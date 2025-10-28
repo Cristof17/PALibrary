@@ -1,0 +1,3 @@
+struct PAPereche
+{
+}paPereche;
