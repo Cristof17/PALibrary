@@ -1,4 +1,3 @@
-struct Algorithm 
-{
-	struct Input in;
-}algorithm;
+//#include "Algorithm.h"
+#include "Input.h"
+
