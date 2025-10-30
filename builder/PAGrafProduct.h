@@ -1,5 +1,5 @@
-#ifndef PA_GRAF_PRODUCT_H
-#define PA_GRAF_PRODUCT_H
+#ifndef PAGGRAFPRODUCT_H
+#define PAGRAFPRODUCT_H
 #include "../PAGraf.h"
 struct PAGrafProduct
 {

@@ -1,5 +1,5 @@
-#ifndef PA_DIRECTOR_H
-#define PA_DIRECTOR_H
+#ifndef PADIRECTOR_H
+#define PADIRECTOR_H
 #include "PABuilder.h"
 #include "PABuilder.h"
 struct PADirector

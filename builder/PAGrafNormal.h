@@ -1,5 +1,5 @@
-#ifndef PA_GRAF_NORMAL_H
-#define PA_GRAF_NORMAL_H
+#ifndef PAGRAFNORMAL_H
+#define PAGRAFNORMAL_H
 #include "../PARezultat.h"
 struct PAGrafNormal
 {
