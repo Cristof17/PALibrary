@@ -1,4 +1,4 @@
-all: PAGrafNormal.c PAGrafTranspus.c PADirector.c PAGrafProduct.c PABuilder.c
+all: PAGrafNormal.o PAGrafTranspus.o PADirector.o PAGrafProduct.o PABuilder.o
 
 PAGrafNormal.o : PAGrafNormal.c
 	$(CC) -c PAGrafNormal.c -o PAGrafNormal.o
@@ -12,8 +12,8 @@ PABuilder.o : PABuilder.c
 	$(CC) -c PABuilder.c -o PABuilder.o
 
 clean:
-	rm PAGrafNormal.c 
-	rm PAGrafTranspus.c 
-	rm PADirector.c 
-	rm PAGrafProduct.c 
-	rm PABuilder.c
+	rm PAGrafNormal.o
+	rm PAGrafTranspus.o
+	rm PADirector.o
+	rm PAGrafProduct.o
+	rm PABuilder.o
