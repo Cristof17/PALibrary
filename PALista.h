@@ -12,7 +12,7 @@ paNod get(int position);
 paNod head(paLista lista);
 paLista tail(paLista lista);
 paNod init(paLista);
-void print(paLista lista);
+void PAListaPrint(paLista lista);
 //toArrayList();
 #endif
 

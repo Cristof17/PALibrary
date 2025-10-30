@@ -6,5 +6,5 @@ enum PARezultat
 	FAIL
 };
 typedef enum PARezultat paRezultat;
-void print(paRezultat rezultat);
+void PARezultatPrint(paRezultat rezultat);
 #endif

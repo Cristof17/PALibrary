@@ -1,5 +1,5 @@
 #include "BFSOutput.h"
-void print(bfsResult result)
+void print(bfsResult Result)
 {
-    result.print(result.d,result.n,result.rezultat);
+    BFSResultPrint(Result);
 }

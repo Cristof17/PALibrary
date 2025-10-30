@@ -22,6 +22,7 @@ paNod init(paLista lista)
     return lista.head;
 }
 
-void print(paLista lista)
+void PAListaPrint(paLista lista)
 {
+    
 }

@@ -1,8 +1,8 @@
 #include "BFSResult.h"
 
-void print(paLista lista, paCardinal n, paRezultat rezultat)
+void BFSResultPrint(bfsResult Result)
 {
-    lista.print();
-    n.print();
-    rezultat.print();
+    PAListaPrint(Result.d);
+    PACardinalPrint(Result.n);
+    PARezultatPrint(Result.rezultat);
 }

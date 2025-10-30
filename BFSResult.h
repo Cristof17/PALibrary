@@ -10,5 +10,6 @@ struct BFSResult
 	enum PARezultat rezultat;
 };
 typedef struct BFSResult bfsResult;
-void print(paLista lista, paCardinal n, paRezultat rezultat);
 #endif
+
+void BFSResultPrint(bfsResult Result);
