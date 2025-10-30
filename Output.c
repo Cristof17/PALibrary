@@ -1,6 +1,6 @@
 #include "Output.h"
 
-void print(paRezultat rezultat)
+void print(paRezultat Rezultat)
 {
-    //rezultat.print();
+    OutputPrint(Rezultat);
 }

@@ -8,4 +8,5 @@ union Output
 	struct BFSOutput outputBFS;
 };
 typedef union Output output;
+void OutputPrint(paRezultat Rezultat);
 #endif
