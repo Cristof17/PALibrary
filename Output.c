@@ -2,5 +2,5 @@
 
 void print(paRezultat rezultat)
 {
-    rezultat.print();
+    //rezultat.print();
 }

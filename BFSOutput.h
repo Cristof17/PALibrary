@@ -3,7 +3,7 @@
 #include "BFSResult.h"
 struct BFSOutput
 {
-    BFSResult rezultat;
+    struct BFSResult rezultat;
 };
 typedef struct BFSOutput bfsOutput;
 #endif
