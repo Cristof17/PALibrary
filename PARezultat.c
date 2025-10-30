@@ -1,2 +1,4 @@
 #include "PARezultat.h"
-void print(pa)
+void print(paRezultat rezultat)
+{
+}

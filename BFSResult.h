@@ -2,12 +2,12 @@
 #define BFSRESULT_H	
 #include "PALista.h"	
 #include "PACardinal.h"	
-#include "BFSResult.h"
+#include "PARezultat.h"
 struct BFSResult
 {
 	struct PALista d;
 	struct PACardinal n;
-	//struct BFSResult result;
+	enum PARezultat rezultat;
 };
 typedef struct BFSResult bfsResult;
 #endif
