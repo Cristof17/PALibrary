@@ -3,4 +3,5 @@
 struct PAData
 {
 };
+typedef struct PAData paData;
 #endif

@@ -9,4 +9,5 @@ struct BFSResult
 	struct PACardinal n;
 	//struct BFSResult result;
 };
+typedef struct BFSResult bfsResult;
 #endif

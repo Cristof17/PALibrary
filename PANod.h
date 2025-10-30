@@ -10,5 +10,6 @@ struct PANod
 	struct PAStare stare;
 
 };
+typedef struct PANod paNod;
 #endif
 

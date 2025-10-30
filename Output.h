@@ -5,4 +5,5 @@ struct Output
 {
 	struct PARezultat rezultat;
 };
+typedef struct Output output;
 #endif

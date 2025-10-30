@@ -4,4 +4,5 @@ struct PARezultat
 {
 	int rezultat;
 };
+typedef struct PARezultat paRezultat;
 #endif

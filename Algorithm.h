@@ -5,4 +5,5 @@ struct Algorithm
 {
 	struct Input in;
 };
+typedef struct Algorithm algorithm;
 #endif

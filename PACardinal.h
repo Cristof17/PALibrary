@@ -4,4 +4,5 @@ struct PACardinal
 {
 
 };
+typedef struct PACardinal paCardinal;
 #endif

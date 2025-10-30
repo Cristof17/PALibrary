@@ -4,4 +4,5 @@ struct PAStare
 {
 	int visitat;
 };
+typedef struct PAStare paStare;
 #endif

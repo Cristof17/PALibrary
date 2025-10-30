@@ -4,4 +4,5 @@ struct BFSOutput
 {
 
 };
+typedef struct BFSOutput bfsOutput;
 #endif
