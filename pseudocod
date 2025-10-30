@@ -1,2 +1,11 @@
 begin 
-read node
+read position 
+
+size(paLista)
+size = 0
+daca elementul este ultimul
+    returneaza 1
+altfel
+    size = 1;
+    size += size(tail(paLista));
+returneaza size;
