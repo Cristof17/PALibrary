@@ -1,21 +1,21 @@
 #include "PALista.h"
-int size(PALista lista)
+int size(paLista lista)
 {
-    PANod head = lista.head(lista);
+    paNod head = head(lista);
 }
-PANod get(int position)
+paNod get(int position)
 {
 
 }
-PANod head(PALista lista)
+paNod head(paLista lista)
 {
     return lista.head;
 }
-PALista tail(PALista lista)
+paNod tail(paLista lista)
 {
 
 }
-PANod init(PALista)
+paNod init(paLista)
 {
 
 }

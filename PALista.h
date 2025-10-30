@@ -4,10 +4,10 @@ struct PALista
 	struct PANod head;
 };
 
-int size(PALista lista)
-PANod get(int position)
-PANod head(PALista lista);
-PALista tail(PALista lista)
-PANod init(PALista)
+int size(paLista lista)
+paNod get(int position)
+paNod head(paLista lista);
+paLista tail(paLista lista)
+paNod init(paLista)
 //toArrayList();
 
