@@ -12,3 +12,8 @@ PABuilder.o : PABuilder.c
 	$(CC) -c PABuilder.c -o PABuilder.o
 
 clean:
+	rm PAGrafNormal.c 
+	rm PAGrafTranspus.c 
+	rm PADirector.c 
+	rm PAGrafProduct.c 
+	rm PABuilder.c
