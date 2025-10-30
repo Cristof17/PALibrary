@@ -1,4 +1,8 @@
-#include "PANod.h"
+#ifndef PANOD_H
+#define PANOD_H
+	#include "PANod.h"
+#endif
+
 struct PALista
 {
 	struct PANod head;
