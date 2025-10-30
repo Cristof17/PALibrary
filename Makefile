@@ -1,4 +1,4 @@
-foo=Input.o Algorithm.o BFSAlgorithm.o BFSInput.o BFSOutput.o BFSResult.o Output.o PAData.o PAGraf.o PALista.o PAMuchie.o PANod.o PAPereche.o PARezultat.o PAStare.o
+foo=Input.o Algorithm.o BFSAlgorithm.o BFSInput.o BFSOutput.o BFSResult.o Output.o PAData.o PAGraf.o PALista.o PAMuchie.o PANod.o PAPereche.o PARezultat.o PAStare.o PANeigh.o
 #bar := $(foo:.c=.o)
 all: Input.o Algorithm.o BFSAlgorithm.o BFSInput.o BFSOutput.o BFSResult.o Output.o PAData.o PAGraf.o PALista.o PAMuchie.o PANod.o PAPereche.o PARezultat.o PAStare.o
 clean:     
@@ -48,3 +48,5 @@ PARezultat.o : PARezultat.c
 	$(CC) -c PARezultat.c -o PARezultat.o
 PAStare.o : PAStare.c
 	$(CC) -c PAStare.c -o PAStare.o
+PANeigh.o : PANeigh.c
+	$(CC) -c PANeigh.c -o PANeigh.o 
