@@ -1,8 +1,8 @@
-#ifndef PAPERECHE_H
-#define PAPERECHE_H
-	#include "PAPereche.h"
-#endif
+#ifndef PAMUCHIE_H
+#define PAMUCHIE_H
+#include "PAPereche.h"
 struct PAMuchie
 {
 	struct PAPereche p;
 };
+#endif

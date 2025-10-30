@@ -1,5 +1,7 @@
 #ifndef BFSOUTPUT_H
 #define BFSOUTPUT_H
-    #include "BFSOutput.h"
+struct BFSOutput
+{
+
+};
 #endif
-struct BFSOutput;

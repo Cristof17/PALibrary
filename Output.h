@@ -1,8 +1,8 @@
-#ifndef PAREZULTAT_H
-#define PAREZULTAT_H
-	#include "PARezultat.h"
-#endif
+#ifndef OUTPUT_H
+#define OUTPUT_H
+#include "PARezultat.h"
 struct Output
 {
 	struct PARezultat rezultat;
 };
+#endif

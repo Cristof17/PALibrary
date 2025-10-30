@@ -1,16 +1,8 @@
-
-#ifndef PACARDINAL_H
-#define PACARDINAL_H
-	#include "PACardinal.h"
-#endif
-#ifndef PALISTA_H
-#define PALISTA_H
-	#include "PALista.h"
-#endif
-#ifndef PANOD_H
-#define PANOD_H
-	#include "PANod.h"
-#endif
+#ifndef PAGRAF_H
+#define PAGRAF_H
+#include "PACardinal.h"
+#include "PALista.h"
+#include "PANod.h"
 struct PAGraf
 {
 	struct PACardinal n;
@@ -18,3 +10,4 @@ struct PAGraf
 	struct PALista adj;
 	struct PANod sursa;
 };
+#endif
