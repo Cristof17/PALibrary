@@ -1,4 +1,4 @@
-#ifndef PAGGRAFPRODUCT_H
+#ifndef PAGRAFPRODUCT_H
 #define PAGRAFPRODUCT_H
 #include "../PAGraf.h"
 struct PAGrafProduct
