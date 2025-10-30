@@ -1,8 +1,9 @@
 #ifndef PAREZULTAT_H
 #define PAREZULTAT_H
-struct PARezultat
+enum PARezultat
 {
-	int rezultat;
+	SUCCESS,
+	FAIL
 };
-typedef struct PARezultat paRezultat;
+typedef enum PARezultat paRezultat;
 #endif
