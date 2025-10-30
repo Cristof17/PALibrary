@@ -11,7 +11,7 @@ PAGrafProduct.o : PAGrafProduct.c
 PABuilder.o : PABuilder.c
 	$(CC) -c PABuilder.c -o PABuilder.o
 
-clean:
+clean: PAGrafNormal.o PAGrafTranspus.o PADirector.o PAGrafProduct.o PABuilder.o
 	rm PAGrafNormal.o
 	rm PAGrafTranspus.o
 	rm PADirector.o
