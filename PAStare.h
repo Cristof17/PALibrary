@@ -1,8 +1,9 @@
 #ifndef PASTARE_H
 #define PASTARE_H
+#include "types.h"
 struct PAStare
 {
-	unsigned int vizitat;
+	INT vizitat;
 };
 typedef struct PAStare paStare;
 #endif

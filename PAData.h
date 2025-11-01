@@ -1,8 +1,9 @@
 #ifndef PADATA_H
 #define PADATA_H
+#include "types.h"
 struct PAData
 {
-    unsigned int value;
+    INT value;
 };
 typedef struct PAData paData;
 #endif
