@@ -26,22 +26,22 @@ clean: assemble compile
 	rm PANeigh.o PANeigh.s
 	rm PATip.o PATip.s
 	@echo "end of clean"
-Input.c: Input.h
-Algorithm.c : Algorithm.h
-BFSAlgorithm.c : BFSAlgorithm.h
-BFSInput.c : BFSInput.h
-BFSOutput.c : BFSOutput.h
-BFSResult.c : BFSResult.h
-Output.c : Output.h 
-PAData.c : PAData.h 
-PAGraf.c : PAGraf.h 
-PALista.c: PALista.h 
-PAMuchie.c : PAMuchie.h
-PANod.c : PANod.h 
-PAPereche.c : PAPereche.h
-PARezultat.c : PARezultat.h
-PAStare.c : PAStare.h
-PATip.c : PATip.h
+Input.c: INCLUDE/Input.h
+Algorithm.c : INCLUDE/Algorithm.h
+BFSAlgorithm.c : INCLUDE/BFSAlgorithm.h
+BFSInput.c : INCLUDE/BFSInput.h
+BFSOutput.c : INCLUDE/BFSOutput.h
+BFSResult.c : INCLUDE/BFSResult.h
+Output.c : INCLUDE/Output.h 
+PAData.c : INCLUDE/PAData.h 
+PAGraf.c : INCLUDE/PAGraf.h 
+PALista.c: INCLUDE/PALista.h 
+PAMuchie.c : INCLUDE/PAMuchie.h
+PANod.c : INCLUDE/PANod.h 
+PAPereche.c : INCLUDE/PAPereche.h
+PARezultat.c : INCLUDE/PARezultat.h
+PAStare.c : INCLUDE/PAStare.h
+PATip.c : INCLUDE/PATip.h
 
 Input.s: Input.c
 	$(CC) -S Input.c -o Input.s
