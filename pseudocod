@@ -3,7 +3,7 @@ read position
 
 size(paLista)
 size = 0
-daca elementul este ultimul
+daca elementul head este ultimul
     returneaza 1;
 altfel
     size = 1;
