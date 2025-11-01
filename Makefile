@@ -1,9 +1,10 @@
 foo=Input.o Algorithm.o BFSAlgorithm.o BFSInput.o BFSOutput.o BFSResult.o Output.o PAData.o PAGraf.o PALista.o PAMuchie.o PANod.o PAPereche.o PARezultat.o PAStare.o PANeigh.o
 #bar := $(foo:.c=.o)
-all: assemble compile 
-compile: Input.o Algorithm.o BFSAlgorithm.o BFSInput.o BFSOutput.o BFSResult.o Output.o PAData.o PAGraf.o PALista.o PAMuchie.o PANod.o PAPereche.o PARezultat.o PAStare.o PATip.o
-assemble: Input.s Algorithm.s BFSAlgorithm.s BFSInput.s BFSOutput.s BFSResult.s Output.s PAData.s PAGraf.s PALista.s PAMuchie.s PANod.s PAPereche.s PARezultat.s PAStare.s PATip.s
-clean: Input.o Algorithm.o BFSAlgorithm.o BFSInput.o BFSOutput.o BFSResult.o Output.o PAData.o PAGraf.o PALista.o PAMuchie.o PANod.o PAPereche.o PARezultat.o PAStare.o PANeigh.o PATip.o Input.s Algorithm.s BFSAlgorithm.s BFSInput.s BFSOutput.s BFSResult.s Output.s PAData.s PAGraf.s PALista.s PAMuchie.s PANod.s PAPereche.s PARezultat.s PAStare.s PANeigh.s PATip.s
+all_$(PWD): assemble compile 
+	@echo 
+compile_$(PWD): Input.o Algorithm.o BFSAlgorithm.o BFSInput.o BFSOutput.o BFSResult.o Output.o PAData.o PAGraf.o PALista.o PAMuchie.o PANod.o PAPereche.o PARezultat.o PAStare.o PATip.o
+assemble_$(PWD): Input.s Algorithm.s BFSAlgorithm.s BFSInput.s BFSOutput.s BFSResult.s Output.s PAData.s PAGraf.s PALista.s PAMuchie.s PANod.s PAPereche.s PARezultat.s PAStare.s PATip.s
+clean_$(PWD): Input.o Algorithm.o BFSAlgorithm.o BFSInput.o BFSOutput.o BFSResult.o Output.o PAData.o PAGraf.o PALista.o PAMuchie.o PANod.o PAPereche.o PARezultat.o PAStare.o PANeigh.o PATip.o Input.s Algorithm.s BFSAlgorithm.s BFSInput.s BFSOutput.s BFSResult.s Output.s PAData.s PAGraf.s PALista.s PAMuchie.s PANod.s PAPereche.s PARezultat.s PAStare.s PANeigh.s PATip.s
 	rm Input.o Input.s
 	rm Algorithm.o Algorithm.s
 	rm BFSAlgorithm.o BFSAlgorithm.s
@@ -107,3 +108,4 @@ PANeigh.o : PANeigh.s
 	$(CC) -c PANeigh.s -o PANeigh.o
 PATip.o : PATip.s
 	$(CC) -c PATip.s -o PATip.o
+include builder/Makefile
