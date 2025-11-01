@@ -1,6 +1,6 @@
 #ifndef PATIP_H
 #ifdef _WIN64
- typedef int HALF_PTR;
+ //typedef int HALF_PTR;
 #else
 #include <stdint.h>
  typedef short HALF_PTR;
