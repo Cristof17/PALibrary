@@ -1,4 +1,4 @@
-#include "PALista.h"
+#include "INCLUDE/PALista.h"
 int size(paLista lista)
 {
     paNod nod_head = head(lista);

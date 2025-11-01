@@ -1,6 +1,6 @@
-#include "PACardinal.h"
+#include "INCLUDE/PACardinal.h"
 
-void PACardinalPrint(paCardinal cardinal);
+void PACardinalPrint(paCardinal cardinal)
 {
 
 }
