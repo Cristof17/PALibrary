@@ -11,7 +11,7 @@ struct PANod
 	struct PAData data;
 	struct PANeigh next;
 	struct PAStare stare;
-	enum PATip paTip;
+	struct PATip paTip;
 };
 typedef struct PANod paNod;
 #endif

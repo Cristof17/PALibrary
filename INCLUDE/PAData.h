@@ -1,6 +1,6 @@
 #ifndef PADATA_H
 #define PADATA_H
-#include "types.h"
+#include "PATip.h"
 struct PAData
 {
     INT value;

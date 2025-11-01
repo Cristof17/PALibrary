@@ -7,7 +7,7 @@ struct BFSResult
 {
 	struct PALista d;
 	struct PACardinal n;
-	enum PARezultat rezultat;
+	struct PARezultat rezultat;
 };
 typedef struct BFSResult bfsResult;
 #endif

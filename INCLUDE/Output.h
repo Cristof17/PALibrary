@@ -4,7 +4,7 @@
 #include "BFSOutput.h"
 union Output
 {
-	enum PARezultat rezultat;
+	struct PARezultat rezultat;
 	struct BFSOutput outputBFS;
 };
 typedef union Output output;

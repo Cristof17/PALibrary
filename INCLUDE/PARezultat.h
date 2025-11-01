@@ -1,6 +1,6 @@
 #ifndef PAREZULTAT_H
 #define PAREZULTAT_H
-#include "types.h"
+#include "PATip.h"
 struct PARezultat
 {
 	INT rezultat;
