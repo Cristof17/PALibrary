@@ -2,9 +2,9 @@ foo=Input.o Algorithm.o BFSAlgorithm.o BFSInput.o BFSOutput.o BFSResult.o Output
 #bar := $(foo:.c=.o)
 all: assemble compile
 	@echo "end of all $(PWD)"
-compile: Input.o Algorithm.o BFSAlgorithm.o BFSInput.o BFSOutput.o BFSResult.o Output.o PAData.o PAGraf.o PALista.o PAMuchie.o PANod.o PAPereche.o PARezultat.o PAStare.o PATip.o
+compile: Input.o Algorithm.o BFSAlgorithm.o BFSInput.o BFSOutput.o BFSResult.o Output.o PAData.o PAGraf.o PALista.o PAMuchie.o PANod.o PAPereche.o PARezultat.o PAStare.o PATip.o PANeigh.o
 	@echo "end of compile $(PWD)"
-assemble: Input.s Algorithm.s BFSAlgorithm.s BFSInput.s BFSOutput.s BFSResult.s Output.s PAData.s PAGraf.s PALista.s PAMuchie.s PANod.s PAPereche.s PARezultat.s PAStare.s PATip.s
+assemble: Input.s Algorithm.s BFSAlgorithm.s BFSInput.s BFSOutput.s BFSResult.s Output.s PAData.s PAGraf.s PALista.s PAMuchie.s PANod.s PAPereche.s PARezultat.s PAStare.s PATip.s PANeigh.s
 	@echo "end of assemble $(PWD)"
 clean: assemble compile 
 	@echo "clean $(PWD)"
