@@ -1,11 +1,11 @@
 foo=Input.o Algorithm.o BFSAlgorithm.o BFSInput.o BFSOutput.o BFSResult.o Output.o PAData.o PAGraf.o PALista.o PAMuchie.o PANod.o PAPereche.o PARezultat.o PAStare.o PANeigh.o
 #bar := $(foo:.c=.o)
 all: assemble compile
-	@echo "all $(PWD)"
+	@echo "end of all $(PWD)"
 compile: Input.o Algorithm.o BFSAlgorithm.o BFSInput.o BFSOutput.o BFSResult.o Output.o PAData.o PAGraf.o PALista.o PAMuchie.o PANod.o PAPereche.o PARezultat.o PAStare.o PATip.o
-	@echo "compile $(PWD)"
+	@echo "end of compile $(PWD)"
 assemble: Input.s Algorithm.s BFSAlgorithm.s BFSInput.s BFSOutput.s BFSResult.s Output.s PAData.s PAGraf.s PALista.s PAMuchie.s PANod.s PAPereche.s PARezultat.s PAStare.s PATip.s
-	@echo "assemble $(PWD)"
+	@echo "end of assemble $(PWD)"
 clean: Input.o Algorithm.o BFSAlgorithm.o BFSInput.o BFSOutput.o BFSResult.o Output.o PAData.o PAGraf.o PALista.o PAMuchie.o PANod.o PAPereche.o PARezultat.o PAStare.o PANeigh.o PATip.o Input.s Algorithm.s BFSAlgorithm.s BFSInput.s BFSOutput.s BFSResult.s Output.s PAData.s PAGraf.s PALista.s PAMuchie.s PANod.s PAPereche.s PARezultat.s PAStare.s PANeigh.s PATip.s
 	@echo "clean $(PWD)"
 	rm Input.o Input.s
