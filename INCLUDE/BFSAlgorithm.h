@@ -1,7 +1,7 @@
 #ifndef BFSALGORITHM_H
 #define BFSALGORITHM_H	
-#include "PAGraf.h"	
-#include "BFSInput.h"
+#include "pagraf.h"	
+#include "bfsinput.h"
 
 struct BFSAlgorithm
 {

@@ -1,7 +1,7 @@
 #ifndef OUTPUT_H
 #define OUTPUT_H
-#include "PARezultat.h"
-#include "BFSOutput.h"
+#include "parezultat.h"
+#include "bfsoutput.h"
 union Output
 {
 	struct PARezultat rezultat;

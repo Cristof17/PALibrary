@@ -1,4 +1,4 @@
-#include "INCLUDE/BFSResult.h"
+#include <bfsresult.h>
 
 void BFSResultPrint(bfsResult Result)
 {

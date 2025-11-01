@@ -1,6 +1,6 @@
 #ifndef PANEIGH_H
 #define PANEIGH_H
-#include "PANod.h"
+#include "panod.h"
 struct PANeigh
 {
     //struct PANod nod;

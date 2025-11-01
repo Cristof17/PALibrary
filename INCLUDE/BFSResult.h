@@ -1,8 +1,8 @@
 #ifndef BFSRESULT_H
 #define BFSRESULT_H	
-#include "PALista.h"	
-#include "PACardinal.h"	
-#include "PARezultat.h"
+#include "palista.h"	
+#include "pacardinal.h"	
+#include "parezultat.h"
 struct BFSResult
 {
 	struct PALista d;

@@ -1,4 +1,4 @@
-#include "INCLUDE/Algorithm.h"
+#include <algorithm.h>
 // #include "Input.h"
 output run(input in)
 {

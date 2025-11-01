@@ -1,6 +1,6 @@
 #ifndef PASTARE_H
 #define PASTARE_H
-#include "PATip.h"
+#include "patip.h"
 struct PAStare
 {
 	INT vizitat;

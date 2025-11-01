@@ -1,0 +1,4 @@
+include/bfsoutput.h:3:10: warning: non-portable path to file '"bfsresult.h"'; specified path differs in case from file name on disk [-Wnonportable-include-path]
+    3 | #include "BFSResult.h"
+      |          ^~~~~~~~~~~~~
+      |          "bfsresult.h"

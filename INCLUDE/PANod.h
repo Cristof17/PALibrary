@@ -1,9 +1,9 @@
 #ifndef PANOD_H
 #define PANOD_H
-#include "PAStare.h"
-#include "PAData.h"
-#include "PANeigh.h"
-#include "PATip.h"
+#include "pastare.h"
+#include "padata.h"
+#include "paneigh.h"
+#include "patip.h"
 struct PANod;
 struct PANod
 { 

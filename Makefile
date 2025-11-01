@@ -1,115 +1,102 @@
-foo=Input.o Algorithm.o BFSAlgorithm.o BFSInput.o BFSOutput.o BFSResult.o Output.o PAData.o PAGraf.o PALista.o PAMuchie.o PANod.o PAPereche.o PARezultat.o PAStare.o PANeigh.o
+foo=input.o algorithm.o bfsalgorithm.o bfsinput.o bfsoutput.o bfsresult.o output.o padata.o pagraf.o palista.o pamuchie.o panod.o papereche.o parezultat.o pastare.o paneigh.o
 #bar := $(foo:.c=.o)
+#include
+C_INCLUDE_PATH+=./include
 all: assemble compile
-	@echo "end of all $(PWD)"
-compile: Input.o Algorithm.o BFSAlgorithm.o BFSInput.o BFSOutput.o BFSResult.o Output.o PAData.o PAGraf.o PALista.o PAMuchie.o PANod.o PAPereche.o PARezultat.o PAStare.o PATip.o PANeigh.o
-	@echo "end of compile $(PWD)"
-assemble: Input.s Algorithm.s BFSAlgorithm.s BFSInput.s BFSOutput.s BFSResult.s Output.s PAData.s PAGraf.s PALista.s PAMuchie.s PANod.s PAPereche.s PARezultat.s PAStare.s PATip.s PANeigh.s
-	@echo "end of assemble $(PWD)"
+	@echo "end of all $(pwd)"
+compile: input.o algorithm.o bfsalgorithm.o bfsinput.o bfsoutput.o bfsresult.o output.o padata.o pagraf.o palista.o pamuchie.o panod.o papereche.o parezultat.o pastare.o patip.o paneigh.o
+	@echo "end of compile $(pwd)"
+assemble: input.s algorithm.s bfsalgorithm.s bfsinput.s bfsoutput.s bfsresult.s output.s padata.s pagraf.s palista.s pamuchie.s panod.s papereche.s parezultat.s pastare.s patip.s paneigh.s
+	@echo "end of assemble $(pwd)"
 clean: assemble compile 
-	@echo "clean $(PWD)"
-	rm Input.o Input.s
-	rm Algorithm.o Algorithm.s
-	rm BFSAlgorithm.o BFSAlgorithm.s
-	rm BFSInput.o BFSInput.s
-	rm BFSOutput.o BFSOutput.s
-	rm BFSResult.o BFSResult.s
-	rm Output.o Output.s
-	rm PAData.o PAData.s
-	rm PAGraf.o PAGraf.s
-	rm PALista.o PALista.s
-	rm PAMuchie.o PAMuchie.s
-	rm PANod.o PANod.s
-	rm PAPereche.o PAPereche.s
-	rm PARezultat.o PARezultat.s
-	rm PAStare.o PAStare.s
-	rm PANeigh.o PANeigh.s
-	rm PATip.o PATip.s
+	@echo "clean $(pwd)"
+	rm input.o input.s
+	rm algorithm.o algorithm.s
+	rm bfsalgorithm.o bfsalgorithm.s
+	rm bfsinput.o bfsinput.s
+	rm bfsoutput.o bfsoutput.s
+	rm bfsresult.o bfsresult.s
+	rm output.o output.s
+	rm padata.o padata.s
+	rm pagraf.o pagraf.s
+	rm palista.o palista.s
+	rm pamuchie.o pamuchie.s
+	rm panod.o panod.s
+	rm papereche.o papereche.s
+	rm parezultat.o parezultat.s
+	rm pastare.o pastare.s
+	rm paneigh.o paneigh.s
+	rm patip.o patip.s
 	@echo "end of clean"
-Input.c: INCLUDE/Input.h
-Algorithm.c : INCLUDE/Algorithm.h
-BFSAlgorithm.c : INCLUDE/BFSAlgorithm.h
-BFSInput.c : INCLUDE/BFSInput.h
-BFSOutput.c : INCLUDE/BFSOutput.h
-BFSResult.c : INCLUDE/BFSResult.h
-Output.c : INCLUDE/Output.h 
-PAData.c : INCLUDE/PAData.h 
-PAGraf.c : INCLUDE/PAGraf.h 
-PALista.c: INCLUDE/PALista.h 
-PAMuchie.c : INCLUDE/PAMuchie.h
-PANod.c : INCLUDE/PANod.h 
-PAPereche.c : INCLUDE/PAPereche.h
-PARezultat.c : INCLUDE/PARezultat.h
-PAStare.c : INCLUDE/PAStare.h
-PATip.c : INCLUDE/PATip.h
 
-Input.s: Input.c
-	$(CC) -S Input.c -o Input.s
-Algorithm.s: Algorithm.c
-	$(CC) -S Algorithm.c -o Algorithm.s
-BFSAlgorithm.s: BFSAlgorithm.c
-	$(CC) -S BFSAlgorithm.c -o BFSAlgorithm.s
-BFSInput.s: BFSInput.c
-	$(CC) -S BFSInput.c -o BFSInput.s
-BFSOutput.s: BFSOutput.c
-	$(CC) -S BFSOutput.c -o BFSOutput.s
-BFSResult.s : BFSResult.c
-	$(CC) -S BFSResult.c -o BFSResult.s
-Output.s : Output.c
-	$(CC) -S Output.c -o Output.s
-PAData.s : PAData.c
-	$(CC) -S PAData.c -o PAData.s
-PAGraf.s : PAGraf.c
-	$(CC) -S PAGraf.c -o PAGraf.s
-PALista.s : PALista.c
-	$(CC) -S PALista.c -o PALista.s
-PAMuchie.s : PAMuchie.c
-	$(CC) -S PAMuchie.c -o PAMuchie.s
-PANod.s : PANod.c
-	$(CC) -S PANod.c -o PANod.s
-PAPereche.s : PAPereche.c
-	$(CC) -S PAPereche.c -o PAPereche.s
-PARezultat.s : PARezultat.c
-	$(CC) -S PARezultat.c -o PARezultat.s
-PAStare.s : PAStare.c
-	$(CC) -S PAStare.c -o PAStare.s
-PANeigh.s : PANeigh.c
-	$(CC) -S PANeigh.c -o PANeigh.s
-PATip.s : PATip.c 
-	$(CC) -S PATip.c -o PATip.s
+input.s: input.c
+	C_INCLUDE_PATH=include $(CC) -S input.c -o input.s
+algorithm.s: algorithm.c
+	@echo $(INCLUDE)
+	C_INCLUDE_PATH=include $(CC) -S algorithm.c -o algorithm.s
+bfsalgorithm.s: bfsalgorithm.c
+	C_INCLUDE_PATH=include $(CC) -S bfsalgorithm.c -o bfsalgorithm.s
+bfsinput.s: bfsinput.c
+	C_INCLUDE_PATH=include $(CC) -S bfsinput.c -o bfsinput.s
+bfsoutput.s: bfsoutput.c
+	C_INCLUDE_PATH=include $(CC) -S bfsoutput.c -o bfsoutput.s
+bfsresult.s : bfsresult.c
+	C_INCLUDE_PATH=include $(CC) -S bfsresult.c -o bfsresult.s
+output.s : output.c
+	C_INCLUDE_PATH=include $(CC) -S output.c -o output.s
+padata.s : padata.c
+	C_INCLUDE_PATH=include $(CC) -S padata.c -o padata.s
+pagraf.s : pagraf.c
+	C_INCLUDE_PATH=include $(CC) -S pagraf.c -o pagraf.s
+palista.s : palista.c
+	C_INCLUDE_PATH=include $(CC) -S palista.c -o palista.s
+pamuchie.s : pamuchie.c
+	C_INCLUDE_PATH=include $(CC) -S pamuchie.c -o pamuchie.s
+panod.s : panod.c
+	C_INCLUDE_PATH=include $(CC) -S panod.c -o panod.s
+papereche.s : papereche.c
+	C_INCLUDE_PATH=include $(CC) -S papereche.c -o papereche.s
+parezultat.s : parezultat.c
+	C_INCLUDE_PATH=include $(CC) -S parezultat.c -o parezultat.s
+pastare.s : pastare.c
+	C_INCLUDE_PATH=include $(CC) -S pastare.c -o pastare.s
+paneigh.s : paneigh.c
+	C_INCLUDE_PATH=include $(CC) -S paneigh.c -o paneigh.s
+patip.s : patip.c 
+	C_INCLUDE_PATH=include $(CC) -S patip.c -o patip.s
 
-Input.o : Input.s
-	$(CC) -c Input.s -o Input.o
-Algorithm.o : Algorithm.s
-	$(CC) -c Algorithm.s -o Algorithm.o
-BFSAlgorithm.o : BFSAlgorithm.s
-	$(CC) -c BFSAlgorithm.s -o BFSAlgorithm.o
-BFSInput.o : BFSInput.s
-	$(CC) -c BFSInput.s -o BFSInput.o
-BFSOutput.o : BFSOutput.s
-	$(CC) -c BFSOutput.s -o BFSOutput.o
-BFSResult.o : BFSResult.s
-	$(CC) -c BFSResult.s -o BFSResult.o
-Output.o : Output.s
-	$(CC) -c Output.s -o Output.o
-PAData.o : PAData.s
-	$(CC) -c PAData.s -o PAData.o
-PAGraf.o : PAGraf.s
-	$(CC) -c PAGraf.s -o PAGraf.o
-PALista.o : PALista.s
-	$(CC) -c PALista.s -o PALista.o
-PAMuchie.o : PAMuchie.s
-	$(CC) -c PAMuchie.s -o PAMuchie.o
-PANod.o : PANod.s
-	$(CC) -c PANod.s -o PANod.o
-PAPereche.o : PAPereche.s
-	$(CC) -c PAPereche.s -o PAPereche.o
-PARezultat.o : PARezultat.s
-	$(CC) -c PARezultat.s -o PARezultat.o
-PAStare.o : PAStare.s
-	$(CC) -c PAStare.s -o PAStare.o
-PANeigh.o : PANeigh.s
-	$(CC) -c PANeigh.s -o PANeigh.o
-PATip.o : PATip.s
-	$(CC) -c PATip.s -o PATip.o
-include builder/Makefile
+input.o : input.s
+	$(CC) -c input.s -o input.o
+algorithm.o : algorithm.s
+	$(CC) -c algorithm.s -o algorithm.o
+bfsalgorithm.o : bfsalgorithm.s
+	$(CC) -c bfsalgorithm.s -o bfsalgorithm.o
+bfsinput.o : bfsinput.s
+	$(CC) -c bfsinput.s -o bfsinput.o
+bfsoutput.o : bfsoutput.s
+	$(CC) -c bfsoutput.s -o bfsoutput.o
+bfsresult.o : bfsresult.s
+	$(CC) -c bfsresult.s -o bfsresult.o
+output.o : output.s
+	$(CC) -c output.s -o output.o
+padata.o : padata.s
+	$(CC) -c padata.s -o padata.o
+pagraf.o : pagraf.s
+	$(CC) -c pagraf.s -o pagraf.o
+palista.o : palista.s
+	$(CC) -c palista.s -o palista.o
+pamuchie.o : pamuchie.s
+	$(CC) -c pamuchie.s -o pamuchie.o
+panod.o : panod.s
+	$(CC) -c panod.s -o panod.o
+papereche.o : papereche.s
+	$(CC) -c papereche.s -o papereche.o
+parezultat.o : parezultat.s
+	$(CC) -c parezultat.s -o parezultat.o
+pastare.o : pastare.s
+	$(CC) -c pastare.s -o pastare.o
+paneigh.o : paneigh.s
+	$(CC) -c paneigh.s -o paneigh.o
+patip.o : patip.s
+	$(CC) -c patip.s -o patip.o
+include builder/makefile

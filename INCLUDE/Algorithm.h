@@ -1,7 +1,8 @@
 #ifndef ALGORITHM_H
 #define ALGORITHM_H	
-#include "Input.h"
-#include "Output.h"
+#include "input.h"
+//#include "outputc.h"
+#include "output.h"
 struct Algorithm
 {
 	struct Input in;

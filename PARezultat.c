@@ -1,4 +1,4 @@
-#include "INCLUDE/PARezultat.h"
+#include <parezultat.h>
 void PARezultatPrint(paRezultat rezultat)
 {
 }

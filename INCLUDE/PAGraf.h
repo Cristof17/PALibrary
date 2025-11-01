@@ -1,8 +1,8 @@
 #ifndef PAGRAF_H
 #define PAGRAF_H
-#include "PACardinal.h"
-#include "PALista.h"
-#include "PANod.h"
+#include "pacardinal.h"
+#include "palista.h"
+#include "panod.h"
 struct PAGraf
 {
 	struct PACardinal n;

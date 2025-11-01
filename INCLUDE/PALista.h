@@ -1,6 +1,6 @@
 #ifndef PALISTA_H
 #define PALISTA_H
-#include "PANod.h"
+#include "panod.h"
 struct PALista
 {
 	struct PANod head;

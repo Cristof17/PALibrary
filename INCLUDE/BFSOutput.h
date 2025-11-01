@@ -1,6 +1,6 @@
 #ifndef BFSOUTPUT_H
 #define BFSOUTPUT_H
-#include "BFSResult.h"
+#include "bfsresult.h"
 struct BFSOutput
 {
     struct BFSResult rezultat;
