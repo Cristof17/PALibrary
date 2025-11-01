@@ -2,7 +2,7 @@
 #define PASTARE_H
 struct PAStare
 {
-	int visitat;
+	unsigned int vizitat;
 };
 typedef struct PAStare paStare;
 #endif
