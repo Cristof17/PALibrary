@@ -1,7 +1,11 @@
-all: assemble compile
-assemble: PAGrafNormal.s PAGrafTranspus.s PADirector.s PAGrafProduct.s PABuilder.s
-compile: PAGrafNormal.o PAGrafTranspus.o PADirector.o PAGrafProduct.o PABuilder.o
-clean: PAGrafNormal.o PAGrafTranspus.o PADirector.o PAGrafProduct.o PABuilder.o PAGrafNormal.s PAGrafTranspus.s PADirector.s PAGrafProduct.s PABuilder.s
+all_builder: assemble compile
+	@echo "all $(PWD)"
+assemble_builder: PAGrafNormal.s PAGrafTranspus.s PADirector.s PAGrafProduct.s PABuilder.s
+	@echo "assemble $(PWD)"
+compile_builder: PAGrafNormal.o PAGrafTranspus.o PADirector.o PAGrafProduct.o PABuilder.o
+	@echo "compile $(PWD)"
+clean_builder: PAGrafNormal.o PAGrafTranspus.o PADirector.o PAGrafProduct.o PABuilder.o PAGrafNormal.s PAGrafTranspus.s PADirector.s PAGrafProduct.s PABuilder.s
+	@echo "clean $(PWD)"
 	rm PAGrafNormal.o
 	rm PAGrafTranspus.o
 	rm PADirector.o
