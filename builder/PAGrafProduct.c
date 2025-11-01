@@ -1,4 +1,5 @@
-#include "PAGrafNormal.h"
+#include <PAGrafNormal.h>
+#include <PARezultat.h>
 paGrafNormal PABuildPart()
 {
     paGrafNormal graf;

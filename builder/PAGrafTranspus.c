@@ -1,4 +1,4 @@
-#include "PAGrafTranspus.h"
+#include <PAGrafTranspus.h>
 paGrafTranspus PAGrafTranspusBuildPart()
 {
     paGrafTranspus graf;

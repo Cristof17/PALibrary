@@ -1,7 +1,6 @@
 #ifndef PAGRAFTRANSPUS_H
 #define PAGRAFTRANSPUS_H
-#include "../PARezultat.h"
-#include "PAGrafTranspus.h"
+#include "<PARezultat.h>"
 struct PAGrafTranspus
 {
 

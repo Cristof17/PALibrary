@@ -97,4 +97,4 @@ paneigh.o : paneigh.s
 	$(CC) -c paneigh.s -o paneigh.o
 patip.o : patip.s
 	$(CC) -c patip.s -o patip.o
-include builder/makefile
+#include builder/makefile
