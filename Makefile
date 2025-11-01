@@ -2,13 +2,12 @@ foo=input.o algorithm.o bfsalgorithm.o bfsinput.o bfsoutput.o bfsresult.o output
 #bar := $(foo:.c=.o)
 #include
 C_INCLUDE_PATH+=./include
-all: assemble compile
-	@echo "end of all $(pwd)"
-compile: input.o algorithm.o bfsalgorithm.o bfsinput.o bfsoutput.o bfsresult.o output.o padata.o pagraf.o palista.o pamuchie.o panod.o papereche.o parezultat.o pastare.o patip.o paneigh.o
+all: input.s algorithm.s bfsalgorithm.s bfsinput.s bfsoutput.s bfsresult.s output.s padata.s pagraf.s palista.s pamuchie.s panod.s papereche.s parezultat.s pastare.s patip.s paneigh.s input.o algorithm.o bfsalgorithm.o bfsinput.o bfsoutput.o bfsresult.o output.o padata.o pagraf.o palista.o pamuchie.o panod.o papereche.o parezultat.o pastare.o patip.o paneigh.o
 	@echo "end of compile $(pwd)"
-assemble: input.s algorithm.s bfsalgorithm.s bfsinput.s bfsoutput.s bfsresult.s output.s padata.s pagraf.s palista.s pamuchie.s panod.s papereche.s parezultat.s pastare.s patip.s paneigh.s
+	@echo "end of all $(pwd)"
 	@echo "end of assemble $(pwd)"
-clean: assemble compile 
+clean: input.s algorithm.s bfsalgorithm.s bfsinput.s bfsoutput.s bfsresult.s output.s padata.s pagraf.s palista.s pamuchie.s panod.s papereche.s parezultat.s pastare.s patip.s paneigh.s input.o algorithm.o bfsalgorithm.o bfsinput.o bfsoutput.o bfsresult.o output.o padata.o pagraf.o palista.o pamuchie.o panod.o papereche.o parezultat.o pastare.o patip.o paneigh.o
+	@echo "end of compile $(pwd)"
 	@echo "clean $(pwd)"
 	rm input.o input.s
 	rm algorithm.o algorithm.s
@@ -32,7 +31,6 @@ clean: assemble compile
 input.s: input.c
 	C_INCLUDE_PATH=include $(CC) -S input.c -o input.s
 algorithm.s: algorithm.c
-	@echo $(INCLUDE)
 	C_INCLUDE_PATH=include $(CC) -S algorithm.c -o algorithm.s
 bfsalgorithm.s: bfsalgorithm.c
 	C_INCLUDE_PATH=include $(CC) -S bfsalgorithm.c -o bfsalgorithm.s
