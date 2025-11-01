@@ -1,9 +1,9 @@
 all_builder: assemble compile
-	@echo "all $(PWD)"
+	@echo "end of all $(PWD)"
 assemble_builder: PAGrafNormal.s PAGrafTranspus.s PADirector.s PAGrafProduct.s PABuilder.s
-	@echo "assemble $(PWD)"
+	@echo "end of assemble $(PWD)"
 compile_builder: PAGrafNormal.o PAGrafTranspus.o PADirector.o PAGrafProduct.o PABuilder.o
-	@echo "compile $(PWD)"
+	@echo "end of compile $(PWD)"
 clean_builder: PAGrafNormal.o PAGrafTranspus.o PADirector.o PAGrafProduct.o PABuilder.o PAGrafNormal.s PAGrafTranspus.s PADirector.s PAGrafProduct.s PABuilder.s
 	@echo "clean $(PWD)"
 	rm PAGrafNormal.o
