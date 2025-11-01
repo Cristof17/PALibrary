@@ -7,7 +7,6 @@
 struct PANod;
 struct PANod
 { 
-
 	struct PAData data;
 	struct PANeigh next;
 	struct PAStare stare;
