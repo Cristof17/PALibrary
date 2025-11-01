@@ -1,6 +1,7 @@
 #ifdef _WIN64
  typedef int HALF_PTR;
 #else
+#include <stdint.h>
  typedef short HALF_PTR;
- typedef __UINT32_TYPE__ INT;
+ typedef int32_t INT;
 #endif

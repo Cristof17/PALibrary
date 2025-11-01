@@ -1,10 +1,10 @@
 #ifndef PAREZULTAT_H
 #define PAREZULTAT_H
-enum PARezultat
+#include "types.h"
+struct PARezultat
 {
-	SUCCESS,
-	FAIL
+	INT rezultat;
 };
-typedef enum PARezultat paRezultat;
+typedef struct PARezultat paRezultat;
 void PARezultatPrint(paRezultat rezultat);
 #endif
