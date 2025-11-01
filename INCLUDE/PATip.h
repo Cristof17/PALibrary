@@ -7,7 +7,7 @@
  typedef int32_t INT;
 #endif
 #define PATIP_H
-#define LAST
+#define LAST(N) (N)+1
 #define FIRST 0
 struct PATip
 {
