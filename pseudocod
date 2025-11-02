@@ -21,8 +21,11 @@ returneaza size;
 
 size(pointer)
 size = 0
+daca pointer == NULL
+    returneaza size
 daca pointer.next == NULL
     size = 1
 altfel
     size = 1
     size += size(pointer->next)
+returneaza size
