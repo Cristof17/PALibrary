@@ -9,3 +9,12 @@ altfel
     size = 1;
     size += size(tail(paLista));
 returneaza size;
+
+size(paNod,position)
+size = 0
+daca position == 1
+    returneaza 1;
+altfel
+    size = 1;
+    size += size(paNod.next, position-1);
+returneaza size;
