@@ -1,4 +1,4 @@
-all: PAGrafNormal.o PAGrafTranspus.o PADirector.o PAGrafProduct.o PABuilder.o PAGrafNormal.s PAGrafTranspus.s PADirector.s PAGrafProduct.s PABuilder.s
+all:PAGrafNormal.s PAGrafTranspus.s PADirector.s PAGrafProduct.s PABuilder.s PAGrafNormal.o PAGrafTranspus.o PADirector.o PAGrafProduct.o PABuilder.o 
 	@echo "clean $(PWD)"
 	@echo "end of all $(PWD)"
 clean: PAGrafNormal.o PAGrafTranspus.o PADirector.o PAGrafProduct.o PABuilder.o PAGrafNormal.s PAGrafTranspus.s PADirector.s PAGrafProduct.s PABuilder.s
@@ -14,30 +14,30 @@ clean: PAGrafNormal.o PAGrafTranspus.o PADirector.o PAGrafProduct.o PABuilder.o 
 	rm PAGrafProduct.s
 	rm PABuilder.s
 
-PAGrafNormal.c : ./include/PAGrafNormal.h
-PADirector.c : ./include/PADirector.h
-PAGrafTranspus.c : ./include/PAGrafTranspus.h
-PAGrafProduct.c : ./include/PAGrafProduct.h
-PABuilder.c : ./include/PABuilder.h
+PAGrafNormal.c: ./include/PAGrafNormal.h
+PADirector.c: ./include/PADirector.h
+PAGrafTranspus.c: ./include/PAGrafTranspus.h
+PAGrafProduct.c: ./include/PAGrafProduct.h
+PABuilder.c: ./include/PABuilder.h
 
 PAGrafNormal.s: PAGrafNormal.c
 	C_INCLUDE_PATH=builder/include $(CC) -S PAGrafNormal.c -o PAGrafNormal.s
-PAGrafTranspus.s : PAGrafTranspus.c
+PAGrafTranspus.s: PAGrafTranspus.c
 	C_INCLUDE_PATH=builder/include $(CC) -S PAGrafTranspus.c -o PAGrafTranspus.s
-PADirector.s : PADirector.c
+PADirector.s: PADirector.c
 	C_INCLUDE_PATH=builder/include $(CC) -S PADirector.c -o PADirector.s
-PAGrafProduct.s : PAGrafProduct.c
+PAGrafProduct.s: PAGrafProduct.c
 	C_INCLUDE_PATH=builder/include $(CC) -S PAGrafProduct.c -o PAGrafProduct.s
-PABuilder.s : PABuilder.c
+PABuilder.s: PABuilder.c
 	C_INCLUDE_PATH=builder/include $(CC) -S PABuilder.c -o PABuilder.s
 
 PAGrafNormal.o: PAGrafNormal.s
 	$(CC) -c PAGrafNormal.s -o PAGrafNormal.o
-PAGrafTranspus.o : PAGrafTranspus.s
+PAGrafTranspus.o: PAGrafTranspus.s
 	$(CC) -c PAGrafTranspus.s -o PAGrafTranspus.o
-PADirector.o : PADirector.s
+PADirector.o: PADirector.s
 	$(CC) -c PADirector.s -o PADirector.o
-PAGrafProduct.o : PAGrafProduct.s
+PAGrafProduct.o: PAGrafProduct.s
 	$(CC) -c PAGrafProduct.s -o PAGrafProduct.o
-PABuilder.o : PABuilder.s
+PABuilder.o: PABuilder.s
 	$(CC) -c PABuilder.s -o PABuilder.o
