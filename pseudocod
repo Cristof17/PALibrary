@@ -18,3 +18,11 @@ altfel
     size = 1;
     size += size(paNod.next, position-1);
 returneaza size;
+
+size(pointer)
+size = 0
+daca pointer.next == NULL
+    size = 1
+altfel
+    size = 1
+    size += size(pointer->next)
