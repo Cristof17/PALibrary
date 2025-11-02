@@ -1,43 +1,43 @@
-all:PAGrafNormal.s PAGrafTranspus.s PADirector.s PAGrafProduct.s PABuilder.s PAGrafNormal.o PAGrafTranspus.o PADirector.o PAGrafProduct.o PABuilder.o 
+all:pagrafnormal.s pagraftranspus.s padirector.s pagrafproduct.s pabuilder.s pagrafnormal.o pagraftranspus.o padirector.o pagrafproduct.o pabuilder.o 
 	@echo "clean $(PWD)"
 	@echo "end of all $(PWD)"
-clean: PAGrafNormal.o PAGrafTranspus.o PADirector.o PAGrafProduct.o PABuilder.o PAGrafNormal.s PAGrafTranspus.s PADirector.s PAGrafProduct.s PABuilder.s
+clean: pagrafnormal.o pagraftranspus.o padirector.o pagrafproduct.o pabuilder.o pagrafnormal.s pagraftranspus.s padirector.s pagrafproduct.s pabuilder.s
 	@echo "clean $(PWD)"
-	rm PAGrafNormal.o
-	rm PAGrafTranspus.o
-	rm PADirector.o
-	rm PAGrafProduct.o
-	rm PABuilder.o
-	rm PAGrafNormal.s
-	rm PAGrafTranspus.s
-	rm PADirector.s
-	rm PAGrafProduct.s
-	rm PABuilder.s
+	rm pagrafnormal.o
+	rm pagraftranspus.o
+	rm padirector.o
+	rm pagrafproduct.o
+	rm pabuilder.o
+	rm pagrafnormal.s
+	rm pagraftranspus.s
+	rm padirector.s
+	rm pagrafproduct.s
+	rm pabuilder.s
 
-PAGrafNormal.c: ./include/PAGrafNormal.h
-PADirector.c: ./include/PADirector.h
-PAGrafTranspus.c: ./include/PAGrafTranspus.h
-PAGrafProduct.c: ./include/PAGrafProduct.h
-PABuilder.c: ./include/PABuilder.h
+pagrafnormal.c: ./include/pagrafnormal.h
+padirector.c: ./include/padirector.h
+pagraftranspus.c: ./include/pagraftranspus.h
+pagrafproduct.c: ./include/pagrafproduct.h
+pabuilder.c: ./include/pabuilder.h
 
-PAGrafNormal.s: PAGrafNormal.c
-	C_INCLUDE_PATH=builder/include $(CC) -S PAGrafNormal.c -o PAGrafNormal.s
-PAGrafTranspus.s: PAGrafTranspus.c
-	C_INCLUDE_PATH=builder/include $(CC) -S PAGrafTranspus.c -o PAGrafTranspus.s
-PADirector.s: PADirector.c
-	C_INCLUDE_PATH=builder/include $(CC) -S PADirector.c -o PADirector.s
-PAGrafProduct.s: PAGrafProduct.c
-	C_INCLUDE_PATH=builder/include $(CC) -S PAGrafProduct.c -o PAGrafProduct.s
-PABuilder.s: PABuilder.c
-	C_INCLUDE_PATH=builder/include $(CC) -S PABuilder.c -o PABuilder.s
+pagrafnormal.s: pagrafnormal.c
+	C_INCLUDE_PATH=builder/include $(CC) -s pagrafnormal.c -o pagrafnormal.s
+pagraftranspus.s: pagraftranspus.c
+	C_INCLUDE_PATH=builder/include $(CC) -s pagraftranspus.c -o pagraftranspus.s
+padirector.s: padirector.c
+	C_INCLUDE_PATH=builder/include $(CC) -s padirector.c -o padirector.s
+pagrafproduct.s: pagrafproduct.c
+	C_INCLUDE_PATH=builder/include $(CC) -s pagrafproduct.c -o pagrafproduct.s
+pabuilder.s: pabuilder.c
+	C_INCLUDE_PATH=builder/include $(CC) -s pabuilder.c -o pabuilder.s
 
-PAGrafNormal.o: PAGrafNormal.s
-	$(CC) -c PAGrafNormal.s -o PAGrafNormal.o
-PAGrafTranspus.o: PAGrafTranspus.s
-	$(CC) -c PAGrafTranspus.s -o PAGrafTranspus.o
-PADirector.o: PADirector.s
-	$(CC) -c PADirector.s -o PADirector.o
-PAGrafProduct.o: PAGrafProduct.s
-	$(CC) -c PAGrafProduct.s -o PAGrafProduct.o
-PABuilder.o: PABuilder.s
-	$(CC) -c PABuilder.s -o PABuilder.o
+pagrafnormal.o: pagrafnormal.s
+	$(CC) -c pagrafnormal.s -o pagrafnormal.o
+pagraftranspus.o: pagraftranspus.s
+	$(CC) -c pagraftranspus.s -o pagraftranspus.o
+padirector.o: padirector.s
+	$(CC) -c padirector.s -o padirector.o
+pagrafproduct.o: pagrafproduct.s
+	$(CC) -c pagrafproduct.s -o pagrafproduct.o
+pabuilder.o: pabuilder.s
+	$(CC) -c pabuilder.s -o pabuilder.o

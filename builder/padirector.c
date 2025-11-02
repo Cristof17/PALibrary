@@ -1,4 +1,4 @@
-#include <PADirector.h>
+#include <padirector.h>
 void PAConstruct()
 {
 }
