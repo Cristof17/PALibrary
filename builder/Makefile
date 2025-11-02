@@ -21,15 +21,15 @@ pagrafproduct.c: ./include/pagrafproduct.h
 pabuilder.c: ./include/pabuilder.h
 
 pagrafnormal.s: pagrafnormal.c
-	C_INCLUDE_PATH=builder/include $(CC) -s pagrafnormal.c -o pagrafnormal.s
+	C_INCLUDE_PATH=builder/include $(CC) -S pagrafnormal.c -o pagrafnormal.s
 pagraftranspus.s: pagraftranspus.c
-	C_INCLUDE_PATH=builder/include $(CC) -s pagraftranspus.c -o pagraftranspus.s
+	C_INCLUDE_PATH=builder/include $(CC) -S pagraftranspus.c -o pagraftranspus.s
 padirector.s: padirector.c
-	C_INCLUDE_PATH=builder/include $(CC) -s padirector.c -o padirector.s
+	C_INCLUDE_PATH=builder/include $(CC) -S padirector.c -o padirector.s
 pagrafproduct.s: pagrafproduct.c
-	C_INCLUDE_PATH=builder/include $(CC) -s pagrafproduct.c -o pagrafproduct.s
+	C_INCLUDE_PATH=builder/include $(CC) -S pagrafproduct.c -o pagrafproduct.s
 pabuilder.s: pabuilder.c
-	C_INCLUDE_PATH=builder/include $(CC) -s pabuilder.c -o pabuilder.s
+	C_INCLUDE_PATH=builder/include $(CC) -S pabuilder.c -o pabuilder.s
 
 pagrafnormal.o: pagrafnormal.s
 	$(CC) -c pagrafnormal.s -o pagrafnormal.o
