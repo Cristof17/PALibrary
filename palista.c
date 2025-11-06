@@ -1,12 +1,13 @@
 #include <palista.h>
-int size(paLista lista)
+INT size(paLista lista)
 {
     int size = 0;
+    paTip tip = lista.head.tip;
     paNod nod_head = head(lista);
     // if (nod_head.paTip == LAST(lista.))
     return 1;
 }
-paNod get(int position)
+paNod get(INT position)
 {
     paNod nod;
     return nod;    

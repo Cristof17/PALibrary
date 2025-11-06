@@ -7,13 +7,13 @@
  typedef int32_t INT;
 #endif
 #define PATIP_H
-#define LAST(N) (N)+1
-#define FIRST 0
+#define KIND_LAST(N) (N)+1
+#define KIND_FIRST 0
 #define SUCCESS 0
 #define FAIL -1
 struct PATip
 {
-	INT Tip;
+	INT Kind;
 };
 typedef struct PATip paTip;
 #endif

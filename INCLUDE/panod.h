@@ -10,7 +10,7 @@ struct PANod
 	struct PAData data;
 	struct PANeigh next;
 	struct PAStare stare;
-	struct PATip paTip;
+	struct PATip tip;
 };
 typedef struct PANod paNod;
 #endif
