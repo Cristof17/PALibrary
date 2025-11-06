@@ -1,4 +1,4 @@
-#include <pacrdinal.h>
+#include <pacardinal.h>
 
 void PACardinalPrint(paCardinal cardinal)
 {
