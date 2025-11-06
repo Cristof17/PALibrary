@@ -7,8 +7,8 @@ struct PALista
 };
 typedef struct PALista paLista;
 
-int size(paLista lista);
-paNod get(int position);
+INT size(paLista lista);
+paNod get(INT position);
 paNod head(paLista lista);
 paLista tail(paLista lista);
 paNod init(paLista);
