@@ -7,6 +7,7 @@ paGrafNormal PABuildPart()
 }
 paRezultat PAGetResult()
 {
-    paRezultat rezultat = SUCCESS;
+    paRezultat rezultat;
+    rezultat.cod = SUCCESS;
     return rezultat;
 }
