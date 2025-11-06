@@ -1,6 +1,6 @@
 #ifndef PAGRAFPRODUCT_H
 #define PAGRAFPRODUCT_H
-#include "<PAGraf.h>"
+#include <pagraf.h>
 struct PAGrafProduct
 {
     struct PAGraf graf;

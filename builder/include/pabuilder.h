@@ -1,6 +1,6 @@
 #ifndef PABUILDER_H
 #define PABUILDER_H
-#include <PAGrafProduct.h>
+#include <pagrafproduct.h>
 struct PABuilder
 {
 

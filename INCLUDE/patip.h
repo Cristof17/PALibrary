@@ -9,6 +9,8 @@
 #define PATIP_H
 #define LAST(N) (N)+1
 #define FIRST 0
+#define SUCCESS 0
+#define FAIL -1
 struct PATip
 {
 	INT Tip;
