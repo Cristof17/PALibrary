@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
-<svg width="128cm" height="83cm" viewBox="52 -532 2560 1641" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="131cm" height="81cm" viewBox="-1 -532 2613 1617" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <g>
     <rect style="fill: #ffffff" x="520" y="560" width="418.1" height="28"/>
     <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="520" y="560" width="418.1" height="28"/>
@@ -18,7 +18,7 @@
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="523" y="702.595">        Sursa:PANod)</text>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="523" y="718.595">+~PAGraf()</text>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="523" y="734.595">+init(graf:PAGraf): PAGraf</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="523" y="750.595">+dispose()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="523" y="750.595">+Dispose()</text>
   </g>
   <g>
     <rect style="fill: #ffffff" x="1007" y="573" width="271.8" height="28"/>
@@ -32,27 +32,22 @@
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1010" y="635.595">+PAMuchie(Pereche:PAPereche)</text>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1010" y="651.595">+~PAMuchie()</text>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1010" y="667.595">+init(pamuchie:PAMuchie): PAMuchie</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1010" y="683.595">+dispose()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1010" y="683.595">+Dispose()</text>
   </g>
   <g>
-    <rect style="fill: #ffffff" x="680" y="800" width="233.3" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="680" y="800" width="233.3" height="28"/>
-    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="796.65" y="818.844">PALista</text>
-    <rect style="fill: #ffffff" x="680" y="828" width="233.3" height="36"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="680" y="828" width="233.3" height="36"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="683" y="842.595">-muchii: ArrayList</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="683" y="858.595">+m: PACardinal</text>
-    <rect style="fill: #ffffff" x="680" y="864" width="233.3" height="100"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="680" y="864" width="233.3" height="100"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="683" y="878.595">+GetHead(): PANod</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="683" y="894.595">+AddHead(data:T): void</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="683" y="910.595">+PALista(Head:PANod)</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="683" y="926.595">+~PALista()</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="683" y="942.595">+init(lista:PALista): PALista</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="683" y="958.595">+dispose()</text>
-    <rect style="fill: #ffffff" x="867.3" y="786" width="54" height="20"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 6; stroke: #000000" x="867.3" y="786" width="54" height="20"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="873.3" y="800.595">T:</text>
+    <rect style="fill: #ffffff" x="700" y="880" width="148.6" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="700" y="880" width="148.6" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="774.3" y="898.844">PALista</text>
+    <rect style="fill: #ffffff" x="700" y="908" width="148.6" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="700" y="908" width="148.6" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="703" y="922.595">-muchii: ArrayList</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="703" y="938.595">+m: PACardinal</text>
+    <rect style="fill: #ffffff" x="700" y="944" width="148.6" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="700" y="944" width="148.6" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="703" y="958.595">+Dispose()</text>
+    <rect style="fill: #ffffff" x="802.6" y="866" width="54" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 6; stroke: #000000" x="802.6" y="866" width="54" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="808.6" y="880.595">T:</text>
   </g>
   <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="729.05" y="658">
     <tspan x="729.05" y="658"></tspan>
@@ -74,53 +69,53 @@
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1023" y="982.595">+PANod(Data:PAData,Next:PANod,status:PAStare)</text>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1023" y="998.595">+~PANod()</text>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1023" y="1014.6">+init(nod:PANod): PANod</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1023" y="1030.6">+dispose()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1023" y="1030.6">+Dispose()</text>
   </g>
   <g>
-    <rect style="fill: #ffffff" x="53" y="362" width="302.6" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="53" y="362" width="302.6" height="28"/>
-    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="204.3" y="380.844">PACardinal</text>
-    <rect style="fill: #ffffff" x="53" y="390" width="302.6" height="20"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="53" y="390" width="302.6" height="20"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="56" y="404.595">+valoare: Int32</text>
-    <rect style="fill: #ffffff" x="53" y="410" width="302.6" height="68"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="53" y="410" width="302.6" height="68"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="56" y="424.595">+PACardinal(valoare:Int32)</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="56" y="440.595">+~PACardinal()</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="56" y="456.595">+init(cardinal:PACardinal): PACardinal</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="56" y="472.595">+dispose()</text>
+    <rect style="fill: #ffffff" x="0" y="340" width="302.6" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="0" y="340" width="302.6" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="151.3" y="358.844">PACardinal</text>
+    <rect style="fill: #ffffff" x="0" y="368" width="302.6" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="0" y="368" width="302.6" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="3" y="382.595">+valoare: Int32</text>
+    <rect style="fill: #ffffff" x="0" y="388" width="302.6" height="68"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="0" y="388" width="302.6" height="68"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="3" y="402.595">+PACardinal(valoare:Int32)</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="3" y="418.595">+~PACardinal()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="3" y="434.595">+init(cardinal:PACardinal): PACardinal</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="3" y="450.595">+Dispose()</text>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="963.272,714 980,714 980,800 1198.25,800 1198.25,840 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="963.272,714 980,714 980,780 1376.5,780 1376.5,840 "/>
     <polygon style="fill: #000000" points="938.1,714 952.1,709.2 966.1,714 952.1,718.8 "/>
     <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="938.1,714 952.1,709.2 966.1,714 952.1,718.8 "/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="1089.12" y="796.506"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="1178.25" y="776.506"/>
     <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="970.1" y="710.506"/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1202.25" y="836.595"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1380.5" y="836.595"/>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="938.472,838 960.514,838 960.514,854 1020,854 "/>
-    <polygon style="fill: #ffffff" points="913.3,838 927.3,833.2 941.3,838 927.3,842.8 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="913.3,838 927.3,833.2 941.3,838 927.3,842.8 "/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="962.514" y="842.506"/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="945.3" y="834.506"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="873.772,918 960.514,918 960.514,854 1020,854 "/>
+    <polygon style="fill: #ffffff" points="848.6,918 862.6,913.2 876.6,918 862.6,922.8 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="848.6,918 862.6,913.2 876.6,918 862.6,922.8 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="962.514" y="882.506"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="880.6" y="914.506"/>
     <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="1016" y="850.506"/>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="559.672,907 614.25,907 614.25,890 680,890 "/>
-    <polygon style="fill: #ffffff" points="534.5,907 548.5,902.2 562.5,907 548.5,911.8 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="534.5,907 548.5,902.2 562.5,907 548.5,911.8 "/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="616.25" y="895.006"/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="566.5" y="903.506"/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="676" y="886.506"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="550.672,858 579.247,858 579.247,814 618.994,814 "/>
+    <polygon style="fill: #ffffff" points="525.5,858 539.5,853.2 553.5,858 539.5,862.8 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="525.5,858 539.5,853.2 553.5,858 539.5,862.8 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="581.247" y="832.506"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="557.5" y="854.506"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="614.994" y="810.506"/>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="494.828,598 400,598 400,362 355.6,362 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="494.828,598 400,598 400,340 302.6,340 "/>
     <polygon style="fill: #000000" points="520,598 506,602.8 492,598 506,593.2 "/>
     <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="520,598 506,602.8 492,598 506,593.2 "/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="402" y="476.506"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="402" y="465.506"/>
     <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="488" y="594.506"/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="359.6" y="358.506"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="306.6" y="336.506"/>
   </g>
   <g>
     <rect style="fill: #ffffff" x="1180" y="160" width="341.1" height="28"/>
@@ -136,7 +131,7 @@
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1183" y="254.595">+BFSAlgoritm(in:BFSInput,graf:PAGraf)</text>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1183" y="270.595">+~BFSAlgoritm()</text>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1183" y="286.595">+init(bfsalgorithm:BFSAlgorithm): Algorithm</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1183" y="302.595">+dispose()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1183" y="302.595">+Dispose()</text>
   </g>
   <g>
     <rect style="fill: #ffffff" x="648.944" y="132.649" width="379.6" height="28"/>
@@ -154,7 +149,7 @@
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="651.944" y="259.245">          sursa:PANod)</text>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="651.944" y="275.245">+~BFSInput()</text>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="651.944" y="291.245">+init(bfsinput:BFSInput): Input</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="651.944" y="307.245">+dispose()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="651.944" y="307.245">+Dispose()</text>
   </g>
   <g>
     <rect style="fill: #ffffff" x="305.596" y="146.649" width="271.8" height="28"/>
@@ -168,7 +163,7 @@
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="308.596" y="209.245">+BFSOutput(result:BFSResult)</text>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="308.596" y="225.245">+~BFSOutput()</text>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="308.596" y="241.245">+init(bfsoutput:BFSOutput): Output</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="308.596" y="257.245">+dispose()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="308.596" y="257.245">+Dispose()</text>
     <rect style="fill: #ffffff" x="531.396" y="132.649" width="54" height="20"/>
     <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 6; stroke: #000000" x="531.396" y="132.649" width="54" height="20"/>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="537.396" y="147.245">:T</text>
@@ -190,18 +185,18 @@
     <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="942.1" y="642.506"/>
   </g>
   <g>
-    <rect style="fill: #ffffff" x="420" y="380" width="302.6" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="420" y="380" width="302.6" height="28"/>
-    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="571.3" y="398.844">PARezultat</text>
-    <rect style="fill: #ffffff" x="420" y="408" width="302.6" height="20"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="420" y="408" width="302.6" height="20"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="423" y="422.595">-cod: int</text>
-    <rect style="fill: #ffffff" x="420" y="428" width="302.6" height="68"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="420" y="428" width="302.6" height="68"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="423" y="442.595">+PARezultat(rezultat:int)</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="423" y="458.595">+~PARezultat()</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="423" y="474.595">+init(rezultat:PARezultat): PARezultat</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="423" y="490.595">+dispose()</text>
+    <rect style="fill: #ffffff" x="419" y="380" width="302.6" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="419" y="380" width="302.6" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="570.3" y="398.844">PARezultat</text>
+    <rect style="fill: #ffffff" x="419" y="408" width="302.6" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="419" y="408" width="302.6" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="422" y="422.595">-cod: int</text>
+    <rect style="fill: #ffffff" x="419" y="428" width="302.6" height="68"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="419" y="428" width="302.6" height="68"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="422" y="442.595">+PARezultat(rezultat:int)</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="422" y="458.595">+~PARezultat()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="422" y="474.595">+init(rezultat:PARezultat): PARezultat</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="422" y="490.595">+Dispose()</text>
   </g>
   <g>
     <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="441.496,287.822 441.496,320 804,320 804,354 "/>
@@ -224,7 +219,7 @@
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1063" y="38.5953">+Algorithm(in:Input)</text>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1063" y="54.5953">+~Algorithm()</text>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1063" y="70.5953">+init(algorithm:Algorithm): Algorithm</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1063" y="86.5953">+dispose()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1063" y="86.5953">+Dispose()</text>
     <rect style="fill: #ffffff" x="1308.9" y="-54" width="54" height="20"/>
     <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 6; stroke: #000000" x="1308.9" y="-54" width="54" height="20"/>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1314.9" y="-39.4047">T:</text>
@@ -240,7 +235,7 @@
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="800" y="6.59531">+Input()</text>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="800" y="22.5953">+~Input()</text>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="800" y="38.5953">+init(input:Input): Input</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="800" y="54.5953">+dispose()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="800" y="54.5953">+Dispose()</text>
   </g>
   <g>
     <rect style="fill: #ffffff" x="485" y="-50" width="225.6" height="28"/>
@@ -253,7 +248,7 @@
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="488" y="0.595313">+Output(rezultat:PARezultat)</text>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="488" y="16.5953">+~Output()</text>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="488" y="32.5953">+init(output:Output): Output</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="488" y="48.5953">+dispose()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="488" y="48.5953">+Dispose()</text>
     <rect style="fill: #ffffff" x="664.6" y="-64" width="54" height="20"/>
     <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 6; stroke: #000000" x="664.6" y="-64" width="54" height="20"/>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="670.6" y="-49.4047">:T</text>
@@ -295,15 +290,15 @@
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="807" y="434.595">+BFSResult(d:PALista,n:PACardinal)</text>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="807" y="450.595">+~BFSResult()</text>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="807" y="466.595">+init(bfsresult:BFSResult): BFSResult</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="807" y="482.595">+dispose()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="807" y="482.595">+Dispose()</text>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="951.45,514.176 951.45,540 571.3,540 571.3,496 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="951.45,514.176 951.45,540 570.3,540 570.3,496 "/>
     <polygon style="fill: #000000" points="951.45,489.005 956.25,503.005 951.45,517.005 946.65,503.005 "/>
     <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="951.45,489.005 956.25,503.005 951.45,517.005 946.65,503.005 "/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="761.375" y="536.506"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="760.875" y="536.506"/>
     <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="962.45" y="501.599"/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="575.3" y="508.595"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="574.3" y="508.595"/>
   </g>
   <g>
     <rect style="fill: #ffffff" x="1898" y="666" width="88.6" height="38"/>
@@ -664,42 +659,43 @@
     <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="2103.64,155.373 2098.64,145.373 2103.64,147.873 2108.64,145.373 "/>
   </g>
   <g>
-    <rect style="fill: #ffffff" x="409" y="869" width="125.5" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="409" y="869" width="125.5" height="28"/>
-    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="471.75" y="887.844">PASir</text>
-    <rect style="fill: #ffffff" x="409" y="897" width="125.5" height="36"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="409" y="897" width="125.5" height="36"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="412" y="911.595">+n: PACardinal</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="412" y="927.595">+adj: PALista[]</text>
-    <rect style="fill: #ffffff" x="409" y="933" width="125.5" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="409" y="933" width="125.5" height="8"/>
-    <rect style="fill: #ffffff" x="488.5" y="855" width="54" height="20"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 6; stroke: #000000" x="488.5" y="855" width="54" height="20"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="494.5" y="869.595">T:</text>
+    <rect style="fill: #ffffff" x="400" y="820" width="125.5" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="400" y="820" width="125.5" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="462.75" y="838.844">PASir</text>
+    <rect style="fill: #ffffff" x="400" y="848" width="125.5" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="400" y="848" width="125.5" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="403" y="862.595">+n: PACardinal</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="403" y="878.595">+adj: PAIndex[]</text>
+    <rect style="fill: #ffffff" x="400" y="884" width="125.5" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="400" y="884" width="125.5" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="403" y="898.595">+Dispose()</text>
+    <rect style="fill: #ffffff" x="479.5" y="806" width="54" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 6; stroke: #000000" x="479.5" y="806" width="54" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="485.5" y="820.595">T:</text>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="494.828,666 471.75,666 471.75,869 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="494.828,666 462.75,666 462.75,820 "/>
     <polygon style="fill: #ffffff" points="520,666 506,670.8 492,666 506,661.2 "/>
     <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="520,666 506,670.8 492,666 506,661.2 "/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="495.875" y="662.506"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="491.375" y="662.506"/>
     <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="488" y="662.506"/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="475.75" y="865.595"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="466.75" y="816.595"/>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="383.828,907 377,907 377,420 355.6,420 "/>
-    <polygon style="fill: #000000" points="409,907 395,911.8 381,907 395,902.2 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="409,907 395,911.8 381,907 395,902.2 "/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="379" y="660.006"/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="377" y="903.506"/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="359.6" y="416.506"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="374.828,858 340,858 340,398 302.6,398 "/>
+    <polygon style="fill: #000000" points="400,858 386,862.8 372,858 386,853.2 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="400,858 386,862.8 372,858 386,853.2 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="342" y="624.506"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="368" y="854.506"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="306.6" y="394.506"/>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="654.828,964 204.3,964 204.3,478 "/>
-    <polygon style="fill: #000000" points="680,964 666,968.8 652,964 666,959.2 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="680,964 666,968.8 652,964 666,959.2 "/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="442.15" y="960.506"/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="648" y="960.506"/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="208.3" y="490.595"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="674.828,964 151.3,964 151.3,456 "/>
+    <polygon style="fill: #000000" points="700,964 686,968.8 672,964 686,959.2 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="700,964 686,968.8 672,964 686,959.2 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="425.65" y="960.506"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="668" y="960.506"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="155.3" y="468.595"/>
   </g>
   <g>
     <rect style="fill: #ffffff" x="2222.8" y="64.5" width="52.4" height="38"/>
@@ -754,22 +750,23 @@
     <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="2070.72,531.064 2065.88,520.983 2070.84,523.565 2075.88,521.149 "/>
   </g>
   <g>
-    <rect style="fill: #ffffff" x="560" y="1020" width="94.7" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="560" y="1020" width="94.7" height="28"/>
-    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="607.35" y="1038.84">PAIndex</text>
-    <rect style="fill: #ffffff" x="560" y="1048" width="94.7" height="20"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="560" y="1048" width="94.7" height="20"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="563" y="1062.6">+value: INT</text>
-    <rect style="fill: #ffffff" x="560" y="1068" width="94.7" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="560" y="1068" width="94.7" height="8"/>
+    <rect style="fill: #ffffff" x="620" y="780" width="94.7" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="620" y="780" width="94.7" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="667.35" y="798.844">PAIndex</text>
+    <rect style="fill: #ffffff" x="620" y="808" width="94.7" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="620" y="808" width="94.7" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="623" y="822.595">+value: INT</text>
+    <rect style="fill: #ffffff" x="620" y="828" width="94.7" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="620" y="828" width="94.7" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="623" y="842.595">+Dispose()</text>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1198.25,1061.17 1198.25,1098.01 607.35,1098.01 607.35,1077.01 "/>
-    <polygon style="fill: #ffffff" points="1198.25,1036 1203.05,1050 1198.25,1064 1193.45,1050 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1198.25,1036 1203.05,1050 1198.25,1064 1193.45,1050 "/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="902.8" y="1094.51"/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1209.25" y="1048.59"/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="611.35" y="1089.6"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1198.25,814.828 1198.25,800 714.7,800 714.7,818 "/>
+    <polygon style="fill: #ffffff" points="1198.25,840 1193.45,826 1198.25,812 1203.05,826 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1198.25,840 1193.45,826 1198.25,812 1203.05,826 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="956.475" y="796.506"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1209.25" y="836.595"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="718.7" y="814.595"/>
   </g>
   <g>
     <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1994.68,-452 2031.25,-452 2031.25,-458 2078.99,-458 "/>
@@ -901,35 +898,43 @@
     <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="720" y="1028" width="171.7" height="36"/>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="723" y="1042.6">+visited: INT = 0</text>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="723" y="1058.6">+not_visited: INT = 1</text>
-    <rect style="fill: #ffffff" x="720" y="1064" width="171.7" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="720" y="1064" width="171.7" height="8"/>
+    <rect style="fill: #ffffff" x="720" y="1064" width="171.7" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="720" y="1064" width="171.7" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="723" y="1078.6">+Dispose()</text>
   </g>
-  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="1552.32" y="735.634">
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="1552.32" y="735.634">
     <tspan x="1552.32" y="735.634"></tspan>
   </text>
-  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="1405.32" y="735.634">
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="1405.32" y="735.634">
     <tspan x="1405.32" y="735.634"></tspan>
   </text>
   <g>
-    <rect style="fill: #ffffff" x="1225.36" y="711" width="110.1" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1225.36" y="711" width="110.1" height="28"/>
-    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1280.41" y="729.844">PAPereche</text>
-    <rect style="fill: #ffffff" x="1225.36" y="739" width="110.1" height="36"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1225.36" y="739" width="110.1" height="36"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1228.36" y="753.595">+node: PANod</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1228.36" y="769.595">+neigh: PANod</text>
-    <rect style="fill: #ffffff" x="1225.36" y="775" width="110.1" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1225.36" y="775" width="110.1" height="8"/>
+    <rect style="fill: #ffffff" x="1260" y="420" width="110.1" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1260" y="420" width="110.1" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1315.05" y="438.844">PAPereche</text>
+    <rect style="fill: #ffffff" x="1260" y="448" width="110.1" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1260" y="448" width="110.1" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1263" y="462.595">+node: PANod</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1263" y="478.595">+neigh: PANod</text>
+    <rect style="fill: #ffffff" x="1260" y="484" width="110.1" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1260" y="484" width="110.1" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1263" y="498.595">+Dispose()()</text>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="994.828,930 949.353,930 949.353,1036 892.705,1036 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="994.828,930 949.353,930 949.353,1042 892.705,1042 "/>
     <polygon style="fill: #ffffff" points="1020,930 1006,934.8 992,930 1006,925.2 "/>
     <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1020,930 1006,934.8 992,930 1006,925.2 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="951.353" y="982.506"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="988" y="926.506"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="896.705" y="1038.51"/>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1142.9,715.179 1142.9,747 1224.35,747 "/>
-    <polygon style="fill: #ffffff" points="1142.9,690.007 1147.7,704.007 1142.9,718.007 1138.1,704.007 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1142.9,690.007 1147.7,704.007 1142.9,718.007 1138.1,704.007 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1142.9,546.821 1142.9,531.499 1315.05,531.499 1315.05,505.005 "/>
+    <polygon style="fill: #ffffff" points="1142.9,571.993 1138.1,557.993 1142.9,543.993 1147.7,557.993 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1142.9,571.993 1138.1,557.993 1142.9,543.993 1147.7,557.993 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="1228.98" y="528.005"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1153.9" y="568.588"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1319.05" y="517.6"/>
   </g>
   <g>
     <rect style="fill: #ffffff" x="1865.46" y="768.8" width="63.15" height="38"/>
@@ -947,13 +952,13 @@
   </g>
   <g>
     <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1920.15,704 1921.36,731 1893.36,730 1895.14,758.088 "/>
-    <polygon style="fill: #000000" points="1895.62,765.573 1889.99,755.91 1895.14,758.088 1899.97,755.276 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1895.62,765.573 1889.99,755.91 1895.14,758.088 1899.97,755.276 "/>
+    <polygon style="fill: #000000" points="1895.62,765.573 1889.99,755.91 1895.14,758.088 1899.97,755.275 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1895.62,765.573 1889.99,755.91 1895.14,758.088 1899.97,755.275 "/>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1964.45,704 1965.36,725 2016.36,725 2015.71,757.868 "/>
-    <polygon style="fill: #000000" points="2015.57,765.366 2010.76,755.27 2015.71,757.868 2020.76,755.466 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="2015.57,765.366 2010.76,755.27 2015.71,757.868 2020.76,755.466 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1964.45,704 1965.36,725 2016.36,725 2015.72,757.868 "/>
+    <polygon style="fill: #000000" points="2015.57,765.366 2010.77,755.271 2015.72,757.868 2020.77,755.466 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="2015.57,765.366 2010.77,755.271 2015.72,757.868 2020.77,755.466 "/>
   </g>
   <g>
     <rect style="fill: #ffffff" x="1598.23" y="717.8" width="68.25" height="38.2"/>
