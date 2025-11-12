@@ -1,3 +1,4 @@
+//@Author Cristofor Rotsching
 #ifndef BFSRESULT_H
 #define BFSRESULT_H	
 #include "palista.h"	

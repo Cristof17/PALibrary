@@ -1,3 +1,4 @@
+//@Author Cristofor Rotsching
 #ifndef PAMUCHIE_H
 #define PAMUCHIE_H
 #include "papereche.h"

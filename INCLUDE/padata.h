@@ -1,3 +1,4 @@
+//@Author Cristofor Rotsching
 #ifndef PADATA_H
 #define PADATA_H
 #include "patip.h"

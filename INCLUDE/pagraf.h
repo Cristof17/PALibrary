@@ -1,3 +1,4 @@
+//@Author Cristofor Rotsching
 #ifndef PAGRAF_H
 #define PAGRAF_H
 #include "pacardinal.h"

@@ -1,3 +1,4 @@
+//@Author Cristofor Rotsching
 #ifndef PANEIGH_H
 #define PANEIGH_H
 #include "panod.h"

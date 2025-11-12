@@ -1,3 +1,4 @@
+//@Author Cristofor Rotsching
 #include <pagrafnormal.h>
 #include <parezultat.h>
 paGrafNormal PABuildPart()

@@ -1,3 +1,4 @@
+//@Author Cristofor Rotsching
 #ifndef BFSOUTPUT_H
 #define BFSOUTPUT_H
 #include "bfsresult.h"

@@ -1,3 +1,4 @@
+//@Author Cristofor Rotsching
 #ifndef PANOD_H
 #define PANOD_H
 #include "pastare.h"

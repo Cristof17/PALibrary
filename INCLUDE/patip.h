@@ -1,3 +1,4 @@
+//@Author Cristofor Rotsching
 #ifndef PATIP_H
 #ifdef _WIN64
  //typedef int HALF_PTR;

@@ -1,3 +1,4 @@
+//@Author Cristofor Rotsching
 #ifndef PACARDINAL_H
 #define PACARDINAL_H
 struct PACardinal

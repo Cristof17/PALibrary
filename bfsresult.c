@@ -1,3 +1,4 @@
+//@Author Cristofor Rotsching
 #include <bfsresult.h>
 
 void BFSResultPrint(bfsResult Result)

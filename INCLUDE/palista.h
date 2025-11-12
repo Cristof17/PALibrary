@@ -1,3 +1,4 @@
+//@Author Cristofor Rotsching
 #ifndef PALISTA_H
 #define PALISTA_H
 #include "panod.h"

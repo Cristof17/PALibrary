@@ -1,3 +1,4 @@
+//@Author Cristofor Rotsching
 #include <palista.h>
 INT size(paLista lista)
 {

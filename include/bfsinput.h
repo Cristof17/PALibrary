@@ -1,3 +1,4 @@
+//@Author Cristofor Rotsching
 #ifndef BFSINPUT_H
 #define BFSINPUT_H	
 #include "panod.h"	

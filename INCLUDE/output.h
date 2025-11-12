@@ -1,3 +1,4 @@
+//@Author Cristofor Rotsching
 #ifndef OUTPUT_H
 #define OUTPUT_H
 #include "parezultat.h"

@@ -1,3 +1,4 @@
+//@Author Cristofor Rotsching
 #ifndef ALGORITHM_H
 #define ALGORITHM_H	
 #include "input.h"

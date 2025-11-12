@@ -1,3 +1,4 @@
+###@Author Cristofor Rotsching
 foo=input.o algorithm.o bfsalgorithm.o bfsinput.o bfsoutput.o bfsresult.o output.o padata.o pagraf.o palista.o pamuchie.o panod.o papereche.o parezultat.o pastare.o paneigh.o
 #bar := $(foo:.c=.o)
 #include

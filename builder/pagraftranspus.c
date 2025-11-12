@@ -1,3 +1,4 @@
+//@Author Cristofor Rotsching
 #include <pagraftranspus.h>
 paGrafTranspus PAGrafTranspusBuildPart()
 {

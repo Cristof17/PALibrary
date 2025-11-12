@@ -1,3 +1,4 @@
+### @Author Cristofor Rotsching
 all:pagrafnormal.s pagraftranspus.s padirector.s pagrafproduct.s pabuilder.s pagrafnormal.o pagraftranspus.o padirector.o pagrafproduct.o pabuilder.o 
 	@echo "clean $(PWD)"
 	@echo "end of all $(PWD)"

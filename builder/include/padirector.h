@@ -1,3 +1,4 @@
+//@Author Cristofor Rotsching
 #ifndef PADIRECTOR_H
 #define PADIRECTOR_H
 #include <pabuilder.h>
