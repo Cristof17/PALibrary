@@ -1,3 +1,4 @@
+## @Author Cristofor Rotsching
 foo=PADrawingEditor.c PAShape.c PALine.c PATextShape.c PATextView.c
 #bar := $(foo:.c=.o)
 #include
