@@ -1,4 +1,5 @@
 ###@Author Cristofor Rotsching
+CC=clang
 foo=input.o \
 	algorithm.o \
 	bfsalgorithm.o \
