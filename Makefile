@@ -1,13 +1,128 @@
 ###@Author Cristofor Rotsching
-foo=input.o algorithm.o bfsalgorithm.o bfsinput.o bfsoutput.o bfsresult.o output.o padata.o pagraf.o palista.o pamuchie.o panod.o papereche.o parezultat.o pastare.o paneigh.o
+foo=input.o \
+	algorithm.o \
+	bfsalgorithm.o \
+	bfsinput.o \
+	bfsoutput.o \
+	bfsresult.o \
+	output.o \
+	padata.o \
+	pagraf.o \
+	palista.o \
+	pamuchie.o \
+	panod.o \
+	papereche.o \
+	parezultat.o \
+	pastare.o \
+	paneigh.o \
+	builder/pagrafnormal.s \
+	builder/pagraftranspus.s \
+	builder/padirector.s \
+	builder/pagrafproduct.s \
+	builder/pabuilder.s \
+	builder/pagrafnormal.o \
+	builder/pagraftranspus.o \
+	builder/padirector.o \
+	builder/pagrafproduct.o \
+	builder/pabuilder.o 
 #bar := $(foo:.c=.o)
 #include
 C_INCLUDE_PATH+=./include
-all: input.s algorithm.s bfsalgorithm.s bfsinput.s bfsoutput.s bfsresult.s output.s padata.s pagraf.s palista.s pamuchie.s panod.s papereche.s parezultat.s pastare.s patip.s paneigh.s paindex.s input.o algorithm.o bfsalgorithm.o bfsinput.o bfsoutput.o bfsresult.o output.o padata.o pagraf.o palista.o pamuchie.o panod.o papereche.o parezultat.o pastare.o patip.o paneigh.o paindex.o
+all: input.s \
+	algorithm.s \
+	bfsalgorithm.s \
+	bfsinput.s \
+	bfsoutput.s \
+	bfsresult.s \
+	output.s \
+	padata.s \
+	pagraf.s \
+	palista.s \
+	pamuchie.s \
+	panod.s \
+	papereche.s \
+	parezultat.s \
+	pastare.s \
+	patip.s \
+	paneigh.s \
+	paindex.s \
+	input.o \
+	algorithm.o \
+	bfsalgorithm.o \
+	bfsinput.o \
+	bfsoutput.o \
+	bfsresult.o \
+	output.o \
+	padata.o \
+	pagraf.o \
+	palista.o \
+	pamuchie.o \
+	panod.o \
+	papereche.o \
+	parezultat.o \
+	pastare.o \
+	patip.o \
+	paneigh.o \
+	paindex.o
+	pagrafnormal.s \
+	pagraftranspus.s \
+	padirector.s \
+	pagrafproduct.s \
+	pabuilder.s \
+	pagrafnormal.o \
+	pagraftranspus.o \
+	padirector.o \
+	pagrafproduct.o \
+	pabuilder.o 
 	@echo "end of compile $(pwd)"
 	@echo "end of all $(pwd)"
 	@echo "end of assemble $(pwd)"
-clean: input.s algorithm.s bfsalgorithm.s bfsinput.s bfsoutput.s bfsresult.s output.s padata.s pagraf.s palista.s pamuchie.s panod.s papereche.s parezultat.s pastare.s patip.s paneigh.s paindex.s input.o algorithm.o bfsalgorithm.o bfsinput.o bfsoutput.o bfsresult.o output.o padata.o pagraf.o palista.o pamuchie.o panod.o papereche.o parezultat.o pastare.o patip.o paneigh.o paindex.o
+clean: input.s \
+	algorithm.s \
+	bfsalgorithm.s \
+	bfsinput.s \
+	bfsoutput.s \
+	bfsresult.s \
+	output.s \
+	padata.s \
+	pagraf.s \
+	palista.s \
+	pamuchie.s \
+	panod.s \
+	papereche.s \
+	parezultat.s \
+	pastare.s \
+	patip.s \
+	paneigh.s \
+	paindex.s \
+	pagrafnormal.s \
+	pagraftranspus.s \
+	padirector.s \
+	pagrafproduct.s \
+	pabuilder.s \
+	input.o \
+	algorithm.o \
+	bfsalgorithm.o \
+	bfsinput.o \
+	bfsoutput.o \
+	bfsresult.o \
+	output.o \
+	padata.o \
+	pagraf.o \
+	palista.o \
+	pamuchie.o \
+	panod.o \
+	papereche.o \
+	parezultat.o \
+	pastare.o \
+	patip.o \
+	paneigh.o \
+	paindex.o
+	pagrafnormal.o \
+	pagraftranspus.o \
+	padirector.o \
+	pagrafproduct.o \
+	pabuilder.o 
 	@echo "end of compile $(pwd)"
 	@echo "clean $(pwd)"
 	rm input.o input.s
@@ -28,6 +143,11 @@ clean: input.s algorithm.s bfsalgorithm.s bfsinput.s bfsoutput.s bfsresult.s out
 	rm paneigh.o paneigh.s
 	rm patip.o patip.s
 	rm paindex.s paindex.o
+	rm builder/pagrafnormal.s builder/pagrafnormal.o
+	rm builder/pagraftranspus.s builder/pagraftranspus.o
+	rm builder/padirector.s builder/padirector.o
+	rm builder/pagrafproduct.s builder/pagrafproduct.o
+	rm builder/pabuilder.s builder/pabuilder.o
 	@echo "end of clean"
 
 input.s: input.c
@@ -67,6 +187,18 @@ patip.s : patip.c
 paindex.s : paindex.c 
 	C_INCLUDE_PATH=include $(CC) -S paindex.c -o paindex.s
 
+pagrafnormal.s: builder/pagrafnormal.c
+	C_INCLUDE_PATH=./builder/include $(CC) -S builder/pagrafnormal.c -o builder/pagrafnormal.s
+pagraftranspus.s:  builder/pagraftranspus.c
+	C_INCLUDE_PATH=./builder/include $(CC) -S builder/pagraftranspus.c -o builder/pagraftranspus.s
+padirector.s:  builder/padirector.c
+	C_INCLUDE_PATH=./builder/include $(CC) -S builder/padirector.c -o builder/padirector.s
+pagrafproduct.s:  builder/pagrafproduct.c
+	C_INCLUDE_PATH=./builder/include $(CC) -S builder/pagrafproduct.c -o builder/pagrafproduct.s
+pabuilder.s:  builder/pabuilder.c
+	C_INCLUDE_PATH=./builder/include $(CC) -S builder/pabuilder.c -o builder/pabuilder.s
+
+
 input.o : input.s
 	$(AS) -c input.s -o input.o
 algorithm.o : algorithm.s
@@ -104,4 +236,14 @@ patip.o : patip.s
 paindex.o : paindex.s
 	$(AS) -c paindex.s -o paindex.o
 
+pagrafnormal.o: builder/pagrafnormal.s
+	$(AS) -c builder/pagrafnormal.s -o builder/pagrafnormal.o
+pagraftranspus.o: builder/pagraftranspus.s
+	$(AS) -c builder/pagraftranspus.s -o builder/pagraftranspus.o
+padirector.o: builder/padirector.s
+	$(AS) -c builder/padirector.s -o builder/padirector.o
+pagrafproduct.o: builder/pagrafproduct.s
+	$(AS) -c builder/pagrafproduct.s -o builder/pagrafproduct.o
+pabuilder.o: builder/pabuilder.s
+	$(AS) -c builder/pabuilder.s -o builder/pabuilder.o
 #include builder/makefile
