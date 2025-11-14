@@ -97,11 +97,11 @@ clean: input.s \
 	patip.s \
 	paneigh.s \
 	paindex.s \
-	builder/pagrafnormal.s \
-	builder/pagraftranspus.s \
-	builder/padirector.s \
-	builder/pagrafproduct.s \
-	builder/pabuilder.s \
+	pagrafnormal.s \
+	pagraftranspus.s \
+	padirector.s \
+	pagrafproduct.s \
+	pabuilder.s \
 	input.o \
 	algorithm.o \
 	bfsalgorithm.o \
@@ -248,5 +248,5 @@ pagrafproduct.o: builder/pagrafproduct.s
 	$(AS) -c builder/pagrafproduct.s -o builder/pagrafproduct.o
 pabuilder.o: builder/pabuilder.s
 	$(AS) -c builder/pabuilder.s -o builder/pabuilder.o
-.PHONY: pagrafnormal.s pagraftranspus.s padirector.s pagrafproduct.s pabuilder.s
+.PHONY: pagrafnormal.s pagraftranspus.s padirector.s pagrafproduct.s pabuilder.s pagrafnormal.o pagraftranspus.o padirector.o pabuilder.o
 #include builder/makefile
