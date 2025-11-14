@@ -463,7 +463,7 @@
                         <mxPoint x="240" y="580" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="1305" value="Text" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="1304" vertex="1" connectable="0">
+                <mxCell id="1305" value="is a&amp;nbsp;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="1304" vertex="1" connectable="0">
                     <mxGeometry x="0.077" y="-2" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
