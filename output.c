@@ -1,7 +1,7 @@
 //@Author Cristofor Rotsching
 #include <output.h>
 
-void print(paRezultat Rezultat)
+void Print(PARezultat rezultat)
 {
-    OutputPrint(Rezultat);
+    OutputPrint(rezultat);
 }

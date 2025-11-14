@@ -1,8 +1,8 @@
 //@Author Cristofor Rotsching
 #include <algorithm.h>
 // #include "Input.h"
-output run(input in)
+Output run(Input input)
 {
-	output o;
+	outpututput o;
 	return o;
 }

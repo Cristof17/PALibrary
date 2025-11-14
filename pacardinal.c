@@ -1,7 +1,7 @@
 //@Author Cristofor Rotsching
 #include <pacardinal.h>
 
-void PACardinalPrint(paCardinal cardinal)
+void PACardinalPrint(PACardinal cardinal)
 {
 
 }

@@ -1,9 +1,8 @@
 //@Author Cristofor Rotsching
 #include <bfsresult.h>
 
-void BFSResultPrint(bfsResult Result)
+void BFSResultPrint(BFSResult result)
 {
-    PAListaPrint(Result.d);
-    PACardinalPrint(Result.n);
-    PARezultatPrint(Result.rezultat);
+    PAListaPrint(result.D);
+    PACardinalPrint(result.N);
 }

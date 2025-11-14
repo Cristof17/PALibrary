@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
 #include <bfsoutput.h>
-void BFSOutputPrint(bfsOutput output)
+void BFSOutputPrint(BFSOutput output)
 {
     BFSResultPrint(output.rezultat);
 }
