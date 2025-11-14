@@ -145,11 +145,11 @@ clean: input.s \
 	rm paneigh.o paneigh.s
 	rm patip.o patip.s
 	rm paindex.s paindex.o
-	rm pagrafnormal.s builder/pagrafnormal.o
-	rm pagraftranspus.s builder/pagraftranspus.o
-	rm padirector.s builder/padirector.o
-	rm pagrafproduct.s builder/pagrafproduct.o
-	rm pabuilder.s builder/pabuilder.o
+	rm builder/pagrafnormal.s builder/pagrafnormal.o
+	rm builder/pagraftranspus.s builder/pagraftranspus.o
+	rm builder/padirector.s builder/padirector.o
+	rm builder/pagrafproduct.s builder/pagrafproduct.o
+	rm builder/pabuilder.s builder/pabuilder.o
 	@echo "end of clean"
 
 input.s: input.c
