@@ -76,7 +76,17 @@ all: input.s \
 	pagraftranspus.o \
 	padirector.o \
 	pagrafproduct.o \
-	pabuilder.o 
+	pabuilder.o \
+	PADrawingEditor.s \ 
+	PADrawingEditor.o \
+	PALine.s \
+	PALine.o \
+	PAShape.s \ 
+	PAShape.o \
+	PATextShape.s \ 
+	PATextShape.o \
+	PATextView.s \
+	PATextView.o
 	@echo "end of compile $(pwd)"
 	@echo "end of all $(pwd)"
 	@echo "end of assemble $(pwd)"
@@ -151,6 +161,16 @@ clean: input.s \
 	rm builder/padirector.s builder/padirector.o
 	rm builder/pagrafproduct.s builder/pagrafproduct.o
 	rm builder/pabuilder.s builder/pabuilder.o
+	rm adapter/PADrawingEditor.s
+	rm adapter/PADrawingEditor.o
+	rm adapter/PALine.s
+	rm adapter/PALine.o
+	rm adapter/PAShape.s
+	rm adapter/PAShape.o
+	rm adapter/PATextShape.s
+	rm adapter/PATextShape.o
+	rm adapter/PATextView.s
+	rm adapter/PATextView.o
 	@echo "end of clean"
 
 input.s: input.c
@@ -201,6 +221,17 @@ pagrafproduct.s:  builder/pagrafproduct.c
 pabuilder.s:  builder/pabuilder.c
 	CPATH=$(CPATH) $(CC) -S builder/pabuilder.c -o builder/pabuilder.s
 
+PADrawingEditor.s: adapter/PADrawingEditor.c
+	CPATH=$(CPATH) $(CC) -S adapter/PADrawingEditor.c -o adapter/PADrawingEditor.s
+PALine.s: adapter/PALine.c
+	CPATH=$(CPATH) $(CC) -S builder/PALine.c -o adapter/pabuilder.s
+PAShape.s: adapter/PAShape.c
+	CPATH=$(CPATH) $(CC) -S adapter/PAShape.c -o adapter/PAShape.s
+PATextShape.s: adapter/PATextShape.c
+	CPATH=$(CPATH) $(CC) -S adapter/PATextShape.s -o adapter/PATextShape.c
+PATextView.s: adapter/PATextView.c
+	CPATH=$(CPATH) $(CC) -S adapter/PATextView.c -o adapter/PATextView.s
+
 
 input.o : input.s
 	$(AS) -c input.s -o input.o
@@ -249,5 +280,17 @@ pagrafproduct.o: builder/pagrafproduct.s
 	$(AS) -c builder/pagrafproduct.s -o builder/pagrafproduct.o
 pabuilder.o: builder/pabuilder.s
 	$(AS) -c builder/pabuilder.s -o builder/pabuilder.o
+
+PADrawingEditor.o: PADrawingEditor.s
+	$(AS) -c adapter/PADrawingEditor.s -o adapter/PADrawingEditor.o
+PALine.o : PALine.s
+	$(AS) -c adapter/PALine.s -o adapter/PALine.o
+PAShape.o : PAShape.s
+	$(AS) -c adapter/PAShape.s -o adapter/PAShape.o
+PATextShape.o : PATextShape.s
+	$(AS) -c adapter/PATextShape.s -o adapter/PATextShape.o
+PATextView.o : PATextView.s
+	$(AS) -c adapter/PATextView.s -o adapter/PATextView.o
+
 .PHONY: pagrafnormal.s pagraftranspus.s padirector.s pagrafproduct.s pabuilder.s pagrafnormal.o pagraftranspus.o padirector.o pabuilder.o
 #include builder/makefile
