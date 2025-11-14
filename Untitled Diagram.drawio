@@ -382,7 +382,7 @@
         <mxCell id="lzW7SFvJad1xQqCVWA5k-183" value="attributes" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="lzW7SFvJad1xQqCVWA5k-182" vertex="1">
           <mxGeometry y="55" width="180" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="lzW7SFvJad1xQqCVWA5k-184" value="-rezultat: BFSResult" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#808080;whiteSpace=wrap;" parent="lzW7SFvJad1xQqCVWA5k-182" vertex="1">
+        <mxCell id="lzW7SFvJad1xQqCVWA5k-184" value="-Result: BFSResult" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#808080;whiteSpace=wrap;" parent="lzW7SFvJad1xQqCVWA5k-182" vertex="1">
           <mxGeometry y="75" width="180" height="20" as="geometry" />
         </mxCell>
         <mxCell id="lzW7SFvJad1xQqCVWA5k-185" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="lzW7SFvJad1xQqCVWA5k-182" vertex="1">
