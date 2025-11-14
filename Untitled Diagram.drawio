@@ -364,7 +364,7 @@
         <mxCell id="lzW7SFvJad1xQqCVWA5k-179" value="SetVisited(vizitat) : void" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="lzW7SFvJad1xQqCVWA5k-172" vertex="1">
           <mxGeometry y="118" width="180" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="R9ZYlDeI9FRY-ie9JzRv-4" value="ClearVisited()" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" vertex="1" parent="lzW7SFvJad1xQqCVWA5k-172">
+        <mxCell id="R9ZYlDeI9FRY-ie9JzRv-4" value="ClearVisited(void) : void" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" vertex="1" parent="lzW7SFvJad1xQqCVWA5k-172">
           <mxGeometry y="138" width="180" height="20" as="geometry" />
         </mxCell>
         <mxCell id="R9ZYlDeI9FRY-ie9JzRv-5" value="IsVisited()" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" vertex="1" parent="lzW7SFvJad1xQqCVWA5k-172">
