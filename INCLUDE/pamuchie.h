@@ -6,5 +6,5 @@ struct PAMuchie
 {
 	struct PAPereche p;
 };
-typedef struct PAMuchie paMuchie;
+typedef struct PAMuchie PAMuchie;
 #endif

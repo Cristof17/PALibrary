@@ -9,5 +9,5 @@ struct BFSAlgorithm
 	struct BFSInput in;
 	struct PAGraf graf;
 };
-typedef struct BFSAlgorithm bfsAlgorithm;
+typedef struct BFSAlgorithm BFSAlgorithm;
 #endif

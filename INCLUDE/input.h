@@ -5,5 +5,5 @@ struct Input
 {
 	;
 };
-typedef struct Input input;
+typedef struct Input Input;
 #endif

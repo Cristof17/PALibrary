@@ -10,7 +10,7 @@ struct BFSResult
 	struct PACardinal n;
 	struct PARezultat rezultat;
 };
-typedef struct BFSResult bfsResult;
+typedef struct BFSResult BFSResult;
 #endif
 
 void BFSResultPrint(bfsResult Result);

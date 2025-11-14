@@ -12,5 +12,5 @@ struct BFSInput
 	struct PALista adj;
 	struct PANod sursa;
 };
-typedef struct BFSInput bfsInput;
+typedef struct BFSInput BFSInput;
 #endif

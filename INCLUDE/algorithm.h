@@ -6,8 +6,8 @@
 #include "output.h"
 struct Algorithm
 {
-	struct Input in;
+	struct Input input;
 };
-typedef struct Algorithm algorithm;
-output run(input in);
+typedef struct Algorithm Algorithm;
+Output Run(Input in);
 #endif

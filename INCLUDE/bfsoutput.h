@@ -6,6 +6,6 @@ struct BFSOutput
 {
     struct BFSResult rezultat;
 };
-typedef struct BFSOutput bfsOutput;
+typedef struct BFSOutput BFSOutput;
 void BFSOutputPrint(bfsOutput Output);
 #endif

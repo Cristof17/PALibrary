@@ -13,6 +13,6 @@ struct PANod
 	struct PAStare stare;
 	struct PATip tip;
 };
-typedef struct PANod paNod;
+typedef struct PANod PANod;
 #endif
 

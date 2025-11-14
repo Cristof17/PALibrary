@@ -4,5 +4,5 @@
 struct PAPereche
 {
 };
-typedef struct PAPereche paPereche;
+typedef struct PAPereche PAPereche;
 #endif

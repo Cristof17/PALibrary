@@ -6,6 +6,6 @@ struct PARezultat
 {
 	INT cod;
 };
-typedef struct PARezultat paRezultat;
+typedef struct PARezultat PARezultat;
 void PARezultatPrint(paRezultat rezultat);
 #endif

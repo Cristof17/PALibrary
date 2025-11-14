@@ -6,5 +6,5 @@ struct PANeigh
 {
     //struct PANod nod;
 };
-typedef struct PANeigh paNeigh;
+typedef struct PANeigh PANeigh;
 #endif

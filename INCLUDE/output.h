@@ -8,6 +8,6 @@ union Output
 	struct PARezultat rezultat;
 	struct BFSOutput outputBFS;
 };
-typedef union Output output;
+typedef union Output Output;
 void OutputPrint(paRezultat Rezultat);
 #endif

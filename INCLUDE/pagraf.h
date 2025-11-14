@@ -11,5 +11,5 @@ struct PAGraf
 	struct PALista adj;
 	struct PANod sursa;
 };
-typedef struct PAGraf paGraf;
+typedef struct PAGraf PAGraf;
 #endif

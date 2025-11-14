@@ -16,5 +16,5 @@ struct PATip
 {
 	INT Kind;
 };
-typedef struct PATip paTip;
+typedef struct PATip PATip;
 #endif

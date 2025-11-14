@@ -6,5 +6,5 @@ struct PAStare
 {
 	INT vizitat;
 };
-typedef struct PAStare paStare;
+typedef struct PAStare PAStare;
 #endif

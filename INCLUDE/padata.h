@@ -6,5 +6,5 @@ struct PAData
 {
     INT value;
 };
-typedef struct PAData paData;
+typedef struct PAData PAData;
 #endif

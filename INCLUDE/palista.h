@@ -6,7 +6,7 @@ struct PALista
 {
 	struct PANod head;
 };
-typedef struct PALista paLista;
+typedef struct PALista PALista;
 
 INT size(paLista lista);
 paNod get(INT position);
