@@ -6,6 +6,6 @@ struct PABuilder
 {
 
 };
-typedef struct PABuilder paBuilder;
+typedef struct PABuilder PABuilder;
 paGrafProduct PABuilderBuildPart();
 #endif

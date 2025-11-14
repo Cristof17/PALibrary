@@ -1,14 +1,14 @@
 //@Author Cristofor Rotsching
 #include <pagrafnormal.h>
 #include <parezultat.h>
-paGrafNormal PABuildPart()
+PAGrafNormal PABuildPart()
 {
-    paGrafNormal graf;
+    PAGrafNormal graf;
     return graf;
 }
-paRezultat PAGetResult()
+PARezultat PAGetResult()
 {
-    paRezultat rezultat;
+    PARezultat rezultat;
     rezultat.cod = SUCCESS;
     return rezultat;
 }

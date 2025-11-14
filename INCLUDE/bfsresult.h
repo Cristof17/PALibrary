@@ -6,11 +6,10 @@
 #include "parezultat.h"
 struct BFSResult
 {
-	struct PALista d;
-	struct PACardinal n;
-	struct PARezultat rezultat;
+	struct PALista D;
+	struct PACardinal N;
 };
 typedef struct BFSResult BFSResult;
 #endif
 
-void BFSResultPrint(bfsResult Result);
+void BFSResultPrint(BFSResult result);

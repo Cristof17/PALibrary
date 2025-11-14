@@ -6,5 +6,5 @@ struct PAGrafProduct
 {
     struct PAGraf graf;
 };
-typedef struct PAGrafProduct paGrafProduct;
+typedef struct PAGrafProduct PAGrafProduct;
 #endif

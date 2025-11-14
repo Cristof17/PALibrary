@@ -9,5 +9,5 @@ union Output
 	struct BFSOutput outputBFS;
 };
 typedef union Output Output;
-void OutputPrint(paRezultat Rezultat);
+void OutputPrint(PARezultat rezultat);
 #endif

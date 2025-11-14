@@ -10,10 +10,10 @@ INT Size(PALista lista)
 }
 PANod Get(INT position)
 {
-    paNod nod;
+    PANod nod;
     return nod;    
 }
-PANod Head(paLista lista)
+PANod Head(PALista lista)
 {
     return lista.head;
 }

@@ -6,7 +6,7 @@ struct PAGrafTranspus
 {
 
 };
-typedef struct PAGrafTranspus paGrafTranspus;
-paGrafTranspus PAGrafTranspusBuildPart();
-paRezultat paGrafTranspusGetResult();
+typedef struct PAGrafTranspus PAGrafTranspus;
+PAGrafTranspus PAGrafTranspusBuildPart();
+PARezultat paGrafTranspusGetResult();
 #endif

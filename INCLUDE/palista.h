@@ -8,12 +8,12 @@ struct PALista
 };
 typedef struct PALista PALista;
 
-INT size(paLista lista);
-paNod get(INT position);
-paNod head(paLista lista);
-paLista tail(paLista lista);
-paNod init(paLista);
-void PAListaPrint(paLista lista);
+INT Size(PALista lista);
+PANod Get(INT position);
+PANod Head(PALista lista);
+PALista Tail(PALista lista);
+PANod Init(PALista);
+void PAListaPrint(PALista lista);
 //toArrayList();
 #endif
 

@@ -1,12 +1,12 @@
 //@Author Cristofor Rotsching
 #include <pagraftranspus.h>
-paGrafTranspus PAGrafTranspusBuildPart()
+PAGrafTranspus PAGrafTranspusBuildPart()
 {
-    paGrafTranspus graf;
+    PAGrafTranspus graf;
     return graf;
 }
-paRezultat paGrafTranspusGetResult()
+PARezultat paGrafTranspusGetResult()
 {
-    paRezultat result;
+    PARezultat result;
     return result;
 }

@@ -33,12 +33,12 @@ pabuilder.s: pabuilder.c
 	C_INCLUDE_PATH=builder/include $(CC) -S pabuilder.c -o pabuilder.s
 
 pagrafnormal.o: pagrafnormal.s
-	$(CC) -c pagrafnormal.s -o pagrafnormal.o
+	$(AS) -c pagrafnormal.s -o pagrafnormal.o
 pagraftranspus.o: pagraftranspus.s
-	$(CC) -c pagraftranspus.s -o pagraftranspus.o
+	$(AS) -c pagraftranspus.s -o pagraftranspus.o
 padirector.o: padirector.s
-	$(CC) -c padirector.s -o padirector.o
+	$(AS) -c padirector.s -o padirector.o
 pagrafproduct.o: pagrafproduct.s
-	$(CC) -c pagrafproduct.s -o pagrafproduct.o
+	$(AS) -c pagrafproduct.s -o pagrafproduct.o
 pabuilder.o: pabuilder.s
-	$(CC) -c pabuilder.s -o pabuilder.o
+	$(AS) -c pabuilder.s -o pabuilder.o

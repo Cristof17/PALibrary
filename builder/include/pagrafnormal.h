@@ -6,7 +6,7 @@ struct PAGrafNormal
 {
 
 };
-typedef struct PAGrafNormal paGrafNormal;
+typedef struct PAGrafNormal PAGrafNormal;
 paGrafNormal PAGrafNormalBuildPart();
 paRezultat PAGrafNormalGetResult();
 #endif

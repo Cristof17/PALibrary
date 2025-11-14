@@ -7,6 +7,6 @@ struct PADirector
 {
     struct PABuilder builder;
 };
-typedef struct PADirector paDirector;
+typedef struct PADirector PADirector;
 void PADirectorConstruct();
 #endif

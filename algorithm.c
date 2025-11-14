@@ -3,6 +3,6 @@
 // #include "Input.h"
 Output run(Input input)
 {
-	outpututput o;
+	Output o;
 	return o;
 }
