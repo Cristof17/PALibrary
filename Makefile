@@ -27,7 +27,7 @@ foo=input.o \
 	builder/pabuilder.o 
 #bar := $(foo:.c=.o)
 #include
-INCLUDE_PATHS=include:builder/include
+INCLUDE_PATHS=INCLUDE:builder/include
 CPATH+=$(INCLUDE_PATHS)
 
 all: input.s \
@@ -187,7 +187,7 @@ paneigh.s : paneigh.c
 patip.s : patip.c 
 	CPATH=$(CPATH) $(CC) -S patip.c -o patip.s
 paindex.s : paindex.c 
-	CPATH=$(CCPATH) $(CC) -S paindex.c -o paindex.s
+	CPATH=$(CPATH) $(CC) -S paindex.c -o paindex.s
 
 pagrafnormal.s: builder/pagrafnormal.c 
 	CPATH=$(CPATH) $(CC) -S builder/pagrafnormal.c -o builder/pagrafnormal.s
