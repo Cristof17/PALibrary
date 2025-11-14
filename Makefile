@@ -27,7 +27,9 @@ foo=input.o \
 	builder/pabuilder.o 
 #bar := $(foo:.c=.o)
 #include
-C_INCLUDE_PATH+=./include
+INCLUDE_PATHS=include:builder/include
+CPATH+=$(INCLUDE_PATHS)
+
 all: input.s \
 	algorithm.s \
 	bfsalgorithm.s \
@@ -63,7 +65,7 @@ all: input.s \
 	pastare.o \
 	patip.o \
 	paneigh.o \
-	paindex.o
+	paindex.o \
 	pagrafnormal.s \
 	pagraftranspus.s \
 	padirector.s \
@@ -95,11 +97,11 @@ clean: input.s \
 	patip.s \
 	paneigh.s \
 	paindex.s \
-	pagrafnormal.s \
-	pagraftranspus.s \
-	padirector.s \
-	pagrafproduct.s \
-	pabuilder.s \
+	builder/pagrafnormal.s \
+	builder/pagraftranspus.s \
+	builder/padirector.s \
+	builder/pagrafproduct.s \
+	builder/pabuilder.s \
 	input.o \
 	algorithm.o \
 	bfsalgorithm.o \
@@ -117,11 +119,11 @@ clean: input.s \
 	pastare.o \
 	patip.o \
 	paneigh.o \
-	paindex.o
-	pagrafnormal.o \
-	pagraftranspus.o \
-	padirector.o \
-	pagrafproduct.o \
+	paindex.o \
+	pagrafnormal.o\
+	pagraftranspus.o\
+	padirector.o\
+	pagrafproduct.o\
 	pabuilder.o 
 	@echo "end of compile $(pwd)"
 	@echo "clean $(pwd)"
@@ -143,60 +145,60 @@ clean: input.s \
 	rm paneigh.o paneigh.s
 	rm patip.o patip.s
 	rm paindex.s paindex.o
-	rm builder/pagrafnormal.s builder/pagrafnormal.o
-	rm builder/pagraftranspus.s builder/pagraftranspus.o
-	rm builder/padirector.s builder/padirector.o
-	rm builder/pagrafproduct.s builder/pagrafproduct.o
-	rm builder/pabuilder.s builder/pabuilder.o
+	rm pagrafnormal.s builder/pagrafnormal.o
+	rm pagraftranspus.s builder/pagraftranspus.o
+	rm padirector.s builder/padirector.o
+	rm pagrafproduct.s builder/pagrafproduct.o
+	rm pabuilder.s builder/pabuilder.o
 	@echo "end of clean"
 
 input.s: input.c
-	C_INCLUDE_PATH=include $(CC) -S input.c -o input.s
+	CPATH=$(CPATH) $(CC) -S input.c -o input.s
 algorithm.s: algorithm.c
-	C_INCLUDE_PATH=include $(CC) -S algorithm.c -o algorithm.s
+	CPATH=$(CPATH) $(CC) -S algorithm.c -o algorithm.s
 bfsalgorithm.s: bfsalgorithm.c
-	C_INCLUDE_PATH=include $(CC) -S bfsalgorithm.c -o bfsalgorithm.s
+	CPATH=$(CPATH) $(CC) -S bfsalgorithm.c -o bfsalgorithm.s
 bfsinput.s: bfsinput.c
-	C_INCLUDE_PATH=include $(CC) -S bfsinput.c -o bfsinput.s
+	CPATH=$(CPATH) $(CC) -S bfsinput.c -o bfsinput.s
 bfsoutput.s: bfsoutput.c
-	C_INCLUDE_PATH=include $(CC) -S bfsoutput.c -o bfsoutput.s
+	CPATH=$(CPATH) $(CC) -S bfsoutput.c -o bfsoutput.s
 bfsresult.s : bfsresult.c
-	C_INCLUDE_PATH=include $(CC) -S bfsresult.c -o bfsresult.s
+	CPATH=$(CPATH) $(CC) -S bfsresult.c -o bfsresult.s
 output.s : output.c
-	C_INCLUDE_PATH=include $(CC) -S output.c -o output.s
+	CPATH=$(CPATH) $(CC) -S output.c -o output.s
 padata.s : padata.c
-	C_INCLUDE_PATH=include $(CC) -S padata.c -o padata.s
+	CPATH=$(CPATH) $(CC) -S padata.c -o padata.s
 pagraf.s : pagraf.c
-	C_INCLUDE_PATH=include $(CC) -S pagraf.c -o pagraf.s
+	CPATH=$(CPATH) $(CC) -S pagraf.c -o pagraf.s
 palista.s : palista.c
-	C_INCLUDE_PATH=include $(CC) -S palista.c -o palista.s
+	CPATH=$(CPATH) $(CC) -S palista.c -o palista.s
 pamuchie.s : pamuchie.c
-	C_INCLUDE_PATH=include $(CC) -S pamuchie.c -o pamuchie.s
+	CPATH=$(CPATH) $(CC) -S pamuchie.c -o pamuchie.s
 panod.s : panod.c
-	C_INCLUDE_PATH=include $(CC) -S panod.c -o panod.s
+	CPATH=$(CPATH) $(CC) -S panod.c -o panod.s
 papereche.s : papereche.c
-	C_INCLUDE_PATH=include $(CC) -S papereche.c -o papereche.s
+	CPATH=$(CPATH) $(CC) -S papereche.c -o papereche.s
 parezultat.s : parezultat.c
-	C_INCLUDE_PATH=include $(CC) -S parezultat.c -o parezultat.s
+	CPATH=$(CPATH) $(CC) -S parezultat.c -o parezultat.s
 pastare.s : pastare.c
-	C_INCLUDE_PATH=include $(CC) -S pastare.c -o pastare.s
+	CPATH=$(CPATH) $(CC) -S pastare.c -o pastare.s
 paneigh.s : paneigh.c
-	C_INCLUDE_PATH=include $(CC) -S paneigh.c -o paneigh.s
+	CPATH=$(CPATH) $(CC) -S paneigh.c -o paneigh.s
 patip.s : patip.c 
-	C_INCLUDE_PATH=include $(CC) -S patip.c -o patip.s
+	CPATH=$(CPATH) $(CC) -S patip.c -o patip.s
 paindex.s : paindex.c 
-	C_INCLUDE_PATH=include $(CC) -S paindex.c -o paindex.s
+	CPATH=$(CCPATH) $(CC) -S paindex.c -o paindex.s
 
-pagrafnormal.s: builder/pagrafnormal.c
-	C_INCLUDE_PATH=./builder/include $(CC) -S builder/pagrafnormal.c -o builder/pagrafnormal.s
+pagrafnormal.s: builder/pagrafnormal.c 
+	CPATH=$(CPATH) $(CC) -S builder/pagrafnormal.c -o builder/pagrafnormal.s
 pagraftranspus.s:  builder/pagraftranspus.c
-	C_INCLUDE_PATH=./builder/include $(CC) -S builder/pagraftranspus.c -o builder/pagraftranspus.s
+	CPATH=$(CPATH) $(CC) -S builder/pagraftranspus.c -o builder/pagraftranspus.s
 padirector.s:  builder/padirector.c
-	C_INCLUDE_PATH=./builder/include $(CC) -S builder/padirector.c -o builder/padirector.s
+	CPATH=$(CPATH) $(CC) -S builder/padirector.c -o builder/padirector.s
 pagrafproduct.s:  builder/pagrafproduct.c
-	C_INCLUDE_PATH=./builder/include $(CC) -S builder/pagrafproduct.c -o builder/pagrafproduct.s
+	CPATH=$(CPATH) $(CC) -S builder/pagrafproduct.c -o builder/pagrafproduct.s
 pabuilder.s:  builder/pabuilder.c
-	C_INCLUDE_PATH=./builder/include $(CC) -S builder/pabuilder.c -o builder/pabuilder.s
+	CPATH=$(CPATH) $(CC) -S builder/pabuilder.c -o builder/pabuilder.s
 
 
 input.o : input.s
@@ -246,4 +248,5 @@ pagrafproduct.o: builder/pagrafproduct.s
 	$(AS) -c builder/pagrafproduct.s -o builder/pagrafproduct.o
 pabuilder.o: builder/pabuilder.s
 	$(AS) -c builder/pabuilder.s -o builder/pabuilder.o
+.PHONY: pagrafnormal.s pagraftranspus.s padirector.s pagrafproduct.s pabuilder.s
 #include builder/makefile

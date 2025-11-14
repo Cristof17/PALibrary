@@ -7,5 +7,5 @@ struct PABuilder
 
 };
 typedef struct PABuilder PABuilder;
-paGrafProduct PABuilderBuildPart();
+PAGrafProduct PABuilderBuildPart();
 #endif
