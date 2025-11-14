@@ -385,7 +385,7 @@
         <mxCell id="lzW7SFvJad1xQqCVWA5k-136" value="-m: PACardinal" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#808080;whiteSpace=wrap;" parent="lzW7SFvJad1xQqCVWA5k-133" vertex="1">
           <mxGeometry y="95" width="180" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="lzW7SFvJad1xQqCVWA5k-137" value="-adj: PALista" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#808080;whiteSpace=wrap;" parent="lzW7SFvJad1xQqCVWA5k-133" vertex="1">
+        <mxCell id="lzW7SFvJad1xQqCVWA5k-137" value="-nodes: PASir" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#808080;whiteSpace=wrap;" parent="lzW7SFvJad1xQqCVWA5k-133" vertex="1">
           <mxGeometry y="115" width="180" height="20" as="geometry" />
         </mxCell>
         <mxCell id="lzW7SFvJad1xQqCVWA5k-138" value="-sursa: PANod" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#808080;whiteSpace=wrap;" parent="lzW7SFvJad1xQqCVWA5k-133" vertex="1">
