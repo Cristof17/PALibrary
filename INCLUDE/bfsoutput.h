@@ -7,5 +7,5 @@ struct BFSOutput
     struct BFSResult result;
 };
 typedef struct BFSOutput BFSOutput;
-void BFSOutputPrint(BFSOutput output);
+void BFSOutputPrint(BFSOutput);
 #endif

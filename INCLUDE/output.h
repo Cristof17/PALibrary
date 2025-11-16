@@ -9,5 +9,5 @@ struct Output
 //	struct BFSOutput outputBFS;
 };
 typedef struct Output Output;
-void OutputPrint(PARezultat rezultat);
+void OutputPrint(PARezultat);
 #endif

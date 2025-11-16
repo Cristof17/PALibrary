@@ -9,5 +9,5 @@ struct Algorithm
 	struct Input input;
 };
 typedef struct Algorithm Algorithm;
-Output Run(Input in);
+Output Run(Input);
 #endif
