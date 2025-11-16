@@ -69,6 +69,7 @@ all: input.s \
 	patip.o \
 	paneigh.o \
 	paindex.o \
+	pasir.o\
 	pagrafnormal.s \
 	pagraftranspus.s \
 	padirector.s \
@@ -280,7 +281,7 @@ patip.o : patip.s
 paindex.o : paindex.s
 	$(AS) -c paindex.s -o paindex.o
 pasir.o : pasir.s
-	CPATH=$(CPATH) $(CC) -S pasir.s -o pasir.o
+	$(AS) -c pasir.s -o pasir.o
 
 pagrafnormal.o: builder/pagrafnormal.s
 	$(AS) -c builder/pagrafnormal.s -o builder/pagrafnormal.o
