@@ -12,7 +12,7 @@
 struct PASir
 {
 	struct PACardinal n;
-	struct PALista adj;
+	struct PALista adj[];
 };
 typedef struct PASir PASir;
 #endif /* INCLUDE_PASIR_H_ */
