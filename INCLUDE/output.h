@@ -5,8 +5,8 @@
 #include "bfsoutput.h"
 union Output
 {
-	struct PARezultat rezultat;
-	struct BFSOutput outputBFS;
+//	struct PARezultat rezultat;
+//	struct BFSOutput outputBFS;
 };
 typedef union Output Output;
 void OutputPrint(PARezultat rezultat);
