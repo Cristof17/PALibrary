@@ -1,5 +1,5 @@
 ###@Author Cristofor Rotsching
-CC=clang
+#CC=clang
 foo=input.o \
 	algorithm.o \
 	bfsalgorithm.o \
@@ -234,7 +234,7 @@ PADrawingEditor.s: adapter/PADrawingEditor.c
 PALine.s: adapter/PALine.c
 	CPATH=$(CPATH) $(CC) -S adapter/PALine.c -o adapter/PALine.s
 PAShape.s: adapter/PAShape.c
-	CPATH=$(CPATH) $(CC) -S adapter/PAShape.s -o adapter/PAShape.c
+	CPATH=$(CPATH) $(CC) -S adapter/PAShape.c -o adapter/PAShape.s
 PATextView.s: adapter/PATextView.c
 	CPATH=$(CPATH) $(CC) -S adapter/PATextView.c -o adapter/PATextView.s
 
