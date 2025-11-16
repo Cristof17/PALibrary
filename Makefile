@@ -299,8 +299,8 @@ PALine.o : PALine.s
 	$(AS) -c adapter/PALine.s -o adapter/PALine.o
 PAShape.o : PAShape.s
 	$(AS) -c adapter/PAShape.s -o adapter/PAShape.o
-PAShape.o : PAShape.s
-	$(AS) -c adapter/PAShape.s -o adapter/PAShape.o
+PASTexthape.o : PATextShape.s
+	$(AS) -c adapter/PATextShape.s -o adapter/PATextShape.o
 PATextView.o : PATextView.s
 	$(AS) -c adapter/PATextView.s -o adapter/PATextView.o
 

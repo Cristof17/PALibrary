@@ -4,6 +4,7 @@
 #include "pacardinal.h"
 #include "palista.h"
 #include "panod.h"
+#include "PASir.h"
 struct PAGraf
 {
 	struct PACardinal n;
