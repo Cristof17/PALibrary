@@ -8,7 +8,7 @@
  typedef int32_t INT;
 #endif
 #define PATIP_H
-#define KIND_LAST(N) (N)+1
+#define KIND_LAST(N) ((N)+1)
 #define KIND_FIRST 0
 #define SUCCESS 0
 #define FAIL -1
