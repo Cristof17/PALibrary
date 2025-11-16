@@ -15,7 +15,8 @@ foo=input.o \
 	papereche.o \
 	parezultat.o \
 	pastare.o \
-	paneigh.o \
+	pasir.o \
+	pastare.o \
 	builder/pagrafnormal.s \
 	builder/pagraftranspus.s \
 	builder/padirector.s \
@@ -49,6 +50,7 @@ all: input.s \
 	patip.s \
 	paneigh.s \
 	paindex.s \
+	pasir.s\
 	input.o \
 	algorithm.o \
 	bfsalgorithm.o \
@@ -77,6 +79,7 @@ all: input.s \
 	padirector.o \
 	pagrafproduct.o \
 	pabuilder.o \
+	pasir.o\
 	PADrawingEditor.s \
 	PADrawingEditor.o \
 	PALine.s \
@@ -113,6 +116,7 @@ clean: input.s \
 	padirector.s \
 	pagrafproduct.s \
 	pabuilder.s \
+	pasir.s\
 	input.o \
 	algorithm.o \
 	bfsalgorithm.o \
@@ -136,6 +140,7 @@ clean: input.s \
 	padirector.o \
 	pagrafproduct.o \
 	pabuilder.o \
+	pasir.o\
 	PADrawingEditor.s \
 	PADrawingEditor.o \
 	PALine.s \
@@ -148,37 +153,34 @@ clean: input.s \
 	PATextView.o 
 	@echo "end of compile $(pwd)"
 	@echo "clean $(pwd)"
-	rm input.o input.s
-	rm algorithm.o algorithm.s
-	rm bfsalgorithm.o bfsalgorithm.s
-	rm bfsinput.o bfsinput.s
-	rm bfsoutput.o bfsoutput.s
-	rm bfsresult.o bfsresult.s
-	rm output.o output.s
-	rm padata.o padata.s
-	rm pagraf.o pagraf.s
-	rm palista.o palista.s
-	rm pamuchie.o pamuchie.s
-	rm panod.o panod.s
-	rm papereche.o papereche.s
-	rm parezultat.o parezultat.s
-	rm pastare.o pastare.s
-	rm paneigh.o paneigh.s
-	rm patip.o patip.s
+	rm input.s input.o
+	rm algorithm.s algorithm.o
+	rm bfsalgorithm.s bfsalgorithm.o
+	rm bfsinput.s bfsinput.o
+	rm bfsoutput.s bfsoutput.o
+	rm bfsresult.s bfsresult.o
+	rm output.s output.o
+	rm padata.s padata.o
+	rm pagraf.s pagraf.o
+	rm palista.s palista.o
+	rm pamuchie.s pamuchie.o
+	rm panod.s panod.o
+	rm papereche.s papereche.o
+	rm parezultat.s parezultat.o
+	rm pastare.s pastare.o
+	rm paneigh.s paneigh.o
+	rm patip.s patip.o
 	rm paindex.s paindex.o
+	rm pasir.s pasir.o
 	rm builder/pagrafnormal.s builder/pagrafnormal.o
 	rm builder/pagraftranspus.s builder/pagraftranspus.o
 	rm builder/padirector.s builder/padirector.o
 	rm builder/pagrafproduct.s builder/pagrafproduct.o
 	rm builder/pabuilder.s builder/pabuilder.o
-	rm adapter/PADrawingEditor.s
-	rm adapter/PADrawingEditor.o
-	rm adapter/PALine.s
-	rm adapter/PALine.o
-	rm adapter/PAShape.s
-	rm adapter/PAShape.o
-	rm adapter/PATextView.s
-	rm adapter/PATextView.o
+	rm adapter/PADrawingEditor.s adapter/PADrawingEditor.o
+	rm adapter/PALine.s adapter/PALine.o
+	rm adapter/PAShape.s adapter/PAShape.o
+	rm adapter/PATextView.s adapter/PATextView.o
 	@echo "end of clean"
 
 input.s: input.c
@@ -217,6 +219,8 @@ patip.s : patip.c
 	CPATH=$(CPATH) $(CC) -S patip.c -o patip.s
 paindex.s : paindex.c 
 	CPATH=$(CPATH) $(CC) -S paindex.c -o paindex.s
+pasir.s : pasir.c 
+	CPATH=$(CPATH) $(CC) -S pasir.c -o pasir.s
 
 pagrafnormal.s: builder/pagrafnormal.c 
 	CPATH=$(CPATH) $(CC) -S builder/pagrafnormal.c -o builder/pagrafnormal.s
@@ -275,6 +279,8 @@ patip.o : patip.s
 	$(AS) -c patip.s -o patip.o
 paindex.o : paindex.s
 	$(AS) -c paindex.s -o paindex.o
+pasir.o : pasir.s
+	CPATH=$(CPATH) $(CC) -S pasir.s -o pasir.o
 
 pagrafnormal.o: builder/pagrafnormal.s
 	$(AS) -c builder/pagrafnormal.s -o builder/pagrafnormal.o
