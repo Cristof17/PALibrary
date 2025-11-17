@@ -8,9 +8,10 @@
 #define ADAPTER_INCLUDE_ADAPTER_H_
 //#include <Target.h>
 #include <Adaptee.h>
+#include <PALista.h>
 struct Adapter
 {
-
+	PALista lista;
 };
 typedef struct Adapter Adapter;
 void AdapterRequest(Adapter);

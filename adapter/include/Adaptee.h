@@ -11,7 +11,7 @@
 
 struct Adaptee
 {
-
+	//ArrayList adaptee;
 };
 typedef struct Adaptee Adaptee;
 void AdapteeSpecificRequest(Adaptee);
