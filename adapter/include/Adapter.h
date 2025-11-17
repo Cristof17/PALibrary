@@ -13,6 +13,6 @@ struct Adapter
 
 };
 typedef struct Adapter Adapter;
-void AdapterRequest(Adapter);
+void AdapterRequest(Adapter,Adaptee);
 
 #endif /* ADAPTER_INCLUDE_ADAPTER_H_ */
