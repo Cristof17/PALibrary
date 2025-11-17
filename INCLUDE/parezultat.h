@@ -7,5 +7,5 @@ struct PARezultat
 	INT cod;
 };
 typedef struct PARezultat PARezultat;
-void PARezultatPrint(PARezultat rezultat);
+void PARezultatPrint(PARezultat);
 #endif

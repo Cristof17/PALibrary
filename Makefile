@@ -17,6 +17,10 @@ foo=input.o \
 	pastare.o \
 	pasir.o \
 	pastare.o \
+	adapter/client.c\
+	adapter/target.c\
+	adapter/adapter.c\
+	adapter/adaptee.c\
 	builder/pagrafnormal.s \
 	builder/pagraftranspus.s \
 	builder/padirector.s \
@@ -51,6 +55,10 @@ all: input.s \
 	paneigh.s \
 	paindex.s \
 	pasir.s\
+	adapter.s\
+	target.s\
+	client.s\
+	adaptee.s\
 	input.o \
 	algorithm.o \
 	bfsalgorithm.o \
@@ -90,8 +98,12 @@ all: input.s \
 	PAShape.s \
 	PAShape.o \
 	PATextView.s \
-	PATextView.o
-	@echo "end of compile $(pwd)"
+	PATextView.o\
+	adapter.o\
+	target.o\
+	client.o\
+	adaptee.o
+	echo "end of compile $(pwd)"
 	@echo "end of all $(pwd)"
 	@echo "end of assemble $(pwd)"
 clean: input.s \
@@ -151,7 +163,15 @@ clean: input.s \
 	PAShape.s \
 	PAShape.o \
 	PATextView.s \
-	PATextView.o 
+	PATextView.o\
+	client.s\
+	target.s\
+	adapter.s\
+	adaptee.s\
+	client.o\
+	target.o\
+	adapter.o\
+	adaptee.o\
 	@echo "end of compile $(pwd)"
 	@echo "clean $(pwd)"
 	rm input.s input.o
@@ -182,6 +202,10 @@ clean: input.s \
 	rm adapter/PALine.s adapter/PALine.o
 	rm adapter/PAShape.s adapter/PAShape.o
 	rm adapter/PATextView.s adapter/PATextView.o
+	rm adapter/client.s adapter/client.o
+	rm adapter/target.s adapter/target.o
+	rm adapter/adapter.s adapter/adapter.o
+	rm adapter/adaptee.s adapter/adaptee.o
 	@echo "end of clean"
 
 input.s: input.c
@@ -242,6 +266,15 @@ PAShape.s: adapter/PAShape.c
 	CPATH=$(CPATH) $(CC) -S adapter/PAShape.c -o adapter/PAShape.s
 PATextView.s: adapter/PATextView.c
 	CPATH=$(CPATH) $(CC) -S adapter/PATextView.c -o adapter/PATextView.s
+
+client.s: adapter/client.c
+	CPATH=$(CPATH) $(CC) -S adapter/client.c -o adapter/client.s
+target.s: adapter/target.c
+	CPATH=$(CPATH) $(CC) -S adapter/target.c -o adapter/target.s
+adapter.s: adapter/adapter.c
+	CPATH=$(CPATH) $(CC) -S adapter/adapter.c -o adapter/adapter.s
+adaptee.s: adapter/adaptee.c
+	CPATH=$(CPATH) $(CC) -S adapter/adaptee.c -o adapter/adaptee.s
 
 
 input.o : input.s
@@ -304,6 +337,15 @@ PASTexthape.o : PATextShape.s
 	$(AS) -c adapter/PATextShape.s -o adapter/PATextShape.o
 PATextView.o : PATextView.s
 	$(AS) -c adapter/PATextView.s -o adapter/PATextView.o
+	
+client.o: client.s
+	$(AS) -c adapter/client.s -o adapter/client.o
+target.o : target.s
+	$(AS) -c adapter/PALine.s -o adapter/PALine.o
+adapter.o : adapter.s
+	$(AS) -c adapter/adapter.s -o adapter/adapter.o
+adaptee.o : adaptee.s
+	$(AS) -c adapter/adaptee.s -o adapter/adaptee.o
 
 .PHONY: pagrafnormal.s \
 	pagraftranspus.s \
