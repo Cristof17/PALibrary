@@ -7,8 +7,9 @@
  *      Author: AdministratorUser
  */
 
-void TargetRequest(Target target)
+PASir TargetRequest(Target target)
 {
+	return target.target;
 	//AdapterRequest(adapter);
 }
 

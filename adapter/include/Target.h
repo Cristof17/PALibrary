@@ -15,6 +15,6 @@ struct Target
 	//struct Adapter adapter;
 };
 typedef struct Target Target;
-void TargetRequest(Target);
+PASir TargetRequest(Target);
 
 #endif /* ADAPTER_INCLUDE_TARGET_H_ */
