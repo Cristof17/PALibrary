@@ -1,5 +1,4 @@
 #include <Target.h>
-#include <Adapter.h>
 /*
  * Target.c
  *
@@ -9,6 +8,9 @@
 
 PASir TargetRequest(Target target)
 {
+	Adapter adapter;
+//	Target local =
+	AdapterRequest(adapter);
 	return target.target;
 	//AdapterRequest(adapter);
 }
