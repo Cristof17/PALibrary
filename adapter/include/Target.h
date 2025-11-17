@@ -8,6 +8,6 @@
 #ifndef ADAPTER_INCLUDE_TARGET_H_
 #define ADAPTER_INCLUDE_TARGET_H_
 
-
+void TargetRequest();
 
 #endif /* ADAPTER_INCLUDE_TARGET_H_ */

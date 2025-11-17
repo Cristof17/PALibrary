@@ -8,6 +8,6 @@
 #ifndef ADAPTER_INCLUDE_ADAPTEE_H_
 #define ADAPTER_INCLUDE_ADAPTEE_H_
 
-
+void SpecificRequest();
 
 #endif /* ADAPTER_INCLUDE_ADAPTEE_H_ */
