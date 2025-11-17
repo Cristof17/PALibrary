@@ -207,7 +207,8 @@ clean: input.s \
 	rm adapter/adapter.s adapter/adapter.o
 	rm adapter/adaptee.s adapter/adaptee.o
 	@echo "end of clean"
-
+run:
+	@echo "Running"
 input.s: input.c
 	CPATH=$(CPATH) $(CC) -S input.c -o input.s
 algorithm.s: algorithm.c
