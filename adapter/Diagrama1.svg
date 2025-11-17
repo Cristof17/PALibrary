@@ -53,11 +53,6 @@
     <polygon style="fill: #ffffff" points="392.5,248.236 384.5,232.236 376.5,248.236 "/>
     <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="392.5,248.236 384.5,232.236 376.5,248.236 "/>
   </g>
-  <g>
-    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="428" y1="306" x2="513" y2="306"/>
-    <polygon style="fill: #000000" points="513,311 523,306 513,301 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="513,311 523,306 513,301 "/>
-  </g>
   <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="440" y="296">
     <tspan x="440" y="296">adaptee</tspan>
   </text>
@@ -74,5 +69,9 @@
   <g>
     <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="201.8" y1="187" x2="336.528" y2="187.968"/>
     <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="328.728,192.912 338.764,187.984 328.8,182.912 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="428" y1="306" x2="519.528" y2="306"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="511.764,311 521.764,306 511.764,301 "/>
   </g>
 </svg>
