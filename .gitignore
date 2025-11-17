@@ -2,6 +2,7 @@
 *.d
 
 # Object files
+adapter/*.o
 *.o
 *.ko
 *.obj
@@ -42,6 +43,7 @@
 *.idb
 *.pdb
 *.s
+adapter/*.s
 
 # Kernel Module Compile Results
 *.mod*
