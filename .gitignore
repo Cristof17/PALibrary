@@ -2,11 +2,12 @@
 *.d
 
 # Object files
-adapter/*.o
 *.o
 *.ko
 *.obj
 *.elf
+adapter/*.o
+builder/*.o
 
 # Linker output
 *.ilk
@@ -44,6 +45,7 @@ adapter/*.o
 *.pdb
 *.s
 adapter/*.s
+builder/*.s
 
 # Kernel Module Compile Results
 *.mod*
