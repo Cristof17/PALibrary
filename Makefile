@@ -174,70 +174,38 @@ clean: input.s \
 	adaptee.o\
 	@echo "end of compile $(pwd)"
 	@echo "clean $(pwd)"
-	rm input.o
-	rm algorithm.o
-	rm bfsalgorithm.o
-	rm bfsinput.o
-	rm bfsoutput.o
-	rm bfsresult.o
-	rm output.o
-	rm padata.o
-	rm pagraf.o
-	rm palista.o
-	rm pamuchie.o
-	rm panod.o
-	rm papereche.o
-	rm parezultat.o
-	rm pastare.o
-	rm paneigh.o
-	rm patip.o
-	rm paindex.o
-	rm pasir.o
-	rm builder/pagrafnormal.o
-	rm builder/pagraftranspus.o
-	rm builder/padirector.o
-	rm builder/pagrafproduct.o
-	rm builder/pabuilder.o
-	rm adapter/PADrawingEditor.o
-	rm adapter/PALine.o
-	rm adapter/PAShape.o
-	rm adapter/PATextView.o
-	rm adapter/client.o
-	rm adapter/target.o
-	rm adapter/adaptee.o
-	rm adapter/adapter.o
-	rm input.s 
-	rm algorithm.s 
-	rm bfsalgorithm.s 
-	rm bfsinput.s 
-	rm bfsoutput.s 
-	rm bfsresult.s 
-	rm output.s 
-	rm padata.s 
-	rm pagraf.s 
-	rm palista.s 
-	rm pamuchie.s 
-	rm panod.s 
-	rm papereche.s 
-	rm parezultat.s 
-	rm pastare.s 
-	rm paneigh.s 
-	rm patip.s 
-	rm paindex.s 
-	rm pasir.s 
-	rm builder/pagrafnormal.s 
-	rm builder/pagraftranspus.s 
-	rm builder/padirector.s 
-	rm builder/pagrafproduct.s 
-	rm builder/pabuilder.s 
-	rm adapter/PADrawingEditor.s 
-	rm adapter/PALine.s 
-	rm adapter/PAShape.s 
-	rm adapter/PATextView.s 
-	rm adapter/client.s 
-	rm adapter/target.s 
-	rm adapter/adapter.s 
-	rm adapter/adaptee.s 
+	rm input.s input.o
+	rm algorithm.s algorithm.o
+	rm bfsalgorithm.s bfsalgorithm.o
+	rm bfsinput.s bfsinput.o
+	rm bfsoutput.s bfsoutput.o
+	rm bfsresult.s bfsresult.o
+	rm output.s output.o
+	rm padata.s padata.o
+	rm pagraf.s pagraf.o
+	rm palista.s palista.o
+	rm pamuchie.s pamuchie.o
+	rm panod.s panod.o
+	rm papereche.s papereche.o
+	rm parezultat.s parezultat.o
+	rm pastare.s pastare.o
+	rm paneigh.s paneigh.o
+	rm patip.s patip.o
+	rm paindex.s paindex.o
+	rm pasir.s pasir.o
+	rm builder/pagrafnormal.s builder/pagrafnormal.o
+	rm builder/pagraftranspus.s builder/pagraftranspus.o
+	rm builder/padirector.s builder/padirector.o
+	rm builder/pagrafproduct.s builder/pagrafproduct.o
+	rm builder/pabuilder.s builder/pabuilder.o
+	rm adapter/PADrawingEditor.s adapter/PADrawingEditor.o
+	rm adapter/PALine.s adapter/PALine.o
+	rm adapter/PAShape.s adapter/PAShape.o
+	rm adapter/PATextView.s adapter/PATextView.o
+	rm adapter/client.s adapter/client.o
+	rm adapter/target.s adapter/target.o
+	rm adapter/adapter.s adapter/adapter.o
+	rm adapter/adaptee.s adapter/adaptee.o
 	@echo "end of clean"
 run:
 	@echo "Running"
