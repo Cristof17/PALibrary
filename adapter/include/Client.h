@@ -7,10 +7,10 @@
 
 #ifndef ADAPTER_INCLUDE_CLIENT_H_
 #define ADAPTER_INCLUDE_CLIENT_H_
-
+#include <PAGraf.h>
 struct Client
 {
-
+	PAGraf client;
 };
 typedef struct Client Client;
 
