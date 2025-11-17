@@ -1,4 +1,5 @@
 #include <Target.h>
+#include <Adapter.h>
 /*
  * Target.c
  *
@@ -6,4 +7,8 @@
  *      Author: AdministratorUser
  */
 
+void TargetRequest(Adapter adapter)
+{
+	AdapterRequest(adapter);
+}
 

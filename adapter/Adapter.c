@@ -9,5 +9,5 @@
 
 void Request(Adaptee adaptee)
 {
-
+	AdapteeSpecificRequest(adaptee);
 }
