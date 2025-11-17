@@ -8,6 +8,11 @@
 #ifndef ADAPTER_INCLUDE_TARGET_H_
 #define ADAPTER_INCLUDE_TARGET_H_
 
+struct Target
+{
+
+};
+typedef struct Target Target;
 void TargetRequest();
 
 #endif /* ADAPTER_INCLUDE_TARGET_H_ */

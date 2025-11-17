@@ -1,4 +1,5 @@
 #include <Adapter.h>
+#include <Adaptee.h>
 /*
  * Adapter.c
  *
@@ -6,4 +7,7 @@
  *      Author: AdministratorUser
  */
 
+void Request(Adaptee adaptee)
+{
 
+}
