@@ -49,11 +49,6 @@
     </text>
   </g>
   <g>
-    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="201.8" y1="187" x2="331" y2="187.922"/>
-    <polygon style="fill: #000000" points="330.965,192.921 341,187.993 331.036,182.922 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="330.965,192.921 341,187.993 331.036,182.922 "/>
-  </g>
-  <g>
     <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="377.8,248.236 377.8,262 377.975,262 377.975,292 "/>
     <polygon style="fill: #ffffff" points="385.8,248.236 377.8,232.236 369.8,248.236 "/>
     <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="385.8,248.236 377.8,232.236 369.8,248.236 "/>
@@ -76,4 +71,8 @@
     <tspan x="378.25" y="427"></tspan>
   </text>
   <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 4; stroke: #000000" x1="377.975" y1="348" x2="378.25" y2="410"/>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="201.8" y1="187" x2="337.528" y2="187.968"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="329.729,192.913 339.764,187.984 329.8,182.913 "/>
+  </g>
 </svg>
