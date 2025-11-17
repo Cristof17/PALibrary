@@ -174,44 +174,44 @@ clean: input.s \
 	adaptee.o\
 	@echo "end of compile $(pwd)"
 	@echo "clean $(pwd)"
-	rm input.s 
 	rm input.o
-	rm algorithm.s 
 	rm algorithm.o
-	rm bfsalgorithm.s 
 	rm bfsalgorithm.o
-	rm bfsinput.s 
 	rm bfsinput.o
-	rm bfsoutput.s 
 	rm bfsoutput.o
-	rm bfsresult.s 
 	rm bfsresult.o
-	rm output.s 
 	rm output.o
-	rm padata.s 
 	rm padata.o
-	rm pagraf.s 
 	rm pagraf.o
-	rm palista.s 
 	rm palista.o
-	rm pamuchie.s 
 	rm pamuchie.o
-	rm panod.s 
 	rm panod.o
-	rm papereche.s 
 	rm papereche.o
-	rm parezultat.s 
 	rm parezultat.o
-	rm pastare.s 
 	rm pastare.o
-	rm paneigh.s 
 	rm paneigh.o
-	rm patip.s 
 	rm patip.o
-	rm paindex.s 
 	rm paindex.o
-	rm pasir.s 
 	rm pasir.o
+	rm input.s 
+	rm algorithm.s 
+	rm bfsalgorithm.s 
+	rm bfsinput.s 
+	rm bfsoutput.s 
+	rm bfsresult.s 
+	rm output.s 
+	rm padata.s 
+	rm pagraf.s 
+	rm palista.s 
+	rm pamuchie.s 
+	rm panod.s 
+	rm papereche.s 
+	rm parezultat.s 
+	rm pastare.s 
+	rm paneigh.s 
+	rm patip.s 
+	rm paindex.s 
+	rm pasir.s 
 	rm builder/pagrafnormal.s 
 	rm builder/pagrafnormal.o
 	rm builder/pagraftranspus.s 

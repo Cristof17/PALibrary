@@ -11,7 +11,16 @@ all:pagrafnormal.s \
 	pabuilder.o 
 	@echo "clean $(PWD)"
 	@echo "end of all $(PWD)"
-clean: pagrafnormal.o pagraftranspus.o padirector.o pagrafproduct.o pabuilder.o pagrafnormal.s pagraftranspus.s padirector.s pagrafproduct.s pabuilder.s
+clean: pagrafnormal.o\
+	pagraftranspus.o\
+	padirector.o\
+	pagrafproduct.o\
+	pabuilder.o\
+	pagrafnormal.s\
+	pagraftranspus.s
+	padirector.s\
+	pagrafproduct.s\
+	pabuilder.s
 	@echo "clean $(PWD)"
 	rm pagrafnormal.o
 	rm pagraftranspus.o
