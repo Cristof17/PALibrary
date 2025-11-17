@@ -1,3 +1,4 @@
+#include <Target.h>
 /*
  * Target.c
  *

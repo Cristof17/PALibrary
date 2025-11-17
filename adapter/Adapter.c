@@ -1,3 +1,4 @@
+#include <Adapter.h>
 /*
  * Adapter.c
  *
