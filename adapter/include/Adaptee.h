@@ -13,6 +13,6 @@ struct Adaptee
 
 };
 typedef struct Adaptee Adaptee;
-void AdapteeSpecificRequest();
+void AdapteeSpecificRequest(Adaptee);
 
 #endif /* ADAPTER_INCLUDE_ADAPTEE_H_ */

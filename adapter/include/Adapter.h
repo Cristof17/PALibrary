@@ -1,3 +1,4 @@
+#include <Target.h>
 /*
  * Adapter.h
  *
@@ -12,6 +13,6 @@ struct Adapter
 
 };
 typedef struct Adapter Adapter;
-void AdapterRequest();
+void AdapterRequest(Adapter);
 
 #endif /* ADAPTER_INCLUDE_ADAPTER_H_ */
