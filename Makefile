@@ -193,6 +193,19 @@ clean: input.s \
 	rm patip.o
 	rm paindex.o
 	rm pasir.o
+	rm builder/pagrafnormal.o
+	rm builder/pagraftranspus.o
+	rm builder/padirector.o
+	rm builder/pagrafproduct.o
+	rm builder/pabuilder.o
+	rm adapter/PADrawingEditor.o
+	rm adapter/PALine.o
+	rm adapter/PAShape.o
+	rm adapter/PATextView.o
+	rm adapter/client.o
+	rm adapter/target.o
+	rm adapter/adaptee.o
+	rm adapter/adapter.o
 	rm input.s 
 	rm algorithm.s 
 	rm bfsalgorithm.s 
@@ -213,31 +226,18 @@ clean: input.s \
 	rm paindex.s 
 	rm pasir.s 
 	rm builder/pagrafnormal.s 
-	rm builder/pagrafnormal.o
 	rm builder/pagraftranspus.s 
-	rm builder/pagraftranspus.o
 	rm builder/padirector.s 
-	rm builder/padirector.o
 	rm builder/pagrafproduct.s 
-	rm builder/pagrafproduct.o
 	rm builder/pabuilder.s 
-	rm builder/pabuilder.o
 	rm adapter/PADrawingEditor.s 
-	rm adapter/PADrawingEditor.o
 	rm adapter/PALine.s 
-	rm adapter/PALine.o
 	rm adapter/PAShape.s 
-	rm adapter/PAShape.o
 	rm adapter/PATextView.s 
-	rm adapter/PATextView.o
 	rm adapter/client.s 
-	rm adapter/client.o
 	rm adapter/target.s 
-	rm adapter/target.o
 	rm adapter/adapter.s 
-	rm adapter/adapter.o
 	rm adapter/adaptee.s 
-	rm adapter/adaptee.o
 	@echo "end of clean"
 run:
 	@echo "Running"
