@@ -33,7 +33,7 @@ foo=input.o \
 	builder/pabuilder.o 
 #bar := $(foo:.c=.o)
 #include
-INCLUDE_PATHS=INCLUDE:builder/include:adapter/include
+INCLUDE_PATHS=INCLUDE:builder/include/:adapter/include/
 CPATH+=$(INCLUDE_PATHS)
 
 all: input.s \

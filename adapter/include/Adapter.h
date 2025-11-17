@@ -6,13 +6,13 @@
  */
 #ifndef ADAPTER_INCLUDE_ADAPTER_H_
 #define ADAPTER_INCLUDE_ADAPTER_H_
-#include <Target.h>
+//#include <Target.h>
 #include <Adaptee.h>
 struct Adapter
 {
 
 };
 typedef struct Adapter Adapter;
-Target AdapterRequest(Adapter);
+void AdapterRequest(Adapter);
 
 #endif /* ADAPTER_INCLUDE_ADAPTER_H_ */

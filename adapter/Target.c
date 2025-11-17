@@ -7,8 +7,8 @@
  *      Author: AdministratorUser
  */
 
-void TargetRequest(Target target, Adapter adapter)
+void TargetRequest(Target target)
 {
-	AdapterRequest(adapter);
+	//AdapterRequest(adapter);
 }
 

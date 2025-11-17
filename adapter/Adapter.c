@@ -7,7 +7,7 @@
  *      Author: AdministratorUser
  */
 
-Target AdapterRequest(Adapter adapter)
+void AdapterRequest(Adapter adapter)
 {
 	Adaptee adaptee;
 	AdapteeSpecificRequest(adaptee);
