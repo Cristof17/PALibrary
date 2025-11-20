@@ -2,8 +2,26 @@
 foo=PADrawingEditor.c PAShape.c PALine.c PATextShape.c PATextView.c
 #bar := $(foo:.c=.o)
 #include
-C_INCLUDE_PATH+=./include
-all:PADrawingEditor.o PAShape.o PALine.o PATextShape.o PATextView.o
+C_PATH=$(C_PATH):include
+#C_INCLUDE_PATH+=./include
+all:PADrawingEditor.o\
+	PAShape.o\
+	PALine.o\
+	PATextShape.o\
+	PATextView.o\
+	PADrawingEditor.s\
+	PAShape.s\
+	PALine.s\
+	PATextShape.s\
+	PATextView.s\
+	adapter.s\
+	adaptee.s\
+	client.s\
+	target.s\
+	adapter.o\
+	adaptee.o\
+	client.o\
+	target.o
 	@echo "end of compile $(pwd)"
 	@echo "end of all $(pwd)"
 	@echo "end of assemble $(pwd)"
@@ -11,6 +29,10 @@ all:PADrawingEditor.o PAShape.o PALine.o PATextShape.o PATextView.o
 clean:
 	@echo "clean $(pwd)"
 	@echo "end of clean"
+	rm adapter.s adapter.o
+	rm adaptee.s adaptee.o
+	rm client.s client.o
+	rm target.s target.o
 
 adapter.s : adapter.c
 	$(C_PATH) $(CC) -S adapter.c -o adapter.s
@@ -32,6 +54,12 @@ target.o : target.s
 	
 #adapter.o : adapter.s
 #	$(AS) -C adapter.s -o adapter.o
-
-
+.PHONY adapter.s\
+	adaptee.s
+	client.s\
+	target.s\
+	adapter.o\
+	adaptee.o\
+	client.o\
+	target.o
 #include builder/makefile
