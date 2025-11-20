@@ -30,10 +30,11 @@ foo=input.o \
 	builder/pagraftranspus.o \
 	builder/padirector.o \
 	builder/pagrafproduct.o \
-	builder/pabuilder.o 
+	builder/pabuilder.o\
+	ArrayList/arraylist.o
 #bar := $(foo:.c=.o)
 #include
-INCLUDE_PATHS=INCLUDE:builder/include/:adapter/include/
+INCLUDE_PATHS=INCLUDE:builder/include/:adapter/include/:arraylist/include
 CPATH+=$(INCLUDE_PATHS)
 
 all: input.s \
@@ -59,6 +60,7 @@ all: input.s \
 	target.s\
 	client.s\
 	adaptee.s\
+	arraylist.s\
 	input.o \
 	algorithm.o \
 	bfsalgorithm.o \
@@ -102,7 +104,8 @@ all: input.s \
 	adapter.o\
 	target.o\
 	client.o\
-	adaptee.o
+	adaptee.o\
+	arraylist.o
 	echo "end of compile $(pwd)"
 	@echo "end of all $(pwd)"
 	@echo "end of assemble $(pwd)"
@@ -130,6 +133,7 @@ clean: input.s \
 	pagrafproduct.s \
 	pabuilder.s \
 	pasir.s\
+	arraylist.s\
 	input.o \
 	algorithm.o \
 	bfsalgorithm.o \
@@ -172,6 +176,7 @@ clean: input.s \
 	target.o\
 	adapter.o\
 	adaptee.o\
+	arraylist.o
 	@echo "end of compile $(pwd)"
 	@echo "clean $(pwd)"
 	rm input.s input.o
@@ -276,7 +281,8 @@ adapter.s: adapter/adapter.c
 	CPATH=$(CPATH) $(CC) -S adapter/adapter.c -o adapter/adapter.s
 adaptee.s: adapter/adaptee.c
 	CPATH=$(CPATH) $(CC) -S adapter/adaptee.c -o adapter/adaptee.s
-
+arraylist.s: ArrayList/arraylist.c
+	CPATH=$(CPATH) $(CC) -S ArrayList/arraylist.c -o ArrayList/arraylist.s
 
 input.o : input.s
 	$(AS) -c input.s -o input.o
@@ -347,6 +353,9 @@ adapter.o : adapter.s
 	$(AS) -c adapter/adapter.s -o adapter/adapter.o
 adaptee.o : adaptee.s
 	$(AS) -c adapter/adaptee.s -o adapter/adaptee.o
+	
+arraylist.o : arraylist.s
+	$(AS) -c ArrayList/arraylist.s -o ArrayList/arraylist.o
 
 .PHONY: pagrafnormal.s \
 	pagraftranspus.s \
@@ -366,7 +375,9 @@ adaptee.o : adaptee.s
 	PAShape.o \
 	PAShape.s \
 	PATextView.s \
-	PATextView.o
+	PATextView.o\
+	arraylist.s\
+	arraylist.o
 	
 #include builder/makefile
 

@@ -8,6 +8,7 @@
 *.elf
 adapter/*.o
 builder/*.o
+arraylist/*.o
 
 # Linker output
 *.ilk
@@ -46,6 +47,7 @@ builder/*.o
 *.s
 adapter/*.s
 builder/*.s
+arraylist/*.s
 
 # Kernel Module Compile Results
 *.mod*
