@@ -99,9 +99,9 @@ all: input.s \
 	paneigh.o \
 	paindex.o \
 	pasir.o\
-	pagrafnormal.s \
-	pagraftranspus.s \
-	padirector.s \
+	builder_pagrafnormal.s \
+	builder_pagraftranspus.s \
+	builder_padirector.s \
 	builder_pagrafproduct.s \
 	builder_pabuilder.s \
 	builder_pagrafnormal.o \
@@ -385,27 +385,57 @@ adapter_adaptee.o : adapter_adaptee.s
 arraylist_arraylist.o : arraylist_arraylist.s
 	$(AS) -c ArrayList/arraylist.s -o ArrayList/arraylist.o
 
-.PHONY: pagrafnormal.s \
-	pagraftranspus.s \
-	padirector.s \
-	pagrafproduct.s \
-	pabuilder.s \
-	pagrafnormal.o \
-	pagraftranspus.o \
-	padirector.o \
-	pabuilder.o \
-	adapter_PADrawingEditor.s \
-	adapter_PADrawingEditor.o \
-	adapter_PALine.s \
-	adapter_PALine.o \
-	adapter_PAShape.s \
-	adapter_PAShape.o \
-	adapter_PAShape.o \
-	adapter_PAShape.s \
-	adapter_PATextView.s \
-	adapter_PATextView.o\
-	arraylist_arraylist.s\
-	arraylist_arraylist.o
+.PHONY: input.o \
+	algorithm.o \
+	bfsalgorithm.o \
+	bfsinput.o \
+	bfsoutput.o \
+	bfsresult.o \
+	output.o \
+	padata.o \
+	pagraf.o \
+	palista.o \
+	pamuchie.o \
+	panod.o \
+	papereche.o \
+	parezultat.o \
+	pastare.o \
+	pasir.o \
+	pastare.o \
+	adapter/client.c\
+	adapter/target.c\
+	adapter/adapter.c\
+	adapter/adaptee.c\
+	builder/pagrafnormal.s \
+	builder/pagraftranspus.s \
+	builder/padirector.s \
+	builder/pagrafproduct.s \
+	builder/pabuilder.s \
+	builder/pagrafnormal.o \
+	builder/pagraftranspus.o \
+	builder/padirector.o \
+	builder/pagrafproduct.o \
+	builder/pabuilder.o\
+	ArrayList/arraylist.o\
+	adapter/PADrawingEditor.s \
+	adapter/PADrawingEditor.o \
+	adapter/PALine.s \
+	adapter/PALine.o \
+	adapter/PAShape.s \
+	adapter/PAShape.o \
+	adapter/PAShape.s \
+	adapter/PAShape.o \
+	adapter/PATextView.s \
+	adapter/PATextView.o\
+	adapter/adapter.o\
+	adapter/target.o\
+	adapter/client.o\
+	adapter/adaptee.o\
+	arraylist/arraylist.o\
+	iterator/client.o \
+	iterator/concreteiterator.o \
+	iterator/iterator.o \
+	iterator/concreteaggregate.o \
 	
 #include builder/makefile
 #include adapter/Makefile
