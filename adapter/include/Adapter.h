@@ -15,5 +15,5 @@ struct Adapter
 };
 typedef struct Adapter Adapter;
 void AdapterRequest(Adapter);
-
+PANod AdapterHead(Adapter adapter);
 #endif /* ADAPTER_INCLUDE_ADAPTER_H_ */

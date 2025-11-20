@@ -2,13 +2,15 @@
 #ifndef PANOD_H
 #define PANOD_H
 #include "pastare.h"
-#include "padata.h"
+//#include "padata.h"
+#include "paindex.h"
 #include "paneigh.h"
 #include "patip.h"
 struct PANod;
 struct PANod
 { 
-	struct PAData data;
+//	struct PAData data;
+	struct PAIndex index;
 	struct PANeigh next;
 	struct PAStare stare;
 	struct PATip tip;

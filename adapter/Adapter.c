@@ -1,5 +1,6 @@
 #include <Adapter.h>
 #include <Adaptee.h>
+#include <types.h>
 /*
  * Adapter.c
  *
@@ -11,4 +12,10 @@ void AdapterRequest(Adapter adapter)
 {
 	Adaptee adaptee;
 	AdapteeSpecificRequest(adaptee);
+}
+PANod AdapterHead(Adapter adapter)
+{
+	PAIndex index = AdapteeGet(FIRST);
+	adapter.lista.head.index = index;
+	return adapter.lista.head;
 }

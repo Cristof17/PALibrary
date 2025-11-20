@@ -1,8 +1,10 @@
 #ifndef PAINDEX_H
 #define PAINDEX_H
+#include <types.h>
 struct PAIndex
 {
-    int Value;
+//    int Value;
+	INT Value;
 };
 typedef struct PAIndex PAIndex;
 INT op_Equality(PAIndex, PAIndex);
