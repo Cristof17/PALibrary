@@ -31,7 +31,26 @@ foo=input.o \
 	builder/padirector.o \
 	builder/pagrafproduct.o \
 	builder/pabuilder.o\
-	ArrayList/arraylist.o
+	ArrayList/arraylist.o\
+	adapter/PADrawingEditor.s \
+	adapter/PADrawingEditor.o \
+	adapter/PALine.s \
+	adapter/PALine.o \
+	adapter/PAShape.s \
+	adapter/PAShape.o \
+	adapter/PAShape.s \
+	adapter/PAShape.o \
+	adapter/PATextView.s \
+	adapter/PATextView.o\
+	adapter/adapter.o\
+	adapter/target.o\
+	adapter/client.o\
+	adapter/adaptee.o\
+	arraylist/arraylist.o\
+	iterator/client.o \
+	iterator/concreteiterator.o \
+	iterator/iterator.o \
+	iterator/concreteaggregate.o \
 #bar := $(foo:.c=.o)
 #include
 INCLUDE_PATHS=INCLUDE:builder/include/:adapter/include/:arraylist/include:iterator/include
