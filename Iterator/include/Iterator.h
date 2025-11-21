@@ -8,6 +8,20 @@
 #ifndef ITERATOR_INCLUDE_ITERATOR_H_
 #define ITERATOR_INCLUDE_ITERATOR_H_
 
+struct Iterator
+{
 
+};
+typedef struct Iterator Iterator;
+PAIndex First()
+{
+    PAIndex index;
+    return index;
+}
+PAIndex Next()
+{
+    PAIndex index;
+    return index;
+}
 
 #endif /* ITERATOR_INCLUDE_ITERATOR_H_ */
