@@ -23,5 +23,15 @@ PAIndex Next()
     PAIndex index;
     return index;
 }
+PABool IsDone()
+{
+    PABool boolean = 1;
+    return boolean;
+}
+PANod CurrentItem()
+{
+    PANod nod;
+    return nod;
+}
 
 #endif /* ITERATOR_INCLUDE_ITERATOR_H_ */
