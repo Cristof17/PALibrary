@@ -99,32 +99,40 @@ all: input.s \
 	paneigh.o \
 	paindex.o \
 	pasir.o\
-	builder_pagrafnormal.s \
-	builder_pagraftranspus.s \
-	builder_padirector.s \
-	builder_pagrafproduct.s \
-	builder_pabuilder.s \
-	builder_pagrafnormal.o \
-	builder_pagraftranspus.o \
-	builder_padirector.o \
-	builder_pagrafproduct.o \
-	builder_pabuilder.o \
+	pagrafnormal.s \
+	pagraftranspus.s \
+	padirector.s \
+	pagrafproduct.s \
+	pabuilder.s \
+	pagrafnormal.o \
+	pagraftranspus.o \
+	padirector.o \
+	pagrafproduct.o \
+	pabuilder.o \
 	pasir.o\
-	adapter_PADrawingEditor.s \
-	adapter_PADrawingEditor.o \
-	adapter_PALine.s \
-	adapter_PALine.o \
-	adapter_PAShape.s \
-	adapter_PAShape.o \
-	adapter_PAShape.s \
-	adapter_PAShape.o \
-	adapter_PATextView.s \
-	adapter_PATextView.o\
-	adapter_adapter.o\
-	adapter_target.o\
-	adapter_client.o\
-	adapter_adaptee.o\
+	PADrawingEditor.s \
+	PADrawingEditor.o \
+	PALine.s \
+	PALine.o \
+	PAShape.s \
+	PAShape.o \
+	PAShape.s \
+	PAShape.o \
+	PATextView.s \
+	PATextView.o\
+	adapter.o\
+	target.o\
+	client.o\
+	adaptee.o\
 	arraylist_arraylist.o
+	mkdir asm
+	mkdir obj
+	mkdir asm/builder/
+	mkdir asm/iterator/
+	mkdir asm/adapter/
+	mkdir obj/builder/
+	mkdir obj/iterator/
+	mkdir obj/adapter
 	echo "end of compile $(pwd)"
 	@echo "end of all $(pwd)"
 	@echo "end of assemble $(pwd)"
@@ -146,15 +154,15 @@ clean: input.s \
 	patip.s \
 	paneigh.s \
 	paindex.s \
-	builder_pagrafnormal.s \
-	builder_pagraftranspus.s \
-	builder_padirector.s \
-	builder_pagrafproduct.s \
-	builder_pabuilder.s \
-	iterator_client.s \
-	iterator_concreteiterator.s \
-	iterator_iterator.s \
-	iterator_concreteaggregate.s \
+	pagrafnormal.s \
+	pagraftranspus.s \
+	padirector.s \
+	pagrafproduct.s \
+	pabuilder.s \
+	client.s \
+	concreteiterator.s \
+	iterator.s \
+	concreteaggregate.s \
 	pasir.s\
 	arraylist_arraylist.s\
 	input.o \
@@ -206,38 +214,78 @@ clean: input.s \
 	arraylist_arraylist.o
 	@echo "end of compile $(pwd)"
 	@echo "clean $(pwd)"
-	rm input.s input.o
-	rm algorithm.s algorithm.o
-	rm bfsalgorithm.s bfsalgorithm.o
-	rm bfsinput.s bfsinput.o
-	rm bfsoutput.s bfsoutput.o
-	rm bfsresult.s bfsresult.o
-	rm output.s output.o
-	rm padata.s padata.o
-	rm pagraf.s pagraf.o
-	rm palista.s palista.o
-	rm pamuchie.s pamuchie.o
-	rm panod.s panod.o
-	rm papereche.s papereche.o
-	rm parezultat.s parezultat.o
-	rm pastare.s pastare.o
-	rm paneigh.s paneigh.o
-	rm patip.s patip.o
-	rm paindex.s paindex.o
-	rm pasir.s pasir.o
-	rm builder/pagrafnormal.s builder/pagrafnormal.o
-	rm builder/pagraftranspus.s builder/pagraftranspus.o
-	rm builder/padirector.s builder/padirector.o
-	rm builder/pagrafproduct.s builder/pagrafproduct.o
-	rm builder/pabuilder.s builder/pabuilder.o
-	rm adapter/PADrawingEditor.s adapter/PADrawingEditor.o
-	rm adapter/PALine.s adapter/PALine.o
-	rm adapter/PAShape.s adapter/PAShape.o
-	rm adapter/PATextView.s adapter/PATextView.o
-	rm adapter/client.s adapter/client.o
-	rm adapter/target.s adapter/target.o
-	rm adapter/adapter.s adapter/adapter.o
-	rm adapter/adaptee.s adapter/adaptee.o
+	rm asm/input.s 
+	rm asm/algorithm.s 
+	rm asm/bfsalgorithm.s 
+	rm asm/bfsinput.s 
+	rm asm/bfsoutput.s 
+	rm asm/bfsresult.s 
+	rm asm/output.s 
+	rm asm/padata.s 
+	rm asm/pagraf.s 
+	rm asm/palista.s 
+	rm asm/pamuchie.s 
+	rm asm/panod.s 
+	rm asm/papereche.s 
+	rm asm/parezultat.s 
+	rm asm/pastare.s 
+	rm asm/paneigh.s 
+	rm asm/patip.s 
+	rm asm/paindex.s 
+	rm asm/pasir.s 
+	rm asm/builder/pagrafnormal.s 
+	rm asm/builder/pagraftranspus.s 
+	rm asm/builder/padirector.s 
+	rm asm/builder/pagrafproduct.s 
+	rm asm/builder/pabuilder.s 
+	rm asm/adapter/PADrawingEditor.s 
+	rm asm/adapter/PALine.s 
+	rm asm/adapter/PAShape.s 
+	rm asm/adapter/PATextView.s 
+	rm asm/adapter/client.s 
+	rm asm/adapter/target.s 
+	rm asm/adapter/adapter.s 
+	rm asm/adapter/adaptee.s 
+	rm obj/input.o
+	rm obj/algorithm.o
+	rm obj/bfsalgorithm.o
+	rm obj/bfsinput.o
+	rm obj/bfsoutput.o
+	rm obj/bfsresult.o
+	rm obj/output.o
+	rm obj/padata.o
+	rm obj/pagraf.o
+	rm obj/palista.o
+	rm obj/pamuchie.o
+	rm obj/panod.o
+	rm obj/papereche.o
+	rm obj/parezultat.o
+	rm obj/pastare.o
+	rm obj/paneigh.o
+	rm obj/patip.o
+	rm obj/paindex.o
+	rm obj/pasir.o
+	rm obj/builder/pagrafnormal.o
+	rm obj/builder/pagraftranspus.o
+	rm obj/builder/padirector.o
+	rm obj/builder/pagrafproduct.o
+	rm obj/builder/pabuilder.o
+	rm obj/adapter/PADrawingEditor.o
+	rm obj/adapter/PALine.o
+	rm obj/adapter/PAShape.o
+	rm obj/adapter/PATextView.o
+	rm obj/adapter/client.o
+	rm obj/adapter/target.o
+	rm obj/adapter/adapter.o
+	rm obj/adapter/adaptee.o
+	rmdir asm/builder/
+	rmdir asm/iterator/
+	rmdir asm/adapter/
+	rmdir obj/iterator/
+	rmdir obj/adapter/
+	rmdir obj/builder/
+	rmdir asm/
+	rmdir obj/
 	@echo "end of clean"
 run:
 	@echo "Running"
