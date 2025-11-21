@@ -12,4 +12,5 @@ struct Aggregate
 
 };
 typedef struct Aggregate Aggregate;
+void CreateIterator();
 #endif /* ITERATOR_INCLUDE_AGGREGATE_H_ */

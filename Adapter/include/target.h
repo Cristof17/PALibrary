@@ -18,6 +18,6 @@ struct Target
 	//struct Adapter adapter;
 };
 typedef struct Target Target;
-PASir TargetRequest(Target);
+PASir Request(Target);
 
 #endif /* ADAPTER_INCLUDE_TARGET_H_ */

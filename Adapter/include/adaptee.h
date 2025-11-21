@@ -16,6 +16,6 @@ struct Adaptee
 	//ArrayList adaptee;
 };
 typedef struct Adaptee Adaptee;
-void AdapteeSpecificRequest(Adaptee);
-PAIndex AdapteeGet(INT);
+void SpecificRequest(Adaptee);
+PAIndex Get(INT);
 #endif /* ADAPTER_INCLUDE_ADAPTEE_H_ */

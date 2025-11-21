@@ -15,6 +15,6 @@ struct Adapter
 	PALista lista;
 };
 typedef struct Adapter Adapter;
-void AdapterRequest(Adapter);
-PANod AdapterHead(Adapter adapter);
+void Request(Adapter);
+PANod GetHead(Adapter adapter);
 #endif /* ADAPTER_INCLUDE_ADAPTER_H_ */
