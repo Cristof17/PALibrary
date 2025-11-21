@@ -4,7 +4,7 @@
 #include "bfsresult.h"
 struct BFSOutput
 {
-    struct BFSResult result;
+    struct BFSResult Result;
 };
 typedef struct BFSOutput BFSOutput;
 void BFSOutputPrint(BFSOutput);

@@ -12,7 +12,7 @@
 
 struct Adapter
 {
-	PALista lista;
+	PALista Lista;
 };
 typedef struct Adapter Adapter;
 void Request(Adapter);

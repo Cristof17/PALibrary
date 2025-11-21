@@ -6,8 +6,8 @@
 #include "parezultat.h"
 struct BFSResult
 {
-	struct PALista D;
-	struct PACardinal N;
+	struct PALista Lista;
+	struct PACardinal Cardinal;
 };
 typedef struct BFSResult BFSResult;
 #endif

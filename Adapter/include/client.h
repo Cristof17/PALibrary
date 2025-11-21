@@ -11,7 +11,7 @@
 #include <target.h>
 struct Client
 {
-	PAGraf client;
+	PAGraf Graf;
 };
 typedef struct Client Client;
 

@@ -6,8 +6,8 @@
 
 struct BFSAlgorithm
 {
-	struct BFSInput in;
-	struct PAGraf graf;
+	struct BFSInput Input;
+	struct PAGraf Graf;
 };
 typedef struct BFSAlgorithm BFSAlgorithm;
 #endif

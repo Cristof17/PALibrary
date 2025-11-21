@@ -9,13 +9,14 @@
 #define ADAPTER_INCLUDE_ADAPTEE_H_
 #include <adaptee.h>
 #include <paindex.h>
+#include <arraylist.h>
 #include <types.h>
 
 struct Adaptee
 {
-	//ArrayList adaptee;
+	ArrayList List;
 };
 typedef struct Adaptee Adaptee;
 void SpecificRequest(Adaptee);
-PAIndex Get(INT);/
+PAIndex Get(INT);
 #endif /* ADAPTER_INCLUDE_ADAPTEE_H_ */

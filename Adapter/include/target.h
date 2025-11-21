@@ -14,7 +14,7 @@
 //#include <Adapter.h">
 struct Target
 {
-	PASir target;
+	PASir Sir;
 	//struct Adapter adapter;
 };
 typedef struct Target Target;

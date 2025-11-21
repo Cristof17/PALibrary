@@ -5,7 +5,7 @@
 #include <types.h>
 struct ArrayList
 {
-	PAIndex array[0];
+	PAIndex Index[0];
 };
 typedef struct ArrayList ArrayList;
 PAIndex ArrayListGet(PAIndex[],INT position);
