@@ -1,5 +1,5 @@
 //@Author Cristofor Rotsching
-#include <algorithm.h>
+#include <Algorithm.h>
 // #include "Input.h"
 Output run(Input input)
 {

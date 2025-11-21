@@ -32,4 +32,15 @@ clean: pagrafnormal.o\
 	rm padirector.s
 	rm pagrafproduct.s
 	rm pabuilder.s
+C_PATH=$(C_PATH):include
+PABuilder.s : PABuilder.c
+	$(C_PATH) $(CC)	-S PABuilder.c -o PABuilder.s
+PADirector.s : PADirector.c
+	$(C_PATH) $(CC)	-S PABuilder.c -o PABuilder.s
+pagrafnormal.s : pagrafnormal.c
+	$(C_PATH) $(CC)	-S pagrafnormal.c -o pagrafnormal.s
+pagraftranspus.s : pagraftranspus.c
+	$(C_PATH) $(CC)	-S pagraftranspus.c -o pagraftranspus.s
+pagrafproduct.s : pagrafproduct.c
+	$(C_PATH) $(CC)	-S pagrafproduct.c -o pagrafproduct.s
 

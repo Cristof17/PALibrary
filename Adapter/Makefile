@@ -54,12 +54,4 @@ target.o : target.s
 	
 #adapter.o : adapter.s
 #	$(AS) -C adapter.s -o adapter.o
-.PHONY adapter.s\
-	adaptee.s
-	client.s\
-	target.s\
-	adapter.o\
-	adaptee.o\
-	client.o\
-	target.o
 #include builder/makefile

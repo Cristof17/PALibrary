@@ -1,3 +1,4 @@
+C_PATH=$(C_PATH)/include
 arraylist.s : arraylist.c
 	$(C_PATH) $(CC) -S arraylist.c -o arraylist.s
 

@@ -7,5 +7,9 @@
 
 #ifndef ITERATOR_INCLUDE_AGGREGATE_H_
 #define ITERATOR_INCLUDE_AGGREGATE_H_
+struct Aggregate
+{
 
+};
+typedef struct Aggregate Aggregate;
 #endif /* ITERATOR_INCLUDE_AGGREGATE_H_ */

@@ -21,14 +21,3 @@ concreteaggregate.o : concreteaggregate.s
 concreteiterator.o : concreteiterator.s
 	$(AS) -c concreteiterator.s -o concreteiterator.o
 	
-.PHONY iterator.s\
-	client.s\
-	aggregate.s\
-	concreteaggregate.s\
-	concreteiterator.s\
-	iterator.o\
-	client.o\
-	aggregate.o\
-	concreteaggregate.o\
-	concreteiterator.o\
-	
