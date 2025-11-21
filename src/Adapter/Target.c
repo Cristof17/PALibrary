@@ -8,10 +8,12 @@
 
 PASir TargetRequest(Target target)
 {
-	Adapter adapter;
-//	Target local =
-	AdapterRequest(adapter);
-	return target.target;
+	PASir sir;
+	return sir;
+// 	Adapter adapter;
+// //	Target local =
+// 	AdapterRequest(adapter);
+// 	return target.target;
 	//AdapterRequest(adapter);
 }
 

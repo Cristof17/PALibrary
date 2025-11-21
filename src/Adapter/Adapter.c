@@ -12,11 +12,13 @@
 void AdapterRequest(Adapter adapter)
 {
 	Adaptee adaptee;
-	AdapteeSpecificRequest(adaptee);
+	SpecificRequest(adaptee);
 }
 PANod AdapterHead(Adapter adapter)
 {
-	PAIndex index = AdapteeGet(FIRST);
-	adapter.lista.head.index = index;
-	return adapter.lista.head;
+	PANod nod;
+	return nod;
+	// PAIndex index = PAListaGet(FIRST);
+	// adapter.Lista.Nod.Index = index;
+	// return adapter.Lista.Nod;
 }

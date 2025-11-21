@@ -2,17 +2,21 @@
 #ifndef INCLUDE_PALISTA_H
 #define INCLUDE_PALISTA_H
 #include "panod.h"
+#include <ArrayList.h>
+#include <PACardinal.h>
 struct PALista
 {
-	struct PANod head;
+	// struct PANod Nod;
+	struct ArrayList List;
+	struct PACardinal m;
 };
 typedef struct PALista PALista;
 
-INT Size(PALista);
-PANod Get(INT);
-PANod Head(PALista);
-PALista Tail(PALista);
-PANod Init(PALista);
+INT PAListaSize(PALista);
+PANod PAListaGet(INT);
+PANod PAListaHead(PALista);
+PALista PAListaTail(PALista);
+PANod PAListaInit(PALista);
 void PAListaPrint(PALista);
 //toArrayList();
 #endif

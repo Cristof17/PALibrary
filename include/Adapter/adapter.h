@@ -4,8 +4,8 @@
  *  Created on: 17 nov. 2025
  *      Author: AdministratorUser
  */
-#ifndef ADAPTER_INCLUDE_ADAPTER_H_
-#define ADAPTER_INCLUDE_ADAPTER_H_
+#ifndef INCLUDE_ADAPTER_H_
+#define INCLUDE_ADAPTER_H_
 //#include <Target.h>
 #include <adaptee.h>
 #include <palista.h>

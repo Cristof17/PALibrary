@@ -350,38 +350,38 @@ paindex.o : asm/paindex.s
 pasir.o : asm/pasir.s
 	$(AS) -c asm/pasir.s -o obj/pasir.o
 
-builder_pagrafnormal.o: asm/builder_pagrafnormal.s
+builder_pagrafnormal.o: asm/builder/pagrafnormal.s
 	$(AS) -c asm/builder/pagrafnormal.s -o obj/builder/pagrafnormal.o
-builder_pagraftranspus.o: asm/builder_pagraftranspus.s
+builder_pagraftranspus.o: asm/builder/pagraftranspus.s
 	$(AS) -c asm/builder/pagraftranspus.s -o obj/builder/pagraftranspus.o
-builder_padirector.o: asm/builder_padirector.s
+builder_padirector.o: asm/builder/padirector.s
 	$(AS) -c asm/builder/padirector.s -o obj/builder/padirector.o
-builder_pagrafproduct.o: asm/builder_pagrafproduct.s
+builder_pagrafproduct.o: asm/builder/pagrafproduct.s
 	$(AS) -c asm/builder/pagrafproduct.s -o obj/builder/pagrafproduct.o
-builder_pabuilder.o: asm/builder_pabuilder.s
+builder_pabuilder.o: asm/builder/pabuilder.s
 	$(AS) -c asm/builder/pabuilder.s -o obj/builder/pabuilder.o
 
-adapter_PADrawingEditor.o: asm/adapter_PADrawingEditor.s
+adapter_PADrawingEditor.o: asm/adapter/PADrawingEditor.s
 	$(AS) -c asm/adapter/PADrawingEditor.s -o obj/adapter/PADrawingEditor.o
-adapter_PALine.o : asm/adapter_PALine.s
+adapter_PALine.o : asm/adapter/PALine.s
 	$(AS) -c asm/adapter/PALine.s -o obj/adapter/PALine.o
-adapter_PAShape.o : asm/adapter_PAShape.s
+adapter_PAShape.o : asm/adapter/PAShape.s
 	$(AS) -c asm/adapter/PAShape.s -o obj/adapter/PAShape.o
-adapter_PASTexthape.o : asm/adapter_PATextShape.s
+adapter_PASTexthape.o : asm/adapter/PATextShape.s
 	$(AS) -c asm/adapter/PATextShape.s -o obj/adapter/PATextShape.o
-adapter_PATextView.o : asm/adapter_PATextView.s
+adapter_PATextView.o : asm/adapter/PATextView.s
 	$(AS) -c asm/adapter/PATextView.s -o obj/adapter/PATextView.o
 	
-adapter_client.o: asm/adapter_client.s
+adapter_client.o: asm/adapter/client.s
 	$(AS) -c asm/adapter/client.s -o obj/adapter/client.o
-adapter_target.o : asm/adapter_target.s
+adapter_target.o : asm/adapter/target.s
 	$(AS) -c asm/adapter/PALine.s -o obj/adapter/PALine.o
-adapter_adapter.o : asm/adapter_adapter.s
+adapter_adapter.o : asm/adapter/adapter.s
 	$(AS) -c asm/adapter/adapter.s -o obj/adapter/adapter.o
-adapter_adaptee.o : asm/adapter_adaptee.s
+adapter_adaptee.o : asm/adapter/adaptee.s
 	$(AS) -c asm/adapter/adaptee.s -o obj/adapter/adaptee.o
 	
-arraylist_arraylist.o : asm/arraylist_arraylist.s
+arraylist_arraylist.o : arraylist_arraylist.s asm/arraylist/arraylist.s
 	$(AS) -c asm/arraylist/arraylist.s -o obj/arraylist/arraylist.o
 
 .PHONY: input.o \
@@ -401,40 +401,40 @@ arraylist_arraylist.o : asm/arraylist_arraylist.s
 	pastare.o \
 	pasir.o \
 	pastare.o \
-	adapter/client.c\
-	adapter/target.c\
-	adapter/adapter.c\
-	adapter/adaptee.c\
-	builder/pagrafnormal.s \
-	builder/pagraftranspus.s \
-	builder/padirector.s \
-	builder/pagrafproduct.s \
-	builder/pabuilder.s \
-	builder/pagrafnormal.o \
-	builder/pagraftranspus.o \
-	builder/padirector.o \
-	builder/pagrafproduct.o \
-	builder/pabuilder.o\
-	ArrayList/arraylist.o\
-	adapter/PADrawingEditor.s \
-	adapter/PADrawingEditor.o \
-	adapter/PALine.s \
-	adapter/PALine.o \
-	adapter/PAShape.s \
-	adapter/PAShape.o \
-	adapter/PAShape.s \
-	adapter/PAShape.o \
-	adapter/PATextView.s \
-	adapter/PATextView.o\
-	adapter/adapter.o\
-	adapter/target.o\
-	adapter/client.o\
-	adapter/adaptee.o\
-	arraylist/arraylist.o\
-	iterator/client.o \
-	iterator/concreteiterator.o \
-	iterator/iterator.o \
-	iterator/concreteaggregate.o \
+	adapter_client.c\
+	adapter_target.c\
+	adapter_adapter.c\
+	adapter_adaptee.c\
+	builder_pagrafnormal.s \
+	builder_pagraftranspus.s \
+	builder_padirector.s \
+	builder_pagrafproduct.s \
+	builder_pabuilder.s \
+	builder_pagrafnormal.o \
+	builder_pagraftranspus.o \
+	builder_padirector.o \
+	builder_pagrafproduct.o \
+	builder_pabuilder.o\
+	ArrayList_arraylist.o\
+	adapter_PADrawingEditor.s \
+	adapter_PADrawingEditor.o \
+	adapter_PALine.s \
+	adapter_PALine.o \
+	adapter_PAShape.s \
+	adapter_PAShape.o \
+	adapter_PAShape.s \
+	adapter_PAShape.o \
+	adapter_PATextView.s \
+	adapter_PATextView.o\
+	adapter_adapter.o\
+	adapter_target.o\
+	adapter_client.o\
+	adapter_adaptee.o\
+	arraylist_arraylist.o\
+	iterator_client.o \
+	iterator_concreteiterator.o \
+	iterator_iterator.o \
+	iterator_concreteaggregate.o \
 	
 #include builder/makefile
 #include adapter/Makefile

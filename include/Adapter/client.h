@@ -5,8 +5,8 @@
  *      Author: AdministratorUser
  */
 
-#ifndef ADAPTER_INCLUDE_CLIENT_H_
-#define ADAPTER_INCLUDE_CLIENT_H_
+#ifndef INCLUDE_ADAPTER_CLIENT_H_
+#define INCLUDE_ADAPTER_CLIENT_H_
 #include <pagraf.h>
 #include <target.h>
 struct Client

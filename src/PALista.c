@@ -3,27 +3,34 @@
 INT Size(PALista lista)
 {
     int size = 0;
-    PATip tip = lista.head.tip;
-    PANod nod_head = Head(lista);
+//    PATip tip = lista.Nod.Tip;
+    PANod nod_head = PAListaHead(lista);
+    PATip tip;
+//    return tip;
+    return size;
     // if (nod_head.paTip == LAST(lista.))
     return 1;
 }
-PANod Get(INT position)
+PANod PAListaGet(INT position)
 {
     PANod nod;
     return nod;    
 }
-PANod Head(PALista lista)
+PANod PAListaHead(PALista lista)
 {
-    return lista.head;
+	PANod nod;
+	return nod;
+//    return lista.Nod;
 }
-PALista Tail(PALista lista)
+PALista PAListaTail(PALista lista)
 {
     return lista;
 }
-PANod Init(PALista lista)
+PANod PAListaInit(PALista lista)
 {
-    return lista.head;
+	PANod nod;
+	return nod;
+//    return lista.Nod;
 }
 
 void PAListaPrint(PALista lista)
