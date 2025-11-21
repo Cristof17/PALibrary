@@ -242,7 +242,7 @@ clean: input.s \
 run:
 	@echo "Running"
 input.s: src/input.c
-	CPATH=$(CPATH) $(CC) -S src/input.c -o asm/input.s
+	CPATH=$(CPATH) $(CC) -S src/Input.c -o asm/input.s
 algorithm.s: src/algorithm.c
 	CPATH=$(CPATH) $(CC) -S src/algorithm.c -o asm/algorithm.s
 bfsalgorithm.s: src/bfsalgorithm.c
@@ -257,39 +257,42 @@ output.s : src/output.c
 	CPATH=$(CPATH) $(CC) -S src/output.c -o asm/output.s
 padata.s : src/padata.c
 	CPATH=$(CPATH) $(CC) -S src/padata.c -o asm/padata.s
-pagraf.s : src/pagraf.c
+pagraf.s: src/pagraf.c
 	CPATH=$(CPATH) $(CC) -S src/pagraf.c -o asm/pagraf.s
-palista.s : src/palista.c
+palista.s: src/palista.c
 	CPATH=$(CPATH) $(CC) -S src/palista.c -o asm/palista.s
-pamuchie.s : src/pamuchie.c
+pamuchie.s: src/pamuchie.c
 	CPATH=$(CPATH) $(CC) -S src/pamuchie.c -o asm/pamuchie.s
-panod.s : src/panod.c
+panod.s: src/panod.c
 	CPATH=$(CPATH) $(CC) -S src/panod.c -o asm/panod.s
-papereche.s : src/papereche.c
+papereche.s: src/papereche.c
 	CPATH=$(CPATH) $(CC) -S src/papereche.c -o asm/papereche.s
-parezultat.s : src/parezultat.c
+parezultat.s: src/parezultat.c
 	CPATH=$(CPATH) $(CC) -S src/parezultat.c -o asm/parezultat.s
-pastare.s : src/pastare.c
+pastare.s: src/pastare.c
 	CPATH=$(CPATH) $(CC) -S src/pastare.c -o asm/pastare.s
-paneigh.s : src/paneigh.c
+paneigh.s: src/paneigh.c
 	CPATH=$(CPATH) $(CC) -S src/paneigh.c -o asm/paneigh.s
-patip.s : src/patip.c 
+patip.s: src/patip.c 
 	CPATH=$(CPATH) $(CC) -S src/patip.c -o asm/patip.s
-paindex.s : src/paindex.c 
+paindex.s: src/paindex.c 
 	CPATH=$(CPATH) $(CC) -S src/paindex.c -o asm/paindex.s
-pasir.s : src/pasir.c 
+paneigh.s: src/paneigh.c
+	CPATH=$(CPATH) $(CC) -S src/paneigh.c -o asm/paneigh.s
+pasir.s: src/pasir.c 
 	CPATH=$(CPATH) $(CC) -S src/pasir.c -o asm/pasir.s
-
+parezultat.s: src/parezultat.c 
+	CPATH=$(CPATH) $(CC) -S src/parezultat.c -o asm/parezultat.s
 builder_pagrafnormal.s: src/builder/pagrafnormal.c 
 	CPATH=$(CPATH) $(CC) -S src/builder/pagrafnormal.c -o asm/builder/pagrafnormal.s
 builder_pagraftranspus.s:  src/builder/pagraftranspus.c
-	CPATH=$(CPATH) $(CC) -S builder/pagraftranspus.c -o asm/builder/pagraftranspus.s
+	CPATH=$(CPATH) $(CC) -S src/builder/pagraftranspus.c -o asm/builder/pagraftranspus.s
 builder_padirector.s:  src/builder/padirector.c
-	CPATH=$(CPATH) $(CC) -S builder/padirector.c -o asm/builder/padirector.s
+	CPATH=$(CPATH) $(CC) -S src/builder/padirector.c -o asm/builder/padirector.s
 builder_pagrafproduct.s:  src/builder/pagrafproduct.c
-	CPATH=$(CPATH) $(CC) -S builder/pagrafproduct.c -o asm/builder/pagrafproduct.s
+	CPATH=$(CPATH) $(CC) -S src/builder/pagrafproduct.c -o asm/builder/pagrafproduct.s
 builder_pabuilder.s:  src/builder/pabuilder.c
-	CPATH=$(CPATH) $(CC) -S builder/pabuilder.c -o asm/builder/pabuilder.s
+	CPATH=$(CPATH) $(CC) -S src/builder/pabuilder.c -o asm/builder/pabuilder.s
 
 adapter_PADrawingEditor.s: src/adapter/PADrawingEditor.c
 	CPATH=$(CPATH) $(CC) -S src/adapter/PADrawingEditor.c -o asm/adapter/PADrawingEditor.s
@@ -311,74 +314,74 @@ adapter_adaptee.s: src/adapter/adaptee.c
 arraylist_arraylist.s: src/arraylist/arraylist.c
 	CPATH=$(CPATH) $(CC) -S src/arraylist/arraylist.c -o asm/arraylist/arraylist.s
 
-input.o : asm/input.s
+input.o: input.s 
 	$(AS) -c asm/input.s -o obj/input.o
-algorithm.o : asm/algorithm.s
+algorithm.o: algorithm.s 
 	$(AS) -c asm/algorithm.s -o obj/algorithm.o
-bfsalgorithm.o : asm/bfsalgorithm.s
+bfsalgorithm.o: bfsalgorithm.s 
 	$(AS) -c asm/bfsalgorithm.s -o obj/bfsalgorithm.o
-bfsinput.o : asm/bfsinput.s
+bfsinput.o: bfsinput.s 
 	$(AS) -c asm/bfsinput.s -o obj/bfsinput.o
-bfsoutput.o : asm/bfsoutput.s
+bfsoutput.o: bfsoutput.s 
 	$(AS) -c asm/bfsoutput.s -o obj/bfsoutput.o
-bfsresult.o : asm/bfsresult.s
+bfsresult.o: bfsresult.s 
 	$(AS) -c asm/bfsresult.s -o obj/bfsresult.o
-output.o : asm/output.s
+output.o: output.s 
 	$(AS) -c asm/output.s -o obj/output.o
-padata.o : asm/padata.s
+padata.o: padata.s 
 	$(AS) -c asm/padata.s -o obj/padata.o
-pagraf.o : asm/pagraf.s
+pagraf.o: pagraf.s 
 	$(AS) -c asm/pagraf.s -o obj/pagraf.o
-palista.o : asm/palista.s
+palista.o: palista.s 
 	$(AS) -c asm/palista.s -o obj/palista.o
-pamuchie.o : asm/pamuchie.s
+pamuchie.o: pamuchie.s 
 	$(AS) -c asm/pamuchie.s -o obj/pamuchie.o
-panod.o : asm/panod.s
+panod.o: panod.s 
 	$(AS) -c asm/panod.s -o obj/panod.o
-papereche.o : asm/papereche.s
+papereche.o: papereche.s 
 	$(AS) -c asm/papereche.s -o obj/papereche.o
-parezultat.o : asm/parezultat.s
+parezultat.o : parezultat.s
 	$(AS) -c asm/parezultat.s -o obj/parezultat.o
-pastare.o : asm/pastare.s
+pastare.o: pastare.s 
 	$(AS) -c asm/pastare.s -o obj/pastare.o
-paneigh.o : asm/paneigh.s
+paneigh.o: paneigh.s
 	$(AS) -c asm/paneigh.s -o obj/paneigh.o
-patip.o : asm/patip.s
+patip.o: patip.s 
 	$(AS) -c asm/patip.s -o obj/patip.o
-paindex.o : asm/paindex.s
+paindex.o: paindex.s 
 	$(AS) -c asm/paindex.s -o obj/paindex.o
-pasir.o : asm/pasir.s
+pasir.o: pasir.s 
 	$(AS) -c asm/pasir.s -o obj/pasir.o
 
-builder_pagrafnormal.o: asm/builder/pagrafnormal.s
+builder_pagrafnormal.o: builder_pagrafnormal.s 
 	$(AS) -c asm/builder/pagrafnormal.s -o obj/builder/pagrafnormal.o
-builder_pagraftranspus.o: asm/builder/pagraftranspus.s
+builder_pagraftranspus.o: builder_pagraftranspus.s 
 	$(AS) -c asm/builder/pagraftranspus.s -o obj/builder/pagraftranspus.o
-builder_padirector.o: asm/builder/padirector.s
+builder_padirector.o: builder_padirector.s 
 	$(AS) -c asm/builder/padirector.s -o obj/builder/padirector.o
-builder_pagrafproduct.o: asm/builder/pagrafproduct.s
+builder_pagrafproduct.o: builder_pagrafproduct.s 
 	$(AS) -c asm/builder/pagrafproduct.s -o obj/builder/pagrafproduct.o
-builder_pabuilder.o: asm/builder/pabuilder.s
+builder_pabuilder.o: builder_pabuilder.s
 	$(AS) -c asm/builder/pabuilder.s -o obj/builder/pabuilder.o
 
-adapter_PADrawingEditor.o: asm/adapter/PADrawingEditor.s
+adapter_PADrawingEditor.o: adapter_PADrawingEditor.s
 	$(AS) -c asm/adapter/PADrawingEditor.s -o obj/adapter/PADrawingEditor.o
-adapter_PALine.o : asm/adapter/PALine.s
+adapter_PALine.o: adapter_PALine.s asm/adapter/PALine.s
 	$(AS) -c asm/adapter/PALine.s -o obj/adapter/PALine.o
-adapter_PAShape.o : asm/adapter/PAShape.s
+adapter_PAShape.o: adapter_PAShape.s asm/adapter/PAShape.s
 	$(AS) -c asm/adapter/PAShape.s -o obj/adapter/PAShape.o
-adapter_PASTexthape.o : asm/adapter/PATextShape.s
+adapter_PASTexthape.o: adapter_patextshape.s asm/adapter/PATextShape.s
 	$(AS) -c asm/adapter/PATextShape.s -o obj/adapter/PATextShape.o
-adapter_PATextView.o : asm/adapter/PATextView.s
+adapter_PATextView.o: adapter_PATextView.s asm/adapter/PATextView.s
 	$(AS) -c asm/adapter/PATextView.s -o obj/adapter/PATextView.o
 	
 adapter_client.o: asm/adapter/client.s
 	$(AS) -c asm/adapter/client.s -o obj/adapter/client.o
-adapter_target.o : asm/adapter/target.s
+adapter_target.o: asm/adapter/target.s
 	$(AS) -c asm/adapter/PALine.s -o obj/adapter/PALine.o
-adapter_adapter.o : asm/adapter/adapter.s
+adapter_adapter.o: asm/adapter/adapter.s
 	$(AS) -c asm/adapter/adapter.s -o obj/adapter/adapter.o
-adapter_adaptee.o : asm/adapter/adaptee.s
+adapter_adaptee.o: asm/adapter/adaptee.s
 	$(AS) -c asm/adapter/adaptee.s -o obj/adapter/adaptee.o
 	
 arraylist_arraylist.o : arraylist_arraylist.s asm/arraylist/arraylist.s
@@ -390,13 +393,32 @@ arraylist_arraylist.o : arraylist_arraylist.s asm/arraylist/arraylist.s
 	bfsinput.o \
 	bfsoutput.o \
 	bfsresult.o \
+	input.s \
+	input.o \
+	algorithm.s \
+	algorithm.o \
+	bfsalgorithm.s \
+	bfsalgorithm.o \
+	bfsinput.s \
+	bfsinput.o \
+	bfsoutput.s \
+	bfsoutput.o \
+	bfsresult.s \
+	bfsresult.o \
+	output.s \
 	output.o \
+	padata.s \
 	padata.o \
+	pagraf.s \
 	pagraf.o \
 	palista.o \
+	pamuchie.s
 	pamuchie.o \
+	panod.s
 	panod.o \
+	papereche.s \
 	papereche.o \
+	parezultat.s \
 	parezultat.o \
 	pastare.o \
 	pasir.o \
@@ -414,8 +436,8 @@ arraylist_arraylist.o : arraylist_arraylist.s asm/arraylist/arraylist.s
 	builder_pagraftranspus.o \
 	builder_padirector.o \
 	builder_pagrafproduct.o \
-	builder_pabuilder.o\
-	ArrayList_arraylist.o\
+	builder_pabuilder.o \
+	ArrayList_arraylist.o \
 	adapter_PADrawingEditor.s \
 	adapter_PADrawingEditor.o \
 	adapter_PALine.s \
@@ -435,6 +457,7 @@ arraylist_arraylist.o : arraylist_arraylist.s asm/arraylist/arraylist.s
 	iterator_concreteiterator.o \
 	iterator_iterator.o \
 	iterator_concreteaggregate.o \
+# 	bfso
 	
 #include builder/makefile
 #include adapter/Makefile

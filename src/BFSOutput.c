@@ -2,5 +2,5 @@
 #include <bfsoutput.h>
 void BFSOutputPrint(BFSOutput output)
 {
-    BFSResultPrint(output.result);
+    BFSResultPrint(output.Result);
 }
