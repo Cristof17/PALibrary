@@ -241,149 +241,148 @@ clean: input.s \
 	@echo "end of clean"
 run:
 	@echo "Running"
-input.s: input.c
-	CPATH=$(CPATH) $(CC) -S input.c -o asm/input.s
-algorithm.s: algorithm.c
-	CPATH=$(CPATH) $(CC) -S algorithm.c -o asm/algorithm.s
-bfsalgorithm.s: bfsalgorithm.c
-	CPATH=$(CPATH) $(CC) -S bfsalgorithm.c -o asm/bfsalgorithm.s
-bfsinput.s: bfsinput.c
-	CPATH=$(CPATH) $(CC) -S bfsinput.c -o asm/bfsinput.s
-bfsoutput.s: bfsoutput.c
-	CPATH=$(CPATH) $(CC) -S bfsoutput.c -o asm/bfsoutput.s
-bfsresult.s : bfsresult.c
-	CPATH=$(CPATH) $(CC) -S bfsresult.c -o asm/bfsresult.s
-output.s : output.c
-	CPATH=$(CPATH) $(CC) -S output.c -o asm/output.s
-padata.s : padata.c
-	CPATH=$(CPATH) $(CC) -S padata.c -o asm/padata.s
-pagraf.s : pagraf.c
-	CPATH=$(CPATH) $(CC) -S pagraf.c -o asm/pagraf.s
-palista.s : palista.c
-	CPATH=$(CPATH) $(CC) -S palista.c -o asm/palista.s
-pamuchie.s : pamuchie.c
-	CPATH=$(CPATH) $(CC) -S pamuchie.c -o asm/pamuchie.s
-panod.s : panod.c
-	CPATH=$(CPATH) $(CC) -S panod.c -o asm/panod.s
-papereche.s : papereche.c
-	CPATH=$(CPATH) $(CC) -S papereche.c -o asm/papereche.s
-parezultat.s : parezultat.c
-	CPATH=$(CPATH) $(CC) -S parezultat.c -o asm/parezultat.s
-pastare.s : pastare.c
-	CPATH=$(CPATH) $(CC) -S pastare.c -o asm/pastare.s
-paneigh.s : paneigh.c
-	CPATH=$(CPATH) $(CC) -S paneigh.c -o asm/paneigh.s
-patip.s : patip.c 
-	CPATH=$(CPATH) $(CC) -S patip.c -o asm/patip.s
-paindex.s : paindex.c 
-	CPATH=$(CPATH) $(CC) -S paindex.c -o asm/paindex.s
-pasir.s : pasir.c 
-	CPATH=$(CPATH) $(CC) -S pasir.c -o asm/pasir.s
+input.s: src/input.c
+	CPATH=$(CPATH) $(CC) -S src/input.c -o asm/input.s
+algorithm.s: src/algorithm.c
+	CPATH=$(CPATH) $(CC) -S src/algorithm.c -o asm/algorithm.s
+bfsalgorithm.s: src/bfsalgorithm.c
+	CPATH=$(CPATH) $(CC) -S src/bfsalgorithm.c -o asm/bfsalgorithm.s
+bfsinput.s: src/bfsinput.c
+	CPATH=$(CPATH) $(CC) -S src/bfsinput.c -o asm/bfsinput.s
+bfsoutput.s: src/bfsoutput.c
+	CPATH=$(CPATH) $(CC) -S src/bfsoutput.c -o asm/bfsoutput.s
+bfsresult.s : src/bfsresult.c
+	CPATH=$(CPATH) $(CC) -S src/bfsresult.c -o asm/bfsresult.s
+output.s : src/output.c
+	CPATH=$(CPATH) $(CC) -S src/output.c -o asm/output.s
+padata.s : src/padata.c
+	CPATH=$(CPATH) $(CC) -S src/padata.c -o asm/padata.s
+pagraf.s : src/pagraf.c
+	CPATH=$(CPATH) $(CC) -S src/pagraf.c -o asm/pagraf.s
+palista.s : src/palista.c
+	CPATH=$(CPATH) $(CC) -S src/palista.c -o asm/palista.s
+pamuchie.s : src/pamuchie.c
+	CPATH=$(CPATH) $(CC) -S src/pamuchie.c -o asm/pamuchie.s
+panod.s : src/panod.c
+	CPATH=$(CPATH) $(CC) -S src/panod.c -o asm/panod.s
+papereche.s : src/papereche.c
+	CPATH=$(CPATH) $(CC) -S src/papereche.c -o asm/papereche.s
+parezultat.s : src/parezultat.c
+	CPATH=$(CPATH) $(CC) -S src/parezultat.c -o asm/parezultat.s
+pastare.s : src/pastare.c
+	CPATH=$(CPATH) $(CC) -S src/pastare.c -o asm/pastare.s
+paneigh.s : src/paneigh.c
+	CPATH=$(CPATH) $(CC) -S src/paneigh.c -o asm/paneigh.s
+patip.s : src/patip.c 
+	CPATH=$(CPATH) $(CC) -S src/patip.c -o asm/patip.s
+paindex.s : src/paindex.c 
+	CPATH=$(CPATH) $(CC) -S src/paindex.c -o asm/paindex.s
+pasir.s : src/pasir.c 
+	CPATH=$(CPATH) $(CC) -S src/pasir.c -o asm/pasir.s
 
-builder_pagrafnormal.s: builder/pagrafnormal.c 
-	CPATH=$(CPATH) $(CC) -S builder/pagrafnormal.c -o asm/builder/pagrafnormal.s
-builder_pagraftranspus.s:  builder/pagraftranspus.c
+builder_pagrafnormal.s: src/builder/pagrafnormal.c 
+	CPATH=$(CPATH) $(CC) -S src/builder/pagrafnormal.c -o asm/builder/pagrafnormal.s
+builder_pagraftranspus.s:  src/builder/pagraftranspus.c
 	CPATH=$(CPATH) $(CC) -S builder/pagraftranspus.c -o asm/builder/pagraftranspus.s
-builder_padirector.s:  builder/padirector.c
+builder_padirector.s:  src/builder/padirector.c
 	CPATH=$(CPATH) $(CC) -S builder/padirector.c -o asm/builder/padirector.s
-builder_pagrafproduct.s:  builder/pagrafproduct.c
+builder_pagrafproduct.s:  src/builder/pagrafproduct.c
 	CPATH=$(CPATH) $(CC) -S builder/pagrafproduct.c -o asm/builder/pagrafproduct.s
-builder_pabuilder.s:  builder/pabuilder.c
+builder_pabuilder.s:  src/builder/pabuilder.c
 	CPATH=$(CPATH) $(CC) -S builder/pabuilder.c -o asm/builder/pabuilder.s
 
-adapter_PADrawingEditor.s: adapter/PADrawingEditor.c
-	CPATH=$(CPATH) $(CC) -S adapter/PADrawingEditor.c -o asm/adapter/PADrawingEditor.s
-adapter_PALine.s: adapter/PALine.c
-	CPATH=$(CPATH) $(CC) -S adapter/PALine.c -o asm/adapter/PALine.s
-adapter_PAShape.s: adapter/PAShape.c
-	CPATH=$(CPATH) $(CC) -S adapter/PAShape.c -o asm/adapter/PAShape.s
-adapter_PATextView.s: adapter/PATextView.c
-	CPATH=$(CPATH) $(CC) -S adapter/PATextView.c -o asm/adapter/PATextView.s
+adapter_PADrawingEditor.s: src/adapter/PADrawingEditor.c
+	CPATH=$(CPATH) $(CC) -S src/adapter/PADrawingEditor.c -o asm/adapter/PADrawingEditor.s
+adapter_PALine.s: src/adapter/PALine.c
+	CPATH=$(CPATH) $(CC) -S src/adapter/PALine.c -o asm/adapter/PALine.s
+adapter_PAShape.s: src/adapter/PAShape.c
+	CPATH=$(CPATH) $(CC) -S src/adapter/PAShape.c -o asm/adapter/PAShape.s
+adapter_PATextView.s: src/adapter/PATextView.c
+	CPATH=$(CPATH) $(CC) -S src/adapter/PATextView.c -o asm/adapter/PATextView.s
 
-adapter_client.s: adapter/client.c
-	CPATH=$(CPATH) $(CC) -S adapter/client.c -o asm/adapter/client.s
-adapter_target.s: adapter/target.c
-	CPATH=$(CPATH) $(CC) -S adapter/target.c -o asm/adapter/target.s
-adapter_adapter.s: adapter/adapter.c
-	CPATH=$(CPATH) $(CC) -S adapter/adapter.c -o asm/adapter/adapter.s
-adapter_adaptee.s: adapter/adaptee.c
-	CPATH=$(CPATH) $(CC) -S adapter/adaptee.c -o asm/adapter/adaptee.s
-	
-arraylist_arraylist.s: ArrayList/arraylist.c
-	CPATH=$(CPATH) $(CC) -S ArrayList/arraylist.c -o asm/arraylist/arraylist.s
+adapter_client.s: src/adapter/client.c
+	CPATH=$(CPATH) $(CC) -S src/adapter/client.c -o asm/adapter/client.s
+adapter_target.s: src/adapter/target.c
+	CPATH=$(CPATH) $(CC) -S src/adapter/target.c -o asm/adapter/target.s
+adapter_adapter.s: src/adapter/adapter.c
+	CPATH=$(CPATH) $(CC) -S src/adapter/adapter.c -o asm/adapter/adapter.s
+adapter_adaptee.s: src/adapter/adaptee.c
+	CPATH=$(CPATH) $(CC) -S src/adapter/adaptee.c -o asm/adapter/adaptee.s
+arraylist_arraylist.s: src/arraylist/arraylist.c
+	CPATH=$(CPATH) $(CC) -S src/arraylist/arraylist.c -o asm/arraylist/arraylist.s
 
 input.o : asm/input.s
-	$(AS) -c input.s -o input.o
+	$(AS) -c asm/input.s -o obj/input.o
 algorithm.o : asm/algorithm.s
-	$(AS) -c algorithm.s -o algorithm.o
+	$(AS) -c asm/algorithm.s -o obj/algorithm.o
 bfsalgorithm.o : asm/bfsalgorithm.s
-	$(AS) -c bfsalgorithm.s -o bfsalgorithm.o
+	$(AS) -c asm/bfsalgorithm.s -o obj/bfsalgorithm.o
 bfsinput.o : asm/bfsinput.s
-	$(AS) -c bfsinput.s -o bfsinput.o
+	$(AS) -c asm/bfsinput.s -o obj/bfsinput.o
 bfsoutput.o : asm/bfsoutput.s
-	$(AS) -c bfsoutput.s -o bfsoutput.o
+	$(AS) -c asm/bfsoutput.s -o obj/bfsoutput.o
 bfsresult.o : asm/bfsresult.s
-	$(AS) -c bfsresult.s -o bfsresult.o
+	$(AS) -c asm/bfsresult.s -o obj/bfsresult.o
 output.o : asm/output.s
-	$(AS) -c output.s -o output.o
+	$(AS) -c asm/output.s -o obj/output.o
 padata.o : asm/padata.s
-	$(AS) -c padata.s -o padata.o
+	$(AS) -c asm/padata.s -o obj/padata.o
 pagraf.o : asm/pagraf.s
-	$(AS) -c pagraf.s -o pagraf.o
+	$(AS) -c asm/pagraf.s -o obj/pagraf.o
 palista.o : asm/palista.s
-	$(AS) -c palista.s -o palista.o
+	$(AS) -c asm/palista.s -o obj/palista.o
 pamuchie.o : asm/pamuchie.s
-	$(AS) -c pamuchie.s -o pamuchie.o
+	$(AS) -c asm/pamuchie.s -o obj/pamuchie.o
 panod.o : asm/panod.s
-	$(AS) -c panod.s -o panod.o
+	$(AS) -c asm/panod.s -o obj/panod.o
 papereche.o : asm/papereche.s
-	$(AS) -c papereche.s -o papereche.o
+	$(AS) -c asm/papereche.s -o obj/papereche.o
 parezultat.o : asm/parezultat.s
-	$(AS) -c parezultat.s -o parezultat.o
+	$(AS) -c asm/parezultat.s -o obj/parezultat.o
 pastare.o : asm/pastare.s
-	$(AS) -c pastare.s -o pastare.o
+	$(AS) -c asm/pastare.s -o obj/pastare.o
 paneigh.o : asm/paneigh.s
-	$(AS) -c paneigh.s -o paneigh.o
+	$(AS) -c asm/paneigh.s -o obj/paneigh.o
 patip.o : asm/patip.s
-	$(AS) -c patip.s -o patip.o
+	$(AS) -c asm/patip.s -o obj/patip.o
 paindex.o : asm/paindex.s
-	$(AS) -c paindex.s -o paindex.o
+	$(AS) -c asm/paindex.s -o obj/paindex.o
 pasir.o : asm/pasir.s
-	$(AS) -c pasir.s -o pasir.o
+	$(AS) -c asm/pasir.s -o obj/pasir.o
 
 builder_pagrafnormal.o: asm/builder_pagrafnormal.s
-	$(AS) -c builder/pagrafnormal.s -o builder/pagrafnormal.o
+	$(AS) -c asm/builder/pagrafnormal.s -o obj/builder/pagrafnormal.o
 builder_pagraftranspus.o: asm/builder_pagraftranspus.s
-	$(AS) -c builder/pagraftranspus.s -o builder/pagraftranspus.o
+	$(AS) -c asm/builder/pagraftranspus.s -o obj/builder/pagraftranspus.o
 builder_padirector.o: asm/builder_padirector.s
-	$(AS) -c builder/padirector.s -o builder/padirector.o
+	$(AS) -c asm/builder/padirector.s -o obj/builder/padirector.o
 builder_pagrafproduct.o: asm/builder_pagrafproduct.s
-	$(AS) -c builder/pagrafproduct.s -o builder/pagrafproduct.o
+	$(AS) -c asm/builder/pagrafproduct.s -o obj/builder/pagrafproduct.o
 builder_pabuilder.o: asm/builder_pabuilder.s
-	$(AS) -c builder/pabuilder.s -o builder/pabuilder.o
+	$(AS) -c asm/builder/pabuilder.s -o obj/builder/pabuilder.o
 
 adapter_PADrawingEditor.o: asm/adapter_PADrawingEditor.s
-	$(AS) -c adapter/PADrawingEditor.s -o adapter/PADrawingEditor.o
+	$(AS) -c asm/adapter/PADrawingEditor.s -o obj/adapter/PADrawingEditor.o
 adapter_PALine.o : asm/adapter_PALine.s
-	$(AS) -c adapter/PALine.s -o adapter/PALine.o
+	$(AS) -c asm/adapter/PALine.s -o obj/adapter/PALine.o
 adapter_PAShape.o : asm/adapter_PAShape.s
-	$(AS) -c adapter/PAShape.s -o adapter/PAShape.o
+	$(AS) -c asm/adapter/PAShape.s -o obj/adapter/PAShape.o
 adapter_PASTexthape.o : asm/adapter_PATextShape.s
-	$(AS) -c adapter/PATextShape.s -o adapter/PATextShape.o
+	$(AS) -c asm/adapter/PATextShape.s -o obj/adapter/PATextShape.o
 adapter_PATextView.o : asm/adapter_PATextView.s
-	$(AS) -c adapter/PATextView.s -o adapter/PATextView.o
+	$(AS) -c asm/adapter/PATextView.s -o obj/adapter/PATextView.o
 	
 adapter_client.o: asm/adapter_client.s
-	$(AS) -c adapter/client.s -o adapter/client.o
+	$(AS) -c asm/adapter/client.s -o obj/adapter/client.o
 adapter_target.o : asm/adapter_target.s
-	$(AS) -c adapter/PALine.s -o adapter/PALine.o
+	$(AS) -c asm/adapter/PALine.s -o obj/adapter/PALine.o
 adapter_adapter.o : asm/adapter_adapter.s
-	$(AS) -c adapter/adapter.s -o adapter/adapter.o
+	$(AS) -c asm/adapter/adapter.s -o obj/adapter/adapter.o
 adapter_adaptee.o : asm/adapter_adaptee.s
-	$(AS) -c adapter/adaptee.s -o adapter/adaptee.o
+	$(AS) -c asm/adapter/adaptee.s -o obj/adapter/adaptee.o
 	
 arraylist_arraylist.o : asm/arraylist_arraylist.s
-	$(AS) -c ArrayList/arraylist.s -o ArrayList/arraylist.o
+	$(AS) -c asm/arraylist/arraylist.s -o obj/arraylist/arraylist.o
 
 .PHONY: input.o \
 	algorithm.o \
