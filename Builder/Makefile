@@ -35,7 +35,7 @@ clean: pagrafnormal.o\
 C_PATH=$(C_PATH):include
 pabuilder.s : PABuilder.c
 	$(C_PATH) $(CC)	-S PABuilder.c -o pabuilder.s
-PADirector.s : PADirector.c
+padirector.s : PADirector.c
 	$(C_PATH) $(CC)	-S PADirector.c -o padirector.s
 pagrafnormal.s : pagrafnormal.c
 	$(C_PATH) $(CC)	-S pagrafnormal.c -o pagrafnormal.s
@@ -44,3 +44,13 @@ pagraftranspus.s : pagraftranspus.c
 pagrafproduct.s : pagrafproduct.c
 	$(C_PATH) $(CC)	-S pagrafproduct.c -o pagrafproduct.s
 
+pabuilder.o : pabuilder.s
+	$(AS) -c pabuilder.s -o pabuilder.o
+padirector.o : padirector.s
+	$(AS) -c padirector.s -o padirector.o
+pagrafnormal.o : pagrafnormal.s
+	$(AS) -c pagrafnormal.s -o pagrafnormal.o
+pagraftranspus.o : pagraftranspus.s
+	$(AS) -c pagraftranspus.s -o pagraftranspus.o
+pagrafproduct.o : pagrafproduct.s
+	$(AS) -c pagrafproduct.s -o pagrafproduct.o
