@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef INPUT_H
-#define INPUT_H
+#ifndef INCLUDE_INPUT_H
+#define INCLUDE_INPUT_H
 struct Input
 {
 	;

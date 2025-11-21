@@ -1,5 +1,5 @@
 //@Author Cristofor Rotsching
-#ifndef PATIP_H
+#ifndef INCLUDE_PATIP_H
 #ifdef _WIN64
  //typedef int HALF_PTR;
 #else

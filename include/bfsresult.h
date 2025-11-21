@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef BFSRESULT_H
-#define BFSRESULT_H	
+#ifndef INCLUDE_BFSRESULT_H
+#define INCLUDE_BFSRESULT_H	
 #include "palista.h"	
 #include "pacardinal.h"	
 #include "parezultat.h"

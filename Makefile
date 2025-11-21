@@ -53,7 +53,7 @@ foo=input.o \
 	iterator/concreteaggregate.o \
 #bar := $(foo:.c=.o)
 #include
-INCLUDE_PATHS=INCLUDE:builder/include/:adapter/include/:arraylist/include:iterator/include
+INCLUDE_PATHS=INCLUDE:include/builder/:include/adapter/:include/arraylist:include/iterator
 CPATH+=$(INCLUDE_PATHS)
 
 all: input.s \

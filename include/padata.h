@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef PADATA_H
-#define PADATA_H
+#ifndef INCLUDE_PADATA_H
+#define INCLUDE_PADATA_H
 #include "patip.h"
 struct PAData
 {

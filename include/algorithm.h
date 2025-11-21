@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef ALGORITHM_H
-#define ALGORITHM_H	
+#ifndef INCLUDE_ALGORITHM_H
+#define INCLUDE_ALGORITHM_H	
 #include "input.h"
 //#include "outputc.h"
 #include "output.h"

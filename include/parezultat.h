@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef PAREZULTAT_H
-#define PAREZULTAT_H
+#ifndef INCLUDE_PAREZULTAT_H
+#define INCLUDE_PAREZULTAT_H
 #include "patip.h"
 struct PARezultat
 {

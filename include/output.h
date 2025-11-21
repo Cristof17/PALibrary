@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef OUTPUT_H
-#define OUTPUT_H
+#ifndef INCLUDE_OUTPUT_H
+#define INCLUDE_OUTPUT_H
 #include "parezultat.h"
 #include "bfsoutput.h"
 struct Output

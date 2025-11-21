@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef PALISTA_H
-#define PALISTA_H
+#ifndef INCLUDE_PALISTA_H
+#define INCLUDE_PALISTA_H
 #include "panod.h"
 struct PALista
 {

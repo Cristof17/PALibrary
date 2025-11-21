@@ -5,8 +5,8 @@
  *      Author: AdministratorUser
  */
 
-#ifndef ITERATOR_INCLUDE_ITERATOR_H_
-#define ITERATOR_INCLUDE_ITERATOR_H_
+#ifndef INCLUDE_ITERATOR_ITERATOR_H_
+#define INCLUDE_ITERATOR_ITERATOR_H_
 
 struct Iterator
 {

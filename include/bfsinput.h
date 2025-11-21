@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef BFSINPUT_H
-#define BFSINPUT_H	
+#ifndef INCLUDE_BFSINPUT_H
+#define INCLUDE_BFSINPUT_H	
 #include "panod.h"	
 #include "palista.h"	
 #include "pacardinal.h"	

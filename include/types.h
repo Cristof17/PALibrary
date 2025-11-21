@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef TYPES_H_
-#define TYPES_H_
+#ifndef INCLUDE_TYPES_H_
+#define INCLUDE_TYPES_H_
 #ifdef _WIN95
 //#define short HALF_PTR;
 #define BOOL PABool

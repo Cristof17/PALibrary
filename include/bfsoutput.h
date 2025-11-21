@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef BFSOUTPUT_H
-#define BFSOUTPUT_H
+#ifndef INCLUDE_BFSOUTPUT_H
+#define INCLUDE_BFSOUTPUT_H
 #include "bfsresult.h"
 struct BFSOutput
 {

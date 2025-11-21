@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef PACARDINAL_H
-#define PACARDINAL_H
+#ifndef INCLUDE_PACARDINAL_H
+#define INCLUDE_PACARDINAL_H
 struct PACardinal
 {
 

@@ -5,8 +5,8 @@
  *      Author: AdministratorUser
  */
 
-#ifndef ITERATOR_INCLUDE_CLIENT_H_
-#define ITERATOR_INCLUDE_CLIENT_H_
+#ifndef INCLUDE_ITERATOR_CLIENT_H_
+#define INCLUDE_ITERATOR_CLIENT_H_
 struct Client
 {
 

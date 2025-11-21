@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef BFSALGORITHM_H
-#define BFSALGORITHM_H	
+#ifndef INCLUDE_BFSALGORITHM_H
+#define INCLUDE_BFSALGORITHM_H	
 #include "pagraf.h"	
 #include "bfsinput.h"
 

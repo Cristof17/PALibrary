@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef PAPERECHE_H
-#define PAPERECHE_H
+#ifndef INCLUDE_PAPERECHE_H
+#define INCLUDE_PAPERECHE_H
 struct PAPereche
 {
 };

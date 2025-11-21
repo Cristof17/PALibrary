@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef PAMUCHIE_H
-#define PAMUCHIE_H
+#ifndef INCLUDE_PAMUCHIE_H
+#define INCLUDE_PAMUCHIE_H
 #include "papereche.h"
 struct PAMuchie
 {
