@@ -242,77 +242,77 @@ clean: input.s \
 run:
 	@echo "Running"
 input.s: src/input.c
-	CPATH=$(CPATH) $(CC) -S src/Input.c -o asm/input.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 algorithm.s: src/algorithm.c
-	CPATH=$(CPATH) $(CC) -S src/algorithm.c -o asm/algorithm.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 bfsalgorithm.s: src/bfsalgorithm.c
-	CPATH=$(CPATH) $(CC) -S src/bfsalgorithm.c -o asm/bfsalgorithm.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 bfsinput.s: src/bfsinput.c
-	CPATH=$(CPATH) $(CC) -S src/bfsinput.c -o asm/bfsinput.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 bfsoutput.s: src/bfsoutput.c
-	CPATH=$(CPATH) $(CC) -S src/bfsoutput.c -o asm/bfsoutput.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 bfsresult.s : src/bfsresult.c
-	CPATH=$(CPATH) $(CC) -S src/bfsresult.c -o asm/bfsresult.s
+		CPATH=$(CPATH) $(CC) -S $^ -o $@
 output.s : src/output.c
-	CPATH=$(CPATH) $(CC) -S src/output.c -o asm/output.s
+		CPATH=$(CPATH) $(CC) -S $^ -o $@
 padata.s : src/padata.c
-	CPATH=$(CPATH) $(CC) -S src/padata.c -o asm/padata.s
+		CPATH=$(CPATH) $(CC) -S $^ -o $@
 pagraf.s: src/pagraf.c
-	CPATH=$(CPATH) $(CC) -S src/pagraf.c -o asm/pagraf.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 palista.s: src/palista.c
-	CPATH=$(CPATH) $(CC) -S src/palista.c -o asm/palista.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 pamuchie.s: src/pamuchie.c
-	CPATH=$(CPATH) $(CC) -S src/pamuchie.c -o asm/pamuchie.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 panod.s: src/panod.c
-	CPATH=$(CPATH) $(CC) -S src/panod.c -o asm/panod.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 papereche.s: src/papereche.c
-	CPATH=$(CPATH) $(CC) -S src/papereche.c -o asm/papereche.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 parezultat.s: src/parezultat.c
-	CPATH=$(CPATH) $(CC) -S src/parezultat.c -o asm/parezultat.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 pastare.s: src/pastare.c
-	CPATH=$(CPATH) $(CC) -S src/pastare.c -o asm/pastare.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 paneigh.s: src/paneigh.c
-	CPATH=$(CPATH) $(CC) -S src/paneigh.c -o asm/paneigh.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 patip.s: src/patip.c 
-	CPATH=$(CPATH) $(CC) -S src/patip.c -o asm/patip.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 paindex.s: src/paindex.c 
-	CPATH=$(CPATH) $(CC) -S src/paindex.c -o asm/paindex.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 paneigh.s: src/paneigh.c
-	CPATH=$(CPATH) $(CC) -S src/paneigh.c -o asm/paneigh.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 pasir.s: src/pasir.c 
-	CPATH=$(CPATH) $(CC) -S src/pasir.c -o asm/pasir.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 parezultat.s: src/parezultat.c 
-	CPATH=$(CPATH) $(CC) -S src/parezultat.c -o asm/parezultat.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 builder_pagrafnormal.s: src/builder/pagrafnormal.c 
-	CPATH=$(CPATH) $(CC) -S src/builder/pagrafnormal.c -o asm/builder/pagrafnormal.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 builder_pagraftranspus.s:  src/builder/pagraftranspus.c
-	CPATH=$(CPATH) $(CC) -S src/builder/pagraftranspus.c -o asm/builder/pagraftranspus.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 builder_padirector.s:  src/builder/padirector.c
-	CPATH=$(CPATH) $(CC) -S src/builder/padirector.c -o asm/builder/padirector.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 builder_pagrafproduct.s:  src/builder/pagrafproduct.c
-	CPATH=$(CPATH) $(CC) -S src/builder/pagrafproduct.c -o asm/builder/pagrafproduct.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 builder_pabuilder.s:  src/builder/pabuilder.c
-	CPATH=$(CPATH) $(CC) -S src/builder/pabuilder.c -o asm/builder/pabuilder.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 
 adapter_PADrawingEditor.s: src/adapter/PADrawingEditor.c
-	CPATH=$(CPATH) $(CC) -S src/adapter/PADrawingEditor.c -o asm/adapter/PADrawingEditor.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 adapter_PALine.s: src/adapter/PALine.c
-	CPATH=$(CPATH) $(CC) -S src/adapter/PALine.c -o asm/adapter/PALine.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 adapter_PAShape.s: src/adapter/PAShape.c
-	CPATH=$(CPATH) $(CC) -S src/adapter/PAShape.c -o asm/adapter/PAShape.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 adapter_PATextView.s: src/adapter/PATextView.c
-	CPATH=$(CPATH) $(CC) -S src/adapter/PATextView.c -o asm/adapter/PATextView.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 
 adapter_client.s: src/adapter/client.c
-	CPATH=$(CPATH) $(CC) -S src/adapter/client.c -o asm/adapter/client.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 adapter_target.s: src/adapter/target.c
-	CPATH=$(CPATH) $(CC) -S src/adapter/target.c -o asm/adapter/target.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 adapter_adapter.s: src/adapter/adapter.c
-	CPATH=$(CPATH) $(CC) -S src/adapter/adapter.c -o asm/adapter/adapter.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 adapter_adaptee.s: src/adapter/adaptee.c
-	CPATH=$(CPATH) $(CC) -S src/adapter/adaptee.c -o asm/adapter/adaptee.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 arraylist_arraylist.s: src/arraylist/arraylist.c
-	CPATH=$(CPATH) $(CC) -S src/arraylist/arraylist.c -o asm/arraylist/arraylist.s
+	CPATH=$(CPATH) $(CC) -S $^ -o $@
 
 input.o: input.s 
 	$(AS) -c asm/input.s -o obj/input.o
