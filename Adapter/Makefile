@@ -34,14 +34,14 @@ clean:
 	rm client.s client.o
 	rm target.s target.o
 
-adapter.s : adapter.c
-	$(C_PATH) $(CC) -S adapter.c -o adapter.s
-adaptee.s : adaptee.c
-	$(C_PATH) $(CC) -S adaptee.c -o adaptee.s
-client.s : client.c
-	$(C_PATH) $(CC) -S client.c -o client.s
-target.s : target.c
-	$(C_PATH) $(CC) -S target.c -o target.s
+adapter.s : Adapter.c
+	$(C_PATH) $(CC) -S Adapter.c -o adapter.s
+adaptee.s : Adaptee.c
+	$(C_PATH) $(CC) -S Adaptee.c -o adaptee.s
+client.s : Client.c
+	$(C_PATH) $(CC) -S Client.c -o client.s
+target.s : Target.c
+	$(C_PATH) $(CC) -S Target.c -o target.s
 	
 adapter.o : adapter.s
 	$(AS) -C adapter.c -o adapter.s
