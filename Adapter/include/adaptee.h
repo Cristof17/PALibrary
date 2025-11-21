@@ -8,7 +8,7 @@
 #ifndef ADAPTER_INCLUDE_ADAPTEE_H_
 #define ADAPTER_INCLUDE_ADAPTEE_H_
 #include <Adaptee.h>
-#include <PAIndex.h>
+#include <paindex.h>
 #include <types.h>
 
 struct Adaptee
