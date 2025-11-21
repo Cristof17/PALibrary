@@ -17,5 +17,5 @@ struct Adaptee
 };
 typedef struct Adaptee Adaptee;
 void SpecificRequest(Adaptee);
-PAIndex Get(INT);
+PAIndex Get(INT);/
 #endif /* ADAPTER_INCLUDE_ADAPTEE_H_ */
