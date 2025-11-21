@@ -350,8 +350,19 @@ patip.o: patip.s
 	$(AS) -c asm/$^ -o obj/$@
 paindex.o: paindex.s 
 	$(AS) -c asm/$^ -o obj/$@
-pasir.o: pasir.s 
-	$(AS) -c asm/$^ -o obj/$@
+	
+aggregate.o: aggregate.s 
+	$(AS) -c asm/iterator/$^ -o obj/iterator/$@
+client.o: client.s 
+	$(AS) -c asm/iterator/$^ -o obj/iterator/$@
+concreteaggregate.o: concreteaggregate.s 
+	$(AS) -c asm/iterator/$^ -o obj/iterator/$@
+concreteiterator.o: concreteiterator.s 
+	$(AS) -c asm/iterator/$^ -o obj/iterator/$@
+iterator.o: iterator.s 
+	$(AS) -c asm/iterator/$^ -o obj/iterator/$@
+
+
 
 pagrafnormal.o: pagrafnormal.s 
 	$(AS) -c asm/builder/$^ -o obj/builder/$@
