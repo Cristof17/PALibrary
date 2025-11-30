@@ -1,4 +1,11 @@
 ###@Author Cristofor Rotsching
+Copyright (C)  2025 Cristofor Rotsching.
+  Permission is granted to copy, distribute and/or modify this document
+  under the terms of the GNU Free Documentation License, Version 1.3
+  or any later version published by the Free Software Foundation;
+  with no Invariant Sections, no Front-Cover Texts, and no Back-Cover
+  Texts.  A copy of the license is included in the section entitled ``GNU
+  Free Documentation License''.
 #CC=clang
 objects=obj/input.o \
 	obj/algorithm.o \
@@ -40,42 +47,64 @@ objects=obj/input.o \
 #include
 include=include:include/builder/:include/adapter/:include/arraylist:include/iterator
 CPATH+=$(include)
-
-all: $(objects)
-	mkdir asm
-	mkdir obj
-	mkdir asm/builder/
-	mkdir asm/iterator/
-	mkdir asm/adapter/
-	mkdir obj/builder/
-	mkdir obj/iterator/
+srcdir=src \
+	 src/builder \
+	 src/iterator \
+	 src/arraylist \
+	 src/adapter
+libdir=obj \
+	obj/builder/ \
+	obj/iterator/ \
+	obj/arraylist \
+	obj/adapter
+pre-install=mkdir obj \
+	mkdir obj/builder \
+	mkdir obj/iterator \
+	mkdir obj/arraylist \
 	mkdir obj/adapter
+all: $(objects)
 	echo "end of compile $(pwd)"
 	@echo "end of all $(pwd)"
 	@echo "end of assemble $(pwd)"
+
 $(objects): obj/%.o : src/%.c
 	CPATH=$(include) $(CC) -c $(CFLAGS) $< -o $@
+
 install:
 	cp . .
+
+installdirs: mkinstalldirs
+	$(srcdir)/mkinstalldirs $(bindir) $(datadir) \
+				$(libdir) $(infodir) \
+				$(mandir)
+
 uninstall:
 	cp . .
+
 distclean:
 	rm asm/*
 	rm obj/*
+
 dist:
 	echo "dist"
+
 check:
 	echo "check"
+
 installcheck:
 	echo "installcheck"
+
 installdirs:
 	echo "installdirs"
+
 clean: 
 	rm $(objects)
 	@echo "clean $(pwd)"
 	@echo "end of clean"
+
 run:
 	@echo "Running"
+
 # input.s: src/input.c
 # 	CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
 # algorithm.s: src/algorithm.c
@@ -231,4 +260,4 @@ run:
 # arraylist.o : arraylist_arraylist.s
 # 	$(AS) -c asm/arraylist/$^ -o obj/arraylist/$@
 
-.PHONY: clean
+.PHONY: all install installdirs installcheck uinstall run distclean clean
