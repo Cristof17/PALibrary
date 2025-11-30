@@ -12,5 +12,6 @@ objects=ConcreteAggregate.o \
 	Client.o \
 	Aggregate.o
 
-$(objects): %.o : %.c
+$(objects): %.o : %.c 
 	$(CC) -c $(CFLAGS) $< -o $@
+

@@ -42,24 +42,23 @@ objects=obj/input.o \
 	obj/iterator/concreteaggregate.o
 SUBDIRS= src src/Iterator src/Builder src/Adapter src/Arraylist
 #bar := $(foo:.c=.o)
-#include
-include=include
-VPATH=include
 bindir=bin
 srcdir=src
+includedir=include
+CFLAGS+=-I$(abspath $(includedir))
+CFLAGS+=-I$(abspath $(includedir)/Builder)
+CFLAGS+=-I$(abspath $(includedir)/Iterator)
+CFLAGS+=-I$(abspath $(includedir)/ArrayList)
+CFLAGS+=-I$(abspath $(includedir)/Adapter)
 libdir=obj obj/Adapter/ obj/Iterator obj/ArrayList obj/Builder
 datadir=dat
 infodir=info
-CFLAGS+=-I include
-CFLAGS+=-I include/Adapter/
-CFLAGS+=-I include/Iterator/
-CFLAGS+=-I include/Builder/
-CFLAGS+=-I include/ArrayList/
 mandir=man
 export CPATH
 export CFLAGS
+export include
 all: $(objects)
-	echo "end of compile $(pwd)"
+	@echo "end of compile $(pwd)"
 	@echo "end of all $(pwd)"
 	@echo "end of assemble $(pwd)"
 
