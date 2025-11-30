@@ -23,75 +23,7 @@ objects=input.o algorithm.o bfsalgorithm.o \
 INCLUDE_PATHS=INCLUDE:include/builder/:include/adapter/:include/arraylist:include/iterator
 CPATH+=$(INCLUDE_PATHS)
 
-all: input.s \
-	algorithm.s \
-	bfsalgorithm.s \
-	bfsinput.s \
-	bfsoutput.s \
-	bfsresult.s \
-	output.s \
-	padata.s \
-	pagraf.s \
-	palista.s \
-	pamuchie.s \
-	panod.s \
-	papereche.s \
-	parezultat.s \
-	pastare.s \
-	patip.s \
-	paneigh.s \
-	paindex.s \
-	pasir.s\
-	adapter_adapter.s\
-	adapter_target.s\
-	adapter_client.s\
-	adapter_adaptee.s\
-	arraylist_arraylist.s\
-	input.o \
-	algorithm.o \
-	bfsalgorithm.o \
-	bfsinput.o \
-	bfsoutput.o \
-	bfsresult.o \
-	output.o \
-	padata.o \
-	pagraf.o \
-	palista.o \
-	pamuchie.o \
-	panod.o \
-	papereche.o \
-	parezultat.o \
-	pastare.o \
-	patip.o \
-	paneigh.o \
-	paindex.o \
-	pasir.o\
-	pagrafnormal.s \
-	pagraftranspus.s \
-	padirector.s \
-	pagrafproduct.s \
-	pabuilder.s \
-	pagrafnormal.o \
-	pagraftranspus.o \
-	padirector.o \
-	pagrafproduct.o \
-	pabuilder.o \
-	pasir.o\
-	PADrawingEditor.s \
-	PADrawingEditor.o \
-	PALine.s \
-	PALine.o \
-	PAShape.s \
-	PAShape.o \
-	PAShape.s \
-	PAShape.o \
-	PATextView.s \
-	PATextView.o\
-	adapter.o\
-	target.o\
-	client.o\
-	adaptee.o\
-	arraylist_arraylist.o
+all: $(objects)
 	mkdir asm
 	mkdir obj
 	mkdir asm/builder/
@@ -103,6 +35,8 @@ all: input.s \
 	echo "end of compile $(pwd)"
 	@echo "end of all $(pwd)"
 	@echo "end of assemble $(pwd)"
+$(objects): %.o : %.c
+	$(CC) -c $(CFLAGS) $< -o $@
 install:
 	cp . .
 uninstall:
@@ -119,79 +53,8 @@ installcheck:
 installdirs:
 	echo "installdirs"
 clean: 
+	rm $(objects)
 	@echo "clean $(pwd)"
-	rm asm/input.s 
-	rm asm/algorithm.s 
-	rm asm/bfsalgorithm.s 
-	rm asm/bfsinput.s 
-	rm asm/bfsoutput.s 
-	rm asm/bfsresult.s 
-	rm asm/output.s 
-	rm asm/padata.s 
-	rm asm/pagraf.s 
-	rm asm/palista.s 
-	rm asm/pamuchie.s 
-	rm asm/panod.s 
-	rm asm/papereche.s 
-	rm asm/parezultat.s 
-	rm asm/pastare.s 
-	rm asm/paneigh.s 
-	rm asm/patip.s 
-	rm asm/paindex.s 
-	rm asm/pasir.s 
-	rm asm/builder/pagrafnormal.s 
-	rm asm/builder/pagraftranspus.s 
-	rm asm/builder/padirector.s 
-	rm asm/builder/pagrafproduct.s 
-	rm asm/builder/pabuilder.s 
-	rm asm/adapter/PADrawingEditor.s 
-	rm asm/adapter/PALine.s 
-	rm asm/adapter/PAShape.s 
-	rm asm/adapter/PATextView.s 
-	rm asm/adapter/client.s 
-	rm asm/adapter/target.s 
-	rm asm/adapter/adapter.s 
-	rm asm/adapter/adaptee.s 
-	rm obj/input.o
-	rm obj/algorithm.o
-	rm obj/bfsalgorithm.o
-	rm obj/bfsinput.o
-	rm obj/bfsoutput.o
-	rm obj/bfsresult.o
-	rm obj/output.o
-	rm obj/padata.o
-	rm obj/pagraf.o
-	rm obj/palista.o
-	rm obj/pamuchie.o
-	rm obj/panod.o
-	rm obj/papereche.o
-	rm obj/parezultat.o
-	rm obj/pastare.o
-	rm obj/paneigh.o
-	rm obj/patip.o
-	rm obj/paindex.o
-	rm obj/pasir.o
-	rm obj/builder/pagrafnormal.o
-	rm obj/builder/pagraftranspus.o
-	rm obj/builder/padirector.o
-	rm obj/builder/pagrafproduct.o
-	rm obj/builder/pabuilder.o
-	rm obj/adapter/PADrawingEditor.o
-	rm obj/adapter/PALine.o
-	rm obj/adapter/PAShape.o
-	rm obj/adapter/PATextView.o
-	rm obj/adapter/client.o
-	rm obj/adapter/target.o
-	rm obj/adapter/adapter.o
-	rm obj/adapter/adaptee.o
-	rmdir asm/builder/
-	rmdir asm/iterator/
-	rmdir asm/adapter/
-	rmdir obj/iterator/
-	rmdir obj/adapter/
-	rmdir obj/builder/
-	rmdir asm/
-	rmdir obj/
 	@echo "end of clean"
 run:
 	@echo "Running"
@@ -268,41 +131,41 @@ adaptee.s: src/adapter/adaptee.c
 arraylist.s: src/arraylist/arraylist.c
 	CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
 
-input.o: input.s 
+input.o: include/Input.h 
 	$(AS) -c asm/$^ -o obj/$@
-algorithm.o: algorithm.s 
+algorithm.o: include/Algorithm.h
 	$(AS) -c asm/$^ -o obj/$@
-bfsalgorithm.o: bfsalgorithm.s 
+bfsalgorithm.o: include/BFSAlgorithm.h 
 	$(AS) -c asm/$^ -o obj/$@
-bfsinput.o: bfsinput.s 
+bfsinput.o: include/BFSInput.h 
 	$(AS) -c asm/$^ -o obj/$@
-bfsoutput.o: bfsoutput.s 
+bfsoutput.o: include/BFSOutput.h 
 	$(AS) -c asm/$^ -o obj/$@
-bfsresult.o: bfsresult.s 
+bfsresult.o: include/BFSResult.h 
 	$(AS) -c asm/$^ -o obj/$@
-output.o: output.s 
+output.o: include/Output.h 
 	$(AS) -c asm/$^ -o obj/$@
-padata.o: padata.s 
+padata.o: include/PAData.h 
 	$(AS) -c asm/$^ -o obj/$@
-pagraf.o: pagraf.s 
+pagraf.o: include/PAGraf.h 
 	$(AS) -c asm/$^ -o obj/$@
-palista.o: palista.s 
+palista.o: include/PALista.h  
 	$(AS) -c asm/$^ -o obj/$@
-pamuchie.o: pamuchie.s 
+pamuchie.o: include/PAMuchie.h  
 	$(AS) -c asm/$^ -o obj/$@
-panod.o: panod.s 
+panod.o: include/PANod.h
 	$(AS) -c asm/$^ -o obj/$@
-papereche.o: papereche.s 
+papereche.o: include/PAPereche.h 
 	$(AS) -c asm/$^ -o obj/$@
-parezultat.o : parezultat.s
+parezultat.o : include/PARezultat.h
 	$(AS) -c asm/$^ -o obj/$@
-pastare.o: pastare.s 
+pastare.o: include/PAStare.h
 	$(AS) -c asm/$^ -o obj/$@
-paneigh.o: paneigh.s
+paneigh.o: include/PANeigh.h
 	$(AS) -c asm/$^ -o obj/$@
-patip.o: patip.s 
+patip.o: include/PATip.h
 	$(AS) -c asm/$^ -o obj/$@
-paindex.o: paindex.s 
+paindex.o: include/PAIndex.h 
 	$(AS) -c asm/$^ -o obj/$@
 
 aggregate.o: aggregate.s 
