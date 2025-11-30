@@ -68,8 +68,7 @@ all: $(objects)
 $(objects): obj/%.o : src/%.c
 	CPATH=$(include) $(CC) -c $(CFLAGS) $< -o $@
 
-install:
-	cp . .
+install: installdirs
 
 installdirs: mkinstalldirs
 	$(srcdir)/mkinstalldirs $(bindir) $(datadir) \
