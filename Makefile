@@ -6,40 +6,40 @@
 # Texts.  A copy of the license is included in the section entitled ``GNU
 # Free Documentation License''.
 objects=obj/input.o \
-	obj/algorithm.o \
-	obj/bfsalgorithm.o \
-	obj/bfsinput.o \
-	obj/bfsoutput.o \
-	obj/bfsresult.o \
-	obj/output.o \
-	obj/padata.o \
-	obj/pagraf.o \
-	obj/palista.o \
-	obj/pamuchie.o \
-	obj/panod.o \
-	obj/papereche.o \
-	obj/parezultat.o \
+	obj/Algorithm.o \
+	obj/BFSAlgorithm.o \
+	obj/BFSInput.o \
+	obj/BFSOutput.o \
+	obj/BFSResult.o \
+	obj/Output.o \
+	obj/PAData.o \
+	obj/PAGraf.o \
+	obj/PALista.o \
+	obj/PAMuchie.o \
+	obj/PANod.o \
+	obj/PAPereche.o \
+	obj/PARezultat.o \
 	obj/pastare.o \
-	obj/pasir.o \
-	obj/builder/padirector.o \
-	obj/builder/pabuilder.o \
-	obj/builder/pagrafnormal.o \
-	obj/builder/pagraftranspus.o \
-	obj/builder/pagrafproduct.o \
-	obj/builder/builder.o \
-	obj/adapter/client.o \
-	obj/adapter/target.o \
-	obj/adapter/adapter.o \
-	obj/adapter/adaptee.o\
+	obj/PASir.o \
+	obj/builder/PADirector.o \
+	obj/builder/PABuilder.o \
+	obj/builder/PAGrafNormal.o \
+	obj/builder/PAGrafTranspus.o \
+	obj/builder/PAGrafProduct.o \
+	obj/builder/Builder.o \
+	obj/adapter/Client.o \
+	obj/adapter/Target.o \
+	obj/adapter/Adapter.o \
+	obj/adapter/Adaptee.o\
 	obj/adapter/PADrawingEditor.o \
 	obj/adapter/PALine.o \
 	obj/adapter/PAShape.o \
 	obj/adapter/PATextView.o \
-	obj/arraylist/arraylist.o \
-	obj/iterator/client.o \
-	obj/iterator/concreteiterator.o \
-	obj/iterator/iterator.o \
-	obj/iterator/concreteaggregate.o
+	obj/arraylist/ArrayList.o \
+	obj/iterator/Client.o \
+	obj/iterator/ConcreteIterator.o \
+	obj/iterator/Iterator.o \
+	obj/iterator/ConcreteAggregate.o
 SUBDIRS= src src/Iterator src/Builder src/Adapter src/Arraylist
 #bar := $(foo:.c=.o)
 bindir=bin
