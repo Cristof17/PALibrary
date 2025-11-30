@@ -136,6 +136,21 @@ all: input.s \
 	echo "end of compile $(pwd)"
 	@echo "end of all $(pwd)"
 	@echo "end of assemble $(pwd)"
+install:
+	cp . .
+uninstall:
+	cp . .
+distclean:
+	rm asm/*
+	rm obj/*
+dist:
+	echo "dist"
+check:
+	echo "check"
+installcheck:
+	echo "installcheck"
+installdirs:
+	echo "installdirs"
 clean: input.s \
 	algorithm.s \
 	bfsalgorithm.s \
