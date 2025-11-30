@@ -16,35 +16,20 @@ objects=obj/input.o \
 	obj/parezultat.o \
 	obj/pastare.o \
 	obj/pasir.o \
-	obj/pastare.o \
-	obj/builder/pagrafnormal.o \
-	obj/builder/pagraftranspus.o \
 	obj/builder/padirector.o \
-	obj/builder/pagrafproduct.o \
 	obj/builder/pabuilder.o \
 	obj/builder/pagrafnormal.o \
 	obj/builder/pagraftranspus.o \
-	obj/builder/padirector.o \
 	obj/builder/pagrafproduct.o \
 	obj/builder/builder.o \
 	obj/adapter/client.o \
 	obj/adapter/target.o \
-	obj/adapter/adapter.o 
+	obj/adapter/adapter.o \
 	obj/adapter/adaptee.o\
 	obj/adapter/PADrawingEditor.o \
-	obj/adapter/PADrawingEditor.o \
-	obj/adapter/PALine.o \
 	obj/adapter/PALine.o \
 	obj/adapter/PAShape.o \
-	obj/adapter/PAShape.o \
-	obj/adapter/PAShape.o \
-	obj/adapter/PAShape.o \
 	obj/adapter/PATextView.o \
-	obj/adapter/PATextView.o \
-	obj/adapter/adapter.o \
-	obj/adapter/target.o \
-	obj/adapter/client.o \
-	obj/adapter/adaptee.o \
 	obj/arraylist/arraylist.o \
 	obj/iterator/client.o \
 	obj/iterator/concreteiterator.o \
