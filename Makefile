@@ -40,7 +40,7 @@ objects=obj/input.o \
 	obj/iterator/concreteiterator.o \
 	obj/iterator/iterator.o \
 	obj/iterator/concreteaggregate.o
-
+SUBDIRS= src src/Iterator src/Builder src/Adapter src/Arraylist
 #bar := $(foo:.c=.o)
 #include
 include=include:include/builder/:include/adapter/:include/arraylist:include/iterator
@@ -61,8 +61,15 @@ $(objects): obj/%.o : src/%.c
 
 install: installdirs
 
+subdirs: $(SUBDIRS)
+	for dir in $(SUBDIRS); do \
+		$(MAKE) -C $$dir; \
+	done
+
 installdirs: mkinstalldirs
-	$(srcdir)/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
+	$(srcdir)/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(datadir) \
+				$(DESTDIR)$(libdir) $(DESTDIR)$(infodir) \
+				$(DESTDIR)$(mandir)
 
 mkinstalldirs: $(srcdir)/mkinstalldirs
 
