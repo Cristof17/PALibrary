@@ -43,24 +43,29 @@ objects=obj/input.o \
 SUBDIRS= src src/Iterator src/Builder src/Adapter src/Arraylist
 #bar := $(foo:.c=.o)
 #include
-include=include:include/builder/:include/adapter/:include/arraylist:include/iterator
-CPATH+=$(include)
+include=include
+VPATH=include
+CPATH=$(CPATH):/include/
+CPATH+=include/Iterator/
+CPATH+=include/Builder/
+CPATH+=include/ArrayList/
+CPATH+=include/Adapter/
+.EXPORT_ALL_VARIABLES
 bindir=bin
 srcdir=src
 libdir=obj obj/Adapter/ obj/Iterator obj/ArrayList obj/Builder
 datadir=dat
 infodir=info
-includedir=include
 mandir=man
-CPATH=$(CPATH):$(includedir)
 export CPATH
+export CFLAGS
 all: $(objects)
 	echo "end of compile $(pwd)"
 	@echo "end of all $(pwd)"
 	@echo "end of assemble $(pwd)"
 
 $(objects): obj/%.o : src/%.c
-	CPATH=$(CPATH) $(CC) -c $(CFLAGS) $< -o $@
+	$(CC) -c $(CFLAGS) $< -o $@
 
 install: installdirs
 

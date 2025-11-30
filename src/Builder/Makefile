@@ -13,4 +13,4 @@ objects:pagrafnormal.o \
 	pabuilder.o \
 
 $(objects): %.o : %.c
-	$(CC) -c $(CFLAGS) $< -o $@
+	CPATH=$(CPATH) $(CC) -c $(CFLAGS) $< -o $@

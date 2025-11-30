@@ -12,7 +12,7 @@ objects=PADrawingEditor.o\
 	PATextView.o
 
 $(objects): %.o : %.c
-	$(CPATH) $(CC) -c $(CFLAGS) $< -o $@
+	CPATH=$(CPATH) $(CC) -c $(CFLAGS) $< -o $@
 
 .PHONY: clean
 clean: 
