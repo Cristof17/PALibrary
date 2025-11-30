@@ -45,21 +45,11 @@ objects=obj/input.o \
 #include
 include=include:include/builder/:include/adapter/:include/arraylist:include/iterator
 CPATH+=$(include)
-srcdir=src \
-	 src/builder \
-	 src/iterator \
-	 src/arraylist \
-	 src/adapter
-libdir=obj \
-	obj/builder/ \
-	obj/iterator/ \
-	obj/arraylist \
-	obj/adapter
-pre-install=mkdir obj \
-	mkdir obj/builder \
-	mkdir obj/iterator \
-	mkdir obj/arraylist \
-	mkdir obj/adapter
+srcdir=src
+libdir=obj
+datadir=src
+infodir=info
+mandir=man
 all: $(objects)
 	echo "end of compile $(pwd)"
 	@echo "end of all $(pwd)"
@@ -74,7 +64,6 @@ installdirs: mkinstalldirs
 	$(srcdir)/mkinstalldirs $(bindir) $(datadir) \
 				$(libdir) $(infodir) \
 				$(mandir)
-
 uninstall:
 	cp . .
 
