@@ -11,8 +11,6 @@ objects=Adaptee.o \
 	Client.o \
 	PALine.o \
 	PAShape.o \
-	PAShape.o \
-	PAShape.o \
 	PATextView.o \
 	Target.o
 
