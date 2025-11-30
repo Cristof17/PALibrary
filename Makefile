@@ -5,7 +5,7 @@ objects=obj/input.o \
 	obj/bfsalgorithm.o \
 	obj/bfsinput.o \
 	obj/bfsoutput.o \
-	src/bfsresult.o \
+	obj/bfsresult.o \
 	obj/output.o \
 	obj/padata.o \
 	obj/pagraf.o \
@@ -38,8 +38,8 @@ objects=obj/input.o \
 
 #bar := $(foo:.c=.o)
 #include
-INCLUDE_PATHS=INCLUDE:include/builder/:include/adapter/:include/arraylist:include/iterator
-CPATH+=$(INCLUDE_PATHS)
+include=include:include/builder/:include/adapter/:include/arraylist:include/iterator
+CPATH+=$(include)
 
 all: $(objects)
 	mkdir asm
@@ -54,7 +54,7 @@ all: $(objects)
 	@echo "end of all $(pwd)"
 	@echo "end of assemble $(pwd)"
 $(objects): obj/%.o : src/%.c
-	$(CC) -c $(CFLAGS) $< -o $@
+	CPATH=$(include) $(CC) -c $(CFLAGS) $< -o $@
 install:
 	cp . .
 uninstall:
