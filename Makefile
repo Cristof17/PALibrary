@@ -1,56 +1,23 @@
 ###@Author Cristofor Rotsching
 #CC=clang
-foo=input.o \
-	algorithm.o \
-	bfsalgorithm.o \
-	bfsinput.o \
-	bfsoutput.o \
-	bfsresult.o \
-	output.o \
-	padata.o \
-	pagraf.o \
-	palista.o \
-	pamuchie.o \
-	panod.o \
-	papereche.o \
-	parezultat.o \
-	pastare.o \
-	pasir.o \
-	pastare.o \
-	adapter/client.c\
-	adapter/target.c\
-	adapter/adapter.c\
-	adapter/adaptee.c\
-	builder/pagrafnormal.s \
-	builder/pagraftranspus.s \
-	builder/padirector.s \
-	builder/pagrafproduct.s \
-	builder/pabuilder.s \
-	builder/pagrafnormal.o \
-	builder/pagraftranspus.o \
-	builder/padirector.o \
-	builder/pagrafproduct.o \
-	builder/pabuilder.o\
-	ArrayList/arraylist.o\
-	adapter/PADrawingEditor.s \
-	adapter/PADrawingEditor.o \
-	adapter/PALine.s \
-	adapter/PALine.o \
-	adapter/PAShape.s \
-	adapter/PAShape.o \
-	adapter/PAShape.s \
-	adapter/PAShape.o \
-	adapter/PATextView.s \
-	adapter/PATextView.o\
-	adapter/adapter.o\
-	adapter/target.o\
-	adapter/client.o\
-	adapter/adaptee.o\
-	arraylist/arraylist.o\
-	iterator/client.o \
-	iterator/concreteiterator.o \
-	iterator/iterator.o \
-	iterator/concreteaggregate.o \
+objects=input.o algorithm.o bfsalgorithm.o \
+	bfsinput.o bfsoutput.o bfsresult.o \
+	output.o padata.o pagraf.o \
+	palista.o pamuchie.o panod.o \
+	papereche.o parezultat.o pastare.o \
+	pasir.o pastare.o adapter/client.c\
+	adapter/target.c adapter/adapter.c adapter/adaptee.c\
+	builder/pagrafnormal.s builder/pagraftranspus.s builder/padirector.s \
+	builder/pagrafproduct.s builder/pabuilder.s builder/pagrafnormal.o \
+	builder/pagraftranspus.o builder/padirector.o builder/pagrafproduct.o \
+	builder/pabuilder.o adapter/PADrawingEditor.s adapter/PADrawingEditor.o \
+	adapter/PALine.s adapter/PALine.o adapter/PAShape.s \
+	adapter/PAShape.o adapter/PAShape.s adapter/PAShape.o \
+	adapter/PATextView.s adapter/PATextView.o adapter/adapter.o\
+	adapter/target.o adapter/client.o adapter/adaptee.o \
+	arraylist/arraylist.o iterator/client.o iterator/concreteiterator.o \
+	iterator/iterator.o iterator/concreteaggregate.o \
+
 #bar := $(foo:.c=.o)
 #include
 INCLUDE_PATHS=INCLUDE:include/builder/:include/adapter/:include/arraylist:include/iterator
@@ -151,83 +118,7 @@ installcheck:
 	echo "installcheck"
 installdirs:
 	echo "installdirs"
-clean: input.s \
-	algorithm.s \
-	bfsalgorithm.s \
-	bfsinput.s \
-	bfsoutput.s \
-	bfsresult.s \
-	output.s \
-	padata.s \
-	pagraf.s \
-	palista.s \
-	pamuchie.s \
-	panod.s \
-	papereche.s \
-	parezultat.s \
-	pastare.s \
-	patip.s \
-	paneigh.s \
-	paindex.s \
-	pagrafnormal.s \
-	pagraftranspus.s \
-	padirector.s \
-	pagrafproduct.s \
-	pabuilder.s \
-	client.s \
-	concreteiterator.s \
-	iterator.s \
-	concreteaggregate.s \
-	pasir.s\
-	arraylist_arraylist.s\
-	input.o \
-	algorithm.o \
-	bfsalgorithm.o \
-	bfsinput.o \
-	bfsoutput.o \
-	bfsresult.o \
-	output.o \
-	padata.o \
-	pagraf.o \
-	palista.o \
-	pamuchie.o \
-	panod.o \
-	papereche.o \
-	parezultat.o \
-	pastare.o \
-	patip.o \
-	paneigh.o \
-	paindex.o \
-	builder_pagrafnormal.o \
-	builder_pagraftranspus.o \
-	builder_padirector.o \
-	builder_pagrafproduct.o \
-	builder_pabuilder.o \
-	pasir.o\
-	builder_PADrawingEditor.s \
-	builder_PADrawingEditor.o \
-	builder_PALine.s \
-	builder_PALine.o \
-	builder_PAShape.s \
-	builder_PAShape.o \
-	builder_PAShape.s \
-	builder_PAShape.o \
-	builder_PATextView.s \
-	builder_PATextView.o\
-	adapter_client.s\
-	adapter_target.s\
-	adapter_adapter.s\
-	adapter_adaptee.s\
-	adapter_client.o\
-	adapter_target.o\
-	adapter_adapter.o\
-	adapter_adaptee.o\
-	iterator_client.o \
-	iterator_concreteiterator.o \
-	iterator_iterator.o \
-	iterator_concreteaggregate.o \
-	arraylist_arraylist.o
-	@echo "end of compile $(pwd)"
+clean: 
 	@echo "clean $(pwd)"
 	rm asm/input.s 
 	rm asm/algorithm.s 
@@ -459,76 +350,74 @@ adaptee.o: asm/adapter/adaptee.s
 arraylist.o : arraylist_arraylist.s
 	$(AS) -c asm/arraylist/$^ -o obj/arraylist/$@
 
-.PHONY: input.o \
-	algorithm.o \
-	bfsalgorithm.o \
-	bfsinput.o \
-	bfsoutput.o \
-	bfsresult.o \
-	input.s \
-	input.o \
-	algorithm.s \
-	algorithm.o \
-	bfsalgorithm.s \
-	bfsalgorithm.o \
-	bfsinput.s \
-	bfsinput.o \
-	bfsoutput.s \
-	bfsoutput.o \
-	bfsresult.s \
-	bfsresult.o \
-	output.s \
-	output.o \
-	padata.s \
-	padata.o \
-	pagraf.s \
-	pagraf.o \
-	palista.o \
-	pamuchie.s
-	pamuchie.o \
-	panod.s
-	panod.o \
-	papereche.s \
-	papereche.o \
-	parezultat.s \
-	parezultat.o \
-	pastare.o \
-	pasir.o \
-	pastare.o \
-	adapter_client.c\
-	adapter_target.c\
-	adapter_adapter.c\
-	adapter_adaptee.c\
-	builder_pagrafnormal.s \
-	builder_pagraftranspus.s \
-	builder_padirector.s \
-	builder_pagrafproduct.s \
-	builder_pabuilder.s \
-	builder_pagrafnormal.o \
-	builder_pagraftranspus.o \
-	builder_padirector.o \
-	builder_pagrafproduct.o \
-	builder_pabuilder.o \
-	ArrayList_arraylist.o \
-	adapter_PADrawingEditor.s \
-	adapter_PADrawingEditor.o \
-	adapter_PALine.s \
-	adapter_PALine.o \
-	adapter_PAShape.s \
-	adapter_PAShape.o \
-	adapter_PAShape.s \
-	adapter_PAShape.o \
-	adapter_PATextView.s \
-	adapter_PATextView.o\
-	adapter_adapter.o\
-	adapter_target.o\
-	adapter_client.o\
-	adapter_adaptee.o\
-	arraylist_arraylist.o\
-	iterator_client.o \
-	iterator_concreteiterator.o \
-	iterator_iterator.o \
-	iterator_concreteaggregate.o \
+.PHONY: clean
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 # 	bfso
 	
 #include builder/makefile
