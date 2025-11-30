@@ -6,7 +6,7 @@
 # Texts.  A copy of the license is included in the section entitled ``GNU
 # Free Documentation License''.
 
-objects= ArrayList.o
+objects=ArrayList.o
 
 $(objects) : %.o : %.c
-	$(C_PATH) $(CC) -S ArrayList.c -o arraylist.s
+	$(CC) -c $(CFLAGS) $< -o $@
