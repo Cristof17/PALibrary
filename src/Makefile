@@ -6,11 +6,26 @@
 # Texts.  A copy of the license is included in the section entitled ``GNU
 # Free Documentation License''.
 
-objects=ConcreteAggregate.o \
-	ConcreteIterator.o \
-	Iterator.o \
-	Client.o \
-	Aggregate.o
+objects=Algorithm.o \
+	BFSAlgorithm.o \
+	BFSInput.o \
+	BFSOutput.o \
+	BFSResult.o \
+	Input.o \
+	Output.o \
+	PACardinal.o \
+	PAData.o \
+	PAGraf.o \
+	PAIndex.o \
+	PALista.o \
+	PAMuchie.o \
+	PANeigh.o \
+	PANod.o \
+	PAPereche.o \
+	PARezultat.o \
+	PASir.o \
+	PAStare.o \
+	PATip.o 
 
 $(objects): %.o : %.c 
 	$(CC) -c $(CFLAGS) $< -o $@
