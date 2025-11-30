@@ -6,6 +6,7 @@
 *.ko
 *.obj
 *.elf
+obj/*.o
 adapter/*.o
 builder/*.o
 arraylist/*.o
@@ -38,6 +39,7 @@ arraylist/*.o
 *.i*86
 *.x86_64
 *.hex
+bin/
 
 # Debug files
 *.dSYM/
@@ -45,9 +47,6 @@ arraylist/*.o
 *.idb
 *.pdb
 *.s
-adapter/*.s
-builder/*.s
-arraylist/*.s
 
 # Kernel Module Compile Results
 *.mod*

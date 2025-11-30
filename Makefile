@@ -45,9 +45,10 @@ objects=obj/input.o \
 #include
 include=include:include/builder/:include/adapter/:include/arraylist:include/iterator
 CPATH+=$(include)
+bindir=bin
 srcdir=src
 libdir=obj
-datadir=src
+datadir=dat
 infodir=info
 mandir=man
 all: $(objects)
@@ -61,9 +62,10 @@ $(objects): obj/%.o : src/%.c
 install: installdirs
 
 installdirs: mkinstalldirs
-	$(srcdir)/mkinstalldirs $(bindir) $(datadir) \
-				$(libdir) $(infodir) \
-				$(mandir)
+	$(srcdir)/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
+
+mkinstalldirs: $(srcdir)/mkinstalldirs
+
 uninstall:
 	cp . .
 
@@ -79,9 +81,6 @@ check:
 
 installcheck:
 	echo "installcheck"
-
-installdirs:
-	echo "installdirs"
 
 clean: 
 	rm $(objects)
