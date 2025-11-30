@@ -9,7 +9,7 @@
 #define INCLUDE_ADAPTEE_H_
 //#include <adaptee.h>
 #include <PAIndex.h>
-#include <arraylist.h>
+#include <ArrayList.h>
 #include <types.h>
 
 struct Adaptee

@@ -26,7 +26,6 @@ objects=obj/input.o \
 	obj/Builder/PAGrafNormal.o \
 	obj/Builder/PAGrafTranspus.o \
 	obj/Builder/PAGrafProduct.o \
-	obj/Builder/Builder.o \
 	obj/Adapter/Client.o \
 	obj/Adapter/Target.o \
 	obj/Adapter/Adapter.o \
