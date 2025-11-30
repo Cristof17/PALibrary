@@ -6,11 +6,12 @@
 # Texts.  A copy of the license is included in the section entitled ``GNU
 # Free Documentation License''.
 
-objects:pagrafnormal.o \
-	pagraftranspus.o \
-	padirector.o \
-	pagrafproduct.o \
-	pabuilder.o \
+objects=PABuilder.o \
+	PADirector.o \
+	PAGrafNormal.o \
+	PAGrafProduct.o \
+	PAGrafTranspus.o
 
-$(objects): %.o : %.c
-	CPATH=$(CPATH) $(CC) -c $(CFLAGS) $< -o $@
+$(objects): %.o : %.c 
+	$(CC) -c $(CFLAGS) $< -o $@
+

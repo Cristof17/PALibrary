@@ -8,5 +8,6 @@
 
 objects=ArrayList.o
 
-$(objects) : %.o : %.c
+$(objects): %.o : %.c 
 	$(CC) -c $(CFLAGS) $< -o $@
+

@@ -5,15 +5,17 @@
 # with no Invariant Sections, no Front-Cover Texts, and no Back-Cover
 # Texts.  A copy of the license is included in the section entitled ``GNU
 # Free Documentation License''.
-objects=PADrawingEditor.o\
-	PAShape.o\
-	PALine.o\
-	PATextShape.o\
-	PATextView.o
 
-$(objects): %.o : %.c
-	CPATH=$(CPATH) $(CC) -c $(CFLAGS) $< -o $@
+objects=Adaptee.o \
+	Adapter.o \
+	Client.o \
+	PALine.o \
+	PAShape.o \
+	PAShape.o \
+	PAShape.o \
+	PATextView.o \
+	Target.o
 
-.PHONY: clean
-clean: 
-	rm $(objects)
+$(objects): %.o : %.c 
+	$(CC) -c $(CFLAGS) $< -o $@
+
