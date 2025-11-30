@@ -45,17 +45,16 @@ SUBDIRS= src src/Iterator src/Builder src/Adapter src/Arraylist
 #include
 include=include
 VPATH=include
-CPATH=$(CPATH):/include/
-CPATH+=include/Iterator/
-CPATH+=include/Builder/
-CPATH+=include/ArrayList/
-CPATH+=include/Adapter/
-.EXPORT_ALL_VARIABLES
 bindir=bin
 srcdir=src
 libdir=obj obj/Adapter/ obj/Iterator obj/ArrayList obj/Builder
 datadir=dat
 infodir=info
+CFLAGS+=-I include
+CFLAGS+=-I include/Adapter/
+CFLAGS+=-I include/Iterator/
+CFLAGS+=-I include/Builder/
+CFLAGS+=-I include/ArrayList/
 mandir=man
 export CPATH
 export CFLAGS
