@@ -21,25 +21,25 @@ objects=obj/input.o \
 	obj/PARezultat.o \
 	obj/pastare.o \
 	obj/PASir.o \
-	obj/builder/PADirector.o \
-	obj/builder/PABuilder.o \
-	obj/builder/PAGrafNormal.o \
-	obj/builder/PAGrafTranspus.o \
-	obj/builder/PAGrafProduct.o \
-	obj/builder/Builder.o \
-	obj/adapter/Client.o \
-	obj/adapter/Target.o \
-	obj/adapter/Adapter.o \
-	obj/adapter/Adaptee.o\
-	obj/adapter/PADrawingEditor.o \
-	obj/adapter/PALine.o \
-	obj/adapter/PAShape.o \
-	obj/adapter/PATextView.o \
-	obj/arraylist/ArrayList.o \
-	obj/iterator/Client.o \
-	obj/iterator/ConcreteIterator.o \
-	obj/iterator/Iterator.o \
-	obj/iterator/ConcreteAggregate.o
+	obj/Builder/PADirector.o \
+	obj/Builder/PABuilder.o \
+	obj/Builder/PAGrafNormal.o \
+	obj/Builder/PAGrafTranspus.o \
+	obj/Builder/PAGrafProduct.o \
+	obj/Builder/Builder.o \
+	obj/Adapter/Client.o \
+	obj/Adapter/Target.o \
+	obj/Adapter/Adapter.o \
+	obj/Adapter/Adaptee.o\
+	obj/Adapter/PADrawingEditor.o \
+	obj/Adapter/PALine.o \
+	obj/Adapter/PAShape.o \
+	obj/Adapter/PATextView.o \
+	obj/ArrayList/ArrayList.o \
+	obj/Iterator/Client.o \
+	obj/Iterator/ConcreteIterator.o \
+	obj/Iterator/Iterator.o \
+	obj/Iterator/ConcreteAggregate.o
 SUBDIRS= src src/Iterator src/Builder src/Adapter src/Arraylist
 #bar := $(foo:.c=.o)
 bindir=bin
