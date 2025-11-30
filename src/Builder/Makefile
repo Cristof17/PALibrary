@@ -11,9 +11,6 @@ objects:pagrafnormal.o \
 	padirector.o \
 	pagrafproduct.o \
 	pabuilder.o \
-	@echo "clean $(PWD)"
-	@echo "end of all $(PWD)"
-libdir=obj/Builder/
-C_PATH=$(C_PATH):include
+
 $(objects): %.o : %.c
-	CPATH=$(include) $(CC) -c $(CFLAGS) $< -o $@
+	CPATH=$(CPATH) $(CC) -c $(CFLAGS) $< -o $@

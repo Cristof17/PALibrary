@@ -1,6 +1,12 @@
-C_PATH=$(C_PATH)/include
-arraylist.s : ArrayList.c
-	$(C_PATH) $(CC) -S ArrayList.c -o arraylist.s
+# Copyright (C)  2025 Cristofor Rotsching. 
+# Permission is granted to copy, distribute and/or modify this document
+# under the terms of the GNU Free Documentation License, Version 1.3
+# or any later version published by the Free Software Foundation;
+# with no Invariant Sections, no Front-Cover Texts, and no Back-Cover
+# Texts.  A copy of the license is included in the section entitled ``GNU
+# Free Documentation License''.
 
-arraylist.o : arraylist.s
-	$(AS) -c arraylist.s -o arraylist.o
+objects= ArrayList.o
+
+$(objects) : %.o : %.c
+	$(C_PATH) $(CC) -S ArrayList.c -o arraylist.s

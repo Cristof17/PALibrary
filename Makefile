@@ -50,14 +50,17 @@ srcdir=src
 libdir=obj obj/Adapter/ obj/Iterator obj/ArrayList obj/Builder
 datadir=dat
 infodir=info
+includedir=include
 mandir=man
+CPATH=$(CPATH):$(includedir)
+export CPATH
 all: $(objects)
 	echo "end of compile $(pwd)"
 	@echo "end of all $(pwd)"
 	@echo "end of assemble $(pwd)"
 
 $(objects): obj/%.o : src/%.c
-	CPATH=$(include) $(CC) -c $(CFLAGS) $< -o $@
+	CPATH=$(CPATH) $(CC) -c $(CFLAGS) $< -o $@
 
 install: installdirs
 
