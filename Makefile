@@ -54,7 +54,7 @@ all: $(objects)
 	@echo "end of all $(pwd)"
 	@echo "end of assemble $(pwd)"
 $(objects): %.o : %.c
-	$(CC) -c $(CFLAGS) $< -o $@
+	$(CC) -c $(CFLAGS) $(patsubst src/%, obj/% ,$<)  -o $@
 install:
 	cp . .
 uninstall:
