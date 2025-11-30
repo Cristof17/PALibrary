@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_PAGRAF_H
-#define INLCUDE_PAGRAF_H
+#define INCLUDE_PAGRAF_H
 #include <PACardinal.h>
 #include <PALista.h>
 #include <PANod.h>
