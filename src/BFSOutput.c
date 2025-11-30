@@ -1,5 +1,5 @@
 //@Author Cristofor Rotsching
-#include <bfsoutput.h>
+#include <BFSOutput.h>
 void BFSOutputPrint(BFSOutput output)
 {
     BFSResultPrint(output.Result);

@@ -1,4 +1,4 @@
-#include <Adapter/client.h>
+#include <Adapter/Client.h>
 /*
  * Client.c
  *

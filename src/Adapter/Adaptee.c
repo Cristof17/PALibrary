@@ -1,4 +1,4 @@
-#include <adaptee.h>
+#include <Adaptee.h>
 /*
  * Adaptee.c
  *

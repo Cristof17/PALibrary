@@ -1,5 +1,5 @@
 //@Author Cristofor Rotsching
-#include <parezultat.h>
+#include <PARezultat.h>
 void PARezultatPrint(PARezultat rezultat)
 {
 }

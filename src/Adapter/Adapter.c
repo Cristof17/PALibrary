@@ -1,6 +1,6 @@
-#include <adapter.h>
-#include <adaptee.h>
-#include <panod.h>
+#include <Adapter.h>
+#include <Adaptee.h>
+#include <PANod.h>
 #include <types.h>
 /*
  * Adapter.c

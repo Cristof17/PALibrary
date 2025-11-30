@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "parezultat.h": "c",
-        "arraylist.h": "c"
+        "arraylist.h": "c",
+        "types.h": "c"
     }
 }
