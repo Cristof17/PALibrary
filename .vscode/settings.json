@@ -2,6 +2,7 @@
     "files.associations": {
         "parezultat.h": "c",
         "arraylist.h": "c",
-        "types.h": "c"
+        "types.h": "c",
+        "output.h": "c"
     }
 }

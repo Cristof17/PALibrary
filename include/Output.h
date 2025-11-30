@@ -1,8 +1,8 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_OUTPUT_H
 #define INCLUDE_OUTPUT_H
-#include "parezultat.h"
-#include "bfsoutput.h"
+#include <PARezultat.h>
+#include <BFSOutput.h>
 struct Output
 {
 //	struct PARezultat rezultat;
