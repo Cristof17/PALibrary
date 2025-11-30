@@ -1,10 +1,10 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_PAGRAF_H
 #define INLCUDE_PAGRAF_H
-#include "pacardinal.h"
-#include "palista.h"
-#include "panod.h"
-#include "PASir.h"
+#include <PACardinal.h>
+#include <PALista.h>
+#include <PANod.h>
+#include <PASir.h>
 struct PAGraf
 {
 	struct PACardinal n;

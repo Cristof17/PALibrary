@@ -1,7 +1,7 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_PAREZULTAT_H
 #define INCLUDE_PAREZULTAT_H
-#include "patip.h"
+#include <PATip.h>
 struct PARezultat
 {
 	INT cod;

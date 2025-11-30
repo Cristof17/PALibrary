@@ -1,7 +1,7 @@
 #ifndef _ARRAYLIST_ARRAYLIST_H
 #define _ARRAYLIST_ARRAYLIST_H
-#include <parezultat.h>
-#include <paindex.h>
+#include <PARezultat.h>
+#include <PAIndex.h>
 #include <types.h>
 struct ArrayList
 {

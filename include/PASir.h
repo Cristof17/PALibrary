@@ -7,8 +7,8 @@
 
 #ifndef INCLUDE_PASIR_H_
 #define INCLUDE_PASIR_H_
-#include <pacardinal.h>
-#include <palista.h>
+#include <PACardinal.h>
+#include <PALista.h>
 struct PASir
 {
 	struct PACardinal n;

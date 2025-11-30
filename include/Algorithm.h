@@ -1,9 +1,9 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_ALGORITHM_H
 #define INCLUDE_ALGORITHM_H	
-#include "input.h"
+#include <Input.h>
 //#include "outputc.h"
-#include "output.h"
+#include <Output.h>
 struct Algorithm
 {
 	struct Input input;

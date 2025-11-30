@@ -1,10 +1,10 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_BFSINPUT_H
 #define INCLUDE_BFSINPUT_H	
-#include "panod.h"	
-#include "palista.h"	
-#include "pacardinal.h"	
-#include "bfsinput.h"
+#include <PANod.h>
+#include <PALista.h>
+#include <PACardinal.h>
+#include <BFSInput.h>
 struct BFSInput
 {
 	struct PACardinal n;

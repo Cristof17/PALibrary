@@ -1,8 +1,8 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_BFSALGORITHM_H
 #define INCLUDE_BFSALGORITHM_H	
-#include "pagraf.h"	
-#include "bfsinput.h"
+#include <PAGraf.h>
+#include <BFSInput.h>
 
 struct BFSAlgorithm
 {
