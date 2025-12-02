@@ -8,6 +8,6 @@ struct ArrayList
 	PAIndex Index[0];
 };
 typedef struct ArrayList ArrayList;
-PAIndex ArrayListGet(PAIndex[],INT position);
-PARezultat Init(INT size);
+PAIndex ArrayListGet(PAIndex[],INT);
+PARezultat Init(INT);
 #endif
