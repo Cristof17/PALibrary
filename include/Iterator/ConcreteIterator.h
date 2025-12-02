@@ -11,7 +11,7 @@
 struct ConcreteIterator
 {
 
-}
+};
 typedef struct ConcreteIterator ConcreteIterator;
 
 #endif /* ITERATOR_INCLUDE_CONCRETEITERATOR_H_ */

@@ -7,7 +7,9 @@
 
 #ifndef INCLUDE_ITERATOR_ITERATOR_H_
 #define INCLUDE_ITERATOR_ITERATOR_H_
-
+#include <PAIndex.h>
+#include <types.h>
+#include <PANod.h>
 struct Iterator
 {
 
