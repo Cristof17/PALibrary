@@ -9,8 +9,8 @@ struct PAGraf
 {
 	struct PACardinal n;
 	struct PACardinal m;
-	struct PASir adj;
 	struct PANod sursa;
+	struct PASir adj;
 };
 typedef struct PAGraf PAGraf;
 #endif
