@@ -5,60 +5,60 @@
 # with no Invariant Sections, no Front-Cover Texts, and no Back-Cover
 # Texts.  A copy of the license is included in the section entitled ``GNU
 # Free Documentation License''.
-objects=obj/Input.o \
-	obj/Algorithm.o \
-	obj/BFSAlgorithm.o \
-	obj/BFSInput.o \
-	obj/BFSOutput.o \
-	obj/BFSResult.o \
-	obj/Output.o \
-	obj/PAData.o \
-	obj/PAGraf.o \
-	obj/PAIndex.o \
-	obj/PALista.o \
-	obj/PAMuchie.o \
-	obj/PANod.o \
-	obj/PAPereche.o \
-	obj/PARezultat.o \
-	obj/PASir.o \
-	obj/PAStare.o \
-	obj/PATip.o \
-	obj/Builder/PADirector.o \
-	obj/Builder/PABuilder.o \
-	obj/Builder/PAGrafNormal.o \
-	obj/Builder/PAGrafTranspus.o \
-	obj/Builder/PAGrafProduct.o \
-	obj/Adapter/Client.o \
-	obj/Adapter/Target.o \
-	obj/Adapter/Adapter.o \
-	obj/Adapter/Adaptee.o\
-	obj/Adapter/PADrawingEditor.o \
-	obj/Adapter/PALine.o \
-	obj/Adapter/PAShape.o \
-	obj/Adapter/PATextView.o \
-	obj/ArrayList/ArrayList.o \
-	obj/Iterator/Client.o \
-	obj/Iterator/ConcreteIterator.o \
-	obj/Iterator/Iterator.o \
-	obj/Iterator/ConcreteAggregate.o
-SUBDIRS= src src/Iterator src/Builder src/Adapter src/Arraylist
+#objects=obj/Input.o \
+#	obj/Algorithm.o \
+#	obj/BFSAlgorithm.o \
+#	obj/BFSInput.o \
+#	obj/BFSOutput.o \
+#	obj/BFSResult.o \
+#	obj/Output.o \
+#	obj/PAData.o \
+#	obj/PAGraf.o \
+#	obj/PAIndex.o \
+#	obj/PALista.o \
+#	obj/PAMuchie.o \
+#	obj/PANod.o \
+#	obj/PAPereche.o \
+#	obj/PARezultat.o \
+#	obj/PASir.o \
+#	obj/PAStare.o \
+#	obj/PATip.o \
+#	obj/Builder/PADirector.o \
+#	obj/Builder/PABuilder.o \
+#	obj/Builder/PAGrafNormal.o \
+#	obj/Builder/PAGrafTranspus.o \
+#	obj/Builder/PAGrafProduct.o \
+#	obj/Adapter/Client.o \
+#	obj/Adapter/Target.o \
+#	obj/Adapter/Adapter.o \
+#	obj/Adapter/Adaptee.o\
+#	obj/Adapter/PADrawingEditor.o \
+#	obj/Adapter/PALine.o \
+#	obj/Adapter/PAShape.o \
+#	obj/Adapter/PATextView.o \
+#	obj/ArrayList/ArrayList.o \
+#	obj/Iterator/Client.o \
+#	obj/Iterator/ConcreteIterator.o \
+#	obj/Iterator/Iterator.o \
+#	obj/Iterator/ConcreteAggregate.o
+#SUBDIRS= src src/Iterator src/Builder src/Adapter src/Arraylist
 #bar := $(foo:.c=.o)
-bindir=bin
-srcdir=src
-includedir=include
+#bindir=bin
+#srcdir=src
+#includedir=include
 #CFLAGS+=-I$(abspath $(includedir))
 #CFLAGS+=-I$(abspath $(includedir)/Builder)
 #CFLAGS+=-I$(abspath $(includedir)/Iterator)
 #CFLAGS+=-I$(abspath $(includedir)/ArrayList)
 #CFLAGS+=-I$(abspath $(includedir)/Adapter)
 CFLAGS+=-Iinclude
-libdir=obj obj/Adapter/ obj/Iterator obj/ArrayList obj/Builder
-datadir=dat
-infodir=info
-mandir=man
-export CPATH
-export CFLAGS
-export include
+#libdir=obj obj/Adapter/ obj/Iterator obj/ArrayList obj/Builder
+#datadir=dat
+#infodir=info
+#mandir=man
+#export CPATH
+#export CFLAGS
+#export include
 #all: 
 #	$(objects)
 #	@echo "end of compile $(pwd)"
