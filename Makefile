@@ -100,77 +100,77 @@ build: obj/Input.o \
 	obj/Iterator/Iterator.o \
 	obj/Iterator/ConcreteAggregate.o
 
-obj/Input.o: src/Input.c 
+obj/Input.o: src/Input.c include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Algorithm.o: src/Input.c src/Algorithm.c include/Algorithm.h
+obj/Algorithm.o: src/Algorithm.c include/Algorithm.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/BFSAlgorithm.o:src/Input.c src/PAGraf.c src/BFSAlgorithm.c
+obj/BFSAlgorithm.o: src/BFSAlgorithm.c include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/BFSInput.o: src/PACardinal.c src/PALista.c src/PANod.c src/BFSInput.c
+obj/BFSInput.o: src/BFSInput.c include/BFSInput.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/BFSOutput.o: src/BFSInput.c include/BFSOutput.h
+obj/BFSOutput.o: src/BFSOutput.c include/BFSOutput.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/BFSResult.o:src/PAIndex.c src/PALista.c src/PACardinal.c src/BFSResult.c include/BFSResult.h
+obj/BFSResult.o:src/BFSResult.c include/BFSResult.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Output.o: src/PARezultat.c src/Output.c include/Output.h
+obj/Output.o: src/Output.c include/Output.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PAData.o: src/PAData.c
+obj/PAData.o: src/PAData.c include/PAData.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PAGraf.o: src/PANod.c src/PACardinal.c src/PAGraf.c
+obj/PAGraf.o: src/PAGraf.c include/PAGraf.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PAIndex.o: src/PAIndex.c include/PAIndex.h
+obj/PAIndex.o: src/PAIndex.c include/PAIndex.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PALista.o: src/PALista.c include/PALista.h
+obj/PALista.o: src/PALista.c include/PALista.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PAMuchie.o: src/PAMuchie.c
+obj/PAMuchie.o: src/PAMuchie.c include/PAMuchie.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PANod.o: src/PANeigh.c src/PAStare.c src/PATip.c src/PAIndex.c src/PANod.c 
-	$(CC) -c $(CFLAGS) src/PAIndex.c src/PANeigh.c src/PAStare.c src/PATip.c -o $@
-obj/PAPereche.o: src/PAPereche.c
+obj/PANod.o: src/PANod.c include/PANod.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PARezultat.o: src/PARezultat.c include/PARezultat.h
+obj/PAPereche.o: src/PAPereche.c include/PAPereche.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PASir.o: src/PASir.c
+obj/PARezultat.o: src/PARezultat.c include/PARezultat.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PAStare.o: src/PAStare.c include/PASir.h
+obj/PASir.o: src/PASir.c include/PASir.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PATip.o: src/PATip.c include/PATip.h
+obj/PAStare.o: src/PAStare.c include/PASir.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Builder/PADirector.o: src/Builder/PADirector.c
+obj/PATip.o: src/PATip.c include/PATip.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Builder/PABuilder.o: src/Builder/PABuilder.c
+obj/Builder/PADirector.o: src/Builder/PADirector.c include/Builder/PADirector.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Builder/PAGrafNormal.o: src/Builder/PAGrafNormal.c
+obj/Builder/PABuilder.o: src/Builder/PABuilder.c include/Builder/PABuilder.h include/defs.h 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Builder/PAGrafTranspus.o: src/Builder/PAGrafTranspus.c
+obj/Builder/PAGrafNormal.o: src/Builder/PAGrafNormal.c include/Builder/PAGrafNormal.h include/defs.h
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/Builder/PAGrafTranspus.o: src/Builder/PAGrafTranspus.c include/Builder/PAGrafTranspus.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/Builder/PAGrafProduct.o: src/Builder/PAGrafProduct.c
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Adapter/Client.o: src/Adapter/Client.c
+obj/Adapter/Client.o: src/Adapter/Client.c include/Adapter/Client.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Adapter/Target.o: src/Adapter/Target.c
+obj/Adapter/Target.o: src/Adapter/Target.c include/Adapter/Target.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Adapter/Adapter.o: src/Adapter/Adapter.c
+obj/Adapter/Adapter.o: src/Adapter/Adapter.c include/Adapter/Adapter.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Adapter/Adaptee.o: src/Adapter/Adaptee.c
+obj/Adapter/Adaptee.o: src/Adapter/Adaptee.c include/Adapter/Adaptee.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Adapter/PADrawingEditor.o: src/Adapter/PADrawingEditor.c
+obj/Adapter/PADrawingEditor.o: src/Adapter/PADrawingEditor.c include/Adapter/PADrawingEditor.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Adapter/PALine.o: src/Adapter/PALine.c
+obj/Adapter/PALine.o: src/Adapter/PALine.c include/Adapter/PALine.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Adapter/PAShape.o: src/Adapter/PAShape.c
+obj/Adapter/PAShape.o: src/Adapter/PAShape.c include/Adapter/PAShape.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Adapter/PATextView.o: src/Adapter/PATextView.c
+obj/Adapter/PATextView.o: src/Adapter/PATextView.c include/Adapter/PATextView.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/ArrayList/ArrayList.o: src/PAIndex.c src/ArrayList/ArrayList.c 
+obj/ArrayList/ArrayList.o: src/PAIndex.c src/ArrayList/ArrayList.c include/ArrayList/ArrayList.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Iterator/Client.o: src/Iterator/Client.c
+obj/Iterator/Client.o: src/Iterator/Client.c include/Iterator/Client.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Iterator/ConcreteIterator.o: src/Iterator/ConcreteIterator.c
+obj/Iterator/ConcreteIterator.o: src/Iterator/ConcreteIterator.c include/Iterator/ConcreteIterator.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Iterator/Iterator.o: src/Iterator/Iterator.c
+obj/Iterator/Iterator.o: src/Iterator/Iterator.c include/Iterator/Iterator.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Iterator/ConcreteAggregate.o: src/Iterator/ConcreteAggregate.c
+obj/Iterator/ConcreteAggregate.o: src/Iterator/ConcreteAggregate.c include/Iterator/ConcreteAggregate.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 
 #$(objects): obj/%.o : src/%.c
