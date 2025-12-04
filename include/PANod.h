@@ -7,8 +7,7 @@
 #include "../include/PANeigh.h"
 #include "../include/PATip.h"
 struct PANod;
-struct PANod
-{ 
+struct PANod { 
 //	struct PAData data;
 	struct PAIndex Index;
 	struct PANeigh Next;

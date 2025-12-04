@@ -9,8 +9,7 @@
 #define INCLUDE_PASIR_H_
 #include "../include/PACardinal.h"
 #include "../include/PALista.h"
-struct PASir
-{
+struct PASir {
 	struct PACardinal n;
 	struct PALista adj[];
 };

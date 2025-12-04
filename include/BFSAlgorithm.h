@@ -4,8 +4,7 @@
 #include "../include/PAGraf.h"
 #include "../include/BFSInput.h"
 
-struct BFSAlgorithm
-{
+struct BFSAlgorithm {
 	struct BFSInput Input;
 	struct PAGraf Graf;
 };

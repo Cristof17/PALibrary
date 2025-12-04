@@ -1,8 +1,7 @@
 #ifndef INCLUDE_PAINDEX_H
 #define INCLUDE_PAINDEX_H
 #include <types.h>
-struct PAIndex
-{
+struct PAIndex {
 //    int Value;
 	INT Value;
 };

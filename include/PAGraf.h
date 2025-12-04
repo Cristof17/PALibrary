@@ -5,8 +5,7 @@
 #include "../include/PALista.h"
 #include "../include/PANod.h"
 #include "../include/PASir.h"
-struct PAGraf
-{
+struct PAGraf {
 	struct PACardinal n;
 	struct PACardinal m;
 	struct PANod sursa;

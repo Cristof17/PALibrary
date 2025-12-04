@@ -2,8 +2,7 @@
 #ifndef INCLUDE_PAREZULTAT_H
 #define INCLUDE_PAREZULTAT_H
 #include "../include/PATip.h"
-struct PARezultat
-{
+struct PARezultat {
 	INT cod;
 };
 typedef struct PARezultat PARezultat;

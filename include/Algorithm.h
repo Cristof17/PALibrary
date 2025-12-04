@@ -4,8 +4,7 @@
 #include "../include/Input.h"
 //#include "outputc.h"
 #include "../include/Output.h"
-struct Algorithm
-{
+struct Algorithm {
 	struct Input input;
 };
 typedef struct Algorithm Algorithm;

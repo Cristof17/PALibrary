@@ -10,14 +10,13 @@
 #include "../include/PAIndex.h"
 #include "../include/PANod.h"
 #include <types.h>
-struct Iterator
-{
+struct Iterator {
 
 };
 typedef struct Iterator Iterator;
-PAIndex First();
-PAIndex Next();
-PABool IsDone();
-PANod CurrentItem();
+struct PAIndex First();
+struct PAIndex Next();
+struct PABool IsDone();
+struct PANod CurrentItem();
 
 #endif /* ITERATOR_INCLUDE_ITERATOR_H_ */

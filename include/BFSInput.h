@@ -5,8 +5,7 @@
 #include "../include/PALista.h"
 #include "../include/PACardinal.h"
 #include "../include/BFSInput.h"
-struct BFSInput
-{
+struct BFSInput {
 	struct PACardinal n;
 	struct PACardinal m;
 	struct PALista adj;

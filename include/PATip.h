@@ -13,8 +13,7 @@
 #define KIND_FIRST 0
 #define SUCCESS 0
 #define FAIL -1
-struct PATip
-{
+struct PATip {
 	INT Kind;
 };
 typedef struct PATip PATip;
