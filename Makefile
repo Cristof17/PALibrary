@@ -5,7 +5,7 @@
 # with no Invariant Sections, no Front-Cover Texts, and no Back-Cover
 # Texts.  A copy of the license is included in the section entitled ``GNU
 # Free Documentation License''.
-objects=obj/input.o \
+objects=obj/Input.o \
 	obj/Algorithm.o \
 	obj/BFSAlgorithm.o \
 	obj/BFSInput.o \
@@ -14,13 +14,15 @@ objects=obj/input.o \
 	obj/Output.o \
 	obj/PAData.o \
 	obj/PAGraf.o \
+	obj/PAIndex.o \
 	obj/PALista.o \
 	obj/PAMuchie.o \
 	obj/PANod.o \
 	obj/PAPereche.o \
 	obj/PARezultat.o \
-	obj/pastare.o \
 	obj/PASir.o \
+	obj/PAStare.o \
+	obj/PATip.o \
 	obj/Builder/PADirector.o \
 	obj/Builder/PABuilder.o \
 	obj/Builder/PAGrafNormal.o \
@@ -44,11 +46,11 @@ SUBDIRS= src src/Iterator src/Builder src/Adapter src/Arraylist
 bindir=bin
 srcdir=src
 includedir=include
-CFLAGS+=-I$(abspath $(includedir))
-CFLAGS+=-I$(abspath $(includedir)/Builder)
-CFLAGS+=-I$(abspath $(includedir)/Iterator)
-CFLAGS+=-I$(abspath $(includedir)/ArrayList)
-CFLAGS+=-I$(abspath $(includedir)/Adapter)
+#CFLAGS+=-I$(abspath $(includedir))
+#CFLAGS+=-I$(abspath $(includedir)/Builder)
+#CFLAGS+=-I$(abspath $(includedir)/Iterator)
+#CFLAGS+=-I$(abspath $(includedir)/ArrayList)
+#CFLAGS+=-I$(abspath $(includedir)/Adapter)
 libdir=obj obj/Adapter/ obj/Iterator obj/ArrayList obj/Builder
 datadir=dat
 infodir=info
@@ -60,25 +62,27 @@ all: $(objects)
 	@echo "end of compile $(pwd)"
 	@echo "end of all $(pwd)"
 	@echo "end of assemble $(pwd)"
-obj/input.o: src/Input.c
+obj/Input.o: src/Input.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Algorithm.o: src/Algorithm.c
+obj/Algorithm.o: src/Algorithm.c include/Algorithm.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/BFSAlgorithm.o: src/BFSAlgorithm.c
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/BFSInput.o: src/BFSInput.c
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/BFSOutput.o: src/BFSInput.c
+obj/BFSOutput.o: src/BFSInput.c include/BFSOutput.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/BFSResult.o: src/BFSResult.c
+obj/BFSResult.o: src/BFSResult.c include/BFSResult.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Output.o: src/Output.c
+obj/Output.o: src/Output.c include/Output.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/PAData.o: src/PAData.c
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/PAGraf.o: src/PAGraf.c
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PALista.o: src/PALista.c
+obj/PAIndex.o: src/PAIndex.c include/PAIndex.h
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/PALista.o: src/PALista.c include/PALista.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/PAMuchie.o: src/PAMuchie.c
 	$(CC) -c $(CFLAGS) $< -o $@
@@ -86,11 +90,13 @@ obj/PANod.o: src/PANod.c
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/PAPereche.o: src/PAPereche.c
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PARezultat.o: src/PARezultat.c
-	$(CC) -c $(CFLAGS) $< -o $@
-obj/pastare.o: src/PAStare.c
+obj/PARezultat.o: src/PARezultat.c include/PARezultat.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/PASir.o: src/PASir.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/PAStare.o: src/PAStare.c include/PASir.h
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/PATip.o: src/PATip.c include/PATip.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/Builder/PADirector.o: src/Builder/PADirector.c
 	$(CC) -c $(CFLAGS) $< -o $@

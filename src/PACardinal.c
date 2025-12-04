@@ -1,5 +1,5 @@
 //@Author Cristofor Rotsching
-#include <PACardinal.h>
+#include "PACardinal.h"
 
 void PACardinalPrint(PACardinal cardinal)
 {
