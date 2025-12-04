@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
 #include "include/Builder/PAGrafNormal.h"
-#include <include/Builder/PARezultat.h"
+#include "include/PARezultat.h"
 PAGrafNormal PABuildPart()
 {
     PAGrafNormal graf;
