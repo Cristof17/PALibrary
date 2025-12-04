@@ -3,6 +3,7 @@
 #include "../include/PARezultat.h"
 #include "../include/PAIndex.h"
 #include <types.h>
+#include <defs.h>
 struct ArrayList;
 typedef struct ArrayList ArrayList;
 struct PAIndex ArrayListGet(struct PAIndex[],INT);
