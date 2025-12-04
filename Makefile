@@ -239,7 +239,7 @@ clean:
 	rm obj/ArrayList/ArrayList.o
 	rm obj/Iterator/Client.o
 	rm obj/Iterator/ConcreteIterator.o
-	rm obj/Iterator/Iterator.o 
+	rm obj/Iterator/Iterator.o
 	rm obj/Iterator/ConcreteAggregate.o
 #rm objInput.o
 #rm $(objects)
