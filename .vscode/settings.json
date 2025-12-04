@@ -9,6 +9,7 @@
         "panod.h": "c",
         "paindex.h": "c",
         "adaptee.h": "c",
-        "client.h": "c"
+        "client.h": "c",
+        "defs.h": "c"
     }
 }
