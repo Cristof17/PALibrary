@@ -1,5 +1,5 @@
 //@Author Cristofor Rotsching
-#include "Output.h"
+#include "include/Output.h"
 
 void Print(PARezultat rezultat)
 {
