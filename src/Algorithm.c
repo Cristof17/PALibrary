@@ -1,8 +1,8 @@
 //@Author Cristofor Rotsching
 #include "../include/Algorithm.h"
 // #include "Input.h"
-Output run(Input input)
+struct Output run(struct Input input)
 {
-	Output o;
+	struct Output o;
 	return o;
 }

@@ -1,39 +1,39 @@
 //@Author Cristofor Rotsching
 #include "../include/PALista.h"
-INT Size(PALista lista)
+INT Size(struct PALista lista)
 {
     int size = 0;
 //    PATip tip = lista.Nod.Tip;
-    PANod nod_head = PAListaHead(lista);
-    PATip tip;
+    struct PANod nod_head = PAListaHead(lista);
+    struct PATip tip;
 //    return tip;
     return size;
     // if (nod_head.paTip == LAST(lista.))
     return 1;
 }
-PANod PAListaGet(INT position)
+struct PANod PAListaGet(INT position)
 {
     PANod nod;
     return nod;    
 }
-PANod PAListaHead(PALista lista)
+struct PANod PAListaHead(struct PALista lista)
 {
 	PANod nod;
 	return nod;
 //    return lista.Nod;
 }
-PALista PAListaTail(PALista lista)
+struct PALista PAListaTail(struct PALista lista)
 {
     return lista;
 }
-PANod PAListaInit(PALista lista)
+struct PANod PAListaInit(struct PALista lista)
 {
-	PANod nod;
+	struct PANod nod;
 	return nod;
 //    return lista.Nod;
 }
 
-void PAListaPrint(PALista lista)
+void PAListaPrint(struct PALista lista)
 {
     
 }

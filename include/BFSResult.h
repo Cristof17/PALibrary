@@ -12,4 +12,4 @@ struct BFSResult
 typedef struct BFSResult BFSResult;
 #endif
 
-void BFSResultPrint(BFSResult);
+void BFSResultPrint(struct BFSResult);

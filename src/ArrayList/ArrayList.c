@@ -5,12 +5,12 @@
  *  Created on: 20 nov. 2025
  *      Author: AdministratorUser
  */
-PAIndex ArrayListGet(PAIndex Array[],INT Position)
+struct PAIndex ArrayListGet(struct PAIndex Array[],INT Position)
 {
-	PAIndex index = Array[Position];
+	struct PAIndex index = Array[Position];
 	return index;
 }
-PARezultat Init(INT size)
+struct PARezultat Init(INT size)
 {
 //	return )
 	PARezultat rezultat;

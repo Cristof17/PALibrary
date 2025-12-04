@@ -12,12 +12,12 @@ struct PALista
 };
 typedef struct PALista PALista;
 
-INT PAListaSize(PALista);
-PANod PAListaGet(INT);
-PANod PAListaHead(PALista);
-PALista PAListaTail(PALista);
-PANod PAListaInit(PALista);
-void PAListaPrint(PALista);
+INT PAListaSize(struct PALista);
+struct PANod PAListaGet(INT);
+struct PANod PAListaHead(struct PALista);
+struct PALista PAListaTail(struct PALista);
+struct PANod PAListaInit(struct PALista);
+void PAListaPrint(struct PALista);
 //toArrayList();
 #endif
 

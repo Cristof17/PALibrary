@@ -6,5 +6,5 @@ struct PACardinal
 
 };
 typedef struct PACardinal PACardinal;
-void PACardinalPrint(PACardinal);
+void PACardinalPrint(struct PACardinal);
 #endif
