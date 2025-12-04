@@ -1,10 +1,6 @@
 //@Author Cristofor Rotsching
 #include "../include/PALista.h"
-struct PALista {
-	// struct PANod Nod;
-	struct ArrayList List;
-	struct PACardinal m;
-};
+#include <defs.h>
 INT Size(struct PALista lista) {
     int size = 0;
 //    PATip tip = lista.Nod.Tip;

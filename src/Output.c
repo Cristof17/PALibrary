@@ -1,9 +1,6 @@
 //@Author Cristofor Rotsching
 #include "../include/Output.h"
-struct Output {
-//	struct PARezultat rezultat;
-//	struct BFSOutput outputBFS;
-};
+#include <defs.h>
 void Print(struct PARezultat rezultat) {
     OutputPrint(rezultat);
 }

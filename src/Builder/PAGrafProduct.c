@@ -1,9 +1,7 @@
 //@Author Cristofor Rotsching
 #include "../include/Builder/PAGrafNormal.h"
 #include "../include/PARezultat.h"
-struct GrafProduct {
-    struct PAGraf graf;
-};
+#include <defs.h>
 struct GrafNormal PABuildPart()
 {
     struct GrafNormal graf;

@@ -1,8 +1,6 @@
 //@Author Cristofor Rotsching
 #include "../include/Builder/PAGrafTranspus.h"
-struct GrafTranspus {
-
-};
+#include <defs.h>
 struct GrafTranspus PAGrafTranspusBuildPart()
 {
     struct GrafTranspus graf;

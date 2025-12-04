@@ -2,15 +2,14 @@
 #include "../include/Adapter/Adaptee.h"
 #include "../include/PANod.h"
 #include <types.h>
+#include <defs.h>
 /*
  * Adapter.c
  *
  *  Created on: 17 nov. 2025
  *      Author: AdministratorUser
  */
-struct Adapter {
-	struct PALista Lista;
-};
+
 void AdapterRequest(Adapter adapter)
 {
 	Adaptee adaptee;

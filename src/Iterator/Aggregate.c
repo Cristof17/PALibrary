@@ -1,4 +1,5 @@
 #include "include/Iterator/Aggregate.h"
+#include <defs.h>
 /*
  * Aggregate.c
  *
@@ -6,6 +7,5 @@
  *      Author: AdministratorUser
  */
 // class {
-struct Aggregate {
-};
+
 

@@ -1,8 +1,5 @@
 #include "../include/PAIndex.h"
-struct PAIndex {
-//    int Value;
-	INT Value;
-};
+#include <defs.h>
 INT op_Equality(struct PAIndex,struct PAIndex) {
     return 1;
 }

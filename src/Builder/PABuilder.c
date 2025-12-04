@@ -1,4 +1,2 @@
 //@Author Cristofor Rotsching
-struct Builder {
-
-};
+#include <defs.h>

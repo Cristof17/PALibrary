@@ -1,7 +1,5 @@
 //@Author Cristofor Rotsching
 #include "../include/PARezultat.h"
-struct PARezultat {
-	INT cod;
-};
+#include <defs.h>
 void PARezultatPrint(struct PARezultat rezultat) {
 }

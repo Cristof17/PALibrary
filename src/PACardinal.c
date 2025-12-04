@@ -1,8 +1,6 @@
 //@Author Cristofor Rotsching
 #include "../include/PACardinal.h"
-struct PACardinal {
-
-};
+#include <defs.h>
 void PACardinalPrint(struct PACardinal cardinal) {
 
 }

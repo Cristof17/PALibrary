@@ -1,4 +1,2 @@
 //@Author Cristofor Rotsching
-struct GrafNormal {
-
-};
+#include <defs.h>

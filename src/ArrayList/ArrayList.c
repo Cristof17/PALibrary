@@ -1,13 +1,12 @@
 #include "../include/ArrayList/ArrayList.h"
+#include <defs.h>
 /*
  * ArrayList.c
  *
  *  Created on: 20 nov. 2025
  *      Author: AdministratorUser
  */
-struct ArrayList {
-	struct PAIndex Index[0];
-};
+
 struct PAIndex ArrayListGet(struct PAIndex Array[],INT Position)
 {
 	struct PAIndex index = Array[Position];

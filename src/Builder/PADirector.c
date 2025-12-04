@@ -1,8 +1,6 @@
 //@Author Cristofor Rotsching
 #include "../include/Builder/PADirector.h"
-struct Director {
-    struct Builder builder;
-};
+#include <defs.h>
 void PAConstruct()
 {
 }
