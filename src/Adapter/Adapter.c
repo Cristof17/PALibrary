@@ -14,9 +14,9 @@ void AdapterRequest(Adapter adapter)
 	Adaptee adaptee;
 	SpecificRequest(adaptee);
 }
-PANod AdapterHead(Adapter adapter)
+struct PANod AdapterHead(Adapter adapter)
 {
-	PANod nod;
+	struct PANod nod;
 	return nod;
 	// PAIndex index = PAListaGet(FIRST);
 	// adapter.Lista.Nod.Index = index;

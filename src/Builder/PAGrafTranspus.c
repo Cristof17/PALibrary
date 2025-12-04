@@ -1,12 +1,12 @@
 //@Author Cristofor Rotsching
 #include "../include/Builder/PAGrafTranspus.h"
-PAGrafTranspus PAGrafTranspusBuildPart()
+struct PAGrafTranspus PAGrafTranspusBuildPart()
 {
-    PAGrafTranspus graf;
+    struct PAGrafTranspus graf;
     return graf;
 }
-PARezultat paGrafTranspusGetResult()
+struct PARezultat paGrafTranspusGetResult()
 {
-    PARezultat result;
+    struct PARezultat result;
     return result;
 }
