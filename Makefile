@@ -207,40 +207,40 @@ obj/Iterator/ConcreteAggregate.o: src/Iterator/ConcreteAggregate.c
 #	echo "installcheck"
 
 clean:
-	rm obj/Input.o \
-	rm obj/Algorithm.o \
-	rm obj/BFSAlgorithm.o \
-	rm obj/BFSInput.o \
-	rm obj/BFSResult.o \
-	rm obj/Output.o \
-	rm obj/PAData.o \
-	rm obj/PAGraf.o \
-	rm obj/PAIndex.o \
-	rm obj/PALista.o \
-	rm obj/PAMuchie.o \
-	rm obj/PANod.o \
-	rm obj/PAPereche.o \
-	rm obj/PARezultat.o \
-	rm obj/PASir.o \
-	rm obj/PATip.o \
-	rm obj/Builder/PADirector.o \
-	rm obj/Builder/PABuilder.o \
-	rm obj/Builder/PAGrafNormal.o \
-	rm obj/Builder/PAGrafTranspus.o \
-	rm obj/Builder/PAGrafProduct.o \
-	rm obj/Adapter/Client.o \
-	rm obj/Adapter/Target.o \ 
-	rm obj/Adapter/Adapter.o \
-	rm obj/Adapter/Adaptee.o \
-	rm obj/Adapter/PADrawingEditor.o \
-	rm obj/Adapter/PALine.o \
-	rm obj/Adapter/PAShape.o \
-	rm obj/Adapter/PATextView.o \
-	rm obj/ArrayList/ArrayList.o \
-	rm obj/Iterator/Client.o \                
-	rm obj/Iterator/ConcreteIterator.o \	
-	rm obj/Iterator/Iterator.o \        	
-	rm obj/Iterator/ConcreteAggregate.o 	
+	rm obj/Input.o
+	rm obj/Algorithm.o
+	rm obj/BFSAlgorithm.o
+	rm obj/BFSInput.o
+	rm obj/BFSResult.o
+	rm obj/Output.o
+	rm obj/PAData.o
+	rm obj/PAGraf.o
+	rm obj/PAIndex.o
+	rm obj/PALista.o
+	rm obj/PAMuchie.o
+	rm obj/PANod.o
+	rm obj/PAPereche.o
+	rm obj/PARezultat.o
+	rm obj/PASir.o
+	rm obj/PATip.o
+	rm obj/Builder/PADirector.o
+	rm obj/Builder/PABuilder.o
+	rm obj/Builder/PAGrafNormal.o
+	rm obj/Builder/PAGrafTranspus.o
+	rm obj/Builder/PAGrafProduct.o
+	rm obj/Adapter/Client.o
+	rm obj/Adapter/Target.o
+	rm obj/Adapter/Adapter.o
+	rm obj/Adapter/Adaptee.o
+	rm obj/Adapter/PADrawingEditor.o
+	rm obj/Adapter/PALine.o
+	rm obj/Adapter/PAShape.o
+	rm obj/Adapter/PATextView.o
+	rm obj/ArrayList/ArrayList.o
+	rm obj/Iterator/Client.o
+	rm obj/Iterator/ConcreteIterator.o
+	rm obj/Iterator/Iterator.o 
+	rm obj/Iterator/ConcreteAggregate.o
 #rm objInput.o
 #rm $(objects)
 #obj/Input.
