@@ -60,9 +60,77 @@ all: $(objects)
 	@echo "end of compile $(pwd)"
 	@echo "end of all $(pwd)"
 	@echo "end of assemble $(pwd)"
-
-$(objects): obj/%.o : src/%.c
+obj/input.o: src/Input.c
 	$(CC) -c $(CFLAGS) $< -o $@
+obj/Algorithm.o: src/Algorithm.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/BFSAlgorithm.o: src/BFSAlgorithm.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/BFSInput.o: src/BFSInput.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/BFSOutput.o: src/BFSInput.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/BFSResult.o: src/BFSResult.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/Output.o: src/Output.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/PAData.o: src/PAData.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/PAGraf.o: src/PAGraf.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/PALista.o: src/PALista.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/PAMuchie.o: src/PAMuchie.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/PANod.o: src/PANod.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/PAPereche.o: src/PAPereche.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/PARezultat.o: src/PARezultat.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/pastare.o: src/PAStare.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/PASir.o: src/PASir.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/Builder/PADirector.o: src/Builder/PADirector.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/Builder/PABuilder.o: src/Builder/PABuilder.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/Builder/PAGrafNormal.o: src/Builder/PAGrafNormal.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/Builder/PAGrafTranspus.o: src/Builder/PAGrafTranspus.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/Builder/PAGrafProduct.o: src/Builder/PAGrafProduct.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/Adapter/Client.o: src/Adapter/Client.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/Adapter/Target.o: src/Adapter/Target.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/Adapter/Adapter.o: src/Adapter/Adapter.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/Adapter/Adaptee.o: src/Adapter/Adaptee.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/Adapter/PADrawingEditor.o: src/Adapter/PADrawingEditor.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/Adapter/PALine.o: src/Adapter/PALine.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/Adapter/PAShape.o: src/Adapter/PAShape.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/Adapter/PATextView.o: src/Adapter/PATextView.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/ArrayList/ArrayList.o: src/ArrayList/ArrayList.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/Iterator/Client.o: src/Iterator/Client.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/Iterator/ConcreteIterator.o: src/Iterator/ConcreteIterator.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/Iterator/Iterator.o: src/Iterator/Iterator.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/Iterator/ConcreteAggregate.o: src/Iterator/ConcreteAggregate.c
+	$(CC) -c $(CFLAGS) $< -o $@
+
+#$(objects): obj/%.o : src/%.c
+#	$(CC) -c $(CFLAGS) $< -o $@
 
 install: installdirs
 
