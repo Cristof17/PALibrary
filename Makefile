@@ -102,21 +102,21 @@ build: obj/Input.o \
 
 obj/Input.o: src/Input.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Algorithm.o: src/Algorithm.c include/Algorithm.h
+obj/Algorithm.o: src/Input.c src/Algorithm.c include/Algorithm.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/BFSAlgorithm.o: src/BFSAlgorithm.c
+obj/BFSAlgorithm.o:src/Input.c src/PAGraf.c src/BFSAlgorithm.c
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/BFSInput.o: src/BFSInput.c
+obj/BFSInput.o: src/PACardinal.c src/PALista.c src/PANod.c src/BFSInput.c
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/BFSOutput.o: src/BFSInput.c include/BFSOutput.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/BFSResult.o: src/BFSResult.c include/BFSResult.h
+obj/BFSResult.o:src/PAIndex.c src/PALista.c src/PACardinal.c src/BFSResult.c include/BFSResult.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Output.o: src/Output.c include/Output.h
+obj/Output.o: src/PARezultat.c src/Output.c include/Output.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/PAData.o: src/PAData.c
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PAGraf.o: src/PAGraf.c
+obj/PAGraf.o: src/PANod.c src/PACardinal.c src/PAGraf.c
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/PAIndex.o: src/PAIndex.c include/PAIndex.h
 	$(CC) -c $(CFLAGS) $< -o $@
@@ -124,8 +124,8 @@ obj/PALista.o: src/PALista.c include/PALista.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/PAMuchie.o: src/PAMuchie.c
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PANod.o: src/PANod.c
-	$(CC) -c $(CFLAGS) $< -o $@
+obj/PANod.o: src/PANeigh.c src/PAStare.c src/PATip.c src/PAIndex.c src/PANod.c 
+	$(CC) -c $(CFLAGS) src/PAIndex.c src/PANeigh.c src/PAStare.c src/PATip.c -o $@
 obj/PAPereche.o: src/PAPereche.c
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/PARezultat.o: src/PARezultat.c include/PARezultat.h
@@ -162,7 +162,7 @@ obj/Adapter/PAShape.o: src/Adapter/PAShape.c
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/Adapter/PATextView.o: src/Adapter/PATextView.c
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/ArrayList/ArrayList.o: src/ArrayList/ArrayList.c
+obj/ArrayList/ArrayList.o: src/PAIndex.c src/ArrayList/ArrayList.c 
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/Iterator/Client.o: src/Iterator/Client.c
 	$(CC) -c $(CFLAGS) $< -o $@

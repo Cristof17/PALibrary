@@ -4,6 +4,9 @@
         "arraylist.h": "c",
         "types.h": "c",
         "output.h": "c",
-        "algorithm.h": "c"
+        "algorithm.h": "c",
+        "input.h": "c",
+        "panod.h": "c",
+        "paindex.h": "c"
     }
 }

@@ -7,7 +7,7 @@
 #include "../include/PANeigh.h"
 #include "../include/PATip.h"
 struct PANod;
-struct PANod;
+// struct PANod;
 typedef struct PANod PANod;
 #endif
 
