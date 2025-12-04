@@ -51,6 +51,7 @@ includedir=include
 #CFLAGS+=-I$(abspath $(includedir)/Iterator)
 #CFLAGS+=-I$(abspath $(includedir)/ArrayList)
 #CFLAGS+=-I$(abspath $(includedir)/Adapter)
+CFLAGS+=-Iinclude
 libdir=obj obj/Adapter/ obj/Iterator obj/ArrayList obj/Builder
 datadir=dat
 infodir=info

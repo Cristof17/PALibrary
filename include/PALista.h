@@ -3,7 +3,7 @@
 #define INCLUDE_PALISTA_H
 #include "include/PANod.h"
 #include "include/PACardinal.h"
-#include "include/ArrayList.h"
+#include "include/ArrayList/ArrayList.h"
 struct PALista
 {
 	// struct PANod Nod;
