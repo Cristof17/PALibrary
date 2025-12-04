@@ -1,7 +1,7 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_BFSOUTPUT_H
 #define INCLUDE_BFSOUTPUT_H
-#include <BFSResult.h>
+#include "include/BFSResult.h"
 struct BFSOutput
 {
     struct BFSResult Result;

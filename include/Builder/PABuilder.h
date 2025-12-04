@@ -1,7 +1,7 @@
 //@Author Cristofor Rotsching
 #ifndef PABUILDER_H
 #define PABUILDER_H
-#include <PAGrafProduct.h>
+#include "include/PAGrafProduct.h"
 struct PABuilder
 {
 

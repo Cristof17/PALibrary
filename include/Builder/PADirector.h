@@ -1,7 +1,7 @@
 //@Author Cristofor Rotsching
 #ifndef PADIRECTOR_H
 #define PADIRECTOR_H
-#include <PABuilder.h>
+#include "include/PABuilder.h"
 // #include <PABuilder.h>
 struct PADirector
 {

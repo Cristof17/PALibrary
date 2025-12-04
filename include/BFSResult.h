@@ -1,9 +1,9 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_BFSRESULT_H
 #define INCLUDE_BFSRESULT_H	
-#include <PALista.h>
-#include <PACardinal.h>
-#include <PARezultat.h>
+#include "include/PALista.h"
+#include "include/PACardinal.h"
+#include "include/PARezultat.h"
 struct BFSResult
 {
 	struct PALista Lista;
