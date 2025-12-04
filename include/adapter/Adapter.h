@@ -10,9 +10,7 @@
 #include "../include/Adapter/Adaptee.h"
 #include "../include/PALista.h"
 
-struct Adapter {
-	struct PALista Lista;
-};
+struct Adapter;
 typedef struct Adapter Adapter;
 void Request(Adapter);
 PANod GetHead(Adapter);

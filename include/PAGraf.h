@@ -5,11 +5,6 @@
 #include "../include/PALista.h"
 #include "../include/PANod.h"
 #include "../include/PASir.h"
-struct PAGraf {
-	struct PACardinal n;
-	struct PACardinal m;
-	struct PANod sursa;
-	struct PASir adj;
-};
+struct PAGraf;
 typedef struct PAGraf PAGraf;
 #endif

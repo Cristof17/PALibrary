@@ -10,9 +10,7 @@
 #include "../include/PAIndex.h"
 #include "../include/PANod.h"
 #include <types.h>
-struct Iterator {
-
-};
+struct Iterator;
 typedef struct Iterator Iterator;
 struct PAIndex First();
 struct PAIndex Next();

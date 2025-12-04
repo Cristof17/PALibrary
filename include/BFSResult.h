@@ -4,10 +4,7 @@
 #include "../include/PALista.h"
 #include "../include/PACardinal.h"
 #include "../include/PARezultat.h"
-struct BFSResult {
-	struct PALista Lista;
-	struct PACardinal Cardinal;
-};
+struct BFSResult;
 typedef struct BFSResult BFSResult;
 #endif
 

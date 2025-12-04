@@ -2,8 +2,6 @@
 #ifndef INCLUDE_PAMUCHIE_H
 #define INCLUDE_PAMUCHIE_H
 #include "../include/PAPereche.h"
-struct PAMuchie {
-	struct PAPereche p;
-};
+struct PAMuchie;
 typedef struct PAMuchie PAMuchie;
 #endif

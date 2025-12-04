@@ -3,10 +3,7 @@
 #define INCLUDE_OUTPUT_H
 #include "../include/PARezultat.h"
 #include "../include/BFSOutput.h"
-struct Output {
-//	struct PARezultat rezultat;
-//	struct BFSOutput outputBFS;
-};
+struct Output;
 typedef struct Output Output;
 void OutputPrint(struct PARezultat);
 #endif

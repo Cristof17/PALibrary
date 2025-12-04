@@ -1,9 +1,12 @@
 //@Author Cristofor Rotsching
 #include "../include/Builder/PAGrafNormal.h"
 #include "../include/PARezultat.h"
-struct sPAGrafNormal PABuildPart()
+struct GrafProduct {
+    struct PAGraf graf;
+};
+struct GrafNormal PABuildPart()
 {
-    struct PAGrafNormal graf;
+    struct GrafNormal graf;
     return graf;
 }
 struct PARezultat PAGetResult()

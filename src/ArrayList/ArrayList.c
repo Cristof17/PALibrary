@@ -5,6 +5,9 @@
  *  Created on: 20 nov. 2025
  *      Author: AdministratorUser
  */
+struct ArrayList {
+	struct PAIndex Index[0];
+};
 struct PAIndex ArrayListGet(struct PAIndex Array[],INT Position)
 {
 	struct PAIndex index = Array[Position];

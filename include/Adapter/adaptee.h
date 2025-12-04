@@ -12,9 +12,7 @@
 #include "../include/ArrayList/ArrayList.h"
 #include <types.h>
 
-struct Adaptee {
-	struct ArrayList List;
-};
+struct Adaptee;
 typedef struct Adaptee Adaptee;
 void SpecificRequest(Adaptee);
 PAIndex Get(INT);

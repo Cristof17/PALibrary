@@ -9,9 +9,7 @@
 #define INCLUDE_ADAPTER_CLIENT_H_
 #include "../include/PAGraf.h"
 #include "../include/Adapter/Target.h"
-struct Client {
-	struct PAGraf Graf;
-};
+struct Client;
 typedef struct Client Client;
 
 #endif /* ADAPTER_INCLUDE_CLIENT_H_ */

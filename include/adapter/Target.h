@@ -12,10 +12,7 @@
 
 
 //#include <Adapter.h">
-struct Target {
-	struct PASir Sir;
-	//struct Adapter adapter;
-};
+struct Target;
 typedef struct Target Target;
 PASir TargetRequest(Target);
 

@@ -4,11 +4,7 @@
 #include "../include/PANod.h"
 #include "../include/PACardinal.h"
 #include "../include/ArrayList/ArrayList.h"
-struct PALista {
-	// struct PANod Nod;
-	struct ArrayList List;
-	struct PACardinal m;
-};
+struct PALista;
 typedef struct PALista PALista;
 
 INT PAListaSize(struct PALista);

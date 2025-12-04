@@ -5,5 +5,6 @@
  *  Created on: 20 nov. 2025
  *      Author: AdministratorUser
  */
+struct ConcreteIterator  {
 
-
+};
