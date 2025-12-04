@@ -1,7 +1,7 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_PADATA_H
 #define INCLUDE_PADATA_H
-#include "include/PATip.h"
+#include "../include/PATip.h"
 struct PAData
 {
     INT value;
