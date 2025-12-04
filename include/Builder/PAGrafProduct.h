@@ -1,7 +1,7 @@
 //@Author Cristofor Rotsching
 #ifndef PAGRAFPRODUCT_H
 #define PAGRAFPRODUCT_H
-#include "include/PAGraf.h"
+#include "../include/PAGraf.h"
 struct PAGrafProduct
 {
     struct PAGraf graf;

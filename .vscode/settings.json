@@ -3,6 +3,7 @@
         "parezultat.h": "c",
         "arraylist.h": "c",
         "types.h": "c",
-        "output.h": "c"
+        "output.h": "c",
+        "algorithm.h": "c"
     }
 }

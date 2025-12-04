@@ -1,5 +1,5 @@
 //@Author Cristofor Rotsching
-#include "include/Builder/PAGrafTranspus.h"
+#include "../include/Builder/PAGrafTranspus.h"
 PAGrafTranspus PAGrafTranspusBuildPart()
 {
     PAGrafTranspus graf;

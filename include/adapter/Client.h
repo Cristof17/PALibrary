@@ -7,8 +7,8 @@
 
 #ifndef INCLUDE_ADAPTER_CLIENT_H_
 #define INCLUDE_ADAPTER_CLIENT_H_
-#include "include/PAGraf.h"
-#include "include/Adapter/Target.h"
+#include "../include/PAGraf.h"
+#include "../include/Adapter/Target.h"
 struct Client
 {
 	PAGraf Graf;

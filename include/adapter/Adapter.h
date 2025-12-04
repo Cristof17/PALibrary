@@ -7,8 +7,8 @@
 #ifndef INCLUDE_ADAPTER_H_
 #define INCLUDE_ADAPTER_H_
 //#include <Target.h>
-#include "include/Adapter/Adaptee.h"
-#include "include/PALista.h"
+#include "../include/Adapter/Adaptee.h"
+#include "../include/PALista.h"
 
 struct Adapter
 {

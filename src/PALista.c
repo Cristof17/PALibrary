@@ -1,5 +1,5 @@
 //@Author Cristofor Rotsching
-#include "include/PALista.h"
+#include "../include/PALista.h"
 INT Size(PALista lista)
 {
     int size = 0;

@@ -7,8 +7,8 @@
 
 #ifndef INCLUDE_ADAPTER_TARGET_H_
 #define INCLUDE_ADAPTER_TARGET_H_
-#include "include/PASir.h"
-#include "include/Adapter/Adapter.h"
+#include "../include/PASir.h"
+#include "../include/Adapter/Adapter.h"
 
 
 //#include <Adapter.h">

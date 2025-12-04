@@ -1,4 +1,4 @@
-#include "include/PASir.h"
+#include "../include/PASir.h"
 /*
  * pasir.c
  *
