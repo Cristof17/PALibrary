@@ -1,4 +1,4 @@
-#include "incude/ArrayList/ArrayList.h"
+#include "include/ArrayList/ArrayList.h"
 /*
  * ArrayList.c
  *
