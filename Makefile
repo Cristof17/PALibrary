@@ -59,10 +59,47 @@ mandir=man
 export CPATH
 export CFLAGS
 export include
-all: $(objects)
-	@echo "end of compile $(pwd)"
-	@echo "end of all $(pwd)"
-	@echo "end of assemble $(pwd)"
+#all: 
+#	$(objects)
+#	@echo "end of compile $(pwd)"
+#	@echo "end of all $(pwd)"
+#	@echo "end of assemble $(pwd)"
+
+build: obj/Input.o \
+	obj/Algorithm.o \
+	obj/BFSAlgorithm.o \
+	obj/BFSInput.o \
+	obj/BFSResult.o \
+	obj/Output.o \
+	obj/PAData.o \
+	obj/PAGraf.o \
+	obj/PAIndex.o \
+	obj/PALista.o \
+	obj/PAMuchie.o \
+	obj/PANod.o \
+	obj/PAPereche.o \
+	obj/PARezultat.o \
+	obj/PASir.o \
+	obj/PATip.o \
+	obj/Builder/PADirector.o \
+	obj/Builder/PABuilder.o \
+	obj/Builder/PAGrafNormal.o \
+	obj/Builder/PAGrafTranspus.o \
+	obj/Builder/PAGrafProduct.o \
+	obj/Adapter/Client.o \
+	obj/Adapter/Target.o \
+	obj/Adapter/Adapter.o \
+	obj/Adapter/Adaptee.o \
+	obj/Adapter/PADrawingEditor.o \
+	obj/Adapter/PALine.o \
+	obj/Adapter/PAShape.o \
+	obj/Adapter/PATextView.o \
+	obj/ArrayList/ArrayList.o \
+	obj/Iterator/Client.o \
+	obj/Iterator/ConcreteIterator.o \
+	obj/Iterator/Iterator.o \
+	obj/Iterator/ConcreteAggregate.o
+
 obj/Input.o: src/Input.c 
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/Algorithm.o: src/Algorithm.c include/Algorithm.h
@@ -139,40 +176,77 @@ obj/Iterator/ConcreteAggregate.o: src/Iterator/ConcreteAggregate.c
 #$(objects): obj/%.o : src/%.c
 #	$(CC) -c $(CFLAGS) $< -o $@
 
-install: installdirs
+#install: installdirs
 
-subdirs: $(SUBDIRS)
-	for dir in $(SUBDIRS); do \
+#subdirs: $(SUBDIRS)
+#	for dir in $(SUBDIRS); do \
 		$(MAKE) -C $$dir; \
 	done
 
-installdirs: mkinstalldirs
-	$(srcdir)/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(datadir) \
+#installdirs: mkinstalldirs
+#	$(srcdir)/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(datadir) \
 				$(DESTDIR)$(libdir) $(DESTDIR)$(infodir) \
 				$(DESTDIR)$(mandir)
 
-mkinstalldirs: $(srcdir)/mkinstalldirs
+#mkinstalldirs: $(srcdir)/mkinstalldirs
 
-uninstall:
-	cp . .
+#uninstall:
+#	cp . .
 
-distclean:
-	rm asm/*
-	rm obj/*
+#distclean:
+#	rm asm/*
+#	rm obj/*
 
-dist:
-	echo "dist"
+#dist:
+#	echo "dist"
 
-check:
-	echo "check"
+#check:
+#	echo "check"
 
-installcheck:
-	echo "installcheck"
+#installcheck:
+#	echo "installcheck"
 
-clean: 
-	rm $(objects)
-	@echo "clean $(pwd)"
-	@echo "end of clean"
+clean:
+	rm obj/Input.o \
+	rm obj/Algorithm.o \
+	rm obj/BFSAlgorithm.o \
+	rm obj/BFSInput.o \
+	rm obj/BFSResult.o \
+	rm obj/Output.o \
+	rm obj/PAData.o \
+	rm obj/PAGraf.o \
+	rm obj/PAIndex.o \
+	rm obj/PALista.o \
+	rm obj/PAMuchie.o \
+	rm obj/PANod.o \
+	rm obj/PAPereche.o \
+	rm obj/PARezultat.o \
+	rm obj/PASir.o \
+	rm obj/PATip.o \
+	rm obj/Builder/PADirector.o \
+	rm obj/Builder/PABuilder.o \
+	rm obj/Builder/PAGrafNormal.o \
+	rm obj/Builder/PAGrafTranspus.o \
+	rm obj/Builder/PAGrafProduct.o \
+	rm obj/Adapter/Client.o \
+	rm obj/Adapter/Target.o \ 
+	rm obj/Adapter/Adapter.o \
+	rm obj/Adapter/Adaptee.o \
+	rm obj/Adapter/PADrawingEditor.o \
+	rm obj/Adapter/PALine.o \
+	rm obj/Adapter/PAShape.o \
+	rm obj/Adapter/PATextView.o \
+	rm obj/ArrayList/ArrayList.o \
+	rm obj/Iterator/Client.o \                
+	rm obj/Iterator/ConcreteIterator.o \	
+	rm obj/Iterator/Iterator.o \        	
+	rm obj/Iterator/ConcreteAggregate.o 	
+#rm objInput.o
+#rm $(objects)
+#obj/Input.
+##include "includePAGrafProduct.h
+#@echo "clean $(pwd)"
+#	@echo "end of clean"
 
 run:
 	@echo "Running"
@@ -332,4 +406,4 @@ run:
 # arraylist.o : arraylist_arraylist.s
 # 	$(AS) -c asm/arraylist/$^ -o obj/arraylist/$@
 
-.PHONY: all install installdirs installcheck uinstall run distclean clean
+#.PHONY: all install installdirs installcheck uinstall run distclean clean
