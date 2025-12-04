@@ -12,8 +12,7 @@
 
 
 //#include <Adapter.h">
-struct Target
-{
+struct Target {
 	struct PASir Sir;
 	//struct Adapter adapter;
 };

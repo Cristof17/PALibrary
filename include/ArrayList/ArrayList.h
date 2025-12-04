@@ -3,11 +3,10 @@
 #include "../include/PARezultat.h"
 #include "../include/PAIndex.h"
 #include <types.h>
-struct ArrayList
-{
-	PAIndex Index[0];
+struct ArrayList {
+	struct PAIndex Index[0];
 };
 typedef struct ArrayList ArrayList;
-PAIndex ArrayListGet(PAIndex[],INT);
-PARezultat Init(INT);
+struct PAIndex ArrayListGet(struct PAIndex[],INT);
+struct PARezultat Init(INT);
 #endif

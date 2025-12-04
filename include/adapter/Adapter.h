@@ -10,9 +10,8 @@
 #include "../include/Adapter/Adaptee.h"
 #include "../include/PALista.h"
 
-struct Adapter
-{
-	PALista Lista;
+struct Adapter {
+	struct PALista Lista;
 };
 typedef struct Adapter Adapter;
 void Request(Adapter);

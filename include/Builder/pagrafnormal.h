@@ -2,11 +2,10 @@
 #ifndef PAGRAFNORMAL_H
 #define PAGRAFNORMAL_H
 #include "../include/PARezultat.h"
-struct PAGrafNormal
-{
+struct GrafNormal {
 
 };
-typedef struct PAGrafNormal PAGrafNormal;
-PAGrafNormal PAGrafNormalBuildPart();
-PARezultat PAGrafNormalGetResult();
+typedef struct GrafNormal PAGrafNormal;
+struct GrafNormal PAGrafNormalBuildPart();
+struct PARezultat PAGrafNormalGetResult();
 #endif

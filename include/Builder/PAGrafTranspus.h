@@ -2,11 +2,10 @@
 #ifndef PAGRAFTRANSPUS_H
 #define PAGRAFTRANSPUS_H
 #include "../include/PARezultat.h"
-struct PAGrafTranspus
-{
+struct GrafTranspus {
 
 };
-typedef struct PAGrafTranspus PAGrafTranspus;
-PAGrafTranspus PAGrafTranspusBuildPart();
-PARezultat paGrafTranspusGetResult();
+typedef struct GrafTranspus GrafTranspus;
+GrafTranspus GrafTranspusBuildPart();
+struct PARezultat GrafTranspusGetResult();
 #endif

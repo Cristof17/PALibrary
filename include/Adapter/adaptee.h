@@ -12,9 +12,8 @@
 #include "../include/ArrayList/ArrayList.h"
 #include <types.h>
 
-struct Adaptee
-{
-	ArrayList List;
+struct Adaptee {
+	struct ArrayList List;
 };
 typedef struct Adaptee Adaptee;
 void SpecificRequest(Adaptee);

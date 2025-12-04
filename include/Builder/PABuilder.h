@@ -2,10 +2,9 @@
 #ifndef PABUILDER_H
 #define PABUILDER_H
 #include "../include/Builder/PAGrafProduct.h"
-struct PABuilder
-{
+struct Builder {
 
 };
-typedef struct PABuilder PABuilder;
-PAGrafProduct PABuilderBuildPart();
+typedef struct Builder Builder;
+struct GrafProduct BuilderBuildPart();
 #endif

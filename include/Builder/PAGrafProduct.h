@@ -2,9 +2,8 @@
 #ifndef PAGRAFPRODUCT_H
 #define PAGRAFPRODUCT_H
 #include "../include/PAGraf.h"
-struct PAGrafProduct
-{
+struct GrafProduct {
     struct PAGraf graf;
 };
-typedef struct PAGrafProduct PAGrafProduct;
+typedef struct GrafProduct GrafProduct;
 #endif
