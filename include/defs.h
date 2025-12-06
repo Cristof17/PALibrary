@@ -15,7 +15,7 @@ struct PAIndex {
 	INT Value;
 };
 struct ArrayList {
-	struct PAIndex Index[0];
+	struct PAData Index[0];
 };
 struct PALista {
 	// struct PANod Nod;
@@ -31,18 +31,18 @@ struct PAStare {
 struct PATip {
 	INT Kind;
 };
-struct PANod { 
+struct PAData { 
 //	struct PAData data;
-	struct PAIndex Index;
-	struct PANeigh Next;
-	struct PAStare Stare;
+	struct PAData Index;
+	struct PADestination Next;
+	struct PAStatus Stare;
 	struct PATip Tip;
 };
 struct BFSInput {
 	struct PACardinal n;
 	struct PACardinal m;
-	struct PALista adj;
-	struct PANod sursa;
+	struct PAList adj;
+	struct PAData sursa;
 };
 struct BFSResult {
 	struct PALista Lista;
@@ -55,23 +55,27 @@ struct Output {
 //	struct PARezultat rezultat;
 //	struct BFSOutput outputBFS;
 };
-struct PAData {
+struct PAValue {
     INT value;
 };
-struct PASir {
+struct PASeries {
 	struct PACardinal n;
-	struct PALista adj[];
+	struct PAList adj[];
 };
-struct PAGraf  {
+struct PATree  {
 	struct PACardinal n;
 	struct PACardinal m;
-	struct PANod sursa;
-	struct PASir adj;
+	struct PAData sursa;
+	struct PASeries adj;
 };
 struct PAPereche {
 };
-struct PAMuchie {
+struct PALink {
 	struct PAPereche p;
+};
+struct PAArrow
+{
+
 };
 struct PARezultat {
 	INT cod;
@@ -80,13 +84,13 @@ struct Adaptee {
 	struct ArrayList List;
 };
 struct Adapter {
-	struct PALista Lista;
+	struct PAList Lista;
 };
 struct IteratorClient {
-	struct PAGraf Graf;
+	struct PATree Graf;
 };
 struct Target {
-	struct PASir Sir;
+	struct PASeries Sir;
 	//struct Adapter adapter;
 };
 
@@ -100,7 +104,7 @@ struct GrafNormal {
     ;
 };
 struct GrafProduct {
-    struct PAGraf graf;
+    struct PATree graf;
 };
 struct GrafTranspus {
     ;
@@ -121,6 +125,6 @@ struct Iterator  {
 };
 struct BFSAlgorithm {
 	struct BFSInput Input;
-	struct PAGraf Graf;
+	struct PATree Graf;
 };
 #endif

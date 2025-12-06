@@ -72,14 +72,15 @@ build: obj/Input.o \
 	obj/BFSRecord.o \
 	obj/Output.o \
 	obj/PAData.o \
-	obj/PAGraf.o \
-	obj/PAIndex.o \
-	obj/PALista.o \
-	obj/PAMuchie.o \
+	obj/PATree.o \
+	obj/PAData.o \
+	obj/PAList.o \
+	obj/PALink.o \
+	obj/PAArrow.o \
 	obj/PANod.o \
 	obj/PAPereche.o \
 	obj/PARezultat.o \
-	obj/PASir.o \
+	obj/PASeries.o \
 	obj/PATip.o \
 	obj/Builder/PADirector.o \
 	obj/Builder/PABuilder.o \
@@ -114,25 +115,27 @@ obj/BFSRecord.o:src/BFSRecord.c include/BFSRecord.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/Output.o: src/Output.c include/Output.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PAData.o: src/PAData.c include/PAData.h include/defs.h
+obj/PAValue.o: src/PAValue.c include/PAValue.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PAGraf.o: src/PAGraf.c include/PAGraf.h include/defs.h
+obj/PATree.o: src/PATree.c include/PATree.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PAIndex.o: src/PAIndex.c include/PAIndex.h include/defs.h
+#obj/PAIndex.o: src/PAIndex.c include/PAIndex.h include/defs.h
+#	$(CC) -c $(CFLAGS) $< -o $@
+obj/PAList.o: src/PAList.c include/PAList.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PALista.o: src/PALista.c include/PALista.h include/defs.h
+obj/PALink.o: src/PALink.c include/PALink.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PAMuchie.o: src/PAMuchie.c include/PAMuchie.h include/defs.h
+obj/PAArrow.o: src/PAArrow.c include/PAArrow.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PANod.o: src/PANod.c include/PANod.h include/defs.h
-	$(CC) -c $(CFLAGS) $< -o $@
+#obj/PANod.o: src/PANod.c include/PANod.h include/defs.h
+#	$(CC) -c $(CFLAGS) $< -o $@
 obj/PAPereche.o: src/PAPereche.c include/PAPereche.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/PARezultat.o: src/PARezultat.c include/PARezultat.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PASir.o: src/PASir.c include/PASir.h include/defs.h
+obj/PASeries.o: src/PASeries.c include/PASeries.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PAStare.o: src/PAStare.c include/PASir.h include/defs.h
+obj/PAStatus.o: src/PAStatus.c include/PAStatus.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/PATip.o: src/PATip.c include/PATip.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
@@ -214,14 +217,15 @@ clean:
 	rm obj/BFSRecord.o
 	rm obj/Output.o
 	rm obj/PAData.o
-	rm obj/PAGraf.o
-	rm obj/PAIndex.o
-	rm obj/PALista.o
-	rm obj/PAMuchie.o
-	rm obj/PANod.o
+	rm obj/PATree.o
+	#rm obj/PA.o
+	rm obj/PAList.o
+	rm obj/PALink.o
+	rm obj/PAArrow.o
+#	rm obj/PANod.o
 	rm obj/PAPereche.o
 	rm obj/PARezultat.o
-	rm obj/PASir.o
+	rm obj/PASeries.o
 	rm obj/PATip.o
 	rm obj/Builder/PADirector.o
 	rm obj/Builder/PABuilder.o
