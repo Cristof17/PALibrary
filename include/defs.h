@@ -10,28 +10,28 @@ struct Algorithm {
 struct PACardinal {
 
 };
-struct PAIndex {
+struct PAData {
 //    int Value;
 	INT Value;
 };
 struct ArrayList {
 	struct PAData Index[0];
 };
-struct PALista {
+struct PAList {
 	// struct PANod Nod;
 	struct ArrayList List;
 	struct PACardinal m;
 };
-struct PANeigh {
+struct PADestination {
     //struct PANod nod;
 };
-struct PAStare {
+struct PAStatus {
 	INT vizitat;
 };
 struct PATip {
 	INT Kind;
 };
-struct PAData { 
+struct PAElement { 
 //	struct PAData data;
 	struct PAData Index;
 	struct PADestination Next;
@@ -42,40 +42,36 @@ struct BFSInput {
 	struct PACardinal n;
 	struct PACardinal m;
 	struct PAList adj;
-	struct PAData sursa;
+	struct PAElement sursa;
 };
-struct BFSResult {
-	struct PALista Lista;
+struct BFSRecord {
+	struct PAList Lista;
 	struct PACardinal Cardinal;
 };
 struct BFSOutput {
-    struct BFSResult Result;
+    struct BFSRecord Result;
 };
 struct Output {
 //	struct PARezultat rezultat;
 //	struct BFSOutput outputBFS;
 };
-struct PAValue {
+struct PAData {
     INT value;
 };
-struct PASeries {
+struct j {
 	struct PACardinal n;
 	struct PAList adj[];
 };
 struct PATree  {
 	struct PACardinal n;
 	struct PACardinal m;
-	struct PAData sursa;
+	struct PAElement sursa;
 	struct PASeries adj;
 };
 struct PAPereche {
 };
 struct PALink {
 	struct PAPereche p;
-};
-struct PAArrow
-{
-
 };
 struct PARezultat {
 	INT cod;
