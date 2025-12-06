@@ -17,6 +17,9 @@ struct PACount {
 struct PAData {
     INT value;
 };
+struct PAValue {
+    INT value;
+};
 struct ArrayList {
 	struct PAData Index[0];
 };

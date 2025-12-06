@@ -83,6 +83,7 @@ build: obj/Input.o \
 	obj/PAResult.o \
 	obj/PASeries.o \
 	obj/PAFeature.o \
+	obj/PAValue.o \
 	obj/Builder/PADirector.o \
 	obj/Builder/PABuilder.o \
 	obj/Builder/PAGrafNormal.o \
@@ -143,6 +144,8 @@ obj/PASeries.o: src/PASeries.c include/PASeries.h include/defs.h
 obj/PAStatus.o: src/PAStatus.c include/PAStatus.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/PAFeature.o: src/PAFeature.c include/PAFeature.h include/defs.h
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/PAValue.o: src/PAValue.c include/PAValue.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/Builder/PADirector.o: src/Builder/PADirector.c include/Builder/PADirector.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
@@ -233,6 +236,7 @@ clean:
 	rm obj/PAResult.o
 	rm obj/PASeries.o
 	rm obj/PAFeature.o
+	rm obj/PAValue.o
 	rm obj/Builder/PADirector.o
 	rm obj/Builder/PABuilder.o
 	rm obj/Builder/PAGrafNormal.o

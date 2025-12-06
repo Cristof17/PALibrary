@@ -16,6 +16,7 @@
         "paseries.h": "c",
         "target.h": "c",
         "paresult.h": "c",
-        "pafeature.h": "c"
+        "pafeature.h": "c",
+        "pavalue.h": "c"
     }
 }
