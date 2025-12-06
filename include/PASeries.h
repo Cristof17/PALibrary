@@ -7,7 +7,7 @@
 
 #ifndef INCLUDE_PASIR_H_
 #define INCLUDE_PASIR_H_
-#include "../include/PACardinal.h"
+#include "../include/PACount.h"
 #include "../include/PAList.h"
 struct PASir;
 typedef struct PASir PASir;

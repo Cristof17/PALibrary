@@ -3,5 +3,5 @@
 #define INCLUDE_PACARDINAL_H
 struct PACount;
 typedef struct PACount PACount;
-void PACardinalPrint(struct PACardinal);
+void PACountPrint(struct PACount);
 #endif

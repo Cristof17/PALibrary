@@ -1,7 +1,7 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_PAGRAF_H
 #define INCLUDE_PAGRAF_H
-#include "../include/PACardinal.h"
+#include "../include/PACount.h"
 #include "../include/PAList.h"
 #include "../include/PAElement.h"
 #include "../include/PASeries.h"

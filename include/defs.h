@@ -7,7 +7,7 @@ struct Input {
 struct Algorithm {
 	struct Input input;
 };
-struct PACardinal {
+struct PACount {
 
 };
 // struct PAData {
@@ -23,7 +23,7 @@ struct ArrayList {
 struct PAList {
 	// struct PANod Nod;
 	struct ArrayList List;
-	struct PACardinal m;
+	struct PACount m;
 };
 struct PADestination {
     //struct PANod nod;
@@ -42,14 +42,14 @@ struct PAElement {
 	struct PATip Tip;
 };
 struct BFSInput {
-	struct PACardinal n;
-	struct PACardinal m;
+	struct PACount n;
+	struct PACount m;
 	struct PAList adj;
 	struct PAElement sursa;
 };
 struct BFSRecord {
 	struct PAList Lista;
-	struct PACardinal Cardinal;
+	struct PACount Cardinal;
 };
 struct BFSOutput {
     struct BFSRecord Result;
@@ -59,7 +59,7 @@ struct Output {
 //	struct BFSOutput outputBFS;
 };
 struct j {
-	struct PACardinal n;
+	struct PACount n;
 	struct PAList adj[];
 };
 struct PASeries
@@ -67,8 +67,8 @@ struct PASeries
 
 };
 struct PATree  {
-	struct PACardinal n;
-	struct PACardinal m;
+	struct PACount n;
+	struct PACount m;
 	struct PAElement sursa;
 	struct PASeries adj;
 };

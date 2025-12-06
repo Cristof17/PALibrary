@@ -3,7 +3,7 @@
 #define INCLUDE_BFSINPUT_H	
 #include "../include/PAElement.h"
 #include "../include/PAList.h"
-#include "../include/PACardinal.h"
+#include "../include/PACount.h"
 #include "../include/BFSInput.h"
 struct BFSInput ;
 typedef struct BFSInput BFSInput;

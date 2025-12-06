@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#include "../include/PACardinal.h"
+#include "../include/PACount.h"
 #include <defs.h>
-void PACardinalPrint(struct PACardinal cardinal) {
+void PACountPrint(struct PACount cardinal) {
 
 }
