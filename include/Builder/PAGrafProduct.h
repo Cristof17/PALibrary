@@ -1,7 +1,7 @@
 //@Author Cristofor Rotsching
 #ifndef PAGRAFPRODUCT_H
 #define PAGRAFPRODUCT_H
-#include "../include/PATree.h"
+#include "../include/PA/Tree.h"
 struct GrafProduct;
 typedef struct GrafProduct GrafProduct;
 #endif

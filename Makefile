@@ -148,7 +148,7 @@ obj/PA/Feature.o: src/PA/Feature.c include/PA/Feature.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/PA/Value.o: src/PA/Value.c include/PA/Value.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Builder/PADirector.o: src/Builder/PA/Director.c include/Builder/PADirector.h include/defs.h
+obj/Builder/PADirector.o: src/Builder/PADirector.c include/Builder/PADirector.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/Builder/PABuilder.o: src/Builder/PABuilder.c include/Builder/PABuilder.h include/defs.h 
 	$(CC) -c $(CFLAGS) $< -o $@
@@ -174,7 +174,7 @@ obj/Adapter/PAShape.o: src/Adapter/PAShape.c include/Adapter/PAShape.h include/d
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/Adapter/PATextView.o: src/Adapter/PATextView.c include/Adapter/PATextView.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/ArrayList/ArrayList.o: src/PAData.c src/ArrayList/ArrayList.c include/ArrayList/ArrayList.h include/defs.h
+obj/ArrayList/ArrayList.o: src/PA/Data.c src/ArrayList/ArrayList.c include/ArrayList/ArrayList.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/Iterator/Client.o: src/Iterator/Client.c include/Iterator/Client.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
