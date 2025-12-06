@@ -1,3 +1,3 @@
 //@Author Cristofor Rotsching
-#include "../include/PAGraf.h"
+#include "../include/PATree.h"
 #include <defs.h>

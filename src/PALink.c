@@ -1,3 +1,3 @@
 //@Author Cristofor Rotsching
-#include "../include/PAMuchie.h"
+#include "../include/PALink.h"
 #include <defs.h>

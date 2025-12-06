@@ -8,10 +8,10 @@ struct PAList;
 typedef struct PAList PAList;
 
 INT PAListaSize(struct PAList);
-struct PANod PAListaGet(INT);
-struct PANod PAListaHead(struct PAList);
-struct PALista PAListaTail(struct PAList);
-struct PANod PAListaInit(struct PAList);
+struct PAElement PAListaGet(INT);
+struct PAElement PAListaHead(struct PAList);
+struct PAList PAListaTail(struct PAList);
+struct PAElement PAListaInit(struct PAList);
 void PAListaPrint(struct PAList);
 //toArrayList();
 #endif

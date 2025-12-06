@@ -77,7 +77,7 @@ build: obj/Input.o \
 	obj/PAList.o \
 	obj/PALink.o \
 	obj/PAArrow.o \
-	obj/PANod.o \
+	obj/PAElement.o \
 	obj/PAPereche.o \
 	obj/PARezultat.o \
 	obj/PASeries.o \
@@ -117,7 +117,7 @@ obj/Output.o: src/Output.c include/Output.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/PAValue.o: src/PAValue.c include/PAValue.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PAData.o: src/PAData.c include/PAData.h defs.h
+obj/PAData.o: src/PAData.c include/PAData.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/PATree.o: src/PATree.c include/PATree.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
@@ -129,8 +129,8 @@ obj/PALink.o: src/PALink.c include/PALink.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/PAArrow.o: src/PAArrow.c include/PAArrow.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-#obj/PANod.o: src/PANod.c include/PANod.h include/defs.h
-#	$(CC) -c $(CFLAGS) $< -o $@
+obj/PAElement.o: src/PAElement.c include/PAElement.h include/defs.h
+	$(CC) -c $(CFLAGS) $< -o $@
 obj/PAPereche.o: src/PAPereche.c include/PAPereche.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/PARezultat.o: src/PARezultat.c include/PARezultat.h include/defs.h

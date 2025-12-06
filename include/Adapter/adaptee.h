@@ -8,12 +8,12 @@
 #ifndef INCLUDE_ADAPTEE_H_
 #define INCLUDE_ADAPTEE_H_
 //#include <adaptee.h>
-#include "../include/PAIndex.h"
+#include "../include/PAData.h"
 #include "../include/ArrayList/ArrayList.h"
 #include <types.h>
 
 struct Adaptee;
 typedef struct Adaptee Adaptee;
 void SpecificRequest(Adaptee);
-PAIndex Get(INT);
+struct PAData Get(INT);
 #endif /* ADAPTER_INCLUDE_ADAPTEE_H_ */
