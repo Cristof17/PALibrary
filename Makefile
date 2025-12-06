@@ -78,7 +78,7 @@ build: obj/Input.o \
 	obj/PALink.o \
 	obj/PAArrow.o \
 	obj/PAElement.o \
-	obj/PAPereche.o \
+	obj/PAPair.o \
 	obj/PARezultat.o \
 	obj/PASeries.o \
 	obj/PATip.o \
@@ -131,7 +131,7 @@ obj/PAArrow.o: src/PAArrow.c include/PAArrow.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/PAElement.o: src/PAElement.c include/PAElement.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PAPereche.o: src/PAPereche.c include/PAPereche.h include/defs.h
+obj/PAPair.o: src/PAPair.c include/PAPair.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/PARezultat.o: src/PARezultat.c include/PARezultat.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
@@ -224,8 +224,8 @@ clean:
 	rm obj/PAList.o
 	rm obj/PALink.o
 	rm obj/PAArrow.o
-#	rm obj/PANod.o
-	rm obj/PAPereche.o
+	rm obj/PAElement.o
+	rm obj/PAPair.o
 	rm obj/PARezultat.o
 	rm obj/PASeries.o
 	rm obj/PATip.o
