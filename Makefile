@@ -5,6 +5,7 @@
 # with no Invariant Sections, no Front-Cover Texts, and no Back-Cover
 # Texts.  A copy of the license is included in the section entitled ``GNU
 # Free Documentation License''.
+
 #objects=obj/Input.o \
 #	obj/Algorithm.o \
 #	obj/BFSAlgorithm.o \
