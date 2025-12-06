@@ -6,8 +6,8 @@ struct GrafTranspus PAGrafTranspusBuildPart()
     struct GrafTranspus graf;
     return graf;
 }
-struct PARezultat paGrafTranspusGetResult()
+struct PAResult PAGrafTranspusGetResult()
 {
-    struct PARezultat result;
+    struct PAResult result;
     return result;
 }

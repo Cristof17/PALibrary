@@ -77,7 +77,7 @@ struct PAPereche {
 struct PALink {
 	struct PAPereche p;
 };
-struct PARezultat {
+struct PAResult {
 	INT cod;
 };
 struct Adaptee {

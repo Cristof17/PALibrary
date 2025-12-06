@@ -80,7 +80,7 @@ build: obj/Input.o \
 	obj/PAElement.o \
 	obj/PACount.o \
 	obj/PAPair.o \
-	obj/PARezultat.o \
+	obj/PAResult.o \
 	obj/PASeries.o \
 	obj/PATip.o \
 	obj/Builder/PADirector.o \
@@ -136,7 +136,7 @@ obj/PACount.o: src/PACount.c include/PACount.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/PAPair.o: src/PAPair.c include/PAPair.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PARezultat.o: src/PARezultat.c include/PARezultat.h include/defs.h
+obj/PAResult.o: src/PAResult.c include/PAResult.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/PASeries.o: src/PASeries.c include/PASeries.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
@@ -230,7 +230,7 @@ clean:
 	rm obj/PAElement.o
 	rm obj/PACount.o
 	rm obj/PAPair.o
-	rm obj/PARezultat.o
+	rm obj/PAResult.o
 	rm obj/PASeries.o
 	rm obj/PATip.o
 	rm obj/Builder/PADirector.o

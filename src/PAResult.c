@@ -1,5 +1,5 @@
 //@Author Cristofor Rotsching
-#include "../include/PARezultat.h"
+#include "../include/PAResult.h"
 #include <defs.h>
-void PARezultatPrint(struct PARezultat rezultat) {
+void PAResultPrint(struct PAResult rezultat) {
 }

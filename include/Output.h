@@ -1,9 +1,9 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_OUTPUT_H
 #define INCLUDE_OUTPUT_H
-#include "../include/PARezultat.h"
+#include "../include/PAResult.h"
 #include "../include/BFSOutput.h"
 struct Output;
 typedef struct Output Output;
-void OutputPrint(struct PARezultat);
+void OutputPrint(struct PAResult);
 #endif
