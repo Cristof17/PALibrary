@@ -7,13 +7,13 @@
 
 #ifndef INCLUDE_ITERATOR_ITERATOR_H_
 #define INCLUDE_ITERATOR_ITERATOR_H_
-#include "../include/PAIndex.h"
-#include "../include/PANod.h"
+#include "../include/PAData.h"
+#include "../include/PAElement.h"
 #include <types.h>
 struct Iterator;
 typedef struct Iterator Iterator;
-struct PAIndex First();
-struct PAIndex Next();
+struct PAData First();
+struct PAData Next();
 struct PABool IsDone();
 struct PANod CurrentItem();
 

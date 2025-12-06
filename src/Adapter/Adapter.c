@@ -1,6 +1,6 @@
 #include "../include/Adapter/Adapter.h"
 #include "../include/Adapter/Adaptee.h"
-#include "../include/PANod.h"
+#include "../include/PAElement.h"
 #include <types.h>
 #include <defs.h>
 /*
@@ -15,9 +15,9 @@ void AdapterRequest(Adapter adapter)
 	Adaptee adaptee;
 	SpecificRequest(adaptee);
 }
-struct PANod AdapterHead(Adapter adapter)
+struct PAElement AdapterHead(Adapter adapter)
 {
-	struct PANod nod;
+	struct PAElement nod;
 	return nod;
 	// PAIndex index = PAListaGet(FIRST);
 	// adapter.Lista.Nod.Index = index;

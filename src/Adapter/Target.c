@@ -7,9 +7,9 @@
  *      Author: AdministratorUser
  */
 
-struct PASir TargetRequest(Target target)
+struct PASeries TargetRequest(Target target)
 {
-	struct PASir sir;
+	struct PASeries sir;
 	return sir;
 // 	Adapter adapter;
 // //	Target local =

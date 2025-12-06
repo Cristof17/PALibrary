@@ -13,6 +13,7 @@
         "defs.h": "c",
         "palist.h": "c",
         "padestination.h": "c",
-        "paseries.h": "c"
+        "paseries.h": "c",
+        "target.h": "c"
     }
 }
