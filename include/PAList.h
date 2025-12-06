@@ -1,7 +1,7 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_PALISTA_H
 #define INCLUDE_PALISTA_H
-#include "../include/PANod.h"
+#include "../include/PAElement.h"
 #include "../include/PACardinal.h"
 #include "../include/ArrayList/ArrayList.h"
 struct PALista;

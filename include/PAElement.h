@@ -1,10 +1,10 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_PANOD_H
 #define INCLUDE_PANOD_H
-#include "../include/PAStare.h"
+#include "../include/PAStatus.h"
 //#include "padata.h"
-#include "../include/PAIndex.h"
-#include "../include/PANeigh.h"
+#include "../include/PAData.h"
+#include "../include/PADestination.h"
 #include "../include/PATip.h"
 struct PANod;
 // struct PANod;

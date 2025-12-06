@@ -1,5 +1,5 @@
 //@Author Cristofor Rotsching
-#include "../include/BFSResult.h"
+#include "../include/BFSRecord.h"
 #include <defs.h>
 // struct PALista Lista;
 	// struct PACardinal Cardinal;

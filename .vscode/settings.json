@@ -10,6 +10,9 @@
         "paindex.h": "c",
         "adaptee.h": "c",
         "client.h": "c",
-        "defs.h": "c"
+        "defs.h": "c",
+        "palist.h": "c",
+        "padestination.h": "c",
+        "paseries.h": "c"
     }
 }

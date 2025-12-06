@@ -69,7 +69,7 @@ build: obj/Input.o \
 	obj/Algorithm.o \
 	obj/BFSAlgorithm.o \
 	obj/BFSInput.o \
-	obj/BFSResult.o \
+	obj/BFSRecord.o \
 	obj/Output.o \
 	obj/PAData.o \
 	obj/PAGraf.o \
@@ -110,7 +110,7 @@ obj/BFSInput.o: src/BFSInput.c include/BFSInput.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/BFSOutput.o: src/BFSOutput.c include/BFSOutput.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/BFSResult.o:src/BFSResult.c include/BFSResult.h include/defs.h
+obj/BFSRecord.o:src/BFSRecord.c include/BFSRecord.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/Output.o: src/Output.c include/Output.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
@@ -211,7 +211,7 @@ clean:
 	rm obj/Algorithm.o
 	rm obj/BFSAlgorithm.o
 	rm obj/BFSInput.o
-	rm obj/BFSResult.o
+	rm obj/BFSRecord.o
 	rm obj/Output.o
 	rm obj/PAData.o
 	rm obj/PAGraf.o
