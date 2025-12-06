@@ -1,7 +1,7 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_PATIP_H
 #define INCLUDE_PATIP_H
-#include "../include/PAFeature.h"
+#include "../include/PA/Feature.h"
 struct PAFeature;
 typedef struct PAFeature PAFeature;
 #endif

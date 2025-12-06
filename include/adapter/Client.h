@@ -7,7 +7,7 @@
 
 #ifndef INCLUDE_ADAPTER_CLIENT_H_
 #define INCLUDE_ADAPTER_CLIENT_H_
-#include "../include/PATree.h"
+#include "../include/PA/Tree.h"
 #include "../include/Adapter/Target.h"
 struct Client;
 typedef struct Client Client;
