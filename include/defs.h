@@ -10,9 +10,12 @@ struct Algorithm {
 struct PACardinal {
 
 };
+// struct PAData {
+// //    int Value;
+// 	INT Value;
+// };
 struct PAData {
-//    int Value;
-	INT Value;
+    INT value;
 };
 struct ArrayList {
 	struct PAData Index[0];
@@ -55,12 +58,13 @@ struct Output {
 //	struct PARezultat rezultat;
 //	struct BFSOutput outputBFS;
 };
-struct PAData {
-    INT value;
-};
 struct j {
 	struct PACardinal n;
 	struct PAList adj[];
+};
+struct PASeries
+{
+
 };
 struct PATree  {
 	struct PACardinal n;
@@ -88,10 +92,6 @@ struct IteratorClient {
 struct Target {
 	struct PASeries Sir;
 	//struct Adapter adapter;
-};
-struct PASeries
-{
-
 };
 struct Builder {
     ;
