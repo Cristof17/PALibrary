@@ -1,7 +1,7 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_PAREZULTAT_H
 #define INCLUDE_PAREZULTAT_H
-#include "../include/PATip.h"
+#include "../include/PAFeature.h"
 // struct PARezultatl
 struct PAResult;
 typedef struct PAResult PAResult;

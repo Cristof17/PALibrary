@@ -1,15 +1,15 @@
 //@Author Cristofor Rotsching
 #include "../include/Builder/PAGrafNormal.h"
-#include "../include/PARezultat.h"
+#include "../include/PAResult.h"
 #include <defs.h>
 struct GrafNormal PABuildPart()
 {
     struct GrafNormal graf;
     return graf;
 }
-struct PARezultat PAGetResult()
+struct PAResult PAGetResult()
 {
-    struct PARezultat rezultat;
-    rezultat.cod = SUCCESS;
+    struct PAResult rezultat;
+    // rezultat.cod = SUCCESS;
     return rezultat;
 }
