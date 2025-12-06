@@ -68,23 +68,23 @@ CFLAGS+=-Iinclude
 
 build: obj/Input.o \
 	obj/Algorithm.o \
-	obj/BFSAlgorithm.o \
-	obj/BFSInput.o \
-	obj/BFSRecord.o \
+	obj/BFS/Algorithm.o \
+	obj/BFS/Input.o \
+	obj/BFS/Record.o \
 	obj/Output.o \
-	obj/PAData.o \
-	obj/PATree.o \
-	obj/PAData.o \
-	obj/PAList.o \
-	obj/PALink.o \
-	obj/PAArrow.o \
-	obj/PAElement.o \
-	obj/PACount.o \
-	obj/PAPair.o \
-	obj/PAResult.o \
-	obj/PASeries.o \
-	obj/PAFeature.o \
-	obj/PAValue.o \
+	obj/PA/Data.o \
+	obj/PA/Tree.o \
+	obj/PA/Data.o \
+	obj/PA/List.o \
+	obj/PA/Link.o \
+	obj/PA/Arrow.o \
+	obj/PA/Element.o \
+	obj/PA/Count.o \
+	obj/PA/Pair.o \
+	obj/PA/Result.o \
+	obj/PA/Series.o \
+	obj/PA/Feature.o \
+	obj/PA/Value.o \
 	obj/Builder/PADirector.o \
 	obj/Builder/PABuilder.o \
 	obj/Builder/PAGrafNormal.o \
@@ -108,47 +108,47 @@ obj/Input.o: src/Input.c include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/Algorithm.o: src/Algorithm.c include/Algorithm.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/BFSAlgorithm.o: src/BFSAlgorithm.c include/defs.h
+obj/BFS/Algorithm.o: src/BFS/Algorithm.c include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/BFSInput.o: src/BFSInput.c include/BFSInput.h include/defs.h
+obj/BFS/Input.o: src/BFS/Input.c include/BFS/Input.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/BFSOutput.o: src/BFSOutput.c include/BFSOutput.h include/defs.h
+obj/BFS/Output.o: src/BFS/Output.c include/BFS/Output.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/BFSRecord.o:src/BFSRecord.c include/BFSRecord.h include/defs.h
+obj/BFS/Record.o:src/BFS/Record.c include/BFS/Record.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/Output.o: src/Output.c include/Output.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PAValue.o: src/PAValue.c include/PAValue.h include/defs.h
+obj/PA/Value.o: src/PA/Value.c include/PA/Value.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PAData.o: src/PAData.c include/PAData.h include/defs.h
+obj/PA/Data.o: src/PA/Data.c include/PA/Data.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PATree.o: src/PATree.c include/PATree.h include/defs.h
+obj/PA/Tree.o: src/PA/Tree.c include/PA/Tree.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 #obj/PAIndex.o: src/PAIndex.c include/PAIndex.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
-obj/PAList.o: src/PAList.c include/PAList.h include/defs.h
+obj/PA/List.o: src/PA/List.c include/PA/List.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PALink.o: src/PALink.c include/PALink.h include/defs.h
+obj/PA/Link.o: src/PA/Link.c include/PA/Link.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PAArrow.o: src/PAArrow.c include/PAArrow.h include/defs.h
+obj/PA/Arrow.o: src/PA/Arrow.c include/PA/Arrow.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PAElement.o: src/PAElement.c include/PAElement.h include/defs.h
+obj/PA/Element.o: src/PA/Element.c include/PA/Element.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PACount.o: src/PACount.c include/PACount.h include/defs.h
+obj/PA/Count.o: src/PA/Count.c include/PA/Count.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PAPair.o: src/PAPair.c include/PAPair.h include/defs.h
+obj/PA/Pair.o: src/PA/Pair.c include/PA/Pair.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PAResult.o: src/PAResult.c include/PAResult.h include/defs.h
+obj/PA/Result.o: src/PA/Result.c include/PA/Result.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PASeries.o: src/PASeries.c include/PASeries.h include/defs.h
+obj/PA/Series.o: src/PA/Series.c include/PA/Series.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PAStatus.o: src/PAStatus.c include/PAStatus.h include/defs.h
+obj/PA/Status.o: src/PA/Status.c include/PA/Status.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PAFeature.o: src/PAFeature.c include/PAFeature.h include/defs.h
+obj/PA/Feature.o: src/PA/Feature.c include/PA/Feature.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PAValue.o: src/PAValue.c include/PAValue.h include/defs.h
+obj/PA/Value.o: src/PA/Value.c include/PA/Value.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Builder/PADirector.o: src/Builder/PADirector.c include/Builder/PADirector.h include/defs.h
+obj/Builder/PADirector.o: src/Builder/PA/Director.c include/Builder/PADirector.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/Builder/PABuilder.o: src/Builder/PABuilder.c include/Builder/PABuilder.h include/defs.h 
 	$(CC) -c $(CFLAGS) $< -o $@
@@ -221,23 +221,23 @@ obj/Iterator/ConcreteAggregate.o: src/Iterator/ConcreteAggregate.c include/Itera
 clean:
 	rm obj/Input.o
 	rm obj/Algorithm.o
-	rm obj/BFSAlgorithm.o
-	rm obj/BFSInput.o
-	rm obj/BFSRecord.o
+	rm obj/BFS/Algorithm.o
+	rm obj/BFS/Input.o
+	rm obj/BFS/Record.o
 	rm obj/Output.o
-	rm obj/PAData.o
-	rm obj/PATree.o
+	rm obj/PA/Data.o
+	rm obj/PA/Tree.o
 	#rm obj/PA.o
-	rm obj/PAList.o
-	rm obj/PALink.o
-	rm obj/PAArrow.o
-	rm obj/PAElement.o
-	rm obj/PACount.o
-	rm obj/PAPair.o
-	rm obj/PAResult.o
-	rm obj/PASeries.o
-	rm obj/PAFeature.o
-	rm obj/PAValue.o
+	rm obj/PA/List.o
+	rm obj/PA/Link.o
+	rm obj/PA/Arrow.o
+	rm obj/PA/Element.o
+	rm obj/PA/Count.o
+	rm obj/PA/Pair.o
+	rm obj/PA/Result.o
+	rm obj/PA/Series.o
+	rm obj/PA/Feature.o
+	rm obj/PA/Value.o
 	rm obj/Builder/PADirector.o
 	rm obj/Builder/PABuilder.o
 	rm obj/Builder/PAGrafNormal.o
