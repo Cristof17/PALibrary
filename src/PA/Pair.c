@@ -1,4 +1,4 @@
 //@Author Cristofor Rotsching
 /*@*/
-#include "../include/PAPair.h"
+#include "../include/PA/Pair.h"
 #include <defs.h>

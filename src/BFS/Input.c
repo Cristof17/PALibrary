@@ -1,3 +1,3 @@
 //@Author Cristofor Rotsching
-#include "../include/BFSInput.h"
+#include "../include/BFS/Input.h"
 #include <defs.h>

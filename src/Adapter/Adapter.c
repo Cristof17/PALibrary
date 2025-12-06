@@ -1,6 +1,6 @@
 #include "../include/Adapter/Adapter.h"
 #include "../include/Adapter/Adaptee.h"
-#include "../include/PAElement.h"
+#include "../include/PA/Element.h"
 #include <types.h>
 #include <defs.h>
 /*

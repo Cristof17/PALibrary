@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
 #include "../include/Builder/PAGrafNormal.h"
-#include "../include/PAResult.h"
+#include "../include/PA/Result.h"
 #include <defs.h>
 struct GrafNormal PABuildPart()
 {

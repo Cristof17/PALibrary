@@ -1,5 +1,5 @@
 //@Author Cristofor Rotsching
-#include "../include/PAList.h"
+#include "../include/PA/List.h"
 #include <defs.h>
 INT PAListSize(struct PAList lista) {
     int size = 0;

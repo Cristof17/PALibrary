@@ -1,3 +1,3 @@
 //@Author Cristofor Rotsching
-#include "../include/PATree.h"
+#include "../include/PA/Tree.h"
 #include <defs.h>
