@@ -4,8 +4,8 @@
 #include "../include/PAList.h"
 #include "../include/PACardinal.h"
 #include "../include/PARezultat.h"
-struct BFSResult;
-typedef struct BFSResult BFSResult;
+struct BFSRecord;
+typedef struct BFSRecord BFSRecord;
 #endif
 
-void BFSResultPrint(struct BFSResult);
+void BFSResultPrint(struct BFSRecord);

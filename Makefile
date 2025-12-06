@@ -117,6 +117,8 @@ obj/Output.o: src/Output.c include/Output.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/PAValue.o: src/PAValue.c include/PAValue.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
+obj/PAData.o: src/PAData.c include/PAData.h defs.h
+	$(CC) -c $(CFLAGS) $< -o $@
 obj/PATree.o: src/PATree.c include/PATree.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 #obj/PAIndex.o: src/PAIndex.c include/PAIndex.h include/defs.h

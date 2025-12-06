@@ -4,15 +4,15 @@
 #include "../include/PAElement.h"
 #include "../include/PACardinal.h"
 #include "../include/ArrayList/ArrayList.h"
-struct PALista;
-typedef struct PALista PALista;
+struct PAList;
+typedef struct PAList PAList;
 
-INT PAListaSize(struct PALista);
+INT PAListaSize(struct PAList);
 struct PANod PAListaGet(INT);
-struct PANod PAListaHead(struct PALista);
-struct PALista PAListaTail(struct PALista);
-struct PANod PAListaInit(struct PALista);
-void PAListaPrint(struct PALista);
+struct PANod PAListaHead(struct PAList);
+struct PALista PAListaTail(struct PAList);
+struct PANod PAListaInit(struct PAList);
+void PAListaPrint(struct PAList);
 //toArrayList();
 #endif
 

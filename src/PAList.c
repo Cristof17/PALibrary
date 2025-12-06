@@ -1,7 +1,7 @@
 //@Author Cristofor Rotsching
-#include "../include/PALista.h"
+#include "../include/PAList.h"
 #include <defs.h>
-INT Size(struct PALista lista) {
+INT Size(struct PAList lista) {
     int size = 0;
 //    PATip tip = lista.Nod.Tip;
     struct PANod nod_head = PAListaHead(lista);
@@ -15,20 +15,20 @@ struct PANod PAListaGet(INT position) {
     struct PANod nod;
     return nod;    
 }
-struct PANod PAListaHead(struct PALista lista) {
+struct PANod PAListaHead(struct PAList lista) {
 	struct PANod nod;
 	return nod;
 //    return lista.Nod;
 }
-struct PALista PAListaTail(struct PALista lista) {
+struct PALista PAListaTail(struct PAList lista) {
     return lista;
 }
-struct PANod PAListaInit(struct PALista lista) {
+struct PANod PAListaInit(struct PAList lista) {
 	struct PANod nod;
 	return nod;
 //    return lista.Nod;
 }
 
-void PAListaPrint(struct PALista lista) {
+void PAListaPrint(struct PAList lista) {
     
 }
