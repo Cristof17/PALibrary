@@ -89,7 +89,10 @@ struct Target {
 	struct PASeries Sir;
 	//struct Adapter adapter;
 };
+struct PASeries
+{
 
+};
 struct Builder {
     ;
 };
