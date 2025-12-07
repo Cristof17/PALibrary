@@ -1,4 +1,4 @@
-#include "../include/PA/Series.h"
+#include <PA/Series.h>
 #include <defs.h>
 /*
  * pasir.c

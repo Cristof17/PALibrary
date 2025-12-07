@@ -1,4 +1,4 @@
-#include "../include/Adapter/Adaptee.h"
+#include <Adapter/Adaptee.h>
 // #include <defs.h>
 #include <defs.h>
 /*

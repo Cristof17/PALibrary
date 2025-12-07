@@ -1,4 +1,4 @@
-#include "../include/ArrayList/ArrayList.h"
+#include <ArrayList/ArrayList.h>
 #include <defs.h>
 /*
  * ArrayList.c

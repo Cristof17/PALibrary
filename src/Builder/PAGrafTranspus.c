@@ -1,5 +1,5 @@
 //@Author Cristofor Rotsching
-#include "../include/Builder/PAGrafTranspus.h"
+#include <Builder/PAGrafTranspus.h>
 #include <defs.h>
 struct GrafTranspus PAGrafTranspusBuildPart()
 {

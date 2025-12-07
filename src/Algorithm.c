@@ -1,5 +1,5 @@
 //@Author Cristofor Rotsching
-#include "../include/Algorithm.h"
+#include <Algorithm.h>
 #include <defs.h>
 // #include "Input.h"
 struct Output run(struct Input input) {

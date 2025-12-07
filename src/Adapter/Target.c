@@ -1,4 +1,4 @@
-#include "../include/Adapter/Target.h"
+#include <Adapter/Target.h>
 #include <defs.h>
 /*
  * Target.c
