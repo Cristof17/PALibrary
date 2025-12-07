@@ -5,7 +5,7 @@
 #include "../include/PA/Count.h"
 #include "../include/ArrayList/ArrayList.h"
 struct PAList;
-typedef struct PAList PAList;
+typedef struct PAList List;
 
 INT PAListSize(struct PAList);
 struct PAElement PAListGet(INT);

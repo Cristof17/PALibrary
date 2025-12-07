@@ -5,6 +5,6 @@
 #include "../include/PA/List.h"
 #include "../include/PA/Element.h"
 #include "../include/PA/Series.h"
-struct PAGraf;
-typedef struct PAGraf PAGraf;
+struct PATree;
+typedef struct PATree Tree;
 #endif

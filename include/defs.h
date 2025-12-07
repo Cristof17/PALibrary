@@ -1,12 +1,12 @@
 #ifndef INCLUDE_DEFS
 #define INCLUDE_DEFS
 #include <types.h>
-struct Input {
-	;
-};
-struct Algorithm {
-	struct Input input;
-};
+// struct Input {
+// 	;
+// };
+// struct Algorithm {
+// 	struct Input input;
+// };
 struct PACount {
 
 };
@@ -57,10 +57,10 @@ struct BFSRecord {
 struct BFSOutput {
     struct BFSRecord Result;
 };
-struct Output {
-//	struct PARezultat rezultat;
-//	struct BFSOutput outputBFS;
-};
+// struct Output {
+// //	struct PARezultat rezultat;
+// //	struct BFSOutput outputBFS;
+// };
 struct j {
 	struct PACount n;
 	struct PAList adj[];
