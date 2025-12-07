@@ -65,7 +65,7 @@ CFLAGS+=-Iinclude
 #	@echo "end of compile $(pwd)"
 #	@echo "end of all $(pwd)"
 #	@echo "end of assemble $(pwd)"
-
+all: build
 build: obj/Input.o \
 	obj/Algorithm.o \
 	obj/BFS/Algorithm.o \
