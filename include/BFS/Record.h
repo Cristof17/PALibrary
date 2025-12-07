@@ -5,7 +5,7 @@
 #include "../include/PA/Count.h"
 #include "../include/PA/Result.h"
 struct BFSRecord;
-typedef struct BFSRecord BFSRecord;
+typedef struct BFSRecord Record;
 #endif
 
 void BFSResultPrint(struct BFSRecord);

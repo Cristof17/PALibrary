@@ -6,8 +6,8 @@
 #include "../include/PA/Data.h"
 #include "../include/PA/Destination.h"
 #include "../include/PA/Feature.h"
-struct PANod;
+struct PAElement;
 // struct PANod;
-typedef struct PANod PANod;
+typedef struct PAElement Element;
 #endif
 

@@ -5,5 +5,5 @@
 #include "../include/BFS/Input.h"
 
 struct BFSAlgorithm;
-typedef struct BFSAlgorithm BFSAlgorithm;
+typedef struct BFSAlgorithm Algorithm;
 #endif

@@ -4,6 +4,6 @@
 #include "../include/PA/Feature.h"
 // struct PARezultatl
 struct PAResult;
-typedef struct PAResult PAResult;
+typedef struct PAResult Result;
 void PAResultPrint(struct PAResult);
 #endif

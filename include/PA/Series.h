@@ -10,5 +10,5 @@
 #include "../include/PA/Count.h"
 #include "../include/PA/List.h"
 struct PASir;
-typedef struct PASir PASir;
+typedef struct PASir Series;
 #endif /* INCLUDE_PASIR_H_ */
