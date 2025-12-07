@@ -8,7 +8,7 @@
 // 	struct Input input;
 // };
 struct PACount {
-
+	INT value;
 };
 // struct PAData {
 // //    int Value;
@@ -32,7 +32,7 @@ struct PADestination {
     //struct PANod nod;
 };
 struct PAStatus {
-	INT vizitat;
+	INT Vizited;
 };
 struct PATip {
 	INT Kind;
@@ -78,7 +78,7 @@ struct PATree  {
 struct PAPereche {
 };
 struct PALink {
-	struct PAPereche p;
+	struct PAPair p;
 };
 struct PAResult {
 	INT cod;
