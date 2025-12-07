@@ -1,4 +1,5 @@
 #include <ArrayList/ArrayList.h>
+#include <PA/Result.h>
 #include <defs.h>
 /*
  * ArrayList.c
@@ -12,9 +13,9 @@ struct PAIndex ArrayListGet(struct PAIndex Array[],INT Position)
 	struct PAIndex index = Array[Position];
 	return index;
 }
-struct PARezultat Init(INT size)
+struct PAResult Init(INT size)
 {
 //	return )
-	PARezultat rezultat;
+	Result rezultat;
 	return rezultat;
 }
