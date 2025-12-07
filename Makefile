@@ -146,8 +146,8 @@ obj/PA/Status.o: src/PA/Status.c include/PA/Status.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/PA/Feature.o: src/PA/Feature.c include/PA/Feature.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PA/Value.o: src/PA/Value.c include/PA/Value.h include/defs.h
-	$(CC) -c $(CFLAGS) $< -o $@
+#obj/PA/Value.o: src/PA/Value.c include/PA/Value.h include/defs.h
+#	$(CC) -c $(CFLAGS) $< -o $@
 obj/Builder/PADirector.o: src/Builder/PADirector.c include/Builder/PADirector.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/Builder/PABuilder.o: src/Builder/PABuilder.c include/Builder/PABuilder.h include/defs.h 
