@@ -9,5 +9,5 @@
 struct Output Run(struct Input);
 void Algorithm(struct Input in);
 void AlgorithmDestroy();
-struct Algorithm AlgorithmInit(struct Algorithm);
+struct Algorithm AlgorithmArrange(struct Algorithm);
 #endif

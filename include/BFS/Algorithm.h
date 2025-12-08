@@ -9,5 +9,5 @@ struct BFSAlgorithm;
 struct PAElement search(struct PAData);
 void BFSAlgorithm(struct PATree, struct BFSInput);
 void BFSAlgorithmDestroy();
-struct Algorithm BFSAlgorithmInit(struct BFSAlgorithm);
+struct Algorithm BFSAlgorithmArrange(struct BFSAlgorithm);
 #endif

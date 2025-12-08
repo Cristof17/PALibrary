@@ -8,5 +8,5 @@ struct PAResult;
 void PAResult();
 void PAResultDestroy();
 void PAResultPrint(struct PAResult);
-struct PAResult PAResultInit(struct PAResult);
+struct PAResult PAResultArrange(struct PAResult);
 #endif

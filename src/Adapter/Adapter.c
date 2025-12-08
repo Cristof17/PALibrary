@@ -10,11 +10,11 @@
  *      Author: AdministratorUser
  */
 
-void AdapterRequest(Adapter adapter) {
-	Adaptee adaptee;
+void AdapterRequest(struct Adapter adapter) {
+	struct Adaptee adaptee;
 	SpecificRequest(adaptee);
 }
-struct PAElement AdapterHead(Adapter adapter) {
+struct PAElement AdapterHead(struct Adapter adapter) {
 	struct PAElement nod;
 	return nod;
 	// PAIndex index = PAListaGet(FIRST);

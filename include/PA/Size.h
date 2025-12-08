@@ -8,5 +8,5 @@ struct PASize;
 void PASizePrint(struct PASize);
 void PASize(PAInt);
 void PASizeDestroy();
-struct PASize PASizeInit(struct PASize);
+struct PASize PASizeArrange(struct PASize);
 #endif

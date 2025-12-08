@@ -14,6 +14,6 @@
 //#include <Adapter.h">
 struct Target;
 //typedef struct Target Target;
-struct PASeries TargetRequest(Target);
+struct PASeries TargetRequest(struct Target);
 
 #endif /* ADAPTER_INCLUDE_TARGET_H_ */

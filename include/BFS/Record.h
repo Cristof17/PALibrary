@@ -10,4 +10,4 @@ struct BFSRecord;
 void BFSRecord(struct PAList, struct PASize);
 void BFSRecordDestroy();
 void BFSRecordPrint(struct BFSRecord);
-struct BFSRecord BFSRecordInit(struct BFSRecord);
+struct BFSRecord BFSRecordArrange(struct BFSRecord);

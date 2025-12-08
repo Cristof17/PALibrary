@@ -6,7 +6,7 @@
 // struct Output;
 // typedef struct Output Output;
 void Output();
-struct Output OutputInit(struct Output output);
+struct Output OutputArrange(struct Output output);
 //struct Output dispose();
 void OutputDestroy();
 void OutputPrint(struct PAResult);

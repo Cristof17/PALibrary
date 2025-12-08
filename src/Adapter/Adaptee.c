@@ -8,7 +8,7 @@
  *      Author: AdministratorUser
  */
 
-void AdapteeSpecificRequest(Adaptee adaptee){
+void AdapteeSpecificRequest(struct Adaptee adaptee){
 
 }
 

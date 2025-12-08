@@ -17,7 +17,7 @@ void Dispose();
 PAInt PAListSize(struct PAList);
 //struct PAElement PAListGet(INT);
 struct PAElement PAListHead(struct PAList);
-struct PAElement PAListInit(struct PAList);
+struct PAElement PAListArrange(struct PAList);
 struct PAList PAListTail(struct PAList);
 //toArrayList();
 #endif
