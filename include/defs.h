@@ -61,7 +61,7 @@ struct BFSOutput {
 // //	struct PARezultat rezultat;
 // //	struct BFSOutput outputBFS;
 // };
-struct j {
+struct PASeries {
 	struct PACount n;
 	struct PAList adj[];
 };
@@ -81,7 +81,7 @@ struct PALink {
 	struct PAPair p;
 };
 struct PAResult {
-	PAInt cod;
+	P cod;
 };
 struct Adaptee {
 	struct ArrayList List;
