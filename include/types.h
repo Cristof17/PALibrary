@@ -4,7 +4,7 @@
 #ifdef _WIN95
 //#define short HALF_PTR;
 #define BOOL PABool
-#define uint32_t INT
+#define int32_t INT
 #else
 typedef int INT;
 typedef int PABool;
