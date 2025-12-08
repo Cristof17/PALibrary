@@ -7,8 +7,7 @@
  *      Author: AdministratorUser
  */
 
-struct PASeries TargetRequest(Target target)
-{
+struct PASeries TargetRequest(Target target) {
 	struct PASeries sir;
 	return sir;
 // 	Adapter adapter;
