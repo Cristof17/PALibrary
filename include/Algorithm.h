@@ -8,7 +8,7 @@
 // typedef struct Algorithm Algorithm;
 struct Output Run(struct Input);
 struct Algorithm AlgorithmConstruct(struct Input);
-void AlgorithmDestroy();
+void AlgorithmRuin();
 struct Algorithm AlgorithmArrange(struct Algorithm);
 struct Algorithm AlgorithmPutInput(struct Algorithm, struct Input);
 #endif

@@ -8,6 +8,6 @@
 struct Output OutputConstruct();
 struct Output OutputArrange(struct Output);
 //struct Output dispose();
-void OutputDestroy();
+void OutputRuin();
 void OutputPrint(struct PAResult);
 #endif

@@ -4,6 +4,7 @@
 #include <PA/Pair.h>
 struct PALink;
 struct PALink PALinkConstruct();
+void PALinkRuin();
 struct PALink PALinkArrange(struct PALink);
 struct PALink PALinkPutPair(struct PAPair);
 //typedef struct PALink Link;

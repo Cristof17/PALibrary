@@ -15,7 +15,7 @@ struct PAList PAListPutArrayList(struct PAList, struct ArrayList);
 
 void PAListAdd(struct PAElement);
 void PAList(struct PAElement Head);
-void PAListDestroy();
+void PAListRuin();
 void PAListPrint(struct PAList);
 void Dispose();
 //struct PAList PAListInit(struct PAList);

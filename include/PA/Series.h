@@ -11,7 +11,7 @@
 #include <PA/List.h>
 struct PASeries;
 struct PASeries PASeriesConstruct();
-void PASeriesDestroy();
+void PASeriesRuin();
 struct PASeries PASeriesArrange(struct PASeries);
 struct PASeries PASeriesPutSize(struct PASeries, struct PASize);
 struct PASeries PASeriesPutList(struct PASeries, struct PAList);

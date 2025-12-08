@@ -6,9 +6,9 @@
 struct PASize;
 //typedef struct PACount Count;
 void PASizePrint(struct PASize);
-struct PASize PASizeConstruct();
-void PASize(PA_INT);
-void PASizeDestroy();
+struct PASize PASizeConstruct(PA_INT);
+// void PASize(PA_INT);
+void PASizeRuin();
 struct PASize PASizeArrange(struct PASize);
 struct PASize PASizePutValue(struct PASize, PA_INT);
 #endif

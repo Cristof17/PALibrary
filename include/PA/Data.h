@@ -4,6 +4,6 @@ struct PAData;
 struct PAData PADataConstruct();
 struct PAData PADataArrange(struct PAData);
 struct PAData PADataPutValue(struct PAData, PA_INT);
-struct PAData PADataDestroy();
+struct PAData PADataRuin();
 //typedef struct PAData Data;
 #endif
