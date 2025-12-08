@@ -17,6 +17,7 @@
         "target.h": "c",
         "paresult.h": "c",
         "pafeature.h": "c",
-        "pavalue.h": "c"
+        "pavalue.h": "c",
+        "size.h": "c"
     }
 }

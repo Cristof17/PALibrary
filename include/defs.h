@@ -7,7 +7,7 @@
 // struct Algorithm {
 // 	struct Input input;
 // };
-struct PACount {
+struct PASize {
 	PAInt value;
 };
 // struct PAData {
@@ -26,7 +26,7 @@ struct ArrayList {
 struct PAList {
 	// struct PANod Nod;
 	struct ArrayList List;
-	struct PACount m;
+	struct PASize m;
 };
 struct PADestination {
     //struct PANod nod;
@@ -45,14 +45,14 @@ struct PAElement {
 	struct PATip Tip;
 };
 struct BFSInput {
-	struct PACount n;
-	struct PACount m;
+	struct PASize n;
+	struct PASize m;
 	struct PAList adj;
 	struct PAElement sursa;
 };
 struct BFSRecord {
 	struct PAList Lista;
-	struct PACount Cardinal;
+	struct PASize Cardinal;
 };
 struct BFSOutput {
     struct BFSRecord Result;
@@ -62,7 +62,7 @@ struct BFSOutput {
 // //	struct BFSOutput outputBFS;
 // };
 struct PASeries {
-	struct PACount n;
+	struct PASize n;
 	struct PAList adj[];
 };
 //struct PASeries
@@ -70,8 +70,8 @@ struct PASeries {
 //
 //};
 struct PATree  {
-	struct PACount n;
-	struct PACount m;
+	struct PASize n;
+	struct PASize m;
 	struct PAElement sursa;
 	struct PASeries adj;
 };
