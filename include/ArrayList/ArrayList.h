@@ -5,7 +5,7 @@
 #include <types.h>
 #include <defs.h>
 struct ArrayList;
-typedef struct ArrayList ArrayList;
+//typedef struct ArrayList ArrayList;
 struct PAData ArrayListGet(struct PAData[],PAInt);
 struct PARecord Init(PAInt);
 #endif
