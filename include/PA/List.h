@@ -4,6 +4,7 @@
 #include <PA/Element.h>
 #include <PA/Size.h>
 #include <ArrayList/ArrayList.h>
+#include <types.h>
 struct PAList;
 //typedef struct PAList List;
 
@@ -14,7 +15,7 @@ void PAListPrint(struct PAList);
 void Dispose();
 //struct PAList PAListInit(struct PAList);
 //s
-PAInt PAListSize(struct PAList);
+int PAListSize(struct PAList);
 //struct PAElement PAListGet(INT);
 struct PAElement PAListHead(struct PAList);
 struct PAElement PAListArrange(struct PAList);

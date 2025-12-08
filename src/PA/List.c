@@ -1,7 +1,7 @@
 //@Author Cristofor Rotsching
 #include <PA/List.h>
 #include <defs.h>
-PAInt PAListSize(struct PAList List) {
+PA_INT PAListSize(struct PAList List) {
     int size = 0;
 //    PATip tip = lista.Nod.Tip;
     struct PAElement nod_head = PAListHead(List);
@@ -11,7 +11,7 @@ PAInt PAListSize(struct PAList List) {
     // if (nod_head.paTip == LAST(lista.))
     return 1;
 }
-struct PAElement PAListGet(PAInt Position) {
+struct PAElement PAListGet(PA_INT Position) {
     struct PAElement nod;
     return nod;    
 }

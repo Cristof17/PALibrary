@@ -20,6 +20,8 @@
         "pavalue.h": "c",
         "size.h": "c",
         "list.h": "c",
-        "record.h": "c"
+        "record.h": "c",
+        "pair.h": "c",
+        "feature.h": "c"
     }
 }

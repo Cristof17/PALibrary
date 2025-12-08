@@ -10,4 +10,5 @@ struct Output Run(struct Input);
 void Algorithm(struct Input in);
 void AlgorithmDestroy();
 struct Algorithm AlgorithmArrange(struct Algorithm);
+struct Algorithm AlgorithmPutInput(struct Algorithm, struct Input);
 #endif

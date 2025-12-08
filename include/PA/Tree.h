@@ -6,5 +6,10 @@
 #include <PA/Element.h>
 #include <PA/Series.h>
 struct PATree;
+struct PATree PATreeArrange(struct PATree);
+struct PATree PATreePutSize(struct PATree, struct PASize);
+struct PATree PATreePutList(struct PATree, struct PAList);
+struct PATree PATreePutElement(struct PATree, struct PAElement);
+struct PATree PATreePutSeries(struct PATree, struct PASeries);
 //typedef struct PATree Tree;
 #endif

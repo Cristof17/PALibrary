@@ -3,11 +3,11 @@
 #define INCLUDE_TYPES_H_
 #ifdef _WIN95
 //#define short HALF_PTR;
-typedef BOOL PABool
-typedef int32_t PAInt
+#define PABool BOOL
+#define PAInt int32_t
 #else
-typedef int PAInt;
-typedef int PABool;
+#define PA_INT int
+// typedef int PAInt;
 #endif
 #define FIRST 0
 #define LAST(N) ((N)+1)

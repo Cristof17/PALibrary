@@ -11,3 +11,5 @@ void BFSRecord(struct PAList, struct PASize);
 void BFSRecordDestroy();
 void BFSRecordPrint(struct BFSRecord);
 struct BFSRecord BFSRecordArrange(struct BFSRecord);
+struct BFSRecord BFSRecordPutList(struct BFSRecord, struct PAList);
+struct BFSRecord BFSRecordPutSize(struct BFSRecord, struct PASize);

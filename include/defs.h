@@ -8,17 +8,17 @@
 // 	struct Input input;
 // };
 struct PASize {
-	PAInt value;
+	PA_INT value;
 };
 // struct PAData {
 // //    int Value;
 // 	INT Value;
 // };
 struct PAData {
-    PAInt value;
+    PA_INT value;
 };
 struct PAValue {
-    PAInt value;
+    PA_INT value;
 };
 struct ArrayList {
 	struct PAData Index[0];
@@ -32,10 +32,10 @@ struct PADestination {
     //struct PANod nod;
 };
 struct PAStatus {
-	PAInt Vizited;
+	PA_INT Vizited;
 };
 struct PATip {
-	PAInt Kind;
+	PA_INT Kind;
 };
 struct PAElement { 
 //	struct PAData data;
@@ -81,7 +81,7 @@ struct PALink {
 	struct PAPair p;
 };
 struct PAResult {
-	PAInt cod;
+	PA_INT cod;
 };
 struct Adaptee {
 	struct ArrayList List;

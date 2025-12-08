@@ -9,6 +9,10 @@
 #define INCLUDE_PA_SERIES_H
 #include <PA/Size.h>
 #include <PA/List.h>
-struct PASir;
+struct PASeries;
+void PASeries();
+struct PASeries PASeriesArrange(struct PASeries);
+struct PASeries PASeriesPutSize(struct PASeries, struct PASize);
+struct PASeries PASeriesPutList(struct PASeries, struct PAList);
 //typedef struct PASir Series;
 #endif /* INCLUDE_PASIR_H_ */
