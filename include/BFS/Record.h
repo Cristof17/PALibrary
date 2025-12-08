@@ -7,5 +7,6 @@
 struct BFSRecord;
 typedef struct BFSRecord Record;
 #endif
-
-void BFSResultPrint(struct BFSRecord);
+void BFSRecord(struct PAList d, struct PACount n);
+void BFSRecordDestroy();
+void BFSRecordPrint(struct BFSRecord);
