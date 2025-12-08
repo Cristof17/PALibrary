@@ -4,7 +4,7 @@
 PAInt PAListSize(struct PAList List) {
     int size = 0;
 //    PATip tip = lista.Nod.Tip;
-    struct PAElement nod_head = PAListHead(lista);
+    struct PAElement nod_head = PAListHead(List);
     struct PATip tip;
 //    return tip;
     return size;
