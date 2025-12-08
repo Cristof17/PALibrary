@@ -5,5 +5,9 @@
 #include "../include/BFS/Output.h"
 // struct Output;
 // typedef struct Output Output;
+void Output();
+struct Output OutputInit(struct Output output);
+//struct Output dispose();
+void OutputDestroy();
 void OutputPrint(struct PAResult);
 #endif
