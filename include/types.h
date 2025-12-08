@@ -3,8 +3,8 @@
 #define INCLUDE_TYPES_H_
 #ifdef _WIN95
 //#define short HALF_PTR;
-#define BOOL PABool
-#define int32_t PAInt
+typedef BOOL PABool
+typedef int32_t PAInt
 #else
 typedef int PAInt;
 typedef int PABool;
