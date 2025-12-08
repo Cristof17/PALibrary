@@ -8,8 +8,7 @@
  *      Author: AdministratorUser
  */
 
-void AdapteeSpecificRequest(Adaptee adaptee)
-{
+void AdapteeSpecificRequest(Adaptee adaptee){
 
 }
 
