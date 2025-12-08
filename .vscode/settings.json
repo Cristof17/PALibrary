@@ -19,6 +19,7 @@
         "pafeature.h": "c",
         "pavalue.h": "c",
         "size.h": "c",
-        "list.h": "c"
+        "list.h": "c",
+        "record.h": "c"
     }
 }

@@ -4,7 +4,7 @@
 // struct PALista Lista;
 	// struct PACardinal Cardinal;
 
-void BFSResultPrint(struct BFSRecord record) {
+void BFSRecordPrint(struct BFSRecord record) {
     PAListPrint(record.Lista);
     PASizePrint(record.Cardinal);
 }
