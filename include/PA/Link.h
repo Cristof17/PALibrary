@@ -3,5 +3,5 @@
 #define INCLUDE_PAMUCHIE_H
 #include "../include/PA/Pair.h"
 struct PALink;
-typedef struct PALink Link;
+//typedef struct PALink Link;
 #endif

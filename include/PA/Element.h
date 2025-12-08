@@ -8,6 +8,6 @@
 #include "../include/PA/Feature.h"
 struct PAElement;
 // struct PANod;
-typedef struct PAElement Element;
+//typedef struct PAElement Element;
 #endif
 

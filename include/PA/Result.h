@@ -4,7 +4,7 @@
 #include "../include/PA/Feature.h"
 // struct PARezultatl
 struct PAResult;
-typedef struct PAResult Result;
+//typedef struct PAResult Result;
 void PAResult();
 void PAResultDestroy();
 void PAResultPrint(struct PAResult);

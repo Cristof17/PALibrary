@@ -5,7 +5,7 @@
 #include "../include/BFS/Input.h"
 
 struct BFSAlgorithm;
-typedef struct BFSAlgorithm Algorithm;
+//typedef struct BFSAlgorithm Algorithm;
 struct PAElement search(struct PAData);
 void BFSAlgorithm(struct PATree, struct BFSInput);
 void BFSAlgorithmDestroy();

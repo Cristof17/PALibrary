@@ -6,5 +6,5 @@
 #include "../include/PA/Count.h"
 #include "../include/BFS/Input.h"
 struct BFSInput ;
-typedef struct BFSInput Input;
+//typedef struct BFSInput Input;
 #endif

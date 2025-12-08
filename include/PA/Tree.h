@@ -6,5 +6,5 @@
 #include "../include/PA/Element.h"
 #include "../include/PA/Series.h"
 struct PATree;
-typedef struct PATree Tree;
+//typedef struct PATree Tree;
 #endif
