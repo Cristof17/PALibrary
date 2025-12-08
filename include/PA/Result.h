@@ -6,7 +6,7 @@
 // struct PARezultatl
 struct PAResult;
 //typedef struct PAResult Result;
-void PAResult();
+struct PAResult PAResultConstruct();
 void PAResultDestroy();
 void PAResultPrint(struct PAResult);
 struct PAResult PAResultArrange(struct PAResult);

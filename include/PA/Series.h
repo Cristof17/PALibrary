@@ -10,7 +10,8 @@
 #include <PA/Size.h>
 #include <PA/List.h>
 struct PASeries;
-void PASeries();
+struct PASeries PASeriesConstruct();
+void PASeriesDestroy();
 struct PASeries PASeriesArrange(struct PASeries);
 struct PASeries PASeriesPutSize(struct PASeries, struct PASize);
 struct PASeries PASeriesPutList(struct PASeries, struct PAList);

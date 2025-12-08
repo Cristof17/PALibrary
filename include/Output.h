@@ -5,7 +5,7 @@
 #include <BFS/Output.h>
 // struct Output;
 // typedef struct Output Output;
-void OutputConstruct();
+struct Output OutputConstruct();
 struct Output OutputArrange(struct Output);
 //struct Output dispose();
 void OutputDestroy();

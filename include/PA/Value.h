@@ -2,6 +2,8 @@
 #define INCLUDE_PA_VALUE_H
 #include <types.h>
 struct PAValue;
+struct PAValue PAValueConstruct();
+void PAValueDestroy();
 struct PAValue PAValueArrange(struct PAValue);
 struct PAValue PAValuePutValue(struct PAValue, PA_INT);
 //typedef struct PAValue Value;
