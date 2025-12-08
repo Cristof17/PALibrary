@@ -3,7 +3,8 @@
 #define INCLUDE_PAMUCHIE_H
 #include <PA/Pair.h>
 struct PAArrow;
-struct PAArrow PAArrawArrange();
-struct PAArrow PAArrowPutPair(struct PAPair);
+struct PAArrow PAArrowConstruct();
+struct PAArrow PAArrawArrange(struct PAArrow);
+struct PAArrow PAArrowPutPair(struct PAArrow, struct PAPair);
 //typedef struct PAArrow Arrow;
 #endif

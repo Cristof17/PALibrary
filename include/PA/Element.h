@@ -7,6 +7,13 @@
 #include <PA/Destination.h>
 #include <PA/Feature.h>
 struct PAElement;
+struct PAElement PAElementConstruct();
+void PAElementDestroy();
+struct PAElement PAElementArrange(struct PAElement);
+struct PAElement PAElementPutStatus(struct PAElement, struct PAStatus);
+struct PAElement PAElementPutData(struct PAElement, struct PAData);
+struct PAElement PAElementPutDestination(struct PAElement, struct PADestination);
+struct PAElement PAElementPutFeature(struct PAElement, struct PAFeature);
 // struct PANod;
 //typedef struct PAElement Element;
 #endif

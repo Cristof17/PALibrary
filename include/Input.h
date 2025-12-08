@@ -5,5 +5,5 @@
 // typedef struct Input Input;
 struct Input InputArrange(struct Input);
 void InputDestroy();
-void Input();
+void InputConstruct();
 #endif

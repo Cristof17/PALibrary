@@ -22,6 +22,7 @@
         "list.h": "c",
         "record.h": "c",
         "pair.h": "c",
-        "feature.h": "c"
+        "feature.h": "c",
+        "element.h": "c"
     }
 }
