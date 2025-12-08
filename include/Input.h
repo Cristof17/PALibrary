@@ -3,7 +3,7 @@
 #define INCLUDE_INPUT_H
 // struct Input;
 // typedef struct Input Input;
-struct Input InputArrange(struct Input Input);
+struct Input InputArrange(struct Input);
 void InputDestroy();
 void Input();
 #endif
