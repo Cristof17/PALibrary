@@ -3,7 +3,7 @@
 #define PAGRAFTRANSPUS_H
 #include <PA/Result.h>
 struct GrafTranspus;
-typedef struct GrafTranspus GrafTranspus;
+// typedef struct GrafTranspus GrafTranspus;
 GrafTranspus GrafTranspusBuildPart();
 struct PAResult GrafTranspusGetResult();
 #endif

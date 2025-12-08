@@ -11,7 +11,7 @@
 #include <PA/Element.h>
 #include <types.h>
 struct Iterator;
-typedef struct Iterator Iterator;
+// typedef struct Iterator Iterator;
 struct PAData First();
 struct PAData Next();
 struct PABool IsDone();

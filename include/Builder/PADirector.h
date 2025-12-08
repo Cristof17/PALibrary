@@ -4,6 +4,6 @@
 #include <Builder/PABuilder.h>
 // #include <PABuilder.h>
 struct Director;
-typedef struct Director Director;
+// typedef struct Director Director;
 void PADirectorConstruct();
 #endif

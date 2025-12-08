@@ -3,5 +3,5 @@
 #define PAGRAFPRODUCT_H
 #include <PA/Tree.h>
 struct GrafProduct;
-typedef struct GrafProduct GrafProduct;
+// typedef struct GrafProduct GrafProduct;
 #endif
