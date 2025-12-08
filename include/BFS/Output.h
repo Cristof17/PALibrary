@@ -4,5 +4,6 @@
 #include <BFS/Record.h>
 struct BFSOutput;
 //typedef struct BFSOutput BFSOutput;
+struct BFSOutput BFSOutputInit(struct BFSOutput);
 void BFSOutputPrint(struct BFSOutput);
 #endif
