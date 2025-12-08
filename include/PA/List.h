@@ -2,7 +2,7 @@
 #ifndef INCLUDE_PALISTA_H
 #define INCLUDE_PALISTA_H
 #include "../include/PA/Element.h"
-#include "../include/PA/Count.h"
+#include "../include/PA/Size.h"
 #include "../include/ArrayList/ArrayList.h"
 struct PAList;
 //typedef struct PAList List;

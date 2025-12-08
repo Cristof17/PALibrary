@@ -6,5 +6,5 @@
 
 void BFSResultPrint(struct BFSRecord record) {
     PAListPrint(record.Lista);
-    PACountPrint(record.Cardinal);
+    PASizePrint(record.Cardinal);
 }
