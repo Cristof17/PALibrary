@@ -6,6 +6,6 @@
 #include <defs.h>
 struct ArrayList;
 typedef struct ArrayList ArrayList;
-struct PAData ArrayListGet(struct PAData[],INT);
-struct PAResult Init(INT);
+struct PAData ArrayListGet(struct PAData[],PAInt);
+struct PARecord Init(PAInt);
 #endif

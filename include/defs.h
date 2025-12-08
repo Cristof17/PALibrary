@@ -65,23 +65,23 @@ struct PASeries {
 	struct PACount n;
 	struct PAList adj[];
 };
-struct PASeries
-{
-
-};
+//struct PASeries
+//{
+//
+//};
 struct PATree  {
 	struct PACount n;
 	struct PACount m;
 	struct PAElement sursa;
 	struct PASeries adj;
 };
-struct PAPereche {
+struct PAPair {
 };
 struct PALink {
 	struct PAPair p;
 };
 struct PAResult {
-	P cod;
+	PAInt cod;
 };
 struct Adaptee {
 	struct ArrayList List;

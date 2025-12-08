@@ -4,7 +4,7 @@
 struct PACount;
 typedef struct PACount Count;
 void PACountPrint(struct PACount);
-void PACount(INT);
+void PACount(PAInt);
 void PACountDestroy();
 struct PACount PACountInit(struct PACount);
 #endif
