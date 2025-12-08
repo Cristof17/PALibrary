@@ -5,5 +5,8 @@
 // struct PARezultatl
 struct PAResult;
 typedef struct PAResult Result;
+void PAResult();
+void PAResultDestroy();
 void PAResultPrint(struct PAResult);
+struct PAResult PAResultInit(struct PAResult);
 #endif

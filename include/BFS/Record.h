@@ -10,3 +10,4 @@ typedef struct BFSRecord Record;
 void BFSRecord(struct PAList d, struct PACount n);
 void BFSRecordDestroy();
 void BFSRecordPrint(struct BFSRecord);
+struct BFSRecord BFSRecordInit(struct BFSRecord);
