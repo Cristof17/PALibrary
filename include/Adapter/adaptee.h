@@ -15,5 +15,5 @@
 struct Adaptee;
 typedef struct Adaptee Adaptee;
 void SpecificRequest(Adaptee);
-struct PAData Get(INT);
+struct PAData Get(PAInt);
 #endif /* ADAPTER_INCLUDE_ADAPTEE_H_ */
