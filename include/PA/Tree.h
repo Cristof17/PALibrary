@@ -1,10 +1,10 @@
 //@Author Cristofor Rotsching
-#ifndef INCLUDE_PAGRAF_H
-#define INCLUDE_PAGRAF_H
-#include "../include/PA/Size.h"
-#include "../include/PA/List.h"
-#include "../include/PA/Element.h"
-#include "../include/PA/Series.h"
+#ifndef INCLUDE_PA_TREE_H
+#define INCLUDE_PA_TREE_H
+#include <PA/Size.h>
+#include <PA/List.h>
+#include <PA/Element.h>
+#include <PA/Series.h>
 struct PATree;
 //typedef struct PATree Tree;
 #endif

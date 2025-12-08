@@ -7,8 +7,8 @@
 
 #ifndef INCLUDE_ITERATOR_ITERATOR_H_
 #define INCLUDE_ITERATOR_ITERATOR_H_
-#include "../include/PA/Data.h"
-#include "../include/PA/Element.h"
+#include <PA/Data.h>
+#include <PA/Element.h>
 #include <types.h>
 struct Iterator;
 typedef struct Iterator Iterator;

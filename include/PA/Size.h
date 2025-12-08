@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef INCLUDE_PACARDINAL_H
-#define INCLUDE_PACARDINAL_H
+#ifndef INCLUDE_PA_SIZE_H
+#define INCLUDE_PA_SIZE_H
 // #include <defs.h>
 #include <types.h>
 struct PASize;

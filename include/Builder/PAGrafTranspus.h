@@ -1,7 +1,7 @@
 //@Author Cristofor Rotsching
 #ifndef PAGRAFTRANSPUS_H
 #define PAGRAFTRANSPUS_H
-#include "../include/PA/Result.h"
+#include <PA/Result.h>
 struct GrafTranspus;
 typedef struct GrafTranspus GrafTranspus;
 GrafTranspus GrafTranspusBuildPart();

@@ -1,9 +1,9 @@
 //@Author Cristofor Rotsching
-#ifndef INCLUDE_PALISTA_H
-#define INCLUDE_PALISTA_H
-#include "../include/PA/Element.h"
-#include "../include/PA/Size.h"
-#include "../include/ArrayList/ArrayList.h"
+#ifndef INCLUDE_PA_LIST_H
+#define INCLUDE_PA_LIST_H
+#include <PA/Element.h>
+#include <PA/Size.h>
+#include <ArrayList/ArrayList.h>
 struct PAList;
 //typedef struct PAList List;
 

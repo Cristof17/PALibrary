@@ -1,7 +1,7 @@
 //@Author Cristofor Rotsching
 #ifndef PAGRAFNORMAL_H
 #define PAGRAFNORMAL_H
-#include "../include/PA/Result.h"
+#include <PA/Result.h>
 struct GrafNormal;
 typedef struct GrafNormal PAGrafNormal;
 struct GrafNormal PAGrafNormalBuildPart();

@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef INCLUDE_PAPERECHE_H
-#define INCLUDE_PAPERECHE_H
+#ifndef INCLUDE_PA_PAIR_H
+#define INCLUDE_PA_PAIR_H
 struct PAPair;
 //typedef struct PAPair Pair;
 #endif

@@ -5,10 +5,10 @@
  *      Author: AdministratorUser
  */
 
-#ifndef INCLUDE_PASIR_H_
-#define INCLUDE_PASIR_H_
-#include "../include/PA/Size.h"
-#include "../include/PA/List.h"
+#ifndef INCLUDE_PA_SERIES_H
+#define INCLUDE_PA_SERIES_H
+#include <PA/Size.h>
+#include <PA/List.h>
 struct PASir;
 //typedef struct PASir Series;
 #endif /* INCLUDE_PASIR_H_ */

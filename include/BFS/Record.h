@@ -1,9 +1,9 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_BFSRESULT_H
 #define INCLUDE_BFSRESULT_H	
-#include "../include/PA/List.h"
-#include "../include/PA/Size.h"
-#include "../include/PA/Result.h"
+#include <PA/List.h>
+#include <PA/Size.h>
+#include <PA/Result.h>
 struct BFSRecord;
 //typedef struct BFSRecord Record;
 #endif

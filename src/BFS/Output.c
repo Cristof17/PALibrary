@@ -1,7 +1,7 @@
 //@Author Cristofor Rotsching
 #include <BFS/Output.h>
 #include <defs.h>
-struct Output init(struct Output output) {
+struct Output OutputInit(struct Output output) {
 	struct Output copy;
 	return copy;
 }
