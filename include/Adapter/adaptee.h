@@ -13,7 +13,7 @@
 #include <types.h>
 
 struct Adaptee;
-typedef struct Adaptee Adaptee;
+//typedef struct Adaptee Adaptee;
 void SpecificRequest(Adaptee);
 struct PAData Get(PAInt);
 #endif /* ADAPTER_INCLUDE_ADAPTEE_H_ */

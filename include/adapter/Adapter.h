@@ -11,7 +11,7 @@
 #include "../include/PA/List.h"
 
 struct Adapter;
-typedef struct Adapter Adapter;
+//typedef struct Adapter Adapter;
 void Request(Adapter);
 struct PAElement GetHead(Adapter);
 #endif /* ADAPTER_INCLUDE_ADAPTER_H_ */

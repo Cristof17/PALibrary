@@ -10,6 +10,6 @@
 #include "../include/PA/Tree.h"
 #include "../include/Adapter/Target.h"
 struct Client;
-typedef struct Client Client;
+//typedef struct Client Client;
 
 #endif /* ADAPTER_INCLUDE_CLIENT_H_ */
