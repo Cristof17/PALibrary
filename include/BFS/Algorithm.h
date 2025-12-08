@@ -6,4 +6,8 @@
 
 struct BFSAlgorithm;
 typedef struct BFSAlgorithm Algorithm;
+struct PAElement search(struct PAData);
+void BFSAlgorithm(struct PATree, struct BFSInput);
+void BFSAlgorithmDestroy();
+struct Algorithm BFSAlgorithmInit(struct BFSAlgorithm);
 #endif
