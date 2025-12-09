@@ -2,6 +2,6 @@
 #ifndef PAGRAFPRODUCT_H
 #define PAGRAFPRODUCT_H
 #include <PA/Tree.h>
-struct _GRAF_PRODUCT;
+struct GrafProduct;
 // typedef struct GrafProduct GrafProduct;
 #endif

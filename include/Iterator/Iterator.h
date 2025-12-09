@@ -10,7 +10,7 @@
 #include <PA/Data.h>
 #include <PA/Element.h>
 #include <types.h>
-struct _ITERATOR;
+struct Iterator;
 // typedef struct Iterator Iterator;
 struct PAData First();
 struct PAData Next();

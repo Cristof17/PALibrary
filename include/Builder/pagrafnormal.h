@@ -2,7 +2,7 @@
 #ifndef PAGRAFNORMAL_H
 #define PAGRAFNORMAL_H
 #include <PA/Result.h>
-struct _GRAF_NORMAL;
+struct GrafNormal;
 // typedef struct GrafNormal PAGrafNormal;
 struct GrafNormal PAGrafNormalBuildPart();
 struct PAResult PAGrafNormalGetResult();

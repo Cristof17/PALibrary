@@ -4,13 +4,13 @@
 #include <PA/Tree.h>
 #include <BFS/Input.h>
 
-struct _BFS_ALGORITHM;
+struct BFSAlgorithm;
 //typedef struct BFSAlgorithm Algorithm;
 struct PAElement search(struct PAData);
-void BFSAlgorithm(struct PATree, struct BFSInput);
 struct BFSAlgorithm BFSAlgorithmConstruct();
-void BFSAlgorithmDestroy();
 struct Algorithm BFSAlgorithmArrange(struct BFSAlgorithm);
 struct Algorithm BFSAlgorithmPutTree(struct BFSAlgorithm, struct PATree);
 struct Algorithm BFSAlgorithmPutInput(struct BFSAlgorithm, struct BFSInput);
+void BFSAlgorithm(struct PATree, struct BFSInput);
+void BFSAlgorithmDestroy();
 #endif

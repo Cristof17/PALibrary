@@ -5,7 +5,7 @@
 #include <PA/List.h>
 #include <PA/Size.h>
 #include <BFS/Input.h>
-struct _BFS_INPUT ;
+struct BFSInput ;
 struct BFSInput BFSInputConstruct();
 // vpo BFSInputRuin();
 void BFSInputRuin();
