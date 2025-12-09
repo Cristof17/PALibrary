@@ -5,7 +5,7 @@
 struct PADestination;
 struct PADestination PADestinationConstruct();
 void PADestinationRuin();
-struct PAData PADataArrange(struct PAData);
-struct PAData PADataPutElement(struct PAData, struct PAElement);
+struct PADestination PADataArrange(struct PADestination);
+struct PADestination PADataPutElement(struct PADestination,struct PAElement);
 //typedef struct PADestination Destination;
 #endif
