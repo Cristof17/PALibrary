@@ -4,7 +4,7 @@
 #include <PA/Element.h>
 struct PADestination;
 struct PADestination PADestinationConstruct();
-void PADestinationDestroy();
+void PADestinationRuin();
 struct PAData PADataArrange(struct PAData);
 struct PAData PADataPutElement(struct PAData, struct PAElement);
 //typedef struct PADestination Destination;

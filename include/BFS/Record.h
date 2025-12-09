@@ -8,7 +8,8 @@ struct BFSRecord;
 //typedef struct BFSRecord Record;
 #endif
 void BFSRecord(struct PAList, struct PASize);
-void BFSRecordDestroy();
+// void BFSRecordDestroy();
+void BFSOutputRuin();
 void BFSRecordPrint(struct BFSRecord);
 struct BFSRecord BFSRecordArrange(struct BFSRecord);
 struct BFSRecord BFSRecordPutList(struct BFSRecord, struct PAList);
