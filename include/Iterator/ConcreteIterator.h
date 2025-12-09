@@ -8,7 +8,7 @@
 #ifndef INCLUDE_ITERATOR_CONCRETEITERATOR_H_
 #define INCLUDE_ITERATOR_CONCRETEITERATOR_H_
 
-struct ConcreteIterator;
+struct _CONCRETE_ITERATOR;
 // typedef struct ConcreteIterator ConcreteIterator;
 
 #endif /* ITERATOR_INCLUDE_CONCRETEITERATOR_H_ */

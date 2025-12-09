@@ -2,9 +2,9 @@
 #ifndef INCLUDE_PA_DESTINATION_H
 #define INCLUDE_PA_DESTINATION_H
 //#include <PA/Element.h>
-struct PADestination;
-struct PADestination PADestinationConstruct();
+struct _PA_DESTINATION;
+struct _PA_DESTINATION PADestinationConstruct();
 void PADestinationRuin();
-struct PADestination PADataArrange(struct PADestination);
+struct _PA_DESTINATION PADataArrange(struct _PA_DESTINATION);
 //struct PADestination PADataPutElement(struct PADestination,struct PAElement);
 #endif

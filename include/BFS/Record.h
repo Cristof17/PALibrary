@@ -4,7 +4,7 @@
 #include <PA/List.h>
 #include <PA/Size.h>
 #include <PA/Result.h>
-struct BFSRecord;
+struct _BFS_RECORD;
 //typedef struct BFSRecord Record;
 #endif
 void BFSRecord(struct PAList, struct PASize);

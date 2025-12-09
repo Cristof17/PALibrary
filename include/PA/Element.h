@@ -6,14 +6,14 @@
 #include <PA/Data.h>
 #include <PA/Destination.h>
 #include <PA/Feature.h>
-struct PAElement;
-struct PAElement PAElementConstruct();
+struct _PA_ELEMENT;
+struct _PA_ELEMENT PAElementConstruct();
 void PAElementRuin();
-struct PAElement PAElementArrange(struct PAElement);
-struct PAElement PAElementPutStatus(struct PAElement, struct PAStatus);
-struct PAElement PAElementPutData(struct PAElement, struct PAData);
-struct PAElement PAElementPutDestination(struct PAElement, struct PADestination);
-struct PAElement PAElementPutFeature(struct PAElement, struct PAFeature);
+struct _PA_ELEMENT PAElementArrange(struct _PA_ELEMENT);
+struct _PA_ELEMENT PAElementPutStatus(struct _PA_ELEMENT, struct _PA_Status);
+struct _PA_ELEMENT PAElementPutData(struct _PA_ELEMENT, struct _PA_Data);
+struct _PA_ELEMENT PAElementPutDestination(struct _PA_ELEMENT, struct _PA_Destination);
+struct _PA_ELEMENT PAElementPutFeature(struct _PA_ELEMENT, struct _PA_Feature);
 // struct PANod;
 //typedef struct PAElement Element;
 #endif

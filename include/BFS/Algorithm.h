@@ -4,7 +4,7 @@
 #include <PA/Tree.h>
 #include <BFS/Input.h>
 
-struct BFSAlgorithm;
+struct _BFS_ALGORITHM;
 //typedef struct BFSAlgorithm Algorithm;
 struct PAElement search(struct PAData);
 void BFSAlgorithm(struct PATree, struct BFSInput);

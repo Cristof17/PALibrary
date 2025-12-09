@@ -2,7 +2,7 @@
 #ifndef INCLUDE_PAMUCHIE_H
 #define INCLUDE_PAMUCHIE_H
 #include <PA/Pair.h>
-struct PAArrow;
+struct _PA_ARROW;
 void PAArrowRuin();
 struct PAArrow PAArrowConstruct();
 struct PAArrow PAArrawArrange(struct PAArrow);

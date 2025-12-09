@@ -3,7 +3,7 @@
 #define PADIRECTOR_H
 #include <Builder/PABuilder.h>
 // #include <PABuilder.h>
-struct Director;
+struct _DIRECTOR;
 // typedef struct Director Director;
 void PADirectorConstruct();
 #endif
