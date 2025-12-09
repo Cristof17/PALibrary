@@ -12,7 +12,7 @@
 #include <ArrayList/ArrayList.h>
 #include <types.h>
 
-struct Adaptee;
+struct _ADAPTEE;
 //typedef struct Adaptee Adaptee;
 void SpecificRequest(struct Adaptee);
 struct PAData Get(PA_INT);

@@ -5,13 +5,13 @@
 #include <PA/List.h>
 #include <PA/Element.h>
 #include <PA/Series.h>
-struct PATree;
-struct PATree PATreeConstruct();
+struct _PA_TREE;
+struct _PA_TREE PATreeConstruct();
 void PATreeRuin();
-struct PATree PATreeArrange(struct PATree);
-struct PATree PATreePutSize(struct PATree, struct PASize);
-struct PATree PATreePutList(struct PATree, struct PAList);
-struct PATree PATreePutElement(struct PATree, struct PAElement);
-struct PATree PATreePutSeries(struct PATree, struct PASeries);
+struct _PA_TREE PATreeArrange(struct _PA_TREE);
+struct _PA_TREE PATreePutSize(struct _PA_TREE, struct _PA_SIZE);
+struct _PA_TREE PATreePutList(struct _PA_TREE, struct _PA_LIST);
+struct _PA_TREE PATreePutElement(struct _PA_TREE, struct _PA_ELEMENT);
+struct _PA_TREE PATreePutSeries(struct _PA_TREE, struct _PA_SERIES);
 //typedef struct PATree Tree;
 #endif
