@@ -4,7 +4,7 @@
 #include <PA/Data.h>
 #include <types.h>
 #include <defs.h>
-struct _ARRAYLIST;
+struct ArrayList;
 //typedef struct ArrayList ArrayList;
 struct PAData ArrayListGet(struct PAData[],PA_INT);
 struct PARecord ArrayListArrange(PA_INT);

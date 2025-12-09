@@ -10,7 +10,7 @@
 #include <Adapter/Adaptee.h>
 #include <PA/List.h>
 
-struct _ADAPTER;
+struct Adapter;
 //typedef struct Adapter Adapter;
 void Request(struct Adapter);
 struct PAElement GetHead(struct Adapter);

@@ -12,7 +12,7 @@
 
 
 //#include <Adapter.h">
-struct _TARGET;
+struct Target;
 //typedef struct Target Target;
 struct PASeries TargetRequest(struct Target);
 
