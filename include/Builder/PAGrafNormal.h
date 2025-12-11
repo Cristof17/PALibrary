@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef PAGRAFNORMAL_H
-#define PAGRAFNORMAL_H
+#ifndef PAGRAFNORMAL_H_
+#define PAGRAFNORMAL_H_
 #ifndef _WIN95
 #include <PA/Result.h>
 #elif defined _WIN95

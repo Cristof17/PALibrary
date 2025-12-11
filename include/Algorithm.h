@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef INCLUDE_ALGORITHM_H
-#define INCLUDE_ALGORITHM_H	
+#ifndef INCLUDE_ALGORITHM_H_
+#define INCLUDE_ALGORITHM_H_
 #ifndef _WIN95
 #include <Input.h>
 //#include "outputc.h"

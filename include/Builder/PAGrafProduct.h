@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef PAGRAFPRODUCT_H
-#define PAGRAFPRODUCT_H
+#ifndef PAGRAFPRODUCT_H_
+#define PAGRAFPRODUCT_H_
 #ifndef _WIN95
 #include <PA/Tree.h>
 #elif defined _WIN95

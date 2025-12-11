@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef INCLUDE_BFSRESULT_H
-#define INCLUDE_BFSRESULT_H	
+#ifndef INCLUDE_BFSRESULT_H_
+#define INCLUDE_BFSRESULT_H_
 #ifndef _WIN95
 #include <PA/List.h>
 #include <PA/Size.h>

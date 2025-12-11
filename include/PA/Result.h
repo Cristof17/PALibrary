@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef INCLUDE_PA_RESULT_H
-#define INCLUDE_PA_RESULT_H
+#ifndef INCLUDE_PA_RESULT_H_
+#define INCLUDE_PA_RESULT_H_
 #ifndef _WIN95
 #include <PA/Feature.h>
 #elif defined _WIN95

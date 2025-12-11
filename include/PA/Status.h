@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef INCLUDE_PA_STATUS_H
-#define INCLUDE_PA_STATUS_H
+#ifndef INCLUDE_PA_STATUS_H_
+#define INCLUDE_PA_STATUS_H_
 // #include <PA/Feature.h>
 #include <types.h>
 // #ifndef <

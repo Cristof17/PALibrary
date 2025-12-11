@@ -1,5 +1,5 @@
-#ifndef INCLUDE_ITERATOR_ITERATOR_H
-#define INCLUDE_ITERATOR_ITERATOR_H
+#ifndef INCLUDE_ITERATOR_ITERATOR_H_
+#define INCLUDE_ITERATOR_ITERATOR_H_
 #ifndef _WIN95
 #elif defined _WIN95
 // #pragma endregion

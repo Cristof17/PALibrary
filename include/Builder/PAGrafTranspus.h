@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef PAGRAFTRANSPUS_H
-#define PAGRAFTRANSPUS_H
+#ifndef PAGRAFTRANSPUS_H_
+#define PAGRAFTRANSPUS_H_
 #ifndef _WIN95
 #include <PA/Result.h>
 #elif defined _WIN95

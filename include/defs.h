@@ -1,5 +1,5 @@
-#ifndef INCLUDE_DEFS
-#define INCLUDE_DEFS
+#ifndef INCLUDE_DEFS_
+#define INCLUDE_DEFS_
 #include <types.h>
 // struct In put {
 // 	;
