@@ -5,7 +5,7 @@
 // #include <PA/Arrow.h>
 #include <PA/Result.h>
 struct PAArrow;
-struct PAResult PAArrowRuin();
+struct PAResult PAArrowRuin(struct PAArrow);
 struct PAArrow PAArrowConstruct();
 struct PAArrow PAArrawArrange(struct PAArrow);
 struct PAArrow PAArrowPutPair(struct PAArrow, struct PAPair);
