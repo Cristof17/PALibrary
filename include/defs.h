@@ -38,7 +38,7 @@ struct PAStatus {
 struct PAFeature {
 	PA_INT Kind;
 };
-struct PAEdge {
+struct PAArrow {
 	struct PAPair p;
 }
 struct PAElement { 
