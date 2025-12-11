@@ -13,14 +13,14 @@ struct PAList PAListPutElement(struct PAList, struct PAElement);
 struct PAList PAListPutSize(struct PAList, struct PASize);
 struct PAList PAListPutArrayList(struct PAList, struct ArrayList);
 
-void PAListAdd(struct PAElement);
-void PAList(struct PAElement Head);
-void PAListRuin();
-void PAListPrint(struct PAList);
+struct PAResult PAListAddElement(struct PAList, struct PAElement);
+// struct PAResult PAList(struct PAElement Head);
+struct PAResult PAListRuin(struct PAList);
+struct PAResult PAListPrint(struct PAList);
 void Dispose();
 //struct PAList PAListInit(struct PAList);
 //s
-int PAListSize(struct PAList);
+PA_INT PAListSize(struct PAList);
 //struct PAElement PAListGet(INT);
 struct PAElement PAListHead(struct PAList);
 // struct PAElement PAListArrange(struct PAList);

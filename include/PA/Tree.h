@@ -7,7 +7,7 @@
 #include <PA/Series.h>
 struct PATree;
 struct PATree PATreeConstruct();
-void PATreeRuin();
+struct PAResult PATreeRuin(struct PATree);
 struct PATree PATreeArrange(struct PATree);
 struct PATree PATreePutSize(struct PATree, struct PASize);
 struct PATree PATreePutList(struct PATree, struct PAList);

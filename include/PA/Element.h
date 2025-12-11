@@ -8,7 +8,7 @@
 #include <PA/Feature.h>
 struct PAElement;
 struct PAElement PAElementConstruct();
-void PAElementRuin();
+struct PAResult PAElementRuin(struct PAElement);
 struct PAElement PAElementArrange(struct PAElement);
 struct PAElement PAElementPutStatus(struct PAElement, struct PAStatus);
 struct PAElement PAElementPutData(struct PAElement, struct PAData);

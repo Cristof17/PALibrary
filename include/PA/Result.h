@@ -7,7 +7,7 @@
 struct PAResult;
 //typedef struct PAResult Result;
 struct PAResult PAResultConstruct();
-void PAResultRuin();
+struct PAResult PAResultRuin(struct PAResult);
 void PAResultPrint(struct PAResult);
 struct PAResult PAResultArrange(struct PAResult);
 struct PAResult PAResultPutValue(struct PAResult, PA_INT);

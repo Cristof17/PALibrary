@@ -4,7 +4,7 @@
 // #include <PA/Feature.h>
 struct PAFeature;
 struct PAFeature PAFeatureConstruct();
-void PAFeatureRuin();
+struct PAResult PAFeatureRuin(struct PAFeature);
 struct PAFeature PAFeatureArrange(struct PAFeature);
 struct PAFeature PAFeaturePut();
 //typedef struct PAFeature Feature;

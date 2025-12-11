@@ -5,7 +5,7 @@
 #include <types.h>
 struct PAStatus/*.*/;
 struct PAStatus PAStatusConstruct();
-void PAStatusRuin();
+struct PAResult PAStatusRuin(struct PAStatus);
 struct PAStatus PAStatusArrange(struct PAStatus);
 struct PAStatus PAStatusPutValue(struct PAStatus, PA_INT);
 //typedef struct PAStatus Status;
