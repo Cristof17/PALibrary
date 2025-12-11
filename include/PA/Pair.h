@@ -1,9 +1,14 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_PA_PAIR_H
 #define INCLUDE_PA_PAIR_H
+#ifndef _WIN95
 // #include <PA/PAElement.h>
 #include <PA/Element.h>
 #include <PA/Pair.h>
+#elif defined _WIN95
+#include <PA\Element.h>
+#include <PA\Pair.h>
+#endif
 struct PAPair;
 struct PAPair PAPairConstruct();
 struct PAPair PAPairRuin(struct PAPair);

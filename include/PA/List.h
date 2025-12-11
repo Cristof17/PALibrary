@@ -1,11 +1,19 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_PA_LIST_H
 #define INCLUDE_PA_LIST_H
+#ifndef _WIN95
 #include <PA/Element.h>
 #include <PA/Size.h>
 #include <ArrayList/ArrayList.h>
-#include <types.h>
 #include <PA/Result.h>
+#include <types.h>
+#elif defined _WIN95
+#include <PA\Element.h>
+#include <PA\Size.h>
+#include <ArrayList\ArrayList.h>
+#include <PA\Result.h>
+#endif
+
 struct PAList;
 //typedef struct PAList List;
 struct PAList PAListConstruct();

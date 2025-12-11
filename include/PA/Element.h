@@ -1,12 +1,20 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_PA_ELEMENT_H
 #define INCLUDE_PA_ELEMENT_H
+#ifndef _WIN95
 #include <PA/Status.h>
 //#include "padata.h"
 #include <PA/Data.h>
 #include <PA/Destination.h>
 #include <PA/Feature.h>
 #include <PA/Result.h>
+#elif defined _WIN95
+#include <PA\Status.h>
+#include <PA\Data.h>
+#include <PA\Destination.h>
+#include <PA\Feature.h>
+#include <PA\Result.h>
+#endif
 struct PAElement;
 struct PAElement PAElementConstruct();
 struct PAResult PAElementRuin(struct PAElement);

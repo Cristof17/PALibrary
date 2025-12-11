@@ -3,7 +3,15 @@
 #define INCLUDE_PA_STATUS_H
 // #include <PA/Feature.h>
 #include <types.h>
+// #ifndef <
+// #ifndef )
+#ifndef _WIN95
 #include <PA/Result.h>
+#elif defined _WIN95
+#include <PA\Result.h>
+// #endo/
+// #endig
+#endif
 struct PAStatus/*.*/;
 struct PAStatus PAStatusConstruct();
 struct PAResult PAStatusRuin(struct PAStatus);
