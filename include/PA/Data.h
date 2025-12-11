@@ -1,6 +1,7 @@
 #ifndef INCLUDE_PADATA_H
 #define INCLUDE_PADATA_H
 #include <types.h>
+#include <PA/Result.h>
 // #include <defs.h>
 struct PAData;
 struct PAData PADataConstruct();

@@ -2,6 +2,7 @@
 #ifndef INCLUDE_PA_LINK_H
 #define INCLUDE_PA_LINK_H
 #include <PA/Pair.h>
+#include <PA/Result.h>
 struct PALink;
 struct PALink PALinkConstruct();
 struct PAResult PALinkRuin(struct PALink);

@@ -5,6 +5,7 @@
 #include <PA/Size.h>
 #include <ArrayList/ArrayList.h>
 #include <types.h>
+#include <PA/Result.h>
 struct PAList;
 //typedef struct PAList List;
 struct PAList PAListConstruct();

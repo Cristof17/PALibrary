@@ -6,6 +6,7 @@
 #include <PA/Data.h>
 #include <PA/Destination.h>
 #include <PA/Feature.h>
+#include <PA/Result.h>
 struct PAElement;
 struct PAElement PAElementConstruct();
 struct PAResult PAElementRuin(struct PAElement);

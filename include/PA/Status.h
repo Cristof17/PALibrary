@@ -3,6 +3,7 @@
 #define INCLUDE_PA_STATUS_H
 // #include <PA/Feature.h>
 #include <types.h>
+#include <PA/Result.h>
 struct PAStatus/*.*/;
 struct PAStatus PAStatusConstruct();
 struct PAResult PAStatusRuin(struct PAStatus);

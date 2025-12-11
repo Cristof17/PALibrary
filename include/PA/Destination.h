@@ -2,6 +2,7 @@
 #ifndef INCLUDE_PA_DESTINATION_H
 #define INCLUDE_PA_DESTINATION_H
 //#include <PA/Element.h>
+#include <PA/Result.h>
 struct PADestination;
 struct PADestination PADestinationConstruct();
 struct PAResult PADestinationRuin(struct PADestination);

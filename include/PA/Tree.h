@@ -5,6 +5,7 @@
 #include <PA/List.h>
 #include <PA/Element.h>
 #include <PA/Series.h>
+#include <PA/Result.h>
 struct PATree;
 struct PATree PATreeConstruct();
 struct PAResult PATreeRuin(struct PATree);

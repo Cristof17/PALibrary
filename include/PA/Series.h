@@ -9,6 +9,7 @@
 #define INCLUDE_PA_SERIES_H
 #include <PA/Size.h>
 #include <PA/List.h>
+#include <PA/Result.h>
 struct PASeries;
 struct PASeries PASeriesConstruct();
 struct PAResult PASeriesRuin(struct PASeries);

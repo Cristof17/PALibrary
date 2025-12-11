@@ -3,6 +3,7 @@
 #define INCLUDE_PA_SIZE_H
 // #include <defs.h>
 #include <types.h>
+#include <PA/Result.h>
 struct PASize;
 //typedef struct PACount Count;
 void PASizePrint(struct PASize);

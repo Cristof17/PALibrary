@@ -3,6 +3,7 @@
 #define INCLUDE_PA_PAIR_H
 // #include <PA/PAElement.h>
 #include <PA/Element.h>
+#include <PA/Pair.h>
 struct PAPair;
 struct PAPair PAPairConstruct();
 struct PAPair PAPairRuin(struct PAPair);

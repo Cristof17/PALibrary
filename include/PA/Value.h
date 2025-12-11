@@ -1,6 +1,7 @@
 #ifndef INCLUDE_PA_VALUE_H
 #define INCLUDE_PA_VALUE_H
 #include <types.h>
+#include <PA/Result.h>
 struct PAValue;
 struct PAValue PAValueConstruct();
 struct PAResult PAValueRuin(struct PAValue);
