@@ -1,9 +1,15 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_ALGORITHM_H
 #define INCLUDE_ALGORITHM_H	
+#ifndef _WIN95
 #include <Input.h>
 //#include "outputc.h"
 #include <Output.h>
+#elif defined _WIN95
+#include <Input.h>
+//#include "outputc.h"
+#include <Output.h>
+#endif
 // struct Algorithm;
 // typedef struct Algorithm Algorithm;
 struct Output Run(struct Input);

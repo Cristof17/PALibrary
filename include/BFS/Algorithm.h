@@ -1,9 +1,14 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_BFSALGORITHM_H
-#define INCLUDE_BFSALGORITHM_H	
+#define INCLUDE_BFSALGORITHM_H
+#ifndef _WIN95
 #include <PA/Tree.h>
 #include <BFS/Input.h>
-
+// #elif defined _WIN945
+#elif defined _WIN95
+#include <PA\Tree.h>
+#include <BFS\Input.h>
+#endif
 struct BFSAlgorithm;
 //typedef struct BFSAlgorithm Algorithm;
 struct PAElement search(struct PAData);

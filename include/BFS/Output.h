@@ -1,7 +1,12 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_BFSOUTPUT_H
 #define INCLUDE_BFSOUTPUT_H
+// #ifndef _WIN954
+#ifndef _WIN95
 #include <BFS/Record.h>
+#elif defined _WIN95
+#include <BFS\Record.h>
+#endif
 struct BFSOutput;
 struct BFSOutput BFSOutputConstruct();
 // strut BFSOutputRuin();

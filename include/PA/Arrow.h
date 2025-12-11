@@ -2,10 +2,10 @@
 #ifndef INCLUDE_PAMUCHIE_H
 #define INCLUDE_PAMUCHIE_H
 // #ifdef WIN)
-#ifdef _WIN95
-#include <PA\Pair.h>
-#include <PA\Result.h>
-#else
+#ifndef _WIN95
+#include <PA/Pair.h>
+#include <PA/Result.h>
+#elif defined _WIN95
 #include <PA/Pair.h>
 #include <PA/Result.h>
 // #include <PA/Arrow.h>

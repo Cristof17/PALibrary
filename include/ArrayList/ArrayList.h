@@ -1,9 +1,17 @@
 #ifndef _ARRAYLIST_ARRAYLIST_H
 #define _ARRAYLIST_ARRAYLIST_H
+#ifndef _WIN95
 #include <PA/Result.h>
 #include <PA/Data.h>
 #include <types.h>
 #include <defs.h>
+// #eliuf 
+#elif defined _WIN95
+#include <PA\Result.h>
+#include <PA\Data.h>
+#include <types.h>
+#include <defs.h>
+#endif
 struct ArrayList;
 //typedef struct ArrayList ArrayList;
 struct PAData ArrayListGet(struct PAData[],PA_INT);

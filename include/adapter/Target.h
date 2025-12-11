@@ -7,8 +7,13 @@
 
 #ifndef INCLUDE_ADAPTER_TARGET_H_
 #define INCLUDE_ADAPTER_TARGET_H_
+#ifndef _WIN95
 #include <PA/Series.h>
 #include <Adapter/Adapter.h>
+#elif defined _WIN95
+#include <PA\Series.h>
+#include <Adapter\Adapter.h>
+#endif
 
 
 //#include <Adapter.h">
