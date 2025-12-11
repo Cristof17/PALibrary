@@ -40,7 +40,7 @@ struct PAFeature {
 };
 struct PAArrow {
 	struct PAPair p;
-}
+};
 struct PAElement { 
 //	struct PAData data;
 	struct PAData Index;
