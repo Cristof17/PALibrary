@@ -3,11 +3,11 @@
 #define INCLUDE_PA_PAIR_H
 // #include <PA/PAElement.h>
 #include <PA/Element.h>
-struct _PA_PAIR;
-struct _PA_PAIR PAPairConstruct();
+struct PAPair;
+struct PAPair PAPairConstruct();
 void PAPairRuin();
-struct _PA_PAIR PAPairArrange(struct _PA_PAIR);
-struct _PA_PAIR PAPairPutFirst(struct _PA_PAIR, struct _PA_ELEMENT);
-struct _PA_PAIR PAPairPutSecond(struct _PA_PAIR, struct _PA_ELEMENT);
+struct PAPair PAPairArrange(struct PAPair);
+struct PAPair PAPairPutFirst(struct PAPair, struct PAElement);
+struct PAPair PAPairPutSecond(struct PAPair, struct PAElement);
 //typedef struct PAPair Pair;
 #endif

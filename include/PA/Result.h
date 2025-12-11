@@ -4,11 +4,11 @@
 #include <PA/Feature.h>
 #include <types.h>
 // struct PARezultatl
-struct _PA_RESULT;
+struct PAResult;
 //typedef struct PAResult Result;
-struct _PA_RESULT PAResultConstruct();
+struct PAResult PAResultConstruct();
 void PAResultRuin();
-void PAResultPrint(struct _PA_RESULT);
-struct _PA_RESULT PAResultArrange(struct _PA_RESULT);
-struct _PA_RESULT PAResultPutValue(struct _PA_RESULT, PA_INT);
+void PAResultPrint(struct PAResult);
+struct PAResult PAResultArrange(struct PAResult);
+struct PAResult PAResultPutValue(struct PAResult, PA_INT);
 #endif

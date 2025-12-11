@@ -3,12 +3,12 @@
 #define INCLUDE_PA_SIZE_H
 // #include <defs.h>
 #include <types.h>
-struct _PA_SIZE;
+struct PASize;
 //typedef struct PACount Count;
-void PASizePrint(struct _PA_SIZE);
-struct _PA_SIZE PASizeConstruct(PA_INT);
+void PASizePrint(struct PASize);
+struct PASize PASizeConstruct(PA_INT);
 // void PASize(PA_INT);
 void PASizeRuin();
-struct _PA_SIZE PASizeArrange(struct _PA_SIZE);
-struct _PA_SIZE PASizePutValue(struct _PA_SIZE, PA_INT);
+struct PASize PASizeArrange(struct PASize);
+struct PASize PASizePutValue(struct PASize, PA_INT);
 #endif

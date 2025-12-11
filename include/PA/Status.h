@@ -3,10 +3,10 @@
 #define INCLUDE_PA_STATUS_H
 // #include <PA/Feature.h>
 #include <types.h>
-struct _PA_STATUS/*.*/;
-struct _PA_STATUS PAStatusConstruct();
+struct PAStatus/*.*/;
+struct PAStatus PAStatusConstruct();
 void PAStatusRuin();
-struct _PA_STATUS PAStatusArrange(struct _PA_STATUS);
-struct _PA_STATUS PAStatusPutValue(struct _PA_STATUS, PA_INT);
+struct PAStatus PAStatusArrange(struct PAStatus);
+struct PAStatus PAStatusPutValue(struct PAStatus, PA_INT);
 //typedef struct PAStatus Status;
 #endif
