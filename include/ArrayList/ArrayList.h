@@ -1,5 +1,5 @@
-#ifndef ARRAYLIST_ARRAYLIST_H
-#define ARRAYLIST_ARRAYLIST_H
+#ifndef ARRAYLIST_ARRAYLIST_H_
+#define ARRAYLIST_ARRAYLIST_H_
 #ifndef _WIN95
 #include <PA/Result.h>
 #include <PA/Data.h>

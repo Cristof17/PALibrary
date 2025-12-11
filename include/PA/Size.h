@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef INCLUDE_PA_SIZE_H
-#define INCLUDE_PA_SIZE_H
+#ifndef INCLUDE_PA_SIZE_H_
+#define INCLUDE_PA_SIZE_H_
 // #include <defs.h>
 #include <types.h>
 #ifndef _WIN95

@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef INCLUDE_BFSINPUT_H
-#define INCLUDE_BFSINPUT_H	
+#ifndef INCLUDE_BFSINPUT_H_
+#define INCLUDE_BFSINPUT_H_
 #ifndef _WIN95
 #include <PA/Element.h>
 #include <PA/List.h>

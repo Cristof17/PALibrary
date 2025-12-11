@@ -5,8 +5,8 @@
  *      Author: AdministratorUser
  */
 
-#ifndef INCLUDE_PA_SERIES_H
-#define INCLUDE_PA_SERIES_H
+#ifndef INCLUDE_PA_SERIES_H_
+#define INCLUDE_PA_SERIES_H_
 #ifndef _WIN95
 #include <PA/Size.h>
 #include <PA/List.h>

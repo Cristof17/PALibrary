@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef PADIRECTOR_H
-#define PADIRECTOR_H
+#ifndef PADIRECTOR_H_
+#define PADIRECTOR_H_
 #ifndef _WIN95
 #include <Builder/PABuilder.h>
 #elif defined _WIN95

@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef INCLUDE_BFSOUTPUT_H
-#define INCLUDE_BFSOUTPUT_H
+#ifndef INCLUDE_BFSOUTPUT_H_
+#define INCLUDE_BFSOUTPUT_H_
 // #ifndef _WIN954
 #ifndef _WIN95
 #include <BFS/Record.h>

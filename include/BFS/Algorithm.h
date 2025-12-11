@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef INCLUDE_BFSALGORITHM_H
-#define INCLUDE_BFSALGORITHM_H
+#ifndef INCLUDE_BFSALGORITHM_H_
+#define INCLUDE_BFSALGORITHM_H_
 #ifndef _WIN95
 #include <PA/Tree.h>
 #include <BFS/Input.h>

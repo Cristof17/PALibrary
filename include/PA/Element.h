@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef INCLUDE_PA_ELEMENT_H
-#define INCLUDE_PA_ELEMENT_H
+#ifndef INCLUDE_PA_ELEMENT_H_
+#define INCLUDE_PA_ELEMENT_H_
 #ifndef _WIN95
 #include <PA/Status.h>
 //#include "padata.h"

@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef PABUILDER_H
-#define PABUILDER_H
+#ifndef PABUILDER_H_
+#define PABUILDER_H_
 #ifndef _WIN95
 #include <Builder/PAGrafProduct.h>
 #elif defined _WIN95

@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef INCLUDE_OUTPUT_H
-#define INCLUDE_OUTPUT_H
+#ifndef INCLUDE_OUTPUT_H_
+#define INCLUDE_OUTPUT_H_
 #ifndef _WIN95
 #include <PA/Result.h>
 #include <BFS/Output.h>

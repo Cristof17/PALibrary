@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef INCLUDE_PA_LIST_H
-#define INCLUDE_PA_LIST_H
+#ifndef INCLUDE_PA_LIST_H_
+#define INCLUDE_PA_LIST_H_
 #ifndef _WIN95
 #include <PA/Element.h>
 #include <PA/Size.h>

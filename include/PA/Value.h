@@ -1,5 +1,5 @@
-#ifndef INCLUDE_PA_VALUE_H
-#define INCLUDE_PA_VALUE_H
+#ifndef INCLUDE_PA_VALUE_H_
+#define INCLUDE_PA_VALUE_H_
 #include <types.h>
 #ifndef _WIN95
 #include <PA/Result.h>
