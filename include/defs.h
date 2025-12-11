@@ -34,7 +34,7 @@ struct PADestination {
 struct PAStatus {
 	PA_INT Vizited;
 };
-struct PATip {
+struct PAFeature {
 	PA_INT Kind;
 };
 struct PAElement { 
@@ -42,7 +42,7 @@ struct PAElement {
 	struct PAData Index;
 	struct PADestination Next;
 	struct PAStatus Stare;
-	struct PATip Tip;
+	struct PAFeature Tip;
 };
 struct BFSInput {
 	struct PASize n;
