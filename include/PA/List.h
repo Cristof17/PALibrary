@@ -36,4 +36,3 @@ struct PAList PAListTail(struct PAList);
 // struct PAElement PAListArrange(struct PAList);
 //toArrayList();
 #endif
-

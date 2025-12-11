@@ -6,7 +6,7 @@
  */
 
 #ifndef INCLUDE_ADAPTEE_H_
-#define INCLUDE_ADAPTEE_H
+#define INCLUDE_ADAPTEE_H_
 //#include <adaptee.h>
 // #inf
 #ifndef _WIN95

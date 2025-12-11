@@ -26,4 +26,3 @@ struct PAElement PAElementPutFeature(struct PAElement, struct PAFeature);
 // struct PANod;
 //typedef struct PAElement Element;
 #endif
-
