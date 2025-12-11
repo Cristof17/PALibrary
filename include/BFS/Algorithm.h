@@ -18,4 +18,5 @@ struct Algorithm BFSAlgorithmPutTree(struct BFSAlgorithm, struct PATree);
 struct Algorithm BFSAlgorithmPutInput(struct BFSAlgorithm, struct BFSInput);
 void BFSAlgorithm(struct PATree, struct BFSInput);
 void BFSAlgorithmDestroy();
+void BFSAlgorithmSubroutine();
 #endif
