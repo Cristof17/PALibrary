@@ -34,9 +34,13 @@ struct PADestination {
 struct PAStatus {
 	PA_INT Vizited;
 };
+
 struct PAFeature {
 	PA_INT Kind;
 };
+struct PAMuchie {
+	struct PAPair p;
+}
 struct PAElement { 
 //	struct PAData data;
 	struct PAData Index;
