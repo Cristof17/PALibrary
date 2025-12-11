@@ -1,7 +1,7 @@
 //@Author Cristofor Rotsching
-#ifndef _INCLUDE_ADAPTER_PALINE_H_
+#ifndef INCLUDE_ADAPTER_PALINE_H
 // #define _INCLUDE_P
 // #define _INCLUDE_ADP
-#define _INCLUDE_ADAPTER_PALINE_H_
+#define INCLUDE_ADAPTER_PALINE_H
 // #endof
 #endif

@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef _INCLUDE_ADAPTER_PATEXTVIEW_H_
-#define _INCLUDE_ADAPTER_PATEXTVIEW_H_
+#ifndef INCLUDE_ADAPTER_PATEXTVIEW_H
+#define INCLUDE_ADAPTER_PATEXTVIEW_H
 // #define _INCLUDE_ADP
 // #define _A
 // #df

@@ -1,7 +1,7 @@
 //@Author Cristofor Rotsching
 // #ifndev
-#ifndef _INCLUDE_ADAPTER_PATEXTSHAPE_H_
-#define _INCLUDE_ADAPTER_PATEXTSHAPE_H_
+#ifndef INCLUDE_ADAPTER_PATEXTSHAPE_H
+#define INCLUDE_ADAPTER_PATEXTSHAPE_H
 #ifndef _WIN95
 // #elif defined _WIN(
 // #elif defined _@IN
