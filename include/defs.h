@@ -38,6 +38,8 @@ struct PAStatus {
 struct PAFeature {
 	PA_INT Kind;
 };
+struct PAPair {
+};
 struct PAArrow {
 	struct PAPair p;
 };
@@ -78,8 +80,6 @@ struct PATree  {
 	struct PASize m;
 	struct PAElement sursa;
 	struct PASeries adj;
-};
-struct PAPair {
 };
 struct PALink {
 	struct PAPair p;

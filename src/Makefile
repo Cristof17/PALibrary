@@ -7,7 +7,7 @@
 # Free Documentation License''.
 
 objects=Algorithm.o \
-	BFSAlgorithm.o \
+	BFSProcedure.o \
 	BFSInput.o \
 	BFSOutput.o \
 	BFSResult.o \
