@@ -5,15 +5,19 @@ void PASizePrint(struct PASize) {
 
 }
 struct PASize PASizeConstruct(PA_INT) {
-
+    struct PASize size;
+    return size;
 }
 // void PASize(PA_INT);
 struct PAResult PASizeRuin(struct PASize) {
-
+    struct PAResult result;
+    return result;
 }
 struct PASize PASizeArrange(struct PASize) {
-    
+    struct PASize size;
+    return size;
 }
 struct PASize PASizePutValue(struct PASize, PA_INT) {
-    
+    struct PASize size;
+    return size;
 }

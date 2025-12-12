@@ -1,16 +1,20 @@
 #include <PA/Value.h>
 #include <defs.h>
 struct PAValue PAValueConstruct() {
-
+    struct PAValue value;
+    return value;
 }
 struct PAResult PAValueRuin(struct PAValue) {
-
+    struct PAResult result;
+    return result;
 }
 struct PAValue PAValueArrange(struct PAValue) {
-
+    struct PAValue value;
+    return value;
 }
 struct PAValue PAValuePutValue(struct PAValue, PA_INT) {
-
+    struct PAValue value;
+    return value;
 }
 //typedef struct PAValue Value;
 PA_INT op_Equality(struct PAValue,struct PAValue) {

@@ -8,12 +8,13 @@
  *      Author: AdministratorUser
  */
 
-struct PAIndex ArrayListGet(struct PAIndex Array[],INT Position) {
-	struct PAIndex index = Array[Position];
+struct PAIndex ArrayListGet(struct PAIndex Array[],PA_INT Position) {
+	struct PAIndex index;
+	// = Array[Position];
 	return index;
 }
-struct PAResult Init(INT size) {
+struct PAResult Init(PA_INT size) {
 //	return )
-	Result rezultat;
+	struct PAResult rezultat;
 	return rezultat;
 }

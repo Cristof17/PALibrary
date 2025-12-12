@@ -1,3 +1,3 @@
 //@Author Cristofor Rotsching
-#include <BFS/Algorithm.h>
+#include <BFS/Procedure.h>
 #include <defs.h>
