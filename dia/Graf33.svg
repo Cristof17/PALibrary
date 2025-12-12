@@ -57,7 +57,7 @@
   <g>
     <rect style="fill: #ffffff" x="1000" y="820" width="425.8" height="28"/>
     <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1000" y="820" width="425.8" height="28"/>
-    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1212.9" y="840">PANod</text>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1212.9" y="840">PAElement</text>
     <rect style="fill: #ffffff" x="1000" y="848" width="425.8" height="52"/>
     <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1000" y="848" width="425.8" height="52"/>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1003" y="861.2">-index: PAData</text>
@@ -138,7 +138,7 @@
   <g>
     <rect style="fill: #ffffff" x="648.944" y="132.649" width="379.6" height="28"/>
     <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="648.944" y="132.649" width="379.6" height="28"/>
-    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="838.744" y="152.649">BFSInput</text>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="838.744" y="152.649">PAInput</text>
     <rect style="fill: #ffffff" x="648.944" y="160.649" width="379.6" height="68"/>
     <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="648.944" y="160.649" width="379.6" height="68"/>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="651.944" y="173.849">+n: PACount</text>
@@ -155,7 +155,7 @@
   <g>
     <rect style="fill: #ffffff" x="305.596" y="146.649" width="271.8" height="28"/>
     <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="305.596" y="146.649" width="271.8" height="28"/>
-    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="441.496" y="166.649">BFSOutput</text>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="441.496" y="166.649">PAOutput</text>
     <rect style="fill: #ffffff" x="305.596" y="174.649" width="271.8" height="20"/>
     <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="305.596" y="174.649" width="271.8" height="20"/>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="308.596" y="187.849">-result: BFSRecord</text>
@@ -199,11 +199,11 @@
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="423" y="473.2">+init(rezultat:PAResult): PAResult</text>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="441.496,287.822 441.496,320 804,320 804,354 "/>
-    <polygon style="fill: #000000" points="441.496,262.65 446.296,276.65 441.496,290.65 436.696,276.65 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="441.496,262.65 446.296,276.65 441.496,290.65 436.696,276.65 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="441.496,287.821 441.496,320 804,320 804,354 "/>
+    <polygon style="fill: #000000" points="441.496,262.649 446.296,276.649 441.496,290.649 436.696,276.649 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="441.496,262.649 446.296,276.649 441.496,290.649 436.696,276.649 "/>
     <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="622.748" y="316"></text>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="452.496" y="274.65"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="452.496" y="274.649"></text>
     <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="808" y="350"></text>
   </g>
   <g>
