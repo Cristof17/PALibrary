@@ -5,42 +5,42 @@ struct PAList PAListConstruct() {
     struct PAList list;
     return list;
 }
-struct PAList PAListArrange(struct PAList) {
+struct PAList PAListArrange(struct PAList List) {
     struct PAList list;
     return list;
 }
-struct PAList PAListPutElement(struct PAList, struct PAElement) {
+struct PAList PAListPutElement(struct PAList List, struct PAElement Element) {
     struct PAList list;
     return list;
 }
-struct PAList PAListPutSize(struct PAList, struct PASize) {
+struct PAList PAListPutSize(struct PAList List, struct PASize Size) {
     struct PAList list;
     return list;
 }
-struct PAList PAListPutArrayList(struct PAList, struct ArrayList) {
+struct PAList PAListPutArrayList(struct PAList List, struct ArrayList Array) {
     struct PAList list;
     return list;
 }
-struct PAResult PAListAddElement(struct PAList, struct PAElement) {
+struct PAResult PAListAddElement(struct PAList List, struct PAElement Element) {
     struct PAResult result;
     return result;
 }
-struct PAResult PAListRuin(struct PAList) {
+struct PAResult PAListRuin(struct PAList List) {
     struct PAResult result;
     return result;
 }
 void Dispose() {
 
 }
-PA_INT PAListSize(struct PAList) {
+PA_INT PAListSize(struct PAList List) {
     PA_INT size;
     return size;
 }
-struct PAElement PAListHead(struct PAList) {
+struct PAElement PAListHead(struct PAList List) {
     struct PAElement element;
     return element;
 }   
-struct PAList PAListTail(struct PAList) {
+struct PAList PAListTail(struct PAList List) {
     struct PAList list;
     return list;
 }

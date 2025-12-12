@@ -5,15 +5,15 @@ struct PALink PALinkConstruct() {
     struct PALink link;
     return link;
 }
-struct PAResult PALinkRuin(struct PALink) {
+struct PAResult PALinkRuin(struct PALink Link) {
     struct PAResult result;
     return result;
 }
-struct PALink PALinkArrange(struct PALink) {
+struct PALink PALinkArrange(struct PALink Link) {
     struct PALink link;
     return link;
 }
-struct PALink PALinkPutPair(struct PALink,struct PAData) {
+struct PALink PALinkPutPair(struct PALink Link,struct PAData Data) {
    struct PALink link;
     return link; 
 }

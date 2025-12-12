@@ -5,15 +5,15 @@ struct PAStatus PAStatusConstruct() {
     struct PAStatus status;
     return status;
 }
-struct PAResult PAStatusRuin(struct PAStatus) {
+struct PAResult PAStatusRuin(struct PAStatus Status) {
     struct PAResult result;
     return result;
 }
-struct PAStatus PAStatusArrange(struct PAStatus) {
+struct PAStatus PAStatusArrange(struct PAStatus Status) {
     struct PAStatus status;
     return status;
 }
-struct PAStatus PAStatusPutValue(struct PAStatus, PA_INT) {
+struct PAStatus PAStatusPutValue(struct PAStatus Status, PA_INT Value) {
     struct PAStatus status;
     return status;
 }

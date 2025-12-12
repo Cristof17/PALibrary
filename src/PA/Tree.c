@@ -5,27 +5,27 @@ struct PATree PATreeConstruct() {
     struct PATree tree;
     return tree;
 }
-struct PAResult PATreeRuin(struct PATree) {
+struct PAResult PATreeRuin(struct PATree Tree) {
     struct PAResult result;
     return result;
 }
-struct PATree PATreeArrange(struct PATree) {
+struct PATree PATreeArrange(struct PATree Tree) {
     struct PATree tree;
     return tree;
 }
-struct PATree PATreePutSize(struct PATree, struct PASize) {
+struct PATree PATreePutSize(struct PATree Tree, struct PASize Size) {
     struct PATree tree;
     return tree;
 }
-struct PATree PATreePutList(struct PATree, struct PAList) {
+struct PATree PATreePutList(struct PATree Tree, struct PAList List) {
     struct PATree tree;
     return tree;
 }
-struct PATree PATreePutElement(struct PATree, struct PAElement) {
+struct PATree PATreePutElement(struct PATree Tree, struct PAElement Element) {
     struct PATree tree;
     return tree;
 }
-struct PATree PATreePutSeries(struct PATree, struct PASeries) {
+struct PATree PATreePutSeries(struct PATree Tree, struct PASeries Series) {
     struct PATree tree;
     return tree;
 }

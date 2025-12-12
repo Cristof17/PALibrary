@@ -4,31 +4,31 @@ struct PAValue PAValueConstruct() {
     struct PAValue value;
     return value;
 }
-struct PAResult PAValueRuin(struct PAValue) {
+struct PAResult PAValueRuin(struct PAValue Value) {
     struct PAResult result;
     return result;
 }
-struct PAValue PAValueArrange(struct PAValue) {
+struct PAValue PAValueArrange(struct PAValue Value) {
     struct PAValue value;
     return value;
 }
-struct PAValue PAValuePutValue(struct PAValue, PA_INT) {
+struct PAValue PAValuePutValue(struct PAValue Value1, PA_INT Value2) {
     struct PAValue value;
     return value;
 }
 //typedef struct PAValue Value;
-PA_INT op_Equality(struct PAValue,struct PAValue) {
+PA_INT op_Equality(struct PAValue Value1,struct PAValue Value2) {
     return 1;
 }
-PA_INT op_Inequality(struct PAValue,struct PAValue) {
+PA_INT op_Inequality(struct PAValue Value1,struct PAValue Value2) {
     return 1;
 }
-PA_INT op_LessThan(struct PAValue,struct PAValue) {
+PA_INT op_LessThan(struct PAValue Value1,struct PAValue Value2) {
     return 1;
 }
-PA_INT op_GreatherThan(struct PAValue,struct PAValue) {
+PA_INT op_GreatherThan(struct PAValue Value1,struct PAValue Value2) {
     return 1;
 }
-PA_INT op_GreatherThanOrEqual(struct PAValue,struct PAValue) {
+PA_INT op_GreatherThanOrEqual(struct PAValue PAValue1,struct PAValue Value2) {
     return 1;
 }

@@ -5,11 +5,11 @@ struct PAFeature PAFeatureConstruct() {
     struct PAFeature feature;
     return feature;
 }
-struct PAResult PAFeatureRuin(struct PAFeature) {
+struct PAResult PAFeatureRuin(struct PAFeature Feature) {
     struct PAResult result;
     return result;
 }
-struct PAFeature PAFeatureArrange(struct PAFeature) {
+struct PAFeature PAFeatureArrange(struct PAFeature Feature) {
     struct PAFeature feature;
     return feature;
 }

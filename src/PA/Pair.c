@@ -6,19 +6,19 @@ struct PAPair PAPairConstruct() {
     struct PAPair pair;
     return pair;
 }
-struct PAPair PAPairRuin(struct PAPair) {
+struct PAPair PAPairRuin(struct PAPair Pair) {
     struct PAPair pair;
     return pair;
 }
-struct PAPair PAPairArrange(struct PAPair) {
+struct PAPair PAPairArrange(struct PAPair Pair) {
     struct PAPair pair;
     return pair;
 }
-struct PAPair PAPairPutFirst(struct PAPair, struct PAElement) {
+struct PAPair PAPairPutFirst(struct PAPair Pair, struct PAElement Element) {
     struct PAPair pair;
     return pair;
 }
-struct PAPair PAPairPutSecond(struct PAPair, struct PAElement) {
+struct PAPair PAPairPutSecond(struct PAPair Pair, struct PAElement Element) {
     struct PAPair pair;
     return pair;
 }

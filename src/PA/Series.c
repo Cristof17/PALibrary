@@ -10,19 +10,19 @@ struct PASeries PASeriesConstruct() {
     struct PASeries series;
     return series;
 }
-struct PAResult PASeriesRuin(struct PASeries) {
+struct PAResult PASeriesRuin(struct PASeries Series) {
     struct PAResult result;
     return result;
 }
-struct PASeries PASeriesArrange(struct PASeries) {
+struct PASeries PASeriesArrange(struct PASeries Series) {
     struct PASeries series;
     return series;
 }
-struct PASeries PASeriesPutSize(struct PASeries, struct PASize) {
+struct PASeries PASeriesPutSize(struct PASeries Series, struct PASize Size) {
     struct PASeries series;
     return series;
 }
-struct PASeries PASeriesPutList(struct PASeries, struct PAList) {
+struct PASeries PASeriesPutList(struct PASeries Series, struct PAList List) {
     struct PASeries series;
     return series;
 }

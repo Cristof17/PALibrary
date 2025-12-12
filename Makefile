@@ -68,7 +68,7 @@ CFLAGS+=-Iinclude
 all: build
 build: obj/Input.o \
 	obj/Algorithm.o \
-	obj/BFS/Algorithm.o \
+	obj/BFS/Procedure.o \
 	obj/BFS/Input.o \
 	obj/BFS/Record.o \
 	obj/Output.o \
@@ -87,8 +87,8 @@ build: obj/Input.o \
 	obj/PA/Value.o \
 	obj/Builder/PADirector.o \
 	obj/Builder/PABuilder.o \
-	obj/Builder/PAGrafNormal.o \
-	obj/Builder/PAGrafTranspus.o \
+	obj/PA/PAGrafNormal.o \
+	obj/PA/PAGrafTranspus.o \
 	obj/Builder/PAGrafProduct.o \
 	obj/Adapter/Client.o \
 	obj/Adapter/Target.o \
@@ -108,7 +108,7 @@ obj/Input.o: src/Input.c include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/Algorithm.o: src/Algorithm.c include/Algorithm.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/BFS/Algorithm.o: src/BFS/Algorithm.c include/defs.h
+obj/BFS/Procedure.o: src/BFS/Procedure.c include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/BFS/Input.o: src/BFS/Input.c include/BFS/Input.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
@@ -152,9 +152,9 @@ obj/Builder/PADirector.o: src/Builder/PADirector.c include/Builder/PADirector.h 
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/Builder/PABuilder.o: src/Builder/PABuilder.c include/Builder/PABuilder.h include/defs.h 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Builder/PAGrafNormal.o: src/Builder/PAGrafNormal.c include/Builder/PAGrafNormal.h include/defs.h
+obj/PA/PAGrafNormal.o: src/PA/PAGrafNormal.c include/PA/PAGrafNormal.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Builder/PAGrafTranspus.o: src/Builder/PAGrafTranspus.c include/Builder/PAGrafTranspus.h include/defs.h
+obj/PA/PAGrafTranspus.o: src/PA/PAGrafTranspus.c include/PA/PAGrafTranspus.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/Builder/PAGrafProduct.o: src/Builder/PAGrafProduct.c
 	$(CC) -c $(CFLAGS) $< -o $@
