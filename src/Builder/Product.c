@@ -1,13 +1,15 @@
 //@Author Cristofor Rotsching
-#include <Builder/PAGrafNormal.h>
+#include <PA/NormalTree.h>
+#include <Builder/Product.h>
 #include <PA/Result.h>
 #include <defs.h>
-struct GrafNormal PABuildPart() {
-    struct GrafNormal graf;
-    return graf;
+
+struct NormalTree BuildPart() {
+    struct NormalTree tree;
+    return tree;
 }
-struct PAResult PAGetResult() {
-    struct PAResult rezultat;
-    // rezultat.cod = SUCCESS;
-    return rezultat;
-}
+//struct PAResult PAGetResult() {
+//    struct PAResult rezultat;
+//    // rezultat.cod = SUCCESS;
+//    return rezultat;
+//}

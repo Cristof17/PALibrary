@@ -1,5 +1,5 @@
 //@Author Cristofor Rotsching
-#include <Builder/PADirector.h>
+#include <Builder/Director.h>
 #include <defs.h>
 void PAConstruct() {
 }

@@ -1,5 +1,5 @@
 //@Author Cristofor Rotsching
-#include <PA/PAGrafTranspus.h>
+#include <PA/TransposeTree.h>
 #include <defs.h>
 struct PAGrafTranspus PAGrafTranspusBuildPart() {
     struct PAGrafTranspus graf;

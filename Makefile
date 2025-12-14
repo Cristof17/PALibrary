@@ -85,11 +85,11 @@ build: obj/Input.o \
 	obj/PA/Series.o \
 	obj/PA/Feature.o \
 	obj/PA/Value.o \
-	obj/Builder/PADirector.o \
-	obj/Builder/PABuilder.o \
-	obj/PA/PAGrafNormal.o \
-	obj/PA/PAGrafTranspus.o \
-	obj/Builder/PAGrafProduct.o \
+	obj/Builder/Director.o \
+	obj/Builder/Builder.o \
+	obj/PA/NormalTree.o \
+	obj/PA/TransposeTree.o \
+	obj/Builder/Product.o \
 	obj/Adapter/Client.o \
 	obj/Adapter/Target.o \
 	obj/Adapter/Adapter.o \
@@ -150,13 +150,13 @@ obj/PA/Feature.o: src/PA/Feature.c include/PA/Feature.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
 obj/Builder/Director.o: src/Builder/Director.c include/Builder/Director.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Builder/PABuilder.o: src/Builder/Builder.c include/Builder/Builder.h include/defs.h 
+obj/Builder/Builder.o: src/Builder/Builder.c include/Builder/Builder.h include/defs.h 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PA/PAGrafNormal.o: src/PA/NormalTree.c include/PA/NormalTree.h include/defs.h
+obj/PA/NormalTree.o: src/PA/NormalTree.c include/PA/NormalTree.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PA/PAGrafTranspus.o: src/PA/TransposeTree.c include/PA/TransposeTree.h include/defs.h
+obj/PA/TransposeTree.o: src/PA/TransposeTree.c include/PA/TransposeTree.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Builder/PAGrafProduct.o: src/Builder/Product.c
+obj/Builder/Product.o: src/Builder/Product.c
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/Adapter/Client.o: src/Adapter/Client.c include/Adapter/Client.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@

@@ -6,8 +6,8 @@
 #elif defined _WIN95
 #include <PA\Result.h>
 #endif
-struct GrafNormal;
+struct NormalTree;
 // typedef struct GrafNormal PAGrafNormal;
-struct GrafNormal PAGrafNormalBuildPart();
+struct  NormalTree PAGrafNormalBuildPart();
 struct PAResult PAGrafNormalGetResult();
 #endif
