@@ -1,7 +1,7 @@
 //@Author Cristofor Rotsching
 #include <PA/Size.h>
 #include <defs.h>
-void PASizePrint(struct PASize) {
+void PASizePrint(struct PASize Size) {
 
 }
 struct PASize PASizeConstruct(PA_INT Value) {
