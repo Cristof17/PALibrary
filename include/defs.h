@@ -100,20 +100,23 @@ struct Target {
 	struct PASeries Sir;
 	//struct Adapter adapter;
 };
-struct PABuilder {
+struct Builder {
     ;
 };
-struct PADirector {
-    struct PABuilder builder;
+struct Director {
+    struct Builder builder;
 };
-struct PAGrafNormal {
+struct NormalTree {
     struct PAList adj;
 };
-struct PAGrafProduct {
+struct Product {
     struct PATree graf;
 };
-struct PAGrafTranspus {
+struct TransposeTree {
 	struct PAList adj_trans;
+};
+struct Resource {
+
 };
 struct Aggregate {
 };

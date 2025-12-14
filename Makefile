@@ -85,6 +85,7 @@ build: obj/Input.o \
 	obj/PA/Series.o \
 	obj/PA/Feature.o \
 	obj/PA/Value.o \
+	obj/PA/Resource.o \
 	obj/Builder/Director.o \
 	obj/Builder/Builder.o \
 	obj/Builder/Product.o \
@@ -146,6 +147,8 @@ obj/PA/Series.o: src/PA/Series.c include/PA/Series.h include/defs.h
 obj/PA/Status.o: src/PA/Status.c include/PA/Status.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/PA/Feature.o: src/PA/Feature.c include/PA/Feature.h include/defs.h
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/PA/Resource.o: src/PA/Resource.c include/PA/Resource.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 #obj/PA/Value.o: src/PA/Value.c include/PA/Value.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
@@ -224,7 +227,7 @@ obj/Iterator/ConcreteAggregate.o: src/Iterator/ConcreteAggregate.c include/Itera
 clean:
 	rm obj/Input.o
 	rm obj/Algorithm.o
-	rm obj/BFS/Algorithm.o
+	rm obj/BFS/Procedure.o
 	rm obj/BFS/Input.o
 	rm obj/BFS/Record.o
 	rm obj/Output.o
@@ -241,11 +244,14 @@ clean:
 	rm obj/PA/Series.o
 	rm obj/PA/Feature.o
 	rm obj/PA/Value.o
-	rm obj/Builder/PADirector.o
-	rm obj/Builder/PABuilder.o
-	rm obj/Builder/PAGrafNormal.o
-	rm obj/Builder/PAGrafTranspus.o
-	rm obj/Builder/PAGrafProduct.o
+	rm obj/PA/Resource.o
+	rm obj/Builder/Product.o
+	rm obj/Builder/ConcreteBuilder.o 
+	rm obj/Builder/Director.o
+	rm obj/Builder/Builder.o
+	rm obj/PA/NormalTree.o
+	rm obj/PA/TransposeTree.o
+# 	rm obj/PA/Product.o
 	rm obj/Adapter/Client.o
 	rm obj/Adapter/Target.o
 	rm obj/Adapter/Adapter.o
