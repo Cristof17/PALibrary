@@ -87,9 +87,10 @@ build: obj/Input.o \
 	obj/PA/Value.o \
 	obj/Builder/Director.o \
 	obj/Builder/Builder.o \
+	obj/Builder/Product.o \
+	obj/Builder/ConcreteBuilder.o \
 	obj/PA/NormalTree.o \
 	obj/PA/TransposeTree.o \
-	obj/Builder/Product.o \
 	obj/Adapter/Client.o \
 	obj/Adapter/Target.o \
 	obj/Adapter/Adapter.o \
@@ -148,6 +149,10 @@ obj/PA/Feature.o: src/PA/Feature.c include/PA/Feature.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 #obj/PA/Value.o: src/PA/Value.c include/PA/Value.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
+obj/Builder/Product.o: src/Builder/Product.c
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/Builder/ConcreteBuilder.o: src/Builder/ConcreteBuilder.c
+	$(CC) -c $(CFLAGS) $< -o $@
 obj/Builder/Director.o: src/Builder/Director.c include/Builder/Director.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/Builder/Builder.o: src/Builder/Builder.c include/Builder/Builder.h include/defs.h 
@@ -155,8 +160,6 @@ obj/Builder/Builder.o: src/Builder/Builder.c include/Builder/Builder.h include/d
 obj/PA/NormalTree.o: src/PA/NormalTree.c include/PA/NormalTree.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/PA/TransposeTree.o: src/PA/TransposeTree.c include/PA/TransposeTree.h include/defs.h
-	$(CC) -c $(CFLAGS) $< -o $@
-obj/Builder/Product.o: src/Builder/Product.c
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/Adapter/Client.o: src/Adapter/Client.c include/Adapter/Client.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
