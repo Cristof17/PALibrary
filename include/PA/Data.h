@@ -3,6 +3,7 @@
 #include <types.h>
 #ifndef _WIN95
 #include <PA/Result.h>
+#include <PA/Resource.h>
 #elif defined _WIN95
 #include <PA\Result.h>
 #endif
