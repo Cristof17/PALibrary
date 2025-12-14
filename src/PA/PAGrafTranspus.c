@@ -1,8 +1,8 @@
 //@Author Cristofor Rotsching
 #include <PA/PAGrafTranspus.h>
 #include <defs.h>
-struct GrafTranspus PAGrafTranspusBuildPart() {
-    struct GrafTranspus graf;
+struct PAGrafTranspus PAGrafTranspusBuildPart() {
+    struct PAGrafTranspus graf;
     return graf;
 }
 struct PAResult PAGrafTranspusGetResult() {
