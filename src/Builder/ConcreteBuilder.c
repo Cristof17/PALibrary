@@ -5,15 +5,15 @@
  *      Author: AdministratorUser
  */
 #include <Builder/ConcreteBuilder.h>
-#include <Builder/Product.h>
-#include <PA/Result.h>
-#include <Builder/Builder.h>
+//#include <Builder/Product.h>
+//#include <PA/Result.h>
+//#include <Builder/Builder.h>
 
-struct Product ConcreteBuilderBuildPart(struct Builder Builder) {
-	struct Product product = BuilderBuildPart(Builder);
-	return product;
-}
-struct PAResult ConcreteBuilderGetResult() {
-	struct PAResult result;
-	return result;
-}
+//struct Product ConcreteBuilderBuildPart(struct Builder builder) {
+//	struct Product product = BuilderBuildPart(builder);
+//	return product;
+//}
+//struct PAResult ConcreteBuilderGetResult() {
+//	struct PAResult result;
+//	return result;
+//}
