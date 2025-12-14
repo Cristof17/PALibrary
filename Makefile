@@ -45,7 +45,7 @@
 #SUBDIRS= src src/Iterator src/Builder src/Adapter src/Arraylist
 #bar := $(foo:.c=.o)
 #bindir=bin
-#srcdir=src
+srcdir=src
 #includedir=include
 #CFLAGS+=-I$(abspath $(includedir))
 #CFLAGS+=-I$(abspath $(includedir)/Builder)
@@ -53,7 +53,7 @@
 #CFLAGS+=-I$(abspath $(includedir)/ArrayList)
 #CFLAGS+=-I$(abspath $(includedir)/Adapter)
 CFLAGS+=-Iinclude
-#libdir=obj obj/Adapter/ obj/Iterator obj/ArrayList obj/Builder
+libdir=obj obj/Adapter obj/Iterator obj/ArrayList obj/Builder obj/PA obj/BFS
 #datadir=dat
 #infodir=info
 #mandir=man
@@ -65,7 +65,8 @@ CFLAGS+=-Iinclude
 #	@echo "end of compile $(pwd)"
 #	@echo "end of all $(pwd)"
 #	@echo "end of assemble $(pwd)"
-all: build
+all: installdirs
+installdirs: build
 build: obj/Input.o \
 	obj/Algorithm.o \
 	obj/BFS/Procedure.o \
@@ -201,12 +202,12 @@ obj/Iterator/ConcreteAggregate.o: src/Iterator/ConcreteAggregate.c include/Itera
 		$(MAKE) -C $$dir; \
 	done
 
-#installdirs: mkinstalldirs
-#	$(srcdir)/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(datadir) \
+installdirs: mkinstalldirs
+	$(srcdir)/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(datadir) \
 				$(DESTDIR)$(libdir) $(DESTDIR)$(infodir) \
 				$(DESTDIR)$(mandir)
 
-#mkinstalldirs: $(srcdir)/mkinstalldirs
+mkinstalldirs: $(srcdir)/mkinstalldirs
 
 #uninstall:
 #	cp . .
