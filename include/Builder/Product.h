@@ -7,6 +7,6 @@
 #include <PA\Tree.h>
 #endif
 struct NormalTree;
-struct NormalTree BuildPart();
+//struct NormalTree BuildPart();
 // typedef struct GrafProduct GrafProduct;
 #endif

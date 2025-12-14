@@ -8,5 +8,5 @@
 #endif
 struct Builder;
 // typedef struct Builder Builder;
-struct GrafProduct BuilderBuildPart();
+struct Product BuilderBuildPart();
 #endif
