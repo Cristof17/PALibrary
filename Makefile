@@ -148,15 +148,15 @@ obj/PA/Feature.o: src/PA/Feature.c include/PA/Feature.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 #obj/PA/Value.o: src/PA/Value.c include/PA/Value.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
-obj/Builder/PADirector.o: src/Builder/PADirector.c include/Builder/PADirector.h include/defs.h
+obj/Builder/Director.o: src/Builder/Director.c include/Builder/Director.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Builder/PABuilder.o: src/Builder/PABuilder.c include/Builder/PABuilder.h include/defs.h 
+obj/Builder/PABuilder.o: src/Builder/Builder.c include/Builder/Builder.h include/defs.h 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PA/PAGrafNormal.o: src/PA/PAGrafNormal.c include/PA/PAGrafNormal.h include/defs.h
+obj/PA/PAGrafNormal.o: src/PA/NormalTree.c include/PA/NormalTree.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PA/PAGrafTranspus.o: src/PA/PAGrafTranspus.c include/PA/PAGrafTranspus.h include/defs.h
+obj/PA/PAGrafTranspus.o: src/PA/TransposeTree.c include/PA/TransposeTree.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Builder/PAGrafProduct.o: src/Builder/PAGrafProduct.c
+obj/Builder/PAGrafProduct.o: src/Builder/Product.c
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/Adapter/Client.o: src/Adapter/Client.c include/Adapter/Client.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
