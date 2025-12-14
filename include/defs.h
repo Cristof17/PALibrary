@@ -14,8 +14,13 @@ struct PASize {
 // //    int Value;
 // 	INT Value;
 // };
+struct PAResource {
+	// struct
+	// PA_INt
+	PA_INT value;
+};
 struct PAData {
-    PA_INT value;
+    struct PAResource resource;
 };
 struct PAValue {
     PA_INT value;
@@ -115,9 +120,7 @@ struct Product {
 struct TransposeTree {
 	struct PAList adj_trans;
 };
-struct Resource {
 
-};
 struct Aggregate {
 };
 struct BuilderClient {
