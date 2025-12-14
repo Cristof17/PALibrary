@@ -6,4 +6,6 @@
 struct ConcreteBuilder {
 
 };
+struct Product ConcreteBuilderBuildPart(struct Builder);
+struct PAResult ConcreteBuilderGetResult();
 #endif
