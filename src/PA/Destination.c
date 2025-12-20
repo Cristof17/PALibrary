@@ -9,7 +9,7 @@ struct PADestination PADestinationConstruct() {
 }
 struct PAResult PADestinationRuin(struct PADestination Destination) {
     struct PAResult result;
-    return result
+    return result;
 }
 struct PADestination PADestinationArrange(struct PADestination Destination) {
     struct PADestination destination;
