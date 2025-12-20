@@ -1,6 +1,43 @@
 #ifndef INCLUDE_DEFS_
 #define INCLUDE_DEFS_
 #include <types.h>
+struct PADestination;
+struct PAArrow;
+struct PAData;
+struct PASize;
+struct PAResource;
+struct PAData;
+struct PAValue;
+struct ArrayList;
+struct PAList ;
+struct PAStatus;
+struct PAFeature;
+struct PAElement;
+struct PADestination ;
+struct PAPair;
+struct PAArrow ;
+struct BFSInput ;
+struct BFSRecord;
+struct BFSOutput;
+struct PASeries;
+struct PATree;
+struct PALink;
+struct PAResult;
+struct Adaptee;
+struct Adapter;
+struct IteratorClient;
+struct Target;
+struct Builder;
+struct Director;
+struct NormalTree;
+struct Product ;
+struct TransposeTree;
+struct Aggregate;
+struct BuilderClient ;
+struct ConcreteAggregate;
+struct ConcreteIterator;
+struct Iterator ;
+struct BFSAlgorithm;
 // struct In put {
 // 	;
 // };
