@@ -12,7 +12,7 @@
 // #endo/
 // #endig
 #endif
-struct PAStatus/*.*/;
+// struct PAStatus/*.*/;
 struct PAStatus PAStatusConstruct();
 struct PAResult PAStatusRuin(struct PAStatus);
 struct PAStatus PAStatusArrange(struct PAStatus);

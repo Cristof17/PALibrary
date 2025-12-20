@@ -9,7 +9,7 @@
 #include <PA\Element.h>
 #include <PA\Pair.h>
 #endif
-struct PAPair;
+// struct PAPair;
 struct PAPair PAPairConstruct(struct PAElement, struct PAElement);
 struct PAResult PAPairRuin(struct PAPair);
 struct PAPair PAPairInit(struct PAPair);

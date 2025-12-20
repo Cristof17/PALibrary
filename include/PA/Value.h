@@ -6,7 +6,7 @@
 #elif defined _WIN95
 #include <PA\Result.h>
 #endif
-struct PAValue;
+// struct PAValue;
 struct PAValue PAValueConstruct();
 struct PAResult PAValueRuin(struct PAValue);
 struct PAValue PAValueArrange(struct PAValue);

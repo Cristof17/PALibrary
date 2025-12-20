@@ -14,7 +14,7 @@
 #include <PA\Result.h>
 #endif
 
-struct PAList;
+// struct PAList;
 //typedef struct PAList List;
 struct PAList PAListConstruct(struct PAElement);
 struct PAList PAListInit(struct PAList);
