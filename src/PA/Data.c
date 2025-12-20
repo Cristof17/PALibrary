@@ -1,7 +1,7 @@
 #include <PA/Data.h>
 // #include <PA/Result.h>
 #include <defs.h>
-struct PAData;
+
 typedef struct PAData PAData;
 //struct PAData {
 //

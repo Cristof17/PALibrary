@@ -3,11 +3,11 @@
 #define INCLUDE_BFSRESULT_H_
 #ifndef _WIN95
 #include <PA/List.h>
-#include <PA/Size.h>
+#include <PA/Count.h>
 #include <PA/Result.h>
 #elif defined _WIN95
 #include <PA\List.h>
-#include <PA\Size.h>
+#include <PA\Count.h>
 #include <PA\Result.h>
 #endif
 struct BFSRecord;

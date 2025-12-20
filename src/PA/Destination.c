@@ -2,7 +2,7 @@
 #include <PA/Destination.h>
 #include <defs.h>
 // #include "Destination.h"
-struct PADestination; 
+
 struct PADestination PADestinationConstruct() {
     struct PADestination destination;
     return destination;

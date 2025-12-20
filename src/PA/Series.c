@@ -22,9 +22,9 @@ struct PASeries PASeriesArrange(struct PASeries Series) {
     series.n = Series.n;
     return series;
 }
-struct PASeries PASeriesPutSize(struct PASeries Series, struct PASize Size) {
+struct PASeries PASeriesPutCount(struct PASeries Series, struct PACount Count) {
     // struct PASeries series;
-    Series.n = Size;
+    Series.n = Count;
     return Series;
     // return series;
 }

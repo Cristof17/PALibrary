@@ -16,9 +16,9 @@ struct PAList PAListArrange(struct PAList List) {
 //     // List.
 //     return list;
 // }
-struct PAList PAListPutSize(struct PAList List, struct PASize Size) {
+struct PAList PAListPutCount(struct PAList List, struct PACount Count) {
     // struct PAList list;
-    List.m = Size;
+    List.m = Count;
     return List;
     // return list;
 }

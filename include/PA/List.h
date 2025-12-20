@@ -3,13 +3,13 @@
 #define INCLUDE_PA_LIST_H_
 #ifndef _WIN95
 #include <PA/Element.h>
-#include <PA/Size.h>
+#include <PA/Count.h>
 #include <ArrayList/ArrayList.h>
 #include <PA/Result.h>
 #include <types.h>
 #elif defined _WIN95
 #include <PA\Element.h>
-#include <PA\Size.h>
+#include <PA\Count.h>
 #include <ArrayList\ArrayList.h>
 #include <PA\Result.h>
 #endif
@@ -19,7 +19,7 @@ struct PAList;
 struct PAList PAListConstruct();
 struct PAList PAListArrange(struct PAList);
 // struct PAList PAListPutElement(struct PAList, struct PAElement);
-struct PAList PAListPutSize(struct PAList, struct PASize);
+struct PAList PAListPutCount(struct PAList, struct PACount);
 struct PAList PAListPutArrayList(struct PAList, struct ArrayList);
 struct PAResult PAListAddElement(struct PAList, struct PAElement);
 struct PAResult PAListRuin(struct PAList);

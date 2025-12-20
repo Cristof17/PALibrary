@@ -20,7 +20,7 @@ struct PASeries;
 struct PASeries PASeriesConstruct();
 struct PAResult PASeriesRuin(struct PASeries);
 struct PASeries PASeriesArrange(struct PASeries);
-struct PASeries PASeriesPutSize(struct PASeries, struct PASize);
+struct PASeries PASeriesPutCount(struct PASeries, struct PACount);
 struct PASeries PASeriesPutList(struct PASeries, struct PAList);
 //typedef struct PASir Series;
 #endif /* INCLUDE_PASIR_H_ */

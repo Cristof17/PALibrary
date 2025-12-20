@@ -8,12 +8,12 @@
 #elif defined _WIN95
 #include <PA\Result.h>
 #endif
-struct PASize;
+struct PACount;
 //typedef struct PACount Count;
-void PASizePrint(struct PASize);
-struct PASize PASizeConstruct(PA_INT);
+void PACountPrint(struct PACount);
+struct PACount PACountConstruct(PA_INT);
 // void PASize(PA_INT);
-struct PAResult PASizeRuin(struct PASize);
-struct PASize PASizeArrange(struct PASize);
-struct PASize PASizePutValue(struct PASize, PA_INT);
+struct PAResult PACountRuin(struct PACount);
+struct PACount PACountArrange(struct PACount);
+struct PACount PACountPutValue(struct PACount, PA_INT);
 #endif

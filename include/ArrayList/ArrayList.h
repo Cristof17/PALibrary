@@ -16,5 +16,5 @@ struct ArrayList;
 //typedef struct ArrayList ArrayList;
 struct PAData ArrayListGet(struct PAData[],PA_INT);
 struct PARecord ArrayListArrange(PA_INT);
-struct PARecord ArrayListPutSize(struct ArrayList, struct PASize);
+struct PARecord ArrayListPutCount(struct ArrayList, struct PACount);
 #endif
