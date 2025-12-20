@@ -7,6 +7,8 @@ struct PAList PAListConstruct() {
 }
 struct PAList PAListArrange(struct PAList List) {
     struct PAList list;
+    list.List = List.List;
+    list.m = List.m;
     return list;
 }
 struct PAList PAListPutElement(struct PAList List, struct PAElement Element) {

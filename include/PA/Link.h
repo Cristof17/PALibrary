@@ -12,6 +12,6 @@ struct PALink;
 struct PALink PALinkConstruct();
 struct PAResult PALinkRuin(struct PALink);
 struct PALink PALinkArrange(struct PALink);
-struct PALink PALinkPutPair(struct PALink,struct PAData);
+struct PALink PALinkPutPair(struct PALink,struct PAPair);
 //typedef struct PALink Link;
 #endif

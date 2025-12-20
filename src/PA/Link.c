@@ -11,9 +11,12 @@ struct PAResult PALinkRuin(struct PALink Link) {
 }
 struct PALink PALinkArrange(struct PALink Link) {
     struct PALink link;
+    link.p = Link.p;
     return link;
 }
-struct PALink PALinkPutPair(struct PALink Link,struct PAData Data) {
-   struct PALink link;
-    return link; 
+struct PALink PALinkPutPair(struct PALink Link,struct PAPair Pair) {
+//    struct PALink link;
+    Link.p = Pair;
+    // return link;
+    return Link;
 }
