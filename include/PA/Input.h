@@ -13,9 +13,12 @@
 // #include <BFS\Input.h>
 #endif
 struct PAInput;
-struct BFSInput BFSInputConstruct();
+struct PAInput PAInputConstruct(struct PACount, struct PACount, struct PAList, struct PAElement);
 // vpo BFSInputRuin();
-void BFSInputRuin();
-struct BFSInput BFSInputArrange(struct BFSInput);
+struct PAInput PAInputInit(struct PAInput);
+// struct 
+void PAInputRuin();
+// void BFSInputRuin();
+// struct BFSInput BFSInputArrange(struct BFSInput);
 //typedef struct BFSInput Input;
 #endif

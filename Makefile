@@ -70,7 +70,8 @@ installdirs: build
 build: obj/Input.o \
 	obj/Algorithm.o \
 	obj/BFS/Procedure.o \
-	obj/BFS/Input.o \
+	obj/PA/Input.o \
+	obj/PA/Output.o \
 	obj/BFS/Record.o \
 	obj/Output.o \
 	obj/PA/Data.o \

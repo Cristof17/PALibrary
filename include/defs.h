@@ -4,6 +4,7 @@
 struct PADestination;
 struct PAArrow;
 struct PAData;
+struct PAResult;
 struct PACount;
 // struct PASize;
 struct PAInput;
