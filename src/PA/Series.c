@@ -14,7 +14,7 @@ struct PAResult PASeriesRuin(struct PASeries Series) {
     struct PAResult result;
     return result;
 }
-struct PASeries PASeriesArrange(struct PASeries Series) {
+struct PASeries PASeriesInit(struct PASeries Series) {
     struct PASeries series;
     //Iterator
     // series.adj = Series.adj;
