@@ -33,8 +33,15 @@ struct PAList {
 	struct ArrayList List;
 	struct PASize m;
 };
+struct PAElement { 
+//	struct PAData data;
+	struct PAData Index;
+	struct PADestination Next;
+	struct PAStatus Stare;
+	struct PAFeature Tip;
+};
 struct PADestination {
-    //struct PANod nod;
+    struct PAElement element;
 };
 struct PAStatus {
 	PA_INT Vizited;
@@ -47,13 +54,6 @@ struct PAPair {
 };
 struct PAArrow {
 	struct PAPair p;
-};
-struct PAElement { 
-//	struct PAData data;
-	struct PAData Index;
-	struct PADestination Next;
-	struct PAStatus Stare;
-	struct PAFeature Tip;
 };
 struct BFSInput {
 	struct PASize n;

@@ -10,8 +10,11 @@ struct PAArrow PAArrowConstruct() {
     return arrow;;
 }
 struct PAArrow PAArrawArrange(struct PAArrow Arrow) {
+    struct PAArrow arrow;
+    arrow.p = Arrow.p;
     return Arrow;
 }
 struct PAArrow PAArrowPutPair(struct PAArrow Arrow, struct PAPair Pair) {
+    Arrow.p = Pair;
     return Arrow;
 }
