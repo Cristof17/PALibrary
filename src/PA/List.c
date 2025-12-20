@@ -17,12 +17,16 @@ struct PAList PAListArrange(struct PAList List) {
 //     return list;
 // }
 struct PAList PAListPutSize(struct PAList List, struct PASize Size) {
-    struct PAList list;
-    return list;
+    // struct PAList list;
+    List.m = Size;
+    return List;
+    // return list;
 }
 struct PAList PAListPutArrayList(struct PAList List, struct ArrayList Array) {
-    struct PAList list;
-    return list;
+    // struct PAList list;
+    // return list;
+    List.List = Array;
+    return List;
 }
 struct PAResult PAListAddElement(struct PAList List, struct PAElement Element) {
     struct PAResult result;
