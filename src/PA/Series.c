@@ -16,15 +16,25 @@ struct PAResult PASeriesRuin(struct PASeries Series) {
 }
 struct PASeries PASeriesArrange(struct PASeries Series) {
     struct PASeries series;
+    //Iterator
+    // series.adj = Series.adj;
+    //end of iterator
+    series.n = Series.n;
     return series;
 }
 struct PASeries PASeriesPutSize(struct PASeries Series, struct PASize Size) {
-    struct PASeries series;
-    return series;
+    // struct PASeries series;
+    Series.n = Size;
+    return Series;
+    // return series;
 }
 struct PASeries PASeriesPutList(struct PASeries Series, struct PAList List) {
+    //Iterator
     struct PASeries series;
-    return series;
+    // Series.adj = List;
+    //End of Iterator
+    // return series;
+    return Series;
 }
 
 
