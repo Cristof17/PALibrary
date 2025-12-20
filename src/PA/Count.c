@@ -13,7 +13,7 @@ struct PAResult PACountRuin(struct PACount Count) {
     struct PAResult result;
     return result;
 }
-struct PACount PACountArrange(struct PACount Count) {
+struct PACount PACountInit(struct PACount Count) {
     struct PACount count;
     count.number = Count.number;
     return count;

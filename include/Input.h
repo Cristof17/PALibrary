@@ -11,7 +11,13 @@
 // #include <tyoes
 // struct Input;
 // typedef struct Input Input;
-struct Input InputArrange(struct Input);
+struct Input InputConstruct(struct PACount, struct PACount, struct ArrayList, struct PAElement);
+// struct Input InputInit(struct Input);
+// void UInputRuin();
+void InputRuin();
+void InputDispose();
+// struct Inpuit
+struct Input InputInit(struct Input);
 struct PAResult InputDestroy();
 struct Input InputConstruct();
 #endif
