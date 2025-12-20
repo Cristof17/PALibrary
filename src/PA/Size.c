@@ -15,9 +15,12 @@ struct PAResult PASizeRuin(struct PASize Size) {
 }
 struct PASize PASizeArrange(struct PASize Size) {
     struct PASize size;
+    size.value = Size.value;
     return size;
 }
 struct PASize PASizePutValue(struct PASize Size, PA_INT Value) {
-    struct PASize size;
-    return size;
+    // struct PASize size;
+    Size.value = Value;
+    // return size;
+    return Size;
 }
