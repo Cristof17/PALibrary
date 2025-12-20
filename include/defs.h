@@ -33,22 +33,21 @@ struct PAList {
 	struct ArrayList List;
 	struct PASize m;
 };
+struct PAStatus {
+	PA_INT Vizited;
+};
+struct PAFeature {
+	PA_INT Kind;
+};
 struct PAElement { 
 //	struct PAData data;
 	struct PAData Index;
-	struct PADestination Next;
+	// struct PADestination Next;
 	struct PAStatus Stare;
 	struct PAFeature Tip;
 };
 struct PADestination {
     struct PAElement element;
-};
-struct PAStatus {
-	PA_INT Vizited;
-};
-
-struct PAFeature {
-	PA_INT Kind;
 };
 struct PAPair {
 };
