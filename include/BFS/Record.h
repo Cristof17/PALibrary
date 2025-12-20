@@ -12,11 +12,11 @@
 #endif
 struct BFSRecord;
 //typedef struct BFSRecord Record;
-void BFSRecord(struct PAList, struct PASize);
+void BFSRecord(struct PAList, struct PACount);
 // void BFSRecordDestroy();
 void BFSOutputRuin();
 void BFSRecordPrint(struct BFSRecord);
 struct BFSRecord BFSRecordArrange(struct BFSRecord);
 struct BFSRecord BFSRecordPutList(struct BFSRecord, struct PAList);
-struct BFSRecord BFSRecordPutSize(struct BFSRecord, struct PASize);
+struct BFSRecord BFSRecordPutCount(struct BFSRecord, struct PACount);
 #endif
