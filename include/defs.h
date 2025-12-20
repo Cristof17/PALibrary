@@ -4,6 +4,7 @@
 struct PADestination;
 struct PAArrow;
 struct PAData;
+struct PACount;
 struct PASize;
 struct PAResource;
 struct PAData;
@@ -44,8 +45,8 @@ struct BFSAlgorithm;
 // struct Algorithm {
 // 	struct Input input;
 // };
-struct PASize {
-	PA_INT value;
+struct PACount {
+	PA_INT number;
 };
 // struct PAData {
 // //    int Value;
@@ -68,7 +69,7 @@ struct ArrayList {
 struct PAList {
 	// struct PANod Nod;
 	struct ArrayList List;
-	struct PASize m;
+	struct PACount m;
 };
 struct PAStatus {
 	PA_INT Vizited;
@@ -94,14 +95,14 @@ struct PAArrow {
 	struct PAPair p;
 };
 struct BFSInput {
-	struct PASize n;
-	struct PASize m;
+	struct PACount n;
+	struct PACount m;
 	struct PAList adj;
 	struct PAElement sursa;
 };
 struct BFSRecord {
-	struct PAList Lista;
-	struct PASize Cardinal;
+	struct PAList d;
+	struct PACount n;
 };
 struct BFSOutput {
     struct BFSRecord Result;
@@ -111,7 +112,7 @@ struct BFSOutput {
 // //	struct BFSOutput outputBFS;
 // };
 struct PASeries {
-	struct PASize n;
+	struct PACount n;
 	struct PAList adj[];
 };
 //struct PASeries
@@ -119,8 +120,8 @@ struct PASeries {
 //
 //};
 struct PATree  {
-	struct PASize n;
-	struct PASize m;
+	struct PACount n;
+	struct PACount m;
 	struct PAElement sursa;
 	struct PASeries adj;
 };
