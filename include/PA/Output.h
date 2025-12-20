@@ -7,7 +7,7 @@
 #elif defined _WIN95
 #include <BFS\Record.h>
 #endif
-struct BFSOutput;
+// struct BFSOutput;
 struct BFSOutput BFSOutputConstruct();
 // strut BFSOutputRuin();
 void BFSOutputRuin();

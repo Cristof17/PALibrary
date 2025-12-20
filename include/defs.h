@@ -6,6 +6,8 @@ struct PAArrow;
 struct PAData;
 struct PACount;
 // struct PASize;
+struct PAInput;
+struct PAOutput;
 struct PAResource;
 struct PAData;
 struct PAValue;
@@ -45,6 +47,15 @@ struct BFSAlgorithm;
 // struct Algorithm {
 // 	struct Input input;
 // };
+struct PAInput {
+	struct PACount n;
+	struct PACount m;
+	struct PAList adj;
+	struct PAElement sursa;
+};
+struct PAOutput {
+	struct BFSRecord result;
+};
 struct PACount {
 	PA_INT number;
 };

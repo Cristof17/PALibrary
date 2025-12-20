@@ -5,14 +5,14 @@
 #include <PA/Element.h>
 #include <PA/List.h>
 #include <PA/Size.h>
-#include <BFS/Input.h>
+// #include <BFS/Input.h>
 #elif defined _WIN95
 #include <PA\Element.h>
 #include <PA\List.h>
 #include <PA\Size.h>
-#include <BFS\Input.h>
+// #include <BFS\Input.h>
 #endif
-struct BFSInput ;
+struct PAInput;
 struct BFSInput BFSInputConstruct();
 // vpo BFSInputRuin();
 void BFSInputRuin();
