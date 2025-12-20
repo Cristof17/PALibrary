@@ -24,15 +24,19 @@ struct PATree PATreePutSize(struct PATree Tree, struct PASize Size, struct PASiz
     return Tree;
     // return tree;
 }
-struct PATree PATreePutList(struct PATree Tree, struct PAList List) {
-    struct PATree tree;
-    return tree;
+struct PATree PATreePutSeries(struct PATree Tree, struct PASeries List) {
+    // struct PATree tree;
+    Tree.adj = List;
+    // return tree;
+    return Tree;
 }
 struct PATree PATreePutElement(struct PATree Tree, struct PAElement Element) {
-    struct PATree tree;
-    return tree;
+    // struct PATree tree;
+    Tree.sursa = Element;
+    // return tree;
+    return Tree;
 }
-struct PATree PATreePutSeries(struct PATree Tree, struct PASeries Series) {
-    struct PATree tree;
-    return tree;
-}
+// struct PATree PATreePutSeries(struct PATree Tree, struct PASeries Series) {
+//     // struct PATree tree;
+//     return tree;
+// }
