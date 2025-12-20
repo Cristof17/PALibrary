@@ -11,6 +11,10 @@ struct PAResult PATreeRuin(struct PATree Tree) {
 }
 struct PATree PATreeArrange(struct PATree Tree) {
     struct PATree tree;
+    tree.adj = Tree.adj;
+    tree.m = Tree.m;
+    tree.n = Tree.n;
+    tree.sursa = Tree.sursa;
     return tree;
 }
 struct PATree PATreePutSize(struct PATree Tree, struct PASize Size) {
