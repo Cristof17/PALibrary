@@ -4,8 +4,10 @@
 // #include <PA/Feature.h>
 #ifndef _WIN95
 #include <PA/Result.h>
+#include <types.h>
 #elif defined _WIN95
 #include <PA\Result.h>
+#include <types.h>
 #endif
 struct PAFeature;
 struct PAFeature PAFeatureConstruct();
