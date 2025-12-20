@@ -80,7 +80,7 @@ build: obj/Input.o \
 	obj/PA/Link.o \
 	obj/PA/Arrow.o \
 	obj/PA/Element.o \
-	obj/PA/Size.o \
+	obj/PA/Count.o \
 	obj/PA/Pair.o \
 	obj/PA/Result.o \
 	obj/PA/Series.o \
@@ -137,7 +137,7 @@ obj/PA/Arrow.o: src/PA/Arrow.c include/PA/Arrow.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/PA/Element.o: src/PA/Element.c include/PA/Element.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PA/Size.o: src/PA/Size.c include/PA/Size.h include/defs.h
+obj/PA/Count.o: src/PA/Count.c include/PA/Count.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/PA/Pair.o: src/PA/Pair.c include/PA/Pair.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
@@ -239,7 +239,7 @@ clean:
 	rm obj/PA/Link.o
 	rm obj/PA/Arrow.o
 	rm obj/PA/Element.o
-	rm obj/PA/Size.o
+	rm obj/PA/Count.o
 	rm obj/PA/Pair.o
 	rm obj/PA/Result.o
 	rm obj/PA/Series.o
