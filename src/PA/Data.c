@@ -15,7 +15,7 @@ struct PAData PADataArrange(struct PAData Data) {
     data.resource = Data.resource;
     return data;
 }
-struct PAData PADataPutValue(struct PAData Data, struct PAResource Resource) {
+struct PAData PADataPutResource(struct PAData Data, struct PAResource Resource) {
     // struct PAData data;
     Data.resource = Resource;
     return Data;

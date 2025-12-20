@@ -11,7 +11,7 @@
 struct PAData;
 struct PAData PADataConstruct();
 struct PAData PADataArrange(struct PAData);
-struct PAData PADataPutValue(struct PAData, PA_INT);
+struct PAData PADataPutResource(struct PAData, struct PAResource Resource);
 struct PAResult PADataRuin(struct PAData);
 //typedef struct PAData Data;
 #endif
