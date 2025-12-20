@@ -1,7 +1,7 @@
 //@Author Cristofor Rotsching
 #include <PA/Tree.h>
 #include <defs.h>
-struct PATree PATreeConstruct() {
+struct PATree PATreeConstruct(struct PACount n, struct PACount m, struct PAList adj, struct PAElement source) {
     struct PATree tree;
     return tree;
 }

@@ -9,7 +9,7 @@
 #include <PA\Result.h>
 #include <types.h>
 #endif
-struct PAFeature;
+// struct PAFeature;
 struct PAFeature PAFeatureConstruct();
 struct PAResult PAFeatureRuin(struct PAFeature);
 struct PAFeature PAFeatureArrange(struct PAFeature);

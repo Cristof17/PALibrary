@@ -16,10 +16,11 @@
 #include <PA\List.h>
 #include <PA\Result.h>
 #endif
-struct PASeries;
-struct PASeries PASeriesConstruct();
+// struct PASeries;
+struct PASeries PASeriesConstruct(struct PACount, struct PAList[]);
 struct PAResult PASeriesRuin(struct PASeries);
-struct PASeries PASeriesArrange(struct PASeries);
+void PASeriesDispose(void);
+struct PASeries PASeriesInit(struct PASeries);
 struct PASeries PASeriesPutCount(struct PASeries, struct PACount);
 struct PASeries PASeriesPutList(struct PASeries, struct PAList);
 //typedef struct PASir Series;

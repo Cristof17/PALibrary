@@ -8,10 +8,10 @@
 #include <BFS\Record.h>
 #endif
 // struct BFSOutput;
-struct PAOutput BFSOutputConstruct(struct BFSRecord);
+struct PAOutput PAOutputConstruct(struct BFSRecord);
 // strut BFSOutputRuin();
-void BFSOutputRuin();
+struct PAResult PAOutputRuin(struct PAOutput);
 //typedef struct BFSOutput BFSOutput;
-struct BFSOutput BFSOutputInit(struct BFSRecord);
-void BFSOutputPrint(struct BFSOutput);
+struct PAOutput PAOutputInit(struct BFSRecord);
+void PAOutputPrint(struct PAOutput);
 #endif
