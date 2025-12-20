@@ -50,6 +50,8 @@ struct PADestination {
     struct PAElement element;
 };
 struct PAPair {
+	struct PAElement Node;
+	struct PAElement Neigh;
 };
 struct PAArrow {
 	struct PAPair p;
