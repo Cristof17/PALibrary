@@ -11,10 +11,11 @@ struct PAList PAListArrange(struct PAList List) {
     list.m = List.m;
     return list;
 }
-struct PAList PAListPutElement(struct PAList List, struct PAElement Element) {
-    struct PAList list;
-    return list;
-}
+// struct PAList PAListPutElement(struct PAList List, struct PAElement Element) {
+//     // struct PAList list;
+//     // List.
+//     return list;
+// }
 struct PAList PAListPutSize(struct PAList List, struct PASize Size) {
     struct PAList list;
     return list;
