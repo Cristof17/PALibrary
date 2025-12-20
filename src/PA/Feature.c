@@ -11,9 +11,12 @@ struct PAResult PAFeatureRuin(struct PAFeature Feature) {
 }
 struct PAFeature PAFeatureArrange(struct PAFeature Feature) {
     struct PAFeature feature;
+    feature.Kind = Feature.Kind;
     return feature;
 }
-struct PAFeature PAFeaturePut() {
-    struct PAFeature feature;
-    return feature;
+struct PAFeature PAFeaturePut(struct PAFeature Feature, PA_INT Kind) {
+    // struct PAFeature feature;
+    Feature.Kind = Kind;
+    // return feature;
+    return Feature;
 }
