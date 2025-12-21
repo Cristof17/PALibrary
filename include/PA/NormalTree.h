@@ -3,6 +3,7 @@
 #define PAGRAFNORMAL_H_
 #ifndef _WIN95
 #include <PA/Result.h>
+#include <defs.h>
 #elif defined _WIN95
 #include <PA\Result.h>
 #endif

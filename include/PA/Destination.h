@@ -7,7 +7,7 @@
 #elif defined _WIN95
 #include <PA\Result.h>
 #endif
-struct PADestination;
+// struct PADestination;
 struct PADestination PADestinationConstruct();
 struct PAResult PADestinationRuin(struct PADestination);
 struct PADestination PADestinationArrange(struct PADestination);

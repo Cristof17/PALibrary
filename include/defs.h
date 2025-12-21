@@ -7,6 +7,8 @@ struct PAArrow;
 struct PAData;
 struct PAResult;
 struct PACount;
+struct PANormalTree;
+struct PATransposeTree;
 // struct PASize;
 struct PAInput;
 struct PAOutput;
@@ -174,13 +176,13 @@ struct Builder {
 struct Director {
     struct Builder builder;
 };
-struct NormalTree {
+struct PANormalTree {
     struct PAList adj;
 };
 struct Product {
     struct PATree graf;
 };
-struct TransposeTree {
+struct PATransposeTree {
 	struct PAList adj_trans;
 };
 
