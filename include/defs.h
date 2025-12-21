@@ -152,7 +152,7 @@ struct PATree  {
 	struct PASeries adj;
 };
 struct PALink {
-	struct PAPair p;
+	struct PAPair phyhy;
 };
 struct PAResult {
 	PA_INT code;
