@@ -6,7 +6,7 @@
  *  Created on: 16 nov. 2025
  *      Author: AdministratorUser
  */
-struct PASeries PASeriesConstruct() {
+struct PASeries PASeriesConstruct(struct PACount N, struct PAList Adj[]) {
     struct PASeries series;
     return series;
 }
