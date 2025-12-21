@@ -13,17 +13,18 @@ struct PAOutput;
 struct PAData;
 struct PAValue;
 struct ArrayList;
-struct PAList ;
+struct PAList;
 struct PAStatus;
 struct PAFeature;
 // struct PAValue;
+// struct PADestination;
 // struct PAStatus/*.*/;
 // struct PAPair;struct PAPair;
 struct PAElement;
-struct PADestination ;
+struct PADestination;
 struct PAPair;
-struct PAArrow ;
-struct BFSInput ;
+struct PAArrow;
+struct BFSInput;
 struct BFSRecord;
 struct BFSOutput;
 struct PASeries;
@@ -53,27 +54,14 @@ struct ConcreteIterator;
 struct Iterator ;
 struct BFSAlgorithm;
 // struct In put {
-// 	;
-// };
-// struct Algorithm {
-// 	struct Input input;
-// };
-struct PAInput {
-	struct PACount n;
-	struct PACount m;
-	struct PAList adj;
-	struct PAElement sursa;
+	// 	;
+	// };
+	// struct Algorithm {
+		// 	struct Input input;
+		// };
+struct PAStatus {
+	PA_INT Vizited;
 };
-struct PAOutput {
-	struct BFSRecord result;
-};
-struct PACount {
-	PA_INT number;
-};
-// struct PAData {
-// //    int Value;
-// 	INT Value;
-// };
 struct PAResource {
 	// struct
 	// PA_INt
@@ -82,8 +70,18 @@ struct PAResource {
 struct PAData {
     struct PAResource resource;
 };
-struct PAValue {
-    PA_INT value;
+struct PAFeature {
+	PA_INT Kind;
+};
+struct PAElement { 
+	//	struct PAData data;
+	struct PAData Index;
+	// struct PADestination Next;
+	struct PAStatus Stare;
+	struct PAFeature Tip;
+};
+struct PACount {
+	PA_INT number;
 };
 struct ArrayList {
 	struct PAData Index[0];
@@ -93,18 +91,25 @@ struct PAList {
 	struct ArrayList List;
 	struct PACount m;
 };
-struct PAStatus {
-	PA_INT Vizited;
+struct PAInput {
+	struct PACount n;
+	struct PACount m;
+	struct PAList adj;
+	struct PAElement sursa;
 };
-struct PAFeature {
-	PA_INT Kind;
+struct BFSRecord {
+	struct PAList d;
+	struct PACount n;
 };
-struct PAElement { 
-//	struct PAData data;
-	struct PAData Index;
-	// struct PADestination Next;
-	struct PAStatus Stare;
-	struct PAFeature Tip;
+struct PAOutput {
+	struct BFSRecord result;
+};
+// struct PAData {
+// //    int Value;
+// 	INT Value;
+// };
+struct PAValue {
+    PA_INT value;
 };
 struct PADestination {
     struct PAElement element;
@@ -121,10 +126,6 @@ struct BFSInput {
 	struct PACount m;
 	struct PAList adj;
 	struct PAElement sursa;
-};
-struct BFSRecord {
-	struct PAList d;
-	struct PACount n;
 };
 struct BFSOutput {
     struct BFSRecord Result;

@@ -4,8 +4,11 @@
 // #ifndef _WIN954
 #ifndef _WIN95
 #include <BFS/Record.h>
+#include <PA/Result.h>
 #elif defined _WIN95
 #include <BFS\Record.h>
+// #include <PA/Result.h>
+#include <PA\Result.h>
 #endif
 // struct BFSOutput;
 struct PAOutput PAOutputConstruct(struct BFSRecord);
