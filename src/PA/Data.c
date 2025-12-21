@@ -6,7 +6,7 @@ typedef struct PAData PAData;
 //struct PAData {
 //
 //}
-struct PAData PADataConstruct() {
+struct PAData PADataConstruct(PA_INT Number) {
     struct PAData data;
     return data;
 }

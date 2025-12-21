@@ -3,7 +3,9 @@
 #define INCLUDE_OUTPUT_H_
 #ifndef _WIN95
 // #include <Output.h>
+#include <PA/Result.h>
 #elif defined _WIN95
+#include <PA/Result.h>
 // #include <Output.h>
 #endif
 // struct Output;

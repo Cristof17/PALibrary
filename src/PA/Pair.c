@@ -2,13 +2,17 @@
 /*@*/
 #include <PA/Pair.h>
 #include <defs.h>
-struct PAPair PAPairConstruct() {
+struct PAPair PAPairConstruct(struct PAElement Node, struct PAElement Neigh) {
     struct PAPair pair;
+    pair.node = Node;
+    pair.neigh = Neigh;
     return pair;
 }
-struct PAPair PAPairRuin(struct PAPair Pair) {
-    struct PAPair pair;
-    return pair;
+// struct PAPair PAPairRuin(struct PAPair Pair) {
+struct PAResult PAPairRuin(struct PAPair Pair) {
+    struct PAResult result;
+    // struct PAPair pair;
+    return result;
 }
 struct PAPair PAPairArrange(struct PAPair Pair) {
     struct PAPair pair;

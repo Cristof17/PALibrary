@@ -11,11 +11,11 @@ void PAResultPrint(struct PAResult Result) {
 }
 struct PAResult PAResultArrange(struct PAResult Result) {
     struct PAResult result;
-    result.cod = Result.cod;
+    result.code = Result.code;
     return result;
 }
 struct PAResult PAResultPutValue(struct PAResult Result, PA_INT Value) {
     struct PAResult result;
-    result.cod = Value;
+    result.code = Value;
     return result;
 }

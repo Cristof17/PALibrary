@@ -14,7 +14,7 @@ struct PATree PATreeArrange(struct PATree Tree) {
     tree.adj = Tree.adj;
     tree.m = Tree.m;
     tree.n = Tree.n;
-    tree.sursa = Tree.sursa;
+    tree.source = Tree.source;
     return tree;
 }
 struct PATree PATreePutSize(struct PATree Tree, struct PACount Count1, struct PACount Count2) {
@@ -32,7 +32,7 @@ struct PATree PATreePutSeries(struct PATree Tree, struct PASeries List) {
 }
 struct PATree PATreePutElement(struct PATree Tree, struct PAElement Element) {
     // struct PATree tree;
-    Tree.sursa = Element;
+    Tree.source = Element;
     // return tree;
     return Tree;
 }

@@ -1,13 +1,16 @@
 //@Author Cristofor Rotsching
 #include <PA/List.h>
 #include <defs.h>
-struct PAList PAListConstruct() {
+// struct PAList PAListConstruct(struct PAElement Element) {
+struct PAList PAListConstruct(struct ArrayList List, struct PACount M) {
     struct PAList list;
+    list.list = List;
+    list.m = M;
     return list;
 }
 struct PAList PAListArrange(struct PAList List) {
     struct PAList list;
-    list.List = List.List;
+    list.list = List.list;
     list.m = List.m;
     return list;
 }
@@ -25,7 +28,7 @@ struct PAList PAListPutCount(struct PAList List, struct PACount Count) {
 struct PAList PAListPutArrayList(struct PAList List, struct ArrayList Array) {
     // struct PAList list;
     // return list;
-    List.List = Array;
+    List.list = Array;
     return List;
 }
 struct PAResult PAListAddElement(struct PAList List, struct PAElement Element) {
