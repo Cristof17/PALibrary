@@ -3,11 +3,14 @@
 #define INCLUDE_BFSALGORITHM_H_
 #ifndef _WIN95
 #include <PA/Tree.h>
-#include <BFS/Input.h>
+// #include <BFS/Input.h>
+#include <PA/Input.h>
 // #elif defined _WIN945
 #elif defined _WIN95
 #include <PA\Tree.h>
-#include <BFS\Input.h>
+// #include <BFS\Input.h>
+// #ni
+#include <PA/Input.h>
 #endif
 struct BFSAlgorithm;
 //typedef struct BFSAlgorithm Algorithm;
