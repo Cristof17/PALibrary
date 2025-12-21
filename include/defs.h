@@ -63,7 +63,7 @@ struct BFSAlgorithm;
 		// 	struct Input input;
 		// };
 struct PAStatus {
-	PA_INT Vizited;
+	PA_INT visited;
 };
 struct PAResource {
 	// struct
@@ -74,20 +74,20 @@ struct PAData {
     struct PAResource resource;
 };
 struct PAFeature {
-	PA_INT Kind;
+	PA_INT kind;
 };
 struct PAElement { 
 	//	struct PAData data;
-	struct PAData Index;
+	struct PAData index;
 	// struct PADestination Next;
-	struct PAStatus Stare;
-	struct PAFeature Tip;
+	struct PAStatus status;
+	struct PAFeature type;
 };
 struct PACount {
 	PA_INT number;
 };
 struct ArrayList {
-	struct PAData Index[0];
+	struct PAData index[0];
 };
 struct PAList {
 	// struct PANod Nod;
@@ -98,7 +98,7 @@ struct PAInput {
 	struct PACount n;
 	struct PACount m;
 	struct PAList adj;
-	struct PAElement sursa;
+	struct PAElement source;
 };
 struct BFSRecord {
 	struct PAList d;
@@ -128,10 +128,10 @@ struct BFSInput {
 	struct PACount n;
 	struct PACount m;
 	struct PAList adj;
-	struct PAElement sursa;
+	struct PAElement source;
 };
 struct BFSOutput {
-    struct BFSRecord Result;
+    struct BFSRecord result;
 };
 // struct Output {
 // //	struct PARezultat rezultat;
@@ -148,14 +148,14 @@ struct PASeries {
 struct PATree  {
 	struct PACount n;
 	struct PACount m;
-	struct PAElement sursa;
+	struct PAElement source;
 	struct PASeries adj;
 };
 struct PALink {
 	struct PAPair p;
 };
 struct PAResult {
-	PA_INT cod;
+	PA_INT code;
 };
 struct Adaptee {
 	struct ArrayList List;
