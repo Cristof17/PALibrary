@@ -91,7 +91,7 @@ struct ArrayList {
 };
 struct PAList {
 	// struct PANod Nod;
-	struct ArrayList List;
+	struct ArrayList list;
 	struct PACount m;
 };
 struct PAInput {
@@ -138,7 +138,7 @@ struct BFSOutput {
 // //	struct BFSOutput outputBFS;
 // };
 struct PASeries {
-	struct PACount progression;
+	struct PACount n;
 	struct PAList adj[];
 };
 //struct PASeries
@@ -158,16 +158,16 @@ struct PAResult {
 	PA_INT code;
 };
 struct Adaptee {
-	struct ArrayList List;
+	struct ArrayList list;
 };
 struct Adapter {
-	struct PAList Lista;
+	struct PAList list;
 };
 struct IteratorClient {
-	struct PATree Graf;
+	struct PATree tree;
 };
 struct Target {
-	struct PASeries Sir;
+	struct PASeries series;
 	//struct Adapter adapter;
 };
 struct Builder {
@@ -180,7 +180,7 @@ struct PANormalTree {
     struct PAList adj;
 };
 struct Product {
-    struct PATree graf;
+    struct PATree tree;
 };
 struct PATransposeTree {
 	struct PAList adj_trans;
@@ -201,7 +201,7 @@ struct Iterator  {
     
 };
 struct BFSAlgorithm {
-	struct BFSInput Input;
-	struct PATree Graf;
+	struct BFSInput input;
+	struct PATree tree;
 };
 #endif
