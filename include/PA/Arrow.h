@@ -10,7 +10,6 @@
 // #include <PA/Arrow.h>
 #endif
 #include <defs.h>
-
 struct PAResult PAArrowRuin(struct PAArrow);
 struct PAArrow PAArrowConstruct();
 struct PAArrow PAArrawInit(struct PAArrow);

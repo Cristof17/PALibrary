@@ -116,8 +116,8 @@ struct PADestination {
     struct PAElement element;
 };
 struct PAPair {
-	struct PAElement Node;
-	struct PAElement Neigh;
+	struct PAElement node;
+	struct PAElement neigh;
 };
 struct PAArrow {
 	struct PAPair p;
