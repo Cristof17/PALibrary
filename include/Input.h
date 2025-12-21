@@ -3,10 +3,12 @@
 #define INCLUDE_INPUT_H_
 #ifndef _WIN95
 #include <PA/Result.h>
+#include <ArrayList/ArrayList.h>
 #include <types.h>
 #elif defined _WIN95
 #include <types.h>
 #include <PA\Result.h>
+#include <ArrayList\ArrayList.h>
 #endif
 // #include <tyoes
 // struct Input;
@@ -19,5 +21,5 @@ void InputDispose();
 // struct Inpuit
 struct Input InputInit(struct Input);
 struct PAResult InputDestroy();
-struct Input InputConstruct();
+// struct Input InputConstruct();
 #endif
