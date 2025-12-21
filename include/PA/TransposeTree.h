@@ -8,7 +8,7 @@
 #include <PA\Result.h>
 #include <defs.h>
 #endif
-struct GrafTranspus;
+// struct GrafTranspus;
 // typedef struct GrafTranspus GrafTranspus;
 struct GrafTranspus GrafTranspusBuildPart();
 struct PAResult GrafTranspusGetResult();

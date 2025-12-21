@@ -114,9 +114,9 @@ obj/Algorithm.o: src/Algorithm.c include/Algorithm.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/BFS/Procedure.o: src/BFS/Procedure.c include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/BFS/Input.o: src/BFS/Input.c include/BFS/Input.h include/defs.h
+obj/PA/Input.o: src/PA/Input.c include/PA/Input.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/BFS/Output.o: src/BFS/Output.c include/BFS/Output.h include/defs.h
+obj/PA/Output.o: src/PA/Output.c include/PA/Output.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/BFS/Record.o:src/BFS/Record.c include/BFS/Record.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
