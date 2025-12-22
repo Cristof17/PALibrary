@@ -6,25 +6,30 @@ typedef struct PAData PAData;
 //struct PAData {
 //
 //}
-struct PAData PADataPerformConstruct(PA_INT Number) {
+struct PAData PADataPerformConstruct(PA_INT Number) 
+{
     struct PAData data;
     return data;
 }
-struct PAData PADataPerformInit(struct PAData Data) {
+struct PAData PADataPerformInit(struct PAData Data) 
+{
     struct PAData data;
     data.resource = Data.resource;
     return data;
 }
-struct PAData PADataPerformPutResource(struct PAData Data, struct PAResource Resource) {
+struct PAData PADataPerformPutResource(struct PAData Data, struct PAResource Resource) 
+{
     // struct PAData data;
     Data.resource = Resource;
     return Data;
 }
-struct PAResult PADataPerformRuin(struct PAData Data) {
+struct PAResult PADataPerformRuin(struct PAData Data) 
+{
     struct PAResult result;
     return result;
 }
-struct PAResult PADataPerformDelete(struct PAData Data) {
+struct PAResult PADataPerformDelete(struct PAData Data) 
+{
     struct PAResult result;
     return result;
 }
