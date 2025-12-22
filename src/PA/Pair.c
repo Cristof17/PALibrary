@@ -33,5 +33,6 @@ struct PAPair PAPairPutNeigh(struct PAPair Pair, struct PAElement Element) {
     // return pair;
 }
 struct PAResult PAPairDelete(struct PAPair) {
-    
+    struct PAResult result;
+    return result;
 }

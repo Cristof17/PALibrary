@@ -17,7 +17,8 @@ struct PADestination PADestinationArrange(struct PADestination Destination) {
     return destination;
 }
 struct PAResult PADestinationDelete(struct PADestination) {
-    
+    struct PAResult result;
+    return result;
 }
 // PAData PADataPutElement(PAData, PAElement)
 // {

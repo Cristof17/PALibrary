@@ -21,5 +21,6 @@ struct PAStatus PAStatusPutValue(struct PAStatus Status, PA_INT Value) {
     return Status;
 }
 struct PAResult PASeriesDelete(struct PASeries) {
-    
+    struct PAResult result;
+    return result;
 }

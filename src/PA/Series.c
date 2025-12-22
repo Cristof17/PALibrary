@@ -37,5 +37,6 @@ struct PASeries PASeriesPutList(struct PASeries Series, struct PAList List) {
     return Series;
 }
 struct PAResult PASeriesDelete(struct PASeries) {
-    
+    struct PAResult result;
+    return result;
 }

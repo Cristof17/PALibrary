@@ -40,5 +40,6 @@ struct PAElement PAElementPutFeature(struct PAElement Element, struct PAFeature 
     return Element;
 }
 struct PAResult PAElementDelete(struct PAElement) {
-    
+    struct PAResult result;
+    return result;
 }

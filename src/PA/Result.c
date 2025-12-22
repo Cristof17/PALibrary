@@ -20,5 +20,6 @@ struct PAResult PAResultPutValue(struct PAResult Result, PA_INT Value) {
     return result;
 }
 struct PAResult PAResultDelete(struct PAResult) {
-    
+    struct PAResult result;
+    return result;
 }

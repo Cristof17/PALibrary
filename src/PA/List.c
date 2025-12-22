@@ -55,5 +55,6 @@ struct PAList PAListTail(struct PAList List) {
     return list;
 }
 struct PAResult PAListDelete(struct PAList) {
-    
+    struct PAResult result;
+    return result;
 }
