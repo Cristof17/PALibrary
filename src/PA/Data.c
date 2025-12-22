@@ -24,7 +24,7 @@ struct PAResult PADataRuin(struct PAData Data) {
     struct PAResult result;
     return result;
 }
-struct PAResult PADataDelete(struct PAData) {
+struct PAResult PADataDelete(struct PAData Data) {
     struct PAResult result;
     return result;
 }

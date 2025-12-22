@@ -16,7 +16,7 @@ struct PADestination PADestinationArrange(struct PADestination Destination) {
     destination.element = Destination.element;
     return destination;
 }
-struct PAResult PADestinationDelete(struct PADestination) {
+struct PAResult PADestinationDelete(struct PADestination Destination) {
     struct PAResult result;
     return result;
 }

@@ -20,7 +20,7 @@ struct PAStatus PAStatusPutValue(struct PAStatus Status, PA_INT Value) {
     // return status;
     return Status;
 }
-struct PAResult PASeriesDelete(struct PASeries) {
+struct PAResult PASeriesDelete(struct PASeries Series) {
     struct PAResult result;
     return result;
 }

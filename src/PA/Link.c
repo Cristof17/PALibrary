@@ -20,7 +20,7 @@ struct PALink PALinkPutPair(struct PALink Link,struct PAPair Pair) {
     // return link;
     return Link;
 }
-struct PAResult PALinkDelete(struct PALink) {
+struct PAResult PALinkDelete(struct PALink Link) {
     struct PAResult reusult;
     return reusult;
 }

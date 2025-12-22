@@ -40,7 +40,7 @@ struct PATree PATreePutElement(struct PATree Tree, struct PAElement Element) {
 //     // struct PATree tree;
 //     return tree;
 // }
-struct PATree PATreeDelete(struct PATree) {
+struct PAResult PATreeDelete(struct PATree Tree) {
     struct PAResult result;
     return result;
 }
