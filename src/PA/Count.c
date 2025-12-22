@@ -1,30 +1,30 @@
 //@Author Cristofor Rotsching
 #include <PA/Count.h>
 #include <defs.h>
-void PACountPrint(struct PACount Count) {
+void PACountPerformPrint(struct PACount Count) {
 
 }
-struct PACount PACountConstruct(PA_INT Number) {
+struct PACount PACountPerformConstruct(PA_INT Number) {
     struct PACount size;
     return size;
 }
 // void PASize(PA_INT);
-struct PAResult PACountRuin(struct PACount Count) {
+struct PAResult PACountPerformRuin(struct PACount Count) {
     struct PAResult result;
     return result;
 }
-struct PACount PACountInit(struct PACount Count) {
+struct PACount PACountPerformInit(struct PACount Count) {
     struct PACount count;
     count.number = Count.number;
     return count;
 }
-struct PACount PACountPutNumber(struct PACount Count, PA_INT Number) {
+struct PACount PACountPerformPutNumber(struct PACount Count, PA_INT Number) {
     // struct PASize size;
     Count.number = Number;
     // return size;
     return Count;
 }
-struct PAResult PACountDelete(struct PACount Count) {
+struct PAResult PACountPerformDelete(struct PACount Count) {
     struct PAResult result;
     return result;
 }

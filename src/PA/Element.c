@@ -3,27 +3,27 @@
 #include <defs.h>
 // #include "//"
 // #include "../include/PAIndex.h"
-struct PAElement PAElementConstruct() {
+struct PAElement PAElementPerformConstruct() {
     struct PAElement element;
     return element;
 }
-struct PAResult PAElementRuin(struct PAElement Element) {
+struct PAResult PAElementPerformRuin(struct PAElement Element) {
     struct PAResult result;
     return result;
 }
-struct PAElement PAElementArrange(struct PAElement Element) {
+struct PAElement PAElementPerformInit(struct PAElement Element) {
     struct PAElement element;
     // element. = Element.Index;
     element.status = Element.status;
     element.type = Element.type;
     return element;
 }
-struct PAElement PAElementPutStatus(struct PAElement Element, struct PAStatus Status) {
+struct PAElement PAElementPerformPutStatus(struct PAElement Element, struct PAStatus Status) {
     // struct PAElement element;
     Element.status = Status;
     return Element;
 }
-struct PAElement PAElementPutData(struct PAElement Element, struct PAData Index) {
+struct PAElement PAElementPerformPutData(struct PAElement Element, struct PAData Index) {
     struct PAElement element;
     // Element.Index = Index;
     return element;
@@ -33,13 +33,13 @@ struct PAElement PAElementPutData(struct PAElement Element, struct PAData Index)
 //     Element.
 //     return element;
 // }
-struct PAElement PAElementPutFeature(struct PAElement Element, struct PAFeature Feature) {
+struct PAElement PAElementPerformPutFeature(struct PAElement Element, struct PAFeature Feature) {
     // struct PAElement element;
     Element.type = Feature;
     // return element;
     return Element;
 }
-struct PAResult PAElementDelete(struct PAElement Element) {
+struct PAResult PAElementPerformDelete(struct PAElement Element) {
     struct PAResult result;
     return result;
 }
