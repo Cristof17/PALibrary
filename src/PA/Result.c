@@ -19,3 +19,6 @@ struct PAResult PAResultPutValue(struct PAResult Result, PA_INT Value) {
     result.code = Value;
     return result;
 }
+struct PAResult PAResultDelete(struct PAResult) {
+    
+}

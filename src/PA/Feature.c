@@ -20,3 +20,6 @@ struct PAFeature PAFeaturePut(struct PAFeature Feature, PA_INT Kind) {
     // return feature;
     return Feature;
 }
+struct PAResult PAFeatureDelete(struct PAFeature) {
+    
+}

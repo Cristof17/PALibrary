@@ -24,3 +24,6 @@ struct PACount PACountPutNumber(struct PACount Count, PA_INT Number) {
     // return size;
     return Count;
 }
+struct PAResult PACountDelete(struct PACount Count) {
+
+}

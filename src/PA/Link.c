@@ -20,3 +20,6 @@ struct PALink PALinkPutPair(struct PALink Link,struct PAPair Pair) {
     // return link;
     return Link;
 }
+struct PALink PALinkDelete(struct PALink) {
+    
+}

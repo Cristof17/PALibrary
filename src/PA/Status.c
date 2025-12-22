@@ -11,12 +11,15 @@ struct PAResult PAStatusRuin(struct PAStatus Status) {
 }
 struct PAStatus PAStatusArrange(struct PAStatus Status) {
     struct PAStatus status;
-    status.Vizited = Status.Vizited;
+    status.visited = Status.visited;
     return status;
 }
 struct PAStatus PAStatusPutValue(struct PAStatus Status, PA_INT Value) {
     // struct PAStatus status;
-    Status.Vizited = Value;
+    Status.visited = Value;
     // return status;
     return Status;
+}
+struct PAResult PASeriesDelete(struct PASeries) {
+    
 }
