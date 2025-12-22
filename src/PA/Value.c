@@ -1,19 +1,19 @@
 #include <PA/Value.h>
 #include <defs.h>
-struct PAValue PAValueConstruct() {
+struct PAValue PAValuePerformConstruct() {
     struct PAValue value;
     return value;
 }
-struct PAResult PAValueRuin(struct PAValue Value) {
+struct PAResult PAValuePerformRuin(struct PAValue Value) {
     struct PAResult result;
     return result;
 }
-struct PAValue PAValueArrange(struct PAValue Value) {
+struct PAValue PAValuePerformInit(struct PAValue Value) {
     struct PAValue value;
     value.value = Value.value;
     return value;
 }
-struct PAValue PAValuePutValue(struct PAValue Value1, PA_INT Value2) {
+struct PAValue PAValuePerformPutValue(struct PAValue Value1, PA_INT Value2) {
     // struct PAValue value;
     Value1.value = Value2;
     // return value;
