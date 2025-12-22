@@ -23,5 +23,6 @@ void PASeriesDispose(void);
 struct PASeries PASeriesInit(struct PASeries);
 struct PASeries PASeriesPutCount(struct PASeries, struct PACount);
 struct PASeries PASeriesPutList(struct PASeries, struct PAList);
+struct PAResult PASeriesDelete(struct PASeries);
 //typedef struct PASir Series;
 #endif /* INCLUDE_PASIR_H_ */

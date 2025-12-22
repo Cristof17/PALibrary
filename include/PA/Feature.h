@@ -14,5 +14,6 @@ struct PAFeature PAFeatureConstruct();
 struct PAResult PAFeatureRuin(struct PAFeature);
 struct PAFeature PAFeatureArrange(struct PAFeature);
 struct PAFeature PAFeaturePut(struct PAFeature, PA_INT Kind);
+struct PAResult PAFeatureDelete(struct PAFeature);
 //typedef struct PAFeature Feature;
 #endif

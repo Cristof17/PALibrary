@@ -13,5 +13,6 @@ struct PAData PADataConstruct(PA_INT);
 struct PAData PADataInit(struct PAData);
 struct PAData PADataPutResource(struct PAData, struct PAResource Resource);
 struct PAResult PADataRuin(struct PAData);
+struct PAResult PADataDelete(struct PAData);
 //typedef struct PAData Data;
 #endif

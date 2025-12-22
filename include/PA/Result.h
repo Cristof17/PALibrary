@@ -16,4 +16,5 @@ struct PAResult PAResultRuin();
 void PAResultPrint(struct PAResult);
 struct PAResult PAResultInit(struct PAResult);
 struct PAResult PAResultPutValue(struct PAResult, PA_INT);
+struct PAResult PAResultDelete(struct PAResult);
 #endif

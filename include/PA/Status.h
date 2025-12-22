@@ -17,5 +17,6 @@ struct PAStatus PAStatusConstruct();
 struct PAResult PAStatusRuin(struct PAStatus);
 struct PAStatus PAStatusArrange(struct PAStatus);
 struct PAStatus PAStatusPutValue(struct PAStatus, PA_INT);
+// struct PAResult PAStatusDelete()
 //typedef struct PAStatus Status;
 #endif

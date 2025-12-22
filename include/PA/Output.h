@@ -17,4 +17,5 @@ struct PAResult PAOutputRuin(struct PAOutput);
 //typedef struct BFSOutput BFSOutput;
 struct PAOutput PAOutputInit(struct BFSRecord);
 void PAOutputPrint(struct PAOutput);
+struct PAResult PAResultDelete(struct PAResult);
 #endif

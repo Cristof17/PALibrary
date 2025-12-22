@@ -23,5 +23,6 @@ struct PATree PATreePutCount(struct PATree, struct PACount, struct PACount);
 // struct PATree PATreePutList(struct PATree, struct PAList);
 struct PATree PATreePutElement(struct PATree, struct PAElement);
 struct PATree PATreePutSeries(struct PATree, struct PASeries);
+struct PATree PATreeDelete(struct PATree);
 //typedef struct PATree Tree;
 #endif

@@ -18,8 +18,9 @@ struct Input InputConstruct(struct PACount, struct PACount, struct ArrayList, st
 // void UInputRuin();
 void InputRuin();
 void InputDispose();
+// struct PAResult InputDestroy();
+struct PAResult InputDelete(struct PAInput);
 // struct Inpuit
 struct Input InputInit(struct Input);
-struct PAResult InputDestroy();
 // struct Input InputConstruct();
 #endif

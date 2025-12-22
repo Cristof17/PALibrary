@@ -11,5 +11,6 @@
 struct PADestination PADestinationConstruct();
 struct PAResult PADestinationRuin(struct PADestination);
 struct PADestination PADestinationArrange(struct PADestination);
+struct PAResult PADestinationDelete(struct PADestination);
 //struct PADestination PADataPutElement(struct PADestination,struct PAElement);
 #endif

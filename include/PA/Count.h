@@ -16,4 +16,6 @@ struct PACount PACountConstruct(PA_INT);
 struct PAResult PACountRuin(struct PACount);
 struct PACount PACountArrange(struct PACount);
 struct PACount PACountPutValue(struct PACount, PA_INT);
+// struct 
+struct PAResult PACountDelete(struct PACount);
 #endif

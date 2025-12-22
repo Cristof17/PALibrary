@@ -17,5 +17,6 @@ struct PAResult PAPairRuin(struct PAPair);
 struct PAPair PAPairInit(struct PAPair);
 struct PAPair PAPairPutNode(struct PAPair, struct PAElement);
 struct PAPair PAPairPutNeigh(struct PAPair, struct PAElement);
+struct PAResult PAPairDelete(struct PAPair);
 //typedef struct PAPair Pair;
 #endif

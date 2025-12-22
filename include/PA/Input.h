@@ -18,6 +18,7 @@ struct PAInput PAInputConstruct(struct PACount, struct PACount, struct PAList, s
 struct PAInput PAInputInit(struct PAInput);
 // struct 
 struct PAResult PAInputRuin(struct PAInput);
+struct PAResult PAInputDelete(struct PAInput);
 // void BFSInputRuin();
 // struct BFSInput BFSInputArrange(struct BFSInput);
 //typedef struct BFSInput Input;

@@ -28,6 +28,7 @@ PA_INT PAListSize(struct PAList);
 struct PAElement PAListHead(struct PAList);
 struct PAList PAListTail(struct PAList);
 struct PAResult PAListPrint(struct PAList);
+struct PAResult PAListDelete(struct PAList);
 
 // struct PAResult PAList(struct PAElement Head);
 // struct PAResult PAListPrint(struct PAList);
