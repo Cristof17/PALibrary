@@ -2,9 +2,9 @@
 #include <PA/TransposeTree.h>
 #include <defs.h>
 
-struct TransposeTree PATransposeTreeBuildPart() 
+struct PATransposeTree PATransposeTreeBuildPart() 
 {
-    struct TransposeTree tree;
+    struct PATransposeTree tree;
     return tree;
 }
 struct PAResult PATransposeTreeGetResult() 
