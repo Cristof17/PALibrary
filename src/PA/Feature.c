@@ -14,7 +14,7 @@ struct PAFeature PAFeaturePerformInit(struct PAFeature Feature) {
     feature.kind = Feature.kind;
     return feature;
 }
-struct PAFeature PAFeaturePerformPut(struct PAFeature Feature, PA_INT Kind) {
+struct PAFeature PAFeaturePerformPutKind(struct PAFeature Feature, PA_INT Kind) {
     // struct PAFeature feature;
     Feature.kind = Kind;
     // return feature;
