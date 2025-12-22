@@ -11,11 +11,11 @@
 #include <PA\Result.h>
 #endif
 // struct BFSOutput;
-struct PAOutput PAOutputConstruct(struct BFSRecord);
+struct PAOutput PAOutputPerformConstruct(struct BFSRecord);
 // strut BFSOutputRuin();
-struct PAResult PAOutputRuin(struct PAOutput);
+struct PAResult PAOutputPerformRuin(struct PAOutput);
 //typedef struct BFSOutput BFSOutput;
-struct PAOutput PAOutputInit(struct BFSRecord);
-void PAOutputPrint(struct PAOutput);
-struct PAResult PAResultDelete(struct PAResult);
+struct PAOutput PAOutputPerformInit(struct BFSRecord);
+void PAOutputPerformPrint(struct PAOutput);
+struct PAResult PAResultPerformDelete(struct PAResult);
 #endif

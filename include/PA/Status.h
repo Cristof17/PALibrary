@@ -13,10 +13,10 @@
 // #endig
 #endif
 // struct PAStatus/*.*/;
-struct PAStatus PAStatusConstruct();
-struct PAResult PAStatusRuin(struct PAStatus);
-struct PAStatus PAStatusArrange(struct PAStatus);
-struct PAStatus PAStatusPutValue(struct PAStatus, PA_INT);
+struct PAStatus PAStatusPerformConstruct();
+struct PAResult PAStatusPerformRuin(struct PAStatus);
+struct PAStatus PAStatusPerformInit(struct PAStatus);
+struct PAStatus PAStatusPerformPutValue(struct PAStatus, PA_INT);
 // struct PAResult PAStatusDelete()
 //typedef struct PAStatus Status;
 #endif

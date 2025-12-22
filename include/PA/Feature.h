@@ -10,10 +10,10 @@
 #include <types.h>
 #endif
 // struct PAFeature;
-struct PAFeature PAFeatureConstruct();
-struct PAResult PAFeatureRuin(struct PAFeature);
-struct PAFeature PAFeatureArrange(struct PAFeature);
-struct PAFeature PAFeaturePut(struct PAFeature, PA_INT Kind);
-struct PAResult PAFeatureDelete(struct PAFeature);
+struct PAFeature PAFeaturePerformConstruct();
+struct PAResult PAFeaturePerformRuin(struct PAFeature);
+struct PAFeature PAFeaturePerformInit(struct PAFeature);
+struct PAFeature PAFeaturePeformPut(struct PAFeature, PA_INT Kind);
+struct PAResult PAFeaturePerformDelete(struct PAFeature);
 //typedef struct PAFeature Feature;
 #endif

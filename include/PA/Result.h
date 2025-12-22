@@ -10,11 +10,11 @@
 // struct PARezultatl
 // struct PAResult;
 //typedef struct PAResult Result;
-struct PAResult PAResultConstruct();
-struct PAResult PAResultRuin();
+struct PAResult PAResultPerformConstruct();
+struct PAResult PAResultPerformRuin();
 // struct PAResult PAResultRuin(struct PAResult);
-void PAResultPrint(struct PAResult);
-struct PAResult PAResultInit(struct PAResult);
-struct PAResult PAResultPutValue(struct PAResult, PA_INT);
-struct PAResult PAResultDelete(struct PAResult);
+void PAResultPerformPrint(struct PAResult);
+struct PAResult PAResultPerformInit(struct PAResult);
+struct PAResult PAResultPerformPutValue(struct PAResult, PA_INT);
+struct PAResult PAResultPerformDelete(struct PAResult);
 #endif

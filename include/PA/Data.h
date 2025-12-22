@@ -9,10 +9,10 @@
 #endif
 // #include <defs.h>
 // struct PAData;
-struct PAData PADataConstruct(PA_INT);
-struct PAData PADataInit(struct PAData);
-struct PAData PADataPutResource(struct PAData, struct PAResource Resource);
-struct PAResult PADataRuin(struct PAData);
-struct PAResult PADataDelete(struct PAData);
+struct PAData PADataPerformConstruct(PA_INT);
+struct PAData PADataPerformInit(struct PAData);
+struct PAData PADataPerformPutResource(struct PAData, struct PAResource Resource);
+struct PAResult PADataPerformRuin(struct PAData);
+struct PAResult PADataPerformDelete(struct PAData);
 //typedef struct PAData Data;
 #endif

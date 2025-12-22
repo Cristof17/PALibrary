@@ -10,12 +10,12 @@
 #endif
 struct PACount;
 //typedef struct PACount Count;
-void PACountPrint(struct PACount);
-struct PACount PACountConstruct(PA_INT);
+void PACountPerformPrint(struct PACount);
+struct PACount PACountPerformConstruct(PA_INT);
 // void PASize(PA_INT);
-struct PAResult PACountRuin(struct PACount);
-struct PACount PACountArrange(struct PACount);
-struct PACount PACountPutValue(struct PACount, PA_INT);
+struct PAResult PACountPerformRuin(struct PACount);
+struct PACount PACountPerformInit(struct PACount);
+struct PACount PACountPerformPutValue(struct PACount, PA_INT);
 // struct 
-struct PAResult PACountDelete(struct PACount);
+struct PAResult PACountPerformDelete(struct PACount);
 #endif

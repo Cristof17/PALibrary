@@ -10,9 +10,9 @@
 #endif
 // struct Output;
 // typedef struct Output Output;
-struct Output OutputConstruct();
-struct Output OutputInit(struct Output);
+struct Output OutputPerformConstruct();
+struct Output OutputPerformInit(struct Output);
 //struct Output dispose();
-void OutputRuin(void);
-void OutputPrint(struct PAResult);
+void OutputPerformRuin(void);
+void OutputPerformPrint(struct PAResult);
 #endif

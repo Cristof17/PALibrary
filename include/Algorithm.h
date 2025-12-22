@@ -14,7 +14,7 @@
 #endif
 // struct Algorithm;
 // typedef struct Algorithm Algorithm;
-struct Output AlgorithmRun(struct Input);
+struct Output AlgorithmPerformRun(struct Input);
 // struct Algorithm AlgorithmConstruct(struct Input);
 // struct PAResult AlgorithmRuin();
 // struct Algorithm AlgorithmArrange(struct Algorithm);

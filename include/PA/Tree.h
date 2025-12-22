@@ -16,13 +16,13 @@
 #endif
 // struct PATree;
 // struct PATree PATreeConstruct(struct OPAResult);
-struct PATree PATreeConstruct(struct PACount, struct PACount, struct PAList, struct PAElement);
-struct PAResult PATreeRuin(struct PATree);
-struct PATree PATreeInit(struct PATree);
-struct PATree PATreePutCount(struct PATree, struct PACount, struct PACount);
+struct PATree PATreePerformConstruct(struct PACount, struct PACount, struct PAList, struct PAElement);
+struct PAResult PATreePerformRuin(struct PATree);
+struct PATree PATreePerformInit(struct PATree);
+struct PATree PATreePerformPutCount(struct PATree, struct PACount, struct PACount);
 // struct PATree PATreePutList(struct PATree, struct PAList);
-struct PATree PATreePutElement(struct PATree, struct PAElement);
-struct PATree PATreePutSeries(struct PATree, struct PASeries);
-struct PAResult PATreeDelete(struct PATree);
+struct PATree PATreePerformPutElement(struct PATree, struct PAElement);
+struct PATree PATreePerformPutSeries(struct PATree, struct PASeries);
+struct PAResult PATreePerformDelete(struct PATree);
 //typedef struct PATree Tree;
 #endif

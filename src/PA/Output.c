@@ -8,5 +8,5 @@ struct BFSOutput BFSOutputPerformInit(struct BFSOutput output) {
 }
 // void BFSOutputPrint(struct BFSOutput output) {
 void BFSOutputPerformPrint(struct PAOutput output) {
-    PAOutputPrint(output);
+    PAOutputPerformPrint(output);
 }

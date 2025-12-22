@@ -8,9 +8,9 @@
 #include <PA\Result.h>
 #endif
 // struct PADestination;
-struct PADestination PADestinationConstruct();
-struct PAResult PADestinationRuin(struct PADestination);
-struct PADestination PADestinationArrange(struct PADestination);
-struct PAResult PADestinationDelete(struct PADestination);
+struct PADestination PADestinationPerformConstruct();
+struct PAResult PADestinationPerformRuin(struct PADestination);
+struct PADestination PADestinationPerformInit(struct PADestination);
+struct PAResult PADestinationPerformDelete(struct PADestination);
 //struct PADestination PADataPutElement(struct PADestination,struct PAElement);
 #endif

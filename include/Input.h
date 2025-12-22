@@ -13,14 +13,14 @@
 // #include <tyoes
 // struct Input;
 // typedef struct Input Input;
-struct Input InputConstruct(struct PACount, struct PACount, struct ArrayList, struct PAElement);
-// struct Input InputInit(struct Input);
-// void UInputRuin();
+struct Input InputPerformConstruct(struct PACount, struct PACount, struct ArrayList, struct PAElement);
+struct Input InputPerformInit(struct Input);
+struct PAResult InputPerformDelete(struct PAInput);
 void InputRuin();
 void InputDispose();
+// struct Input InputInit(struct Input);
+// void UInputRuin();
 // struct PAResult InputDestroy();
-struct PAResult InputDelete(struct PAInput);
 // struct Inpuit
-struct Input InputInit(struct Input);
 // struct Input InputConstruct();
 #endif

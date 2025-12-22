@@ -9,10 +9,10 @@
 #include <PA\Result.h>
 #endif
 // struct PALink;
-struct PALink PALinkConstruct();
-struct PAResult PALinkRuin(struct PALink);
-struct PALink PALinkArrange(struct PALink);
-struct PALink PALinkPutPair(struct PALink,struct PAPair);
-struct PAResult PALinkDelete(struct PALink);
+struct PALink PALinkPerformConstruct();
+struct PAResult PALinkPerformRuin(struct PALink);
+struct PALink PALinkPerformInit(struct PALink);
+struct PALink PALinkPerformPutPair(struct PALink,struct PAPair);
+struct PAResult PALinkPerformDelete(struct PALink);
 //typedef struct PALink Link;
 #endif

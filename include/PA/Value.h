@@ -7,10 +7,10 @@
 #include <PA\Result.h>
 #endif
 // struct PAValue;
-struct PAValue PAValueConstruct();
-struct PAResult PAValueRuin(struct PAValue);
-struct PAValue PAValueArrange(struct PAValue);
-struct PAValue PAValuePutValue(struct PAValue, PA_INT);
+struct PAValue PAValuePerformConstruct();
+struct PAResult PAValuePerformRuin(struct PAValue);
+struct PAValue PAValuePerformInit(struct PAValue);
+struct PAValue PAValuePerformPutValue(struct PAValue, PA_INT);
 // struct PAResult PAValueDelete(stru)
 //typedef struct PAValue Value;
 PA_INT op_Equality(struct PAValue,struct PAValue);
