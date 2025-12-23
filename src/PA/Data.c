@@ -6,12 +6,16 @@
 //struct PAData {
 //
 //}
-struct PAData PADataPerformConstruct(PA_INT Number) 
+struct PAData PADataPerformConstruct()
 {
     struct PAData data;
     return data;
 }
-struct PAData PADataPerformInit(struct PAData Data) 
+struct PAData PADataPerformCopy(struct PAData)
+{
+
+}
+struct PAData PADataPerformInit(struct PAResource)
 {
     struct PAData data;
     data.resource = Data.resource;
