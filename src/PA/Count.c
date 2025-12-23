@@ -1,9 +1,10 @@
 //@Author Cristofor Rotsching
 #include <PA/Count.h>
 #include <defs.h>
-void PACountPerformPrint(struct PACount Count) 
+struct PAResult PACountPerformPrint(struct PACount Count) 
 {
-
+    struct PAResult result;
+    return result;
 }
 struct PACount PACountPerformConstruct(PA_INT Number) 
 {

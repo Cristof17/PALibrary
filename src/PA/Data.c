@@ -2,7 +2,7 @@
 // #include <PA/Result.h>
 #include <defs.h>
 
-typedef struct PAData PAData;
+//typedef struct PAData PAData;
 //struct PAData {
 //
 //}

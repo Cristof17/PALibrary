@@ -12,6 +12,7 @@ struct PATransposeTree;
 // struct PACount;
 // struct PAElement;
 // struct PACount;
+// typedef struct PAData PAData;
 // struct PASize;
 struct PAInput;
 struct PAOutput;
