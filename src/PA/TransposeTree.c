@@ -1,13 +1,24 @@
 //@Author Cristofor Rotsching
 #include <PA/TransposeTree.h>
 #include <defs.h>
+struct PATransposeTree PATransposeTreePerformConstruct()
+{
 
-struct PATransposeTree PATransposeTreeBuildPart() 
+}
+struct PATransposeTree PATransposeTreePerformInit()
+{
+
+}
+struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree)
+{
+
+}
+struct PATransposeTree PATransposeTreeBuildPart()
 {
     struct PATransposeTree tree;
     return tree;
 }
-struct PAResult PATransposeTreeGetResult() 
+struct PAResult PATransposeTreeGetResult()
 {
     struct PAResult result;
     return result;
