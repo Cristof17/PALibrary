@@ -14,8 +14,8 @@ struct PAResult PAResultPerformConstruct();
 struct PAResult PAResultPerformRuin();
 // struct PAResult PAResultRuin(struct PAResult);
 struct PAResult PAResultPerformCopy(struct PAResult);
+void PAResultPerformPrint(struct PAResult);
 struct PAResult PAResultPerformInit(PA_INT);
 struct PAResult PAResultPerformPutValue(struct PAResult, PA_INT);
 struct PAResult PAResultPerformDelete(struct PAResult);
-void PAResultPerformPrint(struct PAResult);
 #endif

@@ -18,19 +18,19 @@ void PAResultPerformPrint(struct PAResult)
 {
 
 }
-struct PAResult PAResultPerformInit(PA_INT)
+struct PAResult PAResultPerformInit(PA_INT Code)
 {
     struct PAResult result;
     result.code = Result.code;
     return result;
 }
-struct PAResult PAResultPerformPutValue(struct PAResult, PA_INT)
+struct PAResult PAResultPerformPutValue(struct PAResult Result, PA_INT Code)
 {
     struct PAResult result;
     result.code = Value;
     return result;
 }
-struct PAResult PAResultPerformDelete(struct PAResult)
+struct PAResult PAResultPerformDelete(struct PAResult Result)
 {
     struct PAResult result;
     return result;
