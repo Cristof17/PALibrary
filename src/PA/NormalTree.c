@@ -4,11 +4,11 @@ struct NormalTree PANormalTreePerformConstruct()
 {
 
 }
-struct NormalTree PANormalTreePerformInit()
+struct NormalTree PANormalTreePerformInit(struct PAList Adj)
 {
 
 }
-struct NormalTree PANormalTreePerformCopy(struct PANormalTree)
+struct NormalTree PANormalTreePerformCopy(struct PANormalTree Tree)
 {
 
 }

@@ -9,7 +9,7 @@
 #endif
 // struct NormalTree;
 struct NormalTree PANormalTreePerformConstruct();
-struct NormalTree PANormalTreePerformInit();
+struct NormalTree PANormalTreePerformInit(struct PAList);
 struct NormalTree PANormalTreePerformCopy(struct PANormalTree);
 // typedef struct GrafNormal PAGrafNormal;
 struct  NormalTree PAGrafNormalBuildPart();
