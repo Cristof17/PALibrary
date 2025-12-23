@@ -28,7 +28,7 @@ void Dispose();
 PA_INT PAListSize(struct PAList);
 struct PAElement PAListHead(struct PAList);
 struct PAList PAListTail(struct PAList);
-struct PAResult PAListPerformPrint(struct PAList);
+void PAListPerformPrint(struct PAList);
 struct PAResult PAListPerformDelete(struct PAList);
 
 // struct PAResult PAList(struct PAElement Head);

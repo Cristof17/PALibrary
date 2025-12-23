@@ -98,7 +98,7 @@ struct ArrayList {
 };
 struct PAList {
 	// struct PANod Nod;
-	struct ArrayList list;
+	struct ArrayList adj;
 	struct PACount m;
 };
 struct PAInput {
