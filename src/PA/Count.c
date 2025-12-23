@@ -27,19 +27,27 @@ struct PACount PACountPerformInit(PA_INT)
     count.number = Count.number;
     return count;
 }
-struct PAData PADataPerformPutResource(struct PAData, struct PAResource Resource)
-{
-    // struct PASize size;
-    Count.number = Number;
-    // return size;
-    return Count;
-}
-struct PAResult PADataPerformRuin(struct PAData)
+struct PACount PACountPerformPutValue(struct PACount, PA_INT)
 {
 
 }
-struct PAResult PADataPerformDelete(struct PAData)
+struct PAResult PACountPerformDelete(struct PACount)
 {
-    struct PAResult result;
-    return result;
+
 }
+// struct PAData PADataPerformPutResource(struct PAData, struct PAResource Resource)
+// {
+//     // struct PASize size;
+//     Count.number = Number;
+//     // return size;
+//     return Count;
+// }
+// struct PAResult PADataPerformRuin(struct PAData)
+// {
+
+// }
+// struct PAResult PADataPerformDelete(struct PAData)
+// {
+//     struct PAResult result;
+//     return result;
+// }
