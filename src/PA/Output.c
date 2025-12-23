@@ -4,28 +4,32 @@
 #include <defs.h>
 struct PAOutput PAOutputPerformConstruct()
 {
-
+    
 }
-struct PAOutput PAOutputPerformInit(struct BFSRecord)
+struct PAOutput PAOutputPerformInit(struct BFSRecord Result)
 {
 
 }
-struct PAOutput PAOutputPerformCopy(struct PAOutput)
+struct PAOutput PAOutputPerformCopy(struct PAOutput Output)
 {
 
 }
-struct PAResult PAOutputPerformRuin(struct PAOutput)
+// strut BFSOutputRuin();
+struct PAResult PAOutputPerformRuin(struct PAOutput Output)
 {
 
 }
-void PAOutputPerformPrint(struct PAOutput)
+//typedef struct BFSOutput BFSOutput;
+// struct PAOutput PAOutputPerformInit(struct BFSRecord);
+void PAOutputPerformPrint(struct PAOutput Output)
 {
 
 }
-struct PAResult PAResultPerformDelete(struct PAResult)
+struct PAResult PAResultPerformDelete(struct PAResult Result)
 {
 
 }
+
 // struct BFSOutput BFSOutputPerformInit(struct BFSOutput output) 
 // {
 // 	struct BFSOutput copy;
