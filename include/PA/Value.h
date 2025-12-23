@@ -9,7 +9,8 @@
 // struct PAValue;
 struct PAValue PAValuePerformConstruct();
 struct PAResult PAValuePerformRuin(struct PAValue);
-struct PAValue PAValuePerformInit(struct PAValue);
+struct PAValue PAValuePerformCopy(struct PAValue);
+struct PAValue PAValuePerformInit(PA_INT);
 struct PAValue PAValuePerformPutValue(struct PAValue, PA_INT);
 // struct PAResult PAValueDelete(stru)
 //typedef struct PAValue Value;

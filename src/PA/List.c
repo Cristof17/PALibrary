@@ -16,6 +16,10 @@ struct PAList PAListPeformInit(struct PAList List)
     list.m = List.m;
     return list;
 }
+struct PAList PAListPerformCopy(struct PAList List)
+{
+
+}
 // struct PAList PAListPutElement(struct PAList List, struct PAElement Element) {
 //     // struct PAList list;
 //     // List.

@@ -16,9 +16,10 @@
 #endif
 // struct PATree;
 // struct PATree PATreeConstruct(struct OPAResult);
-struct PATree PATreePerformConstruct(struct PACount, struct PACount, struct PAList, struct PAElement);
+struct PATree PATreePerformConstruct();
+struct PATree PATreePerformInit(struct PACount, struct PACount, struct PAList, struct PAElement);
 struct PAResult PATreePerformRuin(struct PATree);
-struct PATree PATreePerformInit(struct PATree);
+struct PATree PATreePerformCopy(struct PATree);
 struct PATree PATreePerformPutCount(struct PATree, struct PACount, struct PACount);
 // struct PATree PATreePutList(struct PATree, struct PAList);
 struct PATree PATreePerformPutElement(struct PATree, struct PAElement);

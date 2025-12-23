@@ -16,8 +16,9 @@
 
 // struct PAList;
 //typedef struct PAList List;
-struct PAList PAListPerformConstruct(struct ArrayList, struct PACount);
-struct PAList PAListPerformInit(struct PAList);
+struct PAList PAListPerformConstruct();
+struct PAList PAListPerformInit(struct ArrayList, struct PACount);
+struct PAList PAListPerformCopy(struct PAList);
 // struct PAList PAListPutElement(struct PAList, struct PAElement);
 struct PAList PAListPerformPutCount(struct PAList, struct PACount);
 struct PAList PAListPerformPutArrayList(struct PAList, struct ArrayList);

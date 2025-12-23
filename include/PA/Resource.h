@@ -3,5 +3,5 @@
 #ifndef _WIN95
 #elif defined _WIN95
 #endif
-struct PAResource;
+// struct PAResource;
 #endif

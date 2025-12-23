@@ -10,6 +10,9 @@
 #endif
 // struct GrafTranspus;
 // typedef struct GrafTranspus GrafTranspus;
+struct PATransposeTree PATransposeTreePerformConstruct();
+struct PATransposeTree PATransposeTreePerformInit();
+struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree);
 struct PATransposeTree PATransposeTreeBuildPart();
 struct PAResult PATransposeTreeGetResult();
 #endif

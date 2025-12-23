@@ -9,6 +9,7 @@
 #endif
 // struct PADestination;
 struct PADestination PADestinationPerformConstruct();
+struct PADestination PADestinationPerformCopy(struct PADestination);
 struct PAResult PADestinationPerformRuin(struct PADestination);
 struct PADestination PADestinationPerformInit(struct PADestination);
 struct PAResult PADestinationPerformDelete(struct PADestination);

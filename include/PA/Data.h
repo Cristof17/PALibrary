@@ -9,8 +9,9 @@
 #endif
 // #include <defs.h>
 // struct PAData;
-struct PAData PADataPerformConstruct(PA_INT);
-struct PAData PADataPerformInit(struct PAData);
+struct PAData PADataPerformConstruct();
+struct PAData PADataPerformCopy(struct PAData);
+struct PAData PADataPerformInit(struct PAResource) ;//struct PAData);
 struct PAData PADataPerformPutResource(struct PAData, struct PAResource Resource);
 struct PAResult PADataPerformRuin(struct PAData);
 struct PAResult PADataPerformDelete(struct PAData);

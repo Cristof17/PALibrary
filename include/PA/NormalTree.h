@@ -7,7 +7,10 @@
 #elif defined _WIN95
 #include <PA\Result.h>
 #endif
-struct NormalTree;
+// struct NormalTree;
+struct NormalTree PANormalTreePerformConstruct();
+struct NormalTree PANormalTreePerformInit();
+struct NormalTree PANormalTreePerformCopy(struct PANormalTree);
 // typedef struct GrafNormal PAGrafNormal;
 struct  NormalTree PAGrafNormalBuildPart();
 struct PAResult PAGrafNormalGetResult();

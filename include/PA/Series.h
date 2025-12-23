@@ -17,10 +17,11 @@
 #include <PA\Result.h>
 #endif
 // struct PASeries;
-struct PASeries PASeriesPerformConstruct(struct PACount, struct PAList[]);
+struct PASeries PASeriesPerformConstruct();
+struct PASeries PASeriesPerformInit(struct PACount, struct PAList[]);
 struct PAResult PASeriesPerformRuin(struct PASeries);
 void PASeriesDispose(void);
-struct PASeries PASeriesPerformeInit(struct PASeries);
+struct PASeries PASeriesPerformeCopy(struct PASeries);
 struct PASeries PASeriesPerformePutCount(struct PASeries, struct PACount);
 struct PASeries PASeriesPerformPutList(struct PASeries, struct PAList);
 struct PAResult PASeriesPerformDelete(struct PASeries);

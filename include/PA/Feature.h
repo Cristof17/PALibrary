@@ -11,9 +11,10 @@
 #endif
 // struct PAFeature;
 struct PAFeature PAFeaturePerformConstruct();
+struct PAFeature PAFeaturePerformCopy(struct PAFeature);
 struct PAResult PAFeaturePerformRuin(struct PAFeature);
-struct PAFeature PAFeaturePerformInit(struct PAFeature);
-struct PAFeature PAFeaturePeformPut(struct PAFeature, PA_INT Kind);
+struct PAFeature PAFeaturePerformInit(PA_INT);
+struct PAFeature PAFeaturePeformPutKind(struct PAFeature, PA_INT Kind);
 struct PAResult PAFeaturePerformDelete(struct PAFeature);
 //typedef struct PAFeature Feature;
 #endif

@@ -11,7 +11,8 @@
 // struct PALink;
 struct PALink PALinkPerformConstruct();
 struct PAResult PALinkPerformRuin(struct PALink);
-struct PALink PALinkPerformInit(struct PALink);
+struct PALink PALinkPerformCopy(struct PALink);
+struct PALink PALinkPerformInit(struct PAElement, struct PAElement);
 struct PALink PALinkPerformPutPair(struct PALink,struct PAPair);
 struct PAResult PALinkPerformDelete(struct PALink);
 //typedef struct PALink Link;

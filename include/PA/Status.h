@@ -15,7 +15,8 @@
 // struct PAStatus/*.*/;
 struct PAStatus PAStatusPerformConstruct();
 struct PAResult PAStatusPerformRuin(struct PAStatus);
-struct PAStatus PAStatusPerformInit(struct PAStatus);
+struct PAStatus PAStatusPerformCopy(struct PAStatus);
+struct PAStatus PAStatusPerformInit(PA_INT);
 struct PAStatus PAStatusPerformPutValue(struct PAStatus, PA_INT);
 // struct PAResult PAStatusDelete()
 //typedef struct PAStatus Status;

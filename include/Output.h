@@ -11,7 +11,8 @@
 // struct Output;
 // typedef struct Output Output;
 struct Output OutputPerformConstruct();
-struct Output OutputPerformInit(struct Output);
+// struct Output OutputPerformInit(struct Output);
+struct Output OutputPerformCopy(struct Output);
 //struct Output dispose();
 void OutputPerformRuin(void);
 void OutputPerformPrint(struct PAResult);
