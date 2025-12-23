@@ -11,8 +11,8 @@
 // struct PAData;
 struct PAData PADataPerformConstruct();
 struct PAData PADataPerformCopy(struct PAData);
-struct PAData PADataPerformInit(struct PAResource) ;//struct PAData);
-struct PAData PADataPerformPutResource(struct PAData, struct PAResource Resource);
+struct PAData PADataPerformInit(struct PAResource);
+struct PAData PADataPerformPutResource(struct PAData, struct PAResource);
 struct PAResult PADataPerformRuin(struct PAData);
 struct PAResult PADataPerformDelete(struct PAData);
 //typedef struct PAData Data;
