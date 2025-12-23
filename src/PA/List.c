@@ -6,7 +6,7 @@ struct PAList PAListPerformConstruct()
 {
     struct PAList list;
     // list.list = List;
-    // list.m = M;
+    // list.m = M;ß`
     return list;
 }
 struct PAList PAListPerformInit(struct ArrayList ADJ, struct PACount M)
@@ -18,7 +18,10 @@ struct PAList PAListPerformInit(struct ArrayList ADJ, struct PACount M)
 }
 struct PAList PAListPerformCopy(struct PAList List)
 {
-
+    struct PAList copy;
+    copy = PAListPerformConstruct();
+    copy = PAListPerformInit(List.adj, List.m);
+    return copy;
 }
 // struct PAList PAListPutElement(struct PAList List, struct PAElement Element) {
 //     // struct PAList list;
