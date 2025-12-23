@@ -2,7 +2,7 @@
 // #include <BFS/Input.h>
 #include <PA/Input.h>
 #include <defs.h>
-struct Input InputPerformConstruct()
+struct PAInput PAInputPerformConstruct()
 {
 
 }
