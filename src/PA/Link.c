@@ -6,18 +6,18 @@ struct PALink PALinkPerformConstruct()
     struct PALink link;
     return link;
 }
-struct PAResult PALinkPerformRuin(struct PALink)
+struct PAResult PALinkPerformRuin(struct PALink Link)
 {
     struct PAResult result;
     return result;
 }
-struct PALink PALinkPerformCopy(struct PALink)
+struct PALink PALinkPerformCopy(struct PALink Link)
 {
     struct PALink link;
     link.p = Link.p;
     return link;
 }
-struct PALink PALinkPerformInit(struct PAElement, struct PAElement)
+struct PALink PALinkPerformInit(struct PAPair P)
 {
 //    struct PALink link;
     Link.p = Pair;
