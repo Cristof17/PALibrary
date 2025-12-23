@@ -21,7 +21,7 @@ struct PAData PADataPerformInit(struct PAResource)
     data.resource = Data.resource;
     return data;
 }
-struct PAData PADataPerformPutResource(struct PAData Data, struct PAResource Resource) 
+struct PAData PADataPerformPutResource(struct PAData, struct PAResource Resource)
 {
     // struct PAData data;
     Data.resource = Resource;

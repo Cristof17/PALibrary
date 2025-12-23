@@ -3,7 +3,7 @@
 #include <defs.h>
 // #include "Destination.h"
 
-struct PADestination PADestinationPerformConstruct() 
+struct PADestination PADestinationPerformConstruct()
 {
     struct PADestination destination;
     return destination;
