@@ -11,7 +11,7 @@
 // struct GrafTranspus;
 // typedef struct GrafTranspus GrafTranspus;
 struct PATransposeTree PATransposeTreePerformConstruct();
-struct PATransposeTree PATransposeTreePerformInit();
+struct PATransposeTree PATransposeTreePerformInit(struct PAList);
 struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree);
 struct PATransposeTree PATransposeTreeBuildPart();
 struct PAResult PATransposeTreeGetResult();
