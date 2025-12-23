@@ -1,7 +1,7 @@
 //@Author Cristofor Rotsching
 #include <PA/Count.h>
 #include <defs.h>
-struct PAResult PACountPerformPrint(struct PACount)
+struct PAResult PACountPerformPrint(struct PACount Count)
 {
     struct PAResult result;
     return result;
@@ -11,27 +11,27 @@ struct PACount PACountPerformConstruct()
     struct PACount size;
     return size;
 }
-struct PACount PACountPerformCopy(struct PACount)
+struct PACount PACountPerformCopy(struct PACount Count)
 {
 
 }
 // void PASize(PA_INT);
-struct PAResult PACountPerformRuin(struct PACount)
+struct PAResult PACountPerformRuin(struct PACount Count)
 {
     struct PAResult result;
     return result;
 }
-struct PACount PACountPerformInit(PA_INT)
+struct PACount PACountPerformInit(PA_INT Value)
 {
     struct PACount count;
     count.number = Count.number;
     return count;
 }
-struct PACount PACountPerformPutValue(struct PACount, PA_INT)
+struct PACount PACountPerformPutValue(struct PACount Count, PA_INT Value)
 {
 
 }
-struct PAResult PACountPerformDelete(struct PACount)
+struct PAResult PACountPerformDelete(struct PACount Count)
 {
 
 }

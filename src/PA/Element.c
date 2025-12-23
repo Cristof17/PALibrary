@@ -8,16 +8,16 @@ struct PAElement PAElementPerformConstruct()
     struct PAElement element;
     return element;
 }
-struct PAElement PAElementPerformCopy(struct PAElement)
+struct PAElement PAElementPerformCopy(struct PAElement Element)
 {
 
 }
-struct PAResult PAElementPerformRuin(struct PAElement)
+struct PAResult PAElementPerformRuin(struct PAElement Element)
 {
     struct PAResult result;
     return result;
 }
-struct PAElement PAElementPerformInit(struct PAStatus, struct PAData, struct PADestination, struct PAFeature)
+struct PAElement PAElementPerformInit(struct PAStatus Status, struct PAData, struct PADestination, struct PAFeature Feature)
 {
     struct PAElement element;
     // element. = Element.Index;
@@ -25,19 +25,19 @@ struct PAElement PAElementPerformInit(struct PAStatus, struct PAData, struct PAD
     element.type = Element.type;
     return element;
 }
-struct PAElement PAElementPerformPutStatus(struct PAElement, struct PAStatus)
+struct PAElement PAElementPerformPutStatus(struct PAElement Element, struct PAStatus Status)
 {
     // struct PAElement element;
     Element.status = Status;
     return Element;
 }
-struct PAElement PAElementPerformPutData(struct PAElement, struct PAData)
+struct PAElement PAElementPerformPutData(struct PAElement Element, struct PAData Data)
 {
     struct PAElement element;
     // Element.Index = Index;
     return element;
 }
-struct PAElement PAElementPerformPutDestination(struct PAElement, struct PADestination)
+struct PAElement PAElementPerformPutDestination(struct PAElement Element, struct PADestination Destination)
 {
 
 }
@@ -46,14 +46,14 @@ struct PAElement PAElementPerformPutDestination(struct PAElement, struct PADesti
 //     Element.
 //     return element;
 // }
-struct PAElement PAElementPerformPutFeature(struct PAElement, struct PAFeature)
+struct PAElement PAElementPerformPutFeature(struct PAElement Element, struct PAFeature Feature)
 {
     // struct PAElement element;
     Element.type = Feature;
     // return element;
     return Element;
 }
-struct PAResult PAElementPerformDelete(struct PAElement)
+struct PAResult PAElementPerformDelete(struct PAElement Element)
 {
     struct PAResult result;
     return result;

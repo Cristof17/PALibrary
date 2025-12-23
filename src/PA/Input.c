@@ -2,11 +2,15 @@
 // #include <BFS/Input.h>
 #include <PA/Input.h>
 #include <defs.h>
-struct PAInput PAInputPerformConstruct(struct PACount, struct PACount, struct PAList, struct PAElement)
+struct Input InputPerformConstruct()
 {
 
 }
-struct PAInput PAInputPerformInit(struct PAInput)
+struct PAInput PAInputPerformCopy(struct PAInput)
+{
+
+}
+struct PAInput PAInputPerformInit(struct PACount N, struct PACount M, struct PAList ADJ, struct PAElement Source)
 {
 
 }
