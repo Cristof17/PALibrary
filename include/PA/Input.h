@@ -12,7 +12,7 @@
 #include <PA\Size.h>
 // #include <BFS\Input.h>
 #endif
-struct PAInput;
+// struct PAInput;
 struct PAInput PAInputPerformConstruct(struct PACount, struct PACount, struct PAList, struct PAElement);
 // vpo BFSInputRuin();
 struct PAInput PAInputPerformInit(struct PAInput);

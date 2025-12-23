@@ -3,6 +3,7 @@
 #include <types.h>
 struct PADestination;
 struct PAArrow;
+// struct PAInput;
 // struct BFSAlgorithm;
 struct PAData;
 struct PAResult;
