@@ -9,10 +9,10 @@ struct PATree PATreePerformConstruct()
 struct PATree PATreePerformInit(struct PACount N, struct PACount M, struct PASeries Adj, struct PAElement Source)
 {
     struct PATree tree;
-    tree.adj = Tree.adj;
-    tree.m = Tree.m;
-    tree.n = Tree.n;
-    tree.source = Tree.source;
+    tree.adj = tree.adj;
+    tree.m = tree.m;
+    tree.n = tree.n;
+    tree.source = tree.source;
     return tree;
 }
 struct PAResult PATreePerformRuin(struct PATree)
@@ -28,7 +28,7 @@ struct PATree PATreePerformPutCount(struct PATree, struct PACount, struct PACoun
 {
 
 }
-struct PATree PATreePerformPutElement(struct PATree, struct PAElement)
+struct PATree PATreePerformPutElement(struct PATree Tree, struct PAElement Source)
 {
     // struct PATree tree;
     Tree.source = Element;
