@@ -1,7 +1,7 @@
 //@Author Cristofor Rotsching
 #include <PA/Arrow.h>
 #include <defs.h>
-struct PAArrow PAArrowPerformConstruct() 
+struct PAArrow PAArrowPerformConstruct()
 {
     struct PAArrow arrow;
     return arrow;;
