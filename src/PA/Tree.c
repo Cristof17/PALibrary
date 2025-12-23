@@ -6,7 +6,7 @@ struct PATree PATreePerformConstruct()
     struct PATree tree;
     return tree;
 }
-struct PATree PATreePerformInit(struct PACount, struct PACount, struct PAList, struct PAElement)
+struct PATree PATreePerformInit(struct PACount N, struct PACount M, struct PASeries Adj, struct PAElement Source)
 {
     struct PATree tree;
     tree.adj = Tree.adj;
