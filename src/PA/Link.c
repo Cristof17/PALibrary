@@ -24,11 +24,11 @@ struct PALink PALinkPerformInit(struct PAElement, struct PAElement)
     // return link;
     return Link;
 }
-struct PALink PALinkPerformPutPair(struct PALink,struct PAPair)
+struct PALink PALinkPerformPutPair(struct PALink,struct PAPair);
 {
     struct PAResult reusult;
     return reusult;
 }
 struct PAResult PALinkPerformDelete(struct PALink){
-    
+
 }

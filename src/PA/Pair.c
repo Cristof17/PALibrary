@@ -2,7 +2,7 @@
 /*@*/
 #include <PA/Pair.h>
 #include <defs.h>
-struct PAPair PAPairPerformConstruct(struct PAElement Node, struct PAElement Neigh) 
+struct PAPair PAPairPerformConstruct()
 {
     struct PAPair pair;
     pair.node = Node;
@@ -10,20 +10,20 @@ struct PAPair PAPairPerformConstruct(struct PAElement Node, struct PAElement Nei
     return pair;
 }
 // struct PAPair PAPairRuin(struct PAPair Pair) {
-struct PAResult PAPairPerformRuin(struct PAPair Pair) 
+struct PAPair PAPairPerformInit(struct PAElement, struct PAElement)
 {
     struct PAResult result;
     // struct PAPair pair;
     return result;
 }
-struct PAPair PAPairPerformInit(struct PAPair Pair) 
+struct PAPair PAPairPerformCopy(struct PAPair)
 {
     struct PAPair pair;
     pair.node = Pair.node;
     pair.neigh = Pair.neigh;
     return pair;
 }
-struct PAPair PAPairPerformPutNode(struct PAPair Pair, struct PAElement Element) 
+struct PAPair PAPairPerformPutNode(struct PAPair, struct PAElement)
 {
     // struct PAPair pair;
     Pair.node = Element;
@@ -31,14 +31,18 @@ struct PAPair PAPairPerformPutNode(struct PAPair Pair, struct PAElement Element)
     // return pair;
 }
 
-struct PAPair PAPairPerformPutNeigh(struct PAPair Pair, struct PAElement Element) 
+struct PAPair PAPairPerformPutNeigh(struct PAPair, struct PAElement);
 {
     // struct PAPair pair;
     Pair.neigh = Element;
     return Pair;
     // return pair;
 }
-struct PAResult PAPairPerformDelete(struct PAPair Pair) 
+struct PAResult PAPairPerformRuin(struct PAPair)
+{
+    
+}
+struct PAResult PAPairPerformDelete(struct PAPair)
 {
     struct PAResult result;
     return result;
