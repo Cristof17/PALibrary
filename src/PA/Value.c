@@ -17,7 +17,7 @@ struct PAValue PAValuePerformCopy(struct PAValue Value)
 struct PAValue PAValuePerformInit(PA_INT Value)
 {
     struct PAValue value;
-    value.value = Value.value;
+    value.value = Value;
     return value;
 }
 struct PAValue PAValuePerformPutValue(struct PAValue Value1, PA_INT Value2)

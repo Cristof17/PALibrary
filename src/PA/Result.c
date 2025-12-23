@@ -21,13 +21,13 @@ void PAResultPerformPrint(struct PAResult)
 struct PAResult PAResultPerformInit(PA_INT Code)
 {
     struct PAResult result;
-    result.code = Result.code;
+    result.code = Code;
     return result;
 }
 struct PAResult PAResultPerformPutValue(struct PAResult Result, PA_INT Code)
 {
     struct PAResult result;
-    result.code = Value;
+    result.code = Code;
     return result;
 }
 struct PAResult PAResultPerformDelete(struct PAResult Result)

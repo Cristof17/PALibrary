@@ -8,10 +8,10 @@
 #include <PA\Result.h>
 #endif
 // struct NormalTree;
-struct NormalTree PANormalTreePerformConstruct();
-struct NormalTree PANormalTreePerformInit(struct PAList);
-struct NormalTree PANormalTreePerformCopy(struct PANormalTree);
+struct PANormalTree PANormalTreePerformConstruct();
+struct PANormalTree PANormalTreePerformInit(struct PAList);
+struct PANormalTree PANormalTreePerformCopy(struct PANormalTree);
 // typedef struct GrafNormal PAGrafNormal;
-struct  NormalTree PAGrafNormalBuildPart();
+struct PANormalTree PAGrafNormalBuildPart();
 struct PAResult PAGrafNormalGetResult();
 #endif

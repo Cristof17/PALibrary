@@ -5,15 +5,15 @@
 struct PAList PAListPerformConstruct()
 {
     struct PAList list;
-    list.list = List;
-    list.m = M;
+    // list.list = List;
+    // list.m = M;
     return list;
 }
 struct PAList PAListPerformInit(struct ArrayList ADJ, struct PACount M)
 {
     struct PAList list;
-    list.list = List.list;
-    list.m = List.m;
+    list.adj = ADJ;
+    list.m = M;
     return list;
 }
 struct PAList PAListPerformCopy(struct PAList List)
@@ -28,15 +28,15 @@ struct PAList PAListPerformCopy(struct PAList List)
 struct PAList PAListPerformPutCount(struct PAList List, struct PACount M)
 {
     // struct PAList list;
-    List.m = Count;
+    List.m = M;
     return List;
     // return list;
 }
-struct PAList PAListPerformPutArrayList(struct PAList, struct ArrayList Adj)
+struct PAList PAListPerformPutArrayList(struct PAList List, struct ArrayList Adj)
 {
     // struct PAList list;
     // return list;
-    List.list = Array;
+    List.adj = Adj;
     return List;
 }
 // struct PAResult PAListAddElement÷(struct PAList List, struct PAElement )
@@ -68,7 +68,7 @@ void Dispose()
 //     struct PAList list;
 //     return list;
 // }
-void PAListPerformPrint(struct PAList)
+void PAListPerformPrint(struct PAList List)
 {
 
 }

@@ -17,12 +17,13 @@ struct PAResult PAElementPerformRuin(struct PAElement Element)
     struct PAResult result;
     return result;
 }
-struct PAElement PAElementPerformInit(struct PAStatus Status, struct PAData, struct PADestination, struct PAFeature Feature)
+struct PAElement PAElementPerformInit(struct PAStatus Status, struct PAData Index, struct PAFeature Type)
 {
     struct PAElement element;
     // element. = Element.Index;
-    element.status = Element.status;
-    element.type = Element.type;
+    element.status = Status;
+    element.type = Type;
+    element.index = Index;
     return element;
 }
 struct PAElement PAElementPerformPutStatus(struct PAElement Element, struct PAStatus Status)

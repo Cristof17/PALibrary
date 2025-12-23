@@ -1,22 +1,37 @@
 //@Author Cristofor Rotsching
 #include <defs.h>
-struct NormalTree PANormalTreePerformConstruct()
+#ifndef _WIN95
+#include <PA/NormalTree.h>
+#elif defined _WIN95
+#include <PA\NormalTree.h>
+#endif
+struct PANormalTree PANormalTreePerformConstruct()
 {
-
+    struct PANormalTree normalTree;
+    return normalTree;
 }
-struct NormalTree PANormalTreePerformInit(struct PAList Adj)
+struct PANormalTree PANormalTreePerformInit(struct PAList Adj)
 {
-
+    struct PANormalTree normalTree;
+    normalTree.adj = Adj;
+    return normalTree;  
 }
-struct NormalTree PANormalTreePerformCopy(struct PANormalTree Tree)
+struct PANormalTree PANormalTreePerformCopy(struct PANormalTree Tree)
 {
-
+    // struct PANormalTree
+    struct PANormalTree copy;
+    copy.adj = Tree.adj;
+    return copy;
 }
-struct  NormalTree PAGrafNormalBuildPart()
+struct PANormalTree PAGrafNormalBuildPart()
 {
-
+    struct PANormalTree tree;
+    return tree;
 }
 struct PAResult PAGrafNormalGetResult()
 {
-    
+    // struct PANormalTree tree;
+    // return tree;
+    struct PAResult result;
+    return result;
 }

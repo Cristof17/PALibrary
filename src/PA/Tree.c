@@ -31,7 +31,7 @@ struct PATree PATreePerformPutCount(struct PATree, struct PACount, struct PACoun
 struct PATree PATreePerformPutElement(struct PATree Tree, struct PAElement Source)
 {
     // struct PATree tree;
-    Tree.source = Element;
+    Tree.source = Source;
     // return tree;
     return Tree;
 }

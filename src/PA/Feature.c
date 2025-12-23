@@ -8,21 +8,23 @@ struct PAFeature PAFeaturePerformConstruct()
 }
 struct PAFeature PAFeaturePerformCopy(struct PAFeature Type)
 {
-    struct PAResult result;
-    return result;
+    struct PAFeature copy;
+    copy.kind = Type.kind;
+    return copy;
 }
 struct PAResult PAFeaturePerformRuin(struct PAFeature)
 {
-    struct PAFeature feature;
-    feature.kind = Feature.kind;
-    return feature;
+    // struct PAFeature feature;
+    // feature.kind = kind;
+    // return feature;
 }
 struct PAFeature PAFeaturePerformInit(PA_INT Kind)
 {
-    // struct PAFeature feature;
-    Feature.kind = Kind;
+    struct PAFeature feature;
+    feature.kind = Kind;
     // return feature;
-    return Feature;
+    // return Feature;
+    return feature;
 }
 struct PAFeature PAFeaturePeformPutKind(struct PAFeature Feature, PA_INT Kind)
 {

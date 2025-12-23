@@ -21,10 +21,10 @@ struct PAResult PACountPerformRuin(struct PACount Count)
     struct PAResult result;
     return result;
 }
-struct PACount PACountPerformInit(PA_INT Value)
+struct PACount PACountPerformInit(PA_INT Number)
 {
     struct PACount count;
-    count.number = Count.number;
+    count.number = Number;
     return count;
 }
 struct PACount PACountPerformPutValue(struct PACount Count, PA_INT Value)
