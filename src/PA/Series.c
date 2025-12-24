@@ -38,7 +38,8 @@ struct PASeries PASeriesPerformPutCount(struct PASeries Series, struct PACount N
 struct PASeries PASeriesPerformPutList(struct PASeries Series, struct PAList Adj) 
 {
     //Iterator
-    struct PASeries series;
+//    struct PASeries series;
+    Series.adj = Adj;
     // Series.adj = List;
     //End of Iterator
     // return series;
