@@ -22,8 +22,8 @@ struct PAArrow PAArrawPerformInit(struct PAPair Pair)
 {
     struct PAArrow arrow;
     arrow = PAArrowPerformConstruct();
-    arrow.p = Arrow.p;
-    return Arrow;
+    arrow.p = Pair;
+    return arrow;
 }
 struct PAArrow PAArrowPerformPutPair(struct PAArrow Arrow, struct PAPair Pair) 
 {
