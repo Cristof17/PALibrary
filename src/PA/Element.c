@@ -10,12 +10,12 @@ struct PAElement PAElementPerformConstruct()
 }
 struct PAElement PAElementPerformCopy(struct PAElement Element)
 {
-	struct PAElement element;
-	element=PAElementPerformConstruct();
-	element.index=Element.index;
-	element.status=Element.status;
-	element.type=Element.type;
-	return element;
+	struct PAElement copy;
+	copy=PAElementPerformConstruct();
+	copy.index=Element.index;
+	copy.status=Element.status;
+	copy.type=Element.type;
+	return copy;
 }
 struct PAResult PAElementPerformRuin(struct PAElement Element)
 {
