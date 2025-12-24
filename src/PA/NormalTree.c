@@ -20,8 +20,8 @@ struct PANormalTree PANormalTreePerformCopy(struct PANormalTree Tree)
 {
     // struct PANormalTree
     struct PANormalTree copy;
-    copy = PANormalTreeConstruct();
-    copy = PANormalTreeInit(Tree.adj);
+    copy = PANormalTreePerformConstruct();
+    copy = PANormalTreePerformInit(Tree.adj);
 //    copy.adj = Tree.adj;
     return copy;
 }
