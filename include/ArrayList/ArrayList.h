@@ -18,15 +18,15 @@ struct ArrayList ArrayListPerformConstruct();
 struct ArrayList ArrayListPerformInit(struct PAData Data[], struct PACount M);
 struct ArrayList ArrayListPerformCopy(struct ArrayList List);
 // struct PAData ArrayListGet(struct PAData[],PAInt);
-struct PARecord ArrayListPerformArrange(PAInt);
+// struct PARecord ArrayListPerformArrange(PAInt);
 struct PARecord ArrayListPutCount(struct ArrayList, struct PACount);
 // sjt
 // struct A
-struct PAData ArrayListPerformGetFirst();
-struct PAData ArrayListPerformGetLast();
-struct PAData ArrayListPerformPutFirst();
-struct PAData ArrayListPerformPutLast();
+struct PAData ArrayListPerformGetFirst(struct ArrayList);
+struct PAData ArrayListPerformGetLast(struct ArrayList);
+struct PAData ArrayListPerformPutFirst(struct ArrayList);
+struct PAData ArrayListPerformPutLast(struct ArrayList);
 // struct PAData
 // struct PAData ArrayList
-PAInt ArrayListPerformSize();
+PAInt ArrayListPerformSize(struct ArrayList);
 #endif
