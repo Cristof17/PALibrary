@@ -10,7 +10,12 @@ struct PADestination PADestinationPerformConstruct()
 }
 struct PADestination PADestinationPerformCopy(struct PADestination Destination)
 {
-
+//	struct PADestination destination;
+//	destination =
+	struct PADestination copy;
+	copy=PADestinationConstruct();
+	copy=PADestinationInit(Destination.element);
+	return copy;
 }
 struct PAResult PADestinationPerformRuin(struct PADestination Destination)
 {
