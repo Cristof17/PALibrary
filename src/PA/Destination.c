@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
 #include <PA/Destination.h>
-#include <defs.h>
+#include <types.h>
 // #include "Destination.h"
 
 struct PADestination PADestinationPerformConstruct()

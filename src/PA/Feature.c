@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
 #include <PA/Feature.h>
-#include <defs.h>
+#include <types.h>
 struct PAFeature PAFeaturePerformConstruct()
 {
     struct PAFeature feature;

@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
 #include <PA/Count.h>
-#include <defs.h>
+#include <types.h>
 PAResult PACountPerformPrint(struct PACount Count)
 {
     PAResult result;

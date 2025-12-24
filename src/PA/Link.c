@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
 #include <PA/Link.h>
-#include <defs.h>
+#include <types.h>
 struct PALink PALinkPerformConstruct()
 {
     struct PALink link;
