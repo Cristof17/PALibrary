@@ -28,7 +28,8 @@ struct PAStatus PAStatusPerformInit(PA_INT Visited)
 }
 struct PAStatus PAStatusPerformPutValue(struct PAStatus Status, PA_INT Visited)
 {
-
+    Status.visited = Visited;
+    return Status;
 }
 // struct PAResult PASeriesPerformDelete(struct PASeries Series) 
 // {
