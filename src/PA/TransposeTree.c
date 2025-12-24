@@ -18,6 +18,8 @@ struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree Transpo
     struct PATransposeTree copy;
     // copy = PATranseTreePerformConstruct();
     copy = PATransposeTreePerformInit(TransposeTree.adj_trans);
+    // return tree;
+    return copy;
 }
 struct PATransposeTree PATransposeTreeBuildPart()
 {

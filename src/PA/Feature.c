@@ -15,7 +15,7 @@ struct PAFeature PAFeaturePerformCopy(struct PAFeature Type)
 //    copy.kind = Type.kind;
     return copy;
 }
-PAResult PAFeaturePerformRuin(struct PAFeature)
+PAResult PAFeaturePerformRuin(struct PAFeature Feature)
 {
 	PAResult result;
 	return result;

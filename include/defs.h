@@ -51,6 +51,7 @@ struct PALink;
 struct PAResource;
 // struct PAResult;
 struct Adaptee;
+// struct Adaptee;
 struct Adapter;
 struct IteratorClient;
 struct Target;
