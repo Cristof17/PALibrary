@@ -28,5 +28,5 @@ struct PAData ArrayListPerformPutFirst();
 struct PAData ArrayListPerformPutLast();
 // struct PAData
 // struct PAData ArrayList
-struct PAInt ArrayListPerformSize();
+PAInt ArrayListPerformSize();
 #endif
