@@ -6,6 +6,7 @@
 #elif defined _WIN95
 #include <PA\Result.h>
 #endif
+#include <types.h>
 // struct PAValue;
 struct PAValue PAValuePerformConstruct();
 PAResult PAValuePerformRuin(struct PAValue);

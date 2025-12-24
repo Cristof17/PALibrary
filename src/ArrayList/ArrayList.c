@@ -35,10 +35,11 @@ struct PAData ArrayListPerformGetFirst(struct ArrayList List)
 {
 	struct PAData first;
 	first = List.index[FIRST];
+	return first;
 }
 struct PAData ArrayListPerformGetLast(struct ArrayList List)
 {
-
+	
 }
 struct PAData ArrayListPerformPutFirst(struct ArrayList List)
 {

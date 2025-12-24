@@ -1,12 +1,12 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_PA_LIST_H_
 #define INCLUDE_PA_LIST_H_
+#include <types.h>
 #ifndef _WIN95
 #include <PA/Element.h>
 #include <PA/Count.h>
 #include <ArrayList/ArrayList.h>
 #include <PA/Result.h>
-#include <types.h>
 #elif defined _WIN95
 #include <PA\Element.h>
 #include <PA\Count.h>

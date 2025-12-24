@@ -14,6 +14,7 @@
 #include <PA\Series.h>
 #include <PA\Result.h>
 #endif
+#include <types.h>
 // struct PATree;
 // struct PATree PATreeConstruct(struct OPAResult);
 struct PATree PATreePerformConstruct();

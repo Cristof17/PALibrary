@@ -1,6 +1,8 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_PA_LINK_H_
 #define INCLUDE_PA_LINK_H_
+#include <types.h>
+// #include <rt>
 #ifndef _WIN95
 #include <PA/Pair.h>
 #include <PA/Result.h>

@@ -10,6 +10,7 @@
 #include <PA\Result.h>
 #include <ArrayList\ArrayList.h>
 #endif
+#include <types.h>
 // #include <tyoes
 // struct Input;
 // typedef struct Input Input;

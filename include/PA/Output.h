@@ -2,6 +2,8 @@
 #ifndef INCLUDE_BFSOUTPUT_H_
 #define INCLUDE_BFSOUTPUT_H_
 // #ifndef _WIN954
+// #include <defs.h>
+#include <types.h>
 #ifndef _WIN95
 #include <BFS/Record.h>
 #include <PA/Result.h>

@@ -16,6 +16,7 @@
 #include <PA\List.h>
 #include <PA\Result.h>
 #endif
+#include <types.h>
 // struct PASeries;
 struct PASeries PASeriesPerformConstruct();
 struct PASeries PASeriesPerformInit(struct PACount, struct PAList[]);

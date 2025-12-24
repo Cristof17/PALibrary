@@ -12,6 +12,7 @@
 // #endo/
 // #endig
 #endif
+#include <types.h>
 // struct PAStatus/*.*/;
 struct PAStatus PAStatusPerformConstruct();
 PAResult PAStatusPerformRuin(struct PAStatus);

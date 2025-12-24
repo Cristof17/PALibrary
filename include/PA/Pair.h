@@ -1,6 +1,7 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_PA_PAIR_H_
 #define INCLUDE_PA_PAIR_H_
+#include <types.h>
 #ifndef _WIN95
 // #include <PA/PAElement.h>
 #include <PA/Element.h>
