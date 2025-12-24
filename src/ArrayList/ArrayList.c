@@ -34,4 +34,4 @@ struct PAData ArrayListPerformGet(struct PAIndex Array[],PAInt Position) {
 // //	return )
 // 	PAResult rezultat;
 // 	return rezultat;
-// }
+// `}
