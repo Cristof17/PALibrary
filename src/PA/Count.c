@@ -13,7 +13,10 @@ struct PACount PACountPerformConstruct()
 }
 struct PACount PACountPerformCopy(struct PACount Count)
 {
-
+	struct PACount copy;
+	copy=PACountPerformConstruct();
+	copy=PACountPerformInit(Count.number);
+	return copy;
 }
 // void PASize(PA_INT);
 struct PAResult PACountPerformRuin(struct PACount Count)
@@ -29,11 +32,13 @@ struct PACount PACountPerformInit(PA_INT Number)
 }
 struct PACount PACountPerformPutValue(struct PACount Count, PA_INT Value)
 {
-
+	Count.number = Value;
+	return Count;
 }
 struct PAResult PACountPerformDelete(struct PACount Count)
 {
-
+	struct PAResult result;
+	return result;
 }
 // struct PAData PADataPerformPutResource(struct PAData, struct PAResource Resource)
 // {
