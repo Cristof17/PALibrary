@@ -18,9 +18,9 @@ struct PAElement PAElementPerformCopy(struct PAElement Element)
 //	copy.type=Element.type;
 	return copy;
 }
-struct PAResult PAElementPerformRuin(struct PAElement Element)
+PAResult PAElementPerformRuin(struct PAElement Element)
 {
-    struct PAResult result;
+    PAResult result;
     return result;
 }
 struct PAElement PAElementPerformInit(struct PAStatus Status, struct PAData Index, struct PAFeature Type)
@@ -60,8 +60,8 @@ struct PAElement PAElementPerformPutFeature(struct PAElement Element, struct PAF
     // return element;
     return Element;
 }
-struct PAResult PAElementPerformDelete(struct PAElement Element)
+PAResult PAElementPerformDelete(struct PAElement Element)
 {
-    struct PAResult result;
+    PAResult result;
     return result;
 }

@@ -14,5 +14,5 @@ struct PATransposeTree PATransposeTreePerformConstruct();
 struct PATransposeTree PATransposeTreePerformInit(struct PAList);
 struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree);
 struct PATransposeTree PATransposeTreeBuildPart();
-struct PAResult PATransposeTreeGetResult();
+PAResult PATransposeTreeGetResult();
 #endif

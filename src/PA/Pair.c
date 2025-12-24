@@ -47,13 +47,13 @@ struct PAPair PAPairPerformPutNeigh(struct PAPair Pair, struct PAElement Neigh)
     return Pair;
     // return pair;
 }
-struct PAResult PAPairPerformRuin(struct PAPair Pair)
+PAResult PAPairPerformRuin(struct PAPair Pair)
 {
-	struct PAResult result;
+	PAResult result;
 	return result;
 }
-struct PAResult PAPairPerformDelete(struct PAPair Pair)
+PAResult PAPairPerformDelete(struct PAPair Pair)
 {
-    struct PAResult result;
+    PAResult result;
     return result;
 }

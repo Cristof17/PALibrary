@@ -11,9 +11,9 @@
 #endif
 #include <defs.h>
 struct PAArrow PAArrowPerformConstruct();
-struct PAResult PAArrowPerformRuin(struct PAArrow);
 struct PAArrow PAArrowPerformCopy(struct PAArrow Arrow);
 struct PAArrow PAArrowPerformInit(struct PAPair);
 struct PAArrow PAArrowPerformPutPair(struct PAArrow, struct PAPair);
+PAResult PAArrowPerformRuin(struct PAArrow);
 //typedef struct PAArrow Arrow;
 #endif

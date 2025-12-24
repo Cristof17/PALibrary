@@ -47,9 +47,9 @@ struct PAList PAListPerformPutArrayList(struct PAList List, struct ArrayList Adj
     // struct PAResult result;
     // return result;
 // }
-struct PAResult PAListPerformRuin(struct PAList List)
+PAResult PAListPerformRuin(struct PAList List)
 {
-    struct PAResult result;
+    PAResult result;
     return result;
 }
 void Dispose() 
@@ -75,8 +75,8 @@ void PAListPerformPrint(struct PAList List)
 {
 
 }
-struct PAResult PAListPerformDelete(struct PAList List)
+PAResult PAListPerformDelete(struct PAList List)
 {
-    struct PAResult result;
+    PAResult result;
     return result;
 }

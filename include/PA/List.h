@@ -22,14 +22,14 @@ struct PAList PAListPerformCopy(struct PAList);
 // struct PAList PAListPutElement(struct PAList, struct PAElement);
 struct PAList PAListPerformPutCount(struct PAList, struct PACount);
 struct PAList PAListPerformPutArrayList(struct PAList, struct ArrayList);
-struct PAResult PAListAddElement(struct PAList, struct PAElement);
-struct PAResult PAListPerformRuin(struct PAList);
+PAResult PAListAddElement(struct PAList, struct PAElement);
+PAResult PAListPerformRuin(struct PAList);
 void Dispose();
-PA_INT PAListSize(struct PAList);
+PAInt PAListSize(struct PAList);
 struct PAElement PAListHead(struct PAList);
 struct PAList PAListTail(struct PAList);
 void PAListPerformPrint(struct PAList);
-struct PAResult PAListPerformDelete(struct PAList);
+PAResult PAListPerformDelete(struct PAList);
 
 // struct PAResult PAList(struct PAElement Head);
 // struct PAResult PAListPrint(struct PAList);

@@ -6,9 +6,9 @@ struct PALink PALinkPerformConstruct()
     struct PALink link;
     return link;
 }
-struct PAResult PALinkPerformRuin(struct PALink Link)
+PAResult PALinkPerformRuin(struct PALink Link)
 {
-    struct PAResult result;
+    PAResult result;
     return result;
 }
 struct PALink PALinkPerformCopy(struct PALink Link)
@@ -28,11 +28,12 @@ struct PALink PALinkPerformInit(struct PAPair P)
 }
 struct PALink PALinkPerformPutPair(struct PALink Link,struct PAPair P)
 {
-    struct PAResult reusult;
+    PAResult reusult;
     Link.p = P;
     return Link;
     // return reusult;
 }
-struct PAResult PALinkPerformDelete(struct PALink){
-
+PAResult PALinkPerformDelete(struct PALink){
+    PAResult result;
+    return result;
 }

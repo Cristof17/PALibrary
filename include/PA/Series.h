@@ -19,11 +19,11 @@
 // struct PASeries;
 struct PASeries PASeriesPerformConstruct();
 struct PASeries PASeriesPerformInit(struct PACount, struct PAList[]);
-struct PAResult PASeriesPerformRuin(struct PASeries);
 void PASeriesDispose(void);
 struct PASeries PASeriesPerformCopy(struct PASeries);
 struct PASeries PASeriesPerformPutCount(struct PASeries, struct PACount);
 struct PASeries PASeriesPerformPutList(struct PASeries, struct PAList);
-struct PAResult PASeriesPerformDelete(struct PASeries);
+PAResult PASeriesPerformRuin(struct PASeries);
+PAResult PASeriesPerformDelete(struct PASeries);
 //typedef struct PASir Series;
 #endif /* INCLUDE_PASIR_H_ */

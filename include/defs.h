@@ -7,12 +7,13 @@ struct PAArrow;
 // struct BFSAlgorithm;
 struct PAData;
 struct NormalTree;
-struct PAResult;
+// struct PAResult;
 // struct ArrayList;
 // struct PAResource;
 struct PACount;
 struct PANormalTree;
 struct PATransposeTree;
+// struct BFSRecord;
 // struct PACount;
 // struct PAElement;
 // struct PACount;
@@ -48,7 +49,7 @@ struct PALink;
 // struct PALink;
 // struct PATree;
 struct PAResource;
-struct PAResult;
+// struct PAResult;
 struct Adaptee;
 struct Adapter;
 struct IteratorClient;
@@ -71,18 +72,18 @@ struct BFSAlgorithm;
 		// 	struct Input input;
 		// };
 struct PAStatus {
-	PA_INT visited;
+	PAInt visited;
 };
 struct PAResource {
 	// struct
 	// PA_INt
-	PA_INT value;
+	PAInt value;
 };
 struct PAData {
     struct PAResource resource;
 };
 struct PAFeature {
-	PA_INT kind;
+	PAInt kind;
 };
 struct PAElement { 
 	//	struct PAData data;
@@ -92,7 +93,7 @@ struct PAElement {
 	struct PAFeature type;
 };
 struct PACount {
-	PA_INT number;
+	PAInt number;
 };
 struct ArrayList {
 	struct PAData index[0];
@@ -120,7 +121,7 @@ struct PAOutput {
 // 	INT Value;
 // };
 struct PAValue {
-    PA_INT value;
+	PAInt value;
 };
 struct PADestination {
     struct PAElement element;
@@ -162,9 +163,9 @@ struct PATree  {
 struct PALink {
 	struct PAPair p;
 };
-struct PAResult {
-	PA_INT code;
-};
+// struct PAResult {
+// 	PA_INT code;
+// };
 struct Adaptee {
 	struct ArrayList list;
 };

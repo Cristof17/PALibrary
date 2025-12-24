@@ -27,13 +27,13 @@ struct PAInput PAInputPerformInit(struct PACount N, struct PACount M, struct PAL
 	input.source = Source;
 	return input;
 }
-struct PAResult PAInputPerformRuin(struct PAInput)
+PAResult PAInputPerformRuin(struct PAInput)
 {
-	struct PAResult result;
+	PAResult result;
 	return result;
 }
-struct PAResult PAInputPerformDelete(struct PAInput)
+PAResult PAInputPerformDelete(struct PAInput)
 {
-    struct PAResult result;
+	PAResult result;
     return result;
 }

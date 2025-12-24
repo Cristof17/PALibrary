@@ -1,9 +1,9 @@
 //@Author Cristofor Rotsching
 #include <PA/Count.h>
 #include <defs.h>
-struct PAResult PACountPerformPrint(struct PACount Count)
+PAResult PACountPerformPrint(struct PACount Count)
 {
-    struct PAResult result;
+    PAResult result;
     return result;
 }
 struct PACount PACountPerformConstruct()
@@ -19,25 +19,25 @@ struct PACount PACountPerformCopy(struct PACount Count)
 	return copy;
 }
 // void PASize(PA_INT);
-struct PAResult PACountPerformRuin(struct PACount Count)
+PAResult PACountPerformRuin(struct PACount Count)
 {
-    struct PAResult result;
+    PAResult result;
     return result;
 }
-struct PACount PACountPerformInit(PA_INT Number)
+struct PACount PACountPerformInit(PAResult Number)
 {
     struct PACount count;
     count.number = Number;
     return count;
 }
-struct PACount PACountPerformPutValue(struct PACount Count, PA_INT Value)
+struct PACount PACountPerformPutValue(struct PACount Count, PAInt Value)
 {
 	Count.number = Value;
 	return Count;
 }
-struct PAResult PACountPerformDelete(struct PACount Count)
+PAResult PACountPerformDelete(struct PACount Count)
 {
-	struct PAResult result;
+	PAResult result;
 	return result;
 }
 // struct PAData PADataPerformPutResource(struct PAData, struct PAResource Resource)

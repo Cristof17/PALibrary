@@ -34,13 +34,13 @@ struct PAData PADataPerformPutResource(struct PAData Data, struct PAResource Res
     Data.resource = Resource;
     return Data;
 }
-struct PAResult PADataPerformRuin(struct PAData Data) 
+PAResult PADataPerformRuin(struct PAData Data) 
 {
-    struct PAResult result;
+    PAResult result;
     return result;
 }
-struct PAResult PADataPerformDelete(struct PAData Data)
+PAResult PADataPerformDelete(struct PAData Data)
 {
-    struct PAResult result;
+    PAResult result;
     return result;
 }

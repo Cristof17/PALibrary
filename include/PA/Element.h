@@ -18,13 +18,13 @@
 // struct PAElement;
 struct PAElement PAElementPerformConstruct();
 struct PAElement PAElementPerformCopy(struct PAElement);
-struct PAResult PAElementPerformRuin(struct PAElement);
 struct PAElement PAElementPerformInit(struct PAStatus, struct PAData, struct PAFeature);
 struct PAElement PAElementPerformPutStatus(struct PAElement, struct PAStatus);
 struct PAElement PAElementPerformPutData(struct PAElement, struct PAData);
 struct PAElement PAElementPerformPutDestination(struct PAElement, struct PADestination);
 struct PAElement PAElementPerformPutFeature(struct PAElement, struct PAFeature);
-struct PAResult PAElementPerformDelete(struct PAElement);
+PAResult PAElementPerformRuin(struct PAElement);
+PAResult PAElementPerformDelete(struct PAElement);
 // struct PANod;
 //typedef struct PAElement Element;
 #endif

@@ -6,9 +6,9 @@ struct PAArrow PAArrowPerformConstruct()
     struct PAArrow arrow;
     return arrow;;
 }
-struct PAResult PAArrowPerformRuin(struct PAArrow Arrow) 
+PAResult PAArrowPerformRuin(struct PAArrow Arrow) 
 {
-    struct PAResult result;
+    PAResult result;
     return result;
 }
 struct PAArrow PAArrowPerformCopy(struct PAArrow Arrow)

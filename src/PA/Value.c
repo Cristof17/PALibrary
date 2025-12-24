@@ -5,9 +5,9 @@ struct PAValue PAValuePerformConstruct()
     struct PAValue value;
     return value;
 }
-struct PAResult PAValuePerformRuin(struct PAValue Value)
+PAResult PAValuePerformRuin(struct PAValue Value)
 {
-    struct PAResult result;
+    PAResult result;
     return result;
 }
 struct PAValue PAValuePerformCopy(struct PAValue Value)
@@ -17,13 +17,13 @@ struct PAValue PAValuePerformCopy(struct PAValue Value)
     copy = PAValuePerformInit(Value.value);
     return copy;
 }
-struct PAValue PAValuePerformInit(PA_INT Value)
+struct PAValue PAValuePerformInit(PAInt Value)
 {
     struct PAValue value;
     value.value = Value;
     return value;
 }
-struct PAValue PAValuePerformPutValue(struct PAValue Value1, PA_INT Value2)
+struct PAValue PAValuePerformPutValue(struct PAValue Value1, PAInt Value2)
 {
     // struct PAValue value;
     Value1.value = Value2;
@@ -31,23 +31,23 @@ struct PAValue PAValuePerformPutValue(struct PAValue Value1, PA_INT Value2)
     return Value1;
 }
 //typedef struct PAValue Value;
-PA_INT op_Equality(struct PAValue Value1,struct PAValue Value2)
+PAInt op_Equality(struct PAValue Value1,struct PAValue Value2)
 {
     return 1;
 }
-PA_INT op_Inequality(struct PAValue Value1,struct PAValue Value2)
+PAInt op_Inequality(struct PAValue Value1,struct PAValue Value2)
 {
     return 1;
 }
-PA_INT op_LessThan(struct PAValue Value1,struct PAValue Value2)
+PAInt op_LessThan(struct PAValue Value1,struct PAValue Value2)
 {
     return 1;
 }
-PA_INT op_GreatherThan(struct PAValue Value1,struct PAValue Value2)
+PAInt op_GreatherThan(struct PAValue Value1,struct PAValue Value2)
 {
     return 1;
 }
-PA_INT op_GreatherThanOrEqual(struct PAValue Value1,struct PAValue Value2)
+PAInt op_GreatherThanOrEqual(struct PAValue Value1,struct PAValue Value2)
 {
     return 1;
 }

@@ -23,5 +23,5 @@
 struct Adaptee;
 //typedef struct Adaptee Adaptee;
 void SpecificRequest(struct Adaptee);
-struct PAData Get(PA_INT);
+struct PAData Get(PAInt);
 #endif /* ADAPTER_INCLUDE_ADAPTEE_H_ */

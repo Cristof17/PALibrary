@@ -13,5 +13,5 @@ struct PANormalTree PANormalTreePerformInit(struct PAList);
 struct PANormalTree PANormalTreePerformCopy(struct PANormalTree);
 // typedef struct GrafNormal PAGrafNormal;
 struct PANormalTree PAGrafNormalBuildPart();
-struct PAResult PAGrafNormalGetResult();
+PAResult PAGrafNormalGetResult();
 #endif

@@ -16,9 +16,9 @@ struct PATree PATreePerformInit(struct PACount N, struct PACount M, struct PASer
     tree.source = tree.source;
     return tree;
 }
-struct PAResult PATreePerformRuin(struct PATree Tree)
+PAResult PATreePerformRuin(struct PATree Tree)
 {
-    struct PAResult result;
+    PAResult result;
     return result;
 }
 struct PATree PATreePerformCopy(struct PATree Tree)
@@ -61,8 +61,8 @@ struct PATree PATreePerformPutSeries(struct PATree Tree, struct PASeries List)
 //     // struct PATree tree;
 //     return tree;
 // }
-struct PAResult PATreePerformDelete(struct PATree)
+PAResult PATreePerformDelete(struct PATree Tree)
 {
-    struct PAResult result;
+    PAResult result;
     return result;
 }

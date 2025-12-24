@@ -8,15 +8,15 @@
 #endif
 // struct PAValue;
 struct PAValue PAValuePerformConstruct();
-struct PAResult PAValuePerformRuin(struct PAValue);
+PAResult PAValuePerformRuin(struct PAValue);
 struct PAValue PAValuePerformCopy(struct PAValue);
-struct PAValue PAValuePerformInit(PA_INT);
-struct PAValue PAValuePerformPutValue(struct PAValue, PA_INT);
+struct PAValue PAValuePerformInit(PAInt);
+struct PAValue PAValuePerformPutValue(struct PAValue, PAInt);
 // struct PAResult PAValueDelete(stru)
 //typedef struct PAValue Value;
-PA_INT op_Equality(struct PAValue,struct PAValue);
-PA_INT op_Inequality(struct PAValue,struct PAValue);
-PA_INT op_LessThan(struct PAValue,struct PAValue);
-PA_INT op_GreatherThan(struct PAValue,struct PAValue);
-PA_INT op_GreatherThanOrEqual(struct PAValue,struct PAValue);
+PAInt op_Equality(struct PAValue,struct PAValue);
+PAInt op_Inequality(struct PAValue,struct PAValue);
+PAInt op_LessThan(struct PAValue,struct PAValue);
+PAInt op_GreatherThan(struct PAValue,struct PAValue);
+PAInt op_GreatherThanOrEqual(struct PAValue,struct PAValue);
 #endif

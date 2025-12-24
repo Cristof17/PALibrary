@@ -24,9 +24,9 @@ struct PATransposeTree PATransposeTreeBuildPart()
     struct PATransposeTree tree;
     return tree;
 }
-struct PAResult PATransposeTreeGetResult()
+PAResult PATransposeTreeGetResult()
 {
-    struct PAResult result;
+    PAResult result;
     return result;
 }
 // struct PATransposeTree PAGrafTranspusBuildPart() {

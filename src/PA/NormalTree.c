@@ -30,10 +30,10 @@ struct PANormalTree PAGrafNormalBuildPart()
     struct PANormalTree tree;
     return tree;
 }
-struct PAResult PAGrafNormalGetResult()
+PAResult PAGrafNormalGetResult()
 {
     // struct PANormalTree tree;
     // return tree;
-    struct PAResult result;
+    PAResult result;
     return result;
 }

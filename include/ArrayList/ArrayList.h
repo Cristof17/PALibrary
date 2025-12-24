@@ -17,7 +17,7 @@
 struct ArrayList ArrayListConstruct();
 struct ArrayList ArrayListInit(struct PAData Data[], struct PACount M);
 struct ArrayList ArrayListCopy(struct ArrayList List);
-struct PAData ArrayListGet(struct PAData[],PA_INT);
-struct PARecord ArrayListArrange(PA_INT);
+struct PAData ArrayListGet(struct PAData[],PAInt);
+struct PARecord ArrayListArrange(PAInt);
 struct PARecord ArrayListPutCount(struct ArrayList, struct PACount);
 #endif

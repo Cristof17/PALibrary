@@ -10,10 +10,10 @@
 #endif
 // struct PALink;
 struct PALink PALinkPerformConstruct();
-struct PAResult PALinkPerformRuin(struct PALink);
 struct PALink PALinkPerformCopy(struct PALink);
 struct PALink PALinkPerformInit(struct PAPair);
 struct PALink PALinkPerformPutPair(struct PALink,struct PAPair);
-struct PAResult PALinkPerformDelete(struct PALink);
+PAResult PALinkPerformRuin(struct PALink);
+PAResult PALinkPerformDelete(struct PALink);
 //typedef struct PALink Link;
 #endif

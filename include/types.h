@@ -5,8 +5,10 @@
 //#define short HALF_PTR;
 #define PABool BOOL
 #define PAInt int32_t
+typedef PAInt PAResult;
 #else
-#define PA_INT int
+#define PAInt int
+typedef PAInt PAResult;
 // typedef int PAInt;
 #endif
 #define FIRST 0
