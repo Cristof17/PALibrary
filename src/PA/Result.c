@@ -9,14 +9,17 @@ struct PAResult PAResultPerformConstruct()
 struct PAResult PAResultPerformRuin()
 {
 }
-struct PAResult PAResultPerformCopy(struct PAResult)
+struct PAResult PAResultPerformCopy(struct PAResult Result)
 {
-
+    struct PAResult copy;
+    copy = PAResultPerformConstruct();
+    copy = PAResultPerformInit(Result.code);
+    return copy;
 }
 // struct PAResult PAResultRuin(struct PAResult);
 void PAResultPerformPrint(struct PAResult)
 {
-
+    ;
 }
 struct PAResult PAResultPerformInit(PA_INT Code)
 {
