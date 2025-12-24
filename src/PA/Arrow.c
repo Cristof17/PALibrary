@@ -13,10 +13,10 @@ struct PAResult PAArrowPerformRuin(struct PAArrow Arrow)
 }
 struct PAArrow PAArrowPerformCopy(struct PAArrow Arrow)
 {
-    struct PAArrow arrow;
-    arrow = PAArrowPerformConstruct();
-    arrow = PAArrowPerformInit(Arrow.p);
-    return arrow;
+    struct PAArrow copy;
+    copy = PAArrowPerformConstruct();
+    copy = PAArrowPerformInit(Arrow.p);
+    return copy;
 }
 struct PAArrow PAArrawPerformInit(struct PAArrow Arrow) 
 {
