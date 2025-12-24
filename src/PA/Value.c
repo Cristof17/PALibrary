@@ -13,8 +13,8 @@ struct PAResult PAValuePerformRuin(struct PAValue Value)
 struct PAValue PAValuePerformCopy(struct PAValue Value)
 {
     struct PAValue copy;
-    copy = PAValueConstruct();
-    copy = PAValueInit(Value);
+    copy = PAValuePerformConstruct();
+    copy = PAValuePerformInit(Value.value);
     return copy;
 }
 struct PAValue PAValuePerformInit(PA_INT Value)

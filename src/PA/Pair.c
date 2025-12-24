@@ -26,8 +26,8 @@ struct PAPair PAPairPerformInit(struct PAElement Node, struct PAElement Neigh)
 struct PAPair PAPairPerformCopy(struct PAPair Pair)
 {
     struct PAPair pair;
-    pair = PAPairConstruct();
-    pair = PAPairInit(Pair.node,Pair.neigh);
+    pair = PAPairPerformConstruct();
+    pair = PAPairPerformInit(Pair.node,Pair.neigh);
 //    pair.node = Pair.node;
 //    pair.neigh = Pair.neigh;
     return pair;

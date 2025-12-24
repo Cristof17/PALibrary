@@ -10,15 +10,15 @@ struct PAOutput PAOutputPerformConstruct()
 struct PAOutput PAOutputPerformInit(struct BFSRecord Result)
 {
 	struct PAOutput init;
-	init = PAOutputConstruct();
+	init = PAOutputPerformConstruct();
 	init.result = Result;
 	return init;
 }
 struct PAOutput PAOutputPerformCopy(struct PAOutput Output)
 {
 	struct PAOutput copy;
-	copy = PAOutputConstruct();
-	copy = PAOutputInit(Output.result);
+	copy = PAOutputPerformConstruct();
+	copy = PAOutputPerformInit(Output.result);
 	return copy;
 }
 // strut BFSOutputRuin();
