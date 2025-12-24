@@ -13,7 +13,7 @@
 struct PAArrow PAArrowPerformConstruct();
 struct PAResult PAArrowPerformRuin(struct PAArrow);
 struct PAArrow PAArrowPerformCopy(struct PAArrow Arrow);
-struct PAArrow PAArrawPerformInit(struct PAArrow);
+struct PAArrow PAArrowPerformInit(struct PAPair);
 struct PAArrow PAArrowPerformPutPair(struct PAArrow, struct PAPair);
 //typedef struct PAArrow Arrow;
 #endif

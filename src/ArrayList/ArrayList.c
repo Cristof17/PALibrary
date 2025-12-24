@@ -17,7 +17,7 @@ struct ArrayList ArrayListInit(struct PAData Data[], struct PACount M)
 	// srt
 	struct ArrayList List;
 	List = ArrayListConstruct();
-	List.index = PADataCopy(Data);
+	List.index = PADataPerformCopy(Data);
 	return List;
 }
 struct ArrayList ArrayListCopy(struct ArrayList List)

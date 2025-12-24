@@ -18,7 +18,7 @@ struct PAArrow PAArrowPerformCopy(struct PAArrow Arrow)
     copy = PAArrowPerformInit(Arrow.p);
     return copy;
 }
-struct PAArrow PAArrawPerformInit(struct PAArrow Arrow) 
+struct PAArrow PAArrawPerformInit(struct PAPair Pair) 
 {
     struct PAArrow arrow;
     arrow = PAArrowPerformConstruct();
