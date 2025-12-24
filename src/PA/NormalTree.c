@@ -20,7 +20,9 @@ struct PANormalTree PANormalTreePerformCopy(struct PANormalTree Tree)
 {
     // struct PANormalTree
     struct PANormalTree copy;
-    copy.adj = Tree.adj;
+    copy = PANormalTreeConstruct();
+    copy = PANormalTreeInit(Tree.adj);
+//    copy.adj = Tree.adj;
     return copy;
 }
 struct PANormalTree PAGrafNormalBuildPart()

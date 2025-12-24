@@ -11,10 +11,11 @@ struct PAInput PAInputPerformCopy(struct PAInput Input)
 {
 	struct PAInput copy;
 	copy = PAInputPerformConstruct();
-	copy.n=Input.n;
-	copy.m=Input.m;
-	copy.adj=Input.adj;
-	copy.source=Input.source;
+	copy = PAInputPerformInit(Input.n,Input.m,Input.adj,Input.source);
+//	copy.n=Input.n;
+//	copy.m=Input.m;
+//	copy.adj=Input.adj;
+//	copy.source=Input.source;
 	return copy;
 }
 struct PAInput PAInputPerformInit(struct PACount N, struct PACount M, struct PAList ADJ, struct PAElement Source)

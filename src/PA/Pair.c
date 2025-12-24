@@ -12,10 +12,13 @@ struct PAPair PAPairPerformConstruct()
 // struct PAPair PAPairRuin(struct PAPair Pair) {
 struct PAPair PAPairPerformInit(struct PAElement Node, struct PAElement Neigh)
 {
-    struct PAResult result;
     struct PAPair pair;
+    pair = PAPairPerformConstruct();
     pair.node = Node;
     pair.neigh = Neigh;
+//    struct PAPair pair;
+//    pair.node = Node;
+//    pair.neigh = Neigh;
     return pair;
     // struct PAPair pair;
     // return result;
@@ -23,8 +26,10 @@ struct PAPair PAPairPerformInit(struct PAElement Node, struct PAElement Neigh)
 struct PAPair PAPairPerformCopy(struct PAPair Pair)
 {
     struct PAPair pair;
-    pair.node = Pair.node;
-    pair.neigh = Pair.neigh;
+    pair = PAPairConstruct();
+    pair = PAPairInit(Pair.node,Pair.neigh);
+//    pair.node = Pair.node;
+//    pair.neigh = Pair.neigh;
     return pair;
 }
 struct PAPair PAPairPerformPutNode(struct PAPair Pair, struct PAElement Node)
@@ -44,7 +49,8 @@ struct PAPair PAPairPerformPutNeigh(struct PAPair Pair, struct PAElement Neigh)
 }
 struct PAResult PAPairPerformRuin(struct PAPair Pair)
 {
-    
+	struct PAResult result;
+	return result;
 }
 struct PAResult PAPairPerformDelete(struct PAPair Pair)
 {
