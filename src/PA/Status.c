@@ -19,10 +19,12 @@ struct PAStatus PAStatusPerformCopy(struct PAStatus Status)
 }
 struct PAStatus PAStatusPerformInit(PA_INT Visited)
 {
-    // struct PAStatus status;
-    Status.visited = Value;
+    struct PAStatus status;
+    status = PAStatusPerformConstruct();
+    status.visited = Visited;
+
     // return status;
-    return Status;
+    return status;
 }
 struct PAStatus PAStatusPerformPutValue(struct PAStatus Status, PA_INT Visited)
 {
