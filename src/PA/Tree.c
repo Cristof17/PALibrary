@@ -9,24 +9,31 @@ struct PATree PATreePerformConstruct()
 struct PATree PATreePerformInit(struct PACount N, struct PACount M, struct PASeries Adj, struct PAElement Source)
 {
     struct PATree tree;
+    tree = PATreePerformConstruct();
     tree.adj = tree.adj;
     tree.m = tree.m;
     tree.n = tree.n;
     tree.source = tree.source;
     return tree;
 }
-struct PAResult PATreePerformRuin(struct PATree)
+struct PAResult PATreePerformRuin(struct PATree Tree)
 {
     struct PAResult result;
     return result;
 }
-struct PATree PATreePerformCopy(struct PATree)
+struct PATree PATreePerformCopy(struct PATree Tree)
 {
-
+    struct PATree tree;
+    tree = PATreePerformConstruct();
+    tree = PATreePerformInit(Tree.n, Tree.m, Tree.adj, Tree.source);
+    return tree;
 }
-struct PATree PATreePerformPutCount(struct PATree, struct PACount, struct PACount)
+struct PATree PATreePerformPutCount(struct PATree Tree, struct PACount Count1, struct PACount Count2)
 {
-
+    // s
+    Tree.n = Count1;
+    Tree.m = Count2;
+    return Tree;
 }
 struct PATree PATreePerformPutElement(struct PATree Tree, struct PAElement Source)
 {

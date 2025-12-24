@@ -14,10 +14,13 @@ struct PASeries PASeriesPerformConstruct()
 struct PASeries PASeriesPerformInit(struct PACount N, struct PAList Adj[])
 {
     struct PASeries series;
+    series = PASeriesPerformConstruct();
+    series.adj = Adj;
+    series.n = N;
     //Iterator
     // series.adj = Series.adj;
     //end of iterator
-    series.n = N;
+    // series.n = N;
     return series;
 }
 struct PAResult PASeriesPerformRuin(struct PASeries Series)

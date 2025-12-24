@@ -3,11 +3,15 @@
 #include <defs.h>
 struct PATransposeTree PATransposeTreePerformConstruct()
 {
-
+    struct PATransposeTree transposeTree;
+    return transposeTree;
 }
 struct PATransposeTree PATransposeTreePerformInit(struct PAList Adj_trans)
 {
-
+    struct PATransposeTree transposeTree;
+    transposeTree = PATransposeTreePerformConstruct();
+    transposeTree.adj_trans = Adj_trans;
+    return transposeTree;
 }
 struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree TransposeTree)
 {
