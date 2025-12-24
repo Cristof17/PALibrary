@@ -7,17 +7,17 @@
  *  Created on: 20 nov. 2025
  *      Author: AdministratorUser
  */
-struct ArrayList ArrayListPerformConstruct()
+struct ArrayList ArrayListConstruct()
 {
 	struct ArrayList List;
 	return List;
 }
-struct ArrayList ArrayListPerformInit(struct PAData Data[], struct PACount M)
+struct ArrayList ArrayListInit(struct PAData Data[], struct PACount M)
 {
 	// srt
 	struct ArrayList List;
-	List = ArrayListPerformConstruct();
-	List.index = PADataPerformCopy(Data);
+	List = ArrayListConstruct();
+	List.index = PADataCopy(Data);
 	return List;
 }
 struct ArrayList ArrayListCopy(struct ArrayList List)
