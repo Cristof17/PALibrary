@@ -25,13 +25,13 @@ struct ArrayList ArrayListCopy(struct ArrayList List)
 	struct ArrayList Lost;
 	return Lost;
 }
-struct PAIndex ArrayListGet(struct PAIndex Array[],PA_INT Position) {
-	struct PAIndex index;
+struct PAData ArrayListGet(struct PAIndex Array[],PAInt Position) {
+	struct PAData index;
 	// = Array[Position];
 	return index;
 }
-struct PAResult Init(PA_INT size) {
+PAResult Init(PAInt size) {
 //	return )
-	struct PAResult rezultat;
+	PAResult rezultat;
 	return rezultat;
 }
