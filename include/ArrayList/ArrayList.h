@@ -12,8 +12,11 @@
 #include <types.h>
 #include <defs.h>
 #endif
-struct ArrayList;
+// struct ArrayList;
 //typedef struct ArrayList ArrayList;
+struct ArrayList ArrayListConstruct();
+struct ArrayList ArrayListInit(struct PAData Data[], struct PACount M);
+struct ArrayList ArrayListCopy(struct ArrayList List);
 struct PAData ArrayListGet(struct PAData[],PA_INT);
 struct PARecord ArrayListArrange(PA_INT);
 struct PARecord ArrayListPutCount(struct ArrayList, struct PACount);

@@ -7,7 +7,18 @@
  *  Created on: 20 nov. 2025
  *      Author: AdministratorUser
  */
+struct ArrayList ArrayListConstruct()
+{
 
+}
+struct ArrayList ArrayListInit(struct PAData Data[], struct PACount M)
+{
+
+}
+struct ArrayList ArrayListCopy(struct ArrayList List)
+{
+	
+}
 struct PAIndex ArrayListGet(struct PAIndex Array[],PA_INT Position) {
 	struct PAIndex index;
 	// = Array[Position];
