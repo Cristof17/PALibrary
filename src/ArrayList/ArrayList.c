@@ -30,8 +30,8 @@ struct PAData ArrayListPerformGet(struct PAIndex Array[],PAInt Position) {
 	// = Array[Position];
 	return index;
 }
-PAResult ArrayListPeformInit(PAInt size) {
-//	return )
-	PAResult rezultat;
-	return rezultat;
-}
+// PAResult ArrayListPeformInit(PAInt size) {
+// //	return )
+// 	PAResult rezultat;
+// 	return rezultat;
+// }
