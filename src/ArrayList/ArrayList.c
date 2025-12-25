@@ -101,6 +101,7 @@ PAResult ArrayListPerformMove(struct ArrayList)
 	//this is elementary programming from highschool
 	//buit it workds`
 	//this is not business nor logical 
+	//this is not math
 }
 struct PAData ArrayListPerformPutLast(struct ArrayList List)
 {
