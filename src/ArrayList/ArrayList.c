@@ -103,6 +103,7 @@ PAResult ArrayListPerformMove(struct ArrayList)
 	//this is not business nor logical 
 	//this is not math
 	//this should be done usnng diagrams and helper functions
+	//#noiu #sa #fim #sanatosi
 }
 struct PAData ArrayListPerformPutLast(struct ArrayList List)
 {
