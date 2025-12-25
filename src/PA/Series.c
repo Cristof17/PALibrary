@@ -5,7 +5,7 @@
  *
  *  Created on: 16 nov. 2025
  *      Author: AdministratorUser
- */
+` */
 struct PASeries PASeriesPerformConstruct()
 {
     struct PASeries series;

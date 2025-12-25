@@ -7,19 +7,30 @@
  *  Created on: 20 nov. 2025
  *      Author: AdministratorUser
  */
-struct ArrayList ArrayListPerformConstruct()
-{
-	struct ArrayList List;
-	return List;
-}
-struct ArrayList ArrayListPerformInit(struct PAData Data[], struct PACount M)
-{
-
-}
-struct ArrayList ArrayListPerformCopy(struct ArrayList List)
-{
-
-}
+// struct ArrayList ArrayListPerformConstruct()
+// {
+// 	struct ArrayList List;
+// 	return List;
+// }
+// struct ArrayList ArrayListPerformInit(struct PAData Data[], struct PACount M)
+// {
+// 	struct ArrayList List;
+// 	List = ArrayListPerformConstruct();
+// 	List.count = M;
+// 	List.index = Data;
+// 	return List;
+// }
+// struct ArrayList ArrayListPerformCopy(struct ArrayList List)
+// {
+// 	struct ArrayList copy;
+// 	// copt
+// 	// copy. 
+// 	// copy = ArrayListPefr
+// 	// copy = ArrayListPerformConstruct(;)
+// 	// copy. 
+// 	copy = ArrayListPerformConstruct();
+// 	copy = ArrayList
+// }
 // struct PAData ArrayListGet(struct PAData[],PAInt);
 // struct PARecord ArrayListPerformArrange(PAInt)
 // {
@@ -39,11 +50,13 @@ struct PAData ArrayListPerformGetFirst(struct ArrayList List)
 }
 struct PAData ArrayListPerformGetLast(struct ArrayList List)
 {
-	
+	struct PAData last;
+	last = List.index[(LAST(List.count))];
+	return last;
 }
 struct PAData ArrayListPerformPutFirst(struct ArrayList List)
 {
-
+	
 }
 struct PAData ArrayListPerformPutLast(struct ArrayList List)
 {

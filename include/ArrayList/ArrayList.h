@@ -14,12 +14,12 @@
 #endif
 // struct ArrayList;
 //typedef struct ArrayList ArrayList;
-struct ArrayList ArrayListPerformConstruct();
-struct ArrayList ArrayListPerformInit(struct PAData Data[], struct PACount M);
-struct ArrayList ArrayListPerformCopy(struct ArrayList List);
+// struct ArrayList ArrayListPerformConstruct();
+// struct ArrayList ArrayListPerformInit(struct PAData Data[], struct PACount M);
+// struct ArrayList ArrayListPerformCopy(struct ArrayList List);
 // struct PAData ArrayListGet(struct PAData[],PAInt);
 // struct PARecord ArrayListPerformArrange(PAInt);
-struct PARecord ArrayListPutCount(struct ArrayList, struct PACount);
+// struct PARecord ArrayListPutCount(struct ArrayList, struct PACount);
 // sjt
 // struct A
 struct PAData ArrayListPerformGetFirst(struct ArrayList);
