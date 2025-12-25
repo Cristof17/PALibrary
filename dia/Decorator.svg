@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created by diasvg.py -->
+<svg width="32.935cm" height="24.100cm" viewBox="1.000 12.950 32.935 24.100"
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Layer: Background -->
+<g id="Background">
+</g>
+<!-- Layer: Background -->
+<g id="Background">
+<!-- UML - Class -->
+<rect x="7.250" y="13.000" width="5.890" height="1.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="7.250" y="14.400" width="5.890" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="7.250" y="14.800" width="5.890" height="1.000" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<!-- UML - Class -->
+<rect x="1.050" y="20.150" width="9.703" height="1.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="1.050" y="21.550" width="9.703" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="1.050" y="21.950" width="9.703" height="1.000" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<!-- UML - Class -->
+<rect x="17.000" y="20.000" width="5.120" height="1.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="17.000" y="21.400" width="5.120" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="17.000" y="21.800" width="5.120" height="1.000" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<!-- UML - Class -->
+<rect x="7.250" y="27.000" width="9.660" height="1.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="7.250" y="28.400" width="9.660" height="1.000" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="7.250" y="29.400" width="9.660" height="1.000" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<!-- UML - Class -->
+<rect x="17.000" y="27.000" width="9.650" height="1.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="17.000" y="28.400" width="9.650" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="17.000" y="28.800" width="9.650" height="1.800" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<!-- UML - Generalization -->
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="14.052,15.800 15.470,15.800 15.470,20.000 17.000,20.000 "/>
+<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  points="14.052,15.400 13.252,15.800 14.052,16.200 "/>
+<!-- UML - Generalization -->
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="7.250,16.712 7.250,18.350 5.901,18.350 5.901,20.100 "/>
+<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  points="7.650,16.712 7.250,15.912 6.850,16.712 "/>
+<!-- UML - Generalization -->
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="17.000,23.712 17.000,25.300 12.080,25.300 12.080,27.000 "/>
+<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  points="17.400,23.712 17.000,22.912 16.600,23.712 "/>
+<!-- UML - Generalization -->
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="19.560,23.712 19.560,25.300 21.825,25.300 21.825,27.000 "/>
+<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  points="19.960,23.712 19.560,22.912 19.160,23.712 "/>
+<!-- Standard - PolyLine -->
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="22.479,20.000 22.400,20.000 22.400,13.750 13.364,13.701 "/>
+<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  points="22.120,20.000 22.370,19.750 22.620,20.000 22.370,20.250 "/>
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="13.753,13.453 13.252,13.701 13.750,13.953 "/>
+<!-- UML - Note -->
+<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  points="21.150,34.500 27.995,34.500 28.595,35.100 28.595,37.000 21.150,37.000 "/>
+<polyline fill="none" stroke="#000000" stroke-width="0.050"  points="27.995,34.500 27.995,35.100 28.595,35.100 "/>
+<!-- UML - Note -->
+<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  points="24.900,19.850 33.285,19.850 33.885,20.450 33.885,21.550 24.900,21.550 "/>
+<polyline fill="none" stroke="#000000" stroke-width="0.050"  points="33.285,19.850 33.285,20.450 33.885,20.450 "/>
+<!-- Standard - Line -->
+<line x1="22.120" y1="20.700" x2="24.413" y2="20.700" stroke="#000000" stroke-width="0.100" />
+<polygon fill="#000000" stroke="#000000" stroke-width="0.100"  points="24.788,20.700 24.288,20.950 24.413,20.700 24.288,20.450 "/>
+<!-- Standard - Line -->
+<line x1="24.828" y1="30.600" x2="24.867" y2="34.013" stroke="#000000" stroke-width="0.100" />
+<polygon fill="#000000" stroke="#000000" stroke-width="0.100"  points="24.871,34.388 24.615,33.891 24.867,34.013 25.115,33.885 "/>
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+</g>
+</svg>
