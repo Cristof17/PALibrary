@@ -99,6 +99,8 @@ PAResult ArrayListPerformMove(struct ArrayList)
 	//This is kinda reverse for add directly
 	//you add by first moving all elements and the inserting the new element
 	//this is elementary programming from highschool
+	//buit it workds`
+	//this is not business nor logical 
 }
 struct PAData ArrayListPerformPutLast(struct ArrayList List)
 {
