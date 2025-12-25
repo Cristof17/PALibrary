@@ -97,7 +97,7 @@ PAResult ArrayListPerformMove(struct ArrayList)
 	//if i == 1
 	//element[i-1] = new_element
 	//This is kinda reverse for add directly
-	//you add by first moving all elements and the inserting the new element
+	//you add by first moving all elements and the inserting the new element on position 0
 	//this is elementary programming from highschool
 	//buit it workds`
 	//this is not business nor logical 
