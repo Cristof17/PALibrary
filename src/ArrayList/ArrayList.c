@@ -48,6 +48,9 @@ PAInt ArrayListPerformSize(struct ArrayList List)
 	PAInt x;
 	PAInt y;
 	x = first;
+	//while not end of list
+	//counter ++
+	//return counter
 	//0 is for resizing, put element in first position and then move the rest to the right
 	//for next move
 	//n+1 is for NULL terminatior in List workld
@@ -86,7 +89,16 @@ PAResult ArrayListPerformAdapt(struct ArrayList)
 }
 PAResult ArrayListPerformMove(struct ArrayList)
 {
-
+	//start, first position for i is 1
+	//while not end of line
+	//move to the right all elements and then realloc array with the new size for the next addFirst, or AddLast
+	//element[i+1] = element[iu];
+	//element[i] = element[i-1];
+	//if i == 1
+	//element[i-1] = new_element
+	//This is kinda reverse for add directly
+	//you add by first moving all elements and the inserting the new element
+	//this is elementary programming from highschool
 }
 struct PAData ArrayListPerformPutLast(struct ArrayList List)
 {
