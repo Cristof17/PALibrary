@@ -42,6 +42,16 @@
 // }
 // sjt
 // struct A
+PAInt ArrayListPerformSize(struct ArrayList List)
+{
+	PAInt first = (PAInt) FIRST;
+	PAInt x;
+	PAInt y;
+	x = first;
+	//0 is for resizing, put element in first position and then move the rest to the right
+	//n+1 is for NULL terminatior in List workld
+	return FIRST;
+}
 struct PAData ArrayListPerformGetFirst(struct ArrayList List)
 {
 	struct PAData first;
@@ -56,6 +66,7 @@ struct PAData ArrayListPerformGetLast(struct ArrayList List)
 }
 struct PAData ArrayListPerformPutFirst(struct ArrayList List)
 {
+
 	// int first = List.index[FIRST];
 	//pseudicod
 	//daca array-ul esye plin aloca un nou array
@@ -67,6 +78,14 @@ struct PAData ArrayListPerformPutFirst(struct ArrayList List)
 	//daca load factor e mare -> realloc
 	//altrfel 
 	//adauga element
+}
+PAResult ArrayListPerformAdapt(struct ArrayList)
+{
+	
+}
+PAResult ArrayListPerformMove(struct ArrayList)
+{
+
 }
 struct PAData ArrayListPerformPutLast(struct ArrayList List)
 {

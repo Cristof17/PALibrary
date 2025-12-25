@@ -23,9 +23,12 @@
 // sjt
 // struct A
 struct PAData ArrayListPerformGetFirst(struct ArrayList);
+PAInt ArrayListPerformSize(struct ArrayList);
 struct PAData ArrayListPerformGetLast(struct ArrayList);
-struct PAData ArrayListPerformPutFirst(struct ArrayList);
-struct PAData ArrayListPerformPutLast(struct ArrayList);
+PAResult ArrayListPerformPutFirst(struct ArrayList, struct PAData);
+PAResult ArrayListPerformAdapt(struct ArrayList);
+PAResult ArrayListPerformMove(struct ArrayList);
+PAResult ArrayListPerformPutLast(struct ArrayList, struct PAData);
 // struct PAData
 // struct PAData ArrayList
 PAInt ArrayListPerformSize(struct ArrayList);
