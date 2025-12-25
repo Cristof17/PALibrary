@@ -16,7 +16,7 @@ struct PASeries PASeriesPerformInit(struct PACount N, struct PAList Adj[])
     struct PASeries series;
     series = PASeriesPerformConstruct();
     // series.adj = Adj;
-    series.n = N;
+    series.progression = N;
     //Iterator
     // series.adj = Series.adj;
     //end of iterator
@@ -31,7 +31,7 @@ PAResult PASeriesPerformRuin(struct PASeries Series)
 struct PASeries PASeriesPerformPutCount(struct PASeries Series, struct PACount N) 
 {
     // struct PASeries series;
-    Series.n = N;
+    Series.progression = N;
     return Series;
     // return series;
 }
