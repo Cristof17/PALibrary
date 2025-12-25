@@ -49,6 +49,7 @@ PAInt ArrayListPerformSize(struct ArrayList List)
 	PAInt y;
 	x = first;
 	//0 is for resizing, put element in first position and then move the rest to the right
+	//for next move
 	//n+1 is for NULL terminatior in List workld
 	return FIRST;
 }
