@@ -56,7 +56,17 @@ struct PAData ArrayListPerformGetLast(struct ArrayList List)
 }
 struct PAData ArrayListPerformPutFirst(struct ArrayList List)
 {
-	
+	// int first = List.index[FIRST];
+	//pseudicod
+	//daca array-ul esye plin aloca un nou array
+	//daca load-factor-ul este mare aloca un nou array
+	// /'/'
+	//daa e gol adauga
+	//altfel daca nu  e gol
+	//verifica load factor
+	//daca load factor e mare -> realloc
+	//altrfel 
+	//adauga element
 }
 struct PAData ArrayListPerformPutLast(struct ArrayList List)
 {
