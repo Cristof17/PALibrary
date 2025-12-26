@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created by diasvg.py -->
+<svg width="39.439cm" height="8.650cm" viewBox="16.065 7.250 39.439 8.650"
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Layer: Background -->
+<g id="Background">
+</g>
+<!-- Layer: Background -->
+<g id="Background">
+</g>
+<!-- Layer: Background -->
+<g id="Background">
+</g>
+<!-- Layer: Background -->
+<g id="Background">
+<!-- Flowchart - Box -->
+<rect x="24.379" y="7.450" width="3.942" height="1.900" fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  rx="0.000" />
+<!-- Flowchart - Box -->
+<rect x="23.855" y="13.950" width="5.090" height="1.900" fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  rx="0.000" />
+<!-- Flowchart - Box -->
+<rect x="30.887" y="13.950" width="2.825" height="1.900" fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  rx="0.000" />
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Flowchart - Box -->
+<rect x="41.292" y="7.300" width="5.315" height="1.900" fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  rx="0.000" />
+<!-- Standard - Text -->
+<!-- Standard - PolyLine -->
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="27.335,9.350 27.350,11.850 32.300,11.950 32.300,13.463 "/>
+<polygon fill="#000000" stroke="#000000" stroke-width="0.100"  points="32.300,13.838 32.050,13.338 32.300,13.463 32.550,13.338 "/>
+<!-- Flowchart - Box -->
+<rect x="42.132" y="13.450" width="3.635" height="1.900" fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  rx="0.000" />
+<!-- Standard - Line -->
+<line x1="43.950" y1="9.200" x2="43.950" y2="12.963" stroke="#000000" stroke-width="0.100" />
+<polygon fill="#000000" stroke="#000000" stroke-width="0.100"  points="43.950,13.338 43.700,12.838 43.950,12.963 44.200,12.838 "/>
+<!-- Flowchart - Box -->
+<rect x="50.446" y="7.300" width="5.008" height="1.900" fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  rx="0.000" />
+<!-- Standard - PolyLine -->
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="26.350,9.350 26.395,13.463 "/>
+<polygon fill="#000000" stroke="#000000" stroke-width="0.100"  points="26.399,13.838 26.143,13.341 26.395,13.463 26.643,13.336 "/>
+<!-- Standard - Text -->
+<!-- Flowchart - Display -->
+<path stroke="#000000" fill="#FFFFFF" stroke-width="0.100"  d="M 16.846,7.800 L 20.154,7.800 C 20.650,8.200 20.815,8.400 20.815,8.800 C 20.815,9.200 20.650,9.400 20.154,9.800 L 16.846,9.800 L 16.185,8.800 L 16.846,7.800 z"/>
+<!-- Flowchart - Display -->
+<path stroke="#000000" fill="#FFFFFF" stroke-width="0.100"  d="M 17.786,13.050 L 19.214,13.050 C 19.429,13.450 19.500,13.650 19.500,14.050 C 19.500,14.450 19.429,14.650 19.214,15.050 L 17.786,15.050 L 17.500,14.050 L 17.786,13.050 z"/>
+<!-- Standard - Line -->
+<line x1="18.500" y1="9.800" x2="18.500" y2="12.563" stroke="#000000" stroke-width="0.100" />
+<polygon fill="#000000" stroke="#000000" stroke-width="0.100"  points="18.500,12.938 18.250,12.438 18.500,12.563 18.750,12.438 "/>
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Flowchart - Box -->
+<rect x="51.779" y="13.000" width="2.542" height="1.900" fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  rx="0.000" />
+<!-- Standard - Line -->
+<line x1="52.950" y1="9.200" x2="53.037" y2="12.513" stroke="#000000" stroke-width="0.100" />
+<polygon fill="#000000" stroke="#000000" stroke-width="0.100"  points="53.047,12.888 52.784,12.395 53.037,12.513 53.284,12.382 "/>
+<!-- Standard - Text -->
+</g>
+</svg>
