@@ -20,7 +20,7 @@ struct Iterator;
 // typedef struct Iterator Iterator;
 struct PAData First();
 struct PAData Next();
-struct PABool IsDone();
+PABool IsDone();
 struct PANod CurrentItem();
 
 #endif /* ITERATOR_INCLUDE_ITERATOR_H_ */
