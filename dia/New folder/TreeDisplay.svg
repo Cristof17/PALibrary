@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created by diasvg.py -->
+<svg width="34.540cm" height="12.700cm" viewBox="10.600 5.500 34.540 12.700"
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Layer: Background -->
+<g id="Background">
+</g>
+<!-- Layer: Fundal -->
+<g id="Fundal">
+<!-- UML - Class -->
+<rect x="10.650" y="5.550" width="12.558" height="1.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="10.650" y="6.950" width="12.558" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="10.650" y="7.350" width="12.558" height="3.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<!-- UML - Class -->
+<rect x="10.650" y="14.550" width="9.940" height="1.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="10.650" y="15.950" width="9.940" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="10.650" y="16.350" width="9.940" height="1.800" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<!-- UML - Class -->
+<rect x="24.000" y="14.350" width="12.653" height="1.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="24.000" y="15.750" width="12.653" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="24.000" y="16.150" width="12.653" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<!-- UML - Note -->
+<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  points="27.250,5.600 44.490,5.600 45.090,6.200 45.090,10.500 27.250,10.500 "/>
+<polyline fill="none" stroke="#000000" stroke-width="0.050"  points="44.490,5.600 44.490,6.200 45.090,6.200 "/>
+<!-- UML - Generalization -->
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="16.929,11.662 16.929,13.025 15.620,13.025 15.620,14.500 "/>
+<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  points="17.329,11.662 16.929,10.862 16.529,11.662 "/>
+<!-- Standard - Line -->
+<line x1="20.390" y1="15.250" x2="22.951" y2="15.302" stroke="#000000" stroke-width="0.100" />
+<ellipse cx="23.701" cy="15.317" rx="0.250" ry="0.250" fill="#000000" stroke="none"  stroke-width="0.100" />
+<polygon fill="#000000" stroke="none" stroke-width="0.100"  points="22.946,15.551 23.451,15.312 22.956,15.052 "/>
+<!-- Standard - Text -->
+<!-- Standard - Line -->
+<line x1="23.807" y1="8.114" x2="27.252" y2="8.096" stroke="#000000" stroke-width="0.100" stroke-dasharray="1.00,1.00"/>
+<path stroke="#000000" fill="#FFFFFF" stroke-width="0.100"  d="M 23.307,8.117 C 23.306,7.992 23.431,7.866 23.556,7.866 C 23.681,7.865 23.806,7.989 23.807,8.114 C 23.808,8.239 23.683,8.365 23.558,8.366 C 23.433,8.366 23.308,8.242 23.307,8.117 z"/>
+</g>
+</svg>

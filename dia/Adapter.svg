@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created by diasvg.py -->
+<svg width="25.480cm" height="15.595cm" viewBox="9.950 8.555 25.480 15.595"
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Layer: Background -->
+<g id="Background">
+</g>
+<!-- Layer: Background -->
+<g id="Background">
+<!-- UML - Class -->
+<rect x="10.000" y="9.000" width="3.133" height="1.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="10.000" y="10.400" width="3.133" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="10.000" y="10.800" width="3.133" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<!-- UML - Class -->
+<rect x="19.100" y="16.900" width="4.350" height="1.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="19.100" y="18.300" width="4.350" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="19.100" y="18.700" width="4.350" height="1.000" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<!-- UML - Class -->
+<rect x="19.050" y="8.800" width="4.350" height="1.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="19.050" y="10.200" width="4.350" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="19.050" y="10.600" width="4.350" height="1.000" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<!-- UML - Class -->
+<rect x="27.950" y="16.950" width="7.430" height="1.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="27.950" y="18.350" width="7.430" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="27.950" y="18.750" width="7.430" height="1.000" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<!-- Standard - Line -->
+<line x1="13.182" y1="10.117" x2="18.776" y2="10.175" stroke="#000000" stroke-width="0.100" />
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="18.385,10.421 18.888,10.176 18.391,9.921 "/>
+<!-- Standard - Line -->
+<line x1="21.275" y1="16.900" x2="21.231" y2="12.212" stroke="#000000" stroke-width="0.100" />
+<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  points="21.481,12.209 21.226,11.712 20.981,12.214 "/>
+<!-- Standard - Line -->
+<line x1="23.450" y1="17.600" x2="27.726" y2="17.648" stroke="#000000" stroke-width="0.100" />
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="27.335,17.893 27.838,17.649 27.341,17.393 "/>
+<!-- UML - Note -->
+<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  points="20.500,22.400 30.425,22.400 31.025,23.000 31.025,24.100 20.500,24.100 "/>
+<polyline fill="none" stroke="#000000" stroke-width="0.050"  points="30.425,22.400 30.425,23.000 31.025,23.000 "/>
+<!-- Standard - Line -->
+<line x1="20.550" y1="19.300" x2="20.500" y2="22.400" stroke="#000000" stroke-width="0.100" stroke-dasharray="0.10,0.10"/>
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+</g>
+</svg>

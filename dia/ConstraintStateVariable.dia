@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created by diasvg.py -->
+<svg width="28.192cm" height="12.295cm" viewBox="13.350 3.405 28.192 12.295"
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Layer: Background -->
+<g id="Background">
+</g>
+<!-- Layer: Fundal -->
+<g id="Fundal">
+<!-- UML - Class -->
+<rect x="13.400" y="7.925" width="8.943" height="1.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="13.400" y="9.325" width="8.943" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="13.400" y="9.725" width="8.943" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<!-- UML - Class -->
+<rect x="32.050" y="7.925" width="6.638" height="1.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="32.050" y="9.325" width="6.638" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="32.050" y="9.725" width="6.638" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<!-- UML - Class -->
+<rect x="19.600" y="13.450" width="11.365" height="1.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="19.600" y="14.850" width="11.365" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="19.600" y="15.250" width="11.365" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<!-- UML - Generalization -->
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="17.871,11.037 17.871,12.188 19.600,12.188 19.600,13.450 "/>
+<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  points="18.271,11.037 17.871,10.237 17.471,11.037 "/>
+<!-- UML - Generalization -->
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="32.050,11.037 32.050,12.188 25.283,12.188 25.283,13.450 "/>
+<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  points="32.450,11.037 32.050,10.237 31.650,11.037 "/>
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Line -->
+<line x1="17.407" y1="7.925" x2="17.500" y2="4.050" stroke="#000000" stroke-width="0.100" stroke-dasharray="1.00,1.00"/>
+<!-- Standard - Line -->
+<line x1="35.020" y1="7.925" x2="34.900" y2="4.150" stroke="#000000" stroke-width="0.100" stroke-dasharray="1.00,1.00"/>
+</g>
+</svg>

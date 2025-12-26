@@ -1,5 +1,5 @@
 #include <ArrayList/ArrayList.h>
-#include <PA/Result.h>
+// #include <PA/Result.h>
 #include <defs.h>
 /*
  * ArrayList.c
@@ -7,14 +7,96 @@
  *  Created on: 20 nov. 2025
  *      Author: AdministratorUser
  */
+// struct ArrayList ArrayListPerformConstruct()
+// {
+// 	struct ArrayList List;
+// 	return List;
+// }
+// struct ArrayList ArrayListPerformInit(struct PAData Data[], struct PACount M)
+// {
+// 	struct ArrayList List;
+// 	List = ArrayListPerformConstruct();
+// 	List.count = M;
+// 	List.index = Data;
+// 	return List;
+// }
+// struct ArrayList ArrayListPerformCopy(struct ArrayList List)
+// {
+// 	struct ArrayList copy;
+// 	// copt
+// 	// copy. 
+// 	// copy = ArrayListPefr
+// 	// copy = ArrayListPerformConstruct(;)
+// 	// copy. 
+// 	copy = ArrayListPerformConstruct();
+// 	copy = ArrayList
+// }
+// struct PAData ArrayListGet(struct PAData[],PAInt);
+// struct PARecord ArrayListPerformArrange(PAInt)
+// {
 
-struct PAIndex ArrayListGet(struct PAIndex Array[],PA_INT Position) {
-	struct PAIndex index;
-	// = Array[Position];
-	return index;
+// }
+// struct PARecord ArrayListPutCount(struct ArrayList, struct PACount)
+// {
+
+// }
+// sjt
+// struct A
+struct PAData ArrayListPerformGetFirst(struct ArrayList List)
+{
+	struct PAData first;
+	first = List.index[FIRST];
+	return first;
 }
-struct PAResult Init(PA_INT size) {
-//	return )
-	struct PAResult rezultat;
-	return rezultat;
+struct PAData ArrayListPerformGetLast(struct ArrayList List)
+{
+	struct PAData last;
+	last = List.index[(LAST(List.count))];
+	return last;
 }
+struct PAData ArrayListPerformPutFirst(struct ArrayList List)
+{
+	// int first = List.index[FIRST];
+	//pseudicod
+	//daca array-ul esye plin aloca un nou array
+	//daca load-factor-ul este mare aloca un nou array
+	// /'/'
+	//daa e gol adauga
+	//altfel daca nu  e gol
+	//verifica load factor
+	//daca load factor e mare -> realloc
+	//altrfel 
+	//adauga element
+}
+struct PAData ArrayListPerformPutLast(struct ArrayList List)
+{
+
+}
+struct ArrayList ArrayListPeformConstruct(struct ArrayList List)
+{
+	struct ArrayList List;
+	return List;
+}
+struct ArrayList ArrayListPerformInit(struct PAData Data[], struct PACount M)
+{
+	// srt
+	struct ArrayList List;
+	List = ArrayListPerformConstruct();
+	List.index = PADataPerformCopy(Data);
+	return List;
+}
+struct ArrayList ArrayListPerformCopy(struct ArrayList List)
+{
+	struct ArrayList Lost;
+	return Lost;
+}
+// struct PAData ArrayListPerformGet(struct PAIndex Array[],PAInt Position) {
+// 	struct PAData index;
+// 	// = Array[Position];
+// 	return index;
+// }
+// PAResult ArrayListPeformInit(PAInt size) {
+// //	return )
+// 	PAResult rezultat;
+// 	return rezultat;
+// `}

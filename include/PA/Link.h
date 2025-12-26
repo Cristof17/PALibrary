@@ -1,6 +1,8 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_PA_LINK_H_
 #define INCLUDE_PA_LINK_H_
+#include <types.h>
+// #include <rt>
 #ifndef _WIN95
 #include <PA/Pair.h>
 #include <PA/Result.h>
@@ -9,9 +11,11 @@
 #include <PA\Result.h>
 #endif
 // struct PALink;
-struct PALink PALinkConstruct();
-struct PAResult PALinkRuin(struct PALink);
-struct PALink PALinkArrange(struct PALink);
-struct PALink PALinkPutPair(struct PALink,struct PAPair);
+struct PALink PALinkPerformConstruct();
+struct PALink PALinkPerformCopy(struct PALink);
+struct PALink PALinkPerformInit(struct PAPair);
+struct PALink PALinkPerformPutPair(struct PALink,struct PAPair);
+PAResult PALinkPerformRuin(struct PALink);
+PAResult PALinkPerformDelete(struct PALink);
 //typedef struct PALink Link;
 #endif

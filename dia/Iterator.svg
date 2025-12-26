@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created by diasvg.py -->
+<svg width="28.580cm" height="18.550cm" viewBox="2.250 8.750 28.580 18.550"
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Layer: Background -->
+<g id="Background">
+</g>
+<!-- Layer: Fundal -->
+<g id="Fundal">
+<!-- UML - Class -->
+<rect x="4.300" y="8.850" width="7.045" height="1.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="4.300" y="10.250" width="7.045" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="4.300" y="10.650" width="7.045" height="1.000" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<!-- UML - Class -->
+<rect x="15.950" y="8.800" width="3.133" height="1.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="15.950" y="10.200" width="3.133" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="15.950" y="10.600" width="3.133" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<!-- UML - Class -->
+<rect x="22.800" y="8.850" width="5.890" height="1.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="22.800" y="10.250" width="5.890" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="22.800" y="10.650" width="5.890" height="3.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<!-- UML - Class -->
+<rect x="22.750" y="16.100" width="8.030" height="1.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="22.750" y="17.500" width="8.030" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="22.750" y="17.900" width="8.030" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<!-- UML - Class -->
+<rect x="4.900" y="16.150" width="9.285" height="1.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="4.900" y="17.550" width="9.285" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<rect x="4.900" y="17.950" width="9.285" height="1.000" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
+<!-- UML - Note -->
+<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  points="2.300,25.550 15.305,25.550 15.905,26.150 15.905,27.250 2.300,27.250 "/>
+<polyline fill="none" stroke="#000000" stroke-width="0.050"  points="15.305,25.550 15.305,26.150 15.905,26.150 "/>
+<!-- UML - Generalization -->
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="7.822,12.562 7.822,14.275 9.543,14.275 9.543,16.100 "/>
+<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  points="8.223,12.562 7.822,11.762 7.422,12.562 "/>
+<!-- Standard - Line -->
+<line x1="15.950" y1="9.500" x2="11.569" y2="9.548" stroke="#000000" stroke-width="0.100" />
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="11.954,9.293 11.457,9.549 11.959,9.793 "/>
+<!-- Standard - Line -->
+<line x1="18.790" y1="9.500" x2="22.576" y2="9.547" stroke="#000000" stroke-width="0.100" />
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="22.185,9.792 22.688,9.549 22.191,9.292 "/>
+<!-- UML - Generalization -->
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="25.745,14.962 25.745,15.450 26.765,15.450 26.765,16.050 "/>
+<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  points="26.145,14.962 25.745,14.162 25.345,14.962 "/>
+<!-- Standard - Line -->
+<line x1="13.160" y1="16.850" x2="22.526" y2="16.801" stroke="#000000" stroke-width="0.100" stroke-dasharray="1.00,1.00"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="22.140,17.053 22.638,16.801 22.137,16.553 "/>
+<!-- Standard - Line -->
+<line x1="22.750" y1="18.300" x2="13.384" y2="18.447" stroke="#000000" stroke-width="0.100" />
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="13.768,18.190 13.272,18.448 13.776,18.690 "/>
+<!-- Standard - Line -->
+<line x1="9.463" y1="19.000" x2="9.102" y2="25.550" stroke="#000000" stroke-width="0.100" stroke-dasharray="1.00,1.00"/>
+</g>
+</svg>

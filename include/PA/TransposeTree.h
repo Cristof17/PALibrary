@@ -3,13 +3,17 @@
 #define PAGRAFTRANSPUS_H_
 #ifndef _WIN95
 #include <PA/Result.h>
-#include <defs.h>
+// #include <defs.h>
 #elif defined _WIN95
 #include <PA\Result.h>
 #include <defs.h>
 #endif
+#include <types.h>
 // struct GrafTranspus;
 // typedef struct GrafTranspus GrafTranspus;
-struct GrafTranspus GrafTranspusBuildPart();
-struct PAResult GrafTranspusGetResult();
+struct PATransposeTree PATransposeTreePerformConstruct();
+struct PATransposeTree PATransposeTreePerformInit(struct PAList);
+struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree);
+struct PATransposeTree PATransposeTreeBuildPart();
+PAResult PATransposeTreeGetResult();
 #endif

@@ -14,14 +14,17 @@
 #include <PA\Series.h>
 #include <PA\Result.h>
 #endif
+#include <types.h>
 // struct PATree;
 // struct PATree PATreeConstruct(struct OPAResult);
-struct PATree PATreeConstruct(struct PACount, struct PACount, struct PAList, struct PAElement);
-struct PAResult PATreeRuin(struct PATree);
-struct PATree PATreeInit(struct PATree);
-struct PATree PATreePutCount(struct PATree, struct PACount, struct PACount);
+struct PATree PATreePerformConstruct();
+struct PATree PATreePerformInit(struct PACount, struct PACount, struct PASeries, struct PAElement);
+struct PATree PATreePerformCopy(struct PATree);
+struct PATree PATreePerformPutCount(struct PATree, struct PACount, struct PACount);
 // struct PATree PATreePutList(struct PATree, struct PAList);
-struct PATree PATreePutElement(struct PATree, struct PAElement);
-struct PATree PATreePutSeries(struct PATree, struct PASeries);
+struct PATree PATreePerformPutElement(struct PATree, struct PAElement);
+struct PATree PATreePerformPutSeries(struct PATree, struct PASeries);
+PAResult PATreePerformRuin(struct PATree);
+PAResult PATreePerformDelete(struct PATree);
 //typedef struct PATree Tree;
 #endif

@@ -1,56 +1,82 @@
 //@Author Cristofor Rotsching
 #include <PA/List.h>
-#include <defs.h>
+#include <types.h>
 // struct PAList PAListConstruct(struct PAElement Element) {
-struct PAList PAListConstruct(struct ArrayList List, struct PACount M) {
+struct PAList PAListPerformConstruct()
+{
     struct PAList list;
-    list.list = List;
+    // list.list = List;
+    // list.m = M;ß`
+    return list;
+}
+struct PAList PAListPerformInit(struct ArrayList ADJ, struct PACount M)
+{
+    struct PAList list;
+    list.adj = ADJ;
     list.m = M;
     return list;
 }
-struct PAList PAListArrange(struct PAList List) {
-    struct PAList list;
-    list.list = List.list;
-    list.m = List.m;
-    return list;
+struct PAList PAListPerformCopy(struct PAList List)
+{
+    struct PAList copy;
+    copy = PAListPerformConstruct();
+    copy = PAListPerformInit(List.adj, List.m);
+    return copy;
 }
 // struct PAList PAListPutElement(struct PAList List, struct PAElement Element) {
 //     // struct PAList list;
 //     // List.
 //     return list;
 // }
-struct PAList PAListPutCount(struct PAList List, struct PACount Count) {
+struct PAList PAListPerformPutCount(struct PAList List, struct PACount M)
+{
     // struct PAList list;
-    List.m = Count;
+    List.m = M;
     return List;
     // return list;
 }
-struct PAList PAListPutArrayList(struct PAList List, struct ArrayList Array) {
+struct PAList PAListPerformPutArrayList(struct PAList List, struct ArrayList Adj)
+{
     // struct PAList list;
     // return list;
-    List.list = Array;
+    List.adj = Adj;
     return List;
 }
-struct PAResult PAListAddElement(struct PAList List, struct PAElement Element) {
-    struct PAResult result;
+// struct PAResult PAListAddElement÷(struct PAList List, struct PAElement )
+// {÷
+    // struct PAResult result;
+    // return result;
+// }
+PAResult PAListPerformRuin(struct PAList List)
+{
+    PAResult result;
     return result;
 }
-struct PAResult PAListRuin(struct PAList List) {
-    struct PAResult result;
-    return result;
-}
-void Dispose() {
+void Dispose() 
+{
 
 }
-PA_INT PAListSize(struct PAList List) {
-    PA_INT size;
-    return size;
+// PA_INT PAListSize(struct PAList List)
+// {
+//     PA_INT size;
+//     return size;
+// }
+// struct PAElement PAListHead(struct PAList)
+// {
+//     struct PAElement element;
+//     return element;
+// }   
+// struct PAList PAListTail(struct PAList)
+// {
+//     struct PAList list;
+//     return list;
+// }
+void PAListPerformPrint(struct PAList List)
+{
+
 }
-struct PAElement PAListHead(struct PAList List) {
-    struct PAElement element;
-    return element;
-}   
-struct PAList PAListTail(struct PAList List) {
-    struct PAList list;
-    return list;
+PAResult PAListPerformDelete(struct PAList List)
+{
+    PAResult result;
+    return result;
 }

@@ -16,12 +16,15 @@
 #include <PA\List.h>
 #include <PA\Result.h>
 #endif
+#include <types.h>
 // struct PASeries;
-struct PASeries PASeriesConstruct(struct PACount, struct PAList[]);
-struct PAResult PASeriesRuin(struct PASeries);
+struct PASeries PASeriesPerformConstruct();
+struct PASeries PASeriesPerformInit(struct PACount, struct PAList[]);
 void PASeriesDispose(void);
-struct PASeries PASeriesInit(struct PASeries);
-struct PASeries PASeriesPutCount(struct PASeries, struct PACount);
-struct PASeries PASeriesPutList(struct PASeries, struct PAList);
+struct PASeries PASeriesPerformCopy(struct PASeries);
+struct PASeries PASeriesPerformPutCount(struct PASeries, struct PACount);
+struct PASeries PASeriesPerformPutList(struct PASeries, struct PAList);
+PAResult PASeriesPerformRuin(struct PASeries);
+PAResult PASeriesPerformDelete(struct PASeries);
 //typedef struct PASir Series;
 #endif /* INCLUDE_PASIR_H_ */

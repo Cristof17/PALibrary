@@ -2,17 +2,19 @@
 #ifndef INCLUDE_PA_FEATURE_H_
 #define INCLUDE_PA_FEATURE_H_
 // #include <PA/Feature.h>
+#include <types.h>
+// #include <types.h>
 #ifndef _WIN95
 #include <PA/Result.h>
-#include <types.h>
 #elif defined _WIN95
 #include <PA\Result.h>
-#include <types.h>
 #endif
 // struct PAFeature;
-struct PAFeature PAFeatureConstruct();
-struct PAResult PAFeatureRuin(struct PAFeature);
-struct PAFeature PAFeatureArrange(struct PAFeature);
-struct PAFeature PAFeaturePut(struct PAFeature, PA_INT Kind);
-//typedef struct PAFeature Feature;
+struct PAFeature PAFeaturePerformConstruct();
+struct PAFeature PAFeaturePerformCopy(struct PAFeature);
+PAResult PAFeaturePerformRuin(struct PAFeature);
+struct PAFeature PAFeaturePerformInit(PAInt);
+struct PAFeature PAFeaturePeformPutKind(struct PAFeature, PAInt Kind);
+PAResult PAFeaturePerformDelete(struct PAFeature);
+//typedef struct `PAFeature Feature;
 #endif

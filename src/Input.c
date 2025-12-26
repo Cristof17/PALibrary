@@ -1,3 +1,4 @@
 //@Author Cristofor Rotsching
 #include <Input.h>
-#include <defs.h>
+// #include <ty[].h>
+#include <types.h>

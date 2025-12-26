@@ -5,6 +5,6 @@
 	// struct PACardinal Cardinal;
 
 void BFSRecordPrint(struct BFSRecord Record) {
-    PAListPrint(Record.d);
-    PACountPrint(Record.n);
+    PAListPerformPrint(Record.d);
+    PACountPerformPrint(Record.n);
 }

@@ -12,10 +12,13 @@
 // #endo/
 // #endig
 #endif
+#include <types.h>
 // struct PAStatus/*.*/;
-struct PAStatus PAStatusConstruct();
-struct PAResult PAStatusRuin(struct PAStatus);
-struct PAStatus PAStatusArrange(struct PAStatus);
-struct PAStatus PAStatusPutValue(struct PAStatus, PA_INT);
+struct PAStatus PAStatusPerformConstruct();
+PAResult PAStatusPerformRuin(struct PAStatus);
+struct PAStatus PAStatusPerformCopy(struct PAStatus);
+struct PAStatus PAStatusPerformInit(PAInt);
+struct PAStatus PAStatusPerformPutValue(struct PAStatus, PAInt);
+// struct PAResult PAStatusDelete()
 //typedef struct PAStatus Status;
 #endif

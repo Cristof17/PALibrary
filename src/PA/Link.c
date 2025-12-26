@@ -1,22 +1,39 @@
 //@Author Cristofor Rotsching
 #include <PA/Link.h>
-#include <defs.h>
-struct PALink PALinkConstruct() {
+#include <types.h>
+struct PALink PALinkPerformConstruct()
+{
     struct PALink link;
     return link;
 }
-struct PAResult PALinkRuin(struct PALink Link) {
-    struct PAResult result;
+PAResult PALinkPerformRuin(struct PALink Link)
+{
+    PAResult result;
     return result;
 }
-struct PALink PALinkArrange(struct PALink Link) {
+struct PALink PALinkPerformCopy(struct PALink Link)
+{
     struct PALink link;
-    link.p = Link.p;
+    link = PALinkPerformInit(Link.p);
+//    link.p = Link.p;
     return link;
 }
-struct PALink PALinkPutPair(struct PALink Link,struct PAPair Pair) {
-//    struct PALink link;
-    Link.p = Pair;
+struct PALink PALinkPerformInit(struct PAPair P)
+{
+    struct PALink link;
+    // Link.p = Pair;
+    link.p = P;
     // return link;
+    return link;
+}
+struct PALink PALinkPerformPutPair(struct PALink Link,struct PAPair P)
+{
+    PAResult reusult;
+    Link.p = P;
     return Link;
+    // return reusult;
+}
+PAResult PALinkPerformDelete(struct PALink Link){
+    PAResult result;
+    return result;
 }

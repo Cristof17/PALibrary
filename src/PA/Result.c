@@ -1,21 +1,40 @@
 //@Author Cristofor Rotsching
 #include <PA/Result.h>
-#include <defs.h>
-struct PAResult PAResultConstruct() {
-    struct PAResult result;
-    return result;
-}
-// struct PAResult PAResultRuin(struct PAResult);
-void PAResultPrint(struct PAResult Result) {
-
-}
-struct PAResult PAResultArrange(struct PAResult Result) {
-    struct PAResult result;
-    result.code = Result.code;
-    return result;
-}
-struct PAResult PAResultPutValue(struct PAResult Result, PA_INT Value) {
-    struct PAResult result;
-    result.code = Value;
-    return result;
-}
+// #include <defs.h>
+// struct PAResult PAResultPerformConstruct()
+// {
+//     struct PAResult result;
+//     return result;
+// }
+// struct PAResult PAResultPerformRuin()
+// {
+// }
+// struct PAResult PAResultPerformCopy(struct PAResult Result)
+// {
+//     struct PAResult copy;
+//     copy = PAResultPerformConstruct();
+//     copy = PAResultPerformInit(Result.code);
+//     return copy;
+// }
+// // struct PAResult PAResultRuin(struct PAResult);
+// void PAResultPerformPrint(struct PAResult)
+// {
+//     ;
+// }
+// PAResult PAResultPerformInit(PA_INT Code)
+// {
+//     PAResult result;
+//     result.code = Code;
+//     return result;
+// }
+// PAResult PAResultPerformPutValue(struct PAResult Result, PA_INT Code)
+// {
+//     PAResult result;
+//     result.code = Code;
+//     return result;
+// }
+// PAResult PAResultPerformDelete(struct PAResult Result)
+// {
+//     PAResult result;
+//     return result;
+// }

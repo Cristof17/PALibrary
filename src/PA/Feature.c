@@ -1,22 +1,43 @@
 //@Author Cristofor Rotsching
 #include <PA/Feature.h>
-#include <defs.h>
-struct PAFeature PAFeatureConstruct() {
+#include <types.h>
+struct PAFeature PAFeaturePerformConstruct()
+{
     struct PAFeature feature;
     return feature;
 }
-struct PAResult PAFeatureRuin(struct PAFeature Feature) {
-    struct PAResult result;
-    return result;
+struct PAFeature PAFeaturePerformCopy(struct PAFeature Type)
+{
+    struct PAFeature copy;
+    copy=PAFeaturePerformConstruct();
+    copy=PAFeaturePerformInit(Type.kind);
+//    return
+//    copy.kind = Type.kind;
+    return copy;
 }
-struct PAFeature PAFeatureArrange(struct PAFeature Feature) {
-    struct PAFeature feature;
-    feature.kind = Feature.kind;
-    return feature;
-}
-struct PAFeature PAFeaturePut(struct PAFeature Feature, PA_INT Kind) {
+PAResult PAFeaturePerformRuin(struct PAFeature Feature)
+{
+	PAResult result;
+	return result;
     // struct PAFeature feature;
-    Feature.kind = Kind;
+    // feature.kind = kind;
     // return feature;
-    return Feature;
+}
+struct PAFeature PAFeaturePerformInit(PAInt Kind)
+{
+    struct PAFeature feature;
+    feature.kind = Kind;
+    // return feature;
+    // return Feature;
+    return feature;
+}
+struct PAFeature PAFeaturePeformPutKind(struct PAFeature Feature, PAInt Kind)
+{
+	Feature.kind = Kind;
+	return Feature;
+}
+PAResult PAFeaturePerformDelete(struct PAFeature Feature)
+{
+    PAResult result;
+    return result;
 }

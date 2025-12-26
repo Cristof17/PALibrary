@@ -2,6 +2,8 @@
 #ifndef INCLUDE_BFSOUTPUT_H_
 #define INCLUDE_BFSOUTPUT_H_
 // #ifndef _WIN954
+// #include <defs.h>
+#include <types.h>
 #ifndef _WIN95
 #include <BFS/Record.h>
 #include <PA/Result.h>
@@ -11,10 +13,13 @@
 #include <PA\Result.h>
 #endif
 // struct BFSOutput;
-struct PAOutput PAOutputConstruct(struct BFSRecord);
+struct PAOutput PAOutputPerformConstruct();
+struct PAOutput PAOutputPerformInit(struct BFSRecord);
+struct PAOutput PAOutputPerformCopy(struct PAOutput);
 // strut BFSOutputRuin();
-struct PAResult PAOutputRuin(struct PAOutput);
+struct PAResult PAOutputPerformRuin(struct PAOutput);
 //typedef struct BFSOutput BFSOutput;
-struct PAOutput PAOutputInit(struct BFSRecord);
-void PAOutputPrint(struct PAOutput);
+// struct PAOutput PAOutputPerformInit(struct BFSRecord);
+void PAOutputPerformPrint(struct PAOutput);
+struct PAResult PAResultPerformDelete(struct PAResult);
 #endif

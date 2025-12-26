@@ -5,36 +5,48 @@
  *
  *  Created on: 16 nov. 2025
  *      Author: AdministratorUser
- */
-struct PASeries PASeriesConstruct(struct PACount N, struct PAList Adj[]) {
+` */
+struct PASeries PASeriesPerformConstruct()
+{
     struct PASeries series;
     return series;
 }
-struct PAResult PASeriesRuin(struct PASeries Series) {
-    struct PAResult result;
-    return result;
-}
-struct PASeries PASeriesInit(struct PASeries Series) {
+struct PASeries PASeriesPerformInit(struct PACount N, struct PAList Adj[])
+{
     struct PASeries series;
+    series = PASeriesPerformConstruct();
+    // series.adj = Adj;
+    series.n = N;
     //Iterator
     // series.adj = Series.adj;
     //end of iterator
-    series.n = Series.n;
+    // series.n = N;
     return series;
 }
-struct PASeries PASeriesPutCount(struct PASeries Series, struct PACount Count) {
+PAResult PASeriesPerformRuin(struct PASeries Series)
+{
+    PAResult result;
+    return result;
+}
+struct PASeries PASeriesPerformPutCount(struct PASeries Series, struct PACount N) 
+{
     // struct PASeries series;
-    Series.n = Count;
+    Series.n = N;
     return Series;
     // return series;
 }
-struct PASeries PASeriesPutList(struct PASeries Series, struct PAList List) {
+struct PASeries PASeriesPerformPutList(struct PASeries Series, struct PAList Adj) 
+{
     //Iterator
-    struct PASeries series;
+//    struct PASeries series;
+    // Series.adj = Adj;
     // Series.adj = List;
     //End of Iterator
     // return series;
     return Series;
 }
-
-
+PAResult PASeriesPerformDelete(struct PASeries Series)
+{
+    PAResult result;
+    return result;
+}

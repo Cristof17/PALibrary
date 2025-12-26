@@ -10,16 +10,19 @@
 #include <PA\Result.h>
 #include <ArrayList\ArrayList.h>
 #endif
+#include <types.h>
 // #include <tyoes
 // struct Input;
 // typedef struct Input Input;
-struct Input InputConstruct(struct PACount, struct PACount, struct ArrayList, struct PAElement);
-// struct Input InputInit(struct Input);
-// void UInputRuin();
+struct Input InputPerformConstruct();
+struct Input InputPerformInit(struct PACount, struct PACount, struct ArrayList, struct PAElement);
+struct Input InputPerformCopy(struct Input);
+struct PAResult InputPerformDelete(struct PAInput);
 void InputRuin();
 void InputDispose();
+// struct Input InputInit(struct Input);
+// void UInputRuin();
+// struct PAResult InputDestroy();
 // struct Inpuit
-struct Input InputInit(struct Input);
-struct PAResult InputDestroy();
 // struct Input InputConstruct();
 #endif

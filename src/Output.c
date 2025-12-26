@@ -1,6 +1,8 @@
 //@Author Cristofor Rotsching
 #include <Output.h>
-#include <defs.h>
-void OutputPrint(struct PAResult rezultat) {
-    PAResultPrint(rezultat);
+// #include <PA/Output.h>
+#include <types.h>
+void OutputPerformPrint(PAResult Result)
+{
+    // PAResultPerformPrint(Result);
 }

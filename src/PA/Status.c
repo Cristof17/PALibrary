@@ -1,22 +1,38 @@
 //@Author Cristofor Rotsching
 #include <PA/Status.h>
 #include <defs.h>
-struct PAStatus PAStatusConstruct() {
+struct PAStatus PAStatusPerformConstruct()
+{
     struct PAStatus status;
     return status;
 }
-struct PAResult PAStatusRuin(struct PAStatus Status) {
+struct PAResult PAStatusPerformRuin(struct PAStatus Status)
+{
     struct PAResult result;
     return result;
 }
-struct PAStatus PAStatusArrange(struct PAStatus Status) {
+struct PAStatus PAStatusPerformCopy(struct PAStatus Status)
+{
     struct PAStatus status;
-    status.Vizited = Status.Vizited;
+    status.visited = Status.visited;
     return status;
 }
-struct PAStatus PAStatusPutValue(struct PAStatus Status, PA_INT Value) {
-    // struct PAStatus status;
-    Status.Vizited = Value;
+struct PAStatus PAStatusPerformInit(PA_INT Visited)
+{
+    struct PAStatus status;
+    status = PAStatusPerformConstruct();
+    status.visited = Visited;
+
     // return status;
+    return status;
+}
+struct PAStatus PAStatusPerformPutValue(struct PAStatus Status, PA_INT Visited)
+{
+    Status.visited = Visited;
     return Status;
 }
+// struct PAResult PASeriesPerformDelete(struct PASeries Series) 
+// {
+//     struct PAResult result;
+//     return result;
+// }

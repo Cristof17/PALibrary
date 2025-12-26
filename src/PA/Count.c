@@ -1,26 +1,58 @@
 //@Author Cristofor Rotsching
 #include <PA/Count.h>
-#include <defs.h>
-void PACountPrint(struct PACount Count) {
-
+#include <types.h>
+PAResult PACountPerformPrint(struct PACount Count)
+{
+    PAResult result;
+    return result;
 }
-struct PACount PACountConstruct(PA_INT Number) {
+struct PACount PACountPerformConstruct()
+{
     struct PACount size;
     return size;
 }
+struct PACount PACountPerformCopy(struct PACount Count)
+{
+	struct PACount copy;
+	copy=PACountPerformConstruct();
+	copy=PACountPerformInit(Count.number);
+	return copy;
+}
 // void PASize(PA_INT);
-struct PAResult PACountRuin(struct PACount Count) {
-    struct PAResult result;
+PAResult PACountPerformRuin(struct PACount Count)
+{
+    PAResult result;
     return result;
 }
-struct PACount PACountInit(struct PACount Count) {
+struct PACount PACountPerformInit(PAResult Number)
+{
     struct PACount count;
-    count.number = Count.number;
+    count.number = Number;
     return count;
 }
-struct PACount PACountPutNumber(struct PACount Count, PA_INT Number) {
-    // struct PASize size;
-    Count.number = Number;
-    // return size;
-    return Count;
+struct PACount PACountPerformPutValue(struct PACount Count, PAInt Value)
+{
+	Count.number = Value;
+	return Count;
 }
+PAResult PACountPerformDelete(struct PACount Count)
+{
+	PAResult result;
+	return result;
+}
+// struct PAData PADataPerformPutResource(struct PAData, struct PAResource Resource)
+// {
+//     // struct PASize size;
+//     Count.number = Number;
+//     // return size;
+//     return Count;
+// }
+// struct PAResult PADataPerformRuin(struct PAData)
+// {
+
+// }
+// struct PAResult PADataPerformDelete(struct PAData)
+// {
+//     struct PAResult result;
+//     return result;
+// }

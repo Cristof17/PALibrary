@@ -5,15 +5,20 @@
 #include <types.h>
 #ifndef _WIN95
 #include <PA/Result.h>
+// #include <defs.h>
 #elif defined _WIN95
 #include <PA\Result.h>
+// #include <defs.h>
 #endif
-struct PACount;
+// struct PACount;
 //typedef struct PACount Count;
-void PACountPrint(struct PACount);
-struct PACount PACountConstruct(PA_INT);
+struct PACount PACountPerformConstruct();
+struct PACount PACountPerformCopy(struct PACount);
 // void PASize(PA_INT);
-struct PAResult PACountRuin(struct PACount);
-struct PACount PACountArrange(struct PACount);
-struct PACount PACountPutValue(struct PACount, PA_INT);
+PAResult PACountPerformPrint(struct PACount);
+PAResult PACountPerformRuin(struct PACount);
+struct PACount PACountPerformInit(PAInt);
+struct PACount PACountPerformPutValue(struct PACount, PAInt);
+// struct 
+PAResult PACountPerformDelete(struct PACount);
 #endif

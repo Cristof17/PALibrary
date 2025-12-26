@@ -1,38 +1,59 @@
 //@Author Cristofor Rotsching
 #include <PA/Tree.h>
 #include <defs.h>
-struct PATree PATreeConstruct(struct PACount n, struct PACount m, struct PAList adj, struct PAElement source) {
+struct PATree PATreePerformConstruct()
+{
     struct PATree tree;
     return tree;
 }
-struct PAResult PATreeRuin(struct PATree Tree) {
-    struct PAResult result;
+struct PATree PATreePerformInit(struct PACount N, struct PACount M, struct PASeries Adj, struct PAElement Source)
+{
+    struct PATree tree;
+    tree = PATreePerformConstruct();
+    tree.adj = tree.adj;
+    tree.m = tree.m;
+    tree.n = tree.n;
+    tree.source = tree.source;
+    return tree;
+}
+PAResult PATreePerformRuin(struct PATree Tree)
+{
+    PAResult result;
     return result;
 }
-struct PATree PATreeArrange(struct PATree Tree) {
+struct PATree PATreePerformCopy(struct PATree Tree)
+{
     struct PATree tree;
-    tree.adj = Tree.adj;
-    tree.m = Tree.m;
-    tree.n = Tree.n;
-    tree.source = Tree.source;
+    tree = PATreePerformConstruct();
+    tree = PATreePerformInit(Tree.n, Tree.m, Tree.adj, Tree.source);
     return tree;
 }
-struct PATree PATreePutSize(struct PATree Tree, struct PACount Count1, struct PACount Count2) {
-    // struct PATree tree;
+struct PATree PATreePerformPutCount(struct PATree Tree, struct PACount Count1, struct PACount Count2)
+{
+    // s
     Tree.n = Count1;
     Tree.m = Count2;
     return Tree;
-    // return tree;
 }
-struct PATree PATreePutSeries(struct PATree Tree, struct PASeries List) {
+struct PATree PATreePerformPutElement(struct PATree Tree, struct PAElement Source)
+{
     // struct PATree tree;
-    Tree.adj = List;
+    Tree.source = Source;
     // return tree;
     return Tree;
 }
-struct PATree PATreePutElement(struct PATree Tree, struct PAElement Element) {
+// struct PATree PATreePerformPutSize(struct PATree Tree, struct PACount Count1, struct PACount Count2) 
+// {
+//     // struct PATree tree;
+//     Tree.n = Count1;
+//     Tree.m = Count2;
+//     return Tree;
+//     // return tree;
+// }
+struct PATree PATreePerformPutSeries(struct PATree Tree, struct PASeries List) 
+{
     // struct PATree tree;
-    Tree.source = Element;
+    Tree.adj = List;
     // return tree;
     return Tree;
 }
@@ -40,3 +61,8 @@ struct PATree PATreePutElement(struct PATree Tree, struct PAElement Element) {
 //     // struct PATree tree;
 //     return tree;
 // }
+PAResult PATreePerformDelete(struct PATree Tree)
+{
+    PAResult result;
+    return result;
+}

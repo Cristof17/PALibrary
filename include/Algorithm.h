@@ -12,9 +12,10 @@
 #include <Output.h>
 #include <PA\Result.h>
 #endif
+#include <types.h>
 // struct Algorithm;
 // typedef struct Algorithm Algorithm;
-struct Output AlgorithmRun(struct Input);
+struct Output AlgorithmPerformRun(struct Input);
 // struct Algorithm AlgorithmConstruct(struct Input);
 // struct PAResult AlgorithmRuin();
 // struct Algorithm AlgorithmArrange(struct Algorithm);

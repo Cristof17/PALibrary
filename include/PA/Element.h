@@ -1,6 +1,7 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_PA_ELEMENT_H_
 #define INCLUDE_PA_ELEMENT_H_
+#include <types.h>
 #ifndef _WIN95
 #include <PA/Status.h>
 //#include "padata.h"
@@ -15,14 +16,16 @@
 #include <PA\Feature.h>
 #include <PA\Result.h>
 #endif
-struct PAElement;
-struct PAElement PAElementConstruct();
-struct PAResult PAElementRuin(struct PAElement);
-struct PAElement PAElementArrange(struct PAElement);
-struct PAElement PAElementPutStatus(struct PAElement, struct PAStatus);
-struct PAElement PAElementPutData(struct PAElement, struct PAData);
-struct PAElement PAElementPutDestination(struct PAElement, struct PADestination);
-struct PAElement PAElementPutFeature(struct PAElement, struct PAFeature);
+// struct PAElement;
+struct PAElement PAElementPerformConstruct();
+struct PAElement PAElementPerformCopy(struct PAElement);
+struct PAElement PAElementPerformInit(struct PAStatus, struct PAData, struct PAFeature);
+struct PAElement PAElementPerformPutStatus(struct PAElement, struct PAStatus);
+struct PAElement PAElementPerformPutData(struct PAElement, struct PAData);
+struct PAElement PAElementPerformPutDestination(struct PAElement, struct PADestination);
+struct PAElement PAElementPerformPutFeature(struct PAElement, struct PAFeature);
+PAResult PAElementPerformRuin(struct PAElement);
+PAResult PAElementPerformDelete(struct PAElement);
 // struct PANod;
 //typedef struct PAElement Element;
 #endif
