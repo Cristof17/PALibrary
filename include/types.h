@@ -100,7 +100,7 @@ struct PACount {
 struct ListData {
 	DataObject object;
 };
-struct Position {
+struct ListPosition {
 	PositionInt position;
 };
 struct List {
