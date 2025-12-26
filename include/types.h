@@ -106,11 +106,11 @@ struct Position {
 struct List {
 	struct ListData objects[0];
 	// struct Position position;
-	struct Position place;
+	struct ListPosition place;
 };
-struct Position {
-	PositionInt position;
-};
+// struct Position {
+// 	PositionInt position;
+// };
 struct PAList {
 	// struct PANod Nod;
 	struct List adj;
