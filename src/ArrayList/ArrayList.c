@@ -42,22 +42,6 @@
 // }
 // sjt
 // struct A
-<<<<<<< HEAD
-struct PAData ArrayListPerformGetFirst(struct ArrayList List)
-{
-	struct PAData first;
-	first = List.index[FIRST];
-	return first;
-}
-struct PAData ArrayListPerformGetLast(struct ArrayList List)
-{
-	struct PAData last;
-	last = List.index[(LAST(List.count))];
-	return last;
-}
-struct PAData ArrayListPerformPutFirst(struct ArrayList List)
-{
-=======
 PAInt ArrayListPerformSize(struct ArrayList List)
 {
 	PAInt first = (PAInt) FIRST;
@@ -87,7 +71,6 @@ struct PAData ArrayListPerformGetLast(struct ArrayList List)
 struct PAData ArrayListPerformPutFirst(struct ArrayList List)
 {
 
->>>>>>> 6fc82fdf2a8a5313e741e95c7e45a6a6cff5edd2
 	// int first = List.index[FIRST];
 	//pseudicod
 	//daca array-ul esye plin aloca un nou array
@@ -100,8 +83,6 @@ struct PAData ArrayListPerformPutFirst(struct ArrayList List)
 	//altrfel 
 	//adauga element
 }
-<<<<<<< HEAD
-=======
 PAResult ArrayListPerformAdapt(struct ArrayList)
 {
 	
@@ -124,7 +105,6 @@ PAResult ArrayListPerformMove(struct ArrayList)
 	//this should be done usnng diagrams and helper functions
 	//#noiu #sa #fim #sanatosi
 }
->>>>>>> 6fc82fdf2a8a5313e741e95c7e45a6a6cff5edd2
 struct PAData ArrayListPerformPutLast(struct ArrayList List)
 {
 
