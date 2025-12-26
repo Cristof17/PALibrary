@@ -25,7 +25,7 @@ struct PAOutput;
 // struct PAResource;
 struct PAData;
 struct PAValue;
-struct ArrayList;
+struct List;
 struct PAList;
 struct PAStatus;
 struct PAFeature;
@@ -97,19 +97,18 @@ struct PAElement {
 struct PACount {
 	PAInt number;
 };
-struct ArrayList {
-	// struct PACount m;
-#ifndef _WIN95
-	// uint32_t count;
-	int count;
-#elif defined _WIN95
-	uint32_t count;
-#endif
-	struct PAData index[0];
+struct ListData {
+	DataObject object;
+};
+struct Position {
+	PositionInt position;
+};
+struct List {
+	struct ListData objects[0];
 };
 struct PAList {
 	// struct PANod Nod;
-	struct ArrayList adj;
+	struct List adj;
 	struct PACount m;
 };
 struct PAInput {
@@ -176,7 +175,7 @@ struct PALink {
 // 	PA_INT code;
 // };
 struct Adaptee {
-	struct ArrayList list;
+	struct List list;
 };
 struct Adapter {
 	struct PAList list;

@@ -8,6 +8,14 @@
 typedef PAInt PAResult;
 #else
 #define PAInt int
+#ifndef _WIN95
+typedef int DataObject;
+typedef int PositionInt;
+// typedef 
+#elif defined _WIN95
+typedef uint32_t DataObject;
+typedef uint32_t PositionInt;
+#endif
 typedef PAInt PAResult;
 // typedef int PAInt;
 #endif

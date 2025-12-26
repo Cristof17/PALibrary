@@ -17,11 +17,11 @@
 // struct PAList;
 //typedef struct PAList List;
 struct PAList PAListPerformConstruct();
-struct PAList PAListPerformInit(struct ArrayList, struct PACount);
+struct PAList PAListPerformInit(struct List, struct PACount);
 struct PAList PAListPerformCopy(struct PAList);
 // struct PAList PAListPutElement(struct PAList, struct PAElement);
 struct PAList PAListPerformPutCount(struct PAList, struct PACount);
-struct PAList PAListPerformPutArrayList(struct PAList, struct ArrayList);
+struct PAList PAListPerformPutArrayList(struct PAList, struct List);
 PAResult PAListAddElement(struct PAList, struct PAElement);
 PAResult PAListPerformRuin(struct PAList);
 void Dispose();
