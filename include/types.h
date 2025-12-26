@@ -180,7 +180,7 @@ struct PALink {
 // 	PA_INT code;
 // };
 struct Adaptee {
-	struct List list;
+	struct ArrayList list;
 };
 struct Adapter {
 	struct PAList list;
