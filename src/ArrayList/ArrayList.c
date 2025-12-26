@@ -42,6 +42,7 @@
 // }
 // sjt
 // struct A
+<<<<<<< HEAD
 struct PAData ArrayListPerformGetFirst(struct ArrayList List)
 {
 	struct PAData first;
@@ -56,6 +57,37 @@ struct PAData ArrayListPerformGetLast(struct ArrayList List)
 }
 struct PAData ArrayListPerformPutFirst(struct ArrayList List)
 {
+=======
+PAInt ArrayListPerformSize(struct ArrayList List)
+{
+	PAInt first = (PAInt) FIRST;
+	PAInt x;
+	PAInt y;
+	x = first;
+	//while not end of list
+	//counter ++
+	//return counter
+	//0 is for resizing, put element in first position and then move the rest to the right
+	//for next move
+	//n+1 is for NULL terminatior in List workld
+	return FIRST;
+}
+struct PAData ArrayListPerformGetFirst(struct ArrayList List)
+{
+	struct PAData first;
+	first = List.index[FIRST];
+	return first;
+}
+struct PAData ArrayListPerformGetLast(struct ArrayList List)
+{
+	struct PAData last;
+	last = List.index[(LAST(List.count))];
+	return last;
+}
+struct PAData ArrayListPerformPutFirst(struct ArrayList List)
+{
+
+>>>>>>> 6fc82fdf2a8a5313e741e95c7e45a6a6cff5edd2
 	// int first = List.index[FIRST];
 	//pseudicod
 	//daca array-ul esye plin aloca un nou array
@@ -68,6 +100,31 @@ struct PAData ArrayListPerformPutFirst(struct ArrayList List)
 	//altrfel 
 	//adauga element
 }
+<<<<<<< HEAD
+=======
+PAResult ArrayListPerformAdapt(struct ArrayList)
+{
+	
+}
+PAResult ArrayListPerformMove(struct ArrayList)
+{
+	//start, first position for i is 1
+	//while not end of line
+	//move to the right all elements and then realloc array with the new size for the next addFirst, or AddLast
+	//element[i+1] = element[iu];
+	//element[i] = element[i-1];
+	//if i == 1
+	//element[i-1] = new_element
+	//This is kinda reverse for add directly
+	//you add by first moving all elements and the inserting the new element on position 0
+	//this is elementary programming from highschool
+	//buit it workds`
+	//this is not business nor logical 
+	//this is not math
+	//this should be done usnng diagrams and helper functions
+	//#noiu #sa #fim #sanatosi
+}
+>>>>>>> 6fc82fdf2a8a5313e741e95c7e45a6a6cff5edd2
 struct PAData ArrayListPerformPutLast(struct ArrayList List)
 {
 

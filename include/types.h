@@ -156,7 +156,11 @@ struct BFSOutput {
 // //	struct BFSOutput outputBFS;
 // };
 struct PASeries {
+<<<<<<< HEAD
 	struct PACount n;
+=======
+	struct PACount progression;
+>>>>>>> 6fc82fdf2a8a5313e741e95c7e45a6a6cff5edd2
 	struct PAList adj[];
 };
 //struct PASeries
