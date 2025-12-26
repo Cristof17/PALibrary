@@ -97,23 +97,23 @@ struct PAElement {
 struct PACount {
 	PAInt number;
 };
-struct ListData {
-	DataObject object;
+struct ArrayListData {
+	ListData object;
 };
-struct ListPosition {
-	PositionInt position;
+struct ArrayListPosition {
+	ListPosition position;
 };
-struct List {
-	struct ListData objects[0];
+struct ArrayList {
+	struct ArrayListData objects[0];
 	// struct Position position;
-	struct ListPosition place;
+	struct ArrayListPosition place;
 };
 // struct Position {
 // 	PositionInt position;
 // };
 struct PAList {
 	// struct PANod Nod;
-	struct List adj;
+	struct ArrayList adj;
 	struct PACount m;
 };
 struct PAInput {
