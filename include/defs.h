@@ -11,12 +11,12 @@ typedef PAInt PAResult;
 #define PABool int
 #endif
 #ifndef _WIN95
-typedef int ListData;
+typedef int ListObject;
 typedef int ListPosition;
 // typedef 
 #elif defined _WIN95
-typedef uint32_t DataObject;
-typedef uint32_t PositionInt;
+typedef uint32_t ListObject;
+typedef uint32_t ListPosition;
 #endif
 typedef PAInt PAResult;
 // typedef int PAInt;

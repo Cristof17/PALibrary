@@ -97,14 +97,14 @@ struct PAElement {
 struct PACount {
 	PAInt number;
 };
-struct ArrayListData {
-	ListData object;
+struct ArrayListObject {
+	ListObject object;
 };
 struct ArrayListPosition {
 	ListPosition position;
 };
 struct ArrayList {
-	struct ArrayListData objects[0];
+	struct ArrayListObject objects[0];
 	// struct Position position;
 	struct ArrayListPosition place;
 };
