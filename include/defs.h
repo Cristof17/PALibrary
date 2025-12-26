@@ -8,6 +8,8 @@
 typedef PAInt PAResult;
 #else
 #define PAInt int
+#define PABool int
+#endif
 #ifndef _WIN95
 typedef int DataObject;
 typedef int PositionInt;
@@ -18,7 +20,6 @@ typedef uint32_t PositionInt;
 #endif
 typedef PAInt PAResult;
 // typedef int PAInt;
-#endif
 #define FIRST 1
 #define LAST(N) ((N)+1)
 #endif

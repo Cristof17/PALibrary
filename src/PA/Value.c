@@ -31,23 +31,23 @@ struct PAValue PAValuePerformPutValue(struct PAValue Value1, PAInt Value2)
     return Value1;
 }
 //typedef struct PAValue Value;
-PAInt op_Equality(struct PAValue Value1,struct PAValue Value2)
+PABool op_Equality(struct PAValue Value1,struct PAValue Value2)
 {
     return 1;
 }
-PAInt op_Inequality(struct PAValue Value1,struct PAValue Value2)
+PABool op_Inequality(struct PAValue Value1,struct PAValue Value2)
 {
     return 1;
 }
-PAInt op_LessThan(struct PAValue Value1,struct PAValue Value2)
+PABool op_LessThan(struct PAValue Value1,struct PAValue Value2)
 {
     return 1;
 }
-PAInt op_GreatherThan(struct PAValue Value1,struct PAValue Value2)
+PABool op_GreatherThan(struct PAValue Value1,struct PAValue Value2)
 {
     return 1;
 }
-PAInt op_GreatherThanOrEqual(struct PAValue Value1,struct PAValue Value2)
+PABool op_GreatherThanOrEqual(struct PAValue Value1,struct PAValue Value2)
 {
     return 1;
 }
