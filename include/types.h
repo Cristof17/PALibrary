@@ -104,7 +104,7 @@ struct ArrayListPosition {
 	ListPosition position;
 };
 struct ArrayList {
-	struct ArrayListObject objects[0];
+	Objects objects;
 	// struct Position position;
 	struct ArrayListPosition place;
 };

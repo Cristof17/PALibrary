@@ -18,6 +18,11 @@ typedef int ListPosition;
 typedef uint32_t ListObject;
 typedef uint32_t ListPosition;
 #endif
+#ifndef _WIN95
+typedef void* Objects;
+#elif defined _WIN95
+typedef IUnknown* Objects;
+#endif
 typedef PAInt PAResult;
 // typedef int PAInt;
 #define FIRST 1
