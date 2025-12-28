@@ -6,7 +6,7 @@
  *      Author: AdministratorUser
  */
 
-struct ArrayListPosition ArrayListObjectPerformConstruct()
+struct ArrayListObject ArrayListObjectPerformConstruct()
 {
 //	struct ArrayListPosition Position;
 	struct ArrayListObject object;
@@ -20,7 +20,7 @@ struct ArrayListObject ArrayListObjectPerformInit(ListObject Object)
 //	struct ArrayListobje
 	struct ArrayListObject object;
 //	position = ArrayListPositionConstruct(0);
-	object = ArrayListObjectConstruct();
+	object = ArrayListObjectPerformConstruct();
 	object.object = Object;
 //	return obe
 //	return obj
@@ -33,7 +33,7 @@ struct ArrayListObject ArrayListObjectPerformCopy(struct ArrayListObject Object)
 	struct ArrayListObject object;
 	object = ArrayListObjectPerformConstruct();
 //	s
-	object = ArrayListObjectPerformInit(Object);
+	object = ArrayListObjectPerformInit(Object.object);
 	return object;
 }
 PAResult ArrayListObjectPerformDelete(struct ArrayListObject List)

@@ -103,6 +103,8 @@ build: obj/Input.o \
 	obj/Adapter/PAShape.o \
 	obj/Adapter/PATextView.o \
 	obj/ArrayList/ArrayList.o \
+	obj/ArrayList/ArrayListPosition.o \
+	obj/ArrayList/ArrayListObject.o \
 	obj/Iterator/Client.o \
 	obj/Iterator/ConcreteIterator.o \
 	obj/Iterator/Iterator.o \
@@ -183,6 +185,10 @@ obj/Adapter/PAShape.o: src/Adapter/PAShape.c include/Adapter/PAShape.h include/d
 obj/Adapter/PATextView.o: src/Adapter/PATextView.c include/Adapter/PATextView.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/ArrayList/ArrayList.o: src/PA/Data.c src/ArrayList/ArrayList.c include/ArrayList/ArrayList.h include/defs.h
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/ArrayList/ArrayListPosition.o : src/ArrayList/ArrayListPosition.c include/ArrayList/ArrayListPosition.h include/defs.h include/types.h
+	$(CC) -c $(CFLAGS) $< -o $@
+obj/ArrayList/ArrayListObject.o : src/ArrayList/ArrayListObject.c include/ArrayList/ArrayListObject.h include/types.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/Iterator/Client.o: src/Iterator/Client.c include/Iterator/Client.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@

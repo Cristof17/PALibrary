@@ -15,15 +15,16 @@ struct ArrayListPosition ArrayListPositionPerformConstruct()
 struct ArrayListPosition ArrayListPositionPerformInit(ListPosition place)
 {
 	struct ArrayListPosition position;
-	position = ArrayListPositionConstruct();
+	position = ArrayListPositionPerformConstruct();
 	position.position = place;
 	return position;
 }
 struct ArrayListPosition ArrayListPositionPerformCopy(struct ArrayListPosition Position)
 {
 	struct ArrayListPosition copy;
-	copy = ArrayListPositionConstruct();
-	copy = ArrayListPositionInit(Position.position);
+	copy = ArrayListPositionPerformConstruct();
+//	copy = ArrayListPositionPeoformInit(Position.position);
+	copy = ArrayListPositionPerformInit(Position.position);
 	return copy;
 }
 PAResult ArrayListPositionPerformDelete(struct ArrayListPosition Position)

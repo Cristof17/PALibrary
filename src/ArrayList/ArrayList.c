@@ -70,7 +70,7 @@ struct PAData ArrayListPerformGetLast(struct ArrayList List)
 }
 struct PAData ArrayListPerformPutFirst(struct ArrayList List)
 {
-
+//	struct PADAta
 	// int first = List.index[FIRST];
 	//pseudicod
 	//daca array-ul esye plin aloca un nou array
