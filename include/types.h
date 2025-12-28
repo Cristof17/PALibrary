@@ -119,7 +119,7 @@ struct PAList {
 struct PAInput {
 	struct PACount n;
 	struct PACount m;
-	struct PAList adj;
+	struct PAList adj;//f
 	struct PAElement source;
 };
 struct BFSRecord {

@@ -58,14 +58,14 @@ PAInt ArrayListPerformSize(struct ArrayList List)
 }
 struct PAData ArrayListPerformGetFirst(struct ArrayList List)
 {
-	struct PAData first;
-	first = List.index[FIRST];
+	struct ArrayListObject first;
+	first = List.objects[FIRST];
 	return first;
 }
 struct PAData ArrayListPerformGetLast(struct ArrayList List)
 {
 	struct PAData last;
-	last = List.index[(LAST(List.count))];
+	last = List.objects[(LAST(List.place))];
 	return last;
 }
 struct PAData ArrayListPerformPutFirst(struct ArrayList List)
@@ -111,15 +111,15 @@ struct PAData ArrayListPerformPutLast(struct ArrayList List)
 }
 struct ArrayList ArrayListPeformConstruct(struct ArrayList List)
 {
-	struct ArrayList List;
-	return List;
+	struct ArrayList list;
+	return list;
 }
 struct ArrayList ArrayListPerformInit(struct PAData Data[], struct PACount M)
 {
 	// srt
 	struct ArrayList List;
 	List = ArrayListPerformConstruct();
-	List.index = PADataPerformCopy(Data);
+	List.place = PADataPerformCopy(Data);
 	return List;
 }
 struct ArrayList ArrayListPerformCopy(struct ArrayList List)
