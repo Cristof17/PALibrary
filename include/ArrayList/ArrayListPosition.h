@@ -10,10 +10,10 @@
 #include <defs.h>
 #include <types.h>
 struct ArrayListPosition ArrayListPositionPerformConstruct();
-struct ArrayListPosition ArrayListPositionPerformInit(ListPosition place);
-struct ArrayListPosition ArrayListPositionPerformCopy(struct ArrayListPosition Position);
-PAResult ArrayListPositionPerformDelete(struct ArrayListPosition Position);
-PAResult ArrayListPositionPerformRuin(struct ArrayListPosition Position);
+struct ArrayListPosition ArrayListPositionPerformInit(ListPosition);
+struct ArrayListPosition ArrayListPositionPerformCopy(struct ArrayListPosition);
+PAResult ArrayListPositionPerformDelete(struct ArrayListPosition);
+PAResult ArrayListPositionPerformRuin(struct ArrayListPosition);
 
 
 #endif /* INCLUDE_ARRAYLIST_ARRAYLISTPOSITION_H_ */

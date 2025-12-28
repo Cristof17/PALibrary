@@ -15,11 +15,11 @@
 // struct ArrayList;
 //typedef struct ArrayList ArrayList;
  struct ArrayList ArrayListPerformConstruct();
- struct ArrayList ArrayListPerformInit(struct PAData Data[], struct PACount M);
- struct ArrayList ArrayListPerformCopy(struct ArrayList List);
+ struct ArrayList ArrayListPerformInit(struct PAData Data[], struct PACount);
+ struct ArrayList ArrayListPerformCopy(struct ArrayList);
 // struc  ArrayListPerformRuin(struct ArrayList List);
- PAResult ArrayListPerformRuin(struct ArrayList List);
- PAResult ArrayListPerformDelete(struct ArrayList List);
+ PAResult ArrayListPerformRuin(struct ArrayList);
+ PAResult ArrayListPerformDelete(struct ArrayList);
 // struct ArrayList ArrayListPerformDelete(struct ArrayList List);
 // struct PAData ArrayListGet(struct PAData[],PAInt);
 // struct PARecord ArrayListPerformArrange(PAInt);

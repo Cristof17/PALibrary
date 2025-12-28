@@ -10,9 +10,9 @@
 #include <types.h>
 #include <defs.h>
 struct ArrayListObject ArrayListObjectPerformConstruct();
-struct ArrayListObject ArrayListObjectPerformInit(ListObject object);
-struct ArrayListObject ArrayListObjectPerformCopy(struct ArrayListObject Object);
-PAResult ArrayListObjectPerformDelete(struct ArrayListObject List);
-PAResult ArrayListObjectPerformRuin(struct ArrayListObject List);
+struct ArrayListObject ArrayListObjectPerformInit(ListObject);
+struct ArrayListObject ArrayListObjectPerformCopy(struct ArrayListObject);
+PAResult ArrayListObjectPerformDelete(struct ArrayListObject);
+PAResult ArrayListObjectPerformRuin(struct ArrayListObject);
 
 #endif /* INCLUDE_ARRAYLIST_ARRAYLISTOBJECT_H_ */
