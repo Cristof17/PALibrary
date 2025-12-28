@@ -115,10 +115,10 @@ PAResult ArrayListPerformMove(struct ArrayList)
 	//this should be done usnng diagrams and helper functions
 	//#noiu #sa #fim #sanatosi
 }
-ArrayListObject ArrayListPerformPutLast(struct ArrayList List)
-{
+// ArrayListObject ArrayListPerformPutLast(struct ArrayList List)
+// {
 
-}
+// }
 struct ArrayList ArrayListPeformConstruct(struct ArrayList List)
 {
 	struct ArrayList list;
