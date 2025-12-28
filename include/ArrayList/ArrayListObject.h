@@ -7,8 +7,8 @@
 
 #ifndef INCLUDE_ARRAYLIST_ARRAYLISTOBJECT_H_
 #define INCLUDE_ARRAYLIST_ARRAYLISTOBJECT_H_
-#include <types.h>
 #include <defs.h>
+#include <types.h>
 struct ArrayListObject ArrayListObjectPerformConstruct();
 struct ArrayListObject ArrayListObjectPerformInit(ListObject);
 struct ArrayListObject ArrayListObjectPerformCopy(struct ArrayListObject);
