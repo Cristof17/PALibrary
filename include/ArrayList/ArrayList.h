@@ -28,8 +28,8 @@
 // struct A
 ArrayListObject ArrayListPerformGetFirst(struct ArrayList);
 ArrayListObject ArrayListPerformGetLast(struct ArrayList);
-ArrayListObject ArrayListPerformPutFirst(struct ArrayList);
-ArrayListObject ArrayListPerformPutLast(struct ArrayList);
+ArrayListObject ArrayListPerformPutFirst(struct ArrayList, ArrayListObject);
+ArrayListObject ArrayListPerformPutLast(struct ArrayList, ArrayListObject);
 // struct PAData
 // struct PAData ArrayList
 PAInt ArrayListPerformSize(struct ArrayList);

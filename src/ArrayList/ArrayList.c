@@ -71,7 +71,7 @@ ArrayListObject ArrayListPerformGetLast(struct ArrayList List)
 	last = List.objects[(LAST(place.position))];
 	return last;
 }
-struct PAData ArrayListPerformPutFirst(struct ArrayList List)
+ArrayListObject ArrayListPerformPutFirst(struct ArrayList List, ArrayListObject Object)
 {
 //	struct PADAta
 	// int first = List.index[FIRST];
@@ -85,6 +85,13 @@ struct PAData ArrayListPerformPutFirst(struct ArrayList List)
 	//daca load factor e mare -> realloc
 	//altrfel 
 	//adauga element
+	return Object;
+}
+// ArrayListObject ArrayListPerformPutFirst(struct ArrayList);
+ArrayListObject ArrayListPerformPutLast(struct ArrayList, ArrayListObject Object)
+{
+	// ArrayListObject
+	return Object;
 }
 PAResult ArrayListPerformAdapt(struct ArrayList)
 {
