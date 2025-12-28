@@ -56,15 +56,16 @@ PAInt ArrayListPerformSize(struct ArrayList List)
 	//n+1 is for NULL terminatior in List workld
 	return FIRST;
 }
-struct PAData ArrayListPerformGetFirst(struct ArrayList List)
+ArrayListObject ArrayListPerformGetFirst(struct ArrayList List)
 {
-	struct ArrayListObject first;
+	ArrayListObject first;
 	first = List.objects[FIRST];
 	return first;
 }
-struct PAData ArrayListPerformGetLast(struct ArrayList List)
+ArrayListObject ArrayListPerformGetLast(struct ArrayList List)
 {
-	struct PAData last;
+	// struct PAData last;
+	ArrayListObject last;
 	last = List.objects[(LAST(List.place))];
 	return last;
 }
@@ -105,7 +106,7 @@ PAResult ArrayListPerformMove(struct ArrayList)
 	//this should be done usnng diagrams and helper functions
 	//#noiu #sa #fim #sanatosi
 }
-struct PAData ArrayListPerformPutLast(struct ArrayList List)
+ArrayListObject ArrayListPerformPutLast(struct ArrayList List)
 {
 
 }

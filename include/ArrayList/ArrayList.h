@@ -26,10 +26,10 @@
 // struct PARecord ArrayListPutCount(struct ArrayList, struct PACount);
 // sjt
 // struct A
-struct PAData ArrayListPerformGetFirst(struct ArrayList);
-struct PAData ArrayListPerformGetLast(struct ArrayList);
-struct PAData ArrayListPerformPutFirst(struct ArrayList);
-struct PAData ArrayListPerformPutLast(struct ArrayList);
+ArrayListObject ArrayListPerformGetFirst(struct ArrayList);
+ArrayListObject ArrayListPerformGetLast(struct ArrayList);
+ArrayListObject ArrayListPerformPutFirst(struct ArrayList);
+ArrayListObject ArrayListPerformPutLast(struct ArrayList);
 // struct PAData
 // struct PAData ArrayList
 PAInt ArrayListPerformSize(struct ArrayList);
