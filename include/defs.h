@@ -11,7 +11,7 @@ typedef PAInt PAResult;
 #define PABool int
 #endif
 #ifndef _WIN95
-typedef int ListObject;
+typedef int ArrayListObject;
 typedef int ListPosition;
 // typedef 
 #elif defined _WIN95
