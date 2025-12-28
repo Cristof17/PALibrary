@@ -127,6 +127,16 @@ struct ArrayList ArrayListPerformCopy(struct ArrayList List)
 	struct ArrayList Lost;
 	return Lost;
 }
+PAResult ArrayListPerformRuin(struct ArrayList List)
+{
+	PAResult result;
+	return result;
+}
+PAResult ArrayListPerformDelete(struct ArrayList List)
+{
+	PAResult result;
+	return result;
+}
 // struct PAData ArrayListPerformGet(struct PAIndex Array[],PAInt Position) {
 // 	struct PAData index;
 // 	// = Array[Position];
