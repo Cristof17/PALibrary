@@ -15,7 +15,7 @@
 // struct ArrayList;
 //typedef struct ArrayList ArrayList;
  struct ArrayList ArrayListPerformConstruct();
- struct ArrayList ArrayListPerformInit(struct ArrayListObject Data[], struct ArrayListCount);
+ struct ArrayList ArrayListPerformInit(ArrayListObject Data[], struct ArrayListPosition);
  struct ArrayList ArrayListPerformCopy(struct ArrayList);
 // struc  ArrayListPerformRuin(struct ArrayList List);
  PAResult ArrayListPerformRuin(struct ArrayList);

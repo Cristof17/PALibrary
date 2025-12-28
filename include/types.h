@@ -113,18 +113,18 @@ struct ArrayList {
 // };
 struct PAList {
 	// struct PANod Nod;
-	struct ArrayList adj;
 	struct PACount m;
+	struct ArrayList adj;
 };
 struct PAInput {
 	struct PACount n;
 	struct PACount m;
-	struct PAList adj;//f
 	struct PAElement source;
+	struct PAList adj;//f
 };
 struct BFSRecord {
-	struct PAList d;
 	struct PACount n;
+	struct PAList d;
 };
 struct PAOutput {
 	struct BFSRecord result;
@@ -149,8 +149,8 @@ struct PAArrow {
 struct BFSInput {
 	struct PACount n;
 	struct PACount m;
-	struct PAList adj;
 	struct PAElement source;
+	struct PAList adj;
 };
 struct BFSOutput {
     struct BFSRecord result;
@@ -223,7 +223,7 @@ struct Iterator  {
     
 };
 struct BFSAlgorithm {
-	struct BFSInput input;
 	struct PATree tree;
+	struct BFSInput input;
 };
 #endif
