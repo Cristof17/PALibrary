@@ -114,18 +114,23 @@ struct ArrayList ArrayListPeformConstruct(struct ArrayList List)
 	struct ArrayList list;
 	return list;
 }
-struct ArrayList ArrayListPerformInit(struct PAData Data[], struct PACount M)
+struct ArrayList ArrayListPerformInit(struct ArrayListObject Data[], struct ArrayListCount M)
 {
 	// srt
 	struct ArrayList List;
 	List = ArrayListPerformConstruct();
-	List.place = PADataPerformCopy(Data);
+//	List.place = PADataPerformCopy(Data);
+	//use a design pattern
 	return List;
 }
 struct ArrayList ArrayListPerformCopy(struct ArrayList List)
 {
-	struct ArrayList Lost;
-	return Lost;
+//	struct ArrayList Lost;
+	struct ArrayList copy;
+	copy = ArrayListPerformConstruct();
+	copy = ArrayListPerformInit(List.objects, List.place);
+//	return Lost;
+	return copy;
 }
 PAResult ArrayListPerformRuin(struct ArrayList List)
 {
