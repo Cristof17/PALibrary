@@ -6,68 +6,7 @@
 # Texts.  A copy of the license is included in the section entitled ``GNU
 # Free Documentation License''.
 
-#objects=obj/Input.o \
-#	obj/Algorithm.o \
-#	obj/BFSAlgorithm.o \
-#	obj/BFSInput.o \
-#	obj/BFSOutput.o \
-#	obj/BFSResult.o \
-#	obj/Output.o \
-#	obj/PAData.o \
-#	obj/PAGraf.o \
-#	obj/PAIndex.o \
-#	obj/PALista.o \
-#	obj/PAMuchie.o \
-#	obj/PANod.o \
-#	obj/PAPereche.o \
-#	obj/PARezultat.o \
-#	obj/PASir.o \
-#	obj/PAStare.o \
-#	obj/PATip.o \
-#	obj/Builder/PADirector.o \
-#	obj/Builder/PABuilder.o \
-#	obj/Builder/PAGrafNormal.o \
-#	obj/Builder/PAGrafTranspus.o \
-#	obj/Builder/PAGrafProduct.o \
-#	obj/Adapter/Client.o \
-#	obj/Adapter/Target.o \
-#	obj/Adapter/Adapter.o \
-#	obj/Adapter/Adaptee.o\
-#	obj/Adapter/PADrawingEditor.o \
-#	obj/Adapter/PALine.o \
-#	obj/Adapter/PAShape.o \
-#	obj/Adapter/PATextView.o \
-#	obj/ArrayList/ArrayList.o \
-#	obj/Iterator/Client.o \
-#	obj/Iterator/ConcreteIterator.o \
-#	obj/Iterator/Iterator.o \
-#	obj/Iterator/ConcreteAggregate.o
-#SUBDIRS= src src/Iterator src/Builder src/Adapter src/Arraylist
-#bar := $(foo:.c=.o)
-#bindir=bin
-srcdir=src
-#includedir=include
-#CFLAGS+=-I$(abspath $(includedir))
-#CFLAGS+=-I$(abspath $(includedir)/Builder)
-#CFLAGS+=-I$(abspath $(includedir)/Iterator)
-#CFLAGS+=-I$(abspath $(includedir)/ArrayList)
-#CFLAGS+=-I$(abspath $(includedir)/Adapter)
-CFLAGS+=-Iinclude
-libdir=obj obj/Adapter obj/Iterator obj/ArrayList obj/Builder obj/PA obj/BFS
-#datadir=dat
-#infodir=info
-#mandir=man
-#export CPATH
-#export CFLAGS
-#export include
-#all: 
-#	$(objects)
-#	@echo "end of compile $(pwd)"
-#	@echo "end of all $(pwd)"
-#	@echo "end of assemble $(pwd)"
-all: installdirs
-installdirs: build
-build: obj/Input.o \
+objects= obj/Input.o \
 	obj/Algorithm.o \
 	obj/BFS/Procedure.o \
 	obj/PA/Input.o \
@@ -108,6 +47,202 @@ build: obj/Input.o \
 	obj/Iterator/ConcreteIterator.o \
 	obj/Iterator/Iterator.o \
 	obj/Iterator/ConcreteAggregate.o
+assemblies= asm/Input.s \
+	asm/Algorithm.s \
+	asm/BFS/Procedure.s \
+	asm/PA/Input.s \
+	asm/PA/Output.s \
+	asm/BFS/Record.s \
+	asm/Output.s \
+	asm/PA/Data.s \
+	asm/PA/Tree.s \
+	asm/PA/Data.s \
+	asm/PA/List.s \
+	asm/PA/Link.s \
+	asm/PA/Arrow.s \
+	asm/PA/Element.s \
+	asm/PA/Count.s \
+	asm/PA/Pair.s \
+	asm/PA/Result.s \
+	asm/PA/Series.s \
+	asm/PA/Feature.s \
+	asm/PA/Value.s \
+	asm/PA/Resource.s \
+	asm/Builder/Director.s \
+	asm/Builder/Builder.s \
+	asm/Builder/Product.s \
+	asm/Builder/ConcreteBuilder.s \
+	asm/PA/NormalTree.s \
+	asm/PA/TransposeTree.s \
+	asm/Adapter/Client.s \
+	asm/Adapter/Target.s \
+	asm/Adapter/Adapter.s \
+	asm/Adapter/Adaptee.s \
+	asm/Adapter/PADrawingEditor.s \
+	asm/Adapter/PALine.s \
+	asm/Adapter/PAShape.s \
+	asm/Adapter/PATextView.s \
+	asm/ArrayList/ArrayList.s \
+	asm/ArrayList/ArrayListPosition.s \
+	asm/Iterator/Client.s \
+	asm/Iterator/ConcreteIterator.s \
+	asm/Iterator/Iterator.s \
+	asm/Iterator/ConcreteAggregate.s
+sources=src/Input.c \
+	src/Algorithm.c \
+	src/BFS/Procedure.c \
+	src/PA/Input.c \
+	src/PA/Output.c \
+	src/BFS/Record.c \
+	src/Output.c \
+	src/PA/Data.c \
+	src/PA/Tree.c \
+	src/PA/Data.c \
+	src/PA/List.c \
+	src/PA/Link.c \
+	src/PA/Arrow.c \
+	src/PA/Element.c \
+	src/PA/Count.c \
+	src/PA/Pair.c \
+	src/PA/Result.c \
+	src/PA/Series.c \
+	src/PA/Feature.c \
+	src/PA/Value.c \
+	src/PA/Resource.c \
+	src/Builder/Director.c \
+	src/Builder/Builder.c \
+	src/Builder/Product.c \
+	src/Builder/ConcreteBuilder.c \
+	src/PA/NormalTree.c \
+	src/PA/TransposeTree.c \
+	src/Adapter/Client.c \
+	src/Adapter/Target.c \
+	src/Adapter/Adapter.c \
+	src/Adapter/Adaptee.c \
+	src/Adapter/PADrawingEditor.c \
+	src/Adapter/PALine.c \
+	src/Adapter/PAShape.c \
+	src/Adapter/PATextView.c \
+	src/ArrayList/ArrayList.c \
+	src/ArrayList/ArrayListPosition.c \
+	src/Iterator/Client.c \
+	src/Iterator/ConcreteIterator.c \
+	src/Iterator/Iterator.c \
+	src/Iterator/ConcreteAggregate.c
+#SUBDIRS= src src/Iterator src/Builder src/Adapter src/Arraylist
+#bar := $(foo:.c=.o)
+#bindir=bin
+srcdir=src
+#includedir=include
+#CFLAGS+=-I$(abspath $(includedir))
+#CFLAGS+=-I$(abspath $(includedir)/Builder)
+#CFLAGS+=-I$(abspath $(includedir)/Iterator)
+#CFLAGS+=-I$(abspath $(includedir)/ArrayList)
+#CFLAGS+=-I$(abspath $(includedir)/Adapter)
+CFLAGS+=-Iinclude
+libdir=obj obj/Adapter obj/Iterator obj/ArrayList obj/Builder obj/PA obj/BFS
+#datadir=dat
+#infodir=info
+#mandir=man
+#export CPATH
+#export CFLAGS
+#export include
+#all: 
+#	$(objects)
+#	@echo "end of compile $(pwd)"
+#	@echo "end of all $(pwd)"
+#	@echo "end of assemble $(pwd)"
+all: installdirs
+installdirs: build
+build: $(objects)
+
+preprocess: $(sources)
+compile: $(assemblies)
+assemble: $(objects)
+
+src/Input.c:
+src/Algorithm.c:
+src/BFS/Procedure.c:
+src/PA/Input.c:
+src/PA/Output.c:
+src/BFS/Record.c:
+src/Output.c:
+src/PA/Data.c:
+src/PA/Tree.c:
+src/PA/Data.c:
+src/PA/List.c:
+src/PA/Link.c:
+src/PA/Arrow.c:
+src/PA/Element.c:
+src/PA/Count.c:
+src/PA/Pair.c:
+src/PA/Result.c:
+src/PA/Series.c:
+src/PA/Feature.c:
+src/PA/Value.c:
+src/PA/Resource.c:
+src/Builder/Director.c:
+src/Builder/Builder.c:
+src/Builder/Product.c:
+src/Builder/ConcreteBuilder.c:
+src/PA/NormalTree.c:
+src/PA/TransposeTree.c:
+src/Adapter/Client.c:
+src/Adapter/Target.c:
+src/Adapter/Adapter.c:
+src/Adapter/Adaptee.c:
+src/Adapter/PADrawingEditor.c:
+src/Adapter/PALine.c:
+src/Adapter/PAShape.c:
+src/Adapter/PATextView.c:
+src/ArrayList/ArrayList.c:
+src/ArrayList/ArrayListPosition.c:
+src/Iterator/Client.c:
+src/Iterator/ConcreteIterator.c:
+src/Iterator/Iterator.c:
+src/Iterator/ConcreteAggregate.c
+
+asm/Input.s: src/Input.c
+asm/Algorithm.s: src/Algorithm.c
+asm/BFS/Procedure.s: src//BFS/Procedure.c
+asm/PA/Input.s: src/PA/Input.c
+asm/PA/Output.s: src/PA/Output.c
+asm/BFS/Record.s: src/BFS/Record.c
+asm/Output.s: src/Output.c
+asm/PA/Data.s: src/PA/Data.c
+asm/PA/Tree.s: src/PA/Tree.c
+asm/PA/Data.s: src/PA/Data.c
+asm/PA/List.s: src//PA/List.c
+asm/PA/Link.s: src/PA/Link.c
+asm/PA/Arrow.s: src/PA/Arrow.c
+asm/PA/Element.s: src/PA/Element.c
+asm/PA/Count.s: src/PA/Count.c
+asm/PA/Pair.s: src/PA/Pair.c
+asm/PA/Result.s: src/PA/Result.c
+asm/PA/Series.s: src/PA/Series.c
+asm/PA/Feature.s: src/PA/Feature.c
+asm/PA/Value.s: src/PA/Value.c
+asm/PA/Resource.s: src/PA/Resource.c
+asm/Builder/Director.s: src/Builder/Director.c
+asm/Builder/Builder.s: src/Builder/Builder.c
+asm/Builder/Product.s: src/Builder/Product.c
+asm/Builder/ConcreteBuilder.s: src/Builder/ConcreteBuilder.c
+asm/PA/NormalTree.s: src/PA/NormalTree.c
+asm/PA/TransposeTree.s: src//PA/TransposeTree.c
+asm/Adapter/Client.s: src/Adapter/Client.c
+asm/Adapter/Target.s: src/Adapter/Target.c
+asm/Adapter/Adapter.s: src/Adapter/Adapter.c
+asm/Adapter/Adaptee.s: src/Adapter/Adaptee.c
+asm/Adapter/PADrawingEditor.s: src/Adapter/PADrawingEditor.c
+asm/Adapter/PALine.s: src/Adapter/PALine.c
+asm/Adapter/PAShape.s: src/Adapter/PAShape.c
+asm/Adapter/PATextView.s: src/Adapter/PATextView.c
+asm/ArrayList/ArrayList.s: src/ArrayList/ArrayList.c
+asm/ArrayList/ArrayListPosition.s: src/ArrayList/ArrayListPosition.c
+asm/Iterator/Client.s: src/Iterator/Client.c
+asm/Iterator/ConcreteIterator.s: src/Iterator/ConcreteIterator.c
+asm/Iterator/Iterator.s: src/Iterator/Iterator.c
+asm/Iterator/ConcreteAggregate.s: src//Iterator/ConcreteAggregate.c
 
 obj/Input.o: src/Input.c include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
@@ -198,6 +333,47 @@ obj/Iterator/Iterator.o: src/Iterator/Iterator.c include/Iterator/Iterator.h inc
 obj/Iterator/ConcreteAggregate.o: src/Iterator/ConcreteAggregate.c include/Iterator/ConcreteAggregate.h include/defs.h
 	$(CC) -c $(CFLAGS) $< -o $@
 
+src/Input.c:
+src/Algorithm.c: 
+src/BFS/Procedure.c:
+src/PA/Input.c:
+src/PA/Output.c:
+src/BFS/Record.c:
+src/Output.c:
+src/PA/Data.c:
+src/PA/Tree.c:
+src/PA/Data.c:
+src/PA/List.c:
+src/PA/Link.c:
+src/PA/Arrow.c:
+src/PA/Element.c:
+src/PA/Count.c:
+src/PA/Pair.c:
+src/PA/Result.c:
+src/PA/Series.c:
+src/PA/Feature.c:
+src/PA/Value.c:
+src/PA/Resource.c:
+src/Builder/Director.c:
+src/Builder/Builder.c:
+src/Builder/Product.c:
+src/Builder/ConcreteBuilder.c:
+src/PA/NormalTree.c:
+src/PA/TransposeTree.c:
+src/Adapter/Client.c:
+src/Adapter/Target.c:
+src/Adapter/Adapter.c:
+src/Adapter/Adaptee.c:
+src/Adapter/PADrawingEditor.c:
+src/Adapter/PALine.c:
+src/Adapter/PAShape.c:
+src/Adapter/PATextView.c:
+src/ArrayList/ArrayList.c:s
+src/ArrayList/ArrayListPosition.c:
+src/Iterator/Client.c:
+src/Iterator/ConcreteIterator.c:
+src/Iterator/Iterator.c:s
+src/Iterator/ConcreteAggregate.c:
 #$(objects): obj/%.o : src/%.c
 #	$(CC) -c $(CFLAGS) $< -o $@
 
