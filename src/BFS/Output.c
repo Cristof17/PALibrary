@@ -9,5 +9,6 @@ struct BFSOutput BFSOutputInit(struct BFSOutput output) {
 	return copy;
 }
 void BFSOutputPrint(struct BFSOutput output) {
-    BFSResultPrint(output.Result);
+//    BFSResultPrint(output.Result);
+    BFSResultPrint(output.result);
 }
