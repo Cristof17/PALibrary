@@ -10,10 +10,10 @@ struct PATree PATreePerformInit(struct PACount N, struct PACount M, struct PASer
 {
     struct PATree tree;
     tree = PATreePerformConstruct();
-    tree.adj = tree.adj;
-    tree.m = tree.m;
-    tree.n = tree.n;
-    tree.source = tree.source;
+    tree.adj = Adj;
+    tree.m = M;
+    tree.n = N;
+    tree.source = Source;
     return tree;
 }
 PAResult PATreePerformRuin(struct PATree Tree)

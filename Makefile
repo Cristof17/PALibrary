@@ -183,8 +183,6 @@ src/PA/Data.c: include/PA/Data.h include/defs.h
 	$(CC) $(CFLAGS) -E $@ 
 src/PA/Tree.c: include/PA/Tree.h include/defs.h
 	$(CC) $(CFLAGS) -E $@ 
-src/PA/Data.c: include/PA/Data.h include/types.h
-	$(CC) $(CFLAGS) -E $@ 
 src/PA/List.c: include/PA/List.h include/defs.h
 	$(CC) $(CFLAGS) -E $@ 
 src/PA/Link.c: include/PA/Link.h include/defs.h
