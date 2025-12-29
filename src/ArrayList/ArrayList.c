@@ -124,7 +124,7 @@ struct ArrayList ArrayListPeformConstruct(struct ArrayList List)
 	struct ArrayList list;
 	return list;
 }
-struct ArrayList ArrayListPerformInit(struct ArrayListObject Data[], struct ArrayListPosition M)
+struct ArrayList ArrayListPerformInit(ArrayListObject Data[], struct ArrayListPosition M)
 {
 	// srt
 	struct ArrayList List;

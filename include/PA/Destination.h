@@ -11,7 +11,7 @@
 // struct PADestination;
 struct PADestination PADestinationPerformConstruct();
 struct PADestination PADestinationPerformCopy(struct PADestination);
-struct PADestination PADestinationPerformInit(struct PADestination);
+struct PADestination PADestinationPerformInit(struct PAElement);
 PAResult PADestinationPerformRuin(struct PADestination);
 PAResult PADestinationPerformDelete(struct PADestination);
 //struct PADestination PADataPutElement(struct PADestination,struct PAElement);
