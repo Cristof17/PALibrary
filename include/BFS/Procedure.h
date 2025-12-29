@@ -12,14 +12,14 @@
 // #ni
 #include <PA/Input.h>
 #endif
-struct BFSAlgorithm;
+// struct BFSAlgorithm;
 //typedef struct BFSAlgorithm Algorithm;
 struct PAElement search(struct PAData);
-struct BFSAlgorithm BFSProcedureConstruct();
+struct BFSProcedure BFSProcedureConstruct();
 // struct Algorithm BFSProcedureArrange(struct BFSAlgorithm);
-struct Algorithm BFSAlgorithmPutTree(struct BFSAlgorithm, struct PATree);
-struct Algorithm BFSAlgorithmPutInput(struct BFSAlgorithm, struct BFSInput);
+struct Algorithm BFSProcedurePutTree(struct BFSProcedure, struct PATree);
+struct Algorithm BFSProcedurePutInput(struct BFSProcedure, struct BFSInput);
 // void BFSAlgorithm(struct PATree, struct BFSInput);
 void BFSProcedureRuin();
-void BFSAlgorithmSubroutine();
+void BFSProcedureSubroutine();
 #endif

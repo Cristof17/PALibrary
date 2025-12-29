@@ -8,6 +8,8 @@ struct PAArrow;
 // struct BFSAlgorithm;
 struct PAData;
 struct NormalTree;
+// struct BFSAlgorithm;
+// struct BFSOutput;
 // struct PAResult;
 // struct ArrayList;
 // struct PAResource;
