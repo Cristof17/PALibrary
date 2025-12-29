@@ -1,4 +1,5 @@
 #include <ArrayList/ArrayList.h>
+
 // #include <PA/Result.h>
 // #include <defs.h>
 /*
@@ -95,10 +96,13 @@ ArrayListObject ArrayListPerformPutLast(struct ArrayList, ArrayListObject Object
 }
 PAResult ArrayListPerformAdapt(struct ArrayList)
 {
-	
+	PAResult result;
+	return result;
 }
 PAResult ArrayListPerformMove(struct ArrayList)
 {
+	PAResult result;
+	return result;
 	//start, first position for i is 1
 	//while not end of line
 	//move to the right all elements and then realloc array with the new size for the next addFirst, or AddLast

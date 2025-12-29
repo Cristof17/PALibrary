@@ -1,5 +1,5 @@
 #include <Adapter/Client.h>
-#include <defs.h>
+
 /*
  * Client.c
  *

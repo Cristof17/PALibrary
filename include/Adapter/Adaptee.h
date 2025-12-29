@@ -13,11 +13,13 @@
 #include <PA/Data.h>
 #include <ArrayList/ArrayList.h>
 #include <types.h>
+#include <defs.h>
 // #elf
 #elif defined _WIN95
 #include <PA\Data.h>
 #include <ArrayList\ArrayList.h>
 #include <types.h>
+#include <defs.h>
 #endif
 
 struct Adaptee;

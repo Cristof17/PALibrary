@@ -1,5 +1,6 @@
 #include <Adapter/Target.h>
-#include <defs.h>
+#include <types.h>
+
 /*
  * Target.c
  *

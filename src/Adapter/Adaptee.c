@@ -1,6 +1,5 @@
 #include <Adapter/Adaptee.h>
 // #include <defs.h>
-#include <defs.h>
 /*
  * Adaptee.c
  *

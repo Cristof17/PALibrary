@@ -1,8 +1,6 @@
 #include <Adapter/Adapter.h>
-#include <Adapter/Adaptee.h>
-#include <PA/Element.h>
 #include <types.h>
-#include <defs.h>
+
 /*
  * Adapter.c
  *
