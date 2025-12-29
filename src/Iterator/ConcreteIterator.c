@@ -1,5 +1,5 @@
 #include <Iterator/ConcreteIterator.h>
-#include <defs.h>
+
 /*
  * ConcreteIterator.c
  *

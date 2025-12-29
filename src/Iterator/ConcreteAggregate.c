@@ -1,5 +1,5 @@
 #include <Iterator/ConcreteAggregate.h>
-#include <defs.h>
+
 /*
  * ConcreteAggregate.c
  *

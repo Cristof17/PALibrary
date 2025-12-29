@@ -1,6 +1,8 @@
 //@Author Cristofor Rotsching
+
 #include <PA/Arrow.h>
 #include <types.h>
+
 struct PAArrow PAArrowPerformConstruct()
 {
     struct PAArrow arrow;

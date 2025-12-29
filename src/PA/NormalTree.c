@@ -1,5 +1,7 @@
 //@Author Cristofor Rotsching
-#include <types.h>
+
+#include <defs.h>
+
 #ifndef _WIN95
 #include <PA/NormalTree.h>
 #elif defined _WIN95

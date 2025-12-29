@@ -1,6 +1,8 @@
 //@Author Cristofor Rotsching
+
 #include <BFS/Record.h>
-#include <defs.h>
+#include <types.h>
+
 // struct PALista Lista;
 	// struct PACardinal Cardinal;
 

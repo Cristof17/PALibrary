@@ -1,6 +1,8 @@
 //@Author Cristofor Rotsching
+
+#include <Input.h>
 #include <PA/Status.h>
-#include <defs.h>
+
 struct PAStatus PAStatusPerformConstruct()
 {
     struct PAStatus status;
@@ -17,7 +19,7 @@ struct PAStatus PAStatusPerformCopy(struct PAStatus Status)
     status.visited = Status.visited;
     return status;
 }
-struct PAStatus PAStatusPerformInit(PA_INT Visited)
+struct PAStatus PAStatusPerformInit(PAInt Visited)
 {
     struct PAStatus status;
     status = PAStatusPerformConstruct();
@@ -26,7 +28,7 @@ struct PAStatus PAStatusPerformInit(PA_INT Visited)
     // return status;
     return status;
 }
-struct PAStatus PAStatusPerformPutValue(struct PAStatus Status, PA_INT Visited)
+struct PAStatus PAStatusPerformPutValue(struct PAStatus Status, PAInt Visited)
 {
     Status.visited = Visited;
     return Status;

@@ -1,5 +1,5 @@
 #include <Iterator/Client.h>
-#include <defs.h>
+
 /*
  * Client.c
  *

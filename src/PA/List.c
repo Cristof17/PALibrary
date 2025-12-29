@@ -1,6 +1,8 @@
 //@Author Cristofor Rotsching
+
+#include <defs.h>
 #include <PA/List.h>
-#include <types.h>
+
 // struct PAList PAListConstruct(struct PAElement Element) {
 struct PAList PAListPerformConstruct()
 {

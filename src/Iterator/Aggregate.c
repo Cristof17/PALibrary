@@ -1,5 +1,5 @@
 #include <Iterator/Aggregate.h>
-#include <defs.h>
+
 /*
  * Aggregate.c
  *

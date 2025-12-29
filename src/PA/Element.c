@@ -1,6 +1,8 @@
 //@Author Cristofor Rotsching
+
+#include <defs.h>
 #include <PA/Element.h>
-#include <types.h>
+
 // #include "//"
 // #include "../include/PAIndex.h"
 struct PAElement PAElementPerformConstruct()

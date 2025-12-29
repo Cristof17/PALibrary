@@ -1,5 +1,8 @@
 //@Author Cristofor Rotsching
+
+#include <defs.h>
 #include <PA/Destination.h>
+
 // #include "Destination.h"
 
 struct PADestination PADestinationPerformConstruct()

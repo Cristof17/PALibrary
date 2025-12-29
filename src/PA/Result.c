@@ -1,5 +1,7 @@
 //@Author Cristofor Rotsching
+
 #include <PA/Result.h>
+
 // #include <defs.h>
 // struct PAResult PAResultPerformConstruct()
 // {

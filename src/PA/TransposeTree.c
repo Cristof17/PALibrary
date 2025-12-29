@@ -1,6 +1,8 @@
 //@Author Cristofor Rotsching
-#include <PA/TransposeTree.h>
+
 #include <defs.h>
+#include <PA/TransposeTree.h>
+
 struct PATransposeTree PATransposeTreePerformConstruct()
 {
     struct PATransposeTree transposeTree;

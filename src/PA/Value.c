@@ -1,5 +1,6 @@
-#include <PA/Value.h>
 #include <defs.h>
+#include <PA/Value.h>
+
 //return nil if cannot create object
 struct PAValue PAValuePerformConstruct()
 {

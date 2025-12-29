@@ -1,7 +1,9 @@
 //@Author Cristofor Rotsching
 // #include <BFS/Input.h>
+
+#include <defs.h>
 #include <PA/Input.h>
-#include <types.h>
+
 struct PAInput PAInputPerformConstruct()
 {
 	struct PAInput input;

@@ -1,6 +1,8 @@
 //@Author Cristofor Rotsching
-#include <PA/Tree.h>
+
 #include <defs.h>
+#include <PA/Tree.h>
+
 struct PATree PATreePerformConstruct()
 {
     struct PATree tree;

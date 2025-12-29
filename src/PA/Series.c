@@ -1,5 +1,6 @@
-#include <PA/Series.h>
 #include <defs.h>
+#include <PA/Series.h>
+
 /*
  * pasir.c
  *
