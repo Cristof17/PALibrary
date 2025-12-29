@@ -106,6 +106,7 @@ sources=src/Input.c \
 	src/PA/Pair.c \
 	src/PA/Result.c \
 	src/PA/Series.c \
+	src/PA/Status.c \
 	src/PA/Feature.c \
 	src/PA/Value.c \
 	src/PA/Resource.c \
@@ -152,55 +153,58 @@ libdir=obj obj/Adapter obj/Iterator obj/ArrayList obj/Builder obj/PA obj/BFS
 #	@echo "end of compile $(pwd)"
 #	@echo "end of all $(pwd)"
 #	@echo "end of assemble $(pwd)"
-all: installdirs
-installdirs: build
-build: $(objects)
+all: installdirs preprocess compile assemble
+#installdirs: 
+#//build
 
 preprocess: $(sources)
 compile: $(assemblies)
 assemble: $(objects)
+build: preprocess assemble compile
+#$(objects)
 
-src/Input.c:
-src/Algorithm.c:
-src/BFS/Procedure.c:
-src/PA/Input.c:
-src/PA/Output.c:
-src/BFS/Record.c:
-src/Output.c:
+src/Input.c: include/defs.h
+src/Algorithm.c: include/Algorithm.h include/defs.h 
+src/BFS/Procedure.c: include/defs.h
+src/PA/Input.c: include/PA/Input.h include/defs.h
+src/PA/Output.c:  include/PA/Output.h include/defs.h
+src/BFS/Record.c: include/BFS/Record.h include/defs.h
+src/Output.c: include/Output.h include/defs.h
+src/PA/Data.c: include/PA/Data.h include/defs.h
+src/PA/Tree.c: include/PA/Tree.h include/defs.h
 src/PA/Data.c:
-src/PA/Tree.c:
-src/PA/Data.c:
-src/PA/List.c:
-src/PA/Link.c:
-src/PA/Arrow.c:
-src/PA/Element.c:
-src/PA/Count.c:
-src/PA/Pair.c:
-src/PA/Result.c:
-src/PA/Series.c:
-src/PA/Feature.c:
-src/PA/Value.c:
-src/PA/Resource.c:
-src/Builder/Director.c:
-src/Builder/Builder.c:
+src/PA/List.c: include/PA/List.h include/defs.h
+src/PA/Link.c: include/PA/Link.h include/defs.h
+src/PA/Arrow.c: include/PA/Arrow.h include/defs.h
+src/PA/Element.c: include/PA/Element.h include/defs.h
+src/PA/Count.c: include/PA/Count.h include/defs.h
+src/PA/Pair.c: include/PA/Pair.h include/defs.h
+src/PA/Result.c:  include/PA/Result.h include/defs.h
+src/PA/Series.c: include/PA/Series.h include/defs.h
+src/PA/Status.c : include/PA/Status.h include/defs.h
+src/PA/Feature.c:  include/PA/Feature.h include/defs.h
+src/PA/Value.c: include/PA/Value.h include/defs.h
+src/PA/Resource.c: include/PA/Resource.h include/defs.h
+src/Builder/Director.c: include/Builder/Director.h include/defs.h
+src/Builder/Builder.c: include/Builder/Builder.h include/defs.h 
 src/Builder/Product.c:
 src/Builder/ConcreteBuilder.c:
-src/PA/NormalTree.c:
-src/PA/TransposeTree.c:
-src/Adapter/Client.c:
-src/Adapter/Target.c:
-src/Adapter/Adapter.c:
-src/Adapter/Adaptee.c:
-src/Adapter/PADrawingEditor.c:
-src/Adapter/PALine.c:
-src/Adapter/PAShape.c:
-src/Adapter/PATextView.c:
-src/ArrayList/ArrayList.c:
-src/ArrayList/ArrayListPosition.c:
-src/Iterator/Client.c:
-src/Iterator/ConcreteIterator.c:
-src/Iterator/Iterator.c:
-src/Iterator/ConcreteAggregate.c
+src/PA/NormalTree.c: include/PA/NormalTree.h include/defs.h
+src/PA/TransposeTree.c: include/PA/TransposeTree.h include/defs.h
+src/Adapter/Client.c: include/Adapter/Client.h include/defs.h
+src/Adapter/Target.c: include/Adapter/Target.h include/defs.h
+src/Adapter/Adapter.c: include/Adapter/Adapter.h include/defs.h
+src/Adapter/Adaptee.c: include/Adapter/Adaptee.h include/defs.h
+src/Adapter/PADrawingEditor.c:  include/Adapter/PADrawingEditor.h include/defs.h
+src/Adapter/PALine.c: include/Adapter/PALine.h include/defs.h
+src/Adapter/PAShape.c: include/Adapter/PAShape.h include/defs.h
+src/Adapter/PATextView.c:  include/Adapter/PATextView.h include/defs.h
+src/ArrayList/ArrayList.c: include/ArrayList/ArrayList.h include/defs.h
+src/ArrayList/ArrayListPosition.c:  include/ArrayList/ArrayListPosition.h include/defs.h include/types.h
+src/Iterator/Client.c: include/Iterator/Client.h include/defs.h
+src/Iterator/ConcreteIterator.c: include/Iterator/ConcreteIterator.h include/defs.h
+src/Iterator/Iterator.c: include/Iterator/Iterator.h include/defs.h
+src/Iterator/ConcreteAggregate.c:  include/Iterator/ConcreteAggregate.h include/defs.h
 
 asm/Input.s: src/Input.c
 asm/Algorithm.s: src/Algorithm.c
@@ -244,49 +248,49 @@ asm/Iterator/ConcreteIterator.s: src/Iterator/ConcreteIterator.c
 asm/Iterator/Iterator.s: src/Iterator/Iterator.c
 asm/Iterator/ConcreteAggregate.s: src//Iterator/ConcreteAggregate.c
 
-obj/Input.o: src/Input.c include/defs.h
+obj/Input.o: src/Input.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Algorithm.o: src/Algorithm.c include/Algorithm.h include/defs.h
+obj/Algorithm.o: src/Algorithm.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/BFS/Procedure.o: src/BFS/Procedure.c include/defs.h
+obj/BFS/Procedure.o: src/BFS/Procedure.c
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PA/Input.o: src/PA/Input.c include/PA/Input.h include/defs.h
+obj/PA/Input.o: src/PA/Input.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PA/Output.o: src/PA/Output.c include/PA/Output.h include/defs.h
+obj/PA/Output.o: src/PA/Output.c
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/BFS/Record.o:src/BFS/Record.c include/BFS/Record.h include/defs.h
+obj/BFS/Record.o:src/BFS/Record.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Output.o: src/Output.c include/Output.h include/defs.h
+obj/Output.o: src/Output.c
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PA/Value.o: src/PA/Value.c include/PA/Value.h include/defs.h
+obj/PA/Value.o: src/PA/Value.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PA/Data.o: src/PA/Data.c include/PA/Data.h include/defs.h
+obj/PA/Data.o: src/PA/Data.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PA/Tree.o: src/PA/Tree.c include/PA/Tree.h include/defs.h
+obj/PA/Tree.o: src/PA/Tree.c 
 	$(CC) -c $(CFLAGS) $< -o $@
 #obj/PAIndex.o: src/PAIndex.c include/PAIndex.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
-obj/PA/List.o: src/PA/List.c include/PA/List.h include/defs.h
+obj/PA/List.o: src/PA/List.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PA/Link.o: src/PA/Link.c include/PA/Link.h include/defs.h
+obj/PA/Link.o: src/PA/Link.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PA/Arrow.o: src/PA/Arrow.c include/PA/Arrow.h include/defs.h
+obj/PA/Arrow.o: src/PA/Arrow.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PA/Element.o: src/PA/Element.c include/PA/Element.h include/defs.h
+obj/PA/Element.o: src/PA/Element.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PA/Count.o: src/PA/Count.c include/PA/Count.h include/defs.h
+obj/PA/Count.o: src/PA/Count.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PA/Pair.o: src/PA/Pair.c include/PA/Pair.h include/defs.h
+obj/PA/Pair.o: src/PA/Pair.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PA/Result.o: src/PA/Result.c include/PA/Result.h include/defs.h
+obj/PA/Result.o: src/PA/Result.c
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PA/Series.o: src/PA/Series.c include/PA/Series.h include/defs.h
+obj/PA/Series.o: src/PA/Series.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PA/Status.o: src/PA/Status.c include/PA/Status.h include/defs.h
+obj/PA/Status.o: src/PA/Status.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PA/Feature.o: src/PA/Feature.c include/PA/Feature.h include/defs.h
+obj/PA/Feature.o: src/PA/Feature.c
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PA/Resource.o: src/PA/Resource.c include/PA/Resource.h include/defs.h
+obj/PA/Resource.o: src/PA/Resource.c 
 	$(CC) -c $(CFLAGS) $< -o $@
 #obj/PA/Value.o: src/PA/Value.c include/PA/Value.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
@@ -294,48 +298,48 @@ obj/Builder/Product.o: src/Builder/Product.c
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/Builder/ConcreteBuilder.o: src/Builder/ConcreteBuilder.c
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Builder/Director.o: src/Builder/Director.c include/Builder/Director.h include/defs.h
+obj/Builder/Director.o: src/Builder/Director.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Builder/Builder.o: src/Builder/Builder.c include/Builder/Builder.h include/defs.h 
+obj/Builder/Builder.o: src/Builder/Builder.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PA/NormalTree.o: src/PA/NormalTree.c include/PA/NormalTree.h include/defs.h
+obj/PA/NormalTree.o: src/PA/NormalTree.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/PA/TransposeTree.o: src/PA/TransposeTree.c include/PA/TransposeTree.h include/defs.h
+obj/PA/TransposeTree.o: src/PA/TransposeTree.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Adapter/Client.o: src/Adapter/Client.c include/Adapter/Client.h include/defs.h
+obj/Adapter/Client.o: src/Adapter/Client.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Adapter/Target.o: src/Adapter/Target.c include/Adapter/Target.h include/defs.h
+obj/Adapter/Target.o: src/Adapter/Target.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Adapter/Adapter.o: src/Adapter/Adapter.c include/Adapter/Adapter.h include/defs.h
+obj/Adapter/Adapter.o: src/Adapter/Adapter.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Adapter/Adaptee.o: src/Adapter/Adaptee.c include/Adapter/Adaptee.h include/defs.h
+obj/Adapter/Adaptee.o: src/Adapter/Adaptee.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Adapter/PADrawingEditor.o: src/Adapter/PADrawingEditor.c include/Adapter/PADrawingEditor.h include/defs.h
+obj/Adapter/PADrawingEditor.o: src/Adapter/PADrawingEditor.c
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Adapter/PALine.o: src/Adapter/PALine.c include/Adapter/PALine.h include/defs.h
+obj/Adapter/PALine.o: src/Adapter/PALine.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Adapter/PAShape.o: src/Adapter/PAShape.c include/Adapter/PAShape.h include/defs.h
+obj/Adapter/PAShape.o: src/Adapter/PAShape.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Adapter/PATextView.o: src/Adapter/PATextView.c include/Adapter/PATextView.h include/defs.h
+obj/Adapter/PATextView.o: src/Adapter/PATextView.c
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/ArrayList/ArrayList.o: src/PA/Data.c src/ArrayList/ArrayList.c include/ArrayList/ArrayList.h include/defs.h
+obj/ArrayList/ArrayList.o: src/PA/Data.c src/ArrayList/ArrayList.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/ArrayList/ArrayListPosition.o : src/ArrayList/ArrayListPosition.c include/ArrayList/ArrayListPosition.h include/defs.h include/types.h
+obj/ArrayList/ArrayListPosition.o : src/ArrayList/ArrayListPosition.c
 	$(CC) -c $(CFLAGS) $< -o $@
 #obj/ArrayList/ArrayListObject.o : src/ArrayList/ArrayListObject.c include/ArrayList/ArrayListObject.h include/types.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
-obj/Iterator/Client.o: src/Iterator/Client.c include/Iterator/Client.h include/defs.h
+obj/Iterator/Client.o: src/Iterator/Client.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Iterator/ConcreteIterator.o: src/Iterator/ConcreteIterator.c include/Iterator/ConcreteIterator.h include/defs.h
+obj/Iterator/ConcreteIterator.o: src/Iterator/ConcreteIterator.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Iterator/Iterator.o: src/Iterator/Iterator.c include/Iterator/Iterator.h include/defs.h
+obj/Iterator/Iterator.o: src/Iterator/Iterator.c 
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/Iterator/ConcreteAggregate.o: src/Iterator/ConcreteAggregate.c include/Iterator/ConcreteAggregate.h include/defs.h
+obj/Iterator/ConcreteAggregate.o: src/Iterator/ConcreteAggregate.c
 	$(CC) -c $(CFLAGS) $< -o $@
 
-src/Input.c:
+src/Input.c: 
 src/Algorithm.c: 
-src/BFS/Procedure.c:
+src/BFS/Procedure.c: 
 src/PA/Input.c:
 src/PA/Output.c:
 src/BFS/Record.c:
@@ -368,11 +372,11 @@ src/Adapter/PADrawingEditor.c:
 src/Adapter/PALine.c:
 src/Adapter/PAShape.c:
 src/Adapter/PATextView.c:
-src/ArrayList/ArrayList.c:s
+src/ArrayList/ArrayList.c:
 src/ArrayList/ArrayListPosition.c:
 src/Iterator/Client.c:
 src/Iterator/ConcreteIterator.c:
-src/Iterator/Iterator.c:s
+src/Iterator/Iterator.c:
 src/Iterator/ConcreteAggregate.c:
 #$(objects): obj/%.o : src/%.c
 #	$(CC) -c $(CFLAGS) $< -o $@
@@ -449,6 +453,47 @@ clean:
 	rm obj/Iterator/ConcreteIterator.o
 	rm obj/Iterator/Iterator.o
 	rm obj/Iterator/ConcreteAggregate.o
+	rm asm/Input.s
+	rm asm/Algorithm.s
+	rm asm/BFS/Procedure.s
+	rm asm/PA/Input.s
+	rm asm/PA/Output.s
+	rm asm/BFS/Record.s
+	rm asm/Output.s
+	rm asm/PA/Data.s
+	rm asm/PA/Tree.s
+	rm asm/PA/Data.s
+	rm asm/PA/List.s
+	rm asm/PA/Link.s
+	rm asm/PA/Arrow.s
+	rm asm/PA/Element.s
+	rm asm/PA/Count.s
+	rm asm/PA/Pair.s
+	rm asm/PA/Result.s
+	rm asm/PA/Series.s
+	rm asm/PA/Feature.s
+	rm asm/PA/Value.s
+	rm asm/PA/Resource.s
+	rm asm/Builder/Director.s
+	rm asm/Builder/Builder.s
+	rm asm/Builder/Product.s
+	rm asm/Builder/ConcreteBuilder.s
+	rm asm/PA/NormalTree.s
+	rm asm/PA/TransposeTree.s
+	rm asm/Adapter/Client.s
+	rm asm/Adapter/Target.s
+	rm asm/Adapter/Adapter.s
+	rm asm/Adapter/Adaptee.s
+	rm asm/Adapter/PADrawingEditor.s
+	rm asm/Adapter/PALine.s
+	rm asm/Adapter/PAShape.s
+	rm asm/Adapter/PATextView.s
+	rm asm/ArrayList/ArrayList.s
+	rm asm/ArrayList/ArrayListPosition.s
+	rm asm/Iterator/Client.s
+	rm asm/Iterator/ConcreteIterator.s
+	rm asm/Iterator/Iterator.s
+	rm asm/Iterator/ConcreteAggregate.s
 #rm objInput.o
 #rm $(objects)
 #obj/Input.
