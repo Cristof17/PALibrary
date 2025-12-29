@@ -68,7 +68,7 @@ struct BuilderClient ;
 struct ConcreteAggregate;
 struct ConcreteIterator;
 struct Iterator ;
-struct BFSAlgorithm;
+struct BFSProcedure;
 // struct In put {
 	// 	;
 	// };
@@ -224,7 +224,7 @@ struct ConcreteIterator  {
 struct Iterator  {
     
 };
-struct BFSAlgorithm {
+struct BFSProcedure {
 	struct PATree tree;
 	struct BFSInput input;
 };
