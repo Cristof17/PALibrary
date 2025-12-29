@@ -130,6 +130,13 @@ sources=src/Input.c \
 	src/Iterator/ConcreteIterator.c \
 	src/Iterator/Iterator.c \
 	src/Iterator/ConcreteAggregate.c
+	
+preprocess: $(sources)
+compile: $(assemblies)
+assemble: $(objects)
+#build: preprocess assemble compile
+all: $(sources) build
+build: preprocess compile assemble
 #SUBDIRS= src src/Iterator src/Builder src/Adapter src/Arraylist
 #bar := $(foo:.c=.o)
 #bindir=bin
@@ -153,59 +160,95 @@ libdir=obj obj/Adapter obj/Iterator obj/ArrayList obj/Builder obj/PA obj/BFS
 #	@echo "end of compile $(pwd)"
 #	@echo "end of all $(pwd)"
 #	@echo "end of assemble $(pwd)"
-all: installdirs preprocess compile assemble
+#all: installdirs preprocess compile assemble
 #installdirs: 
 #//build
-
-preprocess: $(sources)
-compile: $(assemblies)
-assemble: $(objects)
-build: preprocess assemble compile
 #$(objects)
 
 src/Input.c: include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/Algorithm.c: include/Algorithm.h include/defs.h 
+	$(CC) $(CFLAGS) -E $@ 
 src/BFS/Procedure.c: include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/PA/Input.c: include/PA/Input.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/PA/Output.c:  include/PA/Output.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/BFS/Record.c: include/BFS/Record.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/Output.c: include/Output.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/PA/Data.c: include/PA/Data.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/PA/Tree.c: include/PA/Tree.h include/defs.h
-src/PA/Data.c:
+	$(CC) $(CFLAGS) -E $@ 
+src/PA/Data.c: include/PA/Data.h include/types.h
+	$(CC) $(CFLAGS) -E $@ 
 src/PA/List.c: include/PA/List.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/PA/Link.c: include/PA/Link.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/PA/Arrow.c: include/PA/Arrow.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/PA/Element.c: include/PA/Element.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/PA/Count.c: include/PA/Count.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/PA/Pair.c: include/PA/Pair.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/PA/Result.c:  include/PA/Result.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/PA/Series.c: include/PA/Series.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/PA/Status.c : include/PA/Status.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/PA/Feature.c:  include/PA/Feature.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/PA/Value.c: include/PA/Value.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/PA/Resource.c: include/PA/Resource.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/Builder/Director.c: include/Builder/Director.h include/defs.h
-src/Builder/Builder.c: include/Builder/Builder.h include/defs.h 
+	$(CC) $(CFLAGS) -E $@ 
+src/Builder/Builder.c: include/Builder/Builder.h include/defs.h
+	$(CC) $(CFLAGS) -E $@  
 src/Builder/Product.c:
+	$(CC) $(CFLAGS) -E $@ 
 src/Builder/ConcreteBuilder.c:
+	$(CC) $(CFLAGS) -E $@ 
 src/PA/NormalTree.c: include/PA/NormalTree.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/PA/TransposeTree.c: include/PA/TransposeTree.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/Adapter/Client.c: include/Adapter/Client.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/Adapter/Target.c: include/Adapter/Target.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/Adapter/Adapter.c: include/Adapter/Adapter.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/Adapter/Adaptee.c: include/Adapter/Adaptee.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/Adapter/PADrawingEditor.c:  include/Adapter/PADrawingEditor.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/Adapter/PALine.c: include/Adapter/PALine.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/Adapter/PAShape.c: include/Adapter/PAShape.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/Adapter/PATextView.c:  include/Adapter/PATextView.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/ArrayList/ArrayList.c: include/ArrayList/ArrayList.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/ArrayList/ArrayListPosition.c:  include/ArrayList/ArrayListPosition.h include/defs.h include/types.h
+	$(CC) $(CFLAGS) -E $@ 
 src/Iterator/Client.c: include/Iterator/Client.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/Iterator/ConcreteIterator.c: include/Iterator/ConcreteIterator.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/Iterator/Iterator.c: include/Iterator/Iterator.h include/defs.h
+	$(CC) $(CFLAGS) -E $@ 
 src/Iterator/ConcreteAggregate.c:  include/Iterator/ConcreteAggregate.h include/defs.h
-
+	$(CC) $(CFLAGS) -E $@ 
 asm/Input.s: src/Input.c
 asm/Algorithm.s: src/Algorithm.c
 asm/BFS/Procedure.s: src//BFS/Procedure.c
