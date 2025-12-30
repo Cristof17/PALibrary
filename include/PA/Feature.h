@@ -10,7 +10,7 @@
 #include <PA\Result.h>
 #endif
 // struct PAFeature;
-struct PAFeature PAFeaturePerformConstruct(PAInt Kind);
+struct PAFeature PAFeaturePerformConstruct(PAInt);
 struct PAFeature PAFeaturePerformCopy(struct PAFeature);
 struct PAFeature PAFeaturePerformInit(struct PAFeature);
 struct PAFeature PAFeaturePeformPutKind(struct PAFeature, PAInt Kind);

@@ -15,7 +15,7 @@
 // #include <BFS\Input.h>
 #endif
 // struct PAInput;
-struct PAInput PAInputPerformConstruct(struct PACount, struct PACount, struct PAList, struct PAElement);
+struct PAInput PAInputPerformConstruct(struct PACount N, struct PACount M, struct PAList Adj, struct PAElement Sursa);
 struct PAInput PAInputPerformCopy(struct PAInput);
 struct PAInput PAInputPerformInit(struct PAInput);
 // vpo BFSInputRuin();

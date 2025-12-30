@@ -10,9 +10,9 @@
 #include <PA\Result.h>
 #endif
 // struct PADestination;
-struct PADestination PADestinationPerformConstruct();
+struct PADestination PADestinationPerformConstruct(struct PAElement);
 struct PADestination PADestinationPerformCopy(struct PADestination);
-struct PADestination PADestinationPerformInit(struct PAElement);
+struct PADestination PADestinationPerformInit(struct PADestination);
 PAResult PADestinationPerformRuin(struct PADestination);
 PAResult PADestinationPerformDelete(struct PADestination);
 //struct PADestination PADataPutElement(struct PADestination,struct PAElement);
