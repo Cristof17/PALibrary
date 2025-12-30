@@ -14,7 +14,7 @@
 #endif
 #include <types.h>
 // struct PAStatus/*.*/;
-struct PAStatus PAStatusPerformConstruct(PAInt);
+struct PAStatus PAStatusPerformConstruct(PAInt Visited);
 struct PAStatus PAStatusPerformCopy(struct PAStatus);
 struct PAStatus PAStatusPerformInit(struct PAStatus);
 struct PAStatus PAStatusPerformPutValue(struct PAStatus, PAInt);

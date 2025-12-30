@@ -8,11 +8,11 @@
 #endif
 #include <types.h>
 // struct PAValue;
-struct PAValue PAValuePerformConstruct();
-PAResult PAValuePerformRuin(struct PAValue);
+struct PAValue PAValuePerformConstruct(PAInt);
 struct PAValue PAValuePerformCopy(struct PAValue);
-struct PAValue PAValuePerformInit(PAInt);
+struct PAValue PAValuePerformInit(struct PAValue);
 struct PAValue PAValuePerformPutValue(struct PAValue, PAInt);
+PAResult PAValuePerformRuin(struct PAValue);
 // struct PAResult PAValueDelete(stru)
 //typedef struct PAValue Value;
 PABool op_Equality(struct PAValue,struct PAValue);
