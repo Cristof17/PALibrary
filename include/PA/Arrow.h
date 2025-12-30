@@ -10,9 +10,9 @@
 // #include <PA/Result.h>
 // #include <PA/Arrow.h>
 #endif
-struct PAArrow PAArrowPerformConstruct();
-struct PAArrow PAArrowPerformCopy(struct PAArrow Arrow);
-struct PAArrow PAArrowPerformInit(struct PAPair);
+struct PAArrow PAArrowPerformConstruct(struct PAPair p);
+struct PAArrow PAArrowPerformCopy(struct PAArrow);
+struct PAArrow PAArrowPerformInit(struct PAArrow);
 struct PAArrow PAArrowPerformPutPair(struct PAArrow, struct PAPair);
 PAResult PAArrowPerformRuin(struct PAArrow);
 //typedef struct PAArrow Arrow;
