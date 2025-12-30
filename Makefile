@@ -132,12 +132,12 @@ sources=src/Input.c \
 	src/Iterator/Iterator.c \
 	src/Iterator/ConcreteAggregate.c
 	
+build: preprocess compile assemble
 preprocess: $(sources)
 compile: $(assemblies)
 assemble: $(objects)
 #build: preprocess assemble compile
 all: $(sources) build
-build: preprocess compile assemble
 #SUBDIRS= src src/Iterator src/Builder src/Adapter src/Arraylist
 #bar := $(foo:.c=.o)
 #bindir=bin

@@ -26,5 +26,5 @@ typedef uint32_t ListPosition;
 typedef PAInt PAResult;
 // typedef int PAInt;
 #define FIRST 1
-#define LAST(N) ((N))
+#define LAST(N) (N)
 #endif
