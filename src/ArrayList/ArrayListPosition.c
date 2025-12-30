@@ -8,24 +8,24 @@
 
 #include <ArrayList/ArrayListPosition.h>
 
-struct ArrayListPosition ArrayListPositionPerformConstruct()
+struct ArrayListPosition ArrayListPositionPerformConstruct(ListPosition place)
 {
 	struct ArrayListPosition position;
 	return position;
 }
-struct ArrayListPosition ArrayListPositionPerformInit(ListPosition place)
+struct ArrayListPosition ArrayListPositionPerformInit(struct ArrayListPosition ListPosition)
 {
 	struct ArrayListPosition position;
-	position = ArrayListPositionPerformConstruct();
-	position.position = place;
+	position = ArrayListPositionPerformConstruct(ListPosition.position);
+	// position.position = ListPosition;
 	return position;
 }
-struct ArrayListPosition ArrayListPositionPerformCopy(struct ArrayListPosition Position)
+struct ArrayListPosition ArrayListPositionPerformCopy(struct ArrayListPosition ListPosition)
 {
 	struct ArrayListPosition copy;
-	copy = ArrayListPositionPerformConstruct();
+	copy = ArrayListPositionPerformConstruct(ListPosition.position);
 //	copy = ArrayListPositionPeoformInit(Position.position);
-	copy = ArrayListPositionPerformInit(Position.position);
+	copy = ArrayListPositionPerformInit(ListPosition);
 	return copy;
 }
 PAResult ArrayListPositionPerformDelete(struct ArrayListPosition Position)

@@ -1,9 +1,10 @@
 //@Author Cristofor Rotsching
 #include <PA/Link.h>
 #include <types.h>
-struct PALink PALinkPerformConstruct()
+struct PALink PALinkPerformConstruct(struct PAPair P)
 {
     struct PALink link;
+    link.p = P;
     return link;
 }
 PAResult PALinkPerformRuin(struct PALink Link)
@@ -14,15 +15,14 @@ PAResult PALinkPerformRuin(struct PALink Link)
 struct PALink PALinkPerformCopy(struct PALink Link)
 {
     struct PALink link;
-    link = PALinkPerformInit(Link.p);
+    link = PALinkPerformInit(Link);
 //    link.p = Link.p;
     return link;
 }
-struct PALink PALinkPerformInit(struct PAPair P)
+struct PALink PALinkPerformInit(struct PALink Link)
 {
     struct PALink link;
     // Link.p = Pair;
-    link.p = P;
     // return link;
     return link;
 }

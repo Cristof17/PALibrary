@@ -18,7 +18,7 @@
 #endif
 #include <types.h>
 // struct PASeries;
-struct PASeries PASeriesPerformConstruct(struct PACount N, struct PAList Adj[]);
+struct PASeries PASeriesPerformConstruct(struct PAList Adj[],struct PACount Nß);
 struct PASeries PASeriesPerformInit(struct PASeries);
 struct PASeries PASeriesPerformCopy(struct PASeries);
 struct PASeries PASeriesPerformPutCount(struct PASeries, struct PACount);

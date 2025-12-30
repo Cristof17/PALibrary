@@ -2,7 +2,7 @@
 /*@*/
 #include <PA/Pair.h>
 #include <defs.h>
-struct PAPair PAPairPerformConstruct()
+struct PAPair PAPairPerformConstruct(struct PAElement Node, struct PAElement Neigh)
 {
     struct PAPair pair;
     // pair.node = Node;
@@ -10,12 +10,12 @@ struct PAPair PAPairPerformConstruct()
     return pair;
 }
 // struct PAPair PAPairRuin(struct PAPair Pair) {
-struct PAPair PAPairPerformInit(struct PAElement Node, struct PAElement Neigh)
+struct PAPair PAPairPerformInit(struct PAPair Pair)
 {
     struct PAPair pair;
-    pair = PAPairPerformConstruct();
-    pair.node = Node;
-    pair.neigh = Neigh;
+    pair = PAPairPerformConstruct(Pair.node,Pair.neigh);
+    // pair.node = Node;
+    // pair.neigh = Neigh;
 //    struct PAPair pair;
 //    pair.node = Node;
 //    pair.neigh = Neigh;
@@ -26,8 +26,8 @@ struct PAPair PAPairPerformInit(struct PAElement Node, struct PAElement Neigh)
 struct PAPair PAPairPerformCopy(struct PAPair Pair)
 {
     struct PAPair pair;
-    pair = PAPairPerformConstruct();
-    pair = PAPairPerformInit(Pair.node,Pair.neigh);
+    pair = PAPairPerformConstruct(Pair.node, Pair.neigh);
+    pair = PAPairPerformInit(Pair);
 //    pair.node = Pair.node;
 //    pair.neigh = Pair.neigh;
     return pair;

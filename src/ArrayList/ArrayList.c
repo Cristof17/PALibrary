@@ -123,26 +123,26 @@ PAResult ArrayListPerformMove(struct ArrayList List)
 // {
 
 // }
-struct ArrayList ArrayListPeformConstruct(struct ArrayList List)
+struct ArrayList ArrayListPeformConstruct(ArrayListObject Data[], struct ArrayListPosition M)
 {
 	struct ArrayList list;
 	return list;
 }
-struct ArrayList ArrayListPerformInit(ArrayListObject Data[], struct ArrayListPosition M)
+struct ArrayList ArrayListPerformInit(struct ArrayList List)
 {
 	// srt
-	struct ArrayList List;
-	List = ArrayListPerformConstruct();
+	struct ArrayList list;
+	list = ArrayListPerformConstruct(List.objects,List.place);
 //	List.place = PADataPerformCopy(Data);
 	//use a design pattern
-	return List;
+	return list;
 }
 struct ArrayList ArrayListPerformCopy(struct ArrayList List)
 {
 //	struct ArrayList Lost;
 	struct ArrayList copy;
-	copy = ArrayListPerformConstruct();
-	copy = ArrayListPerformInit(List.objects, List.place);
+	copy = ArrayListPerformConstruct(List.objects,List.place);
+	copy = ArrayListPerformInit(List);
 //	return Lost;
 	return copy;
 }

@@ -4,7 +4,7 @@
 //struct PAData {
 //
 //}
-struct PAData PADataPerformConstruct()
+struct PAData PADataPerformConstruct(struct PAResource Resource)
 {
     struct PAData data;
     return data;
@@ -12,16 +12,16 @@ struct PAData PADataPerformConstruct()
 struct PAData PADataPerformCopy(struct PAData Data)
 {
     struct PAData copy;
-    copy=PADataPerformConstruct();
-    copy=PADataPerformInit(Data.resource);
+    copy=PADataPerformConstruct(Data.resource);
+    copy=PADataPerformInit(Data);
     return copy;
-//    copy.resource = Data.resource;
+    //    copy.resource = Data.resource;
     return copy;
 }
-struct PAData PADataPerformInit(struct PAResource Resource)
+struct PAData PADataPerformInit(struct PAData Data)
 {
     struct PAData data;
-    data.resource = Resource;
+    data.resource = Data.resource;
     return data;
     // struct PAData data;
     // data.resource = Data.resource;

@@ -7,17 +7,17 @@
  *  Created on: 16 nov. 2025
  *      Author: AdministratorUser
 ` */
-struct PASeries PASeriesPerformConstruct()
+struct PASeries PASeriesPerformConstruct(struct PAList Node[], struct PACount N)
 {
     struct PASeries series;
     return series;
 }
-struct PASeries PASeriesPerformInit(struct PACount N, struct PAList Adj[])
+struct PASeries PASeriesPerformInit(struct PASeries Series)
 {
     struct PASeries series;
-    series = PASeriesPerformConstruct();
+    series = PASeriesPerformConstruct(Series.adj, Series.progression);
     // series.adj = Adj;
-    series.progression = N;
+    // series.progression = N;
     //Iterator
     // series.adj = Series.adj;
     //end of iterator

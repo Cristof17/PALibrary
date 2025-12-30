@@ -3,7 +3,7 @@
 #include <PA/Arrow.h>
 #include <types.h>
 
-struct PAArrow PAArrowPerformConstruct()
+struct PAArrow PAArrowPerformConstruct(struct PAPair Pair)
 {
     struct PAArrow arrow;
     return arrow;;
@@ -16,15 +16,15 @@ PAResult PAArrowPerformRuin(struct PAArrow Arrow)
 struct PAArrow PAArrowPerformCopy(struct PAArrow Arrow)
 {
     struct PAArrow copy;
-    copy = PAArrowPerformConstruct();
-    copy = PAArrowPerformInit(Arrow.p);
+    copy = PAArrowPerformConstruct(Arrow.p);
+    copy = PAArrowPerformInit(Arrow);
     return copy;
 }
-struct PAArrow PAArrawPerformInit(struct PAPair Pair) 
+struct PAArrow PAArrawPerformInit(struct PAArrow Arrow)
 {
     struct PAArrow arrow;
-    arrow = PAArrowPerformConstruct();
-    arrow.p = Pair;
+    // arrow = PAArrowPerformConstruct();
+    // arrow.p = Pair;
     return arrow;
 }
 struct PAArrow PAArrowPerformPutPair(struct PAArrow Arrow, struct PAPair Pair) 

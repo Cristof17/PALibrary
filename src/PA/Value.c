@@ -2,7 +2,7 @@
 #include <PA/Value.h>
 
 //return nil if cannot create object
-struct PAValue PAValuePerformConstruct()
+struct PAValue PAValuePerformConstruct(PAInt Value)
 {
     struct PAValue value;
     return value;
@@ -15,14 +15,14 @@ PAResult PAValuePerformRuin(struct PAValue Value)
 struct PAValue PAValuePerformCopy(struct PAValue Value)
 {
     struct PAValue copy;
-    copy = PAValuePerformConstruct();
-    copy = PAValuePerformInit(Value.value);
+    copy = PAValuePerformConstruct(Value.value);
+    copy = PAValuePerformInit(Value);
     return copy;
 }
-struct PAValue PAValuePerformInit(PAInt Value)
+struct PAValue PAValuePerformInit(struct PAValue Value)
 {
     struct PAValue value;
-    value.value = Value;
+    value.value = Value.value;
     return value;
 }
 struct PAValue PAValuePerformPutValue(struct PAValue Value1, PAInt Value2)

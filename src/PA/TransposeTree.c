@@ -3,23 +3,23 @@
 #include <defs.h>
 #include <PA/TransposeTree.h>
 
-struct PATransposeTree PATransposeTreePerformConstruct()
+struct PATransposeTree PATransposeTreePerformConstruct(struct PAList Adj_trans)
 {
     struct PATransposeTree transposeTree;
     return transposeTree;
 }
-struct PATransposeTree PATransposeTreePerformInit(struct PAList Adj_trans)
+struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree TransposeTree)
 {
     struct PATransposeTree transposeTree;
-    transposeTree = PATransposeTreePerformConstruct();
-    transposeTree.adj_trans = Adj_trans;
+    transposeTree = PATransposeTreePerformConstruct(TransposeTree.adj_trans);
+    // transposeTree.adj_trans = Adj_trans;
     return transposeTree;
 }
 struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree TransposeTree)
 {
     struct PATransposeTree copy;
-    // copy = PATranseTreePerformConstruct();
-    copy = PATransposeTreePerformInit(TransposeTree.adj_trans);
+    copy = PATransposeTreePerformConstruct(TransposeTree.adj_trans);
+    copy = PATransposeTreePerformInit(TransposeTree);
     // return tree;
     return copy;
 }

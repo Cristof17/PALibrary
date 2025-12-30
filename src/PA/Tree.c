@@ -3,19 +3,19 @@
 #include <defs.h>
 #include <PA/Tree.h>
 
-struct PATree PATreePerformConstruct()
+struct PATree PATreePerformConstruct(struct PACount N, struct PACount M, struct PASeries Adj, struct PAElement Source)
 {
     struct PATree tree;
-    return tree;
-}
-struct PATree PATreePerformInit(struct PACount N, struct PACount M, struct PASeries Adj, struct PAElement Source)
-{
-    struct PATree tree;
-    tree = PATreePerformConstruct();
+    // tree = PATreePerformConstruct();
     tree.adj = Adj;
     tree.m = M;
     tree.n = N;
     tree.source = Source;
+    return tree;
+}
+struct PATree PATreePerformInit(struct PATree Tree)
+{
+    struct PATree tree;
     return tree;
 }
 PAResult PATreePerformRuin(struct PATree Tree)
@@ -26,8 +26,8 @@ PAResult PATreePerformRuin(struct PATree Tree)
 struct PATree PATreePerformCopy(struct PATree Tree)
 {
     struct PATree tree;
-    tree = PATreePerformConstruct();
-    tree = PATreePerformInit(Tree.n, Tree.m, Tree.adj, Tree.source);
+    tree = PATreePerformConstruct(Tree.n, Tree.m, Tree.adj, Tree.source);
+    tree = PATreePerformInit(Tree);
     return tree;
 }
 struct PATree PATreePerformPutCount(struct PATree Tree, struct PACount Count1, struct PACount Count2)

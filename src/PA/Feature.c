@@ -1,7 +1,7 @@
 //@Author Cristofor Rotsching
 #include <PA/Feature.h>
 #include <types.h>
-struct PAFeature PAFeaturePerformConstruct()
+struct PAFeature PAFeaturePerformConstruct(PAInt Kind)
 {
     struct PAFeature feature;
     return feature;
@@ -9,8 +9,8 @@ struct PAFeature PAFeaturePerformConstruct()
 struct PAFeature PAFeaturePerformCopy(struct PAFeature Type)
 {
     struct PAFeature copy;
-    copy=PAFeaturePerformConstruct();
-    copy=PAFeaturePerformInit(Type.kind);
+    copy=PAFeaturePerformConstruct(Type.kind);
+    copy=PAFeaturePerformInit(Type);
 //    return
 //    copy.kind = Type.kind;
     return copy;
@@ -23,10 +23,10 @@ PAResult PAFeaturePerformRuin(struct PAFeature Feature)
     // feature.kind = kind;
     // return feature;
 }
-struct PAFeature PAFeaturePerformInit(PAInt Kind)
+struct PAFeature PAFeaturePerformInit(struct PAFeature Feature)
 {
     struct PAFeature feature;
-    feature.kind = Kind;
+    feature.kind = Feature.kind;
     // return feature;
     // return Feature;
     return feature;

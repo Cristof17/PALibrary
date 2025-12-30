@@ -5,7 +5,7 @@
 
 // #include "//"
 // #include "../include/PAIndex.h"
-struct PAElement PAElementPerformConstruct()
+struct PAElement PAElementPerformConstruct(struct PAData Data, struct PAFeature Feature, struct PAStatus Status)
 {
     struct PAElement element;
     return element;
@@ -13,8 +13,8 @@ struct PAElement PAElementPerformConstruct()
 struct PAElement PAElementPerformCopy(struct PAElement Element)
 {
 	struct PAElement copy;
-	copy=PAElementPerformConstruct();
-	copy=PAElementPerformInit(Element.status,Element.index,Element.type);
+	copy=PAElementPerformConstruct(Element.index, Element.type, Element.status);
+	copy=PAElementPerformInit(Element);
 //	copy.index=Element.index;
 //	copy.status=Element.status;
 //	copy.type=Element.type;
@@ -25,13 +25,13 @@ PAResult PAElementPerformRuin(struct PAElement Element)
     PAResult result;
     return result;
 }
-struct PAElement PAElementPerformInit(struct PAStatus Status, struct PAData Index, struct PAFeature Type)
+struct PAElement PAElementPerformInit(struct PAElement Element)
 {
     struct PAElement element;
     // element. = Element.Index;
-    element.status = Status;
-    element.type = Type;
-    element.index = Index;
+    element.status = Element.status;
+    element.type = Element.type;
+    element.index = Element.index;
     return element;
 }
 struct PAElement PAElementPerformPutStatus(struct PAElement Element, struct PAStatus Status)
