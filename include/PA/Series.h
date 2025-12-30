@@ -7,6 +7,9 @@
 
 #ifndef INCLUDE_PA_SERIES_H_
 #define INCLUDE_PA_SERIES_H_
+
+#include "../defs.h"
+
 #ifndef _WIN95
 #include <PA/Size.h>
 #include <PA/List.h>

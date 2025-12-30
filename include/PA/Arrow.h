@@ -2,7 +2,9 @@
 #ifndef INCLUDE_PAMUCHIE_H_
 #define INCLUDE_PAMUCHIE_H_
 // #ifdef WIN)
-#include <defs.h>
+
+#include "../defs.h"
+
 #ifndef _WIN95
 #include <PA/Pair.h>
 #elif defined _WIN95

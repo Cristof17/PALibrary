@@ -1,6 +1,5 @@
 #ifndef INCLUDE_PADATA_H_
 #define INCLUDE_PADATA_H_
-#include <types.h>
 // #include <defs.h>
 #ifndef _WIN95
 #include <PA/Result.h>

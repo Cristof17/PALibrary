@@ -1,7 +1,9 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_PA_DESTINATION_H_
 #define INCLUDE_PA_DESTINATION_H_
-#include <types.h>
+
+#include "../defs.h"
+
 //#include <types.h>
 //#include <PA/Element.h>
 #ifndef _WIN95

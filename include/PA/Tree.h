@@ -1,6 +1,9 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_PA_TREE_H_
 #define INCLUDE_PA_TREE_H_
+
+#include "../defs.h"
+
 #ifndef _WIN95
 #include <PA/Size.h>
 #include <PA/List.h>

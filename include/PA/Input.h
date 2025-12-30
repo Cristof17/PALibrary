@@ -2,7 +2,9 @@
 #ifndef INCLUDE_BFSINPUT_H_
 #define INCLUDE_BFSINPUT_H_
 // #include <typee
-#include <types.h>
+
+#include "../defs.h"
+
 #ifndef _WIN95
 #include <PA/Element.h>
 #include <PA/List.h>
