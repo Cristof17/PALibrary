@@ -18,13 +18,13 @@
 #endif
 #include <types.h>
 // struct PASeries;
-struct PASeries PASeriesPerformConstruct();
-struct PASeries PASeriesPerformInit(struct PACount, struct PAList[]);
-void PASeriesDispose(void);
+struct PASeries PASeriesPerformConstruct(struct PACount N, struct PAList Adj[]);
+struct PASeries PASeriesPerformInit(struct PASeries);
 struct PASeries PASeriesPerformCopy(struct PASeries);
 struct PASeries PASeriesPerformPutCount(struct PASeries, struct PACount);
 struct PASeries PASeriesPerformPutList(struct PASeries, struct PAList);
 PAResult PASeriesPerformRuin(struct PASeries);
 PAResult PASeriesPerformDelete(struct PASeries);
+void PASeriesDispose(void);
 //typedef struct PASir Series;
 #endif /* INCLUDE_PASIR_H_ */

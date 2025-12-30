@@ -17,6 +17,7 @@ void BFSRecordConstruct(struct PAList, struct PACount);
 void BFSRecordRuin();
 void BFSRecordPrint(struct BFSRecord);
 struct BFSRecord BFSRecordInit(struct BFSRecord);
+struct BFSRecord BFSRecordCopy(struct BFSRecord);
 struct BFSRecord BFSRecordPutList(struct BFSRecord, struct PAList);
 struct BFSRecord BFSRecordPutCount(struct BFSRecord, struct PACount);
 #endif

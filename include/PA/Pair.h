@@ -13,8 +13,8 @@
 #include <PA/Result.h>
 #endif
 // struct PAPair;
-struct PAPair PAPairPerformConstruct();
-struct PAPair PAPairPerformInit(struct PAElement, struct PAElement);
+struct PAPair PAPairPerformConstruct(struct PAElement, struct PAElement);
+struct PAPair PAPairPerformInit(struct PAPair);
 struct PAPair PAPairPerformCopy(struct PAPair);
 struct PAPair PAPairPerformPutNode(struct PAPair, struct PAElement);
 struct PAPair PAPairPerformPutNeigh(struct PAPair, struct PAElement);

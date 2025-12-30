@@ -17,9 +17,9 @@
 #include <PA\Result.h>
 #endif
 // struct PAElement;
-struct PAElement PAElementPerformConstruct();
+struct PAElement PAElementPerformConstruct(struct PAData Data, struct PAElement Next, struct PAStatus Status);
 struct PAElement PAElementPerformCopy(struct PAElement);
-struct PAElement PAElementPerformInit(struct PAStatus, struct PAData, struct PAFeature);
+struct PAElement PAElementPerformInit(struct PAElement);
 struct PAElement PAElementPerformPutStatus(struct PAElement, struct PAStatus);
 struct PAElement PAElementPerformPutData(struct PAElement, struct PAData);
 struct PAElement PAElementPerformPutDestination(struct PAElement, struct PADestination);

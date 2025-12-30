@@ -17,8 +17,8 @@
 #include <types.h>
 // struct PATree;
 // struct PATree PATreeConstruct(struct OPAResult);
-struct PATree PATreePerformConstruct();
-struct PATree PATreePerformInit(struct PACount, struct PACount, struct PASeries, struct PAElement);
+struct PATree PATreePerformConstruct(struct PACount N, struct PACount M, struct PAList Adj, struct PAElement Sursa);
+struct PATree PATreePerformInit(struct PATree);
 struct PATree PATreePerformCopy(struct PATree);
 struct PATree PATreePerformPutCount(struct PATree, struct PACount, struct PACount);
 // struct PATree PATreePutList(struct PATree, struct PAList);

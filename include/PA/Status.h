@@ -14,11 +14,11 @@
 #endif
 #include <types.h>
 // struct PAStatus/*.*/;
-struct PAStatus PAStatusPerformConstruct();
-PAResult PAStatusPerformRuin(struct PAStatus);
+struct PAStatus PAStatusPerformConstruct(PAInt);
 struct PAStatus PAStatusPerformCopy(struct PAStatus);
-struct PAStatus PAStatusPerformInit(PAInt);
+struct PAStatus PAStatusPerformInit(struct PAStatus);
 struct PAStatus PAStatusPerformPutValue(struct PAStatus, PAInt);
+PAResult PAStatusPerformRuin(struct PAStatus);
 // struct PAResult PAStatusDelete()
 //typedef struct PAStatus Status;
 #endif

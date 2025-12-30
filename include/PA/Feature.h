@@ -10,11 +10,11 @@
 #include <PA\Result.h>
 #endif
 // struct PAFeature;
-struct PAFeature PAFeaturePerformConstruct();
+struct PAFeature PAFeaturePerformConstruct(PAInt Kind);
 struct PAFeature PAFeaturePerformCopy(struct PAFeature);
-PAResult PAFeaturePerformRuin(struct PAFeature);
-struct PAFeature PAFeaturePerformInit(PAInt);
+struct PAFeature PAFeaturePerformInit(struct PAFeature);
 struct PAFeature PAFeaturePeformPutKind(struct PAFeature, PAInt Kind);
+PAResult PAFeaturePerformRuin(struct PAFeature);
 PAResult PAFeaturePerformDelete(struct PAFeature);
 //typedef struct `PAFeature Feature;
 #endif

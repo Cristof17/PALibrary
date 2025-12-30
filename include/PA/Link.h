@@ -11,9 +11,9 @@
 #include <PA\Result.h>
 #endif
 // struct PALink;
-struct PALink PALinkPerformConstruct();
+struct PALink PALinkPerformConstruct(struct PAPair);
 struct PALink PALinkPerformCopy(struct PALink);
-struct PALink PALinkPerformInit(struct PAPair);
+struct PALink PALinkPerformInit(struct PALink);
 struct PALink PALinkPerformPutPair(struct PALink,struct PAPair);
 PAResult PALinkPerformRuin(struct PALink);
 PAResult PALinkPerformDelete(struct PALink);

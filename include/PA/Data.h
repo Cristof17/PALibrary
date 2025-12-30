@@ -12,9 +12,9 @@
 #endif
 // #include <defs.h>
 // struct PAData;
-struct PAData PADataPerformConstruct();
+struct PAData PADataPerformConstruct(PAInt Resource);
+struct PAData PADataPerformInit(struct PAData);
 struct PAData PADataPerformCopy(struct PAData);
-struct PAData PADataPerformInit(struct PAResource);
 struct PAData PADataPerformPutResource(struct PAData, struct PAResource);
 PAResult PADataPerformRuin(struct PAData);
 PAResult PADataPerformDelete(struct PAData);

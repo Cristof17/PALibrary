@@ -19,10 +19,10 @@
 // struct BFSAlgorithm;
 //typedef struct BFSAlgorithm Algorithm;
 struct PAElement search(struct PAData);
-struct BFSProcedure BFSProcedureConstruct();
+struct BFSProcedure BFSProcedureConstruct(struct PAInput);
+struct BFSProcedure BFSProcedurePutInput(struct BFSProcedure, struct PAInput);
 // struct Algorithm BFSProcedureArrange(struct BFSAlgorithm);
-struct BFSProcedure BFSProcedurePutTree(struct BFSProcedure, struct PATree);
-struct BFSProcedure BFSProcedurePutInput(struct BFSProcedure, struct BFSInput);
+// struct BFSProcedure BFSProcedurePutTree(struct BFSProcedure);
 // void BFSAlgorithm(struct PATree, struct BFSInput);
 PAResult BFSProcedureRuin();
 PAResult BFSProcedureSubroutine();

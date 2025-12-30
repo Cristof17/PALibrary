@@ -13,8 +13,8 @@
 #include <PA\Result.h>
 #endif
 // struct BFSOutput;
-struct PAOutput PAOutputPerformConstruct();
-struct PAOutput PAOutputPerformInit(struct BFSRecord);
+struct PAOutput PAOutputPerformConstruct(struct BFSRecord);
+struct PAOutput PAOutputPerformInit(struct PAOutput);
 struct PAOutput PAOutputPerformCopy(struct PAOutput);
 // strut BFSOutputRuin();
 struct PAResult PAOutputPerformRuin(struct PAOutput);
