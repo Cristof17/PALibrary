@@ -26,7 +26,7 @@ PAResult PACountPerformRuin(struct PACount Count)
     PAResult result;
     return result;
 }
-struct PACount PACountPerformInit(struct PACount)
+struct PACount PACountPerformInit(struct PACount Count)
 {
     struct PACount count;
     // count.number = Number;

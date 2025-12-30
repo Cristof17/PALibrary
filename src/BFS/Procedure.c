@@ -13,7 +13,7 @@ struct PAElement search(struct PAData Data)
     struct PAElement element;
     return element;
 }
-struct BFSProcedure BFSProcedureConstruct(struct PAInput)
+struct BFSProcedure BFSProcedureConstruct(struct PAInput Input)
 // Construct(struct PATree Tree)
 {
     struct BFSProcedure procedure;//this should be a function pointer or delegate from managed code
