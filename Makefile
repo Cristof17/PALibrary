@@ -551,6 +551,7 @@ clean:
 	rm src/BFS/Record.s
 	rm src/Output.s
 	rm src/PA/Data.s
+	rm src/PA/Destination.s
 	rm src/PA/Tree.s
 #	rm src/PA/Data.s
 	rm src/PA/List.s
