@@ -8,7 +8,7 @@
 //check and searcg based b on state
 // a situation that must exist before something else is possible or permitted
 //use visited flag when searching
-struct PAElement search(struct PAData Data)
+struct PAElement BFS(struct PAData Data)
 {
     struct PAElement element;
     return element;

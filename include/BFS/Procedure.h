@@ -21,7 +21,7 @@
 #endif
 // struct BFSAlgorithm;
 //typedef struct BFSAlgorithm Algorithm;
-struct PAElement search(struct PAData);
+struct PAElement BFS(struct PAData);
 struct BFSProcedure BFSProcedureConstruct(struct PAInput);
 struct BFSProcedure BFSProcedurePutInput(struct BFSProcedure, struct PAInput);
 // struct Algorithm BFSProcedureArrange(struct BFSAlgorithm);
