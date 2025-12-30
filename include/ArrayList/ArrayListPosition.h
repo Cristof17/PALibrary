@@ -9,6 +9,7 @@
 #define INCLUDE_ARRAYLIST_ARRAYLISTPOSITION_H_
 
 #include "../defs.h"
+#include "../types.h"
 
 struct ArrayListPosition ArrayListPositionPerformConstruct(ListPosition);
 struct ArrayListPosition ArrayListPositionPerformInit(struct ArrayListPosition);
