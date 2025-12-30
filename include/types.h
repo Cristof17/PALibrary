@@ -225,7 +225,7 @@ struct Iterator  {
     
 };
 struct BFSProcedure {
-	struct PATree tree;
+	// struct PATree tree;
 	struct BFSInput input;
 };
 #endif

@@ -89,17 +89,17 @@ ArrayListObject ArrayListPerformPutFirst(struct ArrayList List, ArrayListObject 
 	return Object;
 }
 // ArrayListObject ArrayListPerformPutFirst(struct ArrayList);
-ArrayListObject ArrayListPerformPutLast(struct ArrayList, ArrayListObject Object)
+ArrayListObject ArrayListPerformPutLast(struct ArrayList List, ArrayListObject Object)
 {
 	// ArrayListObject
 	return Object;
 }
-PAResult ArrayListPerformAdapt(struct ArrayList)
+PAResult ArrayListPerformAdapt(struct ArrayList List)
 {
 	PAResult result;
 	return result;
 }
-PAResult ArrayListPerformMove(struct ArrayList)
+PAResult ArrayListPerformMove(struct ArrayList List)
 {
 	PAResult result;
 	return result;
