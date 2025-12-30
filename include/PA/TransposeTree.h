@@ -1,6 +1,9 @@
 //@Author Cristofor Rotsching
 #ifndef PAGRAFTRANSPUS_H_
 #define PAGRAFTRANSPUS_H_
+
+#include "../defs.h"
+
 #ifndef _WIN95
 #include <PA/Result.h>
 // #include <defs.h>

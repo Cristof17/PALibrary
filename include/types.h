@@ -1,7 +1,9 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_TYPES_H_
 #define INCLUDE_TYPES_H_
-#include <defs.h>
+
+#include "defs.h"
+
 struct PADestination;
 struct PAArrow;
 // struct PAInput;

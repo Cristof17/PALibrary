@@ -1,6 +1,9 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_OUTPUT_H_
 #define INCLUDE_OUTPUT_H_
+
+#include "defs.h"
+
 #ifndef _WIN95
 // #include <Output.h>
 // #include <PA/Result.h>

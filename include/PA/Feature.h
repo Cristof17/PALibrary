@@ -2,7 +2,9 @@
 #ifndef INCLUDE_PA_FEATURE_H_
 #define INCLUDE_PA_FEATURE_H_
 // #include <PA/Feature.h>
-#include <types.h>
+
+#include "../defs.h"
+
 // #include <types.h>
 #ifndef _WIN95
 #include <PA/Result.h>

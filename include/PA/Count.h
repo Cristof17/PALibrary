@@ -2,7 +2,9 @@
 #ifndef INCLUDE_PA_SIZE_H_
 #define INCLUDE_PA_SIZE_H_
 // #include <defs.h>
-#include <types.h>
+
+#include "../defs.h"
+
 #ifndef _WIN95
 #include <PA/Result.h>
 // #include <defs.h>

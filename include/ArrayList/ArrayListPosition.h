@@ -7,8 +7,9 @@
 
 #ifndef INCLUDE_ARRAYLIST_ARRAYLISTPOSITION_H_
 #define INCLUDE_ARRAYLIST_ARRAYLISTPOSITION_H_
-#include <defs.h>
-#include <types.h>
+
+#include "../defs.h"
+
 struct ArrayListPosition ArrayListPositionPerformConstruct(ListPosition);
 struct ArrayListPosition ArrayListPositionPerformInit(struct ArrayListPosition);
 struct ArrayListPosition ArrayListPositionPerformCopy(struct ArrayListPosition);
