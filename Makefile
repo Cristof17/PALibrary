@@ -542,7 +542,7 @@ clean:
 	rm obj/Adapter/PAShape.o
 	rm obj/Adapter/PATextView.o
 	rm obj/ArrayList/ArrayList.o
-	rm obj/ArrayList/ArrayListObject.o
+#	rm obj/ArrayList/ArrayListObject.o
 	rm obj/Iterator/Client.o
 	rm obj/Iterator/ConcreteIterator.o
 	rm obj/Iterator/Iterator.o
