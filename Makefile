@@ -135,10 +135,10 @@ build: preprocess compile assemble link_windows
 preprocess: $(sources)
 compile: $(assemblies)
 assemble: $(objects)
-link_windows: $(objects)
+# link_windows: $(objects)
 # 	$(LD) $(objects) -o filiename.library
-link_macos: $(objects)
-link_linux: $(objects)
+# link_macos: $(objects)
+# link_linux: $(objects)
 #build: preprocess assemble compile
 all: $(sources) build
 #SUBDIRS= src src/Iterator src/Builder src/Adapter src/Arraylist
