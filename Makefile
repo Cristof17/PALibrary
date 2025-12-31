@@ -429,47 +429,47 @@ obj/Iterator/Iterator.o: src/Iterator/Iterator.s
 obj/Iterator/ConcreteAggregate.o: src/Iterator/ConcreteAggregate.s
 	$(CC) -c $(CFLAGS) $< -o $@
 
-src/Input.c: 
-src/Algorithm.c: 
-src/BFS/Procedure.c: 
-src/PA/Input.c:
-src/PA/Output.c:
-src/BFS/Record.c:
-src/Output.c:
-src/PA/Data.c:
-src/PA/Tree.c:
-src/PA/Data.c:
-src/PA/List.c:
-src/PA/Link.c:
-src/PA/Arrow.c:
-src/PA/Element.c:
-src/PA/Count.c:
-src/PA/Pair.c:
-src/PA/Result.c:
-src/PA/Series.c:
-src/PA/Feature.c:
-src/PA/Value.c:
-src/PA/Resource.c:
-src/Builder/Director.c:
-src/Builder/Builder.c:
-src/Builder/Product.c:
-src/Builder/ConcreteBuilder.c:
-src/PA/NormalTree.c:
-src/PA/TransposeTree.c:
-src/Adapter/Client.c:
-src/Adapter/Target.c:
-src/Adapter/Adapter.c:
-src/Adapter/Adaptee.c:
-src/Adapter/PADrawingEditor.c:
-src/Adapter/PALine.c:
-src/Adapter/PAShape.c:
-src/Adapter/PATextView.c:
-src/ArrayList/ArrayList.c:
-src/ArrayList/ArrayListPosition.c:
-src/Iterator/Client.c:
-src/Iterator/ConcreteIterator.c:
-src/Iterator/Iterator.c:
-src/Iterator/ConcreteAggregate.c:
+#src/Input.c: 
+#src/Algorithm.c: 
+#src/BFS/Procedure.c: 
+#src/PA/Input.c:
+#src/PA/Output.c:
+#src/BFS/Record.c:
+#src/Output.c:
+#src/PA/Data.c:
+#src/PA/Tree.c:
+#src/PA/Data.c:
+#src/PA/List.c:
+#src/PA/Link.c:
+#src/PA/Arrow.c:
+#src/PA/Element.c:
+#src/PA/Count.c:
+#src/PA/Pair.c:
+#src/PA/Result.c:
+#src/PA/Series.c:
+#src/PA/Feature.c:
+#src/PA/Value.c:
+#src/PA/Resource.c:
+#src/Builder/Director.c:
+#src/Builder/Builder.c:
+#src/Builder/Product.c:
+#src/Builder/ConcreteBuilder.c:
+#src/PA/NormalTree.c:
+#src/PA/TransposeTree.c:
+#src/Adapter/Client.c:
+#src/Adapter/Target.c:
+#src/Adapter/Adapter.c:
+#src/Adapter/Adaptee.c:
+#src/Adapter/PADrawingEditor.c:
+#src/Adapter/PALine.c:
+#src/Adapter/PAShape.c:
+#src/Adapter/PATextView.c:
+#src/ArrayList/ArrayList.c:
+#src/ArrayList/ArrayListPosition.c:
+#src/Iterator/Client.c:
+#src/Iterator/ConcreteIterator.c:
+#src/Iterator/Iterator.c:
+#src/Iterator/ConcreteAggregate.c:
 #$(objects): obj/%.o : src/%.c
 #	$(CC) -c $(CFLAGS) $< -o $@
 
@@ -541,6 +541,7 @@ clean:
 	rm obj/Adapter/PAShape.o
 	rm obj/Adapter/PATextView.o
 	rm obj/ArrayList/ArrayList.o
+	rm obj/ArrayList/ArrayListObject.o
 	rm obj/Iterator/Client.o
 	rm obj/Iterator/ConcreteIterator.o
 	rm obj/Iterator/Iterator.o

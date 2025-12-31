@@ -123,7 +123,7 @@ PAResult ArrayListPerformMove(struct ArrayList List)
 // {
 
 // }
-struct ArrayList ArrayListPeformConstruct(ArrayListObject Data[], struct ArrayListPosition M)
+struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], struct ArrayListPosition M)
 {
 	struct ArrayList list;
 	return list;

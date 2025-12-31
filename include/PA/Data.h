@@ -2,12 +2,17 @@
 #define INCLUDE_PADATA_H_
 // #include <defs.h>
 #ifndef _WIN95
-#include <PA/Result.h>
-#include <PA/Resource.h>
+//#include <PA/Result.h>
+//#include <PA/Resource.h>
+#include <PA/Data.h>
 #include <defs.h>
+#include <types.h>
 #elif defined _WIN95
-#include <PA\Result.h>
+//#include <PA\Result.h>
+//#include <PA\Resource.h>
+#include <PA\Data.h>
 #include <defs.h>
+#include <types.h>
 #endif
 // #include <defs.h>
 // struct PAData;
