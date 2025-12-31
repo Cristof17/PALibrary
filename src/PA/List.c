@@ -21,8 +21,8 @@ struct PAList PAListPerformInit(struct PAList List)
 struct PAList PAListPerformCopy(struct PAList List)
 {
     struct PAList copy;
-    copy = PAListPerformConstruct(List.adj, List.m);
-    copy = PAListPerformInit(List);
+    // copy = PAListPerformConstruct(List.adj, List.m);
+    // copy = PAListPerformInit(List);
     return copy;
 }
 // struct PAList PAListPutElement(struct PAList List, struct PAElement Element) {

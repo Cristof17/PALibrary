@@ -8,9 +8,9 @@ struct PAStatus PAStatusPerformConstruct()
     struct PAStatus status;
     return status;
 }
-struct PAResult PAStatusPerformRuin(struct PAStatus Status)
+PAResult PAStatusPerformRuin(struct PAStatus Status)
 {
-    struct PAResult result;
+    PAResult result;
     return result;
 }
 struct PAStatus PAStatusPerformCopy(struct PAStatus Status)
@@ -22,7 +22,7 @@ struct PAStatus PAStatusPerformCopy(struct PAStatus Status)
 struct PAStatus PAStatusPerformInit(PAInt Visited)
 {
     struct PAStatus status;
-    status = PAStatusPerformConstruct();
+    // status = PAStatusPerformConstruct();
     status.visited = Visited;
 
     // return status;

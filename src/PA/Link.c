@@ -15,7 +15,7 @@ PAResult PALinkPerformRuin(struct PALink Link)
 struct PALink PALinkPerformCopy(struct PALink Link)
 {
     struct PALink link;
-    link = PALinkPerformInit(Link);
+    // link = PALinkPerformInit(Link);
 //    link.p = Link.p;
     return link;
 }

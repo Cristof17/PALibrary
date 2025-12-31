@@ -136,7 +136,7 @@ preprocess: $(sources)
 compile: $(assemblies)
 assemble: $(objects)
 link_windows: $(objects)
-	$(LD) $(objects) -o filiename.library
+# 	$(LD) $(objects) -o filiename.library
 link_macos: $(objects)
 link_linux: $(objects)
 #build: preprocess assemble compile

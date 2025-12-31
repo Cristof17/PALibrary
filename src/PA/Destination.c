@@ -15,8 +15,8 @@ struct PADestination PADestinationPerformCopy(struct PADestination Destination)
 //	struct PADestination destination;
 //	destination =
 	struct PADestination copy;
-	copy=PADestinationPerformConstruct(Destination.element);
-	copy=PADestinationPerformInit(Destination);
+	// copy=PADestinationPerformConstruct(Destination.element);
+	// copy=PADestinationPerformInit(Destination);
 	return copy;
 }
 PAResult PADestinationPerformRuin(struct PADestination Destination)
@@ -24,7 +24,7 @@ PAResult PADestinationPerformRuin(struct PADestination Destination)
     PAResult result;
     return result;
 }
-struct PADestination PADestinationPerformInit(struct PADestination)
+struct PADestination PADestinationPerformInit(struct PADestination Destination)
 {
     struct PADestination destination;
 //    destination.element = Element;

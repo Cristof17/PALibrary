@@ -16,8 +16,8 @@ struct PACount PACountPerformConstruct(PAResult Number)
 struct PACount PACountPerformCopy(struct PACount Count)
 {
 	struct PACount copy;
-	copy=PACountPerformConstruct(Count.number);
-	copy=PACountPerformInit(Count);
+	// copy=PACountPerformConstruct(Count.number);
+	// copy=PACountPerformInit(Count);
 	return copy;
 }
 // void PASize(PA_INT);

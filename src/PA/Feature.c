@@ -9,8 +9,8 @@ struct PAFeature PAFeaturePerformConstruct(PAInt Kind)
 struct PAFeature PAFeaturePerformCopy(struct PAFeature Type)
 {
     struct PAFeature copy;
-    copy=PAFeaturePerformConstruct(Type.kind);
-    copy=PAFeaturePerformInit(Type);
+    // copy=PAFeaturePerformConstruct(Type.kind);
+    // copy=PAFeaturePerformInit(Type);
 //    return
 //    copy.kind = Type.kind;
     return copy;

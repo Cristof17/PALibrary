@@ -13,8 +13,8 @@ struct PAElement PAElementPerformConstruct(struct PAData Data, struct PAFeature 
 struct PAElement PAElementPerformCopy(struct PAElement Element)
 {
 	struct PAElement copy;
-	copy=PAElementPerformConstruct(Element.index, Element.type, Element.status);
-	copy=PAElementPerformInit(Element);
+	// copy=PAElementPerformConstruct(Element.index, Element.type, Element.status);
+	// copy=PAElementPerformInit(Element);
 //	copy.index=Element.index;
 //	copy.status=Element.status;
 //	copy.type=Element.type;
