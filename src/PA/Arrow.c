@@ -20,7 +20,7 @@ struct PAArrow PAArrowPerformCopy(struct PAArrow Arrow)
     copy = PAArrowPerformInit(Arrow);
     return copy;
 }
-struct PAArrow PAArrawPerformInit(struct PAArrow Arrow)
+struct PAArrow PAArrowPerformInit(struct PAArrow Arrow)
 {
     struct PAArrow arrow;
     // arrow = PAArrowPerformConstruct();

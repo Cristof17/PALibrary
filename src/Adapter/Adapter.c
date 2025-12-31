@@ -10,7 +10,7 @@
 
 void AdapterRequest(struct Adapter adapter) {
 	struct Adaptee adaptee;
-	SpecificRequest(adaptee);
+	AdapteeSpecificRequest(adaptee);
 }
 struct PAElement AdapterHead(struct Adapter adapter) {
 	struct PAElement nod;
