@@ -131,7 +131,8 @@ sources=src/Input.c \
 	src/Iterator/Iterator.c \
 	src/Iterator/ConcreteAggregate.c
 	
-build: preprocess compile assemble link_windows
+# build: preprocess compile assemble link_windows
+build: preprocess compile assemble 
 preprocess: $(sources)
 compile: $(assemblies)
 assemble: $(objects)
