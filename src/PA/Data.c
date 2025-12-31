@@ -12,8 +12,8 @@ struct PAData PADataPerformConstruct(struct PAResource Resource)
 struct PAData PADataPerformCopy(struct PAData Data)
 {
     struct PAData copy;
-    copy=PADataPerformConstruct(Data.resource);
-    copy=PADataPerformInit(Data);
+//    copy=PADataPerformConstruct(Data.resource);
+//    copy=PADataPerformInit(Data);
     return copy;
     //    copy.resource = Data.resource;
     return copy;

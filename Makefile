@@ -414,7 +414,7 @@ obj/Adapter/PAShape.o: src/Adapter/PAShape.s
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/Adapter/PATextView.o: src/Adapter/PATextView.s
 	$(CC) -c $(CFLAGS) $< -o $@
-obj/ArrayList/ArrayList.o: src/PA/Data.c src/ArrayList/ArrayList.s
+obj/ArrayList/ArrayList.o: src/ArrayList/ArrayList.s
 	$(CC) -c $(CFLAGS) $< -o $@
 obj/ArrayList/ArrayListPosition.o : src/ArrayList/ArrayListPosition.s
 	$(CC) -c $(CFLAGS) $< -o $@
