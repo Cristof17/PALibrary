@@ -15,7 +15,6 @@ objects= obj/Input.o \
 	obj/Output.o \
 	obj/PA/Data.o \
 	obj/PA/Tree.o \
-	obj/PA/Data.o \
 	obj/PA/List.o \
 	obj/PA/Link.o \
 	obj/PA/Arrow.o \
@@ -132,10 +131,14 @@ sources=src/Input.c \
 	src/Iterator/Iterator.c \
 	src/Iterator/ConcreteAggregate.c
 	
-build: preprocess compile assemble
+build: preprocess compile assemble link_windows
 preprocess: $(sources)
 compile: $(assemblies)
 assemble: $(objects)
+link_windows: $(objects)
+	$(LD) $(objects) -o filiename.library
+link_macos: $(objects)
+link_linux: $(objects)
 #build: preprocess assemble compile
 all: $(sources) build
 #SUBDIRS= src src/Iterator src/Builder src/Adapter src/Arraylist
@@ -165,7 +168,6 @@ libdir=obj obj/Adapter obj/Iterator obj/ArrayList obj/Builder obj/PA obj/BFS
 #installdirs: 
 #//build
 #$(objects)
-
 src/Input.c: include/defs.h
 	$(CC) $(CFLAGS) -E $@ 
 src/Algorithm.c: include/Algorithm.h include/defs.h 
