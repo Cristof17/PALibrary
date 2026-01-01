@@ -1,7 +1,13 @@
 //@Author Cristofor Rotsching
 
-#include <Builder/Product.h>
 
+#ifndef _WIN95
+#include <PA/Tree.h>
+#include <Builder/Product.h>
+#elif defined _WIN95
+#include <PA\Tree.h>
+#include <Builder\Product.h>
+#endif
 //struct NormalTree BuildPart() {
 //    struct NormalTree tree;
 //    return tree;

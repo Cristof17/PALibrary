@@ -1,8 +1,21 @@
 //@Author Cristofor Rotsching
 
-#include <defs.h>
 #include <PA/Tree.h>
 
+#ifndef _WIN95
+#include <PA/Size.h>
+#include <PA/List.h>
+#include <PA/Element.h>
+#include <PA/Series.h>
+#include <PA/Result.h>
+#elif defined _WIN95
+#include <PA\Size.h>
+#include <PA\List.h>
+#include <PA\Element.h>
+#include <PA\Series.h>
+#include <PA\Result.h>
+#endif
+#include <types.h>
 struct PATree PATreePerformConstruct(struct PACount N, struct PACount M, struct PASeries Adj, struct PAElement Source)
 {
     struct PATree tree;

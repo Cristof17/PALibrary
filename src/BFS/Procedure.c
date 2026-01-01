@@ -1,9 +1,24 @@
 //@Author Cristofor Rotsching
 
-#include <BFS/Procedure.h>
-#include <defs.h>
 #include <types.h>
+#include <Algorithm.h>
+#include <Algorithm.h>
 
+#ifndef _WIN95
+#include <PA/Tree.h>
+#include <PA/Element.h>
+#include <BFS/Procedure.h>
+// #include <BFS/Input.h>
+#include <PA/Input.h>
+// #elif defined _WIN945
+#elif defined _WIN95
+#include <PA\Tree.h>
+#include <PA/Element.h>
+#include <PA/Input.h>
+#include <BFS\Procedure.h>
+// #include <BFS\Input.h>
+// #ni
+#endif
 // #include <defs.h>
 //check and searcg based b on state
 // a situation that must exist before something else is possible or permitted

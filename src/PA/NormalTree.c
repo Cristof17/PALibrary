@@ -1,11 +1,12 @@
 //@Author Cristofor Rotsching
 
 #include <defs.h>
+#include <types.h>
 
 #ifndef _WIN95
-#include <PA/NormalTree.h>
+#include <PA/Result.h>
 #elif defined _WIN95
-#include <PA\NormalTree.h>
+#include <PA\Result.h>
 #endif
 struct PANormalTree PANormalTreePerformConstruct(struct PAList Adj)
 {

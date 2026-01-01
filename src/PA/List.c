@@ -1,8 +1,23 @@
 //@Author Cristofor Rotsching
 
 #include <defs.h>
+#include <types.h>
+
+#ifndef _WIN95
+#include <PA/Element.h>
+#include <PA/Count.h>
+#include <ArrayList/ArrayList.h>
 #include <PA/List.h>
 
+#include <PA/Result.h>
+#elif defined _WIN95
+#include <PA\Element.h>
+#include <PA\Count.h>
+#include <ArrayList\ArrayList.h>
+#include <PA\List.h>
+
+#include <PA\Result.h>
+#endif
 // struct PAList PAListConstruct(struct PAElement Element) {
 struct PAList PAListPerformConstruct(struct ArrayList ADJ, struct PACount M)
 {

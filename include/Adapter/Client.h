@@ -15,7 +15,7 @@
 #include <PA\Tree.h>
 #include <Adapter\Target.h>
 #endif
-struct Client;
+//struct Client;
 //typedef struct Client Client;
 
 #endif /* ADAPTER_INCLUDE_CLIENT_H_ */

@@ -1,6 +1,20 @@
 //@Author Cristofor Rotsching
-#include <PA/Link.h>
+
+#include <defs.h>
 #include <types.h>
+
+// #include <rt>
+#ifndef _WIN95
+#include <PA/Pair.h>
+#include <PA/Result.h>
+#include <PA/Link.h>
+
+#elif defined _WIN95
+#include <PA\Pair.h>
+#include <PA\Result.h>
+#include <PA\Link.h>
+
+#endif
 struct PALink PALinkPerformConstruct(struct PAPair P)
 {
     struct PALink link;

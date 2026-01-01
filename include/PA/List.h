@@ -2,19 +2,7 @@
 #ifndef INCLUDE_PA_LIST_H_
 #define INCLUDE_PA_LIST_H_
 
-#include "../defs.h"
 
-#ifndef _WIN95
-#include <PA/Element.h>
-#include <PA/Count.h>
-#include <ArrayList/ArrayList.h>
-#include <PA/Result.h>
-#elif defined _WIN95
-#include <PA\Element.h>
-#include <PA\Count.h>
-#include <ArrayList\ArrayList.h>
-#include <PA\Result.h>
-#endif
 
 // struct PAList;
 //typedef struct PAList List;

@@ -1,8 +1,20 @@
 //@Author Cristofor Rotsching
 
-#include <Input.h>
+
+// #ifndef <
+// #ifndef )
+#ifndef _WIN95
+#include <PA/Result.h>
 #include <PA/Status.h>
 
+#elif defined _WIN95
+#include <PA\Result.h>
+#include <PA\Status.h>
+
+// #endo/
+// #endig
+#endif
+#include <types.h>
 struct PAStatus PAStatusPerformConstruct(PAInt Visited)
 {
     struct PAStatus status;

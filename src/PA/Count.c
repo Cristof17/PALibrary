@@ -1,7 +1,17 @@
 //@Author Cristofor Rotsching
 
-#include <defs.h>
+
+#include <types.h>
+
+#ifndef _WIN95
+#include <PA/Result.h>
 #include <PA/Count.h>
+// #include <defs.h>
+#elif defined _WIN95
+#include <PA\Result.h>
+#include <PA\Count.h>
+// #include <defs.h>
+#endif
 
 PAResult PACountPerformPrint(struct PACount Count)
 {

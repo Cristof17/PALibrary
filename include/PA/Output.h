@@ -1,16 +1,7 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_BFSOUTPUT_H_
 #define INCLUDE_BFSOUTPUT_H_
-// #ifndef _WIN954
-// #include <defs.h>
-#ifndef _WIN95
-#include <BFS/Record.h>
-#include <PA/Result.h>
-#elif defined _WIN95
-#include <BFS\Record.h>
-// #include <PA/Result.h>
-#include <PA\Result.h>
-#endif
+
 // struct BFSOutput;
 struct PAOutput PAOutputPerformConstruct(struct BFSRecord Result);
 struct PAOutput PAOutputPerformInit(struct PAOutput);

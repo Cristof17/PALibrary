@@ -1,7 +1,17 @@
 //@Author Cristofor Rotsching
 
+
+#ifndef _WIN95
+// #include <types.h>
+#include <PA/Feature.h>
 #include <PA/Result.h>
 
+#elif defined _WIN95
+#include <PA\Feature.h>
+#include <PA\Result.h>
+
+#endif
+#include <types.h>
 // #include <defs.h>
 // struct PAResult PAResultPerformConstruct()
 // {

@@ -1,7 +1,17 @@
 //@Author Cristofor Rotsching
 
-#include <PA/Arrow.h>
+#include <defs.h>
 #include <types.h>
+
+#ifndef _WIN95
+#include <PA/Pair.h>
+#include <PA/Arrow.h>
+#elif defined _WIN95
+#include <PA\Pair.h>
+#include <PA\Arrow.h>
+// #include <PA/Result.h>
+// #include <PA/Arrow.h>
+#endif
 
 struct PAArrow PAArrowPerformConstruct(struct PAPair Pair)
 {

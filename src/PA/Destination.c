@@ -1,8 +1,16 @@
 //@Author Cristofor Rotsching
 
-#include <defs.h>
-#include <PA/Destination.h>
+#include <types.h>
 
+//#include <types.h>
+//#include <PA/Element.h>
+#ifndef _WIN95
+#include <PA/Destination.h>
+#include <PA/Result.h>
+#elif defined _WIN95
+#include <PA\Destination.h>
+#include <PA\Result.h>
+#endif
 // #include "Destination.h"
 
 struct PADestination PADestinationPerformConstruct(struct PAElement Element)

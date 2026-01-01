@@ -1,5 +1,17 @@
+#include <defs.h>
+#include <defs.h>
+#include <types.h>
+#ifndef _WIN95
+//#include <PA/Result.h>
 #include <PA/Data.h>
-
+//#include <PA/Resource.h>
+#elif defined _WIN95
+#include <PA\Data.h>
+#include <PA\Data.h>
+//#include <PA\Result.h>
+//#include <PA\Resource.h>
+#include <types.h>
+#endif
 //typedef struct PAData PAData;
 //struct PAData {
 //

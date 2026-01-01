@@ -1,6 +1,12 @@
-#include <defs.h>
+#include <types.h>
+#ifndef _WIN95
+#include <PA/Result.h>
 #include <PA/Value.h>
 
+#elif defined _WIN95
+#include <PA\Result.h>
+#include <PA\Value.h>
+#endif
 //return nil if cannot create object
 struct PAValue PAValuePerformConstruct(PAInt Value)
 {

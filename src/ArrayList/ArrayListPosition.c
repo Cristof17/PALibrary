@@ -6,7 +6,13 @@
  *      Author: AdministratorUser
  */
 
+#ifndef _WIN95
 #include <ArrayList/ArrayListPosition.h>
+#elif defined _WIN95
+#include <ArrayList\ArrayListPosition.h>
+#endif
+#include <defs.h>
+#include <types.h>
 
 struct ArrayListPosition ArrayListPositionPerformConstruct(ListPosition place)
 {

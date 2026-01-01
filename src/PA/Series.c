@@ -1,6 +1,19 @@
 #include <defs.h>
+
+#ifndef _WIN95
+#include <PA/Size.h>
+#include <PA/List.h>
+#include <PA/Result.h>
 #include <PA/Series.h>
 
+#elif defined _WIN95
+#include <PA\Size.h>
+#include <PA\List.h>
+#include <PA\Result.h>
+#include <PA\Series.h>
+
+#endif
+#include <types.h>
 /*
  * pasir.c
  *
