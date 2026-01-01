@@ -1,6 +1,5 @@
 //@Author Cristofor Rotsching
 
-#include <Input.h>
 #ifndef _WIN95
 #include <PA/Status.h>
 #elif defined _WIN95

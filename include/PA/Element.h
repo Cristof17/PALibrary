@@ -4,20 +4,6 @@
 
 #include "../defs.h"
 
-#ifndef _WIN95
-#include <PA/Status.h>
-//#include "padata.h"
-#include <PA/Data.h>
-#include <PA/Destination.h>
-#include <PA/Feature.h>
-#include <PA/Result.h>
-#elif defined _WIN95
-#include <PA\Status.h>
-#include <PA\Data.h>
-#include <PA\Destination.h>
-#include <PA\Feature.h>
-#include <PA\Result.h>
-#endif
 // struct PAElement;
 struct PAElement PAElementPerformConstruct(struct PAData, struct PAFeature, struct PAStatus);
 struct PAElement PAElementPerformCopy(struct PAElement);

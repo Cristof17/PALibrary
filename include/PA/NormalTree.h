@@ -4,11 +4,6 @@
 
 #include "../defs.h"
 
-#ifndef _WIN95
-#include <PA/Result.h>
-#elif defined _WIN95
-#include <PA\Result.h>
-#endif
 // struct NormalTree;
 struct PANormalTree PANormalTreePerformConstruct(struct PAList);
 struct PANormalTree PANormalTreePerformInit(struct PANormalTree);

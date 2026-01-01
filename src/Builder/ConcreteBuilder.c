@@ -5,7 +5,18 @@
  *      Author: AdministratorUser
  */
 
+
+#ifndef _WIN95
+#include <Builder/Builder.h>
+#include <Builder/Product.h>
 #include <Builder/ConcreteBuilder.h>
+#include <PA/Result.h>
+#elif defined _WIN95
+#include <Builder\Builder.h>
+#include <Builder\Product.h>
+#include <Builder\ConcreteBuilder.h>
+#include <PA/Result.h>
+#endif
 
 //#include <Builder/Product.h>
 //#include <PA/Result.h>

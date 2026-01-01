@@ -1,5 +1,10 @@
-#include <Iterator/ConcreteAggregate.h>
 
+#ifndef _WIN95
+#include <Iterator/ConcreteAggregate.h>
+#elif defined _WIN95
+#include <Iterator\ConcreteAggregate.h>
+// #pragma endregion
+#endif
 /*
  * ConcreteAggregate.c
  *

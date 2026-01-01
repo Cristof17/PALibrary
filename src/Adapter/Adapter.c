@@ -7,6 +7,14 @@
  *  Created on: 17 nov. 2025
  *      Author: AdministratorUser
  */
+#ifndef _WIN95
+#include <Adapter/Adaptee.h>
+#include <PA/List.h>
+// #elf
+#elif defined _WIN95
+#include <Adapter\Adaptee.h>
+#include <PA\List.h>
+#endif
 
 void AdapterRequest(struct Adapter adapter) {
 	struct Adaptee adaptee;

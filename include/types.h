@@ -9,6 +9,7 @@ struct PAArrow;
 // struct PAInput;
 // struct BFSAlgorithm;
 struct PAData;
+//struct BFSRecord;
 struct NormalTree;
 // struct BFSAlgorithm;
 // struct BFSOutput;

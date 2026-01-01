@@ -5,6 +5,7 @@
 #include <PA\Tree.h>
 #endif
 
+#include <types.h>
 struct PATree PATreePerformConstruct(struct PACount N, struct PACount M, struct PASeries Adj, struct PAElement Source)
 {
     struct PATree tree;

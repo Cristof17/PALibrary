@@ -6,7 +6,6 @@
 #include <PA\Result.h>
 #endif
 
-// #include <defs.h>
 // struct PAResult PAResultPerformConstruct()
 // {
 //     struct PAResult result;

@@ -1,8 +1,16 @@
 //@Author Cristofor Rotsching
 
-#include <defs.h>
-#include <PA/TransposeTree.h>
+#include <types.h>
 
+
+
+#ifndef _WIN95
+#include <PA/TransposeTree.h>
+// #include <defs.h>
+#elif defined _WIN95
+#include <PA\TransposeTree.h>
+
+#endif
 struct PATransposeTree PATransposeTreePerformConstruct(struct PAList Adj_trans)
 {
     struct PATransposeTree transposeTree;

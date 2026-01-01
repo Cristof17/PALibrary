@@ -1,5 +1,17 @@
+#include <types.h>
+#include <defs.h>
+#include <types.h>
+#include <defs.h>
+#ifndef _WIN95
+//#include <PA/Result.h>
+//#include <PA/Data.h>
 #include <ArrayList/ArrayList.h>
-
+// #eliuf
+#elif defined _WIN95
+#include <ArrayList\ArrayList.h>
+//#include <PA\Result.h>
+//#include <PA\Data.h>
+#endif
 // #include <PA/Result.h>
 // #include <defs.h>
 /*

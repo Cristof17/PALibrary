@@ -4,7 +4,6 @@
 #elif defined _WIN95
 #include <PA\Data.h>
 #endif
-
 //typedef struct PAData PAData;
 //struct PAData {
 //

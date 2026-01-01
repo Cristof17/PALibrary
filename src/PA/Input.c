@@ -4,6 +4,7 @@
 #include <types.h>
 
 #ifndef _WIN95
+
 #include <PA/Input.h>
 #elif defined _WIN95
 #include <PA\Input.h>

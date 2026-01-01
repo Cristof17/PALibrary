@@ -1,3 +1,5 @@
+#include <types.h>
+
 //@Author Cristofor Rotsching
 #ifndef _WIN95
 #include <PA/Value.h>

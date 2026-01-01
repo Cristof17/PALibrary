@@ -6,6 +6,7 @@
 #include <PA/Count.h>
 #elif defined _WIN95
 #include <PA/Count.h>
+
 #endif
 
 PAResult PACountPerformPrint(struct PACount Count)

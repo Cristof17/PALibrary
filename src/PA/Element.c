@@ -8,6 +8,25 @@
 #include <PA\Element.h>
 #endif
 
+
+#include <types.h>
+
+#ifndef _WIN95
+#include <PA/Status.h>
+#include <PA/Element.h>
+//#include "padata.h"
+#include <PA/Data.h>
+#include <PA/Destination.h>
+#include <PA/Feature.h>
+#include <PA/Result.h>
+#elif defined _WIN95
+#include <PA\Status.h>
+#include <PA\Element.h>
+#include <PA\Data.h>
+#include <PA\Destination.h>
+#include <PA\Feature.h>
+#include <PA\Result.h>
+#endif
 // #include "//"
 // #include "../include/PAIndex.h"
 struct PAElement PAElementPerformConstruct(struct PAData Data, struct PAFeature Feature, struct PAStatus Status)

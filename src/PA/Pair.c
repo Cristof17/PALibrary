@@ -1,11 +1,16 @@
 //@Author Cristofor Rotsching
 /*@*/
+
 #include <defs.h>
+#include <types.h>
+
 #ifndef _WIN95
 #include <PA/Pair.h>
 #elif defined _WIN95
 #include <PA\Pair.h>
 #endif
+
+
 struct PAPair PAPairPerformConstruct(struct PAElement Node, struct PAElement Neigh)
 {
     struct PAPair pair;

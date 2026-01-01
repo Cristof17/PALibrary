@@ -4,14 +4,6 @@
 
 #include "../defs.h"
 
-// #include <rt>
-#ifndef _WIN95
-#include <PA/Pair.h>
-#include <PA/Result.h>
-#elif defined _WIN95
-#include <PA\Pair.h>
-#include <PA\Result.h>
-#endif
 // struct PALink;
 struct PALink PALinkPerformConstruct(struct PAPair);
 struct PALink PALinkPerformCopy(struct PALink);

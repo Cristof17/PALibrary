@@ -1,6 +1,14 @@
 #include <Adapter/Target.h>
 #include <types.h>
 
+#ifndef _WIN95
+#include <PA/Series.h>
+#include <Adapter/Adapter.h>
+#elif defined _WIN95
+#include <PA\Series.h>
+#include <Adapter\Adapter.h>
+#endif
+
 /*
  * Target.c
  *
