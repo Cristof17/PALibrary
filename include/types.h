@@ -127,7 +127,7 @@ struct PAInput {
 	struct PAList adj;//f
 };
 struct BFSRecord {
-	struct PACount n;
+struct PACount n;
 	struct PAList d;
 };
 struct PAOutput {
