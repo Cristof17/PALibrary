@@ -677,6 +677,50 @@ clean:
 	rm src/Iterator/ConcreteIterator.s
 	rm src/Iterator/Iterator.s
 	rm src/Iterator/ConcreteAggregate.s
+	rm src/Input.i
+	rm src/Algorithm.i
+	rm src/BFS/Procedure.i
+	rm src/PA/Input.i
+	rm src/PA/Output.i
+	rm src/BFS/Record.i
+	rm src/Output.i
+	rm src/PA/Data.i
+	rm src/PA/Destination.i
+	rm src/PA/Tree.i
+	rm src/PA/Data.i
+	rm src/PA/List.i
+	rm src/PA/Link.i
+	rm src/PA/Arrow.i
+	rm src/PA/Element.i
+	rm src/PA/Count.i
+	rm src/PA/Pair.i
+	rm src/PA/Result.i
+	rm src/PA/Series.i
+	rm src/PA/Status.i
+	rm src/PA/Feature.i
+	rm src/PA/Value.i
+	rm src/PA/Resource.i
+	rm src/Builder/Director.i
+	rm src/Builder/Builder.i
+	rm src/Builder/Product.i
+	rm src/Builder/ConcreteBuilder.i
+	rm src/PA/NormalTree.i
+	rm src/PA/TransposeTree.i
+	rm src/Adapter/Client.i
+	rm src/Adapter/Target.i
+	rm src/Adapter/Adapter.i
+	rm src/Adapter/Adaptee.i
+	rm src/Adapter/PADrawingEditor.i
+	rm src/Adapter/PALine.i
+	rm src/Adapter/PAShape.i
+	rm src/Adapter/PATextView.i
+	rm src/ArrayList/ArrayList.i
+	rm src/ArrayList/ArrayListPosition.i
+	rm src/Iterator/Client.i
+	rm src/Iterator/ConcreteIterator.i
+	rm src/Iterator/Iterator.i
+	rm src/Iterator/ConcreteAggregate.i
+
 #rm objInput.o
 #rm $(objects)
 #obj/Input.

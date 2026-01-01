@@ -59,3 +59,13 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+#preprocess files from macos
+src/Adapter/*.i
+src/ArrayList/*.i
+src/BFS/*.i
+src/Builder/*.i
+src/Iterator/*.i
+src/PA/*.i
+src/*.i
+*.i
