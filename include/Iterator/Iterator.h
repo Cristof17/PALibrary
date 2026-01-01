@@ -8,17 +8,7 @@
 #ifndef INCLUDE_ITERATOR_ITERATOR_H_
 #define INCLUDE_ITERATOR_ITERATOR_H_
 
-#include "../defs.h"
 
-// #in
-#ifndef _WIN95
-#include <PA/Data.h>
-#include <PA/Element.h>
-#elif defined _WIN95
-#include <PA\Data.h>
-#include <PA\Element.h>
-#endif
-#include <types.h>
 struct Iterator;
 // typedef struct Iterator Iterator;
 struct PAData First();

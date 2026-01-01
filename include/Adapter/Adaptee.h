@@ -9,18 +9,7 @@
 #define INCLUDE_ADAPTEE_H_
 //#include <adaptee.h>
 // #inf
-#ifndef _WIN95
-#include <PA/Data.h>
-#include <ArrayList/ArrayList.h>
-#include <types.h>
-#include <defs.h>
-// #elf
-#elif defined _WIN95
-#include <PA\Data.h>
-#include <ArrayList\ArrayList.h>
-#include <types.h>
-#include <defs.h>
-#endif
+
 
 struct Adaptee;
 //typedef struct Adaptee Adaptee;

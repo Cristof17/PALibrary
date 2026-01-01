@@ -7,9 +7,7 @@
 
 #ifndef INCLUDE_ITERATOR_AGGREGATE_H_
 #define INCLUDE_ITERATOR_AGGREGATE_H_
-#ifndef _WIN95
-#elif defined _WIN95
-#endif
+
 struct Aggregate;
 // typedef struct Aggregate Aggregate;
 void CreateIterator();

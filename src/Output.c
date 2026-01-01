@@ -1,7 +1,7 @@
 //@Author Cristofor Rotsching
 
+#include <defs.h>
 #include <Output.h>
-#include <types.h>
 
 #ifndef _WIN95
 // #include <Output.h>

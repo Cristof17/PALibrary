@@ -2,17 +2,6 @@
 #ifndef INCLUDE_OUTPUT_H_
 #define INCLUDE_OUTPUT_H_
 
-#include "defs.h"
-
-#ifndef _WIN95
-// #include <Output.h>
-// #include <PA/Result.h>
-#elif defined _WIN95
-// #include <PA\Result.h>
-// #include <Output.h>
-// #include <types.h>
-#endif
-#include <types.h>
 // struct Output;
 // typedef struct Output Output;
 struct Output OutputPerformConstruct();

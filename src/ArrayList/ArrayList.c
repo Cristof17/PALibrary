@@ -1,7 +1,6 @@
-#include <types.h>
 #include <defs.h>
 #include <types.h>
-#include <defs.h>
+
 #ifndef _WIN95
 //#include <PA/Result.h>
 //#include <PA/Data.h>

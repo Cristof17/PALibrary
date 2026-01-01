@@ -3,6 +3,7 @@
 #define INCLUDE_PA_TREE_H_
 
 #include "../defs.h"
+#include "../types.h"
 
 // struct PATree;
 // struct PATree PATreeConstruct(struct OPAResult);

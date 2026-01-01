@@ -2,8 +2,8 @@
 
 //#include
 #ifndef _WIN95
-#include <Adapter/PATextShape.h>
+#include <PA/PATextShape.h>
 #elif defined _WIN95
-#include <Adapter\PATextShape.h>
+#include <PA\PATextShape.h>
 #endif
 

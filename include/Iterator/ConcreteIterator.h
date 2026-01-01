@@ -7,10 +7,7 @@
 
 #ifndef INCLUDE_ITERATOR_CONCRETEITERATOR_H_
 #define INCLUDE_ITERATOR_CONCRETEITERATOR_H_
-#ifndef _WIN95
-// <
-#elif defined _WIN95
-#endif
+
 struct ConcreteIterator;
 // typedef struct ConcreteIterator ConcreteIterator;
 

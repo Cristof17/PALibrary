@@ -1,6 +1,8 @@
 #ifndef ARRAYLIST_ARRAYLIST_H_
 #define ARRAYLIST_ARRAYLIST_H_
 
+#include "../defs.h"
+
 // struct ArrayList;
 //typedef struct ArrayList ArrayList;
  struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], struct ArrayListPosition);

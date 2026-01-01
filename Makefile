@@ -38,10 +38,10 @@ objects= obj/Input.o \
 	obj/Adapter/Target.o \
 	obj/Adapter/Adapter.o \
 	obj/Adapter/Adaptee.o \
-	obj/Adapter/PADrawingEditor.o \
-	obj/Adapter/PALine.o \
-	obj/Adapter/PAShape.o \
-	obj/Adapter/PATextView.o \
+	obj/PA/PADrawingEditor.o \
+	obj/PA/PALine.o \
+	obj/PA/PAShape.o \
+	obj/PA/PATextView.o \
 	obj/ArrayList/ArrayList.o \
 	obj/ArrayList/ArrayListPosition.o \
 	obj/Iterator/Client.o \
@@ -79,10 +79,10 @@ assemblies= src/Input.s \
 	src/Adapter/Target.s \
 	src/Adapter/Adapter.s \
 	src/Adapter/Adaptee.s \
-	src/Adapter/PADrawingEditor.s \
-	src/Adapter/PALine.s \
-	src/Adapter/PAShape.s \
-	src/Adapter/PATextView.s \
+	src/PA/PADrawingEditor.s \
+	src/PA/PALine.s \
+	src/PA/PAShape.s \
+	src/PA/PATextView.s \
 	src/ArrayList/ArrayList.s \
 	src/ArrayList/ArrayListPosition.s \
 	src/Iterator/Client.s \
@@ -122,10 +122,10 @@ designs=src/Input.c \
 	src/Adapter/Target.c \
 	src/Adapter/Adapter.c \
 	src/Adapter/Adaptee.c \
-	src/Adapter/PADrawingEditor.c \
-	src/Adapter/PALine.c \
-	src/Adapter/PAShape.c \
-	src/Adapter/PATextView.c \
+	src/PA/PADrawingEditor.c \
+	src/PA/PALine.c \
+	src/PA/PAShape.c \
+	src/PA/PATextView.c \
 	src/ArrayList/ArrayList.c \
 	src/ArrayList/ArrayListPosition.c \
 	src/Iterator/Client.c \
@@ -165,10 +165,10 @@ sources=src/Input.i \
 	src/Adapter/Target.i \
 	src/Adapter/Adapter.i \
 	src/Adapter/Adaptee.i \
-	src/Adapter/PADrawingEditor.i \
-	src/Adapter/PALine.i \
-	src/Adapter/PAShape.i \
-	src/Adapter/PATextView.i \
+	src/PA/PADrawingEditor.i \
+	src/PA/PALine.i \
+	src/PA/PAShape.i \
+	src/PA/PATextView.i \
 	src/ArrayList/ArrayList.i \
 	src/ArrayList/ArrayListPosition.i \
 	src/Iterator/Client.i \
@@ -248,10 +248,10 @@ src/Adapter/Client.c: include/Adapter/Client.h include/defs.h
 src/Adapter/Target.c: include/Adapter/Target.h include/defs.h
 src/Adapter/Adapter.c: include/Adapter/Adapter.h include/defs.h
 src/Adapter/Adaptee.c: include/Adapter/Adaptee.h include/defs.h
-src/Adapter/PADrawingEditor.c:  include/Adapter/PADrawingEditor.h include/defs.h
-src/Adapter/PALine.c: include/Adapter/PALine.h include/defs.h
-src/Adapter/PAShape.c: include/Adapter/PAShape.h include/defs.h
-src/Adapter/PATextView.c:  include/Adapter/PATextView.h include/defs.h
+src/PA/PADrawingEditor.c:  include/PA/PADrawingEditor.h include/defs.h
+src/PA/PALine.c: include/PA/PALine.h include/defs.h
+src/PA/PAShape.c: include/PA/PAShape.h include/defs.h
+src/PA/PATextView.c:  include/PA/PATextView.h include/defs.h
 src/ArrayList/ArrayList.c: include/ArrayList/ArrayList.h include/defs.h
 src/ArrayList/ArrayListPosition.c:  include/ArrayList/ArrayListPosition.h include/defs.h include/types.h
 src/Iterator/Client.c: include/Iterator/Client.h include/defs.h
@@ -323,13 +323,13 @@ src/Adapter/Adapter.i : src/Adapter/Adapter.c
 	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
 src/Adapter/Adaptee.i : src/Adapter/Adaptee.c
 	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
-src/Adapter/PADrawingEditor.i : src/Adapter/PADrawingEditor.c
+src/PA/PADrawingEditor.i : src/PA/PADrawingEditor.c
 	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
-src/Adapter/PALine.i : src/Adapter/PALine.c
+src/PA/PALine.i : src/PA/PALine.c
 	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
-src/Adapter/PAShape.i : src/Adapter/PAShape.c
+src/PA/PAShape.i : src/PA/PAShape.c
 	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
-src/Adapter/PATextView.i : src/Adapter/PATextView.c
+src/PA/PATextView.i : src/PA/PATextView.c
 	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
 src/ArrayList/ArrayList.i : src/ArrayList/ArrayList.c
 	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
@@ -411,13 +411,13 @@ src/Adapter/Adapter.s: src/Adapter/Adapter.i
 	$(CC) -S $< -o $@
 src/Adapter/Adaptee.s: src/Adapter/Adaptee.i
 	$(CC) -S $< -o $@
-src/Adapter/PADrawingEditor.s: src/Adapter/PADrawingEditor.i
+src/PA/PADrawingEditor.s: src/PA/PADrawingEditor.i
 	$(CC) -S $< -o $@
-src/Adapter/PALine.s: src/Adapter/PALine.i
+src/PA/PALine.s: src/PA/PALine.i
 	$(CC) -S $< -o $@
-src/Adapter/PAShape.s: src/Adapter/PAShape.i
+src/PA/PAShape.s: src/PA/PAShape.i
 	$(CC) -S $< -o $@
-src/Adapter/PATextView.s: src/Adapter/PATextView.i
+src/PA/PATextView.s: src/PA/PATextView.i
 	$(CC) -S $< -o $@
 src/ArrayList/ArrayList.s: src/ArrayList/ArrayList.i
 	$(CC) -S $< -o $@
@@ -500,13 +500,13 @@ obj/Adapter/Adapter.o: src/Adapter/Adapter.s
 	$(CC) -c $< -o $@
 obj/Adapter/Adaptee.o: src/Adapter/Adaptee.s
 	$(CC) -c $< -o $@
-obj/Adapter/PADrawingEditor.o: src/Adapter/PADrawingEditor.s
+obj/PA/PADrawingEditor.o: src/PA/PADrawingEditor.s
 	$(CC) -c $< -o $@
-obj/Adapter/PALine.o: src/Adapter/PALine.s
+obj/PA/PALine.o: src/PA/PALine.s
 	$(CC) -c $< -o $@
-obj/Adapter/PAShape.o: src/Adapter/PAShape.s
+obj/PA/PAShape.o: src/PA/PAShape.s
 	$(CC) -c $< -o $@
-obj/Adapter/PATextView.o: src/Adapter/PATextView.s
+obj/PA/PATextView.o: src/PA/PATextView.s
 	$(CC) -c $< -o $@
 obj/ArrayList/ArrayList.o: src/ArrayList/ArrayList.s
 	$(CC) -c $< -o $@
@@ -554,10 +554,10 @@ obj/Iterator/ConcreteAggregate.o: src/Iterator/ConcreteAggregate.s
 #src/Adapter/Target.c:
 #src/Adapter/Adapter.c:
 #src/Adapter/Adaptee.c:
-#src/Adapter/PADrawingEditor.c:
-#src/Adapter/PALine.c:
-#src/Adapter/PAShape.c:
-#src/Adapter/PATextView.c:
+#src/PA/PADrawingEditor.c:
+#src/PA/PALine.c:
+#src/PA/PAShape.c:
+#src/PA/PATextView.c:
 #src/ArrayList/ArrayList.c:
 #src/ArrayList/ArrayListPosition.c:
 #src/Iterator/Client.c:
@@ -631,10 +631,10 @@ clean:
 	rm src/Adapter/Target.i
 	rm src/Adapter/Adapter.i
 	rm src/Adapter/Adaptee.i
-	rm src/Adapter/PADrawingEditor.i
-	rm src/Adapter/PALine.i
-	rm src/Adapter/PAShape.i
-	rm src/Adapter/PATextView.i
+	rm src/PA/PADrawingEditor.i
+	rm src/PA/PALine.i
+	rm src/PA/PAShape.i
+	rm src/PA/PATextView.i
 	rm src/ArrayList/ArrayList.i
 	rm src/ArrayList/ArrayListPosition.i
 	rm src/Iterator/Client.i
@@ -674,10 +674,10 @@ clean:
 	rm src/Adapter/Target.s
 	rm src/Adapter/Adapter.s
 	rm src/Adapter/Adaptee.s
-	rm src/Adapter/PADrawingEditor.s
-	rm src/Adapter/PALine.s
-	rm src/Adapter/PAShape.s
-	rm src/Adapter/PATextView.s
+	rm src/PA/PADrawingEditor.s
+	rm src/PA/PALine.s
+	rm src/PA/PAShape.s
+	rm src/PA/PATextView.s
 	rm src/ArrayList/ArrayList.s
 	rm src/ArrayList/ArrayListPosition.s
 	rm src/Iterator/Client.s
@@ -717,10 +717,10 @@ clean:
 	rm obj/Adapter/Target.o
 	rm obj/Adapter/Adapter.o
 	rm obj/Adapter/Adaptee.o
-	rm obj/Adapter/PADrawingEditor.o
-	rm obj/Adapter/PALine.o
-	rm obj/Adapter/PAShape.o
-	rm obj/Adapter/PATextView.o
+	rm obj/PA/PADrawingEditor.o
+	rm obj/PA/PALine.o
+	rm obj/PA/PAShape.o
+	rm obj/PA/PATextView.o
 	rm obj/ArrayList/ArrayList.o
 #	rm obj/ArrayList/ArrayListObject.o
 	rm obj/Iterator/Client.o
@@ -790,13 +790,13 @@ run:
 # pabuilder.s:  src/builder/pabuilder.c
 # 	CPATH=$(CPATH) $(CC) -S $^ -o asm/builder/$@
 
-# PADrawingEditor.s: src/adapter/PADrawingEditor.c
+# PADrawingEditor.s: src/PA/PADrawingEditor.c
 # 	CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
-# PALine.s: src/adapter/PALine.c
+# PALine.s: src/PA/PALine.c
 # 	CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
-# PAShape.s: src/adapter/PAShape.c
+# PAShape.s: src/PA/PAShape.c
 # 	CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
-# PATextView.s: src/adapter/PATextView.c
+# PATextView.s: src/PA/PATextView.c
 # 	CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
 
 # client.s: src/adapter/client.c

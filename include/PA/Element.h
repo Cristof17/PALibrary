@@ -2,7 +2,7 @@
 #ifndef INCLUDE_PA_ELEMENT_H_
 #define INCLUDE_PA_ELEMENT_H_
 
-#include "../defs.h"
+#include "../types.h"
 
 // struct PAElement;
 struct PAElement PAElementPerformConstruct(struct PAData, struct PAFeature, struct PAStatus);

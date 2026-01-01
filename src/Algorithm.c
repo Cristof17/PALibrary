@@ -1,11 +1,6 @@
 //@Author Cristofor Rotsching
 
 #include <Algorithm.h>
-#include <Input.h>
-#include <Output.h>
-#include <Input.h>
-#include <Output.h>
-#include <types.h>
 
 #ifndef _WIN95
 //#include "outputc.h"

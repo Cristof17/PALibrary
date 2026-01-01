@@ -2,7 +2,7 @@
 // #define _INCLUDE_ADAPTER_PAED
 // #i
 #ifndef _WIN95
-#include <Adapter/PADrawingEditor.h>
+#include <PA/PADrawingEditor.h>
 #elif defined _WIN95
-#include <Adapter\PADrawingEditor.h>
+#include <PA\PADrawingEditor.h>
 #endif

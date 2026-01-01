@@ -2,8 +2,8 @@
 #ifndef INCLUDE_PAMUCHIE_H_
 #define INCLUDE_PAMUCHIE_H_
 
-#include "../defs.h"
-
+//#include "../defs.h"
+#include "../types.h"
 // #ifdef WIN)
 
 struct PAArrow PAArrowPerformConstruct(struct PAPair p);

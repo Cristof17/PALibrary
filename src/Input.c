@@ -1,8 +1,6 @@
 //@Author Cristofor Rotsching
 
 #include <Input.h>
-#include <types.h>
-#include <types.h>
 
 #ifndef _WIN95
 #include <ArrayList/ArrayList.h>

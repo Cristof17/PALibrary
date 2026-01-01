@@ -1,6 +1,6 @@
+//@Author Cristofor Rotsching
 #include <defs.h>
 
-//@Author Cristofor Rotsching
 #ifndef _WIN95
 #include <PA/Arrow.h>
 #elif defined _WIN95

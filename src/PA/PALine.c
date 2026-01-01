@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
 #ifndef _WIN95
-#include <Adapter/PALine.h>
+#include <PA/PALine.h>
 #elif defined _WIN95
-#include <Adapter\PALine.h>
+#include <PA\PALine.h>
 #endif

@@ -4,13 +4,7 @@
 
 #include "../defs.h"
 
-//#include <types.h>
-//#include <PA/Element.h>
-#ifndef _WIN95
-#include <PA/Result.h>
-#elif defined _WIN95
-#include <PA\Result.h>
-#endif
+
 // struct PADestination;
 struct PADestination PADestinationPerformConstruct(struct PAElement);
 struct PADestination PADestinationPerformCopy(struct PADestination);
