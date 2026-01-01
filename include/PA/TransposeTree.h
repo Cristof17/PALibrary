@@ -4,14 +4,6 @@
 
 #include "../defs.h"
 
-#ifndef _WIN95
-#include <PA/Result.h>
-// #include <defs.h>
-#elif defined _WIN95
-#include <PA\Result.h>
-#include <defs.h>
-#endif
-#include <types.h>
 // struct GrafTranspus;
 // typedef struct GrafTranspus GrafTranspus;
 struct PATransposeTree PATransposeTreePerformConstruct(struct PAList);

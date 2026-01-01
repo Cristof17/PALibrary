@@ -1,6 +1,10 @@
+//@Author Cristofor Rotsching
 #include <defs.h>
+#ifndef _WIN95
 #include <PA/Series.h>
-
+#elif defined _WIN95
+#include <PA/Series.h>
+#endif
 /*
  * pasir.c
  *

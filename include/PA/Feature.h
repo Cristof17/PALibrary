@@ -1,16 +1,11 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_PA_FEATURE_H_
 #define INCLUDE_PA_FEATURE_H_
-// #include <PA/Feature.h>
 
 #include "../defs.h"
 
-// #include <types.h>
-#ifndef _WIN95
-#include <PA/Result.h>
-#elif defined _WIN95
-#include <PA\Result.h>
-#endif
+// #include <PA/Feature.h>
+
 // struct PAFeature;
 struct PAFeature PAFeaturePerformConstruct(PAInt);
 struct PAFeature PAFeaturePerformCopy(struct PAFeature);

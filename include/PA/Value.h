@@ -1,14 +1,10 @@
+//@Author Cristofor Rotsching
 #ifndef INCLUDE_PA_VALUE_H_
 #define INCLUDE_PA_VALUE_H_
 
 #include "../defs.h"
 
-#ifndef _WIN95
-#include <PA/Result.h>
-#elif defined _WIN95
-#include <PA\Result.h>
-#endif
-#include <types.h>
+
 // struct PAValue;
 struct PAValue PAValuePerformConstruct(PAInt);
 struct PAValue PAValuePerformCopy(struct PAValue);

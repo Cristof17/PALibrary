@@ -1,5 +1,10 @@
 //@Author Cristofor Rotsching
+#ifndef _WIN95
 #include <PA/Feature.h>
+#elif defined _WIN95
+#include <PA\Feature.h>
+#endif
+
 #include <types.h>
 struct PAFeature PAFeaturePerformConstruct(PAInt Kind)
 {

@@ -1,21 +1,11 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_BFSINPUT_H_
 #define INCLUDE_BFSINPUT_H_
-// #include <typee
 
 #include "../defs.h"
 
-#ifndef _WIN95
-#include <PA/Element.h>
-#include <PA/List.h>
-#include <PA/Size.h>
-// #include <BFS/Input.h>
-#elif defined _WIN95
-#include <PA\Element.h>
-#include <PA\List.h>
-#include <PA\Size.h>
-// #include <BFS\Input.h>
-#endif
+// #include <typee
+
 // struct PAInput;
 struct PAInput PAInputPerformConstruct(struct PACount N, struct PACount M, struct PAList Adj, struct PAElement Sursa);
 struct PAInput PAInputPerformCopy(struct PAInput);

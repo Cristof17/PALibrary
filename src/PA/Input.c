@@ -1,8 +1,13 @@
 //@Author Cristofor Rotsching
 // #include <BFS/Input.h>
 
-#include <defs.h>
+#include <types.h>
+
+#ifndef _WIN95
 #include <PA/Input.h>
+#elif defined _WIN95
+#include <PA\Input.h>
+#endif
 
 struct PAInput PAInputPerformConstruct(struct PACount N, struct PACount M, struct PAList ADJ, struct PAElement Source)
 {

@@ -4,20 +4,6 @@
 
 #include "../defs.h"
 
-#ifndef _WIN95
-#include <PA/Size.h>
-#include <PA/List.h>
-#include <PA/Element.h>
-#include <PA/Series.h>
-#include <PA/Result.h>
-#elif defined _WIN95
-#include <PA\Size.h>
-#include <PA\List.h>
-#include <PA\Element.h>
-#include <PA\Series.h>
-#include <PA\Result.h>
-#endif
-#include <types.h>
 // struct PATree;
 // struct PATree PATreeConstruct(struct OPAResult);
 struct PATree PATreePerformConstruct(struct PACount N, struct PACount M, struct PASeries Adj, struct PAElement Sursa);

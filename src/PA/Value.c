@@ -1,5 +1,9 @@
-#include <defs.h>
+//@Author Cristofor Rotsching
+#ifndef _WIN95
 #include <PA/Value.h>
+#elif defined _WIN95
+#include <PA/Value.h>
+#endif
 
 //return nil if cannot create object
 struct PAValue PAValuePerformConstruct(PAInt Value)

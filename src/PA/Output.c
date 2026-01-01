@@ -1,6 +1,11 @@
 //@Author Cristofor Rotsching
 // #include <BFS/Output.h>
+#ifndef _WIN95
 #include <PA/Output.h>
+#elif defined _WIN95
+#include <PA\Output.h>
+#endif
+
 // #include <defs.h>
 // struct PAOutput PAOutputPerformConstruct()
 // {

@@ -1,7 +1,9 @@
 //@Author Cristofor Rotsching
-
-#include <defs.h>
+#ifndef _WIN95
 #include <PA/Tree.h>
+#elif defined _WIN95
+#include <PA\Tree.h>
+#endif
 
 struct PATree PATreePerformConstruct(struct PACount N, struct PACount M, struct PASeries Adj, struct PAElement Source)
 {
