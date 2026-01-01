@@ -196,6 +196,7 @@ srcdir=src
 #CFLAGS+=-I$(abspath $(includedir)/Iterator)
 #CFLAGS+=-I$(abspath $(includedir)/ArrayList)
 #CFLAGS+=-I$(abspath $(includedir)/Adapter)
+CFLAGS=
 CFLAGS+=-Iinclude
 libdir=obj obj/Adapter obj/Iterator obj/ArrayList obj/Builder obj/PA obj/BFS
 #datadir=dat
@@ -257,89 +258,89 @@ src/Iterator/Iterator.c: include/Iterator/Iterator.h include/defs.h
 src/Iterator/ConcreteAggregate.c:  include/Iterator/ConcreteAggregate.h include/defs.h
 
 src/Input.i : src/Input.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/Algorithm.i : src/Algorithm.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/BFS/Procedure.i : src/BFS/Procedure.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/PA/Input.i : src/PA/Input.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/PA/Output.i : src/PA/Output.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/BFS/Record.i : src/BFS/Record.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/Output.i : src/Output.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/PA/Data.i : src/PA/Data.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/PA/Destination.i : src/PA/Destination.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/PA/Tree.i : src/PA/Tree.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/PA/List.i : src/PA/List.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/PA/Link.i : src/PA/Link.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/PA/Arrow.i : src/PA/Arrow.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/PA/Element.i : src/PA/Element.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/PA/Count.i : src/PA/Count.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/PA/Pair.i : src/PA/Pair.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/PA/Result.i : src/PA/Result.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/PA/Series.i : src/PA/Series.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/PA/Status.i : src/PA/Status.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/PA/Feature.i : src/PA/Feature.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/PA/Value.i : src/PA/Value.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/PA/Resource.i : src/PA/Resource.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/Builder/Director.i : src/Builder/Director.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/Builder/Builder.i : src/Builder/Builder.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/Builder/Product.i : src/Builder/Product.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/Builder/ConcreteBuilder.i : src/Builder/ConcreteBuilder.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/PA/NormalTree.i : src/PA/NormalTree.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/PA/TransposeTree.i : src/PA/TransposeTree.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/Adapter/Client.i : src/Adapter/Client.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/Adapter/Target.i : src/Adapter/Target.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/Adapter/Adapter.i : src/Adapter/Adapter.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/Adapter/Adaptee.i : src/Adapter/Adaptee.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/Adapter/PADrawingEditor.i : src/Adapter/PADrawingEditor.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/Adapter/PALine.i : src/Adapter/PALine.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/Adapter/PAShape.i : src/Adapter/PAShape.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/Adapter/PATextView.i : src/Adapter/PATextView.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/ArrayList/ArrayList.i : src/ArrayList/ArrayList.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/ArrayList/ArrayListPosition.i : src/ArrayList/ArrayListPosition.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/Iterator/Client.i : src/Iterator/Client.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/Iterator/ConcreteIterator.i : src/Iterator/ConcreteIterator.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/Iterator/Iterator.i : src/Iterator/Iterator.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 src/Iterator/ConcreteAggregate.i : src/Iterator/ConcreteAggregate.c
-	$(CC) $(CFLAGS) -E $< > $@
+	$(CC) $(CFLAGS) -E $< > $@ 2>&1
 
 
 src/Input.s: src/Input.i
@@ -593,90 +594,6 @@ mkinstalldirs: $(srcdir)/mkinstalldirs
 #	echo "installcheck"
 
 clean:
-	rm obj/Input.o
-	rm obj/Algorithm.o
-	rm obj/BFS/Procedure.o
-	rm obj/BFS/Record.o
-	rm obj/Output.o
-	rm obj/PA/Data.o
-	rm obj/PA/Tree.o
-	#rm obj/PA.o
-	rm obj/PA/List.o
-	rm obj/PA/Input.o
-	rm obj/PA/Output.o
-	rm obj/PA/Link.o
-	rm obj/PA/Arrow.o
-	rm obj/PA/Element.o
-	rm obj/PA/Count.o
-	rm obj/PA/Pair.o
-	rm obj/PA/Result.o
-	rm obj/PA/Series.o
-	rm obj/PA/Feature.o
-	rm obj/PA/Value.o
-	rm obj/PA/Resource.o
-	rm obj/Builder/Product.o
-	rm obj/Builder/ConcreteBuilder.o 
-	rm obj/Builder/Director.o
-	rm obj/Builder/Builder.o
-	rm obj/PA/NormalTree.o
-	rm obj/PA/TransposeTree.o
-# 	rm obj/PA/Product.o
-	rm obj/Adapter/Client.o
-	rm obj/Adapter/Target.o
-	rm obj/Adapter/Adapter.o
-	rm obj/Adapter/Adaptee.o
-	rm obj/Adapter/PADrawingEditor.o
-	rm obj/Adapter/PALine.o
-	rm obj/Adapter/PAShape.o
-	rm obj/Adapter/PATextView.o
-	rm obj/ArrayList/ArrayList.o
-#	rm obj/ArrayList/ArrayListObject.o
-	rm obj/Iterator/Client.o
-	rm obj/Iterator/ConcreteIterator.o
-	rm obj/Iterator/Iterator.o
-	rm obj/Iterator/ConcreteAggregate.o
-	rm src/Input.s
-	rm src/Algorithm.s
-	rm src/BFS/Procedure.s
-	rm src/PA/Input.s
-	rm src/PA/Output.s
-	rm src/BFS/Record.s
-	rm src/Output.s
-	rm src/PA/Data.s
-	rm src/PA/Destination.s
-	rm src/PA/Tree.s
-#	rm src/PA/Data.s
-	rm src/PA/List.s
-	rm src/PA/Link.s
-	rm src/PA/Arrow.s
-	rm src/PA/Element.s
-	rm src/PA/Count.s
-	rm src/PA/Pair.s
-	rm src/PA/Result.s
-	rm src/PA/Series.s
-	rm src/PA/Feature.s
-	rm src/PA/Value.s
-	rm src/PA/Resource.s
-	rm src/Builder/Director.s
-	rm src/Builder/Builder.s
-	rm src/Builder/Product.s
-	rm src/Builder/ConcreteBuilder.s
-	rm src/PA/NormalTree.s
-	rm src/PA/TransposeTree.s
-	rm src/Adapter/Client.s
-	rm src/Adapter/Target.s
-	rm src/Adapter/Adapter.s
-	rm src/Adapter/Adaptee.s
-	rm src/Adapter/PADrawingEditor.s
-	rm src/Adapter/PALine.s
-	rm src/Adapter/PAShape.s
-	rm src/Adapter/PATextView.s
-	rm src/ArrayList/ArrayList.s
-	rm src/ArrayList/ArrayListPosition.s
-	rm src/Iterator/Client.s
-	rm src/Iterator/ConcreteIterator.s
-	rm src/Iterator/Iterator.s
-	rm src/Iterator/ConcreteAggregate.s
 	rm src/Input.i
 	rm src/Algorithm.i
 	rm src/BFS/Procedure.i
@@ -720,7 +637,90 @@ clean:
 	rm src/Iterator/ConcreteIterator.i
 	rm src/Iterator/Iterator.i
 	rm src/Iterator/ConcreteAggregate.i
-
+	rm src/Input.s
+	rm src/Algorithm.s
+	rm src/BFS/Procedure.s
+	rm src/PA/Input.s
+	rm src/PA/Output.s
+	rm src/BFS/Record.s
+	rm src/Output.s
+	rm src/PA/Data.s
+	rm src/PA/Destination.s
+	rm src/PA/Tree.s
+#	rm src/PA/Data.s
+	rm src/PA/List.s
+	rm src/PA/Link.s
+	rm src/PA/Arrow.s
+	rm src/PA/Element.s
+	rm src/PA/Count.s
+	rm src/PA/Pair.s
+	rm src/PA/Result.s
+	rm src/PA/Series.s
+	rm src/PA/Feature.s
+	rm src/PA/Value.s
+	rm src/PA/Resource.s
+	rm src/Builder/Director.s
+	rm src/Builder/Builder.s
+	rm src/Builder/Product.s
+	rm src/Builder/ConcreteBuilder.s
+	rm src/PA/NormalTree.s
+	rm src/PA/TransposeTree.s
+	rm src/Adapter/Client.s
+	rm src/Adapter/Target.s
+	rm src/Adapter/Adapter.s
+	rm src/Adapter/Adaptee.s
+	rm src/Adapter/PADrawingEditor.s
+	rm src/Adapter/PALine.s
+	rm src/Adapter/PAShape.s
+	rm src/Adapter/PATextView.s
+	rm src/ArrayList/ArrayList.s
+	rm src/ArrayList/ArrayListPosition.s
+	rm src/Iterator/Client.s
+	rm src/Iterator/ConcreteIterator.s
+	rm src/Iterator/Iterator.s
+	rm src/Iterator/ConcreteAggregate.s
+	rm obj/Input.o
+	rm obj/Algorithm.o
+	rm obj/BFS/Procedure.o
+	rm obj/BFS/Record.o
+	rm obj/Output.o
+	rm obj/PA/Data.o
+	rm obj/PA/Tree.o
+	#rm obj/PA.o
+	rm obj/PA/List.o
+	rm obj/PA/Input.o
+	rm obj/PA/Output.o
+	rm obj/PA/Link.o
+	rm obj/PA/Arrow.o
+	rm obj/PA/Element.o
+	rm obj/PA/Count.o
+	rm obj/PA/Pair.o
+	rm obj/PA/Result.o
+	rm obj/PA/Series.o
+	rm obj/PA/Feature.o
+	rm obj/PA/Value.o
+	rm obj/PA/Resource.o
+	rm obj/Builder/Product.o
+	rm obj/Builder/ConcreteBuilder.o 
+	rm obj/Builder/Director.o
+	rm obj/Builder/Builder.o
+	rm obj/PA/NormalTree.o
+	rm obj/PA/TransposeTree.o
+# 	rm obj/PA/Product.o
+	rm obj/Adapter/Client.o
+	rm obj/Adapter/Target.o
+	rm obj/Adapter/Adapter.o
+	rm obj/Adapter/Adaptee.o
+	rm obj/Adapter/PADrawingEditor.o
+	rm obj/Adapter/PALine.o
+	rm obj/Adapter/PAShape.o
+	rm obj/Adapter/PATextView.o
+	rm obj/ArrayList/ArrayList.o
+#	rm obj/ArrayList/ArrayListObject.o
+	rm obj/Iterator/Client.o
+	rm obj/Iterator/ConcreteIterator.o
+	rm obj/Iterator/Iterator.o
+	rm obj/Iterator/ConcreteAggregate.o
 #rm objInput.o
 #rm $(objects)
 #obj/Input.
