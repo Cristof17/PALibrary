@@ -3,7 +3,7 @@
 #include <Input.h>
 #include <PA/Status.h>
 
-struct PAStatus PAStatusPerformConstruct()
+struct PAStatus PAStatusPerformConstruct(PAInt Visited)
 {
     struct PAStatus status;
     return status;
@@ -19,11 +19,11 @@ struct PAStatus PAStatusPerformCopy(struct PAStatus Status)
     status.visited = Status.visited;
     return status;
 }
-struct PAStatus PAStatusPerformInit(PAInt Visited)
+struct PAStatus PAStatusPerformInit(struct PAStatus Status)
 {
     struct PAStatus status;
     // status = PAStatusPerformConstruct();
-    status.visited = Visited;
+    // status.visited = Visited;
 
     // return status;
     return status;

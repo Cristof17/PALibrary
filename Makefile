@@ -14,8 +14,10 @@ objects= obj/Input.o \
 	obj/BFS/Record.o \
 	obj/Output.o \
 	obj/PA/Data.o \
+	obj/PA/Destination.o \
 	obj/PA/Tree.o \
 	obj/PA/List.o \
+	obj/PA/Status.o \
 	obj/PA/Link.o \
 	obj/PA/Arrow.o \
 	obj/PA/Element.o \
@@ -399,6 +401,8 @@ src/PA/NormalTree.s: src/PA/NormalTree.i
 	$(CC) -S $< -o $@
 src/PA/TransposeTree.s: src/PA/TransposeTree.i
 	$(CC) -S $< -o $@
+src/PA/Status.s: src/PA/Status.i
+	$(CC) -S $< -o $@
 src/Adapter/Client.s: src/Adapter/Client.i
 	$(CC) -S $< -o $@
 src/Adapter/Target.s: src/Adapter/Target.i
@@ -645,6 +649,7 @@ clean:
 	rm src/BFS/Record.s
 	rm src/Output.s
 	rm src/PA/Data.s
+	rm src/PA/Status.s
 	rm src/PA/Destination.s
 	rm src/PA/Tree.s
 #	rm src/PA/Data.s
@@ -693,6 +698,7 @@ clean:
 	rm obj/PA/Link.o
 	rm obj/PA/Arrow.o
 	rm obj/PA/Element.o
+	rm obj/PA/Status.o
 	rm obj/PA/Count.o
 	rm obj/PA/Pair.o
 	rm obj/PA/Result.o
