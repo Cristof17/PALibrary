@@ -604,7 +604,7 @@ clean:
 	rm src/PA/Data.i
 	rm src/PA/Destination.i
 	rm src/PA/Tree.i
-	rm src/PA/Data.i
+# 	rm src/PA/Data.i
 	rm src/PA/List.i
 	rm src/PA/Link.i
 	rm src/PA/Arrow.i
