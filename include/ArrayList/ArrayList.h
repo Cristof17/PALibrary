@@ -2,6 +2,7 @@
 #define ARRAYLIST_ARRAYLIST_H_
 
 #include "../defs.h"
+#include "../types.h"
 
 // struct ArrayList;
 //typedef struct ArrayList ArrayList;

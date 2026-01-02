@@ -2,6 +2,8 @@
 #ifndef INCLUDE_INPUT_H_
 #define INCLUDE_INPUT_H_
 
+#include "types.h"
+#include "defs.h"
 // #include <tyoes
 // struct Input;
 // typedef struct Input Input;

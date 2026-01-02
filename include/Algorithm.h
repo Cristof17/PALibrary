@@ -2,6 +2,9 @@
 #ifndef INCLUDE_ALGORITHM_H_
 #define INCLUDE_ALGORITHM_H_
 
+#include "types.h"
+#include "defs.h"
+
 // struct Algorithm;
 // typedef struct Algorithm Algorithm;
 struct Output AlgorithmPerformRun(struct Input);

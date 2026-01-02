@@ -73,7 +73,15 @@ struct ConcreteAggregate;
 struct ConcreteIterator;
 struct Iterator ;
 struct BFSProcedure;
-// struct In put {
+struct Input;
+struct Output;
+struct Input {
+
+};
+struct Output {
+
+};
+// struct Input {
 	// 	;
 	// };
 	// struct Algorithm {

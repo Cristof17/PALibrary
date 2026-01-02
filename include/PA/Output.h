@@ -2,6 +2,9 @@
 #ifndef INCLUDE_BFSOUTPUT_H_
 #define INCLUDE_BFSOUTPUT_H_
 
+#include "types.h"
+#include "defs.h"
+
 // struct BFSOutput;
 struct PAOutput PAOutputPerformConstruct(struct BFSRecord Result);
 struct PAOutput PAOutputPerformInit(struct PAOutput);
