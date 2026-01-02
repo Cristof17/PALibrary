@@ -260,89 +260,89 @@ src/Iterator/Iterator.c: include/Iterator/Iterator.h include/defs.h
 src/Iterator/ConcreteAggregate.c:  include/Iterator/ConcreteAggregate.h include/defs.h
 
 src/Input.i : src/Input.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/Algorithm.i : src/Algorithm.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/BFS/Procedure.i : src/BFS/Procedure.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/PA/Input.i : src/PA/Input.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/PA/Output.i : src/PA/Output.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/BFS/Record.i : src/BFS/Record.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/Output.i : src/Output.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/PA/Data.i : src/PA/Data.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/PA/Destination.i : src/PA/Destination.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/PA/Tree.i : src/PA/Tree.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/PA/List.i : src/PA/List.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/PA/Link.i : src/PA/Link.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/PA/Arrow.i : src/PA/Arrow.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/PA/Element.i : src/PA/Element.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/PA/Count.i : src/PA/Count.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/PA/Pair.i : src/PA/Pair.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/PA/Result.i : src/PA/Result.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/PA/Series.i : src/PA/Series.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/PA/Status.i : src/PA/Status.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/PA/Feature.i : src/PA/Feature.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/PA/Value.i : src/PA/Value.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/PA/Resource.i : src/PA/Resource.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/Builder/Director.i : src/Builder/Director.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/Builder/Builder.i : src/Builder/Builder.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/Builder/Product.i : src/Builder/Product.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/Builder/ConcreteBuilder.i : src/Builder/ConcreteBuilder.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/PA/NormalTree.i : src/PA/NormalTree.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/PA/TransposeTree.i : src/PA/TransposeTree.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/Adapter/Client.i : src/Adapter/Client.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/Adapter/Target.i : src/Adapter/Target.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/Adapter/Adapter.i : src/Adapter/Adapter.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/Adapter/Adaptee.i : src/Adapter/Adaptee.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/PA/PADrawingEditor.i : src/PA/PADrawingEditor.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/PA/PALine.i : src/PA/PALine.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/PA/PAShape.i : src/PA/PAShape.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/PA/PATextView.i : src/PA/PATextView.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/ArrayList/ArrayList.i : src/ArrayList/ArrayList.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/ArrayList/ArrayListPosition.i : src/ArrayList/ArrayListPosition.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/Iterator/Client.i : src/Iterator/Client.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/Iterator/ConcreteIterator.i : src/Iterator/ConcreteIterator.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/Iterator/Iterator.i : src/Iterator/Iterator.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 src/Iterator/ConcreteAggregate.i : src/Iterator/ConcreteAggregate.c
-	$(CC) $(CPPFLAGS) -E $< > $@ 2>&1
+	$(CC) $(CPPFLAGS) -E $< > $@
 
 
 src/Input.s: src/Input.i
