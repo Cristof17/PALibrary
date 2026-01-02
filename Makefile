@@ -706,6 +706,7 @@ clean:
 	rm obj/PA/Feature.o
 	rm obj/PA/Value.o
 	rm obj/PA/Resource.o
+	rm obj/PA/Destination.o
 	rm obj/Builder/Product.o
 	rm obj/Builder/ConcreteBuilder.o 
 	rm obj/Builder/Director.o
@@ -727,6 +728,10 @@ clean:
 	rm obj/Iterator/ConcreteIterator.o
 	rm obj/Iterator/Iterator.o
 	rm obj/Iterator/ConcreteAggregate.o
+	#rm obj/Iterator/
+	#rm obj/Adapter/
+	#rm obj/ArrayList/
+	#rm obj/BFS/
 #rm objInput.o
 #rm $(objects)
 #obj/Input.
@@ -823,7 +828,7 @@ run:
 # bfsresult.o: include/BFSResult.h 
 # 	$(AS) -c asm/$^ -o obj/$@
 # output.o: include/Output.h 
-# 	$(AS) -c asm/$^ -o obj/$@
+# 	$(AS) -c asm/$^ -o /bj/$@
 # padata.o: include/PAData.h 
 # 	$(AS) -c asm/$^ -o obj/$@
 # pagraf.o: include/PAGraf.h 
