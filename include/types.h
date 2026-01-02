@@ -11,6 +11,7 @@ struct PAArrow;
 struct PAData;
 //struct BFSRecord;
 struct NormalTree;
+struct Adaptee;
 // struct BFSAlgorithm;
 // struct BFSOutput;
 // struct PAResult;
