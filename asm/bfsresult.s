@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 15, 0	sdk_version 15, 5
 	.globl	_BFSResultPrint                 ; -- Begin function BFSResultPrint
@@ -19,3 +20,32 @@ _BFSResultPrint:                        ; @BFSResultPrint
 	.cfi_endproc
                                         ; -- End function
 .subsections_via_symbols
+=======
+	.file	"bfsresult.c"
+	.text
+	.globl	BFSResultPrint
+	.def	BFSResultPrint;	.scl	2;	.type	32;	.endef
+	.seh_proc	BFSResultPrint
+BFSResultPrint:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	subq	$48, %rsp
+	.seh_stackalloc	48
+	.seh_endprologue
+	leaq	-16(%rbp), %rax
+	movq	%rax, %rcx
+	call	PAListaPrint
+	leaq	-16(%rbp), %rax
+	movq	%rax, %rcx
+	call	PACardinalPrint
+	nop
+	addq	$48, %rsp
+	popq	%rbp
+	ret
+	.seh_endproc
+	.ident	"GCC: (GNU) 13.4.0"
+	.def	PAListaPrint;	.scl	2;	.type	32;	.endef
+	.def	PACardinalPrint;	.scl	2;	.type	32;	.endef
+>>>>>>> ecd902f403a4951879b23cad39650d6a7816e709

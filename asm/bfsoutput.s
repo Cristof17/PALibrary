@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 15, 0	sdk_version 15, 5
 	.globl	_BFSOutputPrint                 ; -- Begin function BFSOutputPrint
@@ -18,3 +19,28 @@ _BFSOutputPrint:                        ; @BFSOutputPrint
 	.cfi_endproc
                                         ; -- End function
 .subsections_via_symbols
+=======
+	.file	"bfsoutput.c"
+	.text
+	.globl	BFSOutputPrint
+	.def	BFSOutputPrint;	.scl	2;	.type	32;	.endef
+	.seh_proc	BFSOutputPrint
+BFSOutputPrint:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	subq	$48, %rsp
+	.seh_stackalloc	48
+	.seh_endprologue
+	leaq	-16(%rbp), %rax
+	movq	%rax, %rcx
+	call	BFSResultPrint
+	nop
+	addq	$48, %rsp
+	popq	%rbp
+	ret
+	.seh_endproc
+	.ident	"GCC: (GNU) 13.4.0"
+	.def	BFSResultPrint;	.scl	2;	.type	32;	.endef
+>>>>>>> ecd902f403a4951879b23cad39650d6a7816e709
