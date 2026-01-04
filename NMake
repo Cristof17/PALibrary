@@ -433,95 +433,95 @@ src/Iterator/ConcreteAggregate.s: src/Iterator/ConcreteAggregate.i
 	$(CC)  -S $< -o $@
 
 obj/Input.o: src/Input.s 
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/Algorithm.o: src/Algorithm.s 
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/BFS/Procedure.o: src/BFS/Procedure.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/PA/Input.o: src/PA/Input.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/PA/Output.o: src/PA/Output.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/BFS/Record.o:src/BFS/Record.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/Output.o: src/Output.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/PA/Value.o: src/PA/Value.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/PA/Data.o: src/PA/Data.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/PA/Tree.o: src/PA/Tree.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 #obj/PAIndex.o: src/PAIndex.c include/PAIndex.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
 obj/PA/List.o: src/PA/List.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/PA/Link.o: src/PA/Link.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/PA/Arrow.o: src/PA/Arrow.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/PA/Element.o: src/PA/Element.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/PA/Count.o: src/PA/Count.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/PA/Pair.o: src/PA/Pair.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/PA/Result.o: src/PA/Result.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/PA/Series.o: src/PA/Series.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/PA/Status.o: src/PA/Status.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/PA/Feature.o: src/PA/Feature.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/PA/Destination.o : src/PA/Destination.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/PA/Resource.o: src/PA/Resource.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 #obj/PA/Value.o: src/PA/Value.c include/PA/Value.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
 obj/Builder/Product.o: src/Builder/Product.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/Builder/ConcreteBuilder.o: src/Builder/ConcreteBuilder.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/Builder/Director.o: src/Builder/Director.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/Builder/Builder.o: src/Builder/Builder.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/PA/NormalTree.o: src/PA/NormalTree.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/PA/TransposeTree.o: src/PA/TransposeTree.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/Adapter/Client.o: src/Adapter/Client.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/Adapter/Target.o: src/Adapter/Target.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/Adapter/Adapter.o: src/Adapter/Adapter.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/Adapter/Adaptee.o: src/Adapter/Adaptee.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/PA/PADrawingEditor.o: src/PA/PADrawingEditor.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/PA/PALine.o: src/PA/PALine.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/PA/PAShape.o: src/PA/PAShape.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/PA/PATextView.o: src/PA/PATextView.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/ArrayList/ArrayList.o: src/ArrayList/ArrayList.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/ArrayList/ArrayListPosition.o : src/ArrayList/ArrayListPosition.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 #obj/ArrayList/ArrayListObject.o : src/ArrayList/ArrayListObject.c include/ArrayList/ArrayListObject.h include/types.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
 obj/Iterator/Client.o: src/Iterator/Client.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/Iterator/ConcreteIterator.o: src/Iterator/ConcreteIterator.s 
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/Iterator/Iterator.o: src/Iterator/Iterator.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 obj/Iterator/ConcreteAggregate.o: src/Iterator/ConcreteAggregate.s
-	$(CC) -c $< -o $@
+	$(CC) /c $< /Fi$@ 
 
 #src/Input.c: 
 #src/Algorithm.c: 
