@@ -262,269 +262,268 @@ sources=$(SRC_DIR)\Input.i \
 	$(SRC_DIR)\Iterator\ConcreteIterator.i \
 	$(SRC_DIR)\Iterator\Iterator.i \
 	$(SRC_DIR)\Iterator\ConcreteAggregate.i
-$(SRC_DIR)/Input.i : $(SRC_DIR)/Input.c
+$(SRC_DIR)\Input.i : $(SRC_DIR)\Input.c
 	$(CC) $(CFLAGS) /E $< $@
-$(SRC_DIR)/Algorithm.i : $(SRC_DIR)/Algorithm.c
+$(SRC_DIR)\Algorithm.i : $(SRC_DIR)Algorithm.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/BFS/Procedure.i : $(SRC_DIR)/BFS/Procedure.c
+$(SRC_DIR)\BFS\Procedure.i : $(SRC_DIR)\BFS\Procedure.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/PA/Input.i : $(SRC_DIR)/PA/Input.c
+$(SRC_DIR)\PA\Input.i : $(SRC_DIR)\PA\Input.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/PA/Output.i : $(SRC_DIR)/PA/Output.c
+$(SRC_DIR)\PA\Output.i : $(SRC_DIR)\PA\Output.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/BFS/Record.i : $(SRC_DIR)/BFS/Record.c
+$(SRC_DIR)\BFS\Record.i : $(SRC_DIR)\BFS\Record.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/Output.i : $(SRC_DIR)/Output.c
+$(SRC_DIR)\Output.i : $(SRC_DIR)\Output.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/PA/Data.i : $(SRC_DIR)/PA/Data.c
+$(SRC_DIR)\PA\Data.i : $(SRC_DIR)\PA\Data.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/PA/Destination.i : $(SRC_DIR)/PA/Destination.c
+$(SRC_DIR)\PA\Destination.i : $(SRC_DIR)\PA\Destination.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/PA/Tree.i : $(SRC_DIR)/PA/Tree.c
+$(SRC_DIR)\PA\Tree.i : $(SRC_DIR)/PA\Tree.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/PA/List.i : $(SRC_DIR)/PA/List.c
+$(SRC_DIR)\PA\List.i : $(SRC_DIR)\PA\List.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/PA/Link.i : $(SRC_DIR)/PA/Link.c
+$(SRC_DIR)\PA\Link.i : $(SRC_DIR)\PA\Link.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/PA/Arrow.i : $(SRC_DIR)/PA/Arrow.c
+$(SRC_DIR)\PA\Arrow.i : $(SRC_DIR)\PA\Arrow.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/PA/Element.i : $(SRC_DIR)/PA/Element.c
+$(SRC_DIR)\PA\Element.i : $(SRC_DIR)\PA\Element.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/PA/Count.i : $(SRC_DIR)/PA/Count.c
+$(SRC_DIR)\PA\Count.i : $(SRC_DIR)\PA\Count.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/PA/Pair.i : $(SRC_DIR)/PA/Pair.c
+$(SRC_DIR)\PA\Pair.i : $(SRC_DIR)\PA\Pair.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/PA/Result.i : $(SRC_DIR)/PA/Result.c
+$(SRC_DIR)\PA\Result.i : $(SRC_DIR)\PA\Result.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/PA/Series.i : $(SRC_DIR)/PA/Series.c
+$(SRC_DIR)\PA\Series.i : $(SRC_DIR)\PA\Series.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/PA/Status.i : src/PA/Status.c
+$(SRC_DIR)\PA\Status.i : $(SRC_DIR)\PA\Status.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/PA/Feature.i : $(SRC_DIR)/PA/Feature.c
+$(SRC_DIR)\PA\Feature.i : $(SRC_DIR)\PA\Feature.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/PA/Value.i : $(SRC_DIR)/PA/Value.c
+$(SRC_DIR)\PA\Value.i : $(SRC_DIR)\PA\Value.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/PA/Resource.i : $(SRC_DIR)/PA/Resource.c
+$(SRC_DIR)\PA\Resource.i : $(SRC_DIR)\PA\Resource.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/Builder/Director.i : $(SRC_DIR)/Builder/Director.c
+$(SRC_DIR)\Bulder\Director.i : $(SRC_DIR)\Builder\Director.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/Builder/Builder.i : $(SRC_DIR)/Builder/Builder.c
+$(SRC_DIR)\Builder\Builder.i : $(SRC_DIR)\Builder\Builder.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/Builder/Product.i : $(SRC_DIR)/Builder/Product.c
+$(SRC_DIR)\Builder\Product.i : $(SRC_DIR)\Builder\Product.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/Builder/ConcreteBuilder.i : $(SRC_DIR)/Builder/ConcreteBuilder.c
+$(SRC_DIR)\Builder\ConcreteBuilder.i : $(SRC_DIR)\Builder\ConcreteBuilder.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/PA/NormalTree.i : $(SRC_DIR)/PA/NormalTree.c
+$(SRC_DIR)\PA\NormalTree.i : $(SRC_DIR)\PA\NormalTree.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/PA/TransposeTree.i : $(SRC_DIR)/PA/TransposeTree.c
+$(SRC_DIR)\PA\TransposeTree.i : $(SRC_DIR)\PA\TransposeTree.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/Adapter/Client.i : $(SRC_DIR)/Adapter/Client.c
+$(SRC_DIR)\Adapter\Client.i : $(SRC_DIR)\Adapter\Client.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/Adapter/Target.i : $(SRC_DIR)/Adapter/Target.c
+$(SRC_DIR)\Adapter\Target.i : $(SRC_DIR)\Adapter\Target.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/Adapter/Adapter.i : $(SRC_DIR)/Adapter/Adapter.c
+$(SRC_DIR)\Adapter\Adapter.i : $(SRC_DIR)\Adapter\Adapter.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/Adapter/Adaptee.i : $(SRC_DIR)/Adapter/Adaptee.c
+$(SRC_DIR)\Adapter\Adaptee.i : $(SRC_DIR)\Adapter\Adaptee.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/PA/PADrawingEditor.i : $(SRC_DIR)/PA/PADrawingEditor.c
+$(SRC_DIR)\PA\PADrawingEditor.i : $(SRC_DIR)\PA\PADrawingEditor.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/PA/PALine.i : $(SRC_DIR)/PA/PALine.c
+$(SRC_DIR)\PA\PALine.i : $(SRC_DIR)\PA\PALine.c
 	$(CC) $(CPPFLAGS) /E $< > $@
-$(SRC_DIR)/PA/PAShape.i : $(SRC_DIR)/PA/PAShape.c
+$(SRC_DIR)\PA\PAShape.i : $(SRC_DIR)\PA\PAShape.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/PA/PATextView.i : $(SRC_DIR)/PA/PATextView.c
+$(SRC_DIR)\PA\PATextView.i : $(SRC_DIR)\PA\PATextView.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/ArrayList/ArrayList.i : $(SRC_DIR)/ArrayList/ArrayList.c
+$(SRC_DIR)\ArrayList\ArrayList.i : $(SRC_DIR)\ArrayList\ArrayList.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/ArrayList/ArrayListPosition.i : $(SRC_DIR)/ArrayList/ArrayListPosition.c
+$(SRC_DIR)\ArrayList\ArrayListPosition.i : $(SRC_DIR)\ArrayList\ArrayListPosition.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/Iterator/Client.i : $(SRC_DIR)/Iterator/Client.c
+$(SRC_DIR)\Iterator\Client.i : $(SRC_DIR)\Iterator\Client.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/Iterator/ConcreteIterator.i : $(SRC_DIR)/Iterator/ConcreteIterator.c
+$(SRC_DIR)\Iterator\ConcreteIterator.i : $(SRC_DIR)\Iterator\ConcreteIterator.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/Iterator/Iterator.i : $(SRC_DIR)/Iterator/Iterator.c
+$(SRC_DIR)\Iterator\Iterator.i : $(SRC_DIR)\Iterator\Iterator.c
 	$(CC) $(CFLAGS) /E $< > $@
-$(SRC_DIR)/Iterator/ConcreteAggregate.i : $(SRC_DIR)/Iterator/ConcreteAggregate.c
+$(SRC_DIR)\Iterator\ConcreteAggregate.i : $(SRC_DIR)\Iterator\ConcreteAggregate.c
 	$(CC) $(CFLAGS) /E $< > $@
 
-
-$(SRC_DIR)/Input.s: $(SRC_DIR)/Input.i
+$(SRC_DIR)\Input.s: $(SRC_DIR)\Input.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/Algorithm.s: $(SRC_DIR)/Algorithm.i
+$(SRC_DIR)\Algorithm.s: $(SRC_DIR)/Algorithm.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/BFS/Procedure.s: $(SRC_DIR)/BFS/Procedure.i
+$(SRC_DIR)\BFS\Procedure.s: $(SRC_DIR)/BFS/Procedure.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/PA/Input.s: $(SRC_DIR)/PA/Input.i
+$(SRC_DIR)\PA\Input.s: $(SRC_DIR)/PA/Input.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/PA/Output.s: $(SRC_DIR)/PA/Output.i
+$(SRC_DIR)\PA\Output.s: $(SRC_DIR)/PA/Output.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/BFS/Record.s: $(SRC_DIR)/BFS/Record.i
+$(SRC_DIR)\BFS\Record.s: $(SRC_DIR)/BFS/Record.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/Output.s: $(SRC_DIR)/Output.i
+$(SRC_DIR)\Output.s: $(SRC_DIR)/Output.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/PA/Destination.s : $(SRC_DIR)/PA/Destination.i
+$(SRC_DIR)\PA\Destination.s : $(SRC_DIR)/PA/Destination.i
 	$(CC) -S $< -o $@
 #asm/PA/Data.s: $(SRC_DIR)/PA/Data.c
 #	$(CC) $(CFLAGS) -S $< -o $@
-$(SRC_DIR)/PA/Tree.s: $(SRC_DIR)/PA/Tree.i
+$(SRC_DIR)\PA\Tree.s: $(SRC_DIR)/PA/Tree.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/PA/Data.s: $(SRC_DIR)/PA/Data.i
+$(SRC_DIR)\PA\Data.s: $(SRC_DIR)/PA/Data.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/PA/List.s: $(SRC_DIR)/PA/List.i
+$(SRC_DIR)\PA\List.s: $(SRC_DIR)/PA/List.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/PA/Link.s: $(SRC_DIR)/PA/Link.i
+$(SRC_DIR)\PA\Link.s: $(SRC_DIR)/PA/Link.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/PA/Arrow.s: $(SRC_DIR)/PA/Arrow.i
+$(SRC_DIR)\PA\Arrow.s: $(SRC_DIR)/PA/Arrow.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/PA/Element.s: $(SRC_DIR)/PA/Element.i
+$(SRC_DIR)\PA\Element.s: $(SRC_DIR)/PA/Element.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/PA/Count.s: $(SRC_DIR)/PA/Count.i
+$(SRC_DIR)\PA\Count.s: $(SRC_DIR)/PA/Count.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/PA/Pair.s: $(SRC_DIR)/PA/Pair.i
+$(SRC_DIR)\PA\Pair.s: $(SRC_DIR)/PA/Pair.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/PA/Result.s: $(SRC_DIR)/PA/Result.i
+$(SRC_DIR)\PA\Result.s: $(SRC_DIR)/PA/Result.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/PA/Series.s: $(SRC_DIR)/PA/Series.i
+$(SRC_DIR)\PA\Series.s: $(SRC_DIR)/PA/Series.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/PA/Feature.s: $(SRC_DIR)/PA/Feature.i
+$(SRC_DIR)\PA\Feature.s: $(SRC_DIR)/PA/Feature.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/PA/Value.s: $(SRC_DIR)/PA/Value.i
+$(SRC_DIR)\PA\Value.s: $(SRC_DIR)/PA/Value.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/PA/Resource.s: $(SRC_DIR)/PA/Resource.i
+$(SRC_DIR)\PA\Resource.s: $(SRC_DIR)/PA/Resource.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/Builder/Director.s: $(SRC_DIR)/Builder/Director.i
+$(SRC_DIR)\Builder\Director.s: $(SRC_DIR)/Builder/Director.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/Builder/Builder.s: $(SRC_DIR)/Builder/Builder.i
+$(SRC_DIR)\Builder\Builder.s: $(SRC_DIR)/Builder/Builder.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/Builder/Product.s: $(SRC_DIR)/Builder/Product.i
+$(SRC_DIR)\Builder\Product.s: $(SRC_DIR)/Builder/Product.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/Builder/ConcreteBuilder.s: $(SRC_DIR)/Builder/ConcreteBuilder.i
+$(SRC_DIR)\Builder\ConcreteBuilder.s: $(SRC_DIR)/Builder/ConcreteBuilder.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/PA/NormalTree.s: $(SRC_DIR)/PA/NormalTree.i
+$(SRC_DIR)\PA\NormalTree.s: $(SRC_DIR)/PA/NormalTree.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/PA/TransposeTree.s: $(SRC_DIR)/PA/TransposeTree.i
+$(SRC_DIR)\PA\TransposeTree.s: $(SRC_DIR)/PA/TransposeTree.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/PA/Status.s: $(SRC_DIR)/PA/Status.i
+$(SRC_DIR)\PA\Status.s: $(SRC_DIR)/PA/Status.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/Adapter/Client.s: $(SRC_DIR)/Adapter/Client.i
+$(SRC_DIR)\Adapter\Client.s: $(SRC_DIR)/Adapter/Client.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/Adapter/Target.s: $(SRC_DIR)/Adapter/Target.i
+$(SRC_DIR)\Adapter\Target.s: $(SRC_DIR)/Adapter/Target.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/Adapter/Adapter.s: $(SRC_DIR)/Adapter/Adapter.i
+$(SRC_DIR)\Adapter\Adapter.s: $(SRC_DIR)/Adapter/Adapter.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/Adapter/Adaptee.s: $(SRC_DIR)/Adapter/Adaptee.i
+$(SRC_DIR)\Adapter\Adaptee.s: $(SRC_DIR)/Adapter/Adaptee.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/PA/PADrawingEditor.s: $(SRC_DIR)/PA/PADrawingEditor.i
+$(SRC_DIR)\PA\PADrawingEditor.s: $(SRC_DIR)/PA/PADrawingEditor.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/PA/PALine.s: $(SRC_DIR)/PA/PALine.i
+$(SRC_DIR)\PA\PALine.s: $(SRC_DIR)/PA/PALine.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/PA/PAShape.s: $(SRC_DIR)/PA/PAShape.i
+$(SRC_DIR)\PA\PAShape.s: $(SRC_DIR)/PA/PAShape.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/PA/PATextView.s: $(SRC_DIR)/PA/PATextView.i
+$(SRC_DIR)\PA\PATextView.s: $(SRC_DIR)/PA/PATextView.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/ArrayList/ArrayList.s: $(SRC_DIR)/ArrayList/ArrayList.i
+$(SRC_DIR)\ArrayList\ArrayList.s: $(SRC_DIR)/ArrayList/ArrayList.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/ArrayList/ArrayListPosition.s: $(SRC_DIR)/ArrayList/ArrayListPosition.i
+$(SRC_DIR)\ArrayList\ArrayListPosition.s: $(SRC_DIR)/ArrayList/ArrayListPosition.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/Iterator/Client.s: $(SRC_DIR)/Iterator/Client.i
+$(SRC_DIR)\Iterator\Client.s: $(SRC_DIR)/Iterator/Client.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/Iterator/ConcreteIterator.s: $(SRC_DIR)/Iterator/ConcreteIterator.i
+$(SRC_DIR)\Iterator/ConcreteIterator.s: $(SRC_DIR)/Iterator/ConcreteIterator.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/Iterator/Iterator.s: $(SRC_DIR)/Iterator/Iterator.i
+$(SRC_DIR)\Iterator\Iterator.s: $(SRC_DIR)/Iterator/Iterator.i
 	$(CC) -S $< -o $@
-$(SRC_DIR)/Iterator/ConcreteAggregate.s: $(SRC_DIR)/Iterator/ConcreteAggregate.i
+$(SRC_DIR)\Iterator\ConcreteAggregate.s: $(SRC_DIR)/Iterator/ConcreteAggregate.i
 	$(CC)  -S $< -o $@
 
-$(OBJ_DIR)/Input.o: $(SRC_DIR)/Input.i 
+$(OBJ_DIR)\Input.o: $(SRC_DIR)/Input.i 
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/Algorithm.o: $(SRC_DIR)/Algorithm.s 
+$(OBJ_DIR)\Algorithm.o: $(SRC_DIR)/Algorithm.s 
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/BFS/Procedure.o: $(SRC_DIR)/BFS/Procedure.s
+$(OBJ_DIR)\BFS/Procedure.o: $(SRC_DIR)/BFS/Procedure.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/PA/Input.o: $(SRC_DIR)/PA/Input.s
+$(OBJ_DIR)\PA/Input.o: $(SRC_DIR)/PA/Input.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/PA/Output.o: $(SRC_DIR)/PA/Output.s
+$(OBJ_DIR)\PA/Output.o: $(SRC_DIR)/PA/Output.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/BFS/Record.o:$(SRC_DIR)/BFS/Record.s
+$(OBJ_DIR)\BFS/Record.o:$(SRC_DIR)/BFS/Record.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/Output.o: $(SRC_DIR)/Output.s
+$(OBJ_DIR)\Output.o: $(SRC_DIR)/Output.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/PA/Value.o: $(SRC_DIR)/PA/Value.s
+$(OBJ_DIR)\PA/Value.o: $(SRC_DIR)/PA/Value.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/PA/Data.o: $(SRC_DIR)/PA/Data.s
+$(OBJ_DIR)\PA/Data.o: $(SRC_DIR)/PA/Data.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/PA/Tree.o: $(SRC_DIR)/PA/Tree.s
+$(OBJ_DIR)\PA/Tree.o: $(SRC_DIR)/PA/Tree.s
 	$(CC) /c $< /Fi$@
 #obj/PAIndex.o: $(SRC_DIR)/PAIndex.c include/PAIndex.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
-$(OBJ_DIR)/PA/List.o: $(SRC_DIR)/PA/List.s
+$(OBJ_DIR)\PA/List.o: $(SRC_DIR)/PA/List.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/PA/Link.o: $(SRC_DIR)/PA/Link.s
+$(OBJ_DIR)\PA/Link.o: $(SRC_DIR)/PA/Link.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/PA/Arrow.o: $(SRC_DIR)/PA/Arrow.s
+$(OBJ_DIR)\PA/Arrow.o: $(SRC_DIR)/PA/Arrow.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/PA/Element.o: $(SRC_DIR)/PA/Element.s
+$(OBJ_DIR)\PA/Element.o: $(SRC_DIR)/PA/Element.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/PA/Count.o: $(SRC_DIR)/PA/Count.s
+$(OBJ_DIR)\PA/Count.o: $(SRC_DIR)/PA/Count.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/PA/Pair.o: $(SRC_DIR)/PA/Pair.s
+$(OBJ_DIR)\PA/Pair.o: $(SRC_DIR)/PA/Pair.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/PA/Result.o: $(SRC_DIR)/PA/Result.s
+$(OBJ_DIR)\PA/Result.o: $(SRC_DIR)/PA/Result.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/PA/Series.o: $(SRC_DIR)/PA/Series.s
+$(OBJ_DIR)\PA/Series.o: $(SRC_DIR)/PA/Series.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/PA/Status.o: $(SRC_DIR)/PA/Status.s
+$(OBJ_DIR)\PA/Status.o: $(SRC_DIR)/PA/Status.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/PA/Feature.o: $(SRC_DIR)/PA/Feature.s
+$(OBJ_DIR)\PA/Feature.o: $(SRC_DIR)/PA/Feature.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/PA/Destination.o : $(SRC_DIR)/PA/Destination.s
+$(OBJ_DIR)\PA/Destination.o : $(SRC_DIR)/PA/Destination.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/PA/Resource.o: $(SRC_DIR)/PA/Resource.s
+$(OBJ_DIR)\PA/Resource.o: $(SRC_DIR)/PA/Resource.s
 	$(CC) /c $< /Fi$@
 #obj/PA/Value.o: $(SRC_DIR)/PA/Value.c include/PA/Value.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
-$(OBJ_DIR)/Builder/Product.o: $(SRC_DIR)/Builder/Product.s
+$(OBJ_DIR)\Builder/Product.o: $(SRC_DIR)/Builder/Product.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/Builder/ConcreteBuilder.o: $(SRC_DIR)/Builder/ConcreteBuilder.s
+$(OBJ_DIR)\Builder/ConcreteBuilder.o: $(SRC_DIR)/Builder/ConcreteBuilder.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/Builder/Director.o: $(SRC_DIR)/Builder/Director.s
+$(OBJ_DIR)\Builder/Director.o: $(SRC_DIR)/Builder/Director.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/Builder/Builder.o: $(SRC_DIR)/Builder/Builder.s
+$(OBJ_DIR)\Builder/Builder.o: $(SRC_DIR)/Builder/Builder.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/PA/NormalTree.o: $(SRC_DIR)/PA/NormalTree.s
+$(OBJ_DIR)\PA/NormalTree.o: $(SRC_DIR)/PA/NormalTree.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/PA/TransposeTree.o: $(SRC_DIR)/PA/TransposeTree.s
+$(OBJ_DIR)\PA/TransposeTree.o: $(SRC_DIR)/PA/TransposeTree.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/Adapter/Client.o: $(SRC_DIR)/Adapter/Client.s
+$(OBJ_DIR)\Adapter/Client.o: $(SRC_DIR)/Adapter/Client.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/Adapter/Target.o: $(SRC_DIR)/Adapter/Target.s
+$(OBJ_DIR)\Adapter/Target.o: $(SRC_DIR)/Adapter/Target.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/Adapter/Adapter.o: $(SRC_DIR)/Adapter/Adapter.s
+$(OBJ_DIR)\Adapter/Adapter.o: $(SRC_DIR)/Adapter/Adapter.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/Adapter/Adaptee.o: $(SRC_DIR)/Adapter/Adaptee.s
+$(OBJ_DIR)\Adapter/Adaptee.o: $(SRC_DIR)/Adapter/Adaptee.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/PA/PADrawingEditor.o: $(SRC_DIR)/PA/PADrawingEditor.s
+$(OBJ_DIR)\PA/PADrawingEditor.o: $(SRC_DIR)/PA/PADrawingEditor.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/PA/PALine.o: $(SRC_DIR)/PA/PALine.s
+$(OBJ_DIR)\PA/PALine.o: $(SRC_DIR)/PA/PALine.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/PA/PAShape.o: $(SRC_DIR)/PA/PAShape.s
+$(OBJ_DIR)\PA/PAShape.o: $(SRC_DIR)/PA/PAShape.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/PA/PATextView.o: $(SRC_DIR)/PA/PATextView.s
+$(OBJ_DIR)\PA/PATextView.o: $(SRC_DIR)/PA/PATextView.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/ArrayList/ArrayList.o: $(SRC_DIR)/ArrayList/ArrayList.s
+$(OBJ_DIR)\ArrayList/ArrayList.o: $(SRC_DIR)/ArrayList/ArrayList.s
 	$(CC) /c $< /Fi$@
-$(OBJ_DIR)/ArrayList/ArrayListPosition.o : $(SRC_DIR)/ArrayList/ArrayListPosition.s
+$(OBJ_DIR)\ArrayList/ArrayListPosition.o : $(SRC_DIR)/ArrayList/ArrayListPosition.s
 	$(CC) /c $< /Fi$@
 #obj/ArrayList/ArrayListObject.o : $(SRC_DIR)/ArrayList/ArrayListObject.c include/ArrayList/ArrayListObject.h include/types.h include/defs.h
-#	$(CC) -c $(CFLAGS) $< -o $@
-$(OBJ_DIR)/Iterator/Client.o: $(SRC_DIR)/Iterator/Client.s
-	$(CC) -c $< -o $@
-$(OBJ_DIR)/Iterator/ConcreteIterator.o: $(SRC_DIR)/Iterator/ConcreteIterator.s 
-	$(CC) -c $< -o $@
-$(OBJ_DIR)/Iterator/Iterator.o: $(SRC_DIR)/Iterator/Iterator.s
-	$(CC) -c $< -o $@
-$(OBJ_DIR)/Iterator/ConcreteAggregate.o: $(SRC_DIR)/Iterator/ConcreteAggregate.s
-	$(CC) -c $< -o $@
+#	$(CC) /c $(CFLAGS) $< -o $@
+$(OBJ_DIR)\Iterator/Client.o: $(SRC_DIR)/Iterator/Client.s
+	$(CC) /c $< -o $@
+$(OBJ_DIR)\Iterator/ConcreteIterator.o: $(SRC_DIR)/Iterator/ConcreteIterator.s 
+	$(CC) /c $< -o $@
+$(OBJ_DIR)\Iterator/Iterator.o: $(SRC_DIR)/Iterator/Iterator.s
+	$(CC) /c $< -o $@
+$(OBJ_DIR)\Iterator/ConcreteAggregate.o: $(SRC_DIR)/Iterator/ConcreteAggregate.s
+	$(CC) /c $< -o $@
 
 #src/Input.c: 
 #src/Algorithm.c: 
