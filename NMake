@@ -89,92 +89,6 @@ assemblies= src/Input.s \
 	src/Iterator/ConcreteIterator.s \
 	src/Iterator/Iterator.s \
 	src/Iterator/ConcreteAggregate.s
-designs=src/Input.c \
-	src/Algorithm.c \
-	src/BFS/Procedure.c \
-	src/PA/Input.c \
-	src/PA/Output.c \
-	src/BFS/Record.c \
-	src/Output.c \
-	src/PA/Data.c \
-	src/PA/Destination.c \
-	src/PA/Tree.c \
-	src/PA/Data.c \
-	src/PA/List.c \
-	src/PA/Link.c \
-	src/PA/Arrow.c \
-	src/PA/Element.c \
-	src/PA/Count.c \
-	src/PA/Pair.c \
-	src/PA/Result.c \
-	src/PA/Series.c \
-	src/PA/Status.c \
-	src/PA/Feature.c \
-	src/PA/Value.c \
-	src/PA/Resource.c \
-	src/Builder/Director.c \
-	src/Builder/Builder.c \
-	src/Builder/Product.c \
-	src/Builder/ConcreteBuilder.c \
-	src/PA/NormalTree.c \
-	src/PA/TransposeTree.c \
-	src/Adapter/Client.c \
-	src/Adapter/Target.c \
-	src/Adapter/Adapter.c \
-	src/Adapter/Adaptee.c \
-	src/PA/PADrawingEditor.c \
-	src/PA/PALine.c \
-	src/PA/PAShape.c \
-	src/PA/PATextView.c \
-	src/ArrayList/ArrayList.c \
-	src/ArrayList/ArrayListPosition.c \
-	src/Iterator/Client.c \
-	src/Iterator/ConcreteIterator.c \
-	src/Iterator/Iterator.c \
-	src/Iterator/ConcreteAggregate.c
-sources=src/Input.i \
-	src/Algorithm.i \
-	src/BFS/Procedure.i \
-	src/PA/Input.i \
-	src/PA/Output.i \
-	src/BFS/Record.i \
-	src/Output.i \
-	src/PA/Data.i \
-	src/PA/Destination.i \
-	src/PA/Tree.i \
-	src/PA/Data.i \
-	src/PA/List.i \
-	src/PA/Link.i \
-	src/PA/Arrow.i \
-	src/PA/Element.i \
-	src/PA/Count.i \
-	src/PA/Pair.i \
-	src/PA/Result.i \
-	src/PA/Series.i \
-	src/PA/Status.i \
-	src/PA/Feature.i \
-	src/PA/Value.i \
-	src/PA/Resource.i \
-	src/Builder/Director.i \
-	src/Builder/Builder.i \
-	src/Builder/Product.i \
-	src/Builder/ConcreteBuilder.i \
-	src/PA/NormalTree.i \
-	src/PA/TransposeTree.i \
-	src/Adapter/Client.i \
-	src/Adapter/Target.i \
-	src/Adapter/Adapter.i \
-	src/Adapter/Adaptee.i \
-	src/PA/PADrawingEditor.i \
-	src/PA/PALine.i \
-	src/PA/PAShape.i \
-	src/PA/PATextView.i \
-	src/ArrayList/ArrayList.i \
-	src/ArrayList/ArrayListPosition.i \
-	src/Iterator/Client.i \
-	src/Iterator/ConcreteIterator.i \
-	src/Iterator/Iterator.i \
-	src/Iterator/ConcreteAggregate.i
 
 # build: preprocess compile assemble link_windows
 build: $(designs) preprocess compile assemble 
@@ -216,132 +130,220 @@ CFLAGS=/Iinclude
 #installdirs: 
 #//build
 #$(objects)
-src/Input.c: include/defs.h
-src/Algorithm.c: include/Algorithm.h include/defs.h 
-src/BFS/Procedure.c: include/defs.h
-src/PA/Input.c: include/PA/Input.h include/defs.h
-src/PA/Output.c:  include/PA/Output.h include/defs.h
-src/BFS/Record.c: include/BFS/Record.h include/defs.h
-src/Output.c: include/Output.h include/defs.h
-src/PA/Data.c: include/PA/Data.h include/defs.h
-src/PA/Destination.c: include/PA/Destination.h include/defs.h
-src/PA/Tree.c: include/PA/Tree.h include/defs.h
-src/PA/List.c: include/PA/List.h include/defs.h
-src/PA/Link.c: include/PA/Link.h include/defs.h
-src/PA/Arrow.c: include/PA/Arrow.h include/defs.h
-src/PA/Element.c: include/PA/Element.h include/defs.h
-src/PA/Count.c: include/PA/Count.h include/defs.h
-src/PA/Pair.c: include/PA/Pair.h include/defs.h
-src/PA/Result.c:  include/PA/Result.h include/defs.h
-src/PA/Series.c: include/PA/Series.h include/defs.h
-src/PA/Status.c : include/PA/Status.h include/defs.h
-src/PA/Feature.c:  include/PA/Feature.h include/defs.h
-src/PA/Value.c: include/PA/Value.h include/defs.h
-src/PA/Resource.c: include/PA/Resource.h include/defs.h
-src/Builder/Director.c: include/Builder/Director.h include/defs.h
-src/Builder/Builder.c: include/Builder/Builder.h include/defs.h
-src/Builder/Product.c:
-src/Builder/ConcreteBuilder.c:
-src/PA/NormalTree.c: include/PA/NormalTree.h include/defs.h
-src/PA/TransposeTree.c: include/PA/TransposeTree.h include/defs.h
-src/Adapter/Client.c: include/Adapter/Client.h include/defs.h
-src/Adapter/Target.c: include/Adapter/Target.h include/defs.h
-src/Adapter/Adapter.c: include/Adapter/Adapter.h include/defs.h
-src/Adapter/Adaptee.c: include/Adapter/Adaptee.h include/defs.h
-src/PA/PADrawingEditor.c:  include/PA/PADrawingEditor.h include/defs.h
-src/PA/PALine.c: include/PA/PALine.h include/defs.h
-src/PA/PAShape.c: include/PA/PAShape.h include/defs.h
-src/PA/PATextView.c:  include/PA/PATextView.h include/defs.h
-src/ArrayList/ArrayList.c: include/ArrayList/ArrayList.h include/defs.h
-src/ArrayList/ArrayListPosition.c:  include/ArrayList/ArrayListPosition.h include/defs.h include/types.h
-src/Iterator/Client.c: include/Iterator/Client.h include/defs.h
-src/Iterator/ConcreteIterator.c: include/Iterator/ConcreteIterator.h include/defs.h
-src/Iterator/Iterator.c: include/Iterator/Iterator.h include/defs.h
-src/Iterator/ConcreteAggregate.c:  include/Iterator/ConcreteAggregate.h include/defs.h
+INCLUDE_DIR=C:\Users\AdministratorUser\source\repos\PALibrary\include
+SRC_DIR=C:\Users\AdministratorUser\source\repos\PALibrary\src
+designs=$(SRC_DIR)\Input.c \
+	$(SRC_DIR)\Algorithm.c \
+	$(SRC_DIR)\BFS\Procedure.c \
+	$(SRC_DIR)\PA\Input.c \
+	$(SRC_DIR)\PA\Output.c \
+	$(SRC_DIR)\BFS\Record.c \
+	$(SRC_DIR)\Output.c \
+	$(SRC_DIR)\PA\Data.c \
+	$(SRC_DIR)\PA\Destination.c \
+	$(SRC_DIR)\PA\Tree.c \
+	$(SRC_DIR)\PA\Data.c \
+	$(SRC_DIR)\PA\List.c \
+	$(SRC_DIR)\PA\Link.c \
+	$(SRC_DIR)\PA\Arrow.c \
+	$(SRC_DIR)\PA\Element.c \
+	$(SRC_DIR)\PA\Count.c \
+	$(SRC_DIR)\PA\Pair.c \
+	$(SRC_DIR)\PA\Result.c \
+	$(SRC_DIR)\PA\Series.c \
+	$(SRC_DIR)\PA\Status.c \
+	$(SRC_DIR)\PA\Feature.c \
+	$(SRC_DIR)\PA\Value.c \
+	$(SRC_DIR)\PA\Resource.c \
+	$(SRC_DIR)\Builder\Director.c \
+	$(SRC_DIR)\Builder\Builder.c \
+	$(SRC_DIR)\Builder\Product.c \
+	$(SRC_DIR)\Builder\ConcreteBuilder.c \
+	$(SRC_DIR)\PA\NormalTree.c \
+	$(SRC_DIR)\PA\TransposeTree.c \
+	$(SRC_DIR)\Adapter\Client.c \
+	$(SRC_DIR)\Adapter\Target.c \
+	$(SRC_DIR)\Adapter\Adapter.c \
+	$(SRC_DIR)\Adapter\Adaptee.c \
+	$(SRC_DIR)\PA\PADrawingEditor.c \
+	$(SRC_DIR)\PA\PALine.c \
+	$(SRC_DIR)\PA\PAShape.c \
+	$(SRC_DIR)\PA\PATextView.c \
+	$(SRC_DIR)\ArrayList\ArrayList.c \
+	$(SRC_DIR)\ArrayList\ArrayListPosition.c \
+	$(SRC_DIR)\Iterator\Client.c \
+	$(SRC_DIR)\Iterator\ConcreteIterator.c \
+	$(SRC_DIR)\Iterator\Iterator.c \
+	$(SRC_DIR)\Iterator\ConcreteAggregate.c
+$(SRC_DIR)\Input.c: $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\Algorithm.c: $(INCLUDE_DIR)\Algorithm.h $(INCLUDE_DIR)\defs.h 
+$(SRC_DIR)\BFS\Procedure.c: $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\PA\Input.c: $(INCLUDE_DIR)\PA\Input.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\PA\Output.c:  $(INCLUDE_DIR)\PAOutput.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\BFS\Record.c: $(INCLUDE_DIR)\BFS\Record.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\Output.c: $(INCLUDE_DIR)\Output.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\PA\Data.c: $(INCLUDE_DIR)\PA\Data.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\PA\Destination.c: $(INCLUDE_DIR)\PA\Destination.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\PA\Tree.c: $(INCLUDE_DIR)\PA\Tree.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\PA\List.c: $(INCLUDE_DIR)\PA\List.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\PA\Link.c: $(INCLUDE_DIR)\PA\Link.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\PA\Arrow.c: $(INCLUDE_DIR)\PA\Arrow.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\PA\Element.c: $(INCLUDE_DIR)\PA\Element.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\PA\Count.c: $(INCLUDE_DIR)\PA\Count.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\PA\Pair.c: $(INCLUDE_DIR)\PA\Pair.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\PA\Result.c:  $(INCLUDE_DIR)\PA\Result.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\PA\Series.c: $(INCLUDE_DIR)\PA\Series.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\PA\Status.c : $(INCLUDE_DIR)\PA\Status.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\PA\Feature.c:  $(INCLUDE_DIR)\PA\Feature.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\PA\Value.c: $(INCLUDE_DIR)\PA\Value.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\PA\Resource.c: $(INCLUDE_DIR)\PA\Resource.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\Builder\Director.c: $(INCLUDE_DIR)\Builder\Director.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\Builder\Builder.c: $(INCLUDE_DIR)\Builder\Builder.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\Builder\Product.c:
+$(SRC_DIR)\Builder\ConcreteBuilder.c:
+$(SRC_DIR)\PA\NormalTree.c: $(INCLUDE_DIR)\PA\NormalTree.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\PA\TransposeTree.c: $(INCLUDE_DIR)\PA\TransposeTree.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\Adapter\Client.c: $(INCLUDE_DIR)\Adapter\Client.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\Adapter\Target.c: $(INCLUDE_DIR)\Adapter\Target.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\Adapter\Adapter.c: $(INCLUDE_DIR)\Adapter\Adapter.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\Adapter\Adaptee.c: $(INCLUDE_DIR)\Adapter\Adaptee.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\PA\PADrawingEditor.c:  $(INCLUDE_DIR)\PA\PADrawingEditor.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\PA\PALine.c: $(INCLUDE_DIR)\PA\PALine.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\PA\PAShape.c: $(INCLUDE_DIR)\PA\PAShape.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\PA\PATextView.c:  $(INCLUDE_DIR)\PA/PATextView.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\ArrayList\ArrayList.c: $(INCLUDE_DIR)\ArrayList\ArrayList.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\ArrayList\ArrayListPosition.c:  $(INCLUDE_DIR)\ArrayList\ArrayListPosition.h $(INCLUDE_DIR)\defs.h $(INCLUDE_DIR)\types.h
+$(SRC_DIR)\Iterator\Client.c: $(INCLUDE_DIR)\Iterator\Client.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\Iterator\ConcreteIterator.c: $(INCLUDE_DIR)\Iterator\ConcreteIterator.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\Iterator\Iterator.c: $(INCLUDE_DIR)/Iterator\Iterator.h $(INCLUDE_DIR)\defs.h
+$(SRC_DIR)\Iterator\ConcreteAggregate.c:  $(INCLUDE_DIR)\Iterator\ConcreteAggregate.h $(INCLUDE_DIR)\defs.h
 
-src/Input.i : src/Input.c
+sources=$(SRC_DIR)\Input.i \
+	$(SRC_DIR)\Algorithm.i \
+	$(SRC_DIR)\BFS\Procedure.i \
+	$(SRC_DIR)\PA\Input.i \
+	$(SRC_DIR)/PA\Output.i \
+	$(SRC_DIR)/BFS\Record.i \
+	$(SRC_DIR)\Output.i \
+	$(SRC_DIR)\PA\Data.i \
+	$(SRC_DIR)\PA\Destination.i \
+	$(SRC_DIR)\PA\Tree.i \
+	$(SRC_DIR)\PA\Data.i \
+	$(SRC_DIR)\PA\List.i \
+	$(SRC_DIR)\PA\Link.i \
+	$(SRC_DIR)\PA\Arrow.i \
+	$(SRC_DIR)\PA\Element.i \
+	$(SRC_DIR)\PA\Count.i \
+	$(SRC_DIR)\PA\Pair.i \
+	$(SRC_DIR)\PA\Result.i \
+	$(SRC_DIR)\PA\Series.i \
+	$(SRC_DIR)\PA\Status.i \
+	$(SRC_DIR)\PA\Feature.i \
+	$(SRC_DIR)\PA\Value.i \
+	$(SRC_DIR)\PA\Resource.i \
+	$(SRC_DIR)\Builder\Director.i \
+	$(SRC_DIR)\Builder\Builder.i \
+	$(SRC_DIR)\Builder\Product.i \
+	$(SRC_DIR)\Builder\ConcreteBuilder.i \
+	$(SRC_DIR)\PA\NormalTree.i \
+	$(SRC_DIR)\PA\TransposeTree.i \
+	$(SRC_DIR)\Adapter\Client.i \
+	$(SRC_DIR)\Adapter\Target.i \
+	$(SRC_DIR)\Adapter\Adapter.i \
+	$(SRC_DIR)\Adapter\Adaptee.i \
+	$(SRC_DIR)\PA\PADrawingEditor.i \
+	$(SRC_DIR)\PA\PALine.i \
+	$(SRC_DIR)\PA\PAShape.i \
+	$(SRC_DIR)\PA\PATextView.i \
+	$(SRC_DIR)\ArrayList\ArrayList.i \
+	$(SRC_DIR)\ArrayList\ArrayListPosition.i \
+	$(SRC_DIR)\Iterator\Client.i \
+	$(SRC_DIR)\Iterator\ConcreteIterator.i \
+	$(SRC_DIR)\Iterator\Iterator.i \
+	$(SRC_DIR)\Iterator\ConcreteAggregate.i
+$(SRC_DIR)/Input.i : $(SRC_DIR)/Input.c
 	$(CC) $(CFLAGS) /E $< $@
-src/Algorithm.i : src/Algorithm.c
+$(SRC_DIR)/Algorithm.i : $(SRC_DIR)/Algorithm.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/BFS/Procedure.i : src/BFS/Procedure.c
+$(SRC_DIR)/BFS/Procedure.i : $(SRC_DIR)/BFS/Procedure.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/PA/Input.i : src/PA/Input.c
+$(SRC_DIR)/PA/Input.i : $(SRC_DIR)/PA/Input.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/PA/Output.i : src/PA/Output.c
+$(SRC_DIR)/PA/Output.i : $(SRC_DIR)/PA/Output.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/BFS/Record.i : src/BFS/Record.c
+$(SRC_DIR)/BFS/Record.i : $(SRC_DIR)/BFS/Record.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/Output.i : src/Output.c
+$(SRC_DIR)/Output.i : $(SRC_DIR)/Output.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/PA/Data.i : src/PA/Data.c
+$(SRC_DIR)/PA/Data.i : $(SRC_DIR)/PA/Data.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/PA/Destination.i : src/PA/Destination.c
+$(SRC_DIR)/PA/Destination.i : $(SRC_DIR)/PA/Destination.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/PA/Tree.i : src/PA/Tree.c
+src/PA/Tree.i : $(SRC_DIR)/PA/Tree.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/PA/List.i : src/PA/List.c
+$(SRC_DIR)/PA/List.i : $(SRC_DIR)/PA/List.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/PA/Link.i : src/PA/Link.c
+$(SRC_DIR)/PA/Link.i : $(SRC_DIR)/PA/Link.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/PA/Arrow.i : src/PA/Arrow.c
+$(SRC_DIR)/PA/Arrow.i : $(SRC_DIR)/PA/Arrow.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/PA/Element.i : src/PA/Element.c
+$(SRC_DIR)/PA/Element.i : $(SRC_DIR)/PA/Element.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/PA/Count.i : src/PA/Count.c
+$(SRC_DIR)/PA/Count.i : $(SRC_DIR)/PA/Count.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/PA/Pair.i : src/PA/Pair.c
+$(SRC_DIR)/PA/Pair.i : $(SRC_DIR)/PA/Pair.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/PA/Result.i : src/PA/Result.c
+$(SRC_DIR)/PA/Result.i : $(SRC_DIR)/PA/Result.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/PA/Series.i : src/PA/Series.c
+$(SRC_DIR)/PA/Series.i : $(SRC_DIR)/PA/Series.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/PA/Status.i : src/PA/Status.c
+$(SRC_DIR)/PA/Status.i : src/PA/Status.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/PA/Feature.i : src/PA/Feature.c
+$(SRC_DIR)/PA/Feature.i : $(SRC_DIR)/PA/Feature.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/PA/Value.i : src/PA/Value.c
+$(SRC_DIR)/PA/Value.i : $(SRC_DIR)/PA/Value.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/PA/Resource.i : src/PA/Resource.c
+$(SRC_DIR)/PA/Resource.i : $(SRC_DIR)/PA/Resource.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/Builder/Director.i : src/Builder/Director.c
+$(SRC_DIR)/Builder/Director.i : $(SRC_DIR)/Builder/Director.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/Builder/Builder.i : src/Builder/Builder.c
+$(SRC_DIR)/Builder/Builder.i : $(SRC_DIR)/Builder/Builder.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/Builder/Product.i : src/Builder/Product.c
+$(SRC_DIR)/Builder/Product.i : $(SRC_DIR)/Builder/Product.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/Builder/ConcreteBuilder.i : src/Builder/ConcreteBuilder.c
+$(SRC_DIR)/Builder/ConcreteBuilder.i : $(SRC_DIR)/Builder/ConcreteBuilder.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/PA/NormalTree.i : src/PA/NormalTree.c
+$(SRC_DIR)/PA/NormalTree.i : $(SRC_DIR)/PA/NormalTree.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/PA/TransposeTree.i : src/PA/TransposeTree.c
+$(SRC_DIR)/PA/TransposeTree.i : $(SRC_DIR)/PA/TransposeTree.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/Adapter/Client.i : src/Adapter/Client.c
+$(SRC_DIR)/Adapter/Client.i : $(SRC_DIR)/Adapter/Client.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/Adapter/Target.i : src/Adapter/Target.c
+$(SRC_DIR)/Adapter/Target.i : $(SRC_DIR)/Adapter/Target.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/Adapter/Adapter.i : src/Adapter/Adapter.c
+$(SRC_DIR)/Adapter/Adapter.i : $(SRC_DIR)/Adapter/Adapter.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/Adapter/Adaptee.i : src/Adapter/Adaptee.c
+$(SRC_DIR)/Adapter/Adaptee.i : $(SRC_DIR)/Adapter/Adaptee.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/PA/PADrawingEditor.i : src/PA/PADrawingEditor.c
+$(SRC_DIR)/PA/PADrawingEditor.i : $(SRC_DIR)/PA/PADrawingEditor.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/PA/PALine.i : src/PA/PALine.c
+$(SRC_DIR)/PA/PALine.i : $(SRC_DIR)/PA/PALine.c
 	$(CC) $(CPPFLAGS) /E $< > $@
-src/PA/PAShape.i : src/PA/PAShape.c
+$(SRC_DIR)/PA/PAShape.i : $(SRC_DIR)/PA/PAShape.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/PA/PATextView.i : src/PA/PATextView.c
+$(SRC_DIR)/PA/PATextView.i : $(SRC_DIR)/PA/PATextView.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/ArrayList/ArrayList.i : src/ArrayList/ArrayList.c
+$(SRC_DIR)/ArrayList/ArrayList.i : $(SRC_DIR)/ArrayList/ArrayList.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/ArrayList/ArrayListPosition.i : src/ArrayList/ArrayListPosition.c
+$(SRC_DIR)/ArrayList/ArrayListPosition.i : $(SRC_DIR)/ArrayList/ArrayListPosition.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/Iterator/Client.i : src/Iterator/Client.c
+$(SRC_DIR)/Iterator/Client.i : $(SRC_DIR)/Iterator/Client.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/Iterator/ConcreteIterator.i : src/Iterator/ConcreteIterator.c
+$(SRC_DIR)/Iterator/ConcreteIterator.i : $(SRC_DIR)/Iterator/ConcreteIterator.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/Iterator/Iterator.i : src/Iterator/Iterator.c
+$(SRC_DIR)/Iterator/Iterator.i : $(SRC_DIR)/Iterator/Iterator.c
 	$(CC) $(CFLAGS) /E $< > $@
-src/Iterator/ConcreteAggregate.i : src/Iterator/ConcreteAggregate.c
+$(SRC_DIR)/Iterator/ConcreteAggregate.i : $(SRC_DIR)/Iterator/ConcreteAggregate.c
 	$(CC) $(CFLAGS) /E $< > $@
 
 
@@ -432,96 +434,96 @@ src/Iterator/Iterator.s: src/Iterator/Iterator.i
 src/Iterator/ConcreteAggregate.s: src/Iterator/ConcreteAggregate.i
 	$(CC)  -S $< -o $@
 
-obj/Input.o: src/Input.s 
-	$(CC) /c $< /Fi$@ 
+obj/Input.o: src/Input.i 
+	$(CC) /c $< /Fi$@
 obj/Algorithm.o: src/Algorithm.s 
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/BFS/Procedure.o: src/BFS/Procedure.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/PA/Input.o: src/PA/Input.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/PA/Output.o: src/PA/Output.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/BFS/Record.o:src/BFS/Record.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/Output.o: src/Output.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/PA/Value.o: src/PA/Value.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/PA/Data.o: src/PA/Data.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/PA/Tree.o: src/PA/Tree.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 #obj/PAIndex.o: src/PAIndex.c include/PAIndex.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
 obj/PA/List.o: src/PA/List.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/PA/Link.o: src/PA/Link.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/PA/Arrow.o: src/PA/Arrow.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/PA/Element.o: src/PA/Element.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/PA/Count.o: src/PA/Count.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/PA/Pair.o: src/PA/Pair.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/PA/Result.o: src/PA/Result.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/PA/Series.o: src/PA/Series.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/PA/Status.o: src/PA/Status.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/PA/Feature.o: src/PA/Feature.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/PA/Destination.o : src/PA/Destination.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/PA/Resource.o: src/PA/Resource.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 #obj/PA/Value.o: src/PA/Value.c include/PA/Value.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
 obj/Builder/Product.o: src/Builder/Product.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/Builder/ConcreteBuilder.o: src/Builder/ConcreteBuilder.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/Builder/Director.o: src/Builder/Director.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/Builder/Builder.o: src/Builder/Builder.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/PA/NormalTree.o: src/PA/NormalTree.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/PA/TransposeTree.o: src/PA/TransposeTree.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/Adapter/Client.o: src/Adapter/Client.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/Adapter/Target.o: src/Adapter/Target.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/Adapter/Adapter.o: src/Adapter/Adapter.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/Adapter/Adaptee.o: src/Adapter/Adaptee.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/PA/PADrawingEditor.o: src/PA/PADrawingEditor.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/PA/PALine.o: src/PA/PALine.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/PA/PAShape.o: src/PA/PAShape.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/PA/PATextView.o: src/PA/PATextView.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/ArrayList/ArrayList.o: src/ArrayList/ArrayList.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 obj/ArrayList/ArrayListPosition.o : src/ArrayList/ArrayListPosition.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) /c $< /Fi$@
 #obj/ArrayList/ArrayListObject.o : src/ArrayList/ArrayListObject.c include/ArrayList/ArrayListObject.h include/types.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
 obj/Iterator/Client.o: src/Iterator/Client.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) -c $< -o $@
 obj/Iterator/ConcreteIterator.o: src/Iterator/ConcreteIterator.s 
-	$(CC) /c $< /Fi$@ 
+	$(CC) -c $< -o $@
 obj/Iterator/Iterator.o: src/Iterator/Iterator.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) -c $< -o $@
 obj/Iterator/ConcreteAggregate.o: src/Iterator/ConcreteAggregate.s
-	$(CC) /c $< /Fi$@ 
+	$(CC) -c $< -o $@
 
 #src/Input.c: 
 #src/Algorithm.c: 
