@@ -207,10 +207,13 @@ struct Target {
 	struct PASeries series;
 	//struct Adapter adapter;
 };
+struct BuilderProduct {
+    struct PATree tree;
+};
 struct Builder {
 	// struct NormalTree NormalTree;
 	// struct TransposeTree
-	struct Product Product;
+	struct BuilderProduct Product;
 };
 struct Director {
     struct Builder builder;
@@ -218,28 +221,26 @@ struct Director {
 struct PANormalTree {
     struct PAList adj;
 };
-struct Product {
-    struct PATree tree;
-};
 struct PATransposeTree {
 	struct PAList adj_trans;
 };
-
+struct Iterator  {
+    struct PASeries series;
+};
 struct Aggregate {
 	struct Iterator iterator;
 };
 struct ConcreteBuilder {
     struct Builder builder;
 };
-struct ConcreteAggregate {
-    struct ConcreteIterator iterator;
-};
 struct ConcreteIterator  {
     PAInt position;
 };
-struct Iterator  {
-    struct PASeries series;
+struct ConcreteAggregate {
+    struct ConcreteIterator iterator;
 };
+// struct BuilderProduct{
+// };
 struct BFSProcedure {
 	// struct PATree tree;
 	struct BFSInput input;
