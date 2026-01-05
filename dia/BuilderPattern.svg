@@ -1,48 +1,80 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created by diasvg.py -->
-<svg width="34.497cm" height="12.050cm" viewBox="-3.329 9.150 34.497 12.050"
- xmlns="http://www.w3.org/2000/svg"
- xmlns:xlink="http://www.w3.org/1999/xlink">
-<!-- Layer: Background -->
-<g id="Background">
-</g>
-<!-- Layer: Background -->
-<g id="Background">
-<!-- UML - Class -->
-<rect x="15.150" y="9.200" width="5.120" height="1.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
-<rect x="15.150" y="10.600" width="5.120" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
-<rect x="15.150" y="11.000" width="5.120" height="1.000" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
-<!-- UML - Class -->
-<rect x="5.900" y="9.200" width="5.120" height="1.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
-<rect x="5.900" y="10.600" width="5.120" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
-<rect x="5.900" y="11.000" width="5.120" height="1.000" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
-<!-- UML - Class -->
-<rect x="14.100" y="17.550" width="7.785" height="1.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
-<rect x="14.100" y="18.950" width="7.785" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
-<rect x="14.100" y="19.350" width="7.785" height="1.800" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
-<!-- Standard - Line -->
-<line x1="7.245" y1="16.796" x2="8.405" y2="12.217" stroke="#000000" stroke-width="0.100" stroke-dasharray="1.00,0.45,0.10,0.45"/>
-<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="8.552,12.654 8.433,12.108 8.067,12.532 "/>
-<!-- Standard - Line -->
-<line x1="17.584" y1="17.550" x2="17.673" y2="12.662" stroke="#000000" stroke-width="0.100" />
-<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  points="17.922,12.666 17.682,12.162 17.423,12.657 "/>
-<!-- UML - Note -->
-<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  points="-3.280,16.796 6.646,16.796 7.245,17.396 7.245,19.296 -3.280,19.296 "/>
-<polyline fill="none" stroke="#000000" stroke-width="0.050"  points="6.646,16.796 6.646,17.396 7.245,17.396 "/>
-<!-- Standard - Text -->
-<!-- Standard - Text -->
-<!-- Standard - Text -->
-<!-- UML - Class -->
-<rect x="27.085" y="17.505" width="4.032" height="1.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
-<rect x="27.085" y="18.905" width="4.032" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
-<rect x="27.085" y="19.305" width="4.032" height="0.400" fill="#FFFFFF" stroke="#000000" stroke-width="0.100" />
-<!-- Standard - Line -->
-<line x1="21.067" y1="18.250" x2="26.861" y2="18.207" stroke="#000000" stroke-width="0.100" stroke-dasharray="0.10,0.10"/>
-<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="26.475,18.460 26.973,18.206 26.471,17.960 "/>
-<!-- Standard - Line -->
-<line x1="11.379" y1="9.900" x2="14.926" y2="9.900" stroke="#000000" stroke-width="0.100" stroke-dasharray="0.10,0.10"/>
-<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  points="11.020,9.900 11.270,9.650 11.520,9.900 11.270,10.150 "/>
-<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="14.538,10.150 15.038,9.900 14.538,9.650 "/>
-<!-- Standard - Text -->
-</g>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="30cm" height="13cm" viewBox="25 180 587 244" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="Background"/>
+  <g id="Background">
+    <g>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="297" y="181" width="133.2" height="28"/>
+      <text font-size="16" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="363.6" y="200">Builder</text>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="297" y="209" width="133.2" height="8"/>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="297" y="217" width="133.2" height="36"/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="300" y="230.2">+BuildPart()</text>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="300" y="246.2">+AnOperation()()</text>
+    </g>
+    <g>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="118" y="184" width="102.4" height="28"/>
+      <text font-size="16" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="169.2" y="203">Director</text>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="118" y="212" width="102.4" height="8"/>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="118" y="220" width="102.4" height="20"/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="121" y="233.2">+Construct()</text>
+    </g>
+    <g>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="292" y="346" width="155.7" height="28"/>
+      <text font-size="16" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="369.85" y="365">ConcreteBuilder</text>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="292" y="374" width="155.7" height="8"/>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="292" y="382" width="155.7" height="36"/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="295" y="395.2">+BuildPart()</text>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="295" y="411.2">+GetResult()</text>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="138.098" y1="372.994" x2="166.414" y2="251.915"/>
+      <polygon style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="171.282,253.053 168.691,242.177 161.545,250.776 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke-dasharray: 20 8 4 8; stroke: #000000" x1="292" y1="360" x2="220.662" y2="364.706"/>
+      <polyline style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" points="228.08,359.205 218.431,364.853 228.739,369.184 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="369.85" y1="346" x2="365.984" y2="266.212"/>
+      <polygon style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="370.978,265.97 365.5,256.223 360.99,266.454 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke-dasharray: 20 8 4 8; stroke: #000000" x1="447.7" y1="360" x2="526.628" y2="360.852"/>
+      <polyline style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" points="518.811,365.768 528.864,360.876 518.919,355.768 "/>
+    </g>
+    <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="638.65" y="211">
+      <tspan x="638.65" y="211"></tspan>
+    </text>
+    <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="617.21" y="514.922">
+      <tspan x="617.21" y="514.922"></tspan>
+    </text>
+    <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="638.65" y="211">
+      <tspan x="638.65" y="211"></tspan>
+    </text>
+    <g>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="531.1" y="346.9" width="80.65" height="28"/>
+      <text font-size="16" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="571.425" y="365.9">Product</text>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="531.1" y="374.9" width="80.65" height="8"/>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="531.1" y="382.9" width="80.65" height="8"/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="227.566" y1="229.719" x2="292.531" y2="227.175"/>
+      <polygon style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="220.4,230 225.2,224.808 230.392,229.609 225.592,234.8 "/>
+      <polyline style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" points="284.969,232.475 294.766,227.088 284.578,222.483 "/>
+    </g>
+    <g>
+      <polygon style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="27,373 225.5,373 237.5,385 237.5,423 27,423 "/>
+      <polyline style="fill: none; stroke-opacity: 1; stroke-width: 1; stroke: #000000" points="225.5,373 225.5,385 237.5,385 "/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="34" y="396.7">
+        <tspan x="34" y="396.7">foreach item in structure</tspan>
+        <tspan x="34" y="412.7">Builder.BuildPart()</tspan>
+      </text>
+    </g>
+    <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="132.25" y="398">
+      <tspan x="132.25" y="398"></tspan>
+    </text>
+    <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="235" y="212.422">
+      <tspan x="235" y="212.422">builder</tspan>
+    </text>
+  </g>
 </svg>
