@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created by diasvg.py -->
+<svg width="50.243cm" height="23.836cm" viewBox="1.900 -2.086 50.243 23.836"
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Layer: Background -->
+<g id="Background">
+<!-- Flowchart - Box -->
+<rect x="3.600" y="-0.450" width="4.100" height="17.300" fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  rx="0.000" />
+<!-- Flowchart - Box -->
+<rect x="10.250" y="19.800" width="12.850" height="1.900" fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  rx="0.000" />
+<!-- Standard - Line -->
+<line x1="19.887" y1="19.800" x2="19.899" y2="15.887" stroke="#000000" stroke-width="0.100" />
+<polygon fill="#000000" stroke="#000000" stroke-width="0.100"  points="19.900,15.512 20.148,16.013 19.899,15.887 19.648,16.011 "/>
+<!-- Standard - Text -->
+<!-- Standard - Line -->
+<line x1="2.337" y1="-0.100" x2="2.348" y2="3.363" stroke="#000000" stroke-width="0.100" />
+<polygon fill="#000000" stroke="#000000" stroke-width="0.100"  points="2.350,3.738 2.098,3.239 2.348,3.363 2.598,3.237 "/>
+<!-- Standard - Text -->
+<!-- Flowchart - Box -->
+<rect x="14.259" y="8.850" width="3.583" height="1.900" fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  rx="0.000" />
+<!-- Flowchart - Box -->
+<rect x="14.259" y="10.950" width="3.583" height="1.900" fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  rx="0.000" />
+<!-- Standard - Text -->
+<!-- Flowchart - Box -->
+<rect x="14.305" y="13.045" width="3.583" height="1.900" fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  rx="0.000" />
+<!-- Flowchart - Box -->
+<rect x="14.310" y="15.140" width="3.583" height="1.900" fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  rx="0.000" />
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Flowchart - Box -->
+<rect x="14.286" y="6.745" width="5.120" height="1.900" fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  rx="0.000" />
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Flowchart - Ellipse -->
+<ellipse cx="19.850" cy="2.300" rx="1.737" ry="0.869" fill="#FFFFFF" stroke="#000000"  stroke-width="0.100" />
+<!-- Flowchart - Box -->
+<rect x="15.550" y="5.000" width="2.000" height="1.900" fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  rx="0.000" />
+<!-- Flowchart - Box -->
+<rect x="15.400" y="3.150" width="2.000" height="1.900" fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  rx="0.000" />
+<!-- Flowchart - Box -->
+<rect x="15.450" y="1.550" width="2.000" height="1.900" fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  rx="0.000" />
+<!-- Flowchart - Box -->
+<rect x="15.550" y="-0.550" width="2.000" height="1.900" fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  rx="0.000" />
+<!-- Standard - Text -->
+<!-- Standard - Line -->
+<line x1="11.963" y1="1.000" x2="15.065" y2="1.303" stroke="#000000" stroke-width="0.100" />
+<polygon fill="#000000" stroke="#000000" stroke-width="0.100"  points="15.439,1.339 14.917,1.539 15.065,1.303 14.965,1.042 "/>
+<!-- Standard - Line -->
+<line x1="12.168" y1="2.607" x2="14.979" y2="3.329" stroke="#000000" stroke-width="0.100" />
+<polygon fill="#000000" stroke="#000000" stroke-width="0.100"  points="15.342,3.422 14.795,3.540 14.979,3.329 14.920,3.056 "/>
+<!-- Standard - Line -->
+<line x1="12.273" y1="4.152" x2="14.932" y2="4.916" stroke="#000000" stroke-width="0.100" />
+<polygon fill="#000000" stroke="#000000" stroke-width="0.100"  points="15.293,5.019 14.743,5.121 14.932,4.916 14.881,4.641 "/>
+<!-- Standard - Line -->
+<line x1="12.278" y1="5.747" x2="15.100" y2="6.604" stroke="#000000" stroke-width="0.100" />
+<polygon fill="#000000" stroke="#000000" stroke-width="0.100"  points="15.459,6.713 14.908,6.807 15.100,6.604 15.053,6.328 "/>
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Flowchart - Ellipse -->
+<ellipse cx="23.413" cy="6.400" rx="3.392" ry="1.696" fill="#FFFFFF" stroke="#000000"  stroke-width="0.100" />
+<!-- Standard - Text -->
+<!-- Standard - Line -->
+<line x1="23.813" y1="10.150" x2="19.867" y2="8.802" stroke="#000000" stroke-width="0.100" />
+<polygon fill="#000000" stroke="#000000" stroke-width="0.100"  points="19.512,8.681 20.066,8.606 19.867,8.802 19.904,9.079 "/>
+<!-- Flowchart - Ellipse -->
+<ellipse cx="11.213" cy="7.650" rx="2.516" ry="1.258" fill="#FFFFFF" stroke="#000000"  stroke-width="0.100" />
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Line -->
+<line x1="12.313" y1="9.450" x2="15.168" y2="7.201" stroke="#000000" stroke-width="0.100" />
+<polygon fill="#000000" stroke="#000000" stroke-width="0.100"  points="15.462,6.969 15.224,7.475 15.168,7.201 14.915,7.082 "/>
+<!-- Standard - Line -->
+<line x1="12.413" y1="10.350" x2="13.783" y2="10.647" stroke="#000000" stroke-width="0.100" />
+<polygon fill="#000000" stroke="#000000" stroke-width="0.100"  points="14.149,10.726 13.608,10.865 13.783,10.647 13.714,10.376 "/>
+<!-- Standard - Line -->
+<line x1="12.077" y1="12.352" x2="13.447" y2="12.649" stroke="#000000" stroke-width="0.100" />
+<polygon fill="#000000" stroke="#000000" stroke-width="0.100"  points="13.814,12.728 13.272,12.867 13.447,12.649 13.378,12.378 "/>
+<!-- Standard - Line -->
+<line x1="12.082" y1="14.347" x2="13.452" y2="14.644" stroke="#000000" stroke-width="0.100" />
+<polygon fill="#000000" stroke="#000000" stroke-width="0.100"  points="13.819,14.723 13.277,14.862 13.452,14.644 13.383,14.373 "/>
+<!-- Standard - Line -->
+<line x1="11.937" y1="16.592" x2="13.307" y2="16.889" stroke="#000000" stroke-width="0.100" />
+<polygon fill="#000000" stroke="#000000" stroke-width="0.100"  points="13.674,16.968 13.132,17.107 13.307,16.889 13.238,16.618 "/>
+<!-- Standard - Line -->
+<line x1="10.363" y1="15.750" x2="13.829" y2="15.214" stroke="#000000" stroke-width="0.100" />
+<polygon fill="#000000" stroke="#000000" stroke-width="0.100"  points="14.200,15.157 13.744,15.480 13.829,15.214 13.667,14.986 "/>
+<!-- Standard - Line -->
+<line x1="9.613" y1="14.600" x2="13.843" y2="13.198" stroke="#000000" stroke-width="0.100" />
+<polygon fill="#000000" stroke="#000000" stroke-width="0.100"  points="14.199,13.080 13.803,13.475 13.843,13.198 13.646,13.000 "/>
+<!-- Standard - Line -->
+<line x1="10.263" y1="12.400" x2="13.801" y2="11.116" stroke="#000000" stroke-width="0.100" />
+<polygon fill="#000000" stroke="#000000" stroke-width="0.100"  points="14.154,10.988 13.769,11.394 13.801,11.116 13.598,10.924 "/>
+<!-- Standard - Line -->
+<line x1="10.563" y1="10.550" x2="13.816" y2="9.053" stroke="#000000" stroke-width="0.100" />
+<polygon fill="#000000" stroke="#000000" stroke-width="0.100"  points="14.157,8.897 13.807,9.333 13.816,9.053 13.598,8.879 "/>
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Flowchart - Box -->
+<rect x="25.548" y="-1.900" width="10.630" height="1.900" fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  rx="0.000" />
+<!-- Standard - Text -->
+<!-- Flowchart - Box -->
+<rect x="36.604" y="-1.950" width="3.117" height="1.900" fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  rx="0.000" />
+<!-- Flowchart - Box -->
+<rect x="40.113" y="-1.950" width="2.000" height="1.900" fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  rx="0.000" />
+<!-- Flowchart - Box -->
+<rect x="42.613" y="-1.950" width="2.000" height="1.900" fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  rx="0.000" />
+<!-- Flowchart - Box -->
+<rect x="45.063" y="-1.900" width="2.000" height="1.900" fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  rx="0.000" />
+<!-- Flowchart - Box -->
+<rect x="47.562" y="-1.950" width="2.000" height="1.900" fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  rx="0.000" />
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+</g>
+</svg>
