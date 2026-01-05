@@ -176,7 +176,7 @@ struct BFSOutput {
 // };
 struct PASeries {
 	struct PACount progression;
-	struct PAList adj[];
+	struct PAList adj[BLK_SIZE];
 };
 //struct PASeries
 //{
