@@ -223,89 +223,89 @@ sources=$(SRC_DIR)\Input.i \
 	$(SRC_DIR)\Iterator\Iterator.i \
 	$(SRC_DIR)\Iterator\ConcreteAggregate.i
 $(SRC_DIR)\Input.i : $(SRC_DIR)\Input.c
-	$(CC) $(CFLAGS) /E $< $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\Algorithm.i : $(SRC_DIR)Algorithm.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\BFS\Procedure.i : $(SRC_DIR)\BFS\Procedure.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\PA\Input.i : $(SRC_DIR)\PA\Input.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\PA\Output.i : $(SRC_DIR)\PA\Output.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\BFS\Record.i : $(SRC_DIR)\BFS\Record.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\Output.i : $(SRC_DIR)\Output.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\PA\Data.i : $(SRC_DIR)\PA\Data.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\PA\Destination.i : $(SRC_DIR)\PA\Destination.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\PA\Tree.i : $(SRC_DIR)/PA\Tree.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\PA\List.i : $(SRC_DIR)\PA\List.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\PA\Link.i : $(SRC_DIR)\PA\Link.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\PA\Arrow.i : $(SRC_DIR)\PA\Arrow.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\PA\Element.i : $(SRC_DIR)\PA\Element.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\PA\Count.i : $(SRC_DIR)\PA\Count.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\PA\Pair.i : $(SRC_DIR)\PA\Pair.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\PA\Result.i : $(SRC_DIR)\PA\Result.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\PA\Series.i : $(SRC_DIR)\PA\Series.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\PA\Status.i : $(SRC_DIR)\PA\Status.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\PA\Feature.i : $(SRC_DIR)\PA\Feature.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\PA\Value.i : $(SRC_DIR)\PA\Value.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\PA\Resource.i : $(SRC_DIR)\PA\Resource.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\Bulder\Director.i : $(SRC_DIR)\Builder\Director.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\Builder\Builder.i : $(SRC_DIR)\Builder\Builder.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\Builder\Product.i : $(SRC_DIR)\Builder\Product.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\Builder\ConcreteBuilder.i : $(SRC_DIR)\Builder\ConcreteBuilder.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\PA\NormalTree.i : $(SRC_DIR)\PA\NormalTree.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\PA\TransposeTree.i : $(SRC_DIR)\PA\TransposeTree.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\Adapter\Client.i : $(SRC_DIR)\Adapter\Client.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\Adapter\Target.i : $(SRC_DIR)\Adapter\Target.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\Adapter\Adapter.i : $(SRC_DIR)\Adapter\Adapter.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\Adapter\Adaptee.i : $(SRC_DIR)\Adapter\Adaptee.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\PA\PADrawingEditor.i : $(SRC_DIR)\PA\PADrawingEditor.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\PA\PALine.i : $(SRC_DIR)\PA\PALine.c
-	$(CC) $(CPPFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\PA\PAShape.i : $(SRC_DIR)\PA\PAShape.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\PA\PATextView.i : $(SRC_DIR)\PA\PATextView.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\ArrayList\ArrayList.i : $(SRC_DIR)\ArrayList\ArrayList.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\ArrayList\ArrayListPosition.i : $(SRC_DIR)\ArrayList\ArrayListPosition.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\Iterator\Client.i : $(SRC_DIR)\Iterator\Client.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\Iterator\ConcreteIterator.i : $(SRC_DIR)\Iterator\ConcreteIterator.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\Iterator\Iterator.i : $(SRC_DIR)\Iterator\Iterator.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 $(SRC_DIR)\Iterator\ConcreteAggregate.i : $(SRC_DIR)\Iterator\ConcreteAggregate.c
-	$(CC) $(CFLAGS) /E $< > $@
+	$(CC) $(CFLAGS) /P $< /Fi:$@
 
 $(SRC_DIR)\Input.s: $(SRC_DIR)\Input.i
 	$(CC) -S $< -o $@
