@@ -74,13 +74,14 @@ struct ConcreteIterator;
 struct Iterator ;
 struct BFSProcedure;
 struct Input;
+struct Algorithm;
 struct Output;
-struct Input {
+// struct Input {
+// 	struct Algorithm algorithm;
+// };
+// struct Output {
 
-};
-struct Output {
-
-};
+// };
 // struct Input {
 	// 	;
 	// };
