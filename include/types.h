@@ -208,7 +208,9 @@ struct Target {
 	//struct Adapter adapter;
 };
 struct Builder {
-    ;
+	// struct NormalTree NormalTree;
+	// struct TransposeTree
+	struct Product Product;
 };
 struct Director {
     struct Builder builder;
