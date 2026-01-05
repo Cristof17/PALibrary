@@ -1,2 +1,0 @@
-
-src/Adapter/Adapter.c
