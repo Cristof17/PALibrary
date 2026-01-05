@@ -10,17 +10,18 @@ struct PATree PATreePerformConstruct(struct PACount N, struct PACount M, struct 
 {
     struct PATree tree;
     // tree = PATreePerformConstruct();
-    tree.adj = Adj;
-    tree.m = M;
-    tree.n = N;
-    tree.source = Source;
+    // tree.n = N;
+    // tree.m = M;
+    // tree.adj = Adj;
+    // tree.source = Source;
     return tree;
 }
 struct PATree PATreePerformInit(struct PATree Tree)
 {
     struct PATree tree;
-    tree.n.number = 0;
-    tree.m.number = 0;
+    tree.n.number = 2;
+    tree.m.number = 3;
+    tree.source.index.resource.value = 4;
     // tree.adj = PASeriesPerformInit(tree.adj);
     // tree.source.;
     // tree.adj = ()
@@ -28,10 +29,12 @@ struct PATree PATreePerformInit(struct PATree Tree)
 }
 PAResult PATreePerformRuin(struct PATree Tree)
 {
-    PAResult result;
-    Tree.n.number = 0;
-    Tree.m.number = 0;
-    return result;
+    int var = 1;
+    // PAResult result;
+    // PAInt zero = 0;
+    // Tree.n.number = zero;
+    // Tree.m.number = zero;
+    return 0;
 }
 struct PATree PATreePerformCopy(struct PATree Tree)
 {
