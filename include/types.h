@@ -121,7 +121,7 @@ struct ArrayListPosition {
 struct ArrayList {
 	// struct Position position;
 	struct ArrayListPosition place;
-	ArrayListObject objects[];
+	ArrayListObject objects[BLK_SIZE];
 };
 // struct Position {
 // 	PositionInt position;
