@@ -437,95 +437,95 @@ objects= $(OBJ_DIR)/Input.o \
 	$(OBJ_DIR)/Iterator/Iterator.o \
 	$(OBJ_DIR)/Iterator/ConcreteAggregate.o
 $(OBJ_DIR)\Input.o: $(SRC_DIR)\Input.i 
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\Algorithm.o: $(SRC_DIR)\Algorithm.s 
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\BFS\Procedure.o: $(SRC_DIR)\BFS\Procedure.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\PA\Input.o: $(SRC_DIR)\PA\Input.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\PA\Output.o: $(SRC_DIR)\PA\Output.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\BFS\Record.o:$(SRC_DIR)\BFS\Record.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\Output.o: $(SRC_DIR)\Output.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\PA\Value.o: $(SRC_DIR)\PA\Value.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\PA\Data.o: $(SRC_DIR)\PA\Data.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\PA\Tree.o: $(SRC_DIR)\PA\Tree.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 #obj/PAIndex.o: $(SRC_DIR)/PAIndex.c include/PAIndex.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
 $(OBJ_DIR)\PA\List.o: $(SRC_DIR)\PA\List.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\PA\Link.o: $(SRC_DIR)\PA\Link.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\PA\Arrow.o: $(SRC_DIR)\PA\Arrow.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\PA\Element.o: $(SRC_DIR)\PA\Element.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\PA\Count.o: $(SRC_DIR)\PA\Count.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\PA\Pair.o: $(SRC_DIR)\PA\Pair.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\PA\Result.o: $(SRC_DIR)\PA\Result.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\PA\Series.o: $(SRC_DIR)\PA\Series.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\PA\Status.o: $(SRC_DIR)\PA\Status.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\PA\Feature.o: $(SRC_DIR)\PA\Feature.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\PA\Destination.o : $(SRC_DIR)\PA\Destination.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\PA\Resource.o: $(SRC_DIR)\PA\Resource.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 #obj/PA/Value.o: $(SRC_DIR)/PA/Value.c include/PA/Value.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
 $(OBJ_DIR)\Builder\Product.o: $(SRC_DIR)\Builder\Product.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\Builder\ConcreteBuilder.o: $(SRC_DIR)\Builder\ConcreteBuilder.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\Builder\Director.o: $(SRC_DIR)\Builder\Director.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\Builder\Builder.o: $(SRC_DIR)\Builder\Builder.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\PA\NormalTree.o: $(SRC_DIR)\PA\NormalTree.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\PA\TransposeTree.o: $(SRC_DIR)\PA\TransposeTree.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\Adapter\Client.o: $(SRC_DIR)\Adapter\Client.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\Adapter\Target.o: $(SRC_DIR)\Adapter\Target.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\Adapter\Adapter.o: $(SRC_DIR)\Adapter\Adapter.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\Adapter\Adaptee.o: $(SRC_DIR)\Adapter\Adaptee.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\PA\PADrawingEditor.o: $(SRC_DIR)\PA\PADrawingEditor.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\PA\PALine.o: $(SRC_DIR)\PA\PALine.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\PA\PAShape.o: $(SRC_DIR)\PA\PAShape.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\PA\PATextView.o: $(SRC_DIR)\PA\PATextView.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\ArrayList\ArrayList.o: $(SRC_DIR)\ArrayList\ArrayList.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\ArrayList\ArrayListPosition.o : $(SRC_DIR)\ArrayList\ArrayListPosition.s
-	$(CC) /c $< /Fi$@
+	$(CC) /c $< /Fo:$@
 #obj/ArrayList\ArrayListObject.o : $(SRC_DIR)\ArrayList\ArrayListObject.c include/ArrayList/ArrayListObject.h include/types.h include/defs.h
 #	$(CC) /c $(CFLAGS) $< -o $@
 $(OBJ_DIR)\Iterator\Client.o: $(SRC_DIR)\Iterator\Client.s
-	$(CC) /c $< -o $@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\Iterator\ConcreteIterator.o: $(SRC_DIR)\Iterator\ConcreteIterator.s 
-	$(CC) /c $< -o $@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\Iterator\Iterator.o: $(SRC_DIR)\Iterator\Iterator.s
-	$(CC) /c $< -o $@
+	$(CC) /c $< /Fo:$@
 $(OBJ_DIR)\Iterator\ConcreteAggregate.o: $(SRC_DIR)\Iterator\ConcreteAggregate.s
-	$(CC) /c $< -o $@
+	$(CC) /c $< /Fo:$@
 
 #src/Input.c: 
 #src/Algorithm.c: 
