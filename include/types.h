@@ -227,8 +227,8 @@ struct PATransposeTree {
 
 struct Aggregate {
 };
-struct BuilderClient {
-    ;
+struct ConcreteBuilder {
+    struct Builder Builder;
 };
 struct ConcreteAggregate {
     ;
