@@ -226,18 +226,19 @@ struct PATransposeTree {
 };
 
 struct Aggregate {
+	struct Iterator iterator;
 };
 struct ConcreteBuilder {
-    struct Builder Builder;
+    struct Builder builder;
 };
 struct ConcreteAggregate {
-    ;
+    struct ConcreteIterator iterator;
 };
 struct ConcreteIterator  {
-    ;
+    PAInt position;
 };
 struct Iterator  {
-    
+    struct PASeries series;
 };
 struct BFSProcedure {
 	// struct PATree tree;
