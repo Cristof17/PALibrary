@@ -19,11 +19,18 @@ struct PATree PATreePerformConstruct(struct PACount N, struct PACount M, struct 
 struct PATree PATreePerformInit(struct PATree Tree)
 {
     struct PATree tree;
+    tree.n.number = 0;
+    tree.m.number = 0;
+    // tree.adj = PASeriesPerformInit(tree.adj);
+    // tree.source.;
+    // tree.adj = ()
     return tree;
 }
 PAResult PATreePerformRuin(struct PATree Tree)
 {
     PAResult result;
+    Tree.n.number = 0;
+    Tree.m.number = 0;
     return result;
 }
 struct PATree PATreePerformCopy(struct PATree Tree)
