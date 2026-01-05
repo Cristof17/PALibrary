@@ -31,8 +31,8 @@
       <polygon style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="171.282,253.053 168.691,242.177 161.545,250.776 "/>
     </g>
     <g>
-      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke-dasharray: 20 8 4 8; stroke: #000000" x1="292" y1="360" x2="220.662" y2="364.706"/>
-      <polyline style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" points="228.08,359.205 218.431,364.853 228.739,369.184 "/>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke-dasharray: 20 8 4 8; stroke: #000000" x1="292" y1="360" x2="241.168" y2="395.442"/>
+      <polyline style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" points="244.677,386.9 239.334,396.721 250.397,395.103 "/>
     </g>
     <g>
       <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="369.85" y1="346" x2="365.984" y2="266.212"/>
