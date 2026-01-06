@@ -32,7 +32,6 @@ srcdir=src
 #CFLAGS+=-I$(abspath $(includedir)/Adapter)
 #CPPFLAGS+=-Iinclude
 libdir=obj obj/Adapter obj/Iterator obj/ArrayList obj/Builder obj/PA obj/BFS
-CFLAGS=/Iinclude
 #datadir=dat
 #infodir=info
 #mandir=man
@@ -51,6 +50,7 @@ CFLAGS=/Iinclude
 INCLUDE_DIR=C:\Users\AdministratorUser\source\repos\PALibrary\include
 SRC_DIR=C:\Users\AdministratorUser\source\repos\PALibrary\src
 OBJ_DIR=C:\Users\AdministratorUser\source\repos\PALibrary\obj
+CFLAGS=/I$(INCLUDE_DIR)
 designs=$(SRC_DIR)\Input.c \
 	$(SRC_DIR)\Algorithm.c \
 	$(SRC_DIR)\BFS\Procedure.c \
