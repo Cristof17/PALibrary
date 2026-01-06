@@ -309,91 +309,91 @@ $(SRC_DIR)\Iterator\ConcreteAggregate.i : $(SRC_DIR)\Iterator\ConcreteAggregate.
 	$(CC) $(CFLAGS) /P $? /Fi:$@
 
 $(SRC_DIR)\Input.s: $(SRC_DIR)\Input.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\Algorithm.s: $(SRC_DIR)\Algorithm.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\BFS\Procedure.s: $(SRC_DIR)\BFS\Procedure.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\PA\Input.s: $(SRC_DIR)\PA\Input.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\PA\Output.s: $(SRC_DIR)\PA\Output.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\BFS\Record.s: $(SRC_DIR)\BFS\Record.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\Output.s: $(SRC_DIR)\Output.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\PA\Destination.s : $(SRC_DIR)\PA\Destination.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 #asm/PA/Data.s: $(SRC_DIR)\PA\Data.c
-#	$(CC) $(CFLAGS) -S $< -o $@
+#	$(CC) /c $? /Fr:$< -o $@
 $(SRC_DIR)\PA\Tree.s: $(SRC_DIR)\PA\Tree.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\PA\Data.s: $(SRC_DIR)\PA\Data.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\PA\List.s: $(SRC_DIR)\PA\List.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\PA\Link.s: $(SRC_DIR)\PA\Link.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\PA\Arrow.s: $(SRC_DIR)\PA\Arrow.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\PA\Element.s: $(SRC_DIR)\PA\Element.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\PA\Count.s: $(SRC_DIR)\PA\Count.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\PA\Pair.s: $(SRC_DIR)\PA\Pair.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\PA\Result.s: $(SRC_DIR)\PA\Result.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\PA\Series.s: $(SRC_DIR)\PA\Series.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\PA\Feature.s: $(SRC_DIR)\PA\Feature.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\PA\Value.s: $(SRC_DIR)\PA\Value.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\PA\Resource.s: $(SRC_DIR)\PA\Resource.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\Builder\Director.s: $(SRC_DIR)\Builder\Director.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\Builder\Builder.s: $(SRC_DIR)\Builder\Builder.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\Builder\Product.s: $(SRC_DIR)\Builder\Product.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\Builder\ConcreteBuilder.s: $(SRC_DIR)\Builder\ConcreteBuilder.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\PA\NormalTree.s: $(SRC_DIR)\PA\NormalTree.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\PA\TransposeTree.s: $(SRC_DIR)\PA\TransposeTree.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\PA\Status.s: $(SRC_DIR)\PA\Status.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\Adapter\Client.s: $(SRC_DIR)\Adapter\Client.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\Adapter\Target.s: $(SRC_DIR)\Adapter\Target.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\Adapter\Adapter.s: $(SRC_DIR)\Adapter\Adapter.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\Adapter\Adaptee.s: $(SRC_DIR)\Adapter\Adaptee.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\PA\PADrawingEditor.s: $(SRC_DIR)\PA\PADrawingEditor.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\PA\PALine.s: $(SRC_DIR)\PA\PALine.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\PA\PAShape.s: $(SRC_DIR)\PA\PAShape.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\PA\PATextView.s: $(SRC_DIR)\PA\PATextView.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\ArrayList\ArrayList.s: $(SRC_DIR)\ArrayList\ArrayList.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\ArrayList\ArrayListPosition.s: $(SRC_DIR)\ArrayList\ArrayListPosition.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\Iterator\Client.s: $(SRC_DIR)\Iterator\Client.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\Iterator\ConcreteIterator.s: $(SRC_DIR)\Iterator\ConcreteIterator.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\Iterator\Iterator.s: $(SRC_DIR)\Iterator\Iterator.i
-	$(CC) -S $< -o $@
+	$(CC) /c $? /Fr:$@
 $(SRC_DIR)\Iterator\ConcreteAggregate.s: $(SRC_DIR)\Iterator\ConcreteAggregate.i
-	$(CC)  -S $< -o $@
+	$(CC)  /c $? /Fr:$@
 
 objects= $(OBJ_DIR)/Input.o \
 	$(OBJ_DIR)/Algorithm.o \
