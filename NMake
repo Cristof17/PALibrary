@@ -104,9 +104,9 @@ check:
 	file $(INCLUDE_DIR)\Iterator\ConcreteAggregate.h $(INCLUDE_DIR)\defs.h
 preprocess: $(sources)
 	$(CC) $(CFLAGS) /P $(SRC_DIR)\Input.c /Fi:$(SRC_DIR)\Input.i
-	$(CC) $(CFLAGS) /P $(SRC_DIR)\Algorithm.c /Fi:$(SRC_DIR)\Algorithm.i \
-	$(CC) $(CFLAGS) /P $(SRC_DIR)\Procedure.c /Fi:$(SRC_DIR)\BFS\Procedure.i \
-	$(CC) $(CFLAGS) /P $(SRC_DIR)\PA\Input.c /Fi:$(SRC_DIR)\PA\Input.i \
+	$(CC) $(CFLAGS) /P $(SRC_DIR)\Algorithm.c /Fi:$(SRC_DIR)\Algorithm.i
+	$(CC) $(CFLAGS) /P $(SRC_DIR)\Procedure.c /Fi:$(SRC_DIR)\BFS\Procedure.i
+	$(CC) $(CFLAGS) /P $(SRC_DIR)\PA\Input.c /Fi:$(SRC_DIR)\PA\Input.i
 	$(CC) $(CFLAGS) /P $(SRC_DIR)\PA\Output.c /Fi:$(SRC_DIR)\PA\Output.i
 	$(CC) $(CFLAGS) /P $(SRC_DIR)\BFS\Record.c /Fi:$(SRC_DIR)\BFS\Record.i
 	$(CC) $(CFLAGS) /P $(SRC_DIR)\Output.c /Fi:$(SRC_DIR)\Output.i
