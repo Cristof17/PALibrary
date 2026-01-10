@@ -1,2 +1,0 @@
-
-src/ArrayList/ArrayList.c
