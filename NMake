@@ -148,7 +148,7 @@ compile: preprocess $(objects)
 # 	New-Item -Path ./obj -Name 
 	$(CC) $(CFLAGS) /c $(SRC_DIR)\Input.i /Fo:$(OBJ_DIR)\Input.o
 	$(CC) $(CFLAGS) /c $(SRC_DIR)\Algorithm.i /Fo:$(OBJ_DIR)\Algorithm.o
-	$(CC) $(CFLAGS) /c $(SRC_DIR)\Procedure.i /Fo:$(OBJ_DIR)\BFS\Procedure.o
+	$(CC) $(CFLAGS) /c $(SRC_DIR)\BFS\Procedure.i /Fo:$(OBJ_DIR)\BFS\Procedure.o
 	$(CC) $(CFLAGS) /c $(SRC_DIR)\PA\Input.i /Fo:$(OBJ_DIR)\PA\Input.o
 	$(CC) $(CFLAGS) /c $(SRC_DIR)\Output.i /Fo:$(OBJ_DIR)\PA\Output.o
 	$(CC) $(CFLAGS) /c $(SRC_DIR)\BFS\Record.i /Fo:$(OBJ_DIR)\BFS\Record.o
