@@ -187,10 +187,10 @@ compile: preprocess $(objects)
 	$(CC) $(CFLAGS) /c $(SRC_DIR)\Iterator\ConcreteIterator.i /Fo:$(OBJ_DIR)\Iterator\ConcreteIterator.o
 	$(CC) $(CFLAGS) /c $(SRC_DIR)\Iterator\Iterator.i /Fo:$(OBJ_DIR)\Iterator\Iterator.o
 	$(CC) $(CFLAGS) /c $(SRC_DIR)\Iterator\ConcreteAggregate.i /Fo:$(OBJ_DIR)\Iterator\ConcreteAggregate.o
-	$(CC) $(CFLAGS) /c $(SRC_DIR)\ /Fo:$(OBJ_DIR)/
-	$(CC) $(CFLAGS) /c $(SRC_DIR)\ /Fo:$(OBJ_DIR)/
-	$(CC) $(CFLAGS) /c $(SRC_DIR)\ /Fo:$(OBJ_DIR)/
-	$(CC) $(CFLAGS) /c $(SRC_DIR)\ /Fo:$(OBJ_DIR)/
+# 	$(CC) $(CFLAGS) /c $(SRC_DIR)\ /Fo:$(OBJ_DIR)/
+# 	$(CC) $(CFLAGS) /c $(SRC_DIR)\ /Fo:$(OBJ_DIR)/
+# 	$(CC) $(CFLAGS) /c $(SRC_DIR)\ /Fo:$(OBJ_DIR)/
+# 	$(CC) $(CFLAGS) /c $(SRC_DIR)\ /Fo:$(OBJ_DIR)/
 
 #assemble: $(objects)
 # link_windows: $(objects)
