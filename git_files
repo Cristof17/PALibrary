@@ -1,0 +1,490 @@
+._main.o
+.cproject
+.project
+.settings/._language.settings.xml
+.settings/language.settings.xml
+.vscode/._settings.json
+.vscode/settings.json
+ArrayList/arraylist.o
+ArrayList/arraylist.s
+Diagram3.svg
+LICENSE
+Makefile
+NMake
+NMake - Copy
+NMake - Copy (2)
+README.md
+adapter/PADrawingEditor.o
+adapter/PADrawingEditor.s
+adapter/PALine.o
+adapter/PALine.s
+adapter/PAShape.o
+adapter/PAShape.s
+adapter/PATextView.o
+adapter/PATextView.s
+adapter/adaptee.o
+adapter/adaptee.s
+adapter/adapter.o
+adapter/adapter.s
+adapter/client.o
+adapter/client.s
+adapter/pabuilder.s
+adapter/target.s
+builder/pabuilder.o
+builder/padirector.o
+builder/padirector.s
+builder/pagrafproduct.o
+builder/pagrafproduct.s
+builder/pagraftranspus.o
+builder/pagraftranspus.s
+chipset.dia
+chipset.svg
+dia/Adapter.dia
+dia/Adapter.svg
+dia/Adapter/Adapter.dia
+dia/Adapter/Adapter.dia~
+dia/Adapter/Adapter.svg
+dia/AdapterExample.dia
+dia/AdapterExample.dia~
+dia/AdapterExample.svg
+dia/ArrayList/ArrayList.dia
+dia/ArrayList/ArrayList.svg
+dia/ArrayList/ArrayList2.dia
+dia/ArrayList/ArrayList2.svg
+dia/ArrayListAdapter.dia
+dia/ArrayListAdapter.svg
+dia/Bridge.dia
+dia/Bridge.svg
+dia/Builder/BuilderPattern.dia
+dia/BuilderPattern.dia
+dia/BuilderPattern.dia~
+dia/BuilderPattern.svg
+dia/C.drawio
+dia/ConstraintStateVariable.dia
+dia/ConstraintStateVariable.dia~
+dia/Decorator.dia
+dia/Decorator.svg
+dia/Diagram1.dia
+dia/Diagram1_functie.dia
+dia/Diagram3.dia
+dia/Diagrama10.dia
+dia/Diagrama10.dia~
+dia/Edge.dia
+dia/Edge.svg
+dia/Facade.dia
+dia/Facade.svg
+dia/Factory.dia
+dia/Factory.dia~
+dia/Factory.svg
+dia/FactoryMethod.dia
+dia/FactoryMethod.dia~
+dia/FactoryMethod.svg
+dia/Flyweight.dia
+dia/Flyweight.svg
+dia/Graf.dia
+dia/Graf.svg
+dia/Graf10.svg
+dia/Graf11.dia
+dia/Graf11.svg
+dia/Graf12.svg
+dia/Graf14.dia
+dia/Graf14.svg
+dia/Graf15.dia
+dia/Graf15.svg
+dia/Graf17.dia
+dia/Graf17.dia~
+dia/Graf17.svg
+dia/Graf18.dia
+dia/Graf18.dia~
+dia/Graf18.svg
+dia/Graf19.dia
+dia/Graf19.svg
+dia/Graf2.svg
+dia/Graf20.dia
+dia/Graf20.dia~
+dia/Graf20.svg
+dia/Graf21.dia
+dia/Graf21.svg
+dia/Graf22.dia
+dia/Graf22.svg
+dia/Graf23.dia
+dia/Graf23.svg
+dia/Graf24.dia
+dia/Graf24.svg
+dia/Graf25.dia
+dia/Graf25.svg
+dia/Graf26.dia
+dia/Graf26.svg
+dia/Graf27.dia
+dia/Graf27.svg
+dia/Graf28.dia
+dia/Graf28.svg
+dia/Graf29.dia
+dia/Graf29.svg
+dia/Graf3.dia
+dia/Graf3.svg
+dia/Graf30.dia
+dia/Graf30.svg
+dia/Graf31.dia
+dia/Graf31.svg
+dia/Graf32.dia
+dia/Graf32.dia~
+dia/Graf32.svg
+dia/Graf33.dia
+dia/Graf33.dia~
+dia/Graf33.svg
+dia/Graf34.dia
+dia/Graf34.svg
+dia/Graf35.dia
+dia/Graf35.dia~
+dia/Graf35.svg
+dia/Graf36.dia
+dia/Graf36.svg
+dia/Graf37.dia
+dia/Graf37.dia~
+dia/Graf37.svg
+dia/Graf38dia
+dia/Graf38dia.svg
+dia/Graf38dia~
+dia/Graf39dia
+dia/Graf39dia.svg
+dia/Graf39dia~
+dia/Graf4.svg
+dia/Graf40.dia
+dia/Graf40.svg
+dia/Graf41.dia
+dia/Graf41.dia~
+dia/Graf41.svg
+dia/Graf42.dia
+dia/Graf42.svg
+dia/Graf43.dia
+dia/Graf43.svg
+dia/Graf44.dia
+dia/Graf44.svg
+dia/Graf45.dia
+dia/Graf45.svg
+dia/Graf46.dia
+dia/Graf46.svg
+dia/Graf47.dia
+dia/Graf47.svg
+dia/Graf48.dia
+dia/Graf48.svg
+dia/Graf49.dia
+dia/Graf49.svg
+dia/Graf50.dia
+dia/Graf50.svg
+dia/Graf51.dia
+dia/Graf51.svg
+dia/Graf52.dia
+dia/Graf52.svg
+dia/Graf53.dia
+dia/Graf53.svg
+dia/Graf54.dia
+dia/Graf54.svg
+dia/Graf55.dia
+dia/Graf55.svg
+dia/Graf56.svg
+dia/Graf57.dia
+dia/Graf57.svg
+dia/Graf58.dia
+dia/Graf58.svg
+dia/Graf59.dia
+dia/Graf59.svg
+dia/Graf6.svg
+dia/Graf60.dia
+dia/Graf60.svg
+dia/Graf61.dia
+dia/Graf61.svg
+dia/Graf62.dia
+dia/Graf62.svg
+dia/Graf63.dia
+dia/Graf63.dia~
+dia/Graf63.svg
+dia/Graf8.svg
+dia/Graf9.svg
+dia/Iterator.dia
+dia/Iterator.dia~
+dia/Iterator.svg
+dia/Iterator/Iterator.dia
+dia/Manipulator.dia
+dia/Manipulator.svg
+dia/New folder/Adapter.dia
+dia/New folder/Adapter.svg
+dia/New folder/AdapterExample.dia
+dia/New folder/AdapterExample.dia~
+dia/New folder/AdapterExample.svg
+dia/New folder/Bridge.dia
+dia/New folder/Bridge.svg
+dia/New folder/BuilderPattern.dia
+dia/New folder/BuilderPattern.dia~
+dia/New folder/BuilderPattern.svg
+dia/New folder/ConstraintStateVariable.dia
+dia/New folder/ConstraintStateVariable.dia~
+dia/New folder/Decorator.dia
+dia/New folder/Decorator.svg
+dia/New folder/Diagram1.dia
+dia/New folder/Diagrama10.dia
+dia/New folder/Diagrama10.dia~
+dia/New folder/Edge.dia
+dia/New folder/Edge.svg
+dia/New folder/Facade.dia
+dia/New folder/Facade.svg
+dia/New folder/Factory.dia
+dia/New folder/Factory.dia~
+dia/New folder/Factory.svg
+dia/New folder/FactoryMethod.dia
+dia/New folder/FactoryMethod.dia~
+dia/New folder/FactoryMethod.svg
+dia/New folder/Flyweight.dia
+dia/New folder/Flyweight.svg
+dia/New folder/Iterator.dia
+dia/New folder/Iterator.dia~
+dia/New folder/Iterator.svg
+dia/New folder/Manipulator.dia
+dia/New folder/Manipulator.svg
+dia/New folder/Prototype.dia
+dia/New folder/Prototype.dia~
+dia/New folder/Prototype.svg
+dia/New folder/PrototypeExample.dia
+dia/New folder/PrototypeExample.dia~
+dia/New folder/PrototypeExample.svg
+dia/New folder/Proxy.dia
+dia/New folder/Proxy.dia~
+dia/New folder/Proxy.svg
+dia/New folder/Singleton.dia
+dia/New folder/Singleton.svg
+dia/New folder/TreeDisplay.dia
+dia/New folder/TreeDisplay.dia~
+dia/New folder/TreeDisplay.svg
+dia/New folder/artificial_intelligence.dia
+dia/New folder/artificial_intelligence.svg
+dia/New folder/desktop.ini
+dia/Prototype.dia
+dia/Prototype.dia~
+dia/Prototype.svg
+dia/PrototypeExample.dia
+dia/PrototypeExample.dia~
+dia/PrototypeExample.svg
+dia/Proxy.dia
+dia/Proxy.dia~
+dia/Proxy.svg
+dia/Singleton.dia
+dia/Singleton.svg
+dia/TreeDisplay.dia
+dia/TreeDisplay.dia~
+dia/TreeDisplay.svg
+dia/Untitled Diagram.drawio
+dia/Untitled Diagram.drawio.svg
+dia/artificial_intelligence.dia
+dia/artificial_intelligence.svg
+dia/builder.drawio
+dia/desktop.ini
+dia/factory.drawio
+filiename.library
+git_files
+include/Adapter/Adaptee.h
+include/Adapter/Adapter.h
+include/Adapter/Client
+include/Adapter/Client.h
+include/Adapter/Target.h
+include/Algorithm.h
+include/ArrayList/ArrayList.h
+include/ArrayList/ArrayListPosition.h
+include/BFS/Procedure.h
+include/BFS/Program.h
+include/BFS/Record.h
+include/BFS/test_include_guard.h
+include/Builder/Builder.h
+include/Builder/ConcreteBuilder.h
+include/Builder/Director.h
+include/Builder/Product.h
+include/Input.h
+include/Iterator/Aggregate.h
+include/Iterator/Client.h
+include/Iterator/ConcreteAggregate.h
+include/Iterator/ConcreteIterator.h
+include/Iterator/Iterator.h
+include/Output.h
+include/PA/Arrow.h
+include/PA/Count.h
+include/PA/Data.h
+include/PA/Destination.h
+include/PA/Element.h
+include/PA/Feature.h
+include/PA/Input.h
+include/PA/Link.h
+include/PA/List.h
+include/PA/NormalTree.h
+include/PA/Output.h
+include/PA/PADrawingEditor.h
+include/PA/PALine.h
+include/PA/PAShape.h
+include/PA/PATextShape.h
+include/PA/PATextView.h
+include/PA/Pair.h
+include/PA/Resource.h
+include/PA/Result.h
+include/PA/Series.h
+include/PA/Size.h
+include/PA/Status.h
+include/PA/TransposeTree.h
+include/PA/Tree.h
+include/PA/Value.h
+include/defs.h
+include/errors.txt
+include/s
+include/types.h
+linker-script.so
+memory_layout.svg
+obj/Algorithm.o
+obj/Input.o
+obj/PA/Size.o
+obj/adapter/PADrawingEditor.o
+obj/adapter/PALine.o
+obj/adapter/PAShape.o
+obj/adapter/PATextView.o
+pseudocod
+src/Adapter/Adaptee.c
+src/Adapter/Adaptee.o
+src/Adapter/Adaptee.s
+src/Adapter/Adapter.c
+src/Adapter/Adapter.s
+src/Adapter/Client.c
+src/Adapter/Client.s
+src/Adapter/Diagrama1.dia
+src/Adapter/Diagrama1.dia~
+src/Adapter/Diagrama1.svg
+src/Adapter/PADrawingEditor.i
+src/Adapter/PADrawingEditor.o
+src/Adapter/PADrawingEditor.s
+src/Adapter/PALine.i
+src/Adapter/PALine.o
+src/Adapter/PALine.s
+src/Adapter/PAShape.i
+src/Adapter/PAShape.o
+src/Adapter/PAShape.s
+src/Adapter/PATextShape.o
+src/Adapter/PATextView.i
+src/Adapter/PATextView.o
+src/Adapter/PATextView.s
+src/Adapter/Target.c
+src/Adapter/Target.s
+src/Adapter/adaptee.o
+src/Adapter/adapter.o
+src/Adapter/client.o
+src/Algorithm.c
+src/Algorithm.o
+src/ArrayList/ArrayList.c
+src/ArrayList/ArrayList.o
+src/ArrayList/ArrayList.s
+src/ArrayList/ArrayListPosition.c
+src/ArrayList/ArrayListPosition.s
+src/ArrayList/arraylist.o
+src/BFS/Procedure.c
+src/BFS/Program.c
+src/BFS/Record.c
+src/Builder/Builder.c
+src/Builder/Builder.s
+src/Builder/ConcreteBuilder.c
+src/Builder/ConcreteBuilder.s
+src/Builder/Director.c
+src/Builder/Director.s
+src/Builder/Makefile
+src/Builder/PABuilder.o
+src/Builder/Product.c
+src/Builder/Product.s
+src/Builder/Untitled-1.java
+src/Builder/class GarageDoor.cpp
+src/Builder/pabuilder.o
+src/Builder/pabuilder.s
+src/Builder/padirector.o
+src/Builder/padirector.s
+src/Builder/pagrafnormal.o
+src/Builder/pagrafnormal.s
+src/Builder/pagrafproduct.o
+src/Builder/pagrafproduct.s
+src/Builder/pagraftranspus.o
+src/Builder/pagraftranspus.s
+src/Input.c
+src/Iterator/Aggregate.c
+src/Iterator/Client.c
+src/Iterator/Client.s
+src/Iterator/ConcreteAggregate
+src/Iterator/ConcreteAggregate.c
+src/Iterator/ConcreteAggregate.o
+src/Iterator/ConcreteAggregate.s
+src/Iterator/ConcreteIterator.c
+src/Iterator/ConcreteIterator.s
+src/Iterator/Iterator.c
+src/Iterator/Iterator.s
+src/Iterator/Iterator.svg
+src/Makefile
+src/Output.c
+src/PA/Arrow.c
+src/PA/Arrow.s
+src/PA/Count.c
+src/PA/Count.s
+src/PA/Data.c
+src/PA/Data.o
+src/PA/Destination.c
+src/PA/Destination.s
+src/PA/Element.c
+src/PA/Element.s
+src/PA/Feature.c
+src/PA/Feature.s
+src/PA/Input.c
+src/PA/Link.c
+src/PA/Link.s
+src/PA/List.c
+src/PA/List.s
+src/PA/NormalTree.c
+src/PA/NormalTree.s
+src/PA/Output.c
+src/PA/PADrawingEditor.c
+src/PA/PADrawingEditor.s
+src/PA/PALine.c
+src/PA/PALine.s
+src/PA/PAShape.c
+src/PA/PAShape.s
+src/PA/PATextShape.c
+src/PA/PATextView.c
+src/PA/PATextView.s
+src/PA/Pair.c
+src/PA/Pair.s
+src/PA/Resource.c
+src/PA/Resource.o
+src/PA/Resource.s
+src/PA/Result.c
+src/PA/Result.s
+src/PA/Series.c
+src/PA/Series.s
+src/PA/Status.c
+src/PA/TransposeTree.c
+src/PA/TransposeTree.s
+src/PA/Tree.c
+src/PA/Tree.s
+src/PA/Value.c
+src/PA/Value.s
+src/adapter_PAShape.s
+src/bfsoutput.s
+src/builder_pabuilder.s
+src/builder_padirector.s
+src/builder_pagrafnormal.s
+src/builder_pagrafproduct.s
+src/builder_pagraftranspus.s
+src/input.o
+src/main.c
+src/main2.c
+src/mkinstalldirs
+src/padata.s
+src/pagraf.s
+src/paindex.s
+src/palista.s
+src/pamuchie.s
+src/paneigh.s
+src/panod.s
+src/papereche.s
+src/parezultat.s
+src/pasir.s
+src/pastare.s
+src/patip.s
