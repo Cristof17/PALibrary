@@ -143,8 +143,8 @@ preprocess: $(sources)
 	$(CC) $(CFLAGS) /P $(SRC_DIR)\Iterator\ConcreteIterator.c /Fi:$(SRC_DIR)\Iterator\ConcreteIterator.i
 	$(CC) $(CFLAGS) /P $(SRC_DIR)\Iterator\Iterator.c /Fi:$(SRC_DIR)\Iterator\Iterator.i
 	$(CC) $(CFLAGS) /P $(SRC_DIR)\Iterator\ConcreteAggregate.c /Fi:$(SRC_DIR)\Iterator\ConcreteAggregate.i
-compile: $(objects)
-	Get-ChildItem -Path .\src\ | Out-File FileTree.txt
+compile: preprocess $(objects)
+	Get-ChildItem -Path .\src\ -Directory -recurse | Out-File FileTree.txt
 	Get-Content -Path .\FileTree | New-Item -Path .\obj -ItemType "Directory"
 # 	New-Item -Path . -ItemType "Directory" -Name obj/
 # 	New-Item -Path ./obj -Name 
