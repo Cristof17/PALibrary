@@ -400,7 +400,7 @@ $(SRC_DIR)\PA\Value.i : $(SRC_DIR)\PA\Value.c
 	$(CC) $(CFLAGS) /P $? /Fi:$@
 $(SRC_DIR)\PA\Resource.i : $(SRC_DIR)\PA\Resource.c
 	$(CC) $(CFLAGS) /P $? /Fi:$@
-$(SRC_DIR)\Bulder\Director.i : $(SRC_DIR)\Builder\Director.c
+$(SRC_DIR)\Builder\Director.i : $(SRC_DIR)\Builder\Director.c
 	$(CC) $(CFLAGS) /P $? /Fi:$@
 $(SRC_DIR)\Builder\Builder.i : $(SRC_DIR)\Builder\Builder.c
 	$(CC) $(CFLAGS) /P $? /Fi:$@
