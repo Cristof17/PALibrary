@@ -177,17 +177,27 @@ sources=src/Input.i \
 	src/Iterator/ConcreteAggregate.i
 
 # build: preprocess compile assemble link_windows
-build: $(designs) preprocess compile assemble 
+all: $(sources) build
+build: $(designs) preprocess compile assemble
+# 	mkdir obj/Director/
+# 	mkdir obj/Builder/
+# 	mkdir $(OBJ_DIR)
+# 	mkdir $(patsubst, )
+# 	#
+	echo "build"
+# 	@echo "Build"
+# 	@echo "$<"
 # preprocess: $(sources)
 preprocess: $(sources)
 compile: $(assemblies)
 assemble: $(objects)
+	mkdir $(dir $<)
+	@echo "Building"
 # link_windows: $(objects)
 # 	$(LD) $(objects) -o filiename.library
 # link_macos: $(objects)
 # link_linux: $(objects)
 #build: preprocess assemble compile
-all: $(sources) build
 #SUBDIRS= src src/Iterator src/Builder src/Adapter src/Arraylist
 #bar := $(foo:.c=.o)
 #bindir=bin
@@ -433,94 +443,136 @@ src/Iterator/ConcreteAggregate.s: src/Iterator/ConcreteAggregate.i
 	$(CC)  -S $< -o $@
 
 obj/Input.o: src/Input.s 
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/Algorithm.o: src/Algorithm.s 
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/BFS/Procedure.o: src/BFS/Procedure.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/PA/Input.o: src/PA/Input.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/PA/Output.o: src/PA/Output.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/BFS/Record.o:src/BFS/Record.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/Output.o: src/Output.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/PA/Value.o: src/PA/Value.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/PA/Data.o: src/PA/Data.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/PA/Tree.o: src/PA/Tree.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 #obj/PAIndex.o: src/PAIndex.c include/PAIndex.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
 obj/PA/List.o: src/PA/List.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/PA/Link.o: src/PA/Link.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/PA/Arrow.o: src/PA/Arrow.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/PA/Element.o: src/PA/Element.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/PA/Count.o: src/PA/Count.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/PA/Pair.o: src/PA/Pair.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/PA/Result.o: src/PA/Result.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/PA/Series.o: src/PA/Series.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/PA/Status.o: src/PA/Status.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/PA/Feature.o: src/PA/Feature.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/PA/Destination.o : src/PA/Destination.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/PA/Resource.o: src/PA/Resource.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 #obj/PA/Value.o: src/PA/Value.c include/PA/Value.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
 obj/Builder/Product.o: src/Builder/Product.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/Builder/ConcreteBuilder.o: src/Builder/ConcreteBuilder.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/Builder/Director.o: src/Builder/Director.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/Builder/Builder.o: src/Builder/Builder.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/PA/NormalTree.o: src/PA/NormalTree.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/PA/TransposeTree.o: src/PA/TransposeTree.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/Adapter/Client.o: src/Adapter/Client.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/Adapter/Target.o: src/Adapter/Target.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/Adapter/Adapter.o: src/Adapter/Adapter.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/Adapter/Adaptee.o: src/Adapter/Adaptee.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/PA/PADrawingEditor.o: src/PA/PADrawingEditor.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/PA/PALine.o: src/PA/PALine.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/PA/PAShape.o: src/PA/PAShape.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/PA/PATextView.o: src/PA/PATextView.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/ArrayList/ArrayList.o: src/ArrayList/ArrayList.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/ArrayList/ArrayListPosition.o : src/ArrayList/ArrayListPosition.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 #obj/ArrayList/ArrayListObject.o : src/ArrayList/ArrayListObject.c include/ArrayList/ArrayListObject.h include/types.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
 obj/Iterator/Client.o: src/Iterator/Client.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/Iterator/ConcreteIterator.o: src/Iterator/ConcreteIterator.s 
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/Iterator/Iterator.o: src/Iterator/Iterator.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/Iterator/ConcreteAggregate.o: src/Iterator/ConcreteAggregate.s
+	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 
 #src/Input.c: 
