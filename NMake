@@ -358,7 +358,7 @@ libdir=obj obj/Adapter obj/Iterator obj/ArrayList obj/Builder obj/PA obj/BFS
 
 $(SRC_DIR)\Input.i: $(SRC_DIR)\Input.c
 	$(CC) $(CFLAGS) /P $? /Fi:$@
-$(SRC_DIR)\Algorithm.i : $(SRC_DIR)Algorithm.c
+$(SRC_DIR)\Algorithm.i : $(SRC_DIR)\Algorithm.c
 	$(CC) $(CFLAGS) /P $? /Fi:$@
 $(SRC_DIR)\BFS\Procedure.i : $(SRC_DIR)\BFS\Procedure.c
 	$(CC) $(CFLAGS) /P $? /Fi:$@
