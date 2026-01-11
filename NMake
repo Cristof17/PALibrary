@@ -171,7 +171,7 @@ compile: preprocess $(objects)
 	$(CC) $(CFLAGS) /c $(SRC_DIR)\Builder\Director.i /Fo:$(OBJ_DIR)\Builder\Director.o
 	$(CC) $(CFLAGS) /c $(SRC_DIR)\Builder\Product.i /Fo:$(OBJ_DIR)\Builder\Product.o
 	$(CC) $(CFLAGS) /c $(SRC_DIR)\Builder\ConcreteBuilder.i /Fo:$(OBJ_DIR)\Builder\ConcreteBuilder.o
-	$(CC) $(CFLAGS) /c $(SRC_DIR)\NormalTree.i /Fo:$(OBJ_DIR)\NormalTree.o
+	$(CC) $(CFLAGS) /c $(SRC_DIR)\PA\NormalTree.i /Fo:$(OBJ_DIR)\PA\NormalTree.o
 	$(CC) $(CFLAGS) /c $(SRC_DIR)\PA\TransposeTree.i /Fo:$(OBJ_DIR)\PA\TransposeTree.o
 	$(CC) $(CFLAGS) /c $(SRC_DIR)\Adapter\Client.i /Fo:$(OBJ_DIR)\Adapter\Client.o
 	$(CC) $(CFLAGS) /c $(SRC_DIR)\Adapter\Target.i /Fo:$(OBJ_DIR)\Adapter\Target.o
