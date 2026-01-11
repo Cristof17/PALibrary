@@ -59,9 +59,9 @@ sources=$(SRC_DIR)\Input.i \
 	$(SRC_DIR)\Iterator\Iterator.i \
 	$(SRC_DIR)\Iterator\ConcreteAggregate.i
 check:
-	dir $(INCLUDE_DIR)\
-	file $(INCLUDE_DIR)\file.h
-	dir $(INCLUDE_DIR)\Algorithm.h $(INCLUDE_DIR)\defs.h 
+	dir $(INCLUDE_DIR)
+	file $(INCLUDE_DIR)
+	file $(INCLUDE_DIR)\Algorithm.h $(INCLUDE_DIR)\defs.h 
 	file $(INCLUDE_DIR)\defs.h
 	file $(INCLUDE_DIR)\PA\Input.h $(INCLUDE_DIR)\defs.h
 	file $(INCLUDE_DIR)\PAOutput.h $(INCLUDE_DIR)\defs.h
