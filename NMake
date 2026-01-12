@@ -709,6 +709,7 @@ clean: preprocess compile
 	rm $(OBJ_DIR)\PA\Count.o
 	rm $(OBJ_DIR)\PA\Pair.o
 	rm $(OBJ_DIR)\PA\Result.o
+	rm $(OBJ_DIR)\PA\Data.o
 	rm $(OBJ_DIR)\PA\Series.o
 	rm $(OBJ_DIR)\PA\Feature.o
 	rm $(OBJ_DIR)\PA\Value.o
@@ -730,7 +731,7 @@ clean: preprocess compile
 	rm $(OBJ_DIR)\PA\PAShape.o
 	rm $(OBJ_DIR)\PA\PATextView.o
 	rm $(OBJ_DIR)\ArrayList\ArrayList.o
-#	rm $(OBJ_DIR)\ArrayList\ArrayListObject.o
+#	rm $(OBJ_DIR)\ArrayLisft\ArrayListObject.o
 	rm $(OBJ_DIR)\Iterator\Client.o
 	rm $(OBJ_DIR)\Iterator\ConcreteIterator.o
 	rm $(OBJ_DIR)\Iterator\Iterator.o
