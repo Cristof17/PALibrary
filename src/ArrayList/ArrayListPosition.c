@@ -16,7 +16,7 @@
 
 struct ArrayListPosition ArrayListPositionPerformConstruct(ListPosition place)
 {
-	struct ArrayListPosition position;
+	struct ArrayListPosition position = { FIRST };
 	return position;
 }
 struct ArrayListPosition ArrayListPositionPerformInit(struct ArrayListPosition ListPosition)
@@ -36,11 +36,11 @@ struct ArrayListPosition ArrayListPositionPerformCopy(struct ArrayListPosition L
 }
 PAResult ArrayListPositionPerformDelete(struct ArrayListPosition Position)
 {
-	PAResult result;
+	PAResult result = { PARESULT_SUCCESS };
 	return result;
 }
 PAResult ArrayListPositionPerformRuin(struct ArrayListPosition Position)
 {
-	PAResult result;
+	PAResult result = { PARESULT_SUCCESS };
 	return result;
 }

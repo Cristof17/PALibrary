@@ -107,12 +107,12 @@ ArrayListObject ArrayListPerformPutLast(struct ArrayList List, ArrayListObject O
 }
 PAResult ArrayListPerformAdapt(struct ArrayList List)
 {
-	PAResult result;
+	PAResult result = { PARESULT_SUCCESS };
 	return result;
 }
 PAResult ArrayListPerformMove(struct ArrayList List)
 {
-	PAResult result;
+	PAResult result = { PARESULT_SUCCESS };
 	return result;
 	//start, first position for i is 1
 	//while not end of line
@@ -159,12 +159,12 @@ struct ArrayList ArrayListPerformCopy(struct ArrayList List)
 }
 PAResult ArrayListPerformRuin(struct ArrayList List)
 {
-	PAResult result;
+	PAResult result = { PARESULT_SUCCESS } ;
 	return result;
 }
 PAResult ArrayListPerformDelete(struct ArrayList List)
 {
-	PAResult result;
+	PAResult result = { PARESULT_SUCCESS };
 	return result;
 }
 // struct PAData ArrayListPerformGet(struct PAIndex Array[],PAInt Position) {

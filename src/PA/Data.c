@@ -10,12 +10,15 @@
 //}
 struct PAData PADataPerformConstruct(struct PAResource Resource)
 {
-    struct PAData data;
+    struct PAData data = { {1} };
     return data;
 }
 struct PAData PADataPerformCopy(struct PAData Data)
 {
     struct PAData copy;
+    struct PAResource resource = Data.resource;
+    PAInt value = resource.value;
+    copy.resource.value = value;
 //    copy=PADataPerformConstruct(Data.resource);
 //    copy=PADataPerformInit(Data);
     return copy;
@@ -38,11 +41,11 @@ struct PAData PADataPerformPutResource(struct PAData Data, struct PAResource Res
 }
 PAResult PADataPerformRuin(struct PAData Data) 
 {
-    PAResult result;
+    PAResult result = (PAInt) PARESULT_SUCCESS;
     return result;
 }
 PAResult PADataPerformDelete(struct PAData Data)
 {
-    PAResult result;
+    PAResult result = (PAInt) PARESULT_SUCCESS;
     return result;
 }
