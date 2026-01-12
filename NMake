@@ -169,6 +169,7 @@ compile: preprocess $(objects)
 	$(CC) $(CFLAGS) /c $(SRC_DIR)\PA\Value.i /Fo:$(OBJ_DIR)\PA\Value.o
 	$(CC) $(CFLAGS) /c $(SRC_DIR)\PA\Resource.i /Fo:$(OBJ_DIR)\PA\Resource.o
 	$(CC) $(CFLAGS) /c $(SRC_DIR)\Builder\Director.i /Fo:$(OBJ_DIR)\Builder\Director.o
+	$(CC) $(CFLAGS) /c $(SRC_DIR)\Builder/Builder.i /Fo:$(OBJ_DIR)\Builder\Builder.o
 	$(CC) $(CFLAGS) /c $(SRC_DIR)\Builder\Product.i /Fo:$(OBJ_DIR)\Builder\Product.o
 	$(CC) $(CFLAGS) /c $(SRC_DIR)\Builder\ConcreteBuilder.i /Fo:$(OBJ_DIR)\Builder\ConcreteBuilder.o
 	$(CC) $(CFLAGS) /c $(SRC_DIR)\PA\NormalTree.i /Fo:$(OBJ_DIR)\PA\NormalTree.o
@@ -604,7 +605,7 @@ mkinstalldirs: $(srcdir)/mkinstalldirs
 #installcheck:
 #	echo "installcheck"
 
-clean:
+clean: preprocess compile
 	rm $(SRC_DIR)\Input.i
 	rm $(SRC_DIR)\Algorithm.i
 	rm $(SRC_DIR)\BFS\Procedure.i
@@ -697,7 +698,7 @@ clean:
 	rm $(OBJ_DIR)\Output.o
 	rm $(OBJ_DIR)\PA\Data.o
 	rm $(OBJ_DIR)\PA\Tree.o
-	#rm obj/PA.o
+#	rm obj/PA.o
 	rm $(OBJ_DIR)\PA\List.o
 	rm $(OBJ_DIR)\PA\Input.o
 	rm $(OBJ_DIR)\PA\Output.o
@@ -734,10 +735,10 @@ clean:
 	rm $(OBJ_DIR)\Iterator\ConcreteIterator.o
 	rm $(OBJ_DIR)\Iterator\Iterator.o
 	rm $(OBJ_DIR)\Iterator\ConcreteAggregate.o
-	#rm $(OBJ_DIR)\Iterator\
-	#rm $(OBJ_DIR)\Adapter\
-	#rm $(OBJ_DIR)\ArrayList\
-	#rm $(OBJ_DIR)\BFS\
+#	rm $(OBJ_DIR)\Iterator\
+#	rm $(OBJ_DIR)\Adapter\
+#	rm $(OBJ_DIR)\ArrayList\
+#	rm $(OBJ_DIR)\BFS\
 #rm objInput.o
 #rm $(objects)
 #obj/Input.
