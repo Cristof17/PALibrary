@@ -204,48 +204,50 @@ all: $(sources) build
 #bar := $(foo:.c=.o)
 #bindir=bin
 srcdir=src
-#objects= $(OBJ_DIR)/Input.o \
-#	$(OBJ_DIR)/Algorithm.o \
-#	$(OBJ_DIR)/BFS/Procedure.o \
-#	$(OBJ_DIR)/PA/Input.o \
-#	$(OBJ_DIR)/PA/Output.o \
-#	$(OBJ_DIR)/BFS/Record.o \
-#	$(OBJ_DIR)/Output.o \
-#	$(OBJ_DIR)/PA/Data.o \
-#	$(OBJ_DIR)/PA/Destination.o \
-#	$(OBJ_DIR)/PA/Tree.o \
-#	$(OBJ_DIR)/PA/List.o \
-#	$(OBJ_DIR)/PA/Status.o \
-#	$(OBJ_DIR)/PA/Link.o \
-#	$(OBJ_DIR)/PA/Arrow.o \
-#	$(OBJ_DIR)/PA/Element.o \
-#	$(OBJ_DIR)/PA/Count.o \
-#	$(OBJ_DIR)/PA/Pair.o \
-#	$(OBJ_DIR)/PA/Result.o \
-#	$(OBJ_DIR)/PA/Series.o \
-#	$(OBJ_DIR)/PA/Feature.o \
-#	$(OBJ_DIR)/PA/Value.o \
-#	$(OBJ_DIR)/PA/Resource.o \
-#	$(OBJ_DIR)/Builder/Director.o \
-#	$(OBJ_DIR)/Builder/Builder.o \
-#	$(OBJ_DIR)/Builder/Product.o \
-#	$(OBJ_DIR)/Builder/ConcreteBuilder.o \
-#	$(OBJ_DIR)/PA/NormalTree.o \
-#	$(OBJ_DIR)/PA/TransposeTree.o \
-#	$(OBJ_DIR)/Adapter/Client.o \
-#	$(OBJ_DIR)/Adapter/Target.o \
-#	$(OBJ_DIR)/Adapter/Adapter.o \
-#	$(OBJ_DIR)/Adapter/Adaptee.o \
-#	$(OBJ_DIR)/PA/PADrawingEditor.o \
-#	$(OBJ_DIR)/PA/PALine.o \
-#	$(OBJ_DIR)/PA/PAShape.o \
-#	$(OBJ_DIR)/PA/PATextView.o \
-#	$(OBJ_DIR)/ArrayList/ArrayList.o \
-#	$(OBJ_DIR)/ArrayList/ArrayListPosition.o \
-#	$(OBJ_DIR)/Iterator/Client.o \
-#	$(OBJ_DIR)/Iterator/ConcreteIterator.o \
-#	$(OBJ_DIR)/Iterator/Iterator.o \
-#	$(OBJ_DIR)/Iterator/ConcreteAggregate.o
+objects= $(OBJ_DIR)/Input.o \
+	$(OBJ_DIR)/Algorithm.o \
+	$(OBJ_DIR)/BFS/Procedure.o \
+	$(OBJ_DIR)/PA/Input.o \
+	$(OBJ_DIR)/PA/Output.o \
+	$(OBJ_DIR)/BFS/Record.o \
+	$(OBJ_DIR)/Output.o \
+	$(OBJ_DIR)/PA/Data.o \
+	$(OBJ_DIR)/PA/Destination.o \
+	$(OBJ_DIR)/PA/Tree.o \
+	$(OBJ_DIR)/PA/List.o \
+	$(OBJ_DIR)/PA/Status.o \
+	$(OBJ_DIR)/PA/Link.o \
+	$(OBJ_DIR)/PA/Arrow.o \
+	$(OBJ_DIR)/PA/Element.o \
+	$(OBJ_DIR)/PA/Count.o \
+	$(OBJ_DIR)/PA/Pair.o \
+	$(OBJ_DIR)/PA/Result.o \
+	$(OBJ_DIR)/PA/Series.o \
+	$(OBJ_DIR)/PA/Feature.o \
+	$(OBJ_DIR)/PA/Value.o \
+	$(OBJ_DIR)/PA/Resource.o \
+	$(OBJ_DIR)/Builder/Director.o \
+	$(OBJ_DIR)/Builder/Builder.o \
+	$(OBJ_DIR)/Builder/Product.o \
+	$(OBJ_DIR)/Builder/ConcreteBuilder.o \
+	$(OBJ_DIR)/PA/NormalTree.o \
+	$(OBJ_DIR)/PA/TransposeTree.o \
+	$(OBJ_DIR)/Adapter/Client.o \
+	$(OBJ_DIR)/Adapter/Target.o \
+	$(OBJ_DIR)/Adapter/Adapter.o \
+	$(OBJ_DIR)/Adapter/Adaptee.o \
+	$(OBJ_DIR)/PA/PADrawingEditor.o \
+	$(OBJ_DIR)/PA/PALine.o \
+	$(OBJ_DIR)/PA/PAShape.o \
+	$(OBJ_DIR)/PA/PATextView.o \
+	$(OBJ_DIR)/ArrayList/ArrayList.o \
+	$(OBJ_DIR)/ArrayList/ArrayListPosition.o \
+	$(OBJ_DIR)/Iterator/Client.o \
+	$(OBJ_DIR)/Iterator/ConcreteIterator.o \
+	$(OBJ_DIR)/Iterator/Iterator.o \
+	$(OBJ_DIR)/Iterator/ConcreteAggregate.o
+link: $(objects)
+	link $(objects)
 #includedir=include
 #CFLAGS+=-I$(abspath $(includedir))
 #CFLAGS+=-I$(abspath $(includedir)/Builder)
