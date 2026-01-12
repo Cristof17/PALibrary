@@ -8,8 +8,8 @@
 
 
 
-# build: preprocess compile link_windows
-#build: $(designs) preprocess compile 
+#build: preprocess compile link_windows
+build: $(designs) preprocess compile
 # preprocess: $(sources)
 INCLUDE_DIR=C:\Users\AdministratorUser\source\repos\PALibrary\include
 SRC_DIR=C:\Users\AdministratorUser\source\repos\PALibrary\src
@@ -696,7 +696,7 @@ clean: preprocess compile
 	rm $(OBJ_DIR)\BFS\Procedure.o
 	rm $(OBJ_DIR)\BFS\Record.o
 	rm $(OBJ_DIR)\Output.o
-	rm $(OBJ_DIR)\PA\Data.o
+#	rm $(OBJ_DIR)\PA\Data.o
 	rm $(OBJ_DIR)\PA\Tree.o
 #	rm obj/PA.o
 	rm $(OBJ_DIR)\PA\List.o
