@@ -11,7 +11,7 @@ PAResult PAElementPerformInit();
 PAResult PAElementPerformPutStatus(struct PAStatus);
 PAResult PAElementPerformPutData(struct PAData);
 PAResult PAElementPerformPutDestination(struct PADestination);
-PAElementPerformPutFeature(struct PAFeature);
+PAResult PAElementPerformPutFeature(struct PAFeature);
 PAResult PAElementPerformRuin();
 PAResult PAElementPerformDelete();
 // struct PANod;
