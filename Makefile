@@ -196,7 +196,6 @@ assemble: $(objects)
 	@echo "Building"
 link: $(output)
 
-
 libpa.a: $(objects)
 	$(LD) $(LDFLAGS) $< -static -o $@
 # link_windows: $(objects)
