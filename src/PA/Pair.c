@@ -54,11 +54,13 @@ PAResult PAPairPerformPutNode(struct PAPair Pair)
     // return pair;
 }
 
-struct PAPair PAPairPerformPutNeigh(struct PAPair Pair, struct PAElement Neigh)
+PAResult PAPairPerformPutNeigh(struct PAPair Pair)
 {
+	PAResult result;
+	return result;
     // struct PAPair pair;
-    Pair.neigh = Neigh;
-    return Pair;
+    //Pair.neigh = Neigh;
+    //return Pair;
     // return pair;
 }
 PAResult PAPairPerformRuin(struct PAPair Pair)

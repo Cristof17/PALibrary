@@ -22,6 +22,7 @@ PAResult PAElementPerformConstruct(struct PAData Data, struct PAFeature Feature,
 PAResult PAElementPerformCopy()
 {
 	PAResult result;
+	return result;
 	//struct PAElement copy;
 	// copy=PAElementPerformConstruct(Element.index, Element.type, Element.status);
 	// copy=PAElementPerformInit(Element);
