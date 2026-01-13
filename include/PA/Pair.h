@@ -9,7 +9,7 @@ PAResult PAPairPerformConstruct();
 PAResult PAPairPerformInit(struct PAPair);
 PAResult PAPairPerformCopy(struct PAPair);
 PAResult PAPairPerformPutNode(struct PAPair);
-struct PAPair PAPairPerformPutNeigh(struct PAPair);
+PAResult PAPairPerformPutNeigh(struct PAPair);
 PAResult PAPairPerformRuin(struct PAPair);
 PAResult PAPairPerformDelete(struct PAPair);
 //typedef struct PAPair Pair;
