@@ -7,9 +7,9 @@
 
 // struct PATree;
 // struct PATree PATreeConstruct(struct OPAResult);
-struct PATree PATreePerformConstruct(struct PACount N, struct PACount M, struct PASeries Adj, struct PAElement Sursa);
+PAResult PATreePerformConstruct(struct PACount N, struct PACount M);
 struct PATree PATreePerformInit(struct PATree);
-struct PATree PATreePerformCopy(struct PATree);
+PAResult PATreePerformCopy();
 PAResult PATreePerformPutCount(struct PACount, struct PACount);
 // struct PATree PATreePutList(struct PATree, struct PAList);
 PAResult PATreePerformPutElement();
