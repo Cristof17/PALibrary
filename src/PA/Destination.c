@@ -40,7 +40,7 @@ PAResult PADestinationPerformInit()
 //    destination.element = Element;
  //   return destination;
 }
-PAResult PADestinationPerformDelete(struct PADestination Destination)
+PAResult PADestinationPerformDelete()
 {
     PAResult result;
     return result;
