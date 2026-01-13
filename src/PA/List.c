@@ -27,7 +27,7 @@ PAResult PAListPerformInit()
     //return list;
 }
 PAResult PAListPerformCopy()
-
+{
 	PAResult result;
 	return result;
     //struct PAList copy;
@@ -55,8 +55,8 @@ PAResult PAListPerformPutArrayList(struct ArrayList Adj)
 	return result;
     // struct PAList list;
     // return list;
-    List.adj = Adj;
-    return List;
+    //List.adj = Adj;
+    //return List;
 }
 // struct PAResult PAListAddElement÷(struct PAList List, struct PAElement )
 // {÷
