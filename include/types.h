@@ -131,11 +131,12 @@ struct PAList {
 	struct PACount m;
 	struct ArrayList adj;
 };
+// struct BFSPorce
+
 struct PAInput {
 	struct PACount n;
 	struct PACount m;
 	struct PAElement source;
-	struct PAList adj;//f
 };
 struct BFSRecord {
 struct PACount n;
@@ -165,23 +166,22 @@ struct BFSInput {
 	struct PACount n;
 	struct PACount m;
 	struct PAElement source;
-	struct PAList adj;
 };
 struct BFSOutput {
-    struct BFSRecord result;
+	struct BFSRecord result;
 };
 // struct Output {
-// //	struct PARezultat rezultat;
-// //	struct BFSOutput outputBFS;
-// };
+	// //	struct PARezultat rezultat;
+	// //	struct BFSOutput outputBFS;
+	// };
 struct PASeries {
 	struct PACount progression;
 	struct PAList adj[BLK_SIZE];
 };
-//struct PASeries
-//{
-//
-//};
+	//struct PASeries
+	//{
+		//
+		//};
 struct PATree  {
 	struct PACount n;
 	struct PACount m;
@@ -191,9 +191,9 @@ struct PATree  {
 struct PALink {
 	struct PAPair p;
 };
-// struct PAResult {
-// 	PA_INT code;
-// };
+		// struct PAResult {
+			// 	PA_INT code;
+			// };
 struct Adaptee {
 	struct ArrayList list;
 };
@@ -208,7 +208,7 @@ struct Target {
 	//struct Adapter adapter;
 };
 struct BuilderProduct {
-    struct PATree tree;
+	struct PATree tree;
 };
 struct Builder {
 	// struct NormalTree NormalTree;
@@ -216,33 +216,36 @@ struct Builder {
 	struct BuilderProduct Product;
 };
 struct Director {
-    struct Builder builder;
+	struct Builder builder;
 };
 struct PANormalTree {
-    struct PAList adj;
+	struct PAList adj;
 };
 struct PATransposeTree {
 	struct PAList adj_trans;
 };
 struct Iterator  {
-    struct PASeries series;
+	struct PASeries series;
 };
 struct Aggregate {
 	struct Iterator iterator;
 };
 struct ConcreteBuilder {
-    struct Builder builder;
+	struct Builder builder;
 };
 struct ConcreteIterator  {
-    PAInt position;
+	PAInt position;
 };
 struct ConcreteAggregate {
-    struct ConcreteIterator iterator;
+	struct ConcreteIterator iterator;
 };
-// struct BuilderProduct{
-// };
+			// struct BuilderProduct{
+				// };
 struct BFSProcedure {
 	// struct PATree tree;
 	struct BFSInput input;
+	struct PAList adj;
+	// struct 
+	
 };
-#endif
+				#endif
