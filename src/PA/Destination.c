@@ -9,30 +9,36 @@
 #endif
 // #include "Destination.h"
 
-struct PADestination PADestinationPerformConstruct(struct PAElement Element)
+PAResult PADestinationPerformConstruct()
 {
-    struct PADestination destination;
-    return destination;
+	PAResult result;
+	return result;
+    //struct PADestination destination;
+    //return destination;
 }
-struct PADestination PADestinationPerformCopy(struct PADestination Destination)
+PAResult PADestinationPerformCopy()
 {
+	PAResult result;
+	return result;
 //	struct PADestination destination;
 //	destination =
-	struct PADestination copy;
+	//struct PADestination copy;
 	// copy=PADestinationPerformConstruct(Destination.element);
 	// copy=PADestinationPerformInit(Destination);
-	return copy;
+	//return copy;
 }
-PAResult PADestinationPerformRuin(struct PADestination Destination)
+PAResult PADestinationPerformRuin()
 {
     PAResult result;
     return result;
 }
-struct PADestination PADestinationPerformInit(struct PADestination Destination)
+PAResult PADestinationPerformInit()
 {
-    struct PADestination destination;
+	PAResult result;
+	return result;
+//    struct PADestination destination;
 //    destination.element = Element;
-    return destination;
+ //   return destination;
 }
 PAResult PADestinationPerformDelete(struct PADestination Destination)
 {

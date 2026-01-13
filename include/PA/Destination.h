@@ -6,10 +6,10 @@
 
 
 // struct PADestination;
-struct PADestination PADestinationPerformConstruct(struct PAElement);
-struct PADestination PADestinationPerformCopy(struct PADestination);
-struct PADestination PADestinationPerformInit(struct PADestination);
-PAResult PADestinationPerformRuin(struct PADestination);
+PAResult PADestinationPerformConstruct();
+PAResult PADestinationPerformCopy();
+PAResult PADestinationPerformInit();
+PAResult PADestinationPerformRuin();
 PAResult PADestinationPerformDelete(struct PADestination);
 //struct PADestination PADataPutElement(struct PADestination,struct PAElement);
 #endif

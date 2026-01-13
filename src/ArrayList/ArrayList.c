@@ -32,17 +32,20 @@
 // 	List.index = Data;
 // 	return List;
 // }
-// struct ArrayList ArrayListPerformCopy(struct ArrayList List)
-// {
-// 	struct ArrayList copy;
+
+PAResult ArrayListPerformCopy()
+{
+// 	//struct ArrayList copy;
 // 	// copt
 // 	// copy. 
 // 	// copy = ArrayListPefr
 // 	// copy = ArrayListPerformConstruct(;)
 // 	// copy. 
-// 	copy = ArrayListPerformConstruct();
-// 	copy = ArrayList
-// }
+// 	//copy = ArrayListPerformConstruct();
+// 	//copy = ArrayList
+	PAResult result;
+	return result;
+}
 // struct PAData ArrayListGet(struct PAData[],PAInt);
 // struct PARecord ArrayListPerformArrange(PAInt)
 // {
@@ -139,30 +142,34 @@ struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], struct ArrayL
 	struct ArrayList list;
 	return list;
 }
-struct ArrayList ArrayListPerformInit(struct ArrayList List)
+PAResult ArrayListPerformInit()
 {
+	PAResult result;
+	return result;
 	// srt
-	struct ArrayList list;
-	list = ArrayListPerformConstruct(List.objects,List.place);
-//	List.place = PADataPerformCopy(Data);
+	//struct ArrayList list;
+	//list = ArrayListPerformConstruct(List.objects,List.place);
+//	//List.place = PADataPerformCopy(Data);
 	//use a design pattern
-	return list;
+	//return list;
 }
-struct ArrayList ArrayListPerformCopy(struct ArrayList List)
-{
-//	struct ArrayList Lost;
-	struct ArrayList copy;
-	copy = ArrayListPerformConstruct(List.objects,List.place);
-	copy = ArrayListPerformInit(List);
-//	return Lost;
-	return copy;
-}
-PAResult ArrayListPerformRuin(struct ArrayList List)
+//	PAResult ArrayListPerformCopy()
+//	{
+//		PAResult result;
+//		return result;
+//	//	struct ArrayList Lost;
+//		//struct ArrayList copy;
+//		//copy = ArrayListPerformConstruct(List.objects,List.place);
+//		//copy = ArrayListPerformInit(List);
+//	//	return Lost;
+//		//return copy;
+//	}
+PAResult ArrayListPerformRuin()
 {
 	PAResult result = { PARESULT_SUCCESS } ;
 	return result;
 }
-PAResult ArrayListPerformDelete(struct ArrayList List)
+PAResult ArrayListPerformDelete()
 {
 	PAResult result = { PARESULT_SUCCESS };
 	return result;

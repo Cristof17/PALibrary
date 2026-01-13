@@ -7,11 +7,11 @@
 // struct ArrayList;
 //typedef struct ArrayList ArrayList;
  struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], struct ArrayListPosition);
- struct ArrayList ArrayListPerformInit(struct ArrayList);
- struct ArrayList ArrayListPerformCopy(struct ArrayList);
+PAResult ArrayListPerformInit();
+PAResult ArrayListPerformCopy();
 // struc  ArrayListPerformRuin(struct ArrayList List);
- PAResult ArrayListPerformRuin(struct ArrayList);
- PAResult ArrayListPerformDelete(struct ArrayList);
+ PAResult ArrayListPerformRuin();
+ PAResult ArrayListPerformDelete();
 // struct ArrayList ArrayListPerformDelete(struct ArrayList List);
 // struct PAData ArrayListGet(struct PAData[],PAInt);
 // struct PARecord ArrayListPerformArrange(PAInt);
