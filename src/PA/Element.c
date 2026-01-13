@@ -35,26 +35,32 @@ PAResult PAElementPerformRuin()
     PAResult result;
     return result;
 }
-struct PAElement PAElementPerformInit(struct PAElement Element)
+PAResult PAElementPerformInit()
 {
-    struct PAElement element;
+    //struct PAElement element;
     // element. = Element.Index;
-    element.status = Element.status;
-    element.type = Element.type;
-    element.index = Element.index;
-    return element;
+    //element.status = Element.status;
+    //element.type = Element.type;
+    //element.index = Element.index;
+    //return element;
+	PAResult result;
+	return result;
 }
-struct PAElement PAElementPerformPutStatus(struct PAElement Element, struct PAStatus Status)
+PAResult PAElementPerformPutStatus(struct PAStatus Status)
 {
+	PAResult result;
+	return result;
     // struct PAElement element;
-    Element.status = Status;
-    return Element;
+    //Element.status = Status;
+    //return Element;
 }
-struct PAElement PAElementPerformPutData(struct PAElement Element, struct PAData Index)
+PAResult PAElementPerformPutData(struct PAData Index)
 {
-    struct PAElement element;
-    Element.index = Index;
-    return element;
+	PAResult result;
+	return result;
+//    struct PAElement element;
+//    Element.index = Index;
+//    return element;
 }
 //struct PAElement PAElementPerformPutDestination(struct PAElement Element, struct PADestination Destination)
 //{
@@ -65,14 +71,16 @@ struct PAElement PAElementPerformPutData(struct PAElement Element, struct PAData
 //     Element.
 //     return element;
 // }
-struct PAElement PAElementPerformPutFeature(struct PAElement Element, struct PAFeature Feature)
+PAResult PAElementPerformPutFeature(struct PAFeature Feature)
 {
+	PAResult result;
+	return result;
     // struct PAElement element;
-    Element.type = Feature;
+ //   Element.type = Feature;
     // return element;
-    return Element;
+  //  return Element;
 }
-PAResult PAElementPerformDelete(struct PAElement Element)
+PAResult PAElementPerformDelete()
 {
     PAResult result;
     return result;
