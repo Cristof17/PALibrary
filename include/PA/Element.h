@@ -12,7 +12,7 @@ struct PAElement PAElementPerformPutStatus(struct PAElement, struct PAStatus);
 struct PAElement PAElementPerformPutData(struct PAElement, struct PAData);
 struct PAElement PAElementPerformPutDestination(struct PAElement, struct PADestination);
 struct PAElement PAElementPerformPutFeature(struct PAElement, struct PAFeature);
-PAResult PAElementPerformRuin(struct PAElement);
+PAResult PAElementPerformRuin();
 PAResult PAElementPerformDelete(struct PAElement);
 // struct PANod;
 //typedef struct PAElement Element;

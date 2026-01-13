@@ -30,7 +30,7 @@ PAResult PAElementPerformCopy()
 //	copy.type=Element.type;
 	//return copy;
 }
-PAResult PAElementPerformRuin(struct PAElement Element)
+PAResult PAElementPerformRuin()
 {
     PAResult result;
     return result;
