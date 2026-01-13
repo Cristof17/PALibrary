@@ -10,6 +10,6 @@
 
 struct Adapter;
 //typedef struct Adapter Adapter;
-void Request(struct Adapter);
+void AdapterRequest();
 struct PAElement GetHead(struct Adapter);
 #endif /* ADAPTER_INCLUDE_ADAPTER_H_ */
