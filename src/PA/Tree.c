@@ -6,15 +6,17 @@
 #endif
 
 #include <types.h>
-struct PATree PATreePerformConstruct(struct PACount N, struct PACount M, struct PASeries Adj, struct PAElement Source)
+PAResult PATreePerformConstruct(struct PACount N, struct PACount M)
 {
-    struct PATree tree;
+    PAResult result;
+    return result;
+    // struct PATree tree;
     // tree = PATreePerformConstruct();
     // tree.n = N;
     // tree.m = M;
     // tree.adj = Adj;
     // tree.source = Source;
-    return tree;
+    // return tree;
 }
 struct PATree PATreePerformInit(struct PATree Tree)
 {
@@ -36,26 +38,32 @@ PAResult PATreePerformRuin(struct PATree Tree)
     // Tree.m.number = zero;
     return 0;
 }
-struct PATree PATreePerformCopy(struct PATree Tree)
+PAResult PATreePerformCopy()
 {
-    struct PATree tree;
-    tree = PATreePerformConstruct(Tree.n, Tree.m, Tree.adj, Tree.source);
-    tree = PATreePerformInit(Tree);
-    return tree;
-}
-struct PATree PATreePerformPutCount(struct PATree Tree, struct PACount Count1, struct PACount Count2)
-{
-    // s
-    Tree.n = Count1;
-    Tree.m = Count2;
-    return Tree;
-}
-struct PATree PATreePerformPutElement(struct PATree Tree, struct PAElement Source)
-{
+    PAResult result;
+    return result;
     // struct PATree tree;
-    Tree.source = Source;
+    // tree = PATreePerformConstruct(Tree.n, Tree.m, Tree.adj, Tree.source);
+    // tree = PATreePerformInit(Tree);
     // return tree;
-    return Tree;
+}
+PAResult PATreePerformPutCount(struct PACount Count1, struct PACount Count2)
+{
+    PAResult result;
+    return result;
+    // s
+    // Tree.n = Count1;
+    // Tree.m = Count2;
+    // return Tree;
+}
+PAResult PATreePerformPutElement()
+{
+    PAResult result;
+    return result;
+    // struct PATree tree;
+    // return tree;
+    // Tree.source = ÷Source;
+    // return Tree;÷
 }
 // struct PATree PATreePerformPutSize(struct PATree Tree, struct PACount Count1, struct PACount Count2) 
 // {
@@ -65,12 +73,14 @@ struct PATree PATreePerformPutElement(struct PATree Tree, struct PAElement Sourc
 //     return Tree;
 //     // return tree;
 // }
-struct PATree PATreePerformPutSeries(struct PATree Tree, struct PASeries List) 
+PAResult PATreePerformPutSeries() 
 {
+    PAResult result;
+    return result;
     // struct PATree tree;
-    Tree.adj = List;
+    // Tree.adj = List;
     // return tree;
-    return Tree;
+    // return Tree;
 }
 // struct PATree PATreePutSeries(struct PATree Tree, struct PASeries Series) {
 //     // struct PATree tree;

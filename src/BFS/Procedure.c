@@ -23,10 +23,12 @@
 //check and searcg based b on state
 // a situation that must exist before something else is possible or permitted
 //use visited flag when searching
-struct PAElement BFS(struct PAData Data)
+PAResult BFS()
 {
-    struct PAElement element;
-    return element;
+    PAResult result;
+    return result;
+    // struct PAElement element;
+    // return element;
 }
 struct BFSProcedure BFSProcedureConstruct(struct PAInput Input)
 // Construct(struct PATree Tree)
