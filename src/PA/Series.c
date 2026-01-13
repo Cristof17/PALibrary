@@ -36,15 +36,19 @@ PAResult PASeriesPerformRuin(struct PASeries Series)
     PAResult result;
     return result;
 }
-struct PASeries PASeriesPerformPutCount(struct PASeries Series, struct PACount N) 
+PAResult PASeriesPerformPutCount(struct PACount N) 
 {
+	PAResult result;
+	return result;
     // struct PASeries series;
-    Series.progression = N;
-    return Series;
+    //Series.progression = N;
+    //return Series;
     // return series;
 }
-struct PASeries PASeriesPerformPutList(struct PASeries Series, struct PAList Adj) 
+PAResult PASeriesPerformPutList(struct PAList Adj) 
 {
+	PAResult result;
+	return result;
     //Iterator
 //    struct PASeries series;
     // Series.adj = Adj;
@@ -53,7 +57,7 @@ struct PASeries PASeriesPerformPutList(struct PASeries Series, struct PAList Adj
     // return series;
     return Series;
 }
-PAResult PASeriesPerformDelete(struct PASeries Series)
+PAResult PASeriesPerformDelete()
 {
     PAResult result;
     return result;
