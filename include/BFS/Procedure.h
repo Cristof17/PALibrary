@@ -4,7 +4,7 @@
 
 // struct BFSAlgorithm;
 //typedef struct BFSAlgorithm Algorithm;
-struct PAElement BFS(struct PAData);
+PAResult BFS();
 struct BFSProcedure BFSProcedureConstruct(struct PAInput);
 struct BFSProcedure BFSProcedurePutInput(struct BFSProcedure, struct PAInput);
 // struct Algorithm BFSProcedureArrange(struct BFSAlgorithm);

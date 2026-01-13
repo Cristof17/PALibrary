@@ -10,10 +10,10 @@
 struct PATree PATreePerformConstruct(struct PACount N, struct PACount M, struct PASeries Adj, struct PAElement Sursa);
 struct PATree PATreePerformInit(struct PATree);
 struct PATree PATreePerformCopy(struct PATree);
-struct PATree PATreePerformPutCount(struct PATree, struct PACount, struct PACount);
+PAResult PATreePerformPutCount(struct PACount, struct PACount);
 // struct PATree PATreePutList(struct PATree, struct PAList);
-struct PATree PATreePerformPutElement(struct PATree, struct PAElement);
-struct PATree PATreePerformPutSeries(struct PATree, struct PASeries);
+PAResult PATreePerformPutElement();
+PAResult PATreePerformPutSeries();
 PAResult PATreePerformRuin(struct PATree);
 PAResult PATreePerformDelete(struct PATree);
 //typedef struct PATree Tree;
