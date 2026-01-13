@@ -176,6 +176,7 @@ sources=src/Input.i \
 	src/Iterator/Iterator.i \
 	src/Iterator/ConcreteAggregate.i
 
+output=libpa.a
 # build: preprocess compile assemble link_windows
 all: $(sources) build
 build: $(designs) preprocess compile assemble
@@ -193,6 +194,11 @@ compile: $(assemblies)
 assemble: $(objects)
 	mkdir $(dir $<)
 	@echo "Building"
+link: $(output)
+
+
+libpa.a: $(objects)
+	$(LD) $(LDFLAGS) $< -static -o $@
 # link_windows: $(objects)
 # 	$(LD) $(objects) -o filiename.library
 # link_macos: $(objects)
@@ -650,6 +656,7 @@ mkinstalldirs: $(srcdir)/mkinstalldirs
 #	echo "installcheck"
 
 clean:
+	rm libpa.a
 	rm src/Input.i
 	rm src/Algorithm.i
 	rm src/BFS/Procedure.i
