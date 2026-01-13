@@ -24,6 +24,8 @@ typedef uint32_t ListPosition;
 // typedef IUnknown* Objects;
 #endif
 typedef PAInt PAResult;
+#define PARESULT_SUCCESS 0
+#define PARESULT_FAIL 1
 // typedef int PAInt;
 #define BLK_SIZE 4096
 #define FIRST 1
