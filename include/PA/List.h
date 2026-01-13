@@ -7,18 +7,18 @@
 // struct PAList;
 //typedef struct PAList List;
 struct PAList PAListPerformConstruct(struct ArrayList List, struct PACount M);
-struct PAList PAListPerformInit(struct PAList);
-struct PAList PAListPerformCopy(struct PAList);
+PAResult PAListPerformInit();
+PAResult PAListPerformCopy();
 // struct PAList PAListPutElement(struct PAList, struct PAElement);
-struct PAList PAListPerformPutCount(struct PAList, struct PACount);
-struct PAList PAListPerformPutArrayList(struct PAList, struct ArrayList);
-PAResult PAListAddElement(struct PAList, struct PAElement);
-PAInt PAListSize(struct PAList);
+PAResult PAListPerformPutCount(struct PACount);
+PAResult PAListPerformPutArrayList(struct ArrayList);
+PAResult PAListAddElement(struct PAElement);
+PAInt PAListSize();
 struct PAElement PAListHead(struct PAList);
 struct PAList PAListTail(struct PAList);
 void PAListPerformPrint(struct PAList);
 PAResult PAListPerformDelete(struct PAList);
-PAResult PAListPerformRuin(struct PAList);
+PAResult PAListPerformRuin();
 void Dispose();
 
 // struct PAResult PAList(struct PAElement Head);

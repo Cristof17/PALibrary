@@ -17,34 +17,42 @@ struct PAList PAListPerformConstruct(struct ArrayList ADJ, struct PACount M)
     // list.m = M;ß`
     return list;
 }
-struct PAList PAListPerformInit(struct PAList List)
+PAResult PAListPerformInit()
 {
-    struct PAList list;
-    list.adj = List.adj;
-    list.m = List.m;
-    return list;
+	PAResult result;
+	return result;
+    //struct PAList list;
+    //list.adj = List.adj;
+    //list.m = List.m;
+    //return list;
 }
-struct PAList PAListPerformCopy(struct PAList List)
-{
-    struct PAList copy;
+PAResult PAListPerformCopy()
+
+	PAResult result;
+	return result;
+    //struct PAList copy;
     // copy = PAListPerformConstruct(List.adj, List.m);
     // copy = PAListPerformInit(List);
-    return copy;
+    //return copy;
 }
 // struct PAList PAListPutElement(struct PAList List, struct PAElement Element) {
 //     // struct PAList list;
 //     // List.
 //     return list;
 // }
-struct PAList PAListPerformPutCount(struct PAList List, struct PACount M)
+PAResult PAListPerformPutCount(struct PACount M)
 {
+	PAResult result;
+	return result;
     // struct PAList list;
-    List.m = M;
-    return List;
+    //List.m = M;
+    //return List;
     // return list;
 }
-struct PAList PAListPerformPutArrayList(struct PAList List, struct ArrayList Adj)
+PAResult PAListPerformPutArrayList(struct ArrayList Adj)
 {
+	PAResult result;
+	return result;
     // struct PAList list;
     // return list;
     List.adj = Adj;
@@ -55,7 +63,7 @@ struct PAList PAListPerformPutArrayList(struct PAList List, struct ArrayList Adj
     // struct PAResult result;
     // return result;
 // }
-PAResult PAListPerformRuin(struct PAList List)
+PAResult PAListPerformRuin()
 {
     PAResult result;
     return result;
