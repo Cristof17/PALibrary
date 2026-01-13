@@ -19,15 +19,16 @@ PAResult PAElementPerformConstruct(struct PAData Data, struct PAFeature Feature,
  //   struct PAElement element;
   //  return element;
 }
-struct PAElement PAElementPerformCopy(struct PAElement Element)
+PAResult PAElementPerformCopy()
 {
-	struct PAElement copy;
+	PAResult result;
+	//struct PAElement copy;
 	// copy=PAElementPerformConstruct(Element.index, Element.type, Element.status);
 	// copy=PAElementPerformInit(Element);
 //	copy.index=Element.index;
 //	copy.status=Element.status;
 //	copy.type=Element.type;
-	return copy;
+	//return copy;
 }
 PAResult PAElementPerformRuin(struct PAElement Element)
 {

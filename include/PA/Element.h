@@ -6,7 +6,7 @@
 
 // struct PAElement;
 PAResult PAElementPerformConstruct(struct PAData, struct PAFeature, struct PAStatus);
-struct PAElement PAElementPerformCopy(struct PAElement);
+PAResult PAElementPerformCopy();
 struct PAElement PAElementPerformInit(struct PAElement);
 struct PAElement PAElementPerformPutStatus(struct PAElement, struct PAStatus);
 struct PAElement PAElementPerformPutData(struct PAElement, struct PAData);
