@@ -22,6 +22,8 @@ PAResult PAPairPerformConstruct()
 // struct PAPair PAPairRuin(struct PAPair Pair) {
 PAResult PAPairPerformInit(struct PAPair Pair)
 {
+	PAResult result;
+	return result;
     //struct PAPair pair;
     //pair = PAPairPerformConstruct(Pair.node,Pair.neigh);
     // pair.node = Node;
