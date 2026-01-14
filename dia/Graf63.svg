@@ -213,6 +213,40 @@
         <tspan x="2012.88" y="-204.95"></tspan>
       </text>
     </g>
+    <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="2381.5" y="265.5">
+      <tspan x="2381.5" y="265.5">Flyweight</tspan>
+    </text>
+    <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="2201.5" y="152.5">
+      <tspan x="2201.5" y="152.5">Adapter</tspan>
+    </text>
+    <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="2449.5" y="320.5">
+      <tspan x="2449.5" y="320.5">Adapter</tspan>
+    </text>
+    <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="2997.5" y="556.5">
+      <tspan x="2997.5" y="556.5">Facade</tspan>
+    </text>
+    <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="3549.5" y="-323.5">
+      <tspan x="3549.5" y="-323.5">Facade</tspan>
+    </text>
+    <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="2987.26" y="795.477">
+      <tspan x="2987.26" y="795.477">Compsite</tspan>
+    </text>
+    <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="2987.26" y="795.477">
+      <tspan x="2987.26" y="795.477"></tspan>
+    </text>
+    <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="3077.5" y="812.5">
+      <tspan x="3077.5" y="812.5">Composite</tspan>
+    </text>
+    <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="2987.26" y="795.477">
+      <tspan x="2987.26" y="795.477">F</tspan>
+    </text>
+    <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="3117.36" y="832.606">
+      <tspan x="3117.36" y="832.606">Factory</tspan>
+    </text>
+    <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="2441.5" y="-267.5">
+      <tspan x="2441.5" y="-267.5">Prooty</tspan>
+      <tspan x="2441.5" y="-251.5"></tspan>
+    </text>
   </g>
   <g id="Background"/>
   <g id="Background"/>
