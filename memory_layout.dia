@@ -89,6 +89,7 @@
     </dia:attribute>
   </dia:diagramdata>
   <dia:layer name="Background" visible="true" connectable="true"/>
+  <dia:layer name="Background" visible="true" connectable="true"/>
   <dia:layer name="Background" visible="true" connectable="false"/>
   <dia:layer name="Background" visible="true" connectable="true">
     <dia:object type="Flowchart - Box" version="0" id="O0">
@@ -4015,7 +4016,7 @@ ret#</dia:string>
         <dia:real val="0.5"/>
       </dia:attribute>
       <dia:connections>
-        <dia:connection handle="0" to="O355" connection="5"/>
+        <dia:connection handle="0" to="O359" connection="5"/>
         <dia:connection handle="1" to="O106" connection="4"/>
       </dia:connections>
     </dia:object>
@@ -4043,7 +4044,7 @@ ret#</dia:string>
         <dia:real val="0.5"/>
       </dia:attribute>
       <dia:connections>
-        <dia:connection handle="0" to="O354" connection="5"/>
+        <dia:connection handle="0" to="O358" connection="5"/>
         <dia:connection handle="1" to="O106" connection="4"/>
       </dia:connections>
     </dia:object>
@@ -10156,12 +10157,12 @@ titip nume(){
         <dia:point val="32.9901,59.0793"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="32.9901,57.5068;46.5451,59.4793"/>
+        <dia:rectangle val="32.9408,57.4575;41.4226,59.5779"/>
       </dia:attribute>
       <dia:attribute name="text">
         <dia:composite type="text">
           <dia:attribute name="string">
-            <dia:string>#const int a = 40#</dia:string>
+            <dia:string>#int a = 40#</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
             <dia:font family="sans" style="0" name="Helvetica"/>
@@ -10426,13 +10427,13 @@ titip nume(){
         <dia:point val="71.1472,55.6302"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="71.1472,53.2702;80.2197,78.4552"/>
+        <dia:rectangle val="71.1472,53.1962;80.2937,78.6032"/>
       </dia:attribute>
       <dia:attribute name="text">
         <dia:composite type="text">
           <dia:attribute name="string">
             <dia:string>#.data
-f
+a
 .text
 
 .bss
@@ -12127,9 +12128,144 @@ tip nume(tip2 f){
         <dia:connection handle="0" to="O288" connection="16"/>
       </dia:connections>
     </dia:object>
+    <dia:object type="Standard - Text" version="1" id="O343">
+      <dia:attribute name="obj_pos">
+        <dia:point val="50.1449,73.4429"/>
+      </dia:attribute>
+      <dia:attribute name="obj_bb">
+        <dia:rectangle val="50.1449,72.8479;50.1449,73.5954"/>
+      </dia:attribute>
+      <dia:attribute name="text">
+        <dia:composite type="text">
+          <dia:attribute name="string">
+            <dia:string>##</dia:string>
+          </dia:attribute>
+          <dia:attribute name="font">
+            <dia:font family="sans" style="0" name="Helvetica"/>
+          </dia:attribute>
+          <dia:attribute name="height">
+            <dia:real val="0.80000000000000004"/>
+          </dia:attribute>
+          <dia:attribute name="pos">
+            <dia:point val="50.1449,73.4429"/>
+          </dia:attribute>
+          <dia:attribute name="color">
+            <dia:color val="#000000ff"/>
+          </dia:attribute>
+          <dia:attribute name="alignment">
+            <dia:enum val="0"/>
+          </dia:attribute>
+        </dia:composite>
+      </dia:attribute>
+      <dia:attribute name="valign">
+        <dia:enum val="3"/>
+      </dia:attribute>
+      <dia:connections>
+        <dia:connection handle="0" to="O284" connection="16"/>
+      </dia:connections>
+    </dia:object>
+    <dia:object type="Standard - Text" version="1" id="O344">
+      <dia:attribute name="obj_pos">
+        <dia:point val="40.3619,58.5781"/>
+      </dia:attribute>
+      <dia:attribute name="obj_bb">
+        <dia:rectangle val="40.3619,57.9831;40.3619,58.7306"/>
+      </dia:attribute>
+      <dia:attribute name="text">
+        <dia:composite type="text">
+          <dia:attribute name="string">
+            <dia:string>##</dia:string>
+          </dia:attribute>
+          <dia:attribute name="font">
+            <dia:font family="sans" style="0" name="Helvetica"/>
+          </dia:attribute>
+          <dia:attribute name="height">
+            <dia:real val="0.80000000000000004"/>
+          </dia:attribute>
+          <dia:attribute name="pos">
+            <dia:point val="40.3619,58.5781"/>
+          </dia:attribute>
+          <dia:attribute name="color">
+            <dia:color val="#000000ff"/>
+          </dia:attribute>
+          <dia:attribute name="alignment">
+            <dia:enum val="0"/>
+          </dia:attribute>
+        </dia:composite>
+      </dia:attribute>
+      <dia:attribute name="valign">
+        <dia:enum val="3"/>
+      </dia:attribute>
+    </dia:object>
+    <dia:object type="Standard - Text" version="1" id="O345">
+      <dia:attribute name="obj_pos">
+        <dia:point val="71.9476,58.3966"/>
+      </dia:attribute>
+      <dia:attribute name="obj_bb">
+        <dia:rectangle val="71.9476,57.8016;71.9476,58.5491"/>
+      </dia:attribute>
+      <dia:attribute name="text">
+        <dia:composite type="text">
+          <dia:attribute name="string">
+            <dia:string>##</dia:string>
+          </dia:attribute>
+          <dia:attribute name="font">
+            <dia:font family="sans" style="0" name="Helvetica"/>
+          </dia:attribute>
+          <dia:attribute name="height">
+            <dia:real val="0.80000000000000004"/>
+          </dia:attribute>
+          <dia:attribute name="pos">
+            <dia:point val="71.9476,58.3966"/>
+          </dia:attribute>
+          <dia:attribute name="color">
+            <dia:color val="#000000ff"/>
+          </dia:attribute>
+          <dia:attribute name="alignment">
+            <dia:enum val="0"/>
+          </dia:attribute>
+        </dia:composite>
+      </dia:attribute>
+      <dia:attribute name="valign">
+        <dia:enum val="3"/>
+      </dia:attribute>
+    </dia:object>
+    <dia:object type="Standard - Text" version="1" id="O346">
+      <dia:attribute name="obj_pos">
+        <dia:point val="71.403,58.3966"/>
+      </dia:attribute>
+      <dia:attribute name="obj_bb">
+        <dia:rectangle val="71.403,57.8016;71.403,58.5491"/>
+      </dia:attribute>
+      <dia:attribute name="text">
+        <dia:composite type="text">
+          <dia:attribute name="string">
+            <dia:string>##</dia:string>
+          </dia:attribute>
+          <dia:attribute name="font">
+            <dia:font family="sans" style="0" name="Helvetica"/>
+          </dia:attribute>
+          <dia:attribute name="height">
+            <dia:real val="0.80000000000000004"/>
+          </dia:attribute>
+          <dia:attribute name="pos">
+            <dia:point val="71.403,58.3966"/>
+          </dia:attribute>
+          <dia:attribute name="color">
+            <dia:color val="#000000ff"/>
+          </dia:attribute>
+          <dia:attribute name="alignment">
+            <dia:enum val="0"/>
+          </dia:attribute>
+        </dia:composite>
+      </dia:attribute>
+      <dia:attribute name="valign">
+        <dia:enum val="3"/>
+      </dia:attribute>
+    </dia:object>
   </dia:layer>
   <dia:layer name="Background" visible="true" connectable="true">
-    <dia:object type="Flowchart - Box" version="0" id="O343">
+    <dia:object type="Flowchart - Box" version="0" id="O347">
       <dia:attribute name="obj_pos">
         <dia:point val="87.625,1.13048"/>
       </dia:attribute>
@@ -12174,7 +12310,7 @@ tip nume(tip2 f){
         </dia:composite>
       </dia:attribute>
     </dia:object>
-    <dia:object type="Flowchart - Box" version="0" id="O344">
+    <dia:object type="Flowchart - Box" version="0" id="O348">
       <dia:attribute name="obj_pos">
         <dia:point val="87.625,3.61356"/>
       </dia:attribute>
@@ -12219,7 +12355,7 @@ tip nume(tip2 f){
         </dia:composite>
       </dia:attribute>
     </dia:object>
-    <dia:object type="Flowchart - Box" version="0" id="O345">
+    <dia:object type="Flowchart - Box" version="0" id="O349">
       <dia:attribute name="obj_pos">
         <dia:point val="87.625,6.09664"/>
       </dia:attribute>
@@ -12264,7 +12400,7 @@ tip nume(tip2 f){
         </dia:composite>
       </dia:attribute>
     </dia:object>
-    <dia:object type="Flowchart - Box" version="0" id="O346">
+    <dia:object type="Flowchart - Box" version="0" id="O350">
       <dia:attribute name="obj_pos">
         <dia:point val="87.625,8.57972"/>
       </dia:attribute>
@@ -12309,7 +12445,7 @@ tip nume(tip2 f){
         </dia:composite>
       </dia:attribute>
     </dia:object>
-    <dia:object type="Flowchart - Box" version="0" id="O347">
+    <dia:object type="Flowchart - Box" version="0" id="O351">
       <dia:attribute name="obj_pos">
         <dia:point val="95.3975,-1.64036"/>
       </dia:attribute>
@@ -12354,7 +12490,7 @@ tip nume(tip2 f){
         </dia:composite>
       </dia:attribute>
     </dia:object>
-    <dia:object type="Flowchart - Box" version="0" id="O348">
+    <dia:object type="Flowchart - Box" version="0" id="O352">
       <dia:attribute name="obj_pos">
         <dia:point val="98.154,-1.64036"/>
       </dia:attribute>
@@ -12399,7 +12535,7 @@ tip nume(tip2 f){
         </dia:composite>
       </dia:attribute>
     </dia:object>
-    <dia:object type="Flowchart - Box" version="0" id="O349">
+    <dia:object type="Flowchart - Box" version="0" id="O353">
       <dia:attribute name="obj_pos">
         <dia:point val="100.911,-1.64036"/>
       </dia:attribute>
@@ -12444,7 +12580,7 @@ tip nume(tip2 f){
         </dia:composite>
       </dia:attribute>
     </dia:object>
-    <dia:object type="Flowchart - Box" version="0" id="O350">
+    <dia:object type="Flowchart - Box" version="0" id="O354">
       <dia:attribute name="obj_pos">
         <dia:point val="92.5733,-1.64036"/>
       </dia:attribute>
@@ -12489,7 +12625,7 @@ tip nume(tip2 f){
         </dia:composite>
       </dia:attribute>
     </dia:object>
-    <dia:object type="Standard - Line" version="0" id="O351">
+    <dia:object type="Standard - Line" version="0" id="O355">
       <dia:attribute name="obj_pos">
         <dia:point val="98.852,-3.99536"/>
       </dia:attribute>
@@ -12513,10 +12649,10 @@ tip nume(tip2 f){
         <dia:real val="0.5"/>
       </dia:attribute>
       <dia:connections>
-        <dia:connection handle="1" to="O350" connection="3"/>
+        <dia:connection handle="1" to="O354" connection="3"/>
       </dia:connections>
     </dia:object>
-    <dia:object type="Standard - Line" version="0" id="O352">
+    <dia:object type="Standard - Line" version="0" id="O356">
       <dia:attribute name="obj_pos">
         <dia:point val="99.852,-4.14536"/>
       </dia:attribute>
@@ -12540,10 +12676,10 @@ tip nume(tip2 f){
         <dia:real val="0.5"/>
       </dia:attribute>
       <dia:connections>
-        <dia:connection handle="1" to="O347" connection="16"/>
+        <dia:connection handle="1" to="O351" connection="16"/>
       </dia:connections>
     </dia:object>
-    <dia:object type="Standard - Line" version="0" id="O353">
+    <dia:object type="Standard - Line" version="0" id="O357">
       <dia:attribute name="obj_pos">
         <dia:point val="100.757,-3.63835"/>
       </dia:attribute>
@@ -12567,10 +12703,10 @@ tip nume(tip2 f){
         <dia:real val="0.5"/>
       </dia:attribute>
       <dia:connections>
-        <dia:connection handle="1" to="O348" connection="2"/>
+        <dia:connection handle="1" to="O352" connection="2"/>
       </dia:connections>
     </dia:object>
-    <dia:object type="Flowchart - Box" version="0" id="O354">
+    <dia:object type="Flowchart - Box" version="0" id="O358">
       <dia:attribute name="obj_pos">
         <dia:point val="105.22,4.3096"/>
       </dia:attribute>
@@ -12615,7 +12751,7 @@ tip nume(tip2 f){
         </dia:composite>
       </dia:attribute>
     </dia:object>
-    <dia:object type="Flowchart - Box" version="0" id="O355">
+    <dia:object type="Flowchart - Box" version="0" id="O359">
       <dia:attribute name="obj_pos">
         <dia:point val="105.22,1.4096"/>
       </dia:attribute>
@@ -12660,7 +12796,7 @@ tip nume(tip2 f){
         </dia:composite>
       </dia:attribute>
     </dia:object>
-    <dia:object type="Standard - Text" version="1" id="O356">
+    <dia:object type="Standard - Text" version="1" id="O360">
       <dia:attribute name="obj_pos">
         <dia:point val="88.625,2.08048"/>
       </dia:attribute>
@@ -12693,10 +12829,10 @@ tip nume(tip2 f){
         <dia:enum val="3"/>
       </dia:attribute>
       <dia:connections>
-        <dia:connection handle="0" to="O343" connection="16"/>
+        <dia:connection handle="0" to="O347" connection="16"/>
       </dia:connections>
     </dia:object>
-    <dia:object type="Standard - Text" version="1" id="O357">
+    <dia:object type="Standard - Text" version="1" id="O361">
       <dia:attribute name="obj_pos">
         <dia:point val="88.625,2.08048"/>
       </dia:attribute>
@@ -12729,10 +12865,10 @@ tip nume(tip2 f){
         <dia:enum val="3"/>
       </dia:attribute>
       <dia:connections>
-        <dia:connection handle="0" to="O343" connection="16"/>
+        <dia:connection handle="0" to="O347" connection="16"/>
       </dia:connections>
     </dia:object>
-    <dia:object type="Standard - Arc" version="0" id="O358">
+    <dia:object type="Standard - Arc" version="0" id="O362">
       <dia:attribute name="obj_pos">
         <dia:point val="92.5733,-0.690359"/>
       </dia:attribute>
@@ -12756,11 +12892,11 @@ tip nume(tip2 f){
         <dia:real val="0.5"/>
       </dia:attribute>
       <dia:connections>
-        <dia:connection handle="0" to="O350" connection="7"/>
-        <dia:connection handle="1" to="O343" connection="2"/>
+        <dia:connection handle="0" to="O354" connection="7"/>
+        <dia:connection handle="1" to="O347" connection="2"/>
       </dia:connections>
     </dia:object>
-    <dia:object type="Standard - Text" version="1" id="O359">
+    <dia:object type="Standard - Text" version="1" id="O363">
       <dia:attribute name="obj_pos">
         <dia:point val="101.411,-1.64036"/>
       </dia:attribute>
@@ -12793,10 +12929,10 @@ tip nume(tip2 f){
         <dia:enum val="3"/>
       </dia:attribute>
       <dia:connections>
-        <dia:connection handle="0" to="O349" connection="1"/>
+        <dia:connection handle="0" to="O353" connection="1"/>
       </dia:connections>
     </dia:object>
-    <dia:object type="Standard - Line" version="0" id="O360">
+    <dia:object type="Standard - Line" version="0" id="O364">
       <dia:attribute name="obj_pos">
         <dia:point val="105.22,6.2096"/>
       </dia:attribute>
@@ -12820,11 +12956,11 @@ tip nume(tip2 f){
         <dia:real val="0.5"/>
       </dia:attribute>
       <dia:connections>
-        <dia:connection handle="0" to="O354" connection="11"/>
-        <dia:connection handle="1" to="O346" connection="4"/>
+        <dia:connection handle="0" to="O358" connection="11"/>
+        <dia:connection handle="1" to="O350" connection="4"/>
       </dia:connections>
     </dia:object>
-    <dia:object type="Standard - Line" version="0" id="O361">
+    <dia:object type="Standard - Line" version="0" id="O365">
       <dia:attribute name="obj_pos">
         <dia:point val="105.22,3.3096"/>
       </dia:attribute>
@@ -12848,11 +12984,11 @@ tip nume(tip2 f){
         <dia:real val="0.5"/>
       </dia:attribute>
       <dia:connections>
-        <dia:connection handle="0" to="O355" connection="11"/>
-        <dia:connection handle="1" to="O346" connection="15"/>
+        <dia:connection handle="0" to="O359" connection="11"/>
+        <dia:connection handle="1" to="O350" connection="15"/>
       </dia:connections>
     </dia:object>
-    <dia:object type="Standard - Line" version="0" id="O362">
+    <dia:object type="Standard - Line" version="0" id="O366">
       <dia:attribute name="obj_pos">
         <dia:point val="77.5724,2.6382"/>
       </dia:attribute>
@@ -12880,7 +13016,7 @@ tip nume(tip2 f){
         <dia:connection handle="1" to="O84" connection="15"/>
       </dia:connections>
     </dia:object>
-    <dia:object type="Standard - Line" version="0" id="O363">
+    <dia:object type="Standard - Line" version="0" id="O367">
       <dia:attribute name="obj_pos">
         <dia:point val="77.5724,5.53819"/>
       </dia:attribute>
@@ -12908,7 +13044,7 @@ tip nume(tip2 f){
         <dia:connection handle="1" to="O84" connection="4"/>
       </dia:connections>
     </dia:object>
-    <dia:object type="Flowchart - Box" version="0" id="O364">
+    <dia:object type="Flowchart - Box" version="0" id="O368">
       <dia:attribute name="obj_pos">
         <dia:point val="89.7448,-23.1325"/>
       </dia:attribute>
@@ -12953,7 +13089,7 @@ tip nume(tip2 f){
         </dia:composite>
       </dia:attribute>
     </dia:object>
-    <dia:object type="Standard - Text" version="1" id="O365">
+    <dia:object type="Standard - Text" version="1" id="O369">
       <dia:attribute name="obj_pos">
         <dia:point val="-60.8933,-4.38861"/>
       </dia:attribute>
@@ -12986,7 +13122,7 @@ tip nume(tip2 f){
         <dia:enum val="3"/>
       </dia:attribute>
     </dia:object>
-    <dia:object type="Standard - Text" version="1" id="O366">
+    <dia:object type="Standard - Text" version="1" id="O370">
       <dia:attribute name="obj_pos">
         <dia:point val="-41.3284,-46.635"/>
       </dia:attribute>
@@ -13019,7 +13155,7 @@ tip nume(tip2 f){
         <dia:enum val="3"/>
       </dia:attribute>
     </dia:object>
-    <dia:object type="Standard - Text" version="1" id="O367">
+    <dia:object type="Standard - Text" version="1" id="O371">
       <dia:attribute name="obj_pos">
         <dia:point val="-38.7092,-47.809"/>
       </dia:attribute>
