@@ -3,7 +3,7 @@
 #define INCLUDE_TYPES_H_
 
 #include "defs.h"
-
+//struct Client;
 struct PADestination;
 struct PAArrow;
 // struct PAInput;
@@ -202,6 +202,8 @@ struct Adapter {
 };
 struct IteratorClient {
 	struct PATree tree;
+};
+struct AdapterClient {
 };
 struct Target {
 	struct PASeries series;
