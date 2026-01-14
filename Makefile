@@ -43,6 +43,10 @@ objects= obj/Input.o \
 	obj/PA/PAShape.o \
 	obj/PA/PATextView.o \
 	obj/ArrayList/ArrayList.o \
+	obj/State/Context.c \
+	obj/State/State.c \
+	obj/State/ConcreteStateA.c \
+	obj/State/ConcreteStateB.c \
 	obj/ArrayList/ArrayListPosition.o \
 	obj/Iterator/Client.o \
 	obj/Iterator/ConcreteIterator.o \
@@ -83,6 +87,10 @@ assemblies= src/Input.s \
 	src/PA/PALine.s \
 	src/PA/PAShape.s \
 	src/PA/PATextView.s \
+	src/State/Context.c \
+	src/State/State.c \
+	src/State/ConcreteStateA.c \
+	src/State/ConcreteStateB.c \
 	src/ArrayList/ArrayList.s \
 	src/ArrayList/ArrayListPosition.s \
 	src/Iterator/Client.s \
