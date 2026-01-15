@@ -6,6 +6,11 @@
 #endif
 
 #include <types.h>
+struct PACount PATreeSize()
+{
+    struct PACount size;
+    return size;
+}
 PAResult PATreePerformConstruct(struct PACount N, struct PACount M)
 {
     PAResult result;
