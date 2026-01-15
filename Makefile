@@ -304,107 +304,107 @@ src/Prototype/ConcretePrototype1.c: include/Prototype/ConcretePrototype1.h
 src/Prototype/ConcretePrototype2.c: include/Prototype/ConcretePrototype2.h
 
 src/Input.i : src/Input.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/Algorithm.i : src/Algorithm.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/BFS/Procedure.i : src/BFS/Procedure.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Input.i : src/PA/Input.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Output.i : src/PA/Output.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/BFS/Record.i : src/BFS/Record.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/Output.i : src/Output.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Data.i : src/PA/Data.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Destination.i : src/PA/Destination.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Tree.i : src/PA/Tree.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/List.i : src/PA/List.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Link.i : src/PA/Link.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Arrow.i : src/PA/Arrow.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Element.i : src/PA/Element.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Count.i : src/PA/Count.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Pair.i : src/PA/Pair.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Result.i : src/PA/Result.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Series.i : src/PA/Series.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Status.i : src/PA/Status.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Feature.i : src/PA/Feature.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Value.i : src/PA/Value.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Resource.i : src/PA/Resource.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/Builder/Director.i : src/Builder/Director.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/Builder/Builder.i : src/Builder/Builder.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/Builder/Product.i : src/Builder/Product.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/Builder/ConcreteBuilder.i : src/Builder/ConcreteBuilder.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/NormalTree.i : src/PA/NormalTree.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/TransposeTree.i : src/PA/TransposeTree.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/Adapter/Client.i : src/Adapter/Client.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/Adapter/Target.i : src/Adapter/Target.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/Adapter/Adapter.i : src/Adapter/Adapter.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/Adapter/Adaptee.i : src/Adapter/Adaptee.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/PADrawingEditor.i : src/PA/PADrawingEditor.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/PALine.i : src/PA/PALine.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/PAShape.i : src/PA/PAShape.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/PATextView.i : src/PA/PATextView.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/ArrayList/ArrayList.i : src/ArrayList/ArrayList.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/ArrayList/ArrayListPosition.i : src/ArrayList/ArrayListPosition.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/Iterator/Client.i : src/Iterator/Client.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/Iterator/ConcreteIterator.i : src/Iterator/ConcreteIterator.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/Iterator/Iterator.i : src/Iterator/Iterator.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/Iterator/ConcreteAggregate.i : src/Iterator/ConcreteAggregate.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 
 src/Factory/Product.i: src/Factory/Product.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/Factory/Creator.i: src/Factory/Creator.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/Factory/ConcreteProduct.i:src/Factory/ConcreteProduct.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/Factory/ConcreteCreator.i:src/Factory/ConcreteCreator.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 
 src/Prototype/Client.i: src/Prototype/Client.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/Prototype/Prototype.i: src/Prototype/Prototype.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/Prototype/ConcretePrototype1.i: src/Prototype/ConcretePrototype1.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/Prototype/ConcretePrototype2.i: src/Prototype/ConcretePrototype2.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
 
 src/Input.s: src/Input.i
 	$(CC) -S $< -o $@
@@ -511,164 +511,165 @@ src/Prototype/ConcretePrototype1.s: src/Prototype/ConcretePrototype1.c
 src/Prototype/ConcretePrototype2.s: src/Prototype/ConcretePrototype2.c
 	$(CC)  -S $< -o $@
 
+ASFLAGS=-m$(ARCH)
 obj/Input.o: src/Input.s 
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Algorithm.o: src/Algorithm.s 
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/BFS/Procedure.o: src/BFS/Procedure.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Input.o: src/PA/Input.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Output.o: src/PA/Output.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/BFS/Record.o:src/BFS/Record.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Output.o: src/Output.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Value.o: src/PA/Value.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Data.o: src/PA/Data.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Tree.o: src/PA/Tree.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 #obj/PAIndex.o: src/PAIndex.c include/PAIndex.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
 obj/PA/List.o: src/PA/List.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Link.o: src/PA/Link.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Arrow.o: src/PA/Arrow.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Element.o: src/PA/Element.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Count.o: src/PA/Count.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Pair.o: src/PA/Pair.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Result.o: src/PA/Result.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Series.o: src/PA/Series.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Status.o: src/PA/Status.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Feature.o: src/PA/Feature.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Destination.o : src/PA/Destination.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Resource.o: src/PA/Resource.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 #obj/PA/Value.o: src/PA/Value.c include/PA/Value.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
 obj/Builder/Product.o: src/Builder/Product.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Builder/ConcreteBuilder.o: src/Builder/ConcreteBuilder.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Builder/Director.o: src/Builder/Director.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Builder/Builder.o: src/Builder/Builder.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/NormalTree.o: src/PA/NormalTree.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/TransposeTree.o: src/PA/TransposeTree.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Adapter/Client.o: src/Adapter/Client.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Adapter/Target.o: src/Adapter/Target.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Adapter/Adapter.o: src/Adapter/Adapter.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Adapter/Adaptee.o: src/Adapter/Adaptee.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/PADrawingEditor.o: src/PA/PADrawingEditor.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/PALine.o: src/PA/PALine.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/PAShape.o: src/PA/PAShape.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/PATextView.o: src/PA/PATextView.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/ArrayList/ArrayList.o: src/ArrayList/ArrayList.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/ArrayList/ArrayListPosition.o : src/ArrayList/ArrayListPosition.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 #obj/ArrayList/ArrayListObject.o : src/ArrayList/ArrayListObject.c include/ArrayList/ArrayListObject.h include/types.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
 obj/Iterator/Client.o: src/Iterator/Client.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Iterator/ConcreteIterator.o: src/Iterator/ConcreteIterator.s 
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Iterator/Iterator.o: src/Iterator/Iterator.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Iterator/ConcreteAggregate.o: src/Iterator/ConcreteAggregate.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 
 obj/Factory/Product.o: src/Factory/Product.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Factory/Creator.o: src/Factory/Creator.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Factory/ConcreteProduct.o:src/Factory/ConcreteProduct.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Factory/ConcreteCreator.o:src/Factory/ConcreteCreator.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 
 obj/Prototype/Client.o: src/Prototype/Client.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Prototype/Prototype.o: src/Prototype/Prototype.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Prototype/ConcretePrototype1.o: src/Prototype/ConcretePrototype1.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Prototype/ConcretePrototype2.o: src/Prototype/ConcretePrototype2.s
 	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 
 #src/Input.c: 
 #src/Algorithm.c: 
