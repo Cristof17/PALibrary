@@ -194,20 +194,20 @@ struct PALink {
 		// struct PAResult {
 			// 	PA_INT code;
 			// };
-// struct FactoryProduct {
+struct FactoryProduct {
 
-// };
-// struct FactoryConcreteProduct 
-// {
+};
+struct FactoryConcreteProduct 
+{
 
-// };
-// struct FactoryCreator {
+};
+struct FactoryCreator {
 
-// };
-// struct FactoryConcreteCreator 
-// {
+};
+struct FactoryConcreteCreator 
+{
 
-// };
+};
 struct Adaptee {
 	struct ArrayList list;
 };
