@@ -194,18 +194,34 @@ struct PALink {
 		// struct PAResult {
 			// 	PA_INT code;
 			// };
+// struct FactoryProduct {
+
+// };
+// struct FactoryConcreteProduct 
+// {
+
+// };
+// struct FactoryCreator {
+
+// };
+// struct FactoryConcreteCreator 
+// {
+
+// };
 struct Adaptee {
 	struct ArrayList list;
 };
 struct Adapter {
+	struct Adaptee adaptee;
 	struct PAList list;
 };
 struct IteratorClient {
 	struct PATree tree;
 };
 struct AdapterClient {
+	struct AdapterTarget target;
 };
-struct Target {
+struct AdapterTarget {
 	struct PASeries series;
 	//struct Adapter adapter;
 };

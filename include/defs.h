@@ -8,6 +8,7 @@
 typedef PAInt PAResult;
 #else
 #define PAInt int
+#define PAResource int
 #define PABool int
 #endif
 #ifndef _WIN95
@@ -23,7 +24,7 @@ typedef uint32_t ListPosition;
 #elif defined _WIN95
 // typedef IUnknown* Objects;
 #endif
-typedef PAInt PAResult;
+typedef PAResource PAResult;
 #define PARESULT_SUCCESS 0
 #define PARESULT_FAIL 1
 // typedef int PAInt;

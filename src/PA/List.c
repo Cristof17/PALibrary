@@ -68,6 +68,17 @@ PAResult PAListPerformRuin()
     PAResult result;
     return result;
 }
+PAResult PAListPut(PAResource,struct PAData)
+{
+    PAResult result;
+    return result;
+}
+PAResource PAListGet(PAData)
+{
+    PAResource resource;
+    return resource;
+}
+PAResult PAListPutFirst(PAResource);
 void Dispose() 
 {
 
