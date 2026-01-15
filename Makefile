@@ -852,6 +852,10 @@ clean:
 	-rm src/Iterator/ConcreteIterator.i
 	-rm src/Iterator/Iterator.i
 	-rm src/Iterator/ConcreteAggregate.i
+	-rm src/Prototype/Client.i
+	-rm src/Prototype/Prototype.i
+	-rm src/Prototype/ConcretePrototype1.i
+	-rm src/Prototype/ConcretePrototype2.i
 	-rm src/Input.s
 	-rm src/Algorithm.s
 	-rm src/BFS/Procedure.s
@@ -895,6 +899,10 @@ clean:
 	-rm src/Iterator/ConcreteIterator.s
 	-rm src/Iterator/Iterator.s
 	-rm src/Iterator/ConcreteAggregate.s
+	-rm src/Prototype/Client.s
+	-rm src/Prototype/Prototype.s
+	-rm src/Prototype/ConcretePrototype1.s
+	-rm src/Prototype/ConcretePrototype2.s
 	-rm obj/Input.o
 	-rm obj/Algorithm.o
 	-rm obj/BFS/Procedure.o
