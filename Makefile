@@ -259,13 +259,13 @@ ${subdirs}:
 # 	${MAKE} arch=${arch}
 # 	${MAKE} arch=${arch}
 # 	${MA
-build: $(output)
+build: $(objects)
 # 	mkdir obj/Director/
 # 	mkdir obj/Builder/
 # 	mkdir $(OBJ_DIR)
 # 	mkdir $(patsubst, )
 # 	#
-	echo "build"
+# 	echo "build"
 # 	@echo "Build"
 # 	@echo "$<"
 # preprocess: $(sources)
@@ -731,8 +731,8 @@ obj/Prototype/ConcretePrototype2.o: src/Prototype/ConcretePrototype2.s
 # 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 
-libpa.a: $(objects)
-	$(LD) $< -o $@
+# libpa.a: $(objects)
+# 	$(LD) $< -o $@
 #src/Input.c: 
 #src/Algorithm.c: 
 #src/BFS/Procedure.c: 
@@ -808,6 +808,7 @@ mkinstalldirs: $(srcdir)/mkinstalldirs
 #	echo "installcheck"
 
 clean:
+	${MAKE} ARCH=${host-type} build
 # 	-rm libpa.a
 	-rm src/Input.i
 	-rm src/Algorithm.i
@@ -939,20 +940,20 @@ clean:
 	-rm obj/Iterator/ConcreteIterator.o
 	-rm obj/Iterator/Iterator.o
 	-rm obj/Iterator/ConcreteAggregate.o
-	-rm -r obj/BFS/
-	-rm -r obj/Adapter/
-	-rm -r obj/Iterator/
+# 	-rm -r obj/BFS/
 # 	-rm -r obj/Adapter/
-	-rm -r obj/Builder/
-	-rm -r obj/ArrayList/
-	-rm -r obj/Prototype/
-	-rm -r obj/Bridge/
-	-rm -r obj/PA/
-	-rm -r obj/
-	#rm obj/Iterator/
-	#rm obj/Adapter/
-	#rm obj/ArrayList/
-	#rm obj/BFS/
+# 	-rm -r obj/Iterator/
+# 	-rm -r obj/Adapter/
+# 	-rm -r obj/Builder/
+# 	-rm -r obj/ArrayList/
+# 	-rm -r obj/Prototype/
+# 	-rm -r obj/Bridge/
+# 	-rm -r obj/PA/
+# 	-rm -r obj/
+# 	#rm obj/Iterator/
+# 	#rm obj/Adapter/
+# 	#rm obj/ArrayList/
+# 	#rm obj/BFS/
 #rm objInput.o
 #rm $(objects)
 #obj/Input.
