@@ -276,8 +276,8 @@ assemble: $(objects)
 	@echo "Building"
 link: $(output)
 
-libpa.a: $(objects)
-	$(LD) $(LDFLAGS) $(objects) -static -o $@
+# libpa.a: $(objects)
+# 	$(LD) $(LDFLAGS) $(objects) -static -o $@
 # link_windows: $(objects)
 # 	$(LD) $(objects) -o filiename.library
 # link_macos: $(objects)
@@ -731,6 +731,8 @@ obj/Prototype/ConcretePrototype2.o: src/Prototype/ConcretePrototype2.s
 # 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 
+libpa.a: $(objects)
+	$(LD) $< -o $@
 #src/Input.c: 
 #src/Algorithm.c: 
 #src/BFS/Procedure.c: 
@@ -806,7 +808,7 @@ mkinstalldirs: $(srcdir)/mkinstalldirs
 #	echo "installcheck"
 
 clean:
-	-rm libpa.a
+# 	-rm libpa.a
 	-rm src/Input.i
 	-rm src/Algorithm.i
 	-rm src/BFS/Procedure.i
