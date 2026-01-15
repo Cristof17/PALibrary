@@ -164,6 +164,15 @@ PAResult ArrayListPerformInit()
 //	//	return Lost;
 //		//return copy;
 //	}
+ArrayListObject ArrayListGet(ListPosition)
+{
+	ArrayListObject object;
+	return object;
+}
+void ArrayListPut(ListPosition, ArrayListObject)
+{
+	
+}
 PAResult ArrayListPerformRuin()
 {
 	PAResult result = { PARESULT_SUCCESS } ;
