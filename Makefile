@@ -503,9 +503,14 @@ src/Factory/ConcreteCreator.s:src/Factory/ConcreteCreator.i
 	$(CC)  -S $< -o $@
 
 src/Prototype/Client.s: src/Prototype/Client.c
+	$(CC)  -S $< -o $@
 src/Prototype/Prototype.s: src/Prototype/Prototype.c
+	$(CC)  -S $< -o $@
 src/Prototype/ConcretePrototype1.s: src/Prototype/ConcretePrototype1.c
+	$(CC)  -S $< -o $@
 src/Prototype/ConcretePrototype2.s: src/Prototype/ConcretePrototype2.c
+	$(CC)  -S $< -o $@
+	
 obj/Input.o: src/Input.s 
 	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
