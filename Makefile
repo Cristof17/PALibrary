@@ -455,6 +455,15 @@ src/Iterator/Iterator.s: src/Iterator/Iterator.i
 src/Iterator/ConcreteAggregate.s: src/Iterator/ConcreteAggregate.i
 	$(CC)  -S $< -o $@
 
+src/Factory/Product.s: src/Factory/Product.i
+	$(CC)  -S $< -o $@
+src/Factory/Creator.s: src/Factory/Creator.i
+	$(CC)  -S $< -o $@
+src/Factory/ConcreteProduct.s:src/Factory/ConcreteProduct.i
+	$(CC)  -S $< -o $@
+src/Factory/ConcreteCreator.s:src/Factory/ConcreteCreator.i
+	$(CC)  -S $< -o $@
+
 obj/Input.o: src/Input.s 
 	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
