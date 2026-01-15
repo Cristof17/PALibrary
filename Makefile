@@ -940,7 +940,7 @@ clean:
 	-rm -r obj/BFS/
 	-rm -r obj/Adapter/
 	-rm -r obj/Iterator/
-	-rm -r obj/Adapter/
+# 	-rm -r obj/Adapter/
 	-rm -r obj/Builder/
 	-rm -r obj/ArrayList/
 	-rm -r obj/Prototype/

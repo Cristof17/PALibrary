@@ -1,8 +1,3 @@
-# 1 "src/Prototype/ConcretePrototype1.c"
-# 1 "<built-in>" 1
-# 1 "<built-in>" 3
-# 466 "<built-in>" 3
-# 1 "<command line>" 1
-# 1 "<built-in>" 2
-# 1 "src/Prototype/ConcretePrototype1.c" 2
 
+
+src/Prototype/ConcretePrototype1.c
