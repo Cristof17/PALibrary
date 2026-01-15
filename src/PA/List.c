@@ -68,7 +68,7 @@ PAResult PAListPerformRuin()
     PAResult result;
     return result;
 }
-PAResult PAListPut(PAResource,struct PAData)
+PAResult PAListPut(PAResource Resource,struct PAData Data)
 {
     PAResult result;
     return result;

@@ -166,12 +166,12 @@ PAResult ArrayListPerformInit()
 //	//	return Lost;
 //		//return copy;
 //	}
-ArrayListObject ArrayListGet(ListPosition)
+ArrayListObject ArrayListGet(ListPosition Position)
 {
 	ArrayListObject object;
 	return object;
 }
-void ArrayListPut(ListPosition, ArrayListObject)
+void ArrayListPut(ListPosition Position, ArrayListObject ListObject)
 {
 
 }
