@@ -7,10 +7,10 @@
 
 // #include <defs.h>
 // struct PAData;
-struct PAData PADataPerformConstruct(struct PAResource Resource);
+struct PAData PADataPerformConstruct(PAResource Resource);
 struct PAData PADataPerformInit(struct PAData);
 struct PAData PADataPerformCopy(struct PAData);
-struct PAData PADataPerformPutResource(struct PAData, struct PAResource);
+struct PAData PADataPerformPutResource(struct PAData, PAResource);
 PAResult PADataPerformRuin(struct PAData);
 PAResult PADataPerformDelete(struct PAData);
 //typedef struct PAData Data;

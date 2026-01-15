@@ -14,7 +14,7 @@ PAResult PAListPerformPutCount(struct PACount);
 PAResult PAListPerformPutArrayList(struct ArrayList);
 PAResult PAListAddElement(struct PAElement);
 PAResult PAListPut(PAResource,struct PAData);
-PAResource PAListGet(PAData);
+PAResource PAListGet(struct PAData);
 PAInt PAListSize();
 struct PAElement PAListHead(struct PAList);
 struct PAList PAListTail(struct PAList);

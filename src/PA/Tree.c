@@ -26,9 +26,9 @@ PAResult PATreePerformConstruct(struct PACount N, struct PACount M)
 struct PATree PATreePerformInit(struct PATree Tree)
 {
     struct PATree tree;
-    tree.n.number = 2;
-    tree.m.number = 3;
-    tree.source.index.resource.value = 4;
+    // tree.n.number = 2;
+    // tree.m.number = 3;
+    // tree.source.index.resource.value = 4;
     // tree.adj = PASeriesPerformInit(tree.adj);
     // tree.source.;
     // tree.adj = ()

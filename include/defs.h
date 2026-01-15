@@ -10,6 +10,7 @@ typedef PAInt PAResult;
 #define PAInt int
 #define PAResource int
 #define PABool int
+#define PADataDefault 1
 typedef int PAResult;
 #define PARESULT_SUCCESS 0
 #define PARESULT_FAIL 1

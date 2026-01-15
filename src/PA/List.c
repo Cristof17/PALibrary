@@ -73,7 +73,7 @@ PAResult PAListPut(PAResource,struct PAData)
     PAResult result;
     return result;
 }
-PAResource PAListGet(PAData)
+PAResource PAListGet(struct PAData Data)
 {
     PAResource resource;
     return resource;
