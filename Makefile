@@ -123,6 +123,10 @@ designs=src/Input.c \
 	src/Adapter/Adapter.c \
 	src/Adapter/Adaptee.c \
 	src/PA/PADrawingEditor.c \
+	src/Factory/Product.c \
+	src/Factory/Creator.c \
+	src/Factory/ConcreteProduct.c \
+	src/Factory/ConcreteCreator.c \
 	src/PA/PALine.c \
 	src/PA/PAShape.c \
 	src/PA/PATextView.c \
@@ -273,6 +277,10 @@ src/Iterator/Client.c: include/Iterator/Client.h include/defs.h
 src/Iterator/ConcreteIterator.c: include/Iterator/ConcreteIterator.h include/defs.h
 src/Iterator/Iterator.c: include/Iterator/Iterator.h include/defs.h
 src/Iterator/ConcreteAggregate.c:  include/Iterator/ConcreteAggregate.h include/defs.h
+src/Factory/Product.c: include/Factory/Product.h
+src/Factory/Creator.c: include/Factory/Creator.h
+src/Factory/ConcreteProduct.c: include/Factory/ConcreteProduct.h
+src/Factory/ConcreteCreator.c:include/Factory/ConcreteCreator.h
 
 src/Input.i : src/Input.c
 	$(CC) $(CPPFLAGS) -E $< > $@
@@ -579,6 +587,11 @@ obj/Iterator/Iterator.o: src/Iterator/Iterator.s
 obj/Iterator/ConcreteAggregate.o: src/Iterator/ConcreteAggregate.s
 	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
+
+src/Factory/Product.o: src/Factory/Product.s
+src/Factory/Creator.o: src/Factory/Creator.s
+src/Factory/ConcreteProduct.o:src/Factory/ConcreteProduct.s
+src/Factory/ConcreteCreator.o:src/Factory/ConcreteCreator.s
 
 #src/Input.c: 
 #src/Algorithm.c: 
