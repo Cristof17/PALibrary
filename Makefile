@@ -207,12 +207,13 @@ subdirs= obj/ \
 	obj/PA/
 
 ifeq (0,${MAKELEVEL})
-host-type 	:= $(shell uname -a)
+host-type 	:= $(shell arch)
 MAKE := ${MAKE} ARCH=${host-type}
 endif
 
 ${subdirs}:
-	${MAKE} -C $@ all
+# 	mkdir $<
+# 	${MAKE} -C $@ all
 
 output=libpa.a
 # build: preprocess compile assemble link_windows
@@ -895,16 +896,16 @@ clean:
 	-rm obj/Iterator/ConcreteIterator.o
 	-rm obj/Iterator/Iterator.o
 	-rm obj/Iterator/ConcreteAggregate.o
-	-rm obj/BFS/
-	-rm obj/Adapter/
-	-rm obj/Iterator/
-	-rm obj/Adapter/
-	-rm obj/Builder/
-	-rm obj/ArrayList/
-	-rm obj/Prototype/
-	-rm obj/Bridge/
-	-rm obj/PA/
-	-rm obj/
+	-rm -r obj/BFS/
+	-rm -r obj/Adapter/
+	-rm -r obj/Iterator/
+	-rm -r obj/Adapter/
+	-rm -r obj/Builder/
+	-rm -r obj/ArrayList/
+	-rm -r obj/Prototype/
+	-rm -r obj/Bridge/
+	-rm -r obj/PA/
+	-rm -r obj/
 	#rm obj/Iterator/
 	#rm obj/Adapter/
 	#rm obj/ArrayList/
