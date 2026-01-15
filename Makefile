@@ -196,10 +196,17 @@ sources=src/Input.i \
 	src/Prototype/ConcretePrototype1.i \
 	src/Prototype/ConcretePrototype2.i
 
+ifeq (0,${MAKELEVEL})
+host-type := $(shell uname -a)
+MAKE := ${MAKE} ARCH=${host-type}
+
+${subdirs}:
+	${MAKE} -C $@ all
+	
 output=libpa.a
 # build: preprocess compile assemble link_windows
-all: $(sources) build
-build: $(designs) preprocess compile assemble
+all: $(designs) $(sources) $(assemblies) $(objects)
+build: $(output)
 # 	mkdir obj/Director/
 # 	mkdir obj/Builder/
 # 	mkdir $(OBJ_DIR)
@@ -511,7 +518,7 @@ src/Prototype/ConcretePrototype1.s: src/Prototype/ConcretePrototype1.c
 src/Prototype/ConcretePrototype2.s: src/Prototype/ConcretePrototype2.c
 	$(CC)  -S $< -o $@
 
-ASFLAGS=-m$(ARCH)
+ASFLAGS=-arch $(ARCH)
 obj/Input.o: src/Input.s 
 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
