@@ -197,12 +197,13 @@ sources=src/Input.i \
 	src/Prototype/ConcretePrototype2.i
 
 ifeq (0,${MAKELEVEL})
-host-type := $(shell uname -a)
+host-type 	:= $(shell uname -a)
 MAKE := ${MAKE} ARCH=${host-type}
+endif
 
 ${subdirs}:
 	${MAKE} -C $@ all
-	
+
 output=libpa.a
 # build: preprocess compile assemble link_windows
 all: $(designs) $(sources) $(assemblies) $(objects)
