@@ -6,7 +6,7 @@
 
 // struct ArrayList;
 //typedef struct ArrayList ArrayList;
- struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], struct ArrayListPosition);
+struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], struct ArrayListPosition);
 PAResult ArrayListPerformInit();
 PAResult ArrayListPerformCopy();
 // struc  ArrayListPerformRuin(struct ArrayList List);
