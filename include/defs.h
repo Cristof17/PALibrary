@@ -15,6 +15,7 @@ typedef int PAResult;
 #define PARESULT_FAIL 1
 #endif
 #ifndef _WIN95
+typedef int ListSize;
 typedef int ArrayListObject;
 typedef int ListPosition;
 // typedef 
