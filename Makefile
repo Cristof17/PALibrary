@@ -399,11 +399,11 @@ src/Factory/ConcreteCreator.i:src/Factory/ConcreteCreator.c
 
 src/Prototype/Client.i: src/Prototype/Client.c
 	$(CC) $(CPPFLAGS) -E $< > $@
-src/Prototype/Client.i: src/Prototype/Prototype.c
+src/Prototype/Prototype.i: src/Prototype/Prototype.c
 	$(CC) $(CPPFLAGS) -E $< > $@
-src/Prototype/Client.i: src/Prototype/ConcretePrototype1.c
+src/Prototype/ConcretePrototype1.i: src/Prototype/ConcretePrototype1.c
 	$(CC) $(CPPFLAGS) -E $< > $@
-src/Prototype/Client.i: src/Prototype/ConcretePrototype2.c
+src/Prototype/ConcretePrototype2.i: src/Prototype/ConcretePrototype2.c
 	$(CC) $(CPPFLAGS) -E $< > $@
 
 src/Input.s: src/Input.i
@@ -510,7 +510,7 @@ src/Prototype/ConcretePrototype1.s: src/Prototype/ConcretePrototype1.c
 	$(CC)  -S $< -o $@
 src/Prototype/ConcretePrototype2.s: src/Prototype/ConcretePrototype2.c
 	$(CC)  -S $< -o $@
-	
+
 obj/Input.o: src/Input.s 
 	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
