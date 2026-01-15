@@ -8,7 +8,7 @@
 //struct PAData {
 //
 //}
-struct PAData PADataPerformConstruct(struct PAResource Resource)
+struct PAData PADataPerformConstruct(PAResource Resource)
 {
     struct PAData data = { PADataDefault };
     return data;
