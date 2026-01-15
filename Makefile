@@ -200,7 +200,6 @@ subdirs= obj/ \
 	obj/BFS/ \
 	obj/Adapter/ \
 	obj/Iterator/ \
-	obj/Adapter/ \
 	obj/Builder/ \
 	obj/ArrayList/ \
 	obj/Prototype/ \
