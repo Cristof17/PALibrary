@@ -6,7 +6,9 @@
 
 // struct ArrayList;
 //typedef struct ArrayList ArrayList;
+
 ArrayListObject ArrayListGet(ListPosition);
+ListSize ArrayListPerformSize();
 void ArrayListPut(ListPosition, ArrayListObject);
 struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], struct ArrayListPosition);
 PAResult ArrayListPerformInit();
@@ -26,5 +28,4 @@ ArrayListObject ArrayListPerformPutFirst(struct ArrayList, ArrayListObject);
 ArrayListObject ArrayListPerformPutLast(struct ArrayList, ArrayListObject);
 // struct PAData
 // struct PAData ArrayList
-PAInt ArrayListPerformSize(struct ArrayList);
 #endif
