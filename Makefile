@@ -47,7 +47,11 @@ objects= obj/Input.o \
 	obj/Iterator/Client.o \
 	obj/Iterator/ConcreteIterator.o \
 	obj/Iterator/Iterator.o \
-	obj/Iterator/ConcreteAggregate.o
+	obj/Iterator/ConcreteAggregate.o \
+	obj/Prototype/Client.o \
+	obj/Prototype/Prototype.o \
+	obj/Prototype/ConcretePrototype1.o \
+	obj/Prototype/ConcretePrototype2.o 
 assemblies= src/Input.s \
 	src/Algorithm.s \
 	src/BFS/Procedure.s \
@@ -88,7 +92,11 @@ assemblies= src/Input.s \
 	src/Iterator/Client.s \
 	src/Iterator/ConcreteIterator.s \
 	src/Iterator/Iterator.s \
-	src/Iterator/ConcreteAggregate.s
+	src/Iterator/ConcreteAggregate.s \
+	src/Prototype/Client.s \
+	src/Prototype/Prototype.s \
+	src/Prototype/ConcretePrototype1.s \
+	src/Prototype/ConcretePrototype2.s
 designs=src/Input.c \
 	src/Algorithm.c \
 	src/BFS/Procedure.c \
@@ -135,7 +143,11 @@ designs=src/Input.c \
 	src/Iterator/Client.c \
 	src/Iterator/ConcreteIterator.c \
 	src/Iterator/Iterator.c \
-	src/Iterator/ConcreteAggregate.c
+	src/Iterator/ConcreteAggregate.c \
+	src/Prototype/Client.c \
+	src/Prototype/Prototype.c \
+	src/Prototype/ConcretePrototype1.c \
+	src/Prototype/ConcretePrototype2.c
 sources=src/Input.i \
 	src/Algorithm.i \
 	src/BFS/Procedure.i \
@@ -178,7 +190,11 @@ sources=src/Input.i \
 	src/Iterator/Client.i \
 	src/Iterator/ConcreteIterator.i \
 	src/Iterator/Iterator.i \
-	src/Iterator/ConcreteAggregate.i
+	src/Iterator/ConcreteAggregate.i \
+	src/Prototype/Client.i \
+	src/Prototype/Prototype.i \
+	src/Prototype/ConcretePrototype1.i \
+	src/Prototype/ConcretePrototype2.i
 
 output=libpa.a
 # build: preprocess compile assemble link_windows
@@ -282,6 +298,11 @@ src/Factory/Creator.c: include/Factory/Creator.h
 src/Factory/ConcreteProduct.c: include/Factory/ConcreteProduct.h
 src/Factory/ConcreteCreator.c:include/Factory/ConcreteCreator.h
 
+src/Prototype/Client.c: include/Prototype/Client.h
+src/Prototype/Prototype.c: include/Prototype/Prototype.h
+src/Prototype/ConcretePrototype1.c: include/Prototype/ConcretePrototype1.h
+src/Prototype/ConcretePrototype2.c: include/Prototype/ConcretePrototype2.h
+
 src/Input.i : src/Input.c
 	$(CC) $(CPPFLAGS) -E $< > $@
 src/Algorithm.i : src/Algorithm.c
@@ -384,7 +405,7 @@ src/Prototype/Client.i: src/Prototype/ConcretePrototype1.c
 	$(CC) $(CPPFLAGS) -E $< > $@
 src/Prototype/Client.i: src/Prototype/ConcretePrototype2.c
 	$(CC) $(CPPFLAGS) -E $< > $@
-	
+
 src/Input.s: src/Input.i
 	$(CC) -S $< -o $@
 src/Algorithm.s: src/Algorithm.i
@@ -481,6 +502,10 @@ src/Factory/ConcreteProduct.s:src/Factory/ConcreteProduct.i
 src/Factory/ConcreteCreator.s:src/Factory/ConcreteCreator.i
 	$(CC)  -S $< -o $@
 
+src/Prototype/Client.s: src/Prototype/Client.c
+src/Prototype/Prototype.s: src/Prototype/Prototype.c
+src/Prototype/ConcretePrototype1.s: src/Prototype/ConcretePrototype1.c
+src/Prototype/ConcretePrototype2.s: src/Prototype/ConcretePrototype2.c
 obj/Input.o: src/Input.s 
 	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
@@ -624,6 +649,19 @@ obj/Factory/ConcreteProduct.o:src/Factory/ConcreteProduct.s
 	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 obj/Factory/ConcreteCreator.o:src/Factory/ConcreteCreator.s
+	-mkdir $(dir $@)
+	$(CC) -c $< -o $@
+
+obj/Prototype/Client.o: src/Prototype/Client.s
+	-mkdir $(dir $@)
+	$(CC) -c $< -o $@
+obj/Prototype/Prototype.o: src/Prototype/Prototype.s
+	-mkdir $(dir $@)
+	$(CC) -c $< -o $@
+obj/Prototype/ConcretePrototype1.o: src/Prototype/ConcretePrototype1.s
+	-mkdir $(dir $@)
+	$(CC) -c $< -o $@
+obj/Prototype/ConcretePrototype2.o: src/Prototype/ConcretePrototype2.s
 	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 
