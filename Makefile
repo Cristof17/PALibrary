@@ -367,6 +367,15 @@ src/Iterator/Iterator.i : src/Iterator/Iterator.c
 src/Iterator/ConcreteAggregate.i : src/Iterator/ConcreteAggregate.c
 	$(CC) $(CPPFLAGS) -E $< > $@
 
+src/Factory/Product.i: src/Factory/Product.c
+	$(CC) $(CPPFLAGS) -E $< > $@
+src/Factory/Creator.i: src/Factory/Creator.c
+	$(CC) $(CPPFLAGS) -E $< > $@
+src/Factory/ConcreteProduct.i:src/Factory/ConcreteProduct.c
+	$(CC) $(CPPFLAGS) -E $< > $@
+src/Factory/ConcreteCreator.i:src/Factory/ConcreteCreator.c
+	$(CC) $(CPPFLAGS) -E $< > $@
+
 
 src/Input.s: src/Input.i
 	$(CC) -S $< -o $@
