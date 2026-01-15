@@ -940,6 +940,10 @@ clean:
 	-rm obj/Iterator/ConcreteIterator.o
 	-rm obj/Iterator/Iterator.o
 	-rm obj/Iterator/ConcreteAggregate.o
+	-rm obj/Prototype/Client.o
+	-rm obj/Prototype/Prototype.o
+	-rm obj/Prototype/ConcretePrototype1.o
+	-rm obj/Prototype/ConcretePrototype2.o
 # 	-rm -r obj/BFS/
 # 	-rm -r obj/Adapter/
 # 	-rm -r obj/Iterator/
