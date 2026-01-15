@@ -489,6 +489,19 @@ src/Prototype/ConcretePrototype1.i: src/Prototype/ConcretePrototype1.c
 src/Prototype/ConcretePrototype2.i: src/Prototype/ConcretePrototype2.c
 	$(CPP) $(CPPFLAGS) -E $< > $@
 
+src/Bridge/Client.i: src/Bridge/Client.c
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Bridge/Abstraction.i: src/Bridge/Abstraction.c
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Bridge/Implementor.i: src/Prototype/Implementor.c
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Bridge/ConcreteImplementorA.i: src/Prototype/ConcreteImplementorA.c
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Bridge/ConcreteImplementorB.i: src/bridge/ConcreteImplementorB.c
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Bridge/RefinedAbstraction.i: src/Bridge/RefinedAbstraction.c
+	$(CPP) $(CPPFLAGS) -E $< > $@
+
 src/Input.s: src/Input.i
 	$(CC) -S $< -o $@
 src/Algorithm.s: src/Algorithm.i
@@ -585,16 +598,39 @@ src/Factory/ConcreteProduct.s:src/Factory/ConcreteProduct.i
 src/Factory/ConcreteCreator.s:src/Factory/ConcreteCreator.i
 	$(CC)  -S $< -o $@
 
-src/Prototype/Client.s: src/Prototype/Client.c
+src/Prototype/Client.s: src/Prototype/Client.i
 	$(CC)  -S $< -o $@
-src/Prototype/Prototype.s: src/Prototype/Prototype.c
+src/Prototype/Prototype.s: src/Prototype/Prototype.i
 	$(CC)  -S $< -o $@
-src/Prototype/ConcretePrototype1.s: src/Prototype/ConcretePrototype1.c
+src/Prototype/ConcretePrototype1.s: src/Prototype/ConcretePrototype1.i
 	$(CC)  -S $< -o $@
-src/Prototype/ConcretePrototype2.s: src/Prototype/ConcretePrototype2.c
+src/Prototype/ConcretePrototype2.s: src/Prototype/ConcretePrototype2.i
 	$(CC)  -S $< -o $@
 
-ASFLAGS=-arch $(ARCH)
+src/Bridge/Client.s: src/Bridge/Client.i
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+src/Bridge/Abstraction.s: src/Bridge/Abstraction.i
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+src/Bridge/Implementor.s: src/Prototype/Implementor.i
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+src/Bridge/ConcreteImplementorA.s: src/Prototype/ConcreteImplementorA.i
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+src/bridge/concreteimplementor.s: src/bridge/concreteimplementorb.i
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+src/Bridge/RefinedAbstraction.s: src/Bridge/RefinedAbstraction.i
+	$(AS) $(ASFLAGS) $< -o $@
+
+ASFLAGS=
+ifeq ($(ARCH),arm64)
+	ASFLAGS=-arch $(ARCH)
+else
+	ASFLAGS=-march=armv8.3-a
+endif
 obj/Input.o: src/Input.s 
 # 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
@@ -752,6 +788,24 @@ obj/Prototype/ConcretePrototype1.o: src/Prototype/ConcretePrototype1.s
 	$(AS) $(ASFLAGS) $< -o $@
 obj/Prototype/ConcretePrototype2.o: src/Prototype/ConcretePrototype2.s
 # 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+
+obj/Bridge/Client.o: src/Bridge/Client.s
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+obj/Bridge/Abstraction.o: src/Bridge/Abstraction.s
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+obj/Bridge/Implementor.o: src/Prototype/Implementor.s
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+obj/Bridge/ConcreteImplementorA.o: src/Prototype/ConcreteImplementorA.s
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+obj/bridge/concreteimplementor.o: src/bridge/concreteimplementorb.s
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+obj/Bridge/RefinedAbstraction.o: src/Bridge/RefinedAbstraction.s
 	$(AS) $(ASFLAGS) $< -o $@
 
 # libpa.a: $(objects)
