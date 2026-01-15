@@ -196,6 +196,17 @@ sources=src/Input.i \
 	src/Prototype/ConcretePrototype1.i \
 	src/Prototype/ConcretePrototype2.i
 
+subdirs= obj/ \
+	obj/BFS/ \
+	obj/Adapter/ \
+	obj/Iterator/ \
+	obj/Adapter/ \
+	obj/Builder/ \
+	obj/ArrayList/ \
+	obj/Prototype/ \
+	obj/Bridge/ \
+	obj/PA/
+
 ifeq (0,${MAKELEVEL})
 host-type 	:= $(shell uname -a)
 MAKE := ${MAKE} ARCH=${host-type}
@@ -206,7 +217,7 @@ ${subdirs}:
 
 output=libpa.a
 # build: preprocess compile assemble link_windows
-all: $(designs) $(sources) $(assemblies) $(objects)
+all: $(designs) $(sources) $(assemblies) $(subdirs) $(objects)
 build: $(output)
 # 	mkdir obj/Director/
 # 	mkdir obj/Builder/
@@ -885,6 +896,16 @@ clean:
 	-rm obj/Iterator/ConcreteIterator.o
 	-rm obj/Iterator/Iterator.o
 	-rm obj/Iterator/ConcreteAggregate.o
+	-rm obj/BFS/
+	-rm obj/Adapter/
+	-rm obj/Iterator/
+	-rm obj/Adapter/
+	-rm obj/Builder/
+	-rm obj/ArrayList/
+	-rm obj/Prototype/
+	-rm obj/Bridge/
+	-rm obj/PA/
+	-rm obj/
 	#rm obj/Iterator/
 	#rm obj/Adapter/
 	#rm obj/ArrayList/
