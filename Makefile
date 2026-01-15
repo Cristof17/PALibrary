@@ -195,6 +195,15 @@ sources=src/Input.i \
 	src/Prototype/Prototype.i \
 	src/Prototype/ConcretePrototype1.i \
 	src/Prototype/ConcretePrototype2.i
+objdirs= obj/ \
+	obj/BFS/ \
+	obj/Adapter/ \
+	obj/Iterator/ \
+	obj/Builder/ \
+	obj/ArrayList/ \
+	obj/Prototype/ \
+	obj/Bridge/ \
+	obj/PA/
 
 subdirs= obj/ \
 	obj/BFS/ \
@@ -211,13 +220,45 @@ host-type 	:= $(shell arch)
 MAKE := ${MAKE} ARCH=${host-type}
 endif
 
-${subdirs}:
+# ${objdirs}
+# ${objdirs}:
 # 	mkdir $<
-# 	${MAKE} -C $@ all
-
+# obj/BFS/: obj
+# 	mkdir $<
+# obj/Adapter/: obj
+# 	mkdir $<
+# obj/Iterator/: obj
+# 	mkdir $<
+# obj/Builder/: obj
+# 	mkdir $<
+# obj/ArrayList: obj
+# 	mkdir $<
+# obj/Prototype: obj
+# 	mkdir $<
+# obj/Bridge: obj
+# 	mkdir $<
+# obj/PA: obj
+# 	mkdir $<
+	
+# 	mkdir $<
+# ${objdirs}:`
 output=libpa.a
 # build: preprocess compile assemble link_windows
-all: $(designs) $(sources) $(assemblies) $(subdirs) $(objects)
+all: ${objdirs}
+	${MAKE} $(designs) 
+	${MAKE} $(sources)
+	${MAKE} $(assemblies)
+	${MAKE} ${objects}
+${subdirs}:
+	mkdir $@
+# 	${MAKE} -C $@ all
+
+# 	${MAKE} $(objdirs)
+# 	${MAKE} $(objects)
+# 	${MAKE} arch=${arch}
+# 	${MAKE} arch=${arch}
+# 	${MAKE} arch=${arch}
+# 	${MA
 build: $(output)
 # 	mkdir obj/Director/
 # 	mkdir obj/Builder/
@@ -532,162 +573,162 @@ src/Prototype/ConcretePrototype2.s: src/Prototype/ConcretePrototype2.c
 
 ASFLAGS=-arch $(ARCH)
 obj/Input.o: src/Input.s 
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/Algorithm.o: src/Algorithm.s 
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/BFS/Procedure.o: src/BFS/Procedure.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Input.o: src/PA/Input.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Output.o: src/PA/Output.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/BFS/Record.o:src/BFS/Record.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/Output.o: src/Output.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Value.o: src/PA/Value.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Data.o: src/PA/Data.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Tree.o: src/PA/Tree.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 #obj/PAIndex.o: src/PAIndex.c include/PAIndex.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
 obj/PA/List.o: src/PA/List.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Link.o: src/PA/Link.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Arrow.o: src/PA/Arrow.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Element.o: src/PA/Element.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Count.o: src/PA/Count.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Pair.o: src/PA/Pair.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Result.o: src/PA/Result.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Series.o: src/PA/Series.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Status.o: src/PA/Status.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Feature.o: src/PA/Feature.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Destination.o : src/PA/Destination.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Resource.o: src/PA/Resource.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 #obj/PA/Value.o: src/PA/Value.c include/PA/Value.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
 obj/Builder/Product.o: src/Builder/Product.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/Builder/ConcreteBuilder.o: src/Builder/ConcreteBuilder.s
-	-mkdir $(dir $@)
+# 	-mkdir $s(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/Builder/Director.o: src/Builder/Director.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/Builder/Builder.o: src/Builder/Builder.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/NormalTree.o: src/PA/NormalTree.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/TransposeTree.o: src/PA/TransposeTree.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/Adapter/Client.o: src/Adapter/Client.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/Adapter/Target.o: src/Adapter/Target.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/Adapter/Adapter.o: src/Adapter/Adapter.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/Adapter/Adaptee.o: src/Adapter/Adaptee.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/PADrawingEditor.o: src/PA/PADrawingEditor.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/PALine.o: src/PA/PALine.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/PAShape.o: src/PA/PAShape.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/PATextView.o: src/PA/PATextView.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/ArrayList/ArrayList.o: src/ArrayList/ArrayList.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/ArrayList/ArrayListPosition.o : src/ArrayList/ArrayListPosition.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 #obj/ArrayList/ArrayListObject.o : src/ArrayList/ArrayListObject.c include/ArrayList/ArrayListObject.h include/types.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
 obj/Iterator/Client.o: src/Iterator/Client.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/Iterator/ConcreteIterator.o: src/Iterator/ConcreteIterator.s 
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/Iterator/Iterator.o: src/Iterator/Iterator.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/Iterator/ConcreteAggregate.o: src/Iterator/ConcreteAggregate.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 
 obj/Factory/Product.o: src/Factory/Product.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/Factory/Creator.o: src/Factory/Creator.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/Factory/ConcreteProduct.o:src/Factory/ConcreteProduct.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/Factory/ConcreteCreator.o:src/Factory/ConcreteCreator.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 
 obj/Prototype/Client.o: src/Prototype/Client.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/Prototype/Prototype.o: src/Prototype/Prototype.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/Prototype/ConcretePrototype1.o: src/Prototype/ConcretePrototype1.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/Prototype/ConcretePrototype2.o: src/Prototype/ConcretePrototype2.s
-	-mkdir $(dir $@)
+# 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 
 #src/Input.c: 
