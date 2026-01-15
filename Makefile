@@ -588,10 +588,18 @@ obj/Iterator/ConcreteAggregate.o: src/Iterator/ConcreteAggregate.s
 	-mkdir $(dir $@)
 	$(CC) -c $< -o $@
 
-src/Factory/Product.o: src/Factory/Product.s
-src/Factory/Creator.o: src/Factory/Creator.s
-src/Factory/ConcreteProduct.o:src/Factory/ConcreteProduct.s
-src/Factory/ConcreteCreator.o:src/Factory/ConcreteCreator.s
+obj/Factory/Product.o: src/Factory/Product.s
+	-mkdir $(dir $@)
+	$(CC) -c $< -o $@
+obj/Factory/Creator.o: src/Factory/Creator.s
+	-mkdir $(dir $@)
+	$(CC) -c $< -o $@
+obj/Factory/ConcreteProduct.o:src/Factory/ConcreteProduct.s
+	-mkdir $(dir $@)
+	$(CC) -c $< -o $@
+obj/Factory/ConcreteCreator.o:src/Factory/ConcreteCreator.s
+	-mkdir $(dir $@)
+	$(CC) -c $< -o $@
 
 #src/Input.c: 
 #src/Algorithm.c: 
