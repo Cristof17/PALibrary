@@ -376,7 +376,15 @@ src/Factory/ConcreteProduct.i:src/Factory/ConcreteProduct.c
 src/Factory/ConcreteCreator.i:src/Factory/ConcreteCreator.c
 	$(CC) $(CPPFLAGS) -E $< > $@
 
-
+src/Prototype/Client.i: src/Prototype/Client.c
+	$(CC) $(CPPFLAGS) -E $< > $@
+src/Prototype/Client.i: src/Prototype/Prototype.c
+	$(CC) $(CPPFLAGS) -E $< > $@
+src/Prototype/Client.i: src/Prototype/ConcretePrototype1.c
+	$(CC) $(CPPFLAGS) -E $< > $@
+src/Prototype/Client.i: src/Prototype/ConcretePrototype2.c
+	$(CC) $(CPPFLAGS) -E $< > $@
+	
 src/Input.s: src/Input.i
 	$(CC) -S $< -o $@
 src/Algorithm.s: src/Algorithm.i
