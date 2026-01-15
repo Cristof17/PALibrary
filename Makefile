@@ -51,7 +51,13 @@ objects= obj/Input.o \
 	obj/Prototype/Client.o \
 	obj/Prototype/Prototype.o \
 	obj/Prototype/ConcretePrototype1.o \
-	obj/Prototype/ConcretePrototype2.o 
+	obj/Prototype/ConcretePrototype2.o \
+	obj/Bridge/Client.o \
+	obj/Bridge/Implementor.o \
+	obj/Bridge/Abstraction.o \
+	obj/Bridge/RefinedAbstraction.o \
+	obj/Bridge/ConcreteImplementorA.o \
+	obj/Bridge/ConcreteImplementorB.o
 assemblies= src/Input.s \
 	src/Algorithm.s \
 	src/BFS/Procedure.s \
@@ -96,7 +102,13 @@ assemblies= src/Input.s \
 	src/Prototype/Client.s \
 	src/Prototype/Prototype.s \
 	src/Prototype/ConcretePrototype1.s \
-	src/Prototype/ConcretePrototype2.s
+	src/Prototype/ConcretePrototype2.s \
+	src/Bridge/Client.s \
+	src/Bridge/Implementor.s \
+	src/Bridge/Abstraction.s \
+	src/Bridge/RefinedAbstraction.s \
+	src/Bridge/ConcreteImplementorA.s \
+	src/Bridge/ConcreteImplementorB.s
 designs=src/Input.c \
 	src/Algorithm.c \
 	src/BFS/Procedure.c \
@@ -147,7 +159,13 @@ designs=src/Input.c \
 	src/Prototype/Client.c \
 	src/Prototype/Prototype.c \
 	src/Prototype/ConcretePrototype1.c \
-	src/Prototype/ConcretePrototype2.c
+	src/Prototype/ConcretePrototype2.c \
+	src/Bridge/Client.c \
+	src/Bridge/Implementor.c \
+	src/Bridge/Abstraction.c \
+	src/Bridge/RefinedAbstraction.c \
+	src/Bridge/ConcreteImplementorA.c \
+	src/Bridge/ConcreteImplementorB.c
 sources=src/Input.i \
 	src/Algorithm.i \
 	src/BFS/Procedure.i \
@@ -194,7 +212,13 @@ sources=src/Input.i \
 	src/Prototype/Client.i \
 	src/Prototype/Prototype.i \
 	src/Prototype/ConcretePrototype1.i \
-	src/Prototype/ConcretePrototype2.i
+	src/Prototype/ConcretePrototype2.i \
+	src/Bridge/Client.i \
+	src/Bridge/Implementor.i \
+	src/Bridge/Abstraction.i \
+	src/Bridge/RefinedAbstraction.i \
+	src/Bridge/ConcreteImplementorA.i \
+	src/Bridge/ConcreteImplementorB.i
 objdirs= obj/ \
 	obj/BFS/ \
 	obj/Adapter/ \
@@ -951,6 +975,12 @@ clean:
 	-rm obj/Prototype/Prototype.o
 	-rm obj/Prototype/ConcretePrototype1.o
 	-rm obj/Prototype/ConcretePrototype2.o
+	-rm obj/Bridge/Client.o
+	-rm obj/Bridge/Implementor.o
+	-rm obj/Bridge/Abstraction.o
+	-rm obj/Bridge/RefinedAbstraction.o
+	-rm obj/Bridge/ConcreteImplementorA.o
+	-rm obj/Bridge/ConcreteImplementorB.o
 # 	-rm -r obj/BFS/
 # 	-rm -r obj/Adapter/
 # 	-rm -r obj/Iterator/
