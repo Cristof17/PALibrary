@@ -203,8 +203,8 @@ struct Adapter {
 struct IteratorClient {
 	struct PATree tree;
 };
-struct AdapterClient {
-};
+//struct AdapterClient {
+//};
 struct Target {
 	struct PASeries series;
 	//struct Adapter adapter;
