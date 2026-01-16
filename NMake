@@ -9,7 +9,7 @@
 
 
 #build: preprocess compile link_windows
-build: $(designs) preprocess compile
+build: $(designs) preprocess compile link_windows
 # preprocess: $(sources)
 INCLUDE_DIR=C:\Users\AdministratorUser\source\repos\PALibrary\include
 SRC_DIR=C:\Users\AdministratorUser\source\repos\PALibrary\src
@@ -194,7 +194,6 @@ compile: preprocess $(objects)
 # 	$(CC) $(CFLAGS) /c $(SRC_DIR)\ /Fo:$(OBJ_DIR)/
 
 #assemble: $(objects)
-# link_windows: $(objects)
 # 	$(LD) $(objects) -o filiename.library
 # link_macos: $(objects)
 # link_linux: $(objects)
@@ -246,8 +245,12 @@ objects= $(OBJ_DIR)/Input.o \
 	$(OBJ_DIR)/Iterator/ConcreteIterator.o \
 	$(OBJ_DIR)/Iterator/Iterator.o \
 	$(OBJ_DIR)/Iterator/ConcreteAggregate.o
+link_windows: $(objects)
+#$(link) $(ldebug) $(conflags) -out:challeng.exe $** $(conlibs) lsapi32.lib
+	link $(ldebug) $(conflags) $(objects) -out:challeng.exe $(conlibs) lsapi32.lib
 link: $(objects)
-	link $(objects)
+	link $(ldebug) $(conflags) $(objects) -out:challeng.exe $(conlibs) lsapi32.lib
+#	link $(objects)
 #includedir=include
 #CFLAGS+=-I$(abspath $(includedir))
 #CFLAGS+=-I$(abspath $(includedir)/Builder)
