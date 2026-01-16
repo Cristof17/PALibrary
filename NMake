@@ -14,6 +14,7 @@ build: $(designs) preprocess compile link_windows
 INCLUDE_DIR=C:\Users\AdministratorUser\source\repos\PALibrary\include
 SRC_DIR=C:\Users\AdministratorUser\source\repos\PALibrary\src
 OBJ_DIR=C:\Users\AdministratorUser\source\repos\PALibrary\obj
+OUT_DIR=C:\Users\AdministratorUser\source\repos\PALibrary
 CFLAGS=/I$(INCLUDE_DIR) /TC
 sources=$(SRC_DIR)\Input.i \
 	$(SRC_DIR)\Algorithm.i \
@@ -247,7 +248,7 @@ objects= $(OBJ_DIR)\Input.o \
 	$(OBJ_DIR)\Iterator\ConcreteAggregate.o
 link_windows: $(objects)
 #$(link) $(ldebug) $(conflags) -out:challeng.exe $** $(conlibs) lsapi32.lib
-	link $(ldebug) $(conflags) $(objects) -out:challeng.exe $(conlibs) lsapi32.lib
+	link $(ldebug) $(conflags) $(objects) -out:$(OUT_DIR)\challeng.exe $(conlibs) lsapi32.lib
 link: $(objects)
 	link $(ldebug) $(conflags) $(objects) -out:challeng.exe $(conlibs) lsapi32.lib
 #	link $(objects)
