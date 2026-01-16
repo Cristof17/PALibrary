@@ -16,6 +16,10 @@
 #include <PA\List.h>
 #endif
 
+// int Get(int position)
+// {
+// 	return 1;
+// }
 void AdapterRequest() {
 	//struct Adaptee adaptee;
 	//AdapteeSpecificRequest(adaptee);

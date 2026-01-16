@@ -8,6 +8,7 @@
 // struct PATree;
 // struct PATree PATreeConstruct(struct OPAResult);
 PAResult PATreePerformConstruct(struct PACount N, struct PACount M);
+struct PACount PATreeSize();
 struct PATree PATreePerformInit(struct PATree);
 PAResult PATreePerformCopy();
 PAResult PATreePerformPutCount(struct PACount, struct PACount);

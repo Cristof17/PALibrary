@@ -47,7 +47,17 @@ objects= obj/Input.o \
 	obj/Iterator/Client.o \
 	obj/Iterator/ConcreteIterator.o \
 	obj/Iterator/Iterator.o \
-	obj/Iterator/ConcreteAggregate.o
+	obj/Iterator/ConcreteAggregate.o \
+	obj/Prototype/Client.o \
+	obj/Prototype/Prototype.o \
+	obj/Prototype/ConcretePrototype1.o \
+	obj/Prototype/ConcretePrototype2.o \
+	obj/Bridge/Client.o \
+	obj/Bridge/Implementor.o \
+	obj/Bridge/Abstraction.o \
+	obj/Bridge/RefinedAbstraction.o \
+	obj/Bridge/ConcreteImplementorA.o \
+	obj/Bridge/ConcreteImplementorB.o
 assemblies= src/Input.s \
 	src/Algorithm.s \
 	src/BFS/Procedure.s \
@@ -88,7 +98,17 @@ assemblies= src/Input.s \
 	src/Iterator/Client.s \
 	src/Iterator/ConcreteIterator.s \
 	src/Iterator/Iterator.s \
-	src/Iterator/ConcreteAggregate.s
+	src/Iterator/ConcreteAggregate.s \
+	src/Prototype/Client.s \
+	src/Prototype/Prototype.s \
+	src/Prototype/ConcretePrototype1.s \
+	src/Prototype/ConcretePrototype2.s \
+	src/Bridge/Client.s \
+	src/Bridge/Implementor.s \
+	src/Bridge/Abstraction.s \
+	src/Bridge/RefinedAbstraction.s \
+	src/Bridge/ConcreteImplementorA.s \
+	src/Bridge/ConcreteImplementorB.s
 designs=src/Input.c \
 	src/Algorithm.c \
 	src/BFS/Procedure.c \
@@ -123,6 +143,10 @@ designs=src/Input.c \
 	src/Adapter/Adapter.c \
 	src/Adapter/Adaptee.c \
 	src/PA/PADrawingEditor.c \
+	src/Factory/Product.c \
+	src/Factory/Creator.c \
+	src/Factory/ConcreteProduct.c \
+	src/Factory/ConcreteCreator.c \
 	src/PA/PALine.c \
 	src/PA/PAShape.c \
 	src/PA/PATextView.c \
@@ -131,7 +155,17 @@ designs=src/Input.c \
 	src/Iterator/Client.c \
 	src/Iterator/ConcreteIterator.c \
 	src/Iterator/Iterator.c \
-	src/Iterator/ConcreteAggregate.c
+	src/Iterator/ConcreteAggregate.c \
+	src/Prototype/Client.c \
+	src/Prototype/Prototype.c \
+	src/Prototype/ConcretePrototype1.c \
+	src/Prototype/ConcretePrototype2.c \
+	src/Bridge/Client.c \
+	src/Bridge/Implementor.c \
+	src/Bridge/Abstraction.c \
+	src/Bridge/RefinedAbstraction.c \
+	src/Bridge/ConcreteImplementorA.c \
+	src/Bridge/ConcreteImplementorB.c
 sources=src/Input.i \
 	src/Algorithm.i \
 	src/BFS/Procedure.i \
@@ -174,18 +208,88 @@ sources=src/Input.i \
 	src/Iterator/Client.i \
 	src/Iterator/ConcreteIterator.i \
 	src/Iterator/Iterator.i \
-	src/Iterator/ConcreteAggregate.i
+	src/Iterator/ConcreteAggregate.i \
+	src/Prototype/Client.i \
+	src/Prototype/Prototype.i \
+	src/Prototype/ConcretePrototype1.i \
+	src/Prototype/ConcretePrototype2.i \
+	src/Bridge/Client.i \
+	src/Bridge/Implementor.i \
+	src/Bridge/Abstraction.i \
+	src/Bridge/RefinedAbstraction.i \
+	src/Bridge/ConcreteImplementorA.i \
+	src/Bridge/ConcreteImplementorB.i
+objdirs= obj/ \
+	obj/BFS/ \
+	obj/Adapter/ \
+	obj/Iterator/ \
+	obj/Builder/ \
+	obj/ArrayList/ \
+	obj/Prototype/ \
+	obj/Bridge/ \
+	obj/PA/
 
+subdirs= obj/ \
+	obj/BFS/ \
+	obj/Adapter/ \
+	obj/Iterator/ \
+	obj/Builder/ \
+	obj/ArrayList/ \
+	obj/Prototype/ \
+	obj/Bridge/ \
+	obj/PA/
+
+ifeq (0,${MAKELEVEL})
+host-type 	:= $(shell arch)
+MAKE := ${MAKE} ARCH=${host-type}
+endif
+
+# ${objdirs}
+# ${objdirs}:
+# 	mkdir $<
+# obj/BFS/: obj
+# 	mkdir $<
+# obj/Adapter/: obj
+# 	mkdir $<
+# obj/Iterator/: obj
+# 	mkdir $<
+# obj/Builder/: obj
+# 	mkdir $<
+# obj/ArrayList: obj
+# 	mkdir $<
+# obj/Prototype: obj
+# 	mkdir $<
+# obj/Bridge: obj
+# 	mkdir $<
+# obj/PA: obj
+# 	mkdir $<
+	
+# 	mkdir $<
+# ${objdirs}:`
 output=libpa.a
 # build: preprocess compile assemble link_windows
-all: $(sources) build
-build: $(designs) preprocess compile assemble
+all: ${objdirs}
+	${MAKE} $(designs) 
+	${MAKE} $(sources)
+	${MAKE} $(assemblies)
+	${MAKE} ${objects}
+${subdirs}:
+	mkdir $@
+# 	${MAKE} -C $@ all
+
+# 	${MAKE} $(objdirs)
+# 	${MAKE} $(objects)
+# 	${MAKE} arch=${arch}
+# 	${MAKE} arch=${arch}
+# 	${MAKE} arch=${arch}
+# 	${MA
+build: $(objects)
 # 	mkdir obj/Director/
 # 	mkdir obj/Builder/
 # 	mkdir $(OBJ_DIR)
 # 	mkdir $(patsubst, )
 # 	#
-	echo "build"
+# 	echo "build"
 # 	@echo "Build"
 # 	@echo "$<"
 # preprocess: $(sources)
@@ -196,8 +300,8 @@ assemble: $(objects)
 	@echo "Building"
 link: $(output)
 
-libpa.a: $(objects)
-	$(LD) $(LDFLAGS) $(objects) -static -o $@
+# libpa.a: $(objects)
+# 	$(LD) $(LDFLAGS) $(objects) -static -o $@
 # link_windows: $(objects)
 # 	$(LD) $(objects) -o filiename.library
 # link_macos: $(objects)
@@ -231,134 +335,172 @@ libdir=obj obj/Adapter obj/Iterator obj/ArrayList obj/Builder obj/PA obj/BFS
 #installdirs: 
 #//build
 #$(objects)
-src/Input.c: include/defs.h
-src/Algorithm.c: include/Algorithm.h include/defs.h 
-src/BFS/Procedure.c: include/defs.h
-src/PA/Input.c: include/PA/Input.h include/defs.h
-src/PA/Output.c:  include/PA/Output.h include/defs.h
-src/BFS/Record.c: include/BFS/Record.h include/defs.h
-src/Output.c: include/Output.h include/defs.h
-src/PA/Data.c: include/PA/Data.h include/defs.h
-src/PA/Destination.c: include/PA/Destination.h include/defs.h
-src/PA/Tree.c: include/PA/Tree.h include/defs.h
-src/PA/List.c: include/PA/List.h include/defs.h
-src/PA/Link.c: include/PA/Link.h include/defs.h
-src/PA/Arrow.c: include/PA/Arrow.h include/defs.h
-src/PA/Element.c: include/PA/Element.h include/defs.h
-src/PA/Count.c: include/PA/Count.h include/defs.h
-src/PA/Pair.c: include/PA/Pair.h include/defs.h
-src/PA/Result.c:  include/PA/Result.h include/defs.h
-src/PA/Series.c: include/PA/Series.h include/defs.h
-src/PA/Status.c : include/PA/Status.h include/defs.h
-src/PA/Feature.c:  include/PA/Feature.h include/defs.h
-src/PA/Value.c: include/PA/Value.h include/defs.h
-src/PA/Resource.c: include/PA/Resource.h include/defs.h
-src/Builder/Director.c: include/Builder/Director.h include/defs.h
-src/Builder/Builder.c: include/Builder/Builder.h include/defs.h
-src/Builder/Product.c:
-src/Builder/ConcreteBuilder.c:
-src/PA/NormalTree.c: include/PA/NormalTree.h include/defs.h
-src/PA/TransposeTree.c: include/PA/TransposeTree.h include/defs.h
-src/Adapter/Client.c: include/Adapter/Client.h include/defs.h
-src/Adapter/Target.c: include/Adapter/Target.h include/defs.h
-src/Adapter/Adapter.c: include/Adapter/Adapter.h include/defs.h
-src/Adapter/Adaptee.c: include/Adapter/Adaptee.h include/defs.h
-src/PA/PADrawingEditor.c:  include/PA/PADrawingEditor.h include/defs.h
-src/PA/PALine.c: include/PA/PALine.h include/defs.h
-src/PA/PAShape.c: include/PA/PAShape.h include/defs.h
-src/PA/PATextView.c:  include/PA/PATextView.h include/defs.h
-src/ArrayList/ArrayList.c: include/ArrayList/ArrayList.h include/defs.h
-src/ArrayList/ArrayListPosition.c:  include/ArrayList/ArrayListPosition.h include/defs.h include/types.h
-src/Iterator/Client.c: include/Iterator/Client.h include/defs.h
-src/Iterator/ConcreteIterator.c: include/Iterator/ConcreteIterator.h include/defs.h
-src/Iterator/Iterator.c: include/Iterator/Iterator.h include/defs.h
-src/Iterator/ConcreteAggregate.c:  include/Iterator/ConcreteAggregate.h include/defs.h
+#src/Input.c: include/defs.h
+#src/Algorithm.c: include/Algorithm.h include/defs.h 
+#src/BFS/Procedure.c: include/defs.h
+#src/PA/Input.c: include/PA/Input.h include/defs.h
+#src/PA/Output.c:  include/PA/Output.h include/defs.h
+#src/BFS/Record.c: include/BFS/Record.h include/defs.h
+#src/Output.c: include/Output.h include/defs.h
+#src/PA/Data.c: include/PA/Data.h include/defs.h
+#src/PA/Destination.c: include/PA/Destination.h include/defs.h
+#src/PA/Tree.c: include/PA/Tree.h include/defs.h
+#src/PA/List.c: include/PA/List.h include/defs.h
+#src/PA/Link.c: include/PA/Link.h include/defs.h
+#src/PA/Arrow.c: include/PA/Arrow.h include/defs.h
+#src/PA/Element.c: include/PA/Element.h include/defs.h
+#src/PA/Count.c: include/PA/Count.h include/defs.h
+#src/PA/Pair.c: include/PA/Pair.h include/defs.h
+#src/PA/Result.c:  include/PA/Result.h include/defs.h
+#src/PA/Series.c: include/PA/Series.h include/defs.h
+#src/PA/Status.c : include/PA/Status.h include/defs.h
+#src/PA/Feature.c:  include/PA/Feature.h include/defs.h
+#src/PA/Value.c: include/PA/Value.h include/defs.h
+#src/PA/Resource.c: include/PA/Resource.h include/defs.h
+#src/Builder/Director.c: include/Builder/Director.h include/defs.h
+#src/Builder/Builder.c: include/Builder/Builder.h include/defs.h
+#src/Builder/Product.c:
+#src/Builder/ConcreteBuilder.c:
+#src/PA/NormalTree.c: include/PA/NormalTree.h include/defs.h
+#src/PA/TransposeTree.c: include/PA/TransposeTree.h include/defs.h
+#src/Adapter/Client.c: include/Adapter/Client.h include/defs.h
+#src/Adapter/Target.c: include/Adapter/Target.h include/defs.h
+#src/Adapter/Adapter.c: include/Adapter/Adapter.h include/defs.h
+#src/Adapter/Adaptee.c: include/Adapter/Adaptee.h include/defs.h
+#src/PA/PADrawingEditor.c:  include/PA/PADrawingEditor.h include/defs.h
+#src/PA/PALine.c: include/PA/PALine.h include/defs.h
+#src/PA/PAShape.c: include/PA/PAShape.h include/defs.h
+#src/PA/PATextView.c:  include/PA/PATextView.h include/defs.h
+#src/ArrayList/ArrayList.c: include/ArrayList/ArrayList.h include/defs.h
+#src/ArrayList/ArrayListPosition.c:  include/ArrayList/ArrayListPosition.h include/defs.h include/types.h
+#src/Iterator/Client.c: include/Iterator/Client.h include/defs.h
+#src/Iterator/ConcreteIterator.c: include/Iterator/ConcreteIterator.h include/defs.h
+#src/Iterator/Iterator.c: include/Iterator/Iterator.h include/defs.h
+#src/Iterator/ConcreteAggregate.c:  include/Iterator/ConcreteAggregate.h include/defs.h
+#src/Factory/Product.c: include/Factory/Product.h
+#src/Factory/Creator.c: include/Factory/Creator.h
+#src/Factory/ConcreteProduct.c: include/Factory/ConcreteProduct.h
+#src/Factory/ConcreteCreator.c:include/Factory/ConcreteCreator.h
+#
+#src/Prototype/Client.c: include/Prototype/Client.h
+#src/Prototype/Prototype.c: include/Prototype/Prototype.h
+#src/Prototype/ConcretePrototype1.c: include/Prototype/ConcretePrototype1.h
+#src/Prototype/ConcretePrototype2.c: include/Prototype/ConcretePrototype2.h
 
-src/Input.i : src/Input.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/Algorithm.i : src/Algorithm.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/BFS/Procedure.i : src/BFS/Procedure.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/PA/Input.i : src/PA/Input.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/PA/Output.i : src/PA/Output.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/BFS/Record.i : src/BFS/Record.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/Output.i : src/Output.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/PA/Data.i : src/PA/Data.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/PA/Destination.i : src/PA/Destination.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/PA/Tree.i : src/PA/Tree.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/PA/List.i : src/PA/List.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/PA/Link.i : src/PA/Link.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/PA/Arrow.i : src/PA/Arrow.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/PA/Element.i : src/PA/Element.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/PA/Count.i : src/PA/Count.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/PA/Pair.i : src/PA/Pair.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/PA/Result.i : src/PA/Result.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/PA/Series.i : src/PA/Series.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/PA/Status.i : src/PA/Status.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/PA/Feature.i : src/PA/Feature.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/PA/Value.i : src/PA/Value.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/PA/Resource.i : src/PA/Resource.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/Builder/Director.i : src/Builder/Director.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+src/Input.i : src/Input.c include/ArrayList/ArrayList.h include/PA/Result.h include/Input.h include/types.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Algorithm.i : src/Algorithm.c include/PA/Result.h include/Algorithm.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/BFS/Procedure.i : src/BFS/Procedure.c include/types.h include/Algorithm.h include/PA/Tree.h include/PA/Element.h include/BFS/Procedure.h include/PA/Input.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/PA/Input.i : src/PA/Input.c include/Input.h include/ArrayList/ArrayList.h include/PA/Result.h include/types.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/PA/Output.i : src/PA/Output.c include/defs.h include/Output.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/BFS/Record.i : src/BFS/Record.c include/types.h include/PA/List.h include/PA/Count.h include/PA/Result.h include/BFS/Record.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Output.i : src/Output.c include/defs.h include/Output.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/PA/Data.i : src/PA/Data.c include/PA/Data.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/PA/Destination.i : src/PA/Destination.c include/types.h include/PA/Destination.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/PA/Tree.i : src/PA/Tree.c include/PA/Tree.h include/types.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/PA/List.i : src/PA/List.c include/types.h include/PA/List.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/PA/Link.i : src/PA/Link.c include/defs.h include/types.h include/PA/Link.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/PA/Arrow.i : src/PA/Arrow.c include/defs.h include/PA/Arrow.h include/types.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/PA/Element.i : src/PA/Element.c include/defs.h include/PA/Element.h include/types.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/PA/Count.i : src/PA/Count.c include/types.h include/PA/Count.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/PA/Pair.i : src/PA/Pair.c include/types.h include/PA/Pair.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/PA/Result.i : src/PA/Result.c include/PA/Result.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/PA/Series.i : src/PA/Series.c include/defs.h include/types.h include/PA/Series.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/PA/Status.i : src/PA/Status.c include/defs.h include/PA/Status.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/PA/Feature.i : src/PA/Feature.c include/PA/Feature.h include/types.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/PA/Value.i : src/PA/Value.c include/types.h include/PA/Value.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/PA/Resource.i : src/PA/Resource.c include/PA/Resource.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Builder/Director.i : src/Builder/Director.c include/Builder/Director.h include/Builder/Builder.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
 src/Builder/Builder.i : src/Builder/Builder.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/Builder/Product.i : src/Builder/Product.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/Builder/ConcreteBuilder.i : src/Builder/ConcreteBuilder.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/PA/NormalTree.i : src/PA/NormalTree.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/PA/TransposeTree.i : src/PA/TransposeTree.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/Adapter/Client.i : src/Adapter/Client.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/Adapter/Target.i : src/Adapter/Target.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/Adapter/Adapter.i : src/Adapter/Adapter.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/Adapter/Adaptee.i : src/Adapter/Adaptee.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/PA/PADrawingEditor.i : src/PA/PADrawingEditor.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/PA/PALine.i : src/PA/PALine.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/PA/PAShape.i : src/PA/PAShape.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/PA/PATextView.i : src/PA/PATextView.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/ArrayList/ArrayList.i : src/ArrayList/ArrayList.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/ArrayList/ArrayListPosition.i : src/ArrayList/ArrayListPosition.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/Iterator/Client.i : src/Iterator/Client.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/Iterator/ConcreteIterator.i : src/Iterator/ConcreteIterator.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/Iterator/Iterator.i : src/Iterator/Iterator.c
-	$(CC) $(CPPFLAGS) -E $< > $@
-src/Iterator/ConcreteAggregate.i : src/Iterator/ConcreteAggregate.c
-	$(CC) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Builder/Product.i : src/Builder/Product.c include/PA/Tree.h include/Builder/Product.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Builder/ConcreteBuilder.i : src/Builder/ConcreteBuilder.c include/Builder/Builder.h include/Builder/Product.h include/Builder/ConcreteBuilder.h include/PA/Result.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/PA/NormalTree.i : src/PA/NormalTree.c include/types.h include/PA/NormalTree.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/PA/TransposeTree.i : src/PA/TransposeTree.c include/types.h include/PA/TransposeTree.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Adapter/Client.i : src/Adapter/Client.c include/Adapter/Client.h include/PA/Tree.h include/Adapter/Target.h 
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Adapter/Target.i : src/Adapter/Target.c include/Adapter/Target.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Adapter/Adapter.i : src/Adapter/Adapter.c include/Adapter/Adaptee.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Adapter/Adaptee.i : src/Adapter/Adaptee.c include/Adapter/Adaptee.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/PA/PADrawingEditor.i : src/PA/PADrawingEditor.c include/PA/PADrawingEditor.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/PA/PALine.i : src/PA/PALine.c include/PA/PALine.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/PA/PAShape.i : src/PA/PAShape.c include/PA/PAShape.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/PA/PATextView.i : src/PA/PATextView.c include/PA/PATextView.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/ArrayList/ArrayList.i : src/ArrayList/ArrayList.c include/defs.h include/types.h include/ArrayList/ArrayList.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/ArrayList/ArrayListPosition.i : src/ArrayList/ArrayListPosition.c include/ArrayList/ArrayList.h include/defs.h include/types.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Iterator/Client.i : src/Iterator/Client.c include/Adapter/Client.h include/PA/Tree.h include/Adapter/Target.h 
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Iterator/ConcreteIterator.i : src/Iterator/ConcreteIterator.c include/Iterator/ConcreteIterator.h 
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Iterator/Iterator.i : src/Iterator/Iterator.c include/PA/Data.h include/PA/Element.h include/Iterator/Iterator.h include/types.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Iterator/ConcreteAggregate.i : src/Iterator/ConcreteAggregate.c include/Iterator/ConcreteAggregate.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Factory/Product.i: src/Factory/Product.c include/PA/Tree.h include/Builder/Product.h
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Factory/Creator.i: src/Factory/Creator.c
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Factory/ConcreteProduct.i:src/Factory/ConcreteProduct.c
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Factory/ConcreteCreator.i:src/Factory/ConcreteCreator.c
+	$(CPP) $(CPPFLAGS) -E $< > $@
 
+src/Prototype/Client.i: src/Prototype/Client.c include/Adapter/Client.h include/PA/Tree.h include/Adapter/Target.h 
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Prototype/Prototype.i: src/Prototype/Prototype.c
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Prototype/ConcretePrototype1.i: src/Prototype/ConcretePrototype1.c
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Prototype/ConcretePrototype2.i: src/Prototype/ConcretePrototype2.c
+	$(CPP) $(CPPFLAGS) -E $< > $@
+
+src/Bridge/Client.i: src/Bridge/Client.c
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Bridge/Abstraction.i: src/Bridge/Abstraction.c
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Bridge/Implementor.i: src/Prototype/Implementor.c
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Bridge/ConcreteImplementorA.i: src/Prototype/ConcreteImplementorA.c
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Bridge/ConcreteImplementorB.i: src/bridge/ConcreteImplementorB.c
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/Bridge/RefinedAbstraction.i: src/Bridge/RefinedAbstraction.c
+	$(CPP) $(CPPFLAGS) -E $< > $@
 
 src/Input.s: src/Input.i
 	$(CC) -S $< -o $@
@@ -447,139 +589,227 @@ src/Iterator/Iterator.s: src/Iterator/Iterator.i
 src/Iterator/ConcreteAggregate.s: src/Iterator/ConcreteAggregate.i
 	$(CC)  -S $< -o $@
 
+src/Factory/Product.s: src/Factory/Product.i
+	$(CC)  -S $< -o $@
+src/Factory/Creator.s: src/Factory/Creator.i
+	$(CC)  -S $< -o $@
+src/Factory/ConcreteProduct.s:src/Factory/ConcreteProduct.i
+	$(CC)  -S $< -o $@
+src/Factory/ConcreteCreator.s:src/Factory/ConcreteCreator.i
+	$(CC)  -S $< -o $@
+
+src/Prototype/Client.s: src/Prototype/Client.i
+	$(CC)  -S $< -o $@
+src/Prototype/Prototype.s: src/Prototype/Prototype.i
+	$(CC)  -S $< -o $@
+src/Prototype/ConcretePrototype1.s: src/Prototype/ConcretePrototype1.i
+	$(CC)  -S $< -o $@
+src/Prototype/ConcretePrototype2.s: src/Prototype/ConcretePrototype2.i
+	$(CC)  -S $< -o $@
+
+src/Bridge/Client.s: src/Bridge/Client.i
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+src/Bridge/Abstraction.s: src/Bridge/Abstraction.i
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+src/Bridge/Implementor.s: src/Prototype/Implementor.i
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+src/Bridge/ConcreteImplementorA.s: src/Prototype/ConcreteImplementorA.i
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+src/bridge/concreteimplementor.s: src/bridge/concreteimplementorb.i
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+src/Bridge/RefinedAbstraction.s: src/Bridge/RefinedAbstraction.i
+	$(AS) $(ASFLAGS) $< -o $@
+
+ASFLAGS=
+ifeq ($(ARCH),arm64)
+	ASFLAGS=-arch $(ARCH)
+else
+	ASFLAGS=-march=armv8.3-a
+endif
 obj/Input.o: src/Input.s 
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Algorithm.o: src/Algorithm.s 
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/BFS/Procedure.o: src/BFS/Procedure.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Input.o: src/PA/Input.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Output.o: src/PA/Output.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/BFS/Record.o:src/BFS/Record.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Output.o: src/Output.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Value.o: src/PA/Value.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Data.o: src/PA/Data.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Tree.o: src/PA/Tree.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 #obj/PAIndex.o: src/PAIndex.c include/PAIndex.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
 obj/PA/List.o: src/PA/List.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Link.o: src/PA/Link.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Arrow.o: src/PA/Arrow.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Element.o: src/PA/Element.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Count.o: src/PA/Count.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Pair.o: src/PA/Pair.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Result.o: src/PA/Result.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Series.o: src/PA/Series.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Status.o: src/PA/Status.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Feature.o: src/PA/Feature.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Destination.o : src/PA/Destination.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Resource.o: src/PA/Resource.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 #obj/PA/Value.o: src/PA/Value.c include/PA/Value.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
 obj/Builder/Product.o: src/Builder/Product.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Builder/ConcreteBuilder.o: src/Builder/ConcreteBuilder.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $s(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Builder/Director.o: src/Builder/Director.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Builder/Builder.o: src/Builder/Builder.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/NormalTree.o: src/PA/NormalTree.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/TransposeTree.o: src/PA/TransposeTree.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Adapter/Client.o: src/Adapter/Client.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Adapter/Target.o: src/Adapter/Target.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Adapter/Adapter.o: src/Adapter/Adapter.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Adapter/Adaptee.o: src/Adapter/Adaptee.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/PADrawingEditor.o: src/PA/PADrawingEditor.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/PALine.o: src/PA/PALine.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/PAShape.o: src/PA/PAShape.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/PATextView.o: src/PA/PATextView.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/ArrayList/ArrayList.o: src/ArrayList/ArrayList.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/ArrayList/ArrayListPosition.o : src/ArrayList/ArrayListPosition.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 #obj/ArrayList/ArrayListObject.o : src/ArrayList/ArrayListObject.c include/ArrayList/ArrayListObject.h include/types.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
 obj/Iterator/Client.o: src/Iterator/Client.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Iterator/ConcreteIterator.o: src/Iterator/ConcreteIterator.s 
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Iterator/Iterator.o: src/Iterator/Iterator.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 obj/Iterator/ConcreteAggregate.o: src/Iterator/ConcreteAggregate.s
-	-mkdir $(dir $@)
-	$(CC) -c $< -o $@
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
 
+obj/Factory/Product.o: src/Factory/Product.s
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+obj/Factory/Creator.o: src/Factory/Creator.s
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+obj/Factory/ConcreteProduct.o:src/Factory/ConcreteProduct.s
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+obj/Factory/ConcreteCreator.o:src/Factory/ConcreteCreator.s
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+
+obj/Prototype/Client.o: src/Prototype/Client.s
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+obj/Prototype/Prototype.o: src/Prototype/Prototype.s
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+obj/Prototype/ConcretePrototype1.o: src/Prototype/ConcretePrototype1.s
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+obj/Prototype/ConcretePrototype2.o: src/Prototype/ConcretePrototype2.s
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+
+obj/Bridge/Client.o: src/Bridge/Client.s
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+obj/Bridge/Abstraction.o: src/Bridge/Abstraction.s
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+obj/Bridge/Implementor.o: src/Prototype/Implementor.s
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+obj/Bridge/ConcreteImplementorA.o: src/Prototype/ConcreteImplementorA.s
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+obj/bridge/concreteimplementor.o: src/bridge/concreteimplementorb.s
+# 	-mkdir $(dir $@)
+	$(AS) $(ASFLAGS) $< -o $@
+obj/Bridge/RefinedAbstraction.o: src/Bridge/RefinedAbstraction.s
+	$(AS) $(ASFLAGS) $< -o $@
+
+# libpa.a: $(objects)
+# 	$(LD) $< -o $@
 #src/Input.c: 
 #src/Algorithm.c: 
 #src/BFS/Procedure.c: 
@@ -655,7 +885,8 @@ mkinstalldirs: $(srcdir)/mkinstalldirs
 #	echo "installcheck"
 
 clean:
-	-rm libpa.a
+	${MAKE} ARCH=${host-type} build
+# 	-rm libpa.a
 	-rm src/Input.i
 	-rm src/Algorithm.i
 	-rm src/BFS/Procedure.i
@@ -699,6 +930,10 @@ clean:
 	-rm src/Iterator/ConcreteIterator.i
 	-rm src/Iterator/Iterator.i
 	-rm src/Iterator/ConcreteAggregate.i
+	-rm src/Prototype/Client.i
+	-rm src/Prototype/Prototype.i
+	-rm src/Prototype/ConcretePrototype1.i
+	-rm src/Prototype/ConcretePrototype2.i
 	-rm src/Input.s
 	-rm src/Algorithm.s
 	-rm src/BFS/Procedure.s
@@ -742,6 +977,10 @@ clean:
 	-rm src/Iterator/ConcreteIterator.s
 	-rm src/Iterator/Iterator.s
 	-rm src/Iterator/ConcreteAggregate.s
+	-rm src/Prototype/Client.s
+	-rm src/Prototype/Prototype.s
+	-rm src/Prototype/ConcretePrototype1.s
+	-rm src/Prototype/ConcretePrototype2.s
 	-rm obj/Input.o
 	-rm obj/Algorithm.o
 	-rm obj/BFS/Procedure.o
@@ -786,10 +1025,30 @@ clean:
 	-rm obj/Iterator/ConcreteIterator.o
 	-rm obj/Iterator/Iterator.o
 	-rm obj/Iterator/ConcreteAggregate.o
-	#rm obj/Iterator/
-	#rm obj/Adapter/
-	#rm obj/ArrayList/
-	#rm obj/BFS/
+	-rm obj/Prototype/Client.o
+	-rm obj/Prototype/Prototype.o
+	-rm obj/Prototype/ConcretePrototype1.o
+	-rm obj/Prototype/ConcretePrototype2.o
+	-rm obj/Bridge/Client.o
+	-rm obj/Bridge/Implementor.o
+	-rm obj/Bridge/Abstraction.o
+	-rm obj/Bridge/RefinedAbstraction.o
+	-rm obj/Bridge/ConcreteImplementorA.o
+	-rm obj/Bridge/ConcreteImplementorB.o
+# 	-rm -r obj/BFS/
+# 	-rm -r obj/Adapter/
+# 	-rm -r obj/Iterator/
+# 	-rm -r obj/Adapter/
+# 	-rm -r obj/Builder/
+# 	-rm -r obj/ArrayList/
+# 	-rm -r obj/Prototype/
+# 	-rm -r obj/Bridge/
+# 	-rm -r obj/PA/
+# 	-rm -r obj/
+# 	#rm obj/Iterator/
+# 	#rm obj/Adapter/
+# 	#rm obj/ArrayList/
+# 	#rm obj/BFS/
 #rm objInput.o
 #rm $(objects)
 #obj/Input.

@@ -8,9 +8,15 @@
 typedef PAInt PAResult;
 #else
 #define PAInt int
+#define PAResource int
 #define PABool int
+#define PADataDefault 1
+typedef int PAResult;
+#define PARESULT_SUCCESS 0
+#define PARESULT_FAIL 1
 #endif
 #ifndef _WIN95
+typedef int ListSize;
 typedef int ArrayListObject;
 typedef int ListPosition;
 // typedef 
@@ -23,9 +29,6 @@ typedef uint32_t ListPosition;
 #elif defined _WIN95
 // typedef IUnknown* Objects;
 #endif
-typedef PAInt PAResult;
-#define PARESULT_SUCCESS 0
-#define PARESULT_FAIL 1
 // typedef int PAInt;
 #define BLK_SIZE 4096
 #define FIRST 1

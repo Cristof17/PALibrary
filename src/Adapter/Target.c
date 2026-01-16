@@ -1,13 +1,5 @@
 #include <Adapter/Target.h>
-#include <types.h>
-
-#ifndef _WIN95
-#include <PA/Series.h>
-#include <Adapter/Adapter.h>
-#elif defined _WIN95
-#include <PA\Series.h>
-#include <Adapter\Adapter.h>
-#endif
+// #include <types.h>
 
 /*
  * Target.c
@@ -16,7 +8,7 @@
  *      Author: AdministratorUser
  */
 
-struct PASeries TargetRequest(struct Target target) {
+struct PASeries TargetRequest(struct AdapterTarget target) {
 	struct PASeries sir;
 	return sir;
 // 	Adapter adapter;

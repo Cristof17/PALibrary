@@ -55,7 +55,11 @@ struct PALink;
 // struct PAData;
 // struct PALink;
 // struct PATree;
-struct PAResource;
+// struct PAResource;
+struct AdapterTarget;
+struct AdapterClient;
+struct Adapter;
+// struct Adaptee;
 // struct PAResult;
 struct Adaptee;
 // struct Adaptee;
@@ -91,13 +95,13 @@ struct Output;
 struct PAStatus {
 	PAInt visited;
 };
-struct PAResource {
-	// struct
-	// PA_INt
-	PAInt value;
-};
+// struct PAResource {
+// 	// struct
+// 	// PA_INt
+// 	PAInt value;
+// };
 struct PAData {
-    struct PAResource resource;
+    PAResource resource;
 };
 struct PAFeature {
 	PAInt kind;
@@ -194,20 +198,36 @@ struct PALink {
 		// struct PAResult {
 			// 	PA_INT code;
 			// };
+struct FactoryProduct {
+
+};
+struct FactoryConcreteProduct 
+{
+
+};
+struct FactoryCreator {
+
+};
+struct FactoryConcreteCreator 
+{
+
+};
 struct Adaptee {
 	struct ArrayList list;
 };
 struct Adapter {
+	struct Adaptee adaptee;
 	struct PAList list;
 };
 struct IteratorClient {
 	struct PATree tree;
 };
-//struct AdapterClient {
-//};
-struct Target {
+struct AdapterTarget {
 	struct PASeries series;
 	//struct Adapter adapter;
+};
+struct AdapterClient {
+	struct AdapterTarget target;
 };
 struct BuilderProduct {
 	struct PATree tree;
