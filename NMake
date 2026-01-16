@@ -610,7 +610,7 @@ mkinstalldirs: $(srcdir)/mkinstalldirs
 #installcheck:
 #	echo "installcheck"
 
-clean: preprocess compile
+clean:
 	rm $(SRC_DIR)\Input.i
 	rm $(SRC_DIR)\Algorithm.i
 	rm $(SRC_DIR)\BFS\Procedure.i
