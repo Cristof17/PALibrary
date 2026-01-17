@@ -605,23 +605,18 @@ src/Prototype/Prototype.s: src/Prototype/Prototype.i
 src/Prototype/ConcretePrototype1.s: src/Prototype/ConcretePrototype1.i
 	$(CC) -S $< -o $@
 src/Prototype/ConcretePrototype2.s: src/Prototype/ConcretePrototype2.i
-	$(cc) -S $< -o $@
+	$(CC) -S $< -o $@
 
 src/Bridge/Client.s: src/Bridge/Client.i
-# 	-mkdir $(dir $@)
 	$(CC) -S $< -o $@
 src/Bridge/Abstraction.s: src/Bridge/Abstraction.i
-# 	-mkdir $(dir $@)
 	$(CC) -S $< -o $@
 src/Bridge/Implementor.s: src/Bridge/Implementor.i
-# 	-mkdir $(dir $@)
 	$(CC) -S $< -o $@
-src/Bridge/ConcreteImplementorA.s: src/Brdige/ConcreteImplementorA.i
-# 	-mkdir $(dir $@)
+src/Bridge/ConcreteImplementorA.s: src/Bridge/ConcreteImplementorA.i
 	$(CC) -S $< -o $@
 src/Bridge/ConcreteImplementorB.s: src/Bridge/ConcreteImplementorB.i
 	$(CC) -S $< -o $@
-# 	-mkdir $(dir $@)
 src/Bridge/RefinedAbstraction.s: src/Bridge/RefinedAbstraction.i
 	$(CC) -S $< -o $@
 
@@ -802,7 +797,7 @@ obj/Bridge/Implementor.o: src/Bridge/Implementor.s
 obj/Bridge/ConcreteImplementorA.o: src/Bridge/ConcreteImplementorA.s
 # 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
-obj/Bridge/ConcreteImplementorB.o: src/Brdige/ConcreteImplementorB.s
+obj/Bridge/ConcreteImplementorB.o: src/Bridge/ConcreteImplementorB.s
 # 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/Bridge/RefinedAbstraction.o: src/Bridge/RefinedAbstraction.s
