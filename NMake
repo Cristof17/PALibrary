@@ -9,11 +9,12 @@
 
 
 #build: preprocess compile link_windows
-build: $(designs) preprocess compile
+build: $(designs) preprocess compile link_windows
 # preprocess: $(sources)
 INCLUDE_DIR=C:\Users\AdministratorUser\source\repos\PALibrary\include
 SRC_DIR=C:\Users\AdministratorUser\source\repos\PALibrary\src
 OBJ_DIR=C:\Users\AdministratorUser\source\repos\PALibrary\obj
+OUT_DIR=C:\Users\AdministratorUser\source\repos\PALibrary
 CFLAGS=/I$(INCLUDE_DIR) /TC
 sources=$(SRC_DIR)\Input.i \
 	$(SRC_DIR)\Algorithm.i \
@@ -194,7 +195,6 @@ compile: preprocess $(objects)
 # 	$(CC) $(CFLAGS) /c $(SRC_DIR)\ /Fo:$(OBJ_DIR)/
 
 #assemble: $(objects)
-# link_windows: $(objects)
 # 	$(LD) $(objects) -o filiename.library
 # link_macos: $(objects)
 # link_linux: $(objects)
@@ -204,50 +204,54 @@ all: $(sources) build
 #bar := $(foo:.c=.o)
 #bindir=bin
 srcdir=src
-objects= $(OBJ_DIR)/Input.o \
-	$(OBJ_DIR)/Algorithm.o \
-	$(OBJ_DIR)/BFS/Procedure.o \
-	$(OBJ_DIR)/PA/Input.o \
-	$(OBJ_DIR)/PA/Output.o \
-	$(OBJ_DIR)/BFS/Record.o \
-	$(OBJ_DIR)/Output.o \
-	$(OBJ_DIR)/PA/Data.o \
-	$(OBJ_DIR)/PA/Destination.o \
-	$(OBJ_DIR)/PA/Tree.o \
-	$(OBJ_DIR)/PA/List.o \
-	$(OBJ_DIR)/PA/Status.o \
-	$(OBJ_DIR)/PA/Link.o \
-	$(OBJ_DIR)/PA/Arrow.o \
-	$(OBJ_DIR)/PA/Element.o \
-	$(OBJ_DIR)/PA/Count.o \
-	$(OBJ_DIR)/PA/Pair.o \
-	$(OBJ_DIR)/PA/Result.o \
-	$(OBJ_DIR)/PA/Series.o \
-	$(OBJ_DIR)/PA/Feature.o \
-	$(OBJ_DIR)/PA/Value.o \
-	$(OBJ_DIR)/PA/Resource.o \
-	$(OBJ_DIR)/Builder/Director.o \
-	$(OBJ_DIR)/Builder/Builder.o \
-	$(OBJ_DIR)/Builder/Product.o \
-	$(OBJ_DIR)/Builder/ConcreteBuilder.o \
-	$(OBJ_DIR)/PA/NormalTree.o \
-	$(OBJ_DIR)/PA/TransposeTree.o \
-	$(OBJ_DIR)/Adapter/Client.o \
-	$(OBJ_DIR)/Adapter/Target.o \
-	$(OBJ_DIR)/Adapter/Adapter.o \
-	$(OBJ_DIR)/Adapter/Adaptee.o \
-	$(OBJ_DIR)/PA/PADrawingEditor.o \
-	$(OBJ_DIR)/PA/PALine.o \
-	$(OBJ_DIR)/PA/PAShape.o \
-	$(OBJ_DIR)/PA/PATextView.o \
-	$(OBJ_DIR)/ArrayList/ArrayList.o \
-	$(OBJ_DIR)/ArrayList/ArrayListPosition.o \
-	$(OBJ_DIR)/Iterator/Client.o \
-	$(OBJ_DIR)/Iterator/ConcreteIterator.o \
-	$(OBJ_DIR)/Iterator/Iterator.o \
-	$(OBJ_DIR)/Iterator/ConcreteAggregate.o
+objects= $(OBJ_DIR)\Input.o \
+	$(OBJ_DIR)\Algorithm.o \
+	$(OBJ_DIR)\BFS\Procedure.o \
+	$(OBJ_DIR)\PA\Input.o \
+	$(OBJ_DIR)\PA\Output.o \
+	$(OBJ_DIR)\BFS\Record.o \
+	$(OBJ_DIR)\Output.o \
+	$(OBJ_DIR)\PA\Data.o \
+	$(OBJ_DIR)\PA\Destination.o \
+	$(OBJ_DIR)\PA\Tree.o \
+	$(OBJ_DIR)\PA\List.o \
+	$(OBJ_DIR)\PA\Status.o \
+	$(OBJ_DIR)\PA\Link.o \
+	$(OBJ_DIR)\PA\Arrow.o \
+	$(OBJ_DIR)\PA\Element.o \
+	$(OBJ_DIR)\PA\Count.o \
+	$(OBJ_DIR)\PA\Pair.o \
+	$(OBJ_DIR)\PA\Result.o \
+	$(OBJ_DIR)\PA\Series.o \
+	$(OBJ_DIR)\PA\Feature.o \
+	$(OBJ_DIR)\PA\Value.o \
+	$(OBJ_DIR)\PA\Resource.o \
+	$(OBJ_DIR)\Builder\Director.o \
+	$(OBJ_DIR)\Builder\Builder.o \
+	$(OBJ_DIR)\Builder\Product.o \
+	$(OBJ_DIR)\Builder\ConcreteBuilder.o \
+	$(OBJ_DIR)\PA\NormalTree.o \
+	$(OBJ_DIR)\PA\TransposeTree.o \
+	$(OBJ_DIR)\Adapter\Client.o \
+	$(OBJ_DIR)\Adapter\Target.o \
+	$(OBJ_DIR)\Adapter\Adapter.o \
+	$(OBJ_DIR)\Adapter\Adaptee.o \
+	$(OBJ_DIR)\PA/PADrawingEditor.o \
+	$(OBJ_DIR)\PA/PALine.o \
+	$(OBJ_DIR)\PA/PAShape.o \
+	$(OBJ_DIR)\PA/PATextView.o \
+	$(OBJ_DIR)\ArrayList\ArrayList.o \
+	$(OBJ_DIR)\ArrayList\ArrayListPosition.o \
+	$(OBJ_DIR)\Iterator\Client.o \
+	$(OBJ_DIR)\Iterator\ConcreteIterator.o \
+	$(OBJ_DIR)\Iterator\Iterator.o \
+	$(OBJ_DIR)\Iterator\ConcreteAggregate.o
+link_windows: $(objects)
+#$(link) $(ldebug) $(conflags) -out:challeng.exe $** $(conlibs) lsapi32.lib
+	link $(ldebug) $(conflags) $(objects) -out:$(OUT_DIR)\challeng.exe $(conlibs) lsapi32.lib
 link: $(objects)
-	link $(objects)
+	link $(ldebug) $(conflags) $(objects) -out:challeng.exe $(conlibs) lsapi32.lib
+#	link $(objects)
 #includedir=include
 #CFLAGS+=-I$(abspath $(includedir))
 #CFLAGS+=-I$(abspath $(includedir)/Builder)
@@ -607,7 +611,7 @@ mkinstalldirs: $(srcdir)/mkinstalldirs
 #installcheck:
 #	echo "installcheck"
 
-clean: preprocess compile
+clean:
 	rm $(SRC_DIR)\Input.i
 	rm $(SRC_DIR)\Algorithm.i
 	rm $(SRC_DIR)\BFS\Procedure.i
