@@ -18,7 +18,7 @@
 	.arm
 	.type	BFSRecordPrint, %function
 BFSRecordPrint:
-	@ args = 16396, pretend = 16, frame = 0
+	@ args = 67141640, pretend = 16, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
 	@ link register save eliminated.
 	sub	sp, sp, #16

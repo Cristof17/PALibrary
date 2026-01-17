@@ -18,30 +18,35 @@
 	.arm
 	.type	PANormalTreePerformConstruct, %function
 PANormalTreePerformConstruct:
-	@ args = 16396, pretend = 16, frame = 16400
+	@ args = 67141640, pretend = 16, frame = 67141648
 	@ frame_needed = 1, uses_anonymous_args = 0
 	sub	sp, sp, #16
 	push	{fp, lr}
 	add	fp, sp, #4
-	sub	sp, sp, #16384
+	add	sp, sp, #-67108864
+	sub	sp, sp, #32768
 	sub	sp, sp, #16
-	sub	ip, fp, #16384
+	add	ip, fp, #-67108864
 	sub	ip, ip, #4
+	sub	ip, ip, #32768
 	str	r0, [ip, #-12]
 	add	r0, fp, #8
 	stm	r0, {r1, r2, r3}
-	sub	r3, fp, #16384
+	add	r3, fp, #-67108864
 	sub	r3, r3, #4
+	sub	r3, r3, #32768
 	ldr	r2, [r3, #-12]
-	sub	r3, fp, #16384
+	add	r3, fp, #-67108864
 	sub	r3, r3, #4
+	sub	r3, r3, #32768
 	mov	r0, r2
-	sub	r3, r3, #8
+	sub	r3, r3, #4
 	ldr	r2, .L3
 	mov	r1, r3
 	bl	memcpy
-	sub	r3, fp, #16384
+	add	r3, fp, #-67108864
 	sub	r3, r3, #4
+	sub	r3, r3, #32768
 	ldr	r0, [r3, #-12]
 	sub	sp, fp, #4
 	@ sp needed
@@ -51,7 +56,7 @@ PANormalTreePerformConstruct:
 .L4:
 	.align	2
 .L3:
-	.word	16392
+	.word	67141636
 	.size	PANormalTreePerformConstruct, .-PANormalTreePerformConstruct
 	.align	2
 	.global	PANormalTreePerformInit
@@ -59,30 +64,35 @@ PANormalTreePerformConstruct:
 	.arm
 	.type	PANormalTreePerformInit, %function
 PANormalTreePerformInit:
-	@ args = 16396, pretend = 16, frame = 16400
+	@ args = 67141640, pretend = 16, frame = 67141648
 	@ frame_needed = 1, uses_anonymous_args = 0
 	sub	sp, sp, #16
 	push	{fp, lr}
 	add	fp, sp, #4
-	sub	sp, sp, #16384
+	add	sp, sp, #-67108864
+	sub	sp, sp, #32768
 	sub	sp, sp, #16
-	sub	ip, fp, #16384
+	add	ip, fp, #-67108864
 	sub	ip, ip, #4
+	sub	ip, ip, #32768
 	str	r0, [ip, #-12]
 	add	r0, fp, #8
 	stm	r0, {r1, r2, r3}
-	sub	r3, fp, #16384
+	add	r3, fp, #-67108864
 	sub	r3, r3, #4
+	sub	r3, r3, #32768
 	ldr	r2, [r3, #-12]
-	sub	r3, fp, #16384
+	add	r3, fp, #-67108864
 	sub	r3, r3, #4
+	sub	r3, r3, #32768
 	mov	r0, r2
-	sub	r3, r3, #8
+	sub	r3, r3, #4
 	ldr	r2, .L7
 	mov	r1, r3
 	bl	memcpy
-	sub	r3, fp, #16384
+	add	r3, fp, #-67108864
 	sub	r3, r3, #4
+	sub	r3, r3, #32768
 	ldr	r0, [r3, #-12]
 	sub	sp, fp, #4
 	@ sp needed
@@ -92,7 +102,7 @@ PANormalTreePerformInit:
 .L8:
 	.align	2
 .L7:
-	.word	16392
+	.word	67141636
 	.size	PANormalTreePerformInit, .-PANormalTreePerformInit
 	.align	2
 	.global	PANormalTreePerformCopy
@@ -100,30 +110,35 @@ PANormalTreePerformInit:
 	.arm
 	.type	PANormalTreePerformCopy, %function
 PANormalTreePerformCopy:
-	@ args = 16396, pretend = 16, frame = 16400
+	@ args = 67141640, pretend = 16, frame = 67141648
 	@ frame_needed = 1, uses_anonymous_args = 0
 	sub	sp, sp, #16
 	push	{fp, lr}
 	add	fp, sp, #4
-	sub	sp, sp, #16384
+	add	sp, sp, #-67108864
+	sub	sp, sp, #32768
 	sub	sp, sp, #16
-	sub	ip, fp, #16384
+	add	ip, fp, #-67108864
 	sub	ip, ip, #4
+	sub	ip, ip, #32768
 	str	r0, [ip, #-12]
 	add	r0, fp, #8
 	stm	r0, {r1, r2, r3}
-	sub	r3, fp, #16384
+	add	r3, fp, #-67108864
 	sub	r3, r3, #4
+	sub	r3, r3, #32768
 	ldr	r2, [r3, #-12]
-	sub	r3, fp, #16384
+	add	r3, fp, #-67108864
 	sub	r3, r3, #4
+	sub	r3, r3, #32768
 	mov	r0, r2
-	sub	r3, r3, #8
+	sub	r3, r3, #4
 	ldr	r2, .L11
 	mov	r1, r3
 	bl	memcpy
-	sub	r3, fp, #16384
+	add	r3, fp, #-67108864
 	sub	r3, r3, #4
+	sub	r3, r3, #32768
 	ldr	r0, [r3, #-12]
 	sub	sp, fp, #4
 	@ sp needed
@@ -133,7 +148,7 @@ PANormalTreePerformCopy:
 .L12:
 	.align	2
 .L11:
-	.word	16392
+	.word	67141636
 	.size	PANormalTreePerformCopy, .-PANormalTreePerformCopy
 	.align	2
 	.global	PAGrafNormalBuildPart
@@ -141,27 +156,32 @@ PANormalTreePerformCopy:
 	.arm
 	.type	PAGrafNormalBuildPart, %function
 PAGrafNormalBuildPart:
-	@ args = 0, pretend = 0, frame = 16400
+	@ args = 0, pretend = 0, frame = 67141648
 	@ frame_needed = 1, uses_anonymous_args = 0
 	push	{fp, lr}
 	add	fp, sp, #4
-	sub	sp, sp, #16384
+	add	sp, sp, #-67108864
+	sub	sp, sp, #32768
 	sub	sp, sp, #16
-	sub	r3, fp, #16384
+	add	r3, fp, #-67108864
 	sub	r3, r3, #4
+	sub	r3, r3, #32768
 	str	r0, [r3, #-12]
-	sub	r3, fp, #16384
+	add	r3, fp, #-67108864
 	sub	r3, r3, #4
+	sub	r3, r3, #32768
 	ldr	r2, [r3, #-12]
-	sub	r3, fp, #16384
+	add	r3, fp, #-67108864
 	sub	r3, r3, #4
+	sub	r3, r3, #32768
 	mov	r0, r2
-	sub	r3, r3, #8
+	sub	r3, r3, #4
 	ldr	r2, .L15
 	mov	r1, r3
 	bl	memcpy
-	sub	r3, fp, #16384
+	add	r3, fp, #-67108864
 	sub	r3, r3, #4
+	sub	r3, r3, #32768
 	ldr	r0, [r3, #-12]
 	sub	sp, fp, #4
 	@ sp needed
@@ -169,7 +189,7 @@ PAGrafNormalBuildPart:
 .L16:
 	.align	2
 .L15:
-	.word	16392
+	.word	67141636
 	.size	PAGrafNormalBuildPart, .-PAGrafNormalBuildPart
 	.align	2
 	.global	PAGrafNormalGetResult

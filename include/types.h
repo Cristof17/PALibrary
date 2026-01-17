@@ -130,6 +130,10 @@ struct ArrayList {
 // struct Position {
 // 	PositionInt position;
 // };
+struct PASeries {
+	struct PACount m;
+	struct ArrayList adj;
+};
 struct PAList {
 	struct PACount n;
 	struct PASeries adj[BLK_SIZE];
@@ -178,10 +182,6 @@ struct BFSOutput {
 	// //	struct PARezultat rezultat;
 	// //	struct BFSOutput outputBFS;
 	// };
-struct PASeries {
-	struct PACount m;
-	struct ArrayList adj;
-};
 	//struct PASeries
 	//{
 		//
@@ -190,7 +190,7 @@ struct PATree  {
 	struct PACount n;
 	struct PACount m;
 	struct PAElement source;
-	struct PASeries adj;
+	struct PAList adj;
 };
 struct PALink {
 	struct PAPair p;
@@ -223,7 +223,7 @@ struct IteratorClient {
 	struct PATree tree;
 };
 struct AdapterTarget {
-	struct PASeries series;
+	struct PAList list;
 	//struct Adapter adapter;
 };
 struct AdapterClient {
@@ -247,7 +247,7 @@ struct PATransposeTree {
 	struct PAList adj_trans;
 };
 struct Iterator  {
-	struct PASeries series;
+	struct PAList series;
 };
 struct Aggregate {
 	struct Iterator iterator;

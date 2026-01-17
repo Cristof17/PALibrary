@@ -493,11 +493,11 @@ src/Bridge/Client.i: src/Bridge/Client.c
 	$(CPP) $(CPPFLAGS) -E $< > $@
 src/Bridge/Abstraction.i: src/Bridge/Abstraction.c
 	$(CPP) $(CPPFLAGS) -E $< > $@
-src/Bridge/Implementor.i: src/Prototype/Implementor.c
+src/Bridge/Implementor.i: src/Bridge/Implementor.c
 	$(CPP) $(CPPFLAGS) -E $< > $@
-src/Bridge/ConcreteImplementorA.i: src/Prototype/ConcreteImplementorA.c
+src/Bridge/ConcreteImplementorA.i: src/Bridge/ConcreteImplementorA.c
 	$(CPP) $(CPPFLAGS) -E $< > $@
-src/Bridge/ConcreteImplementorB.i: src/bridge/ConcreteImplementorB.c
+src/Bridge/ConcreteImplementorB.i: src/Bridge/ConcreteImplementorB.c
 	$(CPP) $(CPPFLAGS) -E $< > $@
 src/Bridge/RefinedAbstraction.i: src/Bridge/RefinedAbstraction.c
 	$(CPP) $(CPPFLAGS) -E $< > $@
@@ -599,31 +599,31 @@ src/Factory/ConcreteCreator.s:src/Factory/ConcreteCreator.i
 	$(CC)  -S $< -o $@
 
 src/Prototype/Client.s: src/Prototype/Client.i
-	$(CC)  -S $< -o $@
+	$(CC) -S $< -o $@
 src/Prototype/Prototype.s: src/Prototype/Prototype.i
-	$(CC)  -S $< -o $@
+	$(CC) -S $< -o $@
 src/Prototype/ConcretePrototype1.s: src/Prototype/ConcretePrototype1.i
-	$(CC)  -S $< -o $@
+	$(CC) -S $< -o $@
 src/Prototype/ConcretePrototype2.s: src/Prototype/ConcretePrototype2.i
-	$(CC)  -S $< -o $@
+	$(cc) -S $< -o $@
 
 src/Bridge/Client.s: src/Bridge/Client.i
 # 	-mkdir $(dir $@)
-	$(AS) $(ASFLAGS) $< -o $@
+	$(CC) -S $< -o $@
 src/Bridge/Abstraction.s: src/Bridge/Abstraction.i
 # 	-mkdir $(dir $@)
-	$(AS) $(ASFLAGS) $< -o $@
-src/Bridge/Implementor.s: src/Prototype/Implementor.i
+	$(CC) -S $< -o $@
+src/Bridge/Implementor.s: src/Bridge/Implementor.i
 # 	-mkdir $(dir $@)
-	$(AS) $(ASFLAGS) $< -o $@
-src/Bridge/ConcreteImplementorA.s: src/Prototype/ConcreteImplementorA.i
+	$(CC) -S $< -o $@
+src/Bridge/ConcreteImplementorA.s: src/Brdige/ConcreteImplementorA.i
 # 	-mkdir $(dir $@)
-	$(AS) $(ASFLAGS) $< -o $@
-src/bridge/concreteimplementor.s: src/bridge/concreteimplementorb.i
+	$(CC) -S $< -o $@
+src/Bridge/ConcreteImplementorB.s: src/Bridge/ConcreteImplementorB.i
+	$(CC) -S $< -o $@
 # 	-mkdir $(dir $@)
-	$(AS) $(ASFLAGS) $< -o $@
 src/Bridge/RefinedAbstraction.s: src/Bridge/RefinedAbstraction.i
-	$(AS) $(ASFLAGS) $< -o $@
+	$(CC) -S $< -o $@
 
 ASFLAGS=
 ifeq ($(ARCH),arm64)
@@ -796,13 +796,13 @@ obj/Bridge/Client.o: src/Bridge/Client.s
 obj/Bridge/Abstraction.o: src/Bridge/Abstraction.s
 # 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
-obj/Bridge/Implementor.o: src/Prototype/Implementor.s
+obj/Bridge/Implementor.o: src/Bridge/Implementor.s
 # 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
-obj/Bridge/ConcreteImplementorA.o: src/Prototype/ConcreteImplementorA.s
+obj/Bridge/ConcreteImplementorA.o: src/Bridge/ConcreteImplementorA.s
 # 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
-obj/bridge/concreteimplementor.o: src/bridge/concreteimplementorb.s
+obj/Bridge/ConcreteImplementorB.o: src/Brdige/ConcreteImplementorB.s
 # 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/Bridge/RefinedAbstraction.o: src/Bridge/RefinedAbstraction.s

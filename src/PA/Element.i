@@ -147,10 +147,14 @@ struct ArrayList {
 
 
 
-struct PAList {
-
+struct PASeries {
  struct PACount m;
  struct ArrayList adj;
+};
+struct PAList {
+ struct PACount n;
+ struct PASeries adj[4096];
+
 };
 
 
@@ -191,23 +195,12 @@ struct BFSInput {
 struct BFSOutput {
  struct BFSRecord result;
 };
-
-
-
-
-struct PASeries {
- struct PACount progression;
- struct PAList adj[4096];
-};
-
-
-
-
+# 189 "include/PA/../types.h"
 struct PATree {
  struct PACount n;
  struct PACount m;
  struct PAElement source;
- struct PASeries adj;
+ struct PAList adj;
 };
 struct PALink {
  struct PAPair p;
@@ -240,7 +233,7 @@ struct IteratorClient {
  struct PATree tree;
 };
 struct AdapterTarget {
- struct PASeries series;
+ struct PAList list;
 
 };
 struct AdapterClient {
@@ -264,7 +257,7 @@ struct PATransposeTree {
  struct PAList adj_trans;
 };
 struct Iterator {
- struct PASeries series;
+ struct PAList series;
 };
 struct Aggregate {
  struct Iterator iterator;

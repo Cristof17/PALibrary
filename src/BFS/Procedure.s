@@ -37,31 +37,36 @@ BFS:
 	.arm
 	.type	BFSProcedureConstruct, %function
 BFSProcedureConstruct:
-	@ args = 24, pretend = 16, frame = 16424
+	@ args = 24, pretend = 16, frame = 67141664
 	@ frame_needed = 1, uses_anonymous_args = 0
 	sub	sp, sp, #16
 	push	{fp, lr}
 	add	fp, sp, #4
-	sub	sp, sp, #16384
-	sub	sp, sp, #40
-	sub	ip, fp, #16384
+	add	sp, sp, #-67108864
+	sub	sp, sp, #32768
+	sub	sp, sp, #32
+	add	ip, fp, #-67108864
 	sub	ip, ip, #4
-	str	r0, [ip, #-36]
+	sub	ip, ip, #32768
+	str	r0, [ip, #-28]
 	add	r0, fp, #8
 	stm	r0, {r1, r2, r3}
-	sub	r3, fp, #16384
+	add	r3, fp, #-67108864
 	sub	r3, r3, #4
-	ldr	r2, [r3, #-36]
-	sub	r3, fp, #16384
+	sub	r3, r3, #32768
+	ldr	r2, [r3, #-28]
+	add	r3, fp, #-67108864
 	sub	r3, r3, #4
+	sub	r3, r3, #32768
 	mov	r0, r2
-	sub	r3, r3, #28
+	sub	r3, r3, #24
 	ldr	r2, .L5
 	mov	r1, r3
 	bl	memcpy
-	sub	r3, fp, #16384
+	add	r3, fp, #-67108864
 	sub	r3, r3, #4
-	ldr	r0, [r3, #-36]
+	sub	r3, r3, #32768
+	ldr	r0, [r3, #-28]
 	sub	sp, fp, #4
 	@ sp needed
 	pop	{fp, lr}
@@ -70,7 +75,7 @@ BFSProcedureConstruct:
 .L6:
 	.align	2
 .L5:
-	.word	16412
+	.word	67141656
 	.size	BFSProcedureConstruct, .-BFSProcedureConstruct
 	.align	2
 	.global	BFSProcedurePutTree
@@ -78,31 +83,36 @@ BFSProcedureConstruct:
 	.arm
 	.type	BFSProcedurePutTree, %function
 BFSProcedurePutTree:
-	@ args = 67158072, pretend = 16, frame = 16424
+	@ args = 134283316, pretend = 16, frame = 67141664
 	@ frame_needed = 1, uses_anonymous_args = 0
 	sub	sp, sp, #16
 	push	{fp, lr}
 	add	fp, sp, #4
-	sub	sp, sp, #16384
-	sub	sp, sp, #40
-	sub	ip, fp, #16384
+	add	sp, sp, #-67108864
+	sub	sp, sp, #32768
+	sub	sp, sp, #32
+	add	ip, fp, #-67108864
 	sub	ip, ip, #4
-	str	r0, [ip, #-36]
+	sub	ip, ip, #32768
+	str	r0, [ip, #-28]
 	add	r0, fp, #8
 	stm	r0, {r1, r2, r3}
-	sub	r3, fp, #16384
+	add	r3, fp, #-67108864
 	sub	r3, r3, #4
-	ldr	r2, [r3, #-36]
-	sub	r3, fp, #16384
+	sub	r3, r3, #32768
+	ldr	r2, [r3, #-28]
+	add	r3, fp, #-67108864
 	sub	r3, r3, #4
+	sub	r3, r3, #32768
 	mov	r0, r2
-	sub	r3, r3, #28
+	sub	r3, r3, #24
 	ldr	r2, .L9
 	mov	r1, r3
 	bl	memcpy
-	sub	r3, fp, #16384
+	add	r3, fp, #-67108864
 	sub	r3, r3, #4
-	ldr	r0, [r3, #-36]
+	sub	r3, r3, #32768
+	ldr	r0, [r3, #-28]
 	sub	sp, fp, #4
 	@ sp needed
 	pop	{fp, lr}
@@ -111,7 +121,7 @@ BFSProcedurePutTree:
 .L10:
 	.align	2
 .L9:
-	.word	16412
+	.word	67141656
 	.size	BFSProcedurePutTree, .-BFSProcedurePutTree
 	.align	2
 	.global	BFSProcedurePutInput
@@ -119,31 +129,36 @@ BFSProcedurePutTree:
 	.arm
 	.type	BFSProcedurePutInput, %function
 BFSProcedurePutInput:
-	@ args = 16436, pretend = 16, frame = 16424
+	@ args = 67141680, pretend = 16, frame = 67141664
 	@ frame_needed = 1, uses_anonymous_args = 0
 	sub	sp, sp, #16
 	push	{fp, lr}
 	add	fp, sp, #4
-	sub	sp, sp, #16384
-	sub	sp, sp, #40
-	sub	ip, fp, #16384
+	add	sp, sp, #-67108864
+	sub	sp, sp, #32768
+	sub	sp, sp, #32
+	add	ip, fp, #-67108864
 	sub	ip, ip, #4
-	str	r0, [ip, #-36]
+	sub	ip, ip, #32768
+	str	r0, [ip, #-28]
 	add	r0, fp, #8
 	stm	r0, {r1, r2, r3}
-	sub	r3, fp, #16384
+	add	r3, fp, #-67108864
 	sub	r3, r3, #4
-	ldr	r2, [r3, #-36]
-	sub	r3, fp, #16384
+	sub	r3, r3, #32768
+	ldr	r2, [r3, #-28]
+	add	r3, fp, #-67108864
 	sub	r3, r3, #4
+	sub	r3, r3, #32768
 	mov	r0, r2
-	sub	r3, r3, #28
+	sub	r3, r3, #24
 	ldr	r2, .L13
 	mov	r1, r3
 	bl	memcpy
-	sub	r3, fp, #16384
+	add	r3, fp, #-67108864
 	sub	r3, r3, #4
-	ldr	r0, [r3, #-36]
+	sub	r3, r3, #32768
+	ldr	r0, [r3, #-28]
 	sub	sp, fp, #4
 	@ sp needed
 	pop	{fp, lr}
@@ -152,7 +167,7 @@ BFSProcedurePutInput:
 .L14:
 	.align	2
 .L13:
-	.word	16412
+	.word	67141656
 	.size	BFSProcedurePutInput, .-BFSProcedurePutInput
 	.align	2
 	.global	BFSProcedureRuin

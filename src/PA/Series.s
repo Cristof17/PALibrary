@@ -18,40 +18,33 @@
 	.arm
 	.type	PASeriesPerformConstruct, %function
 PASeriesPerformConstruct:
-	@ args = 0, pretend = 0, frame = 67141656
+	@ args = 0, pretend = 0, frame = 16408
 	@ frame_needed = 1, uses_anonymous_args = 0
 	push	{fp, lr}
 	add	fp, sp, #4
-	add	sp, sp, #-67108864
-	sub	sp, sp, #32768
+	sub	sp, sp, #16384
 	sub	sp, sp, #24
-	add	r3, fp, #-67108864
+	sub	r3, fp, #16384
 	sub	r3, r3, #4
-	sub	r3, r3, #32768
 	str	r0, [r3, #-12]
-	add	r3, fp, #-67108864
+	sub	r3, fp, #16384
 	sub	r3, r3, #4
-	sub	r3, r3, #32768
 	str	r1, [r3, #-16]
-	add	r3, fp, #-67108864
+	sub	r3, fp, #16384
 	sub	r3, r3, #4
-	sub	r3, r3, #32768
 	str	r2, [r3, #-20]
-	add	r3, fp, #-67108864
+	sub	r3, fp, #16384
 	sub	r3, r3, #4
-	sub	r3, r3, #32768
 	ldr	r2, [r3, #-12]
-	add	r3, fp, #-67108864
+	sub	r3, fp, #16384
 	sub	r3, r3, #4
-	sub	r3, r3, #32768
 	mov	r0, r2
-	sub	r3, r3, #4
+	sub	r3, r3, #8
 	ldr	r2, .L3
 	mov	r1, r3
 	bl	memcpy
-	add	r3, fp, #-67108864
+	sub	r3, fp, #16384
 	sub	r3, r3, #4
-	sub	r3, r3, #32768
 	ldr	r0, [r3, #-12]
 	sub	sp, fp, #4
 	@ sp needed
@@ -59,7 +52,7 @@ PASeriesPerformConstruct:
 .L4:
 	.align	2
 .L3:
-	.word	67141636
+	.word	16392
 	.size	PASeriesPerformConstruct, .-PASeriesPerformConstruct
 	.align	2
 	.global	PASeriesPerformInit
@@ -125,7 +118,7 @@ PASeriesPerformPutCount:
 	.arm
 	.type	PASeriesPerformPutList, %function
 PASeriesPerformPutList:
-	@ args = 16392, pretend = 16, frame = 8
+	@ args = 67141636, pretend = 16, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
 	@ link register save eliminated.
 	sub	sp, sp, #16
