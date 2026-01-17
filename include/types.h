@@ -131,9 +131,9 @@ struct ArrayList {
 // 	PositionInt position;
 // };
 struct PAList {
+	struct PACount n;
+	struct PASeries adj[BLK_SIZE];
 	// struct PANod Nod;
-	struct PACount m;
-	struct ArrayList adj;
 };
 // struct BFSPorce
 
@@ -179,8 +179,8 @@ struct BFSOutput {
 	// //	struct BFSOutput outputBFS;
 	// };
 struct PASeries {
-	struct PACount progression;
-	struct PAList adj[BLK_SIZE];
+	struct PACount m;
+	struct ArrayList adj;
 };
 	//struct PASeries
 	//{
