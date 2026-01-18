@@ -664,604 +664,787 @@ ASFLAGS=-march=armv8.3-a
 endif
 
 ifeq ($(host-type),arm64)
-endif
-ifeq ($(host-type),x86_64)
-endif
-ifeq ($(host-type),AArch64)
-endif
-
 obj/Input.o: src/Input.s
 	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Input.o: src/Input.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Input.o: src/Input.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+#obj/Input.o: src/Input.s
+#	$(AS) $(ASFLAGS) $< -o $@
+ifeq ($(host-type),arm64)
 obj/Algorithm.o: src/Algorithm.s
-	ifeq ($(host-type),arm64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq ($(host-type),x86_64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq ($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Algorithm.o: src/Algorithm.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Algorithm.o: src/Algorithm.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/BFS/Procedure.o: src/BFS/Procedure.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/BFS/Procedure.o: src/BFS/Procedure.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/BFS/Procedure.o: src/BFS/Procedure.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/PA/Input.o: src/PA/Input.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/PA/Input.o: src/PA/Input.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/PA/Input.o: src/PA/Input.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/PA/Output.o: src/PA/Output.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/PA/Output.o: src/PA/Output.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/PA/Output.o: src/PA/Output.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/BFS/Record.o:src/BFS/Record.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/BFS/Record.o:src/BFS/Record.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/BFS/Record.o:src/BFS/Record.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/Output.o: src/Output.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Output.o: src/Output.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Output.o: src/Output.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/PA/Value.o: src/PA/Value.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/PA/Value.o: src/PA/Value.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/PA/Value.o: src/PA/Value.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/PA/Data.o: src/PA/Data.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/PA/Data.o: src/PA/Data.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/PA/Data.o: src/PA/Data.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/PA/Tree.o: src/PA/Tree.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/PA/Tree.o: src/PA/Tree.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/PA/Tree.o: src/PA/Tree.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/PA/List.o: src/PA/List.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/PA/List.o: src/PA/List.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/PA/List.o: src/PA/List.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/PA/Link.o: src/PA/Link.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/PA/Link.o: src/PA/Link.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/PA/Link.o: src/PA/Link.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/PA/Arrow.o: src/PA/Arrow.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/PA/Arrow.o: src/PA/Arrow.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/PA/Arrow.o: src/PA/Arrow.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/PA/Element.o: src/PA/Element.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/PA/Element.o: src/PA/Element.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/PA/Element.o: src/PA/Element.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/PA/Count.o: src/PA/Count.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/PA/Count.o: src/PA/Count.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/PA/Count.o: src/PA/Count.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/PA/Pair.o: src/PA/Pair.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/PA/Pair.o: src/PA/Pair.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/PA/Pair.o: src/PA/Pair.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/PA/Result.o: src/PA/Result.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/PA/Result.o: src/PA/Result.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/PA/Result.o: src/PA/Result.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/PA/Series.o: src/PA/Series.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/PA/Series.o: src/PA/Series.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/PA/Series.o: src/PA/Series.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/PA/Status.o: src/PA/Status.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/PA/Status.o: src/PA/Status.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/PA/Status.o: src/PA/Status.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/PA/Feature.o: src/PA/Feature.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/PA/Feature.o: src/PA/Feature.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/PA/Feature.o: src/PA/Feature.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/PA/Destination.o : src/PA/Destination.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/PA/Destination.o : src/PA/Destination.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/PA/Destination.o : src/PA/Destination.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/PA/Resource.o: src/PA/Resource.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/PA/Resource.o: src/PA/Resource.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/PA/Resource.o: src/PA/Resource.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/Builder/Product.o: src/Builder/Product.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Builder/Product.o: src/Builder/Product.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Builder/Product.o: src/Builder/Product.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/Builder/ConcreteBuilder.o: src/Builder/ConcreteBuilder.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Builder/ConcreteBuilder.o: src/Builder/ConcreteBuilder.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Builder/ConcreteBuilder.o: src/Builder/ConcreteBuilder.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/Builder/Director.o: src/Builder/Director.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Builder/Director.o: src/Builder/Director.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Builder/Director.o: src/Builder/Director.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/Builder/Builder.o: src/Builder/Builder.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Builder/Builder.o: src/Builder/Builder.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Builder/Builder.o: src/Builder/Builder.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/PA/NormalTree.o: src/PA/NormalTree.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/PA/NormalTree.o: src/PA/NormalTree.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/PA/NormalTree.o: src/PA/NormalTree.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/PA/TransposeTree.o: src/PA/TransposeTree.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/PA/TransposeTree.o: src/PA/TransposeTree.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/PA/TransposeTree.o: src/PA/TransposeTree.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/Adapter/Client.o: src/Adapter/Client.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Adapter/Client.o: src/Adapter/Client.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Adapter/Client.o: src/Adapter/Client.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/Adapter/Target.o: src/Adapter/Target.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Adapter/Target.o: src/Adapter/Target.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Adapter/Target.o: src/Adapter/Target.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/Adapter/Adapter.o: src/Adapter/Adapter.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Adapter/Adapter.o: src/Adapter/Adapter.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Adapter/Adapter.o: src/Adapter/Adapter.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/Adapter/Adaptee.o: src/Adapter/Adaptee.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Adapter/Adaptee.o: src/Adapter/Adaptee.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Adapter/Adaptee.o: src/Adapter/Adaptee.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/PA/PADrawingEditor.o: src/PA/PADrawingEditor.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/PA/PADrawingEditor.o: src/PA/PADrawingEditor.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/PA/PADrawingEditor.o: src/PA/PADrawingEditor.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/PA/PALine.o: src/PA/PALine.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/PA/PALine.o: src/PA/PALine.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/PA/PALine.o: src/PA/PALine.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/PA/PAShape.o: src/PA/PAShape.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/PA/PAShape.o: src/PA/PAShape.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/PA/PAShape.o: src/PA/PAShape.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/PA/PATextView.o: src/PA/PATextView.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/PA/PATextView.o: src/PA/PATextView.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/PA/PATextView.o: src/PA/PATextView.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/ArrayList/ArrayList.o: src/ArrayList/ArrayList.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/ArrayList/ArrayList.o: src/ArrayList/ArrayList.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/ArrayList/ArrayList.o: src/ArrayList/ArrayList.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/ArrayList/ArrayListPosition.o : src/ArrayList/ArrayListPosition.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/ArrayList/ArrayListPosition.o : src/ArrayList/ArrayListPosition.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/ArrayList/ArrayListPosition.o : src/ArrayList/ArrayListPosition.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/Iterator/Client.o: src/Iterator/Client.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Iterator/Client.o: src/Iterator/Client.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Iterator/Client.o: src/Iterator/Client.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/Iterator/ConcreteIterator.o: src/Iterator/ConcreteIterator.s 
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Iterator/ConcreteIterator.o: src/Iterator/ConcreteIterator.s 
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Iterator/ConcreteIterator.o: src/Iterator/ConcreteIterator.s 
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/Iterator/Iterator.o: src/Iterator/Iterator.s
-	ifeq ($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq ($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq ($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Iterator/Iterator.o: src/Iterator/Iterator.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Iterator/Iterator.o: src/Iterator/Iterator.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/Iterator/ConcreteAggregate.o: src/Iterator/ConcreteAggregate.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Iterator/ConcreteAggregate.o: src/Iterator/ConcreteAggregate.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Iterator/ConcreteAggregate.o: src/Iterator/ConcreteAggregate.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/Factory/Product.o: src/Factory/Product.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Factory/Product.o: src/Factory/Product.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Factory/Product.o: src/Factory/Product.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/Factory/Creator.o: src/Factory/Creator.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Factory/Creator.o: src/Factory/Creator.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Factory/Creator.o: src/Factory/Creator.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/Factory/ConcreteProduct.o:src/Factory/ConcreteProduct.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Factory/ConcreteProduct.o:src/Factory/ConcreteProduct.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Factory/ConcreteProduct.o:src/Factory/ConcreteProduct.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/Factory/ConcreteCreator.o:src/Factory/ConcreteCreator.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Factory/ConcreteCreator.o:src/Factory/ConcreteCreator.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Factory/ConcreteCreator.o:src/Factory/ConcreteCreator.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/Prototype/Client.o: src/Prototype/Client.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Prototype/Client.o: src/Prototype/Client.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Prototype/Client.o: src/Prototype/Client.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/Prototype/Prototype.o: src/Prototype/Prototype.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Prototype/Prototype.o: src/Prototype/Prototype.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Prototype/Prototype.o: src/Prototype/Prototype.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/Prototype/ConcretePrototype1.o: src/Prototype/ConcretePrototype1.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Prototype/ConcretePrototype1.o: src/Prototype/ConcretePrototype1.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Prototype/ConcretePrototype1.o: src/Prototype/ConcretePrototype1.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/Prototype/ConcretePrototype2.o: src/Prototype/ConcretePrototype2.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Prototype/ConcretePrototype2.o: src/Prototype/ConcretePrototype2.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Prototype/ConcretePrototype2.o: src/Prototype/ConcretePrototype2.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/Bridge/Client.o: src/Bridge/Client.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Bridge/Client.o: src/Bridge/Client.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Bridge/Client.o: src/Bridge/Client.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/Bridge/Abstraction.o: src/Bridge/Abstraction.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Bridge/Abstraction.o: src/Bridge/Abstraction.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Bridge/Abstraction.o: src/Bridge/Abstraction.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/Bridge/Implementor.o: src/Bridge/Implementor.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Bridge/Implementor.o: src/Bridge/Implementor.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Bridge/Implementor.o: src/Bridge/Implementor.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/Bridge/ConcreteImplementorA.o: src/Bridge/ConcreteImplementorA.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Bridge/ConcreteImplementorA.o: src/Bridge/ConcreteImplementorA.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Bridge/ConcreteImplementorA.o: src/Bridge/ConcreteImplementorA.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/Bridge/ConcreteImplementorB.o: src/Bridge/ConcreteImplementorB.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Bridge/ConcreteImplementorB.o: src/Bridge/ConcreteImplementorB.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Bridge/ConcreteImplementorB.o: src/Bridge/ConcreteImplementorB.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/Bridge/RefinedAbstraction.o: src/Bridge/RefinedAbstraction.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/Bridge/RefinedAbstraction.o: src/Bridge/RefinedAbstraction.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/Bridge/RefinedAbstraction.o: src/Bridge/RefinedAbstraction.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/State/Context.o: src/State/Context.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/State/Context.o: src/State/Context.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/State/Context.o: src/State/Context.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/State/State.o: src/State/State.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/State/State.o: src/State/State.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/State/State.o: src/State/State.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/State/ConcreteStateA.o: src/State/ConcreteStateA.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/State/ConcreteStateA.o: src/State/ConcreteStateA.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/State/ConcreteStateA.o: src/State/ConcreteStateA.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
+ifeq ($(host-type),arm64)
 obj/State/ConcreteStateB.o: src/State/ConcreteStateB.s
-	ifeq($(host-type),arm64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),x86_64)
-		$(CC) -c $(CFLAGS) $< -o $@
-	endif
-	ifeq($(host-type),AArch64)
-		$(AS) $(ASFLAGS) $< -o $@
-	endif
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+obj/State/ConcreteStateB.o: src/State/ConcreteStateB.s
+	$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+obj/State/ConcreteStateB.o: src/State/ConcreteStateB.s
+	$(AS) $(ASFLAGS) $< -o $@
+endif
+
 # libpa.a: $(objects)
 # 	$(LD) $< -o $@
 #src/Input.c: 
