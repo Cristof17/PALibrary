@@ -55,7 +55,11 @@ struct PALink;
 // struct PAData;
 // struct PALink;
 // struct PATree;
-struct PAResource;
+// struct PAResource;
+struct AdapterTarget;
+struct AdapterClient;
+struct Adapter;
+// struct Adaptee;
 // struct PAResult;
 struct Adaptee;
 // struct Adaptee;
@@ -91,13 +95,13 @@ struct Output;
 struct PAStatus {
 	PAInt visited;
 };
-struct PAResource {
-	// struct
-	// PA_INt
-	PAInt value;
-};
+// struct PAResource {
+// 	// struct
+// 	// PA_INt
+// 	PAInt value;
+// };
 struct PAData {
-    struct PAResource resource;
+    PAResource resource;
 };
 struct PAFeature {
 	PAInt kind;
@@ -126,10 +130,14 @@ struct ArrayList {
 // struct Position {
 // 	PositionInt position;
 // };
-struct PAList {
-	// struct PANod Nod;
+struct PASeries {
 	struct PACount m;
 	struct ArrayList adj;
+};
+struct PAList {
+	struct PACount n;
+	struct PASeries adj[BLK_SIZE];
+	// struct PANod Nod;
 };
 // struct BFSPorce
 
@@ -174,10 +182,6 @@ struct BFSOutput {
 	// //	struct PARezultat rezultat;
 	// //	struct BFSOutput outputBFS;
 	// };
-struct PASeries {
-	struct PACount progression;
-	struct PAList adj[BLK_SIZE];
-};
 	//struct PASeries
 	//{
 		//
@@ -186,7 +190,7 @@ struct PATree  {
 	struct PACount n;
 	struct PACount m;
 	struct PAElement source;
-	struct PASeries adj;
+	struct PAList adj;
 };
 struct PALink {
 	struct PAPair p;
@@ -194,20 +198,36 @@ struct PALink {
 		// struct PAResult {
 			// 	PA_INT code;
 			// };
+struct FactoryProduct {
+
+};
+struct FactoryConcreteProduct 
+{
+
+};
+struct FactoryCreator {
+
+};
+struct FactoryConcreteCreator 
+{
+
+};
 struct Adaptee {
 	struct ArrayList list;
 };
 struct Adapter {
+	struct Adaptee adaptee;
 	struct PAList list;
 };
 struct IteratorClient {
 	struct PATree tree;
 };
-struct AdapterClient {
-};
-struct Target {
-	struct PASeries series;
+struct AdapterTarget {
+	struct PAList list;
 	//struct Adapter adapter;
+};
+struct AdapterClient {
+	struct AdapterTarget target;
 };
 struct BuilderProduct {
 	struct PATree tree;
@@ -227,7 +247,7 @@ struct PATransposeTree {
 	struct PAList adj_trans;
 };
 struct Iterator  {
-	struct PASeries series;
+	struct PAList series;
 };
 struct Aggregate {
 	struct Iterator iterator;
