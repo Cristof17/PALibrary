@@ -97,10 +97,10 @@ assemblies= src/Input.s \
 	src/PA/PALine.s \
 	src/PA/PAShape.s \
 	src/PA/PATextView.s \
-	src/State/Context.c \
-	src/State/State.c \
-	src/State/ConcreteStateA.c \
-	src/State/ConcreteStateB.c \
+	src/State/Context.s \
+	src/State/State.s \
+	src/State/ConcreteStateA.s \
+	src/State/ConcreteStateB.s \
 	src/ArrayList/ArrayList.s \
 	src/ArrayList/ArrayListPosition.s \
 	src/Iterator/Client.s \
