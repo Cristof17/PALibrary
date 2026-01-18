@@ -43,10 +43,10 @@ objects= obj/Input.o \
 	obj/PA/PAShape.o \
 	obj/PA/PATextView.o \
 	obj/ArrayList/ArrayList.o \
-	obj/State/Context.c \
-	obj/State/State.c \
-	obj/State/ConcreteStateA.c \
-	obj/State/ConcreteStateB.c \
+	obj/State/Context.o \
+	obj/State/State.o \
+	obj/State/ConcreteStateA.o \
+	obj/State/ConcreteStateB.o \
 	obj/ArrayList/ArrayListPosition.o \
 	obj/Iterator/Client.o \
 	obj/Iterator/ConcreteIterator.o \
@@ -197,6 +197,10 @@ sources=src/Input.i \
 	src/PA/Feature.i \
 	src/PA/Value.i \
 	src/PA/Resource.i \
+	src/State/Context.i \
+	src/State/State.i \
+	src/State/ConcreteStateA.i \
+	src/State/ConcreteStateB.i \
 	src/Builder/Director.i \
 	src/Builder/Builder.i \
 	src/Builder/Product.i \
@@ -235,7 +239,8 @@ objdirs= obj/ \
 	obj/ArrayList/ \
 	obj/Prototype/ \
 	obj/Bridge/ \
-	obj/PA/
+	obj/PA/ \
+	obj/State/
 
 subdirs= obj/ \
 	obj/BFS/ \
@@ -245,7 +250,8 @@ subdirs= obj/ \
 	obj/ArrayList/ \
 	obj/Prototype/ \
 	obj/Bridge/ \
-	obj/PA/
+	obj/PA/ \
+	obj/State/
 
 ifeq (0,${MAKELEVEL})
 host-type 	:= $(shell arch)
@@ -510,6 +516,15 @@ src/Bridge/ConcreteImplementorB.i: src/Bridge/ConcreteImplementorB.c
 src/Bridge/RefinedAbstraction.i: src/Bridge/RefinedAbstraction.c
 	$(CPP) $(CPPFLAGS) -E $< > $@
 
+src/State/Context.i: src/State/Context.c
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/State/State.i:src/State/Context.c
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/State/ConcreteStateA.i:src/State/Context.c
+	$(CPP) $(CPPFLAGS) -E $< > $@
+src/State/ConcreteStateB.i:src/State/Context.c
+	$(CPP) $(CPPFLAGS) -E $< > $@
+
 src/Input.s: src/Input.i
 	$(CC) -S $< -o $@
 src/Algorithm.s: src/Algorithm.i
@@ -628,188 +643,685 @@ src/Bridge/ConcreteImplementorB.s: src/Bridge/ConcreteImplementorB.i
 src/Bridge/RefinedAbstraction.s: src/Bridge/RefinedAbstraction.i
 	$(CC) -S $< -o $@
 
+src/State/Context.s: src/State/Context.i
+	$(CC) -S $< -o $@
+src/State/State.s:src/State/Context.i
+	$(CC) -S $< -o $@
+src/State/ConcreteStateA.s:src/State/Context.i
+	$(CC) -S $< -o $@
+src/State/ConcreteStateB.s:src/State/Context.i
+	$(CC) -S $< -o $@
+
 ASFLAGS=
 ifeq ($(ARCH),arm64)
 	ASFLAGS=-arch $(ARCH)
-else
+ifeq($(ARCH),x86_64)
+	CFLAGS=-march=x86_64
+ifeq($(ARCH),AArch64)
 	ASFLAGS=-march=armv8.3-a
 endif
 obj/Input.o: src/Input.s 
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
 obj/Algorithm.o: src/Algorithm.s 
 # 	-mkdir $(dir $@)
+ifeq ($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+else
 	$(AS) $(ASFLAGS) $< -o $@
+	#$(AS) $(ASFLAGS) $< -o $@
+endif
 obj/BFS/Procedure.o: src/BFS/Procedure.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/PA/Input.o: src/PA/Input.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/PA/Output.o: src/PA/Output.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/BFS/Record.o:src/BFS/Record.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/Output.o: src/Output.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/PA/Value.o: src/PA/Value.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/PA/Data.o: src/PA/Data.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/PA/Tree.o: src/PA/Tree.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 #obj/PAIndex.o: src/PAIndex.c include/PAIndex.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
 obj/PA/List.o: src/PA/List.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/PA/Link.o: src/PA/Link.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/PA/Arrow.o: src/PA/Arrow.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/PA/Element.o: src/PA/Element.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/PA/Count.o: src/PA/Count.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/PA/Pair.o: src/PA/Pair.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/PA/Result.o: src/PA/Result.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/PA/Series.o: src/PA/Series.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/PA/Status.o: src/PA/Status.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/PA/Feature.o: src/PA/Feature.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/PA/Destination.o : src/PA/Destination.s
+ifeq ($(ARCH),arm64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
 # 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/PA/Resource.o: src/PA/Resource.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 #obj/PA/Value.o: src/PA/Value.c include/PA/Value.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
 obj/Builder/Product.o: src/Builder/Product.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/Builder/ConcreteBuilder.o: src/Builder/ConcreteBuilder.s
+ifeq ($(ARCH),arm64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
 # 	-mkdir $s(dir $@)
-	$(AS) $(ASFLAGS) $< -o $@
 obj/Builder/Director.o: src/Builder/Director.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/Builder/Builder.o: src/Builder/Builder.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/PA/NormalTree.o: src/PA/NormalTree.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/PA/TransposeTree.o: src/PA/TransposeTree.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/Adapter/Client.o: src/Adapter/Client.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/Adapter/Target.o: src/Adapter/Target.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/Adapter/Adapter.o: src/Adapter/Adapter.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/Adapter/Adaptee.o: src/Adapter/Adaptee.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/PA/PADrawingEditor.o: src/PA/PADrawingEditor.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/PA/PALine.o: src/PA/PALine.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/PA/PAShape.o: src/PA/PAShape.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/PA/PATextView.o: src/PA/PATextView.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/ArrayList/ArrayList.o: src/ArrayList/ArrayList.s
+ifeq ($(ARCH),arm64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
 # 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/ArrayList/ArrayListPosition.o : src/ArrayList/ArrayListPosition.s
+ifeq ($(ARCH),arm64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
 # 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 #obj/ArrayList/ArrayListObject.o : src/ArrayList/ArrayListObject.c include/ArrayList/ArrayListObject.h include/types.h include/defs.h
 #	$(CC) -c $(CFLAGS) $< -o $@
 obj/Iterator/Client.o: src/Iterator/Client.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/Iterator/ConcreteIterator.o: src/Iterator/ConcreteIterator.s 
+ifeq ($(ARCH),arm64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
 # 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/Iterator/Iterator.o: src/Iterator/Iterator.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/Iterator/ConcreteAggregate.o: src/Iterator/ConcreteAggregate.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
-
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/Factory/Product.o: src/Factory/Product.s
+ifeq ($(ARCH),arm64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
 # 	-mkdir $(dir $@)
 	$(AS) $(ASFLAGS) $< -o $@
 obj/Factory/Creator.o: src/Factory/Creator.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/Factory/ConcreteProduct.o:src/Factory/ConcreteProduct.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/Factory/ConcreteCreator.o:src/Factory/ConcreteCreator.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
-
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/Prototype/Client.o: src/Prototype/Client.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/Prototype/Prototype.o: src/Prototype/Prototype.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/Prototype/ConcretePrototype1.o: src/Prototype/ConcretePrototype1.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/Prototype/ConcretePrototype2.o: src/Prototype/ConcretePrototype2.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
-
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/Bridge/Client.o: src/Bridge/Client.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/Bridge/Abstraction.o: src/Bridge/Abstraction.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/Bridge/Implementor.o: src/Bridge/Implementor.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/Bridge/ConcreteImplementorA.o: src/Bridge/ConcreteImplementorA.s
-# 	-mkdir $(dir $@)
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+# 	-mkdir $(dir $@)
 obj/Bridge/ConcreteImplementorB.o: src/Bridge/ConcreteImplementorB.s
+ifeq ($(ARCH),arm64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
 # 	-mkdir $(dir $@)
-	$(AS) $(ASFLAGS) $< -o $@
 obj/Bridge/RefinedAbstraction.o: src/Bridge/RefinedAbstraction.s
+ifeq ($(ARCH),arm64)
 	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+obj/State/Context.o: src/State/Context.s
+ifeq ($(ARCH),arm64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+obj/State/State.o: src/State/State.s
+ifeq ($(ARCH),arm64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+obj/State/ConcreteStateA.o: src/State/ConcreteStateA.s
+ifeq ($(ARCH),arm64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
+obj/State/ConcreteStateB.o: src/State/ConcreteStateB.s
+ifeq ($(ARCH),arm64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-arch $(ARCH)
+ifeq($(ARCH),x86_64)
+	$(CC) -c $(CFLAGS) $< -o $@
+ifeq($(ARCH),AArch64)
+	$(AS) $(ASFLAGS) $< -o $@
+	#ASFLAGS=-march=armv8.3-a
+endif
 
 # libpa.a: $(objects)
 # 	$(LD) $< -o $@
