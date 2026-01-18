@@ -667,7 +667,7 @@ src/Iterator/ConcreteIterator.s: src/Iterator/ConcreteIterator.i
 src/Iterator/Iterator.s: src/Iterator/Iterator.i
 	$(CC) -S $< -o $@
 src/Iterator/ConcreteAggregate.s: src/Iterator/ConcreteAggregate.i
-	$(CC)  -S $< -o $@
+	$(CC) -S $< -o $@
 
 src/Factory/Product.s: src/Factory/Product.i
 	$(CC)  -S $< -o $@
