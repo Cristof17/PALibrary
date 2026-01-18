@@ -1631,6 +1631,15 @@ clean: preprocess compile assemble
 	-rm src/Prototype/Prototype.i
 	-rm src/Prototype/ConcretePrototype1.i
 	-rm src/Prototype/ConcretePrototype2.i
+	-rm src/Bridge/Implementor.i
+	-rm src/Bridge/Abstraction.i
+	-rm src/Bridge/RefinedAbstraction.i
+	-rm src/Bridge/ConcreteImplementorA.i
+	-rm src/Bridge/ConcreteImplementorB.i
+	-rm src/State/Context.i
+	-rm src/State/State.i
+	-rm src/State/ConcreteStateA.i
+	-rm src/State/ConcreteStateB.i
 	-rm src/Input.s
 	-rm src/Algorithm.s
 	-rm src/BFS/Procedure.s
@@ -1678,6 +1687,15 @@ clean: preprocess compile assemble
 	-rm src/Prototype/Prototype.s
 	-rm src/Prototype/ConcretePrototype1.s
 	-rm src/Prototype/ConcretePrototype2.s
+	-rm src/Bridge/Implementor.s
+	-rm src/Bridge/Abstraction.s
+	-rm src/Bridge/RefinedAbstraction.s
+	-rm src/Bridge/ConcreteImplementorA.s
+	-rm src/Bridge/ConcreteImplementorB.s
+	-rm src/State/Context.s
+	-rm src/State/State.s
+	-rm src/State/ConcreteStateA.s
+	-rm src/State/ConcreteStateB.s
 	-rm obj/Input.o
 	-rm obj/Algorithm.o
 	-rm obj/BFS/Procedure.o
@@ -1732,6 +1750,10 @@ clean: preprocess compile assemble
 	-rm obj/Bridge/RefinedAbstraction.o
 	-rm obj/Bridge/ConcreteImplementorA.o
 	-rm obj/Bridge/ConcreteImplementorB.o
+	-rm obj/State/Context.o
+	-rm obj/State/State.o
+	-rm obj/State/ConcreteStateA.o
+	-rm obj/State/ConcreteStateB.o
 # 	-rm -r obj/BFS/
 # 	-rm -r obj/Adapter/
 # 	-rm -r obj/Iterator/
