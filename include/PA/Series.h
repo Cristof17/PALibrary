@@ -12,13 +12,19 @@
 #include "../defs.h"
 
 // struct PASeries;
-struct PASeries PASeriesPerformConstruct(struct PAList Adj[],struct PACount Nß);
-PAResult PASeriesPerformInit();
-PAResult PASeriesPerformCopy();
-PAResult PASeriesPerformPutCount(struct PACount);
-PAResult PASeriesPerformPutList(struct PAList);
+// struct PAList PAListPutElement(struct PAList, struct PAElement);
+struct PASeries PASeriesPerformConstruct(struct PAElement Head);
+PAResult PASerisPerformPutCount(struct PACount);
+PAResult PASeriesPerformPutArrayList(struct ArrayList);
+PAResult PASeriesAddElement(struct PAElement);
+PAResult PASeriesPut(PAResource,struct PAData);
+PAResource PASeriesGet(struct PAData);
+PAInt PASeriesSize();
+struct PAElement PAListHead(struct PASeries);
+struct PASeries PASeriesTail(struct PASeries);
+void PASeriesPerformPrint(struct PASeries);
+PAResult PASeriesPerformDelete(struct PASeries);
 PAResult PASeriesPerformRuin();
-PAResult PASeriesPerformDelete();
-void PASeriesDispose(void);
+void Dispose();
 //typedef struct PASir Series;
 #endif /* INCLUDE_PASIR_H_ */
