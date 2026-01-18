@@ -1631,6 +1631,7 @@ clean: preprocess compile assemble
 	-rm src/Prototype/Prototype.i
 	-rm src/Prototype/ConcretePrototype1.i
 	-rm src/Prototype/ConcretePrototype2.i
+	-rm src/Bridge/Client.i
 	-rm src/Bridge/Implementor.i
 	-rm src/Bridge/Abstraction.i
 	-rm src/Bridge/RefinedAbstraction.i
@@ -1687,6 +1688,7 @@ clean: preprocess compile assemble
 	-rm src/Prototype/Prototype.s
 	-rm src/Prototype/ConcretePrototype1.s
 	-rm src/Prototype/ConcretePrototype2.s
+	-rm src/Bridge/Client.s
 	-rm src/Bridge/Implementor.s
 	-rm src/Bridge/Abstraction.s
 	-rm src/Bridge/RefinedAbstraction.s
