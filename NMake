@@ -20,8 +20,8 @@ sources=$(SRC_DIR)\Input.i \
 	$(SRC_DIR)\Algorithm.i \
 	$(SRC_DIR)\BFS\Procedure.i \
 	$(SRC_DIR)\PA\Input.i \
-	$(SRC_DIR)/PA\Output.i \
-	$(SRC_DIR)/BFS\Record.i \
+	$(SRC_DIR)\PA\Output.i \
+	$(SRC_DIR)\BFS\Record.i \
 	$(SRC_DIR)\Output.i \
 	$(SRC_DIR)\PA\Data.i \
 	$(SRC_DIR)\PA\Destination.i \
@@ -96,12 +96,12 @@ check:
 	file $(INCLUDE_DIR)\PA\PADrawingEditor.h $(INCLUDE_DIR)\defs.h
 	file $(INCLUDE_DIR)\PA\PALine.h $(INCLUDE_DIR)\defs.h
 	file $(INCLUDE_DIR)\PA\PAShape.h $(INCLUDE_DIR)\defs.h
-	file $(INCLUDE_DIR)\PA/PATextView.h $(INCLUDE_DIR)\defs.h
+	file $(INCLUDE_DIR)\PA\PATextView.h $(INCLUDE_DIR)\defs.h
 	file $(INCLUDE_DIR)\ArrayList\ArrayList.h $(INCLUDE_DIR)\defs.h
 	file $(INCLUDE_DIR)\ArrayList\ArrayListPosition.h $(INCLUDE_DIR)\defs.h $(INCLUDE_DIR)\types.h
 	file $(INCLUDE_DIR)\Iterator\Client.h $(INCLUDE_DIR)\defs.h
 	file $(INCLUDE_DIR)\Iterator\ConcreteIterator.h $(INCLUDE_DIR)\defs.h
-	file $(INCLUDE_DIR)/Iterator\Iterator.h $(INCLUDE_DIR)\defs.h
+	file $(INCLUDE_DIR)\Iterator\Iterator.h $(INCLUDE_DIR)\defs.h
 	file $(INCLUDE_DIR)\Iterator\ConcreteAggregate.h $(INCLUDE_DIR)\defs.h
 preprocess: $(sources)
 	$(CC) $(CFLAGS) /P $(SRC_DIR)\Input.c /Fi:$(SRC_DIR)\Input.i
@@ -236,10 +236,10 @@ objects= $(OBJ_DIR)\Input.o \
 	$(OBJ_DIR)\Adapter\Target.o \
 	$(OBJ_DIR)\Adapter\Adapter.o \
 	$(OBJ_DIR)\Adapter\Adaptee.o \
-	$(OBJ_DIR)\PA/PADrawingEditor.o \
-	$(OBJ_DIR)\PA/PALine.o \
-	$(OBJ_DIR)\PA/PAShape.o \
-	$(OBJ_DIR)\PA/PATextView.o \
+	$(OBJ_DIR)\PA\PADrawingEditor.o \
+	$(OBJ_DIR)\PA\PALine.o \
+	$(OBJ_DIR)\PA\PAShape.o \
+	$(OBJ_DIR)\PA\PATextView.o \
 	$(OBJ_DIR)\ArrayList\ArrayList.o \
 	$(OBJ_DIR)\ArrayList\ArrayListPosition.o \
 	$(OBJ_DIR)\Iterator\Client.o \
