@@ -526,7 +526,7 @@ $(OBJ_DIR)\ArrayList\ArrayList.o: $(SRC_DIR)\ArrayList\ArrayList.c
 	$(CC) $(CFLAGS) /c $? /Fo:$@
 $(OBJ_DIR)\ArrayList\ArrayListPosition.o : $(SRC_DIR)\ArrayList\ArrayListPosition.c
 	$(CC) $(CFLAGS) /c $? /Fo:$@
-#obj/ArrayList\ArrayListObject.o : $(SRC_DIR)\ArrayList\ArrayListObject.c include/ArrayList/ArrayListObject.h include/types.h include/defs.h
+#obj/ArrayList\ArrayListObject.o : $(SRC_DIR)\ArrayList\ArrayListObject.c include\ArrayList\ArrayListObject.h include\types.h include\defs.h
 #	$(CC) /c $(CFLAGS) $< -o $@
 $(OBJ_DIR)\Iterator\Client.o: $(SRC_DIR)\Iterator\Client.c
 	$(CC) $(CFLAGS) /c $? /Fo:$@
