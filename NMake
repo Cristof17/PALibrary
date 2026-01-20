@@ -6,7 +6,7 @@
 # Texts.  A copy of the license is included in the section entitled ``GNU
 # Free Documentation License''.
 
-
+!include "win32.mak"
 
 #build: preprocess compile link_windows
 build: $(designs) preprocess compile link_windows
@@ -715,7 +715,7 @@ clean:
 	rm $(OBJ_DIR)\PA\Count.o
 	rm $(OBJ_DIR)\PA\Pair.o
 	rm $(OBJ_DIR)\PA\Result.o
-	rm $(OBJ_DIR)\PA\Data.o
+	rm $(OBJ_DIR)\PA\Datanm.o
 	rm $(OBJ_DIR)\PA\Series.o
 	rm $(OBJ_DIR)\PA\Feature.o
 	rm $(OBJ_DIR)\PA\Value.o
