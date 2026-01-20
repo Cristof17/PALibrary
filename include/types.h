@@ -198,9 +198,21 @@ struct PALink {
 		// struct PAResult {
 			// 	PA_INT code;
 			// };
-struct FactoryProduct {
-
+struct PANormalTree {
+	struct PATree tree;
+	//struct PAList adj;
 };
+struct PATransposeTree {
+	struct PATree tree;
+	//struct PAList adj_trans;
+};
+struct FactoryProduct1 {
+	struct PANormalTree tree;
+};
+struct FactoryProduct2 {
+	struct PATransposeTree trans;
+};
+
 struct FactoryConcreteProduct 
 {
 
@@ -239,12 +251,6 @@ struct Builder {
 };
 struct Director {
 	struct Builder builder;
-};
-struct PANormalTree {
-	struct PAList adj;
-};
-struct PATransposeTree {
-	struct PAList adj_trans;
 };
 struct Iterator  {
 	struct PAList series;
