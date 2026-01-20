@@ -181,7 +181,7 @@ compile: preprocess $(objects)
 	$(CC) $(CFLAGS) /c $(SRC_DIR)\Adapter\Adaptee.i /Fo:$(OBJ_DIR)\Adapter\Adaptee.o 
 	$(CC) $(CFLAGS) /c $(SRC_DIR)\PA\PADrawingEditor.i /Fo:$(OBJ_DIR)\PA\PADrawingEditor.o
 	$(CC) $(CFLAGS) /c $(SRC_DIR)\PA\PALine.i /Fo:$(OBJ_DIR)\PA\PALine.o
-	$(CC) $(CFLAGS) /c $(SRC_DIR)\PA\PAShape.i /Fo:$(OBJ_DIR)\PA/PAShape.o
+	$(CC) $(CFLAGS) /c $(SRC_DIR)\PA\PAShape.i /Fo:$(OBJ_DIR)\PA\PAShape.o
 	$(CC) $(CFLAGS) /c $(SRC_DIR)\PA\PATextView.i /Fo:$(OBJ_DIR)\PA\PATextView.o
 	$(CC) $(CFLAGS) /c $(SRC_DIR)\ArrayList\ArrayList.i /Fo:$(OBJ_DIR)\ArrayList\ArrayList.o
 	$(CC) $(CFLAGS) /c $(SRC_DIR)\ArrayList\ArrayListPosition.i /Fo:$(OBJ_DIR)\ArrayList\ArrayListPosition.o 
