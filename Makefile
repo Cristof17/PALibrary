@@ -459,255 +459,254 @@ libdir=obj obj/Adapter obj/Iterator obj/ArrayList obj/Builder obj/PA obj/BFS
 #src/Prototype/ConcretePrototype2.c: include/Prototype/ConcretePrototype2.h
 
 src/Input.i : src/Input.c include/ArrayList/ArrayList.h include/PA/Result.h include/Input.h include/types.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/Algorithm.i : src/Algorithm.c include/PA/Result.h include/Algorithm.h
 	$(CPP) $(CPPFLAGS) -E $< > $@
 src/BFS/Procedure.i : src/BFS/Procedure.c include/types.h include/Algorithm.h include/PA/Tree.h include/PA/Element.h include/BFS/Procedure.h include/PA/Input.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Input.i : src/PA/Input.c include/Input.h include/ArrayList/ArrayList.h include/PA/Result.h include/types.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Output.i : src/PA/Output.c include/defs.h include/Output.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/BFS/Record.i : src/BFS/Record.c include/types.h include/PA/List.h include/PA/Count.h include/PA/Result.h include/BFS/Record.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/Output.i : src/Output.c include/defs.h include/Output.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Data.i : src/PA/Data.c include/PA/Data.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Destination.i : src/PA/Destination.c include/types.h include/PA/Destination.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Tree.i : src/PA/Tree.c include/PA/Tree.h include/types.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/List.i : src/PA/List.c include/types.h include/PA/List.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Link.i : src/PA/Link.c include/defs.h include/types.h include/PA/Link.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Arrow.i : src/PA/Arrow.c include/defs.h include/PA/Arrow.h include/types.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Element.i : src/PA/Element.c include/defs.h include/PA/Element.h include/types.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Count.i : src/PA/Count.c include/types.h include/PA/Count.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Pair.i : src/PA/Pair.c include/types.h include/PA/Pair.h
 	$(CPP) $(CPPFLAGS) -E $< > $@
+	-
 src/PA/Result.i : src/PA/Result.c include/PA/Result.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Series.i : src/PA/Series.c include/defs.h include/types.h include/PA/Series.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Status.i : src/PA/Status.c include/defs.h include/PA/Status.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Feature.i : src/PA/Feature.c include/PA/Feature.h include/types.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Value.i : src/PA/Value.c include/types.h include/PA/Value.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Resource.i : src/PA/Resource.c include/PA/Resource.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/Builder/Director.i : src/Builder/Director.c include/Builder/Director.h include/Builder/Builder.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/Builder/Builder.i : src/Builder/Builder.c
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/Builder/Product.i : src/Builder/Product.c include/PA/Tree.h include/Builder/Product.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/Builder/ConcreteBuilder.i : src/Builder/ConcreteBuilder.c include/Builder/Builder.h include/Builder/Product.h include/Builder/ConcreteBuilder.h include/PA/Result.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/NormalTree.i : src/PA/NormalTree.c include/types.h include/PA/NormalTree.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/TransposeTree.i : src/PA/TransposeTree.c include/types.h include/PA/TransposeTree.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/Adapter/Client.i : src/Adapter/Client.c include/Adapter/Client.h include/PA/Tree.h include/Adapter/Target.h 
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/Adapter/Target.i : src/Adapter/Target.c include/Adapter/Target.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/Adapter/Adapter.i : src/Adapter/Adapter.c include/Adapter/Adaptee.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/Adapter/Adaptee.i : src/Adapter/Adaptee.c include/Adapter/Adaptee.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/PADrawingEditor.i : src/PA/PADrawingEditor.c include/PA/PADrawingEditor.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/PALine.i : src/PA/PALine.c include/PA/PALine.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/PAShape.i : src/PA/PAShape.c include/PA/PAShape.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/PATextView.i : src/PA/PATextView.c include/PA/PATextView.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/ArrayList/ArrayList.i : src/ArrayList/ArrayList.c include/defs.h include/types.h include/ArrayList/ArrayList.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/ArrayList/ArrayListPosition.i : src/ArrayList/ArrayListPosition.c include/ArrayList/ArrayList.h include/defs.h include/types.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/Iterator/Client.i : src/Iterator/Client.c include/Adapter/Client.h include/PA/Tree.h include/Adapter/Target.h 
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/Iterator/ConcreteIterator.i : src/Iterator/ConcreteIterator.c include/Iterator/ConcreteIterator.h 
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/Iterator/Iterator.i : src/Iterator/Iterator.c include/PA/Data.h include/PA/Element.h include/Iterator/Iterator.h include/types.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/Iterator/ConcreteAggregate.i : src/Iterator/ConcreteAggregate.c include/Iterator/ConcreteAggregate.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/Factory/Product.i: src/Factory/Product.c include/PA/Tree.h include/Builder/Product.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/Factory/Creator.i: src/Factory/Creator.c
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/Factory/ConcreteProduct.i:src/Factory/ConcreteProduct.c
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/Factory/ConcreteCreator.i:src/Factory/ConcreteCreator.c
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 
 src/Prototype/Client.i: src/Prototype/Client.c include/Adapter/Client.h include/PA/Tree.h include/Adapter/Target.h 
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/Prototype/Prototype.i: src/Prototype/Prototype.c
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/Prototype/ConcretePrototype1.i: src/Prototype/ConcretePrototype1.c
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/Prototype/ConcretePrototype2.i: src/Prototype/ConcretePrototype2.c
-	$(CPP) $(CPPFLAGS) -E $< > $@
-
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/Bridge/Client.i: src/Bridge/Client.c
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/Bridge/Abstraction.i: src/Bridge/Abstraction.c
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/Bridge/Implementor.i: src/Bridge/Implementor.c
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/Bridge/ConcreteImplementorA.i: src/Bridge/ConcreteImplementorA.c
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/Bridge/ConcreteImplementorB.i: src/Bridge/ConcreteImplementorB.c
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/Bridge/RefinedAbstraction.i: src/Bridge/RefinedAbstraction.c
-	$(CPP) $(CPPFLAGS) -E $< > $@
-
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/State/Context.i: src/State/Context.c
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/State/State.i:src/State/Context.c
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/State/ConcreteStateA.i:src/State/Context.c
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/State/ConcreteStateB.i:src/State/Context.c
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 
 src/Input.s: src/Input.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/Algorithm.s: src/Algorithm.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/BFS/Procedure.s: src/BFS/Procedure.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/PA/Input.s: src/PA/Input.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/PA/Output.s: src/PA/Output.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/BFS/Record.s: src/BFS/Record.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/Output.s: src/Output.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/PA/Destination.s : src/PA/Destination.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 #asm/PA/Data.s: src/PA/Data.c
 #	$(CC) $(CFLAGS) -S $< -o $@
 src/PA/Tree.s: src/PA/Tree.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/PA/Data.s: src/PA/Data.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/PA/List.s: src/PA/List.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/PA/Link.s: src/PA/Link.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/PA/Arrow.s: src/PA/Arrow.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/PA/Element.s: src/PA/Element.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/PA/Count.s: src/PA/Count.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/PA/Pair.s: src/PA/Pair.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/PA/Result.s: src/PA/Result.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/PA/Series.s: src/PA/Series.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/PA/Feature.s: src/PA/Feature.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/PA/Value.s: src/PA/Value.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/PA/Resource.s: src/PA/Resource.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/Builder/Director.s: src/Builder/Director.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/Builder/Builder.s: src/Builder/Builder.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/Builder/Product.s: src/Builder/Product.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/Builder/ConcreteBuilder.s: src/Builder/ConcreteBuilder.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/PA/NormalTree.s: src/PA/NormalTree.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/PA/TransposeTree.s: src/PA/TransposeTree.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/PA/Status.s: src/PA/Status.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/Adapter/Client.s: src/Adapter/Client.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/Adapter/Target.s: src/Adapter/Target.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/Adapter/Adapter.s: src/Adapter/Adapter.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/Adapter/Adaptee.s: src/Adapter/Adaptee.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/PA/PADrawingEditor.s: src/PA/PADrawingEditor.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/PA/PALine.s: src/PA/PALine.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/PA/PAShape.s: src/PA/PAShape.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/PA/PATextView.s: src/PA/PATextView.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/ArrayList/ArrayList.s: src/ArrayList/ArrayList.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/ArrayList/ArrayListPosition.s: src/ArrayList/ArrayListPosition.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/Iterator/Client.s: src/Iterator/Client.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/Iterator/ConcreteIterator.s: src/Iterator/ConcreteIterator.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/Iterator/Iterator.s: src/Iterator/Iterator.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/Iterator/ConcreteAggregate.s: src/Iterator/ConcreteAggregate.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 
 src/Factory/Product.s: src/Factory/Product.i
-	$(CC)  -S $< -o $@
+	-$(CC)  -S $< -o $@
 src/Factory/Creator.s: src/Factory/Creator.i
-	$(CC)  -S $< -o $@
+	-$(CC)  -S $< -o $@
 src/Factory/ConcreteProduct.s:src/Factory/ConcreteProduct.i
-	$(CC)  -S $< -o $@
+	-$(CC)  -S $< -o $@
 src/Factory/ConcreteCreator.s:src/Factory/ConcreteCreator.i
-	$(CC)  -S $< -o $@
+	-$(CC)  -S $< -o $@
 
 src/Prototype/Client.s: src/Prototype/Client.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/Prototype/Prototype.s: src/Prototype/Prototype.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/Prototype/ConcretePrototype1.s: src/Prototype/ConcretePrototype1.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/Prototype/ConcretePrototype2.s: src/Prototype/ConcretePrototype2.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 
 src/Bridge/Client.s: src/Bridge/Client.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/Bridge/Abstraction.s: src/Bridge/Abstraction.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/Bridge/Implementor.s: src/Bridge/Implementor.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/Bridge/ConcreteImplementorA.s: src/Bridge/ConcreteImplementorA.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/Bridge/ConcreteImplementorB.s: src/Bridge/ConcreteImplementorB.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/Bridge/RefinedAbstraction.s: src/Bridge/RefinedAbstraction.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 
 src/State/Context.s: src/State/Context.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/State/State.s:src/State/Context.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/State/ConcreteStateA.s:src/State/Context.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 src/State/ConcreteStateB.s:src/State/Context.i
-	$(CC) -S $< -o $@
+	-$(CC) -S $< -o $@
 
 ASFLAGS=
 ifeq ($(host-type),arm64)
@@ -724,12 +723,15 @@ endif
 
 obj/Input.o: src/Input.s
 ifeq ($(host-type),arm64)
+	-
 	$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
+	-
 	$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
+	-
 	$(AS) $(ASFLAGS) $< -o $@
 endif
 
@@ -739,12 +741,15 @@ endif
 #	$(AS) $(ASFLAGS) $< -o $@
 obj/Algorithm.o: src/Algorithm.s
 ifeq ($(host-type),arm64)
+	-
 	$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
+	-
 	$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
+	-
 	$(AS) $(ASFLAGS) $< -o $@
 endif
 
@@ -753,754 +758,754 @@ endif
 
 obj/BFS/Procedure.o: src/BFS/Procedure.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/PA/Input.o: src/PA/Input.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/PA/Output.o: src/PA/Output.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/BFS/Record.o:src/BFS/Record.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/Output.o: src/Output.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/PA/Value.o: src/PA/Value.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/PA/Data.o: src/PA/Data.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/PA/Tree.o: src/PA/Tree.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/PA/List.o: src/PA/List.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/PA/Link.o: src/PA/Link.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/PA/Arrow.o: src/PA/Arrow.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/PA/Element.o: src/PA/Element.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/PA/Count.o: src/PA/Count.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/PA/Pair.o: src/PA/Pair.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/PA/Result.o: src/PA/Result.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/PA/Series.o: src/PA/Series.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/PA/Status.o: src/PA/Status.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/PA/Feature.o: src/PA/Feature.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/PA/Destination.o : src/PA/Destination.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/PA/Resource.o: src/PA/Resource.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/Builder/Product.o: src/Builder/Product.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/Builder/ConcreteBuilder.o: src/Builder/ConcreteBuilder.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/Builder/Director.o: src/Builder/Director.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/Builder/Builder.o: src/Builder/Builder.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/PA/NormalTree.o: src/PA/NormalTree.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/PA/TransposeTree.o: src/PA/TransposeTree.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/Adapter/Client.o: src/Adapter/Client.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/Adapter/Target.o: src/Adapter/Target.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/Adapter/Adapter.o: src/Adapter/Adapter.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/Adapter/Adaptee.o: src/Adapter/Adaptee.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/PA/PADrawingEditor.o: src/PA/PADrawingEditor.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/PA/PALine.o: src/PA/PALine.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/PA/PAShape.o: src/PA/PAShape.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/PA/PATextView.o: src/PA/PATextView.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/ArrayList/ArrayList.o: src/ArrayList/ArrayList.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/ArrayList/ArrayListPosition.o : src/ArrayList/ArrayListPosition.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/Iterator/Client.o: src/Iterator/Client.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/Iterator/ConcreteIterator.o: src/Iterator/ConcreteIterator.s 
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/Iterator/Iterator.o: src/Iterator/Iterator.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/Iterator/ConcreteAggregate.o: src/Iterator/ConcreteAggregate.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/Factory/Product.o: src/Factory/Product.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/Factory/Creator.o: src/Factory/Creator.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/Factory/ConcreteProduct.o:src/Factory/ConcreteProduct.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/Factory/ConcreteCreator.o:src/Factory/ConcreteCreator.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/Prototype/Client.o: src/Prototype/Client.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/Prototype/Prototype.o: src/Prototype/Prototype.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/Prototype/ConcretePrototype1.o: src/Prototype/ConcretePrototype1.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/Prototype/ConcretePrototype2.o: src/Prototype/ConcretePrototype2.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/Bridge/Client.o: src/Bridge/Client.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/Bridge/Abstraction.o: src/Bridge/Abstraction.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/Bridge/Implementor.o: src/Bridge/Implementor.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/Bridge/ConcreteImplementorA.o: src/Bridge/ConcreteImplementorA.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/Bridge/ConcreteImplementorB.o: src/Bridge/ConcreteImplementorB.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/Bridge/RefinedAbstraction.o: src/Bridge/RefinedAbstraction.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/State/Context.o: src/State/Context.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/State/State.o: src/State/State.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/State/ConcreteStateA.o: src/State/ConcreteStateA.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
 
 obj/State/ConcreteStateB.o: src/State/ConcreteStateB.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
 
