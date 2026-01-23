@@ -1,0 +1,1 @@
+Get-Content win32.mak | Out-Dir $1

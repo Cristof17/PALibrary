@@ -14,11 +14,82 @@
  *  Created on: 16 nov. 2025
  *      Author: AdministratorUser
 ` */
-struct PASeries PASeriesPerformConstruct(struct PAList Node[], struct PACount N)
+PAResult PASeriesPerformCopy()
 {
-    struct PASeries series;
-    return series;
+	PAResult result;
+	return result;
+    //struct PAList copy;
+    // copy = PAListPerformConstruct(List.adj, List.m);
+    // copy = PAListPerformInit(List);
+    //return copy;
 }
+// struct PAList PAListPutElement(struct PAList List, struct PAElement Element) {
+//     // struct PAList list;
+//     // List.
+//     return list;
+// }
+PAResult PASeriesPerformPutCount(struct PACount M)
+{
+	PAResult result;
+	return result;
+    // struct PAList list;
+    //List.m = M;
+    //return List;
+    // return list;
+}
+PAResult PASeriesPerformPutArrayList(struct ArrayList Adj)
+{
+	PAResult result;
+	return result;
+    // struct PAList list;
+    // return list;
+    //List.adj = Adj;
+    //return List;
+}
+// struct PAResult PAListAddElement÷(struct PAList List, struct PAElement )
+// {÷
+    // struct PAResult result;
+    // return result;
+// }
+PAResult PASeriesPut(PAResource Resource,struct PAData Data)
+{
+    PAResult result;
+    return result;
+}
+PAResource PASeriesGet(struct PAData Data)
+{
+    PAResource resource;
+    return resource;
+}
+PAResult PASeriesPutFirst(PAResource);
+// PA_INT PAListSize(struct PAList List)
+// {
+//     PA_INT size;
+//     return size;
+// }
+// struct PAElement PAListHead(struct PAList)
+// {
+//     struct PAElement element;
+//     return element;
+// }   
+// struct PAList PAListTail(struct PAList)
+// {
+//     struct PAList list;
+//     return list;
+// }
+struct PASeries PASeriesPerformConstruct(struct PAElement Head) {
+	struct PASeries series;
+	return series;
+}
+void PASeriesPerformPrint(struct PASeries Series)
+{
+
+}
+//	struct PASeries PASeriesPerformConstruct(struct ArrayList edges[], struct PACount N)
+//	{
+//	    struct PASeries series;
+//	    return series;
+//	}
 PAResult PASeriesPerformInit()
 {
 	PAResult result;
@@ -38,15 +109,6 @@ PAResult PASeriesPerformRuin()
     PAResult result;
     return result;
 }
-PAResult PASeriesPerformPutCount(struct PACount N) 
-{
-	PAResult result;
-	return result;
-    // struct PASeries series;
-    //Series.progression = N;
-    //return Series;
-    // return series;
-}
 PAResult PASeriesPerformPutList(struct PAList Adj) 
 {
 	PAResult result;
@@ -59,7 +121,7 @@ PAResult PASeriesPerformPutList(struct PAList Adj)
     // return series;
     //return Series;
 }
-PAResult PASeriesPerformDelete()
+PAResult PASeriesPerformDelete(struct PASeries Series)
 {
     PAResult result;
     return result;
