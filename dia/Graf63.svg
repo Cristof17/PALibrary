@@ -183,11 +183,11 @@
     <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="2381.5" y="265.5">
       <tspan x="2381.5" y="265.5">Flyweight</tspan>
     </text>
-    <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="2201.5" y="152.5">
-      <tspan x="2201.5" y="152.5">Adapter</tspan>
+    <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="2101.5" y="60.5">
+      <tspan x="2101.5" y="60.5">Adapter</tspan>
     </text>
-    <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="2449.5" y="320.5">
-      <tspan x="2449.5" y="320.5">Adapter</tspan>
+    <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="2645.5" y="574.5">
+      <tspan x="2645.5" y="574.5">Adapter</tspan>
     </text>
     <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="2987.26" y="795.476">
       <tspan x="2987.26" y="795.476">Compsite</tspan>
@@ -207,9 +207,9 @@
     <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="3117.36" y="832.606">
       <tspan x="3117.36" y="832.606">Factory</tspan>
     </text>
-    <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="3047.5" y="1120.5">
-      <tspan x="3047.5" y="1120.5">Prototype</tspan>
-      <tspan x="3047.5" y="1136.5"></tspan>
+    <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="3141.5" y="978.5">
+      <tspan x="3141.5" y="978.5">Prototype</tspan>
+      <tspan x="3141.5" y="994.5"></tspan>
     </text>
     <g>
       <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="2075.92" y1="52.8652" x2="2072.59" y2="49.8453"/>
@@ -255,8 +255,8 @@
       <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="2968" y1="494.5" x2="2478.22" y2="727.017"/>
       <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="2471.44,730.233 2478.33,721.428 2478.22,727.017 2482.62,730.461 "/>
     </g>
-    <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="2040" y="89.25">
-      <tspan x="2040" y="89.25">Bridge</tspan>
+    <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="2916" y="1159.25">
+      <tspan x="2916" y="1159.25">Bridge</tspan>
     </text>
     <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="1897.03" y="-109.57">
       <tspan x="1897.03" y="-109.57"></tspan>
