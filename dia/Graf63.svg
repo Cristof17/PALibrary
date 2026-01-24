@@ -299,8 +299,8 @@
     <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="2752.4" y="-115.5">
       <tspan x="2752.4" y="-115.5">Adapter</tspan>
     </text>
-    <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="1881" y="-358">
-      <tspan x="1881" y="-358">Decorator</tspan>
+    <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="3317" y="-306">
+      <tspan x="3317" y="-306">Decorator</tspan>
     </text>
   </g>
   <g id="Structures">
