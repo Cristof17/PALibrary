@@ -12,6 +12,10 @@ typedef PAInt PAResult;
 #define PABool int
 #define PADataDefault 1
 typedef int PAResult;
+// #ifndef 32_BIT
+// #elif defined 32_BIT
+    // typedef int PAResult;
+// #endif
 #define PARESULT_SUCCESS 0
 #define PARESULT_FAIL 1
 #endif
