@@ -1586,7 +1586,7 @@ mkinstalldirs: $(srcdir)/mkinstalldirs
 #installcheck:
 #	echo "installcheck"
 
-clean: preprocess compile assemble
+clean:
 #	${MAKE} ARCH=${host-type} build
 # 	-rm libpa.a
 	-rm src/Input.i
