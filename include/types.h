@@ -224,12 +224,15 @@ struct FactoryConcreteCreator
 {
 
 };
+struct FlyWeight {
+  
+};
 struct Adaptee {
 	struct ArrayList list;
 };
 struct Adapter {
 	struct Adaptee adaptee;
-	struct PAList list;
+  //struct PAList list;
 };
 struct IteratorClient {
 	struct PATree tree;
