@@ -35,7 +35,7 @@ PAResult PAListPerformInit()
     //list.m = List.m;
     //return list;
 }
-PAResult PAListPerformDelete(struct PAList List)
+PAResult PAListPerformDelete()
 {
     PAResult result;
     return result;
