@@ -81,10 +81,10 @@ struct Input;
 struct Algorithm;
 struct Output;
 struct FlyweightClient;
-struct FlyweightFactory;
-struct ConcreteFlyweight;
-struct UnsharedConcreteFlyweight;
-struct Flyweight;
+struct FlyweightFlyweightFactory;
+struct FlyweightConcreteFlyweight;
+struct FlyweightUnsharedConcreteFlyweight;
+struct FlyweightFlyweight;
 
 // struct Input {
 // 	struct Algorithm algorithm;
@@ -98,19 +98,19 @@ struct Flyweight;
 	// struct Algorithm {
 		// 	struct Input input;
 		// };
-struct FlyweightClient {
+struct FlyweightFlyweightClient {
 	
 };
-struct FlyweightFactory {
+struct FlyweightFlyweightFactory {
 	
 };
-struct ConcreteFlyweight {
+struct FlyweightConcreteFlyweight {
 	
 };
-struct UnsharedConcreteFlyweight {
+struct FlyweightUnsharedConcreteFlyweight {
 	
 };
-struct Flyweight {
+struct FlyweightFlyweight {
 	
 };
 struct PAStatus {
