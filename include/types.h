@@ -80,6 +80,12 @@ struct BFSProcedure;
 struct Input;
 struct Algorithm;
 struct Output;
+struct FlyweightClient;
+struct FlyweightFactory;
+struct ConcreteFlyweight;
+struct UnsharedConcreteFlyweight;
+struct Flyweight;
+
 // struct Input {
 // 	struct Algorithm algorithm;
 // };
@@ -92,6 +98,21 @@ struct Output;
 	// struct Algorithm {
 		// 	struct Input input;
 		// };
+struct FlyweightClient {
+	
+};
+struct FlyweightFactory {
+	
+};
+struct ConcreteFlyweight {
+	
+};
+struct UnsharedConcreteFlyweight {
+	
+};
+struct Flyweight {
+	
+};
 struct PAStatus {
 	PAInt visited;
 };
@@ -213,15 +234,13 @@ struct FactoryProduct2 {
 	struct PATransposeTree trans;
 };
 
-struct FactoryConcreteProduct 
-{
+struct FactoryConcreteProduct {
 
 };
 struct FactoryCreator {
 
 };
-struct FactoryConcreteCreator 
-{
+struct FactoryConcreteCreator {
 
 };
 struct FlyWeight {
@@ -270,8 +289,8 @@ struct ConcreteIterator  {
 struct ConcreteAggregate {
 	struct ConcreteIterator iterator;
 };
-			// struct BuilderProduct{
-				// };
+// struct BuilderProduct{
+// };
 struct BFSProcedure {
 	// struct PATree tree;
 	struct BFSInput input;
@@ -279,4 +298,5 @@ struct BFSProcedure {
 	// struct 
 	
 };
-				#endif
+
+#endif
