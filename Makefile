@@ -61,7 +61,12 @@ objects= obj/Input.o \
 	obj/Bridge/Abstraction.o \
 	obj/Bridge/RefinedAbstraction.o \
 	obj/Bridge/ConcreteImplementorA.o \
-	obj/Bridge/ConcreteImplementorB.o
+	obj/Bridge/ConcreteImplementorB.o \
+	obj/Flyweight/Client.o \
+	obj/Flyweight/ConcreteFlyweight.o \
+	obj/Flyweight/FlyweightFactory.o \
+	obj/Flyweight/Flyweight.o \
+	obj/Flyweight/UnsharedConcreteFlyweight.o
 assemblies= src/Input.s \
 	src/Algorithm.s \
 	src/BFS/Procedure.s \
@@ -116,7 +121,12 @@ assemblies= src/Input.s \
 	src/Bridge/Abstraction.s \
 	src/Bridge/RefinedAbstraction.s \
 	src/Bridge/ConcreteImplementorA.s \
-	src/Bridge/ConcreteImplementorB.s
+	src/Bridge/ConcreteImplementorB.s \
+	src/Flyweight/Client.s \
+	src/Flyweight/ConcreteFlyweight.s \
+	src/Flyweight/FlyweightFactory.s \
+	src/Flyweight/Flyweight.s \
+	src/Flyweight/UnsharedConcreteFlyweight.s
 designs=src/Input.c \
 	src/Algorithm.c \
 	src/BFS/Procedure.c \
@@ -173,7 +183,12 @@ designs=src/Input.c \
 	src/Bridge/Abstraction.c \
 	src/Bridge/RefinedAbstraction.c \
 	src/Bridge/ConcreteImplementorA.c \
-	src/Bridge/ConcreteImplementorB.c
+	src/Bridge/ConcreteImplementorB.c \
+	src/Flyweight/Client.c \
+	src/Flyweight/ConcreteFlyweight.c \
+	src/Flyweight/FlyweightFactory.c \
+	src/Flyweight/Flyweight.c \
+	src/Flyweight/UnsharedConcreteFlyweight.c
 sources=src/Input.i \
 	src/Algorithm.i \
 	src/BFS/Procedure.i \
@@ -230,7 +245,12 @@ sources=src/Input.i \
 	src/Bridge/Abstraction.i \
 	src/Bridge/RefinedAbstraction.i \
 	src/Bridge/ConcreteImplementorA.i \
-	src/Bridge/ConcreteImplementorB.i
+	src/Bridge/ConcreteImplementorB.i \
+	src/Flyweight/Client.i \
+	src/Flyweight/ConcreteFlyweight.i \
+	src/Flyweight/FlyweightFactory.i \
+	src/Flyweight/Flyweight.i \
+	src/Flyweight/UnsharedConcreteFlyweight.i
 objdirs= obj/ \
 	obj/BFS/ \
 	obj/Adapter/ \
@@ -240,7 +260,8 @@ objdirs= obj/ \
 	obj/Prototype/ \
 	obj/Bridge/ \
 	obj/PA/ \
-	obj/State/
+	obj/State/ 
+#	obj/Flyweight/
 
 subdirs= obj/ \
 	obj/BFS/ \
@@ -251,7 +272,8 @@ subdirs= obj/ \
 	obj/Prototype/ \
 	obj/Bridge/ \
 	obj/PA/ \
-	obj/State/
+	obj/State/  
+	#obj/Flyweight
 
 ifeq (0,${MAKELEVEL})
 host-type := $(shell arch)
@@ -580,6 +602,16 @@ src/State/ConcreteStateA.i:src/State/Context.c
 	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/State/ConcreteStateB.i:src/State/Context.c
 	-$(CPP) $(CPPFLAGS) -E $< > $@
+src/Flyweight/Client.i :src/Flyweight/Client.c 
+	-$(CPP) $(CPPFLAGS) -E $< > $@
+src/Flyweight/ConcreteFlyweight.i: src/Flyweight/ConcreteFlyweight.c
+	-$(CPP) $(CPPFLAGS) -E $< > $@
+src/Flyweight/FlyweightFactory.i: src/Flyweight/FlyweightFactory.c
+	-$(CPP) $(CPPFLAGS) -E $< > $@
+src/Flyweight/Flyweight.i: src/Flyweight/Flyweight.c
+	-$(CPP) $(CPPFLAGS) -E $< > $@
+src/Flyweight/UnsharedConcreteFlyweight.i: src/Flyweight/UnsharedConcreteFlyweight.c
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 
 src/Input.s: src/Input.i
 	-$(CC) -S $< -o $@
@@ -707,6 +739,16 @@ src/State/ConcreteStateA.s:src/State/Context.i
 	-$(CC) -S $< -o $@
 src/State/ConcreteStateB.s:src/State/Context.i
 	-$(CC) -S $< -o $@
+src/Flyweight/Client.s :src/Flyweight/Client.i
+	-$(CC) -S $< -o $@
+src/Flyweight/ConcreteFlyweight.s: src/Flyweight/ConcreteFlyweight.i
+	-$(CC) -S $< -o $@
+src/Flyweight/FlyweightFactory.s: src/Flyweight/FlyweightFactory.i
+	-$(CC) -S $< -o $@
+src/Flyweight/Flyweight.s: src/Flyweight/Flyweight.i
+	-$(CC) -S $< -o $@
+src/Flyweight/UnsharedConcreteFlyweight.s: src/Flyweight/UnsharedConcreteFlyweight.i
+	-$(CC) -S $< -o $@
 
 ASFLAGS=
 ifeq ($(host-type),arm64)
@@ -734,10 +776,7 @@ ifeq ($(host-type),AArch64)
 	-
 	$(AS) $(ASFLAGS) $< -o $@
 endif
-
-
-
-#obj/Input.o: src/Input.s
+   #obj/Input.o: src/Input.s
 #	$(AS) $(ASFLAGS) $< -o $@
 obj/Algorithm.o: src/Algorithm.s
 ifeq ($(host-type),arm64)
@@ -1508,6 +1547,75 @@ ifeq ($(host-type),AArch64)
 	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
+obj/Flyweight/Client.o :src/Flyweight/Client.s
+ifeq ($(host-type),arm64)
+	-$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+	-$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+	-$(AS) $(ASFLAGS) $< -o $@
+endif
+	-$(CC) -S $< -o $@
+
+obj/Flyweight/ConcreteFlyweight.o: src/Flyweight/ConcreteFlyweight.s
+ifeq ($(host-type),arm64)
+	-$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+	-$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+	-$(AS) $(ASFLAGS) $< -o $@
+endif
+	-$(CC) -S $< -o $@
+	
+objj/Flyweight/FlyweightFactory.o: src/Flyweight/FlyweightFactory.s
+ifeq ($(host-type),arm64)
+	-$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+	-$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+	-$(AS) $(ASFLAGS) $< -o $@
+endif
+	-$(CC) -S $< -o $@
+
+obj/Flyweight/Flyweight.o: src/Flyweight/Flyweight.s
+ifeq ($(host-type),arm64)
+	-$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+	-$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+	-$(AS) $(ASFLAGS) $< -o $@
+endif
+
+obj/Flyweight/FlyweightFactory.o: src/Flyweight/FlyweightFactory.s
+ifeq ($(host-type),arm64)
+	-$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+	-$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+	-$(AS) $(ASFLAGS) $< -o $@
+endif
+
+obj/Flyweight/UnsharedConcreteFlyweight.o: src/Flyweight/UnsharedConcreteFlyweight.s
+ifeq ($(host-type),arm64)
+	-$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+	-$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+	-$(AS) $(ASFLAGS) $< -o $@
+endif
+
 
 
 # libpa.a: $(objects)
@@ -1646,6 +1754,11 @@ clean:
 	-rm src/State/State.i
 	-rm src/State/ConcreteStateA.i
 	-rm src/State/ConcreteStateB.i
+	-rm src/Flyweight/Client.i
+	-rm src/Flyweight/ConcreteFlyweight.i
+	-rm src/Flyweight/FlyweightFactory.i
+	-rm src/Flyweight/Flyweight.i
+	-rm src/Flyweight/UnsharedConcreteFlyweight.i
 	-rm src/Input.s
 	-rm src/Algorithm.s
 	-rm src/BFS/Procedure.s
@@ -1702,7 +1815,12 @@ clean:
 	-rm src/State/Context.s
 	-rm src/State/State.s
 	-rm src/State/ConcreteStateA.s
-	-rm src/State/ConcreteStateB.s
+	-rm src/State/ConcreteStateB.s 
+	-rm src/Flyweight/Client.s 
+	-rm src/Flyweight/ConcreteFlyweight.s 
+	-rm src/Flyweight/FlyweightFactory.s
+	-rm src/Flyweight/Flyweight.s 
+	-rm src/Flyweight/UnsharedConcreteFlyweight.s
 	-rm obj/Input.o
 	-rm obj/Algorithm.o
 	-rm obj/BFS/Procedure.o
@@ -1761,6 +1879,12 @@ clean:
 	-rm obj/State/State.o
 	-rm obj/State/ConcreteStateA.o
 	-rm obj/State/ConcreteStateB.o
+	-rm obj/Bridge/ConcreteImplementorB.o
+	-rm obj/Flyweight/Client.o
+	-rm obj/Flyweight/ConcreteFlyweight.o
+	-rm obj/Flyweight/FlyweightFactory.o
+	-rm obj/Flyweight/Flyweight.o
+	-rm obj/Flyweight/UnsharedConcreteFlyweight.o
 # 	-rm -r obj/BFS/
 # 	-rm -r obj/Adapter/
 # 	-rm -r obj/Iterator/
