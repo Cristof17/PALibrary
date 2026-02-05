@@ -1,44 +1,121 @@
-//@Author Cristofor Rotsching
-#ifndef INCLUDE_TYPES_H_
-#define INCLUDE_TYPES_H_
+#line 1 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\ArrayList\\ArrayListPosition.c"
 
-#include "defs.h"
-//struct Client;
+
+
+
+
+
+
+
+
+#line 1 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\ArrayList/ArrayListPosition.h"
+
+
+
+
+
+
+
+
+
+
+#line 1 "c:\\users\\administratoruser\\source\\repos\\palibrary\\include\\arraylist\\../defs.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+typedef int PAResult;
+
+
+    
+
+
+
+#line 22 "c:\\users\\administratoruser\\source\\repos\\palibrary\\include\\arraylist\\../defs.h"
+
+typedef int ListSize;
+typedef int ArrayListObject;
+typedef int ListPosition;
+
+
+
+
+#line 31 "c:\\users\\administratoruser\\source\\repos\\palibrary\\include\\arraylist\\../defs.h"
+
+
+
+
+#line 36 "c:\\users\\administratoruser\\source\\repos\\palibrary\\include\\arraylist\\../defs.h"
+
+
+
+
+#line 41 "c:\\users\\administratoruser\\source\\repos\\palibrary\\include\\arraylist\\../defs.h"
+#line 12 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\ArrayList/ArrayListPosition.h"
+
+struct ArrayListPosition ArrayListPositionPerformConstruct(ListPosition);
+struct ArrayListPosition ArrayListPositionPerformInit(struct ArrayListPosition);
+struct ArrayListPosition ArrayListPositionPerformCopy(struct ArrayListPosition);
+PAResult ArrayListPositionPerformDelete(struct ArrayListPosition);
+PAResult ArrayListPositionPerformRuin(struct ArrayListPosition);
+
+#line 20 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\ArrayList/ArrayListPosition.h"
+#line 11 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\ArrayList\\ArrayListPosition.c"
+
+
+#line 14 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\ArrayList\\ArrayListPosition.c"
+
+#line 1 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\types.h"
+
+
+
+
+
+
 struct PADestination;
 struct PAArrow;
-// struct PAInput;
-// struct BFSAlgorithm;
+
+
 struct PAData;
-//struct BFSRecord;
+
 struct NormalTree;
 struct Adaptee;
-// struct BFSAlgorithm;
-// struct BFSOutput;
-// struct PAResult;
-// struct ArrayList;
-// struct PAResource;
+
+
+
+
+
 struct PACount;
 struct PANormalTree;
 struct PATransposeTree;
-// struct BFSRecord;
-// struct PACount;
-// struct PAElement;
-// struct PACount;
-// typedef struct PAData PAData;
-// struct PASize;
+
+
+
+
+
+
 struct PAInput;
 struct PAOutput;
-// struct PAResource;
+
 struct PAData;
 struct PAValue;
 struct List;
 struct PAList;
 struct PAStatus;
 struct PAFeature;
-// struct PAValue;
-// struct PADestination;
-// struct PAStatus/*.*/;
-// struct PAPair;struct PAPair;
+
+
+
+
 struct PAElement;
 struct PADestination;
 struct PAPair;
@@ -49,20 +126,20 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-// struct PAList;
-// struct PAFeature;
-// struct PASeries;
-// struct PAData;
-// struct PALink;
-// struct PATree;
-// struct PAResource;
+
+
+
+
+
+
+
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
-// struct Adaptee;
-// struct PAResult;
+
+
 struct Adaptee;
-// struct Adaptee;
+
 struct Adapter;
 struct IteratorClient;
 struct Target;
@@ -86,81 +163,81 @@ struct FlyweightConcreteFlyweight;
 struct FlyweightUnsharedConcreteFlyweight;
 struct FlyweightFlyweight;
 
-// struct Input {
-// 	struct Algorithm algorithm;
-// };
-// struct Output {
 
-// };
-// struct Input {
-	// 	;
-	// };
-	// struct Algorithm {
-		// 	struct Input input;
-		// };
+
+
+
+
+
+
+	
+	
+	
+		
+		
 struct FlyweightFlyweightClient {
-	PAInt todo;
+	int todo;
 };
 struct FlyweightFlyweightFactory {
-	PAInt todo;
+	int todo;
 };
 struct FlyweightConcreteFlyweight {
-	PAInt todo;
+	int todo;
 };
 struct FlyweightUnsharedConcreteFlyweight {
-	PAInt todo;
+	int todo;
 };
 struct FlyweightFlyweight {
-	PAInt todo;
+	int todo;
 };
 struct PAStatus {
-	PAInt visited;
+	int visited;
 };
-// struct PAResource {
-// 	// struct
-// 	// PA_INt
-// 	PAInt value;
-// };
+
+
+
+
+
 struct PAData {
-    PAResource resource;
+    int resource;
 };
 struct PAFeature {
-	PAInt kind;
+	int kind;
 };
 struct PAElement { 
-	//	struct PAData data;
+	
 	struct PAData index;
-	// struct PADestination Next;
+	
 	struct PAStatus status;
 	struct PAFeature type;
 };
 struct PACount {
-	PAInt number;
+	int number;
 };
-//struct ArrayListObject {
-//	ListObject object;
-//};
+
+
+
 struct ArrayListPosition {
 	ListPosition position;
 };
 struct ArrayList {
-	// struct Position position;
+	
 	struct ArrayListPosition place;
-	ArrayListObject objects[BLK_SIZE];
+	ArrayListObject objects[4096];
 };
-// struct Position {
-// 	PositionInt position;
-// };
+
+
+
 struct PASeries {
 	struct PACount m;
 	struct ArrayList adj;
 };
 struct PAList {
 	struct PACount n;
-	struct PASeries adj[BLK_SIZE];
-	// struct PANod Nod;
+	struct PASeries adj[4096];
+	
 };
-// struct BFSPorce
+
 
 struct PAInput {
 	struct PACount n;
@@ -174,12 +251,12 @@ struct PACount n;
 struct PAOutput {
 	struct BFSRecord result;
 };
-// struct PAData {
-// //    int Value;
-// 	INT Value;
-// };
+
+
+
+
 struct PAValue {
-	PAInt value;
+	int value;
 };
 struct PADestination {
     struct PAElement element;
@@ -199,14 +276,14 @@ struct BFSInput {
 struct BFSOutput {
 	struct BFSRecord result;
 };
-// struct Output {
-	// //	struct PARezultat rezultat;
-	// //	struct BFSOutput outputBFS;
-	// };
-	//struct PASeries
-	//{
-		//
-		//};
+
+	
+	
+	
+	
+	
+		
+		
 struct PATree  {
 	struct PACount n;
 	struct PACount m;
@@ -216,16 +293,16 @@ struct PATree  {
 struct PALink {
 	struct PAPair p;
 };
-// struct PAResult {
-	// 	PA_INT code;
-	// };
+
+	
+	
 struct PANormalTree {
 	struct PATree tree;
-	//struct PAList adj;
+	
 };
 struct PATransposeTree {
 	struct PATree tree;
-	//struct PAList adj_trans;
+	
 };
 struct FactoryProduct1 {
 	struct PANormalTree tree;
@@ -239,11 +316,11 @@ struct FactoryConcreteProduct
 	struct PANormalTree tree;
 };
 struct FactoryConcreteCreator {
-	//NotmalTree
+	
 	struct PANormalTree tree;
 };
 struct FactoryConcreteCreator2 {
-	//TransposeTree
+	
 	struct PATransposeTree tree;
 };
 struct FactoryCreator
@@ -252,21 +329,21 @@ struct FactoryCreator
 	struct PATransposeTree transposeTree;
 };
 struct FlyWeight {
-	PAInt todo;
+	int todo;
 };
 struct Adaptee {
 	struct ArrayList list;
 };
 struct Adapter {
 	struct Adaptee adaptee;
-  //struct PAList list;
+  
 };
 struct IteratorClient {
 	struct PATree tree;
 };
 struct AdapterTarget {
 	struct PAList list;
-	//struct Adapter adapter;
+	
 };
 struct AdapterClient {
 	struct AdapterTarget target;
@@ -275,8 +352,8 @@ struct BuilderProduct {
 	struct PATree tree;
 };
 struct Builder {
-	// struct NormalTree NormalTree;
-	// struct TransposeTree
+	
+	
 	struct BuilderProduct Product;
 };
 struct Director {
@@ -292,19 +369,51 @@ struct ConcreteBuilder {
 	struct Builder builder;
 };
 struct ConcreteIterator  {
-	PAInt position;
+	int position;
 };
 struct ConcreteAggregate {
 	struct ConcreteIterator iterator;
 };
-// struct BuilderProduct{
-// };
+
+
 struct BFSProcedure {
-	// struct PATree tree;
+	
 	struct BFSInput input;
 	struct PAList adj;
-	// struct 
+	
 	
 };
 
-#endif
+#line 311 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\types.h"
+#line 16 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\ArrayList\\ArrayListPosition.c"
+
+struct ArrayListPosition ArrayListPositionPerformConstruct(ListPosition place)
+{
+	struct ArrayListPosition position = { 1 };
+	return position;
+}
+struct ArrayListPosition ArrayListPositionPerformInit(struct ArrayListPosition ListPosition)
+{
+	struct ArrayListPosition position;
+	position = ArrayListPositionPerformConstruct(ListPosition.position);
+	
+	return position;
+}
+struct ArrayListPosition ArrayListPositionPerformCopy(struct ArrayListPosition ListPosition)
+{
+	struct ArrayListPosition copy;
+	copy = ArrayListPositionPerformConstruct(ListPosition.position);
+
+	copy = ArrayListPositionPerformInit(ListPosition);
+	return copy;
+}
+PAResult ArrayListPositionPerformDelete(struct ArrayListPosition Position)
+{
+	PAResult result = { 0 };
+	return result;
+}
+PAResult ArrayListPositionPerformRuin(struct ArrayListPosition Position)
+{
+	PAResult result = { 0 };
+	return result;
+}

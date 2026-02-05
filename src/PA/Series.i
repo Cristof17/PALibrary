@@ -1,0 +1,512 @@
+#line 1 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\PA\\Series.c"
+
+
+#line 1 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\defs.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+typedef int PAResult;
+
+
+    
+
+
+
+#line 22 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\defs.h"
+
+typedef int ListSize;
+typedef int ArrayListObject;
+typedef int ListPosition;
+
+
+
+
+#line 31 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\defs.h"
+
+
+
+
+#line 36 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\defs.h"
+
+
+
+
+#line 41 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\defs.h"
+#line 4 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\PA\\Series.c"
+#line 1 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\types.h"
+
+
+
+
+
+
+struct PADestination;
+struct PAArrow;
+
+
+struct PAData;
+
+struct NormalTree;
+struct Adaptee;
+
+
+
+
+
+struct PACount;
+struct PANormalTree;
+struct PATransposeTree;
+
+
+
+
+
+
+struct PAInput;
+struct PAOutput;
+
+struct PAData;
+struct PAValue;
+struct List;
+struct PAList;
+struct PAStatus;
+struct PAFeature;
+
+
+
+
+struct PAElement;
+struct PADestination;
+struct PAPair;
+struct PAArrow;
+struct BFSInput;
+struct BFSRecord;
+struct BFSOutput;
+struct PASeries;
+struct PATree;
+struct PALink;
+
+
+
+
+
+
+
+struct AdapterTarget;
+struct AdapterClient;
+struct Adapter;
+
+
+struct Adaptee;
+
+struct Adapter;
+struct IteratorClient;
+struct Target;
+struct Builder;
+struct Director;
+struct NormalTree;
+struct Product ;
+struct TransposeTree;
+struct Aggregate;
+struct BuilderClient ;
+struct ConcreteAggregate;
+struct ConcreteIterator;
+struct Iterator ;
+struct BFSProcedure;
+struct Input;
+struct Algorithm;
+struct Output;
+struct FlyweightClient;
+struct FlyweightFlyweightFactory;
+struct FlyweightConcreteFlyweight;
+struct FlyweightUnsharedConcreteFlyweight;
+struct FlyweightFlyweight;
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+struct FlyweightFlyweightClient {
+	int todo;
+};
+struct FlyweightFlyweightFactory {
+	int todo;
+};
+struct FlyweightConcreteFlyweight {
+	int todo;
+};
+struct FlyweightUnsharedConcreteFlyweight {
+	int todo;
+};
+struct FlyweightFlyweight {
+	int todo;
+};
+struct PAStatus {
+	int visited;
+};
+
+
+
+
+
+struct PAData {
+    int resource;
+};
+struct PAFeature {
+	int kind;
+};
+struct PAElement { 
+	
+	struct PAData index;
+	
+	struct PAStatus status;
+	struct PAFeature type;
+};
+struct PACount {
+	int number;
+};
+
+
+
+struct ArrayListPosition {
+	ListPosition position;
+};
+struct ArrayList {
+	
+	struct ArrayListPosition place;
+	ArrayListObject objects[4096];
+};
+
+
+
+struct PASeries {
+	struct PACount m;
+	struct ArrayList adj;
+};
+struct PAList {
+	struct PACount n;
+	struct PASeries adj[4096];
+	
+};
+
+
+struct PAInput {
+	struct PACount n;
+	struct PACount m;
+	struct PAElement source;
+};
+struct BFSRecord {
+struct PACount n;
+	struct PAList d;
+};
+struct PAOutput {
+	struct BFSRecord result;
+};
+
+
+
+
+struct PAValue {
+	int value;
+};
+struct PADestination {
+    struct PAElement element;
+};
+struct PAPair {
+	struct PAElement node;
+	struct PAElement neigh;
+};
+struct PAArrow {
+	struct PAPair p;
+};
+struct BFSInput {
+	struct PACount n;
+	struct PACount m;
+	struct PAElement source;
+};
+struct BFSOutput {
+	struct BFSRecord result;
+};
+
+	
+	
+	
+	
+	
+		
+		
+struct PATree  {
+	struct PACount n;
+	struct PACount m;
+	struct PAElement source;
+	struct PAList adj;
+};
+struct PALink {
+	struct PAPair p;
+};
+
+	
+	
+struct PANormalTree {
+	struct PATree tree;
+	
+};
+struct PATransposeTree {
+	struct PATree tree;
+	
+};
+struct FactoryProduct1 {
+	struct PANormalTree tree;
+};
+struct FactoryProduct2 {
+	struct PATransposeTree trans;
+};
+
+struct FactoryConcreteProduct 
+{
+	struct PANormalTree tree;
+};
+struct FactoryConcreteCreator {
+	
+	struct PANormalTree tree;
+};
+struct FactoryConcreteCreator2 {
+	
+	struct PATransposeTree tree;
+};
+struct FactoryCreator
+{
+	struct PANormalTree normalTree;
+	struct PATransposeTree transposeTree;
+};
+struct FlyWeight {
+	int todo;
+};
+struct Adaptee {
+	struct ArrayList list;
+};
+struct Adapter {
+	struct Adaptee adaptee;
+  
+};
+struct IteratorClient {
+	struct PATree tree;
+};
+struct AdapterTarget {
+	struct PAList list;
+	
+};
+struct AdapterClient {
+	struct AdapterTarget target;
+};
+struct BuilderProduct {
+	struct PATree tree;
+};
+struct Builder {
+	
+	
+	struct BuilderProduct Product;
+};
+struct Director {
+	struct Builder builder;
+};
+struct Iterator  {
+	struct PAList series;
+};
+struct Aggregate {
+	struct Iterator iterator;
+};
+struct ConcreteBuilder {
+	struct Builder builder;
+};
+struct ConcreteIterator  {
+	int position;
+};
+struct ConcreteAggregate {
+	struct ConcreteIterator iterator;
+};
+
+
+struct BFSProcedure {
+	
+	struct BFSInput input;
+	struct PAList adj;
+	
+	
+};
+
+#line 311 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\types.h"
+#line 5 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\PA\\Series.c"
+
+
+#line 1 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\PA/Series.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+struct PASeries PASeriesPerformConstruct(struct PAElement Head);
+PAResult PASerisPerformPutCount(struct PACount);
+PAResult PASeriesPerformPutArrayList(struct ArrayList);
+PAResult PASeriesAddElement(struct PAElement);
+PAResult PASeriesPut(int,struct PAData);
+int PASeriesGet(struct PAData);
+int PASeriesSize();
+struct PAElement PAListHead(struct PASeries);
+struct PASeries PASeriesTail(struct PASeries);
+void PASeriesPerformPrint(struct PASeries);
+PAResult PASeriesPerformDelete(struct PASeries);
+PAResult PASeriesPerformRuin();
+void Dispose();
+
+#line 31 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\PA/Series.h"
+#line 8 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\PA\\Series.c"
+
+
+#line 11 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\PA\\Series.c"
+
+
+
+
+
+
+PAResult PASeriesPerformCopy()
+{
+	PAResult result;
+	return result;
+    
+    
+    
+    
+}
+
+
+
+
+
+PAResult PASeriesPerformPutCount(struct PACount M)
+{
+	PAResult result;
+	return result;
+    
+    
+    
+    
+}
+PAResult PASeriesPerformPutArrayList(struct ArrayList Adj)
+{
+	PAResult result;
+	return result;
+    
+    
+    
+    
+}
+
+
+    
+    
+
+PAResult PASeriesPut(int Resource,struct PAData Data)
+{
+    PAResult result;
+    return result;
+}
+int PASeriesGet(struct PAData Data)
+{
+    int resource;
+    return resource;
+}
+PAResult PASeriesPutFirst(int);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+struct PASeries PASeriesPerformConstruct(struct PAElement Head) {
+	struct PASeries series;
+	return series;
+}
+void PASeriesPerformPrint(struct PASeries Series)
+{
+
+}
+
+
+
+
+
+PAResult PASeriesPerformInit()
+{
+	PAResult result;
+	return result;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+PAResult PASeriesPerformRuin()
+{
+    PAResult result;
+    return result;
+}
+PAResult PASeriesPerformPutList(struct PAList Adj) 
+{
+	PAResult result;
+	return result;
+    
+
+    
+    
+    
+    
+    
+}
+PAResult PASeriesPerformDelete(struct PASeries Series)
+{
+    PAResult result;
+    return result;
+}

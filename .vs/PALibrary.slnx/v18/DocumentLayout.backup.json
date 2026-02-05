@@ -105,12 +105,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 9,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -121,8 +117,7 @@
               "RelativeToolTip": "include\\types.h",
               "ViewState": "AgIAALsAAAAAAAAAAADgv84AAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-12T16:40:55.467Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-12T16:40:55.467Z"
             },
             {
               "$type": "Document",
@@ -228,7 +223,7 @@
               "RelativeDocumentMoniker": "NMake",
               "ToolTip": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\NMake",
               "RelativeToolTip": "NMake",
-              "ViewState": "AgIAAIwBAAAAAAAAAAAAAPYAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANgAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2026-01-06T11:53:11.807Z",
               "EditorCaption": ""
@@ -400,6 +395,10 @@
               "ViewState": "AgIAAF0DAAAAAAAAAAAIwIQDAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2026-01-02T19:19:42.969Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
             }
           ]
         }

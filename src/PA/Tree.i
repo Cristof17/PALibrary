@@ -1,44 +1,95 @@
-//@Author Cristofor Rotsching
-#ifndef INCLUDE_TYPES_H_
-#define INCLUDE_TYPES_H_
+#line 1 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src/PA\\Tree.c"
 
-#include "defs.h"
-//struct Client;
+
+#line 1 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\PA/Tree.h"
+
+
+
+
+#line 1 "c:\\users\\administratoruser\\source\\repos\\palibrary\\include\\pa\\../defs.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+typedef int PAResult;
+
+
+    
+
+
+
+#line 22 "c:\\users\\administratoruser\\source\\repos\\palibrary\\include\\pa\\../defs.h"
+
+typedef int ListSize;
+typedef int ArrayListObject;
+typedef int ListPosition;
+
+
+
+
+#line 31 "c:\\users\\administratoruser\\source\\repos\\palibrary\\include\\pa\\../defs.h"
+
+
+
+
+#line 36 "c:\\users\\administratoruser\\source\\repos\\palibrary\\include\\pa\\../defs.h"
+
+
+
+
+#line 41 "c:\\users\\administratoruser\\source\\repos\\palibrary\\include\\pa\\../defs.h"
+#line 6 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\PA/Tree.h"
+#line 1 "c:\\users\\administratoruser\\source\\repos\\palibrary\\include\\pa\\../types.h"
+
+
+
+
+
+
 struct PADestination;
 struct PAArrow;
-// struct PAInput;
-// struct BFSAlgorithm;
+
+
 struct PAData;
-//struct BFSRecord;
+
 struct NormalTree;
 struct Adaptee;
-// struct BFSAlgorithm;
-// struct BFSOutput;
-// struct PAResult;
-// struct ArrayList;
-// struct PAResource;
+
+
+
+
+
 struct PACount;
 struct PANormalTree;
 struct PATransposeTree;
-// struct BFSRecord;
-// struct PACount;
-// struct PAElement;
-// struct PACount;
-// typedef struct PAData PAData;
-// struct PASize;
+
+
+
+
+
+
 struct PAInput;
 struct PAOutput;
-// struct PAResource;
+
 struct PAData;
 struct PAValue;
 struct List;
 struct PAList;
 struct PAStatus;
 struct PAFeature;
-// struct PAValue;
-// struct PADestination;
-// struct PAStatus/*.*/;
-// struct PAPair;struct PAPair;
+
+
+
+
 struct PAElement;
 struct PADestination;
 struct PAPair;
@@ -49,20 +100,20 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-// struct PAList;
-// struct PAFeature;
-// struct PASeries;
-// struct PAData;
-// struct PALink;
-// struct PATree;
-// struct PAResource;
+
+
+
+
+
+
+
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
-// struct Adaptee;
-// struct PAResult;
+
+
 struct Adaptee;
-// struct Adaptee;
+
 struct Adapter;
 struct IteratorClient;
 struct Target;
@@ -86,81 +137,81 @@ struct FlyweightConcreteFlyweight;
 struct FlyweightUnsharedConcreteFlyweight;
 struct FlyweightFlyweight;
 
-// struct Input {
-// 	struct Algorithm algorithm;
-// };
-// struct Output {
 
-// };
-// struct Input {
-	// 	;
-	// };
-	// struct Algorithm {
-		// 	struct Input input;
-		// };
+
+
+
+
+
+
+	
+	
+	
+		
+		
 struct FlyweightFlyweightClient {
-	PAInt todo;
+	int todo;
 };
 struct FlyweightFlyweightFactory {
-	PAInt todo;
+	int todo;
 };
 struct FlyweightConcreteFlyweight {
-	PAInt todo;
+	int todo;
 };
 struct FlyweightUnsharedConcreteFlyweight {
-	PAInt todo;
+	int todo;
 };
 struct FlyweightFlyweight {
-	PAInt todo;
+	int todo;
 };
 struct PAStatus {
-	PAInt visited;
+	int visited;
 };
-// struct PAResource {
-// 	// struct
-// 	// PA_INt
-// 	PAInt value;
-// };
+
+
+
+
+
 struct PAData {
-    PAResource resource;
+    int resource;
 };
 struct PAFeature {
-	PAInt kind;
+	int kind;
 };
 struct PAElement { 
-	//	struct PAData data;
+	
 	struct PAData index;
-	// struct PADestination Next;
+	
 	struct PAStatus status;
 	struct PAFeature type;
 };
 struct PACount {
-	PAInt number;
+	int number;
 };
-//struct ArrayListObject {
-//	ListObject object;
-//};
+
+
+
 struct ArrayListPosition {
 	ListPosition position;
 };
 struct ArrayList {
-	// struct Position position;
+	
 	struct ArrayListPosition place;
-	ArrayListObject objects[BLK_SIZE];
+	ArrayListObject objects[4096];
 };
-// struct Position {
-// 	PositionInt position;
-// };
+
+
+
 struct PASeries {
 	struct PACount m;
 	struct ArrayList adj;
 };
 struct PAList {
 	struct PACount n;
-	struct PASeries adj[BLK_SIZE];
-	// struct PANod Nod;
+	struct PASeries adj[4096];
+	
 };
-// struct BFSPorce
+
 
 struct PAInput {
 	struct PACount n;
@@ -174,12 +225,12 @@ struct PACount n;
 struct PAOutput {
 	struct BFSRecord result;
 };
-// struct PAData {
-// //    int Value;
-// 	INT Value;
-// };
+
+
+
+
 struct PAValue {
-	PAInt value;
+	int value;
 };
 struct PADestination {
     struct PAElement element;
@@ -199,14 +250,14 @@ struct BFSInput {
 struct BFSOutput {
 	struct BFSRecord result;
 };
-// struct Output {
-	// //	struct PARezultat rezultat;
-	// //	struct BFSOutput outputBFS;
-	// };
-	//struct PASeries
-	//{
-		//
-		//};
+
+	
+	
+	
+	
+	
+		
+		
 struct PATree  {
 	struct PACount n;
 	struct PACount m;
@@ -216,16 +267,16 @@ struct PATree  {
 struct PALink {
 	struct PAPair p;
 };
-// struct PAResult {
-	// 	PA_INT code;
-	// };
+
+	
+	
 struct PANormalTree {
 	struct PATree tree;
-	//struct PAList adj;
+	
 };
 struct PATransposeTree {
 	struct PATree tree;
-	//struct PAList adj_trans;
+	
 };
 struct FactoryProduct1 {
 	struct PANormalTree tree;
@@ -239,11 +290,11 @@ struct FactoryConcreteProduct
 	struct PANormalTree tree;
 };
 struct FactoryConcreteCreator {
-	//NotmalTree
+	
 	struct PANormalTree tree;
 };
 struct FactoryConcreteCreator2 {
-	//TransposeTree
+	
 	struct PATransposeTree tree;
 };
 struct FactoryCreator
@@ -252,21 +303,21 @@ struct FactoryCreator
 	struct PATransposeTree transposeTree;
 };
 struct FlyWeight {
-	PAInt todo;
+	int todo;
 };
 struct Adaptee {
 	struct ArrayList list;
 };
 struct Adapter {
 	struct Adaptee adaptee;
-  //struct PAList list;
+  
 };
 struct IteratorClient {
 	struct PATree tree;
 };
 struct AdapterTarget {
 	struct PAList list;
-	//struct Adapter adapter;
+	
 };
 struct AdapterClient {
 	struct AdapterTarget target;
@@ -275,8 +326,8 @@ struct BuilderProduct {
 	struct PATree tree;
 };
 struct Builder {
-	// struct NormalTree NormalTree;
-	// struct TransposeTree
+	
+	
 	struct BuilderProduct Product;
 };
 struct Director {
@@ -292,19 +343,131 @@ struct ConcreteBuilder {
 	struct Builder builder;
 };
 struct ConcreteIterator  {
-	PAInt position;
+	int position;
 };
 struct ConcreteAggregate {
 	struct ConcreteIterator iterator;
 };
-// struct BuilderProduct{
-// };
+
+
 struct BFSProcedure {
-	// struct PATree tree;
+	
 	struct BFSInput input;
 	struct PAList adj;
-	// struct 
+	
 	
 };
 
-#endif
+#line 311 "c:\\users\\administratoruser\\source\\repos\\palibrary\\include\\pa\\../types.h"
+#line 7 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\PA/Tree.h"
+
+
+
+PAResult PATreePerformConstruct(struct PACount N, struct PACount M);
+struct PACount PATreeSize();
+struct PATree PATreePerformInit(struct PATree);
+PAResult PATreePerformCopy();
+PAResult PATreePerformPutCount(struct PACount, struct PACount);
+
+PAResult PATreePerformPutElement();
+PAResult PATreePerformPutSeries();
+PAResult PATreePerformRuin(struct PATree);
+PAResult PATreePerformDelete(struct PATree);
+
+#line 22 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\PA/Tree.h"
+#line 4 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src/PA\\Tree.c"
+
+
+#line 7 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src/PA\\Tree.c"
+
+
+struct PACount PATreeSize()
+{
+    struct PACount size;
+    return size;
+}
+PAResult PATreePerformConstruct(struct PACount N, struct PACount M)
+{
+    PAResult result;
+    return result;
+    
+    
+    
+    
+    
+    
+    
+}
+struct PATree PATreePerformInit(struct PATree Tree)
+{
+    struct PATree tree;
+    
+    
+    
+    
+    
+    
+    return tree;
+}
+PAResult PATreePerformRuin(struct PATree Tree)
+{
+    int var = 1;
+    
+    
+    
+    
+    return 0;
+}
+PAResult PATreePerformCopy()
+{
+    PAResult result;
+    return result;
+    
+    
+    
+    
+}
+PAResult PATreePerformPutCount(struct PACount Count1, struct PACount Count2)
+{
+    PAResult result;
+    return result;
+    
+    
+    
+    
+}
+PAResult PATreePerformPutElement()
+{
+    PAResult result;
+    return result;
+    
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+PAResult PATreePerformPutSeries() 
+{
+    PAResult result;
+    return result;
+    
+    
+    
+    
+}
+
+
+
+
+PAResult PATreePerformDelete(struct PATree Tree)
+{
+    PAResult result;
+    return result;
+}
