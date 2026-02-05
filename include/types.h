@@ -215,14 +215,20 @@ struct FactoryProduct2 {
 
 struct FactoryConcreteProduct 
 {
-
+	struct PANormalTree tree;
 };
-struct FactoryCreator {
-
+struct FactoryConcreteCreator {
+	//NotmalTree
+	struct PANormalTree tree;
 };
-struct FactoryConcreteCreator 
+struct FactoryConcreteCreator2 {
+	//TransposeTree
+	struct PATransposeTree tree;
+};
+struct FactoryCreator
 {
-
+	struct PANormalTree normalTree;
+	struct PATransposeTree transposeTree;
 };
 struct Adaptee {
 	struct ArrayList list;
