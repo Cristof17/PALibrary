@@ -50,7 +50,7 @@ typedef int ListPosition;
 
 
 
-#line 1 "c:\\users\\administratoruser\\source\\repos\\palibrary\\include\\pa\\../types.h"
+#line 1 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\PA\\../types.h"
 
 
 
@@ -360,7 +360,7 @@ struct BFSProcedure {
 	
 };
 
-#line 311 "c:\\users\\administratoruser\\source\\repos\\palibrary\\include\\pa\\../types.h"
+#line 311 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\PA\\../types.h"
 #line 6 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\PA/Element.h"
 
 

@@ -19,7 +19,7 @@
 
 
 
-#line 1 "c:\\users\\administratoruser\\source\\repos\\palibrary\\include\\arraylist\\../defs.h"
+#line 1 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\ArrayList\\../defs.h"
 
 
 
@@ -40,7 +40,7 @@ typedef int PAResult;
 
 
 
-#line 22 "c:\\users\\administratoruser\\source\\repos\\palibrary\\include\\arraylist\\../defs.h"
+#line 22 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\ArrayList\\../defs.h"
 
 typedef int ListSize;
 typedef int ArrayListObject;
@@ -49,17 +49,17 @@ typedef int ListPosition;
 
 
 
-#line 31 "c:\\users\\administratoruser\\source\\repos\\palibrary\\include\\arraylist\\../defs.h"
+#line 31 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\ArrayList\\../defs.h"
 
 
 
 
-#line 36 "c:\\users\\administratoruser\\source\\repos\\palibrary\\include\\arraylist\\../defs.h"
+#line 36 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\ArrayList\\../defs.h"
 
 
 
 
-#line 41 "c:\\users\\administratoruser\\source\\repos\\palibrary\\include\\arraylist\\../defs.h"
+#line 41 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\ArrayList\\../defs.h"
 #line 12 "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\ArrayList/ArrayListPosition.h"
 
 struct ArrayListPosition ArrayListPositionPerformConstruct(ListPosition);
