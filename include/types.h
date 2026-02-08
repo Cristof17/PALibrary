@@ -89,7 +89,7 @@ struct BridgeAbstraction;
 struct BridgeClient;
 struct BridgeConcreteImplementorA;
 struct BridgeConcreteImplementorB;
-Implementor.h
+struct BridgeImplementor;
 
 // struct Input {
 // 	struct Algorithm algorithm;
