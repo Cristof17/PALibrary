@@ -85,6 +85,11 @@ struct FlyweightFlyweightFactory;
 struct FlyweightConcreteFlyweight;
 struct FlyweightUnsharedConcreteFlyweight;
 struct FlyweightFlyweight;
+struct BridgeAbstraction;
+struct BridgeClient;
+struct BridgeConcreteImplementorA;
+struct BridgeConcreteImplementorB;
+Implementor.h
 
 // struct Input {
 // 	struct Algorithm algorithm;
@@ -112,6 +117,14 @@ struct FlyweightUnsharedConcreteFlyweight {
 };
 struct FlyweightFlyweight {
 	PAInt todo;
+};
+struct BridgeAbstraction {
+};
+struct BridgeClient{
+};
+struct BridgeConcreteImplementorA {
+};
+struct BridgeConcreteImplementorB {
 };
 struct PAStatus {
 	PAInt visited;
