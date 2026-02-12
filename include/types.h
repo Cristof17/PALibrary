@@ -104,19 +104,23 @@ struct BridgeImplementor;
 		// 	struct Input input;
 		// };
 struct FlyweightFlyweightClient {
-	PAInt todo;
+	struct PASeries series;
+	//PAInt todo;
 };
 struct FlyweightFlyweightFactory {
-	PAInt todo;
+//	PAInt todo;
 };
 struct FlyweightConcreteFlyweight {
-	PAInt todo;
+	struct PASeries allState;
+	//PAInt todo;
 };
 struct FlyweightUnsharedConcreteFlyweight {
-	PAInt todo;
+	struct PASeries intrinsicState;
+	//PAInt todo;
 };
 struct FlyweightFlyweight {
-	PAInt todo;
+	struct PAList list;
+	//PAInt todo;
 };
 struct BridgeAbstraction {
 	struct PAElement[] elements;
