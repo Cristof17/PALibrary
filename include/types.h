@@ -119,10 +119,13 @@ struct FlyweightFlyweight {
 	PAInt todo;
 };
 struct BridgeAbstraction {
+	struct PAElement[] elements;
 };
 struct BridgeClient{
+	struct PATree tree;
 };
 struct BridgeConcreteImplementorA {
+	struct ArrayList list;
 };
 struct BridgeConcreteImplementorB {
 };
