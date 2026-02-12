@@ -108,10 +108,11 @@ struct FlyweightFlyweightClient {
 	//PAInt todo;
 };
 struct FlyweightFlyweightFactory {
+	struct FlyweigthFlyweight flyweight;
 //	PAInt todo;
 };
 struct FlyweightConcreteFlyweight {
-	struct PASeries allState;
+	struct PAList list;
 	//PAInt todo;
 };
 struct FlyweightUnsharedConcreteFlyweight {
@@ -119,7 +120,7 @@ struct FlyweightUnsharedConcreteFlyweight {
 	//PAInt todo;
 };
 struct FlyweightFlyweight {
-	struct PAList list;
+	struct PAElement allState;
 	//PAInt todo;
 };
 struct BridgeAbstraction {
