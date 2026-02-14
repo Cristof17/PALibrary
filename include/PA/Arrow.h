@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_PAMUCHIE_H_
-#define INCLUDE_PAMUCHIE_H_
+#define INCLUDE_PAMUCHIE_H_	1
 
 //#include "../defs.h"
 #include "../types.h"

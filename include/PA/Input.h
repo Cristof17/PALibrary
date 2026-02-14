@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_BFSINPUT_H_
-#define INCLUDE_BFSINPUT_H_
+#define INCLUDE_BFSINPUT_H_	1
 
 #include "../defs.h"
 

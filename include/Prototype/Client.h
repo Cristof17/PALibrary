@@ -1,1 +1,3 @@
-
+#ifndef _INCLUDE_PROTOTYPE_CLIENT_H_
+#define _INCLUDE_PROTOTYPE_CLIENT_H_	1
+#endif

@@ -6,7 +6,7 @@
  */
 
 #ifndef INCLUDE_ADAPTER_TARGET_H_
-#define INCLUDE_ADAPTER_TARGET_H_
+#define INCLUDE_ADAPTER_TARGET_H_	1
 
 #include <types.h>
 #ifndef _WIN95

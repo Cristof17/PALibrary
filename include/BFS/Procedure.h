@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef INCLUDE_BFSALGORITHM_H_
-#define INCLUDE_BFSALGORITHM_H_
+#ifndef INCLUDE_BFS_BFSALGORITHM_H_
+#define INCLUDE_BFS_BFSALGORITHM_H_	1
 
 // struct BFSAlgorithm;
 //typedef struct BFSAlgorithm Algorithm;

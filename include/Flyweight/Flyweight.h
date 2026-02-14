@@ -1,0 +1,3 @@
+#ifndef _FLYWEIGHT_FLYWEIGHT_H_
+#define _FLYWEIGHT_FLYWEIGHT_H_	1
+#endif

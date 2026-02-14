@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_PA_TREE_H_
-#define INCLUDE_PA_TREE_H_
+#define INCLUDE_PA_TREE_H_	1
 
 #include "../defs.h"
 #include "../types.h"

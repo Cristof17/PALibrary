@@ -6,7 +6,7 @@
  */
 
 #ifndef INCLUDE_ITERATOR_AGGREGATE_H_
-#define INCLUDE_ITERATOR_AGGREGATE_H_
+#define INCLUDE_ITERATOR_AGGREGATE_H_	1
 
 struct Aggregate;
 // typedef struct Aggregate Aggregate;

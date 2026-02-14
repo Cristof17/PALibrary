@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_PA_DESTINATION_H_
-#define INCLUDE_PA_DESTINATION_H_
+#define INCLUDE_PA_DESTINATION_H_	1
 
 #include "../defs.h"
 

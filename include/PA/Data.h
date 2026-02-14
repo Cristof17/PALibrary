@@ -1,5 +1,5 @@
 #ifndef INCLUDE_PADATA_H_
-#define INCLUDE_PADATA_H_
+#define INCLUDE_PADATA_H_	1
 // #include <defs.h>
 
 #include "../defs.h"

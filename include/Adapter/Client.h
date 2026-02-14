@@ -6,7 +6,7 @@
  */
 
 #ifndef INCLUDE_ADAPTER_CLIENT_H_
-#define INCLUDE_ADAPTER_CLIENT_H_
+#define INCLUDE_ADAPTER_CLIENT_H_	1
 
 
 struct Client;

@@ -1,5 +1,5 @@
-#ifndef ARRAYLIST_ARRAYLIST_H_
-#define ARRAYLIST_ARRAYLIST_H_
+#ifndef INCLUDE_ARRAYLIST_ARRAYLIST_H_
+#define INCLUDE_ARRAYLIST_ARRAYLIST_H_	1
 
 #include "../defs.h"
 #include "../types.h"

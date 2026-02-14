@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
 #ifndef PAGRAFNORMAL_H_
-#define PAGRAFNORMAL_H_
+#define PAGRAFNORMAL_H_	1
 
 #include "../defs.h"
 

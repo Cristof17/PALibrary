@@ -5,8 +5,8 @@
  *      Author: AdministratorUser
  */
 
-#ifndef INCLUDE_ADAPTEE_H_
-#define INCLUDE_ADAPTEE_H_
+#ifndef INCLUDE_ADAPTER_ADAPTEE_H_
+#define INCLUDE_ADAPTER_ADAPTEE_H_	1
 //#include <adaptee.h>
 // #inf
 

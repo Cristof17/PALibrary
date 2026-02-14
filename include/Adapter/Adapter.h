@@ -4,8 +4,8 @@
  *  Created on: 17 nov. 2025
  *      Author: AdministratorUser
  */
-#ifndef INCLUDE_ADAPTER_H_
-#define INCLUDE_ADAPTER_H_
+#ifndef INCLUDE_ADAPTER_ADAPTER_H_
+#define INCLUDE_ADAPTER_ADAPTER_H_	1
 //#include <Target.h>
 
 struct Adapter;

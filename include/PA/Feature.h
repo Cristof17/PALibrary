@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_PA_FEATURE_H_
-#define INCLUDE_PA_FEATURE_H_
+#define INCLUDE_PA_FEATURE_H_	1
 
 #include "../defs.h"
 
