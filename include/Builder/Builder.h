@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef PABUILDER_H_
-#define PABUILDER_H_
+#ifndef INCLUDE_BUILDER_BUILDER_H_
+#define INCLUDE_BUILDER_BUILDER_H_	1
 #ifndef _WIN95
 #include <Builder/Product.h>
 #elif defined _WIN95

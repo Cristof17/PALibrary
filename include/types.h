@@ -1,9 +1,9 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_TYPES_H_
-#define INCLUDE_TYPES_H_
+#define INCLUDE_TYPES_H_	1
 
 #include "defs.h"
-
+//struct Client;
 struct PADestination;
 struct PAArrow;
 // struct PAInput;
@@ -55,7 +55,11 @@ struct PALink;
 // struct PAData;
 // struct PALink;
 // struct PATree;
-struct PAResource;
+// struct PAResource;
+struct AdapterTarget;
+struct AdapterClient;
+struct Adapter;
+// struct Adaptee;
 // struct PAResult;
 struct Adaptee;
 // struct Adaptee;
@@ -76,6 +80,17 @@ struct BFSProcedure;
 struct Input;
 struct Algorithm;
 struct Output;
+struct FlyweightClient;
+struct FlyweightFlyweightFactory;
+struct FlyweightConcreteFlyweight;
+struct FlyweightUnsharedConcreteFlyweight;
+struct FlyweightFlyweight;
+struct BridgeAbstraction;
+struct BridgeClient;
+struct BridgeConcreteImplementorA;
+struct BridgeConcreteImplementorB;
+struct BridgeImplementor;
+
 // struct Input {
 // 	struct Algorithm algorithm;
 // };
@@ -88,33 +103,6 @@ struct Output;
 	// struct Algorithm {
 		// 	struct Input input;
 		// };
-struct PAStatus {
-	PAInt visited;
-};
-struct PAResource {
-	// struct
-	// PA_INt
-	PAInt value;
-};
-struct PAData {
-    struct PAResource resource;
-};
-struct PAFeature {
-	PAInt kind;
-};
-struct PAElement { 
-	//	struct PAData data;
-	struct PAData index;
-	// struct PADestination Next;
-	struct PAStatus status;
-	struct PAFeature type;
-};
-struct PACount {
-	PAInt number;
-};
-//struct ArrayListObject {
-//	ListObject object;
-//};
 struct ArrayListPosition {
 	ListPosition position;
 };
@@ -123,19 +111,88 @@ struct ArrayList {
 	struct ArrayListPosition place;
 	ArrayListObject objects[BLK_SIZE];
 };
-// struct Position {
-// 	PositionInt position;
-// };
-struct PAList {
-	// struct PANod Nod;
+struct PAStatus {
+	PAInt visited;
+};
+struct PAData {
+    PAResource resource;
+};
+struct PAFeature {
+	PAInt kind;
+};
+struct PACount {
+	PAInt number;
+};
+struct PASeries {
 	struct PACount m;
 	struct ArrayList adj;
 };
+struct PAList {
+	struct PACount n;
+	struct PASeries adj[BLK_SIZE];
+	// struct PANod Nod;
+};
+struct PAElement { 
+	//	struct PAData data;
+	struct PAData index;
+	// struct PADestination Next;
+	struct PAStatus status;
+	struct PAFeature type;
+};
+struct FlyweightFlyweightClient {
+	struct PASeries series;
+	//PAInt todo;
+};
+struct FlyweightFlyweight {
+	struct PAElement allState;
+	//PAInt todo;
+};
+struct FlyweightFlyweightFactory {
+	struct FlyweightFlyweight flyweight;
+//	PAInt todo;
+};
+struct FlyweightConcreteFlyweight {
+	struct PAList list;
+	//PAInt todo;
+};
+struct FlyweightUnsharedConcreteFlyweight {
+	struct PASeries intrinsicState;
+	//PAInt todo;
+};
+struct PATree  {
+	struct PACount n;
+	struct PACount m;
+	struct PAElement source;
+	struct PAList adj;
+};
+struct BridgeAbstraction {
+	struct PAElement elements[BLK_SIZE];
+};
+struct BridgeClient{
+	struct PATree tree;
+};
+struct BridgeConcreteImplementorA {
+	struct ArrayList list;
+};
+struct BridgeConcreteImplementorB {
+};
+// struct PAResource {
+// 	// struct
+// 	// PA_INt
+// 	PAInt value;
+// };
+//struct ArrayListObject {
+//	ListObject object;
+//};
+// struct Position {
+// 	PositionInt position;
+// };
+// struct BFSPorce
+
 struct PAInput {
 	struct PACount n;
 	struct PACount m;
 	struct PAElement source;
-	struct PAList adj;//f
 };
 struct BFSRecord {
 struct PACount n;
@@ -165,50 +222,78 @@ struct BFSInput {
 	struct PACount n;
 	struct PACount m;
 	struct PAElement source;
-	struct PAList adj;
 };
 struct BFSOutput {
-    struct BFSRecord result;
+	struct BFSRecord result;
 };
 // struct Output {
-// //	struct PARezultat rezultat;
-// //	struct BFSOutput outputBFS;
-// };
-struct PASeries {
-	struct PACount progression;
-	struct PAList adj[BLK_SIZE];
-};
-//struct PASeries
-//{
-//
-//};
-struct PATree  {
-	struct PACount n;
-	struct PACount m;
-	struct PAElement source;
-	struct PASeries adj;
-};
+	// //	struct PARezultat rezultat;
+	// //	struct BFSOutput outputBFS;
+	// };
+	//struct PASeries
+	//{
+		//
+		//};
 struct PALink {
 	struct PAPair p;
 };
 // struct PAResult {
-// 	PA_INT code;
-// };
+	// 	PA_INT code;
+	// };
+struct PANormalTree {
+	struct PATree tree;
+	//struct PAList adj;
+};
+struct PATransposeTree {
+	struct PATree tree;
+	//struct PAList adj_trans;
+};
+struct FactoryProduct1 {
+	struct PANormalTree tree;
+};
+struct FactoryProduct2 {
+	struct PATransposeTree trans;
+};
+
+struct FactoryConcreteProduct 
+{
+	struct PANormalTree tree;
+};
+struct FactoryConcreteCreator {
+	//NotmalTree
+	struct PANormalTree tree;
+};
+struct FactoryConcreteCreator2 {
+	//TransposeTree
+	struct PATransposeTree tree;
+};
+struct FactoryCreator
+{
+	struct PANormalTree normalTree;
+	struct PATransposeTree transposeTree;
+};
+struct FlyWeight {
+	PAInt todo;
+};
 struct Adaptee {
 	struct ArrayList list;
 };
 struct Adapter {
-	struct PAList list;
+	struct Adaptee adaptee;
+  //struct PAList list;
 };
 struct IteratorClient {
 	struct PATree tree;
 };
-struct Target {
-	struct PASeries series;
+struct AdapterTarget {
+	struct PAList list;
 	//struct Adapter adapter;
 };
+struct AdapterClient {
+	struct AdapterTarget target;
+};
 struct BuilderProduct {
-    struct PATree tree;
+	struct PATree tree;
 };
 struct Builder {
 	// struct NormalTree NormalTree;
@@ -216,33 +301,31 @@ struct Builder {
 	struct BuilderProduct Product;
 };
 struct Director {
-    struct Builder builder;
-};
-struct PANormalTree {
-    struct PAList adj;
-};
-struct PATransposeTree {
-	struct PAList adj_trans;
+	struct Builder builder;
 };
 struct Iterator  {
-    struct PASeries series;
+	struct PAList series;
 };
 struct Aggregate {
 	struct Iterator iterator;
 };
 struct ConcreteBuilder {
-    struct Builder builder;
+	struct Builder builder;
 };
 struct ConcreteIterator  {
-    PAInt position;
+	PAInt position;
 };
 struct ConcreteAggregate {
-    struct ConcreteIterator iterator;
+	struct ConcreteIterator iterator;
 };
 // struct BuilderProduct{
 // };
 struct BFSProcedure {
 	// struct PATree tree;
 	struct BFSInput input;
+	struct PAList adj;
+	// struct 
+	
 };
+
 #endif

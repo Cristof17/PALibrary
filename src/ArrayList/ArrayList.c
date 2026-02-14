@@ -32,17 +32,20 @@
 // 	List.index = Data;
 // 	return List;
 // }
-// struct ArrayList ArrayListPerformCopy(struct ArrayList List)
-// {
-// 	struct ArrayList copy;
+
+PAResult ArrayListPerformCopy()
+{
+// 	//struct ArrayList copy;
 // 	// copt
 // 	// copy. 
 // 	// copy = ArrayListPefr
 // 	// copy = ArrayListPerformConstruct(;)
 // 	// copy. 
-// 	copy = ArrayListPerformConstruct();
-// 	copy = ArrayList
-// }
+// 	//copy = ArrayListPerformConstruct();
+// 	//copy = ArrayList
+	PAResult result;
+	return result;
+}
 // struct PAData ArrayListGet(struct PAData[],PAInt);
 // struct PARecord ArrayListPerformArrange(PAInt)
 // {
@@ -54,19 +57,21 @@
 // }
 // sjt
 // struct A
-PAInt ArrayListPerformSize(struct ArrayList List)
+ListSize ArrayListPerformSize()
 {
-	PAInt first = (PAInt) FIRST;
-	PAInt x;
-	PAInt y;
-	x = first;
+	ListSize first;
+	return first;
+	// PAInt first = (PAInt) FIRST;
+	// PAInt x;
+	// PAInt y;
+	// x = first;
 	//while not end of list
 	//counter ++
 	//return counter
 	//0 is for resizing, put element in first position and then move the rest to the right
 	//for next move
 	//n+1 is for NULL terminatior in List workld
-	return FIRST;
+	// return FIRST;
 }
 ArrayListObject ArrayListPerformGetFirst(struct ArrayList List)
 {
@@ -107,12 +112,12 @@ ArrayListObject ArrayListPerformPutLast(struct ArrayList List, ArrayListObject O
 }
 PAResult ArrayListPerformAdapt(struct ArrayList List)
 {
-	PAResult result;
+	PAResult result = { PARESULT_SUCCESS };
 	return result;
 }
 PAResult ArrayListPerformMove(struct ArrayList List)
 {
-	PAResult result;
+	PAResult result = { PARESULT_SUCCESS };
 	return result;
 	//start, first position for i is 1
 	//while not end of line
@@ -139,32 +144,45 @@ struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], struct ArrayL
 	struct ArrayList list;
 	return list;
 }
-struct ArrayList ArrayListPerformInit(struct ArrayList List)
-{
-	// srt
-	struct ArrayList list;
-	list = ArrayListPerformConstruct(List.objects,List.place);
-//	List.place = PADataPerformCopy(Data);
-	//use a design pattern
-	return list;
-}
-struct ArrayList ArrayListPerformCopy(struct ArrayList List)
-{
-//	struct ArrayList Lost;
-	struct ArrayList copy;
-	copy = ArrayListPerformConstruct(List.objects,List.place);
-	copy = ArrayListPerformInit(List);
-//	return Lost;
-	return copy;
-}
-PAResult ArrayListPerformRuin(struct ArrayList List)
+PAResult ArrayListPerformInit()
 {
 	PAResult result;
 	return result;
+	// srt
+	//struct ArrayList list;
+	//list = ArrayListPerformConstruct(List.objects,List.place);
+//	//List.place = PADataPerformCopy(Data);
+	//use a design pattern
+	//return list;
 }
-PAResult ArrayListPerformDelete(struct ArrayList List)
+//	PAResult ArrayListPerformCopy()
+//	{
+//		PAResult result;
+//		return result;
+//	//	struct ArrayList Lost;
+//		//struct ArrayList copy;
+//		//copy = ArrayListPerformConstruct(List.objects,List.place);
+//		//copy = ArrayListPerformInit(List);
+//	//	return Lost;
+//		//return copy;
+//	}
+ArrayListObject ArrayListGet(ListPosition Position)
 {
-	PAResult result;
+	ArrayListObject object;
+	return object;
+}
+void ArrayListPut(ListPosition Position, ArrayListObject ListObject)
+{
+
+}
+PAResult ArrayListPerformRuin()
+{
+	PAResult result = { PARESULT_SUCCESS } ;
+	return result;
+}
+PAResult ArrayListPerformDelete()
+{
+	PAResult result = { PARESULT_SUCCESS };
 	return result;
 }
 // struct PAData ArrayListPerformGet(struct PAIndex Array[],PAInt Position) {

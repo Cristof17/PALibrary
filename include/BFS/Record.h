@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef INCLUDE_BFSRESULT_H_
-#define INCLUDE_BFSRESULT_H_
+#ifndef INCLUDE_BFS_BFSRESULT_H_
+#define INCLUDE_BFS_BFSRESULT_H_	1
 
 
 //typedef struct BFSRecord Record;

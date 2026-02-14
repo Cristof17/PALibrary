@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\include",
+    "\\src",
+    "\\src\\Adapter",
+    "\\src\\ArrayList",
+    "\\src\\BFS",
+    "\\src\\Builder",
+    "\\src\\Iterator",
+    "\\src\\PA"
+  ],
+  "PreviewInSolutionExplorer": false
+}

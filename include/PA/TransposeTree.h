@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
 #ifndef PAGRAFTRANSPUS_H_
-#define PAGRAFTRANSPUS_H_
+#define PAGRAFTRANSPUS_H_	1
 
 #include "../defs.h"
 

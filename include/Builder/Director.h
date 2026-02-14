@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-#ifndef PADIRECTOR_H_
-#define PADIRECTOR_H_
+#ifndef INCLUDE_BUILDER_PADIRECTOR_H_
+#define INCLUDE_BUILDER_PADIRECTOR_H_	1
 
 // #include <PABuilder.h>
 struct Director;

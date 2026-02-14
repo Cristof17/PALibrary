@@ -7,18 +7,24 @@
  */
 
 #ifndef INCLUDE_PA_SERIES_H_
-#define INCLUDE_PA_SERIES_H_
+#define INCLUDE_PA_SERIES_H_	1
 
 #include "../defs.h"
 
 // struct PASeries;
-struct PASeries PASeriesPerformConstruct(struct PAList Adj[],struct PACount Nß);
-struct PASeries PASeriesPerformInit(struct PASeries);
-struct PASeries PASeriesPerformCopy(struct PASeries);
-struct PASeries PASeriesPerformPutCount(struct PASeries, struct PACount);
-struct PASeries PASeriesPerformPutList(struct PASeries, struct PAList);
-PAResult PASeriesPerformRuin(struct PASeries);
+// struct PAList PAListPutElement(struct PAList, struct PAElement);
+struct PASeries PASeriesPerformConstruct(struct PAElement Head);
+PAResult PASerisPerformPutCount(struct PACount);
+PAResult PASeriesPerformPutArrayList(struct ArrayList);
+PAResult PASeriesAddElement(struct PAElement);
+PAResult PASeriesPut(PAResource,struct PAData);
+PAResource PASeriesGet(struct PAData);
+PAInt PASeriesSize();
+struct PAElement PAListHead(struct PASeries);
+struct PASeries PASeriesTail(struct PASeries);
+void PASeriesPerformPrint(struct PASeries);
 PAResult PASeriesPerformDelete(struct PASeries);
-void PASeriesDispose(void);
+PAResult PASeriesPerformRuin();
+void Dispose();
 //typedef struct PASir Series;
 #endif /* INCLUDE_PASIR_H_ */

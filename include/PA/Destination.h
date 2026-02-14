@@ -1,15 +1,15 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_PA_DESTINATION_H_
-#define INCLUDE_PA_DESTINATION_H_
+#define INCLUDE_PA_DESTINATION_H_	1
 
 #include "../defs.h"
 
 
 // struct PADestination;
-struct PADestination PADestinationPerformConstruct(struct PAElement);
-struct PADestination PADestinationPerformCopy(struct PADestination);
-struct PADestination PADestinationPerformInit(struct PADestination);
-PAResult PADestinationPerformRuin(struct PADestination);
-PAResult PADestinationPerformDelete(struct PADestination);
+PAResult PADestinationPerformConstruct();
+PAResult PADestinationPerformCopy();
+PAResult PADestinationPerformInit();
+PAResult PADestinationPerformRuin();
+PAResult PADestinationPerformDelete();
 //struct PADestination PADataPutElement(struct PADestination,struct PAElement);
 #endif

@@ -10,49 +10,59 @@
 #endif
 
 
-struct PAPair PAPairPerformConstruct(struct PAElement Node, struct PAElement Neigh)
+PAResult PAPairPerformConstruct()
 {
-    struct PAPair pair;
+	PAResult result;
+	return result;
+    //struct PAPair pair;
     // pair.node = Node;
     // pair.neigh = N÷÷eigh;
-    return pair;
+    //return pair;
 }
 // struct PAPair PAPairRuin(struct PAPair Pair) {
-struct PAPair PAPairPerformInit(struct PAPair Pair)
+PAResult PAPairPerformInit(struct PAPair Pair)
 {
-    struct PAPair pair;
-    pair = PAPairPerformConstruct(Pair.node,Pair.neigh);
+	PAResult result;
+	return result;
+    //struct PAPair pair;
+    //pair = PAPairPerformConstruct(Pair.node,Pair.neigh);
     // pair.node = Node;
     // pair.neigh = Neigh;
 //    struct PAPair pair;
 //    pair.node = Node;
 //    pair.neigh = Neigh;
-    return pair;
+    //return pair;
     // struct PAPair pair;
     // return result;
 }
-struct PAPair PAPairPerformCopy(struct PAPair Pair)
+PAResult PAPairPerformCopy(struct PAPair Pair)
 {
-    struct PAPair pair;
-    pair = PAPairPerformConstruct(Pair.node, Pair.neigh);
-    pair = PAPairPerformInit(Pair);
+	PAResult result;
+	return result;
+    //struct PAPair pair;
+    //pair = PAPairPerformConstruct(Pair.node, Pair.neigh);
+    //pair = PAPairPerformInit(Pair);
 //    pair.node = Pair.node;
 //    pair.neigh = Pair.neigh;
-    return pair;
+    //return pair;
 }
-struct PAPair PAPairPerformPutNode(struct PAPair Pair, struct PAElement Node)
+PAResult PAPairPerformPutNode(struct PAPair Pair)
 {
+	PAResult result;
+	return result;
     // struct PAPair pair;
-    Pair.node = Node;
-    return Pair;
+    //Pair.node = Node;
+    //return Pair;
     // return pair;
 }
 
-struct PAPair PAPairPerformPutNeigh(struct PAPair Pair, struct PAElement Neigh)
+PAResult PAPairPerformPutNeigh(struct PAPair Pair)
 {
+	PAResult result;
+	return result;
     // struct PAPair pair;
-    Pair.neigh = Neigh;
-    return Pair;
+    //Pair.neigh = Neigh;
+    //return Pair;
     // return pair;
 }
 PAResult PAPairPerformRuin(struct PAPair Pair)

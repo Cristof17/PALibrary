@@ -10,10 +10,10 @@
 #include <PA\Input.h>
 #endif
 
-struct PAInput PAInputPerformConstruct(struct PACount N, struct PACount M, struct PAList ADJ, struct PAElement Source)
+PAResult PAInputPerformConstruct(struct PACount N, struct PACount M)
 {
-	struct PAInput input;
-	return input;
+	PAResult result ;
+	return result;
 }
 struct PAInput PAInputPerformCopy(struct PAInput Input)
 {

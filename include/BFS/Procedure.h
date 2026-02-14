@@ -1,10 +1,10 @@
 //@Author Cristofor Rotsching
-#ifndef INCLUDE_BFSALGORITHM_H_
-#define INCLUDE_BFSALGORITHM_H_
+#ifndef INCLUDE_BFS_BFSALGORITHM_H_
+#define INCLUDE_BFS_BFSALGORITHM_H_	1
 
 // struct BFSAlgorithm;
 //typedef struct BFSAlgorithm Algorithm;
-struct PAElement BFS(struct PAData);
+PAResult BFS();
 struct BFSProcedure BFSProcedureConstruct(struct PAInput);
 struct BFSProcedure BFSProcedurePutInput(struct BFSProcedure, struct PAInput);
 // struct Algorithm BFSProcedureArrange(struct BFSAlgorithm);

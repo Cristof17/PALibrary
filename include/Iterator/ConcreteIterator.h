@@ -6,7 +6,7 @@
  */
 
 #ifndef INCLUDE_ITERATOR_CONCRETEITERATOR_H_
-#define INCLUDE_ITERATOR_CONCRETEITERATOR_H_
+#define INCLUDE_ITERATOR_CONCRETEITERATOR_H_	1
 
 struct ConcreteIterator;
 // typedef struct ConcreteIterator ConcreteIterator;

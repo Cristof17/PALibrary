@@ -1,0 +1,456 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\types.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:include\\types.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\Factory\\ConcreteCreator.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:include\\Factory\\ConcreteCreator.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\Factory\\Creator.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:include\\Factory\\Creator.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\Factory\\ConcreteProduct.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:include\\Factory\\ConcreteProduct.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\NMake||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:NMake||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\Adapter\\Client.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:include\\Adapter\\Client.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\Adapter\\Client.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Adapter\\Client.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\defs.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:include\\defs.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\Adapter\\Target.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Adapter\\Target.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\Adapter\\Adapter.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Adapter\\Adapter.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\Adapter\\T||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Adapter\\T||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\Adapter\\Adapter.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:include\\Adapter\\Adapter.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\PA\\Data.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\PA\\Data.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\ArrayList\\ArrayListPosition.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\ArrayList\\ArrayListPosition.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\ArrayList\\ArrayList.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\ArrayList\\ArrayList.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\Adapter\\Adaptee.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Adapter\\Adaptee.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\PA\\Feature.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\PA\\Feature.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\Output.c||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Output.c||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\Output.h||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:include\\Output.h||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\PA\\Output.h||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:include\\PA\\Output.h||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\PA\\Output.c||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\PA\\Output.c||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AdministratorUser\\Downloads\\NMake.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\main.c||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\main.c||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\Input.c||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Input.c||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\Input.i||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Input.i||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\NMake.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:NMake.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\Makefile||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Makefile||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ConcreteCreator.h",
+              "DocumentMoniker": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\Factory\\ConcreteCreator.h",
+              "RelativeDocumentMoniker": "include\\Factory\\ConcreteCreator.h",
+              "ToolTip": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\Factory\\ConcreteCreator.h",
+              "RelativeToolTip": "include\\Factory\\ConcreteCreator.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-20T19:17:46.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Creator.h",
+              "DocumentMoniker": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\Factory\\Creator.h",
+              "RelativeDocumentMoniker": "include\\Factory\\Creator.h",
+              "ToolTip": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\Factory\\Creator.h",
+              "RelativeToolTip": "include\\Factory\\Creator.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-20T19:09:01.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ConcreteProduct.h",
+              "DocumentMoniker": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\Factory\\ConcreteProduct.h",
+              "RelativeDocumentMoniker": "include\\Factory\\ConcreteProduct.h",
+              "ToolTip": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\Factory\\ConcreteProduct.h",
+              "RelativeToolTip": "include\\Factory\\ConcreteProduct.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-20T19:08:58.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "types.h",
+              "DocumentMoniker": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\types.h",
+              "RelativeDocumentMoniker": "include\\types.h",
+              "ToolTip": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\types.h",
+              "RelativeToolTip": "include\\types.h",
+              "ViewState": "AgIAAL8AAAAAAAAAAAAAAM4AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-12T16:40:55.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Client.h",
+              "DocumentMoniker": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\Adapter\\Client.h",
+              "RelativeDocumentMoniker": "include\\Adapter\\Client.h",
+              "ToolTip": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\Adapter\\Client.h",
+              "RelativeToolTip": "include\\Adapter\\Client.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-14T15:21:57.209Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "defs.h",
+              "DocumentMoniker": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\defs.h",
+              "RelativeDocumentMoniker": "include\\defs.h",
+              "ToolTip": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\defs.h",
+              "RelativeToolTip": "include\\defs.h",
+              "ViewState": "AgIAABUAAAAAAAAAAAAkwBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-12T16:42:20.995Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Adapter.c",
+              "DocumentMoniker": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\Adapter\\Adapter.c",
+              "RelativeDocumentMoniker": "src\\Adapter\\Adapter.c",
+              "ToolTip": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\Adapter\\Adapter.c",
+              "RelativeToolTip": "src\\Adapter\\Adapter.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-01-12T16:59:08.284Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "T",
+              "DocumentMoniker": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\Adapter\\T",
+              "RelativeDocumentMoniker": "src\\Adapter\\T",
+              "ToolTip": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\Adapter\\T",
+              "RelativeToolTip": "src\\Adapter\\T",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-01-14T15:32:00.074Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Adapter.h",
+              "DocumentMoniker": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\Adapter\\Adapter.h",
+              "RelativeDocumentMoniker": "include\\Adapter\\Adapter.h",
+              "ToolTip": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\Adapter\\Adapter.h",
+              "RelativeToolTip": "include\\Adapter\\Adapter.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-14T15:21:45.446Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Adaptee.c",
+              "DocumentMoniker": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\Adapter\\Adaptee.c",
+              "RelativeDocumentMoniker": "src\\Adapter\\Adaptee.c",
+              "ToolTip": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\Adapter\\Adaptee.c",
+              "RelativeToolTip": "src\\Adapter\\Adaptee.c",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAUwA8AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-01-12T16:57:55.945Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Feature.c",
+              "DocumentMoniker": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\PA\\Feature.c",
+              "RelativeDocumentMoniker": "src\\PA\\Feature.c",
+              "ToolTip": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\PA\\Feature.c",
+              "RelativeToolTip": "src\\PA\\Feature.c",
+              "ViewState": "AgIAACoAAAAAAAAAAAAUwC4AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-01-12T16:55:49.882Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ArrayListPosition.c",
+              "DocumentMoniker": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\ArrayList\\ArrayListPosition.c",
+              "RelativeDocumentMoniker": "src\\ArrayList\\ArrayListPosition.c",
+              "ToolTip": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\ArrayList\\ArrayListPosition.c",
+              "RelativeToolTip": "src\\ArrayList\\ArrayListPosition.c",
+              "ViewState": "AgIAACYAAAAAAAAAAAAAACYAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-01-12T16:49:22.841Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NMake",
+              "DocumentMoniker": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\NMake",
+              "RelativeDocumentMoniker": "NMake",
+              "ToolTip": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\NMake",
+              "RelativeToolTip": "NMake",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANgAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-01-06T11:53:11.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ArrayList.c",
+              "DocumentMoniker": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\ArrayList\\ArrayList.c",
+              "RelativeDocumentMoniker": "src\\ArrayList\\ArrayList.c",
+              "ToolTip": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\ArrayList\\ArrayList.c",
+              "RelativeToolTip": "src\\ArrayList\\ArrayList.c",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAUwKEAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-01-12T16:49:12.686Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Client.c",
+              "DocumentMoniker": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\Adapter\\Client.c",
+              "RelativeDocumentMoniker": "src\\Adapter\\Client.c",
+              "ToolTip": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\Adapter\\Client.c",
+              "RelativeToolTip": "src\\Adapter\\Client.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-01-14T15:30:53.949Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Target.c",
+              "DocumentMoniker": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\Adapter\\Target.c",
+              "RelativeDocumentMoniker": "src\\Adapter\\Target.c",
+              "ToolTip": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\Adapter\\Target.c",
+              "RelativeToolTip": "src\\Adapter\\Target.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-01-14T15:32:22.206Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Data.c",
+              "DocumentMoniker": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\PA\\Data.c",
+              "RelativeDocumentMoniker": "src\\PA\\Data.c",
+              "ToolTip": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\PA\\Data.c",
+              "RelativeToolTip": "src\\PA\\Data.c",
+              "ViewState": "AgIAACgAAAAAAAAAAAAkwCsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-01-12T16:39:47.274Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Output.h",
+              "DocumentMoniker": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\Output.h",
+              "RelativeDocumentMoniker": "include\\Output.h",
+              "ToolTip": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\Output.h",
+              "RelativeToolTip": "include\\Output.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-12T12:33:40.861Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Output.c",
+              "DocumentMoniker": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\Output.c",
+              "RelativeDocumentMoniker": "src\\Output.c",
+              "ToolTip": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\Output.c",
+              "RelativeToolTip": "src\\Output.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-01-12T12:33:13.459Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Output.h",
+              "DocumentMoniker": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\PA\\Output.h",
+              "RelativeDocumentMoniker": "include\\PA\\Output.h",
+              "ToolTip": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\include\\PA\\Output.h",
+              "RelativeToolTip": "include\\PA\\Output.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-12T12:31:02.442Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Output.c",
+              "DocumentMoniker": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\PA\\Output.c",
+              "RelativeDocumentMoniker": "src\\PA\\Output.c",
+              "ToolTip": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\PA\\Output.c",
+              "RelativeToolTip": "src\\PA\\Output.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-01-12T12:30:51.156Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "main.c",
+              "DocumentMoniker": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\main.c",
+              "RelativeDocumentMoniker": "src\\main.c",
+              "ToolTip": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\main.c",
+              "RelativeToolTip": "src\\main.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-01-12T12:18:49.405Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Input.c",
+              "DocumentMoniker": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\Input.c",
+              "RelativeDocumentMoniker": "src\\Input.c",
+              "ToolTip": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\Input.c",
+              "RelativeToolTip": "src\\Input.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-01-12T12:18:44.231Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Input.i",
+              "DocumentMoniker": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\Input.i",
+              "RelativeDocumentMoniker": "src\\Input.i",
+              "ToolTip": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\src\\Input.i",
+              "RelativeToolTip": "src\\Input.i",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-01-12T12:18:30.464Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "NMake.txt",
+              "DocumentMoniker": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\NMake.txt",
+              "RelativeDocumentMoniker": "NMake.txt",
+              "ToolTip": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\NMake.txt",
+              "RelativeToolTip": "NMake.txt",
+              "ViewState": "AgIAAMgBAAAAAAAAAAAWwNkBAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-01-06T07:27:40.038Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "NMake.txt",
+              "DocumentMoniker": "C:\\Users\\AdministratorUser\\Downloads\\NMake.txt",
+              "RelativeDocumentMoniker": "..\\..\\..\\Downloads\\NMake.txt",
+              "ToolTip": "C:\\Users\\AdministratorUser\\Downloads\\NMake.txt",
+              "RelativeToolTip": "..\\..\\..\\Downloads\\NMake.txt",
+              "ViewState": "AgIAAH8BAAAAAAAAAADwv5MBAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-01-04T11:19:11.569Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Makefile",
+              "DocumentMoniker": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\Makefile",
+              "RelativeDocumentMoniker": "Makefile",
+              "ToolTip": "C:\\Users\\AdministratorUser\\source\\repos\\PALibrary\\Makefile",
+              "RelativeToolTip": "Makefile",
+              "ViewState": "AgIAAF0DAAAAAAAAAAAIwIQDAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-01-02T19:19:42.969Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

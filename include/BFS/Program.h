@@ -1,0 +1,3 @@
+#ifndef INCLUDE_BFS_PROGRAM_H_
+#define INCLUDE_BFS_PROGRAM_H_	1
+#endif

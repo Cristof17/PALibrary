@@ -1,0 +1,3 @@
+#ifndef INCLUDE_FACTORY_CREATOR_H_
+#define INCLUDE_FACTORY_CREATOR_H_	1
+#endif

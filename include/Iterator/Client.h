@@ -6,7 +6,7 @@
  */
 
 #ifndef INCLUDE_ITERATOR_CLIENT_H_
-#define INCLUDE_ITERATOR_CLIENT_H_
+#define INCLUDE_ITERATOR_CLIENT_H_	1
 
 struct Client ;
 // typedef struct Client Client;

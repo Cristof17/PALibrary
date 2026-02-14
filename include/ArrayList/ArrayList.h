@@ -1,17 +1,21 @@
-#ifndef ARRAYLIST_ARRAYLIST_H_
-#define ARRAYLIST_ARRAYLIST_H_
+#ifndef INCLUDE_ARRAYLIST_ARRAYLIST_H_
+#define INCLUDE_ARRAYLIST_ARRAYLIST_H_	1
 
 #include "../defs.h"
 #include "../types.h"
 
 // struct ArrayList;
 //typedef struct ArrayList ArrayList;
- struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], struct ArrayListPosition);
- struct ArrayList ArrayListPerformInit(struct ArrayList);
- struct ArrayList ArrayListPerformCopy(struct ArrayList);
+
+ArrayListObject ArrayListGet(ListPosition);
+ListSize ArrayListPerformSize();
+void ArrayListPut(ListPosition, ArrayListObject);
+struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], struct ArrayListPosition);
+PAResult ArrayListPerformInit();
+PAResult ArrayListPerformCopy();
 // struc  ArrayListPerformRuin(struct ArrayList List);
- PAResult ArrayListPerformRuin(struct ArrayList);
- PAResult ArrayListPerformDelete(struct ArrayList);
+ PAResult ArrayListPerformRuin();
+ PAResult ArrayListPerformDelete();
 // struct ArrayList ArrayListPerformDelete(struct ArrayList List);
 // struct PAData ArrayListGet(struct PAData[],PAInt);
 // struct PARecord ArrayListPerformArrange(PAInt);
@@ -24,5 +28,4 @@ ArrayListObject ArrayListPerformPutFirst(struct ArrayList, ArrayListObject);
 ArrayListObject ArrayListPerformPutLast(struct ArrayList, ArrayListObject);
 // struct PAData
 // struct PAData ArrayList
-PAInt ArrayListPerformSize(struct ArrayList);
 #endif
