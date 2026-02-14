@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_OUTPUT_H_
-#define INCLUDE_OUTPUT_H_
+#define INCLUDE_OUTPUT_H_	1
 
 // struct Output;
 // typedef struct Output Output;

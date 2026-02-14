@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_INPUT_H_
-#define INCLUDE_INPUT_H_
+#define INCLUDE_INPUT_H_	1
 
 #include "types.h"
 #include "defs.h"

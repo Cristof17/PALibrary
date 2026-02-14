@@ -1,5 +1,5 @@
-#ifndef INCLUDE_DEFS_
-#define INCLUDE_DEFS_
+#ifndef INCLUDE_DEFS_H_
+#define INCLUDE_DEFS_H_ 1
 // #include <types.h>
 #ifdef _WIN95
 //#define short HALF_PTR;
