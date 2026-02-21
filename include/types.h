@@ -2,7 +2,8 @@
 #ifndef INCLUDE_TYPES_H_
 #define INCLUDE_TYPES_H_	1
 
-#include "defs.h"
+#include <defs.h>
+
 //struct Client;
 struct PADestination;
 struct PAArrow;
@@ -104,7 +105,7 @@ struct BridgeImplementor;
 		// 	struct Input input;
 		// };
 struct ArrayListPosition {
-	ListPosition position;
+	ArrayListPosition position;
 };
 struct ArrayList {
 	// struct Position position;
