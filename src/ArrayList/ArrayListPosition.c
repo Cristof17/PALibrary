@@ -14,7 +14,7 @@
 #include <defs.h>
 #include <types.h>
 
-struct ArrayListPosition ArrayListPositionPerformConstruct(ListPosition place)
+struct ArrayListPosition ArrayListPositionPerformConstruct(ArrayListPosition place)
 {
 	struct ArrayListPosition position = { FIRST };
 	return position;
