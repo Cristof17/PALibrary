@@ -10,7 +10,7 @@
 
 #include "../defs.h"
 
-struct ArrayListPosition ArrayListPositionPerformConstruct(ListPosition);
+struct ArrayListPosition ArrayListPositionPerformConstruct(ArrayListPosition);
 struct ArrayListPosition ArrayListPositionPerformInit(struct ArrayListPosition);
 struct ArrayListPosition ArrayListPositionPerformCopy(struct ArrayListPosition);
 PAResult ArrayListPositionPerformDelete(struct ArrayListPosition);

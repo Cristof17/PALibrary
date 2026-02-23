@@ -57,9 +57,9 @@ PAResult ArrayListPerformCopy()
 // }
 // sjt
 // struct A
-ListSize ArrayListPerformSize()
+ArrayListSize ArrayListPerformSize()
 {
-	ListSize first;
+	ArrayListSize first;
 	return first;
 	// PAInt first = (PAInt) FIRST;
 	// PAInt x;
@@ -166,12 +166,12 @@ PAResult ArrayListPerformInit()
 //	//	return Lost;
 //		//return copy;
 //	}
-ArrayListObject ArrayListGet(ListPosition Position)
+ArrayListObject ArrayListGet(ArrayListPosition Position)
 {
 	ArrayListObject object;
 	return object;
 }
-void ArrayListPut(ListPosition Position, ArrayListObject ListObject)
+void ArrayListPut(ArrayListPosition Position, ArrayListObject ListObject)
 {
 
 }

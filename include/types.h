@@ -3,7 +3,22 @@
 #define INCLUDE_TYPES_H_	1
 
 #include <defs.h>
-
+#ifdef _WIN95
+//#define short HALF_PTR;
+typedef PABool BOOL;
+typedef PAInt int32_t;
+typedef int PAInt;
+tyepdef int PAResult;
+#else
+typedef int PAInt;
+//#define PAInt int
+typedef int PAResource;
+typedef int PABool;
+typedef int PAResult;
+typedef int ArrayListSize;
+typedef int ArrayListObject;
+typedef int ArrayListPosition;
+#endif
 //struct Client;
 struct PADestination;
 struct PAArrow;

@@ -7,9 +7,9 @@
 // struct ArrayList;
 //typedef struct ArrayList ArrayList;
 
-ArrayListObject ArrayListGet(ListPosition);
-ListSize ArrayListPerformSize();
-void ArrayListPut(ListPosition, ArrayListObject);
+ArrayListObject ArrayListGet(ArrayListPosition);
+ArrayListSize ArrayListPerformSize();
+void ArrayListPut(ArrayListPosition, ArrayListObject);
 struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], struct ArrayListPosition);
 PAResult ArrayListPerformInit();
 PAResult ArrayListPerformCopy();

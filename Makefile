@@ -260,7 +260,8 @@ objdirs= obj/ \
 	obj/Prototype/ \
 	obj/Bridge/ \
 	obj/PA/ \
-	obj/State/ 
+	obj/State/
+ 
 #	obj/Flyweight/
 
 subdirs= obj/ \
@@ -272,7 +273,8 @@ subdirs= obj/ \
 	obj/Prototype/ \
 	obj/Bridge/ \
 	obj/PA/ \
-	obj/State/  
+	obj/State/ 
+ 
 	#obj/Flyweight
 
 ifeq (0,${MAKELEVEL})
@@ -752,7 +754,7 @@ src/Flyweight/UnsharedConcreteFlyweight.s: src/Flyweight/UnsharedConcreteFlyweig
 
 ASFLAGS=
 ifeq ($(host-type),arm64)
-ASFLAGS=-arch $(ARCH)
+ASFLAGS=-arch $(host-type)
 endif
 ifeq ($(host-type),x86_64)
 CFLAGS=-march=x86_64
@@ -776,7 +778,10 @@ ifeq ($(host-type),AArch64)
 	-
 	$(AS) $(ASFLAGS) $< -o $@
 endif
-   #obj/Input.o: src/Input.s
+
+ 
+ 
+ #obj/Input.o: src/Input.s
 #	$(AS) $(ASFLAGS) $< -o $@
 obj/Algorithm.o: src/Algorithm.s
 ifeq ($(host-type),arm64)
@@ -1815,7 +1820,8 @@ clean:
 	-rm src/State/Context.s
 	-rm src/State/State.s
 	-rm src/State/ConcreteStateA.s
-	-rm src/State/ConcreteStateB.s 
+	-rm src/State/ConcreteStateB.s
+ 
 	-rm src/Flyweight/Client.s 
 	-rm src/Flyweight/ConcreteFlyweight.s 
 	-rm src/Flyweight/FlyweightFactory.s
