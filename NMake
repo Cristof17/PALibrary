@@ -483,9 +483,9 @@ $(OBJ_DIR)\PA\Resource.obj: $(SRC_DIR)\PA\Resource.asm
     $(AS) $(AFLAGS) /c $<
 #obj/PA/Value.obj: $(SRC_DIR)/PA/Value.c include\PA\Value.h include/defs.h
 #   $(CC) -c $(CFLAGS) $< -o $@
-$(OBJ_DIR)\Builder\Product.obj: $(SRC_DIR)\Builder\Product.s
+$(OBJ_DIR)\Builder\Product.obj: $(SRC_DIR)\Builder\Product.asm
    $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\Builder\ConcreteBuilder.o: $(SRC_DIR)\Builder\ConcreteBuilder.s
+$(OBJ_DIR)\Builder\ConcreteBuilder.o: $(SRC_DIR)\Builder\ConcreteBuilder.asm
     $(AS) $(AFLAGS) /c $<
 $(OBJ_DIR)\Builder\Director.obj: $(SRC_DIR)\Builder\Director.asm
     $(AS) $(AFLAGS) /c $<
@@ -644,49 +644,49 @@ clean:
     rm $(SRC_DIR)\Iterator\ConcreteIterator.i
     rm $(SRC_DIR)\Iterator\Iterator.i
     rm $(SRC_DIR)\Iterator\ConcreteAggregate.i
-    rm $(SRC_DIR)\Input.s
-    rm $(SRC_DIR)\Algorithm.s
-    rm $(SRC_DIR)\BFS\Procedure.s
-    rm $(SRC_DIR)\PA\Input.s
-    rm $(SRC_DIR)\PA\Output.s
-    rm $(SRC_DIR)\BFS\Record.s
-    rm $(SRC_DIR)\Output.s
-    rm $(SRC_DIR)\PA\Data.s
-    rm $(SRC_DIR)\PA\Status.s
-    rm $(SRC_DIR)\PA\Destination.s
-    rm $(SRC_DIR)\PA\Tree.s
-#   rm $(SRC_DIR)/PA\Data.s
-    rm $(SRC_DIR)\PA\List.s
-    rm $(SRC_DIR)\PA\Link.s
-    rm $(SRC_DIR)\PA\Arrow.s
-    rm $(SRC_DIR)\PA\Element.s
-    rm $(SRC_DIR)\PA\Count.s
-    rm $(SRC_DIR)\PA\Pair.s
-    rm $(SRC_DIR)\PA\Result.s
-    rm $(SRC_DIR)\PA\Series.s
-    rm $(SRC_DIR)\PA\Feature.s
-    rm $(SRC_DIR)\PA\Value.s
-    rm $(SRC_DIR)\PA\Resource.s
-    rm $(SRC_DIR)\Builder\Director.s
-    rm $(SRC_DIR)\Builder\Builder.s
-    rm $(SRC_DIR)\Builder\Product.s
-    rm $(SRC_DIR)\Builder\ConcreteBuilder.s
-    rm $(SRC_DIR)\PA\NormalTree.s
-    rm $(SRC_DIR)\PA\TransposeTree.s
-    rm $(SRC_DIR)\Adapter\Client.s
-    rm $(SRC_DIR)\Adapter\Target.s
-    rm $(SRC_DIR)\Adapter\Adapter.s
-    rm $(SRC_DIR)\Adapter\Adaptee.s
-    rm $(SRC_DIR)\PA\PADrawingEditor.s
-    rm $(SRC_DIR)\PA\PALine.s
-    rm $(SRC_DIR)\PA\PAShape.s
-    rm $(SRC_DIR)\PA\PATextView.s
-    rm $(SRC_DIR)\ArrayList\ArrayList.s
-    rm $(SRC_DIR)\ArrayList\ArrayListPosition.s
-    rm $(SRC_DIR)\Iterator\Client.s
-    rm $(SRC_DIR)\Iterator\ConcreteIterator.s
-    rm $(SRC_DIR)\Iterator\Iterator.s
-    rm $(SRC_DIR)\Iterator\ConcreteAggregate.s
+    rm $(SRC_DIR)\Input.asm
+    rm $(SRC_DIR)\Algorithm.asm
+    rm $(SRC_DIR)\BFS\Procedure.asm
+    rm $(SRC_DIR)\PA\Input.asm
+    rm $(SRC_DIR)\PA\Output.asm
+    rm $(SRC_DIR)\BFS\Record.asm
+    rm $(SRC_DIR)\Output.asm
+    rm $(SRC_DIR)\PA\Data.asm
+    rm $(SRC_DIR)\PA\Status.asm
+    rm $(SRC_DIR)\PA\Destination.asm
+    rm $(SRC_DIR)\PA\Tree.asm
+#   rm $(SRC_DIR)/PA\Data.asm
+    rm $(SRC_DIR)\PA\List.asm
+    rm $(SRC_DIR)\PA\Link.asm
+    rm $(SRC_DIR)\PA\Arrow.asm
+    rm $(SRC_DIR)\PA\Element.asm
+    rm $(SRC_DIR)\PA\Count.asm
+    rm $(SRC_DIR)\PA\Pair.asm
+    rm $(SRC_DIR)\PA\Result.asm
+    rm $(SRC_DIR)\PA\Series.asm
+    rm $(SRC_DIR)\PA\Feature.asm
+    rm $(SRC_DIR)\PA\Value.asm
+    rm $(SRC_DIR)\PA\Resource.asm
+    rm $(SRC_DIR)\Builder\Director.asm
+    rm $(SRC_DIR)\Builder\Builder.asm
+    rm $(SRC_DIR)\Builder\Product.asm
+    rm $(SRC_DIR)\Builder\ConcreteBuilder.asm
+    rm $(SRC_DIR)\PA\NormalTree.asm
+    rm $(SRC_DIR)\PA\TransposeTree.asm
+    rm $(SRC_DIR)\Adapter\Client.asm
+    rm $(SRC_DIR)\Adapter\Target.asm
+    rm $(SRC_DIR)\Adapter\Adapter.asm
+    rm $(SRC_DIR)\Adapter\Adaptee.asm
+    rm $(SRC_DIR)\PA\PADrawingEditor.asm
+    rm $(SRC_DIR)\PA\PALine.asm
+    rm $(SRC_DIR)\PA\PAShape.asm
+    rm $(SRC_DIR)\PA\PATextView.asm
+    rm $(SRC_DIR)\ArrayList\ArrayList.asm
+    rm $(SRC_DIR)\ArrayList\ArrayListPosition.asm
+    rm $(SRC_DIR)\Iterator\Client.asm
+    rm $(SRC_DIR)\Iterator\ConcreteIterator.asm
+    rm $(SRC_DIR)\Iterator\Iterator.asm
+    rm $(SRC_DIR)\Iterator\ConcreteAggregate.asm
     rm $(OBJ_DIR)\Input.o
     rm $(OBJ_DIR)\Algorithm.o
     rm $(OBJ_DIR)\BFS\Procedure.o
@@ -745,77 +745,77 @@ clean:
 run:
     @echo "Running"
 .PHONY: build preprocess assemble compile 
-# input.s: src/input.c
+# input.asm: src/input.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# algorithm.s: src/algorithm.c
+# algorithm.asm: src/algorithm.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# bfsalgorithm.s: src/bfsalgorithm.c
+# bfsalgorithm.asm: src/bfsalgorithm.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# bfsinput.s: src/bfsinput.c
+# bfsinput.asm: src/bfsinput.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# bfsoutput.s: src/bfsoutput.c
+# bfsoutput.asm: src/bfsoutput.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# bfsresult.s : src/bfsresult.c
+# bfsresult.asm : src/bfsresult.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# output.s : src/output.c
+# output.asm : src/output.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# padata.s : src/padata.c
+# padata.asm : src/padata.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# pagraf.s: src/pagraf.c
+# pagraf.asm: src/pagraf.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# palista.s: src/palista.c
+# palista.asm: src/palista.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# pamuchie.s: src/pamuchie.c
+# pamuchie.asm: src/pamuchie.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# panod.s: src/panod.c
+# panod.asm: src/panod.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# papereche.s: src/papereche.c
+# papereche.asm: src/papereche.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# parezultat.s: src/parezultat.c
+# parezultat.asm: src/parezultat.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# pastare.s: src/pastare.c
+# pastare.asm: src/pastare.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# paneigh.s: src/paneigh.c
+# paneigh.asm: src/paneigh.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# patip.s: src/patip.c 
+# patip.asm: src/patip.c 
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# paindex.s: src/paindex.c 
+# paindex.asm: src/paindex.c 
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# paneigh.s: src/paneigh.c
+# paneigh.asm: src/paneigh.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# pasir.s: src/pasir.c 
+# pasir.asm: src/pasir.c 
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# parezultat.s: src/parezultat.c 
+# parezultat.asm: src/parezultat.c 
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# pagrafnormal.s: src/builder/pagrafnormal.c 
+# pagrafnormal.asm: src/builder/pagrafnormal.c 
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/builder/$@
-# pagraftranspus.s:  src/builder/pagraftranspus.c
+# pagraftranspus.asm:  src/builder/pagraftranspus.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/builder/$@
-# padirector.s:  src/builder/padirector.c
+# padirector.asm:  src/builder/padirector.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/builder/$@
-# pagrafproduct.s:  src/builder/pagrafproduct.c
+# pagrafproduct.asm:  src/builder/pagrafproduct.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/builder/$@
-# pabuilder.s:  src/builder/pabuilder.c
+# pabuilder.asm:  src/builder/pabuilder.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/builder/$@
 
-# PADrawingEditor.s: src/PA/PADrawingEditor.c
+# PADrawingEditor.asm: src/PA/PADrawingEditor.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
-# PALine.s: src/PA/PALine.c
+# PALine.asm: src/PA/PALine.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
-# PAShape.s: src/PA/PAShape.c
+# PAShape.asm: src/PA/PAShape.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
-# PATextView.s: src/PA/PATextView.c
+# PATextView.asm: src/PA/PATextView.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
 
-# client.s: src/adapter/client.c
+# client.asm: src/adapter/client.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
-# target.s: src/adapter/target.c
+# target.asm: src/adapter/target.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
-# adapter.s: src/adapter/adapter.c
+# adapter.asm: src/adapter/adapter.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
-# adaptee.s: src/adapter/adaptee.c
+# adaptee.asm: src/adapter/adaptee.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
-# arraylist.s: src/arraylist/arraylist.c
+# arraylist.asm: src/arraylist/arraylist.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
 
 # input.o: include/Input.h 
@@ -855,49 +855,49 @@ run:
 # paindex.o: include/PAIndex.h 
 #   $(AS) -c asm/$^ -o obj/$@
 
-# aggregate.o: aggregate.s 
+# aggregate.o: aggregate.asm 
 #   $(AS) -c asm/iterator/$^ -o obj/iterator/$@
-# client.o: client.s 
+# client.o: client.asm 
 #   $(AS) -c asm/iterator/$^ -o obj/iterator/$@
-# concreteaggregate.o: concreteaggregate.s 
+# concreteaggregate.o: concreteaggregate.asm 
 #   $(AS) -c asm/iterator/$^ -o obj/iterator/$@
-# concreteiterator.o: concreteiterator.s 
+# concreteiterator.o: concreteiterator.asm 
 #   $(AS) -c asm/iterator/$^ -o obj/iterator/$@
-# iterator.o: iterator.s 
+# iterator.o: iterator.asm 
 #   $(AS) -c asm/iterator/$^ -o obj/iterator/$@
 
-# pagrafnormal.o: pagrafnormal.s 
+# pagrafnormal.o: pagrafnormal.asm 
 #   $(AS) -c asm/builder/$^ -o obj/builder/$@
-# pagraftranspus.o: pagraftranspus.s 
+# pagraftranspus.o: pagraftranspus.asm 
 #   $(AS) -c asm/builder/$^ -o obj/builder/$@
-# padirector.o: padirector.s 
+# padirector.o: padirector.asm 
 #   $(AS) -c asm/builder/$^ -o obj/builder/$@
-# pagrafproduct.o: pagrafproduct.s 
+# pagrafproduct.o: pagrafproduct.asm 
 #   $(AS) -c asm/builder/$^ -o obj/builder/$@
-# pabuilder.o: pabuilder.s
+# pabuilder.o: pabuilder.asm
 #   $(AS) -c asm/builder/$^ -o obj/builder/$@
 
 # PADrawingEditor.o: 
 #   $(AS) -c asm/adapter/$^ -o obj/adapter/$@
-# PALine.o: PALine.s 
+# PALine.o: PALine.asm 
 #   $(AS) -c asm/adapter/$^ -o obj/adapter/$@
-# PAShape.o: PAShape.s
+# PAShape.o: PAShape.asm
 #   $(AS) -c asm/adapter/$^ -o obj/adapter/$@
-# PASTexthape.o: patextshape.s
+# PASTexthape.o: patextshape.asm
 #   $(AS) -c asm/adapter/$^ -o obj/adapter/$@
-# PATextView.o: PATextView.s 
+# PATextView.o: PATextView.asm 
 #   $(AS) -c asm/adapter/$^ -o obj/adapter/$@
     
-# client.o: asm/adapter/client.s
+# client.o: asm/adapter/client.asm
 #   $(AS) -c asm/adapter/$s^ -o obj/adapter/$@
-# target.o: asm/adapter/target.s
+# target.o: asm/adapter/target.asm
 #   $(AS) -c asm/adapter/$^ -o obj/adapter/$@
-# adapter.o: asm/adapter/adapter.s
+# adapter.o: asm/adapter/adapter.asm
 #   $(AS) -c asm/adapter/$^ -o obj/adapter/$@
-# adaptee.o: asm/adapter/adaptee.s
+# adaptee.o: asm/adapter/adaptee.asm
 #   $(AS) -c asm/adapter/$^ -o obj/adapter/$@
     
-# arraylist.o : arraylist_arraylist.s
+# arraylist.o : arraylist_arraylist.asm
 #   $(AS) -c asm/arraylist/$^ -o obj/arraylist/$@
 
 #.PHONY: all install installdirs installcheck uinstall run distclean clean
