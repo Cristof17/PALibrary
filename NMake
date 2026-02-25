@@ -6,48 +6,48 @@
 # Texts.  A copy of the license is included in the section entitled ``GNU
 # Free Documentation License''.
 
-objects= obj/Input.obj \
-    obj/Algorithm.obj \
-    obj/BFS/Procedure.obj \
-    obj/PA/Input.obj \
-    obj/PA/Output.obj \
-    obj/BFS/Record.obj \
-    obj/Output.obj \
-    obj/PA/Data.obj \
-    obj/PA/Destination.obj \
-    obj/PA/Tree.obj \
-    obj/PA/List.obj \
-    obj/PA/Status.obj \
-    obj/PA/Link.obj \
-    obj/PA/Arrow.obj \
-    obj/PA/Element.obj \
-    obj/PA/Count.obj \
-    obj/PA/Pair.obj \
-    obj/PA/Result.obj \
-    obj/PA/Series.obj \
-    obj/PA/Feature.obj \
-    obj/PA/Value.obj \
-    obj/PA/Resource.obj \
-    obj/Builder/Director.obj \
-    obj/Builder/Builder.obj \
-    obj/Builder/Product.obj \
-    obj/Builder/ConcreteBuilder.obj \
-    obj/PA/NormalTree.obj \
-    obj/PA/TransposeTree.obj \
-    obj/Adapter/Client.obj \
-    obj/Adapter/Target.obj \
-    obj/Adapter/Adapter.obj \
-    obj/Adapter/Adaptee.obj \
-    obj/PA/PADrawingEditor.obj \
-    obj/PA/PALine.obj \
-    obj/PA/PAShape.obj \
-    obj/PA/PATextView.obj \
-    obj/ArrayList/ArrayList.obj \
-    obj/ArrayList/ArrayListPosition.obj \
-    obj/Iterator/Client.obj \
-    obj/Iterator/ConcreteIterator.obj \
-    obj/Iterator/Iterator.obj \
-    obj/Iterator/ConcreteAggregate.obj
+objects= obj/Input.objbj \
+    obj/Algorithm.objbj \
+    obj/BFS/Procedure.objbj \
+    obj/PA/Input.objbj \
+    obj/PA/Output.objbj \
+    obj/BFS/Record.objbj \
+    obj/Output.objbj \
+    obj/PA/Data.objbj \
+    obj/PA/Destination.objbj \
+    obj/PA/Tree.objbj \
+    obj/PA/List.objbj \
+    obj/PA/Status.objbj \
+    obj/PA/Link.objbj \
+    obj/PA/Arrow.objbj \
+    obj/PA/Element.objbj \
+    obj/PA/Count.objbj \
+    obj/PA/Pair.objbj \
+    obj/PA/Result.objbj \
+    obj/PA/Series.objbj \
+    obj/PA/Feature.objbj \
+    obj/PA/Value.objbj \
+    obj/PA/Resource.objbj \
+    obj/Builder/Director.objbj \
+    obj/Builder/Builder.objbj \
+    obj/Builder/Product.objbj \
+    obj/Builder/ConcreteBuilder.objbj \
+    obj/PA/NormalTree.objbj \
+    obj/PA/TransposeTree.objbj \
+    obj/Adapter/Client.objbj \
+    obj/Adapter/Target.objbj \
+    obj/Adapter/Adapter.objbj \
+    obj/Adapter/Adaptee.objbj \
+    obj/PA/PADrawingEditor.objbj \
+    obj/PA/PALine.objbj \
+    obj/PA/PAShape.objbj \
+    obj/PA/PATextView.objbj \
+    obj/ArrayList/ArrayList.objbj \
+    obj/ArrayList/ArrayListPosition.objbj \
+    obj/Iterator/Client.objbj \
+    obj/Iterator/ConcreteIterator.objbj \
+    obj/Iterator/Iterator.objbj \
+    obj/Iterator/ConcreteAggregate.objbj
 assemblies= src/Input.asm \
     src/Algorithm.asm \
     src/BFS/Procedure.asm \
@@ -103,7 +103,7 @@ assemble: $(objects)
 #build: preprocess assemble compile
 all: $(sources) build
 #SUBDIRS= src src/Iterator src/Builder src/Adapter src/Arraylist
-#bar := $(foo:.c=.o)
+#bar := $(foo:.c=.obj)
 #bindir=bin
 srcdir=src
 #includedir=include
@@ -435,95 +435,95 @@ $(SRC_DIR)\Iterator\Iterator.asm: $(SRC_DIR)\Iterator\Iterator.cpp
 $(SRC_DIR)\Iterator\ConcreteAggregate.asm: $(SRC_DIR)\Iterator\ConcreteAggregate.cpp
     $(CC)  -S $< -o $@
 
-$(OBJ_DIR)\Input.obj: $(SRC_DIR)\Input.asm
+$(OBJ_DIR)\Input.objbj: $(SRC_DIR)\Input.asm
     $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\Algorithm.obj: $(SRC_DIR)\Algorithm.asm 
+$(OBJ_DIR)\Algorithm.objbj: $(SRC_DIR)\Algorithm.asm 
     $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\BFS\Procedure.obj: $(SRC_DIR)\BFS\Procedure.asm
+$(OBJ_DIR)\BFS\Procedure.objbj: $(SRC_DIR)\BFS\Procedure.asm
     $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\PA\Input.obj: $(SRC_DIR)\PA\Input.asm
+$(OBJ_DIR)\PA\Input.objbj: $(SRC_DIR)\PA\Input.asm
     $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\PA\Output.obj: $(SRC_DIR)\PA\Output.asm
+$(OBJ_DIR)\PA\Output.objbj: $(SRC_DIR)\PA\Output.asm
    $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\BFS\Record.obj:$(SRC_DIR)\BFS\Record.asm
+$(OBJ_DIR)\BFS\Record.objbj:$(SRC_DIR)\BFS\Record.asm
     $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\Output.o: $(SRC_DIR)\Output.asm
+$(OBJ_DIR)\Output.obj: $(SRC_DIR)\Output.asm
     $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\PA\Value.obj: $(SRC_DIR)\PA\Value.asm
+$(OBJ_DIR)\PA\Value.objbj: $(SRC_DIR)\PA\Value.asm
     $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\PA\Data.obj: $(SRC_DIR)\PA\Data.asm
+$(OBJ_DIR)\PA\Data.objbj: $(SRC_DIR)\PA\Data.asm
     $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\PA\Tree.obj: $(SRC_DIR)\PA\Tree.asm
+$(OBJ_DIR)\PA\Tree.objbj: $(SRC_DIR)\PA\Tree.asm
    $(AS) $(AFLAGS) /c $<
-#obj/PAIndex.o: $(SRC_DIR)/PAIndex.c include\PAIndex.h include\defs.h
+#obj/PAIndex.obj: $(SRC_DIR)/PAIndex.c include\PAIndex.h include\defs.h
 #   $(CC) -c $(CFLAGS) $< -o $@
-$(OBJ_DIR)\PA\List.obj: $(SRC_DIR)\PA\List.asm
+$(OBJ_DIR)\PA\List.objbj: $(SRC_DIR)\PA\List.asm
    $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\PA\Link.obj: $(SRC_DIR)\PA\Link.asm
+$(OBJ_DIR)\PA\Link.objbj: $(SRC_DIR)\PA\Link.asm
     $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\PA\Arrow.obj: $(SRC_DIR)\PA\Arrow.asm
+$(OBJ_DIR)\PA\Arrow.objbj: $(SRC_DIR)\PA\Arrow.asm
     $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\PA\Element.obj: $(SRC_DIR)\PA\Element.asm
+$(OBJ_DIR)\PA\Element.objbj: $(SRC_DIR)\PA\Element.asm
     $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\PA\Count.obj: $(SRC_DIR)\PA\Count.asm
+$(OBJ_DIR)\PA\Count.objbj: $(SRC_DIR)\PA\Count.asm
    $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\PA\Pair.obj: $(SRC_DIR)\PA\Pair.asm
+$(OBJ_DIR)\PA\Pair.objbj: $(SRC_DIR)\PA\Pair.asm
     $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\PA\Result.obj: $(SRC_DIR)\PA\Result.asm
+$(OBJ_DIR)\PA\Result.objbj: $(SRC_DIR)\PA\Result.asm
     $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\PA\Series.obj: $(SRC_DIR)\PA\Series.asm
+$(OBJ_DIR)\PA\Series.objbj: $(SRC_DIR)\PA\Series.asm
     $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\PA\Status.obj: $(SRC_DIR)\PA\Status.asm
+$(OBJ_DIR)\PA\Status.objbj: $(SRC_DIR)\PA\Status.asm
    $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\PA\Feature.obj: $(SRC_DIR)\PA\Feature.asm
+$(OBJ_DIR)\PA\Feature.objbj: $(SRC_DIR)\PA\Feature.asm
    $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\PA\Destination.obj : $(SRC_DIR)\PA\Destination.asm
+$(OBJ_DIR)\PA\Destination.objbj : $(SRC_DIR)\PA\Destination.asm
    $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\PA\Resource.obj: $(SRC_DIR)\PA\Resource.asm
+$(OBJ_DIR)\PA\Resource.objbj: $(SRC_DIR)\PA\Resource.asm
     $(AS) $(AFLAGS) /c $<
-#obj/PA/Value.obj: $(SRC_DIR)/PA/Value.c include\PA\Value.h include/defs.h
+#obj/PA/Value.objbj: $(SRC_DIR)/PA/Value.c include\PA\Value.h include/defs.h
 #   $(CC) -c $(CFLAGS) $< -o $@
-$(OBJ_DIR)\Builder\Product.obj: $(SRC_DIR)\Builder\Product.asm
+$(OBJ_DIR)\Builder\Product.objbj: $(SRC_DIR)\Builder\Product.asm
    $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\Builder\ConcreteBuilder.o: $(SRC_DIR)\Builder\ConcreteBuilder.asm
+$(OBJ_DIR)\Builder\ConcreteBuilder.obj: $(SRC_DIR)\Builder\ConcreteBuilder.asm
     $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\Builder\Director.obj: $(SRC_DIR)\Builder\Director.asm
+$(OBJ_DIR)\Builder\Director.objbj: $(SRC_DIR)\Builder\Director.asm
     $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\Builder\Builder.obj: $(SRC_DIR)\Builder\Builder.asm
+$(OBJ_DIR)\Builder\Builder.objbj: $(SRC_DIR)\Builder\Builder.asm
    $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\PA\NormalTree.obj: $(SRC_DIR)\PA\NormalTree.asm
+$(OBJ_DIR)\PA\NormalTree.objbj: $(SRC_DIR)\PA\NormalTree.asm
     $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\PA\TransposeTree.obj: $(SRC_DIR)\PA\TransposeTree.asm
+$(OBJ_DIR)\PA\TransposeTree.objbj: $(SRC_DIR)\PA\TransposeTree.asm
     $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\Adapter\Client.obj: $(SRC_DIR)\Adapter\Client.asm
+$(OBJ_DIR)\Adapter\Client.objbj: $(SRC_DIR)\Adapter\Client.asm
    $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\Adapter\Target.obj: $(SRC_DIR)\Adapter\Target.asm
+$(OBJ_DIR)\Adapter\Target.objbj: $(SRC_DIR)\Adapter\Target.asm
     $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\Adapter\Adapter.obj: $(SRC_DIR)\Adapter\Adapter.asm
+$(OBJ_DIR)\Adapter\Adapter.objbj: $(SRC_DIR)\Adapter\Adapter.asm
     $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\Adapter\Adaptee.obj: $(SRC_DIR)\Adapter\Adaptee.asm
+$(OBJ_DIR)\Adapter\Adaptee.objbj: $(SRC_DIR)\Adapter\Adaptee.asm
    $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\PA\PADrawingEditor.obj: $(SRC_DIR)\PA\PADrawingEditor.asm
+$(OBJ_DIR)\PA\PADrawingEditor.objbj: $(SRC_DIR)\PA\PADrawingEditor.asm
    $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\PA\PALine.obj: $(SRC_DIR)\PA\PALine.asm
+$(OBJ_DIR)\PA\PALine.objbj: $(SRC_DIR)\PA\PALine.asm
    $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\PA\PAShape.obj: $(SRC_DIR)\PA\PAShape.asm
+$(OBJ_DIR)\PA\PAShape.objbj: $(SRC_DIR)\PA\PAShape.asm
     $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\PA\PATextView.obj: $(SRC_DIR)\PA\PATextView.asm
+$(OBJ_DIR)\PA\PATextView.objbj: $(SRC_DIR)\PA\PATextView.asm
    $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\ArrayList\ArrayList.obj: $(SRC_DIR)\ArrayList\ArrayList.asm
+$(OBJ_DIR)\ArrayList\ArrayList.objbj: $(SRC_DIR)\ArrayList\ArrayList.asm
    $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\ArrayList\ArrayListPosition.obj : $(SRC_DIR)\ArrayList\ArrayListPosition.asm
+$(OBJ_DIR)\ArrayList\ArrayListPosition.objbj : $(SRC_DIR)\ArrayList\ArrayListPosition.asm
    $(AS) $(AFLAGS) /c $<
-#obj/ArrayList/ArrayListObject.obj : $(SRC_DIR)\ArrayList\ArrayListObject.c include\ArrayList\ArrayListObject.h include\types.h include\defs.h
+#obj/ArrayList/ArrayListObject.objbj : $(SRC_DIR)\ArrayList\ArrayListObject.c include\ArrayList\ArrayListObject.h include\types.h include\defs.h
 #   $(CC) /c $(CFLAGS) $< -o $@
-$(OBJ_DIR)\Iterator\Client.obj: $(SRC_DIR)\Iterator\Client.asm
+$(OBJ_DIR)\Iterator\Client.objbj: $(SRC_DIR)\Iterator\Client.asm
    $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\Iterator\ConcreteIterator.obj: $(SRC_DIR)\Iterator\ConcreteIterator.asm
+$(OBJ_DIR)\Iterator\ConcreteIterator.objbj: $(SRC_DIR)\Iterator\ConcreteIterator.asm
     $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\Iterator\Iterator.obj: $(SRC_DIR)\Iterator\Iterator.asm
+$(OBJ_DIR)\Iterator\Iterator.objbj: $(SRC_DIR)\Iterator\Iterator.asm
     $(AS) $(AFLAGS) /c $<
-$(OBJ_DIR)\Iterator\ConcreteAggregate.obj: $(SRC_DIR)\Iterator\ConcreteAggregate.asm
+$(OBJ_DIR)\Iterator\ConcreteAggregate.objbj: $(SRC_DIR)\Iterator\ConcreteAggregate.asm
     $(AS) $(AFLAGS) /c $<
 
 #src/Input.c: 
@@ -567,7 +567,7 @@ $(OBJ_DIR)\Iterator\ConcreteAggregate.obj: $(SRC_DIR)\Iterator\ConcreteAggregate
 #src/Iterator/ConcreteIterator.c:
 #src/Iterator/Iterator.c:
 #src/Iterator/ConcreteAggregate.c:
-#$(objects): obj/%.o : src/%.c
+#$(objects): obj/%.obj : src/%.c
 #   $(CC) -c $(CFLAGS) $< -o $@
 
 #install: installdirs
@@ -601,141 +601,141 @@ mkinstalldirs: $(srcdir)/mkinstalldirs
 #   echo "installcheck"
 
 clean:
-    rm $(SRC_DIR)\Input.i
-    rm $(SRC_DIR)\Algorithm.i
-    rm $(SRC_DIR)\BFS\Procedure.i
-    rm $(SRC_DIR)\PA\Input.i
-    rm $(SRC_DIR)\PA\Output.i
-    rm $(SRC_DIR)\BFS\Record.i
-    rm $(SRC_DIR)\Output.i
-    rm $(SRC_DIR)\PA\Data.i
-    rm $(SRC_DIR)\PA\Destination.i
-    rm $(SRC_DIR)\PA\Tree.i
-#   rm $(SRC_DIR)\PA\Data.i
-    rm $(SRC_DIR)\PA\List.i
-    rm $(SRC_DIR)\PA\Link.i
-    rm $(SRC_DIR)\PA\Arrow.i
-    rm $(SRC_DIR)\PA\Element.i
-    rm $(SRC_DIR)\PA\Count.i
-    rm $(SRC_DIR)\PA\Pair.i
-    rm $(SRC_DIR)\PA\Result.i
-    rm $(SRC_DIR)\PA\Series.i
-    rm $(SRC_DIR)\PA\Status.i
-    rm $(SRC_DIR)\PA\Feature.i
-    rm $(SRC_DIR)\PA\Value.i
-    rm $(SRC_DIR)\PA\Resource.i
-    rm $(SRC_DIR)\Builder\Director.i
-    rm $(SRC_DIR)\Builder\Builder.i
-    rm $(SRC_DIR)\Builder\Product.i
-    rm $(SRC_DIR)\Builder\ConcreteBuilder.i
-    rm $(SRC_DIR)\PA\NormalTree.i
-    rm $(SRC_DIR)\PA\TransposeTree.i
-    rm $(SRC_DIR)\Adapter\Client.i
-    rm $(SRC_DIR)\Adapter\Target.i
-    rm $(SRC_DIR)\Adapter\Adapter.i
-    rm $(SRC_DIR)\Adapter\Adaptee.i
-    rm $(SRC_DIR)\PA\PADrawingEditor.i
-    rm $(SRC_DIR)\PA\PALine.i
-    rm $(SRC_DIR)\PA\PAShape.i
-    rm $(SRC_DIR)\PA\PATextView.i
-    rm $(SRC_DIR)\ArrayList\ArrayList.i
-    rm $(SRC_DIR)\ArrayList\ArrayListPosition.i
-    rm $(SRC_DIR)\Iterator\Client.i
-    rm $(SRC_DIR)\Iterator\ConcreteIterator.i
-    rm $(SRC_DIR)\Iterator\Iterator.i
-    rm $(SRC_DIR)\Iterator\ConcreteAggregate.i
+    rm $(SRC_DIR)\Input.cpp
+    rm $(SRC_DIR)\Algorithm.cpp
+    rm $(SRC_DIR)\BFS\Procedure.cpp
+    rm $(SRC_DIR)\PA\Input.cpp
+    rm $(SRC_DIR)\PA\Output.cpp
+    rm $(SRC_DIR)\BFS\Record.cpp
+    rm $(SRC_DIR)\Output.cpp
+    rm $(SRC_DIR)\PA\Data.cpp
+    rm $(SRC_DIR)\PA\Destination.cpp
+    rm $(SRC_DIR)\PA\Tree.cpp
+#   rm $(SRC_DIR)\PA\Data.cpp
+    rm $(SRC_DIR)\PA\List.cpp
+    rm $(SRC_DIR)\PA\Link.cpp
+    rm $(SRC_DIR)\PA\Arrow.cpp
+    rm $(SRC_DIR)\PA\Element.cpp
+    rm $(SRC_DIR)\PA\Count.cpp
+    rm $(SRC_DIR)\PA\Pair.cpp
+    rm $(SRC_DIR)\PA\Result.cpp
+    rm $(SRC_DIR)\PA\Series.cpp
+    rm $(SRC_DIR)\PA\Status.cpp
+    rm $(SRC_DIR)\PA\Feature.cpp
+    rm $(SRC_DIR)\PA\Value.cpp
+    rm $(SRC_DIR)\PA\Resource.cpp
+    rm $(SRC_DIR)\Builder\Director.cpp
+    rm $(SRC_DIR)\Builder\Builder.cpp
+    rm $(SRC_DIR)\Builder\Product.cpp
+    rm $(SRC_DIR)\Builder\ConcreteBuilder.cpp
+    rm $(SRC_DIR)\PA\NormalTree.cpp
+    rm $(SRC_DIR)\PA\TransposeTree.cpp
+    rm $(SRC_DIR)\Adapter\Client.cpp
+    rm $(SRC_DIR)\Adapter\Target.cpp
+    rm $(SRC_DIR)\Adapter\Adapter.cpp
+    rm $(SRC_DIR)\Adapter\Adaptee.cpp
+    rm $(SRC_DIR)\PA\PADrawingEditor.cpp
+    rm $(SRC_DIR)\PA\PALine.cpp
+    rm $(SRC_DIR)\PA\PAShape.cpp
+    rm $(SRC_DIR)\PA\PATextView.cpp
+    rm $(SRC_DIR)\ArrayList\ArrayList.cpp
+    rm $(SRC_DIR)\ArrayList\ArrayListPosition.cpp
+    rm $(SRC_DIR)\Iterator\Client.cpp
+    rm $(SRC_DIR)\Iterator\ConcreteIterator.cpp
+    rm $(SRC_DIR)\Iterator\Iterator.cpp
+    rm $(SRC_DIR)\Iterator\ConcreteAggregate.cpp
     rm $(SRC_DIR)\Input.asm
     rm $(SRC_DIR)\Algorithm.asm
-    rm $(SRC_DIR)\BFS\Procedure.asm
-    rm $(SRC_DIR)\PA\Input.asm
-    rm $(SRC_DIR)\PA\Output.asm
-    rm $(SRC_DIR)\BFS\Record.asm
-    rm $(SRC_DIR)\Output.asm
-    rm $(SRC_DIR)\PA\Data.asm
-    rm $(SRC_DIR)\PA\Status.asm
-    rm $(SRC_DIR)\PA\Destination.asm
-    rm $(SRC_DIR)\PA\Tree.asm
-#   rm $(SRC_DIR)/PA\Data.asm
-    rm $(SRC_DIR)\PA\List.asm
-    rm $(SRC_DIR)\PA\Link.asm
-    rm $(SRC_DIR)\PA\Arrow.asm
-    rm $(SRC_DIR)\PA\Element.asm
-    rm $(SRC_DIR)\PA\Count.asm
-    rm $(SRC_DIR)\PA\Pair.asm
-    rm $(SRC_DIR)\PA\Result.asm
-    rm $(SRC_DIR)\PA\Series.asm
-    rm $(SRC_DIR)\PA\Feature.asm
-    rm $(SRC_DIR)\PA\Value.asm
-    rm $(SRC_DIR)\PA\Resource.asm
-    rm $(SRC_DIR)\Builder\Director.asm
-    rm $(SRC_DIR)\Builder\Builder.asm
-    rm $(SRC_DIR)\Builder\Product.asm
-    rm $(SRC_DIR)\Builder\ConcreteBuilder.asm
-    rm $(SRC_DIR)\PA\NormalTree.asm
-    rm $(SRC_DIR)\PA\TransposeTree.asm
-    rm $(SRC_DIR)\Adapter\Client.asm
-    rm $(SRC_DIR)\Adapter\Target.asm
-    rm $(SRC_DIR)\Adapter\Adapter.asm
-    rm $(SRC_DIR)\Adapter\Adaptee.asm
-    rm $(SRC_DIR)\PA\PADrawingEditor.asm
-    rm $(SRC_DIR)\PA\PALine.asm
-    rm $(SRC_DIR)\PA\PAShape.asm
-    rm $(SRC_DIR)\PA\PATextView.asm
-    rm $(SRC_DIR)\ArrayList\ArrayList.asm
-    rm $(SRC_DIR)\ArrayList\ArrayListPosition.asm
-    rm $(SRC_DIR)\Iterator\Client.asm
-    rm $(SRC_DIR)\Iterator\ConcreteIterator.asm
-    rm $(SRC_DIR)\Iterator\Iterator.asm
-    rm $(SRC_DIR)\Iterator\ConcreteAggregate.asm
-    rm $(OBJ_DIR)\Input.o
-    rm $(OBJ_DIR)\Algorithm.o
-    rm $(OBJ_DIR)\BFS\Procedure.o
-    rm $(OBJ_DIR)\BFS\Record.o
-    rm $(OBJ_DIR)\Output.o
-    rm $(OBJ_DIR)\PA\Data.o
-    rm $(OBJ_DIR)\PA\Tree.o
-    #rm obj/PA.o
-    rm $(OBJ_DIR)\PA\List.o
-    rm $(OBJ_DIR)\PA\Input.o
-    rm $(OBJ_DIR)\PA\Output.o
-    rm $(OBJ_DIR)\PA\Link.o
-    rm $(OBJ_DIR)\PA\Arrow.o
-    rm $(OBJ_DIR)\PA\Element.o
-    rm $(OBJ_DIR)\PA\Status.o
-    rm $(OBJ_DIR)\PA\Count.o
-    rm $(OBJ_DIR)\PA\Pair.o
-    rm $(OBJ_DIR)\PA\Result.o
-    rm $(OBJ_DIR)\PA\Series.o
-    rm $(OBJ_DIR)\PA\Feature.o
-    rm $(OBJ_DIR)\PA\Value.o
-    rm $(OBJ_DIR)\PA\Resource.o
-    rm $(OBJ_DIR)\PA\Destination.o
-    rm $(OBJ_DIR)\Builder\Product.o
-    rm $(OBJ_DIR)\Builder\ConcreteBuilder.o 
-    rm $(OBJ_DIR)\Builder\Director.o
-    rm $(OBJ_DIR)\Builder\Builder.o
-    rm $(OBJ_DIR)\PA\NormalTree.o
-    rm $(OBJ_DIR)\PA\TransposeTree.o
-#   rm $(OBJ_DIR)\PA\Product.o
-    rm $(OBJ_DIR)\Adapter\Client.o
-    rm $(OBJ_DIR)\Adapter\Target.o
-    rm $(OBJ_DIR)\Adapter\Adapter.o
-    rm $(OBJ_DIR)\Adapter\Adaptee.o
-    rm $(OBJ_DIR)\PA\PADrawingEditor.o
-    rm $(OBJ_DIR)\PA\PALine.o
-    rm $(OBJ_DIR)\PA\PAShape.o
-    rm $(OBJ_DIR)\PA\PATextView.o
-    rm $(OBJ_DIR)\ArrayList\ArrayList.o
-#   rm $(OBJ_DIR)\ArrayList\ArrayListObject.o
-    rm $(OBJ_DIR)\Iterator\Client.o
-    rm $(OBJ_DIR)\Iterator\ConcreteIterator.o
-    rm $(OBJ_DIR)\Iterator\Iterator.o
-    rm $(OBJ_DIR)\Iterator\ConcreteAggregate.o
+    rm $(SRC_DIR)\BFS\Procedure.s
+    rm $(SRC_DIR)\PA\Input.s
+    rm $(SRC_DIR)\PA\Output.s
+    rm $(SRC_DIR)\BFS\Record.s
+    rm $(SRC_DIR)\Output.s
+    rm $(SRC_DIR)\PA\Data.s
+    rm $(SRC_DIR)\PA\Status.s
+    rm $(SRC_DIR)\PA\Destination.s
+    rm $(SRC_DIR)\PA\Tree.s
+#   rm $(SRC_DIR)/PA\Data.s
+    rm $(SRC_DIR)\PA\List.s
+    rm $(SRC_DIR)\PA\Link.s
+    rm $(SRC_DIR)\PA\Arrow.s
+    rm $(SRC_DIR)\PA\Element.s
+    rm $(SRC_DIR)\PA\Count.s
+    rm $(SRC_DIR)\PA\Pair.s
+    rm $(SRC_DIR)\PA\Result.s
+    rm $(SRC_DIR)\PA\Series.s
+    rm $(SRC_DIR)\PA\Feature.s
+    rm $(SRC_DIR)\PA\Value.s
+    rm $(SRC_DIR)\PA\Resource.s
+    rm $(SRC_DIR)\Builder\Director.s
+    rm $(SRC_DIR)\Builder\Builder.s
+    rm $(SRC_DIR)\Builder\Product.s
+    rm $(SRC_DIR)\Builder\ConcreteBuilder.s
+    rm $(SRC_DIR)\PA\NormalTree.s
+    rm $(SRC_DIR)\PA\TransposeTree.s
+    rm $(SRC_DIR)\Adapter\Client.s
+    rm $(SRC_DIR)\Adapter\Target.s
+    rm $(SRC_DIR)\Adapter\Adapter.s
+    rm $(SRC_DIR)\Adapter\Adaptee.s
+    rm $(SRC_DIR)\PA\PADrawingEditor.s
+    rm $(SRC_DIR)\PA\PALine.s
+    rm $(SRC_DIR)\PA\PAShape.s
+    rm $(SRC_DIR)\PA\PATextView.s
+    rm $(SRC_DIR)\ArrayList\ArrayList.s
+    rm $(SRC_DIR)\ArrayList\ArrayListPosition.s
+    rm $(SRC_DIR)\Iterator\Client.s
+    rm $(SRC_DIR)\Iterator\ConcreteIterator.s
+    rm $(SRC_DIR)\Iterator\Iterator.s
+    rm $(SRC_DIR)\Iterator\ConcreteAggregate.s
+    rm $(OBJ_DIR)\Input.obj
+    rm $(OBJ_DIR)\Algorithm.obj
+    rm $(OBJ_DIR)\BFS\Procedure.obj
+    rm $(OBJ_DIR)\BFS\Record.obj
+    rm $(OBJ_DIR)\Output.obj
+    rm $(OBJ_DIR)\PA\Data.obj
+    rm $(OBJ_DIR)\PA\Tree.obj
+    #rm obj/PA.obj
+    rm $(OBJ_DIR)\PA\List.obj
+    rm $(OBJ_DIR)\PA\Input.obj
+    rm $(OBJ_DIR)\PA\Output.obj
+    rm $(OBJ_DIR)\PA\Link.obj
+    rm $(OBJ_DIR)\PA\Arrow.obj
+    rm $(OBJ_DIR)\PA\Element.obj
+    rm $(OBJ_DIR)\PA\Status.obj
+    rm $(OBJ_DIR)\PA\Count.obj
+    rm $(OBJ_DIR)\PA\Pair.obj
+    rm $(OBJ_DIR)\PA\Result.obj
+    rm $(OBJ_DIR)\PA\Series.obj
+    rm $(OBJ_DIR)\PA\Feature.obj
+    rm $(OBJ_DIR)\PA\Value.obj
+    rm $(OBJ_DIR)\PA\Resource.obj
+    rm $(OBJ_DIR)\PA\Destination.obj
+    rm $(OBJ_DIR)\Builder\Product.obj
+    rm $(OBJ_DIR)\Builder\ConcreteBuilder.obj 
+    rm $(OBJ_DIR)\Builder\Director.obj
+    rm $(OBJ_DIR)\Builder\Builder.obj
+    rm $(OBJ_DIR)\PA\NormalTree.obj
+    rm $(OBJ_DIR)\PA\TransposeTree.obj
+#   rm $(OBJ_DIR)\PA\Product.obj
+    rm $(OBJ_DIR)\Adapter\Client.obj
+    rm $(OBJ_DIR)\Adapter\Target.obj
+    rm $(OBJ_DIR)\Adapter\Adapter.obj
+    rm $(OBJ_DIR)\Adapter\Adaptee.obj
+    rm $(OBJ_DIR)\PA\PADrawingEditor.obj
+    rm $(OBJ_DIR)\PA\PALine.obj
+    rm $(OBJ_DIR)\PA\PAShape.obj
+    rm $(OBJ_DIR)\PA\PATextView.obj
+    rm $(OBJ_DIR)\ArrayList\ArrayList.obj
+#   rm $(OBJ_DIR)\ArrayList\ArrayListObject.obj
+    rm $(OBJ_DIR)\Iterator\Client.obj
+    rm $(OBJ_DIR)\Iterator\ConcreteIterator.obj
+    rm $(OBJ_DIR)\Iterator\Iterator.obj
+    rm $(OBJ_DIR)\Iterator\ConcreteAggregate.obj
     #rm obj/Iterator/
     #rm obj/Adapter/
     #rm obj/ArrayList/
     #rm obj/BFS/
-#rm objInput.o
+#rm objInput.obj
 #rm $(objects)
 #obj/Input.
 ##include "includePAGrafProduct.h
@@ -745,159 +745,159 @@ clean:
 run:
     @echo "Running"
 .PHONY: build preprocess assemble compile 
-# input.asm: src/input.c
+# input.s: src/input.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# algorithm.asm: src/algorithm.c
+# algorithm.s: src/algorithm.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# bfsalgorithm.asm: src/bfsalgorithm.c
+# bfsalgorithm.s: src/bfsalgorithm.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# bfsinput.asm: src/bfsinput.c
+# bfsinput.s: src/bfsinput.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# bfsoutput.asm: src/bfsoutput.c
+# bfsoutput.s: src/bfsoutput.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# bfsresult.asm : src/bfsresult.c
+# bfsresult.s : src/bfsresult.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# output.asm : src/output.c
+# output.s : src/output.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# padata.asm : src/padata.c
+# padata.s : src/padata.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# pagraf.asm: src/pagraf.c
+# pagraf.s: src/pagraf.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# palista.asm: src/palista.c
+# palista.s: src/palista.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# pamuchie.asm: src/pamuchie.c
+# pamuchie.s: src/pamuchie.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# panod.asm: src/panod.c
+# panod.s: src/panod.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# papereche.asm: src/papereche.c
+# papereche.s: src/papereche.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# parezultat.asm: src/parezultat.c
+# parezultat.s: src/parezultat.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# pastare.asm: src/pastare.c
+# pastare.s: src/pastare.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# paneigh.asm: src/paneigh.c
+# paneigh.s: src/paneigh.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# patip.asm: src/patip.c 
+# patip.s: src/patip.c 
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# paindex.asm: src/paindex.c 
+# paindex.s: src/paindex.c 
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# paneigh.asm: src/paneigh.c
+# paneigh.s: src/paneigh.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# pasir.asm: src/pasir.c 
+# pasir.s: src/pasir.c 
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# parezultat.asm: src/parezultat.c 
+# parezultat.s: src/parezultat.c 
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
-# pagrafnormal.asm: src/builder/pagrafnormal.c 
+# pagrafnormal.s: src/builder/pagrafnormal.c 
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/builder/$@
-# pagraftranspus.asm:  src/builder/pagraftranspus.c
+# pagraftranspus.s:  src/builder/pagraftranspus.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/builder/$@
-# padirector.asm:  src/builder/padirector.c
+# padirector.s:  src/builder/padirector.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/builder/$@
-# pagrafproduct.asm:  src/builder/pagrafproduct.c
+# pagrafproduct.s:  src/builder/pagrafproduct.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/builder/$@
-# pabuilder.asm:  src/builder/pabuilder.c
+# pabuilder.s:  src/builder/pabuilder.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/builder/$@
 
-# PADrawingEditor.asm: src/PA/PADrawingEditor.c
+# PADrawingEditor.s: src/PA/PADrawingEditor.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
-# PALine.asm: src/PA/PALine.c
+# PALine.s: src/PA/PALine.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
-# PAShape.asm: src/PA/PAShape.c
+# PAShape.s: src/PA/PAShape.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
-# PATextView.asm: src/PA/PATextView.c
-#   CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
-
-# client.asm: src/adapter/client.c
-#   CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
-# target.asm: src/adapter/target.c
-#   CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
-# adapter.asm: src/adapter/adapter.c
-#   CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
-# adaptee.asm: src/adapter/adaptee.c
-#   CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
-# arraylist.asm: src/arraylist/arraylist.c
+# PATextView.s: src/PA/PATextView.c
 #   CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
 
-# input.o: include/Input.h 
+# client.s: src/adapter/client.c
+#   CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
+# target.s: src/adapter/target.c
+#   CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
+# adapter.s: src/adapter/adapter.c
+#   CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
+# adaptee.s: src/adapter/adaptee.c
+#   CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
+# arraylist.s: src/arraylist/arraylist.c
+#   CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
+
+# input.obj: include/Input.h 
 #   $(AS) -c asm/$^ -o obj/$@
-# algorithm.o: include/Algorithm.h
+# algorithm.obj: include/Algorithm.h
 #   $(AS) -c asm/$^ -o obj/$@
-# bfsalgorithm.o: include/BFSAlgorithm.h 
+# bfsalgorithm.obj: include/BFSAlgorithm.h 
 #   $(AS) -c asm/$^ -o obj/$@
-# bfsinput.o: include/BFSInput.h 
+# bfsinput.obj: include/BFSInput.h 
 #   $(AS) -c asm/$^ -o obj/$@
-# bfsoutput.o: include/BFSOutput.h 
+# bfsoutput.obj: include/BFSOutput.h 
 #   $(AS) -c asm/$^ -o obj/$@
-# bfsresult.o: include/BFSResult.h 
+# bfsresult.obj: include/BFSResult.h 
 #   $(AS) -c asm/$^ -o obj/$@
-# output.o: include/Output.h 
+# output.obj: include/Output.h 
 #   $(AS) -c asm/$^ -o /bj/$@
-# padata.o: include/PAData.h 
+# padata.obj: include/PAData.h 
 #   $(AS) -c asm/$^ -o obj/$@
-# pagraf.o: include/PAGraf.h 
+# pagraf.obj: include/PAGraf.h 
 #   $(AS) -c asm/$^ -o obj/$@
-# palista.o: include/PALista.h  
+# palista.obj: include/PALista.h  
 #   $(AS) -c asm/$^ -o obj/$@
-# pamuchie.o: include/PAMuchie.h  
+# pamuchie.obj: include/PAMuchie.h  
 #   $(AS) -c asm/$^ -o obj/$@
-# panod.o: include/PANod.h
+# panod.obj: include/PANod.h
 #   $(AS) -c asm/$^ -o obj/$@
-# papereche.o: include/PAPereche.h 
+# papereche.obj: include/PAPereche.h 
 #   $(AS) -c asm/$^ -o obj/$@
-# parezultat.o : include/PARezultat.h
+# parezultat.obj : include/PARezultat.h
 #   $(AS) -c asm/$^ -o obj/$@
-# pastare.o: include/PAStare.h
+# pastare.obj: include/PAStare.h
 #   $(AS) -c asm/$^ -o obj/$@
-# paneigh.o: include/PANeigh.h
+# paneigh.obj: include/PANeigh.h
 #   $(AS) -c asm/$^ -o obj/$@
-# patip.o: include/PATip.h
+# patip.obj: include/PATip.h
 #   $(AS) -c asm/$^ -o obj/$@
-# paindex.o: include/PAIndex.h 
+# paindex.obj: include/PAIndex.h 
 #   $(AS) -c asm/$^ -o obj/$@
 
-# aggregate.o: aggregate.asm 
+# aggregate.obj: aggregate.s 
 #   $(AS) -c asm/iterator/$^ -o obj/iterator/$@
-# client.o: client.asm 
+# client.obj: client.s 
 #   $(AS) -c asm/iterator/$^ -o obj/iterator/$@
-# concreteaggregate.o: concreteaggregate.asm 
+# concreteaggregate.obj: concreteaggregate.s 
 #   $(AS) -c asm/iterator/$^ -o obj/iterator/$@
-# concreteiterator.o: concreteiterator.asm 
+# concreteiterator.obj: concreteiterator.s 
 #   $(AS) -c asm/iterator/$^ -o obj/iterator/$@
-# iterator.o: iterator.asm 
+# iterator.obj: iterator.s 
 #   $(AS) -c asm/iterator/$^ -o obj/iterator/$@
 
-# pagrafnormal.o: pagrafnormal.asm 
+# pagrafnormal.obj: pagrafnormal.s 
 #   $(AS) -c asm/builder/$^ -o obj/builder/$@
-# pagraftranspus.o: pagraftranspus.asm 
+# pagraftranspus.obj: pagraftranspus.s 
 #   $(AS) -c asm/builder/$^ -o obj/builder/$@
-# padirector.o: padirector.asm 
+# padirector.obj: padirector.s 
 #   $(AS) -c asm/builder/$^ -o obj/builder/$@
-# pagrafproduct.o: pagrafproduct.asm 
+# pagrafproduct.obj: pagrafproduct.s 
 #   $(AS) -c asm/builder/$^ -o obj/builder/$@
-# pabuilder.o: pabuilder.asm
+# pabuilder.obj: pabuilder.s
 #   $(AS) -c asm/builder/$^ -o obj/builder/$@
 
-# PADrawingEditor.o: 
+# PADrawingEditor.obj: 
 #   $(AS) -c asm/adapter/$^ -o obj/adapter/$@
-# PALine.o: PALine.asm 
+# PALine.obj: PALine.s 
 #   $(AS) -c asm/adapter/$^ -o obj/adapter/$@
-# PAShape.o: PAShape.asm
+# PAShape.obj: PAShape.s
 #   $(AS) -c asm/adapter/$^ -o obj/adapter/$@
-# PASTexthape.o: patextshape.asm
+# PASTexthape.obj: patextshape.s
 #   $(AS) -c asm/adapter/$^ -o obj/adapter/$@
-# PATextView.o: PATextView.asm 
+# PATextView.obj: PATextView.s 
 #   $(AS) -c asm/adapter/$^ -o obj/adapter/$@
     
-# client.o: asm/adapter/client.asm
+# client.obj: asm/adapter/client.s
 #   $(AS) -c asm/adapter/$s^ -o obj/adapter/$@
-# target.o: asm/adapter/target.asm
+# target.obj: asm/adapter/target.s
 #   $(AS) -c asm/adapter/$^ -o obj/adapter/$@
-# adapter.o: asm/adapter/adapter.asm
+# adapter.obj: asm/adapter/adapter.s
 #   $(AS) -c asm/adapter/$^ -o obj/adapter/$@
-# adaptee.o: asm/adapter/adaptee.asm
+# adaptee.obj: asm/adapter/adaptee.s
 #   $(AS) -c asm/adapter/$^ -o obj/adapter/$@
     
-# arraylist.o : arraylist_arraylist.asm
+# arraylist.obj : arraylist_arraylist.s
 #   $(AS) -c asm/arraylist/$^ -o obj/arraylist/$@
 
 #.PHONY: all install installdirs installcheck uinstall run distclean clean
