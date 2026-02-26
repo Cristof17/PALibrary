@@ -1,9 +1,8 @@
-
-# build: preprocess compile assemble link_windows
-build: $(designs) preprocess assemble 
-# preprocess: $(sources)
-preprocess: $(sources)
+build: $(designs) preprocess assemble
 compile: $(assemblies)
+preprocess: $(sources)
+# build: preprocess compile assemble link_windows
+# preprocess: $(sources)
 assemble: $(objects)
 # link_windows: $(objects)
 #   $(LD) $(objects) -o filiename.library
@@ -343,91 +342,91 @@ $(SRC_DIR)\Iterator\ConcreteAggregate.cpp : $(SRC_DIR)\Iterator\ConcreteAggregat
     $(CC) $(CFLAGS) /E $< > $@
 
 $(SRC_DIR)\Input.asm: $(SRC_DIR)\Input.cpp
-    $(CC) $(CFLAGS) /c $<
+	$(CC) $(CFLAGS) /c $<
 $(SRC_DIR)\Algorithm.asm: $(SRC_DIR)\Algorithm.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\BFS\Procedure.asm: $(SRC_DIR)\BFS\Procedure.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\PA\Input.asm: $(SRC_DIR)\PA\Input.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\PA\Output.asm: $(SRC_DIR)\PA\Output.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\BFS\Record.asm: $(SRC_DIR)\BFS\Record.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\Output.asm: $(SRC_DIR)\Output.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\PA\Destination.asm : $(SRC_DIR)\PA\Destination.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 #asm/PA/Data.asm: $(SRC_DIR)\PA\Data.c
 #   $(CC) $(CFLAGS) -S $< -o $@
 $(SRC_DIR)\PA\Tree.asm: $(SRC_DIR)\PA\Tree.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\PA\Data.asm: $(SRC_DIR)\PA\Data.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\PA\List.asm: $(SRC_DIR)\PA\List.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\PA\Link.asm: $(SRC_DIR)\PA\Link.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\PA\Arrow.asm: $(SRC_DIR)\PA\Arrow.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\PA\Element.asm: $(SRC_DIR)\PA\Element.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\PA\Count.asm: $(SRC_DIR)\PA\Count.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\PA\Pair.asm: $(SRC_DIR)\PA\Pair.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\PA\Result.asm: $(SRC_DIR)\PA\Result.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\PA\Series.asm: $(SRC_DIR)\PA\Series.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\PA\Feature.asm: $(SRC_DIR)\PA\Feature.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\PA\Value.asm: $(SRC_DIR)\PA\Value.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\PA\Resource.asm: $(SRC_DIR)/PA/Resource.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\Builder\Director.asm: $(SRC_DIR)\Builder\Director.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\Builder\Builder.asm: $(SRC_DIR)\Builder\Builder.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\Builder\Product.asm: $(SRC_DIR)\Builder\Product.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\Builder\ConcreteBuilder.asm: $(SRC_DIR)\Builder\ConcreteBuilder.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\PA\NormalTree.asm: $(SRC_DIR)\PA\NormalTree.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\PA\TransposeTree.asm: $(SRC_DIR)\PA\TransposeTree.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\PA\Status.asm: $(SRC_DIR)\PA\Status.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\Adapter\Client.asm: $(SRC_DIR)\Adapter\Client.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\Adapter\Target.asm: $(SRC_DIR)\Adapter\Target.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\Adapter\Adapter.asm: $(SRC_DIR)\Adapter\Adapter.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\Adapter\Adaptee.asm: $(SRC_DIR)\Adapter\Adaptee.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\PA\PADrawingEditor.asm: $(SRC_DIR)\PA\PADrawingEditor.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\PA\PALine.asm: $(SRC_DIR)\PA\PALine.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\PA\PAShape.asm: $(SRC_DIR)\PA\PAShape.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\PA\PATextView.asm: $(SRC_DIR)\PA\PATextView.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\ArrayList\ArrayList.asm: $(SRC_DIR)\ArrayList\ArrayList.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\ArrayList\ArrayListPosition.asm: $(SRC_DIR)\ArrayList\ArrayListPosition.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\Iterator\Client.asm: $(SRC_DIR)\Iterator\Client.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\Iterator/ConcreteIterator.asm: $(SRC_DIR)\Iterator\ConcreteIterator.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\Iterator\Iterator.asm: $(SRC_DIR)\Iterator\Iterator.cpp
-    $(CC) -S $< -o $@
+	$(CC) -S $< -o $@
 $(SRC_DIR)\Iterator\ConcreteAggregate.asm: $(SRC_DIR)\Iterator\ConcreteAggregate.cpp
-    $(CC)  -S $< -o $@
+	$(CC)  -S $< -o $@
 
 $(OBJ_DIR)\Input.obj: $(SRC_DIR)\Input.c
 	$(CC) $(CFLAGS) /c $<
@@ -595,136 +594,136 @@ mkinstalldirs: $(srcdir)/mkinstalldirs
 #   echo "installcheck"
 
 clean:
-    DEL $(SRC_DIR)\Input.cpp
-    DEL $(SRC_DIR)\Algorithm.cpp
-    DEL $(SRC_DIR)\BFS\Procedure.cpp
-    DEL $(SRC_DIR)\PA\Input.cpp
-    DEL $(SRC_DIR)\PA\Output.cpp
-    DEL $(SRC_DIR)\BFS\Record.cpp
-    DEL $(SRC_DIR)\Output.cpp
-    DEL $(SRC_DIR)\PA\Data.cpp
-    DEL $(SRC_DIR)\PA\Destination.cpp
-    DEL $(SRC_DIR)\PA\Tree.cpp
+	DEL $(SRC_DIR)\Input.cpp
+	DEL $(SRC_DIR)\Algorithm.cpp
+	DEL $(SRC_DIR)\BFS\Procedure.cpp
+	DEL $(SRC_DIR)\PA\Input.cpp
+	DEL $(SRC_DIR)\PA\Output.cpp
+	DEL $(SRC_DIR)\BFS\Record.cpp
+	DEL $(SRC_DIR)\Output.cpp
+	DEL $(SRC_DIR)\PA\Data.cpp
+	DEL $(SRC_DIR)\PA\Destination.cpp
+	DEL $(SRC_DIR)\PA\Tree.cpp
 #   DEL $(SRC_DIR)\PA\Data.cpp
-    DEL $(SRC_DIR)\PA\List.cpp
-    DEL $(SRC_DIR)\PA\Link.cpp
-    DEL $(SRC_DIR)\PA\Arrow.cpp
-    DEL $(SRC_DIR)\PA\Element.cpp
-    DEL $(SRC_DIR)\PA\Count.cpp
-    DEL $(SRC_DIR)\PA\Pair.cpp
-    DEL $(SRC_DIR)\PA\Result.cpp
-    DEL $(SRC_DIR)\PA\Series.cpp
-    DEL $(SRC_DIR)\PA\Status.cpp
-    DEL $(SRC_DIR)\PA\Feature.cpp
-    DEL $(SRC_DIR)\PA\Value.cpp
-    DEL $(SRC_DIR)\PA\Resource.cpp
-    DEL $(SRC_DIR)\Builder\Director.cpp
-    DEL $(SRC_DIR)\Builder\Builder.cpp
-    DEL $(SRC_DIR)\Builder\Product.cpp
-    DEL $(SRC_DIR)\Builder\ConcreteBuilder.cpp
-    DEL $(SRC_DIR)\PA\NormalTree.cpp
-    DEL $(SRC_DIR)\PA\TransposeTree.cpp
-    DEL $(SRC_DIR)\Adapter\Client.cpp
-    DEL $(SRC_DIR)\Adapter\Target.cpp
-    DEL $(SRC_DIR)\Adapter\Adapter.cpp
-    DEL $(SRC_DIR)\Adapter\Adaptee.cpp
-    DEL $(SRC_DIR)\PA\PADrawingEditor.cpp
-    DEL $(SRC_DIR)\PA\PALine.cpp
-    DEL $(SRC_DIR)\PA\PAShape.cpp
-    DEL $(SRC_DIR)\PA\PATextView.cpp
-    DEL $(SRC_DIR)\ArrayList\ArrayList.cpp
-    DEL $(SRC_DIR)\ArrayList\ArrayListPosition.cpp
-    DEL $(SRC_DIR)\Iterator\Client.cpp
-    DEL $(SRC_DIR)\Iterator\ConcreteIterator.cpp
-    DEL $(SRC_DIR)\Iterator\Iterator.cpp
-    DEL $(SRC_DIR)\Iterator\ConcreteAggregate.cpp
-    DEL $(SRC_DIR)\Input.asm
-    DEL $(SRC_DIR)\Algorithm.asm
-    DEL $(SRC_DIR)\BFS\Procedure.asm
-    DEL $(SRC_DIR)\PA\Input.asm
-    DEL $(SRC_DIR)\PA\Output.asm
-    DEL $(SRC_DIR)\BFS\Record.asm
-    DEL $(SRC_DIR)\Output.asm
-    DEL $(SRC_DIR)\PA\Data.asm
-    DEL $(SRC_DIR)\PA\Status.asm
-    DEL $(SRC_DIR)\PA\Destination.asm
-    DEL $(SRC_DIR)\PA\Tree.asm
+	DEL $(SRC_DIR)\PA\List.cpp
+	DEL $(SRC_DIR)\PA\Link.cpp
+	DEL $(SRC_DIR)\PA\Arrow.cpp
+	DEL $(SRC_DIR)\PA\Element.cpp
+	DEL $(SRC_DIR)\PA\Count.cpp
+	DEL $(SRC_DIR)\PA\Pair.cpp
+	DEL $(SRC_DIR)\PA\Result.cpp
+	DEL $(SRC_DIR)\PA\Series.cpp
+	DEL $(SRC_DIR)\PA\Status.cpp
+	DEL $(SRC_DIR)\PA\Feature.cpp
+	DEL $(SRC_DIR)\PA\Value.cpp
+	DEL $(SRC_DIR)\PA\Resource.cpp
+	DEL $(SRC_DIR)\Builder\Director.cpp
+	DEL $(SRC_DIR)\Builder\Builder.cpp
+	DEL $(SRC_DIR)\Builder\Product.cpp
+	DEL $(SRC_DIR)\Builder\ConcreteBuilder.cpp
+	DEL $(SRC_DIR)\PA\NormalTree.cpp
+	DEL $(SRC_DIR)\PA\TransposeTree.cpp
+	DEL $(SRC_DIR)\Adapter\Client.cpp
+	DEL $(SRC_DIR)\Adapter\Target.cpp
+	DEL $(SRC_DIR)\Adapter\Adapter.cpp
+	DEL $(SRC_DIR)\Adapter\Adaptee.cpp
+	DEL $(SRC_DIR)\PA\PADrawingEditor.cpp
+	DEL $(SRC_DIR)\PA\PALine.cpp
+	DEL $(SRC_DIR)\PA\PAShape.cpp
+	DEL $(SRC_DIR)\PA\PATextView.cpp
+	DEL $(SRC_DIR)\ArrayList\ArrayList.cpp
+	DEL $(SRC_DIR)\ArrayList\ArrayListPosition.cpp
+	DEL $(SRC_DIR)\Iterator\Client.cpp
+	DEL $(SRC_DIR)\Iterator\ConcreteIterator.cpp
+	DEL $(SRC_DIR)\Iterator\Iterator.cpp
+	DEL $(SRC_DIR)\Iterator\ConcreteAggregate.cpp
+	DEL $(SRC_DIR)\Input.asm
+	DEL $(SRC_DIR)\Algorithm.asm
+	DEL $(SRC_DIR)\BFS\Procedure.asm
+	DEL $(SRC_DIR)\PA\Input.asm
+	DEL $(SRC_DIR)\PA\Output.asm
+	DEL $(SRC_DIR)\BFS\Record.asm
+	DEL $(SRC_DIR)\Output.asm
+	DEL $(SRC_DIR)\PA\Data.asm
+	DEL $(SRC_DIR)\PA\Status.asm
+	DEL $(SRC_DIR)\PA\Destination.asm
+	DEL $(SRC_DIR)\PA\Tree.asm
 #   rm $(SRC_DIR)/PA\Data.asm
-    DEL $(SRC_DIR)\PA\List.asm
-    DEL $(SRC_DIR)\PA\Link.asm
-    DEL $(SRC_DIR)\PA\Arrow.asm
-    DEL $(SRC_DIR)\PA\Element.asm
-    DEL $(SRC_DIR)\PA\Count.asm
-    DEL $(SRC_DIR)\PA\Pair.asm
-    DEL $(SRC_DIR)\PA\Result.asm
-    DEL $(SRC_DIR)\PA\Series.asm
-    DEL $(SRC_DIR)\PA\Feature.asm
-    DEL $(SRC_DIR)\PA\Value.asm
-    DEL $(SRC_DIR)\PA\Resource.asm
-    DEL $(SRC_DIR)\Builder\Director.asm
-    DEL $(SRC_DIR)\Builder\Builder.asm
-    DEL $(SRC_DIR)\Builder\Product.asm
-    DEL $(SRC_DIR)\Builder\ConcreteBuilder.asm
-    DEL $(SRC_DIR)\PA\NormalTree.asm
-    DEL $(SRC_DIR)\PA\TransposeTree.asm
-    DEL $(SRC_DIR)\Adapter\Client.asm
-    DEL $(SRC_DIR)\Adapter\Target.asm
-    DEL $(SRC_DIR)\Adapter\Adapter.asm
-    DEL $(SRC_DIR)\Adapter\Adaptee.asm
-    DEL $(SRC_DIR)\PA\PADrawingEditor.asm
-    DEL $(SRC_DIR)\PA\PALine.asm
-    DEL $(SRC_DIR)\PA\PAShape.asm
-    DEL $(SRC_DIR)\PA\PATextView.asm
-    DEL $(SRC_DIR)\ArrayList\ArrayList.asm
-    DEL $(SRC_DIR)\ArrayList\ArrayListPosition.asm
-    DEL $(SRC_DIR)\Iterator\Client.asm
-    DEL $(SRC_DIR)\Iterator\ConcreteIterator.asm
-    DEL $(SRC_DIR)\Iterator\Iterator.asm
-    DEL $(SRC_DIR)\Iterator\ConcreteAggregate.asm
-    DEL $(OBJ_DIR)\Input.obj
-    DEL $(OBJ_DIR)\Algorithm.obj
-    DEL $(OBJ_DIR)\BFS\Procedure.obj
-    DEL $(OBJ_DIR)\BFS\Record.obj
-    DEL $(OBJ_DIR)\Output.obj
-    DEL $(OBJ_DIR)\PA\Data.obj
-    DEL $(OBJ_DIR)\PA\Tree.obj
+	DEL $(SRC_DIR)\PA\List.asm
+	DEL $(SRC_DIR)\PA\Link.asm
+	DEL $(SRC_DIR)\PA\Arrow.asm
+	DEL $(SRC_DIR)\PA\Element.asm
+	DEL $(SRC_DIR)\PA\Count.asm
+	DEL $(SRC_DIR)\PA\Pair.asm
+	DEL $(SRC_DIR)\PA\Result.asm
+	DEL $(SRC_DIR)\PA\Series.asm
+	DEL $(SRC_DIR)\PA\Feature.asm
+	DEL $(SRC_DIR)\PA\Value.asm
+	DEL $(SRC_DIR)\PA\Resource.asm
+	DEL $(SRC_DIR)\Builder\Director.asm
+	DEL $(SRC_DIR)\Builder\Builder.asm
+	DEL $(SRC_DIR)\Builder\Product.asm
+	DEL $(SRC_DIR)\Builder\ConcreteBuilder.asm
+	DEL $(SRC_DIR)\PA\NormalTree.asm
+	DEL $(SRC_DIR)\PA\TransposeTree.asm
+	DEL $(SRC_DIR)\Adapter\Client.asm
+	DEL $(SRC_DIR)\Adapter\Target.asm
+	DEL $(SRC_DIR)\Adapter\Adapter.asm
+	DEL $(SRC_DIR)\Adapter\Adaptee.asm
+	DEL $(SRC_DIR)\PA\PADrawingEditor.asm
+	DEL $(SRC_DIR)\PA\PALine.asm
+	DEL $(SRC_DIR)\PA\PAShape.asm
+	DEL $(SRC_DIR)\PA\PATextView.asm
+	DEL $(SRC_DIR)\ArrayList\ArrayList.asm
+	DEL $(SRC_DIR)\ArrayList\ArrayListPosition.asm
+	DEL $(SRC_DIR)\Iterator\Client.asm
+	DEL $(SRC_DIR)\Iterator\ConcreteIterator.asm
+	DEL $(SRC_DIR)\Iterator\Iterator.asm
+	DEL $(SRC_DIR)\Iterator\ConcreteAggregate.asm
+	DEL $(OBJ_DIR)\Input.obj
+	DEL $(OBJ_DIR)\Algorithm.obj
+	DEL $(OBJ_DIR)\BFS\Procedure.obj
+	DEL $(OBJ_DIR)\BFS\Record.obj
+	DEL $(OBJ_DIR)\Output.obj
+	DEL $(OBJ_DIR)\PA\Data.obj
+	DEL $(OBJ_DIR)\PA\Tree.obj
     #rm obj/PA.obj
-    DEL $(OBJ_DIR)\PA\List.obj
-    DEL $(OBJ_DIR)\PA\Input.obj
-    DEL $(OBJ_DIR)\PA\Output.obj
-    DEL $(OBJ_DIR)\PA\Link.obj
-    DEL $(OBJ_DIR)\PA\Arrow.obj
-    DEL $(OBJ_DIR)\PA\Element.obj
-    DEL $(OBJ_DIR)\PA\Status.obj
-    DEL $(OBJ_DIR)\PA\Count.obj
-    rm $(OBJ_DIR)\PA\Pair.obj
-    DEL $(OBJ_DIR)\PA\Result.obj
-    DEL $(OBJ_DIR)\PA\Series.obj
-    DEL $(OBJ_DIR)\PA\Feature.obj
-    DEL $(OBJ_DIR)\PA\Value.obj
-    DEL $(OBJ_DIR)\PA\Resource.obj
-    DEL $(OBJ_DIR)\PA\Destination.obj
-    DEL $(OBJ_DIR)\Builder\Product.obj
-    DEL $(OBJ_DIR)\Builder\ConcreteBuilder.obj 
-    DEL $(OBJ_DIR)\Builder\Director.obj
-    DEL $(OBJ_DIR)\Builder\Builder.obj
-    DEL $(OBJ_DIR)\PA\NormalTree.obj
-    DEL $(OBJ_DIR)\PA\TransposeTree.obj
+	DEL $(OBJ_DIR)\PA\List.obj
+	DEL $(OBJ_DIR)\PA\Input.obj
+	DEL $(OBJ_DIR)\PA\Output.obj
+	DEL $(OBJ_DIR)\PA\Link.obj
+	DEL $(OBJ_DIR)\PA\Arrow.obj
+	DEL $(OBJ_DIR)\PA\Element.obj
+	DEL $(OBJ_DIR)\PA\Status.obj
+	DEL $(OBJ_DIR)\PA\Count.obj
+	DEL $(OBJ_DIR)\PA\Pair.obj
+	DEL $(OBJ_DIR)\PA\Result.obj
+	DEL $(OBJ_DIR)\PA\Series.obj
+	DEL $(OBJ_DIR)\PA\Feature.obj
+	DEL $(OBJ_DIR)\PA\Value.obj
+	DEL $(OBJ_DIR)\PA\Resource.obj
+	DEL $(OBJ_DIR)\PA\Destination.obj
+	DEL $(OBJ_DIR)\Builder\Product.obj
+	DEL $(OBJ_DIR)\Builder\ConcreteBuilder.obj 
+	DEL $(OBJ_DIR)\Builder\Director.obj
+	DEL $(OBJ_DIR)\Builder\Builder.obj
+	DEL $(OBJ_DIR)\PA\NormalTree.obj
+	DEL $(OBJ_DIR)\PA\TransposeTree.obj
 #   rm $(OBJ_DIR)\PA\Product.obj
-    DEL $(OBJ_DIR)\Adapter\Client.obj
-    DEL $(OBJ_DIR)\Adapter\Target.obj
-    DEL $(OBJ_DIR)\Adapter\Adapter.obj
-    DEL $(OBJ_DIR)\Adapter\Adaptee.obj
-    DEL $(OBJ_DIR)\PA\PADrawingEditor.obj
-    DEL $(OBJ_DIR)\PA\PALine.obj
-    DEL $(OBJ_DIR)\PA\PAShape.obj
-    DEL $(OBJ_DIR)\PA\PATextView.obj
-    DEL $(OBJ_DIR)\ArrayList\ArrayList.obj
+	DEL $(OBJ_DIR)\Adapter\Client.obj
+	DEL $(OBJ_DIR)\Adapter\Target.obj
+	DEL $(OBJ_DIR)\Adapter\Adapter.obj
+	DEL $(OBJ_DIR)\Adapter\Adaptee.obj
+	DEL $(OBJ_DIR)\PA\PADrawingEditor.obj
+	DEL $(OBJ_DIR)\PA\PALine.obj
+	DEL $(OBJ_DIR)\PA\PAShape.obj
+	DEL $(OBJ_DIR)\PA\PATextView.obj
+	DEL $(OBJ_DIR)\ArrayList\ArrayList.obj
 #   rm $(OBJ_DIR)\ArrayList\ArrayListObject.obj
-    DEL $(OBJ_DIR)\Iterator\Client.obj
-    DEL $(OBJ_DIR)\Iterator\ConcreteIterator.obj
-    DEL $(OBJ_DIR)\Iterator\Iterator.obj
-    DEL $(OBJ_DIR)\Iterator\ConcreteAggregate.obj
+	DEL $(OBJ_DIR)\Iterator\Client.obj
+	DEL $(OBJ_DIR)\Iterator\ConcreteIterator.obj
+	DEL $(OBJ_DIR)\Iterator\Iterator.obj
+	DEL $(OBJ_DIR)\Iterator\ConcreteAggregate.obj
     #rm obj/Iterator/
     #rm obj/Adapter/
     #rm obj/ArrayList/
