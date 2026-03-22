@@ -3,7 +3,7 @@
 #define INCLUDE_PA_FEATURE_H_	1
 
 #include "../defs.h"
-
+#include "../types.h"
 // #include <PA/Feature.h>
 
 // struct PAFeature;
