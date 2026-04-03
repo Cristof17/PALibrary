@@ -14,7 +14,7 @@ typedef int PAInt;
 //#define PAInt int
 typedef int PAResource;
 typedef int PABool;
-typedef int PAResult;
+typedef long long PAResult;
 typedef int ArrayListSize;
 typedef int ArrayListObject;
 typedef int ArrayListPosition;

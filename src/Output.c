@@ -13,7 +13,12 @@
 #endif
 // #include <PA/Output.h>
 //#include <types.h>
-void OutputPerformPrint(PAResult Result)
+void OutputPerformPrint(PAResult result)
 {
+    // int a = result;
+    // int b = result;
+    // int c = result;
+    // int d = result;
+    // OutputPerformPrint(result);
     // PAResultPerformPrint(Result);
 }

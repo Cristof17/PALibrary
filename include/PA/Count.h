@@ -9,7 +9,7 @@
 
 // struct PACount;
 //typedef struct PACount Count;
-struct PACount PACountPerformConstruct(PAInt valoare);
+struct PACount PACountPerformConstruct(PAResult valoare);
 struct PACount PACountPerformInit(struct PACount);
 struct PACount PACountPerformCopy(struct PACount);
 // void PASize(PA_INT);
