@@ -1623,8 +1623,10 @@ endif
 
 
 
-# libpa.a: $(objects)
-# 	$(LD) $< -o $@
+libpa.dylib: $(objects)
+ifeq ($(host-type),arm64)
+	$(LD) -dylib -lSystem $< -o $@
+endif
 #src/Input.c: 
 #src/Algorithm.c: 
 #src/BFS/Procedure.c: 
