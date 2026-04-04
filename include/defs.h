@@ -7,11 +7,11 @@
 #define PARESULT_FAIL ((int)1)
 #endif
 #ifndef _WIN95
-
 // typedef 
 #elif defined _WIN95
 typedef uint32_t ListObject;
 typedef uint32_t ListPosition;
+#define DllExport   __declspec( dllexport )
 #endif
 #ifndef _WIN95
 // typedef void* Objects;
