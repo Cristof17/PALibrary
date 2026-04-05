@@ -27,7 +27,7 @@ PAResult PADestinationPerformCopy()
 	// copy=PADestinationPerformInit(Destination);
 	//return copy;
 }
-PAResult PADestinationPerformRuin()
+PAResult PADestinationPerformRuin(struct PADestination Destination)
 {
     PAResult result;
     return result;
@@ -40,7 +40,7 @@ PAResult PADestinationPerformInit()
 //    destination.element = Element;
  //   return destination;
 }
-PAResult PADestinationPerformDelete()
+PAResult PADestinationPerformDelete(struct PADestination Destination)
 {
     PAResult result;
     return result;
