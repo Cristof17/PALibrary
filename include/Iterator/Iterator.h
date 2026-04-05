@@ -8,12 +8,12 @@
 #ifndef INCLUDE_ITERATOR_ITERATOR_H_
 #define INCLUDE_ITERATOR_ITERATOR_H_	1
 
+#include <defs.h>
 
-struct Iterator;
 // typedef struct Iterator Iterator;
-struct PAData First();
-struct PAData Next();
-PABool IsDone();
-struct PANod CurrentItem();
+DllExport struct PAData First();
+DllExport struct PAData Next();
+DllExport PABool IsDone();
+DllExport struct PANod CurrentItem();
 
 #endif /* ITERATOR_INCLUDE_ITERATOR_H_ */

@@ -2,13 +2,13 @@
 #ifndef PAGRAFNORMAL_H_
 #define PAGRAFNORMAL_H_	1
 
-#include "../defs.h"
-
+// #include "../defs.h"
+#include <defs.h>
 // struct NormalTree;
-struct PANormalTree PANormalTreePerformConstruct(struct PAList);
-struct PANormalTree PANormalTreePerformInit(struct PANormalTree);
-struct PANormalTree PANormalTreePerformCopy(struct PANormalTree);
+DllExport struct PANormalTree PANormalTreePerformConstruct(struct PAList);
+DllExport struct PANormalTree PANormalTreePerformInit(struct PANormalTree);
+DllExport struct PANormalTree PANormalTreePerformCopy(struct PANormalTree);
 // typedef struct GrafNormal PAGrafNormal;
-struct PANormalTree PAGrafNormalBuildPart();
-PAResult PAGrafNormalGetResult();
+DllExport struct PANormalTree PAGrafNormalBuildPart();
+DllExport PAResult PAGrafNormalGetResult();
 #endif

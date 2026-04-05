@@ -7,9 +7,8 @@
 
 #ifndef INCLUDE_ADAPTER_CLIENT_H_
 #define INCLUDE_ADAPTER_CLIENT_H_	1
+// #include <defs.h>
 
-
-struct Client;
 //typedef struct Client Client;
 
 #endif /* ADAPTER_INCLUDE_CLIENT_H_ */

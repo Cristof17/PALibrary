@@ -19,9 +19,18 @@ typedef int ArrayListSize;
 typedef int ArrayListObject;
 typedef int ArrayListPosition;
 #endif
+// struct Client;
 //struct Client;
+// struct Builder;
+// struct Director;
+// struct Target;
+// struct NormalTree;
+// struct Target;
+struct Adapter;
 struct PADestination;
 struct PAArrow;
+// struct ConcreteAggregate;
+// struct Client ;
 // struct PAInput;
 // struct BFSAlgorithm;
 struct PAData;
@@ -65,6 +74,8 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
+// struct ConcreteIterator;
+// struct Iterator;
 // struct PAList;
 // struct PAFeature;
 // struct PASeries;
@@ -72,6 +83,7 @@ struct PALink;
 // struct PALink;
 // struct PATree;
 // struct PAResource;
+// struct Aggregate;
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -87,11 +99,11 @@ struct Director;
 struct NormalTree;
 struct Product ;
 struct TransposeTree;
-struct Aggregate;
+struct IteratorAggregate;
+struct IteratorConcreteAggregate;
+struct IteratorConcreteIterator;
+struct IteratorIterator ;
 struct BuilderClient ;
-struct ConcreteAggregate;
-struct ConcreteIterator;
-struct Iterator ;
 struct BFSProcedure;
 struct Input;
 struct Algorithm;
@@ -319,20 +331,20 @@ struct Builder {
 struct Director {
 	struct Builder builder;
 };
-struct Iterator  {
+struct IteratorIterator  {
 	struct PAList series;
 };
-struct Aggregate {
-	struct Iterator iterator;
+struct IteratorAggregate {
+	struct IteratorIterator iterator;
 };
 struct ConcreteBuilder {
 	struct Builder builder;
 };
-struct ConcreteIterator  {
+struct IteratorConcreteIterator  {
 	PAInt position;
 };
-struct ConcreteAggregate {
-	struct ConcreteIterator iterator;
+struct IteratorConcreteAggregate {
+	struct IteratorConcreteIterator iterator;
 };
 // struct BuilderProduct{
 // };

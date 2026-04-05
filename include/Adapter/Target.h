@@ -9,6 +9,8 @@
 #define INCLUDE_ADAPTER_TARGET_H_	1
 
 #include <types.h>
+#include <defs.h>
+
 #ifndef _WIN95
 #include <PA/Series.h>
 #include <Adapter/Adapter.h>
@@ -20,8 +22,8 @@
 #endif
 
 //#include <Adapter.h">
-struct Target;
+
 //typedef struct Target Target;
-struct PASeries TargetRequest(struct AdapterTarget);
+DllExport struct PASeries TargetRequest(struct AdapterTarget);
 
 #endif /* ADAPTER_INCLUDE_TARGET_H_ */

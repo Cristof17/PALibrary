@@ -2,20 +2,22 @@
 #ifndef INCLUDE_PA_SIZE_H_
 #define INCLUDE_PA_SIZE_H_	1
 
-#include "../defs.h"
+// #include "../defs.h"
+#include <defs.h>
+#include <types.h>
 
 // #include <defs.h>
 
 
 // struct PACount;
 //typedef struct PACount Count;
-struct PACount PACountPerformConstruct(PAResult valoare);
-struct PACount PACountPerformInit(struct PACount);
-struct PACount PACountPerformCopy(struct PACount);
+DllExport struct PACount PACountPerformConstruct(PAResult valoare);
+DllExport struct PACount PACountPerformInit(struct PACount);
+DllExport struct PACount PACountPerformCopy(struct PACount);
 // void PASize(PA_INT);
-PAResult PACountPerformPrint(struct PACount);
-PAResult PACountPerformRuin(struct PACount);
-struct PACount PACountPerformPutValue(struct PACount, PAInt);
+DllExport PAResult PACountPerformPrint(struct PACount);
+DllExport PAResult PACountPerformRuin(struct PACount);
+DllExport struct PACount PACountPerformPutValue(struct PACount, PAInt);
 // struct 
-PAResult PACountPerformDelete(struct PACount);
+DllExport PAResult PACountPerformDelete(struct PACount);
 #endif

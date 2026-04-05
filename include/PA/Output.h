@@ -2,17 +2,18 @@
 #ifndef INCLUDE_BFSOUTPUT_H_
 #define INCLUDE_BFSOUTPUT_H_	1
 
-#include "types.h"
-#include "defs.h"
-
+// #include "types.h"
+// #include "defs.h"
+#include <defs.h>
+#include <types.h>
 // struct BFSOutput;
-struct PAOutput PAOutputPerformConstruct(struct BFSRecord Result);
-struct PAOutput PAOutputPerformInit(struct PAOutput);
-struct PAOutput PAOutputPerformCopy(struct PAOutput);
+DllExport struct PAOutput PAOutputPerformConstruct(struct BFSRecord Result);
+DllExport struct PAOutput PAOutputPerformInit(struct PAOutput);
+DllExport struct PAOutput PAOutputPerformCopy(struct PAOutput);
 // strut BFSOutputRuin();
-struct PAResult PAOutputPerformRuin(struct PAOutput);
+DllExport struct PAResult PAOutputPerformRuin(struct PAOutput);
 //typedef struct BFSOutput BFSOutput;
 // struct PAOutput PAOutputPerformInit(struct BFSRecord);
-void PAOutputPerformPrint(struct PAOutput);
-struct PAResult PAResultPerformDelete(struct PAResult);
+DllExport void PAOutputPerformPrint(struct PAOutput);
+DllExport struct PAResult PAResultPerformDelete(struct PAResult);
 #endif

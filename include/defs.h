@@ -1,5 +1,5 @@
 #ifndef INCLUDE_DEFS_H_
-#define INCLUDE_DEFS_H_	1
+#define INCLUDE_DEFS_H_ 1
 // #include <types.h>
 
 #define PADataDefault 1
@@ -8,6 +8,7 @@
 #endif
 #ifndef _WIN95
 // typedef 
+#define DllExport
 #elif defined _WIN95
 typedef uint32_t ListObject;
 typedef uint32_t ListPosition;

@@ -2,18 +2,18 @@
 #ifndef INCLUDE_PA_LIST_H_
 #define INCLUDE_PA_LIST_H_	1
 
-#include "../defs.h"
-
+// #include "../defs.h"
+#include <defs.h>
 // struct PAList;
 //typedef struct PAList List;
-struct PAList PASeriesPerformConstruct(struct PASeries Adj[],struct PACount Nß);
-PAResult PAListPerformInit();
-PAResult PAListPerformCopy();
-PAResult PAListPerformPutCount(struct PACount);
-PAResult PAListPerformPutList(struct PAList);
-PAResult PAListPerformRuin();
-PAResult PAListPerformDelete();
-void PAListDispose(void);
+DllExport struct PAList PASeriesPerformConstruct(struct PASeries Adj[],struct PACount Nß);
+DllExport PAResult PAListPerformInit();
+DllExport PAResult PAListPerformCopy();
+DllExport PAResult PAListPerformPutCount(struct PACount);
+DllExport PAResult PAListPerformPutList(struct PAList);
+DllExport PAResult PAListPerformRuin();
+DllExport PAResult PAListPerformDelete();
+DllExport void PAListDispose(void);
 
 
 // struct PAResult PAList(struct PAElement Head);

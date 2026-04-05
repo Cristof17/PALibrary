@@ -1,7 +1,7 @@
 #ifndef INCLUDE_ITERATOR_ITERATOR_H_
 #define INCLUDE_ITERATOR_ITERATOR_H_	1
 
-struct ConcreteAggregate;
+#include <defs.h>
 // typedef struct ConcreteAggregate ConcreteAggregate;
-void CreateIterator();
+DllExport void CreateIterator();
 #endif

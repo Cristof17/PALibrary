@@ -1,13 +1,16 @@
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_OUTPUT_H_
 #define INCLUDE_OUTPUT_H_	1
-#include "types.h"
+// #include "defs.h"
+// #include "types.h"
+#include <defs.h>
+#include <types.h>
 // struct Output;
 // typedef struct Output Output;
-struct Output OutputPerformConstruct();
+DllExport struct Output OutputPerformConstruct();
 // struct Output OutputPerformInit(struct Output);
-struct Output OutputPerformCopy(struct Output);
+DllExport struct Output OutputPerformCopy(struct Output);
 //struct Output dispose();
-void OutputPerformRuin(void);
-void OutputPerformPrint(PAResult);
+DllExport void OutputPerformRuin(void);
+DllExport void OutputPerformPrint(PAResult);
 #endif

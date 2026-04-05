@@ -2,13 +2,14 @@
 #ifndef PAGRAFTRANSPUS_H_
 #define PAGRAFTRANSPUS_H_	1
 
-#include "../defs.h"
+// #include "../defs.h"
+#include <defs.h>
 
 // struct GrafTranspus;
 // typedef struct GrafTranspus GrafTranspus;
-struct PATransposeTree PATransposeTreePerformConstruct(struct PAList);
-struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree);
-struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree);
-struct PATransposeTree PATransposeTreeBuildPart();
-PAResult PATransposeTreeGetResult();
+DllExport struct PATransposeTree PATransposeTreePerformConstruct(struct PAList);
+DllExport struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree);
+DllExport struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree);
+DllExport struct PATransposeTree PATransposeTreeBuildPart();
+DllExport PAResult PATransposeTreeGetResult();
 #endif

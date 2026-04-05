@@ -6,11 +6,16 @@
  */
 #ifndef INCLUDE_ADAPTER_ADAPTER_H_
 #define INCLUDE_ADAPTER_ADAPTER_H_	1
+#include <defs.h>
+#include <types.h>
 //#include <Target.h>
+// #ifndef _WIN95
+// #elif defined _WIN95
+// #include <defs.h>
+// #endif
 
-struct Adapter;
 //typedef struct Adapter Adapter;
-void AdapterRequest();
-void AdapterHead();
-struct PAElement GetHead(struct Adapter);
+DllExport void AdapterRequest();
+DllExport void AdapterHead();
+DllExport struct PAElement GetHead(struct Adapter);
 #endif /* ADAPTER_INCLUDE_ADAPTER_H_ */
