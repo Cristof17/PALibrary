@@ -9,10 +9,12 @@
 #ifndef _WIN95
 // typedef 
 #define DllExport
+#define HRESULT PAResult
 #elif defined _WIN95
 typedef uint32_t ListObject;
 typedef uint32_t ListPosition;
 #define DllExport   __declspec( dllexport )
+#define HRESULT HRESULT
 #endif
 #ifndef _WIN95
 // typedef void* Objects;
@@ -23,4 +25,3 @@ typedef uint32_t ListPosition;
 #define BLK_SIZE ((int)4096)
 #define FIRST ((int)1)
 #define LAST(N) (N)
-
