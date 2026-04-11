@@ -9,7 +9,7 @@
 DllExport PAResult PADestinationPerformConstruct();
 DllExport PAResult PADestinationPerformCopy();
 DllExport PAResult PADestinationPerformInit();
-DllExport PAResult PADestinationPerformRuin();
-DllExport PAResult PADestinationPerformDelete();
+DllExport PAResult PADestinationPerformRuin(struct PADestination);
+DllExport PAResult PADestinationPerformDelete(struct PADestination);
 //struct PADestination PADataPutElement(struct PADestination,struct PAElement);
 #endif

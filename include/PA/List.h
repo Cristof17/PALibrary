@@ -7,12 +7,12 @@
 // struct PAList;
 //typedef struct PAList List;
 DllExport struct PAList PASeriesPerformConstruct(struct PASeries Adj[],struct PACount Nß);
-DllExport PAResult PAListPerformInit();
-DllExport PAResult PAListPerformCopy();
-DllExport PAResult PAListPerformPutCount(struct PACount);
+DllExport struct PAList PAListPerformInit(struct PAList);
+DllExport PAResult PAListPerformCopy(struct PAList);
+DllExport PAResult PAListPerformPutCount(struct PAList, struct PACount);
 DllExport PAResult PAListPerformPutList(struct PAList);
-DllExport PAResult PAListPerformRuin();
-DllExport PAResult PAListPerformDelete();
+DllExport PAResult PAListPerformRuin(struct PAList);
+DllExport PAResult PAListPerformDelete(struct PAList);
 DllExport void PAListDispose(void);
 
 
