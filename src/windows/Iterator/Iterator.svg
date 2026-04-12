@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="28cm" height="19cm" viewBox="45 174 557 371" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="86" y="177" width="140.9" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="86" y="177" width="140.9" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="156.45" y="197">Aggregate</text>
+    <rect style="fill: #ffffff" x="86" y="205" width="140.9" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="86" y="205" width="140.9" height="8"/>
+    <rect style="fill: #ffffff" x="86" y="213" width="140.9" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="86" y="213" width="140.9" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="89" y="226.2">+CreateIterator()</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="319" y="176" width="56.8" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="319" y="176" width="56.8" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="347.4" y="196">Client</text>
+    <rect style="fill: #ffffff" x="319" y="204" width="56.8" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="319" y="204" width="56.8" height="8"/>
+    <rect style="fill: #ffffff" x="319" y="212" width="56.8" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="319" y="212" width="56.8" height="8"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="456" y="177" width="117.8" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="456" y="177" width="117.8" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="514.9" y="197">Iterator</text>
+    <rect style="fill: #ffffff" x="456" y="205" width="117.8" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="456" y="205" width="117.8" height="8"/>
+    <rect style="fill: #ffffff" x="456" y="213" width="117.8" height="68"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="456" y="213" width="117.8" height="68"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="459" y="226.2">+First()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="459" y="242.2">+Next()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="459" y="258.2">+IsDone()()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="459" y="274.2">+CurrentItem()</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="455" y="322" width="145.85" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="455" y="322" width="145.85" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="527.925" y="342">ConcreteIterator</text>
+    <rect style="fill: #ffffff" x="455" y="350" width="145.85" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="455" y="350" width="145.85" height="8"/>
+    <rect style="fill: #ffffff" x="455" y="358" width="145.85" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="455" y="358" width="145.85" height="8"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="98" y="323" width="165.2" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="98" y="323" width="165.2" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="180.6" y="343">ConcreteAggregate</text>
+    <rect style="fill: #ffffff" x="98" y="351" width="165.2" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="98" y="351" width="165.2" height="8"/>
+    <rect style="fill: #ffffff" x="98" y="359" width="165.2" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="98" y="359" width="165.2" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="101" y="372.2">+CreateIterator()</text>
+  </g>
+  <g>
+    <polygon style="fill: #ffffff" points="46,511 306.1,511 318.1,523 318.1,545 46,545 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="46,511 306.1,511 318.1,523 318.1,545 46,545 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" points="306.1,511 306.1,523 318.1,523 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="53" y="534.65">
+      <tspan x="53" y="534.65">return new ConcreteIterator(this)</tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="156.45,251.236 156.45,285.496 180.6,285.496 180.6,321.993 "/>
+    <polygon style="fill: #ffffff" points="164.45,251.236 156.45,235.236 148.45,251.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="164.45,251.236 156.45,235.236 148.45,251.236 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="319" y1="190" x2="231.372" y2="190.951"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="239.081,185.867 229.136,190.976 239.19,195.867 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="375.8" y1="190" x2="451.528" y2="190.944"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="443.703,195.847 453.764,190.972 443.827,185.848 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="514.9,299.236 514.9,308.997 527.925,308.997 527.925,320.994 "/>
+    <polygon style="fill: #ffffff" points="522.9,299.236 514.9,283.236 506.9,299.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="522.9,299.236 514.9,283.236 506.9,299.236 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 20; stroke: #000000" x1="263.2" y1="337" x2="450.528" y2="336.023"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="442.79,341.064 452.764,336.012 442.738,331.064 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="455" y1="366" x2="267.672" y2="368.93"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="275.356,363.809 265.436,368.965 275.513,373.808 "/>
+  </g>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 20; stroke: #000000" x1="180.863" y1="379.994" x2="182.05" y2="511"/>
+</svg>
