@@ -9,7 +9,7 @@ DllExport struct PALink PALinkPerformConstruct(struct PAPair);
 DllExport struct PALink PALinkPerformCopy(struct PALink);
 DllExport struct PALink PALinkPerformInit(struct PALink);
 DllExport struct PALink PALinkPerformPutPair(struct PALink,struct PAPair);
-DllExport PAResult PALinkPerformRuin(struct PALink);
-DllExport PAResult PALinkPerformDelete(struct PALink);
+DllExport HRESULT PALinkPerformRuin(struct PALink);
+DllExport HRESULT PALinkPerformDelete(struct PALink);
 //typedef struct PALink Link;
 #endif

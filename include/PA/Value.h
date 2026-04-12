@@ -10,7 +10,7 @@ DllExport struct PAValue PAValuePerformConstruct(PAInt);
 DllExport struct PAValue PAValuePerformCopy(struct PAValue);
 DllExport struct PAValue PAValuePerformInit(struct PAValue);
 DllExport struct PAValue PAValuePerformPutValue(struct PAValue, PAInt);
-DllExport PAResult PAValuePerformRuin(struct PAValue);
+DllExport HRESULT PAValuePerformRuin(struct PAValue);
 // struct PAResult PAValueDelete(stru)
 //typedef struct PAValue Value;
 DllExport PABool op_Equality(struct PAValue,struct PAValue);

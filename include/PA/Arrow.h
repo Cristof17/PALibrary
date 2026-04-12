@@ -12,6 +12,6 @@ DllExport struct PAArrow PAArrowPerformConstruct(struct PAPair p);
 DllExport struct PAArrow PAArrowPerformCopy(struct PAArrow);
 DllExport struct PAArrow PAArrowPerformInit(struct PAArrow);
 DllExport struct PAArrow PAArrowPerformPutPair(struct PAArrow, struct PAPair);
-DllExport PAResult PAArrowPerformRuin(struct PAArrow);
+DllExport HRESULT PAArrowPerformRuin(struct PAArrow);
 //typedef struct PAArrow Arrow;
 #endif

@@ -6,10 +6,10 @@
 #include <defs.h>
 
 // struct PADestination;
-DllExport PAResult PADestinationPerformConstruct();
-DllExport PAResult PADestinationPerformCopy();
-DllExport PAResult PADestinationPerformInit();
-DllExport PAResult PADestinationPerformRuin(struct PADestination);
-DllExport PAResult PADestinationPerformDelete(struct PADestination);
+DllExport HRESULT PADestinationPerformConstruct();
+DllExport HRESULT PADestinationPerformCopy();
+DllExport HRESULT PADestinationPerformInit();
+DllExport HRESULT PADestinationPerformRuin(struct PADestination);
+DllExport HRESULT PADestinationPerformDelete(struct PADestination);
 //struct PADestination PADataPutElement(struct PADestination,struct PAElement);
 #endif

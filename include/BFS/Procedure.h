@@ -5,12 +5,12 @@
 #include <types.h>
 // struct BFSAlgorithm;
 //typedef struct BFSAlgorithm Algorithm;
-DllExport PAResult BFS();
+DllExport HRESULT BFS();
 DllExport struct BFSProcedure BFSProcedureConstruct(struct PAInput);
 DllExport struct BFSProcedure BFSProcedurePutInput(struct BFSProcedure, struct PAInput);
 // struct Algorithm BFSProcedureArrange(struct BFSAlgorithm);
 // struct BFSProcedure BFSProcedurePutTree(struct BFSProcedure);
 // void BFSAlgorithm(struct PATree, struct BFSInput);
-DllExport PAResult BFSProcedureRuin();
-DllExport PAResult BFSProcedureSubroutine();
+DllExport HRESULT BFSProcedureRuin();
+DllExport HRESULT BFSProcedureSubroutine();
 #endif

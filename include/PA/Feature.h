@@ -13,7 +13,7 @@ DllExport struct PAFeature PAFeaturePerformConstruct(PAInt);
 DllExport struct PAFeature PAFeaturePerformCopy(struct PAFeature);
 DllExport struct PAFeature PAFeaturePerformInit(struct PAFeature);
 DllExport struct PAFeature PAFeaturePeformPutKind(struct PAFeature, PAInt Kind);
-DllExport PAResult PAFeaturePerformRuin(struct PAFeature);
-DllExport PAResult PAFeaturePerformDelete(struct PAFeature);
+DllExport HRESULT PAFeaturePerformRuin(struct PAFeature);
+DllExport HRESULT PAFeaturePerformDelete(struct PAFeature);
 //typedef struct `PAFeature Feature;
 #endif

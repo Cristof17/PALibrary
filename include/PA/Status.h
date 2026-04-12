@@ -12,7 +12,7 @@ DllExport struct PAStatus PAStatusPerformConstruct(PAInt Visited);
 DllExport struct PAStatus PAStatusPerformCopy(struct PAStatus);
 DllExport struct PAStatus PAStatusPerformInit(struct PAStatus);
 DllExport struct PAStatus PAStatusPerformPutValue(struct PAStatus, PAInt);
-DllExport PAResult PAStatusPerformRuin(struct PAStatus);
+DllExport HRESULT PAStatusPerformRuin(struct PAStatus);
 // struct PAResult PAStatusDelete()
 //typedef struct PAStatus Status;
 #endif
