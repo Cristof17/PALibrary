@@ -10,5 +10,5 @@ DllExport struct PANormalTree PANormalTreePerformInit(struct PANormalTree);
 DllExport struct PANormalTree PANormalTreePerformCopy(struct PANormalTree);
 // typedef struct GrafNormal PAGrafNormal;
 DllExport struct PANormalTree PAGrafNormalBuildPart();
-DllExport PAResult PAGrafNormalGetResult();
+DllExport HRESULT PAGrafNormalGetResult();
 #endif

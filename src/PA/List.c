@@ -12,13 +12,15 @@
 #endif
 
 // struct PAList PAListConstruct(struct PAElement Element) {
-// struct PAList PAListPerformConstruct(struct ArrayList ADJ, struct PACount M)
-
+struct PAList PAListPerformConstruct(struct ArrayList ADJ, struct PACount M)
+{
+    struct PAList list;
+    return list;
+}
 struct PAList PAListPerformInit(struct PAList List)
 {
     struct PAList list;
     // list.adj = List.adj;
-    list.n = List.n;
     return list;
 }
 struct PAList PAListPerformCopy(struct PAList List)
@@ -26,6 +28,7 @@ struct PAList PAListPerformCopy(struct PAList List)
     struct PAList copy;
     // copy = PAListPerformConstruct(List.adj, List.m);
     // copy = PAListPerformInit(List);
+    // return PARESULT_SUCCESS;
     return copy;
 }
 // struct PAList PAListPutElement(struct PAList List, struct PAElement Element) {
@@ -36,8 +39,6 @@ struct PAList PAListPerformCopy(struct PAList List)
 PAResult PAListPerformPutCount(struct PAList List, struct PACount M)
 {
     // struct PAList list;
-    List.n = M;
-    // return List;
     return PARESULT_SUCCESS;
     // return list;
 }

@@ -13,7 +13,7 @@ struct PAArrow PAArrowPerformConstruct(struct PAPair Pair)
     struct PAArrow arrow;
     return arrow;;
 }
-PAResult PAArrowPerformRuin(struct PAArrow Arrow) 
+PAResult PAArrowPerformRuin(struct PAArrow Arrow)
 {
     PAResult result;
     return result;
