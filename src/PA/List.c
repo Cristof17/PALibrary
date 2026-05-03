@@ -42,11 +42,11 @@ PAResult PAListPerformPutCount(struct PAList List, struct PACount M)
     return PARESULT_SUCCESS;
     // return list;
 }
-struct PAList PAListPerformPutArrayList(struct PAList List, struct ArrayList Adj)
+struct PAList PAListPerformPutArrayList(struct PAList List, struct ArrayList Adj, struct PAElement Element)
 {
     // struct PAList list;
     // return list;
-    ArrayListPerformCopyTo(Adj,List);
+    ArrayListPerformCopyTo(Adj,List,Element);
     return List;
 }
 // struct PAResult PAListAddElement÷(struct PAList List, struct PAElement )

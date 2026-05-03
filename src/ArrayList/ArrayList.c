@@ -49,7 +49,27 @@ struct ArrayList ArrayListPerformCopy(struct ArrayList List)
 	return list;
 }
 
-PAResult ArrayListPerformCopyTo(struct ArrayList, struct PAList);
+PAResult ArrayListPerformCopyTo(struct ArrayList Array, struct PAList List, struct PAElement Element) {
+	PAResult result;
+	struct ArrayListPosition total;
+	struct PACount count;
+	struct ArrayList destination;
+	total = Array.place;
+	unsigned long node = Element.index.resource;
+	unsigned long i = FIRST;
+	if (node < 0)
+		return PARESULT_FAIL;
+	if (node > Array.place.position)
+		return PARESULT_FAIL;
+		
+	while (i < Array.place.position)
+	{
+		List.adj[node].adj.objects[i] = Array.objects[i];
+		i++;
+
+	}
+	return PARESULT_SUCCESS;
+}
 // struct PAData ArrayListGet(struct PAData[],PAInt);
 // struct PARecord ArrayListPerformArrange(PAInt)
 // {
