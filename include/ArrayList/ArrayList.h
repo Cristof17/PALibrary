@@ -14,7 +14,7 @@ DllExport ArrayListSize ArrayListPerformSize();
 DllExport void ArrayListPut(ArrayListPosition, ArrayListObject);
 DllExport struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], struct ArrayListPosition);
 DllExport PAResult ArrayListPerformInit();
-DllExport PAResult ArrayListPerformCopy(struct ArrayList, struct PAList);
+DllExport struct ArrayList ArrayListPerformCopy(struct ArrayList);
 DllExport PAResult ArrayListPerformCopyTo(struct ArrayList Dest, struct PAList source);
 // struc  ArrayListPerformRuin(struct ArrayList List);
 DllExport HRESULT ArrayListPerformRuin();

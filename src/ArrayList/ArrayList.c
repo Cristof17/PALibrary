@@ -33,7 +33,7 @@
 // 	return List;
 // }
 
-PAResult ArrayListPerformCopy(struct ArrayList Adj, struct PAList List)
+struct ArrayList ArrayListPerformCopy(struct ArrayList List)
 {
 // 	//struct ArrayList copy;
 // 	// copt
@@ -43,8 +43,10 @@ PAResult ArrayListPerformCopy(struct ArrayList Adj, struct PAList List)
 // 	// copy. 
 // 	//copy = ArrayListPerformConstruct();
 // 	//copy = ArrayList
-	PAResult result;
-	return result;
+	// PAResult result;
+	// return result;
+	struct ArrayList list;
+	return list;
 }
 
 PAResult ArrayListPerformCopyTo(struct ArrayList, struct PAList);
