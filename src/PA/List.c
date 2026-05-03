@@ -46,7 +46,7 @@ struct PAList PAListPerformPutArrayList(struct PAList List, struct ArrayList Adj
 {
     // struct PAList list;
     // return list;
-    ArrayListPerformCopy(Adj,List);
+    ArrayListPerformCopyTo(Adj,List);
     return List;
 }
 // struct PAResult PAListAddElement÷(struct PAList List, struct PAElement )
