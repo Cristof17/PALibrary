@@ -5,18 +5,20 @@
 
 #ifndef _WIN95
 #include <PA/List.h>
+#include <ArrayList/ArrayList.h>
 #elif defined _WIN95
 #include <PA\List.h>
+#include <ArrayList/ArrayList.h>
 #endif
 
 // struct PAList PAListConstruct(struct PAElement Element) {
-struct PAList PAListPerformConstruct(struct ArrayList ADJ, struct PACount M)
+// struct PAList PAListPerformConstruct(struct ArrayList ADJ, struct PACount M)
 
 struct PAList PAListPerformInit(struct PAList List)
 {
     struct PAList list;
-    list.adj = List.adj;
-    list.m = List.m;
+    // list.adj = List.adj;
+    list.n = List.n;
     return list;
 }
 struct PAList PAListPerformCopy(struct PAList List)
@@ -31,19 +33,19 @@ struct PAList PAListPerformCopy(struct PAList List)
 //     // List.
 //     return list;
 // }
-struct PAList PAListPerformPutCount(struct PAList List, struct PACount M)
+PAResult PAListPerformPutCount(struct PAList List, struct PACount M)
 {
     // struct PAList list;
-    List.m = M;
-    return List;
+    List.n = M;
+    // return List;
+    return PARESULT_SUCCESS;
     // return list;
 }
 struct PAList PAListPerformPutArrayList(struct PAList List, struct ArrayList Adj)
 {
     // struct PAList list;
     // return list;
-    List.ad
-    j = Adj;
+    ArrayListPerformCopy(Adj,List);
     return List;
 }
 // struct PAResult PAListAddElement÷(struct PAList List, struct PAElement )
