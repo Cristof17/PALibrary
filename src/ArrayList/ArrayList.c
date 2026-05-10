@@ -55,7 +55,7 @@ PAResult ArrayListPerformCopyTo(struct ArrayList Array, struct PAList List, stru
 	// struct PACount count;
 	// struct ArrayList destination;
 	// total = Array.place;
-	if (Element.index.resource <= 0)
+	if (Element.index.resource < FIRST)
 		return PARESULT_FAIL;
 	else if (Element.index.resource > List.n.number)
 		return PARESULT_FAIL;
