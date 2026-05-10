@@ -4,7 +4,7 @@
 #ifndef _WIN95
 //#include <PA/Result.h>
 //#include <PA/Data.h>
-#include <ArrayList/ArrayList.h>
+ #include <ArrayList/ArrayList.h>
 // #eliuf
 #elif defined _WIN95
 #include <ArrayList\ArrayList.h>
@@ -163,7 +163,7 @@ PAResult ArrayListPerformMove(struct ArrayList List)
 // {
 
 // }
-struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], struct ArrayListPosition M)
+struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], ArrayListPosition M)
 {
 	struct ArrayList list;
 	return list;
