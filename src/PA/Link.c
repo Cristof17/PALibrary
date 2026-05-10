@@ -10,16 +10,19 @@
 #include <PA\Link.h>
 #endif
 
-struct PALink PALinkPerformConstruct(struct PAPair P)
+struct PAPair PALinkPerformConstruct(struct PALink Link)
 {
-    struct PALink link;
-    link.p = P;
-    return link;
+    struct PAPair Pair;
+    return Pair;
+    // struct PALink link;
+    // return link;÷
+    // link.p = P;÷
 }
-PAResult PALinkPerformRuin(struct PALink Link)
+int PALinkPerformRuin(struct PAPair)
 {
-    PAResult result;
-    return result;
+    return 0;
+    // PAResult result;
+    // return result;
 }
 struct PALink PALinkPerformCopy(struct PALink Link)
 {
@@ -28,12 +31,13 @@ struct PALink PALinkPerformCopy(struct PALink Link)
 //    link.p = Link.p;
     return link;
 }
-struct PALink PALinkPerformInit(struct PALink Link)
+struct PAPair PALinkPerformInit(struct PAPair Pair)
 {
-    struct PALink link;
+    // struct PALink link;
+    struct PAPair pair;
     // Link.p = Pair;
     // return link;
-    return link;
+    return pair;
 }
 struct PALink PALinkPerformPutPair(struct PALink Link,struct PAPair P)
 {
@@ -42,7 +46,8 @@ struct PALink PALinkPerformPutPair(struct PALink Link,struct PAPair P)
     return Link;
     // return reusult;
 }
-PAResult PALinkPerformDelete(struct PALink Link){
-    PAResult result;
-    return result;
+int PALinkPerformDelete(struct PALink Link){
+    // PAResult result;
+    // return result;
+    return 0;
 }
