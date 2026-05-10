@@ -60,8 +60,8 @@ PAResult ArrayListPerformCopyTo(struct ArrayList Array, struct PAList List, stru
 	else if (Element.index.resource > List.n.number)
 		return PARESULT_FAIL;
 	else {
-		PAResource node = Element.index.resource;
 		// int i = FIRST;
+		PAResource node = Element.index.resource;
 		Array.place.position = FIRST;
 		while (Array.place.position <= List.n.number)
 		{
