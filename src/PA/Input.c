@@ -10,10 +10,12 @@
 #include <PA\Input.h>
 #endif
 
-PAResult PAInputPerformConstruct(struct PACount N, struct PACount M)
+struct PAInput PAInputPerformConstruct(struct PACount n, struct PACount m, struct ArrayList adj, struct PAElement source)
 {
-	PAResult result ;
-	return result;
+	struct PAInput input;
+	return input;
+	// PAResult result ;
+	// return result;
 }
 struct PAInput PAInputPerformCopy(struct PAInput Input)
 {
@@ -36,12 +38,11 @@ struct PAInput PAInputPerformInit(struct PAInput Input)
 	// input.source = Source;
 	return input;
 }
-PAResult PAInputPerformRuin(struct PAInput Input)
-{
+int PAInputPerformRuin(struct PACount n, struct PACount m, struct ArrayList adj, struct PAElement source) {
 	PAResult result;
 	return result;
 }
-PAResult PAInputPerformDelete(struct PAInput Input)
+int PAInputPerformDelete(struct PAInput Input)
 {
 	PAResult result;
     return result;
