@@ -55,3 +55,10 @@
 // {
 //     PAOutputPerformPrint(output);
 // }
+DllExport struct Output OutputPerformConstruct(struct PAResult rezultat);
+// struct Output OutputPerformInit(struct Output);
+DllExport struct Output OutputPerformCopy(struct Output);
+//struct Output dispose();
+DllExport int OutputPerformRuin(int PAResult);
+DllExport int OutputPerformDelete(struct Output Out);
+DllExport void OutputPerformPrint(PAResult);

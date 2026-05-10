@@ -10,10 +10,12 @@
 #endif
 
 
-PAResult PAPairPerformConstruct()
+struct PAPair PAPairPerformConstruct(struct PAElement Node, struct PAElement Neigh)
 {
-	PAResult result;
-	return result;
+    struct PAPair pair;
+    return pair;
+	// PAResult result;
+	// return result;
     //struct PAPair pair;
     // pair.node = Node;
     // pair.neigh = N÷÷eigh;
