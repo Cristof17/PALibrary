@@ -14,32 +14,32 @@
 #include <defs.h>
 #include <types.h>
 
-struct ArrayListPosition ArrayListPositionPerformConstruct(ArrayListPosition place)
+ArrayListPosition ArrayListPositionPerformConstruct(ArrayListPosition place)
 {
-	struct ArrayListPosition position = { FIRST };
+	ArrayListPosition position = { FIRST };
 	return position;
 }
-struct ArrayListPosition ArrayListPositionPerformInit(struct ArrayListPosition ListPosition)
+ArrayListPosition ArrayListPositionPerformInit(ArrayListPosition ListPosition)
 {
-	struct ArrayListPosition position;
-	position = ArrayListPositionPerformConstruct(ListPosition.position);
+    ArrayListPosition position;
+	position = ArrayListPositionPerformConstruct(ListPosition);
 	// position.position = ListPosition;
 	return position;
 }
-struct ArrayListPosition ArrayListPositionPerformCopy(struct ArrayListPosition ListPosition)
+ArrayListPosition ArrayListPositionPerformCopy(ArrayListPosition ListPosition)
 {
-	struct ArrayListPosition copy;
-	copy = ArrayListPositionPerformConstruct(ListPosition.position);
+	ArrayListPosition copy;
+	copy = ArrayListPositionPerformConstruct(ListPosition);
 //	copy = ArrayListPositionPeoformInit(Position.position);
 	copy = ArrayListPositionPerformInit(ListPosition);
 	return copy;
 }
-PAResult ArrayListPositionPerformDelete(struct ArrayListPosition Position)
+PAResult ArrayListPositionPerformDelete(ArrayListPosition Position)
 {
 	PAResult result = { PARESULT_SUCCESS };
 	return result;
 }
-PAResult ArrayListPositionPerformRuin(struct ArrayListPosition Position)
+PAResult ArrayListPositionPerformRuin(ArrayListPosition Position)
 {
 	PAResult result = { PARESULT_SUCCESS };
 	return result;

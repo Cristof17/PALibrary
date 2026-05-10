@@ -12,7 +12,7 @@
 DllExport ArrayListObject ArrayListGet(ArrayListPosition);
 DllExport ArrayListSize ArrayListPerformSize();
 DllExport void ArrayListPut(ArrayListPosition, ArrayListObject);
-DllExport struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], struct ArrayListPosition);
+DllExport struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], ArrayListPosition);
 DllExport PAResult ArrayListPerformInit();
 DllExport struct ArrayList ArrayListPerformCopy(struct ArrayList);
 DllExport PAResult ArrayListPerformCopyTo(struct ArrayList Dest, struct PAList source, struct PAElement);
