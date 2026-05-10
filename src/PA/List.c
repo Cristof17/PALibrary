@@ -12,7 +12,7 @@
 #endif
 
 // struct PAList PAListConstruct(struct PAElement Element) {
-struct PAList PAListPerformConstruct(struct ArrayList ADJ, struct PACount M)
+struct PAList PAListPerformConstruct(struct PAElement Headed)
 {
     struct PAList list;
     return list;
@@ -54,10 +54,11 @@ struct PAList PAListPerformPutArrayList(struct PAList List, struct ArrayList Adj
     // struct PAResult result;
     // return result;
 // }
-PAResult PAListPerformRuin(struct PAList List)
+int PAListPerformRuin(struct PACount M, struct ArrayList Edges)
 {
-    PAResult result;
-    return result;
+    return 0;
+    // PAResult result;
+    // return result;
 }
 void Dispose() 
 {
@@ -82,8 +83,9 @@ void PAListPerformPrint(struct PAList List)
 {
 
 }
-PAResult PAListPerformDelete(struct PAList List)
+int PAListPerformDelete(struct PASeries PA)
 {
-    PAResult result;
-    return result;
+    return 0;
+    // PAResult result;
+    // return result;
 }
