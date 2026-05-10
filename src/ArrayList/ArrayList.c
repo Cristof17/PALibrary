@@ -60,7 +60,7 @@ PAResult ArrayListPerformCopyTo(struct ArrayList Array, struct PAList List, stru
 	result = (node <= 0 || node > List.n.number) ?  PARESULT_FAIL : PARESULT_SUCCESS;
 	if (result == PARESULT_FAIL)
 		return result;
-		
+
 	while (i <= Array.place.position)
 	{
 		ArrayListObject neigh = Array.objects[i];
@@ -68,7 +68,7 @@ PAResult ArrayListPerformCopyTo(struct ArrayList Array, struct PAList List, stru
 		i++;
 
 	}
-	return PARESULT_SUCCESS;
+	return result;
 }
 // struct PAData ArrayListGet(struct PAData[],PAInt);
 // struct PARecord ArrayListPerformArrange(PAInt)
