@@ -115,9 +115,9 @@ ArrayListObject ArrayListPerformGetLast(struct ArrayList List)
 	// struct ArrayListPosition place;
 	// place = List.place;
 	// struct ArrayListPosition x;
-	struct ArrayListPosition n;
-	n.position = List.place.position;
-	return List.objects[LAST(n.position)];
+	// struct ArrayListPosition n;
+	// n.position = List.place.position;
+	return List.objects[LAST(List.place.position)];
 	// x.position = FIRST;
 	// while (x.position < n.position)
 	// {
