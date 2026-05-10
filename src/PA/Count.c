@@ -31,6 +31,7 @@ int PACountPerformRuin(PAInt value)
 {
     // PAResult result;
     // return result;
+    return 0;
 }
 struct PACount PACountPerformInit(struct PACount Count)
 {

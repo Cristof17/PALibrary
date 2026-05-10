@@ -13,6 +13,6 @@ struct PAData PADataPerformCopy(struct PAData Data);
 struct PAData PADataPerformInit(struct PAData Data);
 //typedef struct BFSOutput BFSOutput;
 // struct PAOutput PAOutputPerformInit(struct BFSRecord);
-int PADataPerformRuin(PAInt Resource) ;
-int PADataPerformDelete(struct PAData PA)
+int PADataPerformRuin(PAInt Resource);
+int PADataPerformDelete(struct PAData PA);
 #endif

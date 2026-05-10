@@ -86,22 +86,22 @@ PAResult ArrayListPerformCopyTo(struct ArrayList Array, struct PAList List, stru
 // }
 // sjt
 // struct A
-ArrayListSize ArrayListPerformSize()
-{
-	// ArrayListSize first;
-	// return first;
-	// PAInt first = (PAInt) FIRST;
-	// PAInt x;
-	// PAInt y;
-	// x = first;
-	//while not end of list
-	//counter ++
-	//return counter
-	//0 is for resizing, put element in first position and then move the rest to the right
-	//for next move
-	//n+1 is for NULL terminatior in List workld
-	// return FIRST;
-}
+// ArrayListSize ArrayListPerformSize()
+// {
+// 	// ArrayListSize first;
+// 	// return first;
+// 	// PAInt first = (PAInt) FIRST;
+// 	// PAInt x;
+// 	// PAInt y;
+// 	// x = first;
+// 	//while not end of list
+// 	//counter ++
+// 	//return counter
+// 	//0 is for resizing, put element in first position and then move the rest to the right
+// 	//for next move
+// 	//n+1 is for NULL terminatior in List workld
+// 	// return FIRST;
+// }
 ArrayListObject ArrayListPerformGetFirst(struct ArrayList List)
 {
 	ArrayListObject first;

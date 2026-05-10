@@ -10,24 +10,24 @@
 #include <PA\Input.h>
 #endif
 
-struct PAInput PAInputPerformConstruct(struct PACount n, struct PACount m, struct ArrayList adj, struct PAElement source)
+struct PAInput PAInputPerformConstruct(struct PACount n, struct PACount m, struct PAList adj, struct PAElement source)
 {
 	struct PAInput input;
 	return input;
 	// PAResult result ;
 	// return result;
 }
-struct PAInput PAInputPerformCopy(struct PAInput Input)
-{
-	struct PAInput copy;
-	// copy = PAInputPerformConstruct(Input.n,Input.m,Input.adj,Input.source);
-	// copy = PAInputPerformInit(Input);
-//	copy.n=Input.n;
-//	copy.m=Input.m;
-//	copy.adj=Input.adj;
-//	copy.source=Input.source;
-	return copy;
-}
+// struct PAInput PAInputPerformCopy(struct PAInput Input)
+// {
+// 	struct PAInput copy;
+// 	// copy = PAInputPerformConstruct(Input.n,Input.m,Input.adj,Input.source);
+// 	// copy = PAInputPerformInit(Input);
+// //	copy.n=Input.n;
+// //	copy.m=Input.m;
+// //	copy.adj=Input.adj;
+// //	copy.source=Input.source;
+// 	return copy;
+// }
 struct PAInput PAInputPerformInit(struct PAInput Input)
 {
 	struct PAInput input;
@@ -38,7 +38,7 @@ struct PAInput PAInputPerformInit(struct PAInput Input)
 	// input.source = Source;
 	return input;
 }
-int PAInputPerformRuin(struct PACount n, struct PACount m, struct ArrayList adj, struct PAElement source) {
+int PAInputPerformRuin(struct PACount n, struct PACount m, struct PAList adj, struct PAElement source) {
 	PAResult result;
 	return result;
 }

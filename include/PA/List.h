@@ -7,7 +7,7 @@
 #include <types.h>
 // struct PAList;
 //typedef struct PAList List;
-DllExport struct PAElement GetHead();
+// DllExport struct PAElement GetHead();
 DllExport struct PAList PASeriesPerformConstruct(struct PAElement Head);
 DllExport struct PAList PAListPerformInit(struct PAList);
 // DllExport struct PAList PAListPerformCopy(struct PAList);

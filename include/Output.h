@@ -9,7 +9,7 @@
 // typedef struct Output Output;
 DllExport struct Output OutputPerformConstruct();
 // struct Output OutputPerformInit(struct Output);
-DllExport struct Output OutputPerformCopy(struct Output);
+// DllExport struct Output OutputPerformCopy(struct Output);
 //struct Output dispose();
 DllExport void OutputPerformRuin(void);
 DllExport void OutputPerformPrint(PAResult);

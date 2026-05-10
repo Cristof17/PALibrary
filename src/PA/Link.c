@@ -18,7 +18,7 @@ struct PAPair PALinkPerformConstruct(struct PALink Link)
     // return link;÷
     // link.p = P;÷
 }
-int PALinkPerformRuin(struct PAPair)
+int PALinkPerformRuin(struct PAPair Pair)
 {
     return 0;
     // PAResult result;
