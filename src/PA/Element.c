@@ -12,10 +12,12 @@
 #include <types.h>
 // #include "//"
 // #include "../include/PAIndex.h"
-PAResult PAElementPerformConstruct(struct PAData Data, struct PAFeature Feature, struct PAStatus Status)
+struct PAElement PAElementPerformConstruct(struct PAData Data, struct PAElement Next, struct PAStatus Status)
 {
-	PAResult result;
-	return result;
+    struct PAElement result;
+    return result;
+	// PAResult result;
+	// return result;
  //   struct PAElement element;
   //  return element;
 }
