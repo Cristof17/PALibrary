@@ -56,16 +56,16 @@ PAResult ArrayListPerformCopyTo(struct ArrayList Array, struct PAList List, stru
 	struct ArrayList destination;
 	total = Array.place;
 	unsigned long node = Element.index.resource;
-	unsigned long i = FIRST;
+	unsigned long neigh = FIRST;
 	if (node <= 0)
 		return PARESULT_FAIL;
 	if (node > List.n.number)
 		return PARESULT_FAIL;
 
-	while (i <= Array.place.position)
+	while (neigh <= Array.place.position)
 	{
-		List.adj[node].adj.objects[i] = Array.objects[i];
-		i++;
+		List.adj[node].adj.objects[neigh] = Array.objects[neigh];
+		neigh++;
 
 	}
 	return PARESULT_SUCCESS;
