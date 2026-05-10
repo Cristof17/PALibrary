@@ -67,6 +67,7 @@ PAResult ArrayListPerformCopyTo(struct ArrayList Array, struct PAList List, stru
 			ArrayListObject neigh = Array.objects[i];
 			List.adj[node].adj.objects[i] = neigh;
 			i++;
+
 		}
 	}
 	// if (result == PARESULT_FAIL)
