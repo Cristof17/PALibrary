@@ -88,8 +88,8 @@ PAResult ArrayListPerformCopyTo(struct ArrayList Array, struct PAList List, stru
 // struct A
 ArrayListSize ArrayListPerformSize()
 {
-	ArrayListSize first;
-	return first;
+	// ArrayListSize first;
+	// return first;
 	// PAInt first = (PAInt) FIRST;
 	// PAInt x;
 	// PAInt y;
@@ -213,12 +213,12 @@ void ArrayListPut(struct ArrayListPosition Position, ArrayListObject ListObject)
 {
 
 }
-PAResult ArrayListPerformRuin()
+PAResult ArrayListPerformRuin(struct ArrayListPosition place, ArrayListObject objects[])
 {
 	PAResult result = { PARESULT_SUCCESS } ;
 	return result;
 }
-PAResult ArrayListPerformDelete()
+PAResult ArrayListPerformDelete(struct ArrayList List)
 {
 	PAResult result = { PARESULT_SUCCESS };
 	return result;
