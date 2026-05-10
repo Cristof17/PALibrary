@@ -60,13 +60,14 @@ PAResult ArrayListPerformCopyTo(struct ArrayList Array, struct PAList List, stru
 	else if (Element.index.resource > List.n.number)
 		return PARESULT_FAIL;
 	else {
-		unsigned long node = Element.index.resource;
-		unsigned long i = FIRST;
-		while (i <= Array.place.position)
+		PAResource node = Element.index.resource;
+		// int i = FIRST;
+		Array.place.position = FIRST;
+		while (Array.place.position <= List.n.number)
 		{
-			ArrayListObject neigh = Array.objects[i];
-			List.adj[node].adj.objects[i] = neigh;
-			i++;
+			ArrayListObject neigh = Array.objects[Array.place.position];
+			List.adj[node].adj.objects[Array.place.position] = neigh;
+			Array.place.position++;
 
 		}
 	}
