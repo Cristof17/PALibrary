@@ -9,15 +9,15 @@
 
 // struct PATree;
 // struct PATree PATreeConstruct(struct OPAResult);
-DllExport HRESULT PATreePerformConstruct(struct PACount N, struct PACount M);
-DllExport struct PACount PATreeSize();
+DllExport struct PATree PATreePerformConstruct(struct PACount N, struct PACount M, struct PAList adj, struct PAElement source);
+// DllExport struct PACount PATreeSize();
 DllExport struct PATree PATreePerformInit(struct PATree);
-DllExport HRESULT PATreePerformCopy();
-DllExport HRESULT PATreePerformPutCount(struct PACount, struct PACount);
+// DllExport HRESULT PATreePerformCopy();
+// DllExport HRESULT PATreePerformPutCount(struct PACount, struct PACount);
 // struct PATree PATreePutList(struct PATree, struct PAList);
-DllExport HRESULT PATreePerformPutElement();
-DllExport HRESULT PATreePerformPutSeries();
-DllExport HRESULT PATreePerformRuin(struct PATree);
-DllExport HRESULT PATreePerformDelete(struct PATree);
+// DllExport HRESULT PATreePerformPutElement();
+// DllExport HRESULT PATreePerformPutSeries();
+DllExport int PATreePerformRuin(struct PACount n, struct PACount m, struct PAList adj, struct PAElement sursa);
+DllExport int PATreePerformDelete(struct PATree);
 //typedef struct PATree Tree;
 #endif
