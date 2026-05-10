@@ -182,7 +182,7 @@ struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], struct ArrayL
 	struct ArrayList list;
 	return list;
 }
-PAResult ArrayListPerformInit()
+PAResult ArrayListPerformInit(struct ArrayList List)
 {
 	PAResult result;
 	return result;
