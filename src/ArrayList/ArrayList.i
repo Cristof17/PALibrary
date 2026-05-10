@@ -373,16 +373,16 @@ PAResult ArrayListPerformCopyTo(struct ArrayList Array, struct PAList List, stru
  struct ArrayList destination;
  total = Array.place;
  unsigned long node = Element.index.resource;
- unsigned long i = ((int)1);
+ unsigned long neigh = ((int)1);
  if (node <= 0)
   return ((int)1);
  if (node > List.n.number)
   return ((int)1);
 
- while (i <= Array.place.position)
+ while (neigh <= Array.place.position)
  {
-  List.adj[node].adj.objects[i] = Array.objects[i];
-  i++;
+  List.adj[node].adj.objects[neigh] = Array.objects[neigh];
+  neigh++;
 
  }
  return ((int)0);
