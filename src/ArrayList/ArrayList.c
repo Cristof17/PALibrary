@@ -57,12 +57,12 @@ PAResult ArrayListPerformCopyTo(struct ArrayList Array, struct PAList List, stru
 	total = Array.place;
 	unsigned long node = Element.index.resource;
 	unsigned long i = FIRST;
-	if (node < 0)
+	if (node <= 0)
 		return PARESULT_FAIL;
 	if (node > List.n.number)
 		return PARESULT_FAIL;
 
-	while (i < Array.place.position)
+	while (i <= Array.place.position)
 	{
 		List.adj[node].adj.objects[i] = Array.objects[i];
 		i++;
