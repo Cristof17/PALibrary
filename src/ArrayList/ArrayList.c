@@ -51,10 +51,10 @@ struct ArrayList ArrayListPerformCopy(struct ArrayList List)
 
 PAResult ArrayListPerformCopyTo(struct ArrayList Array, struct PAList List, struct PAElement Element) {
 	PAResult result = PARESULT_SUCCESS;
-	struct ArrayListPosition total;
-	struct PACount count;
-	struct ArrayList destination;
-	total = Array.place;
+	// struct ArrayListPosition total;
+	// struct PACount count;
+	// struct ArrayList destination;
+	// total = Array.place;
 	unsigned long node = Element.index.resource;
 	unsigned long i = FIRST;
 	result = (node <= 0 || node > List.n.number) ?  PARESULT_FAIL : PARESULT_SUCCESS;
