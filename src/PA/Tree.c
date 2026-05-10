@@ -11,10 +11,12 @@ struct PACount PATreeSize()
     struct PACount size;
     return size;
 }
-PAResult PATreePerformConstruct(struct PACount N, struct PACount M)
+struct PATree PATreePerformConstruct(struct PACount N, struct PACount M, struct PAList adj, struct PAElement source)
 {
-    PAResult result;
-    return result;
+    struct PATree tree;
+    return tree;
+    // PAResult result;
+    // return result;
     // struct PATree tree;
     // tree = PATreePerformConstruct();
     // tree.n = N;
@@ -34,9 +36,9 @@ struct PATree PATreePerformInit(struct PATree Tree)
     // tree.adj = ()
     return tree;
 }
-PAResult PATreePerformRuin(struct PATree Tree)
+int PATreePerformRuin(struct PACount n, struct PACount m, struct PAList adj[], struct PAElement source)
 {
-    int var = 1;
+    // int var = 1;
     // PAResult result;
     // PAInt zero = 0;
     // Tree.n.number = zero;
@@ -91,8 +93,9 @@ PAResult PATreePerformPutSeries()
 //     // struct PATree tree;
 //     return tree;
 // }
-PAResult PATreePerformDelete(struct PATree Tree)
+int PATreePerformDelete(struct PATree Tree)
 {
-    PAResult result;
-    return result;
+    // PAResult result;
+    // return result;
+    return 0;
 }
