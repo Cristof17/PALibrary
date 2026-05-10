@@ -8,7 +8,7 @@
 //struct PAData {
 //
 //}
-struct PAData PADataPerformConstruct(PAResource Resource)
+struct PAData PADataPerformConstruct(PAInt Resource)
 {
     struct PAData data = { PADataDefault };
     return data;
@@ -38,12 +38,12 @@ struct PAData PADataPerformPutResource(struct PAData Data, PAResource Resource)
     Data.resource = Resource;
     return Data;
 }
-PAResult PADataPerformRuin(struct PAData Data) 
+int PADataPerformRuin(PAInt Resource) 
 {
     PAResult result = (PAInt) PARESULT_SUCCESS;
     return result;
 }
-PAResult PADataPerformDelete(struct PAData Data)
+int PADataPerformDelete(struct PAData PA)
 {
     PAResult result = (PAInt) PARESULT_SUCCESS;
     return result;
