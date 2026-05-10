@@ -14,18 +14,19 @@
 
 // struct PASeries;
 // struct PAList PAListPutElement(struct PAList, struct PAElement);
-DllExport struct PASeries PASeriesPerformConstruct(struct PAElement Head);
-DllExport HRESULT PASerisPerformPutCount(struct PACount);
-DllExport HRESULT PASeriesPerformPutArrayList(struct ArrayList);
-DllExport HRESULT PASeriesAddElement(struct PAElement);
-DllExport HRESULT PASeriesPut(PAResource,struct PAData);
-DllExport PAResource PASeriesGet(struct PAData);
-DllExport PAInt PASeriesSize();
-DllExport struct PAElement PAListHead(struct PASeries);
-DllExport struct PASeries PASeriesTail(struct PASeries);
-DllExport void PASeriesPerformPrint(struct PASeries);
-DllExport HRESULT PASeriesPerformDelete(struct PASeries);
-DllExport HRESULT PASeriesPerformRuin();
+DllExport struct PASeries PASeriesPerformConstruct(struct PACount n, struct PAList adj[]);
+DllExport struct PASeries PASeriesPerformInit(struct PASeries s);
+// DllExport HRESULT PASerisPerformPutCount(struct PACount);
+// DllExport HRESULT PASeriesPerformPutArrayList(struct ArrayList);
+// DllExport HRESULT PASeriesAddElement(struct PAElement);
+// DllExport HRESULT PASeriesPut(PAResource,struct PAData);
+// DllExport PAResource PASeriesGet(struct PAData);
+// DllExport PAInt PASeriesSize();
+// DllExport struct PAElement PAListHead(struct PASeries);
+// DllExport struct PASeries PASeriesTail(struct PASeries);
+// DllExport void PASeriesPerformPrint(struct PASeries);
+DllExport int PASeriesPerformDelete(struct PASeries);
+DllExport int PASeriesPerformRuin(struct PACount n, struct PAList adj[]);
 DllExport void Dispose();
 //typedef struct PASir Series;
 #endif /* INCLUDE_PASIR_H_ */
