@@ -39,7 +39,7 @@ int PAElementPerformRuin(struct PAData Data, struct PAElement Next, struct PASta
     // PAResult result;
     // return result;
 }
-int PAElementPerformInit(struct PAElement Eleement)
+struct PAElement PAElementPerformInit(struct PAElement Element)
 {
     //struct PAElement element;
     // element. = Element.Index;
@@ -85,8 +85,9 @@ PAResult PAElementPerformPutFeature(struct PAFeature Feature)
     // return element;
   //  return Element;
 }
-PAResult PAElementPerformDelete()
+int PAElementPerformDelete(struct PAElement Element)
 {
-    PAResult result;
-    return result;
+    // PAResult result;
+    // return result;
+    return 0;
 }

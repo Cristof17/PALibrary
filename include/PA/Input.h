@@ -7,14 +7,14 @@
 // #include <typee
 
 // struct PAInput;
-DllExport HRESULT PAInputPerformConstruct(struct PACount N, struct PACount M);
-DllExport struct PAInput PAInputPerformCopy(struct PAInput);
-DllExport struct PAInput PAInputPerformInit(struct PAInput);
+DllExport struct PAInput PAInputPerformConstruct(struct PACount N, struct PACount M, struct PAList adj, struct PAElement sursa);
+// DllExport struct PAInput PAInputPerformCopy(struct PAInput);
+DllExport struct PAInput PAInputPerformInit(struct PAInput PAInput);
 // vpo BFSInputRuin();
 // struct PAInput PAInputPerformConstruct(struct PACount, struct PACount, struct PAList, struct PAElement)l
 // struct 
-DllExport HRESULT PAInputPerformRuin(struct PAInput);
-DllExport HRESULT PAInputPerformDelete(struct PAInput);
+DllExport int PAInputPerformRuin(struct PACount n, struct PACount m, struct PAList adj, struct PAElement sursa);
+DllExport int PAInputPerformDelete(struct PAInput i);
 // void BFSInputRuin();
 // struct BFSInput BFSInputArrange(struct BFSInput);
 //typedef struct BFSInput Input;
