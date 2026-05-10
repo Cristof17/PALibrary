@@ -110,6 +110,8 @@ ArrayListObject ArrayListPerformGetFirst(struct ArrayList List)
 }
 ArrayListObject ArrayListPerformGetLast(struct ArrayList List)
 {
+	return List.objects[LAST(List.place.position)];
+}
 	// struct PAData last;
 	// ArrayListObject last;
 	// struct ArrayListPosition place;
@@ -117,7 +119,6 @@ ArrayListObject ArrayListPerformGetLast(struct ArrayList List)
 	// struct ArrayListPosition x;
 	// struct ArrayListPosition n;
 	// n.position = List.place.position;
-	return List.objects[LAST(List.place.position)];
 	// x.position = FIRST;
 	// while (x.position < n.position)
 	// {
@@ -125,7 +126,6 @@ ArrayListObject ArrayListPerformGetLast(struct ArrayList List)
 	// }
 	// last = List.objects[(LAST(place.position))];
 	// return last;
-}
 ArrayListObject ArrayListPerformPutFirst(struct ArrayList List, ArrayListObject Object)
 {
 //	struct PADAta
