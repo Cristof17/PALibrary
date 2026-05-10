@@ -184,7 +184,7 @@ struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], struct ArrayL
 }
 PAResult ArrayListPerformInit(struct ArrayList List)
 {
-	PAResult result;
+	PAResult result = { PARESULT_SUCCESS };
 	return result;
 	// srt
 	//struct ArrayList list;
