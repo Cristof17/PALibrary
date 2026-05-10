@@ -50,25 +50,29 @@ struct ArrayList ArrayListPerformCopy(struct ArrayList List)
 }
 
 PAResult ArrayListPerformCopyTo(struct ArrayList Array, struct PAList List, struct PAElement Element) {
-	PAResult result = PARESULT_SUCCESS;
+	// PAResult result = PARESULT_SUCCESS;
 	// struct ArrayListPosition total;
 	// struct PACount count;
 	// struct ArrayList destination;
 	// total = Array.place;
-	unsigned long node = Element.index.resource;
-	unsigned long i = FIRST;
-	result = (node <= 0 || node > List.n.number) ?  PARESULT_FAIL : PARESULT_SUCCESS;
-	if (result == PARESULT_FAIL)
-		return result;
-
-	while (i <= Array.place.position)
-	{
-		ArrayListObject neigh = Array.objects[i];
-		List.adj[node].adj.objects[i] = neigh;
-		i++;
-
+	if (Element.index.resource <= 0)
+		return PARESULT_FAIL;
+	else if (Element.index.resource > List.n.number)
+		return PARESULT_FAIL;
+	else {
+		unsigned long node = Element.index.resource;
+		unsigned long i = FIRST;
+		while (i <= Array.place.position)
+		{
+			ArrayListObject neigh = Array.objects[i];
+			List.adj[node].adj.objects[i] = neigh;
+			i++;
+			
+		}
 	}
-	return result;
+	// if (result == PARESULT_FAIL)
+	// 	return result;
+	return PARESULT_SUCCESS;
 }
 // struct PAData ArrayListGet(struct PAData[],PAInt);
 // struct PARecord ArrayListPerformArrange(PAInt)
