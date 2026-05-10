@@ -6,12 +6,12 @@
 #include <defs.h>
 
 // struct PAPair;
-DllExport HRESULT PAPairPerformConstruct();
-DllExport HRESULT PAPairPerformInit(struct PAPair);
-DllExport HRESULT PAPairPerformCopy(struct PAPair);
-DllExport HRESULT PAPairPerformPutNode(struct PAPair);
-DllExport HRESULT PAPairPerformPutNeigh(struct PAPair);
-DllExport HRESULT PAPairPerformRuin(struct PAPair);
-DllExport HRESULT PAPairPerformDelete(struct PAPair);
+DllExport struct PAPair PAPairPerformConstruct(struct PAElement Node, struct PAElement Neigh);
+DllExport struct PAPair PAPairPerformInit(struct PAPair p);
+// DllExport HRESULT PAPairPerformCopy(struct PAPair);
+// DllExport HRESULT PAPairPerformPutNode(struct PAPair);
+// DllExport HRESULT PAPairPerformPutNeigh(struct PAPair);
+DllExport int PAPairPerformRuin(struct PAElement Node, struct PAElement Neight);
+DllExport int PAPairPerformDelete(struct PAPair);
 //typedef struct PAPair Pair;
 #endif

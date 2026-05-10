@@ -7,13 +7,12 @@
 #include <defs.h>
 #include <types.h>
 // struct BFSOutput;
-DllExport struct PAOutput PAOutputPerformConstruct(struct BFSRecord Result);
-DllExport struct PAOutput PAOutputPerformInit(struct PAOutput);
-DllExport struct PAOutput PAOutputPerformCopy(struct PAOutput);
+struct PAData PADataPerformConstruct(PAInt Resource);
+struct PAData PADataPerformCopy(struct PAData Data);
 // strut BFSOutputRuin();
-DllExport struct PAResult PAOutputPerformRuin(struct PAOutput);
+struct PAData PADataPerformInit(struct PAData Data);
 //typedef struct BFSOutput BFSOutput;
 // struct PAOutput PAOutputPerformInit(struct BFSRecord);
-DllExport void PAOutputPerformPrint(struct PAOutput);
-DllExport struct PAResult PAResultPerformDelete(struct PAResult);
+int PADataPerformRuin(PAInt Resource) ;
+int PADataPerformDelete(struct PAData PA)
 #endif

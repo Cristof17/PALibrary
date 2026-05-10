@@ -7,14 +7,15 @@
 #include <types.h>
 // struct PAList;
 //typedef struct PAList List;
-DllExport struct PAList PASeriesPerformConstruct(struct PASeries Adj[],struct PACount Nß);
+DllExport struct PAElement GetHead();
+DllExport struct PAList PASeriesPerformConstruct(struct PAElement Head);
 DllExport struct PAList PAListPerformInit(struct PAList);
-DllExport struct PAList PAListPerformCopy(struct PAList);
-DllExport PAResult PAListPerformPutCount(struct PAList, struct PACount);
-DllExport PAResult PAListPerformPutList(struct PAList);
-DllExport PAResult PAListPerformRuin(struct PAList);
-DllExport PAResult PAListPerformDelete(struct PAList);
-DllExport void PAListDispose(void);
+// DllExport struct PAList PAListPerformCopy(struct PAList);
+// DllExport PAResult PAListPerformPutCount(struct PAList, struct PACount);
+// DllExport PAResult PAListPerformPutList(struct PAList);
+DllExport int PAListPerformRuin(struct PACount M, struct ArrayList Edges);
+DllExport int PAListPerformDelete(struct PASeries PA);
+// DllExport void PAListDispose(void);
 
 
 // struct PAResult PAList(struct PAElement Head);
