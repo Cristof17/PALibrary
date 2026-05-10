@@ -18,7 +18,7 @@ typedef int PABool;
 typedef int PAResult;
 typedef int ArrayListSize;
 typedef int ArrayListObject;
-typedef int ArrayListPosition;
+// typedef int ArrayListPosition;
 #endif
 // struct Client;
 //struct Client;
@@ -133,7 +133,7 @@ struct BridgeImplementor;
 		// 	struct Input input;
 		// };
 struct ArrayListPosition {
-	ArrayListPosition position;
+	int position;
 };
 struct ArrayList {
 	// struct Position position;

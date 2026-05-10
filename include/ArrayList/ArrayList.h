@@ -9,10 +9,10 @@
 // struct ArrayList;
 //typedef struct ArrayList ArrayList;
 
-DllExport ArrayListObject ArrayListGet(ArrayListPosition);
+DllExport ArrayListObject ArrayListGet(struct ArrayListPosition);
 DllExport ArrayListSize ArrayListPerformSize();
-DllExport void ArrayListPut(ArrayListPosition, ArrayListObject);
-DllExport struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], ArrayListPosition);
+DllExport void ArrayListPut(struct ArrayListPosition, ArrayListObject);
+DllExport struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], struct ArrayListPosition);
 DllExport PAResult ArrayListPerformInit();
 DllExport struct ArrayList ArrayListPerformCopy(struct ArrayList);
 DllExport PAResult ArrayListPerformCopyTo(struct ArrayList Dest, struct PAList source, struct PAElement);

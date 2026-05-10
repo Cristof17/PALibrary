@@ -163,7 +163,7 @@ PAResult ArrayListPerformMove(struct ArrayList List)
 // {
 
 // }
-struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], ArrayListPosition M)
+struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], struct ArrayListPosition M)
 {
 	struct ArrayList list;
 	return list;
@@ -190,12 +190,12 @@ PAResult ArrayListPerformInit()
 //	//	return Lost;
 //		//return copy;
 //	}
-ArrayListObject ArrayListGet(ArrayListPosition Position)
+ArrayListObject ArrayListGet(struct ArrayListPosition Position)
 {
 	ArrayListObject object;
 	return object;
 }
-void ArrayListPut(ArrayListPosition Position, ArrayListObject ListObject)
+void ArrayListPut(struct ArrayListPosition Position, ArrayListObject ListObject)
 {
 
 }

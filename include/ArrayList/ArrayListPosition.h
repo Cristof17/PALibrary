@@ -12,10 +12,10 @@
 #include <types.h>
 // #include "../defs.h"
 // #include "../types.h"
-DllExport ArrayListPosition ArrayListPositionPerformConstruct(ArrayListPosition);
-DllExport ArrayListPosition ArrayListPositionPerformInit(ArrayListPosition);
-DllExport ArrayListPosition ArrayListPositionPerformCopy(ArrayListPosition);
-DllExport HRESULT ArrayListPositionPerformDelete(ArrayListPosition);
-DllExport HRESULT ArrayListPositionPerformRuin(ArrayListPosition);
+DllExport struct ArrayListPosition ArrayListPositionPerformConstruct(struct ArrayListPosition);
+DllExport struct ArrayListPosition ArrayListPositionPerformInit(struct ArrayListPosition);
+DllExport struct ArrayListPosition ArrayListPositionPerformCopy(struct ArrayListPosition);
+DllExport HRESULT ArrayListPositionPerformDelete(struct ArrayListPosition);
+DllExport HRESULT ArrayListPositionPerformRuin(struct ArrayListPosition);
 
 #endif /* INCLUDE_ARRAYLIST_ARRAYLISTPOSITION_H_ */
