@@ -1,3 +1,0 @@
-
-
-src/Bridge/Abstraction.c

@@ -1,3 +1,0 @@
-
-
-src/Bridge/Client.c

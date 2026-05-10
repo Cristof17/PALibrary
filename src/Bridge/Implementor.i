@@ -1,3 +1,0 @@
-
-
-src/Bridge/Implementor.c

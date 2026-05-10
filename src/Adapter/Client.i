@@ -1,3 +1,0 @@
-
-
-src/Adapter/Client.c
