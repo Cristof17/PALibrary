@@ -389,6 +389,5 @@ struct Facade {
 	struct PAElement element;
 	struct PALink link;
 	struct PAData data;
-}
-
+};
 #endif
