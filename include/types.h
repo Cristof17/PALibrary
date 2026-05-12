@@ -119,6 +119,18 @@ struct BridgeClient;
 struct BridgeConcreteImplementorA;
 struct BridgeConcreteImplementorB;
 struct BridgeImplementor;
+struct PrototypePrototype;
+struct PrototypeClient;
+struct PrototypeConcretePrototype1;
+struct PrototypeConcretePrototype2;
+	// struct PASeries adj;
+// };
+	// struct PrototypePrototype prototype;
+// };
+	// struct PASeries adj;
+// };
+	// struct PASeries adj_trans;
+// };
 
 // struct Input {
 // 	struct Algorithm algorithm;
