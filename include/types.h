@@ -169,8 +169,9 @@ struct PAElement {
 	struct PAFeature type;
 };
 struct FlyweightFlyweightClient {
-	struct PASeries series;
+	// struct PASeries series;
 	//PAInt todo;
+	struct PASeries series;
 };
 struct FlyweightFlyweight {
 	struct PAElement allState;
@@ -349,6 +350,18 @@ struct IteratorConcreteAggregate {
 };
 // struct BuilderProduct{
 // };
+struct PrototypeClient {
+	struct PrototypePrototype prototype;
+};
+struct PrototypePrototype {
+	struct PASeries adj;
+};
+struct PrototypeConcretePrototype1 {
+	struct PASeries adj;
+};
+struct PrototypeConcretePrototype2 {
+	struct PASeries adj;
+};
 struct BFSProcedure {
 	// struct PATree tree;
 	struct BFSInput input;
