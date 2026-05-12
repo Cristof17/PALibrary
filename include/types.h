@@ -360,7 +360,7 @@ struct PrototypeConcretePrototype1 {
 	struct PASeries adj;
 };
 struct PrototypeConcretePrototype2 {
-	struct PASeries adj;
+	struct PASeries adj_trans;
 };
 struct BFSProcedure {
 	// struct PATree tree;
