@@ -123,6 +123,7 @@ struct PrototypePrototype;
 struct PrototypeClient;
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
+struct Facade;
 	// struct PASeries adj;
 // };
 	// struct PrototypePrototype prototype;
@@ -381,5 +382,13 @@ struct BFSProcedure {
 	// struct 
 	
 };
+struct Facade {
+	struct PASeries series;
+	struct PACount size;
+	struct PAList list;
+	struct PAElement element;
+	struct PALink link;
+	struct PAData data;
+}
 
 #endif
