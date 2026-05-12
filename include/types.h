@@ -350,11 +350,11 @@ struct IteratorConcreteAggregate {
 };
 // struct BuilderProduct{
 // };
-struct PrototypeClient {
-	struct PrototypePrototype prototype;
-};
 struct PrototypePrototype {
 	struct PASeries adj;
+};
+struct PrototypeClient {
+	struct PrototypePrototype prototype;
 };
 struct PrototypeConcretePrototype1 {
 	struct PASeries adj;
