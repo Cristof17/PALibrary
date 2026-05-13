@@ -16,8 +16,8 @@ struct PAData PADataPerformConstruct(PAInt Resource)
 struct PAData PADataPerformCopy(struct PAData Data)
 {
     struct PAData copy;
-    struct PAResource resource = Data.resource;
-    copy.resource = resource;
+    struct PAResource resource = Data.Resource;
+    copy.Resource = resource;
 //    copy=PADataPerformConstruct(Data.resource);
 //    copy=PADataPerformInit(Data);
     return copy;
@@ -27,7 +27,7 @@ struct PAData PADataPerformCopy(struct PAData Data)
 struct PAData PADataPerformInit(struct PAData Data)
 {
     struct PAData data;
-    data.resource = Data.resource;
+    data.Resource = Data.Resource;
     return data;
     // struct PAData data;
     // data.resource = Data.resource;
@@ -35,7 +35,7 @@ struct PAData PADataPerformInit(struct PAData Data)
 struct PAData PADataPerformPutResource(struct PAData Data, struct PAResource Resource)
 {
     // struct PAData data;
-    Data.resource = Resource;
+    Data.Resource = Resource;
     return Data;
 }
 int PADataPerformRuin(PAInt Resource) 
