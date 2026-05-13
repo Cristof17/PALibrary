@@ -6,16 +6,16 @@
 #include <defs.h>
 #ifdef _WIN95
 //#define short HALF_PTR;
-typedef PABool BOOL;
 typedef PAInt int32_t;
 typedef int PAInt;
+typedef PABool BOOL;
 typedef int PAResult;
 typedef int ArrayListSize;
 typedef int ArrayListObject;
 #else
 typedef int PAInt;
 //#define PAInt int
-typedef int PAResource;
+// typedef int PAResource;
 typedef int PABool;
 typedef int PAResult;
 typedef int ArrayListSize;
@@ -44,7 +44,7 @@ struct Adaptee;
 // struct BFSOutput;
 // struct PAResult;
 // struct ArrayList;
-// struct PAResource;
+struct PAResource;
 struct PACount;
 struct PANormalTree;
 struct PATransposeTree;
@@ -158,8 +158,13 @@ struct ArrayList {
 struct PAStatus {
 	PAInt visited;
 };
+struct PAResource {
+	// struct
+	// PA_INt
+	PAInt value;
+};
 struct PAData {
-    PAResource resource;
+    struct PAResource resource;
 };
 struct PAFeature {
 	PAInt kind;
@@ -221,11 +226,6 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-// struct PAResource {
-// 	// struct
-// 	// PA_INt
-// 	PAInt value;
-// };
 //struct ArrayListObject {
 //	ListObject object;
 //};

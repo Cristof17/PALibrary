@@ -55,13 +55,14 @@ PAResult ArrayListPerformCopyTo(struct ArrayList Array, struct PAList List, stru
 	// struct PACount count;
 	// struct ArrayList destination;
 	// total = Array.place;
-	if (Element.index.resource < FIRST)
+	if (Element.index.resource.value < FIRST)
 		return PARESULT_FAIL;
-	else if (Element.index.resource > List.n.number)
+	else if (Element.index.resource.value > List.n.number)
 		return PARESULT_FAIL;
 	else {
 		// int i = FIRST;
-		PAResource node = Element.index.resource;
+		struct PAResource resource = Element.index.resource;
+		PAInt node = resource.value;
 		Array.place.position = FIRST;
 		while (Array.place.position <= List.n.number)
 		{

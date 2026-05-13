@@ -51,17 +51,17 @@ PAResult PASeriesPerformPutArrayList(struct ArrayList Adj)
     // struct PAResult result;
     // return result;
 // }
-PAResult PASeriesPut(PAResource Resource,struct PAData Data)
+PAResult PASeriesPut(struct PAResource Resource,struct PAData Data)
 {
     PAResult result;
     return result;
 }
-PAResource PASeriesGet(struct PAData Data)
+struct PAResource PASeriesGet(struct PAData Data)
 {
-    PAResource resource;
+    struct PAResource resource;
     return resource;
 }
-PAResult PASeriesPutFirst(PAResource);
+PAResult PASeriesPutFirst(struct PAResource);
 // PA_INT PAListSize(struct PAList List)
 // {
 //     PA_INT size;
