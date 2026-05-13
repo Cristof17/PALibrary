@@ -8,11 +8,13 @@
 //#define short HALF_PTR;
 typedef PAInt int32_t;
 typedef int PAInt;
+typedef int PANumber;
 typedef PABool BOOL;
 typedef int PAResult;
 typedef int ArrayListSize;
 typedef int ArrayListObject;
 #else
+typedef int PANumber;
 typedef int PAInt;
 //#define PAInt int
 // typedef int PAResource;
@@ -161,10 +163,11 @@ struct PAStatus {
 struct PAResource {
 	// struct
 	// PA_INt
-	PAInt value;
+	// PAInt value;
+	PANumber value;
 };
 struct PAData {
-    struct PAResource resource;
+    struct PAResource Resource;
 };
 struct PAFeature {
 	PAInt kind;
@@ -257,8 +260,8 @@ struct PADestination {
     struct PAElement element;
 };
 struct PAPair {
-	struct PAElement node;
-	struct PAElement neigh;
+	struct PAElement Node;
+	struct PAElement Neigh;
 };
 struct PAArrow {
 	struct PAPair p;
