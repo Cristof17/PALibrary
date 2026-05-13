@@ -9,7 +9,9 @@
 typedef PABool BOOL;
 typedef PAInt int32_t;
 typedef int PAInt;
-tyepdef int PAResult;
+typedef int PAResult;
+typedef int ArrayListSize;
+typedef int ArrayListObject;
 #else
 typedef int PAInt;
 //#define PAInt int
