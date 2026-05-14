@@ -161,15 +161,15 @@ struct ArrayList {
 	struct ArrayListPosition place;
 	ArrayListObject objects[BLK_SIZE];
 };
-struct PAStatus {
-	PAInt visited;
-};
 struct PAResource {
 	// struct
 	// PA_INt
 	// PAInt value;
 	struct PANumber value;
 	PADDING_1_BYTE(0);
+};
+struct PAStatus {
+	struct PAResource visited;
 };
 struct PAData {
 	struct PAResource Resource;
@@ -195,8 +195,9 @@ struct PAElement {
 	//	struct PAData data;
 	struct PAData index;
 	// struct PADestination Next;
-	struct PAStatus status;
-	struct PAFeature type;
+	struct
+	PAStatus status;
+	// struct PAFeature type;
 	PADDING_1_BYTE(2);
 };
 struct FlyweightFlyweightClient {
