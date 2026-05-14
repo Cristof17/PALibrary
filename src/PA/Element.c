@@ -12,6 +12,18 @@
 #include <types.h>
 // #include "//"
 // #include "../include/PAIndex.h"
+DllExport void PAElementVisit()
+{
+
+}
+DllExport PABool PAElementIsVisited()
+{
+    
+}
+DllExport void PAElementReset()
+{
+
+}
 struct PAElement PAElementPerformConstruct(struct PAData Data, struct PAElement Next, struct PAStatus Status)
 {
     struct PAElement result;

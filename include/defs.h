@@ -5,7 +5,8 @@
 #define PADataDefault 1
 #define PARESULT_SUCCESS ((int)0)
 #define PARESULT_FAIL ((int)1)
-#endif
+#define TRUE 1
+#define FALSE 0
 #ifndef _WIN95
 // typedef 
 #define DllExport
@@ -25,3 +26,4 @@ typedef uint32_t ListPosition;
 #define BLK_SIZE ((int)4096)
 #define FIRST ((int)1)
 #define LAST(N) (N)
+#endif
