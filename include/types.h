@@ -173,6 +173,7 @@ struct PAFeature {
 	PAInt kind;
 };
 struct PACount {
+	PADDING_1_BYTE(2);
 	PAInt number;
 };
 struct PASeries {
