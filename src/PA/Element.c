@@ -14,15 +14,15 @@
 // #include "../include/PAIndex.h"
 DllExport void PAElementVisit()
 {
-
+    return;
 }
 DllExport PABool PAElementIsVisited()
 {
-    
+    return TRUE;
 }
 DllExport void PAElementReset()
 {
-
+    return;
 }
 struct PAElement PAElementPerformConstruct(struct PAData Data, struct PAElement Next, struct PAStatus Status)
 {
