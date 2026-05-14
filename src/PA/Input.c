@@ -30,13 +30,13 @@ struct PAInput PAInputPerformConstruct(struct PACount n, struct PACount m, struc
 // }
 struct PAInput PAInputPerformInit(struct PAInput Input)
 {
-	struct PAInput input;
+	// struct PAInput input;
 	// struct PAInput input=PAInputPerformConstruct(Input.n,input.m,input.adj,input.source);
 	// input.n=N;
 	// input.m=M;
 	// input.adj=ADJ;
 	// input.source = Source;
-	return input;
+	return Input;
 }
 int PAInputPerformRuin(struct PACount n, struct PACount m, struct PAList adj, struct PAElement source) {
 	PAResult result;

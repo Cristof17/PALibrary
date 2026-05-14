@@ -61,8 +61,8 @@ struct PAElement PAElementPerformInit(struct PAElement Element)
     //return element;
 	// PAResult result;
 	// return result;
-    struct PAElement element;
-    return element;
+    // struct PAElement element;
+    return Element;
 }
 // PAResult PAElementPerformPutStatus(struct PAStatus Status)
 // {

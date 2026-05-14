@@ -35,9 +35,9 @@ int PACountPerformRuin(PAInt value)
 }
 struct PACount PACountPerformInit(struct PACount Count)
 {
-    struct PACount count;
+    // struct PACount count;
     // count.number = Number;
-    return count;
+    return Count;
 }
 struct PACount PACountPerformPutValue(struct PACount Count, PAInt Value)
 {
