@@ -26,9 +26,9 @@ struct PAData PADataPerformConstruct(PAInt Resource)
 // }
 struct PAData PADataPerformInit(struct PAData Data)
 {
+    return Data;
     // struct PAData data;
     // data.Resource = Data.Resource;
-    return Data;
     // struct PAData data;
     // data.resource = Data.resource;
 }

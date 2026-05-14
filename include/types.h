@@ -167,13 +167,14 @@ struct PAResource {
 	PANumber value;
 };
 struct PAData {
-    struct PAResource Resource;
+	struct PAResource Resource;
+	PADDING_1_BYTE(4);
 };
 struct PAFeature {
 	PAInt kind;
 };
 struct PACount {
-	PADDING_1_BYTE(2);
+	PADDING_1_BYTE(4);
 	PAInt number;
 };
 struct PASeries {
@@ -191,6 +192,7 @@ struct PAElement {
 	// struct PADestination Next;
 	struct PAStatus status;
 	struct PAFeature type;
+	PADDING_1_BYTE(14);
 };
 struct FlyweightFlyweightClient {
 	// struct PASeries series;
