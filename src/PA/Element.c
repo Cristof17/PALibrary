@@ -21,10 +21,10 @@ struct PAElement PAElementPerformConstruct(struct PAData Data, struct PAElement 
  //   struct PAElement element;
   //  return element;
 }
-PAResult PAElementPerformCopy()
-{
-	PAResult result;
-	return result;
+// PAResult PAElementPerformCopy()
+// {
+	// PAResult result;
+	// return result;
 	//struct PAElement copy;
 	// copy=PAElementPerformConstruct(Element.index, Element.type, Element.status);
 	// copy=PAElementPerformInit(Element);
@@ -32,7 +32,7 @@ PAResult PAElementPerformCopy()
 //	copy.status=Element.status;
 //	copy.type=Element.type;
 	//return copy;
-}
+// }
 int PAElementPerformRuin(struct PAData Data, struct PAElement Next, struct PAStatus Status)
 {
     return 0; 
@@ -52,14 +52,14 @@ struct PAElement PAElementPerformInit(struct PAElement Element)
     struct PAElement element;
     return element;
 }
-PAResult PAElementPerformPutStatus(struct PAStatus Status)
-{
-	PAResult result;
-	return result;
+// PAResult PAElementPerformPutStatus(struct PAStatus Status)
+// {
+	// PAResult result;
+	// return result;
     // struct PAElement element;
     //Element.status = Status;
     //return Element;
-}
+// }
 PAResult PAElementPerformPutData(struct PAData Index)
 {
 	PAResult result;
