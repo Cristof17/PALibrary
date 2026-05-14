@@ -305,6 +305,7 @@ endif
 # 	mkdir $<
 # ${objdirs}:`
 output=libpa.a
+lib: $(output)
 # build: preprocess compile assemble link_windows
 all: ${objdirs}
 	${MAKE} $(designs) 
@@ -1621,11 +1622,9 @@ ifeq ($(host-type),AArch64)
 	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
-
-
-libpa.dylib: $(objects)
+$(output): $(objects)
 ifeq ($(host-type),arm64)
-	$(LD) -dylib -lSystem $< -o $@
+	$(AR) -r $@ $^
 endif
 #src/Input.c: 
 #src/Algorithm.c: 
