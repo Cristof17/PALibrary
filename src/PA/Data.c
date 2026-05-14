@@ -32,12 +32,12 @@ struct PAData PADataPerformInit(struct PAData Data)
     // struct PAData data;
     // data.resource = Data.resource;
 }
-struct PAData PADataPerformPutResource(struct PAData Data, struct PAResource Resource)
-{
+// struct PAData PADataPerformPutResource(struct PAData Data, struct PAResource Resource)
+// {
     // struct PAData data;
-    Data.Resource = Resource;
-    return Data;
-}
+    // Data.Resource = Resource;
+    // return Data;
+// }
 int PADataPerformRuin(PAInt Resource) 
 {
     PAResult result = (PAInt) PARESULT_SUCCESS;
