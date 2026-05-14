@@ -14,18 +14,15 @@ objects= obj/Input.o \
 	obj/BFS/Record.o \
 	obj/Output.o \
 	obj/PA/Data.o \
-	obj/PA/Destination.o \
 	obj/PA/Tree.o \
 	obj/PA/List.o \
 	obj/PA/Status.o \
 	obj/PA/Link.o \
-	obj/PA/Arrow.o \
 	obj/PA/Element.o \
 	obj/PA/Count.o \
 	obj/PA/Pair.o \
 	obj/PA/Result.o \
 	obj/PA/Series.o \
-	obj/PA/Feature.o \
 	obj/PA/Value.o \
 	obj/PA/Resource.o \
 	obj/Builder/Director.o \
@@ -67,6 +64,9 @@ objects= obj/Input.o \
 	obj/Flyweight/FlyweightFactory.o \
 	obj/Flyweight/Flyweight.o \
 	obj/Flyweight/UnsharedConcreteFlyweight.o
+# 	obj/PA/Destination.o
+# 	obj/PA/Arrow.o
+# 	obj/PA/Feature.o
 assemblies= src/Input.s \
 	src/Algorithm.s \
 	src/BFS/Procedure.s \
@@ -76,16 +76,13 @@ assemblies= src/Input.s \
 	src/Output.s \
 	src/PA/Tree.s \
 	src/PA/Data.s \
-	src/PA/Destination.s \
 	src/PA/List.s \
 	src/PA/Link.s \
-	src/PA/Arrow.s \
 	src/PA/Element.s \
 	src/PA/Count.s \
 	src/PA/Pair.s \
 	src/PA/Result.s \
 	src/PA/Series.s \
-	src/PA/Feature.s \
 	src/PA/Value.s \
 	src/PA/Resource.s \
 	src/Builder/Director.s \
@@ -127,6 +124,9 @@ assemblies= src/Input.s \
 	src/Flyweight/FlyweightFactory.s \
 	src/Flyweight/Flyweight.s \
 	src/Flyweight/UnsharedConcreteFlyweight.s
+# 	src/PA/Destination.s
+# 	src/PA/Arrow.s
+# 	src/PA/Feature.s
 designs=src/Input.c \
 	src/Algorithm.c \
 	src/BFS/Procedure.c \
@@ -135,19 +135,16 @@ designs=src/Input.c \
 	src/BFS/Record.c \
 	src/Output.c \
 	src/PA/Data.c \
-	src/PA/Destination.c \
 	src/PA/Tree.c \
 	src/PA/Data.c \
 	src/PA/List.c \
 	src/PA/Link.c \
-	src/PA/Arrow.c \
 	src/PA/Element.c \
 	src/PA/Count.c \
 	src/PA/Pair.c \
 	src/PA/Result.c \
 	src/PA/Series.c \
 	src/PA/Status.c \
-	src/PA/Feature.c \
 	src/PA/Value.c \
 	src/PA/Resource.c \
 	src/Builder/Director.c \
@@ -189,6 +186,9 @@ designs=src/Input.c \
 	src/Flyweight/FlyweightFactory.c \
 	src/Flyweight/Flyweight.c \
 	src/Flyweight/UnsharedConcreteFlyweight.c
+# 	src/PA/Destination.c
+# 	src/PA/Arrow.c
+# 	src/PA/Feature.c
 sources=src/Input.i \
 	src/Algorithm.i \
 	src/BFS/Procedure.i \
@@ -197,19 +197,16 @@ sources=src/Input.i \
 	src/BFS/Record.i \
 	src/Output.i \
 	src/PA/Data.i \
-	src/PA/Destination.i \
 	src/PA/Tree.i \
 	src/PA/Data.i \
 	src/PA/List.i \
 	src/PA/Link.i \
-	src/PA/Arrow.i \
 	src/PA/Element.i \
 	src/PA/Count.i \
 	src/PA/Pair.i \
 	src/PA/Result.i \
 	src/PA/Series.i \
 	src/PA/Status.i \
-	src/PA/Feature.i \
 	src/PA/Value.i \
 	src/PA/Resource.i \
 	src/State/Context.i \
@@ -251,6 +248,9 @@ sources=src/Input.i \
 	src/Flyweight/FlyweightFactory.i \
 	src/Flyweight/Flyweight.i \
 	src/Flyweight/UnsharedConcreteFlyweight.i
+# 	src/PA/Destination.i
+# 	src/PA/Arrow.i
+# 	src/PA/Feature.i
 objdirs= obj/ \
 	obj/BFS/ \
 	obj/Adapter/ \
@@ -498,16 +498,16 @@ src/Output.i : src/Output.c include/defs.h include/Output.h
 	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Data.i : src/PA/Data.c include/PA/Data.h
 	-$(CPP) $(CPPFLAGS) -E $< > $@
-src/PA/Destination.i : src/PA/Destination.c include/types.h include/PA/Destination.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
+# src/PA/Destination.i : src/PA/Destination.c include/types.h include/PA/Destination.h
+# 	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Tree.i : src/PA/Tree.c include/PA/Tree.h include/types.h
 	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/List.i : src/PA/List.c include/types.h include/PA/List.h
 	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Link.i : src/PA/Link.c include/defs.h include/types.h include/PA/Link.h
 	-$(CPP) $(CPPFLAGS) -E $< > $@
-src/PA/Arrow.i : src/PA/Arrow.c include/defs.h include/PA/Arrow.h include/types.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
+# src/PA/Arrow.i : src/PA/Arrow.c include/defs.h include/PA/Arrow.h include/types.h
+# 	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Element.i : src/PA/Element.c include/defs.h include/PA/Element.h include/types.h
 	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Count.i : src/PA/Count.c include/types.h include/PA/Count.h
@@ -521,8 +521,8 @@ src/PA/Series.i : src/PA/Series.c include/defs.h include/types.h include/PA/Seri
 	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Status.i : src/PA/Status.c include/defs.h include/PA/Status.h
 	-$(CPP) $(CPPFLAGS) -E $< > $@
-src/PA/Feature.i : src/PA/Feature.c include/PA/Feature.h include/types.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
+# src/PA/Feature.i : src/PA/Feature.c include/PA/Feature.h include/types.h
+# 	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Value.i : src/PA/Value.c include/types.h include/PA/Value.h
 	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Resource.i : src/PA/Resource.c include/PA/Resource.h
@@ -629,8 +629,8 @@ src/BFS/Record.s: src/BFS/Record.i
 	-$(CC) -S $< -o $@
 src/Output.s: src/Output.i
 	-$(CC) -S $< -o $@
-src/PA/Destination.s : src/PA/Destination.i
-	-$(CC) -S $< -o $@
+# src/PA/Destination.s : src/PA/Destination.i
+# 	-$(CC) -S $< -o $@
 #asm/PA/Data.s: src/PA/Data.c
 #	$(CC) $(CFLAGS) -S $< -o $@
 src/PA/Tree.s: src/PA/Tree.i
@@ -641,8 +641,8 @@ src/PA/List.s: src/PA/List.i
 	-$(CC) -S $< -o $@
 src/PA/Link.s: src/PA/Link.i
 	-$(CC) -S $< -o $@
-src/PA/Arrow.s: src/PA/Arrow.i
-	-$(CC) -S $< -o $@
+# src/PA/Arrow.s: src/PA/Arrow.i
+# 	-$(CC) -S $< -o $@
 src/PA/Element.s: src/PA/Element.i
 	-$(CC) -S $< -o $@
 src/PA/Count.s: src/PA/Count.i
@@ -653,8 +653,8 @@ src/PA/Result.s: src/PA/Result.i
 	-$(CC) -S $< -o $@
 src/PA/Series.s: src/PA/Series.i
 	-$(CC) -S $< -o $@
-src/PA/Feature.s: src/PA/Feature.i
-	-$(CC) -S $< -o $@
+# src/PA/Feature.s: src/PA/Feature.i
+# 	-$(CC) -S $< -o $@
 src/PA/Value.s: src/PA/Value.i
 	-$(CC) -S $< -o $@
 src/PA/Resource.s: src/PA/Resource.i
@@ -930,16 +930,16 @@ endif
 
 
 
-obj/PA/Arrow.o: src/PA/Arrow.s
-ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
-endif
-ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
-endif
-ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
-endif
+# obj/PA/Arrow.o: src/PA/Arrow.s
+# ifeq ($(host-type),arm64)
+# 	-$(AS) $(ASFLAGS) $< -o $@
+# endif
+# ifeq ($(host-type),x86_64)
+# 	-$(CC) -c $(CFLAGS) $< -o $@
+# endif
+# ifeq ($(host-type),AArch64)
+# 	-$(AS) $(ASFLAGS) $< -o $@
+# endif
 
 
 
@@ -1021,29 +1021,29 @@ endif
 
 
 
-obj/PA/Feature.o: src/PA/Feature.s
-ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
-endif
-ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
-endif
-ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
-endif
+# obj/PA/Feature.o: src/PA/Feature.s
+# ifeq ($(host-type),arm64)
+# 	-$(AS) $(ASFLAGS) $< -o $@
+# endif
+# ifeq ($(host-type),x86_64)
+# 	-$(CC) -c $(CFLAGS) $< -o $@
+# endif
+# ifeq ($(host-type),AArch64)
+# 	-$(AS) $(ASFLAGS) $< -o $@
+# endif
 
 
 
-obj/PA/Destination.o : src/PA/Destination.s
-ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
-endif
-ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
-endif
-ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
-endif
+# obj/PA/Destination.o : src/PA/Destination.s
+# ifeq ($(host-type),arm64)
+# 	-$(AS) $(ASFLAGS) $< -o $@
+# endif
+# ifeq ($(host-type),x86_64)
+# 	-$(CC) -c $(CFLAGS) $< -o $@
+# endif
+# ifeq ($(host-type),AArch64)
+# 	-$(AS) $(ASFLAGS) $< -o $@
+# endif
 
 
 
@@ -1712,19 +1712,19 @@ clean:
 	-rm src/BFS/Record.i
 	-rm src/Output.i
 	-rm src/PA/Data.i
-	-rm src/PA/Destination.i
+# 	-rm src/PA/Destination.i
 	-rm src/PA/Tree.i
 # 	-rm src/PA/Data.i
 	-rm src/PA/List.i
 	-rm src/PA/Link.i
-	-rm src/PA/Arrow.i
+# 	-rm src/PA/Arrow.i
 	-rm src/PA/Element.i
 	-rm src/PA/Count.i
 	-rm src/PA/Pair.i
 	-rm src/PA/Result.i
 	-rm src/PA/Series.i
 	-rm src/PA/Status.i
-	-rm src/PA/Feature.i
+# 	-rm src/PA/Feature.i
 	-rm src/PA/Value.i
 	-rm src/PA/Resource.i
 	-rm src/Builder/Director.i
@@ -1775,18 +1775,18 @@ clean:
 	-rm src/Output.s
 	-rm src/PA/Data.s
 	-rm src/PA/Status.s
-	-rm src/PA/Destination.s
+# 	-rm src/PA/Destination.s
 	-rm src/PA/Tree.s
 #	-rm src/PA/Data.s
 	-rm src/PA/List.s
 	-rm src/PA/Link.s
-	-rm src/PA/Arrow.s
+# 	-rm src/PA/Arrow.s
 	-rm src/PA/Element.s
 	-rm src/PA/Count.s
 	-rm src/PA/Pair.s
 	-rm src/PA/Result.s
 	-rm src/PA/Series.s
-	-rm src/PA/Feature.s
+# 	-rm src/PA/Feature.s
 	-rm src/PA/Value.s
 	-rm src/PA/Resource.s
 	-rm src/Builder/Director.s
@@ -1841,17 +1841,17 @@ clean:
 	-rm obj/PA/Input.o
 	-rm obj/PA/Output.o
 	-rm obj/PA/Link.o
-	-rm obj/PA/Arrow.o
+# 	-rm obj/PA/Arrow.o
 	-rm obj/PA/Element.o
 	-rm obj/PA/Status.o
 	-rm obj/PA/Count.o
 	-rm obj/PA/Pair.o
 	-rm obj/PA/Result.o
 	-rm obj/PA/Series.o
-	-rm obj/PA/Feature.o
+# 	-rm obj/PA/Feature.o
 	-rm obj/PA/Value.o
 	-rm obj/PA/Resource.o
-	-rm obj/PA/Destination.o
+# 	-rm obj/PA/Destination.o
 	-rm obj/Builder/Product.o
 	-rm obj/Builder/ConcreteBuilder.o 
 	-rm obj/Builder/Director.o
