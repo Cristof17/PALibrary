@@ -14,7 +14,8 @@ typedef int PAResult;
 typedef int ArrayListSize;
 typedef int ArrayListObject;
 #else
-typedef int PANumber;
+// typedef int PANumber;
+struct PANumber;
 typedef int PAInt;
 //#define PAInt int
 // typedef int PAResource;
@@ -125,6 +126,9 @@ struct BridgeConcreteImplementorB;
 struct BridgeImplementor;
 struct PrototypePrototype;
 struct PrototypeClient;
+struct PANumber {
+	char val;
+};
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
@@ -164,11 +168,12 @@ struct PAResource {
 	// struct
 	// PA_INt
 	// PAInt value;
-	PANumber value;
+	struct PANumber value;
+	PADDING_1_BYTE(0);
 };
 struct PAData {
 	struct PAResource Resource;
-	PADDING_1_BYTE(4);
+	PADDING_1_BYTE(2);
 };
 struct PAFeature {
 	PAInt kind;
@@ -192,7 +197,7 @@ struct PAElement {
 	// struct PADestination Next;
 	struct PAStatus status;
 	struct PAFeature type;
-	PADDING_1_BYTE(14);
+	PADDING_1_BYTE(2);
 };
 struct FlyweightFlyweightClient {
 	// struct PASeries series;
@@ -263,8 +268,10 @@ struct PADestination {
     struct PAElement element;
 };
 struct PAPair {
-	struct PAElement Node;
+	struct
+	PAElement Node;
 	struct PAElement Neigh;
+	PADDING_1_BYTE(2);
 };
 struct PAArrow {
 	struct PAPair p;
@@ -287,6 +294,7 @@ struct BFSOutput {
 		//};
 struct PALink {
 	struct PAPair p;
+	// PADDING_1_BYTE(0);
 };
 // struct PAResult {
 	// 	PA_INT code;
