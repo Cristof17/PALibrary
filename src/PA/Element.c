@@ -60,14 +60,14 @@ struct PAElement PAElementPerformInit(struct PAElement Element)
     //Element.status = Status;
     //return Element;
 // }
-PAResult PAElementPerformPutData(struct PAData Index)
-{
-	PAResult result;
-	return result;
+// PAResult PAElementPerformPutData(struct PAData Index)
+// {
+	// PAResult result;
+	// return result;
 //    struct PAElement element;
 //    Element.index = Index;
 //    return element;
-}
+// }
 //struct PAElement PAElementPerformPutDestination(struct PAElement Element, struct PADestination Destination)
 //{
 //	Element.
@@ -77,15 +77,15 @@ PAResult PAElementPerformPutData(struct PAData Index)
 //     Element.
 //     return element;
 // }
-PAResult PAElementPerformPutFeature(struct PAFeature Feature)
-{
-	PAResult result;
-	return result;
+// PAResult PAElementPerformPutFeature(struct PAFeature Feature)
+// {
+	// PAResult result;
+	// return result;
     // struct PAElement element;
  //   Element.type = Feature;
     // return element;
   //  return Element;
-}
+// }
 int PAElementPerformDelete(struct PAElement Element)
 {
     // PAResult result;
