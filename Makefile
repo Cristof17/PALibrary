@@ -305,6 +305,7 @@ endif
 # 	mkdir $<
 # ${objdirs}:`
 output=libpa.a
+output_dir=out
 lib: $(output)
 # build: preprocess compile assemble link_windows
 all: ${objdirs}
@@ -394,7 +395,7 @@ assemble: $(objects)
 #	${MAKE} obj/Bridge/ConcreteImplementorB.o
 #	#-mkdir $(dir $<)
 	@echo "Building"
-link: $(output)
+link: $(output_dir)/$(output)
 
 # libpa.a: $(objects)
 # 	$(LD) $(LDFLAGS) $(objects) -static -o $@
@@ -1622,7 +1623,7 @@ ifeq ($(host-type),AArch64)
 	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
-$(output): $(objects)
+$(output_dir)/$(output): $(objects)
 ifeq ($(host-type),arm64)
 	$(AR) -r $@ $^
 endif
