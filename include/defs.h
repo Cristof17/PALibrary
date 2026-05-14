@@ -2,7 +2,7 @@
 #define INCLUDE_DEFS_H_ 1
 // #include <types.h>
 
-#define PADataDefault 1
+#define PADataDefault { {} , {} }
 #define PARESULT_SUCCESS ((int)0)
 #define PARESULT_FAIL ((int)1)
 #define TRUE 1

@@ -127,7 +127,7 @@ struct BridgeImplementor;
 struct PrototypePrototype;
 struct PrototypeClient;
 struct PANumber {
-	char val;
+	//  val;
 };
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
@@ -173,7 +173,7 @@ struct PAStatus {
 };
 struct PAData {
 	struct PAResource Resource;
-	PADDING_1_BYTE(2);
+	PADDING_1_BYTE(0);
 };
 struct PAFeature {
 	PAInt kind;
@@ -198,7 +198,7 @@ struct PAElement {
 	struct
 	PAStatus status;
 	// struct PAFeature type;
-	PADDING_1_BYTE(2);
+	PADDING_1_BYTE(0);
 };
 struct FlyweightFlyweightClient {
 	// struct PASeries series;

@@ -55,23 +55,23 @@ PAResult ArrayListPerformCopyTo(struct ArrayList Array, struct PAList List, stru
 	// struct PACount count;
 	// struct ArrayList destination;
 	// total = Array.place;
-	if (Element.index.Resource.value.val < FIRST)
-		return PARESULT_FAIL;
-	else if (Element.index.Resource.value.val > List.n.number)
-		return PARESULT_FAIL;
-	else {
-		// int i = FIRST;
-		struct PAResource resource = Element.index.Resource;
-		PAInt node = resource.value.val;
-		Array.place.position = FIRST;
-		while (Array.place.position <= List.n.number)
-		{
-			ArrayListObject neigh = Array.objects[Array.place.position];
-			List.adj[node].adj.objects[Array.place.position] = neigh;
-			Array.place.position++;
+	// if (Element.index.Resource.value.val < FIRST)
+	// 	return PARESULT_FAIL;
+	// else if (Element.index.Resource.value.val > List.n.number)
+	// 	return PARESULT_FAIL;
+	// else {
+	// 	// int i = FIRST;
+	// 	struct PAResource resource = Element.index.Resource;
+	// 	PAInt node = resource.value.val;
+	// 	Array.place.position = FIRST;
+	// 	while (Array.place.position <= List.n.number)
+	// 	{
+	// 		ArrayListObject neigh = Array.objects[Array.place.position];
+	// 		List.adj[node].adj.objects[Array.place.position] = neigh;
+	// 		Array.place.position++;
 
-		}
-	}
+	// 	}
+	// }
 	// if (result == PARESULT_FAIL)
 	// 	return result;
 	return PARESULT_SUCCESS;

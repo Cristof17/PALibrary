@@ -10,7 +10,7 @@
 //}
 struct PAData PADataPerformConstruct(PAInt Resource)
 {
-    struct PAData data = { { PADataDefault } };
+    struct PAData data = { PADataDefault };
     return data;
 }
 // struct PAData PADataPerformCopy(struct PAData Data)
