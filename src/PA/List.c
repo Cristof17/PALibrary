@@ -19,9 +19,9 @@ struct PAList PAListPerformConstruct(struct PAElement Headed)
 }
 struct PAList PAListPerformInit(struct PAList List)
 {
-    struct PAList list;
+    // struct PAList list;
     // list.adj = List.adj;
-    return list;
+    return List;
 }
 struct PAList PAListPerformCopy(struct PAList List)
 {

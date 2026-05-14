@@ -34,10 +34,10 @@ struct PALink PALinkPerformCopy(struct PALink Link)
 struct PAPair PALinkPerformInit(struct PAPair Pair)
 {
     // struct PALink link;
-    struct PAPair pair;
+    // struct PAPair pair;
     // Link.p = Pair;
     // return link;
-    return pair;
+    return Pair;
 }
 struct PALink PALinkPerformPutPair(struct PALink Link,struct PAPair P)
 {
