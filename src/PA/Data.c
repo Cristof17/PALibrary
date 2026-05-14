@@ -13,17 +13,17 @@ struct PAData PADataPerformConstruct(PAInt Resource)
     struct PAData data = { PADataDefault };
     return data;
 }
-struct PAData PADataPerformCopy(struct PAData Data)
-{
-    struct PAData copy;
-    struct PAResource resource = Data.Resource;
-    copy.Resource = resource;
+// struct PAData PADataPerformCopy(struct PAData Data)
+// {
+    // struct PAData copy;
+    // struct PAResource resource = Data.Resource;
+    // copy.Resource = resource;
 //    copy=PADataPerformConstruct(Data.resource);
 //    copy=PADataPerformInit(Data);
-    return copy;
+    // return copy;
     //    copy.resource = Data.resource;
-    return copy;
-}
+    // return copy;
+// }
 struct PAData PADataPerformInit(struct PAData Data)
 {
     struct PAData data;
