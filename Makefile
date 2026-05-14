@@ -1893,6 +1893,7 @@ clean:
 	-rm obj/Flyweight/FlyweightFactory.o
 	-rm obj/Flyweight/Flyweight.o
 	-rm obj/Flyweight/UnsharedConcreteFlyweight.o
+	-rm out/libpa.a
 # 	-rm -r obj/BFS/
 # 	-rm -r obj/Adapter/
 # 	-rm -r obj/Iterator/
