@@ -65,7 +65,7 @@ struct PAValue;
 struct List;
 struct PAList;
 struct PAStatus;
-struct PAFeature;
+// struct PAFeature;
 // struct PAValue;
 // struct PADestination;
 // struct PAStatus/*.*/;
