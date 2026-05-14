@@ -57,7 +57,10 @@
 // }
 DllExport struct BFSRecord OutputPerformConstruct(struct BFSRecord record);
 // struct Output OutputPerformInit(struct Output);
-DllExport int PAOutputPerformInit(struct BFSRecord record);
+DllExport int PAOutputPerformInit(struct BFSRecord record)
+{
+    return 0;
+}
 //struct Output dispose();
 DllExport int PAOutputPerformRuin(struct BFSRecord Result);
 DllExport int PAOutputPerformDelete(struct Output Out);

@@ -90,7 +90,7 @@ void PASeriesPerformPrint(struct PASeries Series)
 //	    struct PASeries series;
 //	    return series;
 //	}
-struct PASeries PASeriesPerformInit(struct PASeries s)
+struct PASeries PASeriesPerformInit(struct PASeries Series)
 {
 	// PAResult result;
 	// return result;
@@ -103,8 +103,8 @@ struct PASeries PASeriesPerformInit(struct PASeries s)
     //end of iterator
     // series.n = N;
     //return series;
-    struct PASeries series;
-    return series;
+    // struct PASeries series;
+    return Series;
 }
 int PASeriesPerformRuin(struct PACount n, struct PAList adj[])
 {

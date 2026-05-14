@@ -15,9 +15,9 @@ struct PANormalTree PANormalTreePerformConstruct(struct PAList Adj)
 }
 struct PANormalTree PANormalTreePerformInit(struct PANormalTree NormalTree)
 {
-    struct PANormalTree normalTree;
+    // struct PANormalTree normalTree;
     // normalTree.adj = Adj;
-    return normalTree;  
+    return NormalTree;  
 }
 struct PANormalTree PANormalTreePerformCopy(struct PANormalTree NormalTree)
 {

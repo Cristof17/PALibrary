@@ -18,10 +18,10 @@ struct PATransposeTree PATransposeTreePerformConstruct(struct PAList Adj_trans)
 }
 struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree TransposeTree)
 {
-    struct PATransposeTree transposeTree;
+    // struct PATransposeTree transposeTree;
     // transposeTree = PATransposeTreePerformConstruct(TransposeTree.adj_trans);
     // transposeTree.adj_trans = Adj_trans;
-    return transposeTree;
+    return TransposeTree;
 }
 struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree TransposeTree)
 {

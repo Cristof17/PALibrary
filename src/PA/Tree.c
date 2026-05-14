@@ -27,14 +27,14 @@ struct PATree PATreePerformConstruct(struct PACount N, struct PACount M, struct 
 }
 struct PATree PATreePerformInit(struct PATree Tree)
 {
-    struct PATree tree;
+    // struct PATree tree;
     // tree.n.number = 2;
     // tree.m.number = 3;
     // tree.source.index.resource.value = 4;
     // tree.adj = PASeriesPerformInit(tree.adj);
     // tree.source.;
     // tree.adj = ()
-    return tree;
+    return Tree;
 }
 int PATreePerformRuin(struct PACount n, struct PACount m, struct PAList adj[], struct PAElement source)
 {

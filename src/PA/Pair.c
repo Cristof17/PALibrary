@@ -24,8 +24,8 @@ struct PAPair PAPairPerformConstruct(struct PAElement Node, struct PAElement Nei
 // struct PAPair PAPairRuin(struct PAPair Pair) {
 struct PAPair PAPairPerformInit(struct PAPair Pair)
 {
-    struct PAPair pair;
-    return pair;
+    // struct PAPair pair;
+    return Pair;
 	// PAResult result;
 	// return result;
     //struct PAPair pair;
