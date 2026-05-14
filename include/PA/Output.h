@@ -7,12 +7,13 @@
 #include <defs.h>
 #include <types.h>
 // struct BFSOutput;
-struct PAData PADataPerformConstruct(PAInt Resource);
-struct PAData PADataPerformCopy(struct PAData Data);
+// struct PAData PADataPerformConstruct(PAInt Resource);
+// struct PAData PADataPerformCopy(struct PAData Data);
 // strut BFSOutputRuin();
-struct PAData PADataPerformInit(struct PAData Data);
+struct BFSRecord OutputPerformConstruct(struct BFSRecord result);
+struct Output PADataPerformInit(struct BFSRecord record);
 //typedef struct BFSOutput BFSOutput;
 // struct PAOutput PAOutputPerformInit(struct BFSRecord);
-int PADataPerformRuin(PAInt Resource);
-int PADataPerformDelete(struct PAData PA);
+int PADataPerformRuin(struct BFSRecord record);
+int PADataPerformDelete(struct BFSRecord bfs);
 #endif
