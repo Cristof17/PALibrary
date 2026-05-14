@@ -306,7 +306,7 @@ endif
 # ${objdirs}:`
 output=libpa.a
 output_dir=out
-lib: $(output)
+lib: out/$(output)
 # build: preprocess compile assemble link_windows
 all: ${objdirs}
 	${MAKE} $(designs) 
