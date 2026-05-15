@@ -68,14 +68,17 @@ PAResult PAPairPerformPutNeigh(struct PAPair Pair)
     //return Pair;
     // return pair;
 }
-int PAPairPerformRuin(struct PAElement Node, struct PAElement Neigh)
+DllExport struct PAPair PAPairPerformRuin(struct PAElement Node, struct PAElement Neigh)
 {
-    return 0;
+    struct PAPair Empty;
+    return Empty;
+    // return 0;
 	// PAResult result;
 	// return result;
 }
-int PAPairPerformDelete(struct PAPair Pair)
+DllExport struct PAPair PAPairPerformDelete(struct PAPair Pair)
 {
-    PAResult result;
-    return result;
+    return Pair;
+    // PAResult result;
+    // return result;
 }
