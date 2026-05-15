@@ -11,17 +11,23 @@
 #include <PA\TransposeTree.h>
 
 #endif
-struct PATransposeTree PATransposeTreePerformConstruct(struct PAList Adj_trans)
+struct PATransposeTree PATransposeTreePerformConstruct(struct PATree Tree)
 {
     struct PATransposeTree transposeTree;
     return transposeTree;
 }
-struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree TransposeTree)
+struct PATransposeTree PATransposeTreeRuin(struct PATree Tree)
+{
+    struct PATransposeTree tree;
+    return tree;
+}
+struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree)
 {
     // struct PATransposeTree transposeTree;
     // transposeTree = PATransposeTreePerformConstruct(TransposeTree.adj_trans);
     // transposeTree.adj_trans = Adj_trans;
-    return TransposeTree;
+    struct PATransposeTree tree;
+    return tree;
 }
 struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree TransposeTree)
 {
@@ -31,6 +37,15 @@ struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree Transpo
     // return tree;
     return copy;
 }
+struct PATransposeTree PATransposeTreeDelete(struct PATransposeTree Tree)
+{
+    return Tree;
+}
+// struct PATransposeTree PATransposeTreeRuin(struct PATree Tree)
+// {
+    // struct PATransposeTree tree;
+    // return tree;
+// }
 struct PATransposeTree PATransposeTreeBuildPart()
 {
     struct PATransposeTree tree;
