@@ -36,7 +36,7 @@ struct PATree PATreePerformInit(struct PATree Tree)
     // tree.adj = ()
     return Tree;
 }
-int PATreePerformRuin(struct PACount n, struct PACount m, struct PAList adj[], struct PAElement source)
+struct PATree PATreePerformRuin(struct PACount n, struct PACount m, struct PAList adj[], struct PAElement source)
 {
     // int var = 1;
     // PAResult result;

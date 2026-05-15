@@ -17,7 +17,7 @@ DllExport struct PATree PATreePerformInit(struct PATree);
 // struct PATree PATreePutList(struct PATree, struct PAList);
 // DllExport HRESULT PATreePerformPutElement();
 // DllExport HRESULT PATreePerformPutSeries();
-DllExport int PATreePerformRuin(struct PACount n, struct PACount m, struct PAList adj[], struct PAElement sursa);
+DllExport struct PATree PATreePerformRuin(struct PACount n, struct PACount m, struct PAList adj[], struct PAElement sursa);
 DllExport int PATreePerformDelete(struct PATree);
 //typedef struct PATree Tree;
 #endif
