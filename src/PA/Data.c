@@ -47,8 +47,8 @@ struct PAData PADataPerformRuin(struct PAData Data)
     // PAResult result = (PAInt) PARESULT_SUCCESS;
     // return PARESULT_SUCCESS;
 }
-int PADataPerformDelete(struct PAData PA)
+struct PAData PADataPerformDelete(struct PAData PA)
 {
     PAResult result = (PAInt) PARESULT_SUCCESS;
-    return result;
+    return PA;
 }

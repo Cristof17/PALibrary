@@ -38,12 +38,16 @@ struct PAInput PAInputPerformInit(struct PAInput Input)
 	// input.source = Source;
 	return Input;
 }
-int PAInputPerformRuin(struct PACount n, struct PACount m, struct PAList adj, struct PAElement source) {
-	PAResult result;
-	return result;
+struct PAInput PAInputPerformRuin(struct PACount N, struct PACount M, struct PAList ADJ, struct PAElement Source) {
+	// PAResult result;
+	struct PAInput Empty;
+	return Empty;
+	// return result;
 }
-int PAInputPerformDelete(struct PAInput Input)
+struct PAInput PAInputPerformDelete(struct PAInput Input)
 {
-	PAResult result;
-    return result;
+	struct PAInput Empty;
+	return Empty;
+	// PAResult result;
+    // return result;
 }

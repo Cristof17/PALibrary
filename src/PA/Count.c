@@ -28,7 +28,7 @@ PAResult PACountPerformCopy(struct PACount from, struct PACount to)
 	return PARESULT_SUCCESS;
 }
 // void PASize(PA_INT);
-PAResult PACountPerformRuin(struct PACount PA)
+struct PACount PACountPerformRuin(PAInt PA)
 {
     //get the value at address pointed by stack pointer
     //that corresponsds to parameter PA
@@ -37,21 +37,22 @@ PAResult PACountPerformRuin(struct PACount PA)
     //if is a zero, leave it just like that
     //return success
     struct PACount Empty;
-    Empty.padding[0] = NULL;
-    Empty.padding[1] = NULL;
-    Empty.padding[2] = NULL;
-    Empty.padding[3] = NULL;
+    // Empty.padding[0] = NULL;
+    // Empty.padding[1] = NULL;
+    // Empty.padding[2] = NULL;
+    // Empty.padding[3] = NULL;
     Empty.number = NULL;
-    PA.number = Empty.number;
-    PA.padding[0] = Empty.padding[0];
-    PA.padding[1] = Empty.padding[1];
-    PA.padding[2] = Empty.padding[2];
-    PA.padding[3] = Empty.padding[3];
+    // PA.number = Empty.number;
+    // PA.padding[0] = Empty.padding[0];
+    // PA.padding[1] = Empty.padding[1];
+    // PA.padding[2] = Empty.padding[2];
+    // PA.padding[3] = Empty.padding[3];
     // PA = {0, {0}};
     // PA.number = 0;
     // PAResult result;
     // return result;
-    return PARESULT_SUCCESS;
+    // return PARESULT_SUCCESS;
+    return Empty;
 }
 struct PACount PACountPerformInit(struct PACount Count)
 {
