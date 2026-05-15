@@ -1,0 +1,106 @@
+	.section	__TEXT,__text,regular,pure_instructions
+	.build_version macos, 15, 0	sdk_version 26, 2
+	.globl	_PACountPerformPrint            ; -- Begin function PACountPerformPrint
+	.p2align	2
+_PACountPerformPrint:                   ; @PACountPerformPrint
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	str	x0, [sp, #8]
+	ldr	w0, [sp, #4]
+	add	sp, sp, #16
+	ret
+	.cfi_endproc
+                                        ; -- End function
+	.globl	_PACountPerformConstruct        ; -- Begin function PACountPerformConstruct
+	.p2align	2
+_PACountPerformConstruct:               ; @PACountPerformConstruct
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	str	w0, [sp, #4]
+	ldr	x0, [sp, #8]
+	add	sp, sp, #16
+	ret
+	.cfi_endproc
+                                        ; -- End function
+	.globl	_PACountPerformCopy             ; -- Begin function PACountPerformCopy
+	.p2align	2
+_PACountPerformCopy:                    ; @PACountPerformCopy
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #24]
+	str	x1, [sp, #16]
+	ldr	w8, [sp, #28]
+	str	w8, [sp, #20]
+	mov	w0, #0                          ; =0x0
+	add	sp, sp, #32
+	ret
+	.cfi_endproc
+                                        ; -- End function
+	.globl	_PACountPerformRuin             ; -- Begin function PACountPerformRuin
+	.p2align	2
+_PACountPerformRuin:                    ; @PACountPerformRuin
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	str	w0, [sp, #4]
+	str	wzr, [sp, #12]
+	ldr	x0, [sp, #8]
+	add	sp, sp, #16
+	ret
+	.cfi_endproc
+                                        ; -- End function
+	.globl	_PACountPerformInit             ; -- Begin function PACountPerformInit
+	.p2align	2
+_PACountPerformInit:                    ; @PACountPerformInit
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	str	x0, [sp]
+	ldr	x8, [sp]
+	str	x8, [sp, #8]
+	ldr	x0, [sp, #8]
+	add	sp, sp, #16
+	ret
+	.cfi_endproc
+                                        ; -- End function
+	.globl	_PACountPerformPutValue         ; -- Begin function PACountPerformPutValue
+	.p2align	2
+_PACountPerformPutValue:                ; @PACountPerformPutValue
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #16]
+	str	w1, [sp, #12]
+	ldr	w8, [sp, #12]
+	str	w8, [sp, #20]
+	ldr	x8, [sp, #16]
+	str	x8, [sp, #24]
+	ldr	x0, [sp, #24]
+	add	sp, sp, #32
+	ret
+	.cfi_endproc
+                                        ; -- End function
+	.globl	_PACountPerformDelete           ; -- Begin function PACountPerformDelete
+	.p2align	2
+_PACountPerformDelete:                  ; @PACountPerformDelete
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	str	x0, [sp, #8]
+	mov	w0, #0                          ; =0x0
+	str	wzr, [sp, #12]
+	add	sp, sp, #16
+	ret
+	.cfi_endproc
+                                        ; -- End function
+.subsections_via_symbols
