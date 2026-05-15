@@ -9,7 +9,6 @@
 #include <PA\Pair.h>
 #endif
 
-
 struct PAPair PAPairPerformConstruct(struct PAElement Node, struct PAElement Neigh)
 {
     struct PAPair pair;
