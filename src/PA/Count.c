@@ -27,11 +27,18 @@ struct PACount PACountPerformCopy(struct PACount Count)
 	return copy;
 }
 // void PASize(PA_INT);
-int PACountPerformRuin(PAInt value)
+PAResult PACountPerformRuin(struct PACount PA)
 {
+    //get the value at address pointed by stack pointer
+    //that corresponsds to parameter PA
+    //check each bit
+    //if is a one, place 0's
+    //if is a zero, leave it just like that
+    //return success
+
     // PAResult result;
     // return result;
-    return 0;
+    return PARESULT_SUCCESS;
 }
 struct PACount PACountPerformInit(struct PACount Count)
 {
