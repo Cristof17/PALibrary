@@ -38,12 +38,14 @@ struct PATree PATreePerformInit(struct PATree Tree)
 }
 struct PATree PATreePerformRuin(struct PACount n, struct PACount m, struct PAList adj[], struct PAElement source)
 {
+    struct PATree tree;
     // int var = 1;
     // PAResult result;
     // PAInt zero = 0;
     // Tree.n.number = zero;
     // Tree.m.number = zero;
-    return 0;
+    // return 0;
+    return tree;
 }
 PAResult PATreePerformCopy()
 {
