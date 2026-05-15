@@ -8,10 +8,19 @@
 #include <PA\NormalTree.h>
 #endif
 
-struct PANormalTree PANormalTreePerformConstruct(struct PAList Adj)
+struct PANormalTree PANormalTreePerformConstruct(struct PATree Tree)
 {
     struct PANormalTree normalTree;
     return normalTree;
+}
+struct PANormalTree PANormalTreePerformRuin(struct PATree Tree)
+{
+    struct PANormalTree Empty;
+    return Empty;
+}
+struct PANormalTree PANormalTreePerformDelete(struct PANormalTree NormalTree)
+{
+    return NormalTree;
 }
 struct PANormalTree PANormalTreePerformInit(struct PANormalTree NormalTree)
 {
