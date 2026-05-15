@@ -25,6 +25,7 @@ typedef uint32_t ListPosition;
 #endif
 // typedef int PAInt;
 #define BLK_SIZE ((int)4096)
+#define SIZE 2
 #define FIRST (1)
 #define LAST(N) (N)
 #define PADDING_1_BYTE(NUM) unsigned char padding[NUM] 

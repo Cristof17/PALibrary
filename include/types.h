@@ -162,7 +162,7 @@ struct ArrayListPosition {
 struct ArrayList {
 	// struct Position position;
 	struct ArrayListPosition place;
-	ArrayListObject objects[BLK_SIZE];
+	ArrayListObject objects[SIZE];
 };
 struct PAResource {
 	// struct
@@ -191,7 +191,7 @@ struct PASeries {
 };
 struct PAList {
 	struct PACount n;
-	struct PASeries adj[BLK_SIZE];
+	struct PASeries adj;
 	// struct PANod Nod;
 };
 struct PAElement { 
@@ -231,7 +231,7 @@ struct PATree  {
 	struct PAList adj;
 };
 struct BridgeAbstraction {
-	struct PAElement elements[BLK_SIZE];
+	struct PAElement elements[SIZE];
 };
 struct BridgeClient{
 	struct PATree tree;
