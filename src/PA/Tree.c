@@ -11,10 +11,10 @@ DllExport struct PACount PATreeSize()
     struct PACount size;
     return size;
 }
-DllExport struct PATree PATreePerformConstruct(struct PACount N, struct PACount M, struct PAList adj, struct PAElement source)
-{
-    struct PATree tree;
-    return tree;
+// DllExport struct PATree PATreePerformConstruct(struct PACount N, struct PACount M, struct PASeries adj[], struct PAElement source)
+// {
+    // struct PATree tree;
+    // return tree;
     // PAResult result;
     // return result;
     // struct PATree tree;
@@ -24,7 +24,7 @@ DllExport struct PATree PATreePerformConstruct(struct PACount N, struct PACount 
     // tree.adj = Adj;
     // tree.source = Source;
     // return tree;
-}
+// }
 DllExport struct PATree PATreePerformInit(struct PATree Tree)
 {
     // struct PATree tree;
@@ -36,7 +36,7 @@ DllExport struct PATree PATreePerformInit(struct PATree Tree)
     // tree.adj = ()
     return Tree;
 }
-DllExport struct PATree PATreePerformRuin(struct PACount n, struct PACount m, struct PAList adj[], struct PAElement source)
+DllExport struct PATree PATreePerformRuin(struct PACount n, struct PACount m, struct PASeries adj[], struct PAElement source)
 {
     struct PATree tree;
     // int var = 1;
