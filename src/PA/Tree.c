@@ -6,15 +6,15 @@
 #endif
 
 #include <types.h>
-DllExport struct PACount PATreeSize()
-{
-    struct PACount size;
-    return size;
-}
-// DllExport struct PATree PATreePerformConstruct(struct PACount N, struct PACount M, struct PASeries adj[], struct PAElement source)
+// DllExport struct PACount PATreeSize()
 // {
-    // struct PATree tree;
-    // return tree;
+    // struct PACount size;
+    // return size;
+// }
+DllExport struct PATree PATreePerformConstruct(struct PACount N, struct PACount M, struct PASeries adj[], struct PAElement source)
+{
+    struct PATree tree;
+    return tree;
     // PAResult result;
     // return result;
     // struct PATree tree;
@@ -24,7 +24,7 @@ DllExport struct PACount PATreeSize()
     // tree.adj = Adj;
     // tree.source = Source;
     // return tree;
-// }
+}
 DllExport struct PATree PATreePerformInit(struct PATree Tree)
 {
     // struct PATree tree;
@@ -47,33 +47,33 @@ DllExport struct PATree PATreePerformRuin(struct PACount n, struct PACount m, st
     // return 0;
     return tree;
 }
-DllExport PAResult PATreePerformCopy()
-{
-    PAResult result;
-    return result;
+// DllExport PAResult PATreePerformCopy()
+// {
+        // PAResult result;
+        // return result;
     // struct PATree tree;
     // tree = PATreePerformConstruct(Tree.n, Tree.m, Tree.adj, Tree.source);
     // tree = PATreePerformInit(Tree);
     // return tree;
-}
-DllExport PAResult PATreePerformPutCount(struct PACount Count1, struct PACount Count2)
-{
-    PAResult result;
-    return result;
+// }
+// DllExport PAResult PATreePerformPutCount(struct PACount Count1, struct PACount Count2)
+// {
+    // PAResult result;
+    // return result;
     // s
     // Tree.n = Count1;
     // Tree.m = Count2;
     // return Tree;
-}
-DllExport PAResult PATreePerformPutElement()
-{
-    PAResult result;
-    return result;
+// }
+// DllExport PAResult PATreePerformPutElement()
+// {
+    // PAResult result;
+    // return result;
     // struct PATree tree;
     // return tree;
     // Tree.source = ÷Source;
     // return Tree;÷
-}
+// }
 // struct PATree PATreePerformPutSize(struct PATree Tree, struct PACount Count1, struct PACount Count2) 
 // {
 //     // struct PATree tree;
@@ -82,15 +82,15 @@ DllExport PAResult PATreePerformPutElement()
 //     return Tree;
 //     // return tree;
 // }
-DllExport PAResult PATreePerformPutSeries() 
-{
-    PAResult result;
-    return result;
+// DllExport PAResult PATreePerformPutSeries() 
+// {
+    // PAResult result;
+    // return result;
     // struct PATree tree;
     // Tree.adj = List;
     // return tree;
     // return Tree;
-}
+// }
 // struct PATree PATreePutSeries(struct PATree Tree, struct PASeries Series) {
 //     // struct PATree tree;
 //     return tree;
