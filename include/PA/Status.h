@@ -6,10 +6,10 @@
 #include <defs.h>
 #include <types.h>
 // #include <PA/Feature.h>
-struct PAStatus PAStatusPerformInit(struct PAStatus);
-struct PAStatus PAStatusPerformDelete(struct PAStatus);
-struct PAStatus PAStatusPerformConstruct(PAInt value);
-struct PAStatus PAStatusPerformRuin(struct PAStatus);
+DllExport struct PAStatus PAStatusPerformInit(struct PAStatus, struct PAResource);
+DllExport struct PAStatus PAStatusPerformDelete(struct PAStatus);
+DllExport struct PAStatus PAStatusPerformConstruct(struct PAResource Resource);
+DllExport struct PAStatus PAStatusPerformRuin(struct PAStatus, struct PAResource);
 // struct PAStatus/*.*/;
 // DllExport struct PAStatus PAStatusPerformConstruct(PAInt Visited);
 // DllExport struct PAStatus PAStatusPerformCopy(struct PAStatus);

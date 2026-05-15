@@ -52,7 +52,7 @@ struct PAElement PAElementPerformConstruct(struct PAData Data, struct PAElement 
 struct PAElement PAElementPerformRuin(struct PAData Data, struct PAStatus Status)
 {
     Data = PADataPerformRuin(Data);
-    Status = PAStatusPerformRuin(Status);
+    Status = PAStatusPerformRuin(Status, Status.visited);
     // Element.padding[0] = NULL;
     // Element.padding[1] = NULL;
     // Element.padding[2] = NULL;
