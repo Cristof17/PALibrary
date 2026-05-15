@@ -35,7 +35,15 @@ PAResult PACountPerformRuin(struct PACount PA)
     //if is a one, place 0's
     //if is a zero, leave it just like that
     //return success
-
+    struct PACount Empty;
+    Empty.number = 0;
+    Empty.padding[0] = 0;
+    Empty.padding[1] = 0;
+    Empty.padding[2] = 0;
+    Empty.padding[3] = 0;
+    // PA = {0, {0}};
+    // PA.number = 0;
+    PA = Empty;
     // PAResult result;
     // return result;
     return PARESULT_SUCCESS;
@@ -53,6 +61,7 @@ struct PACount PACountPerformPutValue(struct PACount Count, PAInt Value)
 }
 int PACountPerformDelete(struct PACount PA)
 {
+    PA.number = 0;
     return 0;
 	// PAResult result;
 	// return result;
