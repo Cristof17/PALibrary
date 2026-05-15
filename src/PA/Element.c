@@ -4,8 +4,12 @@
 
 #ifndef _WIN95
 #include <PA/Element.h>
+#include <PA/Data.h>
+#include <PA/Status.h>
 #elif defined _WIN95
 #include <PA\Element.h>
+#include <PA\Data.h>
+#include <PA\Status.h>
 #endif
 
 
@@ -45,9 +49,19 @@ struct PAElement PAElementPerformConstruct(struct PAData Data, struct PAElement 
 //	copy.type=Element.type;
 	//return copy;
 // }
-int PAElementPerformRuin(struct PAData Data, struct PAElement Next, struct PAStatus Status)
+struct PAElement PAElementPerformRuin(struct PAElement Element)
 {
-    return 0; 
+    Element.index = PADataPerformRuin(Element.index);
+    Element.status = PAStatusPerformRuin(Element.status);
+    // Element.padding[0] = NULL;
+    // Element.padding[1] = NULL;
+    // Element.padding[2] = NULL;
+    // Element.padding[3] = NULL;
+    // PADataPerformRuin(Data);
+    // PAElementPerformRuin(Next.index, Next.Status);
+    // PAStatusPerformRuin(Status);
+    // PAResourcePerformRuin()
+    return Element; 
     // PAResult result;
     // return result;
 }

@@ -37,11 +37,11 @@ PAResult PACountPerformRuin(struct PACount PA)
     //if is a zero, leave it just like that
     //return success
     struct PACount Empty;
-    Empty.padding[0] = 0;
-    Empty.padding[1] = 0;
-    Empty.padding[2] = 0;
-    Empty.padding[3] = 0;
-    Empty.number = 0;
+    Empty.padding[0] = NULL;
+    Empty.padding[1] = NULL;
+    Empty.padding[2] = NULL;
+    Empty.padding[3] = NULL;
+    Empty.number = NULL;
     PA.number = Empty.number;
     PA.padding[0] = Empty.padding[0];
     PA.padding[1] = Empty.padding[1];

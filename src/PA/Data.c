@@ -10,7 +10,7 @@
 //}
 struct PAData PADataPerformConstruct(PAInt Resource)
 {
-    struct PAData data = { PADataDefault };
+struct PAData data = { PADataDefault };
     return data;
 }
 // struct PAData PADataPerformCopy(struct PAData Data)
@@ -38,10 +38,14 @@ struct PAData PADataPerformInit(struct PAData Data)
     // Data.Resource = Resource;
     // return Data;
 // }
-int PADataPerformRuin(PAInt Resource) 
+struct PAData PADataPerformRuin(struct PAData Data) 
 {
-    PAResult result = (PAInt) PARESULT_SUCCESS;
-    return result;
+    // PAInt Empty = NULL;
+    // Resource = Empty;
+    // return Resource;
+    return Data;
+    // PAResult result = (PAInt) PARESULT_SUCCESS;
+    // return PARESULT_SUCCESS;
 }
 int PADataPerformDelete(struct PAData PA)
 {

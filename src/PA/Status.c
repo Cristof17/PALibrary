@@ -7,16 +7,24 @@
 #elif defined _WIN95
 #include <PA\Status.h>
 #endif
-// struct PAStatus PAStatusPerformConstruct(PAInt Visited)
-// {
-//     struct PAStatus status;
-//     return status;
-// }
-// PAResult PAStatusPerformRuin(struct PAStatus Status)
-// {
-//     PAResult result;
-//     return result;
-// }
+struct PAStatus PAStatusPerformConstruct(PAInt Visited)
+{
+    struct PAStatus status;
+    return status;
+}
+struct PAStatus PAStatusPerformRuin(struct PAStatus Status)
+{
+    // PAResult result;
+    return Status;
+}
+struct PAStatus PAStatusPerformDelete(struct PAStatus Status)
+{
+    return Status;
+}
+struct PAStatus PAStatusPerformInit(struct PAStatus Status)
+{
+    return Status;
+}
 // struct PAStatus PAStatusPerformCopy(struct PAStatus Status)
 // {
 //     struct PAStatus status;

@@ -7,6 +7,7 @@
 #define PARESULT_FAIL ((int)1)
 #define TRUE 1
 #define FALSE 0
+#define NULL 0
 #ifndef _WIN95
 // typedef 
 #define DllExport
