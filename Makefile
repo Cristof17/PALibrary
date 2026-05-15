@@ -1887,7 +1887,7 @@ clean:
 	-rm obj/State/State.o
 	-rm obj/State/ConcreteStateA.o
 	-rm obj/State/ConcreteStateB.o
-	-rm obj/Bridge/ConcreteImplementorB.o
+# 	-rm obj/Bridge/ConcreteImplementorB.o
 	-rm obj/Flyweight/Client.o
 	-rm obj/Flyweight/ConcreteFlyweight.o
 	-rm obj/Flyweight/FlyweightFactory.o

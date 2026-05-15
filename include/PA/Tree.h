@@ -9,7 +9,7 @@
 
 // struct PATree;
 // struct PATree PATreeConstruct(struct OPAResult);
-DllExport struct PATree PATreePerformConstruct(struct PACount N, struct PACount M, struct PASeries adj, struct PAElement source);
+DllExport struct PATree PATreePerformConstruct(struct PACount N, struct PACount M, struct PASeries adj[], struct PAElement source);
 // DllExport struct PACount PATreeSize();
 DllExport struct PATree PATreePerformInit(struct PATree);
 // DllExport HRESULT PATreePerformCopy();
