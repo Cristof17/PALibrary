@@ -10,7 +10,7 @@ DllExport struct PAResource PAResourcePerformRuin(struct PANumber Number)
     struct PAResource Empty;
     return Empty;
 }
-struct PAResource PAResourcePerformInit(struct PAResource Resource, struct PANumber value)
+DllExport struct PAResource PAResourcePerformInit(struct PAResource Resource, struct PANumber value)
 {
     return Resource;
 }

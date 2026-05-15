@@ -11,17 +11,17 @@
 #include <PA\TransposeTree.h>
 
 #endif
-struct PATransposeTree PATransposeTreePerformConstruct(struct PATree Tree)
+DllExport struct PATransposeTree PATransposeTreePerformConstruct(struct PATree Tree)
 {
     struct PATransposeTree transposeTree;
     return transposeTree;
 }
-struct PATransposeTree PATransposeTreeRuin(struct PATree Tree)
+DllExport struct PATransposeTree PATransposeTreeRuin(struct PATree Tree)
 {
     struct PATransposeTree tree;
     return tree;
 }
-struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree TransposeTree)
+DllExport struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree TransposeTree)
 {
     // struct PATransposeTree transposeTree;
     // transposeTree = PATransposeTreePerformConstruct(TransposeTree.adj_trans);
@@ -29,7 +29,7 @@ struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree Transpo
     // struct PATransposeTree tree;
     return TransposeTree;
 }
-struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree TransposeTree)
+DllExport struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree TransposeTree)
 {
     struct PATransposeTree copy;
     // copy = PATransposeTreePerformConstruct(TransposeTree.adj_trans);
@@ -37,7 +37,7 @@ struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree Transpo
     // return tree;
     return copy;
 }
-struct PATransposeTree PATransposeTreeDelete(struct PATransposeTree Tree)
+DllExport struct PATransposeTree PATransposeTreeDelete(struct PATransposeTree Tree)
 {
     return Tree;
 }
@@ -46,12 +46,12 @@ struct PATransposeTree PATransposeTreeDelete(struct PATransposeTree Tree)
     // struct PATransposeTree tree;
     // return tree;
 // }
-struct PATransposeTree PATransposeTreeBuildPart()
+DllExport struct PATransposeTree PATransposeTreeBuildPart()
 {
     struct PATransposeTree tree;
     return tree;
 }
-PAResult PATransposeTreeGetResult()
+DllExport PAResult PATransposeTreeGetResult()
 {
     PAResult result;
     return result;

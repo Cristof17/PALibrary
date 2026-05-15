@@ -90,7 +90,7 @@ void PASeriesPerformPrint(struct PASeries Series)
 //	    struct PASeries series;
 //	    return series;
 //	}
-struct PASeries PASeriesPerformInit(struct PASeries Series, struct PACount n, struct PAList adj[])
+DllExport struct PASeries PASeriesPerformInit(struct PASeries Series, struct PACount n, struct PAList adj[])
 {
 	// PAResult result;
 	// return result;
@@ -106,7 +106,7 @@ struct PASeries PASeriesPerformInit(struct PASeries Series, struct PACount n, st
     struct PASeries series;
     return series;
 }
-struct PASeries PASeriesPerform(struct PACount n, struct PAList adj[])
+DllExport struct PASeries PASeriesPerform(struct PACount n, struct PAList adj[])
 {
     struct PASeries Empty;
     return Empty;
@@ -119,7 +119,7 @@ DllExport struct PASeries PASeriesPerformDelete(struct PASeries Series)
     struct PASeries Empty;
     return Empty;
 }
-PAResult PASeriesPerformPutList(struct PAList Adj) 
+DllExport PAResult PASeriesPerformPutList(struct PAList Adj) 
 {
 	PAResult result;
 	return result;
