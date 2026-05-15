@@ -7,23 +7,23 @@
 #elif defined _WIN95
 #include <PA\Status.h>
 #endif
-struct PAStatus PAStatusPerformConstruct(struct PAResource Resource)
+DllExport struct PAStatus PAStatusPerformConstruct(struct PAResource Resource)
 {
     struct PAStatus status;
     return status;
 }
-struct PAStatus PAStatusPerformRuin(struct PAStatus Status, struct PAResource Resource)
+DllExport struct PAStatus PAStatusPerformRuin(struct PAStatus Status, struct PAResource Resource)
 {
     // PAResult result;
     // return Status;
     struct PAStatus Empty;
     return Empty;
 }
-struct PAStatus PAStatusPerformDelete(struct PAStatus Status)
+DllExport struct PAStatus PAStatusPerformDelete(struct PAStatus Status)
 {
     return Status;
 }
-struct PAStatus PAStatusPerformInit(struct PAStatus Status, struct PAResource value)
+DllExport struct PAStatus PAStatusPerformInit(struct PAStatus Status, struct PAResource value)
 {
     return Status;
 }
