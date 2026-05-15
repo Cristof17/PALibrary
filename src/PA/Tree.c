@@ -95,9 +95,11 @@ PAResult PATreePerformPutSeries()
 //     // struct PATree tree;
 //     return tree;
 // }
-int PATreePerformDelete(struct PATree Tree)
+struct PATree PATreePerformDelete(struct PATree Tree)
 {
+    // struct PATree Tree;
     // PAResult result;
     // return result;
-    return 0;
+    return Tree;
+    // return 0;
 }

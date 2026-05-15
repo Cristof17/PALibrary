@@ -21,13 +21,13 @@ struct PATransposeTree PATransposeTreeRuin(struct PATree Tree)
     struct PATransposeTree tree;
     return tree;
 }
-struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree)
+struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree TransposeTree)
 {
     // struct PATransposeTree transposeTree;
     // transposeTree = PATransposeTreePerformConstruct(TransposeTree.adj_trans);
     // transposeTree.adj_trans = Adj_trans;
-    struct PATransposeTree tree;
-    return tree;
+    // struct PATransposeTree tree;
+    return TransposeTree;
 }
 struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree TransposeTree)
 {
