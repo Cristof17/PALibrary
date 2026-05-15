@@ -22,6 +22,7 @@ struct PACount PACountPerformConstruct(PAInt value)
 PAResult PACountPerformCopy(struct PACount from, struct PACount to)
 {
 	struct PACount copy;
+    to.number = from.number;
 	// copy=PACountPerformConstruct(Count.number);
 	// copy=PACountPerformInit(Count);
 	return PARESULT_SUCCESS;
