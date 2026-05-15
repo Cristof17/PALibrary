@@ -5,20 +5,21 @@
 #include <PA\Resource.h>
 #endif
 
-struct PAResource PAResourcePerformRuin(struct PAResource Resource)
+DllExport struct PAResource PAResourcePerformRuin(struct PANumber Number)
 {
-    return Resource;
+    struct PAResource Empty;
+    return Empty;
 }
 struct PAResource PAResourcePerformInit(struct PAResource Resource, struct PANumber value)
 {
     return Resource;
 }
-struct PAResource PAResourcePerformConstruct(struct PANumber value)
+DllExport struct PAResource PAResourcePerformConstruct(struct PANumber value)
 {
     struct PAResource resource;
     return resource;
 }
-struct PAResource PAResourcePerformDelete(struct PAResource Resource)
+DllExport struct PAResource PAResourcePerformDelete(struct PAResource Resource)
 {
     return Resource;
 }
