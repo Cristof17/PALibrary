@@ -115,7 +115,7 @@ struct PAElement PAElementPerformInit(struct PAElement Element)
     // return element;
   //  return Element;
 // }
-int PAElementPerformDelete(struct PAElement Element)
+struct PAElement PAElementPerformDelete(struct PAElement Element)
 {
     // PAResult result;
     // return result;
