@@ -51,6 +51,19 @@ struct PAElement PAElementPerformConstruct()
 //	copy.type=Element.type;
 	//return copy;
 // }
+DllExport struct PAElement PAElementPerformInit(struct PAElement Element, struct PAData Data, struct PAStatus Status)
+{
+    //struct PAElement element;
+    // element. = Element.Index;
+    //element.status = Element.status;
+    //element.type = Element.type;
+    //element.index = Element.index;
+    //return element;
+    // PAResult result;
+    // return result;
+    // struct PAElement element;
+    return Element;
+}
 DllExport struct PAElement PAElementPerformRuin(struct PAElement PA)
 {
     PA.index = PADataPerformRuin(PA.index);
@@ -69,19 +82,6 @@ DllExport struct PAElement PAElementPerformRuin(struct PAElement PA)
     return Element; 
     // PAResult result;
     // return result;
-}
-DllExport struct PAElement PAElementPerformInit(struct PAElement Element, struct PAData Data, struct PAStatus Status)
-{
-    //struct PAElement element;
-    // element. = Element.Index;
-    //element.status = Element.status;
-    //element.type = Element.type;
-    //element.index = Element.index;
-    //return element;
-	// PAResult result;
-	// return result;
-    // struct PAElement element;
-    return Element;
 }
 // PAResult PAElementPerformPutStatus(struct PAStatus Status)
 // {

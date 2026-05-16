@@ -50,7 +50,7 @@ DllExport struct PAData PADataPerformRuin(struct PAData Data)
     // PAResult result = (PAInt) PARESULT_SUCCESS;
     // return PARESULT_SUCCESS;
 }
-DllExport struct PAData PADataPerformDelete(struct PAData PA)
+DllExport struct PAData PADataPerform(struct PAData PA)
 {
     PAResult result = (PAInt) PARESULT_SUCCESS;
     return PA;

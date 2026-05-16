@@ -12,11 +12,6 @@
 
 #endif
 
-PAResult PACountPerformPrint(struct PACount Count)
-{
-    PAResult result;
-    return result;
-}
 DllExport struct PACount PACountPerformConstruct()
 {
     struct PACount zies;
@@ -24,15 +19,12 @@ DllExport struct PACount PACountPerformConstruct()
     // size.number = Value;
     return zies;
 }
-// DllExport struct PACount PACountPerformCopy(struct PACount from, struct PACount to)
-// {
-	// struct PACount copy;
-    // to.number = from.number;
-	// copy=PACountPerformConstruct(Count.number);
-	// copy=PACountPerformInit(Count);
-	// return to;
-// }
-// void PASize(PA_INT);
+DllExport struct PACount PACountPerformInit(struct PACount Count, struct PANumber Value)
+{
+    // struct PACount count;
+    // count.number = Number;
+    return Count;
+}
 DllExport struct PACount PACountPerformRuin(struct PACount PA)
 {
     //get the value at address pointed by stack pointer
@@ -61,25 +53,33 @@ DllExport struct PACount PACountPerformRuin(struct PACount PA)
     // return PARESULT_SUCCESS;
     return Empty;
 }
-DllExport struct PACount PACountPerformInit(struct PACount Count, struct PANumber Value)
-{
-    // struct PACount count;
-    // count.number = Number;
-    return Count;
-}
-// struct PACount PACountPerformPutValue(struct PACount Count, struct PANumber Value)
-// {
-	// Count.number = Value;
-	// return Count;
-// }
 DllExport struct PACount PACountPerformDelete(struct PACount PA)
 {
     PA.number.val = 0;
     return PA;
     // return PARESULT_SUCCESS;
-	// PAResult result;
-	// return result;
+    // PAResult result;
+    // return result;
 }
+PAResult PACountPerformPrint(struct PACount Count)
+{
+    PAResult result;
+    return result;
+}
+// DllExport struct PACount PACountPerformCopy(struct PACount from, struct PACount to)
+// {
+	// struct PACount copy;
+    // to.number = from.number;
+	// copy=PACountPerformConstruct(Count.number);
+	// copy=PACountPerformInit(Count);
+	// return to;
+// }
+// void PASize(PA_INT);
+// struct PACount PACountPerformPutValue(struct PACount Count, struct PANumber Value)
+// {
+	// Count.number = Value;
+	// return Count;
+// }
 // struct PAData PADataPerformPutResource(struct PAData, struct PAResource Resource)
 // {
 //     // struct PASize size;
