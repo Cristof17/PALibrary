@@ -77,7 +77,7 @@ PAResult PASeriesPutFirst(struct PAResource);
 //     struct PAList list;
 //     return list;
 // }
-struct PASeries PASeriesPerformConstruct(struct PACount n, struct PAList adj[]) {
+struct PASeries PASeriesPerformConstruct(struct PACount n, struct ArrayList adj) {
 	struct PASeries series;
 	return series;
 }
@@ -106,7 +106,7 @@ DllExport struct PASeries PASeriesPerformInit(struct PASeries Series)
     struct PASeries series;
     return series;
 }
-DllExport struct PASeries PASeriesPerformRuin(struct PACount n, struct PAList adj[])
+DllExport struct PASeries PASeriesPerformRuin(struct PACount n, struct ArrayList adj)
 {
     struct PASeries Empty;
     return Empty;
@@ -114,7 +114,7 @@ DllExport struct PASeries PASeriesPerformRuin(struct PACount n, struct PAList ad
     //return result;
     // return 0;
 }
-DllExport struct PASeries PASeriesPerformDelete(struct PACount m, struct PAList adj)
+DllExport struct PASeries PASeriesPerformDelete(struct PASeries Series)
 {
     struct PASeries Empty;
     return Empty;
