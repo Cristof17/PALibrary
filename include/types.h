@@ -157,7 +157,7 @@ struct Facade;
 		// 	struct Input input;
 		// };
 struct ArrayListPosition {
-	struct PANumber position;
+	int position;
 };
 struct ArrayList {
 	// struct Position position;

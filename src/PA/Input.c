@@ -48,10 +48,14 @@ DllExport struct PAInput PAInputPerformInit(struct PAInput Input, struct PACount
 	// input.source = Source;
 	return Input;
 }
-DllExport struct PAInput PAInputPerformRuin(struct PAInput Input) {
+DllExport struct PAInput PAInputPerformRuin(struct PAInput PA) {
 	// PAResult result;
-	struct PAInput Empty;
-	return Empty;
+	// struct PAInput Empty;
+	PA.n = PACountPerformRuin(PA.n);
+	PA.m = PACountPerformRuin(PA.m);
+	PA.source = PAElementPerformRuin(PA.source);
+	return PA;
+	// return Empty;
 	// return result;
 }
 DllExport struct PAInput PAInputPerformDelete(struct PAInput Input)
