@@ -12,6 +12,7 @@ DllExport struct PAResource PAResourcePerformRuin(struct PAResource PA)
     PA.value = PANumberPerformRuin(PA.value);
     // struct PAResource Empty;
     // return Empty;
+    return PA;
 }
 DllExport struct PAResource PAResourcePerformInit(struct PAResource Resource, struct PANumber value)
 {

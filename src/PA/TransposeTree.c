@@ -70,4 +70,5 @@ DllExport PAResult PATransposeTreeGetResult()
 DllExport struct PATransposeTree PATransposeTreePerformRuin(struct PATransposeTree PA)
 {
     PA.tree = PATreePerformRuin(PA.tree);
+    return PA;
 }

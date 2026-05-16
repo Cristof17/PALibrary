@@ -202,7 +202,7 @@ struct PASeries {
 };
 struct PAList {
 	struct PACount n;
-	struct PASeries adj[];
+	struct PASeries neigh[SIZE];
 	// struct PANod Nod;
 };
 struct FlyweightFlyweightClient {
@@ -230,7 +230,7 @@ struct PATree  {
 	struct PACount n;
 	struct PACount m;
 	struct PAElement source;
-	struct PAList adj[];
+	struct PAList adj[SIZE];
 };
 struct BridgeAbstraction {
 	struct PAElement elements[SIZE];

@@ -70,7 +70,7 @@ struct PAList PAListPerformRuin(struct PAList PA)
     while (x.number.val < y.number.val)
     {
         // PA.adj[x.number.val]
-        PA.adj[x.number.val] = PASeriesPerformRuin(PA.adj[x.number.val]);
+        PA.neigh[x.number.val] = PASeriesPerformRuin(PA.neigh[x.number.val]);
         x.number.val ++;
     }
     PA.n = PACountPerformRuin(PA.n);
