@@ -186,6 +186,7 @@ struct PAElement {
 	PAStatus status;
 	// struct PAFeature type;
 	PADDING_1_BYTE(0);
+};
 struct PAFeature {
 	PAInt kind;
 };
@@ -193,7 +194,7 @@ struct PACount {
 	PADDING_1_BYTE(0);
 	struct PANumber number;
 };
-};
+// };
 
 struct PASeries {
 	struct PACount m;
