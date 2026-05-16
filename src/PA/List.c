@@ -98,14 +98,14 @@ void Dispose()
 //     struct PAList list;
 //     return list;
 // }
-void PAListPerformPrint(struct PAList List)
-{
-
-}
 DllExport struct PAList PAListPerformDelete(struct PAList List)
 {
     return List;
     // return 0;
     // PAResult result;
     // return result;
+}
+void PAListPerformPrint(struct PAList List)
+{
+
 }
