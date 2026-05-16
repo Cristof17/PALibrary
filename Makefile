@@ -33,7 +33,8 @@ objects= obj/Input.o \
 	obj/PA/PAShape.o \
 	obj/PA/PATextView.o \
 	obj/ArrayList/ArrayList.o \
-	obj/ArrayList/ArrayListPosition.o \
+	obj/ArrayList/ArrayListPosition.o
+
 # 	obj/PA/Destination.o
 # 	obj/PA/Arrow.o
 # 	obj/PA/Feature.o
@@ -63,10 +64,11 @@ assemblies= src/Input.s \
 	src/PA/PAShape.s \
 	src/PA/PATextView.s \
 	src/ArrayList/ArrayList.s \
-	src/ArrayList/ArrayListPosition.s \
+	src/ArrayList/ArrayListPosition.s
 # 	src/PA/Destination.s
 # 	src/PA/Arrow.s
 # 	src/PA/Feature.s
+
 designs=src/Input.c \
 	src/Algorithm.c \
 	src/BFS/Procedure.c \
@@ -87,46 +89,15 @@ designs=src/Input.c \
 	src/PA/Status.c \
 	src/PA/Value.c \
 	src/PA/Resource.c \
-	src/Builder/Director.c \
-	src/Builder/Builder.c \
-	src/Builder/Product.c \
-	src/Builder/ConcreteBuilder.c \
 	src/PA/NormalTree.c \
 	src/PA/Number.c \
 	src/PA/TransposeTree.c \
-	src/Adapter/Client.c \
-	src/Adapter/Target.c \
-	src/Adapter/Adapter.c \
-	src/Adapter/Adaptee.c \
-	src/PA/PADrawingEditor.c \
-	src/Factory/Product.c \
-	src/Factory/Creator.c \
-	src/Factory/ConcreteProduct.c \
-	src/Factory/ConcreteCreator.c \
 	src/PA/PALine.c \
 	src/PA/PAShape.c \
 	src/PA/PATextView.c \
 	src/ArrayList/ArrayList.c \
-	src/ArrayList/ArrayListPosition.c \
-	src/Iterator/Client.c \
-	src/Iterator/ConcreteIterator.c \
-	src/Iterator/Iterator.c \
-	src/Iterator/ConcreteAggregate.c \
-	src/Prototype/Client.c \
-	src/Prototype/Prototype.c \
-	src/Prototype/ConcretePrototype1.c \
-	src/Prototype/ConcretePrototype2.c \
-	src/Bridge/Client.c \
-	src/Bridge/Implementor.c \
-	src/Bridge/Abstraction.c \
-	src/Bridge/RefinedAbstraction.c \
-	src/Bridge/ConcreteImplementorA.c \
-	src/Bridge/ConcreteImplementorB.c \
-	src/Flyweight/Client.c \
-	src/Flyweight/ConcreteFlyweight.c \
-	src/Flyweight/FlyweightFactory.c \
-	src/Flyweight/Flyweight.c \
-	src/Flyweight/UnsharedConcreteFlyweight.c
+	src/ArrayList/ArrayListPosition.c
+
 # 	src/PA/Destination.c
 # 	src/PA/Arrow.c
 # 	src/PA/Feature.c
@@ -150,74 +121,31 @@ sources=src/Input.i \
 	src/PA/Status.i \
 	src/PA/Value.i \
 	src/PA/Resource.i \
-	src/State/Context.i \
-	src/State/State.i \
-	src/State/ConcreteStateA.i \
-	src/State/ConcreteStateB.i \
-	src/Builder/Director.i \
-	src/Builder/Builder.i \
-	src/Builder/Product.i \
-	src/Builder/ConcreteBuilder.i \
 	src/PA/NormalTree.i \
 	src/PA/Number.i \
 	src/PA/TransposeTree.i \
-	src/Adapter/Client.i \
-	src/Adapter/Target.i \
-	src/Adapter/Adapter.i \
-	src/Adapter/Adaptee.i \
 	src/PA/PADrawingEditor.i \
 	src/PA/PALine.i \
 	src/PA/PAShape.i \
 	src/PA/PATextView.i \
 	src/ArrayList/ArrayList.i \
-	src/ArrayList/ArrayListPosition.i \
-	src/Iterator/Client.i \
-	src/Iterator/ConcreteIterator.i \
-	src/Iterator/Iterator.i \
-	src/Iterator/ConcreteAggregate.i \
-	src/Prototype/Client.i \
-	src/Prototype/Prototype.i \
-	src/Prototype/ConcretePrototype1.i \
-	src/Prototype/ConcretePrototype2.i \
-	src/Bridge/Client.i \
-	src/Bridge/Implementor.i \
-	src/Bridge/Abstraction.i \
-	src/Bridge/RefinedAbstraction.i \
-	src/Bridge/ConcreteImplementorA.i \
-	src/Bridge/ConcreteImplementorB.i \
-	src/Flyweight/Client.i \
-	src/Flyweight/ConcreteFlyweight.i \
-	src/Flyweight/FlyweightFactory.i \
-	src/Flyweight/Flyweight.i \
-	src/Flyweight/UnsharedConcreteFlyweight.i
+	src/ArrayList/ArrayListPosition.i
+
+	
 # 	src/PA/Destination.i
 # 	src/PA/Arrow.i
 # 	src/PA/Feature.i
 objdirs= obj/ \
 	obj/BFS/ \
-	obj/Adapter/ \
-	obj/Iterator/ \
-	obj/Builder/ \
 	obj/ArrayList/ \
-	obj/Prototype/ \
-	obj/Bridge/ \
-	obj/PA/ \
-	obj/State/
+	obj/PA/
  
 #	obj/Flyweight/
 
 subdirs= obj/ \
 	obj/BFS/ \
-	obj/Adapter/ \
-	obj/Iterator/ \
-	obj/Builder/ \
 	obj/ArrayList/ \
-	obj/Prototype/ \
-	obj/Bridge/ \
-	obj/PA/ \
-	obj/State/ 
- 
-	#obj/Flyweight
+	obj/PA/
 
 ifeq (0,${MAKELEVEL})
 host-type := $(shell arch)
@@ -358,7 +286,7 @@ srcdir=src
 #CFLAGS+=-I$(abspath $(includedir)/Adapter)
 CPPFLAGS=
 CPPFLAGS+=-Iinclude
-libdir=obj obj/Adapter obj/Iterator obj/ArrayList obj/Builder obj/PA obj/BFS
+libdir= obj obj/ArrayList obj/PA obj/BFS
 #datadir=dat
 #infodir=info
 #mandir=man
@@ -470,28 +398,12 @@ src/PA/Status.i : src/PA/Status.c include/defs.h include/PA/Status.h
 src/PA/Value.i : src/PA/Value.c include/types.h include/PA/Value.h
 	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Resource.i : src/PA/Resource.c include/PA/Resource.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
-src/Builder/Director.i : src/Builder/Director.c include/Builder/Director.h include/Builder/Builder.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
-src/Builder/Builder.i : src/Builder/Builder.c
-	-$(CPP) $(CPPFLAGS) -E $< > $@
-src/Builder/Product.i : src/Builder/Product.c include/PA/Tree.h include/Builder/Product.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
-src/Builder/ConcreteBuilder.i : src/Builder/ConcreteBuilder.c include/Builder/Builder.h include/Builder/Product.h include/Builder/ConcreteBuilder.h include/PA/Result.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $@	
 src/PA/NormalTree.i : src/PA/NormalTree.c include/types.h include/PA/NormalTree.h
 	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/Number.i : src/PA/Number.c include/PA/Number.h
 	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/TransposeTree.i : src/PA/TransposeTree.c include/types.h include/PA/TransposeTree.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
-src/Adapter/Client.i : src/Adapter/Client.c include/Adapter/Client.h include/PA/Tree.h include/Adapter/Target.h 
-	-$(CPP) $(CPPFLAGS) -E $< > $@
-src/Adapter/Target.i : src/Adapter/Target.c include/Adapter/Target.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
-src/Adapter/Adapter.i : src/Adapter/Adapter.c include/Adapter/Adaptee.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
-src/Adapter/Adaptee.i : src/Adapter/Adaptee.c include/Adapter/Adaptee.h
 	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/PADrawingEditor.i : src/PA/PADrawingEditor.c include/PA/PADrawingEditor.h
 	-$(CPP) $(CPPFLAGS) -E $< > $@
@@ -877,60 +789,6 @@ ifeq ($(host-type),AArch64)
 	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
-
-
-obj/Builder/Product.o: src/Builder/Product.s
-ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
-endif
-ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
-endif
-ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
-endif
-
-
-
-obj/Builder/ConcreteBuilder.o: src/Builder/ConcreteBuilder.s
-ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
-endif
-ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
-endif
-ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
-endif
-
-
-
-obj/Builder/Director.o: src/Builder/Director.s
-ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
-endif
-ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
-endif
-ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
-endif
-
-
-
-obj/Builder/Builder.o: src/Builder/Builder.s
-ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
-endif
-ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
-endif
-ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
-endif
-
-
-
 obj/PA/NormalTree.o: src/PA/NormalTree.s
 ifeq ($(host-type),arm64)
 	-$(AS) $(ASFLAGS) $< -o $@
@@ -953,7 +811,6 @@ ifeq ($(host-type),AArch64)
 	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
-
 obj/PA/TransposeTree.o: src/PA/TransposeTree.s
 ifeq ($(host-type),arm64)
 	-$(AS) $(ASFLAGS) $< -o $@
@@ -965,60 +822,6 @@ ifeq ($(host-type),AArch64)
 	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
-
-
-obj/Adapter/Client.o: src/Adapter/Client.s
-ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
-endif
-ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
-endif
-ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
-endif
-
-
-
-obj/Adapter/Target.o: src/Adapter/Target.s
-ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
-endif
-ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
-endif
-ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
-endif
-
-
-
-obj/Adapter/Adapter.o: src/Adapter/Adapter.s
-ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
-endif
-ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
-endif
-ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
-endif
-
-
-
-obj/Adapter/Adaptee.o: src/Adapter/Adaptee.s
-ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
-endif
-ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
-endif
-ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
-endif
-
-
-
 obj/PA/PADrawingEditor.o: src/PA/PADrawingEditor.s
 ifeq ($(host-type),arm64)
 	-$(AS) $(ASFLAGS) $< -o $@
@@ -1029,8 +832,6 @@ endif
 ifeq ($(host-type),AArch64)
 	-$(AS) $(ASFLAGS) $< -o $@
 endif
-
-
 
 obj/PA/PALine.o: src/PA/PALine.s
 ifeq ($(host-type),arm64)
