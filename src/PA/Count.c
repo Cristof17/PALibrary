@@ -24,14 +24,14 @@ DllExport struct PACount PACountPerformConstruct()
     // size.number = Value;
     return zies;
 }
-DllExport struct PACount PACountPerformCopy(struct PACount from, struct PACount to)
-{
-	struct PACount copy;
-    to.number = from.number;
+// DllExport struct PACount PACountPerformCopy(struct PACount from, struct PACount to)
+// {
+	// struct PACount copy;
+    // to.number = from.number;
 	// copy=PACountPerformConstruct(Count.number);
 	// copy=PACountPerformInit(Count);
-	return to;
-}
+	// return to;
+// }
 // void PASize(PA_INT);
 DllExport struct PACount PACountPerformRuin(struct PACount PA)
 {
