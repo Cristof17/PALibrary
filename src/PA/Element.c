@@ -51,7 +51,7 @@ struct PAElement PAElementPerformConstruct()
 //	copy.type=Element.type;
 	//return copy;
 // }
-struct PAElement PAElementPerformRuin(struct PAElement PA)
+DllExport struct PAElement PAElementPerformRuin(struct PAElement PA)
 {
     PA.index = PADataPerformRuin(PA.index);
     PA.status = PAStatusPerformRuin(PA.status);
@@ -70,7 +70,7 @@ struct PAElement PAElementPerformRuin(struct PAElement PA)
     // PAResult result;
     // return result;
 }
-struct PAElement PAElementPerformInit(struct PAElement Element, struct PAData Data, struct PAStatus Status)
+DllExport struct PAElement PAElementPerformInit(struct PAElement Element, struct PAData Data, struct PAStatus Status)
 {
     //struct PAElement element;
     // element. = Element.Index;
@@ -117,7 +117,7 @@ struct PAElement PAElementPerformInit(struct PAElement Element, struct PAData Da
     // return element;
   //  return Element;
 // }
-struct PAElement PAElementPerformDelete(struct PAElement PA)
+DllExport struct PAElement PAElementPerformDelete(struct PAElement PA)
 {
     // PAResult result;
     // return result;

@@ -9,29 +9,29 @@
 #include <PA\Tree.h>
 #endif
 
-struct PANormalTree PANormalTreePerformConstruct()
+DllExport struct PANormalTree PANormalTreePerformConstruct()
 {
     struct PANormalTree normalTree;
     normalTree.tree = PATreePerformConstruct();
     return normalTree;
 }
-struct PANormalTree PANormalTreePerformRuin(struct PANormalTree PA)
+DllExport struct PANormalTree PANormalTreePerformRuin(struct PANormalTree PA)
 {
     struct PANormalTree Empty;
     PA.tree = PATreePerformRuin(PA.tree);
     return PA;
 }
-struct PANormalTree PANormalTreePerformDelete(struct PANormalTree NormalTree)
+DllExport struct PANormalTree PANormalTreePerformDelete(struct PANormalTree NormalTree)
 {
     return NormalTree;
 }
-struct PANormalTree PANormalTreePerformInit(struct PANormalTree NormalTree, struct PATree Tree)
+DllExport struct PANormalTree PANormalTreePerformInit(struct PANormalTree NormalTree, struct PATree Tree)
 {
     // struct PANormalTree normalTree;
     // normalTree.adj = Adj;
     return NormalTree;  
 }
-struct PANormalTree PANormalTreePerformCopy(struct PANormalTree NormalTree)
+DllExport struct PANormalTree PANormalTreePerformCopy(struct PANormalTree NormalTree)
 {
     // struct PANormalTree
     struct PANormalTree copy;
@@ -40,7 +40,7 @@ struct PANormalTree PANormalTreePerformCopy(struct PANormalTree NormalTree)
 //    copy.adj = Tree.adj;
     return copy;
 }
-struct PANormalTree PAGrafNormalBuildPart()
+DllExport struct PANormalTree PAGrafNormalBuildPart()
 {
     struct PANormalTree tree;
     return tree;

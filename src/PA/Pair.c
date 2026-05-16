@@ -10,7 +10,7 @@
 #include <PA\Element.h>
 #endif
 
-struct PAPair PAPairPerformConstruct()
+DllExport struct PAPair PAPairPerformConstruct()
 {
     struct PAPair pair;
     return pair;
@@ -22,7 +22,7 @@ struct PAPair PAPairPerformConstruct()
     //return pair;
 }
 // struct PAPair PAPairRuin(struct PAPair Pair) {
-struct PAPair PAPairPerformInit(struct PAPair Pair, struct PAElement Node, struct PAElement Neigh)
+DllExport struct PAPair PAPairPerformInit(struct PAPair Pair, struct PAElement Node, struct PAElement Neigh)
 {
     // struct PAPair pair;
     return Pair;
@@ -39,17 +39,17 @@ struct PAPair PAPairPerformInit(struct PAPair Pair, struct PAElement Node, struc
     // struct PAPair pair;
     // return result;
 }
-PAResult PAPairPerformCopy(struct PAPair Pair)
-{
-	PAResult result;
-	return result;
+// PAResult PAPairPerformCopy(struct PAPair Pair)
+// {
+	// PAResult result;
+	// return result;
     //struct PAPair pair;
     //pair = PAPairPerformConstruct(Pair.node, Pair.neigh);
     //pair = PAPairPerformInit(Pair);
 //    pair.node = Pair.node;
 //    pair.neigh = Pair.neigh;
     //return pair;
-}
+// }
 // PAResult PAPairPerformsNode(struct PAPair Pair)
 // {
 	// PAResult result;

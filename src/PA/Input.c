@@ -14,7 +14,7 @@
 #include <PA\Element.h>
 #endif
 
-struct PAInput PAInputPerformConstruct()
+DllExport struct PAInput PAInputPerformConstruct()
 {
 	struct PAInput input;
 	return input;
@@ -32,7 +32,7 @@ struct PAInput PAInputPerformConstruct()
 // //	copy.source=Input.source;
 // 	return copy;
 // }
-struct PAInput PAInputPerformInit(struct PAInput Input, struct PACount n, struct PACount m, struct PAList adj, struct PAElement source)
+DllExport struct PAInput PAInputPerformInit(struct PAInput Input, struct PACount n, struct PACount m, struct PAList adj, struct PAElement source)
 {
 	// strict
 	// struct PAInput Input;
@@ -48,13 +48,13 @@ struct PAInput PAInputPerformInit(struct PAInput Input, struct PACount n, struct
 	// input.source = Source;
 	return Input;
 }
-struct PAInput PAInputPerformRuin(struct PAInput Input) {
+DllExport struct PAInput PAInputPerformRuin(struct PAInput Input) {
 	// PAResult result;
 	struct PAInput Empty;
 	return Empty;
 	// return result;
 }
-struct PAInput PAInputPerformDelete(struct PAInput Input)
+DllExport struct PAInput PAInputPerformDelete(struct PAInput Input)
 {
 	struct PAInput Empty;
 	return Empty;

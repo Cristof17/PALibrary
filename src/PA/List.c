@@ -16,14 +16,14 @@
 #endif
 
 // struct PAList PAListConstruct(struct PAElement Element) {
-struct PAList PAListPerformConstruct()
+DllExport struct PAList PAListPerformConstruct()
 {
     struct PAList list;
     list.n = PACountPerformConstruct();
     // list.adj = PASeriesPerformConstruct();
     return list;
 }
-struct PAList PAListPerformInit(struct PAList List, struct PACount n, struct PASeries adj)
+DllExport struct PAList PAListPerformInit(struct PAList List, struct PACount n, struct PASeries adj)
 {
     // struct PAList list;
     // list.adj = List.adj;
@@ -60,7 +60,7 @@ struct PAList PAListPerformInit(struct PAList List, struct PACount n, struct PAS
     // struct PAResult result;
     // return result;
 // }
-struct PAList PAListPerformRuin(struct PAList PA)
+DllExport struct PAList PAListPerformRuin(struct PAList PA)
 {
     // struct PAList List;
     struct PACount x;
@@ -102,7 +102,7 @@ void PAListPerformPrint(struct PAList List)
 {
 
 }
-struct PAList PAListPerformDelete(struct PAList List)
+DllExport struct PAList PAListPerformDelete(struct PAList List)
 {
     return List;
     // return 0;

@@ -55,17 +55,18 @@ PAResult PASeriesPerformCopy()
     // struct PAResult result;
     // return result;
 // }
-PAResult PASeriesPut(struct PAResource Resource,struct PAData Data)
-{
-    PAResult result;
-    return result;
-}
+// PAResult PASeriesPut(struct PAResource Resource,struct PAData Data)
+// {
+    // PAResult result;
+    // return result;
+// }
+DllExport
 struct PAResource PASeriesGet(struct PAData Data)
 {
     struct PAResource resource;
     return resource;
 }
-PAResult PASeriesPutFirst(struct PAResource);
+// PAResult PASeriesPutFirst(struct PAResource);
 // PA_INT PAListSize(struct PAList List)
 // {
 //     PA_INT size;
@@ -81,6 +82,7 @@ PAResult PASeriesPutFirst(struct PAResource);
 //     struct PAList list;
 //     return list;
 // }
+DllExport 
 struct PASeries PASeriesPerformConstruct() {
 	struct PASeries series;
 
