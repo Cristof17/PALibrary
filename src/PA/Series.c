@@ -106,7 +106,7 @@ DllExport struct PASeries PASeriesPerformInit(struct PASeries Series)
     struct PASeries series;
     return series;
 }
-DllExport struct PASeries PASeriesPerformRuin(struct PACount n, struct PAElement[])
+DllExport struct PASeries PASeriesPerformRuin(struct PACount n, struct PAElement Adj[])
 {
     struct PASeries Empty;
     return Empty;
