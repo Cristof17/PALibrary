@@ -19,5 +19,5 @@ DllExport struct PACount PACountPerformInit(struct PACount value);
 DllExport struct PACount PACountPerformRuin(struct PANumber value);
 // DllExport struct PACount PACountPerformPutValue(struct PACount, PAInt);
 // struct 
-DllExport int PACountPerformDelete(struct PACount PA);
+DllExport struct PACount PACountPerformDelete(struct PACount PA);
 #endif

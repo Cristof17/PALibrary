@@ -66,10 +66,11 @@ struct PACount PACountPerformInit(struct PACount Count)
 	// Count.number = Value;
 	// return Count;
 // }
-PAResult PACountPerformDelete(struct PACount PA)
+struct PACount PACountPerformDelete(struct PACount PA)
 {
     PA.number.val = 0;
-    return PARESULT_SUCCESS;
+    return PA;
+    // return PARESULT_SUCCESS;
 	// PAResult result;
 	// return result;
 }
