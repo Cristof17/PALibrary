@@ -1,4 +1,0 @@
-#ifndef INCLUDE_BRIDGE_CLIENT_H_
-#define INCLUDE_BRIDGE_CLIENT_H_	1
-#endif
-

@@ -1,4 +1,0 @@
-#ifndef INCLUDE_FACTORY_PRODUCT_H_
-#define INCLUDE_FACTORY_PRODUCT_H_	1
-#endif
-
