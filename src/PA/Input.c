@@ -34,6 +34,12 @@ struct PAInput PAInputPerformConstruct()
 // }
 struct PAInput PAInputPerformInit(struct PAInput Input, struct PACount n, struct PACount m, struct PAList adj, struct PAElement source)
 {
+	// strict
+	// struct PAInput Input;
+	// Input.n = PACountPerformConstruct();
+	// Input.m = PACountPerformConstruct();
+	// Input.source = PAElementPerformConstruct();
+	// struct PAInput
 	// struct PAInput input;
 	// struct PAInput input=PAInputPerformConstruct(Input.n,input.m,input.adj,input.source);
 	// input.n=N;

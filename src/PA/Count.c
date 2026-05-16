@@ -19,9 +19,10 @@ PAResult PACountPerformPrint(struct PACount Count)
 }
 struct PACount PACountPerformConstruct()
 {
-    struct PACount size;
+    struct PACount zies;
+    zies.number = PANumberPerformConstruct();
     // size.number = Value;
-    return size;
+    return zies;
 }
 struct PACount PACountPerformCopy(struct PACount from, struct PACount to)
 {

@@ -3,8 +3,10 @@
 
 #ifndef _WIN95
 #include <PA/Output.h>
+#include <BFS/Record.h>
 #elif defined _WIN95
 #include <PA\Output.h>
+#include <BFS\Record.h>
 #endif
 
 // #include <defs.h>
@@ -55,13 +57,27 @@
 // {
 //     PAOutputPerformPrint(output);
 // }
-DllExport struct PAOutput PAOutputPerformConstruct();
-DllExport struct PAOutput PAOutputPerformInit(struct PAOutput Output, struct BFSRecord record);
-DllExport struct PAOutput PAOutputPerformDelete(struct PAOutput Output);
+DllExport struct PAOutput PAOutputPerformConstruct()
+{
+    struct PAOutput Output;
+    return Output;
+    // struct BFSRecord Record = BFSRecordConstruct()
+}
+DllExport struct PAOutput PAOutputPerformInit(struct PAOutput Output, struct BFSRecord record)
+{
+    return Output;
+}
+DllExport struct PAOutput PAOutputPerformDelete(struct PAOutput Output)
+{
+    // struct PAOutput Output;
+    return Output;
+}
 DllExport struct PAOutput PAOutputPerformRuin(struct BFSRecord Record)
 {
-    struct PAOutput Empty;
-    return Empty;
+    struct PAOutput Output;
+    return Output;
+    // struct PAOutput Empty;
+    // return Empty;
     // return 0;
 }
 // struct Output OutputPerformInit(struct Output);

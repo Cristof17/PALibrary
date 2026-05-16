@@ -12,8 +12,9 @@
 //}
 struct PAData PADataPerformConstruct()
 {
-struct PAData data = { PADataDefault };
-    return data;
+    struct PAData Data;
+    Data.Resource = PAResourcePerformConstruct(); 
+    return Data;
 }
 // struct PAData PADataPerformCopy(struct PAData Data)
 // {

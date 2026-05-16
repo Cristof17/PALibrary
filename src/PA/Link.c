@@ -15,6 +15,7 @@
 struct PALink PALinkPerformConstruct()
 {
     struct PALink Link;
+    Link.p = PAPairPerformConstruct();
     return Link;
     // struct PALink link;
     // return link;÷

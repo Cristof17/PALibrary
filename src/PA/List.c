@@ -19,6 +19,8 @@
 struct PAList PAListPerformConstruct()
 {
     struct PAList list;
+    list.n = PACountPerformConstruct();
+    list.adj = PASeriesPerformConstruct();
     return list;
 }
 struct PAList PAListPerformInit(struct PAList List, struct PACount n, struct PASeries adj)
