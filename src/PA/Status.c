@@ -4,8 +4,10 @@
 
 #ifndef _WIN95
 #include <PA/Status.h>
+#include <PA/Resource.h>
 #elif defined _WIN95
 #include <PA\Status.h>
+#include <PA\Resource.h>
 #endif
 DllExport struct PAStatus PAStatusPerformConstruct(struct PAResource Resource)
 {

@@ -1,11 +1,12 @@
 //@Author Cristofor Rotsching
 
 #include <types.h>
-
 #ifndef _WIN95
 #include <PA/NormalTree.h>
+#include <PA/Tree.h>
 #elif defined _WIN95
 #include <PA\NormalTree.h>
+#include <PA\Tree.h>
 #endif
 
 struct PANormalTree PANormalTreePerformConstruct(struct PATree Tree)

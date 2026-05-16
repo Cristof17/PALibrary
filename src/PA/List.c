@@ -5,10 +5,14 @@
 
 #ifndef _WIN95
 #include <PA/List.h>
-#include <ArrayList/ArrayList.h>
+#include <PA/Count.h>
+#include <PA/Series.h>
+// #include <ArrayList/ArrayList.h>
 #elif defined _WIN95
 #include <PA\List.h>
-#include <ArrayList/ArrayList.h>
+#include <PA\Count.h>
+#include <PA\Series.h>
+// #include <ArrayList/ArrayList.h>
 #endif
 
 // struct PAList PAListConstruct(struct PAElement Element) {

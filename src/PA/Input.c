@@ -6,8 +6,12 @@
 #ifndef _WIN95
 
 #include <PA/Input.h>
+#include <PA/Count.h>
+#include <PA/Element.h>
 #elif defined _WIN95
 #include <PA\Input.h>
+#include <PA\Count.h>
+#include <PA\Element.h>
 #endif
 
 struct PAInput PAInputPerformConstruct(struct PACount n, struct PACount m, struct PAList adj, struct PAElement source)

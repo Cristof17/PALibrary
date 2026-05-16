@@ -1,8 +1,10 @@
 //@Author Cristofor Rotsching
 #ifndef _WIN95
 #include <PA/Resource.h>
+#include <PA/Number.h>
 #elif defined _WIN95
 #include <PA\Resource.h>
+#include <PA\Number.h>
 #endif
 
 DllExport struct PAResource PAResourcePerformRuin(struct PANumber Number)

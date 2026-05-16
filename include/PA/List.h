@@ -8,7 +8,7 @@
 // struct PAList;
 //typedef struct PAList List;
 // DllExport struct PAElement GetHead();
-DllExport struct PAList PASeriesPerformConstruct(struct PACount n, struct PASeries series);
+DllExport struct PAList PAListPerformConstruct(struct PACount n, struct PASeries series);
 DllExport struct PAList PAListPerformInit(struct PAList);
 // DllExport struct PAList PAListPerformCopy(struct PAList);
 // DllExport PAResult PAListPerformPutCount(struct PAList, struct PACount);

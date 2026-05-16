@@ -1,8 +1,10 @@
 //@Author Cristofor Rotsching
 #ifndef _WIN95
 #include <PA/Data.h>
+#include <PA/Resource.h>
 #elif defined _WIN95
 #include <PA\Data.h>
+#include <PA\Resource.h>
 #endif
 //typedef struct PAData PAData;
 //struct PAData {

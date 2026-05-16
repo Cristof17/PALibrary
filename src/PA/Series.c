@@ -5,8 +5,12 @@
 
 #ifndef _WIN95
 #include <PA/Series.h>
-#elif defined _WIN95
+#include <PA/Count.h>
 #include <PA/Series.h>
+#elif defined _WIN95
+#include <PA\Series.h>
+#include <PA\Count.h>
+#include <PA\Series.h>
 #endif
 /*
  * pasir.c

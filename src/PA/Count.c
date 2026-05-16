@@ -4,9 +4,11 @@
 
 #ifndef _WIN95
 #include <PA/Count.h>
+#include <PA/Number.h>
 // #include <PA/Number.h>
 #elif defined _WIN95
-#include <PA/Count.h>
+#include <PA\Count.h>
+#include <PA\Number.h>
 
 #endif
 

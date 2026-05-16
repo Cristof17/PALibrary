@@ -1,8 +1,14 @@
 //@Author Cristofor Rotsching
 #ifndef _WIN95
 #include <PA/Tree.h>
+#include <PA/Count.h>
+#include <PA/Element.h>
+#include <PA/List.h>
 #elif defined _WIN95
 #include <PA\Tree.h>
+#include <PA\Count.h>
+#include <PA\Element.h>
+#include <PA\List.h>
 #endif
 #include <types.h>
 // DllExport struct PACount PATreeSize()

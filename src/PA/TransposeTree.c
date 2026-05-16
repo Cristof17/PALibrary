@@ -6,9 +6,11 @@
 
 #ifndef _WIN95
 #include <PA/TransposeTree.h>
+#include <PA/Tree.h>
 // #include <defs.h>
 #elif defined _WIN95
 #include <PA\TransposeTree.h>
+#include <PA\Tree.h>
 
 #endif
 DllExport struct PATransposeTree PATransposeTreePerformConstruct(struct PATree Tree)

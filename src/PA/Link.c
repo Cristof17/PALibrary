@@ -6,8 +6,10 @@
 
 #ifndef _WIN95
 #include <PA/Link.h>
+#include <PA/Pair.h>
 #elif defined _WIN95
 #include <PA\Link.h>
+#include <PA\Pair.h>
 #endif
 
 struct PAPair PALinkPerformConstruct(struct PALink Link)

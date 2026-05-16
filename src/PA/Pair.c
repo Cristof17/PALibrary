@@ -2,11 +2,12 @@
 /*@*/
 
 #include <types.h>
-
 #ifndef _WIN95
 #include <PA/Pair.h>
+#include <PA/Element.h>
 #elif defined _WIN95
 #include <PA\Pair.h>
+#include <PA\Element.h>
 #endif
 
 struct PAPair PAPairPerformConstruct(struct PAElement Node, struct PAElement Neigh)
