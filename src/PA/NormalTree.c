@@ -9,7 +9,7 @@
 #include <PA\Tree.h>
 #endif
 
-struct PANormalTree PANormalTreePerformConstruct(struct PATree Tree)
+struct PANormalTree PANormalTreePerformConstruct()
 {
     struct PANormalTree normalTree;
     return normalTree;
@@ -23,7 +23,7 @@ struct PANormalTree PANormalTreePerformDelete(struct PANormalTree NormalTree)
 {
     return NormalTree;
 }
-struct PANormalTree PANormalTreePerformInit(struct PANormalTree NormalTree)
+struct PANormalTree PANormalTreePerformInit(struct PANormalTree NormalTree, struct PATree Tree)
 {
     // struct PANormalTree normalTree;
     // normalTree.adj = Adj;

@@ -14,7 +14,7 @@
 #include <PA\Element.h>
 #endif
 
-struct PAInput PAInputPerformConstruct(struct PACount n, struct PACount m, struct PAList adj, struct PAElement source)
+struct PAInput PAInputPerformConstruct()
 {
 	struct PAInput input;
 	return input;
@@ -32,7 +32,7 @@ struct PAInput PAInputPerformConstruct(struct PACount n, struct PACount m, struc
 // //	copy.source=Input.source;
 // 	return copy;
 // }
-struct PAInput PAInputPerformInit(struct PAInput Input)
+struct PAInput PAInputPerformInit(struct PAInput Input, struct PACount n, struct PACount m, struct PAList adj, struct PAElement source)
 {
 	// struct PAInput input;
 	// struct PAInput input=PAInputPerformConstruct(Input.n,input.m,input.adj,input.source);

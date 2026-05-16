@@ -55,8 +55,8 @@
 // {
 //     PAOutputPerformPrint(output);
 // }
-DllExport struct PAOutput PAOutputPerformConstruct(struct BFSRecord record);
-DllExport struct PAOutput PAOutputPerformInit(struct PAOutput Output);
+DllExport struct PAOutput PAOutputPerformConstruct();
+DllExport struct PAOutput PAOutputPerformInit(struct PAOutput Output, struct BFSRecord record);
 DllExport struct PAOutput PAOutputPerformDelete(struct PAOutput Output);
 DllExport struct PAOutput PAOutputPerformRuin(struct BFSRecord Record)
 {

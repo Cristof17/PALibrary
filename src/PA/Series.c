@@ -81,7 +81,7 @@ PAResult PASeriesPutFirst(struct PAResource);
 //     struct PAList list;
 //     return list;
 // }
-struct PASeries PASeriesPerformConstruct(struct PACount n, struct PAElement Adj[]) {
+struct PASeries PASeriesPerformConstruct() {
 	struct PASeries series;
 	return series;
 }
@@ -94,7 +94,8 @@ void PASeriesPerformPrint(struct PASeries Series)
 //	    struct PASeries series;
 //	    return series;
 //	}
-DllExport struct PASeries PASeriesPerformInit(struct PASeries Series)
+DllExport struct PASeries PASeriesPerformInit(struct PASeries Series,
+struct PACount n, struct PAElement Adj[])
 {
 	// PAResult result;
 	// return result;

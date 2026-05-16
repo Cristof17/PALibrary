@@ -10,10 +10,10 @@
 // struct PAData PADataPerformConstruct(PAInt Resource);
 // struct PAData PADataPerformCopy(struct PAData Data);
 // strut BFSOutputRuin();
-DllExport struct PAOutput PAOutputPerformConstruct(struct BFSRecord Record);
-DllExport struct PAOutput PAOutputPerformInit(struct PAOutput);
-DllExport struct PAOutput PAOutputPerformDelete(struct PAOutput Output);
-DllExport struct PAOutput PAOutputPerformRuin(struct BFSRecord Data);
+DllExport struct PAOutput PAOutputPerformConstruct();
+DllExport struct PAOutput PAOutputPerformInit(struct PAOutput, struct BFSRecord);
+DllExport struct PAOutput PAOutputPerformDelete(struct PAOutput);
+DllExport struct PAOutput PAOutputPerformRuin(struct BFSRecord);
 //typedef struct BFSOutput BFSOutput;
 // struct PAOutput PAOutputPerformInit(struct BFSRecord);
 // DllExport int PADataPerformRuin(struct BFSRecord record);

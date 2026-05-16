@@ -12,10 +12,10 @@
 #include <PA\Pair.h>
 #endif
 
-struct PAPair PALinkPerformConstruct(struct PALink Link)
+struct PALink PALinkPerformConstruct()
 {
-    struct PAPair Pair;
-    return Pair;
+    struct PALink Link;
+    return Link;
     // struct PALink link;
     // return link;÷
     // link.p = P;÷
@@ -35,13 +35,13 @@ struct PALink PALinkPerformCopy(struct PALink Link)
 //    link.p = Link.p;
     return link;
 }
-struct PAPair PALinkPerformInit(struct PAPair Pair)
+struct PALink PALinkPerformInit(struct PALink Link, struct PAPair p)
 {
     // struct PALink link;
     // struct PAPair pair;
     // Link.p = Pair;
     // return link;
-    return Pair;
+    return Link;
 }
 // struct PALink PALinkPerformPutPair(struct PALink Link,struct PAPair P)
 // {

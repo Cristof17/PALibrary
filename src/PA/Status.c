@@ -9,7 +9,7 @@
 #include <PA\Status.h>
 #include <PA\Resource.h>
 #endif
-DllExport struct PAStatus PAStatusPerformConstruct(struct PAResource Resource)
+DllExport struct PAStatus PAStatusPerformConstruct()
 {
     struct PAStatus status;
     return status;
@@ -25,7 +25,7 @@ DllExport struct PAStatus PAStatusPerformDelete(struct PAStatus Status)
 {
     return Status;
 }
-DllExport struct PAStatus PAStatusPerformInit(struct PAStatus Status, struct PAResource value)
+DllExport struct PAStatus PAStatusPerformInit(struct PAStatus Status, struct PAResource Resource)
 {
     return Status;
 }

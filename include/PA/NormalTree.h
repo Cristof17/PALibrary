@@ -5,11 +5,11 @@
 // #include "../defs.h"
 #include <defs.h>
 // struct NormalTree;
-DllExport struct PANormalTree PANormalTreePerformConstruct(struct PATree Tree);
-DllExport struct PANormalTree PANormalTreePerformInit(struct PANormalTree);
+DllExport struct PANormalTree PANormalTreePerformConstruct();
+DllExport struct PANormalTree PANormalTreePerformInit(struct PANormalTree, struct PATree);
 DllExport struct PANormalTree PANormalTreePerformCopy(struct PANormalTree);
-DllExport struct PANormalTree PANormalTreePerformRuin(struct PATree Tree);
-DllExport struct PANormalTree PANormalTreePerformDelete(struct PANormalTree Tree);
+DllExport struct PANormalTree PANormalTreePerformRuin(struct PATree);
+DllExport struct PANormalTree PANormalTreePerformDelete(struct PANormalTree);
 // DllExport struct PANormalTree PANormalTreePerformConstruct(struct PATree tree);
 // typedef struct GrafNormal PAGrafNormal;
 DllExport struct PANormalTree PAGrafNormalBuildPart();

@@ -10,7 +10,7 @@
 #include <PA\Element.h>
 #endif
 
-struct PAPair PAPairPerformConstruct(struct PAElement Node, struct PAElement Neigh)
+struct PAPair PAPairPerformConstruct()
 {
     struct PAPair pair;
     return pair;
@@ -22,7 +22,7 @@ struct PAPair PAPairPerformConstruct(struct PAElement Node, struct PAElement Nei
     //return pair;
 }
 // struct PAPair PAPairRuin(struct PAPair Pair) {
-struct PAPair PAPairPerformInit(struct PAPair Pair)
+struct PAPair PAPairPerformInit(struct PAPair Pair, struct PAElement Node, struct PAElement Neigh)
 {
     // struct PAPair pair;
     return Pair;

@@ -3,8 +3,8 @@
 #define INCLUDE_PA_RESOURCE_H_	1
 #include <types.h>
 #include <defs.h>
-DllExport struct PAResource PAResourcePerformInit(struct PAResource Resource, struct PANumber Number);
-DllExport struct PAResource PAResourcePerformConstruct(struct PANumber Number);
-DllExport struct PAResource PAResourcePerformRuin(struct PANumber Number);
-DllExport struct PAResource PAResourcePerformDelete(struct PAResource Resource);
+DllExport struct PAResource PAResourcePerformInit(struct PAResource, struct PANumber);
+DllExport struct PAResource PAResourcePerformConstruct();
+DllExport struct PAResource PAResourcePerformRuin(struct PANumber);
+DllExport struct PAResource PAResourcePerformDelete(struct PAResource);
 #endif

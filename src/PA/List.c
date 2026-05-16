@@ -16,12 +16,12 @@
 #endif
 
 // struct PAList PAListConstruct(struct PAElement Element) {
-struct PAList PAListPerformConstruct(struct PACount n, struct PASeries adj)
+struct PAList PAListPerformConstruct()
 {
     struct PAList list;
     return list;
 }
-struct PAList PAListPerformInit(struct PAList List)
+struct PAList PAListPerformInit(struct PAList List, struct PACount n, struct PASeries adj)
 {
     // struct PAList list;
     // list.adj = List.adj;

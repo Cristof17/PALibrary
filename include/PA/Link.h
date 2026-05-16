@@ -5,11 +5,11 @@
 // #include "../defs.h"
 #include <defs.h>
 // struct PALink;
-DllExport struct PAPair PALinkPerformConstruct(struct PALink);
+DllExport struct PALink PALinkPerformConstruct();
 // DllExport struct PALink PALinkPerformCopy(struct PALink);
-DllExport struct PAPair PALinkPerformInit(struct PAPair p);
+DllExport struct PALink PALinkPerformInit(struct PALink, struct PAPair);
 // DllExport struct PALink PALinkPerformPutPair(struct PALink,struct PAPair);
-DllExport struct PALink PALinkPerformRuin(struct PAPair p);
-DllExport struct PALink PALinkPerformDelete(struct PALink PA);
+DllExport struct PALink PALinkPerformRuin(struct PAPair);
+DllExport struct PALink PALinkPerformDelete(struct PALink);
 //typedef struct PALink Link;
 #endif

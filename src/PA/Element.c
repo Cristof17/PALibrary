@@ -28,7 +28,7 @@ DllExport void PAElementReset()
 {
     return;
 }
-struct PAElement PAElementPerformConstruct(struct PAData Data, struct PAElement Next, struct PAStatus Status)
+struct PAElement PAElementPerformConstruct()
 {
     struct PAElement result;
     return result;
@@ -68,7 +68,7 @@ struct PAElement PAElementPerformRuin(struct PAData Data, struct PAStatus Status
     // PAResult result;
     // return result;
 }
-struct PAElement PAElementPerformInit(struct PAElement Element)
+struct PAElement PAElementPerformInit(struct PAElement Element, struct PAData Data, struct PAStatus Status)
 {
     //struct PAElement element;
     // element. = Element.Index;

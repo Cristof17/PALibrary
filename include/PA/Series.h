@@ -14,10 +14,10 @@
 
 // struct PASeries;
 // struct PAList PAListPutElement(struct PAList, struct PAElement);
-DllExport struct PASeries PASeriesPerformConstruct(struct PACount m, struct PAElement[]);
-DllExport struct PASeries PASeriesPerformInit(struct PASeries);
-DllExport struct PASeries PASeriesPerformDelete(struct PASeries Series);
-DllExport struct PASeries PASeriesPerformRuin(struct PACount n, struct PAElement adj[]);
+DllExport struct PASeries PASeriesPerformConstruct();
+DllExport struct PASeries PASeriesPerformInit(struct PASeries, struct PACount, struct PAElement[]);
+DllExport struct PASeries PASeriesPerformDelete(struct PASeries);
+DllExport struct PASeries PASeriesPerformRuin(struct PACount, struct PAElement[]);
 // DllExport HRESULT PASerisPerformPutCount(struct PACount);
 // DllExport HRESULT PASeriesPerformPutArrayList(struct ArrayList);
 // DllExport HRESULT PASeriesAddElement(struct PAElement);

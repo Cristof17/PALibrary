@@ -16,7 +16,7 @@ DllExport struct PAResource PAResourcePerformInit(struct PAResource Resource, st
 {
     return Resource;
 }
-DllExport struct PAResource PAResourcePerformConstruct(struct PANumber value)
+DllExport struct PAResource PAResourcePerformConstruct()
 {
     struct PAResource resource;
     return resource;

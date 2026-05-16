@@ -3,12 +3,12 @@
 #elif defined _WIN95
 #include <PA\Number.h>
 #endif
-DllExport struct PANumber PANumberPerformConstruct(unsigned char val)
+DllExport struct PANumber PANumberPerformConstruct()
 {
     struct PANumber number;
     return number;
 }
-DllExport struct PANumber PANumberPerformInit(struct PANumber Number)
+DllExport struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char val)
 {
     struct PANumber number;
     return number;

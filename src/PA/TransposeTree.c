@@ -13,7 +13,7 @@
 #include <PA\Tree.h>
 
 #endif
-DllExport struct PATransposeTree PATransposeTreePerformConstruct(struct PATree Tree)
+DllExport struct PATransposeTree PATransposeTreePerformConstruct()
 {
     struct PATransposeTree transposeTree;
     return transposeTree;
@@ -23,7 +23,7 @@ DllExport struct PATransposeTree PATransposeTreeRuin(struct PATree Tree)
     struct PATransposeTree tree;
     return tree;
 }
-DllExport struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree TransposeTree)
+DllExport struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree TransposeTree, struct PATree Tree)
 {
     // struct PATransposeTree transposeTree;
     // transposeTree = PATransposeTreePerformConstruct(TransposeTree.adj_trans);
