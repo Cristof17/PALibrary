@@ -62,7 +62,7 @@ struct PACount PACountPerformInit(struct PACount Count)
 }
 struct PACount PACountPerformPutValue(struct PACount Count, struct PANumber Value)
 {
-	Count.number.val = Value;
+	Count.number = Value;
 	return Count;
 }
 PAResult PACountPerformDelete(struct PACount PA)

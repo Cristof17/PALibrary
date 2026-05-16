@@ -11,12 +11,12 @@
 
 // struct PACount;
 //typedef struct PACount Count;
-DllExport struct PACount PACountPerformConstruct(PAInt value);
+DllExport struct PACount PACountPerformConstruct(struct PANumber value);
 DllExport struct PACount PACountPerformInit(struct PACount value);
 // DllExport struct PACount PACountPerformCopy(struct PACount);
 // void PASize(PA_INT);
 // DllExport HRESULT PACountPerformPrint(struct PACount);
-DllExport struct PACount PACountPerformRuin(PAInt value);
+DllExport struct PACount PACountPerformRuin(struct PANumber value);
 // DllExport struct PACount PACountPerformPutValue(struct PACount, PAInt);
 // struct 
 DllExport int PACountPerformDelete(struct PACount PA);
