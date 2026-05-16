@@ -20,8 +20,10 @@ DllExport struct PANumber PANumberPerformDelete(struct PANumber Number)
     struct PANumber number;
     return number;
 }
-DllExport struct PANumber PANumberPerformRuin(unsigned char value)
+DllExport struct PANumber PANumberPerformRuin(struct PANumber PA)
 {
-    struct PANumber number;
-    return number;
+    struct PANumber Empty;
+    return Empty;
+    // struct PANumber number;
+    // return number;
 }

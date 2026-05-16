@@ -15,7 +15,7 @@ struct PANormalTree PANormalTreePerformConstruct()
     normalTree.tree = PATreePerformConstruct();
     return normalTree;
 }
-struct PANormalTree PANormalTreePerformRuin(struct PATree Tree)
+struct PANormalTree PANormalTreePerformRuin(struct PANormalTree NormalTree)
 {
     struct PANormalTree Empty;
     return Empty;

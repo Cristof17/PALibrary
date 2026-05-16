@@ -45,7 +45,7 @@ DllExport struct PATree PATreePerformInit(struct PATree Tree, struct PACount N, 
     // tree.adj = ()
     return Tree;
 }
-DllExport struct PATree PATreePerformRuin(struct PACount n, struct PACount m, struct PASeries adj[], struct PAElement source)
+DllExport struct PATree PATreePerformRuin(struct PATree PA)
 {
     struct PATree tree;
     // int var = 1;

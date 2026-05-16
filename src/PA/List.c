@@ -60,7 +60,7 @@ struct PAList PAListPerformInit(struct PAList List, struct PACount n, struct PAS
     // struct PAResult result;
     // return result;
 // }
-struct PAList PAListPerformRuin(struct PACount N, struct PASeries adj)
+struct PAList PAListPerformRuin(struct PAList List)
 {
     struct PAList List;
     return List;

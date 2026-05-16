@@ -19,7 +19,7 @@ DllExport struct PATransposeTree PATransposeTreePerformConstruct()
     transposeTree.tree = PATreePerformConstruct();
     return transposeTree;
 }
-DllExport struct PATransposeTree PATransposeTreeRuin(struct PATree Tree)
+DllExport struct PATransposeTree PATransposeTreeRuin(struct PATransposeTree PA)
 {
     struct PATransposeTree tree;
     return tree;

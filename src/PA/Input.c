@@ -48,7 +48,7 @@ struct PAInput PAInputPerformInit(struct PAInput Input, struct PACount n, struct
 	// input.source = Source;
 	return Input;
 }
-struct PAInput PAInputPerformRuin(struct PACount N, struct PACount M, struct PAList ADJ, struct PAElement Source) {
+struct PAInput PAInputPerformRuin(struct PAInput Input) {
 	// PAResult result;
 	struct PAInput Empty;
 	return Empty;

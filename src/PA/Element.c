@@ -51,7 +51,7 @@ struct PAElement PAElementPerformConstruct()
 //	copy.type=Element.type;
 	//return copy;
 // }
-struct PAElement PAElementPerformRuin(struct PAData Data, struct PAStatus Status)
+struct PAElement PAElementPerformRuin(struct PAElement element)
 {
     Data = PADataPerformRuin(Data);
     Status = PAStatusPerformRuin(Status, Status.visited);

@@ -69,7 +69,7 @@ PAResult PAPairPerformCopy(struct PAPair Pair)
     //return Pair;
     // return pair;
 // }
-DllExport struct PAPair PAPairPerformRuin(struct PAElement Node, struct PAElement Neigh)
+DllExport struct PAPair PAPairPerformRuin(struct PAPair PA)
 {
     struct PAPair Empty;
     return Empty;

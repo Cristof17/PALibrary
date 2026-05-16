@@ -15,7 +15,7 @@ DllExport struct PAStatus PAStatusPerformConstruct()
     status.visited = PAResourcePerformConstruct();
     return status;
 }
-DllExport struct PAStatus PAStatusPerformRuin(struct PAStatus Status, struct PAResource Resource)
+DllExport struct PAStatus PAStatusPerformRuin(struct PAStatus PA)
 {
     // PAResult result;
     // return Status;

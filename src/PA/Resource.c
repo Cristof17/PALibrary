@@ -7,7 +7,7 @@
 #include <PA\Number.h>
 #endif
 
-DllExport struct PAResource PAResourcePerformRuin(struct PANumber Number)
+DllExport struct PAResource PAResourcePerformRuin(struct PAResource Resource)
 {
     struct PAResource Empty;
     return Empty;
