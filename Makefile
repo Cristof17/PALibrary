@@ -34,7 +34,6 @@ objects= obj/Input.o \
 	obj/PA/PATextView.o \
 	obj/ArrayList/ArrayList.o \
 	obj/ArrayList/ArrayListPosition.o
-
 # 	obj/PA/Destination.o
 # 	obj/PA/Arrow.o
 # 	obj/PA/Feature.o

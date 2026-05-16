@@ -31,8 +31,8 @@ DllExport void PAElementReset()
 struct PAElement PAElementPerformConstruct()
 {
     struct PAElement result;
-    result.index = PADataPerformConstruct();
-    result.status = PAStatusPerformConstruct();
+    // result.index = PADataPerformConstruct();
+    // result.status = PAStatusPerformConstruct();
     return result;
 	// PAResult result;
 	// return result;

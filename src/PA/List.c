@@ -19,7 +19,7 @@
 DllExport struct PAList PAListPerformConstruct()
 {
     struct PAList list;
-    list.n = PACountPerformConstruct();
+    // list.n = PACountPerformConstruct();
     // list.adj = PASeriesPerformConstruct();
     return list;
 }

@@ -22,18 +22,18 @@ DllExport
 struct PASeries PASeriesPerformConstruct() {
     struct PASeries series;
 
-    series.m = PACountPerformConstruct();
+    // series.m = sPACountPerformConstruct();
 
-    struct PANumber iterator;
+    // struct PANumber iterator;
 
-    struct PANumber j;
+    // struct PANumber j;
 
-    j.val = SIZE;
-    iterator.val = 1;
-    while (iterator.val < j.val)
-    {
-        series.adj[iterator.val] = PAElementPerformConstruct();
-    } 
+    // j.val = SIZE;
+    // iterator.val = 1;
+    // while (iterator.val < j.val)
+    // {
+    //     series.adj[iterator.val] = PAElementPerformConstruct();
+    // } 
     return series;
 }
 DllExport struct PASeries PASeriesPerformInit(struct PASeries Series,

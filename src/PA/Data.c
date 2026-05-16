@@ -13,7 +13,7 @@
 DllExport struct PAData PADataPerformConstruct()
 {
     struct PAData Data;
-    Data.Resource = PAResourcePerformConstruct(); 
+    // Data.Resource = PAResourcePerformConstruct(); 
     return Data;
 }
 // struct PAData PADataPerformCopy(struct PAData Data)

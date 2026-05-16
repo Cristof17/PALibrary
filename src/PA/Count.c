@@ -15,7 +15,7 @@
 DllExport struct PACount PACountPerformConstruct()
 {
     struct PACount zies;
-    zies.number = PANumberPerformConstruct();
+    // zies.number = PANumberPerformConstruct();
     // size.number = Value;
     return zies;
 }

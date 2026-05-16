@@ -21,7 +21,7 @@ DllExport struct PAStatus PAStatusPerformDelete(struct PAStatus Status)
 DllExport struct PAStatus PAStatusPerformConstruct()
 {
     struct PAStatus status;
-    status.visited = PAResourcePerformConstruct();
+    // status.visited = PAResourcePerformConstruct();
     return status;
 }
 DllExport struct PAStatus PAStatusPerformRuin(struct PAStatus PA)
