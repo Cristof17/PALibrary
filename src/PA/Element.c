@@ -115,9 +115,10 @@ struct PAElement PAElementPerformInit(struct PAElement Element)
     // return element;
   //  return Element;
 // }
-struct PAElement PAElementPerformDelete(struct PAElement Element)
+struct PAElement PAElementPerformDelete(struct PAElement PA)
 {
     // PAResult result;
     // return result;
-    return 0;
+    return PA;
+    // return 0;
 }
