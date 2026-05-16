@@ -1049,7 +1049,6 @@ clean:
 	-rm obj/Output.o
 	-rm obj/PA/Data.o
 	-rm obj/PA/Tree.o
-	-#rm obj/PA.o
 	-rm obj/PA/List.o
 	-rm obj/PA/Input.o
 	-rm obj/PA/Output.o
