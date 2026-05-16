@@ -13,22 +13,83 @@
 #include <PA\Element.h>
 #endif
 /*
- * pasir.c
- *
- *  Created on: 16 nov. 2025
- *      Author: AdministratorUser
+* pasir.c
+*
+*  Created on: 16 nov. 2025
+*      Author: AdministratorUser
 ` */
-PAResult PASeriesPerformCopy()
-{
-	PAResult result;
-	return result;
-    //struct PAList copy;
-    // copy = PAListPerformConstruct(List.adj, List.m);
-    // copy = PAListPerformInit(List);
-    //return copy;
+DllExport 
+struct PASeries PASeriesPerformConstruct() {
+    struct PASeries series;
+
+    series.m = PACountPerformConstruct();
+
+    struct PANumber iterator;
+
+    struct PANumber j;
+
+    j.val = SIZE;
+    iterator.val = 1;
+    while (iterator.val < j.val)
+    {
+        series.adj[iterator.val] = PAElementPerformConstruct();
+    } 
+    return series;
 }
-// struct PAList PAListPutElement(struct PAList List, struct PAElement Element) {
-//     // struct PAList list;
+DllExport struct PASeries PASeriesPerformInit(struct PASeries Series,
+    struct PACount n, struct PAElement Adj[])
+    {
+        // PAResult result;
+        // return result;
+        //struct PASeries series;
+        // series = PASeriesPerformConstruct(Series.adj, Series.progression);
+        // series.adj = Adj;
+        // series.progression = N;
+        //Iterator
+        // series.adj = Series.adj;
+        //end of iterator
+        // series.n = N;
+        //return series;
+        struct PASeries series;
+        return series;
+    }
+    DllExport struct PASeries PASeriesPerformDelete(struct PASeries Series)
+    {
+        struct PASeries Empty;
+        return Empty;
+    }
+    PAResult PASeriesPerformCopy()
+    {
+        PAResult result;
+        return result;
+        //struct PAList copy;
+        // copy = PAListPerformConstruct(List.adj, List.m);
+        // copy = PAListPerformInit(List);
+        //return copy;
+    }
+    DllExport struct PASeries PASeriesPerformRuin(struct PASeries PA)
+    {
+        struct PACount x;
+        struct PACount y;
+        x.number.val = PA.m.number.val;
+        y.number.val = FIRST;
+        while (y.number.val <= x.number.val)
+        {
+            PA.adj[y.number.val] = PAElementPerformRuin(PA.adj[y.number.val]);
+            y.number.val++;
+        }
+        // struct PASeries Empty;
+        // struct PACount 
+        // struct PASeries Empty;
+        // struct PACount m;
+        // return Empty;
+        //PAResult result;
+        //return result;
+        // return 0;
+        return PA;
+    }
+    // struct PAList PAListPutElement(struct PAList List, struct PAElement Element) {
+        //     // struct PAList list;
 //     // List.
 //     return list;
 // }
@@ -49,17 +110,17 @@ PAResult PASeriesPerformCopy()
     // return list;
     //List.adj = Adj;
     //return List;
-// }
-// struct PAResult PAListAddElement÷(struct PAList List, struct PAElement )
-// {÷
+    // }
+    // struct PAResult PAListAddElement÷(struct PAList List, struct PAElement )
+    // {÷
     // struct PAResult result;
     // return result;
-// }
-// PAResult PASeriesPut(struct PAResource Resource,struct PAData Data)
-// {
-    // PAResult result;
-    // return result;
-// }
+    // }
+    // PAResult PASeriesPut(struct PAResource Resource,struct PAData Data)
+    // {
+        // PAResult result;
+        // return result;
+        // }
 DllExport
 struct PAResource PASeriesGet(struct PAData Data)
 {
@@ -82,24 +143,6 @@ struct PAResource PASeriesGet(struct PAData Data)
 //     struct PAList list;
 //     return list;
 // }
-DllExport 
-struct PASeries PASeriesPerformConstruct() {
-	struct PASeries series;
-
-    series.m = PACountPerformConstruct();
-
-    struct PANumber iterator;
-
-    struct PANumber j;
-
-    j.val = SIZE;
-    iterator.val = 1;
-    while (iterator.val < j.val)
-    {
-        series.adj[iterator.val] = PAElementPerformConstruct();
-    } 
-	return series;
-}
 void PASeriesPerformPrint(struct PASeries Series)
 {
 
@@ -109,49 +152,6 @@ void PASeriesPerformPrint(struct PASeries Series)
 //	    struct PASeries series;
 //	    return series;
 //	}
-DllExport struct PASeries PASeriesPerformInit(struct PASeries Series,
-struct PACount n, struct PAElement Adj[])
-{
-	// PAResult result;
-	// return result;
-    //struct PASeries series;
-    // series = PASeriesPerformConstruct(Series.adj, Series.progression);
-    // series.adj = Adj;
-    // series.progression = N;
-    //Iterator
-    // series.adj = Series.adj;
-    //end of iterator
-    // series.n = N;
-    //return series;
-    struct PASeries series;
-    return series;
-}
-DllExport struct PASeries PASeriesPerformRuin(struct PASeries PA)
-{
-    struct PACount x;
-    struct PACount y;
-    x.number.val = PA.m.number.val;
-    y.number.val = FIRST;
-    while (y.number.val <= x.number.val)
-    {
-        PA.adj[y.number.val] = PAElementPerformRuin(PA.adj[y.number.val]);
-        y.number.val++;
-    }
-    // struct PASeries Empty;
-    // struct PACount 
-    // struct PASeries Empty;
-    // struct PACount m;
-    // return Empty;
-    //PAResult result;
-    //return result;
-    // return 0;
-    return PA;
-}
-DllExport struct PASeries PASeriesPerformDelete(struct PASeries Series)
-{
-    struct PASeries Empty;
-    return Empty;
-}
 // DllExport PAResult PASeriesPerformPutList(struct PAList Adj) 
 // {
 	// PAResult result;

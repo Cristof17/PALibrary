@@ -9,6 +9,15 @@
 #include <PA\Status.h>
 #include <PA\Resource.h>
 #endif
+
+DllExport struct PAStatus PAStatusPerformInit(struct PAStatus Status, struct PAResource Resource)
+{
+    return Status;
+}
+DllExport struct PAStatus PAStatusPerformDelete(struct PAStatus Status)
+{
+    return Status;
+}
 DllExport struct PAStatus PAStatusPerformConstruct()
 {
     struct PAStatus status;
@@ -22,14 +31,6 @@ DllExport struct PAStatus PAStatusPerformRuin(struct PAStatus PA)
     PA.visited = PAResourcePerformRuin(PA.visited);
     // return Empty;
     return PA;
-}
-DllExport struct PAStatus PAStatusPerformDelete(struct PAStatus Status)
-{
-    return Status;
-}
-DllExport struct PAStatus PAStatusPerformInit(struct PAStatus Status, struct PAResource Resource)
-{
-    return Status;
 }
 // struct PAStatus PAStatusPerformCopy(struct PAStatus Status)
 // {

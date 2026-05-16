@@ -19,11 +19,7 @@ DllExport struct PATransposeTree PATransposeTreePerformConstruct()
     transposeTree.tree = PATreePerformConstruct();
     return transposeTree;
 }
-DllExport struct PATransposeTree PATransposeTreeRuin(struct PATransposeTree PA)
-{
-    struct PATransposeTree tree;
-    return tree;
-}
+
 DllExport struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree TransposeTree, struct PATree Tree)
 {
     // struct PATransposeTree transposeTree;
@@ -39,6 +35,20 @@ DllExport struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTr
     // copy = PATransposeTreePerformInit(TransposeTree);
     // return tree;
     return copy;
+}
+// DllExport struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree Tree )
+// {
+//     return Tree;
+// }
+DllExport struct PATransposeTree PATransposeTreeRuin(struct PATransposeTree PA)
+{
+    struct PATransposeTree tree;
+    return tree;
+}
+DllExport struct PATransposeTree PATransposeTreePerformRuin(struct PATransposeTree PA)
+{
+    PA.tree = PATreePerformRuin(PA.tree);
+    return PA;
 }
 DllExport struct PATransposeTree PATransposeTreeDelete(struct PATransposeTree Tree)
 {
@@ -67,8 +77,4 @@ DllExport PAResult PATransposeTreeGetResult()
 //     struct PAResult result;
 //     return result;
 // }
-DllExport struct PATransposeTree PATransposeTreePerformRuin(struct PATransposeTree PA)
-{
-    PA.tree = PATreePerformRuin(PA.tree);
-    return PA;
-}
+

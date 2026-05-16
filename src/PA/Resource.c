@@ -7,13 +7,6 @@
 #include <PA\Number.h>
 #endif
 
-DllExport struct PAResource PAResourcePerformRuin(struct PAResource PA)
-{
-    PA.value = PANumberPerformRuin(PA.value);
-    // struct PAResource Empty;
-    // return Empty;
-    return PA;
-}
 DllExport struct PAResource PAResourcePerformInit(struct PAResource Resource, struct PANumber value)
 {
     return Resource;
@@ -23,6 +16,13 @@ DllExport struct PAResource PAResourcePerformConstruct()
     struct PAResource resource;
     resource.value = PANumberPerformConstruct();
     return resource;
+}
+DllExport struct PAResource PAResourcePerformRuin(struct PAResource PA)
+{
+    PA.value = PANumberPerformRuin(PA.value);
+    // struct PAResource Empty;
+    // return Empty;
+    return PA;
 }
 DllExport struct PAResource PAResourcePerformDelete(struct PAResource Resource)
 {

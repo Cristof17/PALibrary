@@ -45,6 +45,15 @@ DllExport struct PATree PATreePerformInit(struct PATree Tree, struct PACount N, 
     // tree.adj = ()
     return Tree;
 }
+DllExport PAResult PATreePerformCopy(struct PATransposeTree Tree)
+{
+    PAResult result;
+    return result;
+    // struct PATree tree;
+    // tree = PATreePerformConstruct(Tree.n, Tree.m, Tree.adj, Tree.source);
+    // tree = PATreePerformInit(Tree);
+    // return tree;
+}
 DllExport struct PATree PATreePerformRuin(struct PATree PA)
 {
     PA.n = PACountPerformRuin(PA.n);
@@ -69,15 +78,7 @@ DllExport struct PATree PATreePerformRuin(struct PATree PA)
     // return 0;
     return PA;
 }
-// DllExport PAResult PATreePerformCopy()
-// {
-        // PAResult result;
-        // return result;
-    // struct PATree tree;
-    // tree = PATreePerformConstruct(Tree.n, Tree.m, Tree.adj, Tree.source);
-    // tree = PATreePerformInit(Tree);
-    // return tree;
-// }
+
 // DllExport PAResult PATreePerformPutCount(struct PACount Count1, struct PACount Count2)
 // {
     // PAResult result;
@@ -124,4 +125,9 @@ DllExport struct PATree PATreePerformDelete(struct PATree Tree)
     // return result;
     return Tree;
     // return 0;
+}
+DllExport struct PATransposeTree PATransposeTreeBuildPart()
+{
+    struct PATransposeTree tree;
+    return tree;
 }

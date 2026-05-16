@@ -83,6 +83,10 @@ DllExport struct PAOutput PAOutputPerformRuin(struct PAOutput PA)
     // return 0;
     return PA;
 }
+DllExport void OutputPerformPrint(PAResult Result)
+{
+
+}
 // struct Output OutputPerformInit(struct Output);
 // DllExport int PAOutputPerformInit(struct BFSRecord record)
 //struct Output dispose();
