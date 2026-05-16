@@ -14,7 +14,7 @@ PAResult PACountPerformPrint(struct PACount Count)
     PAResult result;
     return result;
 }
-struct PACount PACountPerformConstruct(PAInt value)
+struct PACount PACountPerformConstruct(struct PANumber value)
 {
     struct PACount size;
     return size;
@@ -28,7 +28,7 @@ PAResult PACountPerformCopy(struct PACount from, struct PACount to)
 	return PARESULT_SUCCESS;
 }
 // void PASize(PA_INT);
-struct PACount PACountPerformRuin(PAInt PA)
+struct PACount PACountPerformRuin(struct PANumber PA)
 {
     //get the value at address pointed by stack pointer
     //that corresponsds to parameter PA
@@ -60,7 +60,7 @@ struct PACount PACountPerformInit(struct PACount Count)
     // count.number = Number;
     return Count;
 }
-struct PACount PACountPerformPutValue(struct PACount Count, PAInt Value)
+struct PACount PACountPerformPutValue(struct PACount Count, struct PANumber Value)
 {
 	Count.number.val = Value;
 	return Count;
