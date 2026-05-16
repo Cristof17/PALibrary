@@ -111,7 +111,7 @@ ArrayListObject ArrayListPerformGetFirst(struct ArrayList List)
 }
 ArrayListObject ArrayListPerformGetLast(struct ArrayList List)
 {
-	return List.objects[LAST(List.place.position)];
+	return List.objects[LAST(List.place.position.val)];
 }
 	// struct PAData last;
 	// ArrayListObject last;

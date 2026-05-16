@@ -129,7 +129,7 @@ struct PrototypeClient;
 struct PANumber {
 	//  val;
 	// long long val;
-	unsigned int val;
+	unsigned char val;
 	PADDING_1_BYTE(0);
 };
 struct PrototypeConcretePrototype1;
@@ -157,7 +157,7 @@ struct Facade;
 		// 	struct Input input;
 		// };
 struct ArrayListPosition {
-	int position;
+	struct PANumber position;
 };
 struct ArrayList {
 	// struct Position position;
@@ -182,11 +182,12 @@ struct PAFeature {
 	PAInt kind;
 };
 struct PACount {
-	PADDING_1_BYTE(4);
-	PAInt number;
+	PADDING_1_BYTE(0);
+	struct PANumber number;
 };
 struct PASeries {
 	struct PACount m;
+	// struct PANumber adj[0];
 	struct ArrayList adj;
 };
 struct PAList {

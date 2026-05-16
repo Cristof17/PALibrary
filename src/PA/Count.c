@@ -41,7 +41,7 @@ struct PACount PACountPerformRuin(PAInt PA)
     // Empty.padding[1] = NULL;
     // Empty.padding[2] = NULL;
     // Empty.padding[3] = NULL;
-    Empty.number = NULL;
+    Empty.number.val = NULL;
     // PA.number = Empty.number;
     // PA.padding[0] = Empty.padding[0];
     // PA.padding[1] = Empty.padding[1];
@@ -62,12 +62,12 @@ struct PACount PACountPerformInit(struct PACount Count)
 }
 struct PACount PACountPerformPutValue(struct PACount Count, PAInt Value)
 {
-	Count.number = Value;
+	Count.number.val = Value;
 	return Count;
 }
 PAResult PACountPerformDelete(struct PACount PA)
 {
-    PA.number = 0;
+    PA.number.val = 0;
     return PARESULT_SUCCESS;
 	// PAResult result;
 	// return result;
