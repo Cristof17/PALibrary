@@ -185,16 +185,6 @@ struct PACount {
 	PADDING_1_BYTE(0);
 	struct PANumber number;
 };
-struct PASeries {
-	struct PACount m;
-	// struct PANumber adj[0];
-	struct ArrayList adj;
-};
-struct PAList {
-	struct PACount n;
-	struct PASeries adj;
-	// struct PANod Nod;
-};
 struct PAElement { 
 	//	struct PAData data;
 	struct PAData index;
@@ -203,6 +193,17 @@ struct PAElement {
 	PAStatus status;
 	// struct PAFeature type;
 	PADDING_1_BYTE(0);
+};
+
+struct PASeries {
+	struct PACount m;
+	// struct PANumber adj[0];
+	struct PAElement adj[SIZE];
+};
+struct PAList {
+	struct PACount n;
+	struct PASeries adj;
+	// struct PANod Nod;
 };
 struct FlyweightFlyweightClient {
 	// struct PASeries series;
