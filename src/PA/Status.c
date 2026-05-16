@@ -19,8 +19,9 @@ DllExport struct PAStatus PAStatusPerformRuin(struct PAStatus PA)
 {
     // PAResult result;
     // return Status;
-    struct PAStatus Empty;
-    return Empty;
+    PA.visited = PAResourcePerformRuin(PA.visited);
+    // return Empty;
+    return PA;
 }
 DllExport struct PAStatus PAStatusPerformDelete(struct PAStatus Status)
 {

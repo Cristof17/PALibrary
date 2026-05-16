@@ -126,7 +126,15 @@ struct PACount n, struct PAElement Adj[])
 }
 DllExport struct PASeries PASeriesPerformRuin(struct PASeries PA)
 {
-    
+    struct PACount x;
+    struct PACount y;
+    x.number.val = PA.m.number.val;
+    y.number.val = FIRST;
+    while (y.number.val <= x.number.val)
+    {
+        PA.adj[y.number.val] = PAElementPerformRuin(PA.adj[y.number.val]);
+        y.number.val++;
+    }
     // struct PASeries Empty;
     // struct PACount 
     // struct PASeries Empty;
@@ -135,6 +143,7 @@ DllExport struct PASeries PASeriesPerformRuin(struct PASeries PA)
     //PAResult result;
     //return result;
     // return 0;
+    return PA;
 }
 DllExport struct PASeries PASeriesPerformDelete(struct PASeries Series)
 {

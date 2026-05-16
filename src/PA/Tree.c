@@ -22,7 +22,7 @@ DllExport struct PATree PATreePerformConstruct()
     tree.n = PACountPerformConstruct();
     tree.m = PACountPerformConstruct();
     tree.source = PAElementPerformConstruct();
-    tree.adj = PAListPerformConstruct();
+    // tree.adj = PAListPerformConstruct();
     return tree;
     // PAResult result;
     // return result;
@@ -47,14 +47,27 @@ DllExport struct PATree PATreePerformInit(struct PATree Tree, struct PACount N, 
 }
 DllExport struct PATree PATreePerformRuin(struct PATree PA)
 {
-    struct PATree tree;
+    PA.n = PACountPerformRuin(PA.n);
+    PA.m = PACountPerformRuin(PA.m);
+    PA.source = PAElementPerformRuin(PA.source);
+    struct PACount x;
+    struct PACount y;
+    x.number.val = FIRST;
+    y.number.val = PA.n.number.val;
+    while (x.number.val <= y.number.val)
+    {
+        PA.adj[x.number.val] = PAListPerformDelete(PA.adj[x.number.val]);
+        x.number.val++;
+    }
+    // PA.adj = 
+    // struct PATree tree;
     // int var = 1;
     // PAResult result;
     // PAInt zero = 0;
     // Tree.n.number = zero;
     // Tree.m.number = zero;
     // return 0;
-    return tree;
+    return PA;
 }
 // DllExport PAResult PATreePerformCopy()
 // {
