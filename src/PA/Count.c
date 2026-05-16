@@ -33,7 +33,7 @@ struct PACount PACountPerformCopy(struct PACount from, struct PACount to)
 	return to;
 }
 // void PASize(PA_INT);
-struct PACount PACountPerformRuin(struct struct PACount PA)
+struct PACount PACountPerformRuin(struct PACount PA)
 {
     //get the value at address pointed by stack pointer
     //that corresponsds to parameter PA
@@ -47,7 +47,8 @@ struct PACount PACountPerformRuin(struct struct PACount PA)
     // Empty.padding[2] = NULL;
     // Empty.padding[3] = NULL;
     // Empty.number.val = NULL;
-    struct PACount Empty = PANumberPerformRuin(PA);
+    struct PACount Empty;
+    Empty.number = PANumberPerformRuin(PA.number);
     // PA.number = Empty.number;
     // PA.padding[0] = Empty.padding[0];
     // PA.padding[1] = Empty.padding[1];

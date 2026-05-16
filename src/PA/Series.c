@@ -126,8 +126,12 @@ struct PACount n, struct PAElement Adj[])
 }
 DllExport struct PASeries PASeriesPerformRuin(struct PASeries PA)
 {
-    struct PASeries Empty;
-    return Empty;
+    
+    // struct PASeries Empty;
+    // struct PACount 
+    // struct PASeries Empty;
+    // struct PACount m;
+    // return Empty;
     //PAResult result;
     //return result;
     // return 0;

@@ -202,7 +202,7 @@ struct PASeries {
 };
 struct PAList {
 	struct PACount n;
-	struct PASeries adj;
+	struct PASeries adj[];
 	// struct PANod Nod;
 };
 struct FlyweightFlyweightClient {

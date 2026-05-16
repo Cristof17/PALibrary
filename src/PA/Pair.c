@@ -71,8 +71,11 @@ PAResult PAPairPerformCopy(struct PAPair Pair)
 // }
 DllExport struct PAPair PAPairPerformRuin(struct PAPair PA)
 {
-    struct PAPair Empty;
-    return Empty;
+    PA.Node = PAElementPerformRuin(PA.Node);
+    PA.Neigh = PAElementPerformRuin(PA.Neigh);
+    return PA;
+    // struct PAPair Empty;
+    // return Empty;
     // return 0;
 	// PAResult result;
 	// return result;

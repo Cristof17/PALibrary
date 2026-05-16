@@ -15,10 +15,11 @@ struct PANormalTree PANormalTreePerformConstruct()
     normalTree.tree = PATreePerformConstruct();
     return normalTree;
 }
-struct PANormalTree PANormalTreePerformRuin(struct PANormalTree NormalTree)
+struct PANormalTree PANormalTreePerformRuin(struct PANormalTree PA)
 {
     struct PANormalTree Empty;
-    return Empty;
+    PA.tree = PATreePerformRuin(PA.tree);
+    return PA;
 }
 struct PANormalTree PANormalTreePerformDelete(struct PANormalTree NormalTree)
 {

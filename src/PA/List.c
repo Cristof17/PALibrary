@@ -60,10 +60,21 @@ struct PAList PAListPerformInit(struct PAList List, struct PACount n, struct PAS
     // struct PAResult result;
     // return result;
 // }
-struct PAList PAListPerformRuin(struct PAList List)
+struct PAList PAListPerformRuin(struct PAList PA)
 {
-    struct PAList List;
-    return List;
+    // struct PAList List;
+    struct PACount x;
+    struct PACount y;
+    x.number.val = FIRST;
+    y.number.val = PA.n.number.val;
+    while (x.number.val < y.number.val)
+    {
+        // PA.adj[x.number.val]
+        PA.adj[x.number.val] = PASeriesPerformRuin(PA.adj[x.number.val]);
+        x.number.val ++;
+    }
+    PA.n = PACountPerformRuin(PA.n);
+    return PA;
     // return 0;
     // PAResult result;
     // return result;

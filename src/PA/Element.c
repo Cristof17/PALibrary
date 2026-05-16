@@ -51,10 +51,10 @@ struct PAElement PAElementPerformConstruct()
 //	copy.type=Element.type;
 	//return copy;
 // }
-struct PAElement PAElementPerformRuin(struct PAElement element)
+struct PAElement PAElementPerformRuin(struct PAElement PA)
 {
-    Data = PADataPerformRuin(Data);
-    Status = PAStatusPerformRuin(Status, Status.visited);
+    PA.index = PADataPerformRuin(PA.index);
+    PA.status = PAStatusPerformRuin(PA.status);
     // Element.padding[0] = NULL;
     // Element.padding[1] = NULL;
     // Element.padding[2] = NULL;
@@ -64,8 +64,8 @@ struct PAElement PAElementPerformRuin(struct PAElement element)
     // PAStatusPerformRuin(Status);
     // PAResourcePerformRuin()
     struct PAElement Element;
-    Element.index = Data;
-    Element.status = Status;
+    Element.index = PADataPerformRuin(PA.index);
+    Element.status = PAStatusPerformRuin(PA.status);
     return Element; 
     // PAResult result;
     // return result;

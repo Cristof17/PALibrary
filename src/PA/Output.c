@@ -74,8 +74,9 @@ DllExport struct PAOutput PAOutputPerformDelete(struct PAOutput Output)
 }
 DllExport struct PAOutput PAOutputPerformRuin(struct PAOutput PA)
 {
-    struct PAOutput Output;
-    return Output;
+    // PA.result = BFSRecordPerformRuin
+    // struct PAOutput Output;
+    // return Output;
     // struct PAOutput Empty;
     // return Empty;
     // return 0;

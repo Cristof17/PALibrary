@@ -17,7 +17,7 @@
 DllExport struct PASeries PASeriesPerformConstruct();
 DllExport struct PASeries PASeriesPerformInit(struct PASeries, struct PACount, struct PAElement[]);
 DllExport struct PASeries PASeriesPerformDelete(struct PASeries);
-DllExport struct PASeries PASeriesPerformRuin(struct PACount, struct PAElement[]);
+DllExport struct PASeries PASeriesPerformRuin(struct PASeries);
 // DllExport HRESULT PASerisPerformPutCount(struct PACount);
 // DllExport HRESULT PASeriesPerformPutArrayList(struct ArrayList);
 // DllExport HRESULT PASeriesAddElement(struct PAElement);

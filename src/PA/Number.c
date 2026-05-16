@@ -23,7 +23,9 @@ DllExport struct PANumber PANumberPerformDelete(struct PANumber Number)
 DllExport struct PANumber PANumberPerformRuin(struct PANumber PA)
 {
     struct PANumber Empty;
-    return Empty;
+    PA.val = '0';
+    return PA;
+    // return Empty;
     // struct PANumber number;
     // return number;
 }
