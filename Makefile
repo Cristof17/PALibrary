@@ -30,6 +30,7 @@ objects= obj/Input.o \
 	obj/Builder/Product.o \
 	obj/Builder/ConcreteBuilder.o \
 	obj/PA/NormalTree.o \
+	obj/PA/Number.o \
 	obj/PA/TransposeTree.o \
 	obj/Adapter/Client.o \
 	obj/Adapter/Target.o \
@@ -90,6 +91,7 @@ assemblies= src/Input.s \
 	src/Builder/Product.s \
 	src/Builder/ConcreteBuilder.s \
 	src/PA/NormalTree.s \
+	src/PA/Number.s \
 	src/PA/TransposeTree.s \
 	src/Adapter/Client.s \
 	src/Adapter/Target.s \
@@ -152,6 +154,7 @@ designs=src/Input.c \
 	src/Builder/Product.c \
 	src/Builder/ConcreteBuilder.c \
 	src/PA/NormalTree.c \
+	src/PA/Number.c \
 	src/PA/TransposeTree.c \
 	src/Adapter/Client.c \
 	src/Adapter/Target.c \
@@ -218,6 +221,7 @@ sources=src/Input.i \
 	src/Builder/Product.i \
 	src/Builder/ConcreteBuilder.i \
 	src/PA/NormalTree.i \
+	src/PA/Number.i \
 	src/PA/TransposeTree.i \
 	src/Adapter/Client.i \
 	src/Adapter/Target.i \
@@ -539,6 +543,8 @@ src/Builder/ConcreteBuilder.i : src/Builder/ConcreteBuilder.c include/Builder/Bu
 	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/NormalTree.i : src/PA/NormalTree.c include/types.h include/PA/NormalTree.h
 	-$(CPP) $(CPPFLAGS) -E $< > $@
+src/PA/Number.i : src/PA/Number.c include/PA/Number.h
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/PA/TransposeTree.i : src/PA/TransposeTree.c include/types.h include/PA/TransposeTree.h
 	-$(CPP) $(CPPFLAGS) -E $< > $@
 src/Adapter/Client.i : src/Adapter/Client.c include/Adapter/Client.h include/PA/Tree.h include/Adapter/Target.h 
@@ -670,6 +676,8 @@ src/Builder/Product.s: src/Builder/Product.i
 src/Builder/ConcreteBuilder.s: src/Builder/ConcreteBuilder.i
 	-$(CC) -S $< -o $@
 src/PA/NormalTree.s: src/PA/NormalTree.i
+	-$(CC) -S $< -o $@
+src/PA/Number.s: src/PA/Number.i
 	-$(CC) -S $< -o $@
 src/PA/TransposeTree.s: src/PA/TransposeTree.i
 	-$(CC) -S $< -o $@
@@ -1125,6 +1133,16 @@ ifeq ($(host-type),AArch64)
 	-$(AS) $(ASFLAGS) $< -o $@
 endif
 
+obj/PA/Number.o: src/PA/Number.s
+ifeq ($(host-type),arm64)
+	-$(AS) $(ASFLAGS) $< -o $@
+endif
+ifeq ($(host-type),x86_64)
+	-$(CC) -c $(CFLAGS) $< -o $@
+endif
+ifeq ($(host-type),AArch64)
+	-$(AS) $(ASFLAGS) $< -o $@
+endif
 
 
 obj/PA/TransposeTree.o: src/PA/TransposeTree.s
@@ -1732,6 +1750,7 @@ clean:
 	-rm src/Builder/Product.i
 	-rm src/Builder/ConcreteBuilder.i
 	-rm src/PA/NormalTree.i
+	-rm src/PA/Number.i
 	-rm src/PA/TransposeTree.i
 	-rm src/Adapter/Client.i
 	-rm src/Adapter/Target.i
@@ -1794,6 +1813,7 @@ clean:
 	-rm src/Builder/Product.s
 	-rm src/Builder/ConcreteBuilder.s
 	-rm src/PA/NormalTree.s
+	-rm src/PA/Number.s
 	-rm src/PA/TransposeTree.s
 	-rm src/Adapter/Client.s
 	-rm src/Adapter/Target.s
@@ -1823,7 +1843,6 @@ clean:
 	-rm src/State/State.s
 	-rm src/State/ConcreteStateA.s
 	-rm src/State/ConcreteStateB.s
- 
 	-rm src/Flyweight/Client.s 
 	-rm src/Flyweight/ConcreteFlyweight.s 
 	-rm src/Flyweight/FlyweightFactory.s
@@ -1887,6 +1906,7 @@ clean:
 	-rm obj/State/State.o
 	-rm obj/State/ConcreteStateA.o
 	-rm obj/State/ConcreteStateB.o
+	-rm obj/PA/Number.o
 # 	-rm obj/Bridge/ConcreteImplementorB.o
 	-rm obj/Flyweight/Client.o
 	-rm obj/Flyweight/ConcreteFlyweight.o
