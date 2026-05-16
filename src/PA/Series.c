@@ -28,15 +28,15 @@ PAResult PASeriesPerformCopy()
 //     // List.
 //     return list;
 // }
-PAResult PASeriesPerformPutCount(struct PACount M)
-{
-	PAResult result;
-	return result;
+// PAResult PASeriesPerformPutCount(struct PACount M)
+// {
+	// PAResult result;
+	// return result;
     // struct PAList list;
     //List.m = M;
     //return List;
     // return list;
-}
+// }
 // PAResult PASeriesPerformPutArrayList(struct ArrayList Adj)
 // {
 	// PAResult result;

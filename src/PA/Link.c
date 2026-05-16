@@ -41,13 +41,13 @@ struct PAPair PALinkPerformInit(struct PAPair Pair)
     // return link;
     return Pair;
 }
-struct PALink PALinkPerformPutPair(struct PALink Link,struct PAPair P)
-{
-    PAResult reusult;
-    Link.p = P;
-    return Link;
+// struct PALink PALinkPerformPutPair(struct PALink Link,struct PAPair P)
+// {
+    // PAResult reusult;
+    // Link.p = P;
+    // return Link;
     // return reusult;
-}
+// }
 struct PALink PALinkPerformDelete(struct PALink Link){
     struct PALink Empty;
     // PAResult result;

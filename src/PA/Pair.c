@@ -49,25 +49,25 @@ PAResult PAPairPerformCopy(struct PAPair Pair)
 //    pair.neigh = Pair.neigh;
     //return pair;
 }
-PAResult PAPairPerformPutNode(struct PAPair Pair)
-{
-	PAResult result;
-	return result;
+// PAResult PAPairPerformsNode(struct PAPair Pair)
+// {
+	// PAResult result;
+	// return result;
     // struct PAPair pair;
     //Pair.node = Node;
     //return Pair;
     // return pair;
-}
+// }
 
-PAResult PAPairPerformPutNeigh(struct PAPair Pair)
-{
-	PAResult result;
-	return result;
+// PAResult PAPairPerformPutNeigh(struct PAPair Pair)
+// {
+	// PAResult result;
+	// return result;
     // struct PAPair pair;
     //Pair.neigh = Neigh;
     //return Pair;
     // return pair;
-}
+// }
 DllExport struct PAPair PAPairPerformRuin(struct PAElement Node, struct PAElement Neigh)
 {
     struct PAPair Empty;
