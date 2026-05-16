@@ -19,6 +19,10 @@
 DllExport struct PATree PATreePerformConstruct()
 {
     struct PATree tree;
+    tree.n = PACountPerformConstruct();
+    tree.m = PACountPerformConstruct();
+    tree.source = PAElementPerformConstruct();
+    tree.adj = PAListPerformConstruct();
     return tree;
     // PAResult result;
     // return result;

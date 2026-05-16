@@ -6,11 +6,11 @@
 #ifndef _WIN95
 #include <PA/Series.h>
 #include <PA/Count.h>
-#include <PA/Series.h>
+#include <PA/Element.h>
 #elif defined _WIN95
 #include <PA\Series.h>
 #include <PA\Count.h>
-#include <PA\Series.h>
+#include <PA\Element.h>
 #endif
 /*
  * pasir.c
@@ -83,6 +83,19 @@ PAResult PASeriesPutFirst(struct PAResource);
 // }
 struct PASeries PASeriesPerformConstruct() {
 	struct PASeries series;
+
+    series.m = PACountPerformConstruct();
+
+    struct PANumber iterator;
+
+    struct PANumber j;
+
+    j.val = SIZE;
+    iterator.val = 1;
+    while (iterator.val < j.val)
+    {
+        series.adj[iterator.val] = PAElementPerformConstruct();
+    } 
 	return series;
 }
 void PASeriesPerformPrint(struct PASeries Series)
