@@ -187,11 +187,11 @@ mostlyclean:
 distclean:
 realclean:
 clobber:
-	git status
 install:
 print:
+	git status
 tar:
-	tar cvf palibrary.tar src/
+	tar cvf palibrary.tar src/PA/
 shar:
 dist:
 	tar cvf obj/libpa.a
