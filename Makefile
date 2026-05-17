@@ -5,13 +5,21 @@
 # with no Invariant Sections, no Front-Cover Texts, and no Back-Cover
 # Texts.  A copy of the license is included in the section entitled ``GNU
 # Free Documentation License''.
+.PHONY: all
+all: pa arraylist bfs
+# 	obj/PA/Destination.o
+# 	obj/PA/Arrow.o
+# 	obj/PA/Feature.o
 
-objects= obj/Input.o \
+objects_arraylist= obj/ArrayList/ArrayList.o \
+	obj/ArrayList/ArrayListPosition.o
+objects_bfs= obj/BFS/Procedure.o \
+	obj/BFS/Record.o
+# objects_arraylist= obj/Input.o
+objects_pa= obj/Input.o \
 	obj/Algorithm.o \
-	obj/BFS/Procedure.o \
 	obj/PA/Input.o \
 	obj/PA/Output.o \
-	obj/BFS/Record.o \
 	obj/Output.o \
 	obj/PA/Data.o \
 	obj/PA/Tree.o \
@@ -31,81 +39,17 @@ objects= obj/Input.o \
 	obj/PA/PADrawingEditor.o \
 	obj/PA/PALine.o \
 	obj/PA/PAShape.o \
-	obj/PA/PATextView.o \
-	obj/ArrayList/ArrayList.o \
-	obj/ArrayList/ArrayListPosition.o
-# 	obj/PA/Destination.o
-# 	obj/PA/Arrow.o
-# 	obj/PA/Feature.o
-assemblies= src/Input.s \
-	src/Algorithm.s \
-	src/BFS/Procedure.s \
-	src/PA/Input.s \
-	src/PA/Output.s \
-	src/BFS/Record.s \
-	src/Output.s \
-	src/PA/Tree.s \
-	src/PA/Data.s \
-	src/PA/List.s \
-	src/PA/Link.s \
-	src/PA/Element.s \
-	src/PA/Count.s \
-	src/PA/Pair.s \
-	src/PA/Result.s \
-	src/PA/Series.s \
-	src/PA/Value.s \
-	src/PA/Resource.s \
-	src/PA/NormalTree.s \
-	src/PA/Number.s \
-	src/PA/TransposeTree.s \
-	src/PA/PADrawingEditor.s \
-	src/PA/PALine.s \
-	src/PA/PAShape.s \
-	src/PA/PATextView.s \
-	src/ArrayList/ArrayList.s \
-	src/ArrayList/ArrayListPosition.s
-# 	src/PA/Destination.s
-# 	src/PA/Arrow.s
-# 	src/PA/Feature.s
+	obj/PA/PATextView.o
 
-designs=src/Input.c \
-	src/Algorithm.c \
-	src/BFS/Procedure.c \
-	src/PA/Input.c \
-	src/PA/Output.c \
-	src/BFS/Record.c \
-	src/Output.c \
-	src/PA/Data.c \
-	src/PA/Tree.c \
-	src/PA/Data.c \
-	src/PA/List.c \
-	src/PA/Link.c \
-	src/PA/Element.c \
-	src/PA/Count.c \
-	src/PA/Pair.c \
-	src/PA/Result.c \
-	src/PA/Series.c \
-	src/PA/Status.c \
-	src/PA/Value.c \
-	src/PA/Resource.c \
-	src/PA/NormalTree.c \
-	src/PA/Number.c \
-	src/PA/TransposeTree.c \
-	src/PA/PALine.c \
-	src/PA/PAShape.c \
-	src/PA/PATextView.c \
-	src/ArrayList/ArrayList.c \
-	src/ArrayList/ArrayListPosition.c
-
-# 	src/PA/Destination.c
-# 	src/PA/Arrow.c
-# 	src/PA/Feature.c
-sources=src/Input.i \
+sources_arraylist= src/ArrayList/ArrayList.i \
+	src/ArrayList/ArrayListPosition.i
+sources_bfs= src/BFS/Procedure.i \
+	src/BFS/Record.i
+sources_pa=src/Input.i \
 	src/Algorithm.i \
 	src/BFS/Procedure.i \
 	src/PA/Input.i \
 	src/PA/Output.i \
-	src/BFS/Record.i \
 	src/Output.i \
 	src/PA/Data.i \
 	src/PA/Tree.i \
@@ -126,9 +70,74 @@ sources=src/Input.i \
 	src/PA/PADrawingEditor.i \
 	src/PA/PALine.i \
 	src/PA/PAShape.i \
-	src/PA/PATextView.i \
-	src/ArrayList/ArrayList.i \
-	src/ArrayList/ArrayListPosition.i
+	src/PA/PATextView.i
+# sources_arraylist= src/Input.i
+
+designs_arraylist= src/ArrayList/ArrayList.c \
+	src/ArrayList/ArrayListPosition.c
+designs_bfs= src/BFS/Procedure.c \
+	src/BFS/Record.c
+# sources_= src/Input.i
+designs_pa=src/Input.c \
+	src/Algorithm.c \
+	src/PA/Input.c \
+	src/PA/Output.c \
+	src/Output.c \
+	src/PA/Data.c \
+	src/PA/Tree.c \
+	src/PA/Data.c \
+	src/PA/List.c \
+	src/PA/Link.c \
+	src/PA/Element.c \
+	src/PA/Count.c \
+	src/PA/Pair.c \
+	src/PA/Result.c \
+	src/PA/Series.c \
+	src/PA/Status.c \
+	src/PA/Value.c \
+	src/PA/Resource.c \
+	src/PA/NormalTree.c \
+	src/PA/Number.c \
+	src/PA/TransposeTree.c \
+	src/PA/PALine.c \
+	src/PA/PAShape.c \
+	src/PA/PATextView.c
+
+assemblies_arraylist= src/ArrayList/ArrayListPosition.s \
+ 	src/ArrayList/ArrayList.s
+assemblies_bfs= src/BFS/Procedure.s \
+	src/BFS/Record.s
+assemblies_pa= src/Input.s \
+	src/Algorithm.s \
+	src/PA/Input.s \
+	src/PA/Output.s \
+	src/Output.s \
+	src/PA/Tree.s \
+	src/PA/Data.s \
+	src/PA/List.s \
+	src/PA/Link.s \
+	src/PA/Element.s \
+	src/PA/Count.s \
+	src/PA/Pair.s \
+	src/PA/Result.s \
+	src/PA/Series.s \
+	src/PA/Value.s \
+	src/PA/Resource.s \
+	src/PA/NormalTree.s \
+	src/PA/Number.s \
+	src/PA/TransposeTree.s \
+	src/PA/PADrawingEditor.s \
+	src/PA/PALine.s \
+	src/PA/PAShape.s \
+	src/PA/PATextView.s
+# 	src/PA/Destination.s
+# 	src/PA/Arrow.s
+# 	src/PA/Feature.s
+
+
+# 	src/PA/Destination.c
+# 	src/PA/Arrow.c
+# 	src/PA/Feature.c
 
 	
 # 	src/PA/Destination.i
@@ -173,17 +182,24 @@ endif
 	
 # 	mkdir $<
 # ${objdirs}:`
-output=libpa.a
-output_dir=out
-all: ${objdirs} $(output_dir)/$(output)
-	${MAKE} $(designs) 
-	${MAKE} preprocess
-	${MAKE} compile
-	${MAKE} assemble
+output_bfs= libbfs.a
+output_arraylist= libarraylist.a
+output_pa= libpa.a
+output_dir= out
+
+pa: ${objdirs} ${designs_pa} ${sources_pa} ${assemblies_pa} ${objects_pa} $(output_dir)/$(output_pa)
+bfs: ${objdirs} ${designs_bfs} ${sources_bfs} ${assemblies_bfs} ${objects_bfs} $(output_dir)/$(output_bfs)
+arraylist: ${objdirs} ${designs_arraylist} ${sources_arraylist} ${assemblies_arraylist} ${objects_arraylist} $(output_dir)/$(output_arraylist)
+
+#${MAKE} $(designs_pa) 
+#${MAKE} $(sources_pa)
+#${MAKE} $(objects_pa)
+#${MAKE} $(assemblies_pa)
+#${MAKE} $(output_dir)/$(output_pa)
 mostlyclean:
-	-rm $(objects)
-	-rm $(assemblies)
-	-rm $(sources)
+	-rm $(objects_pa)
+	-rm $(assemblies_pa)
+	-rm $(sources_pa)
 distclean:
 realclean:
 clobber:
@@ -223,9 +239,9 @@ build:
 # 	@echo "Build"
 # 	@echo "$<"
 # preprocess: $(sources)
-preprocess: $(sources)
-compile: $(assemblies)
-assemble: $(objects)
+preprocess: $(sources_pa)
+compile: $(assemblies_pa)
+assemble: $(objects_pa)
 #	${MAKE} obj/Input.o
 #	${MAKE} obj/Algorithm.o
 #	${MAKE} obj/BFS/Procedure.o
@@ -918,10 +934,6 @@ endif
 
 
 
-$(output_dir)/$(output): $(objects)
-ifeq ($(host-type),arm64)
-	$(AR) -r $@ $^
-endif
 #src/Input.c: 
 #src/Algorithm.c: 
 #src/BFS/Procedure.c: 
@@ -995,7 +1007,18 @@ mkinstalldirs: $(srcdir)/mkinstalldirs
 
 #installcheck:
 #	echo "installcheck"
-
+$(output_dir)/$(output_pa): $(objects_pa)
+ifeq ($(host-type),arm64)
+	$(AR) -r $@ $^
+endif
+$(output_dir)/$(output_bfs): $(objects_bfs)
+ifeq ($(host-type),arm64)
+	$(AR) -r $@ $^
+endif
+$(output_dir)/$(output_arraylist): $(objects_arraylist)
+ifeq ($(host-type),arm64)
+	$(AR) -r $@ $^
+endif
 clean:
 #	${MAKE} ARCH=${host-type} build
 # 	-rm libpa.a
@@ -1094,7 +1117,9 @@ clean:
 #	-rm obj/ArrayList/ArrayListObject.o
 	-rm obj/PA/Number.o
 # 	-rm obj/Bridge/ConcreteImplementorB.o
-	-rm out/libpa.a
+	-rm out/$(output_pa)
+	-rm out/$(output_bfs)
+	-rm out/$(output_arraylist)
 # 	-rm -r obj/BFS/
 # 	-rm -r obj/Adapter/
 # 	-rm -r obj/Iterator/
