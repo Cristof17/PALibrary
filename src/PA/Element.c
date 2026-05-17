@@ -51,8 +51,10 @@ struct PAElement PAElementPerformConstruct()
 //	copy.type=Element.type;
 	//return copy;
 // }
-DllExport struct PAElement PAElementPerformInit(struct PAElement Element, struct PAData Data, struct PAStatus Status)
+DllExport struct PAElement PAElementPerformInit(struct PAElement Element, struct PAData Value, struct PAStatus Value2)
 {
+    Element.index = Value;
+    Element.status = Value2;
     //struct PAElement element;
     // element. = Element.Index;
     //element.status = Element.status;

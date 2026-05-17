@@ -21,6 +21,7 @@ DllExport struct PACount PACountPerformConstruct()
 }
 DllExport struct PACount PACountPerformInit(struct PACount Count, struct PANumber Value)
 {
+    Count.number = Value;
     // struct PACount count;
     // count.number = Number;
     return Count;
@@ -39,8 +40,8 @@ DllExport struct PACount PACountPerformRuin(struct PACount PA)
     // Empty.padding[2] = NULL;
     // Empty.padding[3] = NULL;
     // Empty.number.val = NULL;
-    struct PACount Empty;
-    Empty.number = PANumberPerformRuin(PA.number);
+    // struct PACount Empty;
+    // Empty.number = PANumberPerformRuin(PA.number);
     // PA.number = Empty.number;
     // PA.padding[0] = Empty.padding[0];
     // PA.padding[1] = Empty.padding[1];
