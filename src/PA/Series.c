@@ -52,7 +52,16 @@ DllExport struct PASeries PASeriesPerformInit(struct PASeries Series,
         //return series;
         struct PASeries series;
         series.m = Value;
-        series.adj = Value2;
+        struct PANumber x;
+        struct PANumber y;
+        x.val = FIRST;
+        y.val = Value.number.val;
+        while (x.val < y.val)
+        {
+            series.adj[x.val] = Value2[x.val];
+            x.val++;
+        }
+        // series.adj = Value2;
         return series;
     }
     DllExport struct PASeries PASeriesPerformDelete(struct PASeries Series)
