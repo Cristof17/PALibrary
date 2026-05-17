@@ -10,7 +10,7 @@
 // struct Input;
 // typedef struct Input Input;
 DllExport struct Input InputPerformConstruct();
-DllExport struct Input InputPerformInit(struct PACount, struct PACount, struct List, struct PAElement);
+DllExport struct Input InputPerformInit(struct PACount, struct PACount, struct PAElement);
 DllExport struct Input InputPerformCopy(struct Input);
 DllExport struct PAResult InputPerformDelete(struct PAInput);
 DllExport void InputRuin();
