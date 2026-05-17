@@ -1143,7 +1143,7 @@ clean:
 
 run:
 	@echo "Running"
-.PHONY: build preprocess assemble compile 
+# .PHONY: build preprocess assemble compile 
 # input.s: src/input.c
 # 	CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
 # algorithm.s: src/algorithm.c
