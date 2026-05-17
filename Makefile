@@ -47,7 +47,6 @@ sources_bfs= src/BFS/Procedure.i \
 	src/BFS/Record.i
 sources_pa=src/Input.i \
 	src/Algorithm.i \
-	src/BFS/Procedure.i \
 	src/PA/Input.i \
 	src/PA/Output.i \
 	src/Output.i \
