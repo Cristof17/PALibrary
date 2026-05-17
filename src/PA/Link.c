@@ -21,8 +21,9 @@ DllExport struct PALink PALinkPerformConstruct()
     // return link;÷
     // link.p = P;÷
 }
-DllExport struct PALink PALinkPerformInit(struct PALink Link, struct PAPair p)
+DllExport struct PALink PALinkPerformInit(struct PALink Link, struct PAPair Value)
 {
+    Link.p = Value;
     // struct PALink link;
     // struct PAPair pair;
     // Link.p = Pair;

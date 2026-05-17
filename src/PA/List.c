@@ -23,8 +23,10 @@ DllExport struct PAList PAListPerformConstruct()
     // list.adj = PASeriesPerformConstruct();
     return list;
 }
-DllExport struct PAList PAListPerformInit(struct PAList List, struct PACount n, struct PASeries adj)
+DllExport struct PAList PAListPerformInit(struct PAList List, struct PACount Value, struct PASeries Value2)
 {
+    List.n = Value;
+    List.neigh = Value2;
     // struct PAList list;
     // list.adj = List.adj;
     return List;
