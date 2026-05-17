@@ -175,24 +175,33 @@ endif
 # ${objdirs}:`
 output=libpa.a
 output_dir=out
-mostlyclean:
-distclean:
-realclean:
-clobber:
-install:
-print:
-tar:
-shar:
-dist:
-check:
-test:
-lib: out/$(output)
-# build: preprocess compile assemble link_windows
-all: ${objdirs}
+all: ${objdirs} $(output_dir)/$(output)
 	${MAKE} $(designs) 
 	${MAKE} preprocess
 	${MAKE} compile
 	${MAKE} assemble
+mostlyclean:
+	-rm $(objects)
+	-rm $(assemblies)
+	-rm $(sources)
+distclean:
+realclean:
+clobber:
+	git status
+install:
+print:
+tar:
+	tar cvf palibrary.tar src/
+shar:
+dist:
+	tar cvf obj/libpa.a
+check:
+test:
+ifeq ($(host-type), arm64)
+	file out/libpa.a
+endif
+lib: out/$(output)
+# build: preprocess compile assemble link_windows
 ${subdirs}:
 	-mkdir $@
 # 	${MAKE} -C $@ all
