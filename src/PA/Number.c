@@ -10,10 +10,11 @@ DllExport struct PANumber PANumberPerformConstruct()
     // number.val =  random;
     return number;
 }
-DllExport struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char val)
+DllExport struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char Value)
 {
-    struct PANumber number;
-    return number;
+    // struct PANumber number;
+    Number.val = Value;
+    return Number;
 }
 DllExport struct PANumber PANumberPerformDelete(struct PANumber Number)
 {
