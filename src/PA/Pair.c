@@ -22,8 +22,10 @@ DllExport struct PAPair PAPairPerformConstruct()
     //return pair;
 }
 // struct PAPair PAPairRuin(struct PAPair Pair) {
-DllExport struct PAPair PAPairPerformInit(struct PAPair Pair, struct PAElement Node, struct PAElement Neigh)
+DllExport struct PAPair PAPairPerformInit(struct PAPair Pair, struct PAElement Value, struct PAElement Value2)
 {
+    Pair.Node = Value;
+    Pair.Neigh = Value2;
     // struct PAPair pair;
     return Pair;
 	// PAResult result;

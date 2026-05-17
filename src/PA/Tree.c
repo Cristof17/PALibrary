@@ -34,8 +34,12 @@ DllExport struct PATree PATreePerformConstruct()
     // tree.source = Source;
     // return tree;
 }
-DllExport struct PATree PATreePerformInit(struct PATree Tree, struct PACount N, struct PACount M, struct PASeries adj[], struct PAElement source)
+DllExport struct PATree PATreePerformInit(struct PATree Tree, struct PACount Value, struct PACount Value2, struct PASeries Value3[], struct PAElement Value4)
 {
+    Tree.n = Value;
+    Tree.m = Value2;
+    Tree.adj = Value3;
+    Tree.source = Value4;
     // struct PATree tree;
     // tree.n.number = 2;
     // tree.m.number = 3;

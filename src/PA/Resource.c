@@ -7,8 +7,9 @@
 #include <PA\Number.h>
 #endif
 
-DllExport struct PAResource PAResourcePerformInit(struct PAResource Resource, struct PANumber value)
+DllExport struct PAResource PAResourcePerformInit(struct PAResource Resource, struct PANumber Value)
 {
+    Resource.value = Value;
     return Resource;
 }
 DllExport struct PAResource PAResourcePerformConstruct()

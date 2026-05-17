@@ -53,6 +53,7 @@ DllExport struct PACount PACountPerformRuin(struct PACount PA)
     // return result;
     // return PARESULT_SUCCESS;
     // return Empty;
+    return PA;    
 }
 DllExport struct PACount PACountPerformDelete(struct PACount PA)
 {

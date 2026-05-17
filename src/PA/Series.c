@@ -37,7 +37,7 @@ struct PASeries PASeriesPerformConstruct() {
     return series;
 }
 DllExport struct PASeries PASeriesPerformInit(struct PASeries Series,
-    struct PACount n, struct PAElement Adj[])
+    struct PACount Value, struct PAElement Value2[])
     {
         // PAResult result;
         // return result;
@@ -51,6 +51,8 @@ DllExport struct PASeries PASeriesPerformInit(struct PASeries Series,
         // series.n = N;
         //return series;
         struct PASeries series;
+        series.m = Value;
+        series.adj = Value2;
         return series;
     }
     DllExport struct PASeries PASeriesPerformDelete(struct PASeries Series)

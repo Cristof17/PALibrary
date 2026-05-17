@@ -10,8 +10,9 @@
 #include <PA\Resource.h>
 #endif
 
-DllExport struct PAStatus PAStatusPerformInit(struct PAStatus Status, struct PAResource Resource)
+DllExport struct PAStatus PAStatusPerformInit(struct PAStatus Status, struct PAResource Value)
 {
+    Status.visited = Value;
     return Status;
 }
 DllExport struct PAStatus PAStatusPerformDelete(struct PAStatus Status)
