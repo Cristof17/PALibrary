@@ -34,7 +34,7 @@ DllExport struct PATree PATreePerformConstruct()
     // tree.source = Source;
     // return tree;
 }
-DllExport struct PATree PATreePerformInit(struct PATree Tree, struct PACount Value, struct PACount Value2, struct PASeries Value3[], struct PAElement Value4)
+DllExport struct PATree PATreePerformInit(struct PATree Tree, struct PACount Value, struct PACount Value2, struct PAList Value3, struct PAElement Value4)
 {
     Tree.n = Value;
     Tree.m = Value2;
@@ -63,15 +63,16 @@ DllExport struct PATree PATreePerformRuin(struct PATree PA)
     PA.n = PACountPerformRuin(PA.n);
     PA.m = PACountPerformRuin(PA.m);
     PA.source = PAElementPerformRuin(PA.source);
-    struct PACount x;
-    struct PACount y;
-    x.number.val = FIRST;
-    y.number.val = PA.n.number.val;
-    while (x.number.val <= y.number.val)
-    {
-        PA.adj[x.number.val] = PAListPerformDelete(PA.adj[x.number.val]);
-        x.number.val++;
-    }
+    PA.adj = PAListPerformRuin(PA.adj);
+    // struct PACount x;
+    // struct PACount y;
+    // x.number.val = FIRST;
+    // y.number.val = PA.n.number.val;
+    // while (x.number.val <= y.number.val)
+    // {
+    //     PA.adj = PAListPerformDelete(PA.adj[x.number.val]);
+    //     x.number.val++;
+    // }
     // PA.adj = 
     // struct PATree tree;
     // int var = 1;

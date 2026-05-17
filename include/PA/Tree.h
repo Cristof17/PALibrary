@@ -11,7 +11,7 @@
 // struct PATree PATreeConstruct(struct OPAResult);
 DllExport struct PATree PATreePerformConstruct();
 // DllExport struct PACount PATreeSize();
-DllExport struct PATree PATreePerformInit(struct PATree, struct PACount, struct PACount, struct PASeries[], struct PAElement);
+DllExport struct PATree PATreePerformInit(struct PATree, struct PACount, struct PACount, struct PAList, struct PAElement);
 // DllExport HRESULT PATreePerformCopy();
 // DllExport HRESULT PATreePerformPutCount(struct PACount, struct PACount);
 // struct PATree PATreePutList(struct PATree, struct PAList);
