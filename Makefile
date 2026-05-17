@@ -181,14 +181,34 @@ endif
 	
 # 	mkdir $<
 # ${objdirs}:`
-output_bfs= libbfs.a
-output_arraylist= libarraylist.a
-output_pa= libpa.a
-output_dir= out
+lib_bfs= libbfs.a
+lib_arraylist= libarraylist.a
+lib_pa= libpa.a
 
-pa: ${objdirs} ${designs_pa} ${sources_pa} ${assemblies_pa} ${objects_pa} $(output_dir)/$(output_pa)
-bfs: ${objdirs} ${designs_bfs} ${sources_bfs} ${assemblies_bfs} ${objects_bfs} $(output_dir)/$(output_bfs)
-arraylist: ${objdirs} ${designs_arraylist} ${sources_arraylist} ${assemblies_arraylist} ${objects_arraylist} $(output_dir)/$(output_arraylist)
+output_dir= out
+output_bfs= $(output_dir)/$(lib_bfs)
+output_arraylist= $(output_dir)/$(lib_arraylist)
+output_pa= $(output_dir)/$(lib_pa)
+
+assemble_pa: $(assemblies_pa)
+assemble_arraylist: $(assemblies_arraylist)
+assemble_bfs: $(assemblies_bfs)
+
+compile_pa: $(objects_pa)
+compile_bfs: $(objects_bfs)
+compile_arraylist: $(objects_arraylist)
+
+preprocess_pa: $(sources_pa)
+preprocess_bfs: $(sources_bfs)
+preprocess_arraylist: $(sources_arraylist)
+
+link_pa: $(output_pa)
+link_bfs: $(output_bfs)
+link_arraylist: $(output_arraylist)
+
+pa: ${designs_pa} ${sources_pa} ${assemblies_pa} ${objects_pa} ${output_pa}
+bfs: ${designs_bfs} ${sources_bfs} ${assemblies_bfs} ${objects_bfs} $(output_bfs)
+arraylist: ${designs_arraylist} ${sources_arraylist} ${assemblies_arraylist} ${objects_arraylist} $(output_arraylist)
 
 #${MAKE} $(designs_pa) 
 #${MAKE} $(sources_pa)
@@ -238,9 +258,9 @@ build:
 # 	@echo "Build"
 # 	@echo "$<"
 # preprocess: $(sources)
-preprocess: $(sources_pa)
-compile: $(assemblies_pa)
-assemble: $(objects_pa)
+preprocess: preprocess_pa preprocess_bfs preprocess_arraylist
+compile: compile_pa compile_arraylist compile_bfs
+assemble: assemble_pa assemble_bfs assemble_arraylist
 #	${MAKE} obj/Input.o
 #	${MAKE} obj/Algorithm.o
 #	${MAKE} obj/BFS/Procedure.o
@@ -299,7 +319,7 @@ assemble: $(objects_pa)
 #	${MAKE} obj/Bridge/ConcreteImplementorB.o
 #	#-mkdir $(dir $<)
 	@echo "Building"
-link: $(output_dir)/$(output)
+link: link_pa link_bfs link_arraylist
 
 # libpa.a: $(objects)
 # 	$(LD) $(LDFLAGS) $(objects) -static -o $@
@@ -1006,17 +1026,17 @@ mkinstalldirs: $(srcdir)/mkinstalldirs
 
 #installcheck:
 #	echo "installcheck"
-$(output_dir)/$(output_pa): $(objects_pa)
+$(output_dir)/$(lib_pa):
 ifeq ($(host-type),arm64)
-	$(AR) -r $@ $^
+	$(AR) -r $@ $(objects_pa)
 endif
-$(output_dir)/$(output_bfs): $(objects_bfs)
+$(output_dir)/$(lib_bfs):
 ifeq ($(host-type),arm64)
-	$(AR) -r $@ $^
+	$(AR) -r $@ $(objects_bfs)
 endif
-$(output_dir)/$(output_arraylist): $(objects_arraylist)
+$(output_dir)/$(lib_arraylist):
 ifeq ($(host-type),arm64)
-	$(AR) -r $@ $^
+	$(AR) -r $@ $(objects_arraylist)
 endif
 clean:
 #	${MAKE} ARCH=${host-type} build
@@ -1116,9 +1136,9 @@ clean:
 #	-rm obj/ArrayList/ArrayListObject.o
 	-rm obj/PA/Number.o
 # 	-rm obj/Bridge/ConcreteImplementorB.o
-	-rm out/$(output_pa)
-	-rm out/$(output_bfs)
-	-rm out/$(output_arraylist)
+	-rm out/libpa.a
+	-rm out/libbfs.a
+	-rm out/libarraylist.a
 # 	-rm -r obj/BFS/
 # 	-rm -r obj/Adapter/
 # 	-rm -r obj/Iterator/
