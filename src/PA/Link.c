@@ -40,13 +40,15 @@ DllExport struct PALink PALinkPerformRuin(struct PALink PA)
     // return result;
     return PA;
 }
-// struct PALink PALinkPerformCopy(struct PALink Link)
-// {
-    // struct PALink link;
+struct PALink PALinkPerformCopy(struct PALink from, struct PALink to)
+{
+    struct PALink temp;
+    temp.p = PAPairPerformCopy(from.p, to.p);
+    return temp;
     // link = PALinkPerformInit(Link);
 //    link.p = Link.p;
     // return link;
-// }
+}
 // struct PALink PALinkPerformPutPair(struct PALink Link,struct PAPair P)
 // {
     // PAResult reusult;
