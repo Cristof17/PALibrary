@@ -13,7 +13,7 @@ all: pa arraylist bfs
 test_pa_arm64:
 	-$(CPP) -Iinclude/ $(CPPFLAGS) test/test.c > test/test.i
 	-$(CC) -S test/test.i -o test/test.s
-	-$(LD) $(LDFLAGS) -arch arm64 -platform_version macos out/libpa.a test/test.s -o test/test
+	-$(LD) test/test.o out/libpa.a -o out/test -arch arm64 -platform_version macos 3.0 2.0
 
 objects_arraylist= obj/ArrayList/ArrayList.o \
 	obj/ArrayList/ArrayListPosition.o
