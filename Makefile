@@ -10,6 +10,18 @@ all: pa arraylist bfs
 # 	obj/PA/Destination.o
 # 	obj/PA/Arrow.o
 # 	obj/PA/Feature.o
+test_pa:
+	-$(CPP) -Iinclude/ $(CPPFLAGS) test/test.c > test/test.i
+	-$(CC) -S test/test.i -o test/test.s
+ifeq ($(host-type),arm64)
+	-$(AS) $(ASFLAGS) test/test.s -o test/test.o
+endif
+ifeq ($(host-type),x86_64)
+	-$(CC) -c $(CFLAGS) test/test.s -o test/test.o
+endif
+ifeq ($(host-type),AArch64)
+	-$(AS) $(ASFLAGS) test/test.s -o test/test.o
+endif
 
 objects_arraylist= obj/ArrayList/ArrayList.o \
 	obj/ArrayList/ArrayListPosition.o
@@ -231,7 +243,7 @@ shar:
 dist:
 	tar cvf obj/libpa.a
 check:
-test:
+test: $(test_pa)
 ifeq ($(host-type), arm64)
 	file out/libpa.a
 endif
@@ -535,6 +547,9 @@ src/PA/PATextView.s: src/PA/PATextView.i
 src/ArrayList/ArrayList.s: src/ArrayList/ArrayList.i
 	-$(CC) -S $< -o $@
 src/ArrayList/ArrayListPosition.s: src/ArrayList/ArrayListPosition.i
+	-$(CC) -S $< -o $@
+
+test/test.s: test/test.i
 	-$(CC) -S $< -o $@
 
 ASFLAGS=
