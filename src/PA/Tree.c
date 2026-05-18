@@ -61,7 +61,10 @@ DllExport struct PATree PATreePerformInit(struct PATree Tree, struct PACount Val
 DllExport struct PATree PATreePerformCopy(struct PATree from, struct PATree to)
 {
     struct PATree temp;
-    // temp.n = PACountPerformCopy(from.m)
+    temp.n = PACountPerformCopy(from.n,to.n);
+    temp.m = PACountPerformCopy(from.m,to.m);
+    temp.adj = PAListPerformCopy(from.adj,to.adj);
+    // temp.source =PAElementPerformCopy
     return temp;
 }
 DllExport struct PATree PATreePerformRuin(struct PATree PA)

@@ -23,6 +23,22 @@ DllExport struct PAList PAListPerformConstruct()
     // list.adj = PASeriesPerformConstruct();
     return list;
 }
+DllExport struct PAList PAListPerformCopy(struct PAList from, struct PAList to)
+{
+    struct PAList temp;
+    temp.n = PACountPerformCopy(from.n,to.n);
+    struct PACount x;
+    struct PACount y;
+    x.number.val = FIRST;
+    y.number.val = from.n.number.val;
+    while (x.number.val < y.number.val)
+    {
+        temp.neigh[x.number.val] = PASeriesPerformCopy(from.neigh[x.number.val], to.neigh[x.number.val]);
+        x.number.val++;
+    }
+    return temp;
+}
+
 DllExport struct PAList PAListPerformInit(struct PAList List, struct PACount Value, struct PASeries Value2[])
 {
     List.n = Value;

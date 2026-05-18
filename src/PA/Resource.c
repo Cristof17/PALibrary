@@ -12,6 +12,12 @@ DllExport struct PAResource PAResourcePerformInit(struct PAResource Resource, st
     Resource.value = Value;
     return Resource;
 }
+DllExport struct PAResource PAResourcePerformCopy(struct PAResource from, struct PAResource to)
+{
+    struct PAResource temp;
+    temp.value = PANumberPerformCopy(from.value, to.value);
+    return temp;
+}
 DllExport struct PAResource PAResourcePerformConstruct()
 {
     struct PAResource resource;

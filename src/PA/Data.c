@@ -16,6 +16,12 @@ DllExport struct PAData PADataPerformConstruct()
     // Data.Resource = PAResourcePerformConstruct(); 
     return Data;
 }
+DllExport struct PAData PADataPerformCopy(struct PAData from, struct PAData to)
+{
+    struct PAData temp;
+    temp.Resource = PAResourcePerformCopy(from.Resource, to.Resource);
+    return temp;
+}
 // struct PAData PADataPerformCopy(struct PAData Data)
 // {
     // struct PAData copy;

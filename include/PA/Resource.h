@@ -7,4 +7,5 @@ DllExport struct PAResource PAResourcePerformInit(struct PAResource, struct PANu
 DllExport struct PAResource PAResourcePerformConstruct();
 DllExport struct PAResource PAResourcePerformRuin(struct PAResource);
 DllExport struct PAResource PAResourcePerformDelete(struct PAResource);
+DllExport struct PAResource PAResourcePerformCopy(struct PAResource, struct PAResource);
 #endif

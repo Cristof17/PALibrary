@@ -30,6 +30,12 @@ DllExport void PAElementReset(struct PAElement Element)
     Element.status.visited.value.val = FALSE;
     return;
 }
+DllExport struct PAElement PAElementPerformCopy(struct PAElement from, struct PAElement to)
+{
+    struct PAElement temp;
+    temp.index = PADataPerformCopy(from.index, to.index);
+    return temp;
+}   
 struct PAElement PAElementPerformConstruct()
 {
     struct PAElement result;

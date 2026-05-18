@@ -56,6 +56,16 @@ DllExport struct PASeries PASeriesPerformCopy(struct PASeries from, struct PASer
     }
     return temp;
 }
+DllExport struct PASeries PASeriesPerformCopy(struct PASeries from, struct PASeries to)
+{
+    struct  PASeries temp;
+    temp.m = PACountPerformCopy(from.m, to.m);
+    struct PACount x;
+    struct PACount y;
+    y.number.val = from.m.number.val;
+    x.number.val = FIRST;
+    
+}
 DllExport struct PASeries PASeriesPerformInit(struct PASeries Series,
     struct PACount Value, struct PAElement Value2[])
     {
