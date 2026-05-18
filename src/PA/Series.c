@@ -84,10 +84,20 @@ DllExport struct PASeries PASeriesPerformInit(struct PASeries Series,
         // series.adj = Value2;
         return series;
     }
-    DllExport struct PASeries PASeriesPerformDelete(struct PASeries Series)
+    DllExport struct PASeries PASeriesPerformDelete(struct PASeries PA)
     {
-        struct PASeries Empty;
-        return Empty;
+        struct PANumber x;
+        struct PANumber y;
+        x.val = PA.m.number.val;
+        y.val = FIRST;
+        while (y.val <= x.val)
+        {
+            PA.adj[y.val] = PAElementPerformDelete(PA.adj[y.val]);
+            y.val++;
+        }
+        // struct PASeries Empty;
+        return PA;
+        // return Empty;
     }
     // PAResult PASeriesPerformCopy()
     // {
