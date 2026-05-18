@@ -34,6 +34,7 @@ DllExport struct PAElement PAElementPerformCopy(struct PAElement from, struct PA
 {
     struct PAElement temp;
     temp.index = PADataPerformCopy(from.index, to.index);
+    temp.status = PAStatusPerformCopy(from.status,to.status);
     return temp;
 }   
 struct PAElement PAElementPerformConstruct()
@@ -57,7 +58,7 @@ struct PAElement PAElementPerformConstruct()
 //	copy.index=Element.index;
 //	copy.status=Element.status;
 //	copy.type=Element.type;
-	//return copy;
+	//return ;
 // }
 DllExport struct PAElement PAElementPerformInit(struct PAElement Element, struct PAData Value, struct PAStatus Value2)
 {
