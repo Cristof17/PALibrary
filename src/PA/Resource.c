@@ -7,6 +7,15 @@
 #include <PA\Number.h>
 #endif
 
+DllExport struct PAResource PAResourcePerformConstruct()
+{
+    struct PAResource resource;
+    // resource = PAResourcePerformC
+    resource.value = PANumberPerformConstruct();
+    // resource = PAResourcePerformInit(Data,resource.value)
+    resource = PAResourcePerformInit(resource,resource.value);
+    return resource;
+}
 DllExport struct PAResource PAResourcePerformInit(struct PAResource Resource, struct PANumber Value)
 {
     struct PAResource resource;
@@ -20,15 +29,6 @@ DllExport struct PAResource PAResourcePerformCopy(struct PAResource from, struct
     struct PAResource temp;
     temp.value = PANumberPerformCopy(from.value, to.value);
     return temp;
-}
-DllExport struct PAResource PAResourcePerformConstruct()
-{
-    struct PAResource resource;
-    // resource = PAResourcePerformC
-    resource.value = PANumberPerformConstruct();
-    // resource = PAResourcePerformInit(Data,resource.value)
-    resource = PAResourcePerformInit(resource,resource.value);
-    return resource;
 }
 DllExport struct PAResource PAResourcePerformRuin(struct PAResource PA)
 {

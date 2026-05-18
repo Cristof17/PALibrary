@@ -18,17 +18,34 @@
 // }
 DllExport struct PATree PATreePerformConstruct()
 {
-    struct PATree tree;
-    struct PACount countN = PACountPerformConstruct();
-    struct PACount countM = PACountPerformConstruct();
-    struct PAElement element = PAElementPerformConstruct();
-    struct PAList list = PAListPerformConstruct();
-    tree = PATreePerformInit(tree,countN,countM,list,element);
-    // tree.n = PACountPerformConstruct();
-    // tree.m = PACountPerformConstruct();
-    // tree.source = PAElementPerformConstruct();
-    // tree.adj = PAListPerformConstruct();
-    return tree;
+    struct PATree temp;
+    struct PACount n;
+    struct PACount m;
+    struct PAList adj;
+    struct PAElement element;
+    n = PACountPerformConstruct();
+    m = PACountPerformConstruct();
+    adj = PAListPerformConstruct();
+    element = PAElementPerformConstruct();
+    temp.n = PACountPerformCopy(n,temp.n);
+    temp.m = PACountPerformCopy(m,temp.m);
+    temp.adj = PAListPerformCopy(adj,temp.adj);
+    temp.source = PAElementPerformCopy(element,temp.source);
+    // Tree.n = Value;
+    // Tree.m = Value2;
+    // Tree.adj = Value3;
+    // Tree.source = Value4;
+    // struct PATree tree;
+    // struct PACount countN = PACountPerformConstruct();
+    // struct PACount countM = PACountPerformConstruct();
+    // struct PAElement element = PAElementPerformConstruct();
+    // struct PAList list = PAListPerformConstruct();
+    // tree = PATreePerformInit(tree,countN,countM,list,element);
+    // // tree.n = PACountPerformConstruct();
+    // // tree.m = PACountPerformConstruct();
+    // // tree.source = PAElementPerformConstruct();
+    // // tree.adj = PAListPerformConstruct();
+    // return tree;
     // PAResult result;
     // return result;
     // struct PATree tree;
@@ -38,13 +55,11 @@ DllExport struct PATree PATreePerformConstruct()
     // tree.adj = Adj;
     // tree.source = Source;
     // return tree;
+    return temp;
 }
 DllExport struct PATree PATreePerformInit(struct PATree Tree, struct PACount Value, struct PACount Value2, struct PAList Value3, struct PAElement Value4)
 {
-    Tree.n = Value;
-    Tree.m = Value2;
-    Tree.adj = Value3;
-    Tree.source = Value4;
+    
     // struct PATree tree;
     // tree.n.number = 2;
     // tree.m.number = 3;

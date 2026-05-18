@@ -13,14 +13,27 @@
 DllExport struct PAData PADataPerformConstruct()
 {
     struct PAData data;
-    struct PAResource resource;
-    resource = PAResourcePerformConstruct();
-    data.Resource = resource;
+    // struct PAResource resource;
+    data.Resource = PAResourcePerformConstruct();
+    data = PADataPerformInit(data, data.Resource);
+    // data.Resource = resource;
     //  = data;
     // Data.Resource = PAResourcePerformInit(Data.Resource, )
     // PADataPerformInit(Data,)
     // Data.Resource = PAResourcePerformConstruct(); 
     return data;
+}
+DllExport struct PAData PADataPerformInit(struct PAData Data, struct PAResource Value)
+{
+    struct PAData temp;
+    temp.Resource = PAResourcePerformConstruct();
+    Data = temp;
+    // Data.Resource = Value;
+    return Data;
+    // struct PAData data;
+    // data.Resource = Data.Resource;
+    // struct PAData data;
+    // data.resource = Data.resource;
 }
 DllExport struct PAData PADataPerformCopy(struct PAData from, struct PAData to)
 {
@@ -39,15 +52,6 @@ DllExport struct PAData PADataPerformCopy(struct PAData from, struct PAData to)
     //    copy.resource = Data.resource;
     // return copy;
 // }
-DllExport struct PAData PADataPerformInit(struct PAData Data, struct PAResource Value)
-{
-    Data.Resource = Value;
-    return Data;
-    // struct PAData data;
-    // data.Resource = Data.Resource;
-    // struct PAData data;
-    // data.resource = Data.resource;
-}
 // struct PAData PADataPerformPutResource(struct PAData Data, struct PAResource Resource)
 // {
     // struct PAData data;

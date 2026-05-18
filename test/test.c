@@ -4,9 +4,16 @@
 #include <PA/Element.h>
 #include <PA/Data.h>
 #include <PA/Element.h>
+#include <PA/Resource.h>
+#include <PA/Number.h>
 #include <stdio.h>
 int main()
 {
+	struct PANumber number;
+	number = PANumberPerformConstruct();
+	struct PAResource resource;
+	resource = PAResourcePerformConstruct();
+	printf("testing Resource %d\n",resource.value.val);
 	struct PATree tree = PATreePerformConstruct();
 	struct PATree tree2 = PATreePerformConstruct();
 	printf("testing tree %d\n", tree.n.number.val);
@@ -17,6 +24,7 @@ int main()
 	Data = PADataPerformConstruct();
 	printf("testing Data %d\n",Data.Resource.value.val);
 	struct PAElement element = PAElementPerformConstruct();
+
 	// printf("testing element %d,%d,%d\n",element.status.)
 	// PATreePerformCopy(tree,tree2);
 	return 0;

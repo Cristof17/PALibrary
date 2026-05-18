@@ -16,6 +16,35 @@
 #include <types.h>
 // #include "//"
 // #include "../include/PAIndex.h"
+struct PAElement PAElementPerformConstruct()
+{
+    struct PAElement temp;
+    temp.index = PADataPerformConstruct();
+    temp.status = PAStatusPerformConstruct();
+    temp = PAElementPerformInit(temp,temp.index,temp.status);
+    // result.index = PADataPerformConstruct();
+    // result.status = PAStatusPerformConstruct();
+    return temp;
+    // PAResult result;
+    // return result;
+ //   struct PAElement element;
+  //  return element;
+}
+DllExport struct PAElement PAElementPerformInit(struct PAElement Element, struct PAData Value, struct PAStatus Value2)
+{
+    Element.index = Value;
+    Element.status = Value2;
+    //struct PAElement element;
+    // element. = Element.Index;
+    //element.status = Element.status;
+    //element.type = Element.type;
+    //element.index = Element.index;
+    //return element;
+    // PAResult result;
+    // return result;
+    // struct PAElement element;
+    return Element;
+}
 DllExport void PAElementVisit(struct PAElement Element)
 {
     Element.status.visited.value.val = TRUE;
@@ -37,17 +66,6 @@ DllExport struct PAElement PAElementPerformCopy(struct PAElement from, struct PA
     temp.status = PAStatusPerformCopy(from.status,to.status);
     return temp;
 }   
-struct PAElement PAElementPerformConstruct()
-{
-    struct PAElement result;
-    // result.index = PADataPerformConstruct();
-    // result.status = PAStatusPerformConstruct();
-    return result;
-	// PAResult result;
-	// return result;
- //   struct PAElement element;
-  //  return element;
-}
 // PAResult PAElementPerformCopy()
 // {
 	// PAResult result;
@@ -60,21 +78,6 @@ struct PAElement PAElementPerformConstruct()
 //	copy.type=Element.type;
 	//return ;
 // }
-DllExport struct PAElement PAElementPerformInit(struct PAElement Element, struct PAData Value, struct PAStatus Value2)
-{
-    Element.index = Value;
-    Element.status = Value2;
-    //struct PAElement element;
-    // element. = Element.Index;
-    //element.status = Element.status;
-    //element.type = Element.type;
-    //element.index = Element.index;
-    //return element;
-    // PAResult result;
-    // return result;
-    // struct PAElement element;
-    return Element;
-}
 DllExport struct PAElement PAElementPerformRuin(struct PAElement PA)
 {
     PA.index = PADataPerformRuin(PA.index);

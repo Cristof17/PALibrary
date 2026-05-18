@@ -14,9 +14,11 @@
 
 DllExport struct PALink PALinkPerformConstruct()
 {
-    struct PALink Link;
+    struct PALink link;
+    link.p = PAPairPerformConstruct();
+    link = PALinkPerformInit(link,link.p);
     // Link.p = PAPairPerformConstruct();
-    return Link;
+    return link;
     // struct PALink link;
     // return link;÷
     // link.p = P;÷

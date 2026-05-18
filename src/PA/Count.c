@@ -15,21 +15,24 @@
 DllExport struct PACount PACountPerformConstruct()
 {
     struct PACount zies;
-    struct PANumber number;
-    number.val = 0;
-    zies = PACountPerformInit(zies,number);
+    // struct PANumber number;
+    zies.number = PANumberPerformConstruct();
+    zies = PACountPerformInit(zies,zies.number);
     // zies.number = PANumberPerformConstruct();
     // size.number = Value;
     return zies;
 }
 DllExport struct PACount PACountPerformInit(struct PACount Count, struct PANumber Value)
 {
+    // struct PACount temp;
     struct PACount temp;
-    struct PANumber value;
-    value = PANumberPerformConstruct();
-    value.val = Value.val;
-    temp.number = value;
-    return temp;
+    // struct PANumber value;
+    // value = PANumberPerformConstruct();
+    temp.number = PANumberPerformConstruct();
+    //Value.val;
+    Count = temp;
+    //temp.number = value;
+    return Count;
     // temp = Count.number;
     // temp.val = Value;
     // Count.number.val = Value.val;

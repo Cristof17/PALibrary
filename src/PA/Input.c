@@ -17,6 +17,10 @@
 DllExport struct PAInput PAInputPerformConstruct()
 {
 	struct PAInput input;
+	input.n = PACountPerformConstruct();
+	input.m = PACountPerformConstruct();
+	input.source = PAElementPerformConstruct();
+	input = PAInputPerformInit(input,input.n,input.m,input.source);
 	return input;
 	// PAResult result ;
 	// return result;
@@ -34,9 +38,14 @@ DllExport struct PAInput PAInputPerformConstruct()
 // }
 DllExport struct PAInput PAInputPerformInit(struct PAInput Input, struct PACount Value, struct PACount Value2, struct PAElement Value3)
 {
-	Input.n = Value;
-	Input.m = Value2;
-	Input.source = Value3;	
+	struct PAInput temp;
+	temp.n = PACountPerformConstruct();
+	temp.m = PACountPerformConstruct();
+	temp.source = PAElementPerformConstruct();
+	Input = temp;
+	// Input.n = Value;
+	// Input.m = Value2;
+	// Input.source = Value3;	
 	// strict
 	// struct PAInput Input;
 	// Input.n = PACountPerformConstruct();
