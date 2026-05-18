@@ -6,15 +6,22 @@
 DllExport struct PANumber PANumberPerformConstruct()
 {
     struct PANumber number;
+    unsigned char val;
+    val = NULL_CHAR;
+    number.val = val;
+    // number = PANumberPerformInit(number,NULL_CHAR);
     // unsigned char random;
     // number.val =  random;
     return number;
 }
 DllExport struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char Value)
 {
+    struct PANumber temp;
+    temp = Number;
+    temp.val = Value;
     // struct PANumber number;
-    Number.val = Value;
-    return Number;
+    // Number.val = Value;
+    return temp;
 }
 DllExport struct PANumber PANumberPerformDelete(struct PANumber PA)
 {

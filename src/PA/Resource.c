@@ -9,7 +9,10 @@
 
 DllExport struct PAResource PAResourcePerformInit(struct PAResource Resource, struct PANumber Value)
 {
-    Resource.value = Value;
+    struct PAResource resource;
+    resource.value = PANumberPerformConstruct();
+    // resource.value = PANumberPerformInit(resource.value,NULL_CHAR);
+    Resource = resource;
     return Resource;
 }
 DllExport struct PAResource PAResourcePerformCopy(struct PAResource from, struct PAResource to)
