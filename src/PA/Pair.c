@@ -82,9 +82,11 @@ DllExport struct PAPair PAPairPerformRuin(struct PAPair PA)
 	// PAResult result;
 	// return result;
 }
-DllExport struct PAPair PAPairPerformDelete(struct PAPair Pair)
+DllExport struct PAPair PAPairPerformDelete(struct PAPair PA)
 {
-    return Pair;
+    PA.Node = PAElementPerformDelete(PA.Node);
+    PA.Neigh = PAElementPerformDelete(PA.Neigh);
+    return PA;
     // PAResult result;
     // return result;
 }

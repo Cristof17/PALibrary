@@ -16,15 +16,15 @@ DllExport struct PANumber PANumberPerformInit(struct PANumber Number, unsigned c
     Number.val = Value;
     return Number;
 }
-DllExport struct PANumber PANumberPerformDelete(struct PANumber Number)
+DllExport struct PANumber PANumberPerformDelete(struct PANumber PA)
 {
-    struct PANumber number;
-    return number;
+    PA.val = '0';
+    // struct PANumber number;
+    return PA;
 }
 DllExport struct PANumber PANumberPerformRuin(struct PANumber PA)
 {
-    struct PANumber Empty;
-    PA.val = '0';
+    // struct PANumber Empty;
     return PA;
     // return Empty;
     // struct PANumber number;
