@@ -30,13 +30,15 @@ DllExport struct PALink PALinkPerformInit(struct PALink Link, struct PAPair Valu
     // return link;
     return Link;
 }
-DllExport struct PALink PALinkPerformRuin(struct PALink Link)
+DllExport struct PALink PALinkPerformRuin(struct PALink PA)
 {
-    struct PALink Empty;
-    return Empty;
+    PA.p = PAPairPerformRuin(Link.p);    
+    // struct PALink Empty;
+    // return Empty;
     // return 0;
     // PAResult result;
     // return result;
+    return PA;
 }
 // struct PALink PALinkPerformCopy(struct PALink Link)
 // {
@@ -52,9 +54,10 @@ DllExport struct PALink PALinkPerformRuin(struct PALink Link)
     // return Link;
     // return reusult;
 // }
-DllExport struct PALink PALinkPerformDelete(struct PALink Link){
-    struct PALink Empty;
+DllExport struct PALink PALinkPerformDelete(struct PALink PA){
     // PAResult result;
+    // struct PALink Empty;
+    PA.p = PAPairPerformDelete(PA.p);
     // return result;
-    return Empty;
+    return PA;
 }

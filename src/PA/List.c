@@ -109,9 +109,12 @@ void Dispose()
 //     struct PAList list;
 //     return list;
 // }
-DllExport struct PAList PAListPerformDelete(struct PAList List)
+DllExport struct PAList PAListPerformDelete(struct PAList PA)
 {
-    return List;
+    struct PACount n = PA.n;
+    n = PACountPerformDelete(PA.n);
+    // return List;
+    return PA;
     // return 0;
     // PAResult result;
     // return result;

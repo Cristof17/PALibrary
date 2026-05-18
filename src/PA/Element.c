@@ -16,16 +16,18 @@
 #include <types.h>
 // #include "//"
 // #include "../include/PAIndex.h"
-DllExport void PAElementVisit()
+DllExport void PAElementVisit(struct PAElement Element)
 {
+    Element.status.visited.value.val = TRUE;
     return;
 }
-DllExport PABool PAElementIsVisited()
+DllExport PABool PAElementIsVisited(struct PAElement Element)
 {
-    return TRUE;
+    return Element.status.visited.value.val;
 }
-DllExport void PAElementReset()
+DllExport void PAElementReset(struct PAElement Element)
 {
+    Element.status.visited.value.val = FALSE;
     return;
 }
 struct PAElement PAElementPerformConstruct()
@@ -78,10 +80,10 @@ DllExport struct PAElement PAElementPerformRuin(struct PAElement PA)
     // PAElementPerformRuin(Next.index, Next.Status);
     // PAStatusPerformRuin(Status);
     // PAResourcePerformRuin()
-    struct PAElement Element;
-    Element.index = PADataPerformRuin(PA.index);
-    Element.status = PAStatusPerformRuin(PA.status);
-    return Element; 
+    // struct PAElement Element;
+    // Element.index = PADataPerformRuin(PA.index);
+    // Element.status = PAStatusPerformRuin(PA.status);
+    return PA; 
     // PAResult result;
     // return result;
 }

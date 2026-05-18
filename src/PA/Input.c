@@ -63,8 +63,9 @@ DllExport struct PAInput PAInputPerformRuin(struct PAInput PA) {
 }
 DllExport struct PAInput PAInputPerformDelete(struct PAInput Input)
 {
-	struct PAInput Empty;
-	return Empty;
+	return Input;
+	// struct PAInput Empty;
+	// return Empty;
 	// PAResult result;
     // return result;
 }
