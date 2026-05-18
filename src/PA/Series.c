@@ -31,7 +31,6 @@ DllExport struct PASeries PASeriesPerformConstruct() {
         series.adj[x.val] = PAElementPerformInit(series.adj[x.val], series.adj[x.val].index, series.adj[x.val].status);
         x.val++;
     }
-    return series;
     // series.m = sPACountPerformConstruct();
 
     // struct PANumber iterator;
@@ -103,7 +102,7 @@ DllExport struct PASeries PASeriesPerformInit(struct PASeries Series,
         y.val = Value.number.val;
         while (x.val < y.val)
         {
-            series.adj[x.val] = Value2[x.val];
+            series.adj[x.val] = PAElementPerformInit(series.adj[x.val],series.adj[x.val].index, series.adj[x.val].status);
             x.val++;
         }
         // series.adj = Value2;
