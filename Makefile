@@ -10,18 +10,10 @@ all: pa arraylist bfs
 # 	obj/PA/Destination.o
 # 	obj/PA/Arrow.o
 # 	obj/PA/Feature.o
-test_pa:
+test_pa_arm64:
 	-$(CPP) -Iinclude/ $(CPPFLAGS) test/test.c > test/test.i
 	-$(CC) -S test/test.i -o test/test.s
-ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) test/test.s -o test/test.o
-endif
-ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) test/test.s -o test/test.o
-endif
-ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) test/test.s -o test/test.o
-endif
+	-$(LD) $(LDFLAGS) -arch arm64 -platform_version macos out/libpa.a test/test.s -o test/test
 
 objects_arraylist= obj/ArrayList/ArrayList.o \
 	obj/ArrayList/ArrayListPosition.o
@@ -1154,6 +1146,8 @@ clean:
 	-rm out/libpa.a
 	-rm out/libbfs.a
 	-rm out/libarraylist.a
+	-rm test/test.i
+	-rm test/test.s
 # 	-rm -r obj/BFS/
 # 	-rm -r obj/Adapter/
 # 	-rm -r obj/Iterator/
