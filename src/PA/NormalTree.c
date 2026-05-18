@@ -37,9 +37,10 @@ DllExport struct PANormalTree PANormalTreePerformRuin(struct PANormalTree PA)
     PA.tree = PATreePerformRuin(PA.tree);
     return PA;
 }
-DllExport struct PANormalTree PANormalTreePerformDelete(struct PANormalTree NormalTree)
+DllExport struct PANormalTree PANormalTreePerformDelete(struct PANormalTree PA)
 {
-    return NormalTree;
+    PA.tree = PATreePerformDelete(PA.tree);
+    return PA;
 }
 DllExport struct PANormalTree PAGrafNormalBuildPart()
 {
