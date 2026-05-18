@@ -30,3 +30,10 @@ DllExport struct PANumber PANumberPerformRuin(struct PANumber PA)
     // struct PANumber number;
     // return number;
 }
+DllExport struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to)
+{
+    struct PANumber temp;
+    temp.val = from.val;
+    to.val = temp.val;
+    return temp;
+}
