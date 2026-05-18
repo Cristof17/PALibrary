@@ -13,6 +13,11 @@
 DllExport struct PAPair PAPairPerformConstruct()
 {
     struct PAPair pair;
+
+    pair.Node = PAElementPerformConstruct();
+    pair.Neigh = PAElementPerformConstruct();
+    pair = PAPairPerformInit(pair,pair.Node, pair.Neigh);
+
     // pair.Node = PAElementPerformCopy(from)
     return pair;
 	// PAResult result;
@@ -25,8 +30,13 @@ DllExport struct PAPair PAPairPerformConstruct()
 // struct PAPair PAPairRuin(struct PAPair Pair) {
 DllExport struct PAPair PAPairPerformInit(struct PAPair Pair, struct PAElement Value, struct PAElement Value2)
 {
-    Pair.Node = Value;
-    Pair.Neigh = Value2;
+    struct PAPair temp;
+    temp.Node = PAElementPerformConstruct();
+    temp.Neigh = PAElementPerformConstruct();
+    // Pair = pair;
+    Pair = temp;
+    // Pair.Node = Value;
+    // Pair.Neigh = Value2;
     // struct PAPair pair;
     return Pair;
 	// PAResult result;

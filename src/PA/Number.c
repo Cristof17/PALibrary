@@ -17,11 +17,12 @@ DllExport struct PANumber PANumberPerformConstruct()
 DllExport struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char Value)
 {
     struct PANumber temp;
-    temp = Number;
     temp.val = Value;
+    Number = temp;
+    // temp = Number;
     // struct PANumber number;
     // Number.val = Value;
-    return temp;
+    return Number;
 }
 DllExport struct PANumber PANumberPerformDelete(struct PANumber PA)
 {

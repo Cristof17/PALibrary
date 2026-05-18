@@ -18,10 +18,20 @@
 *  Created on: 16 nov. 2025
 *      Author: AdministratorUser
 ` */
-DllExport 
-struct PASeries PASeriesPerformConstruct() {
-    struct PASeries series;
+DllExport struct PASeries PASeriesPerformConstruct() {
 
+    struct PASeries series;
+    series.m = PACountPerformConstruct();
+    struct PANumber x;
+    struct PANumber y;
+    x.val = FIRST;
+    y.val = series.m.number.val;
+    while (x.val < y.val)
+    {
+        series.adj[x.val] = PAElementPerformInit(series.adj[x.val], series.adj[x.val].index, series.adj[x.val].status);
+        x.val++;
+    }
+    return series;
     // series.m = sPACountPerformConstruct();
 
     // struct PANumber iterator;
