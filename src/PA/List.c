@@ -113,6 +113,15 @@ DllExport struct PAList PAListPerformDelete(struct PAList PA)
 {
     struct PACount n = PA.n;
     n = PACountPerformDelete(PA.n);
+    struct PANumber x;
+    struct PANumber y;
+    y = n.number;
+    x.val = FIRST;
+    while (x.val < y.val)
+    {
+        PA.neigh[x.val] = PASeriesPerformDelete(PA.neigh[x.val]);
+        x.val++;
+    }
     // return List;
     return PA;
     // return 0;

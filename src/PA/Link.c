@@ -32,7 +32,7 @@ DllExport struct PALink PALinkPerformInit(struct PALink Link, struct PAPair Valu
 }
 DllExport struct PALink PALinkPerformRuin(struct PALink PA)
 {
-    PA.p = PAPairPerformRuin(Link.p);    
+    PA.p = PAPairPerformRuin(PA.p);    
     // struct PALink Empty;
     // return Empty;
     // return 0;
