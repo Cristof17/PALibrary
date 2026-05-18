@@ -16,12 +16,17 @@
 DllExport struct PATransposeTree PATransposeTreePerformConstruct()
 {
     struct PATransposeTree transposeTree;
+    transposeTree.tree = PATreePerformConstruct();
+    transposeTree = PATransposeTreePerformInit(transposeTree,transposeTree.tree);
     // transposeTree.tree = PATreePerformConstruct();
     return transposeTree;
 }
 
 DllExport struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree TransposeTree, struct PATree Value)
 {
+    struct PATransposeTree tree;
+    TransposeTree.tree = PATreePerformConstruct();
+    TransposeTree = tree;
     TransposeTree.tree = Value;
     // struct PATransposeTree transposeTree;
     // transposeTree = PATransposeTreePerformConstruct(TransposeTree.adj_trans);

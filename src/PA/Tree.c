@@ -19,18 +19,26 @@
 DllExport struct PATree PATreePerformConstruct()
 {
     struct PATree temp;
-    struct PACount n;
-    struct PACount m;
-    struct PAList adj;
-    struct PAElement element;
-    n = PACountPerformConstruct();
-    m = PACountPerformConstruct();
-    adj = PAListPerformConstruct();
-    element = PAElementPerformConstruct();
-    temp.n = PACountPerformCopy(n,temp.n);
-    temp.m = PACountPerformCopy(m,temp.m);
-    temp.adj = PAListPerformCopy(adj,temp.adj);
-    temp.source = PAElementPerformCopy(element,temp.source);
+    temp.n = PACountPerformConstruct();
+    temp.m = PACountPerformConstruct();
+    temp.adj = PAListPerformConstruct();
+    temp.source = PAElementPerformConstruct();
+    temp = PATreePerformInit(temp,temp.n,temp.m,temp.adj,temp.source);
+    return temp;
+    // struct PACount n;
+    // struct PACount m;
+    // struct PAList adj;
+    // struct PAElement element;
+    // n = PACountPerformConstruct();
+    // m = PACountPerformConstruct();
+    // adj = PAListPerformConstruct();
+    // element = PAElementPerformConstruct();
+    // temp.n = PACountPerformCopy(n,temp.n);
+    // temp.m = PACountPerformCopy(m,temp.m);
+    // temp.adj = PAListPerformCopy(adj,temp.adj);
+    // temp.source = PAElementPerformCopy(element,temp.source);
+
+
     // Tree.n = Value;
     // Tree.m = Value2;
     // Tree.adj = Value3;
@@ -59,7 +67,12 @@ DllExport struct PATree PATreePerformConstruct()
 }
 DllExport struct PATree PATreePerformInit(struct PATree Tree, struct PACount Value, struct PACount Value2, struct PAList Value3, struct PAElement Value4)
 {
-    
+    struct PATree tree;
+    tree.n = PACountPerformConstruct();
+    tree.m = PACountPerformConstruct();
+    tree.adj = PAListPerformConstruct();
+    tree.source = PAElementPerformConstruct();
+    Tree = tree;
     // struct PATree tree;
     // tree.n.number = 2;
     // tree.m.number = 3;
