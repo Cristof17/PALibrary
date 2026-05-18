@@ -10,6 +10,7 @@
 // struct PATree;
 // struct PATree PATreeConstruct(struct OPAResult);
 DllExport struct PATree PATreePerformConstruct();
+DllExport struct PATree PATreePerformCopy(struct PATree from, struct PATree to);
 // DllExport struct PACount PATreeSize();
 DllExport struct PATree PATreePerformInit(struct PATree, struct PACount, struct PACount, struct PAList, struct PAElement);
 // DllExport HRESULT PATreePerformCopy();

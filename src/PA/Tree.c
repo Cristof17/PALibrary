@@ -49,14 +49,20 @@ DllExport struct PATree PATreePerformInit(struct PATree Tree, struct PACount Val
     // tree.adj = ()
     return Tree;
 }
-DllExport PAResult PATreePerformCopy(struct PATransposeTree Tree)
-{
-    PAResult result;
-    return result;
+// DllExport PAResult PATreePerformCopy(struct PATransposeTree Tree)
+// {
+    // PAResult result;
+    // return result;
     // struct PATree tree;
     // tree = PATreePerformConstruct(Tree.n, Tree.m, Tree.adj, Tree.source);
     // tree = PATreePerformInit(Tree);
     // return tree;
+// }
+DllExport struct PATree PATreePerformCopy(struct PATree from, struct PATree to)
+{
+    struct PATree temp;
+    // temp.n = PACountPerformCopy(from.m)
+    return temp;
 }
 DllExport struct PATree PATreePerformRuin(struct PATree PA)
 {

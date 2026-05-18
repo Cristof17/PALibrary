@@ -15,9 +15,10 @@ DllExport struct PAStatus PAStatusPerformInit(struct PAStatus Status, struct PAR
     Status.visited = Value;
     return Status;
 }
-DllExport struct PAStatus PAStatusPerformDelete(struct PAStatus Status)
+DllExport struct PAStatus PAStatusPerformDelete(struct PAStatus PA)
 {
-    return Status;
+    PA.visited.value.val = FALSE;
+    return PA;
 }
 DllExport struct PAStatus PAStatusPerformConstruct()
 {
