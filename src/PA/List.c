@@ -32,7 +32,8 @@ DllExport struct PAList PAListPerformInit(struct PAList List, struct PACount Val
     y.val = List.n.number.val;
     while (x.val <= y.val)
     {
-        List.neigh[x.val] = Value2[x.val];
+        //avoid shallow copy (call PASeriesPerformCopy)
+        List.neigh[x.val] = PASeriesPerformCopy(Value2[x.val], List.neigh[x.val]);
         x.val++;
     }
     // struct PAList list;
