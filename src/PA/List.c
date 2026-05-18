@@ -19,8 +19,18 @@
 DllExport struct PAList PAListPerformConstruct()
 {
     struct PAList list;
-    struct PACount n = PACountPerformConstruct();
-    struct PACount x;
+    // struct PACount n = PACountPerformConstruct();
+    // struct PACount x;
+    list.n = PACountPerformConstruct();
+    // list.m = PACountPerformConstruct();
+    struct PANumber y;
+    y.val = FIRST;
+    while (y.val < list.n.number.val)
+    {
+        list.neigh[y.val] = PASeriesPerformInit(list.neigh[y.val],list.neigh[y.val].m, list.neigh[y.val].adj);
+        y.val++;
+    }
+    return list;
     // struct PASeries neigh[] = list.neigh;
     // x.number.val = FIRST;
     // while (x.number.val < n.number.val)
@@ -29,7 +39,7 @@ DllExport struct PAList PAListPerformConstruct()
     // }
     // list.n = PACountPerformConstruct();
     // list.adj = PASeriesPerformConstruct();
-    return list;
+    // return list;
 }
 DllExport struct PAList PAListPerformCopy(struct PAList from, struct PAList to)
 {
