@@ -6,6 +6,7 @@
 #include <PA/Element.h>
 #include <PA/Resource.h>
 #include <PA/Number.h>
+#include <PA/Series.h>
 #include <stdio.h>
 int main()
 {
@@ -15,9 +16,12 @@ int main()
 	struct PAResource resource;
 	resource = PAResourcePerformConstruct();
 	printf("testing Resource %d\n",resource.value.val);
+	//struct PATree tree = PATreePerformConstruct();
 	struct PATree tree = PATreePerformConstruct();
 	///struct PATree tree2 = PATreePerformConstruct();
-	//printf("testing tree %d\n", tree.n.number.val);
+	printf("testing tree %d\n", tree.n.number.val);
+	struct PASeries pa = PASeriesPerformConstruct();
+	printf("testing series number:%d\n",pa.m.number.val);
 	//printf("testing copy %d\n", tree2.n.number.val);
 	//struct PACount count1 = PACountPerformConstruct();
 	//printf("testing count %d\n", count1.number.val);

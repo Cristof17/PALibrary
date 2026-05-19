@@ -21,9 +21,9 @@ DllExport struct PATree PATreePerformConstruct()
     struct PATree temp;
     temp.n = PACountPerformConstruct();
     temp.m = PACountPerformConstruct();
-    temp.adj = PAListPerformConstruct();
+    // temp.adj = PAListPerformConstruct();
     temp.source = PAElementPerformConstruct();
-    temp = PATreePerformInit(temp,temp.n,temp.m,temp.adj,temp.source);
+    // temp = PATreePerformInit(temp,temp.n,temp.m,temp.adj,temp.source);
     return temp;
     // struct PACount n;
     // struct PACount m;
