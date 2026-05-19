@@ -130,7 +130,7 @@ struct PANumber {
 	//  val;
 	// long long val;
 	unsigned char val;
-	PADDING_1_BYTE(0);
+	// PADDING_1_BYTE(0);
 };
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
@@ -169,14 +169,14 @@ struct PAResource {
 	// PA_INt
 	// PAInt value;
 	struct PANumber value;
-	PADDING_1_BYTE(0);
+	// PADDING_1_BYTE(0);
 };
 struct PAStatus {
 	struct PAResource visited;
 };
 struct PAData {
 	struct PAResource Resource;
-	PADDING_1_BYTE(0);
+	// PADDING_1_BYTE(0);
 };
 struct PAElement { 
 	//	struct PAData data;
@@ -184,13 +184,13 @@ struct PAElement {
 	// struct PADestination Next;
 	struct PAStatus status;
 	// struct PAFeature type;
-	PADDING_1_BYTE(0);
+	// PADDING_1_BYTE(0);
 };
 struct PAFeature {
 	PAInt kind;
 };
 struct PACount {
-	PADDING_1_BYTE(0);
+	// PADDING_1_BYTE(0);
 	struct PANumber number;
 };
 // };
