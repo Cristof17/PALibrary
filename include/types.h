@@ -130,7 +130,7 @@ struct PANumber {
 	//  val;
 	// long long val;
 	unsigned char val;
-	PADDING_1_BYTE(0);
+	// PADDING_1_BYTE(0);
 };
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
@@ -190,7 +190,7 @@ struct PAFeature {
 	PAInt kind;
 };
 struct PACount {
-	PADDING_1_BYTE(0);
+	// PADDING_1_BYTE(0);
 	struct PANumber number;
 };
 // };
