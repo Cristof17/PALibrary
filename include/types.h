@@ -182,8 +182,7 @@ struct PAElement {
 	//	struct PAData data;
 	struct PAData index;
 	// struct PADestination Next;
-	struct
-	PAStatus status;
+	struct PAStatus status;
 	// struct PAFeature type;
 	PADDING_1_BYTE(0);
 };
