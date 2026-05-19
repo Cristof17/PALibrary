@@ -20,8 +20,8 @@ struct PAElement PAElementPerformConstruct()
 {
     struct PAElement temp;
     temp.index = PADataPerformConstruct();
-    // temp.status = PAStatusPerformConstruct();
-    // temp = PAElementPerformInit(temp,temp.index,temp.status);
+    temp.status = PAStatusPerformConstruct();
+    temp = PAElementPerformInit(temp,temp.index,temp.status);
     // result.index = PADataPerformConstruct();
     // result.status = PAStatusPerformConstruct();
     return temp;
