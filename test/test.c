@@ -8,6 +8,8 @@
 #include <PA/Number.h>
 #include <PA/Series.h>
 #include <stdio.h>
+#include <PA/Status.h>
+#include <PA/TransposeTree.h>
 int main()
 {
 	struct PANumber number;
@@ -22,6 +24,16 @@ int main()
 	printf("testing tree %d\n", tree.n.number.val);
 	struct PASeries pa = PASeriesPerformConstruct();
 	printf("testing series number:%d\n",pa.m.number.val);
+	struct PAStatus status;
+	status = PAStatusPerformConstruct();
+	//printf("pastatus perform construct %d\n",status.resource.number.val);
+	printf("pastatus perform construct %d\n",status.visited.value.val);
+	struct PATransposeTree tree2;
+	tree2 = PATransposeTreePerformConstruct();
+	printf("tree n=%d\n",tree2.tree.n.number.val);
+	printf("tree n=%d\n",tree2.tree.m.number.val);
+	printf("tree n=%d\n",tree2.tree.source.index.Resource.value.val);
+	// printf("tree n=%d\n",tree2.tree.source.index.Resource.value.val);
 	//printf("testing copy %d\n", tree2.n.number.val);
 	//struct PACount count1 = PACountPerformConstruct();
 	//printf("testing count %d\n", count1.number.val);

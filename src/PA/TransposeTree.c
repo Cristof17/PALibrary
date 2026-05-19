@@ -65,11 +65,11 @@ DllExport struct PATransposeTree PATransposeTreeDelete(struct PATransposeTree Tr
     // struct PATransposeTree tree;
     // return tree;
 // }
-DllExport struct PATransposeTree PATransposeTreeBuildPart()
-{
-    struct PATransposeTree tree;
-    return tree;
-}
+// DllExport struct PATransposeTree PATransposeTreeBuildPart()
+// {
+    // struct PATransposeTree tree;
+    // return tree;
+// }
 DllExport PAResult PATransposeTreeGetResult()
 {
     PAResult result;

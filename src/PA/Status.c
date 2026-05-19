@@ -13,7 +13,8 @@
 DllExport struct PAStatus PAStatusPerformConstruct()
 {
     struct PAStatus status;
-    // status.visited = PAResourcePerformConstruct();
+    status.visited = PAResourcePerformConstruct();
+    status = PAStatusPerformInit(status,status.visited);
     return status;
 }
 DllExport struct PAStatus PAStatusPerformInit(struct PAStatus Status, struct PAResource Value)
