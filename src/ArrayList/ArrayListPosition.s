@@ -1,5 +1,5 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.build_version macos, 15, 0	sdk_version 26, 2
+	.build_version macos, 15, 0	sdk_version 15, 5
 	.globl	_ArrayListPositionPerformConstruct ; -- Begin function ArrayListPositionPerformConstruct
 	.p2align	2
 _ArrayListPositionPerformConstruct:     ; @ArrayListPositionPerformConstruct
