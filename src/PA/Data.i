@@ -420,7 +420,7 @@ struct Facade {
     struct PAData temp;
     temp.Resource = PAResourcePerformConstruct();
     Data = temp;
-
+    Data.Resource = Value;
     return Data;
 
 
