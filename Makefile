@@ -58,17 +58,18 @@ objects_pa= obj/Input.o \
 	obj/PA/Output.o \
 	obj/Output.o \
 	obj/PA/Data.o \
+	obj/PA/Count.o \
 	obj/PA/Tree.o \
 	obj/PA/List.o \
 	obj/PA/Status.o \
 	obj/PA/Link.o \
 	obj/PA/Element.o \
-	obj/PA/Count.o \
 	obj/PA/Pair.o \
 	obj/PA/Result.o \
 	obj/PA/Series.o \
 	obj/PA/Value.o \
 	obj/PA/Resource.o \
+	obj/PA/Status.o \
 	obj/PA/NormalTree.o \
 	obj/PA/Number.o \
 	obj/PA/TransposeTree.o \
