@@ -1,5 +1,4 @@
 AC_SUBST(prefix)
-p
 AC_SUBST(exec_prefix
 AC_SUBST(bindir)
 AC_SUBST(bindir)
