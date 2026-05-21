@@ -10,6 +10,35 @@ all: pa arraylist bfs
 # 	obj/PA/Destination.o
 # 	obj/PA/Arrow.o
 # 	obj/PA/Feature.o
+prefix=
+exec_prefix=
+bindir=
+sbindir=
+libexdir=
+datarootdir=
+datadir=
+sysconfdir=
+sharedstatedir=
+localstatedir=
+runstatedir=
+includedir=
+oldincludedir=
+docdir=
+infodir=
+htmldir=
+dvdir=
+pdfdir=
+psdir=
+libdir=
+lispdir=
+localedir=
+mandir=
+man1dir=
+man2dir=
+manext=
+man1ext=
+man2ext=
+srcdir=
 test_pa_arm64:
 	-$(CPP) -Iinclude/ $(CPPFLAGS) test/test.c > test/test.i
 	-$(CC) -S test/test.i -o test/test.s
@@ -1149,6 +1178,7 @@ clean:
 	-rm out/libarraylist.a
 	-rm test/test.i
 	-rm test/test.s
+	-rm out/test
 # 	-rm -r obj/BFS/
 # 	-rm -r obj/Adapter/
 # 	-rm -r obj/Iterator/
