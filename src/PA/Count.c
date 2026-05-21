@@ -18,7 +18,7 @@ DllExport struct PACount PACountPerformConstruct()
     // struct PANumber number;
     zies.number = PANumberPerformConstruct();
     zies = PACountPerformInit(zies,zies.number);
-            // zies.number = PANumberPerformConstruct();
+    // zies.number = PANumberPerformConstruct();
     // size.number = Value;
     return zies;
 }
@@ -81,6 +81,12 @@ PAResult PACountPerformPrint(struct PACount Count)
 {
     PAResult result;
     return result;
+}
+DllExport struct PACount PACountPerformCopy(struct PACount from, struct PACount to)
+{
+    struct PACount temp;
+    temp.number = PANumberPerformCopy(from.number,to.number);
+    return temp;
 }
 // DllExport struct PACount PACountPerformCopy(struct PACount from, struct PACount to)
 // {
