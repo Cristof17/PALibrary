@@ -420,7 +420,9 @@ struct Facade {
     struct PAData temp;
     temp.Resource = PAResourcePerformConstruct();
     Data = temp;
-    Data.Resource = Value;
+    Data.Resource.value.val = Value.value.val;
+    Data.Resource.value = Value.value;
+
     return Data;
 
 
@@ -433,7 +435,7 @@ struct Facade {
     temp.Resource = PAResourcePerformCopy(from.Resource, to.Resource);
     return temp;
 }
-# 61 "src/PA/Data.c"
+# 63 "src/PA/Data.c"
           struct PAData PADataPerformRuin(struct PAData Data)
 {
 

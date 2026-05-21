@@ -28,7 +28,9 @@ DllExport struct PAData PADataPerformInit(struct PAData Data, struct PAResource 
     struct PAData temp;
     temp.Resource = PAResourcePerformConstruct();
     Data = temp;
-    Data.Resource = Value;
+    Data.Resource.value.val = Value.value.val;
+    Data.Resource.value = Value.value;
+
     return Data;
     // struct PAData data;
     // data.Resource = Data.Resource;

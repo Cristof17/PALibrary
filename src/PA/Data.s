@@ -52,6 +52,8 @@ _PADataPerformInit:                     ; @PADataPerformInit
 	sturb	w8, [x29, #-2]
 	ldurb	w8, [x29, #-3]
 	sturb	w8, [x29, #-2]
+	ldurb	w8, [x29, #-3]
+	sturb	w8, [x29, #-2]
 	ldurb	w8, [x29, #-2]
 	sturb	w8, [x29, #-1]
 	ldurb	w0, [x29, #-1]
