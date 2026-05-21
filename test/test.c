@@ -26,6 +26,9 @@ int main()
 	printf("testing series number:%d\n",pa.m.number.val);
 	struct PAStatus status;
 	status = PAStatusPerformConstruct();
+	struct PAElement element;
+	element = PAElementPerformConstruct();
+	printf("Element resource test%d\n",element.index.Resource.value.val);
 	//printf("pastatus perform construct %d\n",status.resource.number.val);
 	printf("pastatus perform construct %d\n",status.visited.value.val);
 	struct PATransposeTree tree2;

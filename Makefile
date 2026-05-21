@@ -252,7 +252,7 @@ ${subdirs}:
 # 	${MAKE} arch=${arch}
 # 	${MAKE} arch=${arch}
 # 	${MA
-build: 
+build: $(subdirs)
 	${MAKE} assemble
 # 	mkdir obj/Director/
 # 	mkdir obj/Builder/
