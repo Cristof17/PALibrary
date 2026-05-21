@@ -27,15 +27,17 @@ docdir=/usr/local/share/doc/pa
 infodir=/usr/local/share/info
 htmldir=$(docdir)
 dvdir=$(docdir)
-pdfdir=/usr/local/lib
-psdir=/usr/local/share/emacs/site-lisp
-libdir=
-lispdir=
-localedir=
-mandir=
-man1dir=
-man2dir=
-manext=
+pdfdir=$)docdir)
+# /usr/local/lib
+psdir=$(docdir)
+# /usr/local/share/emacs/site-lisp
+libdir=/usr/local/lib
+lispdir=/usr/local/share/emacs/site-lisp
+localedir=/usr/local/share/locale
+mandir=/usr/local/share/man
+man1dir=$(mandir)/man1
+man2dir=$(mandir)/man2
+manext=.1
 man1ext=
 man2ext=
 srcdir=
