@@ -1,20 +1,13 @@
-# 1 "src/PA/Count.c"
+# 1 "src/ArrayList/ArrayList.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/PA/Count.c" 2
-
-
-# 1 "include/types.h" 1
-
-
-
-
-
+# 1 "src/ArrayList/ArrayList.c" 2
 # 1 "include/defs.h" 1
-# 7 "include/types.h" 2
+# 2 "src/ArrayList/ArrayList.c" 2
+# 1 "include/types.h" 1
 # 18 "include/types.h"
 struct PANumber;
 typedef int PAInt;
@@ -363,61 +356,93 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 4 "src/PA/Count.c" 2
-
-
-# 1 "include/PA/Count.h" 1
-# 13 "include/PA/Count.h"
-          struct PACount PACountPerformConstruct();
-          struct PACount PACountPerformInit(struct PACount Count, struct PANumber Number);
-          struct PACount PACountPerformCopy(struct PACount from, struct PACount to);
-
-
-
-          struct PACount PACountPerformRuin(struct PACount);
-
-
-          struct PACount PACountPerformDelete(struct PACount PA);
-# 7 "src/PA/Count.c" 2
-# 1 "include/PA/Number.h" 1
+# 3 "src/ArrayList/ArrayList.c" 2
 
 
 
 
-          struct PANumber PANumberPerformConstruct();
-          struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char Value);
-          struct PANumber PANumberPerformDelete(struct PANumber);
-          struct PANumber PANumberPerformRuin(struct PANumber);
-          struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to);
-# 8 "src/PA/Count.c" 2
+# 1 "include/ArrayList/ArrayList.h" 1
+# 12 "include/ArrayList/ArrayList.h"
+          ArrayListObject ArrayListGet(struct ArrayListPosition);
+          ArrayListSize ArrayListPerformSize();
+          void ArrayListPut(struct ArrayListPosition, ArrayListObject);
+          struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], struct ArrayListPosition);
+          PAResult ArrayListPerformInit(struct ArrayList);
+          struct ArrayList ArrayListPerformCopy(struct ArrayList);
+          PAResult ArrayListPerformCopyTo(struct ArrayList Dest, struct PAList source, struct PAElement);
+
+          PAResult ArrayListPerformRuin(struct ArrayListPosition, ArrayListObject[]);
+          PAResult ArrayListPerformDelete(struct ArrayList);
 
 
 
 
 
 
-
-          struct PACount PACountPerformConstruct()
+          ArrayListObject ArrayListPerformGetFirst(struct ArrayList);
+          ArrayListObject ArrayListPerformGetLast(struct ArrayList);
+          ArrayListObject ArrayListPerformPutFirst(struct ArrayList, ArrayListObject);
+          ArrayListObject ArrayListPerformPutLast(struct ArrayList, ArrayListObject);
+# 8 "src/ArrayList/ArrayList.c" 2
+# 36 "src/ArrayList/ArrayList.c"
+struct ArrayList ArrayListPerformCopy(struct ArrayList List)
 {
-    struct PACount zies;
-
-    zies.number = PANumberPerformConstruct();
-    zies = PACountPerformInit(zies,zies.number);
-
-
-    return zies;
+# 48 "src/ArrayList/ArrayList.c"
+ struct ArrayList list;
+ return list;
 }
-          struct PACount PACountPerformInit(struct PACount Count, struct PANumber Value)
+
+PAResult ArrayListPerformCopyTo(struct ArrayList Array, struct PAList List, struct PAElement Element) {
+# 77 "src/ArrayList/ArrayList.c"
+ return ((int)0);
+}
+# 106 "src/ArrayList/ArrayList.c"
+ArrayListObject ArrayListPerformGetFirst(struct ArrayList List)
+{
+ ArrayListObject first;
+ first = List.objects[(1)];
+ return first;
+}
+ArrayListObject ArrayListPerformGetLast(struct ArrayList List)
+{
+ return List.objects[(List.place.position)];
+}
+# 130 "src/ArrayList/ArrayList.c"
+ArrayListObject ArrayListPerformPutFirst(struct ArrayList List, ArrayListObject Object)
+{
+# 144 "src/ArrayList/ArrayList.c"
+ return Object;
+}
+
+ArrayListObject ArrayListPerformPutLast(struct ArrayList List, ArrayListObject Object)
 {
 
-    struct PACount temp;
+ return Object;
+}
+PAResult ArrayListPerformAdapt(struct ArrayList List)
+{
+ PAResult result = { ((int)0) };
+ return result;
+}
+PAResult ArrayListPerformMove(struct ArrayList List)
+{
+ PAResult result = { ((int)0) };
+ return result;
+# 176 "src/ArrayList/ArrayList.c"
+}
 
 
-    temp.number = PANumberPerformConstruct();
 
-    Count = temp;
 
-    return Count;
+struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], struct ArrayListPosition M)
+{
+ struct ArrayList list;
+ return list;
+}
+PAResult ArrayListPerformInit(struct ArrayList List)
+{
+ PAResult result = { ((int)0) };
+ return result;
 
 
 
@@ -425,27 +450,23 @@ struct Facade {
 
 
 }
-          struct PACount PACountPerformRuin(struct PACount PA)
+# 208 "src/ArrayList/ArrayList.c"
+ArrayListObject ArrayListGet(struct ArrayListPosition Position)
 {
-# 70 "src/PA/Count.c"
-    return PA;
+ ArrayListObject object;
+ return object;
 }
-          struct PACount PACountPerformDelete(struct PACount PA)
+void ArrayListPut(struct ArrayListPosition Position, ArrayListObject ListObject)
 {
-    PA.number.val = 0;
-    return PA;
-
-
 
 }
-PAResult PACountPerformPrint(struct PACount Count)
+PAResult ArrayListPerformRuin(struct ArrayListPosition place, ArrayListObject objects[])
 {
-    PAResult result;
-    return result;
+ PAResult result = { ((int)0) } ;
+ return result;
 }
-          struct PACount PACountPerformCopy(struct PACount from, struct PACount to)
+PAResult ArrayListPerformDelete(struct ArrayList List)
 {
-    struct PACount temp;
-    temp.number = PANumberPerformCopy(from.number,to.number);
-    return temp;
+ PAResult result = { ((int)0) };
+ return result;
 }

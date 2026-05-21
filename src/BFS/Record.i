@@ -1,10 +1,10 @@
-# 1 "src/PA/Count.c"
+# 1 "src/BFS/Record.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/PA/Count.c" 2
+# 1 "src/BFS/Record.c" 2
 
 
 # 1 "include/types.h" 1
@@ -363,9 +363,22 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 4 "src/PA/Count.c" 2
+# 4 "src/BFS/Record.c" 2
 
 
+# 1 "include/PA/List.h" 1
+# 11 "include/PA/List.h"
+          struct PAList PAListPerformConstruct();
+          struct PAList PAListPerformInit(struct PAList,struct PACount, struct PASeries[]);
+
+
+
+          struct PAList PAListPerformRuin(struct PAList);
+          struct PAList PAListPerformDelete(struct PAList);
+          struct PAList PAListPerformCopy(struct PAList, struct PAList);
+
+void PAListPerformPrint(struct PAList List);
+# 7 "src/BFS/Record.c" 2
 # 1 "include/PA/Count.h" 1
 # 13 "include/PA/Count.h"
           struct PACount PACountPerformConstruct();
@@ -378,18 +391,10 @@ struct Facade {
 
 
           struct PACount PACountPerformDelete(struct PACount PA);
-# 7 "src/PA/Count.c" 2
-# 1 "include/PA/Number.h" 1
-
-
-
-
-          struct PANumber PANumberPerformConstruct();
-          struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char Value);
-          struct PANumber PANumberPerformDelete(struct PANumber);
-          struct PANumber PANumberPerformRuin(struct PANumber);
-          struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to);
-# 8 "src/PA/Count.c" 2
+# 8 "src/BFS/Record.c" 2
+# 1 "include/PA/Result.h" 1
+# 9 "src/BFS/Record.c" 2
+# 1 "include/BFS/Record.h" 1
 
 
 
@@ -397,55 +402,17 @@ struct Facade {
 
 
 
-          struct PACount PACountPerformConstruct()
-{
-    struct PACount zies;
+          void BFSRecordConstruct(struct PAList, struct PACount);
 
-    zies.number = PANumberPerformConstruct();
-    zies = PACountPerformInit(zies,zies.number);
-
-
-    return zies;
-}
-          struct PACount PACountPerformInit(struct PACount Count, struct PANumber Value)
-{
-
-    struct PACount temp;
+          void BFSRecordRuin();
+          void BFSRecordPrint(struct BFSRecord);
+          struct BFSRecord BFSRecordInit(struct BFSRecord);
+          struct BFSRecord BFSRecordCopy(struct BFSRecord);
+          struct BFSRecord BFSRecordPutList(struct BFSRecord, struct PAList);
+          struct BFSRecord BFSRecordPutCount(struct BFSRecord, struct PACount);
+# 10 "src/BFS/Record.c" 2
+# 19 "src/BFS/Record.c"
+void BFSRecordPrint(struct BFSRecord Record) {
 
 
-    temp.number = PANumberPerformConstruct();
-
-    Count = temp;
-
-    return Count;
-
-
-
-
-
-
-}
-          struct PACount PACountPerformRuin(struct PACount PA)
-{
-# 70 "src/PA/Count.c"
-    return PA;
-}
-          struct PACount PACountPerformDelete(struct PACount PA)
-{
-    PA.number.val = 0;
-    return PA;
-
-
-
-}
-PAResult PACountPerformPrint(struct PACount Count)
-{
-    PAResult result;
-    return result;
-}
-          struct PACount PACountPerformCopy(struct PACount from, struct PACount to)
-{
-    struct PACount temp;
-    temp.number = PANumberPerformCopy(from.number,to.number);
-    return temp;
 }

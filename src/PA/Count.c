@@ -38,7 +38,7 @@ DllExport struct PACount PACountPerformInit(struct PACount Count, struct PANumbe
     // Count.number.val = Value.val;
     // struct PACount count;
     // count.number = Number;
-    return Count;
+    // return÷÷ Count;
 }
 DllExport struct PACount PACountPerformRuin(struct PACount PA)
 {

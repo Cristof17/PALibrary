@@ -1,20 +1,16 @@
-# 1 "src/PA/Count.c"
+# 1 "src/ArrayList/ArrayListPosition.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/PA/Count.c" 2
-
-
-# 1 "include/types.h" 1
-
-
-
-
-
+# 1 "src/ArrayList/ArrayListPosition.c" 2
+# 10 "src/ArrayList/ArrayListPosition.c"
+# 1 "include/ArrayList/ArrayListPosition.h" 1
+# 11 "include/ArrayList/ArrayListPosition.h"
 # 1 "include/defs.h" 1
-# 7 "include/types.h" 2
+# 12 "include/ArrayList/ArrayListPosition.h" 2
+# 1 "include/types.h" 1
 # 18 "include/types.h"
 struct PANumber;
 typedef int PAInt;
@@ -363,89 +359,48 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 4 "src/PA/Count.c" 2
+# 13 "include/ArrayList/ArrayListPosition.h" 2
 
 
-# 1 "include/PA/Count.h" 1
-# 13 "include/PA/Count.h"
-          struct PACount PACountPerformConstruct();
-          struct PACount PACountPerformInit(struct PACount Count, struct PANumber Number);
-          struct PACount PACountPerformCopy(struct PACount from, struct PACount to);
-
-
-
-          struct PACount PACountPerformRuin(struct PACount);
-
-
-          struct PACount PACountPerformDelete(struct PACount PA);
-# 7 "src/PA/Count.c" 2
-# 1 "include/PA/Number.h" 1
-
-
-
-
-          struct PANumber PANumberPerformConstruct();
-          struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char Value);
-          struct PANumber PANumberPerformDelete(struct PANumber);
-          struct PANumber PANumberPerformRuin(struct PANumber);
-          struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to);
-# 8 "src/PA/Count.c" 2
+          struct ArrayListPosition ArrayListPositionPerformConstruct(struct ArrayListPosition);
+          struct ArrayListPosition ArrayListPositionPerformInit(struct ArrayListPosition);
+          struct ArrayListPosition ArrayListPositionPerformCopy(struct ArrayListPosition);
+          PAResult ArrayListPositionPerformDelete(struct ArrayListPosition);
+          PAResult ArrayListPositionPerformRuin(struct ArrayListPosition);
+# 11 "src/ArrayList/ArrayListPosition.c" 2
 
 
 
 
 
 
-
-          struct PACount PACountPerformConstruct()
+struct ArrayListPosition ArrayListPositionPerformConstruct(struct ArrayListPosition place)
 {
-    struct PACount zies;
-
-    zies.number = PANumberPerformConstruct();
-    zies = PACountPerformInit(zies,zies.number);
-
-
-    return zies;
+ struct ArrayListPosition position = { (1) };
+ return position;
 }
-          struct PACount PACountPerformInit(struct PACount Count, struct PANumber Value)
+struct ArrayListPosition ArrayListPositionPerformInit(struct ArrayListPosition ListPosition)
 {
+    struct ArrayListPosition position;
+ position = ArrayListPositionPerformConstruct(ListPosition);
 
-    struct PACount temp;
-
-
-    temp.number = PANumberPerformConstruct();
-
-    Count = temp;
-
-    return Count;
-
-
-
-
-
-
+ return position;
 }
-          struct PACount PACountPerformRuin(struct PACount PA)
+struct ArrayListPosition ArrayListPositionPerformCopy(struct ArrayListPosition ListPosition)
 {
-# 70 "src/PA/Count.c"
-    return PA;
-}
-          struct PACount PACountPerformDelete(struct PACount PA)
-{
-    PA.number.val = 0;
-    return PA;
+ struct ArrayListPosition copy;
+ copy = ArrayListPositionPerformConstruct(ListPosition);
 
-
-
+ copy = ArrayListPositionPerformInit(ListPosition);
+ return copy;
 }
-PAResult PACountPerformPrint(struct PACount Count)
+PAResult ArrayListPositionPerformDelete(struct ArrayListPosition Position)
 {
-    PAResult result;
-    return result;
+ PAResult result = { ((int)0) };
+ return result;
 }
-          struct PACount PACountPerformCopy(struct PACount from, struct PACount to)
+PAResult ArrayListPositionPerformRuin(struct ArrayListPosition Position)
 {
-    struct PACount temp;
-    temp.number = PANumberPerformCopy(from.number,to.number);
-    return temp;
+ PAResult result = { ((int)0) };
+ return result;
 }

@@ -1,10 +1,10 @@
-# 1 "src/PA/Count.c"
+# 1 "src/BFS/Procedure.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/PA/Count.c" 2
+# 1 "src/BFS/Procedure.c" 2
 
 
 # 1 "include/types.h" 1
@@ -363,89 +363,106 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 4 "src/PA/Count.c" 2
-
-
-# 1 "include/PA/Count.h" 1
-# 13 "include/PA/Count.h"
-          struct PACount PACountPerformConstruct();
-          struct PACount PACountPerformInit(struct PACount Count, struct PANumber Number);
-          struct PACount PACountPerformCopy(struct PACount from, struct PACount to);
+# 4 "src/BFS/Procedure.c" 2
+# 1 "include/Algorithm.h" 1
+# 12 "include/Algorithm.h"
+          struct Output AlgorithmPerformRun(struct Input);
+# 5 "src/BFS/Procedure.c" 2
 
 
 
-          struct PACount PACountPerformRuin(struct PACount);
+# 1 "include/PA/Tree.h" 1
+# 12 "include/PA/Tree.h"
+          struct PATree PATreePerformConstruct();
+          struct PATree PATreePerformCopy(struct PATree from, struct PATree to);
 
-
-          struct PACount PACountPerformDelete(struct PACount PA);
-# 7 "src/PA/Count.c" 2
-# 1 "include/PA/Number.h" 1
-
-
-
-
-          struct PANumber PANumberPerformConstruct();
-          struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char Value);
-          struct PANumber PANumberPerformDelete(struct PANumber);
-          struct PANumber PANumberPerformRuin(struct PANumber);
-          struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to);
-# 8 "src/PA/Count.c" 2
+          struct PATree PATreePerformInit(struct PATree, struct PACount, struct PACount, struct PAList, struct PAElement);
 
 
 
 
 
+          struct PATree PATreePerformRuin(struct PATree);
+          struct PATree PATreePerformDelete(struct PATree);
+# 9 "src/BFS/Procedure.c" 2
+# 1 "include/PA/Element.h" 1
+# 10 "include/PA/Element.h"
+          void PAElementVisit(struct PAElement);
+          PABool PAElementIsVisited(struct PAElement);
+          void PAElementReset(struct PAElement);
+          struct PAElement PAElementPerformConstruct();
+
+          struct PAElement PAElementPerformInit(struct PAElement,struct PAData,struct PAStatus);
 
 
-          struct PACount PACountPerformConstruct()
+
+
+          struct PAElement PAElementPerformRuin(struct PAElement);
+          struct PAElement PAElementPerformDelete(struct PAElement);
+          struct PAElement PAElementPerformCopy(struct PAElement, struct PAElement);
+# 10 "src/BFS/Procedure.c" 2
+# 1 "include/BFS/Procedure.h" 1
+
+
+
+
+
+
+
+          PAResult BFS();
+          struct BFSProcedure BFSProcedureConstruct(struct PAInput);
+          struct BFSProcedure BFSProcedurePutInput(struct BFSProcedure, struct PAInput);
+
+
+
+          PAResult BFSProcedureRuin();
+          PAResult BFSProcedureSubroutine();
+# 11 "src/BFS/Procedure.c" 2
+
+# 1 "include/PA/Input.h" 1
+# 10 "include/PA/Input.h"
+          struct PAInput PAInputPerformConstruct();
+
+          struct PAInput PAInputPerformInit(struct PAInput PAInput, struct PACount, struct PACount, struct PAElement);
+
+
+
+          struct PAInput PAInputPerformRuin(struct PAInput);
+          struct PAInput PAInputPerformDelete(struct PAInput i);
+# 13 "src/BFS/Procedure.c" 2
+# 26 "src/BFS/Procedure.c"
+PAResult BFS()
 {
-    struct PACount zies;
-
-    zies.number = PANumberPerformConstruct();
-    zies = PACountPerformInit(zies,zies.number);
+    PAResult result;
+    return result;
 
 
-    return zies;
 }
-          struct PACount PACountPerformInit(struct PACount Count, struct PANumber Value)
+struct BFSProcedure BFSProcedureConstruct(struct PAInput Input)
+
 {
-
-    struct PACount temp;
-
-
-    temp.number = PANumberPerformConstruct();
-
-    Count = temp;
-
-    return Count;
-
-
-
-
-
-
+    struct BFSProcedure procedure;
+    return procedure;
 }
-          struct PACount PACountPerformRuin(struct PACount PA)
+
+struct BFSProcedure BFSProcedurePutTree(struct BFSProcedure Procedure, struct PATree Tree)
 {
-# 70 "src/PA/Count.c"
-    return PA;
+    struct BFSProcedure procedure;
+    return procedure;
 }
-          struct PACount PACountPerformDelete(struct PACount PA)
+struct BFSProcedure BFSProcedurePutInput(struct BFSProcedure Procedure, struct PAInput Input)
 {
-    PA.number.val = 0;
-    return PA;
-
-
-
+    struct BFSProcedure procedure;
+    return procedure;
 }
-PAResult PACountPerformPrint(struct PACount Count)
+
+PAResult BFSProcedureRuin()
 {
     PAResult result;
     return result;
 }
-          struct PACount PACountPerformCopy(struct PACount from, struct PACount to)
+PAResult BFSProcedureSubroutine()
 {
-    struct PACount temp;
-    temp.number = PANumberPerformCopy(from.number,to.number);
-    return temp;
+    PAResult result;
+    return result;
 }
