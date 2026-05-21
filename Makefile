@@ -10,25 +10,25 @@ all: pa arraylist bfs
 # 	obj/PA/Destination.o
 # 	obj/PA/Arrow.o
 # 	obj/PA/Feature.o
-prefix=
-exec_prefix=
-bindir=
-sbindir=
-libexdir=
-datarootdir=
-datadir=
-sysconfdir=
-sharedstatedir=
-localstatedir=
-runstatedir=
-includedir=
-oldincludedir=
-docdir=
-infodir=
-htmldir=
-dvdir=
-pdfdir=
-psdir=
+prefix=/usr/local/
+exec_prefix=$(prefix)
+bindir=/usr/local/bin
+sbindir=/usr/local/sbin
+libexdir=/usr/local/libexec
+datarootdir=/usr/local/share
+datadir=/usr/local/share
+sysconfdir=/usr/local/etc
+sharedstatedir=/usr/local/com
+localstatedir=/usr/local/var
+runstatedir=/var/run
+includedir=/usr/local/include
+oldincludedir=/usr/include
+docdir=/usr/local/share/doc/pa
+infodir=/usr/local/share/info
+htmldir=$(docdir)
+dvdir=$(docdir)
+pdfdir=/usr/local/lib
+psdir=/usr/local/share/emacs/site-lisp
 libdir=
 lispdir=
 localedir=
