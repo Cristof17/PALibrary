@@ -239,7 +239,7 @@ distclean:
 	rm $(foreach source,$(sources_pa),$(srcdir)/$(source))
 	rm $(foreach source,$(sources_bfs),$(srcdir)/$(source))
 	rm $(foreach source,$(sources_arraylist),$(srcdir)/$(source))
-	rm $(foreach assembly,$(assemblies_pa),$(assembly))
+	rm $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
 	rm $(foreach assembly,$(assemblies_bfs)$(srcdir)/$(assembly))
 	rm $(foreach assembly,$(assemblies_arraylist),$(srcdir)/$(assembly))
 	rm $(foreach object,$(objects_pa),$(libdir)/$(object))
@@ -317,7 +317,8 @@ link_arraylist: $(output_arraylist)
 #${MAKE} $(output_dir)/$(output_pa)
 
 lib: out/$(output)
-# build: preprocess compile assemble link_windows
+build: preprocess compile assemble test
+#link_windows
 ${subdirs}:
 	-mkdir $@
 # 	${MAKE} -C $@ all
@@ -402,8 +403,8 @@ assemble: assemble_pa assemble_bfs assemble_arraylist
 	@echo "Building"
 link: link_pa link_bfs link_arraylist
 
-# libpa.a: $(objects)
-# 	$(LD) $(LDFLAGS) $(objects) -static -o $@
+libpa.a: $(objects)
+	$(LD) $(LDFLAGS) $(foreach object,$(objects_pa), $(libdir)/$(object)) -static -o $(libdir)/$@
 # link_windows: $(objects)
 # 	$(LD) $(objects) -o filiename.library
 # link_macos: $(objects)
@@ -557,7 +558,7 @@ Input.s: Input.i
 	-$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 Algorithm.s: Algorithm.i
 	-$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
-BFS/Procedure.s: $(srcdir)/BFS/Procedure.i
+BFS/Procedure.s: BFS/Procedure.i
 	-$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 PA/Input.s: PA/Input.i
 	-$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
@@ -618,8 +619,24 @@ ArrayList/ArrayList.s: ArrayList/ArrayList.i
 ArrayList/ArrayListPosition.s: ArrayList/ArrayListPosition.i
 	-$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 
+test.i: test/test.c
+	-$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 test.s: test.i
 	-$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+
+test.o: test.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+
+test.out: test.o
+	-$(CC) $(libdir)/$< $(libdir)/libpa.a -o $(bindir)/$@
 
 ASFLAGS=
 ifeq ($(host-type),arm64)
@@ -634,15 +651,15 @@ endif
 
 
 
-Input.o: $(srcdir)/Input.s
+Input.o: Input.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 
  
@@ -744,54 +761,54 @@ endif
 
 
 
-PA/Data.o: $(srcdir)/PA/Data.s
+PA/Data.o: PA/Data.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $(libdir)/$@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $(libdir)/$@
+	-$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $(libdir)/$@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 
 
 
-PA/Tree.o: $(srcdir)/PA/Tree.s
+PA/Tree.o: PA/Tree.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $(libdir)/$@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $(libdir)/$@
+	-$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $(libdir)/$@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 
 
 
-PA/List.o: $(srcdir)/PA/List.s
+PA/List.o: PA/List.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $(libdir)/$@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $(libdir)/$@
+	-$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $(libdir)/$@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 
 
 
-PA/Link.o: $(srcdir)/PA/Link.s
+PA/Link.o: PA/Link.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $(libdir)/$@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $(libdir)/$@
+	-$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $(libdir)/$@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 
 
