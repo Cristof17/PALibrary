@@ -11,60 +11,36 @@ all: pa arraylist bfs
 # 	obj/PA/Arrow.o
 # 	obj/PA/Feature.o
 prefix=/usr/local/
-AC_SUBST(prefix)
 exec_prefix=$(prefix)
-AC_SUBST(exec_prefix)
 bindir=$(exec_prefix)/bin
-AC_SUBST(bindir)
 sbindir=$(exec_prefix)/sbin
-AC_SUBST(bindir)
 libexdir=$(exec_prefix)/libexec
-AC_SUBST(libexecdir)
 datarootdir=$(prefix)/share
-AC_SUBST(datarootdir)
 datadir=$(datarootdir)
-AC_SUBST(datadir)
 sysconfdir=$(prefix)/etc
-AC_SUBST(sysconfdir)
 sharedstatedir=$(prefix)/com
-AC_SUBST(sharedstatedir)
 localstatedir=$(prefix)/var
-AC_SUBST(localestatedir)
 runstatedir=$(localstatedir)/run
-AC_SUBST(runstatedir)
 includedir=$(prefix)/include
-AC_SUBST(includedir)
 oldincludedir=/usr/include
-AC_SUBST(oldincludedir)
 docdir=$(datarootdir)/doc/pa
-AC_SUBST(docdir)
 infodir=$(datarootdir)/info
-AC_SUBST(infodir)
 htmldir=$(docdir)
-AC_SUBST(htmldir)
 dvdir=$(docdir)
-AC_SUBST(dvidir)
 pdfdir=$(docdir)
-AC_SUBST(pdfdir)
 # /usr/local/lib
 psdir=$(docdir)
-AC_SUBST(psdir)
 # /usr/local/share/emacs/site-lisp
 libdir=$(exec_prefix)/lib
-AC_SUBST(libdir)
 lispdir=$(dataroot_dir)/emacs/site-lisp
-AC_SUBST(lispdir)
 localedir=$(datarootdir)/locale
-AC_SUBST(localedir)
 mandir=$(datarootdir)/man
-AC_SUBST(mandir)
 man1dir=$(mandir)/man1
 man2dir=$(mandir)/man2
 manext=.1
 man1ext=
 man2ext=
 srcdir=src
-AC_SUBST(srcdir)
 test_pa_arm64:
 	-$(CPP) -Iinclude/ $(CPPFLAGS) test/test.c > test/test.i
 	-$(CC) -S test/test.i -o test/test.s
