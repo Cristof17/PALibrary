@@ -97,78 +97,78 @@ ifeq ($(host-type), arm64)
 endif
 test_pa_arm64:
 	-$(CPP) -I$(includedir)/ $(CPPFLAGS) test/test.c > test/test.i
-	-$(CC) -S $(srcdir)/test.i -o $(srcdir)/test.s
-	-$(AS) $(srcdir)/test.s -o $(srcdir)/test.o
-	-$(CC) $(srcdir)/test.o $(libdir)/libpa.a -o $(bindir)/test
+	-$(CC) -S test.i -o test.s
+	-$(AS) test.s -o test.o
+	-$(CC) test.o libpa.a -o test
 #obj/PA/.o \
 
-objects_arraylist= $(libdir)/ArrayList/ArrayList.o \
-	$(libdir)/ArrayList/ArrayListPosition.o
-objects_bfs= $(libdir)/BFS/Procedure.o \
-	$(libdir)/BFS/Record.o
+objects_arraylist= ArrayList/ArrayList.o \
+	ArrayList/ArrayListPosition.o
+objects_bfs= BFS/Procedure.o \
+	BFS/Record.o
 # objects_arraylist= obj/Input.o
-objects_pa= $(libdir)/Input.o \
-	$(libdir)/Algorithm.o \
-	$(libdir)/PA/Input.o \
-	$(libdir)/PA/Output.o \
-	$(libdir)/Output.o \
-	$(libdir)/PA/Resource.o \
-	$(libdir)/PA/Count.o \
-	$(libdir)/PA/Data.o \
-	$(libdir)/PA/Tree.o \
-	$(libdir)/PA/List.o \
-	$(libdir)/PA/Link.o \
-	$(libdir)/PA/Element.o \
-	$(libdir)/PA/Pair.o \
-	$(libdir)/PA/Result.o \
-	$(libdir)/PA/Series.o \
-	$(libdir)/PA/Value.o \
-	$(libdir)/PA/Status.o \
-	$(libdir)/PA/NormalTree.o \
-	$(libdir)/PA/Number.o \
-	$(libdir)/PA/TransposeTree.o \
-	$(libdir)/PA/PADrawingEditor.o \
-	$(libdir)/PA/PALine.o \
-	$(libdir)/PA/PAShape.o \
-	$(libdir)/PA/PATextView.o
+objects_pa= Input.o \
+	Algorithm.o \
+	PA/Input.o \
+	PA/Output.o \
+	Output.o \
+	PA/Resource.o \
+	PA/Count.o \
+	PA/Data.o \
+	PA/Tree.o \
+	PA/List.o \
+	PA/Link.o \
+	PA/Element.o \
+	PA/Pair.o \
+	PA/Result.o \
+	PA/Series.o \
+	PA/Value.o \
+	PA/Status.o \
+	PA/NormalTree.o \
+	PA/Number.o \
+	PA/TransposeTree.o \
+	PA/PADrawingEditor.o \
+	PA/PALine.o \
+	PA/PAShape.o \
+	PA/PATextView.o
 # 	src/PA/Data.i \
 
-sources_arraylist= $(srcdir)/ArrayList/ArrayList.i \
-	$(srcdir)/ArrayList/ArrayListPosition.i
-sources_bfs= $(srcdir)/BFS/Procedure.i \
-	$(srcdir)/BFS/Record.i
-sources_pa=src/Input.i \
-	$(srcdir)/Algorithm.i \
-	$(srcdir)/PA/Input.i \
-	$(srcdir)/PA/Output.i \
-	$(srcdir)/Output.i \
-	$(srcdir)/PA/Data.i \
-	$(srcdir)/PA/Tree.i \
-	$(srcdir)/PA/List.i \
-	$(srcdir)/PA/Link.i \
-	$(srcdir)/PA/Element.i \
-	$(srcdir)/PA/Count.i \
-	$(srcdir)/PA/Pair.i \
-	$(srcdir)/PA/Result.i \
-	$(srcdir)/PA/Series.i \
-	$(srcdir)/PA/Status.i \
-	$(srcdir)/PA/Value.i \
-	$(srcdir)/PA/Resource.i \
-	$(srcdir)/PA/NormalTree.i \
-	$(srcdir)/PA/Number.i \
-	$(srcdir)/PA/TransposeTree.i \
-	$(srcdir)/PA/PADrawingEditor.i \
-	$(srcdir)/PA/PALine.i \
-	$(srcdir)/PA/PAShape.i \
-	$(srcdir)/PA/PATextView.i
+sources_arraylist= ArrayList/ArrayList.i \
+	ArrayList/ArrayListPosition.i
+sources_bfs= BFS/Procedure.i \
+	BFS/Record.i
+sources_pa=Input.i \
+	Algorithm.i \
+	PA/Input.i \
+	PA/Output.i \
+	Output.i \
+	PA/Data.i \
+	PA/Tree.i \
+	PA/List.i \
+	PA/Link.i \
+	PA/Element.i \
+	PA/Count.i \
+	PA/Pair.i \
+	PA/Result.i \
+	PA/Series.i \
+	PA/Status.i \
+	PA/Value.i \
+	PA/Resource.i \
+	PA/NormalTree.i \
+	PA/Number.i \
+	PA/TransposeTree.i \
+	PA/PADrawingEditor.i \
+	PA/PALine.i \
+	PA/PAShape.i \
+	PA/PATextView.i
 # sources_arraylist= src/Input.i
 
-designs_arraylist= $(srcdir)/ArrayList/ArrayList.c \
-	$(srcdir)/ArrayList/ArrayListPosition.c
+designs_arraylist= ArrayList/ArrayList.c \
+	ArrayList/ArrayListPosition.c
 designs_bfs= src/BFS/Procedure.c \
-	$(srcdir)/BFS/Record.c
+	BFS/Record.c
 # sources_= src/Input.i
-designs_pa=src/Input.c \
+designs_pa=$(srcdir)/Input.c \
 	$(srcdir)/Algorithm.c \
 	$(srcdir)/PA/Input.c \
 	$(srcdir)/PA/Output.c \
@@ -193,33 +193,33 @@ designs_pa=src/Input.c \
 	$(srcdir)/PA/PAShape.c \
 	$(srcdir)/PA/PATextView.c
 
-assemblies_arraylist= $(srcdir)/ArrayList/ArrayListPosition.s \
- 	$(srcdir)/ArrayList/ArrayList.s
-assemblies_bfs= $(srcdir)/BFS/Procedure.s \
-	$(srcdir)/BFS/Record.s
+assemblies_arraylist= ArrayList/ArrayListPosition.s \
+ 	ArrayList/ArrayList.s
+assemblies_bfs= BFS/Procedure.s \
+	BFS/Record.s
 assemblies_pa= $(srcdir)/Input.s \
-	$(srcdir)/Algorithm.s \
-	$(srcdir)/PA/Input.s \
-	$(srcdir)/PA/Output.s \
-	$(srcdir)/Output.s \
-	$(srcdir)/PA/Tree.s \
-	$(srcdir)/PA/Data.s \
-	$(srcdir)/PA/List.s \
-	$(srcdir)/PA/Link.s \
-	$(srcdir)/PA/Element.s \
-	$(srcdir)/PA/Count.s \
-	$(srcdir)/PA/Pair.s \
-	$(srcdir)/PA/Result.s \
-	$(srcdir)/PA/Series.s \
-	$(srcdir)/PA/Value.s \
-	$(srcdir)/PA/Resource.s \
-	$(srcdir)/PA/NormalTree.s \
-	$(srcdir)/PA/Number.s \
-	$(srcdir)/PA/TransposeTree.s \
-	$(srcdir)/PA/PADrawingEditor.s \
-	$(srcdir)/PA/PALine.s \
-	$(srcdir)/PA/PAShape.s \
-	$(srcdir)/PA/PATextView.s
+	Algorithm.s \
+	PA/Input.s \
+	PA/Output.s \
+	Output.s \
+	PA/Tree.s \
+	PA/Data.s \
+	PA/List.s \
+	PA/Link.s \
+	PA/Element.s \
+	PA/Count.s \
+	PA/Pair.s \
+	PA/Result.s \
+	PA/Series.s \
+	PA/Value.s \
+	PA/Resource.s \
+	PA/NormalTree.s \
+	PA/Number.s \
+	PA/TransposeTree.s \
+	PA/PADrawingEditor.s \
+	PA/PALine.s \
+	PA/PAShape.s \
+	PA/PATextView.s
 # 	src/PA/Destination.s
 # 	src/PA/Arrow.s
 # 	src/PA/Feature.s
@@ -308,10 +308,6 @@ preprocess_arraylist: $(sources_arraylist)
 link_pa: $(output_pa)
 link_bfs: $(output_bfs)
 link_arraylist: $(output_arraylist)
-
-pa: ${designs_pa} ${sources_pa} ${assemblies_pa} ${objects_pa} ${output_pa}
-bfs: ${designs_bfs} ${sources_bfs} ${assemblies_bfs} ${objects_bfs} $(output_bfs)
-arraylist: ${designs_arraylist} ${sources_arraylist} ${assemblies_arraylist} ${objects_arraylist} $(output_arraylist)
 
 #${MAKE} $(designs_pa) 
 #${MAKE} $(sources_pa)
@@ -424,7 +420,7 @@ srcdir=src
 #CFLAGS+=-I$(abspath $(includedir)/Adapter)
 CPPFLAGS=
 CPPFLAGS+=-Iinclude
-libdir= obj obj/ArrayList obj/PA obj/BFS
+libdir= obj
 #datadir=dat
 #infodir=info
 #mandir=man
@@ -493,136 +489,135 @@ libdir= obj obj/ArrayList obj/PA obj/BFS
 #src/Prototype/ConcretePrototype2.c: include/Prototype/ConcretePrototype2.h
 
 Input.i : $(srcdir)/Input.c $(includedir)/ArrayList/ArrayList.h $(includedir)/PA/Result.h $(includedir)/Input.h $(includedir)/types.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 Algorithm.i : $(srcdir)/Algorithm.c $(includedir)/PA/Result.h $(includedir)/Algorithm.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 BFS/Procedure.i : $(srcdir)/BFS/Procedure.c $(includedir)/types.h $(includedir)/Algorithm.h $(includedir)/PA/Tree.h $(includedir)/PA/Element.h $(includedir)/BFS/Procedure.h $(includedir)/PA/Input.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 PA/Input.i : $(srcdir)/PA/Input.c $(includedir)/Input.h $(includedir)/ArrayList/ArrayList.h $(includedir)/PA/Result.h $(includedir)/types.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 PA/Output.i : $(srcdir)/PA/Output.c $(includedir)/defs.h $(includedir)/Output.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 BFS/Record.i : $(srcdir)/BFS/Record.c $(includedir)/types.h $(includedir)/PA/List.h $(includedir)/PA/Count.h $(includedir)/PA/Result.h $(includedir)/BFS/Record.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 Output.i : $(srcdir)/Output.c $(includedir)/defs.h $(includedir)/Output.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 PA/Data.i : $(srcdir)/PA/Data.c $(includedir)/PA/Data.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 # src/PA/Destination.i : src/PA/Destination.c include/types.h include/PA/Destination.h
 # 	-$(CPP) $(CPPFLAGS) -E $< > $@
 PA/Tree.i : $(srcdir)/PA/Tree.c $(includedir)/PA/Tree.h $(includedir)/types.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 PA/List.i : $(srcdir)/PA/List.c $(includedir)/types.h $(includedir)/PA/List.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 PA/Link.i : $(srcdir)/PA/Link.c $(includedir)/defs.h $(includedir)/types.h $(includedir)/PA/Link.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 # src/PA/Arrow.i : src/PA/Arrow.c include/defs.h include/PA/Arrow.h include/types.h
 # 	-$(CPP) $(CPPFLAGS) -E $< > $@
 PA/Element.i : $(srcdir)/PA/Element.c $(includedir)/defs.h $(includedir)/PA/Element.h $(includedir)/types.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 PA/Count.i : $(srcdir)/PA/Count.c $(includedir)/types.h $(includedir)/PA/Count.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > v$@
 PA/Pair.i : $(srcdir)/PA/Pair.c $(includedir)/types.h $(includedir)/PA/Pair.h
-	$(CPP) $(CPPFLAGS) -E $< > $@
+	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 	-
 PA/Result.i : $(srcdir)/PA/Result.c $(includedir)/PA/Result.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 PA/Series.i : $(srcdir)/PA/Series.c $(includedir)/defs.h $(includedir)/types.h $(includedir)/PA/Series.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 PA/Status.i : $(srcdir)/PA/Status.c $(includedir)/defs.h $(includedir)/PA/Status.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 # src/PA/Feature.i : src/PA/Feature.c include/PA/Feature.h include/types.h
 # 	-$(CPP) $(CPPFLAGS) -E $< > $@
 PA/Value.i : $(srcdir)/PA/Value.c $(includedir)/types.h $(includedir)/PA/Value.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 PA/Resource.i : $(srcdir)/PA/Resource.c $(includedir)/PA/Resource.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@	
+	-$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@	
 PA/NormalTree.i : $(srcdir)/PA/NormalTree.c $(includedir)/types.h $(includedir)/PA/NormalTree.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 PA/Number.i : $(srcdir)/PA/Number.c $(includedir)/PA/Number.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 PA/TransposeTree.i : $(srcdir)/PA/TransposeTree.c $(includedir)/types.h $(includedir)/PA/TransposeTree.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 PA/PADrawingEditor.i : $(srcdir)/PA/PADrawingEditor.c $(includedir)/PA/PADrawingEditor.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 PA/PALine.i : $(srcdir)/PA/PALine.c $(includedir)/PA/PALine.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 PA/PAShape.i : $(srcdir)/PA/PAShape.c $(includedir)/PA/PAShape.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 PA/PATextView.i : $(srcdir)/PA/PATextView.c $(includedir)/PA/PATextView.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
-ArrayList/ArrayList.i : $(srcdir)/ArrayList/ArrayList.c $(includedir)/defs.h $(includedir)/types.h $(includedir)/ArrayList/ArrayList.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
-ArrayList/ArrayListPosition.i : $(srcdir)/ArrayList/ArrayListPosition.c $(includedir)/ArrayList/ArrayList.h inc$(includedir)lude/defs.h $(includedir)/types.h
-	-$(CPP) $(CPPFLAGS) -E $< > $@
+	-$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
+ArrayList/ArrayList.i: $(srcdir)/ArrayList/ArrayList.c $(includedir)/defs.h $(includedir)/types.h $(includedir)/ArrayList/ArrayList.h
+	-$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
+ArrayList/ArrayListPosition.i : $(srcdir)/ArrayList/ArrayListPosition.c $(includedir)/ArrayList/ArrayList.h $(includedir)/defs.h $(includedir)/types.h
+	-$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 
-Input.s: $(srcdir)/Input.i
-	-$(CC) -S $< -o $@
-Algorithm.s: $(srcdir)/Algorithm.i
-	-$(CC) -S $< -o $@
+Input.s: Input.i
+	-$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+Algorithm.s: Algorithm.i
+	-$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 BFS/Procedure.s: $(srcdir)/BFS/Procedure.i
-	-$(CC) -S $< -o $@
-PA/Input.s: $(srcdir)/PA/Input.i
-	-$(CC) -S $< -o $@
-PA/Output.s: $(srcdir)/PA/Output.i
-	-$(CC) -S $< -o $@
-BFS/Record.s: $(srcdir)/BFS/Record.i
-	-$(CC) -S $< -o $@
-Output.s: $(srcdir)/Output.i
-	-$(CC) -S $< -o $@
+	-$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+PA/Input.s: PA/Input.i
+	-$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+PA/Output.s: PA/Output.i
+	-$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+BFS/Record.s: BFS/Record.i
+	-$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+Output.s: Output.i
+	-$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 # src/PA/Destination.s : src/PA/Destination.i
 # 	-$(CC) -S $< -o $@
 #asm/PA/Data.s: src/PA/Data.c
 #	$(CC) $(CFLAGS) -S $< -o $@
-PA/Tree.s: $(srcdir)/PA/Tree.i
-	-$(CC) -S $< -o $@
-PA/Data.s: $(srcdir)/PA/Data.i
-	-$(CC) -S $< -o $@
-PA/List.s: $(srcdir)/PA/List.i
-	-$(CC) -S $< -o $@
+PA/Tree.s: PA/Tree.i
+	-$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+PA/Data.s: PA/Data.i
+	-$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+PA/List.s: $(srcdir)/PA/List.i $(srcdir)/$< -o $(srcdir)/$@
 PA/Link.s: $(srcdir)/PA/Link.i
-	-$(CC) -S $< -o $@
+	-$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 # src/PA/Arrow.s: src/PA/Arrow.i
 # 	-$(CC) -S $< -o $@
 PA/Element.s: $(srcdir)/PA/Element.i
-	-$(CC) -S $< -o $@
+	-$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 PA/Count.s: $(srcdir)/PA/Count.i
-	-$(CC) -S $< -o $@
+	-$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 PA/Pair.s: $(srcdir)/PA/Pair.i
-	-$(CC) -S $< -o $@
+	-$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 PA/Result.s: $(srcdir)/PA/Result.i
-	-$(CC) -S $< -o $@
+	-$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 PA/Series.s: $(srcdir)/PA/Series.i
-	-$(CC) -S $< -o $@
+	-$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 # src/PA/Feature.s: src/PA/Feature.i
 # 	-$(CC) -S $< -o $@
 PA/Value.s: $(srcdir)/PA/Value.i
-	-$(CC) -S $< -o $@
+	-$(CC) -S $< -o $(srcdir)/$@
 PA/Resource.s: $(srcdir)/PA/Resource.i
-	-$(CC) -S $< -o $@
+	-$(CC) -S $< -o $(srcdir)/$@
 PA/NormalTree.s: $(srcdir)/PA/NormalTree.i
-	-$(CC) -S $< -o $@
+	-$(CC) -S $< -o $(srcdir)/$@
 PA/Number.s: $(srcdir)/PA/Number.i
-	-$(CC) -S $< -o $@
+	-$(CC) -S $< -o $(srcdir)/$@
 PA/TransposeTree.s: $(srcdir)/PA/TransposeTree.i
-	-$(CC) -S $< -o $@
+	-$(CC) -S $< -o $(srcdir)/$@
 PA/Status.s: $(srcdir)/PA/Status.i
-	-$(CC) -S $< -o $@
+	-$(CC) -S $< -o $(srcdir)/$@
 PA/PADrawingEditor.s: $(srcdir)/PA/PADrawingEditor.i
-	-$(CC) -S $< -o $@
+	-$(CC) -S $< -o $(srcdir)/$@
 PA/PALine.s: $(srcdir)/PA/PALine.i
-	-$(CC) -S $< -o $@
+	-$(CC) -S $< -o $(srcdir)/$@
 PA/PAShape.s: $(srcdir)/PA/PAShape.i
-	-$(CC) -S $< -o $@
+	-$(CC) -S $< -o $(srcdir)/$@
 PA/PATextView.s: $(srcdir)/PA/PATextView.i
-	-$(CC) -S $< -o $@
+	-$(CC) -S $< -o $(srcdir)/$@
 ArrayList/ArrayList.s: $(srcdir)/ArrayList/ArrayList.i
-	-$(CC) -S $< -o $@
+	-$(CC) -S $< -o $(srcdir)/$@
 ArrayList/ArrayListPosition.s: $(srcdir)/ArrayList/ArrayListPosition.i
-	-$(CC) -S $< -o $@
+	-$(CC) -S $< -o $(srcdir)/$@
 
 test.s: test.i
-	-$(CC) -S $< -o $@
+	-$(CC) -S $< -o $(srcdir)/$@
 
 ASFLAGS=
 ifeq ($(host-type),arm64)
@@ -637,7 +632,7 @@ endif
 
 
 
-Input.o: Input.s
+Input.o: $(srcdir)/Input.s
 ifeq ($(host-type),arm64)
 	$(AS) $(ASFLAGS) $< -o $(libdir)/$@
 endif
@@ -652,149 +647,149 @@ endif
  
  #obj/Input.o: src/Input.s
 #	$(AS) $(ASFLAGS) $< -o $@
-Algorithm.o: Algorithm.s
+Algorithm.o: $(srcdir)/Algorithm.s
 ifeq ($(host-type),arm64)
 	-
-	$(AS) $(ASFLAGS) $< -o $@
+	$(AS) $(ASFLAGS) $< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
 	-
-	$(CC) -c $(CFLAGS) $< -o $@
+	$(CC) -c $(CFLAGS) $< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
 	-
-	$(AS) $(ASFLAGS) $< -o $@
+	$(AS) $(ASFLAGS) $< -o $(libdir)/$@
 endif
 
 
 
 
-BFS/Procedure.o: BFS/Procedure.s
+BFS/Procedure.o: $(srcdir)/BFS/Procedure.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $(libdir)/$@
 endif
 
 
 
-PA/Input.o: PA/Input.s
+PA/Input.o: $(srcdir)/PA/Input.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $(libdir)/$@
 endif
 
 
 
-PA/Output.o: PA/Output.s
+PA/Output.o: $(srcdir)/PA/Output.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $(libdir)/$@
 endif
 
 
 
-BFS/Record.o: BFS/Record.s
+BFS/Record.o: $(srcdir)/BFS/Record.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $(libdir)/$@
 endif
 
 
 
-Output.o: Output.s
+Output.o: $(srcdir)/Output.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $(libdir)/$@
 endif
 
 
 
-PA/Value.o: PA/Value.s
+PA/Value.o: $(srcdir)/PA/Value.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 
 
 
-PA/Data.o: PA/Data.s
+PA/Data.o: $(srcdir)/PA/Data.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $(libdir)/$@
 endif
 
 
 
-PA/Tree.o: PA/Tree.s
+PA/Tree.o: $(srcdir)/PA/Tree.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $(libdir)/$@
 endif
 
 
 
-PA/List.o: PA/List.s
+PA/List.o: $(srcdir)/PA/List.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $(libdir)/$@
 endif
 
 
 
-PA/Link.o: PA/Link.s
+PA/Link.o: $(srcdir)/PA/Link.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $(libdir)/$@
 endif
 
 
@@ -812,80 +807,80 @@ endif
 
 
 
-PA/Element.o: PA/Element.s
+PA/Element.o: $(srcdir)/PA/Element.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 
 
 
-PA/Count.o: PA/Count.s
+PA/Count.o: $(srcdir)/PA/Count.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 
 
 
-PA/Pair.o: PA/Pair.s
+PA/Pair.o: $(srcdir)/PA/Pair.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 
 
 
-PA/Result.o: PA/Result.s
+PA/Result.o: $(srcdir)/PA/Result.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 
 
 
-PA/Series.o: PA/Series.s
+PA/Series.o: $(srcdir)/PA/Series.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 
 
 
-Status.o: PA/Status.s
+Status.o: $(srcdir)/PA/Status.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $< -o $(libdir)/$@
 endif
 
 
@@ -918,120 +913,120 @@ endif
 
 PA/Resource.o: PA/Resource.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 
 PA/NormalTree.o: PA/NormalTree.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 
 PA/Number.o: PA/Number.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 
 PA/TransposeTree.o: PA/TransposeTree.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 
 PA/PADrawingEditor.o: PA/PADrawingEditor.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 
 PA/PALine.o: PA/PALine.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 
 
 
 PA/PAShape.o: PA/PAShape.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 
 
 
 PA/PATextView.o: PA/PATextView.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 
 
 
 ArrayList/ArrayList.o: ArrayList/ArrayList.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 
 
 
 ArrayList/ArrayListPosition.o : ArrayList/ArrayListPosition.s
 ifeq ($(host-type),arm64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),x86_64)
-	-$(CC) -c $(CFLAGS) $< -o $@
+	-$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $< -o $@
+	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 
 
@@ -1246,6 +1241,9 @@ clean:
 ##include "includePAGrafProduct.h
 #@echo "clean $(pwd)"
 #	@echo "end of clean"
+pa: ${designs_pa} ${sources_pa} ${assemblies_pa} ${objects_pa} ${output_pa}
+bfs: ${designs_bfs} ${sources_bfs} ${assemblies_bfs} ${objects_bfs} $(output_bfs)
+arraylist: ${designs_arraylist} ${sources_arraylist} ${assemblies_arraylist} ${objects_arraylist} $(output_arraylist)
 
 run:
 	@echo "Running"
