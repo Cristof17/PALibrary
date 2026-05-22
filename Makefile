@@ -9,7 +9,7 @@
 # 	obj/PA/Destination.o
 # 	obj/PA/Arrow.o
 # 	obj/PA/Feature.o
-prefix=/usr/local/
+prefix=.
 exec_prefix=$(prefix)
 bindir=$(exec_prefix)/bin
 sbindir=$(exec_prefix)/sbin
@@ -65,8 +65,9 @@ maintainer-clean:
 realclean:
 clobber:
 install: $(subdirs)
-	cp out/libpa.a $(libdir)
-	cp -r obj/* $(libdir)
+	mkdir $(subdirs)
+#	cp out/libpa.a $(libdir)
+#	cp -r obj/*.o $(libdir)
 install_check:
 	ls $(libdir) | grep libpa.a
 	ls $(libdir) | grep $(objects)/PA
