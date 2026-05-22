@@ -41,6 +41,26 @@ manext=.1
 man1ext=
 man2ext=
 srcdir=src
+mostlyclean:
+	-rm $(objects_pa)
+	-rm $(assemblies_pa)
+	-rm $(sources_pa)
+distclean:
+realclean:
+clobber:
+install: $(subdirs)
+print:
+	git status
+tar:
+	tar cvf palibrary.tar src/PA/
+shar:
+dist:
+	tar cvf obj/libpa.a
+check:
+test: $(test_pa)
+ifeq ($(host-type), arm64)
+	file out/libpa.a
+endif
 test_pa_arm64:
 	-$(CPP) -Iinclude/ $(CPPFLAGS) test/test.c > test/test.i
 	-$(CC) -S test/test.i -o test/test.s
@@ -252,26 +272,7 @@ arraylist: ${designs_arraylist} ${sources_arraylist} ${assemblies_arraylist} ${o
 #${MAKE} $(objects_pa)
 #${MAKE} $(assemblies_pa)
 #${MAKE} $(output_dir)/$(output_pa)
-mostlyclean:
-	-rm $(objects_pa)
-	-rm $(assemblies_pa)
-	-rm $(sources_pa)
-distclean:
-realclean:
-clobber:
-install: $(subdirs)
-print:
-	git status
-tar:
-	tar cvf palibrary.tar src/PA/
-shar:
-dist:
-	tar cvf obj/libpa.a
-check:
-test: $(test_pa)
-ifeq ($(host-type), arm64)
-	file out/libpa.a
-endif
+
 lib: out/$(output)
 # build: preprocess compile assemble link_windows
 ${subdirs}:
