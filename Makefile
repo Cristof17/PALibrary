@@ -12,29 +12,29 @@ all: pa arraylist bfs
 # 	obj/PA/Feature.o
 prefix=/usr/local/
 exec_prefix=$(prefix)
-bindir=/usr/local/bin
-sbindir=/usr/local/sbin
-libexdir=/usr/local/libexec
-datarootdir=/usr/local/share
-datadir=/usr/local/share
-sysconfdir=/usr/local/etc
-sharedstatedir=/usr/local/com
-localstatedir=/usr/local/var
-runstatedir=/var/run
-includedir=/usr/local/include
+bindir=$(exec_prefix)/bin
+sbindir=$(exec_prefix)/sbin
+libexdir=$(exec_prefix)/libexec
+datarootdir=$(prefix)/share
+datadir=$(datarootdir)
+sysconfdir=$(prefix)/etc
+sharedstatedir=$(prefix)/com
+localstatedir=$(prefix)/var
+runstatedir=$(localstatedir)
+includedir=$(prefix)/include
 oldincludedir=/usr/include
-docdir=/usr/local/share/doc/pa
-infodir=/usr/local/share/info
+docdir=/$(datarootdir)/doc/pa
+infodir=$(datarootdir)/info
 htmldir=$(docdir)
 dvdir=$(docdir)
 pdfdir=$(docdir)
 # /usr/local/lib
 psdir=$(docdir)
 # /usr/local/share/emacs/site-lisp
-libdir=/usr/local/lib
-lispdir=/usr/local/share/emacs/site-lisp
-localedir=/usr/local/share/locale
-mandir=/usr/local/share/man
+libdir=$(exec_prefix)/lib
+lispdir=$(dataroot_dir)/emacs/site-lisp
+localedir=$(datarootdir)/locale
+mandir=$(datarootdir)/man
 man1dir=$(mandir)/man1
 man2dir=$(mandir)/man2
 manext=.1
