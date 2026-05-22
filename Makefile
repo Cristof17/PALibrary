@@ -259,7 +259,7 @@ mostlyclean:
 distclean:
 realclean:
 clobber:
-install:
+install: $(subdirs)
 print:
 	git status
 tar:
