@@ -5,8 +5,7 @@
 # with no Invariant Sections, no Front-Cover Texts, and no Back-Cover
 # Texts.  A copy of the license is included in the section entitled ``GNU
 # Free Documentation License''.
-.PHONY: all
-all: pa arraylist bfs
+
 # 	obj/PA/Destination.o
 # 	obj/PA/Arrow.o
 # 	obj/PA/Feature.o
@@ -41,6 +40,7 @@ manext=.1
 man1ext=
 man2ext=
 srcdir=src
+all: pa arraylist bfs
 mostlyclean:
 	-rm $(objects_pa)
 	-rm $(assemblies_pa)
@@ -1363,3 +1363,4 @@ run:
 # 	$(AS) -c asm/arraylist/$^ -o obj/arraylist/$@
 
 #.PHONY: all install installdirs installcheck uinstall run distclean clean
+.PHONY: all
