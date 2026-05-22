@@ -517,7 +517,7 @@ PA/Link.i : $(srcdir)/PA/Link.c $(includedir)/defs.h $(includedir)/types.h $(inc
 PA/Element.i : $(srcdir)/PA/Element.c $(includedir)/defs.h $(includedir)/PA/Element.h $(includedir)/types.h
 	-$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 PA/Count.i : $(srcdir)/PA/Count.c $(includedir)/types.h $(includedir)/PA/Count.h
-	-$(CPP) $(CPPFLAGS) -E $< > v$@
+	-$(CPP) $(CPPFLAGS) -E $< > $@
 PA/Pair.i : $(srcdir)/PA/Pair.c $(includedir)/types.h $(includedir)/PA/Pair.h
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 	-
