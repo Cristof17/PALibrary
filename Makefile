@@ -53,16 +53,15 @@ maintainer-clean:
 	-rmdir $(libdir)/BFS/
 	-rm $(libdir)/ArrayList/*
 	-rmdir $(libdir)/ArrayList
-distclean:
-	-rm $(sources_pa)
-	-rm $(sources_bfs)
-	-rm $(sources_arraylist)
-	-rm $(assemblies_pa)
-	-rm $(assemblies_bfs)
-	-rm $(assemble_arraylist)
-	-rm $(objects_pa)
-	-rm $(objects_bfs)
-	-rm $(objects_arraylist)
+#	-rm $(sources_pa)
+#	-rm $(sources_bfs)
+#	-rm $(sources_arraylist)
+#	-rm $(assemblies_pa)
+#	-rm $(assemblies_bfs)
+#	-rm $(assemble_arraylist)
+#	-rm $(objects_pa)
+#	-rm $(objects_bfs)
+#	-rm $(objects_arraylist)
 realclean:
 clobber:
 install: $(subdirs)
@@ -88,6 +87,7 @@ test_pa_arm64:
 	-$(CC) -S test/test.i -o test/test.s
 	-$(AS) test/test.s -o test/test.o
 	-$(CC) test/test.o out/libpa.a -o out/test
+#obj/PA/.o \
 
 objects_arraylist= obj/ArrayList/ArrayList.o \
 	obj/ArrayList/ArrayListPosition.o
@@ -102,7 +102,6 @@ objects_pa= obj/Input.o \
 	obj/PA/Resource.o \
 	obj/PA/Count.o \
 	obj/PA/Data.o \
-	obj/PA/Status.o \
 	obj/PA/Tree.o \
 	obj/PA/List.o \
 	obj/PA/Link.o \
@@ -221,6 +220,18 @@ assemblies_pa= src/Input.s \
 # 	src/PA/Destination.i
 # 	src/PA/Arrow.i
 # 	src/PA/Feature.i
+
+distclean:
+	rm $(foreach source,$(sources_pa),$(source))
+	rm $(foreach source,$(sources_bfs),$(source))
+	rm $(foreach source,$(sources_arraylist),$(source))
+	rm $(foreach assembly,$(assemblies_pa),$(assembly))
+	rm $(foreach assembly,$(assemblies_bfs),$(assembly))
+	rm $(foreach assembly,$(assemblies_arraylist),$(assembly))
+	rm $(foreach object,$(objects_pa),$(object))
+	rm $(foreach object,$(objects_bfs),$(object))
+	rm $(foreach object,$(objects_arraylist),$(object))
+
 objdirs= obj/ \
 	obj/BFS/ \
 	obj/ArrayList/ \
