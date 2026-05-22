@@ -9,6 +9,7 @@
 # 	obj/PA/Destination.o
 # 	obj/PA/Arrow.o
 # 	obj/PA/Feature.o
+#prefix=/usr/local
 prefix=.
 exec_prefix=$(prefix)
 bindir=$(exec_prefix)/bin
@@ -47,12 +48,21 @@ mostlyclean:
 	-rm $(sources_pa)
 maintainer-clean:
 	-rm $(libdir)/libpa.a
-	-rm $(libdir)/PA/*
-	-rmdir $(libdir)/PA
-	-rm $(libdir)/BFS/*
-	-rmdir $(libdir)/BFS/
-	-rm $(libdir)/ArrayList/*
-	-rmdir $(libdir)/ArrayList
+	-rm $(sources_pa)
+	-rm $(sources_bfs)
+	-rm $(sources_arraylist)
+	-rm $(assemblies_pa)
+	-rm $(assemblies_bfs)
+	-rm $(assemblies_arraylist)
+	-rm $(objects_pa)
+	-rm $(objects_bfs)
+	-rm $(objects_arraylist)
+#	-rm $(output_dir)/$(outfile)
+#-rmdir $(libdir)/PA
+#	-rm $(libdir)/BFS/*
+#	-rmdir $(libdir)/BFS/
+#	-rm $(libdir)/ArrayList/*
+#	-rmdir $(libdir)/ArrayList
 #	-rm $(sources_pa)
 #	-rm $(sources_bfs)
 #	-rm $(sources_arraylist)
@@ -65,7 +75,8 @@ maintainer-clean:
 realclean:
 clobber:
 install: $(subdirs)
-	mkdir $(subdirs)
+	$(srcdir)/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
+# 	mkdir $(subdirs)
 #	cp out/libpa.a $(libdir)
 #	cp -r obj/*.o $(libdir)
 installcheck:
