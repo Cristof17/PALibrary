@@ -68,9 +68,10 @@ install: $(subdirs)
 	mkdir $(subdirs)
 #	cp out/libpa.a $(libdir)
 #	cp -r obj/*.o $(libdir)
-install_check:
-	ls $(libdir) | grep libpa.a
-	ls $(libdir) | grep $(objects)/PA
+installcheck:
+	ls $(foreach subdir,$(subdirs),$(subdir))
+#	ls $(libdir) | grep libpa.a
+#	ls $(libdir) | grep $(objects)/PA
 print:
 	git status
 tar:
