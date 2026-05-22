@@ -45,10 +45,23 @@ mostlyclean:
 	-rm $(objects_pa)
 	-rm $(assemblies_pa)
 	-rm $(sources_pa)
+maintainer-clean:
+	-rm $(libdir)/libpa.a
+	-rm $(libdir)/PA/*
+	-rmdir $(libdir)/PA
+	-rm $(libdir)/BFS/*
+	-rmdir $(libdir)/BFS/
+	-rm $(libdir)/ArrayList/*
+	-rmdir $(libdir)/ArrayList
 distclean:
 realclean:
 clobber:
 install: $(subdirs)
+	cp out/libpa.a $(libdir)
+	cp -r obj/* $(libdir)
+install_check: $(build) $(install)
+	ls $(libdir) | grep libpa.a
+	ls $(libdir) | grep $(objects)/PA
 print:
 	git status
 tar:
