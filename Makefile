@@ -231,15 +231,15 @@ assemblies_pa= Input.s \
 	PA/PAShape.s \
 	PA/PATextView.s
 
-sources_test_pa = src/test.i
+sources_test_pa = test.i
 sources_test_bfs = 
 sources_test_arraylist =
-assemblies_test_pa = src/test.s
+assemblies_test_pa = test.s
 assemblies_test_bfs =
 assemblies_test_arraylist =
 # objects_
 # as
-objects_test_pa = obj/test.o
+objects_test_pa = test.o
 objects_test_bfs =
 objects_test_arraylist = 
 # 	src/PA/Destination.s
@@ -1265,19 +1265,21 @@ clean:
 # 	-rm $(srcdir)/test.s
 # 	-rm $(bindir)/test
 	rm $(foreach source,$(sources_pa),$(srcdir)/$(source))
-	rm $(foreach source,$(sources_bfs),$(srcdir)/$(source))
-	rm $(foreach source,$(sources_arraylist),$(srcdir)/$(source))
+	rm $(foreach test,$(sources_test_pa),$(srcdir)/$(test))
+# 	rm $(foreach source,$(sources_bfs),$(srcdir)/$(source))
+# 	rm $(foreach source,$(sources_arraylist),$(srcdir)/$(source))
 # 	rm $(foreach assembly,$(assemblies_pa),$(libdir)/$(assembly))
 # 	rm $(foreach assembly,$(assemblies_bfs),$(libdir)/$(assembly))
 # 	rm $(foreach assembly,$(assemblies_arraylist),$(libdir)/$(assembly))
 # 	rm $(foreach assembly,$(assemblies_pa),$(srcdir)/ass)
 	rm $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
-	rm $(foreach assembly,$(assemblies_bfs),$(srcdir)/$(assebmbly))
-	rm $(foreach assembly,$(assemblies_arraylist),$(srcdir)/$(assembly))
+	rm $(foreach test,$(assemblies_test_pa),$(srcdir)/$(test))
+# 	rm $(foreach assembly,$(assemblies_bfs),$(srcdir)/$(assebmbly))
+# 	rm $(foreach assembly,$(assemblies_arraylist),$(srcdir)/$(assembly))
 	rm $(foreach object,$(objects_pa),$(libdir)/$(object))
-	rm $(foreach object,$(objects_bfs),$(libdir)/$(object))
-	rm $(foreach object,$(objects_arraylist),$(libdir)/$(object))
-	rm $(foreach test,$(sources_test_pa),$(srcdir)/$(test))
+	rm $(foreach object,$(objects_test_pa),$(libdir)/$(object))
+# 	rm $(foreach object,$(objects_bfs),$(libdir)/$(object))
+# 	rm $(foreach object,$(objects_arraylist),$(libdir)/$(object))
 # 	rm $(bindir)/test
 # 	-rm -r obj/BFS/
 # 	-rm -r obj/Adapter/
