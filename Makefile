@@ -431,8 +431,9 @@ assemble: assemble_pa
 	@echo "Building"
 link: link_pa link_bfs link_arraylist
 
-libpa.a: $(objects)
-	$(LD) $(LDFLAGS) $(foreach object,$(objects_pa), $(libdir)/$(object)) -static -o $(libdir)/$@
+libpa.a: $(objects_pa)
+	$(LD) $(foreach object,$^,$(libdir)/$(object)) -static -o $(libdir)/$@
+# 	$(LD) $(LDFLAGS) $(foreach object,$$^,$(libdir)/$(object)) -static -o $(libdir)/$@
 # link_windows: $(objects)
 # 	$(LD) $(objects) -o filiename.library
 # link_macos: $(objects)
