@@ -45,20 +45,28 @@ srcdir=src
 all: build 
 #pa arraylist bfs
 mostlyclean:
-	-rm $(objects_pa)
-	-rm $(assemblies_pa)
-	-rm $(sources_pa)
+	rm $(foreach object,$(objects_pa),$(libdir)/$(object))
+	rm $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
+	rm $(foreach source,$(sources_pa),$(srcdir)/$(source))
+	rm $(foreach test,$(sources_test_pa),$(srcdir)/$(test))
+# 	-rm $(objects_pa)
+# 	-rm $(assemblies_pa)
+# 	-rm $(sources_pa)
 maintainer-clean:
-	-rm $(libdir)/libpa.a
-	-rm $(sources_pa)
-	-rm $(sources_bfs)
-	-rm $(sources_arraylist)
-	-rm $(assemblies_pa)
-	-rm $(assemblies_bfs)
-	-rm $(assemblies_arraylist)
-	-rm $(objects_pa)
-	-rm $(objects_bfs)
-	-rm $(objects_arraylist)
+	rm $(foreach object,$(objects_pa),$(libdir)/$(object))
+	rm $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
+	rm $(foreach source,$(sources_pa),$(srcdir)/$(source))
+	rm $(foreach test,$(sources_test_pa),$(srcdir)/$(test))
+# 	-rm $(libdir)/libpa.a
+# 	-rm $(sources_pa)
+# 	-rm $(sources_bfs)
+# 	-rm $(sources_arraylist)
+# 	-rm $(assemblies_pa)
+# 	-rm $(assemblies_bfs)
+# 	-rm $(assemblies_arraylist)
+# 	-rm $(objects_pa)
+# 	-rm $(objects_bfs)
+# 	-rm $(objects_arraylist)
 #	-rm $(output_dir)/$(outfile)
 #-rmdir $(libdir)/PA
 #	-rm $(libdir)/BFS/*
@@ -222,6 +230,18 @@ assemblies_pa= Input.s \
 	PA/PALine.s \
 	PA/PAShape.s \
 	PA/PATextView.s
+
+sources_test_pa = src/test.i
+sources_test_bfs = 
+sources_test_arraylist =
+assemblies_test_pa = src/test.s
+assemblies_test_bfs =
+assemblies_test_arraylist =
+# objects_
+# as
+objects_test_pa = obj/test.o
+objects_test_bfs =
+objects_test_arraylist = 
 # 	src/PA/Destination.s
 # 	src/PA/Arrow.s
 # 	src/PA/Feature.s
@@ -238,14 +258,14 @@ assemblies_pa= Input.s \
 
 distclean:
 	rm $(foreach source,$(sources_pa),$(srcdir)/$(source))
-	rm $(foreach source,$(sources_bfs),$(srcdir)/$(source))
-	rm $(foreach source,$(sources_arraylist),$(srcdir)/$(source))
+# 	rm $(foreach source,$(sources_bfs),$(srcdir)/$(source))
+# 	rm $(foreach source,$(sources_arraylist),$(srcdir)/$(source))
 	rm $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
-	rm $(foreach assembly,$(assemblies_bfs),$(srcdir)/$(assembly))
-	rm $(foreach assembly,$(assemblies_arraylist),$(srcdir)/$(assembly))
+# 	rm $(foreach assembly,$(assemblies_bfs),$(srcdir)/$(assembly))
+# 	rm $(foreach assembly,$(assemblies_arraylist),$(srcdir)/$(assembly))
 	rm $(foreach object,$(objects_pa),$(libdir)/$(object))
-	rm $(foreach object,$(objects_bfs),$(libdir)/$(object))
-	rm $(foreach object,$(objects_arraylist),$(libdir)/$(object))
+# 	rm $(foreach object,$(objects_bfs),$(libdir)/$(object))
+# 	rm $(foreach object,$(objects_arraylist),$(libdir)/$(object))
 
 objdirs= $(libdir)/ \
 	$(libdir)/BFS/ \
@@ -295,22 +315,26 @@ output_bfs= $(output_dir)/$(lib_bfs)
 output_arraylist= $(output_dir)/$(lib_arraylist)
 output_pa= $(output_dir)/$(lib_pa)
 
-assemble_pa: $(assemblies_pa)
-assemble_arraylist: $(assemblies_arraylist)
-assemble_bfs: $(assemblies_bfs)
+assemble_pa: $(assemblies_pa) $(assemblies_test_pa)
+assemble_bfs: $(assemblies_bfs) $(assemblies_test_bfs)
+assemble_arraylist: $(assemblies_arraylist) $(assemblies_test_arraylist)
 
-compile_pa: $(objects_pa)
-compile_bfs: $(objects_bfs)
-compile_arraylist: $(objects_arraylist)
+compile_pa: $(objects_pa) $(objects_test_pa)
+compile_bfs: $(objects_bfs) $(objects_test_bfs)
+compile_arraylist: $(objects_arraylist) $(objects_test_arraylist)
 
-preprocess_pa: $(sources_pa)
-preprocess_bfs: $(sources_bfs)
-preprocess_arraylist: $(sources_arraylist)
+preprocess_pa: $(sources_pa) $(sources_test_pa)
+preprocess_bfs: $(sources_bfs) $(sources_test_bfs)
+preprocess_arraylist: $(sources_arraylist) $(sources_test_arraylist)
 
-link_pa: $(output_pa)
-link_bfs: $(output_bfs)
-link_arraylist: $(output_arraylist)
+link_pa: $(output_pa) $(link_test_pa)
+link_bfs: $(output_bfs) $(link_test_bfs)
+link_arraylist: $(output_arraylist) $(link_test_arraylist)
 
+run_pa: $(test_pa)
+
+link_test_pa: $(objects_test_pa) $(output_pa)
+	@echo "Testing"
 #${MAKE} $(designs_pa) 
 #${MAKE} $(sources_pa)
 #${MAKE} $(objects_pa)
@@ -341,9 +365,12 @@ build: $(subdirs)
 # 	@echo "Build"
 # 	@echo "$<"
 # preprocess: $(sources)
-preprocess: preprocess_pa preprocess_bfs preprocess_arraylist
-compile: compile_pa compile_arraylist compile_bfs
-assemble: assemble_pa assemble_bfs assemble_arraylist
+preprocess: preprocess_pa 
+#preprocess_bfs preprocess_arraylist
+compile: compile_pa 
+#compile_arraylist compile_bfs
+assemble: assemble_pa 
+#assemble_bfs assemble_arraylist
 #	${MAKE} obj/Input.o
 #	${MAKE} obj/Algorithm.o
 #	${MAKE} obj/BFS/Procedure.o
@@ -1135,108 +1162,108 @@ ifeq ($(host-type),arm64)
 endif
 clean:
 #	${MAKE} ARCH=${host-type} build
-# 	-rm libpa.a
-	-rm $(srcdir)/Input.i
-	-rm $(srcdir)/Algorithm.i
-	-rm $(srcdir)/BFS/Procedure.i
-	-rm $(srcdir)/PA/Input.i
-	-rm $(srcdir)/PA/Output.i
-	-rm $(srcdir)/BFS/Record.i
-	-rm $(srcdir)/Output.i
-	-rm $(srcdir)/PA/Data.i
-# 	-rm src/PA/Destination.i
-	-rm $(srcdir)/PA/Tree.i
-# 	-rm src/PA/Data.i
-	-rm $(srcdir)/PA/List.i
-	-rm $(srcdir)/PA/Link.i
-# 	-rm src/PA/Arrow.i
-	-rm $(srcdir)/PA/Element.i
-	-rm $(srcdir)/PA/Count.i
-	-rm $(srcdir)/PA/Pair.i
-	-rm $(srcdir)/PA/Result.i
-	-rm $(srcdir)/PA/Series.i
-	-rm $(srcdir)/PA/Status.i
-# 	-rm src/PA/Feature.i
-	-rm $(srcdir)/PA/Value.i
-	-rm $(srcdir)/PA/Resource.i
-	-rm $(srcdir)/PA/NormalTree.i
-	-rm $(srcdir)/PA/Number.i
-	-rm $(srcdir)/PA/TransposeTree.i
-	-rm $(srcdir)/PA/PADrawingEditor.i
-	-rm $(srcdir)/PA/PALine.i
-	-rm $(srcdir)/PA/PAShape.i
-	-rm $(srcdir)/PA/PATextView.i
-	-rm $(srcdir)/ArrayList/ArrayList.i
-	-rm $(srcdir)/ArrayList/ArrayListPosition.i
-	-rm $(srcdir)/Input.s
-	-rm $(srcdir)/Algorithm.s
-	-rm $(srcdir)/BFS/Procedure.s
-	-rm $(srcdir)/PA/Input.s
-	-rm $(srcdir)/PA/Output.s
-	-rm $(srcdir)/BFS/Record.s
-	-rm $(srcdir)/Output.s
-	-rm $(srcdir)/PA/Data.s
-	-rm $(srcdir)/PA/Status.s
-# 	-rm src/PA/Destination.s
-	-rm $(srcdir)/PA/Tree.s
-#	-rm src/PA/Data.s
-	-rm $(srcdir)/PA/List.s
-	-rm $(srcdir)/PA/Link.s
-# 	-rm src/PA/Arrow.s
-	-rm $(srcdir)/PA/Element.s
-	-rm $(srcdir)/PA/Count.s
-	-rm $(srcdir)/PA/Pair.s
-	-rm $(srcdir)/PA/Result.s
-	-rm $(srcdir)/PA/Series.s
-# 	-rm src/PA/Feature.s
-	-rm $(srcdir)/PA/Value.s
-	-rm $(srcdir)/PA/Resource.s
-	-rm $(srcdir)/PA/NormalTree.s
-	-rm $(srcdir)/PA/Number.s
-	-rm $(srcdir)/PA/TransposeTree.s
-	-rm $(srcdir)/PA/PADrawingEditor.s
-	-rm $(srcdir)/PA/PALine.s
-	-rm $(srcdir)/PA/PAShape.s
-	-rm $(srcdir)/PA/PATextView.s
-	-rm $(libdir)/Input.o
-	-rm $(libdir)/Algorithm.o
-	-rm $(libdir)/BFS/Procedure.o
-	-rm $(libdir)/BFS/Record.o
-	-rm $(libdir)/Output.o
-	-rm $(libdir)/PA/Data.o
-	-rm $(libdir)/PA/Tree.o
-	-rm $(libdir)/PA/List.o
-	-rm $(libdir)/PA/Input.o
-	-rm $(libdir)/PA/Output.o
-	-rm $(libdir)/PA/Link.o
-# 	-rm obj/PA/Arrow.o
-	-rm $(libdir)/PA/Element.o
-	-rm $(libdir)/PA/Status.o
-	-rm $(libdir)/PA/Count.o
-	-rm $(libdir)/PA/Pair.o
-	-rm $(libdir)/PA/Result.o
-	-rm $(libdir)/PA/Series.o
-# 	-rm obj/PA/Feature.o
-	-rm $(libdir)/PA/Value.o
-	-rm $(libdir)/PA/Resource.o
-# 	-rm obj/PA/Destination.o
-	-rm $(libdir)/PA/NormalTree.o
-	-rm $(libdir)/PA/TransposeTree.o
-# 	-rm obj/PA/Product.o
-	-rm $(libdir)/PA/PADrawingEditor.o
-	-rm $(libdir)/PA/PALine.o
-	-rm $(libdir)/PA/PAShape.o
-	-rm $(libdir)/PA/PATextView.o
-	-rm $(libdir)/ArrayList/ArrayList.o
-#	-rm obj/ArrayList/ArrayListObject.o
-	-rm $(libdir)/PA/Number.o
-# 	-rm obj/Bridge/ConcreteImplementorB.o
-	-rm $(libdir)/libpa.a
-	-rm $(libdir)/libbfs.a
-	-rm $(libdir)/libarraylist.a
-	-rm $(srcdir)/test.i
-	-rm $(srcdir)/test.s
-	-rm $(bindir)/test
+# # 	-rm libpa.a
+# 	-rm $(srcdir)/Input.i
+# 	-rm $(srcdir)/Algorithm.i
+# 	-rm $(srcdir)/BFS/Procedure.i
+# 	-rm $(srcdir)/PA/Input.i
+# 	-rm $(srcdir)/PA/Output.i
+# 	-rm $(srcdir)/BFS/Record.i
+# 	-rm $(srcdir)/Output.i
+# 	-rm $(srcdir)/PA/Data.i
+# # 	-rm src/PA/Destination.i
+# 	-rm $(srcdir)/PA/Tree.i
+# # 	-rm src/PA/Data.i
+# 	-rm $(srcdir)/PA/List.i
+# 	-rm $(srcdir)/PA/Link.i
+# # 	-rm src/PA/Arrow.i
+# 	-rm $(srcdir)/PA/Element.i
+# 	-rm $(srcdir)/PA/Count.i
+# 	-rm $(srcdir)/PA/Pair.i
+# 	-rm $(srcdir)/PA/Result.i
+# 	-rm $(srcdir)/PA/Series.i
+# 	-rm $(srcdir)/PA/Status.i
+# # 	-rm src/PA/Feature.i
+# 	-rm $(srcdir)/PA/Value.i
+# 	-rm $(srcdir)/PA/Resource.i
+# 	-rm $(srcdir)/PA/NormalTree.i
+# 	-rm $(srcdir)/PA/Number.i
+# 	-rm $(srcdir)/PA/TransposeTree.i
+# 	-rm $(srcdir)/PA/PADrawingEditor.i
+# 	-rm $(srcdir)/PA/PALine.i
+# 	-rm $(srcdir)/PA/PAShape.i
+# 	-rm $(srcdir)/PA/PATextView.i
+# 	-rm $(srcdir)/ArrayList/ArrayList.i
+# 	-rm $(srcdir)/ArrayList/ArrayListPosition.i
+# 	-rm $(srcdir)/Input.s
+# 	-rm $(srcdir)/Algorithm.s
+# 	-rm $(srcdir)/BFS/Procedure.s
+# 	-rm $(srcdir)/PA/Input.s
+# 	-rm $(srcdir)/PA/Output.s
+# 	-rm $(srcdir)/BFS/Record.s
+# 	-rm $(srcdir)/Output.s
+# 	-rm $(srcdir)/PA/Data.s
+# 	-rm $(srcdir)/PA/Status.s
+# # 	-rm src/PA/Destination.s
+# 	-rm $(srcdir)/PA/Tree.s
+# #	-rm src/PA/Data.s
+# 	-rm $(srcdir)/PA/List.s
+# 	-rm $(srcdir)/PA/Link.s
+# # 	-rm src/PA/Arrow.s
+# 	-rm $(srcdir)/PA/Element.s
+# 	-rm $(srcdir)/PA/Count.s
+# 	-rm $(srcdir)/PA/Pair.s
+# 	-rm $(srcdir)/PA/Result.s
+# 	-rm $(srcdir)/PA/Series.s
+# # 	-rm src/PA/Feature.s
+# 	-rm $(srcdir)/PA/Value.s
+# 	-rm $(srcdir)/PA/Resource.s
+# 	-rm $(srcdir)/PA/NormalTree.s
+# 	-rm $(srcdir)/PA/Number.s
+# 	-rm $(srcdir)/PA/TransposeTree.s
+# 	-rm $(srcdir)/PA/PADrawingEditor.s
+# 	-rm $(srcdir)/PA/PALine.s
+# 	-rm $(srcdir)/PA/PAShape.s
+# 	-rm $(srcdir)/PA/PATextView.s
+# 	-rm $(libdir)/Input.o
+# 	-rm $(libdir)/Algorithm.o
+# 	-rm $(libdir)/BFS/Procedure.o
+# 	-rm $(libdir)/BFS/Record.o
+# 	-rm $(libdir)/Output.o
+# 	-rm $(libdir)/PA/Data.o
+# 	-rm $(libdir)/PA/Tree.o
+# 	-rm $(libdir)/PA/List.o
+# 	-rm $(libdir)/PA/Input.o
+# 	-rm $(libdir)/PA/Output.o
+# 	-rm $(libdir)/PA/Link.o
+# # 	-rm obj/PA/Arrow.o
+# 	-rm $(libdir)/PA/Element.o
+# 	-rm $(libdir)/PA/Status.o
+# 	-rm $(libdir)/PA/Count.o
+# 	-rm $(libdir)/PA/Pair.o
+# 	-rm $(libdir)/PA/Result.o
+# 	-rm $(libdir)/PA/Series.o
+# # 	-rm obj/PA/Feature.o
+# 	-rm $(libdir)/PA/Value.o
+# 	-rm $(libdir)/PA/Resource.o
+# # 	-rm obj/PA/Destination.o
+# 	-rm $(libdir)/PA/NormalTree.o
+# 	-rm $(libdir)/PA/TransposeTree.o
+# # 	-rm obj/PA/Product.o
+# 	-rm $(libdir)/PA/PADrawingEditor.o
+# 	-rm $(libdir)/PA/PALine.o
+# 	-rm $(libdir)/PA/PAShape.o
+# 	-rm $(libdir)/PA/PATextView.o
+# 	-rm $(libdir)/ArrayList/ArrayList.o
+# #	-rm obj/ArrayList/ArrayListObject.o
+# 	-rm $(libdir)/PA/Number.o
+# # 	-rm obj/Bridge/ConcreteImplementorB.o
+# 	-rm $(libdir)/libpa.a
+# 	-rm $(libdir)/libbfs.a
+# 	-rm $(libdir)/libarraylist.a
+# 	-rm $(srcdir)/test.i
+# 	-rm $(srcdir)/test.s
+# 	-rm $(bindir)/test
 	rm $(foreach source,$(sources_pa),$(srcdir)/$(source))
 	rm $(foreach source,$(sources_bfs),$(srcdir)/$(source))
 	rm $(foreach source,$(sources_arraylist),$(srcdir)/$(source))
@@ -1250,7 +1277,8 @@ clean:
 	rm $(foreach object,$(objects_pa),$(libdir)/$(object))
 	rm $(foreach object,$(objects_bfs),$(libdir)/$(object))
 	rm $(foreach object,$(objects_arraylist),$(libdir)/$(object))
-	rm $(bindir)/test
+	rm $(foreach test,$(sources_test_pa),$(srcdir)/$(test))
+# 	rm $(bindir)/test
 # 	-rm -r obj/BFS/
 # 	-rm -r obj/Adapter/
 # 	-rm -r obj/Iterator/
