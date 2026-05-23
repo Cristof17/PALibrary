@@ -10,7 +10,7 @@
 # 	obj/PA/Arrow.o
 # 	obj/PA/Feature.o
 #prefix=/usr/local
-prefix=.
+prefix=/usr/local/
 exec_prefix=$(prefix)
 bindir=$(exec_prefix)/bin
 sbindir=$(exec_prefix)/sbin
