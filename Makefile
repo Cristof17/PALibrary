@@ -1237,6 +1237,20 @@ clean:
 	-rm $(srcdir)/test.i
 	-rm $(srcdir)/test.s
 	-rm $(bindir)/test
+	rm $(foreach source,$(sources_pa),$(srcdir)/$(source))
+	rm $(foreach source,$(sources_bfs),$(srcdir)/$(source))
+	rm $(foreach source,$(sources_arraylist),$(srcdir)/$(source))
+# 	rm $(foreach assembly,$(assemblies_pa),$(libdir)/$(assembly))
+# 	rm $(foreach assembly,$(assemblies_bfs),$(libdir)/$(assembly))
+# 	rm $(foreach assembly,$(assemblies_arraylist),$(libdir)/$(assembly))
+# 	rm $(foreach assembly,$(assemblies_pa),$(srcdir)/ass)
+	rm $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
+	rm $(foreach assembly,$(assemblies_bfs),$(srcdir)/$(assebmbly))
+	rm $(foreach assembly,$(assemblies_arraylist),$(srcdir)/$(assembly))
+	rm $(foreach object,$(objects_pa),$(libdir)/$(object))
+	rm $(foreach object,$(objects_bfs),$(libdir)/$(object))
+	rm $(foreach object,$(objects_arraylist),$(libdir)/$(object))
+	rm $(bindir)/test
 # 	-rm -r obj/BFS/
 # 	-rm -r obj/Adapter/
 # 	-rm -r obj/Iterator/
