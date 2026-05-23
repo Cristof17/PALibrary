@@ -1,0 +1,36 @@
+SECTIONS {
+	output:
+	{
+	obj/Algorithm.o(.text)
+	obj/Input.o(.text)
+	obj/Output.o(.text)
+	obj/test.o(.text)
+	
+	obj/ArrayList/ArrayListPosition.o(.text)
+	
+	obj/BFS/Procedure.o(.text)
+	obj/BFS/Record.o(.text)
+	
+	obj/PA/Count.o(.text)
+	obj/PA/CData.o(.text)
+	obj/PA/CElement.o(.text)
+	obj/PA/CInput.o(.text)
+	obj/PA/CLink.o(.text)
+	obj/PA/CList.o(.text)
+	obj/PA/CNormalTree.o(.text)
+	obj/PA/CNumber.o(.text)
+	obj/PA/COutput.o(.text)
+	obj/PA/CPADrawingEditor.o(.text)
+	obj/PA/CPair.o(.text)
+	obj/PA/CPALine.o(.text)
+	obj/PA/CPAShape.o(.text)
+	obj/PA/CPATextView.o(.text)
+	obj/PA/CResource.o(.text)
+	obj/PA/CResult.o(.text)
+	obj/PA/CSeries.o(.text)
+	obj/PA/CStatus.o(.text)
+	obj/PA/TransposeTree.o(.text)
+	obj/PA/Tree.o(.text)
+	obj/PA/Value.o(.text)
+	}
+}

@@ -10,7 +10,8 @@
 # 	obj/PA/Arrow.o
 # 	obj/PA/Feature.o
 #prefix=/usr/local
-prefix=/usr/local/
+# prefix=/usr/local/
+prefix=.
 exec_prefix=$(prefix)
 bindir=$(exec_prefix)/bin
 sbindir=$(exec_prefix)/sbin
@@ -240,7 +241,7 @@ distclean:
 	rm $(foreach source,$(sources_bfs),$(srcdir)/$(source))
 	rm $(foreach source,$(sources_arraylist),$(srcdir)/$(source))
 	rm $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
-	rm $(foreach assembly,$(assemblies_bfs)$(srcdir)/$(assembly))
+	rm $(foreach assembly,$(assemblies_bfs),$(srcdir)/$(assembly))
 	rm $(foreach assembly,$(assemblies_arraylist),$(srcdir)/$(assembly))
 	rm $(foreach object,$(objects_pa),$(libdir)/$(object))
 	rm $(foreach object,$(objects_bfs),$(libdir)/$(object))
