@@ -1100,7 +1100,9 @@ endif
 installdirs: mkinstalldirs
 	$(srcdir)/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(datadir) \
 				$(DESTDIR)$(libdir) $(DESTDIR)$(infodir) \
-				$(DESTDIR)$(mandir)
+				$(DESTDIR)$(mandir) \
+				$(DESTDIR)$(subdirs) \
+				$(DESTDIR)$(objdirs)
 
 mkinstalldirs: $(srcdir)/mkinstalldirs
 
