@@ -255,17 +255,22 @@ objects_test_arraylist =
 # 	src/PA/Destination.i
 # 	src/PA/Arrow.i
 # 	src/PA/Feature.i
+program_test_pa = test.out
 
 distclean:
 	rm $(foreach source,$(sources_pa),$(srcdir)/$(source))
+	rm $(foreach source,$(sources_test_pa),$(srcdir)/$(source))
 # 	rm $(foreach source,$(sources_bfs),$(srcdir)/$(source))
 # 	rm $(foreach source,$(sources_arraylist),$(srcdir)/$(source))
 	rm $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
+	rm $(foreach assembly,$(assemblies_test_pa),$(srcdir)/$(assembly))
 # 	rm $(foreach assembly,$(assemblies_bfs),$(srcdir)/$(assembly))
 # 	rm $(foreach assembly,$(assemblies_arraylist),$(srcdir)/$(assembly))
 	rm $(foreach object,$(objects_pa),$(libdir)/$(object))
+	rm $(foreach object,$(objects_test_pa),$(libdir)/$(object))
 # 	rm $(foreach object,$(objects_bfs),$(libdir)/$(object))
 # 	rm $(foreach object,$(objects_arraylist),$(libdir)/$(object))
+	rm $(foreach program,$(program_test_pa),$(bindir)/$(program))
 
 objdirs= $(libdir)/ \
 	$(libdir)/BFS/ \
@@ -663,7 +668,7 @@ ifeq ($(host-type),AArch64)
 	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 
-test.out: test.o
+test.out: test.o libpa.a
 	$(CC) $(libdir)/$< $(libdir)/libpa.a -o $(bindir)/$@
 
 ASFLAGS=
@@ -1468,4 +1473,4 @@ run:
 # 	$(AS) -c asm/arraylist/$^ -o obj/arraylist/$@
 
 #.PHONY: all install installdirs installcheck uinstall run distclean clean
-.PHONY: all
+.PHONY: all test
