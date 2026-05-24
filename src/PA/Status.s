@@ -1,125 +1,119 @@
-	.section	__TEXT,__text,regular,pure_instructions
-	.build_version macos, 15, 0	sdk_version 26, 2
-	.globl	_PAStatusPerformConstruct       ; -- Begin function PAStatusPerformConstruct
-	.p2align	2
-_PAStatusPerformConstruct:              ; @PAStatusPerformConstruct
+	.file	"Status.c"
+	.text
+	.globl	PAStatusPerformConstruct
+	.type	PAStatusPerformConstruct, @function
+PAStatusPerformConstruct:
+.LFB0:
 	.cfi_startproc
-; %bb.0:
-	sub	sp, sp, #32
-	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
-	add	x29, sp, #16
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	bl	_PAResourcePerformConstruct
-	sturb	w0, [x29, #-2]
-	ldurb	w8, [x29, #-2]
-	sturb	w8, [x29, #-1]
-	ldurb	w8, [x29, #-1]
-	mov	x0, x8
-	ldurb	w8, [x29, #-1]
-	mov	x1, x8
-	bl	_PAStatusPerformInit
-	sturb	w0, [x29, #-3]
-	ldurb	w8, [x29, #-3]
-	sturb	w8, [x29, #-1]
-	ldurb	w0, [x29, #-1]
-	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
-	add	sp, sp, #32
-	ret
-	.cfi_endproc
-                                        ; -- End function
-	.globl	_PAStatusPerformInit            ; -- Begin function PAStatusPerformInit
-	.p2align	2
-_PAStatusPerformInit:                   ; @PAStatusPerformInit
-	.cfi_startproc
-; %bb.0:
-	sub	sp, sp, #16
+	pushq	%rbp
 	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	strb	w8, [sp, #14]
-	mov	x8, x1
-	strb	w8, [sp, #13]
-	ldrb	w8, [sp, #13]
-	strb	w8, [sp, #14]
-	ldrb	w8, [sp, #14]
-	strb	w8, [sp, #15]
-	ldrb	w0, [sp, #15]
-	add	sp, sp, #16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$16, %rsp
+	call	PAResourcePerformConstruct
+	movb	%al, -1(%rbp)
+	movzbl	-1(%rbp), %edx
+	movzbl	-1(%rbp), %eax
+	movl	%edx, %esi
+	movl	%eax, %edi
+	call	PAStatusPerformInit
+	movb	%al, -1(%rbp)
+	movzbl	-1(%rbp), %eax
+	leave
+	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
-                                        ; -- End function
-	.globl	_PAStatusPerformCopy            ; -- Begin function PAStatusPerformCopy
-	.p2align	2
-_PAStatusPerformCopy:                   ; @PAStatusPerformCopy
+.LFE0:
+	.size	PAStatusPerformConstruct, .-PAStatusPerformConstruct
+	.globl	PAStatusPerformInit
+	.type	PAStatusPerformInit, @function
+PAStatusPerformInit:
+.LFB1:
 	.cfi_startproc
-; %bb.0:
-	sub	sp, sp, #32
-	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
-	add	x29, sp, #16
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	mov	x8, x0
-	sturb	w8, [x29, #-2]
-	mov	x8, x1
-	sturb	w8, [x29, #-3]
-	ldurb	w8, [x29, #-2]
-	mov	x0, x8
-	ldurb	w8, [x29, #-3]
-	mov	x1, x8
-	bl	_PAResourcePerformCopy
-	sturb	w0, [x29, #-4]
-	ldurb	w8, [x29, #-4]
-	sturb	w8, [x29, #-1]
-	ldurb	w0, [x29, #-1]
-	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
-	add	sp, sp, #32
-	ret
-	.cfi_endproc
-                                        ; -- End function
-	.globl	_PAStatusPerformDelete          ; -- Begin function PAStatusPerformDelete
-	.p2align	2
-_PAStatusPerformDelete:                 ; @PAStatusPerformDelete
-	.cfi_startproc
-; %bb.0:
-	sub	sp, sp, #16
+	pushq	%rbp
 	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	strb	w8, [sp, #14]
-	strb	wzr, [sp, #14]
-	ldrb	w8, [sp, #14]
-	strb	w8, [sp, #15]
-	ldrb	w0, [sp, #15]
-	add	sp, sp, #16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movb	%dil, -1(%rbp)
+	movb	%sil, -2(%rbp)
+	movzbl	-2(%rbp), %eax
+	movb	%al, -1(%rbp)
+	movzbl	-1(%rbp), %eax
+	popq	%rbp
+	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
-                                        ; -- End function
-	.globl	_PAStatusPerformRuin            ; -- Begin function PAStatusPerformRuin
-	.p2align	2
-_PAStatusPerformRuin:                   ; @PAStatusPerformRuin
+.LFE1:
+	.size	PAStatusPerformInit, .-PAStatusPerformInit
+	.globl	PAStatusPerformCopy
+	.type	PAStatusPerformCopy, @function
+PAStatusPerformCopy:
+.LFB2:
 	.cfi_startproc
-; %bb.0:
-	sub	sp, sp, #32
-	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
-	add	x29, sp, #16
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	mov	x8, x0
-	sturb	w8, [x29, #-2]
-	ldurb	w8, [x29, #-2]
-	mov	x0, x8
-	bl	_PAResourcePerformRuin
-	sturb	w0, [x29, #-3]
-	ldurb	w8, [x29, #-3]
-	sturb	w8, [x29, #-2]
-	ldurb	w8, [x29, #-2]
-	sturb	w8, [x29, #-1]
-	ldurb	w0, [x29, #-1]
-	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
-	add	sp, sp, #32
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$32, %rsp
+	movb	%dil, -17(%rbp)
+	movb	%sil, -18(%rbp)
+	movzbl	-18(%rbp), %edx
+	movzbl	-17(%rbp), %eax
+	movl	%edx, %esi
+	movl	%eax, %edi
+	call	PAResourcePerformCopy
+	movb	%al, -1(%rbp)
+	movzbl	-1(%rbp), %eax
+	leave
+	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
-                                        ; -- End function
-.subsections_via_symbols
+.LFE2:
+	.size	PAStatusPerformCopy, .-PAStatusPerformCopy
+	.globl	PAStatusPerformDelete
+	.type	PAStatusPerformDelete, @function
+PAStatusPerformDelete:
+.LFB3:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movb	%dil, -1(%rbp)
+	movb	$0, -1(%rbp)
+	movzbl	-1(%rbp), %eax
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE3:
+	.size	PAStatusPerformDelete, .-PAStatusPerformDelete
+	.globl	PAStatusPerformRuin
+	.type	PAStatusPerformRuin, @function
+PAStatusPerformRuin:
+.LFB4:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$16, %rsp
+	movb	%dil, -1(%rbp)
+	movzbl	-1(%rbp), %eax
+	movl	%eax, %edi
+	call	PAResourcePerformRuin
+	movb	%al, -1(%rbp)
+	movzbl	-1(%rbp), %eax
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE4:
+	.size	PAStatusPerformRuin, .-PAStatusPerformRuin
+	.ident	"GCC: (SUSE Linux) 15.2.1 20260202"
+	.section	.note.GNU-stack,"",@progbits

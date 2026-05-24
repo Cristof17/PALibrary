@@ -1,10 +1,9 @@
+# 0 "src/PA/Output.c"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+# 0 "<command-line>" 2
 # 1 "src/PA/Output.c"
-# 1 "<built-in>" 1
-# 1 "<built-in>" 3
-# 466 "<built-in>" 3
-# 1 "<command line>" 1
-# 1 "<built-in>" 2
-# 1 "src/PA/Output.c" 2
 
 
 
@@ -372,10 +371,11 @@ struct Facade {
 
 
 
-          struct PAOutput PAOutputPerformConstruct();
-          struct PAOutput PAOutputPerformInit(struct PAOutput, struct BFSRecord);
-          struct PAOutput PAOutputPerformDelete(struct PAOutput);
-          struct PAOutput PAOutputPerformRuin(struct PAOutput);
+ struct PAOutput PAOutputPerformConstruct();
+ struct PAOutput PAOutputPerformInit(struct PAOutput, struct BFSRecord);
+ struct PAOutput PAOutputPerformDelete(struct PAOutput);
+ struct PAOutput PAOutputPerformRuin(struct PAOutput);
+ void PAOutputPerformPrint(PAResult Result);
 # 6 "src/PA/Output.c" 2
 # 1 "include/BFS/Record.h" 1
 
@@ -385,33 +385,33 @@ struct Facade {
 
 
 
-          void BFSRecordConstruct(struct PAList, struct PACount);
+ void BFSRecordConstruct(struct PAList, struct PACount);
 
-          void BFSRecordRuin();
-          void BFSRecordPrint(struct BFSRecord);
-          struct BFSRecord BFSRecordInit(struct BFSRecord);
-          struct BFSRecord BFSRecordCopy(struct BFSRecord);
-          struct BFSRecord BFSRecordPutList(struct BFSRecord, struct PAList);
-          struct BFSRecord BFSRecordPutCount(struct BFSRecord, struct PACount);
+ void BFSRecordRuin();
+ void BFSRecordPrint(struct BFSRecord);
+ struct BFSRecord BFSRecordInit(struct BFSRecord);
+ struct BFSRecord BFSRecordCopy(struct BFSRecord);
+ struct BFSRecord BFSRecordPutList(struct BFSRecord, struct PAList);
+ struct BFSRecord BFSRecordPutCount(struct BFSRecord, struct PACount);
 # 7 "src/PA/Output.c" 2
 # 60 "src/PA/Output.c"
-          struct PAOutput PAOutputPerformConstruct()
+ struct PAOutput PAOutputPerformConstruct()
 {
     struct PAOutput Output;
     return Output;
 
 }
-          struct PAOutput PAOutputPerformInit(struct PAOutput Output, struct BFSRecord Value)
+ struct PAOutput PAOutputPerformInit(struct PAOutput Output, struct BFSRecord Value)
 {
     Output.result = Value;
     return Output;
 }
-          struct PAOutput PAOutputPerformDelete(struct PAOutput Output)
+ struct PAOutput PAOutputPerformDelete(struct PAOutput Output)
 {
 
     return Output;
 }
-          struct PAOutput PAOutputPerformRuin(struct PAOutput PA)
+ struct PAOutput PAOutputPerformRuin(struct PAOutput PA)
 {
 
 
@@ -422,7 +422,7 @@ struct Facade {
 
     return PA;
 }
-          void OutputPerformPrint(PAResult Result)
+ void PAOutputPerformPrint(PAResult Result)
 {
 
 }

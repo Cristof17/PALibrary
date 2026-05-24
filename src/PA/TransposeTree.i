@@ -1,10 +1,9 @@
+# 0 "src/PA/TransposeTree.c"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+# 0 "<command-line>" 2
 # 1 "src/PA/TransposeTree.c"
-# 1 "<built-in>" 1
-# 1 "<built-in>" 3
-# 466 "<built-in>" 3
-# 1 "<command line>" 1
-# 1 "<built-in>" 2
-# 1 "src/PA/TransposeTree.c" 2
 
 
 # 1 "include/types.h" 1
@@ -370,29 +369,29 @@ struct Facade {
 
 # 1 "include/PA/TransposeTree.h" 1
 # 10 "include/PA/TransposeTree.h"
-          struct PATransposeTree PATransposeTreePerformConstruct();
-          struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree, struct PATree);
-          struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree);
+ struct PATransposeTree PATransposeTreePerformConstruct();
+ struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree, struct PATree);
+ struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree);
 
-          struct PATransposeTree PATransposeTreeRuin(struct PATransposeTree);
-          struct PATransposeTree PATransposeTreeDelete(struct PATransposeTree);
+ struct PATransposeTree PATransposeTreeRuin(struct PATransposeTree);
+ struct PATransposeTree PATransposeTreeDelete(struct PATransposeTree);
 
-          PAResult PATransposeTreeGetResult();
-          PAResult PATransposeTreeGetResult();
+ PAResult PATransposeTreeGetResult();
+ PAResult PATransposeTreeGetResult();
 # 9 "src/PA/TransposeTree.c" 2
 # 1 "include/PA/Tree.h" 1
 # 12 "include/PA/Tree.h"
-          struct PATree PATreePerformConstruct();
-          struct PATree PATreePerformCopy(struct PATree from, struct PATree to);
+ struct PATree PATreePerformConstruct();
+ struct PATree PATreePerformCopy(struct PATree from, struct PATree to);
 
-          struct PATree PATreePerformInit(struct PATree, struct PACount, struct PACount, struct PAList, struct PAElement);
-
-
+ struct PATree PATreePerformInit(struct PATree, struct PACount, struct PACount, struct PAList, struct PAElement);
 
 
 
-          struct PATree PATreePerformRuin(struct PATree);
-          struct PATree PATreePerformDelete(struct PATree);
+
+
+ struct PATree PATreePerformRuin(struct PATree);
+ struct PATree PATreePerformDelete(struct PATree);
 # 10 "src/PA/TransposeTree.c" 2
 
 
@@ -400,7 +399,7 @@ struct Facade {
 
 
 
-          struct PATransposeTree PATransposeTreePerformConstruct()
+ struct PATransposeTree PATransposeTreePerformConstruct()
 {
     struct PATransposeTree transposeTree;
     transposeTree.tree = PATreePerformConstruct();
@@ -409,7 +408,7 @@ struct Facade {
     return transposeTree;
 }
 
-          struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree TransposeTree, struct PATree Value)
+ struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree TransposeTree, struct PATree Value)
 {
     struct PATransposeTree tree;
     TransposeTree.tree = PATreePerformConstruct();
@@ -421,7 +420,7 @@ struct Facade {
 
     return TransposeTree;
 }
-          struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree TransposeTree)
+ struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree TransposeTree)
 {
     struct PATransposeTree copy;
 
@@ -433,22 +432,22 @@ struct Facade {
 
 
 
-          struct PATransposeTree PATransposeTreeRuin(struct PATransposeTree PA)
+ struct PATransposeTree PATransposeTreeRuin(struct PATransposeTree PA)
 {
     struct PATransposeTree tree;
     return tree;
 }
-          struct PATransposeTree PATransposeTreePerformRuin(struct PATransposeTree PA)
+ struct PATransposeTree PATransposeTreePerformRuin(struct PATransposeTree PA)
 {
     PA.tree = PATreePerformRuin(PA.tree);
     return PA;
 }
-          struct PATransposeTree PATransposeTreeDelete(struct PATransposeTree Tree)
+ struct PATransposeTree PATransposeTreeDelete(struct PATransposeTree Tree)
 {
     return Tree;
 }
 # 73 "src/PA/TransposeTree.c"
-          PAResult PATransposeTreeGetResult()
+ PAResult PATransposeTreeGetResult()
 {
     PAResult result;
     return result;

@@ -1,10 +1,9 @@
+# 0 "src/PA/Resource.c"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+# 0 "<command-line>" 2
 # 1 "src/PA/Resource.c"
-# 1 "<built-in>" 1
-# 1 "<built-in>" 3
-# 466 "<built-in>" 3
-# 1 "<command line>" 1
-# 1 "<built-in>" 2
-# 1 "src/PA/Resource.c" 2
 
 
 # 1 "include/PA/Resource.h" 1
@@ -369,29 +368,29 @@ struct Facade {
 };
 # 5 "include/PA/Resource.h" 2
 
-          struct PAResource PAResourcePerformInit(struct PAResource, struct PANumber);
-          struct PAResource PAResourcePerformConstruct();
-          struct PAResource PAResourcePerformRuin(struct PAResource);
-          struct PAResource PAResourcePerformDelete(struct PAResource);
-          struct PAResource PAResourcePerformCopy(struct PAResource, struct PAResource);
+ struct PAResource PAResourcePerformInit(struct PAResource, struct PANumber);
+ struct PAResource PAResourcePerformConstruct();
+ struct PAResource PAResourcePerformRuin(struct PAResource);
+ struct PAResource PAResourcePerformDelete(struct PAResource);
+ struct PAResource PAResourcePerformCopy(struct PAResource, struct PAResource);
 # 4 "src/PA/Resource.c" 2
 # 1 "include/PA/Number.h" 1
 
 
 
 
-          struct PANumber PANumberPerformConstruct();
-          struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char Value);
-          struct PANumber PANumberPerformDelete(struct PANumber);
-          struct PANumber PANumberPerformRuin(struct PANumber);
-          struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to);
+ struct PANumber PANumberPerformConstruct();
+ struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char Value);
+ struct PANumber PANumberPerformDelete(struct PANumber);
+ struct PANumber PANumberPerformRuin(struct PANumber);
+ struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to);
 # 5 "src/PA/Resource.c" 2
 
 
 
 
 
-          struct PAResource PAResourcePerformConstruct()
+ struct PAResource PAResourcePerformConstruct()
 {
     struct PAResource resource;
 
@@ -400,7 +399,7 @@ struct Facade {
     resource = PAResourcePerformInit(resource,resource.value);
     return resource;
 }
-          struct PAResource PAResourcePerformInit(struct PAResource Resource, struct PANumber Value)
+ struct PAResource PAResourcePerformInit(struct PAResource Resource, struct PANumber Value)
 {
     struct PAResource resource;
     resource.value = PANumberPerformConstruct();
@@ -408,20 +407,20 @@ struct Facade {
     Resource = resource;
     return Resource;
 }
-          struct PAResource PAResourcePerformCopy(struct PAResource from, struct PAResource to)
+ struct PAResource PAResourcePerformCopy(struct PAResource from, struct PAResource to)
 {
     struct PAResource temp;
     temp.value = PANumberPerformCopy(from.value, to.value);
     return temp;
 }
-          struct PAResource PAResourcePerformRuin(struct PAResource PA)
+ struct PAResource PAResourcePerformRuin(struct PAResource PA)
 {
     PA.value = PANumberPerformRuin(PA.value);
 
 
     return PA;
 }
-          struct PAResource PAResourcePerformDelete(struct PAResource Resource)
+ struct PAResource PAResourcePerformDelete(struct PAResource Resource)
 {
     return Resource;
 }

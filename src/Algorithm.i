@@ -1,10 +1,9 @@
+# 0 "src/Algorithm.c"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+# 0 "<command-line>" 2
 # 1 "src/Algorithm.c"
-# 1 "<built-in>" 1
-# 1 "<built-in>" 3
-# 466 "<built-in>" 3
-# 1 "<command line>" 1
-# 1 "<built-in>" 2
-# 1 "src/Algorithm.c" 2
 
 
 # 1 "include/Algorithm.h" 1
@@ -369,11 +368,10 @@ struct Facade {
 
 
 
-          struct Output AlgorithmPerformRun(struct Input);
+ struct Output AlgorithmPerformRun(struct Input);
 # 4 "src/Algorithm.c" 2
 
 
 
 # 1 "include/PA/Result.h" 1
 # 8 "src/Algorithm.c" 2
-

@@ -1,10 +1,9 @@
+# 0 "src/PA/NormalTree.c"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+# 0 "<command-line>" 2
 # 1 "src/PA/NormalTree.c"
-# 1 "<built-in>" 1
-# 1 "<built-in>" 3
-# 466 "<built-in>" 3
-# 1 "<command line>" 1
-# 1 "<built-in>" 2
-# 1 "src/PA/NormalTree.c" 2
 
 
 # 1 "include/types.h" 1
@@ -373,43 +372,43 @@ struct Facade {
 
 
 
-          struct PANormalTree PANormalTreePerformConstruct();
-          struct PANormalTree PANormalTreePerformInit(struct PANormalTree, struct PATree);
-          struct PANormalTree PANormalTreePerformCopy(struct PANormalTree);
-          struct PANormalTree PANormalTreePerformRuin(struct PANormalTree);
-          struct PANormalTree PANormalTreePerformDelete(struct PANormalTree);
+ struct PANormalTree PANormalTreePerformConstruct();
+ struct PANormalTree PANormalTreePerformInit(struct PANormalTree, struct PATree);
+ struct PANormalTree PANormalTreePerformCopy(struct PANormalTree);
+ struct PANormalTree PANormalTreePerformRuin(struct PANormalTree);
+ struct PANormalTree PANormalTreePerformDelete(struct PANormalTree);
 
-          struct PANormalTree PAGrafNormalBuildPart();
+ struct PANormalTree PAGrafNormalBuildPart();
 
-          PAResult PAGrafNormalGetResult();
+ PAResult PAGrafNormalGetResult();
 # 6 "src/PA/NormalTree.c" 2
 # 1 "include/PA/Tree.h" 1
 # 12 "include/PA/Tree.h"
-          struct PATree PATreePerformConstruct();
-          struct PATree PATreePerformCopy(struct PATree from, struct PATree to);
+ struct PATree PATreePerformConstruct();
+ struct PATree PATreePerformCopy(struct PATree from, struct PATree to);
 
-          struct PATree PATreePerformInit(struct PATree, struct PACount, struct PACount, struct PAList, struct PAElement);
-
-
+ struct PATree PATreePerformInit(struct PATree, struct PACount, struct PACount, struct PAList, struct PAElement);
 
 
 
-          struct PATree PATreePerformRuin(struct PATree);
-          struct PATree PATreePerformDelete(struct PATree);
+
+
+ struct PATree PATreePerformRuin(struct PATree);
+ struct PATree PATreePerformDelete(struct PATree);
 # 7 "src/PA/NormalTree.c" 2
 
 
 
 
 
-          struct PANormalTree PANormalTreePerformConstruct()
+ struct PANormalTree PANormalTreePerformConstruct()
 {
     struct PANormalTree normalTree;
 
     normalTree.tree = PATreePerformConstruct();
     return normalTree;
 }
-          struct PANormalTree PANormalTreePerformInit(struct PANormalTree NormalTree, struct PATree Value)
+ struct PANormalTree PANormalTreePerformInit(struct PANormalTree NormalTree, struct PATree Value)
 {
     struct PANormalTree normalTree;
     normalTree.tree = PATreePerformConstruct();
@@ -420,18 +419,18 @@ struct Facade {
     return NormalTree;
 }
 # 38 "src/PA/NormalTree.c"
-          struct PANormalTree PANormalTreePerformRuin(struct PANormalTree PA)
+ struct PANormalTree PANormalTreePerformRuin(struct PANormalTree PA)
 {
     struct PANormalTree Empty;
     PA.tree = PATreePerformRuin(PA.tree);
     return PA;
 }
-          struct PANormalTree PANormalTreePerformDelete(struct PANormalTree PA)
+ struct PANormalTree PANormalTreePerformDelete(struct PANormalTree PA)
 {
     PA.tree = PATreePerformDelete(PA.tree);
     return PA;
 }
-          struct PANormalTree PAGrafNormalBuildPart()
+ struct PANormalTree PAGrafNormalBuildPart()
 {
     struct PANormalTree tree;
     return tree;

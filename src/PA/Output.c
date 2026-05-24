@@ -84,7 +84,7 @@ DllExport struct PAOutput PAOutputPerformRuin(struct PAOutput PA)
     // return 0;
     return PA;
 }
-DllExport void OutputPerformPrint(PAResult Result)
+DllExport void PAOutputPerformPrint(PAResult Result)
 {
 
 }

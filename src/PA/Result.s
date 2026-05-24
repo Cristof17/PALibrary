@@ -1,3 +1,4 @@
-	.section	__TEXT,__text,regular,pure_instructions
-	.build_version macos, 15, 0	sdk_version 26, 2
-.subsections_via_symbols
+	.file	"Result.c"
+	.text
+	.ident	"GCC: (SUSE Linux) 15.2.1 20260202"
+	.section	.note.GNU-stack,"",@progbits

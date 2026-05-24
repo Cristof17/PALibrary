@@ -1,10 +1,9 @@
+# 0 "src/PA/Number.c"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+# 0 "<command-line>" 2
 # 1 "src/PA/Number.c"
-# 1 "<built-in>" 1
-# 1 "<built-in>" 3
-# 466 "<built-in>" 3
-# 1 "<command line>" 1
-# 1 "<built-in>" 2
-# 1 "src/PA/Number.c" 2
 
 # 1 "include/PA/Number.h" 1
 
@@ -367,16 +366,16 @@ struct Facade {
 };
 # 4 "include/PA/Number.h" 2
 
-          struct PANumber PANumberPerformConstruct();
-          struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char Value);
-          struct PANumber PANumberPerformDelete(struct PANumber);
-          struct PANumber PANumberPerformRuin(struct PANumber);
-          struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to);
+ struct PANumber PANumberPerformConstruct();
+ struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char Value);
+ struct PANumber PANumberPerformDelete(struct PANumber);
+ struct PANumber PANumberPerformRuin(struct PANumber);
+ struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to);
 # 3 "src/PA/Number.c" 2
 
 
 
-          struct PANumber PANumberPerformConstruct()
+ struct PANumber PANumberPerformConstruct()
 {
     struct PANumber number;
     unsigned char val;
@@ -387,7 +386,7 @@ struct Facade {
 
     return number;
 }
-          struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char Value)
+ struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char Value)
 {
     struct PANumber temp;
     temp.val = Value;
@@ -397,13 +396,13 @@ struct Facade {
 
     return Number;
 }
-          struct PANumber PANumberPerformDelete(struct PANumber PA)
+ struct PANumber PANumberPerformDelete(struct PANumber PA)
 {
     PA.val = '0';
 
     return PA;
 }
-          struct PANumber PANumberPerformRuin(struct PANumber PA)
+ struct PANumber PANumberPerformRuin(struct PANumber PA)
 {
 
     return PA;
@@ -411,7 +410,7 @@ struct Facade {
 
 
 }
-          struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to)
+ struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to)
 {
     struct PANumber temp;
     temp.val = from.val;

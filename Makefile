@@ -106,10 +106,10 @@ ifeq ($(host-type), arm64)
 	file $(bindir)/libpa.a
 endif
 test_pa_arm64:
-	-$(CPP) -I$(includedir)/ $(CPPFLAGS) test/test.c > test/test.i
-	-$(CC) -S test.i -o test.s
-	-$(AS) test.s -o test.o
-	-$(CC) test.o libpa.a -o test
+#	-$(CPP) -I$(includedir)/ $(CPPFLAGS) test/test.c > test/test.i
+#	-$(CC) -S test.i -o test.s
+#	-$(AS) test.s -o test.o
+	-$(CC) $(libdir)/test.o $(libdir)/libpa.a -o $(bindir)/test
 #obj/PA/.o \
 
 objects_arraylist= ArrayList/ArrayList.o \
@@ -119,9 +119,9 @@ objects_bfs= BFS/Procedure.o \
 # objects_arraylist= obj/Input.o
 objects_pa= Input.o \
 	Algorithm.o \
+	Output.o \
 	PA/Input.o \
 	PA/Output.o \
-	Output.o \
 	PA/Resource.o \
 	PA/Count.o \
 	PA/Data.o \

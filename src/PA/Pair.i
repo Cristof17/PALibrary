@@ -1,10 +1,9 @@
+# 0 "src/PA/Pair.c"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+# 0 "<command-line>" 2
 # 1 "src/PA/Pair.c"
-# 1 "<built-in>" 1
-# 1 "<built-in>" 3
-# 466 "<built-in>" 3
-# 1 "<command line>" 1
-# 1 "<built-in>" 2
-# 1 "src/PA/Pair.c" 2
 
 
 
@@ -367,45 +366,38 @@ struct Facade {
 # 5 "src/PA/Pair.c" 2
 
 # 1 "include/PA/Pair.h" 1
+# 9 "include/PA/Pair.h"
+ struct PAPair PAPairPerformConstruct();
+ struct PAPair PAPairPerformInit(struct PAPair, struct PAElement, struct PAElement);
+ struct PAPair PAPairPerformCopy(struct PAPair from, struct PAPair to);
 
 
 
-
-
-
-
-
-          struct PAPair PAPairPerformConstruct();
-          struct PAPair PAPairPerformInit(struct PAPair, struct PAElement, struct PAElement);
-          struct PAPair PAPairPerformCopy(struct PAPair from, struct PAPair to);
-
-
-
-          struct PAPair PAPairPerformRuin(struct PAPair);
-          struct PAPair PAPairPerformDelete(struct PAPair);
+ struct PAPair PAPairPerformRuin(struct PAPair);
+ struct PAPair PAPairPerformDelete(struct PAPair);
 # 7 "src/PA/Pair.c" 2
 # 1 "include/PA/Element.h" 1
 # 10 "include/PA/Element.h"
-          void PAElementVisit(struct PAElement);
-          PABool PAElementIsVisited(struct PAElement);
-          void PAElementReset(struct PAElement);
-          struct PAElement PAElementPerformConstruct();
+ void PAElementVisit(struct PAElement);
+ PABool PAElementIsVisited(struct PAElement);
+ void PAElementReset(struct PAElement);
+ struct PAElement PAElementPerformConstruct();
 
-          struct PAElement PAElementPerformInit(struct PAElement,struct PAData,struct PAStatus);
-
-
+ struct PAElement PAElementPerformInit(struct PAElement,struct PAData,struct PAStatus);
 
 
-          struct PAElement PAElementPerformRuin(struct PAElement);
-          struct PAElement PAElementPerformDelete(struct PAElement);
-          struct PAElement PAElementPerformCopy(struct PAElement, struct PAElement);
+
+
+ struct PAElement PAElementPerformRuin(struct PAElement);
+ struct PAElement PAElementPerformDelete(struct PAElement);
+ struct PAElement PAElementPerformCopy(struct PAElement, struct PAElement);
 # 8 "src/PA/Pair.c" 2
 
 
 
 
 
-          struct PAPair PAPairPerformConstruct()
+ struct PAPair PAPairPerformConstruct()
 {
     struct PAPair pair;
 
@@ -423,7 +415,7 @@ struct Facade {
 
 }
 
-          struct PAPair PAPairPerformInit(struct PAPair Pair, struct PAElement Value, struct PAElement Value2)
+ struct PAPair PAPairPerformInit(struct PAPair Pair, struct PAElement Value, struct PAElement Value2)
 {
     struct PAPair temp;
     temp.Node = PAElementPerformConstruct();
@@ -451,7 +443,7 @@ struct PAPair PAPairPerformCopy(struct PAPair from, struct PAPair to)
     return temp;
 }
 # 97 "src/PA/Pair.c"
-          struct PAPair PAPairPerformRuin(struct PAPair PA)
+ struct PAPair PAPairPerformRuin(struct PAPair PA)
 {
     PA.Node = PAElementPerformRuin(PA.Node);
     PA.Neigh = PAElementPerformRuin(PA.Neigh);
@@ -462,7 +454,7 @@ struct PAPair PAPairPerformCopy(struct PAPair from, struct PAPair to)
 
 
 }
-          struct PAPair PAPairPerformDelete(struct PAPair PA)
+ struct PAPair PAPairPerformDelete(struct PAPair PA)
 {
     PA.Node = PAElementPerformDelete(PA.Node);
     PA.Neigh = PAElementPerformDelete(PA.Neigh);

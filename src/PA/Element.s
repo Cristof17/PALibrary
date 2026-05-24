@@ -1,192 +1,191 @@
-	.section	__TEXT,__text,regular,pure_instructions
-	.build_version macos, 15, 0	sdk_version 26, 2
-	.globl	_PAElementPerformConstruct      ; -- Begin function PAElementPerformConstruct
-	.p2align	2
-_PAElementPerformConstruct:             ; @PAElementPerformConstruct
+	.file	"Element.c"
+	.text
+	.globl	PAElementPerformConstruct
+	.type	PAElementPerformConstruct, @function
+PAElementPerformConstruct:
+.LFB0:
 	.cfi_startproc
-; %bb.0:
-	sub	sp, sp, #32
-	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
-	add	x29, sp, #16
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	bl	_PADataPerformConstruct
-	sturb	w0, [x29, #-3]
-	ldurb	w8, [x29, #-3]
-	sturb	w8, [x29, #-2]
-	bl	_PAStatusPerformConstruct
-	sturb	w0, [x29, #-4]
-	ldurb	w8, [x29, #-4]
-	sturb	w8, [x29, #-1]
-	ldurh	w8, [x29, #-2]
-	strh	w8, [sp]
-	ldr	x0, [sp]
-	ldurb	w8, [x29, #-2]
-	mov	x1, x8
-	ldurb	w8, [x29, #-1]
-	mov	x2, x8
-	bl	_PAElementPerformInit
-	sturh	w0, [x29, #-6]
-	ldurh	w8, [x29, #-6]
-	sturh	w8, [x29, #-2]
-	ldurh	w0, [x29, #-2]
-	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
-	add	sp, sp, #32
-	ret
-	.cfi_endproc
-                                        ; -- End function
-	.globl	_PAElementPerformInit           ; -- Begin function PAElementPerformInit
-	.p2align	2
-_PAElementPerformInit:                  ; @PAElementPerformInit
-	.cfi_startproc
-; %bb.0:
-	sub	sp, sp, #16
+	pushq	%rbp
 	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	strh	w8, [sp, #12]
-	mov	x8, x1
-	strb	w8, [sp, #11]
-	mov	x8, x2
-	strb	w8, [sp, #10]
-	ldrb	w8, [sp, #11]
-	strb	w8, [sp, #12]
-	ldrb	w8, [sp, #10]
-	strb	w8, [sp, #13]
-	ldrh	w8, [sp, #12]
-	strh	w8, [sp, #14]
-	ldrh	w0, [sp, #14]
-	add	sp, sp, #16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$16, %rsp
+	call	PADataPerformConstruct
+	movb	%al, -2(%rbp)
+	call	PAStatusPerformConstruct
+	movb	%al, -1(%rbp)
+	movzbl	-1(%rbp), %edx
+	movzbl	-2(%rbp), %ecx
+	movzwl	-2(%rbp), %eax
+	movl	%ecx, %esi
+	movl	%eax, %edi
+	call	PAElementPerformInit
+	movw	%ax, -2(%rbp)
+	movzwl	-2(%rbp), %eax
+	leave
+	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
-                                        ; -- End function
-	.globl	_PAElementVisit                 ; -- Begin function PAElementVisit
-	.p2align	2
-_PAElementVisit:                        ; @PAElementVisit
+.LFE0:
+	.size	PAElementPerformConstruct, .-PAElementPerformConstruct
+	.globl	PAElementPerformInit
+	.type	PAElementPerformInit, @function
+PAElementPerformInit:
+.LFB1:
 	.cfi_startproc
-; %bb.0:
-	sub	sp, sp, #16
+	pushq	%rbp
 	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	strh	w8, [sp, #14]
-	mov	w8, #1                          ; =0x1
-	strb	w8, [sp, #15]
-	add	sp, sp, #16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movw	%di, -2(%rbp)
+	movb	%sil, -3(%rbp)
+	movb	%dl, -4(%rbp)
+	movzbl	-3(%rbp), %eax
+	movb	%al, -2(%rbp)
+	movzbl	-4(%rbp), %eax
+	movb	%al, -1(%rbp)
+	movzwl	-2(%rbp), %eax
+	popq	%rbp
+	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
-                                        ; -- End function
-	.globl	_PAElementIsVisited             ; -- Begin function PAElementIsVisited
-	.p2align	2
-_PAElementIsVisited:                    ; @PAElementIsVisited
+.LFE1:
+	.size	PAElementPerformInit, .-PAElementPerformInit
+	.globl	PAElementVisit
+	.type	PAElementVisit, @function
+PAElementVisit:
+.LFB2:
 	.cfi_startproc
-; %bb.0:
-	sub	sp, sp, #16
+	pushq	%rbp
 	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	strh	w8, [sp, #14]
-	ldrb	w0, [sp, #15]
-	add	sp, sp, #16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movw	%di, -2(%rbp)
+	movb	$1, -1(%rbp)
+	nop
+	popq	%rbp
+	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
-                                        ; -- End function
-	.globl	_PAElementReset                 ; -- Begin function PAElementReset
-	.p2align	2
-_PAElementReset:                        ; @PAElementReset
+.LFE2:
+	.size	PAElementVisit, .-PAElementVisit
+	.globl	PAElementIsVisited
+	.type	PAElementIsVisited, @function
+PAElementIsVisited:
+.LFB3:
 	.cfi_startproc
-; %bb.0:
-	sub	sp, sp, #16
+	pushq	%rbp
 	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	strh	w8, [sp, #14]
-	strb	wzr, [sp, #15]
-	add	sp, sp, #16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movw	%di, -2(%rbp)
+	movzbl	-1(%rbp), %eax
+	movzbl	%al, %eax
+	popq	%rbp
+	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
-                                        ; -- End function
-	.globl	_PAElementPerformCopy           ; -- Begin function PAElementPerformCopy
-	.p2align	2
-_PAElementPerformCopy:                  ; @PAElementPerformCopy
+.LFE3:
+	.size	PAElementIsVisited, .-PAElementIsVisited
+	.globl	PAElementReset
+	.type	PAElementReset, @function
+PAElementReset:
+.LFB4:
 	.cfi_startproc
-; %bb.0:
-	sub	sp, sp, #32
-	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
-	add	x29, sp, #16
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	mov	x8, x0
-	sturh	w8, [x29, #-4]
-	mov	x8, x1
-	sturh	w8, [x29, #-6]
-	ldurb	w8, [x29, #-4]
-	mov	x0, x8
-	ldurb	w8, [x29, #-6]
-	mov	x1, x8
-	bl	_PADataPerformCopy
-	sturb	w0, [x29, #-7]
-	ldurb	w8, [x29, #-7]
-	sturb	w8, [x29, #-2]
-	ldurb	w8, [x29, #-3]
-	mov	x0, x8
-	ldurb	w8, [x29, #-5]
-	mov	x1, x8
-	bl	_PAStatusPerformCopy
-	strb	w0, [sp, #8]
-	ldrb	w8, [sp, #8]
-	sturb	w8, [x29, #-1]
-	ldurh	w0, [x29, #-2]
-	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
-	add	sp, sp, #32
-	ret
-	.cfi_endproc
-                                        ; -- End function
-	.globl	_PAElementPerformRuin           ; -- Begin function PAElementPerformRuin
-	.p2align	2
-_PAElementPerformRuin:                  ; @PAElementPerformRuin
-	.cfi_startproc
-; %bb.0:
-	sub	sp, sp, #32
-	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
-	add	x29, sp, #16
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	mov	x8, x0
-	sturh	w8, [x29, #-4]
-	ldurb	w8, [x29, #-4]
-	mov	x0, x8
-	bl	_PADataPerformRuin
-	sturb	w0, [x29, #-5]
-	ldurb	w8, [x29, #-5]
-	sturb	w8, [x29, #-4]
-	ldurb	w8, [x29, #-3]
-	mov	x0, x8
-	bl	_PAStatusPerformRuin
-	sturb	w0, [x29, #-6]
-	ldurb	w8, [x29, #-6]
-	sturb	w8, [x29, #-3]
-	ldurh	w8, [x29, #-4]
-	sturh	w8, [x29, #-2]
-	ldurh	w0, [x29, #-2]
-	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
-	add	sp, sp, #32
-	ret
-	.cfi_endproc
-                                        ; -- End function
-	.globl	_PAElementPerformDelete         ; -- Begin function PAElementPerformDelete
-	.p2align	2
-_PAElementPerformDelete:                ; @PAElementPerformDelete
-	.cfi_startproc
-; %bb.0:
-	sub	sp, sp, #16
+	pushq	%rbp
 	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	strh	w8, [sp, #12]
-	ldrh	w8, [sp, #12]
-	strh	w8, [sp, #14]
-	ldrh	w0, [sp, #14]
-	add	sp, sp, #16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movw	%di, -2(%rbp)
+	movb	$0, -1(%rbp)
+	nop
+	popq	%rbp
+	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
-                                        ; -- End function
-.subsections_via_symbols
+.LFE4:
+	.size	PAElementReset, .-PAElementReset
+	.globl	PAElementPerformCopy
+	.type	PAElementPerformCopy, @function
+PAElementPerformCopy:
+.LFB5:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$32, %rsp
+	movw	%di, -18(%rbp)
+	movw	%si, -20(%rbp)
+	movzbl	-20(%rbp), %edx
+	movzbl	-18(%rbp), %eax
+	movl	%edx, %esi
+	movl	%eax, %edi
+	call	PADataPerformCopy
+	movb	%al, -2(%rbp)
+	movzbl	-19(%rbp), %edx
+	movzbl	-17(%rbp), %eax
+	movl	%edx, %esi
+	movl	%eax, %edi
+	call	PAStatusPerformCopy
+	movb	%al, -1(%rbp)
+	movzwl	-2(%rbp), %eax
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE5:
+	.size	PAElementPerformCopy, .-PAElementPerformCopy
+	.globl	PAElementPerformRuin
+	.type	PAElementPerformRuin, @function
+PAElementPerformRuin:
+.LFB6:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$16, %rsp
+	movw	%di, -2(%rbp)
+	movzbl	-2(%rbp), %eax
+	movl	%eax, %edi
+	call	PADataPerformRuin
+	movb	%al, -2(%rbp)
+	movzbl	-1(%rbp), %eax
+	movl	%eax, %edi
+	call	PAStatusPerformRuin
+	movb	%al, -1(%rbp)
+	movzwl	-2(%rbp), %eax
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE6:
+	.size	PAElementPerformRuin, .-PAElementPerformRuin
+	.globl	PAElementPerformDelete
+	.type	PAElementPerformDelete, @function
+PAElementPerformDelete:
+.LFB7:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movw	%di, -2(%rbp)
+	movzwl	-2(%rbp), %eax
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE7:
+	.size	PAElementPerformDelete, .-PAElementPerformDelete
+	.ident	"GCC: (SUSE Linux) 15.2.1 20260202"
+	.section	.note.GNU-stack,"",@progbits

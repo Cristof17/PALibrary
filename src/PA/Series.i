@@ -1,10 +1,9 @@
+# 0 "src/PA/Series.c"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+# 0 "<command-line>" 2
 # 1 "src/PA/Series.c"
-# 1 "<built-in>" 1
-# 1 "<built-in>" 3
-# 466 "<built-in>" 3
-# 1 "<command line>" 1
-# 1 "<built-in>" 2
-# 1 "src/PA/Series.c" 2
 
 
 # 1 "include/defs.h" 1
@@ -363,46 +362,46 @@ struct Facade {
 
 # 1 "include/PA/Series.h" 1
 # 17 "include/PA/Series.h"
-          struct PASeries PASeriesPerformConstruct();
-          struct PASeries PASeriesPerformInit(struct PASeries, struct PACount, struct PAElement[]);
-          struct PASeries PASeriesPerformDelete(struct PASeries);
-          struct PASeries PASeriesPerformCopy(struct PASeries, struct PASeries);
+ struct PASeries PASeriesPerformConstruct();
+ struct PASeries PASeriesPerformInit(struct PASeries, struct PACount, struct PAElement[]);
+ struct PASeries PASeriesPerformDelete(struct PASeries);
+ struct PASeries PASeriesPerformCopy(struct PASeries, struct PASeries);
 
-          struct PASeries PASeriesPerformRuin(struct PASeries);
-          struct PAResource PASeriesGet(struct PAData Data);
-          void PASeriesPerformPrint(struct PASeries Series);
+ struct PASeries PASeriesPerformRuin(struct PASeries);
+ struct PAResource PASeriesGet(struct PAData Data);
+ void PASeriesPerformPrint(struct PASeries Series);
 # 8 "src/PA/Series.c" 2
 # 1 "include/PA/Count.h" 1
 # 13 "include/PA/Count.h"
-          struct PACount PACountPerformConstruct();
-          struct PACount PACountPerformInit(struct PACount Count, struct PANumber Number);
-          struct PACount PACountPerformCopy(struct PACount from, struct PACount to);
+ struct PACount PACountPerformConstruct();
+ struct PACount PACountPerformInit(struct PACount Count, struct PANumber Number);
+ struct PACount PACountPerformCopy(struct PACount from, struct PACount to);
 
 
 
-          struct PACount PACountPerformRuin(struct PACount);
+ struct PACount PACountPerformRuin(struct PACount);
 
 
-          struct PACount PACountPerformDelete(struct PACount PA);
+ struct PACount PACountPerformDelete(struct PACount PA);
 # 9 "src/PA/Series.c" 2
 # 1 "include/PA/Element.h" 1
 # 10 "include/PA/Element.h"
-          void PAElementVisit(struct PAElement);
-          PABool PAElementIsVisited(struct PAElement);
-          void PAElementReset(struct PAElement);
-          struct PAElement PAElementPerformConstruct();
+ void PAElementVisit(struct PAElement);
+ PABool PAElementIsVisited(struct PAElement);
+ void PAElementReset(struct PAElement);
+ struct PAElement PAElementPerformConstruct();
 
-          struct PAElement PAElementPerformInit(struct PAElement,struct PAData,struct PAStatus);
-
-
+ struct PAElement PAElementPerformInit(struct PAElement,struct PAData,struct PAStatus);
 
 
-          struct PAElement PAElementPerformRuin(struct PAElement);
-          struct PAElement PAElementPerformDelete(struct PAElement);
-          struct PAElement PAElementPerformCopy(struct PAElement, struct PAElement);
+
+
+ struct PAElement PAElementPerformRuin(struct PAElement);
+ struct PAElement PAElementPerformDelete(struct PAElement);
+ struct PAElement PAElementPerformCopy(struct PAElement, struct PAElement);
 # 10 "src/PA/Series.c" 2
 # 21 "src/PA/Series.c"
-          struct PASeries PASeriesPerformConstruct() {
+ struct PASeries PASeriesPerformConstruct() {
 
     struct PASeries series;
     series.m = PACountPerformConstruct();
@@ -418,7 +417,7 @@ struct Facade {
 # 46 "src/PA/Series.c"
     return series;
 }
-          struct PASeries PASeriesPerformCopy(struct PASeries from, struct PASeries to)
+ struct PASeries PASeriesPerformCopy(struct PASeries from, struct PASeries to)
 {
     struct PANumber x;
     struct PANumber y;
@@ -440,7 +439,7 @@ struct Facade {
     return temp;
 }
 # 83 "src/PA/Series.c"
-          struct PASeries PASeriesPerformInit(struct PASeries Series,
+ struct PASeries PASeriesPerformInit(struct PASeries Series,
     struct PACount Value, struct PAElement Value2[])
     {
 # 97 "src/PA/Series.c"
@@ -458,7 +457,7 @@ struct Facade {
 
         return series;
     }
-              struct PASeries PASeriesPerformDelete(struct PASeries PA)
+    struct PASeries PASeriesPerformDelete(struct PASeries PA)
     {
         struct PANumber x;
         struct PANumber y;
@@ -474,7 +473,7 @@ struct Facade {
 
     }
 # 135 "src/PA/Series.c"
-              struct PASeries PASeriesPerformRuin(struct PASeries PA)
+    struct PASeries PASeriesPerformRuin(struct PASeries PA)
     {
         struct PACount x;
         struct PACount y;
@@ -488,7 +487,8 @@ struct Facade {
 # 154 "src/PA/Series.c"
         return PA;
     }
-# 190 "src/PA/Series.c"
+# 189 "src/PA/Series.c"
+
 struct PAResource PASeriesGet(struct PAData Data)
 {
     struct PAResource resource;

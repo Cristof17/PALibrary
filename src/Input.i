@@ -1,10 +1,9 @@
+# 0 "src/Input.c"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+# 0 "<command-line>" 2
 # 1 "src/Input.c"
-# 1 "<built-in>" 1
-# 1 "<built-in>" 3
-# 466 "<built-in>" 3
-# 1 "<command line>" 1
-# 1 "<built-in>" 2
-# 1 "src/Input.c" 2
 
 
 # 1 "include/Input.h" 1
@@ -369,38 +368,37 @@ struct Facade {
 
 
 
-          struct Input InputPerformConstruct();
-          struct Input InputPerformInit(struct PACount, struct PACount, struct PAElement);
-          struct Input InputPerformCopy(struct Input);
-          struct PAResult InputPerformDelete(struct PAInput);
-          void InputRuin();
-          void InputDispose();
+ struct Input InputPerformConstruct();
+ struct Input InputPerformInit(struct PACount, struct PACount, struct PAElement);
+ struct Input InputPerformCopy(struct Input);
+ struct PAResult InputPerformDelete(struct PAInput);
+ void InputRuin();
+ void InputDispose();
 # 4 "src/Input.c" 2
 
 
 # 1 "include/ArrayList/ArrayList.h" 1
 # 12 "include/ArrayList/ArrayList.h"
-          ArrayListObject ArrayListGet(struct ArrayListPosition);
-          ArrayListSize ArrayListPerformSize();
-          void ArrayListPut(struct ArrayListPosition, ArrayListObject);
-          struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], struct ArrayListPosition);
-          PAResult ArrayListPerformInit(struct ArrayList);
-          struct ArrayList ArrayListPerformCopy(struct ArrayList);
-          PAResult ArrayListPerformCopyTo(struct ArrayList Dest, struct PAList source, struct PAElement);
+ ArrayListObject ArrayListGet(struct ArrayListPosition);
+ ArrayListSize ArrayListPerformSize();
+ void ArrayListPut(struct ArrayListPosition, ArrayListObject);
+ struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], struct ArrayListPosition);
+ PAResult ArrayListPerformInit(struct ArrayList);
+ struct ArrayList ArrayListPerformCopy(struct ArrayList);
+ PAResult ArrayListPerformCopyTo(struct ArrayList Dest, struct PAList source, struct PAElement);
 
-          PAResult ArrayListPerformRuin(struct ArrayListPosition, ArrayListObject[]);
-          PAResult ArrayListPerformDelete(struct ArrayList);
-
-
+ PAResult ArrayListPerformRuin(struct ArrayListPosition, ArrayListObject[]);
+ PAResult ArrayListPerformDelete(struct ArrayList);
 
 
 
 
-          ArrayListObject ArrayListPerformGetFirst(struct ArrayList);
-          ArrayListObject ArrayListPerformGetLast(struct ArrayList);
-          ArrayListObject ArrayListPerformPutFirst(struct ArrayList, ArrayListObject);
-          ArrayListObject ArrayListPerformPutLast(struct ArrayList, ArrayListObject);
+
+
+ ArrayListObject ArrayListPerformGetFirst(struct ArrayList);
+ ArrayListObject ArrayListPerformGetLast(struct ArrayList);
+ ArrayListObject ArrayListPerformPutFirst(struct ArrayList, ArrayListObject);
+ ArrayListObject ArrayListPerformPutLast(struct ArrayList, ArrayListObject);
 # 7 "src/Input.c" 2
 # 1 "include/PA/Result.h" 1
 # 8 "src/Input.c" 2
-

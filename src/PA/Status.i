@@ -1,10 +1,9 @@
+# 0 "src/PA/Status.c"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+# 0 "<command-line>" 2
 # 1 "src/PA/Status.c"
-# 1 "<built-in>" 1
-# 1 "<built-in>" 3
-# 466 "<built-in>" 3
-# 1 "<command line>" 1
-# 1 "<built-in>" 2
-# 1 "src/PA/Status.c" 2
 
 
 # 1 "include/defs.h" 1
@@ -369,11 +368,11 @@ struct Facade {
 };
 # 8 "include/PA/Status.h" 2
 
-          struct PAStatus PAStatusPerformInit(struct PAStatus, struct PAResource);
-          struct PAStatus PAStatusPerformDelete(struct PAStatus);
-          struct PAStatus PAStatusPerformConstruct();
-          struct PAStatus PAStatusPerformRuin(struct PAStatus);
-          struct PAStatus PAStatusPerformCopy(struct PAStatus, struct PAStatus);
+ struct PAStatus PAStatusPerformInit(struct PAStatus, struct PAResource);
+ struct PAStatus PAStatusPerformDelete(struct PAStatus);
+ struct PAStatus PAStatusPerformConstruct();
+ struct PAStatus PAStatusPerformRuin(struct PAStatus);
+ struct PAStatus PAStatusPerformCopy(struct PAStatus, struct PAStatus);
 # 7 "src/PA/Status.c" 2
 # 1 "include/PA/Resource.h" 1
 
@@ -381,41 +380,41 @@ struct Facade {
 
 
 
-          struct PAResource PAResourcePerformInit(struct PAResource, struct PANumber);
-          struct PAResource PAResourcePerformConstruct();
-          struct PAResource PAResourcePerformRuin(struct PAResource);
-          struct PAResource PAResourcePerformDelete(struct PAResource);
-          struct PAResource PAResourcePerformCopy(struct PAResource, struct PAResource);
+ struct PAResource PAResourcePerformInit(struct PAResource, struct PANumber);
+ struct PAResource PAResourcePerformConstruct();
+ struct PAResource PAResourcePerformRuin(struct PAResource);
+ struct PAResource PAResourcePerformDelete(struct PAResource);
+ struct PAResource PAResourcePerformCopy(struct PAResource, struct PAResource);
 # 8 "src/PA/Status.c" 2
 
 
 
 
 
-          struct PAStatus PAStatusPerformConstruct()
+ struct PAStatus PAStatusPerformConstruct()
 {
     struct PAStatus status;
     status.visited = PAResourcePerformConstruct();
     status = PAStatusPerformInit(status,status.visited);
     return status;
 }
-          struct PAStatus PAStatusPerformInit(struct PAStatus Status, struct PAResource Value)
+ struct PAStatus PAStatusPerformInit(struct PAStatus Status, struct PAResource Value)
 {
     Status.visited = Value;
     return Status;
 }
-          struct PAStatus PAStatusPerformCopy(struct PAStatus from, struct PAStatus to)
+ struct PAStatus PAStatusPerformCopy(struct PAStatus from, struct PAStatus to)
 {
     struct PAStatus temp;
     temp.visited = PAResourcePerformCopy(from.visited, to.visited);
     return temp;
 }
-          struct PAStatus PAStatusPerformDelete(struct PAStatus PA)
+ struct PAStatus PAStatusPerformDelete(struct PAStatus PA)
 {
     PA.visited.value.val = 0;
     return PA;
 }
-          struct PAStatus PAStatusPerformRuin(struct PAStatus PA)
+ struct PAStatus PAStatusPerformRuin(struct PAStatus PA)
 {
 
 

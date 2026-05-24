@@ -1,10 +1,9 @@
+# 0 "src/PA/Count.c"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+# 0 "<command-line>" 2
 # 1 "src/PA/Count.c"
-# 1 "<built-in>" 1
-# 1 "<built-in>" 3
-# 466 "<built-in>" 3
-# 1 "<command line>" 1
-# 1 "<built-in>" 2
-# 1 "src/PA/Count.c" 2
 
 
 # 1 "include/types.h" 1
@@ -368,27 +367,27 @@ struct Facade {
 
 # 1 "include/PA/Count.h" 1
 # 13 "include/PA/Count.h"
-          struct PACount PACountPerformConstruct();
-          struct PACount PACountPerformInit(struct PACount Count, struct PANumber Number);
-          struct PACount PACountPerformCopy(struct PACount from, struct PACount to);
+ struct PACount PACountPerformConstruct();
+ struct PACount PACountPerformInit(struct PACount Count, struct PANumber Number);
+ struct PACount PACountPerformCopy(struct PACount from, struct PACount to);
 
 
 
-          struct PACount PACountPerformRuin(struct PACount);
+ struct PACount PACountPerformRuin(struct PACount);
 
 
-          struct PACount PACountPerformDelete(struct PACount PA);
+ struct PACount PACountPerformDelete(struct PACount PA);
 # 7 "src/PA/Count.c" 2
 # 1 "include/PA/Number.h" 1
 
 
 
 
-          struct PANumber PANumberPerformConstruct();
-          struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char Value);
-          struct PANumber PANumberPerformDelete(struct PANumber);
-          struct PANumber PANumberPerformRuin(struct PANumber);
-          struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to);
+ struct PANumber PANumberPerformConstruct();
+ struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char Value);
+ struct PANumber PANumberPerformDelete(struct PANumber);
+ struct PANumber PANumberPerformRuin(struct PANumber);
+ struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to);
 # 8 "src/PA/Count.c" 2
 
 
@@ -397,7 +396,7 @@ struct Facade {
 
 
 
-          struct PACount PACountPerformConstruct()
+ struct PACount PACountPerformConstruct()
 {
     struct PACount zies;
 
@@ -407,7 +406,7 @@ struct Facade {
 
     return zies;
 }
-          struct PACount PACountPerformInit(struct PACount Count, struct PANumber Value)
+ struct PACount PACountPerformInit(struct PACount Count, struct PANumber Value)
 {
 
     struct PACount temp;
@@ -425,12 +424,12 @@ struct Facade {
 
 
 }
-          struct PACount PACountPerformRuin(struct PACount PA)
+ struct PACount PACountPerformRuin(struct PACount PA)
 {
 # 70 "src/PA/Count.c"
     return PA;
 }
-          struct PACount PACountPerformDelete(struct PACount PA)
+ struct PACount PACountPerformDelete(struct PACount PA)
 {
     PA.number.val = 0;
     return PA;
@@ -443,7 +442,7 @@ PAResult PACountPerformPrint(struct PACount Count)
     PAResult result;
     return result;
 }
-          struct PACount PACountPerformCopy(struct PACount from, struct PACount to)
+ struct PACount PACountPerformCopy(struct PACount from, struct PACount to)
 {
     struct PACount temp;
     temp.number = PANumberPerformCopy(from.number,to.number);

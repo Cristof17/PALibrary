@@ -1,10 +1,9 @@
+# 0 "src/PA/Tree.c"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+# 0 "<command-line>" 2
 # 1 "src/PA/Tree.c"
-# 1 "<built-in>" 1
-# 1 "<built-in>" 3
-# 466 "<built-in>" 3
-# 1 "<command line>" 1
-# 1 "<built-in>" 2
-# 1 "src/PA/Tree.c" 2
 
 
 # 1 "include/PA/Tree.h" 1
@@ -369,62 +368,62 @@ struct Facade {
 
 
 
-          struct PATree PATreePerformConstruct();
-          struct PATree PATreePerformCopy(struct PATree from, struct PATree to);
+ struct PATree PATreePerformConstruct();
+ struct PATree PATreePerformCopy(struct PATree from, struct PATree to);
 
-          struct PATree PATreePerformInit(struct PATree, struct PACount, struct PACount, struct PAList, struct PAElement);
-
-
+ struct PATree PATreePerformInit(struct PATree, struct PACount, struct PACount, struct PAList, struct PAElement);
 
 
 
-          struct PATree PATreePerformRuin(struct PATree);
-          struct PATree PATreePerformDelete(struct PATree);
+
+
+ struct PATree PATreePerformRuin(struct PATree);
+ struct PATree PATreePerformDelete(struct PATree);
 # 4 "src/PA/Tree.c" 2
 # 1 "include/PA/Count.h" 1
 # 13 "include/PA/Count.h"
-          struct PACount PACountPerformConstruct();
-          struct PACount PACountPerformInit(struct PACount Count, struct PANumber Number);
-          struct PACount PACountPerformCopy(struct PACount from, struct PACount to);
+ struct PACount PACountPerformConstruct();
+ struct PACount PACountPerformInit(struct PACount Count, struct PANumber Number);
+ struct PACount PACountPerformCopy(struct PACount from, struct PACount to);
 
 
 
-          struct PACount PACountPerformRuin(struct PACount);
+ struct PACount PACountPerformRuin(struct PACount);
 
 
-          struct PACount PACountPerformDelete(struct PACount PA);
+ struct PACount PACountPerformDelete(struct PACount PA);
 # 5 "src/PA/Tree.c" 2
 # 1 "include/PA/Element.h" 1
 # 10 "include/PA/Element.h"
-          void PAElementVisit(struct PAElement);
-          PABool PAElementIsVisited(struct PAElement);
-          void PAElementReset(struct PAElement);
-          struct PAElement PAElementPerformConstruct();
+ void PAElementVisit(struct PAElement);
+ PABool PAElementIsVisited(struct PAElement);
+ void PAElementReset(struct PAElement);
+ struct PAElement PAElementPerformConstruct();
 
-          struct PAElement PAElementPerformInit(struct PAElement,struct PAData,struct PAStatus);
-
-
+ struct PAElement PAElementPerformInit(struct PAElement,struct PAData,struct PAStatus);
 
 
-          struct PAElement PAElementPerformRuin(struct PAElement);
-          struct PAElement PAElementPerformDelete(struct PAElement);
-          struct PAElement PAElementPerformCopy(struct PAElement, struct PAElement);
+
+
+ struct PAElement PAElementPerformRuin(struct PAElement);
+ struct PAElement PAElementPerformDelete(struct PAElement);
+ struct PAElement PAElementPerformCopy(struct PAElement, struct PAElement);
 # 6 "src/PA/Tree.c" 2
 # 1 "include/PA/List.h" 1
 # 11 "include/PA/List.h"
-          struct PAList PAListPerformConstruct();
-          struct PAList PAListPerformInit(struct PAList,struct PACount, struct PASeries[]);
+ struct PAList PAListPerformConstruct();
+ struct PAList PAListPerformInit(struct PAList,struct PACount, struct PASeries[]);
 
 
 
-          struct PAList PAListPerformRuin(struct PAList);
-          struct PAList PAListPerformDelete(struct PAList);
-          struct PAList PAListPerformCopy(struct PAList, struct PAList);
+ struct PAList PAListPerformRuin(struct PAList);
+ struct PAList PAListPerformDelete(struct PAList);
+ struct PAList PAListPerformCopy(struct PAList, struct PAList);
 
 void PAListPerformPrint(struct PAList List);
 # 7 "src/PA/Tree.c" 2
 # 19 "src/PA/Tree.c"
-          struct PATree PATreePerformConstruct()
+ struct PATree PATreePerformConstruct()
 {
     struct PATree temp;
     temp.n = PACountPerformConstruct();
@@ -436,7 +435,7 @@ void PAListPerformPrint(struct PAList List);
 # 66 "src/PA/Tree.c"
     return temp;
 }
-          struct PATree PATreePerformInit(struct PATree Tree, struct PACount Value, struct PACount Value2, struct PAList Value3, struct PAElement Value4)
+ struct PATree PATreePerformInit(struct PATree Tree, struct PACount Value, struct PACount Value2, struct PAList Value3, struct PAElement Value4)
 {
     struct PATree tree;
     tree.n = PACountPerformConstruct();
@@ -454,7 +453,7 @@ void PAListPerformPrint(struct PAList List);
     return Tree;
 }
 # 94 "src/PA/Tree.c"
-          struct PATree PATreePerformCopy(struct PATree from, struct PATree to)
+ struct PATree PATreePerformCopy(struct PATree from, struct PATree to)
 {
     struct PATree temp;
     temp.n = PACountPerformCopy(from.n,to.n);
@@ -463,7 +462,7 @@ void PAListPerformPrint(struct PAList List);
 
     return temp;
 }
-          struct PATree PATreePerformRuin(struct PATree PA)
+ struct PATree PATreePerformRuin(struct PATree PA)
 {
     PA.n = PACountPerformRuin(PA.n);
     PA.m = PACountPerformRuin(PA.m);
@@ -473,7 +472,7 @@ void PAListPerformPrint(struct PAList List);
     return PA;
 }
 # 168 "src/PA/Tree.c"
-          struct PATree PATreePerformDelete(struct PATree Tree)
+ struct PATree PATreePerformDelete(struct PATree Tree)
 {
 
 
@@ -481,7 +480,7 @@ void PAListPerformPrint(struct PAList List);
     return Tree;
 
 }
-          struct PATransposeTree PATransposeTreeBuildPart()
+ struct PATransposeTree PATransposeTreeBuildPart()
 {
     struct PATransposeTree tree;
     return tree;

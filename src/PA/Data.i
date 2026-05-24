@@ -1,10 +1,9 @@
+# 0 "src/PA/Data.c"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+# 0 "<command-line>" 2
 # 1 "src/PA/Data.c"
-# 1 "<built-in>" 1
-# 1 "<built-in>" 3
-# 466 "<built-in>" 3
-# 1 "<command line>" 1
-# 1 "<built-in>" 2
-# 1 "src/PA/Data.c" 2
 
 
 # 1 "include/PA/Data.h" 1
@@ -374,13 +373,13 @@ struct Facade {
 
 
 
-          struct PAData PADataPerformConstruct();
-          struct PAData PADataPerformInit(struct PAData, struct PAResource);
+ struct PAData PADataPerformConstruct();
+ struct PAData PADataPerformInit(struct PAData, struct PAResource);
 
 
-          struct PAData PADataPerformRuin(struct PAData);
-          struct PAData PADataPerformDelete(struct PAData);
-          struct PAData PADataPerformCopy(struct PAData from, struct PAData to);
+ struct PAData PADataPerformRuin(struct PAData);
+ struct PAData PADataPerformDelete(struct PAData);
+ struct PAData PADataPerformCopy(struct PAData from, struct PAData to);
 # 4 "src/PA/Data.c" 2
 # 1 "include/PA/Resource.h" 1
 
@@ -388,21 +387,14 @@ struct Facade {
 
 
 
-          struct PAResource PAResourcePerformInit(struct PAResource, struct PANumber);
-          struct PAResource PAResourcePerformConstruct();
-          struct PAResource PAResourcePerformRuin(struct PAResource);
-          struct PAResource PAResourcePerformDelete(struct PAResource);
-          struct PAResource PAResourcePerformCopy(struct PAResource, struct PAResource);
+ struct PAResource PAResourcePerformInit(struct PAResource, struct PANumber);
+ struct PAResource PAResourcePerformConstruct();
+ struct PAResource PAResourcePerformRuin(struct PAResource);
+ struct PAResource PAResourcePerformDelete(struct PAResource);
+ struct PAResource PAResourcePerformCopy(struct PAResource, struct PAResource);
 # 5 "src/PA/Data.c" 2
-
-
-
-
-
-
-
-
-          struct PAData PADataPerformConstruct()
+# 13 "src/PA/Data.c"
+ struct PAData PADataPerformConstruct()
 {
     struct PAData data;
 
@@ -415,7 +407,7 @@ struct Facade {
 
     return data;
 }
-          struct PAData PADataPerformInit(struct PAData Data, struct PAResource Value)
+ struct PAData PADataPerformInit(struct PAData Data, struct PAResource Value)
 {
     struct PAData temp;
     temp.Resource = PAResourcePerformConstruct();
@@ -429,14 +421,14 @@ struct Facade {
 
 
 }
-          struct PAData PADataPerformCopy(struct PAData from, struct PAData to)
+ struct PAData PADataPerformCopy(struct PAData from, struct PAData to)
 {
     struct PAData temp;
     temp.Resource = PAResourcePerformCopy(from.Resource, to.Resource);
     return temp;
 }
 # 63 "src/PA/Data.c"
-          struct PAData PADataPerformRuin(struct PAData Data)
+ struct PAData PADataPerformRuin(struct PAData Data)
 {
 
 
@@ -445,7 +437,7 @@ struct Facade {
 
 
 }
-          struct PAData PADataPerformDelete(struct PAData PA)
+ struct PAData PADataPerformDelete(struct PAData PA)
 {
     return PA;
 
