@@ -1,4 +1,9 @@
-
+AC_PREREQ(2.2.2)
+AC_INIT(pa,1.0,cristof_rotsching@yahoo.com)
+#AC_PROG_CC(clang)
+AC_CONFIG_HEADERS([conf.h])
+AC_TYPE_INT32_T()
+AC_TYPE_UINT32_T()
 AC_SUBST(prefix)
 AC_SUBST(exec_prefix)
 AC_SUBST(bindir)
@@ -23,3 +28,5 @@ AC_SUBST(lispdir)
 AC_SUBST(localedir)
 AC_SUBST(mandir)
 AC_SUBST(srcdir)
+AC_CONFIG_FILES()
+AC_OUTPUT
