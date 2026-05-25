@@ -43,10 +43,11 @@ man1ext=
 man2ext=
 srcdir=
 musl=1.2.6
-
+crt=crt1.o
+output=libpa.a
 all:
 	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
-	$(LD) $(foreach object,$^,$(libdir)/$(object)) musl-$(muslVersion)/obj/crt1.o -static -o $(libdir)/libpa.a
+	$(LD) $(foreach object,$^,$(libdir)/$(object)) musl-$(musl)/$(libdir)/$(crt) -static -o $(libdir)/$(output)
 #pa arraylist bfs
 
 mostlyclean:
