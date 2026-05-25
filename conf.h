@@ -28,14 +28,17 @@
 /* Define to 1 if you have the <unistd.h> header file. */
 #define HAVE_UNISTD_H 1
 
+/* Name of package */
+#define PACKAGE "pa"
+
 /* Define to the address where bug reports for this package should be sent. */
-#define PACKAGE_BUGREPORT "cristof_rotsching@yahoo.com"
+#define PACKAGE_BUGREPORT ""
 
 /* Define to the full name of this package. */
 #define PACKAGE_NAME "pa"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "pa 1.0"
+#define PACKAGE_STRING "pa 1.2.1"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "pa"
@@ -44,12 +47,15 @@
 #define PACKAGE_URL ""
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "1.0"
+#define PACKAGE_VERSION "1.2.1"
 
 /* Define to 1 if all of the C89 standard headers exist (not just the ones
    required in a freestanding environment). This macro is provided for
    backward compatibility; new code need not use it. */
 #define STDC_HEADERS 1
+
+/* Version number of package */
+#define VERSION "1.2.1"
 
 /* Define for Solaris 2.5.1 so the uint32_t typedef from <sys/synch.h>,
    <pthread.h>, or <semaphore.h> is not used. If the typedef were allowed, the

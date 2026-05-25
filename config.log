@@ -37,7 +37,7 @@ PATH: /bin/
 ## Core tests. ##
 ## ----------- ##
 
-configure:1952: loading site script /usr/share/site/x86_64-pc-linux-gnu
+configure:1956: loading site script /usr/share/site/x86_64-pc-linux-gnu
 | #!/bin/sh
 | # Site script for configure. It is resourced via $CONFIG_SITE environment varaible.
 | 
@@ -123,64 +123,23 @@ configure:1952: loading site script /usr/share/site/x86_64-pc-linux-gnu
 | See 'config.log' for more details" "$LINENO" 5; }
 | 	fi
 | done
-configure:2421: looking for aux files: compile missing install-sh
-configure:2434:  trying ./
-configure:2463:   ./compile found
-configure:2463:   ./missing found
-configure:2445:   ./install-sh found
-configure:2616: checking for a BSD-compatible install
-configure:2690: result: /usr/bin/install -c
-configure:2701: checking whether sleep supports fractional seconds
-configure:2717: result: yes
-configure:2720: checking filesystem timestamp resolution
-configure:2855: result: 0.01
-configure:2860: checking whether build environment is sane
-configure:2905: result: yes
-configure:3076: checking for a race-free mkdir -p
-configure:3119: result: /usr/bin/mkdir -p
-configure:3126: checking for gawk
-configure:3147: found /usr/bin/gawk
-configure:3159: result: gawk
-configure:3170: checking whether make sets $(MAKE)
-configure:3194: result: yes
-configure:3220: checking whether make supports nested variables
-configure:3239: result: yes
-configure:3253: checking xargs -n works
-configure:3269: result: yes
-configure:3354: checking whether UID '1000' is supported by ustar format
-configure:3360: result: yes
-configure:3367: checking whether GID '1000' is supported by ustar format
-configure:3373: result: yes
-configure:3381: checking how to create a ustar tar archive
-configure:3392: tar --version
-tar (GNU tar) 1.35
-Copyright (C) 2023 Free Software Foundation, Inc.
-License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.
-
-Written by John Gilmore and Jay Fenlason.
-configure:3395: $? = 0
-configure:3435: tardir=conftest.dir && eval tar --format=ustar -chf - "$tardir" >conftest.tar
-configure:3438: $? = 0
-configure:3442: tar -xf - <conftest.tar
-configure:3445: $? = 0
-configure:3447: cat conftest.dir/file
-GrepMe
-configure:3450: $? = 0
-configure:3465: result: gnutar
-configure:3565: checking for gcc
-configure:3586: found /usr/bin/gcc
-configure:3598: result: gcc
-configure:3629: checking for C compiler version
-configure:3638: gcc --version >&5
+configure:2425: looking for aux files: missing install-sh compile
+configure:2438:  trying ./
+configure:2467:   ./missing found
+configure:2449:   ./install-sh found
+configure:2467:   ./compile found
+configure:2677: checking for gcc
+configure:2698: found /usr/bin/gcc
+configure:2710: result: gcc
+configure:2741: checking for C compiler version
+configure:2750: gcc --version >&5
 gcc (SUSE Linux) 15.2.1 20260202
 Copyright (C) 2025 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-configure:3649: $? = 0
-configure:3638: gcc -v >&5
+configure:2761: $? = 0
+configure:2750: gcc -v >&5
 Using built-in specs.
 COLLECT_GCC=gcc
 COLLECT_LTO_WRAPPER=/usr/lib64/gcc/x86_64-suse-linux/15/lto-wrapper
@@ -192,115 +151,108 @@ Thread model: posix
 Supported LTO compression algorithms: zlib zstd
 gcc version 15.2.1 20260202 (SUSE Linux) 
 ... rest of stderr output deleted ...
-configure:3649: $? = 0
-configure:3638: gcc -V >&5
+configure:2761: $? = 0
+configure:2750: gcc -V >&5
 gcc: error: unrecognized command-line option '-V'
 gcc: fatal error: no input files
 compilation terminated.
-configure:3649: $? = 1
-configure:3638: gcc -qversion >&5
+configure:2761: $? = 1
+configure:2750: gcc -qversion >&5
 gcc: error: unrecognized command-line option '-qversion'; did you mean '--version'?
 gcc: fatal error: no input files
 compilation terminated.
-configure:3649: $? = 1
-configure:3638: gcc -version >&5
+configure:2761: $? = 1
+configure:2750: gcc -version >&5
 gcc: error: unrecognized command-line option '-version'
 gcc: fatal error: no input files
 compilation terminated.
-configure:3649: $? = 1
-configure:3669: checking whether the C compiler works
-configure:3691: gcc    conftest.c  >&5
-configure:3695: $? = 0
-configure:3746: result: yes
-configure:3750: checking for C compiler default output file name
-configure:3752: result: a.out
-configure:3758: checking for suffix of executables
-configure:3765: gcc -o conftest    conftest.c  >&5
-configure:3769: $? = 0
-configure:3793: result: 
-configure:3817: checking whether we are cross compiling
-configure:3825: gcc -o conftest    conftest.c  >&5
-configure:3829: $? = 0
-configure:3836: ./conftest
-configure:3840: $? = 0
-configure:3855: result: no
-configure:3861: checking for suffix of object files
-configure:3884: gcc -c   conftest.c >&5
-configure:3888: $? = 0
-configure:3912: result: o
-configure:3916: checking whether the compiler supports GNU C
-configure:3936: gcc -c   conftest.c >&5
-configure:3936: $? = 0
-configure:3948: result: yes
-configure:3959: checking whether gcc accepts -g
-configure:3980: gcc -c -g  conftest.c >&5
-configure:3980: $? = 0
-configure:4027: result: yes
-configure:4047: checking for gcc option to enable C23 features
-configure:4062: gcc  -c -g -O2  conftest.c >&5
-configure:4062: $? = 0
-configure:4081: result: none needed
-configure:4254: checking whether gcc understands -c and -o together
-configure:4277: gcc -c conftest.c -o conftest2.o
-configure:4280: $? = 0
-configure:4277: gcc -c conftest.c -o conftest2.o
-configure:4280: $? = 0
-configure:4296: result: yes
-configure:4316: checking whether make supports the include directive
-configure:4331: make -f confmf.GNU && cat confinc.out
-this is the am__doit target
-configure:4334: $? = 0
-configure:4353: result: yes (GNU style)
-configure:4379: checking dependency style of gcc
-configure:4492: result: none
-configure:4512: checking for stdio.h
-configure:4512: gcc -c -g -O2  conftest.c >&5
-configure:4512: $? = 0
-configure:4512: result: yes
-configure:4512: checking for stdlib.h
-configure:4512: gcc -c -g -O2  conftest.c >&5
-configure:4512: $? = 0
-configure:4512: result: yes
-configure:4512: checking for string.h
-configure:4512: gcc -c -g -O2  conftest.c >&5
-configure:4512: $? = 0
-configure:4512: result: yes
-configure:4512: checking for inttypes.h
-configure:4512: gcc -c -g -O2  conftest.c >&5
-configure:4512: $? = 0
-configure:4512: result: yes
-configure:4512: checking for stdint.h
-configure:4512: gcc -c -g -O2  conftest.c >&5
-configure:4512: $? = 0
-configure:4512: result: yes
-configure:4512: checking for strings.h
-configure:4512: gcc -c -g -O2  conftest.c >&5
-configure:4512: $? = 0
-configure:4512: result: yes
-configure:4512: checking for sys/stat.h
-configure:4512: gcc -c -g -O2  conftest.c >&5
-configure:4512: $? = 0
-configure:4512: result: yes
-configure:4512: checking for sys/types.h
-configure:4512: gcc -c -g -O2  conftest.c >&5
-configure:4512: $? = 0
-configure:4512: result: yes
-configure:4512: checking for unistd.h
-configure:4512: gcc -c -g -O2  conftest.c >&5
-configure:4512: $? = 0
-configure:4512: result: yes
-configure:4537: checking for int32_t
-configure:4537: gcc -c -g -O2  conftest.c >&5
-configure:4537: $? = 0
-configure:4537: gcc -c -g -O2  conftest.c >&5
+configure:2761: $? = 1
+configure:2781: checking whether the C compiler works
+configure:2803: gcc    conftest.c  >&5
+configure:2807: $? = 0
+configure:2858: result: yes
+configure:2862: checking for C compiler default output file name
+configure:2864: result: a.out
+configure:2870: checking for suffix of executables
+configure:2877: gcc -o conftest    conftest.c  >&5
+configure:2881: $? = 0
+configure:2905: result: 
+configure:2929: checking whether we are cross compiling
+configure:2937: gcc -o conftest    conftest.c  >&5
+configure:2941: $? = 0
+configure:2948: ./conftest
+configure:2952: $? = 0
+configure:2967: result: no
+configure:2973: checking for suffix of object files
+configure:2996: gcc -c   conftest.c >&5
+configure:3000: $? = 0
+configure:3024: result: o
+configure:3028: checking whether the compiler supports GNU C
+configure:3048: gcc -c   conftest.c >&5
+configure:3048: $? = 0
+configure:3060: result: yes
+configure:3071: checking whether gcc accepts -g
+configure:3092: gcc -c -g  conftest.c >&5
+configure:3092: $? = 0
+configure:3139: result: yes
+configure:3159: checking for gcc option to enable C23 features
+configure:3174: gcc  -c -g -O2  conftest.c >&5
+configure:3174: $? = 0
+configure:3193: result: none needed
+configure:3371: checking whether gcc understands -c and -o together
+configure:3394: gcc -c conftest.c -o conftest2.o
+configure:3397: $? = 0
+configure:3394: gcc -c conftest.c -o conftest2.o
+configure:3397: $? = 0
+configure:3413: result: yes
+configure:3435: checking for stdio.h
+configure:3435: gcc -c -g -O2  conftest.c >&5
+configure:3435: $? = 0
+configure:3435: result: yes
+configure:3435: checking for stdlib.h
+configure:3435: gcc -c -g -O2  conftest.c >&5
+configure:3435: $? = 0
+configure:3435: result: yes
+configure:3435: checking for string.h
+configure:3435: gcc -c -g -O2  conftest.c >&5
+configure:3435: $? = 0
+configure:3435: result: yes
+configure:3435: checking for inttypes.h
+configure:3435: gcc -c -g -O2  conftest.c >&5
+configure:3435: $? = 0
+configure:3435: result: yes
+configure:3435: checking for stdint.h
+configure:3435: gcc -c -g -O2  conftest.c >&5
+configure:3435: $? = 0
+configure:3435: result: yes
+configure:3435: checking for strings.h
+configure:3435: gcc -c -g -O2  conftest.c >&5
+configure:3435: $? = 0
+configure:3435: result: yes
+configure:3435: checking for sys/stat.h
+configure:3435: gcc -c -g -O2  conftest.c >&5
+configure:3435: $? = 0
+configure:3435: result: yes
+configure:3435: checking for sys/types.h
+configure:3435: gcc -c -g -O2  conftest.c >&5
+configure:3435: $? = 0
+configure:3435: result: yes
+configure:3435: checking for unistd.h
+configure:3435: gcc -c -g -O2  conftest.c >&5
+configure:3435: $? = 0
+configure:3435: result: yes
+configure:3460: checking for int32_t
+configure:3460: gcc -c -g -O2  conftest.c >&5
+configure:3460: $? = 0
+configure:3460: gcc -c -g -O2  conftest.c >&5
 conftest.c: In function 'main':
-conftest.c:54:67: warning: integer overflow in expression of type 'int' results in '-2147483648' [-Woverflow]
-   54 |                  < (int32_t) (((((int32_t) 1 << N) << N) - 1) * 2 + 2))];
+conftest.c:52:67: warning: integer overflow in expression of type 'int' results in '-2147483648' [-Woverflow]
+   52 |                  < (int32_t) (((((int32_t) 1 << N) << N) - 1) * 2 + 2))];
       |                                                                   ^
-conftest.c:53:12: error: storage size of 'test_array' isn't constant
-   53 | static int test_array [1 - 2 * !((int32_t) (((((int32_t) 1 << N) << N) - 1) * 2 + 1)
+conftest.c:51:12: error: storage size of 'test_array' isn't constant
+   51 | static int test_array [1 - 2 * !((int32_t) (((((int32_t) 1 << N) << N) - 1) * 2 + 1)
       |            ^~~~~~~~~~
-configure:4537: $? = 1
+configure:3460: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "pa"
@@ -309,8 +261,6 @@ configure: failed program was:
 | #define PACKAGE_STRING "pa 1.2.1"
 | #define PACKAGE_BUGREPORT ""
 | #define PACKAGE_URL ""
-| #define PACKAGE "pa"
-| #define VERSION "1.2.1"
 | #define HAVE_STDIO_H 1
 | #define HAVE_STDLIB_H 1
 | #define HAVE_STRING_H 1
@@ -362,11 +312,81 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:4537: result: yes
-configure:4546: checking for uint32_t
-configure:4546: gcc -c -g -O2  conftest.c >&5
-configure:4546: $? = 0
-configure:4546: result: yes
+configure:3460: result: yes
+configure:3469: checking for uint32_t
+configure:3469: gcc -c -g -O2  conftest.c >&5
+configure:3469: $? = 0
+configure:3469: result: yes
+configure:3522: checking for a BSD-compatible install
+configure:3596: result: /usr/bin/install -c
+configure:3607: checking whether sleep supports fractional seconds
+configure:3623: result: yes
+configure:3626: checking filesystem timestamp resolution
+configure:3761: result: 0.01
+configure:3766: checking whether build environment is sane
+configure:3811: result: yes
+configure:3978: checking for a race-free mkdir -p
+configure:4021: result: /usr/bin/mkdir -p
+configure:4028: checking for gawk
+configure:4049: found /usr/bin/gawk
+configure:4061: result: gawk
+configure:4072: checking whether make sets $(MAKE)
+configure:4096: result: yes
+configure:4118: checking whether make supports the include directive
+configure:4133: make -f confmf.GNU && cat confinc.out
+this is the am__doit target
+configure:4136: $? = 0
+configure:4155: result: yes (GNU style)
+configure:4186: checking whether make supports nested variables
+configure:4205: result: yes
+configure:4219: checking xargs -n works
+configure:4235: result: yes
+configure:4320: checking whether UID '1000' is supported by ustar format
+configure:4326: result: yes
+configure:4333: checking whether GID '1000' is supported by ustar format
+configure:4339: result: yes
+configure:4347: checking how to create a ustar tar archive
+configure:4358: tar --version
+tar (GNU tar) 1.35
+Copyright (C) 2023 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by John Gilmore and Jay Fenlason.
+configure:4361: $? = 0
+configure:4401: tardir=conftest.dir && eval tar --format=ustar -chf - "$tardir" >conftest.tar
+configure:4404: $? = 0
+configure:4408: tar -xf - <conftest.tar
+configure:4411: $? = 0
+configure:4413: cat conftest.dir/file
+GrepMe
+configure:4416: $? = 0
+configure:4431: result: gnutar
+configure:4440: checking dependency style of gcc
+configure:4553: result: none
+configure:4659: checking that generated files are newer than configure
+configure:4665: result: done
+configure:4708: creating ./config.status
+
+## ---------------------- ##
+## Running config.status. ##
+## ---------------------- ##
+
+This file was extended by pa config.status 1.2.1, which was
+generated by GNU Autoconf 2.73.  Invocation command line was
+
+  CONFIG_FILES    = 
+  CONFIG_HEADERS  = 
+  CONFIG_LINKS    = 
+  CONFIG_COMMANDS = 
+  $ ./config.status 
+
+on localhost.localdomain
+
+config.status:840: creating Makefile
+config.status:840: creating conf.h
+config.status:1069: executing depfiles commands
 
 ## ---------------- ##
 ## Cache variables. ##
@@ -427,9 +447,9 @@ AMDEP_FALSE='#'
 AMDEP_TRUE=''
 AMTAR='$${TAR-tar}'
 AM_BACKSLASH='\'
-AM_DEFAULT_V=''
+AM_DEFAULT_V='$(AM_DEFAULT_VERBOSITY)'
 AM_DEFAULT_VERBOSITY='1'
-AM_V=''
+AM_V='$(V)'
 AUTOCONF='${SHELL} '\''/home/cristof/PALibrary/missing'\'' autoconf'
 AUTOHEADER='${SHELL} '\''/home/cristof/PALibrary/missing'\'' autoheader'
 AUTOMAKE='${SHELL} '\''/home/cristof/PALibrary/missing'\'' automake-1.18'
@@ -441,7 +461,7 @@ CPPFLAGS=''
 CSCOPE='cscope'
 CTAGS='ctags'
 CYGPATH_W='echo'
-DEFS=''
+DEFS='-DHAVE_CONFIG_H'
 DEPDIR='.deps'
 ECHO_C=''
 ECHO_N='-n'
@@ -453,7 +473,9 @@ INSTALL_PROGRAM='${INSTALL}'
 INSTALL_SCRIPT='${INSTALL}'
 INSTALL_STRIP_PROGRAM='$(install_sh) -c -s'
 LDFLAGS=''
+LIBOBJS=''
 LIBS=''
+LTLIBOBJS=''
 MAKEINFO='${SHELL} '\''/home/cristof/PALibrary/missing'\'' makeinfo'
 MKDIR_P='/usr/bin/mkdir -p'
 OBJEXT='o'
@@ -470,6 +492,8 @@ SHELL='/bin/sh'
 STRIP=''
 VERSION='1.2.1'
 ac_ct_CC='gcc'
+am__EXEEXT_FALSE=''
+am__EXEEXT_TRUE='#'
 am__fastdepCC_FALSE=''
 am__fastdepCC_TRUE='#'
 am__include='include'
@@ -487,7 +511,7 @@ datadir='${datarootdir}'
 datarootdir='${prefix}/share'
 docdir='${datarootdir}/doc/${PACKAGE_TARNAME}'
 dvidir='${docdir}'
-exec_prefix='NONE'
+exec_prefix='${prefix}'
 host_alias=''
 htmldir='${docdir}'
 includedir='${prefix}/include'
@@ -504,7 +528,7 @@ musl_version=''
 oldincludedir='/usr/include'
 olincludedir=''
 pdfdir='${docdir}'
-prefix='NONE'
+prefix='/usr/local'
 program_transform_name='s,x,x,'
 psdir='${docdir}'
 runstatedir='${localstatedir}/run'
@@ -525,8 +549,6 @@ target_alias=''
 #define PACKAGE_STRING "pa 1.2.1"
 #define PACKAGE_BUGREPORT ""
 #define PACKAGE_URL ""
-#define PACKAGE "pa"
-#define VERSION "1.2.1"
 #define HAVE_STDIO_H 1
 #define HAVE_STDLIB_H 1
 #define HAVE_STRING_H 1
@@ -537,5 +559,7 @@ target_alias=''
 #define HAVE_SYS_TYPES_H 1
 #define HAVE_UNISTD_H 1
 #define STDC_HEADERS 1
+#define PACKAGE "pa"
+#define VERSION "1.2.1"
 
 configure: exit 
