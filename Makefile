@@ -13,35 +13,34 @@
 # prefix=/usr/local/
 prefix=/home/cristof/PALibrary
 exec_prefix=$(prefix)
-bindir=$(exec_prefix)/bin
-sbindir=$(exec_prefix)/sbin
-libexdir=$(exec_prefix)/libexec
-datarootdir=$(prefix)/share
-datadir=$(datarootdir)
-sysconfdir=$(prefix)/etc
-sharedstatedir=$(prefix)/com
-localstatedir=$(prefix)/var
-runstatedir=$(localstatedir)/run
-includedir=$(prefix)/include
-oldincludedir=/usr/include
-docdir=$(datarootdir)/doc/pa
-infodir=$(datarootdir)/info
+bindir=$(exec_prefix)/bin/
+sbindir=$(exec_prefix)/sbin/
+libexdir=$(exec_prefix)/libexec/
+datarootdir=$(prefix)/share/
+datadir=$(datarootdir)/
+sysconfdir=$(prefix)/etc/
+sharedstatedir=$(prefix)/com/
+localstatedir=$(prefix)/var/
+runstatedir=$(localstatedir)/run/
+includedir=$(prefix)/include/
+oldincludedir=/usr/include/
+docdir=$(datarootdir)/doc/pa/
+infodir=$(datarootdir)/info/
 htmldir=$(docdir)
 dvdir=$(docdir)
 pdfdir=$(docdir)
 # /usr/local/lib
 psdir=$(docdir)
 # /usr/local/share/emacs/site-lisp
-libdir=$(exec_prefix)/lib
-lispdir=$(dataroot_dir)/emacs/site-lisp
-localedir=$(datarootdir)/locale
-mandir=$(datarootdir)/man
-man1dir=$(mandir)/man1
-man2dir=$(mandir)/man2
+libdir=$(exec_prefix)/lib/
+lispdir=$(dataroot_dir)/emacs/site-lisp/
+localedir=$(datarootdir)/locale/ 
+man1dir=$(mandir)/man1/
+man2dir=$(mandir)/man2/
 manext=.1
 man1ext=
 man2ext=
-srcdir=src
+srcdir=$(prefix)/src/
 all: build 
 #pa arraylist bfs
 mostlyclean:
@@ -61,6 +60,7 @@ maintainer-clean:
 # 	-rm $(sources_pa)
 # 	-rm $(sources_bfs)
 # 	-rm $(sources_arraylist)
+
 # 	-rm $(assemblies_pa)
 # 	-rm $(assemblies_bfs)
 # 	-rm $(assemblies_arraylist)
@@ -437,7 +437,7 @@ assemble: assemble_pa
 link: link_pa link_bfs link_arraylist
 
 libpa.a: $(objects_pa)
-	$(LD) $(foreach object,$^,$(libdir)/$(object)) -static -o $(libdir)/$@
+	$(LD) $(foreach object,$^,$(libdir)/$(object)) /lib/crt0.o -static -o $(libdir)/$@
 # 	$(LD) $(LDFLAGS) $(foreach object,$$^,$(libdir)/$(object)) -static -o $(libdir)/$@
 # link_windows: $(objects)
 # 	$(LD) $(objects) -o filiename.library
@@ -669,7 +669,8 @@ ifeq ($(host-type),AArch64)
 endif
 
 test.out: test.o libpa.a
-	$(CC) $(libdir)/$< $(libdir)/libpa.a @$(prefix)/ld_options
+	$(CC) $(libdir)/$< $(libdir)/libpa.a -o $(bindir)/$@
+
 ASFLAGS=
 ifeq ($(host-type),arm64)
 ASFLAGS=-arch $(host-type)
