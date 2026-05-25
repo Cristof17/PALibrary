@@ -11,41 +11,42 @@
 # 	obj/PA/Feature.o
 #prefix=/usr/local
 # prefix=/usr/local/
-prefix=@prefix@
-exec_prefix=@exec_prefix@
-bindir=@bindir@
-sbindir=@sbindir@
-libexdir=@libexecdir@
-datarootdir=@datarootdir@
-datadir=@datadir@
-sysconfdir=@sysconfdir@
-sharedstatedir=@sharedstatedir@
-localstatedir=@localstatedir@
-runstatedir=@runstatedir@
-includedir=@includedir@
-oldincludedir=@oldincludedir@
-docdir=@docdir@
-infodir=@infodir@
-htmldir=@docdir@
-dvdir=@docdir@
-pdfdir=@docdir@
-# /usr/local/lib
-psdir=@docdir@
+prefix=/usr/local/
+exec_prefix=$(prefix)
+bindir=$(prefix)/bin/
+sbindir=$(exec_prefix)/sbin/
+libexdir=$(exec_prefix)/libexec
+datarootdir=$(prefix)/share
+datadir=$(datarootdir)
+sysconfdir=$(prefix)/etc
+sharedstatedir=$(prefix)/com
+localstatedir=$(prefix)/var
+runstatedir=$(localstatedir)/run
+includedir=$(prefix)/include
+oldincludedir=/usr/local/
+docdir=$(datarootdir)/doc/yourpkg
+infodir=$(datarootdir)/info
+htmldir=$(docdir)
+dvdir=$(docdir)
+pdfdir=$(docdir)
+# /usr/local/
+psdir=$(docdir)
 # /usr/local/share/emacs/site-lisp
-libdir=@libdir@
-lispdir=@lispdir@
-localedir=@localedir@
-mandir=@mandir@
+libdir=$(exec_prefix)/lib
+lispdir=$(datarootdir)/emacs-site-lisp #d
+localedir=$(datarootdir)/locale
+mandir=$(datarootdir)/man
 man1dir=$(mandir)/man1
 man2dir=$(mandir)/man2
 manext=.1
 man1ext=
 man2ext=
-srcdir=@srcdir@
+srcdir=
+musl_version=@musl_version@
 
 all:
-	$(srcdir)/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
-	$(LD) $(foreach object,$^,$(libdir)/$(object)) /lib/crt0.o -static -o $(libdir)/libpa.a
+	./mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
+	$(LD) $(foreach object,$^,$(libdir)/$(object)) musl-$(musl_version)/obj/crt1.o -static -o $(libdir)/libpa.a
 #pa arraylist bfs
 
 mostlyclean:
