@@ -10,8 +10,8 @@
 #include <PA/Status.h>
 #include <PA/TransposeTree.h>
 #include <conf.h>
-#ifndef _HAVE_STDIO_H
-#elif defined _HAVE_STDIO_H
+#ifndef HAVE_STDIO_H
+#elif defined HAVE_STDIO_H
 #include <stdio.h>
 #endif
 int main()
