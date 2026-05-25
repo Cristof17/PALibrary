@@ -447,7 +447,7 @@ libpa.a: $(objects_pa)
 #SUBDIRS= src src/Iterator src/Builder src/Adapter src/Arraylist
 #bar := $(foo:.c=.o)
 #bindir=bin
-srcdir=src
+srcdir=$(prefix)/src
 #includedir=include
 #CFLAGS+=-I$(abspath $(includedir))
 #CFLAGS+=-I$(abspath $(includedir)/Builder)
@@ -455,8 +455,8 @@ srcdir=src
 #CFLAGS+=-I$(abspath $(includedir)/ArrayList)
 #CFLAGS+=-I$(abspath $(includedir)/Adapter)
 CPPFLAGS=
-CPPFLAGS+=-Iinclude -I$(prefix)
-libdir= obj
+CPPFLAGS+=-I$(prefix)/include -I$(prefix)
+libdir=$(prefix)/obj
 #datadir=dat
 #infodir=info
 #mandir=man
