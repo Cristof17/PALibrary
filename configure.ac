@@ -1,6 +1,6 @@
 AC_PREREQ(2.2.2)
-AM_INIT_AUTOMAKE()
 AC_INIT(pa,1.0,cristof_rotsching@yahoo.com)
+AM_INIT_AUTOMAKE()
 #AC_PROG_CC(clang)
 AC_CONFIG_HEADERS([conf.h])
 AC_CONFIG_FILES([Makefile])

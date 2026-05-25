@@ -2443,6 +2443,8 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
 #AC_PROG_CC(clang)
 ac_config_headers="$ac_config_headers conf.h"
 
+ac_config_files="$ac_config_files Makefile"
+
 
 
 
@@ -3595,7 +3597,7 @@ printf '%s\n' "@%:@define uint32_t $ac_cv_c_uint32_t" >>confdefs.h
 
 
 
-ac_config_files="$ac_config_files "
+ac_config_files="$ac_config_files configure.ac"
 
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
@@ -4237,6 +4239,8 @@ for ac_config_target in $ac_config_targets
 do
   case $ac_config_target in
     "conf.h") CONFIG_HEADERS="$CONFIG_HEADERS conf.h" ;;
+    "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
+    "configure.ac") CONFIG_FILES="$CONFIG_FILES configure.ac" ;;
 
   *) as_fn_error $? "invalid argument: '$ac_config_target'" "$LINENO" 5;;
   esac
