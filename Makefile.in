@@ -112,9 +112,9 @@ assemble: assemble_pa
 	@echo "Building"
 link: link_pa link_bfs link_arraylist
 
-all: preprocess assemble
-	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
-	$(LD) $(foreach object,$^,$(libdir)/$(object)) $(prefix)/musl-$(musl)/obj/crt/$(crt) -lc -static -o $(libdir)/$(output) 
+all: preprocess assemble compile
+#	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
+#	$(LD) $(foreach object,$^,$(libdir)/$(object)) $(prefix)/musl-$(musl)/obj/crt/$(crt) -lc -static -o $(libdir)/$(output) 
 #pa arraylist bfs
 
 mostlyclean:
@@ -451,8 +451,11 @@ build: $(subdirs)
 # 	echo "build"
 # 	@echo "Build"
 # 	@echo "$<"
-libpa.a: $(objects_pa)
-	$(LD) $(foreach object,$^,$(libdir)/$(object)) /lib/crt0.o -static -o $(libdir)/$@
+libpa.a: $(objects_pa) $(prefix)/musl-$(musl)/obj/crt/crt1.o
+	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
+	$(LD) $(foreach object,$^,$(libdir)/$(object)) $(prefix)/musl-$(musl)/obj/crt/$(crt) -lc -static -o $(libdir)/$(output) 
+#libpa.a: $(objects_pa)
+#	$(LD) $(foreach object,$^,$(libdir)/$(object)) /lib/crt0.o -static -o $(libdir)/$@
 # 	$(LD) $(LDFLAGS) $(foreach object,$$^,$(libdir)/$(object)) -static -o $(libdir)/$@
 # link_windows: $(objects)
 # 	$(LD) $(objects) -o filiename.library
