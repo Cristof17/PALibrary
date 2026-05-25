@@ -45,7 +45,7 @@ srcdir=
 musl_version=@musl_version@
 
 all:
-	./mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
+	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
 	$(LD) $(foreach object,$^,$(libdir)/$(object)) musl-$(musl_version)/obj/crt1.o -static -o $(libdir)/libpa.a
 #pa arraylist bfs
 
