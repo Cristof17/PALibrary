@@ -317,36 +317,36 @@ configure:3469: checking for uint32_t
 configure:3469: gcc -c -g -O2  conftest.c >&5
 configure:3469: $? = 0
 configure:3469: result: yes
-configure:3522: checking for a BSD-compatible install
-configure:3596: result: /usr/bin/install -c
-configure:3607: checking whether sleep supports fractional seconds
-configure:3623: result: yes
-configure:3626: checking filesystem timestamp resolution
-configure:3761: result: 0.01
-configure:3766: checking whether build environment is sane
-configure:3811: result: yes
-configure:3978: checking for a race-free mkdir -p
-configure:4021: result: /usr/bin/mkdir -p
-configure:4028: checking for gawk
-configure:4049: found /usr/bin/gawk
-configure:4061: result: gawk
-configure:4072: checking whether make sets $(MAKE)
-configure:4096: result: yes
-configure:4118: checking whether make supports the include directive
-configure:4133: make -f confmf.GNU && cat confinc.out
+configure:3523: checking for a BSD-compatible install
+configure:3597: result: /usr/bin/install -c
+configure:3608: checking whether sleep supports fractional seconds
+configure:3624: result: yes
+configure:3627: checking filesystem timestamp resolution
+configure:3762: result: 0.01
+configure:3767: checking whether build environment is sane
+configure:3812: result: yes
+configure:3979: checking for a race-free mkdir -p
+configure:4022: result: /usr/bin/mkdir -p
+configure:4029: checking for gawk
+configure:4050: found /usr/bin/gawk
+configure:4062: result: gawk
+configure:4073: checking whether make sets $(MAKE)
+configure:4097: result: yes
+configure:4119: checking whether make supports the include directive
+configure:4134: make -f confmf.GNU && cat confinc.out
 this is the am__doit target
-configure:4136: $? = 0
-configure:4155: result: yes (GNU style)
-configure:4186: checking whether make supports nested variables
-configure:4205: result: yes
-configure:4219: checking xargs -n works
-configure:4235: result: yes
-configure:4320: checking whether UID '1000' is supported by ustar format
-configure:4326: result: yes
-configure:4333: checking whether GID '1000' is supported by ustar format
-configure:4339: result: yes
-configure:4347: checking how to create a ustar tar archive
-configure:4358: tar --version
+configure:4137: $? = 0
+configure:4156: result: yes (GNU style)
+configure:4187: checking whether make supports nested variables
+configure:4206: result: yes
+configure:4220: checking xargs -n works
+configure:4236: result: yes
+configure:4321: checking whether UID '1000' is supported by ustar format
+configure:4327: result: yes
+configure:4334: checking whether GID '1000' is supported by ustar format
+configure:4340: result: yes
+configure:4348: checking how to create a ustar tar archive
+configure:4359: tar --version
 tar (GNU tar) 1.35
 Copyright (C) 2023 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
@@ -354,20 +354,20 @@ This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
 
 Written by John Gilmore and Jay Fenlason.
-configure:4361: $? = 0
-configure:4401: tardir=conftest.dir && eval tar --format=ustar -chf - "$tardir" >conftest.tar
-configure:4404: $? = 0
-configure:4408: tar -xf - <conftest.tar
-configure:4411: $? = 0
-configure:4413: cat conftest.dir/file
+configure:4362: $? = 0
+configure:4402: tardir=conftest.dir && eval tar --format=ustar -chf - "$tardir" >conftest.tar
+configure:4405: $? = 0
+configure:4409: tar -xf - <conftest.tar
+configure:4412: $? = 0
+configure:4414: cat conftest.dir/file
 GrepMe
-configure:4416: $? = 0
-configure:4431: result: gnutar
-configure:4440: checking dependency style of gcc
-configure:4553: result: none
-configure:4659: checking that generated files are newer than configure
-configure:4665: result: done
-configure:4708: creating ./config.status
+configure:4417: $? = 0
+configure:4432: result: gnutar
+configure:4441: checking dependency style of gcc
+configure:4554: result: none
+configure:4660: checking that generated files are newer than configure
+configure:4666: result: done
+configure:4709: creating ./config.status
 
 ## ---------------------- ##
 ## Running config.status. ##
@@ -525,7 +525,7 @@ localedir='${datarootdir}/locale'
 localstatedir='${prefix}/var'
 mandir='${datarootdir}/man'
 mkdir_p='$(MKDIR_P)'
-musl_version=''
+musl='1.2.6'
 oldincludedir='/usr/include'
 olincludedir=''
 pdfdir='${docdir}'

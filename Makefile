@@ -11,8 +11,8 @@
 # 	obj/PA/Feature.o
 #prefix=/usr/local
 # prefix=/usr/local/
-prefix=
-exec_prefix=/home/cristof/PALibrary
+prefix=/home/cristof/PALibrary
+exec_prefix=$(prefix)
 bindir=$(prefix)/bin/
 sbindir=$(exec_prefix)/sbin/
 libexdir=$(exec_prefix)/libexec
@@ -42,7 +42,7 @@ manext=.1
 man1ext=
 man2ext=
 srcdir=
-musl_version=
+musl=1.2.6
 
 all:
 	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
