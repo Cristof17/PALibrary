@@ -7,9 +7,13 @@
 #include <PA/Resource.h>
 #include <PA/Number.h>
 #include <PA/Series.h>
-#include <stdio.h>
 #include <PA/Status.h>
 #include <PA/TransposeTree.h>
+#include <conf.h>
+#ifndef _HAVE_STDIO_H
+#elif defined _HAVE_STDIO_H
+#include <stdio.h>
+#endif
 int main()
 {
 	struct PANumber number;
