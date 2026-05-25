@@ -473,3 +473,38 @@ struct Facade {
  PAResult PATransposeTreeGetResult();
  PAResult PATransposeTreeGetResult();
 # 12 "test/test.c" 2
+# 1 "/home/cristof/PALibrary/conf.h" 1
+# 13 "test/test.c" 2
+
+
+
+
+int main()
+{
+ struct PANumber number;
+ number = PANumberPerformConstruct();
+ printf("testing PANumber %d\n()",number.val);
+ struct PAResource resource;
+ resource = PAResourcePerformConstruct();
+ printf("testing Resource %d\n",resource.value.val);
+
+ struct PATree tree = PATreePerformConstruct();
+
+ printf("testing tree %d\n", tree.n.number.val);
+ struct PASeries pa = PASeriesPerformConstruct();
+ printf("testing series number:%d\n",pa.m.number.val);
+ struct PAStatus status;
+ status = PAStatusPerformConstruct();
+ struct PAElement element;
+ element = PAElementPerformConstruct();
+ printf("Element resource test%d\n",element.index.Resource.value.val);
+
+ printf("pastatus perform construct %d\n",status.visited.value.val);
+ struct PATransposeTree tree2;
+ tree2 = PATransposeTreePerformConstruct();
+ printf("tree n=%d\n",tree2.tree.n.number.val);
+ printf("tree n=%d\n",tree2.tree.m.number.val);
+ printf("tree n=%d\n",tree2.tree.source.index.Resource.value.val);
+# 54 "test/test.c"
+ return 0;
+}

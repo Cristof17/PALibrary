@@ -11,7 +11,7 @@
 # 	obj/PA/Feature.o
 #prefix=/usr/local
 # prefix=/usr/local/
-prefix=.
+prefix=/home/cristof/PALibrary
 exec_prefix=$(prefix)
 bindir=$(exec_prefix)/bin
 sbindir=$(exec_prefix)/sbin
@@ -455,7 +455,7 @@ srcdir=src
 #CFLAGS+=-I$(abspath $(includedir)/ArrayList)
 #CFLAGS+=-I$(abspath $(includedir)/Adapter)
 CPPFLAGS=
-CPPFLAGS+=-Iinclude
+CPPFLAGS+=-Iinclude -I$(prefix)
 libdir= obj
 #datadir=dat
 #infodir=info
