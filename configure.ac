@@ -1,4 +1,5 @@
 AC_PREREQ(2.2.2)
+AM_INIT_AUTOMAKE()
 AC_INIT(pa,1.0,cristof_rotsching@yahoo.com)
 #AC_PROG_CC(clang)
 AC_CONFIG_HEADERS([conf.h])
@@ -29,5 +30,5 @@ AC_SUBST(lispdir)
 AC_SUBST(localedir)
 AC_SUBST(mandir)
 AC_SUBST(srcdir)
-AC_CONFIG_FILES()
+AC_CONFIG_FILES([configure.ac])
 AC_OUTPUT
