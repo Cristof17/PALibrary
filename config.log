@@ -123,18 +123,18 @@ configure:1896: loading site script /usr/share/site/x86_64-pc-linux-gnu
 | See 'config.log' for more details" "$LINENO" 5; }
 | 	fi
 | done
-configure:2512: checking for gcc
-configure:2533: found /usr/bin/gcc
-configure:2545: result: gcc
-configure:2904: checking for C compiler version
-configure:2913: gcc --version >&5
+configure:2514: checking for gcc
+configure:2535: found /usr/bin/gcc
+configure:2547: result: gcc
+configure:2906: checking for C compiler version
+configure:2915: gcc --version >&5
 gcc (SUSE Linux) 15.2.1 20260202
 Copyright (C) 2025 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-configure:2924: $? = 0
-configure:2913: gcc -v >&5
+configure:2926: $? = 0
+configure:2915: gcc -v >&5
 Using built-in specs.
 COLLECT_GCC=gcc
 COLLECT_LTO_WRAPPER=/usr/lib64/gcc/x86_64-suse-linux/15/lto-wrapper
@@ -146,94 +146,94 @@ Thread model: posix
 Supported LTO compression algorithms: zlib zstd
 gcc version 15.2.1 20260202 (SUSE Linux) 
 ... rest of stderr output deleted ...
-configure:2924: $? = 0
-configure:2913: gcc -V >&5
+configure:2926: $? = 0
+configure:2915: gcc -V >&5
 gcc: error: unrecognized command-line option '-V'
 gcc: fatal error: no input files
 compilation terminated.
-configure:2924: $? = 1
-configure:2913: gcc -qversion >&5
+configure:2926: $? = 1
+configure:2915: gcc -qversion >&5
 gcc: error: unrecognized command-line option '-qversion'; did you mean '--version'?
 gcc: fatal error: no input files
 compilation terminated.
-configure:2924: $? = 1
-configure:2913: gcc -version >&5
+configure:2926: $? = 1
+configure:2915: gcc -version >&5
 gcc: error: unrecognized command-line option '-version'
 gcc: fatal error: no input files
 compilation terminated.
-configure:2924: $? = 1
-configure:2944: checking whether the C compiler works
-configure:2966: gcc    conftest.c  >&5
-configure:2970: $? = 0
-configure:3021: result: yes
-configure:3025: checking for C compiler default output file name
-configure:3027: result: a.out
-configure:3033: checking for suffix of executables
-configure:3040: gcc -o conftest    conftest.c  >&5
-configure:3044: $? = 0
-configure:3068: result: 
-configure:3092: checking whether we are cross compiling
-configure:3100: gcc -o conftest    conftest.c  >&5
-configure:3104: $? = 0
-configure:3111: ./conftest
-configure:3115: $? = 0
-configure:3130: result: no
-configure:3136: checking for suffix of object files
-configure:3159: gcc -c   conftest.c >&5
-configure:3163: $? = 0
-configure:3187: result: o
-configure:3191: checking whether the compiler supports GNU C
-configure:3211: gcc -c   conftest.c >&5
-configure:3211: $? = 0
-configure:3223: result: yes
-configure:3234: checking whether gcc accepts -g
-configure:3255: gcc -c -g  conftest.c >&5
-configure:3255: $? = 0
-configure:3302: result: yes
-configure:3322: checking for gcc option to enable C23 features
-configure:3337: gcc  -c -g -O2  conftest.c >&5
-configure:3337: $? = 0
-configure:3356: result: none needed
-configure:3528: checking for stdio.h
-configure:3528: gcc -c -g -O2  conftest.c >&5
-configure:3528: $? = 0
-configure:3528: result: yes
-configure:3528: checking for stdlib.h
-configure:3528: gcc -c -g -O2  conftest.c >&5
-configure:3528: $? = 0
-configure:3528: result: yes
-configure:3528: checking for string.h
-configure:3528: gcc -c -g -O2  conftest.c >&5
-configure:3528: $? = 0
-configure:3528: result: yes
-configure:3528: checking for inttypes.h
-configure:3528: gcc -c -g -O2  conftest.c >&5
-configure:3528: $? = 0
-configure:3528: result: yes
-configure:3528: checking for stdint.h
-configure:3528: gcc -c -g -O2  conftest.c >&5
-configure:3528: $? = 0
-configure:3528: result: yes
-configure:3528: checking for strings.h
-configure:3528: gcc -c -g -O2  conftest.c >&5
-configure:3528: $? = 0
-configure:3528: result: yes
-configure:3528: checking for sys/stat.h
-configure:3528: gcc -c -g -O2  conftest.c >&5
-configure:3528: $? = 0
-configure:3528: result: yes
-configure:3528: checking for sys/types.h
-configure:3528: gcc -c -g -O2  conftest.c >&5
-configure:3528: $? = 0
-configure:3528: result: yes
-configure:3528: checking for unistd.h
-configure:3528: gcc -c -g -O2  conftest.c >&5
-configure:3528: $? = 0
-configure:3528: result: yes
-configure:3553: checking for int32_t
-configure:3553: gcc -c -g -O2  conftest.c >&5
-configure:3553: $? = 0
-configure:3553: gcc -c -g -O2  conftest.c >&5
+configure:2926: $? = 1
+configure:2946: checking whether the C compiler works
+configure:2968: gcc    conftest.c  >&5
+configure:2972: $? = 0
+configure:3023: result: yes
+configure:3027: checking for C compiler default output file name
+configure:3029: result: a.out
+configure:3035: checking for suffix of executables
+configure:3042: gcc -o conftest    conftest.c  >&5
+configure:3046: $? = 0
+configure:3070: result: 
+configure:3094: checking whether we are cross compiling
+configure:3102: gcc -o conftest    conftest.c  >&5
+configure:3106: $? = 0
+configure:3113: ./conftest
+configure:3117: $? = 0
+configure:3132: result: no
+configure:3138: checking for suffix of object files
+configure:3161: gcc -c   conftest.c >&5
+configure:3165: $? = 0
+configure:3189: result: o
+configure:3193: checking whether the compiler supports GNU C
+configure:3213: gcc -c   conftest.c >&5
+configure:3213: $? = 0
+configure:3225: result: yes
+configure:3236: checking whether gcc accepts -g
+configure:3257: gcc -c -g  conftest.c >&5
+configure:3257: $? = 0
+configure:3304: result: yes
+configure:3324: checking for gcc option to enable C23 features
+configure:3339: gcc  -c -g -O2  conftest.c >&5
+configure:3339: $? = 0
+configure:3358: result: none needed
+configure:3530: checking for stdio.h
+configure:3530: gcc -c -g -O2  conftest.c >&5
+configure:3530: $? = 0
+configure:3530: result: yes
+configure:3530: checking for stdlib.h
+configure:3530: gcc -c -g -O2  conftest.c >&5
+configure:3530: $? = 0
+configure:3530: result: yes
+configure:3530: checking for string.h
+configure:3530: gcc -c -g -O2  conftest.c >&5
+configure:3530: $? = 0
+configure:3530: result: yes
+configure:3530: checking for inttypes.h
+configure:3530: gcc -c -g -O2  conftest.c >&5
+configure:3530: $? = 0
+configure:3530: result: yes
+configure:3530: checking for stdint.h
+configure:3530: gcc -c -g -O2  conftest.c >&5
+configure:3530: $? = 0
+configure:3530: result: yes
+configure:3530: checking for strings.h
+configure:3530: gcc -c -g -O2  conftest.c >&5
+configure:3530: $? = 0
+configure:3530: result: yes
+configure:3530: checking for sys/stat.h
+configure:3530: gcc -c -g -O2  conftest.c >&5
+configure:3530: $? = 0
+configure:3530: result: yes
+configure:3530: checking for sys/types.h
+configure:3530: gcc -c -g -O2  conftest.c >&5
+configure:3530: $? = 0
+configure:3530: result: yes
+configure:3530: checking for unistd.h
+configure:3530: gcc -c -g -O2  conftest.c >&5
+configure:3530: $? = 0
+configure:3530: result: yes
+configure:3555: checking for int32_t
+configure:3555: gcc -c -g -O2  conftest.c >&5
+configure:3555: $? = 0
+configure:3555: gcc -c -g -O2  conftest.c >&5
 conftest.c: In function 'main':
 conftest.c:52:67: warning: integer overflow in expression of type 'int' results in '-2147483648' [-Woverflow]
    52 |                  < (int32_t) (((((int32_t) 1 << N) << N) - 1) * 2 + 2))];
@@ -241,7 +241,7 @@ conftest.c:52:67: warning: integer overflow in expression of type 'int' results 
 conftest.c:51:12: error: storage size of 'test_array' isn't constant
    51 | static int test_array [1 - 2 * !((int32_t) (((((int32_t) 1 << N) << N) - 1) * 2 + 1)
       |            ^~~~~~~~~~
-configure:3553: $? = 1
+configure:3555: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "pa"
@@ -301,12 +301,12 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:3553: result: yes
-configure:3562: checking for uint32_t
-configure:3562: gcc -c -g -O2  conftest.c >&5
-configure:3562: $? = 0
-configure:3562: result: yes
-configure:3685: creating ./config.status
+configure:3555: result: yes
+configure:3564: checking for uint32_t
+configure:3564: gcc -c -g -O2  conftest.c >&5
+configure:3564: $? = 0
+configure:3564: result: yes
+configure:3687: creating ./config.status
 
 ## ---------------------- ##
 ## Running config.status. ##
@@ -323,8 +323,10 @@ generated by GNU Autoconf 2.73.  Invocation command line was
 
 on localhost.localdomain
 
-config.status:778: creating conf.h
-config.status:948: conf.h is unchanged
+config.status:780: creating Makefile
+config.status:780: creating configure.ac
+config.status:780: creating conf.h
+config.status:950: conf.h is unchanged
 
 ## ---------------- ##
 ## Cache variables. ##
@@ -443,37 +445,3 @@ target_alias=''
 #define STDC_HEADERS 1
 
 configure: exit 
-
-## ---------------------- ##
-## Running config.status. ##
-## ---------------------- ##
-
-This file was extended by pa config.status 1.0, which was
-generated by GNU Autoconf 2.73.  Invocation command line was
-
-  CONFIG_FILES    = 
-  CONFIG_HEADERS  = 
-  CONFIG_LINKS    = 
-  CONFIG_COMMANDS = 
-  $ ./config.status Makefile
-
-on localhost.localdomain
-
-config.status:516: error: invalid argument: 'Makefile'
-
-## ---------------------- ##
-## Running config.status. ##
-## ---------------------- ##
-
-This file was extended by pa config.status 1.0, which was
-generated by GNU Autoconf 2.73.  Invocation command line was
-
-  CONFIG_FILES    = 
-  CONFIG_HEADERS  = 
-  CONFIG_LINKS    = 
-  CONFIG_COMMANDS = 
-  $ ./config.status Makefile
-
-on localhost.localdomain
-
-config.status:516: error: invalid argument: 'Makefile'
