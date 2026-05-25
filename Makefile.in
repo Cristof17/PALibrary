@@ -12,7 +12,7 @@
 #prefix=/usr/local
 # prefix=/usr/local/
 prefix=@prefix@
-exec_prefix=@execprefix@
+exec_prefix=@exec_prefix@
 bindir=@bindir@
 sbindir=@sbindir@
 libexdir=@libexecdir@
@@ -42,8 +42,12 @@ manext=.1
 man1ext=
 man2ext=
 srcdir=@srcdir@
-all: build 
+
+all:
+	$(srcdir)/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
+	$(LD) $(foreach object,$^,$(libdir)/$(object)) /lib/crt0.o -static -o $(libdir)/libpa.a
 #pa arraylist bfs
+
 mostlyclean:
 	rm $(foreach object,$(objects_pa),$(libdir)/$(object))
 	rm $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
@@ -52,6 +56,7 @@ mostlyclean:
 # 	-rm $(objects_pa)
 # 	-rm $(assemblies_pa)
 # 	-rm $(sources_pa)
+#
 maintainer-clean:
 	rm $(foreach object,$(objects_pa),$(libdir)/$(object))
 	rm $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
@@ -85,11 +90,14 @@ maintainer-clean:
 #	-rm $(objects_arraylist)
 realclean:
 clobber:
+
 install: $(subdirs)
 	$(srcdir)/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
+
 # 	mkdir $(subdirs)
 #	cp out/libpa.a $(libdir)
 #	cp -r obj/*.o $(libdir)
+#
 installcheck:
 	ls $(foreach subdir,$(subdirs),$(subdir))
 #	ls $(libdir) | grep libpa.a
@@ -106,6 +114,7 @@ test: $(test_pa)
 ifeq ($(host-type), arm64)
 	file $(bindir)/libpa.a
 endif
+
 test_pa_arm64:
 #	-$(CPP) -I$(includedir)/ $(CPPFLAGS) test/test.c > test/test.i
 #	-$(CC) -S test.i -o test.s

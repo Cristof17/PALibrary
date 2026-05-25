@@ -12,39 +12,42 @@
 #prefix=/usr/local
 # prefix=/usr/local/
 prefix=/home/cristof/PALibrary
-exec_prefix=$(prefix)
-bindir=$(exec_prefix)/bin/
-sbindir=$(exec_prefix)/sbin/
-libexdir=$(exec_prefix)/libexec/
-datarootdir=$(prefix)/share/
-datadir=$(datarootdir)/
-sysconfdir=$(prefix)/etc/
-sharedstatedir=$(prefix)/com/
-localstatedir=$(prefix)/var/
-runstatedir=$(localstatedir)/run/
-includedir=$(prefix)/include/
-oldincludedir=/usr/include/
-docdir=$(datarootdir)/doc/pa/
-infodir=$(datarootdir)/info/
-htmldir=$(docdir)
-dvdir=$(docdir)
-pdfdir=$(docdir)
+exec_prefix=@execprefix@
+bindir=${exec_prefix}/bin
+sbindir=${exec_prefix}/sbin
+libexdir=${exec_prefix}/libexec
+datarootdir=${prefix}/share
+datadir=${datarootdir}
+sysconfdir=${prefix}/etc
+sharedstatedir=${prefix}/com
+localstatedir=${prefix}/var
+runstatedir=${localstatedir}/run
+includedir=${prefix}/include
+oldincludedir=/usr/include
+docdir=${datarootdir}/doc/${PACKAGE_TARNAME}
+infodir=${datarootdir}/info
+htmldir=${datarootdir}/doc/${PACKAGE_TARNAME}
+dvdir=${datarootdir}/doc/${PACKAGE_TARNAME}
+pdfdir=${datarootdir}/doc/${PACKAGE_TARNAME}
 # /usr/local/lib
-psdir=$(docdir)
+psdir=${datarootdir}/doc/${PACKAGE_TARNAME}
 # /usr/local/share/emacs/site-lisp
-libdir=$(exec_prefix)/lib/
-lispdir=$(dataroot_dir)/emacs/site-lisp/
-localedir=$(datarootdir)/locale/ 
-man1dir=$(mandir)/man1/
-man2dir=$(mandir)/man2/
+libdir=${exec_prefix}/lib64
+lispdir=
+localedir=${datarootdir}/locale
+mandir=${datarootdir}/man
+man1dir=$(mandir)/man1
+man2dir=$(mandir)/man2
 manext=.1
 man1ext=
 man2ext=
-srcdir=$(prefix)/src/
-all: 
+srcdir=.
+
+all:
 	$(srcdir)/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
-	$(LD) $(foreach object,$^,$(libdir)/$(object)) /lib/crt0.o -static -o $(libdir)/$@
+	$(LD) $(foreach object,$^,$(libdir)/$(object)) /lib/crt0.o -static -o $(libdir)libpa.a
 #pa arraylist bfs
+
 mostlyclean:
 	rm $(foreach object,$(objects_pa),$(libdir)/$(object))
 	rm $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
@@ -53,6 +56,7 @@ mostlyclean:
 # 	-rm $(objects_pa)
 # 	-rm $(assemblies_pa)
 # 	-rm $(sources_pa)
+#
 maintainer-clean:
 	rm $(foreach object,$(objects_pa),$(libdir)/$(object))
 	rm $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
@@ -86,11 +90,14 @@ maintainer-clean:
 #	-rm $(objects_arraylist)
 realclean:
 clobber:
+
 install: $(subdirs)
-	file $(bindir)libpa.a
+	$(srcdir)/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
+
 # 	mkdir $(subdirs)
 #	cp out/libpa.a $(libdir)
 #	cp -r obj/*.o $(libdir)
+#
 installcheck:
 	ls $(foreach subdir,$(subdirs),$(subdir))
 #	ls $(libdir) | grep libpa.a
@@ -107,6 +114,7 @@ test: $(test_pa)
 ifeq ($(host-type), arm64)
 	file $(bindir)/libpa.a
 endif
+
 test_pa_arm64:
 #	-$(CPP) -I$(includedir)/ $(CPPFLAGS) test/test.c > test/test.i
 #	-$(CC) -S test.i -o test.s
@@ -438,6 +446,8 @@ assemble: assemble_pa
 	@echo "Building"
 link: link_pa link_bfs link_arraylist
 
+libpa.a: $(objects_pa)
+	$(LD) $(foreach object,$^,$(libdir)/$(object)) /lib/crt0.o -static -o $(libdir)/$@
 # 	$(LD) $(LDFLAGS) $(foreach object,$$^,$(libdir)/$(object)) -static -o $(libdir)/$@
 # link_windows: $(objects)
 # 	$(LD) $(objects) -o filiename.library
