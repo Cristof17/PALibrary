@@ -45,7 +45,74 @@ srcdir=
 musl=@musl@
 crt=@crt@
 output=@output@
-all:
+# preprocess: $(sources)
+preprocess: preprocess_pa 
+#preprocess_bfs preprocess_arraylist
+compile: compile_pa 
+#compile_arraylist compile_bfs
+assemble: assemble_pa 
+#assemble_bfs assemble_arraylist
+#	${MAKE} obj/Input.o
+#	${MAKE} obj/Algorithm.o
+#	${MAKE} obj/BFS/Procedure.o
+#	${MAKE} obj/PA/Input.o
+#	${MAKE} obj/PA/Output.o
+#	${MAKE} obj/BFS/Record.o
+#	${MAKE} obj/Output.o
+#	${MAKE} obj/PA/Data.o
+#	${MAKE} obj/PA/Destination.o
+#	${MAKE} obj/PA/Tree.o
+#	${MAKE} obj/PA/List.o
+#	${MAKE} obj/PA/Status.o
+#	${MAKE} obj/PA/Link.o
+#	${MAKE} obj/PA/Arrow.o
+#	${MAKE} obj/PA/Element.o
+#	${MAKE} obj/PA/Count.o
+#	${MAKE} obj/PA/Pair.o
+#	${MAKE} obj/PA/Result.o
+#	${MAKE} obj/PA/Series.o
+#	${MAKE} obj/PA/Feature.o
+#	${MAKE} obj/PA/Value.o
+#	${MAKE} obj/PA/Resource.o
+#	${MAKE} obj/Builder/Director.o
+#	${MAKE} obj/Builder/Builder.o
+#	${MAKE} obj/Builder/Product.o
+#	${MAKE} obj/Builder/ConcreteBuilder.o
+#	${MAKE} obj/PA/NormalTree.o
+#	${MAKE} obj/PA/TransposeTree.o
+#	${MAKE} obj/Adapter/Client.o
+#	${MAKE} obj/Adapter/Target.o
+#	${MAKE} obj/Adapter/Adapter.o
+#	${MAKE} obj/Adapter/Adaptee.o
+#	${MAKE} obj/PA/PADrawingEditor.o
+#	${MAKE} obj/PA/PALine.o
+#	${MAKE} obj/PA/PAShape.o
+#	${MAKE} obj/PA/PATextView.o
+#	${MAKE} obj/ArrayList/ArrayList.o
+#	${MAKE} obj/State/Context.o
+#	${MAKE} obj/State/State.o
+#	${MAKE} obj/State/ConcreteStateA.o
+#	${MAKE} obj/State/ConcreteStateB.o
+#	${MAKE} obj/ArrayList/ArrayListPosition.o
+#	${MAKE} obj/Iterator/Client.o
+#	${MAKE} obj/Iterator/ConcreteIterator.o
+#	${MAKE} obj/Iterator/Iterator.o
+#	${MAKE} obj/Iterator/ConcreteAggregate.o
+#	${MAKE} obj/Prototype/Client.o
+#	${MAKE} obj/Prototype/Prototype.o
+#	${MAKE} obj/Prototype/ConcretePrototype1.o
+#	${MAKE} obj/Prototype/ConcretePrototype2.o
+#	${MAKE} obj/Bridge/Client.o
+#	${MAKE} obj/Bridge/Implementor.o
+#	${MAKE} obj/Bridge/Abstraction.o
+#	${MAKE} obj/Bridge/RefinedAbstraction.o
+#	${MAKE} obj/Bridge/ConcreteImplementorA.o
+#	${MAKE} obj/Bridge/ConcreteImplementorB.o
+#	#-mkdir $(dir $<)
+	@echo "Building"
+link: link_pa link_bfs link_arraylist
+
+all: preprocess assemble
 	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
 	$(LD) $(foreach object,$^,$(libdir)/$(object)) $(prefix)/musl-$(musl)/obj/crt/$(crt) -lc -static -o $(libdir)/$(output) 
 #pa arraylist bfs
@@ -375,7 +442,7 @@ ${subdirs}:
 # 	${MAKE} arch=${arch}
 # 	${MA
 build: $(subdirs)
-	${MAKE} assemble
+#	${MAKE} assemble
 # 	mkdir obj/Director/
 # 	mkdir obj/Builder/
 # 	mkdir $(OBJ_DIR)
@@ -384,73 +451,6 @@ build: $(subdirs)
 # 	echo "build"
 # 	@echo "Build"
 # 	@echo "$<"
-# preprocess: $(sources)
-preprocess: preprocess_pa 
-#preprocess_bfs preprocess_arraylist
-compile: compile_pa 
-#compile_arraylist compile_bfs
-assemble: assemble_pa 
-#assemble_bfs assemble_arraylist
-#	${MAKE} obj/Input.o
-#	${MAKE} obj/Algorithm.o
-#	${MAKE} obj/BFS/Procedure.o
-#	${MAKE} obj/PA/Input.o
-#	${MAKE} obj/PA/Output.o
-#	${MAKE} obj/BFS/Record.o
-#	${MAKE} obj/Output.o
-#	${MAKE} obj/PA/Data.o
-#	${MAKE} obj/PA/Destination.o
-#	${MAKE} obj/PA/Tree.o
-#	${MAKE} obj/PA/List.o
-#	${MAKE} obj/PA/Status.o
-#	${MAKE} obj/PA/Link.o
-#	${MAKE} obj/PA/Arrow.o
-#	${MAKE} obj/PA/Element.o
-#	${MAKE} obj/PA/Count.o
-#	${MAKE} obj/PA/Pair.o
-#	${MAKE} obj/PA/Result.o
-#	${MAKE} obj/PA/Series.o
-#	${MAKE} obj/PA/Feature.o
-#	${MAKE} obj/PA/Value.o
-#	${MAKE} obj/PA/Resource.o
-#	${MAKE} obj/Builder/Director.o
-#	${MAKE} obj/Builder/Builder.o
-#	${MAKE} obj/Builder/Product.o
-#	${MAKE} obj/Builder/ConcreteBuilder.o
-#	${MAKE} obj/PA/NormalTree.o
-#	${MAKE} obj/PA/TransposeTree.o
-#	${MAKE} obj/Adapter/Client.o
-#	${MAKE} obj/Adapter/Target.o
-#	${MAKE} obj/Adapter/Adapter.o
-#	${MAKE} obj/Adapter/Adaptee.o
-#	${MAKE} obj/PA/PADrawingEditor.o
-#	${MAKE} obj/PA/PALine.o
-#	${MAKE} obj/PA/PAShape.o
-#	${MAKE} obj/PA/PATextView.o
-#	${MAKE} obj/ArrayList/ArrayList.o
-#	${MAKE} obj/State/Context.o
-#	${MAKE} obj/State/State.o
-#	${MAKE} obj/State/ConcreteStateA.o
-#	${MAKE} obj/State/ConcreteStateB.o
-#	${MAKE} obj/ArrayList/ArrayListPosition.o
-#	${MAKE} obj/Iterator/Client.o
-#	${MAKE} obj/Iterator/ConcreteIterator.o
-#	${MAKE} obj/Iterator/Iterator.o
-#	${MAKE} obj/Iterator/ConcreteAggregate.o
-#	${MAKE} obj/Prototype/Client.o
-#	${MAKE} obj/Prototype/Prototype.o
-#	${MAKE} obj/Prototype/ConcretePrototype1.o
-#	${MAKE} obj/Prototype/ConcretePrototype2.o
-#	${MAKE} obj/Bridge/Client.o
-#	${MAKE} obj/Bridge/Implementor.o
-#	${MAKE} obj/Bridge/Abstraction.o
-#	${MAKE} obj/Bridge/RefinedAbstraction.o
-#	${MAKE} obj/Bridge/ConcreteImplementorA.o
-#	${MAKE} obj/Bridge/ConcreteImplementorB.o
-#	#-mkdir $(dir $<)
-	@echo "Building"
-link: link_pa link_bfs link_arraylist
-
 libpa.a: $(objects_pa)
 	$(LD) $(foreach object,$^,$(libdir)/$(object)) /lib/crt0.o -static -o $(libdir)/$@
 # 	$(LD) $(LDFLAGS) $(foreach object,$$^,$(libdir)/$(object)) -static -o $(libdir)/$@
