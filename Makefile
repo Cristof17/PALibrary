@@ -45,17 +45,12 @@ srcdir=
 musl=1.2.6
 crt=crt1.o
 output=libpa.a
-all: preprocess assemble compile
-
 # preprocess: $(sources)
 preprocess: preprocess_pa 
-
 #preprocess_bfs preprocess_arraylist
 compile: compile_pa 
-
 #compile_arraylist compile_bfs
 assemble: assemble_pa 
-
 #assemble_bfs assemble_arraylist
 #	${MAKE} obj/Input.o
 #	${MAKE} obj/Algorithm.o
@@ -117,6 +112,9 @@ assemble: assemble_pa
 	@echo "Building"
 link: link_pa link_bfs link_arraylist
 
+all: preprocess assemble compile
+#	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
+#	$(LD) $(foreach object,$^,$(libdir)/$(object)) $(prefix)/musl-$(musl)/obj/crt/$(crt) -lc -static -o $(libdir)/$(output) 
 #pa arraylist bfs
 
 mostlyclean:
@@ -456,6 +454,7 @@ build: $(subdirs)
 libpa.a: $(objects_pa) $(prefix)/musl-$(musl)/obj/crt/crt1.o
 	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
 	$(LD) $(foreach object,$^,$(libdir)/$(object)) $(prefix)/musl-$(musl)/obj/crt/$(crt) -lc -static -o $(libdir)/$(output) 
+#libpa.a: $(objects_pa)
 #	$(LD) $(foreach object,$^,$(libdir)/$(object)) /lib/crt0.o -static -o $(libdir)/$@
 # 	$(LD) $(LDFLAGS) $(foreach object,$$^,$(libdir)/$(object)) -static -o $(libdir)/$@
 # link_windows: $(objects)
