@@ -451,7 +451,7 @@ build: $(subdirs)
 #
 libpa.a: $(objects_pa)
 	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
-	$(AR) U $(libdir)/$(output) $(foreach object,$^,$(libdir)/$(object))  
+	$(AR) r $(libdir)/$(output) $(foreach object,$^,$(libdir)/$(object))  
 
 #libpa.a: $(objects_pa)
 #	$(LD) $(foreach object,$^,$(libdir)/$(object)) /lib/crt0.o -static -o $(libdir)/$@
@@ -686,7 +686,7 @@ ifeq ($(host-type),AArch64)
 endif
 
 test.out: test.o libpa.a
-	$(LD) -lc -static $(foreach dependency,$^,$(libdir)/$(dependency)) musl-$(musl)/obj/crt/$(crt) -o $(bindir)/$@
+	$(LD) -lc $(foreach dependency,$^,$(libdir)/$(dependency)) musl-$(musl)/obj/crt/$(crt) -o $(bindir)/$@
 
 ASFLAGS=
 ifeq ($(host-type),arm64)
