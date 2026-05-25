@@ -47,7 +47,7 @@ crt=crt1.o
 output=libpa.a
 all:
 	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
-	$(LD) $(foreach object,$^,$(libdir)/$(object)) $(prefix)/musl-$(musl)/obj/crt/$(crt) -static -o $(libdir)/$(output)
+	$(LD) $(foreach object,$^,$(libdir)/$(object)) $(prefix)/musl-$(musl)/obj/crt/$(crt) -lc -static -o $(libdir)/$(output) 
 #pa arraylist bfs
 
 mostlyclean:
