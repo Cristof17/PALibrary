@@ -42,7 +42,7 @@ manext=.1
 man1ext=
 man2ext=
 srcdir=
-musl=1.2.6
+muslVersion=@muslVersion@
 
 all:
 	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
