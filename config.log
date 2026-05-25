@@ -169,18 +169,18 @@ configure:3447: cat conftest.dir/file
 GrepMe
 configure:3450: $? = 0
 configure:3465: result: gnutar
-configure:3563: checking for gcc
-configure:3584: found /usr/bin/gcc
-configure:3596: result: gcc
-configure:3627: checking for C compiler version
-configure:3636: gcc --version >&5
+configure:3565: checking for gcc
+configure:3586: found /usr/bin/gcc
+configure:3598: result: gcc
+configure:3629: checking for C compiler version
+configure:3638: gcc --version >&5
 gcc (SUSE Linux) 15.2.1 20260202
 Copyright (C) 2025 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-configure:3647: $? = 0
-configure:3636: gcc -v >&5
+configure:3649: $? = 0
+configure:3638: gcc -v >&5
 Using built-in specs.
 COLLECT_GCC=gcc
 COLLECT_LTO_WRAPPER=/usr/lib64/gcc/x86_64-suse-linux/15/lto-wrapper
@@ -192,107 +192,107 @@ Thread model: posix
 Supported LTO compression algorithms: zlib zstd
 gcc version 15.2.1 20260202 (SUSE Linux) 
 ... rest of stderr output deleted ...
-configure:3647: $? = 0
-configure:3636: gcc -V >&5
+configure:3649: $? = 0
+configure:3638: gcc -V >&5
 gcc: error: unrecognized command-line option '-V'
 gcc: fatal error: no input files
 compilation terminated.
-configure:3647: $? = 1
-configure:3636: gcc -qversion >&5
+configure:3649: $? = 1
+configure:3638: gcc -qversion >&5
 gcc: error: unrecognized command-line option '-qversion'; did you mean '--version'?
 gcc: fatal error: no input files
 compilation terminated.
-configure:3647: $? = 1
-configure:3636: gcc -version >&5
+configure:3649: $? = 1
+configure:3638: gcc -version >&5
 gcc: error: unrecognized command-line option '-version'
 gcc: fatal error: no input files
 compilation terminated.
-configure:3647: $? = 1
-configure:3667: checking whether the C compiler works
-configure:3689: gcc    conftest.c  >&5
-configure:3693: $? = 0
-configure:3744: result: yes
-configure:3748: checking for C compiler default output file name
-configure:3750: result: a.out
-configure:3756: checking for suffix of executables
-configure:3763: gcc -o conftest    conftest.c  >&5
-configure:3767: $? = 0
-configure:3791: result: 
-configure:3815: checking whether we are cross compiling
-configure:3823: gcc -o conftest    conftest.c  >&5
-configure:3827: $? = 0
-configure:3834: ./conftest
-configure:3838: $? = 0
-configure:3853: result: no
-configure:3859: checking for suffix of object files
-configure:3882: gcc -c   conftest.c >&5
-configure:3886: $? = 0
-configure:3910: result: o
-configure:3914: checking whether the compiler supports GNU C
-configure:3934: gcc -c   conftest.c >&5
-configure:3934: $? = 0
-configure:3946: result: yes
-configure:3957: checking whether gcc accepts -g
-configure:3978: gcc -c -g  conftest.c >&5
-configure:3978: $? = 0
-configure:4025: result: yes
-configure:4045: checking for gcc option to enable C23 features
-configure:4060: gcc  -c -g -O2  conftest.c >&5
-configure:4060: $? = 0
-configure:4079: result: none needed
-configure:4252: checking whether gcc understands -c and -o together
-configure:4275: gcc -c conftest.c -o conftest2.o
-configure:4278: $? = 0
-configure:4275: gcc -c conftest.c -o conftest2.o
-configure:4278: $? = 0
-configure:4294: result: yes
-configure:4314: checking whether make supports the include directive
-configure:4329: make -f confmf.GNU && cat confinc.out
+configure:3649: $? = 1
+configure:3669: checking whether the C compiler works
+configure:3691: gcc    conftest.c  >&5
+configure:3695: $? = 0
+configure:3746: result: yes
+configure:3750: checking for C compiler default output file name
+configure:3752: result: a.out
+configure:3758: checking for suffix of executables
+configure:3765: gcc -o conftest    conftest.c  >&5
+configure:3769: $? = 0
+configure:3793: result: 
+configure:3817: checking whether we are cross compiling
+configure:3825: gcc -o conftest    conftest.c  >&5
+configure:3829: $? = 0
+configure:3836: ./conftest
+configure:3840: $? = 0
+configure:3855: result: no
+configure:3861: checking for suffix of object files
+configure:3884: gcc -c   conftest.c >&5
+configure:3888: $? = 0
+configure:3912: result: o
+configure:3916: checking whether the compiler supports GNU C
+configure:3936: gcc -c   conftest.c >&5
+configure:3936: $? = 0
+configure:3948: result: yes
+configure:3959: checking whether gcc accepts -g
+configure:3980: gcc -c -g  conftest.c >&5
+configure:3980: $? = 0
+configure:4027: result: yes
+configure:4047: checking for gcc option to enable C23 features
+configure:4062: gcc  -c -g -O2  conftest.c >&5
+configure:4062: $? = 0
+configure:4081: result: none needed
+configure:4254: checking whether gcc understands -c and -o together
+configure:4277: gcc -c conftest.c -o conftest2.o
+configure:4280: $? = 0
+configure:4277: gcc -c conftest.c -o conftest2.o
+configure:4280: $? = 0
+configure:4296: result: yes
+configure:4316: checking whether make supports the include directive
+configure:4331: make -f confmf.GNU && cat confinc.out
 this is the am__doit target
-configure:4332: $? = 0
-configure:4351: result: yes (GNU style)
-configure:4377: checking dependency style of gcc
-configure:4490: result: none
-configure:4510: checking for stdio.h
-configure:4510: gcc -c -g -O2  conftest.c >&5
-configure:4510: $? = 0
-configure:4510: result: yes
-configure:4510: checking for stdlib.h
-configure:4510: gcc -c -g -O2  conftest.c >&5
-configure:4510: $? = 0
-configure:4510: result: yes
-configure:4510: checking for string.h
-configure:4510: gcc -c -g -O2  conftest.c >&5
-configure:4510: $? = 0
-configure:4510: result: yes
-configure:4510: checking for inttypes.h
-configure:4510: gcc -c -g -O2  conftest.c >&5
-configure:4510: $? = 0
-configure:4510: result: yes
-configure:4510: checking for stdint.h
-configure:4510: gcc -c -g -O2  conftest.c >&5
-configure:4510: $? = 0
-configure:4510: result: yes
-configure:4510: checking for strings.h
-configure:4510: gcc -c -g -O2  conftest.c >&5
-configure:4510: $? = 0
-configure:4510: result: yes
-configure:4510: checking for sys/stat.h
-configure:4510: gcc -c -g -O2  conftest.c >&5
-configure:4510: $? = 0
-configure:4510: result: yes
-configure:4510: checking for sys/types.h
-configure:4510: gcc -c -g -O2  conftest.c >&5
-configure:4510: $? = 0
-configure:4510: result: yes
-configure:4510: checking for unistd.h
-configure:4510: gcc -c -g -O2  conftest.c >&5
-configure:4510: $? = 0
-configure:4510: result: yes
-configure:4535: checking for int32_t
-configure:4535: gcc -c -g -O2  conftest.c >&5
-configure:4535: $? = 0
-configure:4535: gcc -c -g -O2  conftest.c >&5
+configure:4334: $? = 0
+configure:4353: result: yes (GNU style)
+configure:4379: checking dependency style of gcc
+configure:4492: result: none
+configure:4512: checking for stdio.h
+configure:4512: gcc -c -g -O2  conftest.c >&5
+configure:4512: $? = 0
+configure:4512: result: yes
+configure:4512: checking for stdlib.h
+configure:4512: gcc -c -g -O2  conftest.c >&5
+configure:4512: $? = 0
+configure:4512: result: yes
+configure:4512: checking for string.h
+configure:4512: gcc -c -g -O2  conftest.c >&5
+configure:4512: $? = 0
+configure:4512: result: yes
+configure:4512: checking for inttypes.h
+configure:4512: gcc -c -g -O2  conftest.c >&5
+configure:4512: $? = 0
+configure:4512: result: yes
+configure:4512: checking for stdint.h
+configure:4512: gcc -c -g -O2  conftest.c >&5
+configure:4512: $? = 0
+configure:4512: result: yes
+configure:4512: checking for strings.h
+configure:4512: gcc -c -g -O2  conftest.c >&5
+configure:4512: $? = 0
+configure:4512: result: yes
+configure:4512: checking for sys/stat.h
+configure:4512: gcc -c -g -O2  conftest.c >&5
+configure:4512: $? = 0
+configure:4512: result: yes
+configure:4512: checking for sys/types.h
+configure:4512: gcc -c -g -O2  conftest.c >&5
+configure:4512: $? = 0
+configure:4512: result: yes
+configure:4512: checking for unistd.h
+configure:4512: gcc -c -g -O2  conftest.c >&5
+configure:4512: $? = 0
+configure:4512: result: yes
+configure:4537: checking for int32_t
+configure:4537: gcc -c -g -O2  conftest.c >&5
+configure:4537: $? = 0
+configure:4537: gcc -c -g -O2  conftest.c >&5
 conftest.c: In function 'main':
 conftest.c:54:67: warning: integer overflow in expression of type 'int' results in '-2147483648' [-Woverflow]
    54 |                  < (int32_t) (((((int32_t) 1 << N) << N) - 1) * 2 + 2))];
@@ -300,7 +300,7 @@ conftest.c:54:67: warning: integer overflow in expression of type 'int' results 
 conftest.c:53:12: error: storage size of 'test_array' isn't constant
    53 | static int test_array [1 - 2 * !((int32_t) (((((int32_t) 1 << N) << N) - 1) * 2 + 1)
       |            ^~~~~~~~~~
-configure:4535: $? = 1
+configure:4537: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "pa"
@@ -362,11 +362,11 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:4535: result: yes
-configure:4544: checking for uint32_t
-configure:4544: gcc -c -g -O2  conftest.c >&5
-configure:4544: $? = 0
-configure:4544: result: yes
+configure:4537: result: yes
+configure:4546: checking for uint32_t
+configure:4546: gcc -c -g -O2  conftest.c >&5
+configure:4546: $? = 0
+configure:4546: result: yes
 
 ## ---------------- ##
 ## Cache variables. ##
