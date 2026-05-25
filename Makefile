@@ -453,7 +453,7 @@ build: $(subdirs)
 # 	@echo "$<"
 libpa.a: $(objects_pa) musl-$(musl)/obj/crt/crt1.o
 	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
-	$(LD) $(foreach object,$@,$(libdir)/$(object)) musl-$(musl)/obj/crt/$(crt) -lc -static -o $(libdir)/$(output) 
+	$(LD) $(foreach object,$<,$(libdir)/$(object)) musl-$(musl)/obj/crt/$(crt) -lc -static -o $(libdir)/$(output) 
 #libpa.a: $(objects_pa)
 #	$(LD) $(foreach object,$^,$(libdir)/$(object)) /lib/crt0.o -static -o $(libdir)/$@
 # 	$(LD) $(LDFLAGS) $(foreach object,$$^,$(libdir)/$(object)) -static -o $(libdir)/$@
