@@ -11,8 +11,8 @@
 # 	obj/PA/Feature.o
 #prefix=/usr/local
 # prefix=/usr/local/
-prefix=/usr/local/
-exec_prefix=$(prefix)
+prefix=
+exec_prefix=/home/cristof/PALibrary
 bindir=$(prefix)/bin/
 sbindir=$(exec_prefix)/sbin/
 libexdir=$(exec_prefix)/libexec
