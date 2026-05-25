@@ -686,7 +686,7 @@ ifeq ($(host-type),AArch64)
 endif
 
 test.out: test.o libpa.a
-	$(LD) -lc $(foreach dependency,$^,$(libdir)/$(dependency)) musl-$(musl)/obj/crt/$(crt) -o $(bindir)/$@
+	$(CC) -lc $(foreach dependency,$^,$(libdir)/$(dependency)) -o $(bindir)/$@
 
 ASFLAGS=
 ifeq ($(host-type),arm64)
