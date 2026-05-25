@@ -41,7 +41,9 @@ manext=.1
 man1ext=
 man2ext=
 srcdir=$(prefix)/src/
-all: build 
+all: 
+	$(srcdir)/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
+	$(LD) $(foreach object,$^,$(libdir)/$(object)) /lib/crt0.o -static -o $(libdir)/$@
 #pa arraylist bfs
 mostlyclean:
 	rm $(foreach object,$(objects_pa),$(libdir)/$(object))
@@ -85,7 +87,7 @@ maintainer-clean:
 realclean:
 clobber:
 install: $(subdirs)
-	$(srcdir)/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
+	file $(bindir)libpa.a
 # 	mkdir $(subdirs)
 #	cp out/libpa.a $(libdir)
 #	cp -r obj/*.o $(libdir)
@@ -436,8 +438,6 @@ assemble: assemble_pa
 	@echo "Building"
 link: link_pa link_bfs link_arraylist
 
-libpa.a: $(objects_pa)
-	$(LD) $(foreach object,$^,$(libdir)/$(object)) /lib/crt0.o -static -o $(libdir)/$@
 # 	$(LD) $(LDFLAGS) $(foreach object,$$^,$(libdir)/$(object)) -static -o $(libdir)/$@
 # link_windows: $(objects)
 # 	$(LD) $(objects) -o filiename.library
