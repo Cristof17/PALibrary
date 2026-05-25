@@ -196,8 +196,7 @@ objects_arraylist= ArrayList/ArrayList.o \
 objects_bfs= BFS/Procedure.o \
 	BFS/Record.o
 # objects_arraylist= obj/Input.o
-objects_pa= main.o \
-	Input.o \
+objects_pa= Input.o \
 	Algorithm.o \
 	Output.o \
 	PA/Input.o \
@@ -227,8 +226,7 @@ sources_arraylist= ArrayList/ArrayList.i \
 	ArrayList/ArrayListPosition.i
 sources_bfs= BFS/Procedure.i \
 	BFS/Record.i
-sources_pa= main.i \
-	Input.i \
+sources_pa= Input.i \
 	Algorithm.i \
 	PA/Input.i \
 	PA/Output.i \
@@ -288,8 +286,7 @@ assemblies_arraylist= ArrayList/ArrayListPosition.s \
  	ArrayList/ArrayList.s
 assemblies_bfs= BFS/Procedure.s \
 	BFS/Record.s
-assemblies_pa= main.s \
-	Input.s \
+assemblies_pa= Input.s \
 	Algorithm.s \
 	PA/Input.s \
 	PA/Output.s \
@@ -542,8 +539,6 @@ libdir=$(prefix)/obj
 #src/Prototype/ConcretePrototype1.c: include/Prototype/ConcretePrototype1.h
 #src/Prototype/ConcretePrototype2.c: include/Prototype/ConcretePrototype2.h
 
-main.i : $(srcdir)/main.c
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 Input.i : $(srcdir)/Input.c $(includedir)/ArrayList/ArrayList.h $(includedir)/PA/Result.h $(includedir)/Input.h $(includedir)/types.h
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 Algorithm.i : $(srcdir)/Algorithm.c $(includedir)/PA/Result.h $(includedir)/Algorithm.h
@@ -607,8 +602,6 @@ ArrayList/ArrayList.i: $(srcdir)/ArrayList/ArrayList.c $(includedir)/defs.h $(in
 ArrayList/ArrayListPosition.i : $(srcdir)/ArrayList/ArrayListPosition.c $(includedir)/ArrayList/ArrayList.h $(includedir)/defs.h $(includedir)/types.h
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 
-main.s: main.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 Input.s: Input.i
 	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 Algorithm.s: Algorithm.i
