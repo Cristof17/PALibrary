@@ -669,8 +669,7 @@ ifeq ($(host-type),AArch64)
 endif
 
 test.out: test.o libpa.a
-	$(CC) $(libdir)/$< $(libdir)/libpa.a -o $(bindir)/$@
-
+	$(CC) $(libdir)/$< $(libdir)/libpa.a @$(prefix)/ld_options
 ASFLAGS=
 ifeq ($(host-type),arm64)
 ASFLAGS=-arch $(host-type)
