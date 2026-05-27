@@ -1084,6 +1084,12 @@ int main()
  PAElementPerformCopy(element12, element245);
  printf("Element copy source = %d, destination = %d\n", element12.index.Resource.value.val, element245.index.Resource.value.val);
 
+ struct PAResource resource12;
+ struct PAResource resource14;
+ resource12.value.val = 32;
+ resource14 = PAResourcePerformCopy(resource12,resource14);
+ printf("resource copy %d, %d\n",resource12.value.val, resource14.value.val);
+
  struct PANumber number;
  number = PANumberPerformConstruct();
  printf("testing PANumber %d\n()",number.val);
@@ -1114,7 +1120,7 @@ int main()
  struct PAList list;
  list = PAListPerformConstruct();
  printf("List construct count%d\n", list.n.number.val);
-# 75 "test/test.c"
+# 81 "test/test.c"
  struct PANumber number1;
  struct PANumber number2;
  number1.val = 10;
