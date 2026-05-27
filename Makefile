@@ -52,6 +52,13 @@ preprocess: preprocess_pa
 compile: compile_pa 
 #compile_arraylist compile_bfs
 assemble: assemble_pa 
+
+preprocess_test_pa: $(sources_test_pa)
+
+compile_test_pa: assemble_test_pa
+
+assemble_test_pa: preprocess_test_pa 
+
 #assemble_bfs assemble_arraylist
 #	${MAKE} obj/Input.o
 #	${MAKE} obj/Algorithm.o
@@ -180,12 +187,12 @@ shar:
 dist:
 	tar cvf $(libdir)/libpa.a
 check:
-test: 
+test:
 ifeq ($(host-type), arm64)
 	file $(bindir)/libpa.a
 endif
 
-test_pa_arm64: $(objects) $(objects_test_pa) libpa.a
+test_pa_arm64: $(objects) test.o libpa.a
 	$(CC) $(libdir)/test.o $(foreach object,$(objects_pa),$(libdir)/$(object)) -o $(bindir)/test
 #ifeq ($(host-type),arm64)
 ##	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
@@ -325,17 +332,17 @@ assemblies_pa= Input.s \
 	PA/PAShape.s \
 	PA/PATextView.s
 
-sources_test_pa = test.i
-sources_test_bfs = 
-sources_test_arraylist =
-assemblies_test_pa = test.s
-assemblies_test_bfs =
+sources_test_pa= test.i
+sources_test_bfs= 
+sources_test_arraylist=
+assemblies_test_pa= test.s
+assemblies_test_bfs=
 assemblies_test_arraylist =
 # objects_
 # as
-objects_test_pa = test.o
-objects_test_bfs =
-objects_test_arraylist = 
+objects_test_pa= test.o
+objects_test_bfs=
+objects_test_arraylist= 
 # 	src/PA/Destination.s
 # 	src/PA/Arrow.s
 # 	src/PA/Feature.s
