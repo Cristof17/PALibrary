@@ -53,16 +53,20 @@ _main:                                  ; @main
 	add	x0, x0, l_.str@PAGEOFF
 	bl	_printf
 	ldr	x8, [sp, #24]                   ; 8-byte Folded Reload
+	ldr	w9, [sp, #52]                   ; 4-byte Folded Reload
+	sturb	w9, [x29, #-83]
 	ldrh	w9, [x8, #114]
 	sturh	w9, [x29, #-96]
 	ldur	x0, [x8, #101]
-	ldrh	w9, [x8, #112]
+	ldurh	w9, [x29, #-86]
 	sturh	w9, [x29, #-104]
 	ldur	x1, [x8, #93]
 	bl	_PAElementPerformCopy
-	sturh	w0, [x29, #-106]
+	sturh	w0, [x29, #-88]
+	ldurh	w8, [x29, #-88]
+	sturh	w8, [x29, #-86]
 	ldurb	w11, [x29, #-83]
-	ldurb	w10, [x29, #-85]
+	ldurb	w10, [x29, #-86]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x11
@@ -74,17 +78,17 @@ _main:                                  ; @main
 	add	x0, x0, l_.str.1@PAGEOFF
 	bl	_printf
 	mov	w8, #50                         ; =0x32
-	sturb	w8, [x29, #-107]
-	ldurb	w8, [x29, #-107]
+	sturb	w8, [x29, #-105]
+	ldurb	w8, [x29, #-105]
 	mov	x0, x8
-	ldurb	w8, [x29, #-108]
+	ldurb	w8, [x29, #-106]
 	mov	x1, x8
 	bl	_PADataPerformCopy
-	sturb	w0, [x29, #-109]
-	ldurb	w8, [x29, #-109]
-	sturb	w8, [x29, #-108]
-	ldurb	w11, [x29, #-107]
-	ldurb	w10, [x29, #-108]
+	sturb	w0, [x29, #-107]
+	ldurb	w8, [x29, #-107]
+	sturb	w8, [x29, #-106]
+	ldurb	w11, [x29, #-105]
+	ldurb	w10, [x29, #-106]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x11
@@ -96,17 +100,17 @@ _main:                                  ; @main
 	add	x0, x0, l_.str.2@PAGEOFF
 	bl	_printf
 	mov	w8, #32                         ; =0x20
-	sturb	w8, [x29, #-110]
-	ldurb	w8, [x29, #-110]
+	sturb	w8, [x29, #-108]
+	ldurb	w8, [x29, #-108]
 	mov	x0, x8
-	ldurb	w8, [x29, #-111]
+	ldurb	w8, [x29, #-109]
 	mov	x1, x8
 	bl	_PAResourcePerformCopy
-	sturb	w0, [x29, #-112]
-	ldurb	w8, [x29, #-112]
-	sturb	w8, [x29, #-111]
-	ldurb	w11, [x29, #-110]
-	ldurb	w10, [x29, #-111]
+	sturb	w0, [x29, #-110]
+	ldurb	w8, [x29, #-110]
+	sturb	w8, [x29, #-109]
+	ldurb	w11, [x29, #-108]
+	ldurb	w10, [x29, #-109]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x11
@@ -118,10 +122,10 @@ _main:                                  ; @main
 	add	x0, x0, l_.str.3@PAGEOFF
 	bl	_printf
 	bl	_PANumberPerformConstruct
-	sturb	w0, [x29, #-114]
-	ldurb	w8, [x29, #-114]
-	sturb	w8, [x29, #-113]
-	ldurb	w10, [x29, #-113]
+	sturb	w0, [x29, #-112]
+	ldurb	w8, [x29, #-112]
+	sturb	w8, [x29, #-111]
+	ldurb	w10, [x29, #-111]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x10
@@ -130,10 +134,10 @@ _main:                                  ; @main
 	add	x0, x0, l_.str.4@PAGEOFF
 	bl	_printf
 	bl	_PAResourcePerformConstruct
-	sturb	w0, [x29, #-116]
-	ldurb	w8, [x29, #-116]
-	sturb	w8, [x29, #-115]
-	ldurb	w10, [x29, #-115]
+	sturb	w0, [x29, #-114]
+	ldurb	w8, [x29, #-114]
+	sturb	w8, [x29, #-113]
+	ldurb	w10, [x29, #-113]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x10
