@@ -40,7 +40,7 @@ DllExport struct PAData PADataPerformInit(struct PAData Data, struct PAResource 
 DllExport struct PAData PADataPerformCopy(struct PAData from, struct PAData to)
 {
     struct PAData temp;
-    temp.Resource = PAResourcePerformCopy(from.Resource, to.Resource);
+    temp.Resource = PAResourcePerformCopy(from.Resource, temp.Resource);
     to.Resource = temp.Resource;
     return to;
 }

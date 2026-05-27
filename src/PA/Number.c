@@ -43,6 +43,7 @@ DllExport struct PANumber PANumberPerformCopy(struct PANumber from, struct PANum
     struct PANumber temp;
     temp.val = from.val;
     to.val = temp.val;
+    // to.val = temp.val;
     // return temp;
     return to;
 }

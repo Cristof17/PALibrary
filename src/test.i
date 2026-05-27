@@ -1070,6 +1070,18 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 int main()
 {
+
+ struct PANumber number123;
+ struct PANumber number221;
+ number123.val = 20;
+ PANumberPerformCopy(number123, number221);
+ printf("Number copy source = %d, destination = %d\n", number123.val, number221.val);
+
+ struct PAElement element12;
+ struct PAElement element245;
+ PAElementPerformCopy(element12, element245);
+ printf("Element copy source = %d, destination = %d\n", element12.index.Resource.value.val, element245.index.Resource.value.val);
+
  struct PANumber number;
  number = PANumberPerformConstruct();
  printf("testing PANumber %d\n()",number.val);
@@ -1100,7 +1112,7 @@ int main()
  struct PAList list;
  list = PAListPerformConstruct();
  printf("List construct count%d\n", list.n.number.val);
-# 61 "test/test.c"
+# 73 "test/test.c"
  struct PANumber number1;
  struct PANumber number2;
  number1.val = 10;
@@ -1111,14 +1123,14 @@ int main()
 
  copyTest1 = PASeriesPerformConstruct();
  copyTest2 = PASeriesPerformConstruct();
- copyTest1.m.number.val = 20;
- copyTest1.adj[0].index.Resource.value.val = 20;
+ copyTest1.m.number.val = 40;
+ copyTest1.adj[1].index.Resource.value.val = 40;
  copyTest2 = PASeriesPerformCopy(copyTest1,copyTest2);
 
 
  struct PAData data1;
  struct PAData data2;
- data1.Resource.value.val = 20;
+ data1.Resource.value.val = 40;
  data2 = PADataPerformCopy(data1,data2);
  printf("data2=%d, from %d\n",data1.Resource.value.val, data2.Resource.value.val);
  copyTest2 = PASeriesPerformCopy(copyTest1, copyTest2);

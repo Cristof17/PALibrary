@@ -79,7 +79,7 @@ _PADataPerformCopy:                     ; @PADataPerformCopy
 	sturb	w8, [x29, #-3]
 	ldurb	w8, [x29, #-2]
 	mov	x0, x8
-	ldurb	w8, [x29, #-3]
+	ldurb	w8, [x29, #-4]
 	mov	x1, x8
 	bl	_PAResourcePerformCopy
 	sturb	w0, [x29, #-5]

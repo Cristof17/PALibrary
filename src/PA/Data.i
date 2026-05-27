@@ -441,7 +441,7 @@ struct Facade {
           struct PAData PADataPerformCopy(struct PAData from, struct PAData to)
 {
     struct PAData temp;
-    temp.Resource = PAResourcePerformCopy(from.Resource, to.Resource);
+    temp.Resource = PAResourcePerformCopy(from.Resource, temp.Resource);
     to.Resource = temp.Resource;
     return to;
 }

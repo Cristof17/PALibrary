@@ -436,7 +436,18 @@ struct Facade {
     to.m = PACountPerformCopy(temp.m, to.m);
     x.val = temp.m.number.val;
     y.val = (1);
-# 69 "src/PA/Series.c"
+    while (y.val <= x.val)
+    {
+        PAElementPerformCopy(from.adj[y.val],temp.adj[y.val]);
+        y.val++;
+    }
+    y.val = (1);
+    while (y.val <= x.val)
+    {
+        PAElementPerformCopy(temp.adj[y.val],to.adj[y.val]);
+        y.val++;
+    }
+
     return to;
 }
 # 85 "src/PA/Series.c"
