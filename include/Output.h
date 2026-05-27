@@ -7,10 +7,10 @@
 #include <types.h>
 // struct Output;
 // typedef struct Output Output;
-DllExport struct Output OutputPerformConstruct(struct BFSRecord Record);
-struct Output OutputPerformInit(struct Output);
-DllExport struct Output OutputPerformCopy(struct Output);
+DllExport struct Output OutputPerformConstruct();
+DllExport struct Output OutputPerformInit(struct Output, struct BFSOutput);
+DllExport struct Output OutputPerformCopy(struct Output, struct Output);
+DllExport struct Output OutputPerformRuin(struct Output);
 //struct Output dispose();
-DllExport void OutputPerformRuin(void);
 DllExport void OutputPerformPrint(PAResult);
 #endif

@@ -147,9 +147,9 @@ struct Facade;
 // struct Input {
 // 	struct Algorithm algorithm;
 // };
-// struct Output {
+struct Output {
 
-// };
+};
 struct Input {
 	;
 };

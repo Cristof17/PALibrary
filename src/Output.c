@@ -11,6 +11,23 @@
 // #include <Output.h>
 // #include <types.h>
 #endif
+DllExport struct Output OutputPerformConstruct()
+{
+    struct Output output;
+    return output;   
+}
+DllExport struct Output OutputPerformInit(struct Output output, struct BFSOutput Output2)
+{
+    return output;
+}
+DllExport struct Output OutputPerformCopy(struct Output from, struct Output to)
+{
+    return from;
+}
+DllExport struct Output OutputPerformRuin(struct Output PA)
+{
+    return PA;
+}
 // #include <PA/Output.h>
 //#include <types.h>
 void OutputPerformPrint(PAResult result)
