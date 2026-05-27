@@ -4,6 +4,7 @@
 #include <PA/Element.h>
 #include <PA/Data.h>
 #include <PA/Element.h>
+#include <PA/List.h>
 #include <PA/Resource.h>
 #include <PA/Number.h>
 #include <PA/Series.h>
@@ -40,6 +41,12 @@ int main()
 	printf("tree n=%d\n",tree2.tree.n.number.val);
 	printf("tree n=%d\n",tree2.tree.m.number.val);
 	printf("tree n=%d\n",tree2.tree.source.index.Resource.value.val);
+	struct PASeries series;
+	series = PASeriesPerformConstruct();
+	printf("Series construct series %d\n", series.m.number.val);
+	struct PAList list;
+	list = PAListPerformConstruct();
+	printf("List construct count%d\n", list.n.number.val);
 	// printf("tree n=%d\n",tree2.tree.source.index.Resource.value.val);
 	//printf("testing copy %d\n", tree2.n.number.val);
 	//struct PACount count1 = PACountPerformConstruct();

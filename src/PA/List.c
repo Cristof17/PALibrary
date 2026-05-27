@@ -24,12 +24,12 @@ DllExport struct PAList PAListPerformConstruct()
     list.n = PACountPerformConstruct();
     // list.m = PACountPerformConstruct();
     struct PANumber y;
-    y.val = FIRST;
-    while (y.val < list.n.number.val)
-    {
-        list.neigh[y.val] = PASeriesPerformInit(list.neigh[y.val],list.neigh[y.val].m, list.neigh[y.val].adj);
-        y.val++;
-    }
+    // y.val = FIRST;
+    // while (y.val < list.n.number.val)
+    // {
+        // list.neigh[y.val] = PASeriesPerformInit(list.neigh[y.val],list.neigh[y.val].m, list.neigh[y.val].adj);
+        // y.val++;
+    // }
     return list;
     // struct PASeries neigh[] = list.neigh;
     // x.number.val = FIRST;
