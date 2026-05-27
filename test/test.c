@@ -58,5 +58,6 @@ int main()
 
 	// printf("testing element %d,%d,%d\n",element.status.)
 	// PATreePerformCopy(tree,tree2);
+	PAListPerformInit(list,list.n,list.neigh);
 	return 0;
 }

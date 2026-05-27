@@ -1101,5 +1101,6 @@ int main()
  list = PAListPerformConstruct();
  printf("List construct count%d\n", list.n.number.val);
 # 61 "test/test.c"
+ PAListPerformInit(list,list.n,list.neigh);
  return 0;
 }

@@ -452,17 +452,7 @@ void PAListPerformPrint(struct PAList List);
 {
     struct PAList list;
     list.n = PACountPerformConstruct();
-
-    struct PANumber x;
-    struct PANumber y;
-    x.val = (1);
-    y.val = List.n.number.val;
-    while (x.val <= y.val)
-    {
-
-        list.neigh[x.val] = PASeriesPerformConstruct();
-        x.val++;
-    }
+# 76 "src/PA/List.c"
     List = list;
 
 
