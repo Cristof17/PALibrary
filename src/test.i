@@ -1076,7 +1076,7 @@ int main()
  number123 = PANumberPerformConstruct();
  number221 = PANumberPerformConstruct();
  number123.val = 20;
- PANumberPerformCopy(number123, number221);
+ number221 = PANumberPerformCopy(number123, number221);
  printf("Number copy source = %d, destination = %d\n", number123.val, number221.val);
 
  struct PAElement element12;

@@ -38,6 +38,8 @@ _main:                                  ; @main
 	mov	x1, x8
 	bl	_PANumberPerformCopy
 	sturb	w0, [x29, #-81]
+	ldurb	w8, [x29, #-81]
+	sturb	w8, [x29, #-78]
 	ldurb	w11, [x29, #-77]
 	ldurb	w10, [x29, #-78]
 	mov	x9, sp

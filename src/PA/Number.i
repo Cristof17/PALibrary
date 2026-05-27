@@ -422,9 +422,13 @@ struct Facade {
 }
           struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to)
 {
-    struct PANumber temp;
-    temp.val = from.val;
-    to.val = temp.val;
+
+    char num = from.val;
+    to.val = num;
+
+
+
+
 
 
     return to;
