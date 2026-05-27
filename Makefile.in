@@ -13,8 +13,8 @@
 # prefix=/usr/local/
 prefix=.
 exec_prefix=$(prefix)
-bindir=$(prefix)/bin/
-sbindir=$(exec_prefix)/sbin/
+bindir=$(prefix)/bin
+sbindir=$(exec_prefix)/sbin
 libexdir=$(exec_prefix)/libexec
 datarootdir=$(prefix)/share
 datadir=$(datarootdir)
@@ -45,13 +45,21 @@ srcdir=
 #musl=@musl@
 #crt=@crt@
 #output=@output@
-output=$(bindir)/libpa.a
+output=libpa.a
+all: preprocess assemble compile test
 # preprocess: $(sources)
 preprocess: preprocess_pa 
 #preprocess_bfs preprocess_arraylist
 compile: compile_pa 
 #compile_arraylist compile_bfs
 assemble: assemble_pa 
+
+preprocess_test_pa: $(sources_test_pa)
+
+compile_test_pa: assemble_test_pa
+
+assemble_test_pa: preprocess_test_pa 
+
 #assemble_bfs assemble_arraylist
 #	${MAKE} obj/Input.o
 #	${MAKE} obj/Algorithm.o
@@ -113,7 +121,6 @@ assemble: assemble_pa
 	@echo "Building"
 link: link_pa link_bfs link_arraylist
 
-all: preprocess assemble compile
 #	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
 #	$(LD) $(foreach object,$^,$(libdir)/$(object)) $(prefix)/musl-$(musl)/obj/crt/$(crt) -lc -static -o $(libdir)/$(output) 
 #pa arraylist bfs
@@ -174,29 +181,44 @@ installcheck:
 #	ls $(libdir) | grep $(objects)/PA
 print:
 	git status
+	ar -T -t $(libdir)/libpa.a
 tar:
 	tar cvf palibrary.tar $(srcdir)/PA/
 shar:
 dist:
-	tar cvf $(libdir)/libpa.a
+	tar cvf libpa.tar.gz $(libdir)/libpa.a
 check:
-test: $(test_pa)
+test:
 ifeq ($(host-type), arm64)
 	file $(bindir)/libpa.a
 endif
 
-test_pa_arm64:
+test_pa_arm64: 
+	./$(bindir)/$(program_test_pa)
+#ifeq ($(host-type),arm64)
+##	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+#endif
+#ifeq ($(host-type),x86_64)
+#	$(CC) -c $(CFLAGS) $(libdir)/test.o $(libdir)/libpa.a -o $(bindir)/test
+#endif
+ifeq ($(host-type),AArch64)
+	$(CC) -c $(CFLAGS) $(libdir)/test.o $(libdir)/libpa.a -o $(bindir)/test
+#	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+
 #	-$(CPP) -I$(includedir)/ $(CPPFLAGS) test/test.c > test/test.i
 #	-$(CC) -S test.i -o test.s
 #	-$(AS) test.s -o test.o
-	-$(CC) $(libdir)/test.o $(libdir)/libpa.a -o $(bindir)/test
-#obj/PA/.o \
+
 
 objects_arraylist= ArrayList/ArrayList.o \
 	ArrayList/ArrayListPosition.o
+
 objects_bfs= BFS/Procedure.o \
 	BFS/Record.o
+
 # objects_arraylist= obj/Input.o
+#
 objects_pa= Input.o \
 	Algorithm.o \
 	Output.o \
@@ -301,6 +323,7 @@ assemblies_pa= Input.s \
 	PA/Pair.s \
 	PA/Result.s \
 	PA/Series.s \
+	PA/Status.s \
 	PA/Value.s \
 	PA/Resource.s \
 	PA/NormalTree.s \
@@ -311,17 +334,17 @@ assemblies_pa= Input.s \
 	PA/PAShape.s \
 	PA/PATextView.s
 
-sources_test_pa = test.i
-sources_test_bfs = 
-sources_test_arraylist =
-assemblies_test_pa = test.s
-assemblies_test_bfs =
+sources_test_pa= test.i
+sources_test_bfs= 
+sources_test_arraylist=
+assemblies_test_pa= test.s
+assemblies_test_bfs=
 assemblies_test_arraylist =
 # objects_
 # as
-objects_test_pa = test.o
-objects_test_bfs =
-objects_test_arraylist = 
+objects_test_pa= test.o
+objects_test_bfs=
+objects_test_arraylist= 
 # 	src/PA/Destination.s
 # 	src/PA/Arrow.s
 # 	src/PA/Feature.s
@@ -452,7 +475,9 @@ build: $(subdirs)
 #
 libpa.a: $(objects_pa)
 	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
-	$(AR) r $(libdir)/$(output) $(foreach object,$^,$(libdir)/$(object))  
+	$(AR) -v -s -m -a Input.o $(libdir)/$(output) $(foreach object,$^,$(libdir)/$(object))  
+	$(AR) -v -t -s $(libdir)/$(output)
+#	$(AR) -d -b Input.o $(libdir)/$(output)
 
 #libpa.a: $(objects_pa)
 #	$(LD) $(foreach object,$^,$(libdir)/$(object)) /lib/crt0.o -static -o $(libdir)/$@
@@ -461,7 +486,7 @@ libpa.a: $(objects_pa)
 # 	$(LD) $(objects) -o filiename.library
 # link_macos: $(objects)
 # link_linux: $(objects)
-#build: preprocess assemble compile
+build: preprocess assemble compile
 #SUBDIRS= src src/Iterator src/Builder src/Adapter src/Arraylist
 #bar := $(foo:.c=.o)
 #bindir=bin
@@ -686,8 +711,9 @@ ifeq ($(host-type),AArch64)
 	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 
-test.out: test.o libpa.a
-	$(CC) -lc $(foreach dependency,$^,$(libdir)/$(dependency)) -o $(bindir)/$@
+test.out: $(objects) test.o test.out libpa.a
+	$(CC) $(libdir)/test.o $(foreach object,$(objects_pa),$(libdir)/$(object)) -o $(bindir)/$(program_test_pa)
+#$(CC) -lc $(foreach dependency,$^,$(libdir)/$(dependency)) -o $(bindir)/$@
 
 ASFLAGS=
 ifeq ($(host-type),arm64)
