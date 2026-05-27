@@ -26,7 +26,8 @@ DllExport struct PAStatus PAStatusPerformCopy(struct PAStatus from, struct PASta
 {
     struct PAStatus temp;
     temp.visited = PAResourcePerformCopy(from.visited, to.visited);
-    return temp;
+    to.visited = temp.visited;
+    return to;
 }
 DllExport struct PAStatus PAStatusPerformDelete(struct PAStatus PA)
 {

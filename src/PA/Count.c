@@ -86,7 +86,8 @@ DllExport struct PACount PACountPerformCopy(struct PACount from, struct PACount 
 {
     struct PACount temp;
     temp.number = PANumberPerformCopy(from.number,to.number);
-    return temp;
+    to.number = temp.number;
+    return to;
 }
 // DllExport struct PACount PACountPerformCopy(struct PACount from, struct PACount to)
 // {

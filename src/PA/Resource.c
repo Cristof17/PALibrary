@@ -28,7 +28,8 @@ DllExport struct PAResource PAResourcePerformCopy(struct PAResource from, struct
 {
     struct PAResource temp;
     temp.value = PANumberPerformCopy(from.value, to.value);
-    return temp;
+    to.value = temp.value;
+    return to;
 }
 DllExport struct PAResource PAResourcePerformRuin(struct PAResource PA)
 {

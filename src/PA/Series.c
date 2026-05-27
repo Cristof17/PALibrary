@@ -55,16 +55,17 @@ DllExport struct PASeries PASeriesPerformCopy(struct PASeries from, struct PASer
     y.val = FIRST;
     while (y.val <= x.val)
     {
-        temp.adj[y.val] = from.adj[y.val];
+        temp.adj[y.val] = PAElementPerformCopy(from.adj[y.val],temp.adj[y.val]);
         y.val++;
     }
     y.val = FIRST;
     while (y.val <= x.val)
     {
-        to.adj[y.val] = temp.adj[y.val];
+        PAElementPerformCopy(temp.adj[y.val],to.adj[y.val]);
         y.val++;
     }
-    return temp;
+    // return temp;
+    return to;
 }
 // DllExport struct PASeries PASeriesPerformCopy(struct PASeries from, struct PASeries to)
 // {
@@ -74,11 +75,11 @@ DllExport struct PASeries PASeriesPerformCopy(struct PASeries from, struct PASer
 //     struct PACount y;
 //     y.number.val = from.m.number.val;
 //     x.number.val = FIRST;
-//     while (x.number.val < y.number.val)
+//     while (x.number.val <= y.number.val)
 //     {
 //         temp.adj[x.number.val] = PAElementPerformCopy(from.adj[x.number.val], to.adj[x.number.val]);
 //     }
-    
+// }
 // }
 DllExport struct PASeries PASeriesPerformInit(struct PASeries Series,
     struct PACount Value, struct PAElement Value2[])

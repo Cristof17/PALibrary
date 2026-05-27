@@ -64,7 +64,9 @@ DllExport struct PAElement PAElementPerformCopy(struct PAElement from, struct PA
     struct PAElement temp;
     temp.index = PADataPerformCopy(from.index, to.index);
     temp.status = PAStatusPerformCopy(from.status,to.status);
-    return temp;
+    to.index = temp.index;
+    to.status = temp.status;
+    return to;
 }   
 // PAResult PAElementPerformCopy()
 // {

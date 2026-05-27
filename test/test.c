@@ -55,23 +55,41 @@ int main()
 	//Data = PADataPerformConstruct();
 	//printf("testing Data %d\n",Data.Resource.value.val);
 	///struct PAElement element = PAElementPerformConstruct();
-
+	
 	// printf("testing element %d,%d,%d\n",element.status.)
 	// PATreePerformCopy(tree,tree2);
 	struct PANumber number1;
 	struct PANumber number2;
 	number1.val = 10;
-	PANumberPerformCopy(number1,number2);
-	printf("number1 = %d, number2 = %d\n",number1.val,number2.val);
+	// number2 = PANumberPerformCopy(number1,number2);
+	// printf("number1 = %d, number2 = %d\n",number1.val,number2.val);
+	struct PASeries copyTest1;
+	struct PASeries copyTest2;
+	copyTest1.adj[0].index.Resource.value.val = 20;
+	copyTest1.adj[0].index.Resource.value.val = 40;
+	// PASeriesPerformCons
+	copyTest2 = PASeriesPerformCopy(copyTest1, copyTest2);
+	// printf("copy series test %d\n", s)
+	printf("copy test for series %d\n %d\n",copyTest1.adj[0].index.Resource.value.val,copyTest2.adj[0].index.Resource.value.val);
 	struct PACount count1;
 	count1.number.val = 1;
 	struct PACount count2;
-	PACountPerformCopy(count1,count2);
+	struct PAResource resource1;
+	struct PAResource resource2;
+	struct PAElement element1;
+	struct PAElement element2;
+	element1.index.Resource.value.val = 20;
+	element2 = PAElementPerformCopy(element1,element2);
+	printf("element1.index = %d, element2.index = %d\n", element1.index.Resource.value.val, element2.index.Resource.value.val);
+	resource2 = PAResourcePerformCopy(resource1,resource2);
+	printf("resource1.number.val = %d, resource2.number.val=%d\n",resource1.value.val, resource2.value.val);
+	// count2 = PACountPerformCopy(count1,count2);
 	printf("count1 = %d, count2 = %d\n",count1.number.val,count2.number.val);
 	list.n.number.val = 2;
-	PAListPerformInit(list,list.n,list.neigh);
+	// PAListPerformInit(list,list.n,list.neigh);
 	printf("count1 = %d, count2 = %d\n",count1.number.val,count2.number.val);
 	printf("list.n = %d",list.n.number.val);
+
 	// PASeriesPerformInit(series, series.m, series.adj);
 	return 0;
 }
