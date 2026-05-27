@@ -1073,6 +1073,8 @@ int main()
 
  struct PANumber number123;
  struct PANumber number221;
+ number123 = PANumberPerformConstruct();
+ number221 = PANumberPerformConstruct();
  number123.val = 20;
  PANumberPerformCopy(number123, number221);
  printf("Number copy source = %d, destination = %d\n", number123.val, number221.val);
@@ -1112,7 +1114,7 @@ int main()
  struct PAList list;
  list = PAListPerformConstruct();
  printf("List construct count%d\n", list.n.number.val);
-# 73 "test/test.c"
+# 75 "test/test.c"
  struct PANumber number1;
  struct PANumber number2;
  number1.val = 10;

@@ -21,6 +21,14 @@ _main:                                  ; @main
 	ldr	x9, [x9]
 	stur	x9, [x29, #-24]
 	stur	wzr, [x8, #113]
+	bl	_PANumberPerformConstruct
+	sturb	w0, [x29, #-79]
+	ldurb	w8, [x29, #-79]
+	sturb	w8, [x29, #-77]
+	bl	_PANumberPerformConstruct
+	sturb	w0, [x29, #-80]
+	ldurb	w8, [x29, #-80]
+	sturb	w8, [x29, #-78]
 	mov	w8, #20                         ; =0x14
 	str	w8, [sp, #60]                   ; 4-byte Folded Spill
 	sturb	w8, [x29, #-77]
@@ -29,7 +37,7 @@ _main:                                  ; @main
 	ldurb	w8, [x29, #-78]
 	mov	x1, x8
 	bl	_PANumberPerformCopy
-	sturb	w0, [x29, #-79]
+	sturb	w0, [x29, #-81]
 	ldurb	w11, [x29, #-77]
 	ldurb	w10, [x29, #-78]
 	mov	x9, sp
@@ -43,16 +51,16 @@ _main:                                  ; @main
 	add	x0, x0, l_.str@PAGEOFF
 	bl	_printf
 	ldr	x8, [sp, #32]                   ; 8-byte Folded Reload
-	ldrh	w9, [x8, #108]
+	ldrh	w9, [x8, #106]
 	sturh	w9, [x29, #-96]
 	ldur	x0, [x8, #93]
-	ldrh	w9, [x8, #106]
+	ldrh	w9, [x8, #104]
 	sturh	w9, [x29, #-104]
 	ldur	x1, [x8, #85]
 	bl	_PAElementPerformCopy
 	sturh	w0, [x29, #-106]
-	ldurb	w11, [x29, #-81]
-	ldurb	w10, [x29, #-83]
+	ldurb	w11, [x29, #-83]
+	ldurb	w10, [x29, #-85]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x11
