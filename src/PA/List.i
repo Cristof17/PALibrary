@@ -451,14 +451,25 @@ void PAListPerformPrint(struct PAList List);
           struct PAList PAListPerformInit(struct PAList List, struct PACount Value, struct PASeries Value2[])
 {
     struct PAList list;
-    list.n = PACountPerformConstruct();
-# 76 "src/PA/List.c"
+    list.n = Value;
+
+
+    struct PANumber x;
+    struct PANumber y;
+    x.val = (1);
+    y.val = Value.number.val;
+    while (x.val <= y.val)
+    {
+
+        list.neigh[x.val] = PASeriesPerformInit(list.neigh[x.val], list.neigh[x.val].m, list.neigh[x.val].adj);
+        x.val++;
+    }
     List = list;
 
 
     return List;
 }
-# 112 "src/PA/List.c"
+# 113 "src/PA/List.c"
           struct PAList PAListPerformRuin(struct PAList PA)
 {
 
@@ -482,7 +493,7 @@ void Dispose()
 {
 
 }
-# 150 "src/PA/List.c"
+# 151 "src/PA/List.c"
           struct PAList PAListPerformDelete(struct PAList PA)
 {
     struct PACount n = PA.n;

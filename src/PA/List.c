@@ -61,18 +61,20 @@ DllExport struct PAList PAListPerformCopy(struct PAList from, struct PAList to)
 DllExport struct PAList PAListPerformInit(struct PAList List, struct PACount Value, struct PASeries Value2[])
 {
     struct PAList list;
-    list.n = PACountPerformConstruct();
+    list.n = Value;
+    // list.n = PACountPerformConstruct();
     // list.m = PACountPerformConstruct()
-    // struct PANumber x;
-    // struct PANumber y;
-    // x.val = FIRST;
-    // y.val = List.n.number.val;
-    // while (x.val <= y.val)
-    // {
-    //     //avoid shallow copy (call PASeriesPerformCopy)
-    //     list.neigh[x.val] = PASeriesPerformConstruct();
-    //     x.val++;
-    // }
+    struct PANumber x;
+    struct PANumber y;
+    x.val = FIRST;
+    y.val = Value2[x.val].m.number.val;
+    // .number.val;
+    while (x.val <= y.val)
+    {
+        //avoid shallow copy (call PASeriesPerformCopy)
+        list.neigh[x.val] = PASeriesPerformInit(Value2[x.val], Value2[x.val].m, Value2[x.val].adj);
+        x.val++;
+    }
     List = list;
     // struct PAList list;
     // list.adj = List.adj;
