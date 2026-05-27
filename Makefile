@@ -46,6 +46,7 @@ srcdir=
 #crt=@crt@
 #output=@output@
 output=libpa.a
+all: preprocess assemble compile test
 # preprocess: $(sources)
 preprocess: preprocess_pa 
 #preprocess_bfs preprocess_arraylist
@@ -120,7 +121,6 @@ assemble_test_pa: preprocess_test_pa
 	@echo "Building"
 link: link_pa link_bfs link_arraylist
 
-all: preprocess assemble compile test
 #	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
 #	$(LD) $(foreach object,$^,$(libdir)/$(object)) $(prefix)/musl-$(musl)/obj/crt/$(crt) -lc -static -o $(libdir)/$(output) 
 #pa arraylist bfs
