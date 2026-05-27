@@ -194,7 +194,7 @@ ifeq ($(host-type), arm64)
 endif
 
 test_pa_arm64: $(objects) test.o libpa.a
-	$(CC) $(libdir)/test.o $(foreach object,$(objects_pa),$(libdir)/$(object)) -o $(bindir)/test
+	$(CC) $(libdir)/test.o $(foreach object,$(objects_pa),$(libdir)/$(object)) -o $(bindir)/$(program_test_pa)
 #ifeq ($(host-type),arm64)
 ##	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 #endif
