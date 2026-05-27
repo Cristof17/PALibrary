@@ -100,7 +100,7 @@ DllExport struct PASeries PASeriesPerformInit(struct PASeries Series,
         struct PANumber y;
         x.val = FIRST;
         y.val = Value.number.val;
-        while (x.val < y.val)
+        while (x.val <= y.val)
         {
             series.adj[x.val] = PAElementPerformInit(series.adj[x.val],series.adj[x.val].index, series.adj[x.val].status);
             x.val++;
