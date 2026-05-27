@@ -185,12 +185,23 @@ ifeq ($(host-type), arm64)
 	file $(bindir)/libpa.a
 endif
 
-test_pa_arm64: build libpa.a
+test_pa_arm64: $(objects) $(objects_test_pa) libpa.a
+	$(CC) $(libdir)/test.o $(foreach object,$(objects_pa),$(libdir)/$(object)) -o $(bindir)/test
+#ifeq ($(host-type),arm64)
+##	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+#endif
+#ifeq ($(host-type),x86_64)
+#	$(CC) -c $(CFLAGS) $(libdir)/test.o $(libdir)/libpa.a -o $(bindir)/test
+#endif
+ifeq ($(host-type),AArch64)
+	$(CC) -c $(CFLAGS) $(libdir)/test.o $(libdir)/libpa.a -o $(bindir)/test
+#	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+
 #	-$(CPP) -I$(includedir)/ $(CPPFLAGS) test/test.c > test/test.i
 #	-$(CC) -S test.i -o test.s
 #	-$(AS) test.s -o test.o
-	-$(CC) obj/test.o obj/libpa.a -o bin/test
-#obj/PA/.o \
+
 
 objects_arraylist= ArrayList/ArrayList.o \
 	ArrayList/ArrayListPosition.o
@@ -456,6 +467,8 @@ build: $(subdirs)
 libpa.a: $(objects_pa)
 	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
 	$(AR) -v -s -m -a Input.o $(libdir)/$(output) $(foreach object,$^,$(libdir)/$(object))  
+	$(AR) -v -t -s $(libdir)/$(output)
+#	$(AR) -d -b Input.o $(libdir)/$(output)
 
 #libpa.a: $(objects_pa)
 #	$(LD) $(foreach object,$^,$(libdir)/$(object)) /lib/crt0.o -static -o $(libdir)/$@
