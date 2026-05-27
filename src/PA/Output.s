@@ -1,157 +1,215 @@
-	.file	"Output.c"
-	.text
-	.globl	PAOutputPerformConstruct
-	.type	PAOutputPerformConstruct, @function
-PAOutputPerformConstruct:
-.LFB0:
+	.section	__TEXT,__text,regular,pure_instructions
+	.build_version macos, 15, 0	sdk_version 26, 2
+	.globl	_PAOutputPerformConstruct       ; -- Begin function PAOutputPerformConstruct
+	.p2align	2
+_PAOutputPerformConstruct:              ; @PAOutputPerformConstruct
 	.cfi_startproc
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	movq	-24(%rbp), %rax
-	movq	%rax, -12(%rbp)
-	movl	-16(%rbp), %eax
-	movl	%eax, -4(%rbp)
-	movq	-12(%rbp), %rax
-	movl	-4(%rbp), %ecx
-	movq	%rcx, %rdx
-	popq	%rbp
-	.cfi_def_cfa 7, 8
+; %bb.0:
+	sub	sp, sp, #80
+	stp	x29, x30, [sp, #64]             ; 16-byte Folded Spill
+	add	x29, sp, #64
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	adrp	x8, ___stack_chk_guard@GOTPAGE
+	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
+	ldr	x8, [x8]
+	stur	x8, [x29, #-8]
+	ldur	x8, [sp, #28]
+	stur	x8, [x29, #-24]
+	ldr	w8, [sp, #36]
+	stur	w8, [x29, #-16]
+	ldur	x8, [x29, #-24]
+	str	x8, [sp, #8]                    ; 8-byte Folded Spill
+	ldur	x8, [x29, #-16]
+	str	x8, [sp, #16]                   ; 8-byte Folded Spill
+	ldur	x9, [x29, #-8]
+	adrp	x8, ___stack_chk_guard@GOTPAGE
+	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
+	ldr	x8, [x8]
+	subs	x8, x8, x9
+	b.eq	LBB0_2
+	b	LBB0_1
+LBB0_1:
+	bl	___stack_chk_fail
+LBB0_2:
+	ldr	x1, [sp, #16]                   ; 8-byte Folded Reload
+	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
+	ldp	x29, x30, [sp, #64]             ; 16-byte Folded Reload
+	add	sp, sp, #80
 	ret
 	.cfi_endproc
-.LFE0:
-	.size	PAOutputPerformConstruct, .-PAOutputPerformConstruct
-	.globl	PAOutputPerformInit
-	.type	PAOutputPerformInit, @function
-PAOutputPerformInit:
-.LFB1:
+                                        ; -- End function
+	.globl	_PAOutputPerformInit            ; -- Begin function PAOutputPerformInit
+	.p2align	2
+_PAOutputPerformInit:                   ; @PAOutputPerformInit
 	.cfi_startproc
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	movq	%rdx, %rax
-	movq	%rcx, %rdx
-	movq	%rdi, -32(%rbp)
-	movl	%esi, -24(%rbp)
-	movq	%rax, -48(%rbp)
-	movzbl	%dl, %esi
-	movzbl	-40(%rbp), %ecx
-	andl	$0, %ecx
-	orl	%esi, %ecx
-	movb	%cl, -40(%rbp)
-	movq	%rdx, %rcx
-	shrq	$8, %rcx
-	movzbl	%cl, %esi
-	movzbl	-39(%rbp), %ecx
-	andl	$0, %ecx
-	orl	%esi, %ecx
-	movb	%cl, -39(%rbp)
-	movq	%rdx, %rcx
-	shrq	$16, %rcx
-	movzbl	%cl, %esi
-	movzbl	-38(%rbp), %ecx
-	andl	$0, %ecx
-	orl	%esi, %ecx
-	movb	%cl, -38(%rbp)
-	movq	%rdx, %rax
-	shrq	$24, %rax
-	movzbl	%al, %edx
-	movzbl	-37(%rbp), %eax
-	andl	$0, %eax
-	orl	%edx, %eax
-	movb	%al, -37(%rbp)
-	movq	-48(%rbp), %rax
-	movq	%rax, -32(%rbp)
-	movl	-40(%rbp), %eax
-	movl	%eax, -24(%rbp)
-	movq	-32(%rbp), %rax
-	movq	%rax, -12(%rbp)
-	movl	-24(%rbp), %eax
-	movl	%eax, -4(%rbp)
-	movq	-12(%rbp), %rax
-	movl	-4(%rbp), %ecx
-	movq	%rcx, %rdx
-	popq	%rbp
-	.cfi_def_cfa 7, 8
+; %bb.0:
+	sub	sp, sp, #144
+	stp	x29, x30, [sp, #128]            ; 16-byte Folded Spill
+	add	x29, sp, #128
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	adrp	x8, ___stack_chk_guard@GOTPAGE
+	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
+	ldr	x8, [x8]
+	stur	x8, [x29, #-8]
+	stur	x0, [x29, #-24]
+	stur	x1, [x29, #-16]
+	ldur	x8, [x29, #-24]
+	str	x8, [sp, #40]
+	ldur	w8, [x29, #-16]
+	str	w8, [sp, #48]
+	stur	x2, [x29, #-40]
+	stur	x3, [x29, #-32]
+	ldur	x8, [x29, #-40]
+	str	x8, [sp, #24]
+	ldur	w8, [x29, #-32]
+	str	w8, [sp, #32]
+	ldr	x8, [sp, #24]
+	str	x8, [sp, #40]
+	ldr	w8, [sp, #32]
+	str	w8, [sp, #48]
+	ldr	x8, [sp, #40]
+	str	x8, [sp, #56]
+	ldr	w8, [sp, #48]
+	str	w8, [sp, #64]
+	ldr	x8, [sp, #56]
+	stur	x8, [x29, #-56]
+	ldr	w8, [sp, #64]
+	stur	w8, [x29, #-48]
+	ldur	x8, [x29, #-56]
+	str	x8, [sp, #8]                    ; 8-byte Folded Spill
+	ldur	x8, [x29, #-48]
+	str	x8, [sp, #16]                   ; 8-byte Folded Spill
+	ldur	x9, [x29, #-8]
+	adrp	x8, ___stack_chk_guard@GOTPAGE
+	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
+	ldr	x8, [x8]
+	subs	x8, x8, x9
+	b.eq	LBB1_2
+	b	LBB1_1
+LBB1_1:
+	bl	___stack_chk_fail
+LBB1_2:
+	ldr	x1, [sp, #16]                   ; 8-byte Folded Reload
+	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
+	ldp	x29, x30, [sp, #128]            ; 16-byte Folded Reload
+	add	sp, sp, #144
 	ret
 	.cfi_endproc
-.LFE1:
-	.size	PAOutputPerformInit, .-PAOutputPerformInit
-	.globl	PAOutputPerformDelete
-	.type	PAOutputPerformDelete, @function
-PAOutputPerformDelete:
-.LFB2:
+                                        ; -- End function
+	.globl	_PAOutputPerformDelete          ; -- Begin function PAOutputPerformDelete
+	.p2align	2
+_PAOutputPerformDelete:                 ; @PAOutputPerformDelete
 	.cfi_startproc
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	movq	%rdi, %rdx
-	movl	%esi, %eax
-	movq	%rdx, -32(%rbp)
-	movl	%eax, -24(%rbp)
-	movq	-32(%rbp), %rax
-	movq	%rax, -12(%rbp)
-	movl	-24(%rbp), %eax
-	movl	%eax, -4(%rbp)
-	movq	-12(%rbp), %rax
-	movl	-4(%rbp), %ecx
-	movq	%rcx, %rdx
-	popq	%rbp
-	.cfi_def_cfa 7, 8
+; %bb.0:
+	sub	sp, sp, #112
+	stp	x29, x30, [sp, #96]             ; 16-byte Folded Spill
+	add	x29, sp, #96
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	adrp	x8, ___stack_chk_guard@GOTPAGE
+	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
+	ldr	x8, [x8]
+	stur	x8, [x29, #-8]
+	stur	x0, [x29, #-24]
+	stur	x1, [x29, #-16]
+	ldur	x8, [x29, #-24]
+	str	x8, [sp, #24]
+	ldur	w8, [x29, #-16]
+	str	w8, [sp, #32]
+	ldr	x8, [sp, #24]
+	str	x8, [sp, #40]
+	ldr	w8, [sp, #32]
+	str	w8, [sp, #48]
+	ldr	x8, [sp, #40]
+	stur	x8, [x29, #-40]
+	ldr	w8, [sp, #48]
+	stur	w8, [x29, #-32]
+	ldur	x8, [x29, #-40]
+	str	x8, [sp, #8]                    ; 8-byte Folded Spill
+	ldur	x8, [x29, #-32]
+	str	x8, [sp, #16]                   ; 8-byte Folded Spill
+	ldur	x9, [x29, #-8]
+	adrp	x8, ___stack_chk_guard@GOTPAGE
+	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
+	ldr	x8, [x8]
+	subs	x8, x8, x9
+	b.eq	LBB2_2
+	b	LBB2_1
+LBB2_1:
+	bl	___stack_chk_fail
+LBB2_2:
+	ldr	x1, [sp, #16]                   ; 8-byte Folded Reload
+	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
+	ldp	x29, x30, [sp, #96]             ; 16-byte Folded Reload
+	add	sp, sp, #112
 	ret
 	.cfi_endproc
-.LFE2:
-	.size	PAOutputPerformDelete, .-PAOutputPerformDelete
-	.globl	PAOutputPerformRuin
-	.type	PAOutputPerformRuin, @function
-PAOutputPerformRuin:
-.LFB3:
+                                        ; -- End function
+	.globl	_PAOutputPerformRuin            ; -- Begin function PAOutputPerformRuin
+	.p2align	2
+_PAOutputPerformRuin:                   ; @PAOutputPerformRuin
 	.cfi_startproc
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	movq	%rdi, %rdx
-	movl	%esi, %eax
-	movq	%rdx, -32(%rbp)
-	movl	%eax, -24(%rbp)
-	movq	-32(%rbp), %rax
-	movq	%rax, -12(%rbp)
-	movl	-24(%rbp), %eax
-	movl	%eax, -4(%rbp)
-	movq	-12(%rbp), %rax
-	movl	-4(%rbp), %ecx
-	movq	%rcx, %rdx
-	popq	%rbp
-	.cfi_def_cfa 7, 8
+; %bb.0:
+	sub	sp, sp, #112
+	stp	x29, x30, [sp, #96]             ; 16-byte Folded Spill
+	add	x29, sp, #96
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	adrp	x8, ___stack_chk_guard@GOTPAGE
+	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
+	ldr	x8, [x8]
+	stur	x8, [x29, #-8]
+	stur	x0, [x29, #-24]
+	stur	x1, [x29, #-16]
+	ldur	x8, [x29, #-24]
+	str	x8, [sp, #24]
+	ldur	w8, [x29, #-16]
+	str	w8, [sp, #32]
+	ldr	x8, [sp, #24]
+	str	x8, [sp, #40]
+	ldr	w8, [sp, #32]
+	str	w8, [sp, #48]
+	ldr	x8, [sp, #40]
+	stur	x8, [x29, #-40]
+	ldr	w8, [sp, #48]
+	stur	w8, [x29, #-32]
+	ldur	x8, [x29, #-40]
+	str	x8, [sp, #8]                    ; 8-byte Folded Spill
+	ldur	x8, [x29, #-32]
+	str	x8, [sp, #16]                   ; 8-byte Folded Spill
+	ldur	x9, [x29, #-8]
+	adrp	x8, ___stack_chk_guard@GOTPAGE
+	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
+	ldr	x8, [x8]
+	subs	x8, x8, x9
+	b.eq	LBB3_2
+	b	LBB3_1
+LBB3_1:
+	bl	___stack_chk_fail
+LBB3_2:
+	ldr	x1, [sp, #16]                   ; 8-byte Folded Reload
+	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
+	ldp	x29, x30, [sp, #96]             ; 16-byte Folded Reload
+	add	sp, sp, #112
 	ret
 	.cfi_endproc
-.LFE3:
-	.size	PAOutputPerformRuin, .-PAOutputPerformRuin
-	.globl	PAOutputPerformPrint
-	.type	PAOutputPerformPrint, @function
-PAOutputPerformPrint:
-.LFB4:
+                                        ; -- End function
+	.globl	_PAOutputPerformPrint           ; -- Begin function PAOutputPerformPrint
+	.p2align	2
+_PAOutputPerformPrint:                  ; @PAOutputPerformPrint
 	.cfi_startproc
-	pushq	%rbp
+; %bb.0:
+	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	movl	%edi, -4(%rbp)
-	nop
-	popq	%rbp
-	.cfi_def_cfa 7, 8
+	str	w0, [sp, #12]
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
-.LFE4:
-	.size	PAOutputPerformPrint, .-PAOutputPerformPrint
-	.ident	"GCC: (SUSE Linux) 15.2.1 20260202"
-	.section	.note.GNU-stack,"",@progbits
+                                        ; -- End function
+.subsections_via_symbols

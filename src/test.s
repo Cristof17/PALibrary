@@ -1,186 +1,173 @@
-	.file	"test.c"
-	.text
-	.section	.rodata
-.LC0:
-	.string	"testing PANumber %d\n()"
-.LC1:
-	.string	"testing Resource %d\n"
-.LC2:
-	.string	"testing tree %d\n"
-.LC3:
-	.string	"testing series number:%d\n"
-.LC4:
-	.string	"Element resource test%d\n"
-	.align 8
-.LC5:
-	.string	"pastatus perform construct %d\n"
-.LC6:
-	.string	"tree n=%d\n"
-	.text
-	.globl	main
-	.type	main, @function
-main:
-.LFB0:
+	.section	__TEXT,__text,regular,pure_instructions
+	.build_version macos, 15, 0	sdk_version 26, 2
+	.globl	_main                           ; -- Begin function main
+	.p2align	2
+_main:                                  ; @main
 	.cfi_startproc
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	subq	$48, %rsp
-	call	PANumberPerformConstruct
-	movb	%al, -1(%rbp)
-	movzbl	-1(%rbp), %eax
-	movzbl	%al, %eax
-	movl	%eax, %esi
-	movl	$.LC0, %edi
-	movl	$0, %eax
-	call	printf
-	call	PAResourcePerformConstruct
-	movb	%al, -2(%rbp)
-	movzbl	-2(%rbp), %eax
-	movzbl	%al, %eax
-	movl	%eax, %esi
-	movl	$.LC1, %edi
-	movl	$0, %eax
-	call	printf
-	call	PATreePerformConstruct
-	movq	%rax, -17(%rbp)
-	movzbl	%dl, %esi
-	movzbl	-9(%rbp), %ecx
-	andl	$0, %ecx
-	orl	%esi, %ecx
-	movb	%cl, -9(%rbp)
-	movq	%rdx, %rcx
-	shrq	$8, %rcx
-	movzbl	%cl, %esi
-	movzbl	-8(%rbp), %ecx
-	andl	$0, %ecx
-	orl	%esi, %ecx
-	movb	%cl, -8(%rbp)
-	movq	%rdx, %rcx
-	shrq	$16, %rcx
-	movzbl	%cl, %esi
-	movzbl	-7(%rbp), %ecx
-	andl	$0, %ecx
-	orl	%esi, %ecx
-	movb	%cl, -7(%rbp)
-	movq	%rdx, %rcx
-	shrq	$24, %rcx
-	movzbl	%cl, %esi
-	movzbl	-6(%rbp), %ecx
-	andl	$0, %ecx
-	orl	%esi, %ecx
-	movb	%cl, -6(%rbp)
-	movq	%rdx, %rcx
-	shrq	$32, %rcx
-	movzbl	%cl, %esi
-	movzbl	-5(%rbp), %ecx
-	andl	$0, %ecx
-	orl	%esi, %ecx
-	movb	%cl, -5(%rbp)
-	movq	%rdx, %rcx
-	shrq	$40, %rcx
-	movzbl	%cl, %esi
-	movzbl	-4(%rbp), %ecx
-	andl	$0, %ecx
-	orl	%esi, %ecx
-	movb	%cl, -4(%rbp)
-	movq	%rdx, %rax
-	shrq	$48, %rax
-	movzbl	%al, %edx
-	movzbl	-3(%rbp), %eax
-	andl	$0, %eax
-	orl	%edx, %eax
-	movb	%al, -3(%rbp)
-	movzbl	-17(%rbp), %eax
-	movzbl	%al, %eax
-	movl	%eax, %esi
-	movl	$.LC2, %edi
-	movl	$0, %eax
-	call	printf
-	call	PASeriesPerformConstruct
-	movb	%al, -22(%rbp)
-	movzbl	%ah, %edx
-	movb	%dl, -21(%rbp)
-	movq	%rax, %rdx
-	shrq	$16, %rdx
-	andb	$-1, %dh
-	movb	%dl, -20(%rbp)
-	movq	%rax, %rdx
-	shrq	$24, %rdx
-	andb	$-1, %dh
-	movb	%dl, -19(%rbp)
-	shrq	$32, %rax
-	andb	$-1, %ah
-	movb	%al, -18(%rbp)
-	movzbl	-22(%rbp), %eax
-	movzbl	%al, %eax
-	movl	%eax, %esi
-	movl	$.LC3, %edi
-	movl	$0, %eax
-	call	printf
-	call	PAStatusPerformConstruct
-	movb	%al, -23(%rbp)
-	call	PAElementPerformConstruct
-	movw	%ax, -25(%rbp)
-	movzbl	-25(%rbp), %eax
-	movzbl	%al, %eax
-	movl	%eax, %esi
-	movl	$.LC4, %edi
-	movl	$0, %eax
-	call	printf
-	movzbl	-23(%rbp), %eax
-	movzbl	%al, %eax
-	movl	%eax, %esi
-	movl	$.LC5, %edi
-	movl	$0, %eax
-	call	printf
-	call	PATransposeTreePerformConstruct
-	movq	%rax, -40(%rbp)
-	movl	%edx, %esi
-	movl	-32(%rbp), %ecx
-	andl	$0, %ecx
-	orl	%esi, %ecx
-	movl	%ecx, -32(%rbp)
-	movq	%rdx, %rcx
-	shrq	$32, %rcx
-	movzwl	%cx, %esi
-	movzwl	-28(%rbp), %ecx
-	andl	$0, %ecx
-	orl	%esi, %ecx
-	movw	%cx, -28(%rbp)
-	movq	%rdx, %rax
-	shrq	$48, %rax
-	movzbl	%al, %edx
-	movzbl	-26(%rbp), %eax
-	andl	$0, %eax
-	orl	%edx, %eax
-	movb	%al, -26(%rbp)
-	movzbl	-40(%rbp), %eax
-	movzbl	%al, %eax
-	movl	%eax, %esi
-	movl	$.LC6, %edi
-	movl	$0, %eax
-	call	printf
-	movzbl	-39(%rbp), %eax
-	movzbl	%al, %eax
-	movl	%eax, %esi
-	movl	$.LC6, %edi
-	movl	$0, %eax
-	call	printf
-	movzbl	-38(%rbp), %eax
-	movzbl	%al, %eax
-	movl	%eax, %esi
-	movl	$.LC6, %edi
-	movl	$0, %eax
-	call	printf
-	movl	$0, %eax
-	leave
-	.cfi_def_cfa 7, 8
+; %bb.0:
+	sub	sp, sp, #144
+	stp	x29, x30, [sp, #128]            ; 16-byte Folded Spill
+	add	x29, sp, #128
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	adrp	x8, ___stack_chk_guard@GOTPAGE
+	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
+	ldr	x8, [x8]
+	stur	x8, [x29, #-8]
+	stur	wzr, [x29, #-44]
+	bl	_PANumberPerformConstruct
+	sturb	w0, [x29, #-46]
+	ldurb	w8, [x29, #-46]
+	sturb	w8, [x29, #-45]
+	ldurb	w10, [x29, #-45]
+	mov	x9, sp
+                                        ; implicit-def: $x8
+	mov	x8, x10
+	str	x8, [x9]
+	adrp	x0, l_.str@PAGE
+	add	x0, x0, l_.str@PAGEOFF
+	bl	_printf
+	bl	_PAResourcePerformConstruct
+	sturb	w0, [x29, #-48]
+	ldurb	w8, [x29, #-48]
+	sturb	w8, [x29, #-47]
+	ldurb	w10, [x29, #-47]
+	mov	x9, sp
+                                        ; implicit-def: $x8
+	mov	x8, x10
+	str	x8, [x9]
+	adrp	x0, l_.str.1@PAGE
+	add	x0, x0, l_.str.1@PAGEOFF
+	bl	_printf
+	bl	_PATreePerformConstruct
+	sub	x8, x29, #24
+	stur	x0, [x29, #-24]
+	stur	x1, [x29, #-16]
+	ldur	x10, [x29, #-24]
+	add	x9, sp, #64
+	str	x10, [sp, #64]
+	ldur	x8, [x8, #7]
+	stur	x8, [x9, #7]
+	ldrb	w10, [sp, #64]
+	mov	x9, sp
+                                        ; implicit-def: $x8
+	mov	x8, x10
+	str	x8, [x9]
+	adrp	x0, l_.str.2@PAGE
+	add	x0, x0, l_.str.2@PAGEOFF
+	bl	_printf
+	bl	_PASeriesPerformConstruct
+	lsr	x8, x0, #32
+	mov	x9, x0
+	stur	w9, [sp, #59]
+                                        ; kill: def $w8 killed $w8 killed $x8
+	strb	w8, [sp, #63]
+	ldrb	w10, [sp, #59]
+	mov	x9, sp
+                                        ; implicit-def: $x8
+	mov	x8, x10
+	str	x8, [x9]
+	adrp	x0, l_.str.3@PAGE
+	add	x0, x0, l_.str.3@PAGEOFF
+	bl	_printf
+	bl	_PAStatusPerformConstruct
+	strb	w0, [sp, #57]
+	ldrb	w8, [sp, #57]
+	strb	w8, [sp, #58]
+	bl	_PAElementPerformConstruct
+	strh	w0, [sp, #52]
+	ldrh	w8, [sp, #52]
+	strh	w8, [sp, #54]
+	ldrb	w10, [sp, #54]
+	mov	x9, sp
+                                        ; implicit-def: $x8
+	mov	x8, x10
+	str	x8, [x9]
+	adrp	x0, l_.str.4@PAGE
+	add	x0, x0, l_.str.4@PAGEOFF
+	bl	_printf
+	ldrb	w10, [sp, #58]
+	mov	x9, sp
+                                        ; implicit-def: $x8
+	mov	x8, x10
+	str	x8, [x9]
+	adrp	x0, l_.str.5@PAGE
+	add	x0, x0, l_.str.5@PAGEOFF
+	bl	_printf
+	bl	_PATransposeTreePerformConstruct
+	sub	x9, x29, #40
+	stur	x0, [x29, #-40]
+	stur	x1, [x29, #-32]
+	ldur	x10, [x29, #-40]
+	add	x8, sp, #16
+	str	x10, [sp, #16]
+	ldur	x9, [x9, #7]
+	stur	x9, [x8, #7]
+	ldr	x10, [sp, #16]
+	add	x9, sp, #32
+	str	x10, [sp, #32]
+	ldur	x8, [x8, #7]
+	stur	x8, [x9, #7]
+	ldrb	w10, [sp, #32]
+	mov	x9, sp
+                                        ; implicit-def: $x8
+	mov	x8, x10
+	str	x8, [x9]
+	adrp	x0, l_.str.6@PAGE
+	add	x0, x0, l_.str.6@PAGEOFF
+	str	x0, [sp, #8]                    ; 8-byte Folded Spill
+	bl	_printf
+	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
+	ldrb	w10, [sp, #33]
+	mov	x9, sp
+                                        ; implicit-def: $x8
+	mov	x8, x10
+	str	x8, [x9]
+	bl	_printf
+	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
+	ldrb	w10, [sp, #34]
+	mov	x9, sp
+                                        ; implicit-def: $x8
+	mov	x8, x10
+	str	x8, [x9]
+	bl	_printf
+	ldur	x9, [x29, #-8]
+	adrp	x8, ___stack_chk_guard@GOTPAGE
+	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
+	ldr	x8, [x8]
+	subs	x8, x8, x9
+	b.eq	LBB0_2
+	b	LBB0_1
+LBB0_1:
+	bl	___stack_chk_fail
+LBB0_2:
+	mov	w0, #0                          ; =0x0
+	ldp	x29, x30, [sp, #128]            ; 16-byte Folded Reload
+	add	sp, sp, #144
 	ret
 	.cfi_endproc
-.LFE0:
-	.size	main, .-main
-	.ident	"GCC: (SUSE Linux) 15.2.1 20260202"
-	.section	.note.GNU-stack,"",@progbits
+                                        ; -- End function
+	.section	__TEXT,__cstring,cstring_literals
+l_.str:                                 ; @.str
+	.asciz	"testing PANumber %d\n()"
+
+l_.str.1:                               ; @.str.1
+	.asciz	"testing Resource %d\n"
+
+l_.str.2:                               ; @.str.2
+	.asciz	"testing tree %d\n"
+
+l_.str.3:                               ; @.str.3
+	.asciz	"testing series number:%d\n"
+
+l_.str.4:                               ; @.str.4
+	.asciz	"Element resource test%d\n"
+
+l_.str.5:                               ; @.str.5
+	.asciz	"pastatus perform construct %d\n"
+
+l_.str.6:                               ; @.str.6
+	.asciz	"tree n=%d\n"
+
+.subsections_via_symbols

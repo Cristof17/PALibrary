@@ -1,108 +1,94 @@
-	.file	"Number.c"
-	.text
-	.globl	PANumberPerformConstruct
-	.type	PANumberPerformConstruct, @function
-PANumberPerformConstruct:
-.LFB0:
+	.section	__TEXT,__text,regular,pure_instructions
+	.build_version macos, 15, 0	sdk_version 26, 2
+	.globl	_PANumberPerformConstruct       ; -- Begin function PANumberPerformConstruct
+	.p2align	2
+_PANumberPerformConstruct:              ; @PANumberPerformConstruct
 	.cfi_startproc
-	pushq	%rbp
+; %bb.0:
+	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	movb	$53, -1(%rbp)
-	movzbl	-1(%rbp), %eax
-	movb	%al, -2(%rbp)
-	movzbl	-2(%rbp), %eax
-	popq	%rbp
-	.cfi_def_cfa 7, 8
+	mov	w8, #53                         ; =0x35
+	strb	w8, [sp, #14]
+	ldrb	w8, [sp, #14]
+	strb	w8, [sp, #15]
+	ldrb	w0, [sp, #15]
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
-.LFE0:
-	.size	PANumberPerformConstruct, .-PANumberPerformConstruct
-	.globl	PANumberPerformInit
-	.type	PANumberPerformInit, @function
-PANumberPerformInit:
-.LFB1:
+                                        ; -- End function
+	.globl	_PANumberPerformInit            ; -- Begin function PANumberPerformInit
+	.p2align	2
+_PANumberPerformInit:                   ; @PANumberPerformInit
 	.cfi_startproc
-	pushq	%rbp
+; %bb.0:
+	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	movb	%dil, -17(%rbp)
-	movl	%esi, %eax
-	movb	%al, -20(%rbp)
-	movzbl	-20(%rbp), %eax
-	movb	%al, -1(%rbp)
-	movzbl	-1(%rbp), %eax
-	movb	%al, -17(%rbp)
-	movzbl	-17(%rbp), %eax
-	popq	%rbp
-	.cfi_def_cfa 7, 8
+	mov	x8, x0
+	strb	w8, [sp, #14]
+	strb	w1, [sp, #13]
+	ldrb	w8, [sp, #13]
+	strb	w8, [sp, #12]
+	ldrb	w8, [sp, #12]
+	strb	w8, [sp, #14]
+	ldrb	w8, [sp, #14]
+	strb	w8, [sp, #15]
+	ldrb	w0, [sp, #15]
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
-.LFE1:
-	.size	PANumberPerformInit, .-PANumberPerformInit
-	.globl	PANumberPerformDelete
-	.type	PANumberPerformDelete, @function
-PANumberPerformDelete:
-.LFB2:
+                                        ; -- End function
+	.globl	_PANumberPerformDelete          ; -- Begin function PANumberPerformDelete
+	.p2align	2
+_PANumberPerformDelete:                 ; @PANumberPerformDelete
 	.cfi_startproc
-	pushq	%rbp
+; %bb.0:
+	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	movb	%dil, -1(%rbp)
-	movb	$48, -1(%rbp)
-	movzbl	-1(%rbp), %eax
-	popq	%rbp
-	.cfi_def_cfa 7, 8
+	mov	x8, x0
+	strb	w8, [sp, #14]
+	mov	w8, #48                         ; =0x30
+	strb	w8, [sp, #14]
+	ldrb	w8, [sp, #14]
+	strb	w8, [sp, #15]
+	ldrb	w0, [sp, #15]
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
-.LFE2:
-	.size	PANumberPerformDelete, .-PANumberPerformDelete
-	.globl	PANumberPerformRuin
-	.type	PANumberPerformRuin, @function
-PANumberPerformRuin:
-.LFB3:
+                                        ; -- End function
+	.globl	_PANumberPerformRuin            ; -- Begin function PANumberPerformRuin
+	.p2align	2
+_PANumberPerformRuin:                   ; @PANumberPerformRuin
 	.cfi_startproc
-	pushq	%rbp
+; %bb.0:
+	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	movb	%dil, -1(%rbp)
-	movzbl	-1(%rbp), %eax
-	popq	%rbp
-	.cfi_def_cfa 7, 8
+	mov	x8, x0
+	strb	w8, [sp, #14]
+	ldrb	w8, [sp, #14]
+	strb	w8, [sp, #15]
+	ldrb	w0, [sp, #15]
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
-.LFE3:
-	.size	PANumberPerformRuin, .-PANumberPerformRuin
-	.globl	PANumberPerformCopy
-	.type	PANumberPerformCopy, @function
-PANumberPerformCopy:
-.LFB4:
+                                        ; -- End function
+	.globl	_PANumberPerformCopy            ; -- Begin function PANumberPerformCopy
+	.p2align	2
+_PANumberPerformCopy:                   ; @PANumberPerformCopy
 	.cfi_startproc
-	pushq	%rbp
+; %bb.0:
+	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	movb	%dil, -17(%rbp)
-	movb	%sil, -18(%rbp)
-	movzbl	-17(%rbp), %eax
-	movb	%al, -1(%rbp)
-	movzbl	-1(%rbp), %eax
-	movb	%al, -18(%rbp)
-	movzbl	-1(%rbp), %eax
-	popq	%rbp
-	.cfi_def_cfa 7, 8
+	mov	x8, x0
+	strb	w8, [sp, #14]
+	mov	x8, x1
+	strb	w8, [sp, #13]
+	ldrb	w8, [sp, #14]
+	strb	w8, [sp, #15]
+	ldrb	w8, [sp, #15]
+	strb	w8, [sp, #13]
+	ldrb	w0, [sp, #15]
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
-.LFE4:
-	.size	PANumberPerformCopy, .-PANumberPerformCopy
-	.ident	"GCC: (SUSE Linux) 15.2.1 20260202"
-	.section	.note.GNU-stack,"",@progbits
+                                        ; -- End function
+.subsections_via_symbols

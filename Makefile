@@ -13,8 +13,8 @@
 # prefix=/usr/local/
 prefix=.
 exec_prefix=$(prefix)
-bindir=$(prefix)/bin/
-sbindir=$(exec_prefix)/sbin/
+bindir=$(prefix)/bin
+sbindir=$(exec_prefix)/sbin
 libexdir=$(exec_prefix)/libexec
 datarootdir=$(prefix)/share
 datadir=$(datarootdir)
@@ -45,7 +45,7 @@ srcdir=
 #musl=@musl@
 #crt=@crt@
 #output=@output@
-output=$(bindir)/libpa.a
+output=libpa.a
 # preprocess: $(sources)
 preprocess: preprocess_pa 
 #preprocess_bfs preprocess_arraylist
@@ -113,7 +113,7 @@ assemble: assemble_pa
 	@echo "Building"
 link: link_pa link_bfs link_arraylist
 
-all: preprocess assemble compile
+all: preprocess assemble compile test
 #	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
 #	$(LD) $(foreach object,$^,$(libdir)/$(object)) $(prefix)/musl-$(musl)/obj/crt/$(crt) -lc -static -o $(libdir)/$(output) 
 #pa arraylist bfs
@@ -180,7 +180,7 @@ shar:
 dist:
 	tar cvf $(libdir)/libpa.a
 check:
-test: $(test_pa)
+test: 
 ifeq ($(host-type), arm64)
 	file $(bindir)/libpa.a
 endif

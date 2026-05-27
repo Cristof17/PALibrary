@@ -1,22 +1,15 @@
-	.file	"Output.c"
-	.text
-	.globl	OutputPerformPrint
-	.type	OutputPerformPrint, @function
-OutputPerformPrint:
-.LFB0:
+	.section	__TEXT,__text,regular,pure_instructions
+	.build_version macos, 15, 0	sdk_version 26, 2
+	.globl	_OutputPerformPrint             ; -- Begin function OutputPerformPrint
+	.p2align	2
+_OutputPerformPrint:                    ; @OutputPerformPrint
 	.cfi_startproc
-	pushq	%rbp
+; %bb.0:
+	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	movl	%edi, -4(%rbp)
-	nop
-	popq	%rbp
-	.cfi_def_cfa 7, 8
+	str	w0, [sp, #12]
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
-.LFE0:
-	.size	OutputPerformPrint, .-OutputPerformPrint
-	.ident	"GCC: (SUSE Linux) 15.2.1 20260202"
-	.section	.note.GNU-stack,"",@progbits
+                                        ; -- End function
+.subsections_via_symbols
