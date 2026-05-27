@@ -28,3 +28,7 @@ DllExport struct Input InputPerformDelete(struct Input PA)
 {
     return PA;
 }
+DllExport struct Input InputPerformRuin(struct Input PA)
+{
+    return PA;
+}
