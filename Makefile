@@ -181,6 +181,7 @@ installcheck:
 #	ls $(libdir) | grep $(objects)/PA
 print:
 	git status
+	ar -T -t $(libdir)/libpa.a
 tar:
 	tar cvf palibrary.tar $(srcdir)/PA/
 shar:
