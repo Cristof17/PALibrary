@@ -65,8 +65,12 @@ int main()
 	// printf("number1 = %d, number2 = %d\n",number1.val,number2.val);
 	struct PASeries copyTest1;
 	struct PASeries copyTest2;
+
+	copyTest1 = PASeriesPerformConstruct();
+	copyTest2 = PASeriesPerformConstruct();
 	copyTest1.m.number.val = 20;
-	copyTest1.adj[0].index.Resource.value.val = 20;
+	copyTest1.adj[1].index.Resource.value.val = 20;
+	copyTest2 = PASeriesPerformCopy(copyTest1,copyTest2);
 	// copyTest1.adj[0].index.Resource.value.val = 40;
 	// PASeriesPerformCons
 	struct PAData data1;
@@ -79,6 +83,7 @@ int main()
 	// printf("copy series test %d\n", s)
 	// printf("copy test for series %d copy is %d\n",copyTest1.adj[0].index.Resource.value.val,copyTest2.adj[0].index.Resource.value.val);
 	printf("copy test for series %d copy is %d\n",copyTest1.adj[0].index.Resource.value.val, copyTest2.adj[0].index.Resource.value.val);
+
 	struct PACount count1;
 	count1.number.val = 20;
 	struct PACount count2;
