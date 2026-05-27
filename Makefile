@@ -185,18 +185,21 @@ ifeq ($(host-type), arm64)
 	file $(bindir)/libpa.a
 endif
 
-test_pa_arm64:
+test_pa_arm64: build libpa.a
 #	-$(CPP) -I$(includedir)/ $(CPPFLAGS) test/test.c > test/test.i
 #	-$(CC) -S test.i -o test.s
 #	-$(AS) test.s -o test.o
-	-$(CC) $(libdir)/test.o $(libdir)/libpa.a -o $(bindir)/test
+	-$(CC) obj/test.o obj/libpa.a -o bin/test
 #obj/PA/.o \
 
 objects_arraylist= ArrayList/ArrayList.o \
 	ArrayList/ArrayListPosition.o
+
 objects_bfs= BFS/Procedure.o \
 	BFS/Record.o
+
 # objects_arraylist= obj/Input.o
+#
 objects_pa= Input.o \
 	Algorithm.o \
 	Output.o \
@@ -452,7 +455,7 @@ build: $(subdirs)
 #
 libpa.a: $(objects_pa)
 	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
-	$(AR) r $(libdir)/$(output) $(foreach object,$^,$(libdir)/$(object))  
+	$(AR) -v -s -m -a Input.o $(libdir)/$(output) $(foreach object,$^,$(libdir)/$(object))  
 
 #libpa.a: $(objects_pa)
 #	$(LD) $(foreach object,$^,$(libdir)/$(object)) /lib/crt0.o -static -o $(libdir)/$@
@@ -461,7 +464,7 @@ libpa.a: $(objects_pa)
 # 	$(LD) $(objects) -o filiename.library
 # link_macos: $(objects)
 # link_linux: $(objects)
-#build: preprocess assemble compile
+build: preprocess assemble compile
 #SUBDIRS= src src/Iterator src/Builder src/Adapter src/Arraylist
 #bar := $(foo:.c=.o)
 #bindir=bin
