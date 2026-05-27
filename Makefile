@@ -185,7 +185,7 @@ tar:
 	tar cvf palibrary.tar $(srcdir)/PA/
 shar:
 dist:
-	tar cvf $(libdir)/libpa.a
+	tar cvf libpa.tar.gz $(libdir)/libpa.a
 check:
 test:
 ifeq ($(host-type), arm64)
