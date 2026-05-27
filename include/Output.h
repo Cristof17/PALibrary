@@ -8,7 +8,7 @@
 // struct Output;
 // typedef struct Output Output;
 DllExport struct Output OutputPerformConstruct();
-DllExport struct Output OutputPerformInit(struct Output, struct BFSOutput);
+DllExport struct Output OutputPerformInit(struct Output, struct PAOutput);
 DllExport struct Output OutputPerformCopy(struct Output, struct Output);
 DllExport struct Output OutputPerformRuin(struct Output);
 //struct Output dispose();
