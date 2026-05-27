@@ -193,8 +193,8 @@ ifeq ($(host-type), arm64)
 	file $(bindir)/libpa.a
 endif
 
-test_pa_arm64: $(objects) test.o libpa.a
-	$(CC) $(libdir)/test.o $(foreach object,$(objects_pa),$(libdir)/$(object)) -o $(bindir)/$(program_test_pa)
+test_pa_arm64: 
+	./$(bindir)/$(program_test_pa)
 #ifeq ($(host-type),arm64)
 ##	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 #endif
@@ -711,8 +711,9 @@ ifeq ($(host-type),AArch64)
 	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 
-test.out: test.o libpa.a
-	$(CC) -lc $(foreach dependency,$^,$(libdir)/$(dependency)) -o $(bindir)/$@
+test.out: $(objects) test.o test.out libpa.a
+	$(CC) $(libdir)/test.o $(foreach object,$(objects_pa),$(libdir)/$(object)) -o $(bindir)/$(program_test_pa)
+#$(CC) -lc $(foreach dependency,$^,$(libdir)/$(dependency)) -o $(bindir)/$@
 
 ASFLAGS=
 ifeq ($(host-type),arm64)
