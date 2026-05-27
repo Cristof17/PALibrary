@@ -1,20 +1,21 @@
-# 0 "/home/cristof/PALibrary/src/PA/NormalTree.c"
-# 0 "<built-in>"
-# 0 "<command-line>"
-# 1 "/usr/include/stdc-predef.h" 1 3 4
-# 0 "<command-line>" 2
-# 1 "/home/cristof/PALibrary/src/PA/NormalTree.c"
+# 1 "src/PA/NormalTree.c"
+# 1 "<built-in>" 1
+# 1 "<built-in>" 3
+# 466 "<built-in>" 3
+# 1 "<command line>" 1
+# 1 "<built-in>" 2
+# 1 "src/PA/NormalTree.c" 2
 
 
-# 1 "/home/cristof/PALibrary/include/types.h" 1
+# 1 "./include/types.h" 1
 
 
 
 
 
-# 1 "/home/cristof/PALibrary/include/defs.h" 1
-# 7 "/home/cristof/PALibrary/include/types.h" 2
-# 18 "/home/cristof/PALibrary/include/types.h"
+# 1 "./include/defs.h" 1
+# 7 "./include/types.h" 2
+# 18 "./include/types.h"
 struct PANumber;
 typedef int PAInt;
 
@@ -23,7 +24,7 @@ typedef int PABool;
 typedef int PAResult;
 typedef int ArrayListSize;
 typedef int ArrayListObject;
-# 35 "/home/cristof/PALibrary/include/types.h"
+# 35 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -72,7 +73,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 93 "/home/cristof/PALibrary/include/types.h"
+# 93 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -118,7 +119,7 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 159 "/home/cristof/PALibrary/include/types.h"
+# 159 "./include/types.h"
 struct ArrayListPosition {
  int position;
 };
@@ -206,7 +207,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 254 "/home/cristof/PALibrary/include/types.h"
+# 254 "./include/types.h"
 struct PAInput {
  struct PACount n;
  struct PACount m;
@@ -246,7 +247,7 @@ struct BFSInput {
 struct BFSOutput {
  struct BFSRecord result;
 };
-# 301 "/home/cristof/PALibrary/include/types.h"
+# 301 "./include/types.h"
 struct PALink {
  struct PAPair p;
 
@@ -362,53 +363,53 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 4 "/home/cristof/PALibrary/src/PA/NormalTree.c" 2
+# 4 "src/PA/NormalTree.c" 2
 
-# 1 "/home/cristof/PALibrary/include/PA/NormalTree.h" 1
-
-
+# 1 "./include/PA/NormalTree.h" 1
 
 
 
 
 
- struct PANormalTree PANormalTreePerformConstruct();
- struct PANormalTree PANormalTreePerformInit(struct PANormalTree, struct PATree);
- struct PANormalTree PANormalTreePerformCopy(struct PANormalTree);
- struct PANormalTree PANormalTreePerformRuin(struct PANormalTree);
- struct PANormalTree PANormalTreePerformDelete(struct PANormalTree);
-
- struct PANormalTree PAGrafNormalBuildPart();
-
- PAResult PAGrafNormalGetResult();
-# 6 "/home/cristof/PALibrary/src/PA/NormalTree.c" 2
-# 1 "/home/cristof/PALibrary/include/PA/Tree.h" 1
-# 12 "/home/cristof/PALibrary/include/PA/Tree.h"
- struct PATree PATreePerformConstruct();
- struct PATree PATreePerformCopy(struct PATree from, struct PATree to);
-
- struct PATree PATreePerformInit(struct PATree, struct PACount, struct PACount, struct PAList, struct PAElement);
 
 
+          struct PANormalTree PANormalTreePerformConstruct();
+          struct PANormalTree PANormalTreePerformInit(struct PANormalTree, struct PATree);
+          struct PANormalTree PANormalTreePerformCopy(struct PANormalTree);
+          struct PANormalTree PANormalTreePerformRuin(struct PANormalTree);
+          struct PANormalTree PANormalTreePerformDelete(struct PANormalTree);
 
+          struct PANormalTree PAGrafNormalBuildPart();
 
+          PAResult PAGrafNormalGetResult();
+# 6 "src/PA/NormalTree.c" 2
+# 1 "./include/PA/Tree.h" 1
+# 12 "./include/PA/Tree.h"
+          struct PATree PATreePerformConstruct();
+          struct PATree PATreePerformCopy(struct PATree from, struct PATree to);
 
- struct PATree PATreePerformRuin(struct PATree);
- struct PATree PATreePerformDelete(struct PATree);
-# 7 "/home/cristof/PALibrary/src/PA/NormalTree.c" 2
+          struct PATree PATreePerformInit(struct PATree, struct PACount, struct PACount, struct PAList, struct PAElement);
 
 
 
 
 
- struct PANormalTree PANormalTreePerformConstruct()
+          struct PATree PATreePerformRuin(struct PATree);
+          struct PATree PATreePerformDelete(struct PATree);
+# 7 "src/PA/NormalTree.c" 2
+
+
+
+
+
+          struct PANormalTree PANormalTreePerformConstruct()
 {
     struct PANormalTree normalTree;
 
     normalTree.tree = PATreePerformConstruct();
     return normalTree;
 }
- struct PANormalTree PANormalTreePerformInit(struct PANormalTree NormalTree, struct PATree Value)
+          struct PANormalTree PANormalTreePerformInit(struct PANormalTree NormalTree, struct PATree Value)
 {
     struct PANormalTree normalTree;
     normalTree.tree = PATreePerformConstruct();
@@ -418,19 +419,19 @@ struct Facade {
 
     return NormalTree;
 }
-# 38 "/home/cristof/PALibrary/src/PA/NormalTree.c"
- struct PANormalTree PANormalTreePerformRuin(struct PANormalTree PA)
+# 38 "src/PA/NormalTree.c"
+          struct PANormalTree PANormalTreePerformRuin(struct PANormalTree PA)
 {
     struct PANormalTree Empty;
     PA.tree = PATreePerformRuin(PA.tree);
     return PA;
 }
- struct PANormalTree PANormalTreePerformDelete(struct PANormalTree PA)
+          struct PANormalTree PANormalTreePerformDelete(struct PANormalTree PA)
 {
     PA.tree = PATreePerformDelete(PA.tree);
     return PA;
 }
- struct PANormalTree PAGrafNormalBuildPart()
+          struct PANormalTree PAGrafNormalBuildPart()
 {
     struct PANormalTree tree;
     return tree;

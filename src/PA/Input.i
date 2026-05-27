@@ -1,21 +1,22 @@
-# 0 "/home/cristof/PALibrary/src/PA/Input.c"
-# 0 "<built-in>"
-# 0 "<command-line>"
-# 1 "/usr/include/stdc-predef.h" 1 3 4
-# 0 "<command-line>" 2
-# 1 "/home/cristof/PALibrary/src/PA/Input.c"
+# 1 "src/PA/Input.c"
+# 1 "<built-in>" 1
+# 1 "<built-in>" 3
+# 466 "<built-in>" 3
+# 1 "<command line>" 1
+# 1 "<built-in>" 2
+# 1 "src/PA/Input.c" 2
 
 
 
-# 1 "/home/cristof/PALibrary/include/types.h" 1
+# 1 "./include/types.h" 1
 
 
 
 
 
-# 1 "/home/cristof/PALibrary/include/defs.h" 1
-# 7 "/home/cristof/PALibrary/include/types.h" 2
-# 18 "/home/cristof/PALibrary/include/types.h"
+# 1 "./include/defs.h" 1
+# 7 "./include/types.h" 2
+# 18 "./include/types.h"
 struct PANumber;
 typedef int PAInt;
 
@@ -24,7 +25,7 @@ typedef int PABool;
 typedef int PAResult;
 typedef int ArrayListSize;
 typedef int ArrayListObject;
-# 35 "/home/cristof/PALibrary/include/types.h"
+# 35 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -73,7 +74,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 93 "/home/cristof/PALibrary/include/types.h"
+# 93 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -119,7 +120,7 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 159 "/home/cristof/PALibrary/include/types.h"
+# 159 "./include/types.h"
 struct ArrayListPosition {
  int position;
 };
@@ -207,7 +208,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 254 "/home/cristof/PALibrary/include/types.h"
+# 254 "./include/types.h"
 struct PAInput {
  struct PACount n;
  struct PACount m;
@@ -247,7 +248,7 @@ struct BFSInput {
 struct BFSOutput {
  struct BFSRecord result;
 };
-# 301 "/home/cristof/PALibrary/include/types.h"
+# 301 "./include/types.h"
 struct PALink {
  struct PAPair p;
 
@@ -363,57 +364,57 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 5 "/home/cristof/PALibrary/src/PA/Input.c" 2
+# 5 "src/PA/Input.c" 2
 
 
 
-# 1 "/home/cristof/PALibrary/include/PA/Input.h" 1
-# 10 "/home/cristof/PALibrary/include/PA/Input.h"
- struct PAInput PAInputPerformConstruct();
+# 1 "./include/PA/Input.h" 1
+# 10 "./include/PA/Input.h"
+          struct PAInput PAInputPerformConstruct();
 
- struct PAInput PAInputPerformInit(struct PAInput PAInput, struct PACount, struct PACount, struct PAElement);
-
-
-
- struct PAInput PAInputPerformRuin(struct PAInput);
- struct PAInput PAInputPerformDelete(struct PAInput i);
-# 9 "/home/cristof/PALibrary/src/PA/Input.c" 2
-# 1 "/home/cristof/PALibrary/include/PA/Count.h" 1
-# 13 "/home/cristof/PALibrary/include/PA/Count.h"
- struct PACount PACountPerformConstruct();
- struct PACount PACountPerformInit(struct PACount Count, struct PANumber Number);
- struct PACount PACountPerformCopy(struct PACount from, struct PACount to);
+          struct PAInput PAInputPerformInit(struct PAInput PAInput, struct PACount, struct PACount, struct PAElement);
 
 
 
- struct PACount PACountPerformRuin(struct PACount);
-
-
- struct PACount PACountPerformDelete(struct PACount PA);
-# 10 "/home/cristof/PALibrary/src/PA/Input.c" 2
-# 1 "/home/cristof/PALibrary/include/PA/Element.h" 1
-# 10 "/home/cristof/PALibrary/include/PA/Element.h"
- void PAElementVisit(struct PAElement);
- PABool PAElementIsVisited(struct PAElement);
- void PAElementReset(struct PAElement);
- struct PAElement PAElementPerformConstruct();
-
- struct PAElement PAElementPerformInit(struct PAElement,struct PAData,struct PAStatus);
+          struct PAInput PAInputPerformRuin(struct PAInput);
+          struct PAInput PAInputPerformDelete(struct PAInput i);
+# 9 "src/PA/Input.c" 2
+# 1 "./include/PA/Count.h" 1
+# 13 "./include/PA/Count.h"
+          struct PACount PACountPerformConstruct();
+          struct PACount PACountPerformInit(struct PACount Count, struct PANumber Number);
+          struct PACount PACountPerformCopy(struct PACount from, struct PACount to);
 
 
 
+          struct PACount PACountPerformRuin(struct PACount);
 
- struct PAElement PAElementPerformRuin(struct PAElement);
- struct PAElement PAElementPerformDelete(struct PAElement);
- struct PAElement PAElementPerformCopy(struct PAElement, struct PAElement);
-# 11 "/home/cristof/PALibrary/src/PA/Input.c" 2
+
+          struct PACount PACountPerformDelete(struct PACount PA);
+# 10 "src/PA/Input.c" 2
+# 1 "./include/PA/Element.h" 1
+# 10 "./include/PA/Element.h"
+          void PAElementVisit(struct PAElement);
+          PABool PAElementIsVisited(struct PAElement);
+          void PAElementReset(struct PAElement);
+          struct PAElement PAElementPerformConstruct();
+
+          struct PAElement PAElementPerformInit(struct PAElement,struct PAData,struct PAStatus);
 
 
 
 
+          struct PAElement PAElementPerformRuin(struct PAElement);
+          struct PAElement PAElementPerformDelete(struct PAElement);
+          struct PAElement PAElementPerformCopy(struct PAElement, struct PAElement);
+# 11 "src/PA/Input.c" 2
 
 
- struct PAInput PAInputPerformConstruct()
+
+
+
+
+          struct PAInput PAInputPerformConstruct()
 {
  struct PAInput input;
  input.n = PACountPerformConstruct();
@@ -424,18 +425,18 @@ struct Facade {
 
 
 }
-# 39 "/home/cristof/PALibrary/src/PA/Input.c"
- struct PAInput PAInputPerformInit(struct PAInput Input, struct PACount Value, struct PACount Value2, struct PAElement Value3)
+# 39 "src/PA/Input.c"
+          struct PAInput PAInputPerformInit(struct PAInput Input, struct PACount Value, struct PACount Value2, struct PAElement Value3)
 {
  struct PAInput temp;
  temp.n = PACountPerformConstruct();
  temp.m = PACountPerformConstruct();
  temp.source = PAElementPerformConstruct();
  Input = temp;
-# 61 "/home/cristof/PALibrary/src/PA/Input.c"
+# 61 "src/PA/Input.c"
  return Input;
 }
- struct PAInput PAInputPerformRuin(struct PAInput PA) {
+          struct PAInput PAInputPerformRuin(struct PAInput PA) {
 
 
  PA.n = PACountPerformRuin(PA.n);
@@ -445,7 +446,7 @@ struct Facade {
 
 
 }
- struct PAInput PAInputPerformDelete(struct PAInput Input)
+          struct PAInput PAInputPerformDelete(struct PAInput Input)
 {
  return Input;
 

@@ -1,15 +1,16 @@
-# 0 "/home/cristof/PALibrary/src/PA/Series.c"
-# 0 "<built-in>"
-# 0 "<command-line>"
-# 1 "/usr/include/stdc-predef.h" 1 3 4
-# 0 "<command-line>" 2
-# 1 "/home/cristof/PALibrary/src/PA/Series.c"
+# 1 "src/PA/Series.c"
+# 1 "<built-in>" 1
+# 1 "<built-in>" 3
+# 466 "<built-in>" 3
+# 1 "<command line>" 1
+# 1 "<built-in>" 2
+# 1 "src/PA/Series.c" 2
 
 
-# 1 "/home/cristof/PALibrary/include/defs.h" 1
-# 4 "/home/cristof/PALibrary/src/PA/Series.c" 2
-# 1 "/home/cristof/PALibrary/include/types.h" 1
-# 18 "/home/cristof/PALibrary/include/types.h"
+# 1 "./include/defs.h" 1
+# 4 "src/PA/Series.c" 2
+# 1 "./include/types.h" 1
+# 18 "./include/types.h"
 struct PANumber;
 typedef int PAInt;
 
@@ -18,7 +19,7 @@ typedef int PABool;
 typedef int PAResult;
 typedef int ArrayListSize;
 typedef int ArrayListObject;
-# 35 "/home/cristof/PALibrary/include/types.h"
+# 35 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -67,7 +68,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 93 "/home/cristof/PALibrary/include/types.h"
+# 93 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -113,7 +114,7 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 159 "/home/cristof/PALibrary/include/types.h"
+# 159 "./include/types.h"
 struct ArrayListPosition {
  int position;
 };
@@ -201,7 +202,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 254 "/home/cristof/PALibrary/include/types.h"
+# 254 "./include/types.h"
 struct PAInput {
  struct PACount n;
  struct PACount m;
@@ -241,7 +242,7 @@ struct BFSInput {
 struct BFSOutput {
  struct BFSRecord result;
 };
-# 301 "/home/cristof/PALibrary/include/types.h"
+# 301 "./include/types.h"
 struct PALink {
  struct PAPair p;
 
@@ -357,51 +358,51 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 5 "/home/cristof/PALibrary/src/PA/Series.c" 2
+# 5 "src/PA/Series.c" 2
 
 
-# 1 "/home/cristof/PALibrary/include/PA/Series.h" 1
-# 17 "/home/cristof/PALibrary/include/PA/Series.h"
- struct PASeries PASeriesPerformConstruct();
- struct PASeries PASeriesPerformInit(struct PASeries, struct PACount, struct PAElement[]);
- struct PASeries PASeriesPerformDelete(struct PASeries);
- struct PASeries PASeriesPerformCopy(struct PASeries, struct PASeries);
+# 1 "./include/PA/Series.h" 1
+# 17 "./include/PA/Series.h"
+          struct PASeries PASeriesPerformConstruct();
+          struct PASeries PASeriesPerformInit(struct PASeries, struct PACount, struct PAElement[]);
+          struct PASeries PASeriesPerformDelete(struct PASeries);
+          struct PASeries PASeriesPerformCopy(struct PASeries, struct PASeries);
 
- struct PASeries PASeriesPerformRuin(struct PASeries);
- struct PAResource PASeriesGet(struct PAData Data);
- void PASeriesPerformPrint(struct PASeries Series);
-# 8 "/home/cristof/PALibrary/src/PA/Series.c" 2
-# 1 "/home/cristof/PALibrary/include/PA/Count.h" 1
-# 13 "/home/cristof/PALibrary/include/PA/Count.h"
- struct PACount PACountPerformConstruct();
- struct PACount PACountPerformInit(struct PACount Count, struct PANumber Number);
- struct PACount PACountPerformCopy(struct PACount from, struct PACount to);
-
-
-
- struct PACount PACountPerformRuin(struct PACount);
-
-
- struct PACount PACountPerformDelete(struct PACount PA);
-# 9 "/home/cristof/PALibrary/src/PA/Series.c" 2
-# 1 "/home/cristof/PALibrary/include/PA/Element.h" 1
-# 10 "/home/cristof/PALibrary/include/PA/Element.h"
- void PAElementVisit(struct PAElement);
- PABool PAElementIsVisited(struct PAElement);
- void PAElementReset(struct PAElement);
- struct PAElement PAElementPerformConstruct();
-
- struct PAElement PAElementPerformInit(struct PAElement,struct PAData,struct PAStatus);
+          struct PASeries PASeriesPerformRuin(struct PASeries);
+          struct PAResource PASeriesGet(struct PAData Data);
+          void PASeriesPerformPrint(struct PASeries Series);
+# 8 "src/PA/Series.c" 2
+# 1 "./include/PA/Count.h" 1
+# 13 "./include/PA/Count.h"
+          struct PACount PACountPerformConstruct();
+          struct PACount PACountPerformInit(struct PACount Count, struct PANumber Number);
+          struct PACount PACountPerformCopy(struct PACount from, struct PACount to);
 
 
 
+          struct PACount PACountPerformRuin(struct PACount);
 
- struct PAElement PAElementPerformRuin(struct PAElement);
- struct PAElement PAElementPerformDelete(struct PAElement);
- struct PAElement PAElementPerformCopy(struct PAElement, struct PAElement);
-# 10 "/home/cristof/PALibrary/src/PA/Series.c" 2
-# 21 "/home/cristof/PALibrary/src/PA/Series.c"
- struct PASeries PASeriesPerformConstruct() {
+
+          struct PACount PACountPerformDelete(struct PACount PA);
+# 9 "src/PA/Series.c" 2
+# 1 "./include/PA/Element.h" 1
+# 10 "./include/PA/Element.h"
+          void PAElementVisit(struct PAElement);
+          PABool PAElementIsVisited(struct PAElement);
+          void PAElementReset(struct PAElement);
+          struct PAElement PAElementPerformConstruct();
+
+          struct PAElement PAElementPerformInit(struct PAElement,struct PAData,struct PAStatus);
+
+
+
+
+          struct PAElement PAElementPerformRuin(struct PAElement);
+          struct PAElement PAElementPerformDelete(struct PAElement);
+          struct PAElement PAElementPerformCopy(struct PAElement, struct PAElement);
+# 10 "src/PA/Series.c" 2
+# 21 "src/PA/Series.c"
+          struct PASeries PASeriesPerformConstruct() {
 
     struct PASeries series;
     series.m = PACountPerformConstruct();
@@ -414,10 +415,10 @@ struct Facade {
         series.adj[x.val] = PAElementPerformInit(series.adj[x.val], series.adj[x.val].index, series.adj[x.val].status);
         x.val++;
     }
-# 46 "/home/cristof/PALibrary/src/PA/Series.c"
+# 46 "src/PA/Series.c"
     return series;
 }
- struct PASeries PASeriesPerformCopy(struct PASeries from, struct PASeries to)
+          struct PASeries PASeriesPerformCopy(struct PASeries from, struct PASeries to)
 {
     struct PANumber x;
     struct PANumber y;
@@ -438,11 +439,11 @@ struct Facade {
     }
     return temp;
 }
-# 83 "/home/cristof/PALibrary/src/PA/Series.c"
- struct PASeries PASeriesPerformInit(struct PASeries Series,
+# 83 "src/PA/Series.c"
+          struct PASeries PASeriesPerformInit(struct PASeries Series,
     struct PACount Value, struct PAElement Value2[])
     {
-# 97 "/home/cristof/PALibrary/src/PA/Series.c"
+# 97 "src/PA/Series.c"
         struct PASeries series;
         series.m = Value;
         struct PANumber x;
@@ -457,7 +458,7 @@ struct Facade {
 
         return series;
     }
-    struct PASeries PASeriesPerformDelete(struct PASeries PA)
+              struct PASeries PASeriesPerformDelete(struct PASeries PA)
     {
         struct PANumber x;
         struct PANumber y;
@@ -472,8 +473,8 @@ struct Facade {
         return PA;
 
     }
-# 135 "/home/cristof/PALibrary/src/PA/Series.c"
-    struct PASeries PASeriesPerformRuin(struct PASeries PA)
+# 135 "src/PA/Series.c"
+              struct PASeries PASeriesPerformRuin(struct PASeries PA)
     {
         struct PACount x;
         struct PACount y;
@@ -484,17 +485,16 @@ struct Facade {
             PA.adj[y.number.val] = PAElementPerformRuin(PA.adj[y.number.val]);
             y.number.val++;
         }
-# 154 "/home/cristof/PALibrary/src/PA/Series.c"
+# 154 "src/PA/Series.c"
         return PA;
     }
-# 189 "/home/cristof/PALibrary/src/PA/Series.c"
-
+# 190 "src/PA/Series.c"
 struct PAResource PASeriesGet(struct PAData Data)
 {
     struct PAResource resource;
     return resource;
 }
-# 211 "/home/cristof/PALibrary/src/PA/Series.c"
+# 211 "src/PA/Series.c"
 void PASeriesPerformPrint(struct PASeries Series)
 {
 

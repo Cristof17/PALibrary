@@ -1,22 +1,23 @@
-# 0 "/home/cristof/PALibrary/src/PA/Number.c"
-# 0 "<built-in>"
-# 0 "<command-line>"
-# 1 "/usr/include/stdc-predef.h" 1 3 4
-# 0 "<command-line>" 2
-# 1 "/home/cristof/PALibrary/src/PA/Number.c"
+# 1 "src/PA/Number.c"
+# 1 "<built-in>" 1
+# 1 "<built-in>" 3
+# 466 "<built-in>" 3
+# 1 "<command line>" 1
+# 1 "<built-in>" 2
+# 1 "src/PA/Number.c" 2
 
-# 1 "/home/cristof/PALibrary/include/PA/Number.h" 1
-
-
-# 1 "/home/cristof/PALibrary/include/types.h" 1
+# 1 "./include/PA/Number.h" 1
 
 
+# 1 "./include/types.h" 1
 
 
 
-# 1 "/home/cristof/PALibrary/include/defs.h" 1
-# 7 "/home/cristof/PALibrary/include/types.h" 2
-# 18 "/home/cristof/PALibrary/include/types.h"
+
+
+# 1 "./include/defs.h" 1
+# 7 "./include/types.h" 2
+# 18 "./include/types.h"
 struct PANumber;
 typedef int PAInt;
 
@@ -25,7 +26,7 @@ typedef int PABool;
 typedef int PAResult;
 typedef int ArrayListSize;
 typedef int ArrayListObject;
-# 35 "/home/cristof/PALibrary/include/types.h"
+# 35 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -74,7 +75,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 93 "/home/cristof/PALibrary/include/types.h"
+# 93 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -120,7 +121,7 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 159 "/home/cristof/PALibrary/include/types.h"
+# 159 "./include/types.h"
 struct ArrayListPosition {
  int position;
 };
@@ -208,7 +209,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 254 "/home/cristof/PALibrary/include/types.h"
+# 254 "./include/types.h"
 struct PAInput {
  struct PACount n;
  struct PACount m;
@@ -248,7 +249,7 @@ struct BFSInput {
 struct BFSOutput {
  struct BFSRecord result;
 };
-# 301 "/home/cristof/PALibrary/include/types.h"
+# 301 "./include/types.h"
 struct PALink {
  struct PAPair p;
 
@@ -364,18 +365,18 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 4 "/home/cristof/PALibrary/include/PA/Number.h" 2
+# 4 "./include/PA/Number.h" 2
 
- struct PANumber PANumberPerformConstruct();
- struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char Value);
- struct PANumber PANumberPerformDelete(struct PANumber);
- struct PANumber PANumberPerformRuin(struct PANumber);
- struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to);
-# 3 "/home/cristof/PALibrary/src/PA/Number.c" 2
+          struct PANumber PANumberPerformConstruct();
+          struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char Value);
+          struct PANumber PANumberPerformDelete(struct PANumber);
+          struct PANumber PANumberPerformRuin(struct PANumber);
+          struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to);
+# 3 "src/PA/Number.c" 2
 
 
 
- struct PANumber PANumberPerformConstruct()
+          struct PANumber PANumberPerformConstruct()
 {
     struct PANumber number;
     unsigned char val;
@@ -386,7 +387,7 @@ struct Facade {
 
     return number;
 }
- struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char Value)
+          struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char Value)
 {
     struct PANumber temp;
     temp.val = Value;
@@ -396,13 +397,13 @@ struct Facade {
 
     return Number;
 }
- struct PANumber PANumberPerformDelete(struct PANumber PA)
+          struct PANumber PANumberPerformDelete(struct PANumber PA)
 {
     PA.val = '0';
 
     return PA;
 }
- struct PANumber PANumberPerformRuin(struct PANumber PA)
+          struct PANumber PANumberPerformRuin(struct PANumber PA)
 {
 
     return PA;
@@ -410,7 +411,7 @@ struct Facade {
 
 
 }
- struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to)
+          struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to)
 {
     struct PANumber temp;
     temp.val = from.val;

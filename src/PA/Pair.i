@@ -1,21 +1,22 @@
-# 0 "/home/cristof/PALibrary/src/PA/Pair.c"
-# 0 "<built-in>"
-# 0 "<command-line>"
-# 1 "/usr/include/stdc-predef.h" 1 3 4
-# 0 "<command-line>" 2
-# 1 "/home/cristof/PALibrary/src/PA/Pair.c"
+# 1 "src/PA/Pair.c"
+# 1 "<built-in>" 1
+# 1 "<built-in>" 3
+# 466 "<built-in>" 3
+# 1 "<command line>" 1
+# 1 "<built-in>" 2
+# 1 "src/PA/Pair.c" 2
 
 
 
-# 1 "/home/cristof/PALibrary/include/types.h" 1
+# 1 "./include/types.h" 1
 
 
 
 
 
-# 1 "/home/cristof/PALibrary/include/defs.h" 1
-# 7 "/home/cristof/PALibrary/include/types.h" 2
-# 18 "/home/cristof/PALibrary/include/types.h"
+# 1 "./include/defs.h" 1
+# 7 "./include/types.h" 2
+# 18 "./include/types.h"
 struct PANumber;
 typedef int PAInt;
 
@@ -24,7 +25,7 @@ typedef int PABool;
 typedef int PAResult;
 typedef int ArrayListSize;
 typedef int ArrayListObject;
-# 35 "/home/cristof/PALibrary/include/types.h"
+# 35 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -73,7 +74,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 93 "/home/cristof/PALibrary/include/types.h"
+# 93 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -119,7 +120,7 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 159 "/home/cristof/PALibrary/include/types.h"
+# 159 "./include/types.h"
 struct ArrayListPosition {
  int position;
 };
@@ -207,7 +208,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 254 "/home/cristof/PALibrary/include/types.h"
+# 254 "./include/types.h"
 struct PAInput {
  struct PACount n;
  struct PACount m;
@@ -247,7 +248,7 @@ struct BFSInput {
 struct BFSOutput {
  struct BFSRecord result;
 };
-# 301 "/home/cristof/PALibrary/include/types.h"
+# 301 "./include/types.h"
 struct PALink {
  struct PAPair p;
 
@@ -363,41 +364,48 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 5 "/home/cristof/PALibrary/src/PA/Pair.c" 2
+# 5 "src/PA/Pair.c" 2
 
-# 1 "/home/cristof/PALibrary/include/PA/Pair.h" 1
-# 9 "/home/cristof/PALibrary/include/PA/Pair.h"
- struct PAPair PAPairPerformConstruct();
- struct PAPair PAPairPerformInit(struct PAPair, struct PAElement, struct PAElement);
- struct PAPair PAPairPerformCopy(struct PAPair from, struct PAPair to);
-
-
-
- struct PAPair PAPairPerformRuin(struct PAPair);
- struct PAPair PAPairPerformDelete(struct PAPair);
-# 7 "/home/cristof/PALibrary/src/PA/Pair.c" 2
-# 1 "/home/cristof/PALibrary/include/PA/Element.h" 1
-# 10 "/home/cristof/PALibrary/include/PA/Element.h"
- void PAElementVisit(struct PAElement);
- PABool PAElementIsVisited(struct PAElement);
- void PAElementReset(struct PAElement);
- struct PAElement PAElementPerformConstruct();
-
- struct PAElement PAElementPerformInit(struct PAElement,struct PAData,struct PAStatus);
-
-
-
-
- struct PAElement PAElementPerformRuin(struct PAElement);
- struct PAElement PAElementPerformDelete(struct PAElement);
- struct PAElement PAElementPerformCopy(struct PAElement, struct PAElement);
-# 8 "/home/cristof/PALibrary/src/PA/Pair.c" 2
+# 1 "./include/PA/Pair.h" 1
 
 
 
 
 
- struct PAPair PAPairPerformConstruct()
+
+
+
+          struct PAPair PAPairPerformConstruct();
+          struct PAPair PAPairPerformInit(struct PAPair, struct PAElement, struct PAElement);
+          struct PAPair PAPairPerformCopy(struct PAPair from, struct PAPair to);
+
+
+
+          struct PAPair PAPairPerformRuin(struct PAPair);
+          struct PAPair PAPairPerformDelete(struct PAPair);
+# 7 "src/PA/Pair.c" 2
+# 1 "./include/PA/Element.h" 1
+# 10 "./include/PA/Element.h"
+          void PAElementVisit(struct PAElement);
+          PABool PAElementIsVisited(struct PAElement);
+          void PAElementReset(struct PAElement);
+          struct PAElement PAElementPerformConstruct();
+
+          struct PAElement PAElementPerformInit(struct PAElement,struct PAData,struct PAStatus);
+
+
+
+
+          struct PAElement PAElementPerformRuin(struct PAElement);
+          struct PAElement PAElementPerformDelete(struct PAElement);
+          struct PAElement PAElementPerformCopy(struct PAElement, struct PAElement);
+# 8 "src/PA/Pair.c" 2
+
+
+
+
+
+          struct PAPair PAPairPerformConstruct()
 {
     struct PAPair pair;
 
@@ -415,7 +423,7 @@ struct Facade {
 
 }
 
- struct PAPair PAPairPerformInit(struct PAPair Pair, struct PAElement Value, struct PAElement Value2)
+          struct PAPair PAPairPerformInit(struct PAPair Pair, struct PAElement Value, struct PAElement Value2)
 {
     struct PAPair temp;
     temp.Node = PAElementPerformConstruct();
@@ -426,7 +434,7 @@ struct Facade {
 
 
     return Pair;
-# 54 "/home/cristof/PALibrary/src/PA/Pair.c"
+# 54 "src/PA/Pair.c"
 }
 struct PAPair PAPairPerformCopy(struct PAPair from, struct PAPair to)
 {
@@ -442,8 +450,8 @@ struct PAPair PAPairPerformCopy(struct PAPair from, struct PAPair to)
 
     return temp;
 }
-# 97 "/home/cristof/PALibrary/src/PA/Pair.c"
- struct PAPair PAPairPerformRuin(struct PAPair PA)
+# 97 "src/PA/Pair.c"
+          struct PAPair PAPairPerformRuin(struct PAPair PA)
 {
     PA.Node = PAElementPerformRuin(PA.Node);
     PA.Neigh = PAElementPerformRuin(PA.Neigh);
@@ -454,7 +462,7 @@ struct PAPair PAPairPerformCopy(struct PAPair from, struct PAPair to)
 
 
 }
- struct PAPair PAPairPerformDelete(struct PAPair PA)
+          struct PAPair PAPairPerformDelete(struct PAPair PA)
 {
     PA.Node = PAElementPerformDelete(PA.Node);
     PA.Neigh = PAElementPerformDelete(PA.Neigh);

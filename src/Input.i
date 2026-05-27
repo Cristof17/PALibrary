@@ -1,20 +1,21 @@
-# 0 "/home/cristof/PALibrary/src/Input.c"
-# 0 "<built-in>"
-# 0 "<command-line>"
-# 1 "/usr/include/stdc-predef.h" 1 3 4
-# 0 "<command-line>" 2
-# 1 "/home/cristof/PALibrary/src/Input.c"
+# 1 "src/Input.c"
+# 1 "<built-in>" 1
+# 1 "<built-in>" 3
+# 466 "<built-in>" 3
+# 1 "<command line>" 1
+# 1 "<built-in>" 2
+# 1 "src/Input.c" 2
 
 
-# 1 "/home/cristof/PALibrary/include/Input.h" 1
+# 1 "./include/Input.h" 1
 
 
 
 
-# 1 "/home/cristof/PALibrary/include/defs.h" 1
-# 6 "/home/cristof/PALibrary/include/Input.h" 2
-# 1 "/home/cristof/PALibrary/include/types.h" 1
-# 18 "/home/cristof/PALibrary/include/types.h"
+# 1 "./include/defs.h" 1
+# 6 "./include/Input.h" 2
+# 1 "./include/types.h" 1
+# 18 "./include/types.h"
 struct PANumber;
 typedef int PAInt;
 
@@ -23,7 +24,7 @@ typedef int PABool;
 typedef int PAResult;
 typedef int ArrayListSize;
 typedef int ArrayListObject;
-# 35 "/home/cristof/PALibrary/include/types.h"
+# 35 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -72,7 +73,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 93 "/home/cristof/PALibrary/include/types.h"
+# 93 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -118,7 +119,7 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 159 "/home/cristof/PALibrary/include/types.h"
+# 159 "./include/types.h"
 struct ArrayListPosition {
  int position;
 };
@@ -206,7 +207,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 254 "/home/cristof/PALibrary/include/types.h"
+# 254 "./include/types.h"
 struct PAInput {
  struct PACount n;
  struct PACount m;
@@ -246,7 +247,7 @@ struct BFSInput {
 struct BFSOutput {
  struct BFSRecord result;
 };
-# 301 "/home/cristof/PALibrary/include/types.h"
+# 301 "./include/types.h"
 struct PALink {
  struct PAPair p;
 
@@ -362,43 +363,44 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 7 "/home/cristof/PALibrary/include/Input.h" 2
+# 7 "./include/Input.h" 2
 
 
 
 
 
- struct Input InputPerformConstruct();
- struct Input InputPerformInit(struct PACount, struct PACount, struct PAElement);
- struct Input InputPerformCopy(struct Input);
- struct PAResult InputPerformDelete(struct PAInput);
- void InputRuin();
- void InputDispose();
-# 4 "/home/cristof/PALibrary/src/Input.c" 2
+          struct Input InputPerformConstruct();
+          struct Input InputPerformInit(struct PACount, struct PACount, struct PAElement);
+          struct Input InputPerformCopy(struct Input);
+          struct PAResult InputPerformDelete(struct PAInput);
+          void InputRuin();
+          void InputDispose();
+# 4 "src/Input.c" 2
 
 
-# 1 "/home/cristof/PALibrary/include/ArrayList/ArrayList.h" 1
-# 12 "/home/cristof/PALibrary/include/ArrayList/ArrayList.h"
- ArrayListObject ArrayListGet(struct ArrayListPosition);
- ArrayListSize ArrayListPerformSize();
- void ArrayListPut(struct ArrayListPosition, ArrayListObject);
- struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], struct ArrayListPosition);
- PAResult ArrayListPerformInit(struct ArrayList);
- struct ArrayList ArrayListPerformCopy(struct ArrayList);
- PAResult ArrayListPerformCopyTo(struct ArrayList Dest, struct PAList source, struct PAElement);
+# 1 "./include/ArrayList/ArrayList.h" 1
+# 12 "./include/ArrayList/ArrayList.h"
+          ArrayListObject ArrayListGet(struct ArrayListPosition);
+          ArrayListSize ArrayListPerformSize();
+          void ArrayListPut(struct ArrayListPosition, ArrayListObject);
+          struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], struct ArrayListPosition);
+          PAResult ArrayListPerformInit(struct ArrayList);
+          struct ArrayList ArrayListPerformCopy(struct ArrayList);
+          PAResult ArrayListPerformCopyTo(struct ArrayList Dest, struct PAList source, struct PAElement);
 
- PAResult ArrayListPerformRuin(struct ArrayListPosition, ArrayListObject[]);
- PAResult ArrayListPerformDelete(struct ArrayList);
-
-
-
+          PAResult ArrayListPerformRuin(struct ArrayListPosition, ArrayListObject[]);
+          PAResult ArrayListPerformDelete(struct ArrayList);
 
 
 
- ArrayListObject ArrayListPerformGetFirst(struct ArrayList);
- ArrayListObject ArrayListPerformGetLast(struct ArrayList);
- ArrayListObject ArrayListPerformPutFirst(struct ArrayList, ArrayListObject);
- ArrayListObject ArrayListPerformPutLast(struct ArrayList, ArrayListObject);
-# 7 "/home/cristof/PALibrary/src/Input.c" 2
-# 1 "/home/cristof/PALibrary/include/PA/Result.h" 1
-# 8 "/home/cristof/PALibrary/src/Input.c" 2
+
+
+
+          ArrayListObject ArrayListPerformGetFirst(struct ArrayList);
+          ArrayListObject ArrayListPerformGetLast(struct ArrayList);
+          ArrayListObject ArrayListPerformPutFirst(struct ArrayList, ArrayListObject);
+          ArrayListObject ArrayListPerformPutLast(struct ArrayList, ArrayListObject);
+# 7 "src/Input.c" 2
+# 1 "./include/PA/Result.h" 1
+# 8 "src/Input.c" 2
+

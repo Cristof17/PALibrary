@@ -1,16 +1,17 @@
-# 0 "/home/cristof/PALibrary/src/PA/Link.c"
-# 0 "<built-in>"
-# 0 "<command-line>"
-# 1 "/usr/include/stdc-predef.h" 1 3 4
-# 0 "<command-line>" 2
-# 1 "/home/cristof/PALibrary/src/PA/Link.c"
+# 1 "src/PA/Link.c"
+# 1 "<built-in>" 1
+# 1 "<built-in>" 3
+# 466 "<built-in>" 3
+# 1 "<command line>" 1
+# 1 "<built-in>" 2
+# 1 "src/PA/Link.c" 2
 
 
 
-# 1 "/home/cristof/PALibrary/include/defs.h" 1
-# 5 "/home/cristof/PALibrary/src/PA/Link.c" 2
-# 1 "/home/cristof/PALibrary/include/types.h" 1
-# 18 "/home/cristof/PALibrary/include/types.h"
+# 1 "./include/defs.h" 1
+# 5 "src/PA/Link.c" 2
+# 1 "./include/types.h" 1
+# 18 "./include/types.h"
 struct PANumber;
 typedef int PAInt;
 
@@ -19,7 +20,7 @@ typedef int PABool;
 typedef int PAResult;
 typedef int ArrayListSize;
 typedef int ArrayListObject;
-# 35 "/home/cristof/PALibrary/include/types.h"
+# 35 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -68,7 +69,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 93 "/home/cristof/PALibrary/include/types.h"
+# 93 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -114,7 +115,7 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 159 "/home/cristof/PALibrary/include/types.h"
+# 159 "./include/types.h"
 struct ArrayListPosition {
  int position;
 };
@@ -202,7 +203,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 254 "/home/cristof/PALibrary/include/types.h"
+# 254 "./include/types.h"
 struct PAInput {
  struct PACount n;
  struct PACount m;
@@ -242,7 +243,7 @@ struct BFSInput {
 struct BFSOutput {
  struct BFSRecord result;
 };
-# 301 "/home/cristof/PALibrary/include/types.h"
+# 301 "./include/types.h"
 struct PALink {
  struct PAPair p;
 
@@ -358,42 +359,49 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 6 "/home/cristof/PALibrary/src/PA/Link.c" 2
+# 6 "src/PA/Link.c" 2
 
 
-# 1 "/home/cristof/PALibrary/include/PA/Link.h" 1
-
-
-
-
-
-
-
- struct PALink PALinkPerformConstruct();
- struct PALink PALinkPerformCopy(struct PALink, struct PALink);
-
- struct PALink PALinkPerformInit(struct PALink, struct PAPair);
-
- struct PALink PALinkPerformRuin(struct PALink);
- struct PALink PALinkPerformDelete(struct PALink);
-# 9 "/home/cristof/PALibrary/src/PA/Link.c" 2
-# 1 "/home/cristof/PALibrary/include/PA/Pair.h" 1
-# 9 "/home/cristof/PALibrary/include/PA/Pair.h"
- struct PAPair PAPairPerformConstruct();
- struct PAPair PAPairPerformInit(struct PAPair, struct PAElement, struct PAElement);
- struct PAPair PAPairPerformCopy(struct PAPair from, struct PAPair to);
-
-
-
- struct PAPair PAPairPerformRuin(struct PAPair);
- struct PAPair PAPairPerformDelete(struct PAPair);
-# 10 "/home/cristof/PALibrary/src/PA/Link.c" 2
+# 1 "./include/PA/Link.h" 1
 
 
 
 
 
- struct PALink PALinkPerformConstruct()
+
+
+          struct PALink PALinkPerformConstruct();
+          struct PALink PALinkPerformCopy(struct PALink, struct PALink);
+
+          struct PALink PALinkPerformInit(struct PALink, struct PAPair);
+
+          struct PALink PALinkPerformRuin(struct PALink);
+          struct PALink PALinkPerformDelete(struct PALink);
+# 9 "src/PA/Link.c" 2
+# 1 "./include/PA/Pair.h" 1
+
+
+
+
+
+
+
+
+          struct PAPair PAPairPerformConstruct();
+          struct PAPair PAPairPerformInit(struct PAPair, struct PAElement, struct PAElement);
+          struct PAPair PAPairPerformCopy(struct PAPair from, struct PAPair to);
+
+
+
+          struct PAPair PAPairPerformRuin(struct PAPair);
+          struct PAPair PAPairPerformDelete(struct PAPair);
+# 10 "src/PA/Link.c" 2
+
+
+
+
+
+          struct PALink PALinkPerformConstruct()
 {
     struct PALink link;
     link.p = PAPairPerformConstruct();
@@ -404,7 +412,7 @@ struct Facade {
 
 
 }
- struct PALink PALinkPerformInit(struct PALink Link, struct PAPair Value)
+          struct PALink PALinkPerformInit(struct PALink Link, struct PAPair Value)
 {
     struct PALink link;
     link.p = PAPairPerformConstruct();
@@ -415,7 +423,7 @@ struct Facade {
 
     return Link;
 }
- struct PALink PALinkPerformRuin(struct PALink PA)
+          struct PALink PALinkPerformRuin(struct PALink PA)
 {
     PA.p = PAPairPerformRuin(PA.p);
 
@@ -441,7 +449,7 @@ struct PALink PALinkPerformCopy(struct PALink from, struct PALink to)
 
 
 
- struct PALink PALinkPerformDelete(struct PALink PA){
+          struct PALink PALinkPerformDelete(struct PALink PA){
 
 
     PA.p = PAPairPerformDelete(PA.p);

@@ -1,27 +1,28 @@
-# 0 "/home/cristof/PALibrary/src/PA/Data.c"
-# 0 "<built-in>"
-# 0 "<command-line>"
-# 1 "/usr/include/stdc-predef.h" 1 3 4
-# 0 "<command-line>" 2
-# 1 "/home/cristof/PALibrary/src/PA/Data.c"
+# 1 "src/PA/Data.c"
+# 1 "<built-in>" 1
+# 1 "<built-in>" 3
+# 466 "<built-in>" 3
+# 1 "<command line>" 1
+# 1 "<built-in>" 2
+# 1 "src/PA/Data.c" 2
 
 
-# 1 "/home/cristof/PALibrary/include/PA/Data.h" 1
-
-
-
-
-
-
-# 1 "/home/cristof/PALibrary/include/types.h" 1
+# 1 "./include/PA/Data.h" 1
 
 
 
 
 
-# 1 "/home/cristof/PALibrary/include/defs.h" 1
-# 7 "/home/cristof/PALibrary/include/types.h" 2
-# 18 "/home/cristof/PALibrary/include/types.h"
+
+# 1 "./include/types.h" 1
+
+
+
+
+
+# 1 "./include/defs.h" 1
+# 7 "./include/types.h" 2
+# 18 "./include/types.h"
 struct PANumber;
 typedef int PAInt;
 
@@ -30,7 +31,7 @@ typedef int PABool;
 typedef int PAResult;
 typedef int ArrayListSize;
 typedef int ArrayListObject;
-# 35 "/home/cristof/PALibrary/include/types.h"
+# 35 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -79,7 +80,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 93 "/home/cristof/PALibrary/include/types.h"
+# 93 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -125,7 +126,7 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 159 "/home/cristof/PALibrary/include/types.h"
+# 159 "./include/types.h"
 struct ArrayListPosition {
  int position;
 };
@@ -213,7 +214,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 254 "/home/cristof/PALibrary/include/types.h"
+# 254 "./include/types.h"
 struct PAInput {
  struct PACount n;
  struct PACount m;
@@ -253,7 +254,7 @@ struct BFSInput {
 struct BFSOutput {
  struct BFSRecord result;
 };
-# 301 "/home/cristof/PALibrary/include/types.h"
+# 301 "./include/types.h"
 struct PALink {
  struct PAPair p;
 
@@ -369,32 +370,39 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 8 "/home/cristof/PALibrary/include/PA/Data.h" 2
+# 8 "./include/PA/Data.h" 2
 
 
 
- struct PAData PADataPerformConstruct();
- struct PAData PADataPerformInit(struct PAData, struct PAResource);
+          struct PAData PADataPerformConstruct();
+          struct PAData PADataPerformInit(struct PAData, struct PAResource);
 
 
- struct PAData PADataPerformRuin(struct PAData);
- struct PAData PADataPerformDelete(struct PAData);
- struct PAData PADataPerformCopy(struct PAData from, struct PAData to);
-# 4 "/home/cristof/PALibrary/src/PA/Data.c" 2
-# 1 "/home/cristof/PALibrary/include/PA/Resource.h" 1
+          struct PAData PADataPerformRuin(struct PAData);
+          struct PAData PADataPerformDelete(struct PAData);
+          struct PAData PADataPerformCopy(struct PAData from, struct PAData to);
+# 4 "src/PA/Data.c" 2
+# 1 "./include/PA/Resource.h" 1
 
 
 
 
 
- struct PAResource PAResourcePerformInit(struct PAResource, struct PANumber);
- struct PAResource PAResourcePerformConstruct();
- struct PAResource PAResourcePerformRuin(struct PAResource);
- struct PAResource PAResourcePerformDelete(struct PAResource);
- struct PAResource PAResourcePerformCopy(struct PAResource, struct PAResource);
-# 5 "/home/cristof/PALibrary/src/PA/Data.c" 2
-# 13 "/home/cristof/PALibrary/src/PA/Data.c"
- struct PAData PADataPerformConstruct()
+          struct PAResource PAResourcePerformInit(struct PAResource, struct PANumber);
+          struct PAResource PAResourcePerformConstruct();
+          struct PAResource PAResourcePerformRuin(struct PAResource);
+          struct PAResource PAResourcePerformDelete(struct PAResource);
+          struct PAResource PAResourcePerformCopy(struct PAResource, struct PAResource);
+# 5 "src/PA/Data.c" 2
+
+
+
+
+
+
+
+
+          struct PAData PADataPerformConstruct()
 {
     struct PAData data;
 
@@ -407,7 +415,7 @@ struct Facade {
 
     return data;
 }
- struct PAData PADataPerformInit(struct PAData Data, struct PAResource Value)
+          struct PAData PADataPerformInit(struct PAData Data, struct PAResource Value)
 {
     struct PAData temp;
     temp.Resource = PAResourcePerformConstruct();
@@ -421,14 +429,14 @@ struct Facade {
 
 
 }
- struct PAData PADataPerformCopy(struct PAData from, struct PAData to)
+          struct PAData PADataPerformCopy(struct PAData from, struct PAData to)
 {
     struct PAData temp;
     temp.Resource = PAResourcePerformCopy(from.Resource, to.Resource);
     return temp;
 }
-# 63 "/home/cristof/PALibrary/src/PA/Data.c"
- struct PAData PADataPerformRuin(struct PAData Data)
+# 63 "src/PA/Data.c"
+          struct PAData PADataPerformRuin(struct PAData Data)
 {
 
 
@@ -437,7 +445,7 @@ struct Facade {
 
 
 }
- struct PAData PADataPerformDelete(struct PAData PA)
+          struct PAData PADataPerformDelete(struct PAData PA)
 {
     return PA;
 

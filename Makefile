@@ -11,7 +11,7 @@
 # 	obj/PA/Feature.o
 #prefix=/usr/local
 # prefix=/usr/local/
-prefix=/home/cristof/PALibrary
+prefix=.
 exec_prefix=$(prefix)
 bindir=$(prefix)/bin/
 sbindir=$(exec_prefix)/sbin/
@@ -42,9 +42,10 @@ manext=.1
 man1ext=
 man2ext=
 srcdir=
-musl=1.2.6
-crt=crt1.o
-output=libpa.a
+#musl=@musl@
+#crt=@crt@
+#output=@output@
+output=$(bindir)/libpa.a
 # preprocess: $(sources)
 preprocess: preprocess_pa 
 #preprocess_bfs preprocess_arraylist
@@ -1298,7 +1299,7 @@ clean:
 # 	-rm $(srcdir)/test.s
 # 	-rm $(bindir)/test
 	rm $(foreach source,$(sources_pa),$(srcdir)/$(source))
-	rm $(foreach source,$(sources_test_pa),$(srcdir)/$(source))
+	rm $(foreach test,$(sources_test_pa),$(srcdir)/$(test))
 # 	rm $(foreach source,$(sources_bfs),$(srcdir)/$(source))
 # 	rm $(foreach source,$(sources_arraylist),$(srcdir)/$(source))
 # 	rm $(foreach assembly,$(assemblies_pa),$(libdir)/$(assembly))
@@ -1306,7 +1307,7 @@ clean:
 # 	rm $(foreach assembly,$(assemblies_arraylist),$(libdir)/$(assembly))
 # 	rm $(foreach assembly,$(assemblies_pa),$(srcdir)/ass)
 	rm $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
-	rm $(foreach assembly,$(assemblies_test_pa),$(srcdir)/$(assembly))
+	rm $(foreach test,$(assemblies_test_pa),$(srcdir)/$(test))
 # 	rm $(foreach assembly,$(assemblies_bfs),$(srcdir)/$(assebmbly))
 # 	rm $(foreach assembly,$(assemblies_arraylist),$(srcdir)/$(assembly))
 	rm $(foreach object,$(objects_pa),$(libdir)/$(object))

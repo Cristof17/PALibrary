@@ -11,7 +11,7 @@
 # 	obj/PA/Feature.o
 #prefix=/usr/local
 # prefix=/usr/local/
-prefix=@prefix@
+prefix=.
 exec_prefix=$(prefix)
 bindir=$(prefix)/bin/
 sbindir=$(exec_prefix)/sbin/
@@ -42,9 +42,10 @@ manext=.1
 man1ext=
 man2ext=
 srcdir=
-musl=@musl@
-crt=@crt@
-output=@output@
+#musl=@musl@
+#crt=@crt@
+#output=@output@
+output=$(bindir)/libpa.a
 # preprocess: $(sources)
 preprocess: preprocess_pa 
 #preprocess_bfs preprocess_arraylist
