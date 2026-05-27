@@ -58,7 +58,20 @@ int main()
 
 	// printf("testing element %d,%d,%d\n",element.status.)
 	// PATreePerformCopy(tree,tree2);
+	struct PANumber number1;
+	struct PANumber number2;
+	number1.val = 10;
+	PANumberPerformCopy(number1,number2);
+	printf("number1 = %d, number2 = %d\n",number1.val,number2.val);
+	struct PACount count1;
+	count1.number.val = 1;
+	struct PACount count2;
+	PACountPerformCopy(count1,count2);
+	printf("count1 = %d, count2 = %d\n",count1.number.val,count2.number.val);
+	list.n.number.val = 2;
 	PAListPerformInit(list,list.n,list.neigh);
-	PASeriesPerformInit(series, series.m, series.adj);
+	printf("count1 = %d, count2 = %d\n",count1.number.val,count2.number.val);
+	printf("list.n = %d",list.n.number.val);
+	// PASeriesPerformInit(series, series.m, series.adj);
 	return 0;
 }
