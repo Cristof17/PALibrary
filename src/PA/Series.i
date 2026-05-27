@@ -433,7 +433,8 @@ struct Facade {
     struct PANumber y;
     struct PASeries temp;
     temp.m = PACountPerformCopy(from.m, temp.m);
-    x.val = from.m.number.val;
+    to.m = PACountPerformCopy(temp.m, to.m);
+    x.val = temp.m.number.val;
     y.val = (1);
     while (y.val <= x.val)
     {
@@ -449,11 +450,11 @@ struct Facade {
 
     return to;
 }
-# 84 "src/PA/Series.c"
+# 85 "src/PA/Series.c"
           struct PASeries PASeriesPerformInit(struct PASeries Series,
     struct PACount Value, struct PAElement Value2[])
     {
-# 98 "src/PA/Series.c"
+# 99 "src/PA/Series.c"
         struct PASeries series;
         series.m = Value;
         struct PANumber x;
@@ -483,7 +484,7 @@ struct Facade {
         return PA;
 
     }
-# 136 "src/PA/Series.c"
+# 137 "src/PA/Series.c"
               struct PASeries PASeriesPerformRuin(struct PASeries PA)
     {
         struct PACount x;
@@ -495,16 +496,16 @@ struct Facade {
             PA.adj[y.number.val] = PAElementPerformRuin(PA.adj[y.number.val]);
             y.number.val++;
         }
-# 155 "src/PA/Series.c"
+# 156 "src/PA/Series.c"
         return PA;
     }
-# 191 "src/PA/Series.c"
+# 192 "src/PA/Series.c"
 struct PAResource PASeriesGet(struct PAData Data)
 {
     struct PAResource resource;
     return resource;
 }
-# 212 "src/PA/Series.c"
+# 213 "src/PA/Series.c"
 void PASeriesPerformPrint(struct PASeries Series)
 {
 

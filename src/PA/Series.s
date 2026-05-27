@@ -106,7 +106,15 @@ _PASeriesPerformCopy:                   ; @PASeriesPerformCopy
 	sturb	w0, [x29, #-26]
 	ldurb	w8, [x29, #-26]
 	sturb	w8, [x29, #-25]
-	ldurb	w8, [x29, #-13]
+	ldurb	w8, [x29, #-25]
+	mov	x0, x8
+	ldurb	w8, [x29, #-18]
+	mov	x1, x8
+	bl	_PACountPerformCopy
+	sturb	w0, [x29, #-27]
+	ldurb	w8, [x29, #-27]
+	sturb	w8, [x29, #-18]
+	ldurb	w8, [x29, #-25]
 	sturb	w8, [x29, #-19]
 	mov	w8, #1                          ; =0x1
 	sturb	w8, [x29, #-20]
@@ -141,8 +149,8 @@ LBB1_2:                                 ;   in Loop: Header=BB1_1 Depth=1
 	ldr	x1, [sp, #48]
 	bl	_PAElementPerformCopy
 	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload
-	sturh	w0, [x29, #-28]
-	ldurh	w8, [x29, #-28]
+	sturh	w0, [x29, #-29]
+	ldurh	w8, [x29, #-29]
 	strh	w8, [x9]
 	ldurb	w8, [x29, #-20]
 	add	w8, w8, #1

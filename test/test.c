@@ -65,14 +65,22 @@ int main()
 	// printf("number1 = %d, number2 = %d\n",number1.val,number2.val);
 	struct PASeries copyTest1;
 	struct PASeries copyTest2;
+	copyTest1.m.number.val = 20;
 	copyTest1.adj[0].index.Resource.value.val = 20;
-	copyTest1.adj[0].index.Resource.value.val = 40;
+	// copyTest1.adj[0].index.Resource.value.val = 40;
 	// PASeriesPerformCons
+	struct PAData data1;
+	struct PAData data2;
+	data1.Resource.value.val = 20;
+	data2 = PADataPerformCopy(data1,data2);
+	printf("data2=%d, from %d\n",data1.Resource.value.val, data2.Resource.value.val);
 	copyTest2 = PASeriesPerformCopy(copyTest1, copyTest2);
+	printf("copy test for series %d copy is %d\n",copyTest1.m.number.val, copyTest2.m.number.val);
 	// printf("copy series test %d\n", s)
-	printf("copy test for series %d\n %d\n",copyTest1.adj[0].index.Resource.value.val,copyTest2.adj[0].index.Resource.value.val);
+	// printf("copy test for series %d copy is %d\n",copyTest1.adj[0].index.Resource.value.val,copyTest2.adj[0].index.Resource.value.val);
+	printf("copy test for series %d copy is %d\n",copyTest1.adj[0].index.Resource.value.val, copyTest2.adj[0].index.Resource.value.val);
 	struct PACount count1;
-	count1.number.val = 1;
+	count1.number.val = 20;
 	struct PACount count2;
 	struct PAResource resource1;
 	struct PAResource resource2;
@@ -83,7 +91,7 @@ int main()
 	printf("element1.index = %d, element2.index = %d\n", element1.index.Resource.value.val, element2.index.Resource.value.val);
 	resource2 = PAResourcePerformCopy(resource1,resource2);
 	printf("resource1.number.val = %d, resource2.number.val=%d\n",resource1.value.val, resource2.value.val);
-	// count2 = PACountPerformCopy(count1,count2);
+	count2 = PACountPerformCopy(count1,count2);
 	printf("count1 = %d, count2 = %d\n",count1.number.val,count2.number.val);
 	list.n.number.val = 2;
 	// PAListPerformInit(list,list.n,list.neigh);
