@@ -17,9 +17,9 @@
 *
 *  Created on: 16 nov. 2025
 *      Author: AdministratorUser
-` */
-DllExport struct PASeries PASeriesPerformConstruct() {
-
+*/
+DllExport struct PASeries PASeriesPerformConstruct() 
+{
     struct PASeries series;
     series.m = PACountPerformConstruct();
     struct PANumber x;

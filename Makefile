@@ -46,7 +46,7 @@ srcdir=
 #crt=@crt@
 #output=@output@
 output=libpa.a
-all: preprocess assemble compile test
+all: preprocess assemble compile test.out test
 # preprocess: $(sources)
 preprocess: preprocess_pa 
 #preprocess_bfs preprocess_arraylist
@@ -358,7 +358,7 @@ objects_test_arraylist=
 # 	src/PA/Destination.i
 # 	src/PA/Arrow.i
 # 	src/PA/Feature.i
-program_test_pa = test.out
+program_test_pa= test.out
 
 distclean:
 	rm $(foreach source,$(sources_pa),$(srcdir)/$(source))
