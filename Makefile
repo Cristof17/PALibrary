@@ -323,6 +323,7 @@ assemblies_pa= Input.s \
 	PA/Pair.s \
 	PA/Result.s \
 	PA/Series.s \
+	PA/Status.s \
 	PA/Value.s \
 	PA/Resource.s \
 	PA/NormalTree.s \
