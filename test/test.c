@@ -20,8 +20,8 @@ int main()
 
 	struct PANumber number123;
 	struct PANumber number221;
-	number123 = PANumberPerformConstruct();
-	number221 = PANumberPerformConstruct();
+	// number123 = PANumberPerformConstruct();
+	// number221 = PANumberPerformConstruct();
 	number123.val = 20;
 	number221 = PANumberPerformCopy(number123, number221);
 	printf("Number copy source = %d, destination = %d\n", number123.val, number221.val);
@@ -34,7 +34,7 @@ int main()
 
 	struct PACount count123;
 	struct PACount count234;
-	count123 = PACountPerformConstruct();
+	// count123 = PACountPerformConstruct();
 	count234 = PACountPerformCopy(count123,count234);
 	printf("Count1 = %d, count2 = %d\n", count123.number.val, count234.number.val);
 
@@ -46,7 +46,7 @@ int main()
 
 	struct PAStatus status1;
 	struct PAStatus status2;
-	status1 = PAStatusPerformCopy(status1, status2);
+	status2 = PAStatusPerformCopy(status1, status2);
 	printf("copy from status %d %d\n", status1.visited.value.val, status2.visited.value.val);
 
 	struct PAResource resource12;
@@ -58,7 +58,7 @@ int main()
 	struct PATree tree1;
 	struct PATree tree2;
 	// tree2 = PATreePerformConstruct();
-	tree1 = PATreePerformConstruct();
+	// tree1 = PATreePerformConstruct();
 	tree2 = PATreePerformCopy(tree1,tree2);
 	printf("Tree1 %d %d\n", tree1.m.number.val, tree2.m.number.val);
 	printf("Tree1 %d %d\n", tree1.n.number.val, tree2.n.number.val);
@@ -66,7 +66,7 @@ int main()
 
 	struct PASeries series1;
 	struct PASeries series2;
-	series1 = PASeriesPerformConstruct();
+	// series1 = PASeriesPerformConstruct();
 	series2 = PASeriesPerformCopy(series1, series2);
 	printf("series one n %d, series two n %d\n", series1.m.number.val, series2.m.number.val);
 
@@ -93,6 +93,11 @@ int main()
 	resource123 = PAResourcePerformConstruct();
 	resource124 = PAResourcePerformCopy(resource123,resource124);
 	printf("resource123 = %d resource124 = %d\n|,re",resource123.value.val, resource124.value.val);		
+
+	struct PAElement element1234;
+	struct PAElement element2345;
+	element2345 = PAElementPerformCopy(element1234,element2345);
+	printf("resource1234 %d %d \n", element1234.index.Resource.value.val, element2345.index.Resource.value.val);
 
 	struct PANumber number;
 	number = PANumberPerformConstruct();
