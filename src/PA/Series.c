@@ -47,32 +47,38 @@ DllExport struct PASeries PASeriesPerformConstruct()
 }
 DllExport struct PASeries PASeriesPerformCopy(struct PASeries from, struct PASeries to)
 {
-    struct PANumber x;
-    struct PANumber y;
+    struct PACount x;
+    struct PACount y;
     struct PASeries temp;
+    temp = PASeriesPerformConstruct();
+    // x = PANumber
     temp.m = PACountPerformCopy(from.m, temp.m);
+    x.number.val = temp.m.number.val;
+    if (temp.m.number.val < to.m.number.val)
+    {
+        x.number.val = temp.m.number.val;
+    }
+    else if (temp.m.number.val > to.m.number.val)
+    {
+        x.number.val = to.m.number.val;
+    }
+    y.number.val = FIRST;
+    while (y.number.val <= x.number.val)
+    {
+        struct PAElement aux;
+        PAElementPerformCopy(from.adj[y.number.val],aux);
+        PAElementPerformCopy(aux,temp.adj[y.number.val]);
+        y.number.val++;
+    }
+    y.number.val = FIRST;
+    while (y.number.val <= x.number.val)
+    {
+        struct PAElement aux;
+        PAElementPerformCopy(temp.adj[y.number.val],aux);
+        PAElementPerformCopy(aux, to.adj[y.number.val]);
+        y.number.val++;
+    }
     to.m = PACountPerformCopy(temp.m, to.m);
-    x.val = temp.m.number.val;
-    y.val = FIRST;
-    if (x.val < to.m.number.val)
-    {
-        x.val = temp.m.number.val;
-    }
-    else if (x.val > to.m.number.val)
-    {
-        x.val = to.m.number.val;
-    }
-    while (y.val <= x.val)
-    {
-        PAElementPerformCopy(from.adj[y.val],temp.adj[y.val]);
-        y.val++;
-    }
-    y.val = FIRST;
-    while (y.val <= x.val)
-    {
-        PAElementPerformCopy(temp.adj[y.val],to.adj[y.val]);
-        y.val++;
-    }
     // return temp;
     return to;
 }

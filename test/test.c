@@ -75,6 +75,14 @@ int main()
 	series2345 = PASeriesPerformCopy(series1234,series2345);
 	printf("series1.size %d series2.size %d\n", series1234.m.number.val, series2345.m.number.val);
 
+	struct PAList list12334;
+	struct PAList list2345;
+	// printf(:"")
+	// p
+	list12334.n.number.val = 30;
+	list2345 = PAListPerformCopy(list12334, list2345);
+	printf("First list %d` second list %d,\n",list12334.n.number.val, list2345.n.number.val);
+
 	// struct j
 	struct PANumber number345;
 	struct PANumber number456;//s

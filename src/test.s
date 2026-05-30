@@ -5,35 +5,37 @@
 _main:                                  ; @main
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #480
-	stp	x28, x27, [sp, #448]            ; 16-byte Folded Spill
-	stp	x29, x30, [sp, #464]            ; 16-byte Folded Spill
-	add	x29, sp, #464
+	stp	x28, x27, [sp, #-32]!           ; 16-byte Folded Spill
+	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
+	add	x29, sp, #16
+	sub	sp, sp, #560
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
 	.cfi_offset w27, -24
 	.cfi_offset w28, -32
-	add	x8, sp, #207
-	str	x8, [sp, #24]                   ; 8-byte Folded Spill
+	sub	x8, x29, #88
+	str	x8, [sp, #40]                   ; 8-byte Folded Spill
+	add	x8, sp, #231
+	str	x8, [sp, #48]                   ; 8-byte Folded Spill
 	adrp	x9, ___stack_chk_guard@GOTPAGE
 	ldr	x9, [x9, ___stack_chk_guard@GOTPAGEOFF]
 	ldr	x9, [x9]
 	stur	x9, [x29, #-24]
-	stur	wzr, [x8, #197]
+	stur	wzr, [x8, #237]
 	mov	w8, #20                         ; =0x14
-	str	w8, [sp, #52]                   ; 4-byte Folded Spill
-	sturb	w8, [x29, #-61]
-	ldurb	w8, [x29, #-61]
+	str	w8, [sp, #76]                   ; 4-byte Folded Spill
+	sturb	w8, [x29, #-109]
+	ldurb	w8, [x29, #-109]
 	mov	x0, x8
-	ldurb	w8, [x29, #-62]
+	ldurb	w8, [x29, #-110]
 	mov	x1, x8
 	bl	_PANumberPerformCopy
-	sturb	w0, [x29, #-63]
-	ldurb	w8, [x29, #-63]
-	sturb	w8, [x29, #-62]
-	ldurb	w11, [x29, #-61]
-	ldurb	w10, [x29, #-62]
+	sturb	w0, [x29, #-111]
+	ldurb	w8, [x29, #-111]
+	sturb	w8, [x29, #-110]
+	ldurb	w11, [x29, #-109]
+	ldurb	w10, [x29, #-110]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x11
@@ -44,21 +46,21 @@ _main:                                  ; @main
 	adrp	x0, l_.str@PAGE
 	add	x0, x0, l_.str@PAGEOFF
 	bl	_printf
-	ldr	x8, [sp, #24]                   ; 8-byte Folded Reload
-	ldr	w9, [sp, #52]                   ; 4-byte Folded Reload
-	sturb	w9, [x29, #-65]
-	ldrh	w9, [x8, #192]
-	sturh	w9, [x29, #-80]
-	ldur	x0, [x8, #177]
-	ldurh	w9, [x29, #-68]
-	sturh	w9, [x29, #-88]
-	ldur	x1, [x8, #169]
+	ldr	x8, [sp, #48]                   ; 8-byte Folded Reload
+	ldr	w9, [sp, #76]                   ; 4-byte Folded Reload
+	sturb	w9, [x29, #-113]
+	ldrh	w9, [x8, #232]
+	sturh	w9, [x29, #-128]
+	ldur	x0, [x8, #217]
+	ldurh	w9, [x29, #-116]
+	sturh	w9, [x29, #-136]
+	ldur	x1, [x8, #209]
 	bl	_PAElementPerformCopy
-	sturh	w0, [x29, #-70]
-	ldurh	w8, [x29, #-70]
-	sturh	w8, [x29, #-68]
-	ldurb	w11, [x29, #-65]
-	ldurb	w10, [x29, #-68]
+	sturh	w0, [x29, #-118]
+	ldurh	w8, [x29, #-118]
+	sturh	w8, [x29, #-116]
+	ldurb	w11, [x29, #-113]
+	ldurb	w10, [x29, #-116]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x11
@@ -69,16 +71,16 @@ _main:                                  ; @main
 	adrp	x0, l_.str.1@PAGE
 	add	x0, x0, l_.str.1@PAGEOFF
 	bl	_printf
-	ldurb	w8, [x29, #-89]
+	ldurb	w8, [x29, #-137]
 	mov	x0, x8
-	ldurb	w8, [x29, #-90]
+	ldurb	w8, [x29, #-138]
 	mov	x1, x8
 	bl	_PACountPerformCopy
-	sturb	w0, [x29, #-91]
-	ldurb	w8, [x29, #-91]
-	sturb	w8, [x29, #-90]
-	ldurb	w11, [x29, #-89]
-	ldurb	w10, [x29, #-90]
+	sturb	w0, [x29, #-139]
+	ldurb	w8, [x29, #-139]
+	sturb	w8, [x29, #-138]
+	ldurb	w11, [x29, #-137]
+	ldurb	w10, [x29, #-138]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x11
@@ -90,17 +92,17 @@ _main:                                  ; @main
 	add	x0, x0, l_.str.2@PAGEOFF
 	bl	_printf
 	mov	w8, #50                         ; =0x32
-	sturb	w8, [x29, #-92]
-	ldurb	w8, [x29, #-92]
+	sturb	w8, [x29, #-140]
+	ldurb	w8, [x29, #-140]
 	mov	x0, x8
-	ldurb	w8, [x29, #-93]
+	ldurb	w8, [x29, #-141]
 	mov	x1, x8
 	bl	_PADataPerformCopy
-	sturb	w0, [x29, #-94]
-	ldurb	w8, [x29, #-94]
-	sturb	w8, [x29, #-93]
-	ldurb	w11, [x29, #-92]
-	ldurb	w10, [x29, #-93]
+	sturb	w0, [x29, #-142]
+	ldurb	w8, [x29, #-142]
+	sturb	w8, [x29, #-141]
+	ldurb	w11, [x29, #-140]
+	ldurb	w10, [x29, #-141]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x11
@@ -111,16 +113,16 @@ _main:                                  ; @main
 	adrp	x0, l_.str.3@PAGE
 	add	x0, x0, l_.str.3@PAGEOFF
 	bl	_printf
-	ldurb	w8, [x29, #-95]
+	ldurb	w8, [x29, #-143]
 	mov	x0, x8
-	ldurb	w8, [x29, #-96]
+	ldurb	w8, [x29, #-144]
 	mov	x1, x8
 	bl	_PAStatusPerformCopy
-	sturb	w0, [x29, #-97]
-	ldurb	w8, [x29, #-97]
-	sturb	w8, [x29, #-96]
-	ldurb	w11, [x29, #-95]
-	ldurb	w10, [x29, #-96]
+	sturb	w0, [x29, #-145]
+	ldurb	w8, [x29, #-145]
+	sturb	w8, [x29, #-144]
+	ldurb	w11, [x29, #-143]
+	ldurb	w10, [x29, #-144]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x11
@@ -132,17 +134,17 @@ _main:                                  ; @main
 	add	x0, x0, l_.str.4@PAGEOFF
 	bl	_printf
 	mov	w8, #32                         ; =0x20
-	sturb	w8, [x29, #-98]
-	ldurb	w8, [x29, #-98]
+	sturb	w8, [x29, #-146]
+	ldurb	w8, [x29, #-146]
 	mov	x0, x8
-	ldurb	w8, [x29, #-99]
+	ldurb	w8, [x29, #-147]
 	mov	x1, x8
 	bl	_PAResourcePerformCopy
-	sturb	w0, [x29, #-100]
-	ldurb	w8, [x29, #-100]
-	sturb	w8, [x29, #-99]
-	ldurb	w11, [x29, #-98]
-	ldurb	w10, [x29, #-99]
+	sturb	w0, [x29, #-148]
+	ldurb	w8, [x29, #-148]
+	sturb	w8, [x29, #-147]
+	ldurb	w11, [x29, #-146]
+	ldurb	w10, [x29, #-147]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x11
@@ -153,8 +155,8 @@ _main:                                  ; @main
 	adrp	x0, l_.str.5@PAGE
 	add	x0, x0, l_.str.5@PAGEOFF
 	bl	_printf
-	ldurb	w11, [x29, #-126]
-	ldurb	w10, [x29, #-111]
+	ldurb	w11, [x29, #-174]
+	ldurb	w10, [x29, #-159]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x11
@@ -165,8 +167,8 @@ _main:                                  ; @main
 	adrp	x0, l_.str.6@PAGE
 	add	x0, x0, l_.str.6@PAGEOFF
 	bl	_printf
-	ldurb	w11, [x29, #-114]
-	ldurb	w10, [x29, #-129]
+	ldurb	w11, [x29, #-162]
+	ldurb	w10, [x29, #-177]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x11
@@ -176,11 +178,11 @@ _main:                                  ; @main
 	str	x8, [x9, #8]
 	adrp	x0, l_.str.7@PAGE
 	add	x0, x0, l_.str.7@PAGEOFF
-	str	x0, [sp, #16]                   ; 8-byte Folded Spill
+	str	x0, [sp, #24]                   ; 8-byte Folded Spill
 	bl	_printf
-	ldr	x0, [sp, #16]                   ; 8-byte Folded Reload
-	ldurb	w11, [x29, #-115]
-	ldurb	w10, [x29, #-130]
+	ldr	x0, [sp, #24]                   ; 8-byte Folded Reload
+	ldurb	w11, [x29, #-163]
+	ldurb	w10, [x29, #-178]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x11
@@ -189,8 +191,8 @@ _main:                                  ; @main
 	mov	x8, x10
 	str	x8, [x9, #8]
 	bl	_printf
-	ldurb	w11, [x29, #-111]
-	ldurb	w10, [x29, #-126]
+	ldurb	w11, [x29, #-159]
+	ldurb	w10, [x29, #-174]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x11
@@ -201,30 +203,30 @@ _main:                                  ; @main
 	adrp	x0, l_.str.8@PAGE
 	add	x0, x0, l_.str.8@PAGEOFF
 	bl	_printf
-	ldr	x8, [sp, #24]                   ; 8-byte Folded Reload
-	ldur	w9, [x8, #122]
-	stur	w9, [x8, #97]
-	ldurb	w9, [x29, #-131]
-	sturb	w9, [x29, #-156]
-	ldur	x0, [x8, #97]
-	ldur	w9, [x8, #117]
-	stur	w9, [x8, #89]
-	ldurb	w9, [x29, #-136]
-	sturb	w9, [x29, #-164]
-	ldur	x1, [x8, #89]
+	ldr	x8, [sp, #48]                   ; 8-byte Folded Reload
+	ldur	w9, [x8, #162]
+	stur	w9, [x8, #137]
+	ldurb	w9, [x29, #-179]
+	sturb	w9, [x29, #-204]
+	ldur	x0, [x8, #137]
+	ldur	w9, [x8, #157]
+	stur	w9, [x8, #129]
+	ldurb	w9, [x29, #-184]
+	sturb	w9, [x29, #-212]
+	ldur	x1, [x8, #129]
 	bl	_PASeriesPerformCopy
-	ldr	x9, [sp, #24]                   ; 8-byte Folded Reload
+	ldr	x9, [sp, #48]                   ; 8-byte Folded Reload
 	lsr	x8, x0, #32
 	mov	x10, x0
-	str	w10, [x9, #112]
+	str	w10, [x9, #152]
                                         ; kill: def $w8 killed $w8 killed $x8
-	sturb	w8, [x29, #-141]
-	ldr	w8, [x9, #112]
-	stur	w8, [x9, #117]
-	ldurb	w8, [x29, #-141]
-	sturb	w8, [x29, #-136]
-	ldurb	w11, [x29, #-135]
-	ldurb	w10, [x29, #-140]
+	sturb	w8, [x29, #-189]
+	ldr	w8, [x9, #152]
+	stur	w8, [x9, #157]
+	ldurb	w8, [x29, #-189]
+	sturb	w8, [x29, #-184]
+	ldurb	w11, [x29, #-183]
+	ldurb	w10, [x29, #-188]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x11
@@ -235,20 +237,45 @@ _main:                                  ; @main
 	adrp	x0, l_.str.9@PAGE
 	add	x0, x0, l_.str.9@PAGEOFF
 	bl	_printf
-	bl	_PANumberPerformConstruct
-	sturb	w0, [x29, #-171]
-	ldurb	w8, [x29, #-171]
-	sturb	w8, [x29, #-169]
-	ldurb	w8, [x29, #-169]
-	mov	x0, x8
-	ldurb	w8, [x29, #-170]
-	mov	x1, x8
-	bl	_PANumberPerformCopy
-	sturb	w0, [x29, #-172]
-	ldurb	w8, [x29, #-172]
-	sturb	w8, [x29, #-170]
-	ldurb	w11, [x29, #-169]
-	ldurb	w10, [x29, #-170]
+	ldr	x8, [sp, #40]                   ; 8-byte Folded Reload
+	ldr	x10, [sp, #48]                  ; 8-byte Folded Reload
+	sub	x9, x29, #227
+	mov	w11, #30                        ; =0x1e
+	sturb	w11, [x29, #-227]
+	ldur	x12, [x10, #118]
+	sub	x11, x29, #40
+	str	x12, [x8, #48]
+	ldur	w9, [x9, #7]
+	stur	w9, [x11, #7]
+	ldr	x0, [x8, #48]
+	ldr	x1, [x8, #56]
+	sub	x9, x29, #240
+	str	x9, [sp, #32]                   ; 8-byte Folded Spill
+	ldur	x11, [x10, #105]
+	sub	x10, x29, #56
+	str	x11, [x8, #32]
+	ldur	w9, [x9, #7]
+	stur	w9, [x10, #7]
+	ldr	x2, [x8, #32]
+	ldr	x3, [x8, #40]
+	bl	_PAListPerformCopy
+	ldr	x9, [sp, #32]                   ; 8-byte Folded Reload
+	ldr	x8, [sp, #40]                   ; 8-byte Folded Reload
+	ldr	x11, [sp, #48]                  ; 8-byte Folded Reload
+	sub	x10, x29, #72
+	str	x0, [x8, #16]
+	str	x1, [x8, #24]
+	ldr	x12, [x8, #16]
+	sub	x8, x29, #256
+	stur	x12, [x11, #89]
+	ldur	w10, [x10, #7]
+	stur	w10, [x8, #7]
+	ldur	x10, [x11, #89]
+	stur	x10, [x11, #105]
+	ldur	w8, [x8, #7]
+	stur	w8, [x9, #7]
+	ldurb	w11, [x29, #-227]
+	ldurb	w10, [x29, #-240]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x11
@@ -259,20 +286,20 @@ _main:                                  ; @main
 	adrp	x0, l_.str.10@PAGE
 	add	x0, x0, l_.str.10@PAGEOFF
 	bl	_printf
-	bl	_PAStatusPerformConstruct
-	sturb	w0, [x29, #-175]
-	ldurb	w8, [x29, #-175]
-	sturb	w8, [x29, #-173]
-	ldurb	w8, [x29, #-173]
+	bl	_PANumberPerformConstruct
+	strb	w0, [sp, #317]
+	ldrb	w8, [sp, #317]
+	strb	w8, [sp, #319]
+	ldrb	w8, [sp, #319]
 	mov	x0, x8
-	ldurb	w8, [x29, #-174]
+	ldrb	w8, [sp, #318]
 	mov	x1, x8
-	bl	_PAStatusPerformCopy
-	sturb	w0, [x29, #-176]
-	ldurb	w8, [x29, #-176]
-	sturb	w8, [x29, #-174]
-	ldurb	w11, [x29, #-173]
-	ldurb	w10, [x29, #-174]
+	bl	_PANumberPerformCopy
+	strb	w0, [sp, #316]
+	ldrb	w8, [sp, #316]
+	strb	w8, [sp, #318]
+	ldrb	w11, [sp, #319]
+	ldrb	w10, [sp, #318]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x11
@@ -283,20 +310,20 @@ _main:                                  ; @main
 	adrp	x0, l_.str.11@PAGE
 	add	x0, x0, l_.str.11@PAGEOFF
 	bl	_printf
-	bl	_PAResourcePerformConstruct
-	sturb	w0, [x29, #-179]
-	ldurb	w8, [x29, #-179]
-	sturb	w8, [x29, #-177]
-	ldurb	w8, [x29, #-177]
+	bl	_PAStatusPerformConstruct
+	strb	w0, [sp, #313]
+	ldrb	w8, [sp, #313]
+	strb	w8, [sp, #315]
+	ldrb	w8, [sp, #315]
 	mov	x0, x8
-	ldurb	w8, [x29, #-178]
+	ldrb	w8, [sp, #314]
 	mov	x1, x8
-	bl	_PAResourcePerformCopy
-	sturb	w0, [x29, #-180]
-	ldurb	w8, [x29, #-180]
-	sturb	w8, [x29, #-178]
-	ldurb	w11, [x29, #-177]
-	ldurb	w10, [x29, #-178]
+	bl	_PAStatusPerformCopy
+	strb	w0, [sp, #312]
+	ldrb	w8, [sp, #312]
+	strb	w8, [sp, #314]
+	ldrb	w11, [sp, #315]
+	ldrb	w10, [sp, #314]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x11
@@ -307,19 +334,20 @@ _main:                                  ; @main
 	adrp	x0, l_.str.12@PAGE
 	add	x0, x0, l_.str.12@PAGEOFF
 	bl	_printf
-	ldr	x8, [sp, #24]                   ; 8-byte Folded Reload
-	ldurh	w9, [x29, #-182]
-	sturh	w9, [x29, #-200]
-	ldur	x0, [x8, #57]
-	ldurh	w9, [x29, #-184]
-	sturh	w9, [x29, #-208]
-	ldur	x1, [x8, #49]
-	bl	_PAElementPerformCopy
-	sturh	w0, [x29, #-186]
-	ldurh	w8, [x29, #-186]
-	sturh	w8, [x29, #-184]
-	ldurb	w11, [x29, #-182]
-	ldurb	w10, [x29, #-184]
+	bl	_PAResourcePerformConstruct
+	strb	w0, [sp, #309]
+	ldrb	w8, [sp, #309]
+	strb	w8, [sp, #311]
+	ldrb	w8, [sp, #311]
+	mov	x0, x8
+	ldrb	w8, [sp, #310]
+	mov	x1, x8
+	bl	_PAResourcePerformCopy
+	strb	w0, [sp, #308]
+	ldrb	w8, [sp, #308]
+	strb	w8, [sp, #310]
+	ldrb	w11, [sp, #311]
+	ldrb	w10, [sp, #310]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x11
@@ -330,187 +358,19 @@ _main:                                  ; @main
 	adrp	x0, l_.str.13@PAGE
 	add	x0, x0, l_.str.13@PAGEOFF
 	bl	_printf
-	bl	_PANumberPerformConstruct
-	sturb	w0, [x29, #-210]
-	ldurb	w8, [x29, #-210]
-	sturb	w8, [x29, #-209]
-	ldurb	w10, [x29, #-209]
-	mov	x9, sp
-                                        ; implicit-def: $x8
-	mov	x8, x10
-	str	x8, [x9]
-	adrp	x0, l_.str.14@PAGE
-	add	x0, x0, l_.str.14@PAGEOFF
-	bl	_printf
-	bl	_PAResourcePerformConstruct
-	sturb	w0, [x29, #-212]
-	ldurb	w8, [x29, #-212]
-	sturb	w8, [x29, #-211]
-	ldurb	w10, [x29, #-211]
-	mov	x9, sp
-                                        ; implicit-def: $x8
-	mov	x8, x10
-	str	x8, [x9]
-	adrp	x0, l_.str.15@PAGE
-	add	x0, x0, l_.str.15@PAGEOFF
-	bl	_printf
-	bl	_PATreePerformConstruct
-	ldr	x11, [sp, #24]                  ; 8-byte Folded Reload
-	sub	x8, x29, #40
-	stur	x0, [x11, #217]
-	stur	x1, [x11, #225]
-	ldur	x10, [x11, #217]
-	add	x9, sp, #232
-	stur	x10, [x11, #25]
-	ldur	x8, [x8, #7]
-	stur	x8, [x9, #7]
-	ldrb	w10, [sp, #232]
-	mov	x9, sp
-                                        ; implicit-def: $x8
-	mov	x8, x10
-	str	x8, [x9]
-	adrp	x0, l_.str.16@PAGE
-	add	x0, x0, l_.str.16@PAGEOFF
-	bl	_printf
-	bl	_PASeriesPerformConstruct
-	ldr	x10, [sp, #24]                  ; 8-byte Folded Reload
-	lsr	x8, x0, #32
-	mov	x9, x0
-	str	w9, [x10, #20]
-                                        ; kill: def $w8 killed $w8 killed $x8
-	strb	w8, [sp, #231]
-	ldrb	w10, [sp, #227]
-	mov	x9, sp
-                                        ; implicit-def: $x8
-	mov	x8, x10
-	str	x8, [x9]
-	adrp	x0, l_.str.17@PAGE
-	add	x0, x0, l_.str.17@PAGEOFF
-	bl	_printf
-	bl	_PAStatusPerformConstruct
-	strb	w0, [sp, #225]
-	ldrb	w8, [sp, #225]
-	strb	w8, [sp, #226]
-	bl	_PAElementPerformConstruct
-	strh	w0, [sp, #220]
-	ldrh	w8, [sp, #220]
-	strh	w8, [sp, #222]
-	ldrb	w10, [sp, #222]
-	mov	x9, sp
-                                        ; implicit-def: $x8
-	mov	x8, x10
-	str	x8, [x9]
-	adrp	x0, l_.str.18@PAGE
-	add	x0, x0, l_.str.18@PAGEOFF
-	bl	_printf
-	ldrb	w10, [sp, #226]
-	mov	x9, sp
-                                        ; implicit-def: $x8
-	mov	x8, x10
-	str	x8, [x9]
-	adrp	x0, l_.str.19@PAGE
-	add	x0, x0, l_.str.19@PAGEOFF
-	bl	_printf
-	bl	_PASeriesPerformConstruct
-	ldr	x9, [sp, #24]                   ; 8-byte Folded Reload
-	lsr	x8, x0, #32
-	mov	x10, x0
-	str	w10, [x9]
-                                        ; kill: def $w8 killed $w8 killed $x8
-	strb	w8, [sp, #211]
-	ldr	w8, [x9]
-	stur	w8, [x9, #5]
-	ldrb	w8, [sp, #211]
-	strb	w8, [sp, #216]
-	ldrb	w10, [sp, #212]
-	mov	x9, sp
-                                        ; implicit-def: $x8
-	mov	x8, x10
-	str	x8, [x9]
-	adrp	x0, l_.str.20@PAGE
-	add	x0, x0, l_.str.20@PAGEOFF
-	bl	_printf
-	bl	_PAListPerformConstruct
-	ldr	x8, [sp, #24]                   ; 8-byte Folded Reload
-	sub	x9, x29, #56
-	stur	x0, [x8, #201]
-	stur	x1, [x8, #209]
-	ldur	x10, [x8, #201]
-	add	x8, sp, #176
-	str	x10, [sp, #176]
-	ldur	w9, [x9, #7]
-	stur	w9, [x8, #7]
-	ldr	x10, [sp, #176]
-	add	x9, sp, #192
-	str	x10, [sp, #192]
-	ldur	w8, [x8, #7]
-	stur	w8, [x9, #7]
-	ldrb	w10, [sp, #192]
-	mov	x9, sp
-                                        ; implicit-def: $x8
-	mov	x8, x10
-	str	x8, [x9]
-	adrp	x0, l_.str.21@PAGE
-	add	x0, x0, l_.str.21@PAGEOFF
-	bl	_printf
-	mov	w8, #10                         ; =0xa
-	strb	w8, [sp, #175]
-	bl	_PASeriesPerformConstruct
-	lsr	x8, x0, #32
-	mov	x9, x0
-	stur	w9, [sp, #155]
-                                        ; kill: def $w8 killed $w8 killed $x8
-	strb	w8, [sp, #159]
-	ldur	w8, [sp, #155]
-	str	w8, [sp, #168]
-	ldrb	w8, [sp, #159]
-	strb	w8, [sp, #172]
-	bl	_PASeriesPerformConstruct
-	lsr	x8, x0, #32
-	mov	x9, x0
-	stur	w9, [sp, #150]
-                                        ; kill: def $w8 killed $w8 killed $x8
-	strb	w8, [sp, #154]
-	ldur	w8, [sp, #150]
-	str	w8, [sp, #160]
-	ldrb	w8, [sp, #154]
-	strb	w8, [sp, #164]
-	mov	w8, #40                         ; =0x28
-	str	w8, [sp, #36]                   ; 4-byte Folded Spill
-	strb	w8, [sp, #168]
-	strb	w8, [sp, #171]
-	ldr	w8, [sp, #168]
-	str	w8, [sp, #136]
-	ldrb	w8, [sp, #172]
-	strb	w8, [sp, #140]
-	ldr	x0, [sp, #136]
-	ldr	w8, [sp, #160]
-	str	w8, [sp, #128]
-	ldrb	w8, [sp, #164]
-	strb	w8, [sp, #132]
-	ldr	x1, [sp, #128]
-	bl	_PASeriesPerformCopy
-	ldr	w8, [sp, #36]                   ; 4-byte Folded Reload
-	lsr	x9, x0, #32
-	mov	x10, x0
-	stur	w10, [sp, #145]
-                                        ; kill: def $w9 killed $w9 killed $x9
-	strb	w9, [sp, #149]
-	ldur	w9, [sp, #145]
-	str	w9, [sp, #160]
-	ldrb	w9, [sp, #149]
-	strb	w9, [sp, #164]
-	strb	w8, [sp, #127]
-	ldrb	w8, [sp, #127]
-	mov	x0, x8
-	ldrb	w8, [sp, #126]
-	mov	x1, x8
-	bl	_PADataPerformCopy
-	strb	w0, [sp, #125]
-	ldrb	w8, [sp, #125]
-	strb	w8, [sp, #126]
-	ldrb	w11, [sp, #127]
-	ldrb	w10, [sp, #126]
+	ldr	x8, [sp, #48]                   ; 8-byte Folded Reload
+	ldrh	w9, [sp, #306]
+	strh	w9, [sp, #288]
+	ldur	x0, [x8, #57]
+	ldrh	w9, [sp, #304]
+	strh	w9, [sp, #280]
+	ldur	x1, [x8, #49]
+	bl	_PAElementPerformCopy
+	strh	w0, [sp, #302]
+	ldrh	w8, [sp, #302]
+	strh	w8, [sp, #304]
+	ldrb	w11, [sp, #306]
+	ldrb	w10, [sp, #304]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x11
@@ -518,31 +378,191 @@ _main:                                  ; @main
                                         ; implicit-def: $x8
 	mov	x8, x10
 	str	x8, [x9, #8]
+	adrp	x0, l_.str.14@PAGE
+	add	x0, x0, l_.str.14@PAGEOFF
+	bl	_printf
+	bl	_PANumberPerformConstruct
+	strb	w0, [sp, #278]
+	ldrb	w8, [sp, #278]
+	strb	w8, [sp, #279]
+	ldrb	w10, [sp, #279]
+	mov	x9, sp
+                                        ; implicit-def: $x8
+	mov	x8, x10
+	str	x8, [x9]
+	adrp	x0, l_.str.15@PAGE
+	add	x0, x0, l_.str.15@PAGEOFF
+	bl	_printf
+	bl	_PAResourcePerformConstruct
+	strb	w0, [sp, #276]
+	ldrb	w8, [sp, #276]
+	strb	w8, [sp, #277]
+	ldrb	w10, [sp, #277]
+	mov	x9, sp
+                                        ; implicit-def: $x8
+	mov	x8, x10
+	str	x8, [x9]
+	adrp	x0, l_.str.16@PAGE
+	add	x0, x0, l_.str.16@PAGEOFF
+	bl	_printf
+	bl	_PATreePerformConstruct
+	ldr	x9, [sp, #40]                   ; 8-byte Folded Reload
+	ldr	x11, [sp, #48]                  ; 8-byte Folded Reload
+	sub	x8, x29, #88
+	str	x0, [x9]
+	str	x1, [x9, #8]
+	ldr	x10, [x9]
+	add	x9, sp, #256
+	stur	x10, [x11, #25]
+	ldur	x8, [x8, #7]
+	stur	x8, [x9, #7]
+	ldrb	w10, [sp, #256]
+	mov	x9, sp
+                                        ; implicit-def: $x8
+	mov	x8, x10
+	str	x8, [x9]
+	adrp	x0, l_.str.17@PAGE
+	add	x0, x0, l_.str.17@PAGEOFF
+	bl	_printf
+	bl	_PASeriesPerformConstruct
+	ldr	x10, [sp, #48]                  ; 8-byte Folded Reload
+	lsr	x8, x0, #32
+	mov	x9, x0
+	str	w9, [x10, #20]
+                                        ; kill: def $w8 killed $w8 killed $x8
+	strb	w8, [sp, #255]
+	ldrb	w10, [sp, #251]
+	mov	x9, sp
+                                        ; implicit-def: $x8
+	mov	x8, x10
+	str	x8, [x9]
+	adrp	x0, l_.str.18@PAGE
+	add	x0, x0, l_.str.18@PAGEOFF
+	bl	_printf
+	bl	_PAStatusPerformConstruct
+	strb	w0, [sp, #249]
+	ldrb	w8, [sp, #249]
+	strb	w8, [sp, #250]
+	bl	_PAElementPerformConstruct
+	strh	w0, [sp, #244]
+	ldrh	w8, [sp, #244]
+	strh	w8, [sp, #246]
+	ldrb	w10, [sp, #246]
+	mov	x9, sp
+                                        ; implicit-def: $x8
+	mov	x8, x10
+	str	x8, [x9]
+	adrp	x0, l_.str.19@PAGE
+	add	x0, x0, l_.str.19@PAGEOFF
+	bl	_printf
+	ldrb	w10, [sp, #250]
+	mov	x9, sp
+                                        ; implicit-def: $x8
+	mov	x8, x10
+	str	x8, [x9]
+	adrp	x0, l_.str.20@PAGE
+	add	x0, x0, l_.str.20@PAGEOFF
+	bl	_printf
+	bl	_PASeriesPerformConstruct
+	ldr	x9, [sp, #48]                   ; 8-byte Folded Reload
+	lsr	x8, x0, #32
+	mov	x10, x0
+	str	w10, [x9]
+                                        ; kill: def $w8 killed $w8 killed $x8
+	strb	w8, [sp, #235]
+	ldr	w8, [x9]
+	stur	w8, [x9, #5]
+	ldrb	w8, [sp, #235]
+	strb	w8, [sp, #240]
+	ldrb	w10, [sp, #236]
+	mov	x9, sp
+                                        ; implicit-def: $x8
+	mov	x8, x10
+	str	x8, [x9]
+	adrp	x0, l_.str.21@PAGE
+	add	x0, x0, l_.str.21@PAGEOFF
+	bl	_printf
+	bl	_PAListPerformConstruct
+	ldr	x8, [sp, #48]                   ; 8-byte Folded Reload
+	sub	x9, x29, #104
+	stur	x0, [x8, #241]
+	stur	x1, [x8, #249]
+	ldur	x10, [x8, #241]
+	add	x8, sp, #200
+	str	x10, [sp, #200]
+	ldur	w9, [x9, #7]
+	stur	w9, [x8, #7]
+	ldr	x10, [sp, #200]
+	add	x9, sp, #216
+	str	x10, [sp, #216]
+	ldur	w8, [x8, #7]
+	stur	w8, [x9, #7]
+	ldrb	w10, [sp, #216]
+	mov	x9, sp
+                                        ; implicit-def: $x8
+	mov	x8, x10
+	str	x8, [x9]
 	adrp	x0, l_.str.22@PAGE
 	add	x0, x0, l_.str.22@PAGEOFF
 	bl	_printf
-	ldr	w8, [sp, #168]
-	str	w8, [sp, #112]
-	ldrb	w8, [sp, #172]
-	strb	w8, [sp, #116]
-	ldr	x0, [sp, #112]
-	ldr	w8, [sp, #160]
-	str	w8, [sp, #104]
-	ldrb	w8, [sp, #164]
-	strb	w8, [sp, #108]
-	ldr	x1, [sp, #104]
-	bl	_PASeriesPerformCopy
+	mov	w8, #10                         ; =0xa
+	strb	w8, [sp, #199]
+	bl	_PASeriesPerformConstruct
 	lsr	x8, x0, #32
 	mov	x9, x0
-	str	w9, [sp, #120]
+	stur	w9, [sp, #179]
                                         ; kill: def $w8 killed $w8 killed $x8
-	strb	w8, [sp, #124]
-	ldr	w8, [sp, #120]
+	strb	w8, [sp, #183]
+	ldur	w8, [sp, #179]
+	str	w8, [sp, #192]
+	ldrb	w8, [sp, #183]
+	strb	w8, [sp, #196]
+	bl	_PASeriesPerformConstruct
+	lsr	x8, x0, #32
+	mov	x9, x0
+	stur	w9, [sp, #174]
+                                        ; kill: def $w8 killed $w8 killed $x8
+	strb	w8, [sp, #178]
+	ldur	w8, [sp, #174]
+	str	w8, [sp, #184]
+	ldrb	w8, [sp, #178]
+	strb	w8, [sp, #188]
+	mov	w8, #40                         ; =0x28
+	str	w8, [sp, #60]                   ; 4-byte Folded Spill
+	strb	w8, [sp, #192]
+	strb	w8, [sp, #195]
+	ldr	w8, [sp, #192]
 	str	w8, [sp, #160]
-	ldrb	w8, [sp, #124]
+	ldrb	w8, [sp, #196]
 	strb	w8, [sp, #164]
-	ldrb	w11, [sp, #168]
-	ldrb	w10, [sp, #160]
+	ldr	x0, [sp, #160]
+	ldr	w8, [sp, #184]
+	str	w8, [sp, #152]
+	ldrb	w8, [sp, #188]
+	strb	w8, [sp, #156]
+	ldr	x1, [sp, #152]
+	bl	_PASeriesPerformCopy
+	ldr	w8, [sp, #60]                   ; 4-byte Folded Reload
+	lsr	x9, x0, #32
+	mov	x10, x0
+	stur	w10, [sp, #169]
+                                        ; kill: def $w9 killed $w9 killed $x9
+	strb	w9, [sp, #173]
+	ldur	w9, [sp, #169]
+	str	w9, [sp, #184]
+	ldrb	w9, [sp, #173]
+	strb	w9, [sp, #188]
+	strb	w8, [sp, #151]
+	ldrb	w8, [sp, #151]
+	mov	x0, x8
+	ldrb	w8, [sp, #150]
+	mov	x1, x8
+	bl	_PADataPerformCopy
+	strb	w0, [sp, #149]
+	ldrb	w8, [sp, #149]
+	strb	w8, [sp, #150]
+	ldrb	w11, [sp, #151]
+	ldrb	w10, [sp, #150]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x11
@@ -552,34 +572,29 @@ _main:                                  ; @main
 	str	x8, [x9, #8]
 	adrp	x0, l_.str.23@PAGE
 	add	x0, x0, l_.str.23@PAGEOFF
-	str	x0, [sp, #40]                   ; 8-byte Folded Spill
 	bl	_printf
-	ldr	x0, [sp, #40]                   ; 8-byte Folded Reload
-	ldrb	w11, [sp, #169]
-	ldrb	w10, [sp, #161]
-	mov	x9, sp
-                                        ; implicit-def: $x8
-	mov	x8, x11
-	str	x8, [x9]
-                                        ; implicit-def: $x8
-	mov	x8, x10
-	str	x8, [x9, #8]
-	bl	_printf
-	ldr	w8, [sp, #52]                   ; 4-byte Folded Reload
-	strb	w8, [sp, #103]
-	strb	w8, [sp, #98]
-	ldrh	w8, [sp, #98]
-	strh	w8, [sp, #80]
-	ldr	x0, [sp, #80]
-	ldrh	w8, [sp, #96]
-	strh	w8, [sp, #72]
-	ldr	x1, [sp, #72]
-	bl	_PAElementPerformCopy
-	strh	w0, [sp, #94]
-	ldrh	w8, [sp, #94]
-	strh	w8, [sp, #96]
-	ldrb	w11, [sp, #98]
-	ldrb	w10, [sp, #96]
+	ldr	w8, [sp, #192]
+	str	w8, [sp, #136]
+	ldrb	w8, [sp, #196]
+	strb	w8, [sp, #140]
+	ldr	x0, [sp, #136]
+	ldr	w8, [sp, #184]
+	str	w8, [sp, #128]
+	ldrb	w8, [sp, #188]
+	strb	w8, [sp, #132]
+	ldr	x1, [sp, #128]
+	bl	_PASeriesPerformCopy
+	lsr	x8, x0, #32
+	mov	x9, x0
+	str	w9, [sp, #144]
+                                        ; kill: def $w8 killed $w8 killed $x8
+	strb	w8, [sp, #148]
+	ldr	w8, [sp, #144]
+	str	w8, [sp, #184]
+	ldrb	w8, [sp, #148]
+	strb	w8, [sp, #188]
+	ldrb	w11, [sp, #192]
+	ldrb	w10, [sp, #184]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x11
@@ -589,17 +604,34 @@ _main:                                  ; @main
 	str	x8, [x9, #8]
 	adrp	x0, l_.str.24@PAGE
 	add	x0, x0, l_.str.24@PAGEOFF
+	str	x0, [sp, #64]                   ; 8-byte Folded Spill
 	bl	_printf
-	ldrb	w8, [sp, #101]
-	mov	x0, x8
-	ldrb	w8, [sp, #100]
-	mov	x1, x8
-	bl	_PAResourcePerformCopy
-	strb	w0, [sp, #71]
-	ldrb	w8, [sp, #71]
-	strb	w8, [sp, #100]
-	ldrb	w11, [sp, #101]
-	ldrb	w10, [sp, #100]
+	ldr	x0, [sp, #64]                   ; 8-byte Folded Reload
+	ldrb	w11, [sp, #193]
+	ldrb	w10, [sp, #185]
+	mov	x9, sp
+                                        ; implicit-def: $x8
+	mov	x8, x11
+	str	x8, [x9]
+                                        ; implicit-def: $x8
+	mov	x8, x10
+	str	x8, [x9, #8]
+	bl	_printf
+	ldr	w8, [sp, #76]                   ; 4-byte Folded Reload
+	strb	w8, [sp, #127]
+	strb	w8, [sp, #122]
+	ldrh	w8, [sp, #122]
+	strh	w8, [sp, #104]
+	ldr	x0, [sp, #104]
+	ldrh	w8, [sp, #120]
+	strh	w8, [sp, #96]
+	ldr	x1, [sp, #96]
+	bl	_PAElementPerformCopy
+	strh	w0, [sp, #118]
+	ldrh	w8, [sp, #118]
+	strh	w8, [sp, #120]
+	ldrb	w11, [sp, #122]
+	ldrb	w10, [sp, #120]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x11
@@ -610,16 +642,16 @@ _main:                                  ; @main
 	adrp	x0, l_.str.25@PAGE
 	add	x0, x0, l_.str.25@PAGEOFF
 	bl	_printf
-	ldrb	w8, [sp, #103]
+	ldrb	w8, [sp, #125]
 	mov	x0, x8
-	ldrb	w8, [sp, #102]
+	ldrb	w8, [sp, #124]
 	mov	x1, x8
-	bl	_PACountPerformCopy
-	strb	w0, [sp, #70]
-	ldrb	w8, [sp, #70]
-	strb	w8, [sp, #102]
-	ldrb	w11, [sp, #103]
-	ldrb	w10, [sp, #102]
+	bl	_PAResourcePerformCopy
+	strb	w0, [sp, #95]
+	ldrb	w8, [sp, #95]
+	strb	w8, [sp, #124]
+	ldrb	w11, [sp, #125]
+	ldrb	w10, [sp, #124]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x11
@@ -629,13 +661,33 @@ _main:                                  ; @main
 	str	x8, [x9, #8]
 	adrp	x0, l_.str.26@PAGE
 	add	x0, x0, l_.str.26@PAGEOFF
-	str	x0, [sp, #56]                   ; 8-byte Folded Spill
 	bl	_printf
-	ldr	x0, [sp, #56]                   ; 8-byte Folded Reload
+	ldrb	w8, [sp, #127]
+	mov	x0, x8
+	ldrb	w8, [sp, #126]
+	mov	x1, x8
+	bl	_PACountPerformCopy
+	strb	w0, [sp, #94]
+	ldrb	w8, [sp, #94]
+	strb	w8, [sp, #126]
+	ldrb	w11, [sp, #127]
+	ldrb	w10, [sp, #126]
+	mov	x9, sp
+                                        ; implicit-def: $x8
+	mov	x8, x11
+	str	x8, [x9]
+                                        ; implicit-def: $x8
+	mov	x8, x10
+	str	x8, [x9, #8]
+	adrp	x0, l_.str.27@PAGE
+	add	x0, x0, l_.str.27@PAGEOFF
+	str	x0, [sp, #80]                   ; 8-byte Folded Spill
+	bl	_printf
+	ldr	x0, [sp, #80]                   ; 8-byte Folded Reload
 	mov	w8, #2                          ; =0x2
-	strb	w8, [sp, #192]
-	ldrb	w11, [sp, #103]
-	ldrb	w10, [sp, #102]
+	strb	w8, [sp, #216]
+	ldrb	w11, [sp, #127]
+	ldrb	w10, [sp, #126]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x11
@@ -644,13 +696,13 @@ _main:                                  ; @main
 	mov	x8, x10
 	str	x8, [x9, #8]
 	bl	_printf
-	ldrb	w10, [sp, #192]
+	ldrb	w10, [sp, #216]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x10
 	str	x8, [x9]
-	adrp	x0, l_.str.27@PAGE
-	add	x0, x0, l_.str.27@PAGEOFF
+	adrp	x0, l_.str.28@PAGE
+	add	x0, x0, l_.str.28@PAGEOFF
 	bl	_printf
 	ldur	x9, [x29, #-24]
 	adrp	x8, ___stack_chk_guard@GOTPAGE
@@ -663,9 +715,9 @@ LBB0_1:
 	bl	___stack_chk_fail
 LBB0_2:
 	mov	w0, #0                          ; =0x0
-	ldp	x29, x30, [sp, #464]            ; 16-byte Folded Reload
-	ldp	x28, x27, [sp, #448]            ; 16-byte Folded Reload
-	add	sp, sp, #480
+	add	sp, sp, #560
+	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
+	ldp	x28, x27, [sp], #32             ; 16-byte Folded Reload
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -701,57 +753,60 @@ l_.str.9:                               ; @.str.9
 	.asciz	"series1.size %d series2.size %d\n"
 
 l_.str.10:                              ; @.str.10
-	.asciz	"forst number %d %d \n|"
+	.asciz	"First list %d` second list %d,\n"
 
 l_.str.11:                              ; @.str.11
-	.asciz	"status123 = %d status456 = %d\n"
+	.asciz	"forst number %d %d \n|"
 
 l_.str.12:                              ; @.str.12
-	.asciz	"resource123 = %d resource124 = %d\n|,re"
+	.asciz	"status123 = %d status456 = %d\n"
 
 l_.str.13:                              ; @.str.13
-	.asciz	"resource1234 %d %d \n"
+	.asciz	"resource123 = %d resource124 = %d\n|,re"
 
 l_.str.14:                              ; @.str.14
-	.asciz	"testing PANumber %d\n()"
+	.asciz	"resource1234 %d %d \n"
 
 l_.str.15:                              ; @.str.15
-	.asciz	"testing Resource %d\n"
+	.asciz	"testing PANumber %d\n()"
 
 l_.str.16:                              ; @.str.16
-	.asciz	"testing tree %d\n"
+	.asciz	"testing Resource %d\n"
 
 l_.str.17:                              ; @.str.17
-	.asciz	"testing series number:%d\n"
+	.asciz	"testing tree %d\n"
 
 l_.str.18:                              ; @.str.18
-	.asciz	"Element resource test%d\n"
+	.asciz	"testing series number:%d\n"
 
 l_.str.19:                              ; @.str.19
-	.asciz	"pastatus perform construct %d\n"
+	.asciz	"Element resource test%d\n"
 
 l_.str.20:                              ; @.str.20
-	.asciz	"Series construct series %d\n"
+	.asciz	"pastatus perform construct %d\n"
 
 l_.str.21:                              ; @.str.21
-	.asciz	"List construct count%d\n"
+	.asciz	"Series construct series %d\n"
 
 l_.str.22:                              ; @.str.22
-	.asciz	"data2=%d, from %d\n"
+	.asciz	"List construct count%d\n"
 
 l_.str.23:                              ; @.str.23
-	.asciz	"copy test for series %d copy is %d\n"
+	.asciz	"data2=%d, from %d\n"
 
 l_.str.24:                              ; @.str.24
-	.asciz	"element1.index = %d, element2.index = %d\n"
+	.asciz	"copy test for series %d copy is %d\n"
 
 l_.str.25:                              ; @.str.25
-	.asciz	"resource1.number.val = %d, resource2.number.val=%d\n"
+	.asciz	"element1.index = %d, element2.index = %d\n"
 
 l_.str.26:                              ; @.str.26
-	.asciz	"count1 = %d, count2 = %d\n"
+	.asciz	"resource1.number.val = %d, resource2.number.val=%d\n"
 
 l_.str.27:                              ; @.str.27
+	.asciz	"count1 = %d, count2 = %d\n"
+
+l_.str.28:                              ; @.str.28
 	.asciz	"list.n = %d"
 
 .subsections_via_symbols
