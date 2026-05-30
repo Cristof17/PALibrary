@@ -1116,12 +1116,13 @@ int main()
  printf("Tree1 %d %d\n", tree1.m.number.val, tree2.m.number.val);
  printf("Tree1 %d %d\n", tree1.n.number.val, tree2.n.number.val);
  printf("tree1.list.n %d, tree2.list.n %d\n", tree1.adj.n.number.val, tree2.adj.n.number.val);
-
+ printf("tree.ls.n to, %d tree.ls.n. from %d", tree2.adj.n.number.val,tree1.adj.n.number.val);
  struct PASeries series1;
  struct PASeries series2;
 
  series2 = PASeriesPerformCopy(series1, series2);
  printf("series one n %d, series two n %d\n", series1.m.number.val, series2.m.number.val);
+
 
 
 
@@ -1182,7 +1183,7 @@ int main()
  struct PAList list;
  list = PAListPerformConstruct();
  printf("List construct count%d\n", list.n.number.val);
-# 143 "test/test.c"
+# 144 "test/test.c"
  struct PANumber number1;
  struct PANumber number2;
  number1.val = 10;

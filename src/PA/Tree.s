@@ -165,9 +165,9 @@ LBB1_2:
 _PATreePerformCopy:                     ; @PATreePerformCopy
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #176
-	stp	x29, x30, [sp, #160]            ; 16-byte Folded Spill
-	add	x29, sp, #160
+	sub	sp, sp, #240
+	stp	x29, x30, [sp, #224]            ; 16-byte Folded Spill
+	add	x29, sp, #224
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
@@ -179,54 +179,87 @@ _PATreePerformCopy:                     ; @PATreePerformCopy
 	stur	x0, [x29, #-24]
 	stur	x1, [x29, #-16]
 	ldur	x10, [x29, #-24]
-	add	x9, sp, #72
-	str	x10, [sp, #72]
+	add	x9, sp, #88
+	str	x9, [sp]                        ; 8-byte Folded Spill
+	str	x10, [sp, #88]
 	ldur	x8, [x8, #7]
 	stur	x8, [x9, #7]
 	sub	x8, x29, #40
 	stur	x2, [x29, #-40]
 	stur	x3, [x29, #-32]
 	ldur	x10, [x29, #-40]
-	add	x9, sp, #56
-	str	x9, [sp, #8]                    ; 8-byte Folded Spill
-	str	x10, [sp, #56]
+	add	x9, sp, #72
+	str	x9, [sp, #16]                   ; 8-byte Folded Spill
+	str	x10, [sp, #72]
 	ldur	x8, [x8, #7]
 	stur	x8, [x9, #7]
-	ldrb	w8, [sp, #72]
+	ldrb	w8, [sp, #88]
 	mov	x0, x8
-	ldrb	w8, [sp, #41]
+	add	x8, sp, #57
+	str	x8, [sp, #8]                    ; 8-byte Folded Spill
+	ldrb	w8, [sp, #57]
 	mov	x1, x8
 	bl	_PACountPerformCopy
-	strb	w0, [sp, #40]
-	ldrb	w8, [sp, #40]
-	strb	w8, [sp, #41]
-	ldrb	w8, [sp, #73]
-	mov	x0, x8
-	ldrb	w8, [sp, #42]
-	mov	x1, x8
-	bl	_PACountPerformCopy
-	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload
-	strb	w0, [sp, #39]
-	ldrb	w8, [sp, #39]
-	strb	w8, [sp, #42]
-	ldrb	w8, [sp, #41]
-	strb	w8, [sp, #56]
-	ldrb	w8, [sp, #42]
+	strb	w0, [sp, #56]
+	ldrb	w8, [sp, #56]
 	strb	w8, [sp, #57]
-	ldr	x10, [sp, #56]
-	sub	x8, x29, #72
+	ldrb	w8, [sp, #89]
+	mov	x0, x8
+	ldrb	w8, [sp, #58]
+	mov	x1, x8
+	bl	_PACountPerformCopy
+	ldr	x9, [sp]                        ; 8-byte Folded Reload
+	ldr	x8, [sp, #8]                    ; 8-byte Folded Reload
+	strb	w0, [sp, #55]
+	ldrb	w10, [sp, #55]
+	strb	w10, [sp, #58]
+	ldur	x11, [x9, #4]
+	sub	x10, x29, #56
+	stur	x11, [x29, #-56]
+	ldur	w9, [x9, #11]
+	stur	w9, [x10, #7]
+	ldur	x0, [x29, #-56]
+	ldur	x1, [x29, #-48]
+	ldur	x10, [x8, #4]
+	sub	x9, x29, #72
 	stur	x10, [x29, #-72]
+	ldur	w8, [x8, #11]
+	stur	w8, [x9, #7]
+	ldur	x2, [x29, #-72]
+	ldur	x3, [x29, #-64]
+	bl	_PAListPerformCopy
+	ldr	x10, [sp, #8]                   ; 8-byte Folded Reload
+	ldr	x9, [sp, #16]                   ; 8-byte Folded Reload
+	sub	x11, x29, #88
+	stur	x0, [x29, #-88]
+	stur	x1, [x29, #-80]
+	ldur	x12, [x29, #-88]
+	add	x8, sp, #40
+	str	x12, [sp, #40]
+	ldur	w11, [x11, #7]
+	stur	w11, [x8, #7]
+	ldr	x11, [sp, #40]
+	stur	x11, [x10, #4]
+	ldur	w8, [x8, #7]
+	stur	w8, [x10, #11]
+	ldrb	w8, [sp, #57]
+	strb	w8, [sp, #72]
+	ldrb	w8, [sp, #58]
+	strb	w8, [sp, #73]
+	ldr	x10, [sp, #72]
+	add	x8, sp, #104
+	str	x10, [sp, #104]
 	ldur	x9, [x9, #7]
 	stur	x9, [x8, #7]
-	ldur	x10, [x29, #-72]
-	sub	x9, x29, #56
-	stur	x10, [x29, #-56]
+	ldr	x10, [sp, #104]
+	sub	x9, x29, #104
+	stur	x10, [x29, #-104]
 	ldur	x8, [x8, #7]
 	stur	x8, [x9, #7]
-	ldur	x8, [x29, #-56]
-	str	x8, [sp, #16]                   ; 8-byte Folded Spill
-	ldur	x8, [x29, #-48]
+	ldur	x8, [x29, #-104]
 	str	x8, [sp, #24]                   ; 8-byte Folded Spill
+	ldur	x8, [x29, #-96]
+	str	x8, [sp, #32]                   ; 8-byte Folded Spill
 	ldur	x9, [x29, #-8]
 	adrp	x8, ___stack_chk_guard@GOTPAGE
 	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
@@ -237,10 +270,10 @@ _PATreePerformCopy:                     ; @PATreePerformCopy
 LBB2_1:
 	bl	___stack_chk_fail
 LBB2_2:
-	ldr	x1, [sp, #24]                   ; 8-byte Folded Reload
-	ldr	x0, [sp, #16]                   ; 8-byte Folded Reload
-	ldp	x29, x30, [sp, #160]            ; 16-byte Folded Reload
-	add	sp, sp, #176
+	ldr	x1, [sp, #32]                   ; 8-byte Folded Reload
+	ldr	x0, [sp, #24]                   ; 8-byte Folded Reload
+	ldp	x29, x30, [sp, #224]            ; 16-byte Folded Reload
+	add	sp, sp, #240
 	ret
 	.cfi_endproc
                                         ; -- End function

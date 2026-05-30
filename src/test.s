@@ -226,6 +226,18 @@ _main:                                  ; @main
 	adrp	x0, l_.str.7@PAGE
 	add	x0, x0, l_.str.7@PAGEOFF
 	bl	_printf
+	ldurb	w11, [x29, #-180]
+	ldurb	w10, [x29, #-159]
+	mov	x9, sp
+                                        ; implicit-def: $x8
+	mov	x8, x11
+	str	x8, [x9]
+                                        ; implicit-def: $x8
+	mov	x8, x10
+	str	x8, [x9, #8]
+	adrp	x0, l_.str.8@PAGE
+	add	x0, x0, l_.str.8@PAGEOFF
+	bl	_printf
 	ldr	x8, [sp, #48]                   ; 8-byte Folded Reload
 	ldr	w9, [x8, #124]
 	stur	w9, [x8, #97]
@@ -257,8 +269,8 @@ _main:                                  ; @main
                                         ; implicit-def: $x8
 	mov	x8, x10
 	str	x8, [x9, #8]
-	adrp	x0, l_.str.8@PAGE
-	add	x0, x0, l_.str.8@PAGEOFF
+	adrp	x0, l_.str.9@PAGE
+	add	x0, x0, l_.str.9@PAGEOFF
 	bl	_printf
 	bl	_PANumberPerformConstruct
 	sturb	w0, [x29, #-243]
@@ -281,8 +293,8 @@ _main:                                  ; @main
                                         ; implicit-def: $x8
 	mov	x8, x10
 	str	x8, [x9, #8]
-	adrp	x0, l_.str.9@PAGE
-	add	x0, x0, l_.str.9@PAGEOFF
+	adrp	x0, l_.str.10@PAGE
+	add	x0, x0, l_.str.10@PAGEOFF
 	bl	_printf
 	bl	_PAStatusPerformConstruct
 	sturb	w0, [x29, #-247]
@@ -305,8 +317,8 @@ _main:                                  ; @main
                                         ; implicit-def: $x8
 	mov	x8, x10
 	str	x8, [x9, #8]
-	adrp	x0, l_.str.10@PAGE
-	add	x0, x0, l_.str.10@PAGEOFF
+	adrp	x0, l_.str.11@PAGE
+	add	x0, x0, l_.str.11@PAGEOFF
 	bl	_printf
 	bl	_PAResourcePerformConstruct
 	sturb	w0, [x29, #-251]
@@ -329,8 +341,8 @@ _main:                                  ; @main
                                         ; implicit-def: $x8
 	mov	x8, x10
 	str	x8, [x9, #8]
-	adrp	x0, l_.str.11@PAGE
-	add	x0, x0, l_.str.11@PAGEOFF
+	adrp	x0, l_.str.12@PAGE
+	add	x0, x0, l_.str.12@PAGEOFF
 	bl	_printf
 	ldr	x8, [sp, #48]                   ; 8-byte Folded Reload
 	ldurh	w9, [x29, #-254]
@@ -352,8 +364,8 @@ _main:                                  ; @main
                                         ; implicit-def: $x8
 	mov	x8, x10
 	str	x8, [x9, #8]
-	adrp	x0, l_.str.12@PAGE
-	add	x0, x0, l_.str.12@PAGEOFF
+	adrp	x0, l_.str.13@PAGE
+	add	x0, x0, l_.str.13@PAGEOFF
 	bl	_printf
 	bl	_PANumberPerformConstruct
 	strb	w0, [sp, #278]
@@ -364,8 +376,8 @@ _main:                                  ; @main
                                         ; implicit-def: $x8
 	mov	x8, x10
 	str	x8, [x9]
-	adrp	x0, l_.str.13@PAGE
-	add	x0, x0, l_.str.13@PAGEOFF
+	adrp	x0, l_.str.14@PAGE
+	add	x0, x0, l_.str.14@PAGEOFF
 	bl	_printf
 	bl	_PAResourcePerformConstruct
 	strb	w0, [sp, #276]
@@ -376,8 +388,8 @@ _main:                                  ; @main
                                         ; implicit-def: $x8
 	mov	x8, x10
 	str	x8, [x9]
-	adrp	x0, l_.str.14@PAGE
-	add	x0, x0, l_.str.14@PAGEOFF
+	adrp	x0, l_.str.15@PAGE
+	add	x0, x0, l_.str.15@PAGEOFF
 	bl	_printf
 	bl	_PATreePerformConstruct
 	ldr	x11, [sp, #48]                  ; 8-byte Folded Reload
@@ -394,8 +406,8 @@ _main:                                  ; @main
                                         ; implicit-def: $x8
 	mov	x8, x10
 	str	x8, [x9]
-	adrp	x0, l_.str.15@PAGE
-	add	x0, x0, l_.str.15@PAGEOFF
+	adrp	x0, l_.str.16@PAGE
+	add	x0, x0, l_.str.16@PAGEOFF
 	bl	_printf
 	bl	_PASeriesPerformConstruct
 	ldr	x10, [sp, #48]                  ; 8-byte Folded Reload
@@ -409,8 +421,8 @@ _main:                                  ; @main
                                         ; implicit-def: $x8
 	mov	x8, x10
 	str	x8, [x9]
-	adrp	x0, l_.str.16@PAGE
-	add	x0, x0, l_.str.16@PAGEOFF
+	adrp	x0, l_.str.17@PAGE
+	add	x0, x0, l_.str.17@PAGEOFF
 	bl	_printf
 	bl	_PAStatusPerformConstruct
 	strb	w0, [sp, #249]
@@ -425,16 +437,16 @@ _main:                                  ; @main
                                         ; implicit-def: $x8
 	mov	x8, x10
 	str	x8, [x9]
-	adrp	x0, l_.str.17@PAGE
-	add	x0, x0, l_.str.17@PAGEOFF
+	adrp	x0, l_.str.18@PAGE
+	add	x0, x0, l_.str.18@PAGEOFF
 	bl	_printf
 	ldrb	w10, [sp, #250]
 	mov	x9, sp
                                         ; implicit-def: $x8
 	mov	x8, x10
 	str	x8, [x9]
-	adrp	x0, l_.str.18@PAGE
-	add	x0, x0, l_.str.18@PAGEOFF
+	adrp	x0, l_.str.19@PAGE
+	add	x0, x0, l_.str.19@PAGEOFF
 	bl	_printf
 	bl	_PASeriesPerformConstruct
 	ldr	x9, [sp, #48]                   ; 8-byte Folded Reload
@@ -452,8 +464,8 @@ _main:                                  ; @main
                                         ; implicit-def: $x8
 	mov	x8, x10
 	str	x8, [x9]
-	adrp	x0, l_.str.19@PAGE
-	add	x0, x0, l_.str.19@PAGEOFF
+	adrp	x0, l_.str.20@PAGE
+	add	x0, x0, l_.str.20@PAGEOFF
 	bl	_printf
 	bl	_PAListPerformConstruct
 	ldr	x8, [sp, #48]                   ; 8-byte Folded Reload
@@ -475,8 +487,8 @@ _main:                                  ; @main
                                         ; implicit-def: $x8
 	mov	x8, x10
 	str	x8, [x9]
-	adrp	x0, l_.str.20@PAGE
-	add	x0, x0, l_.str.20@PAGEOFF
+	adrp	x0, l_.str.21@PAGE
+	add	x0, x0, l_.str.21@PAGEOFF
 	bl	_printf
 	mov	w8, #10                         ; =0xa
 	strb	w8, [sp, #199]
@@ -543,8 +555,8 @@ _main:                                  ; @main
                                         ; implicit-def: $x8
 	mov	x8, x10
 	str	x8, [x9, #8]
-	adrp	x0, l_.str.21@PAGE
-	add	x0, x0, l_.str.21@PAGEOFF
+	adrp	x0, l_.str.22@PAGE
+	add	x0, x0, l_.str.22@PAGEOFF
 	bl	_printf
 	ldr	w8, [sp, #192]
 	str	w8, [sp, #136]
@@ -575,8 +587,8 @@ _main:                                  ; @main
                                         ; implicit-def: $x8
 	mov	x8, x10
 	str	x8, [x9, #8]
-	adrp	x0, l_.str.22@PAGE
-	add	x0, x0, l_.str.22@PAGEOFF
+	adrp	x0, l_.str.23@PAGE
+	add	x0, x0, l_.str.23@PAGEOFF
 	str	x0, [sp, #64]                   ; 8-byte Folded Spill
 	bl	_printf
 	ldr	x0, [sp, #64]                   ; 8-byte Folded Reload
@@ -612,8 +624,8 @@ _main:                                  ; @main
                                         ; implicit-def: $x8
 	mov	x8, x10
 	str	x8, [x9, #8]
-	adrp	x0, l_.str.23@PAGE
-	add	x0, x0, l_.str.23@PAGEOFF
+	adrp	x0, l_.str.24@PAGE
+	add	x0, x0, l_.str.24@PAGEOFF
 	bl	_printf
 	ldrb	w8, [sp, #125]
 	mov	x0, x8
@@ -632,8 +644,8 @@ _main:                                  ; @main
                                         ; implicit-def: $x8
 	mov	x8, x10
 	str	x8, [x9, #8]
-	adrp	x0, l_.str.24@PAGE
-	add	x0, x0, l_.str.24@PAGEOFF
+	adrp	x0, l_.str.25@PAGE
+	add	x0, x0, l_.str.25@PAGEOFF
 	bl	_printf
 	ldrb	w8, [sp, #127]
 	mov	x0, x8
@@ -652,8 +664,8 @@ _main:                                  ; @main
                                         ; implicit-def: $x8
 	mov	x8, x10
 	str	x8, [x9, #8]
-	adrp	x0, l_.str.25@PAGE
-	add	x0, x0, l_.str.25@PAGEOFF
+	adrp	x0, l_.str.26@PAGE
+	add	x0, x0, l_.str.26@PAGEOFF
 	str	x0, [sp, #80]                   ; 8-byte Folded Spill
 	bl	_printf
 	ldr	x0, [sp, #80]                   ; 8-byte Folded Reload
@@ -674,8 +686,8 @@ _main:                                  ; @main
                                         ; implicit-def: $x8
 	mov	x8, x10
 	str	x8, [x9]
-	adrp	x0, l_.str.26@PAGE
-	add	x0, x0, l_.str.26@PAGEOFF
+	adrp	x0, l_.str.27@PAGE
+	add	x0, x0, l_.str.27@PAGEOFF
 	bl	_printf
 	ldur	x9, [x29, #-24]
 	adrp	x8, ___stack_chk_guard@GOTPAGE
@@ -720,60 +732,63 @@ l_.str.7:                               ; @.str.7
 	.asciz	"tree1.list.n %d, tree2.list.n %d\n"
 
 l_.str.8:                               ; @.str.8
-	.asciz	"series one n %d, series two n %d\n"
+	.asciz	"tree.ls.n to, %d tree.ls.n. from %d"
 
 l_.str.9:                               ; @.str.9
-	.asciz	"forst number %d %d \n|"
+	.asciz	"series one n %d, series two n %d\n"
 
 l_.str.10:                              ; @.str.10
-	.asciz	"status123 = %d status456 = %d\n"
+	.asciz	"forst number %d %d \n|"
 
 l_.str.11:                              ; @.str.11
-	.asciz	"resource123 = %d resource124 = %d\n|,re"
+	.asciz	"status123 = %d status456 = %d\n"
 
 l_.str.12:                              ; @.str.12
-	.asciz	"resource1234 %d %d \n"
+	.asciz	"resource123 = %d resource124 = %d\n|,re"
 
 l_.str.13:                              ; @.str.13
-	.asciz	"testing PANumber %d\n()"
+	.asciz	"resource1234 %d %d \n"
 
 l_.str.14:                              ; @.str.14
-	.asciz	"testing Resource %d\n"
+	.asciz	"testing PANumber %d\n()"
 
 l_.str.15:                              ; @.str.15
-	.asciz	"testing tree %d\n"
+	.asciz	"testing Resource %d\n"
 
 l_.str.16:                              ; @.str.16
-	.asciz	"testing series number:%d\n"
+	.asciz	"testing tree %d\n"
 
 l_.str.17:                              ; @.str.17
-	.asciz	"Element resource test%d\n"
+	.asciz	"testing series number:%d\n"
 
 l_.str.18:                              ; @.str.18
-	.asciz	"pastatus perform construct %d\n"
+	.asciz	"Element resource test%d\n"
 
 l_.str.19:                              ; @.str.19
-	.asciz	"Series construct series %d\n"
+	.asciz	"pastatus perform construct %d\n"
 
 l_.str.20:                              ; @.str.20
-	.asciz	"List construct count%d\n"
+	.asciz	"Series construct series %d\n"
 
 l_.str.21:                              ; @.str.21
-	.asciz	"data2=%d, from %d\n"
+	.asciz	"List construct count%d\n"
 
 l_.str.22:                              ; @.str.22
-	.asciz	"copy test for series %d copy is %d\n"
+	.asciz	"data2=%d, from %d\n"
 
 l_.str.23:                              ; @.str.23
-	.asciz	"element1.index = %d, element2.index = %d\n"
+	.asciz	"copy test for series %d copy is %d\n"
 
 l_.str.24:                              ; @.str.24
-	.asciz	"resource1.number.val = %d, resource2.number.val=%d\n"
+	.asciz	"element1.index = %d, element2.index = %d\n"
 
 l_.str.25:                              ; @.str.25
-	.asciz	"count1 = %d, count2 = %d\n"
+	.asciz	"resource1.number.val = %d, resource2.number.val=%d\n"
 
 l_.str.26:                              ; @.str.26
+	.asciz	"count1 = %d, count2 = %d\n"
+
+l_.str.27:                              ; @.str.27
 	.asciz	"list.n = %d"
 
 .subsections_via_symbols

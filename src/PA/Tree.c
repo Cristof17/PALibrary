@@ -96,7 +96,7 @@ DllExport struct PATree PATreePerformCopy(struct PATree from, struct PATree to)
     struct PATree temp;
     temp.n = PACountPerformCopy(from.n,temp.n);
     temp.m = PACountPerformCopy(from.m,temp.m);
-    // temp.adj = PAListPerformCopy(from.adj,temp.adj);
+    temp.adj = PAListPerformCopy(from.adj,temp.adj);
 
     to.n = temp.n;
     to.m = temp.m;

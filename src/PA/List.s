@@ -89,29 +89,50 @@ _PAListPerformCopy:                     ; @PAListPerformCopy
 	strb	w8, [sp, #46]
 	ldrb	w8, [sp, #64]
 	strb	w8, [sp, #45]
+	ldrb	w8, [sp, #45]
+	ldurb	w9, [x29, #-67]
+	subs	w8, w8, w9
+	b.le	LBB1_2
 	b	LBB1_1
-LBB1_1:                                 ; =>This Inner Loop Header: Depth=1
+LBB1_1:
+	ldurb	w8, [x29, #-67]
+	strb	w8, [sp, #45]
+	b	LBB1_5
+LBB1_2:
+	ldrb	w8, [sp, #45]
+	ldurb	w9, [x29, #-67]
+	subs	w8, w8, w9
+	b.ge	LBB1_4
+	b	LBB1_3
+LBB1_3:
+	ldrb	w8, [sp, #64]
+	strb	w8, [sp, #45]
+	b	LBB1_4
+LBB1_4:
+	b	LBB1_5
+LBB1_5:
+	b	LBB1_6
+LBB1_6:                                 ; =>This Inner Loop Header: Depth=1
 	ldrb	w8, [sp, #46]
 	ldrb	w9, [sp, #45]
 	subs	w8, w8, w9
-	b.ge	LBB1_3
-	b	LBB1_2
-LBB1_2:                                 ;   in Loop: Header=BB1_1 Depth=1
+	b.ge	LBB1_8
+	b	LBB1_7
+LBB1_7:                                 ;   in Loop: Header=BB1_6 Depth=1
 	sub	x8, x29, #67
-	add	x8, x8, #1
-	ldrb	w9, [sp, #46]
-                                        ; kill: def $x9 killed $w9
+	add	x9, x8, #1
+	ldrb	w10, [sp, #46]
+                                        ; kill: def $x10 killed $w10
 	mov	x11, #5                         ; =0x5
-	mul	x9, x9, x11
-	add	x8, x8, x9
-	str	x8, [sp, #16]                   ; 8-byte Folded Spill
-	add	x8, sp, #64
-	add	x8, x8, #1
-	ldrb	w9, [sp, #46]
-                                        ; kill: def $x9 killed $w9
-	mul	x9, x9, x11
-	add	x9, x8, x9
-	add	x8, sp, #48
+	mul	x10, x10, x11
+	add	x9, x9, x10
+	str	x9, [sp, #16]                   ; 8-byte Folded Spill
+	add	x9, sp, #64
+	add	x9, x9, #1
+	ldrb	w10, [sp, #46]
+                                        ; kill: def $x10 killed $w10
+	mul	x10, x10, x11
+	add	x9, x9, x10
 	add	x8, x8, #1
 	ldrb	w10, [sp, #46]
                                         ; kill: def $x10 killed $w10
@@ -141,8 +162,8 @@ LBB1_2:                                 ;   in Loop: Header=BB1_1 Depth=1
 	ldrb	w8, [sp, #46]
 	add	w8, w8, #1
 	strb	w8, [sp, #46]
-	b	LBB1_1
-LBB1_3:
+	b	LBB1_6
+LBB1_8:
 	sub	x8, x29, #67
 	ldur	x10, [x29, #-67]
 	sub	x9, x29, #56
@@ -158,11 +179,11 @@ LBB1_3:
 	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
 	ldr	x8, [x8]
 	subs	x8, x8, x9
-	b.eq	LBB1_5
-	b	LBB1_4
-LBB1_4:
+	b.eq	LBB1_10
+	b	LBB1_9
+LBB1_9:
 	bl	___stack_chk_fail
-LBB1_5:
+LBB1_10:
 	ldr	x1, [sp, #8]                    ; 8-byte Folded Reload
 	ldr	x0, [sp]                        ; 8-byte Folded Reload
 	ldp	x29, x30, [sp, #144]            ; 16-byte Folded Reload
