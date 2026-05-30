@@ -1085,17 +1085,37 @@ int main()
  element245 = PAElementPerformCopy(element12, element245);
  printf("Element copy source = %d, destination = %d\n", element12.index.Resource.value.val, element245.index.Resource.value.val);
 
+ struct PACount count123;
+ struct PACount count234;
+ count123 = PACountPerformConstruct();
+ count234 = PACountPerformCopy(count123,count234);
+ printf("Count1 = %d, count2 = %d\n", count123.number.val, count234.number.val);
+
  struct PAData data123;
  struct PAData data124;
  data123.Resource.value.val = 50;
  data124 = PADataPerformCopy(data123,data124);
  printf("copy padata %d from %d\n", data123.Resource.value.val, data124.Resource.value.val);
 
+ struct PAStatus status1;
+ struct PAStatus status2;
+ status1 = PAStatusPerformCopy(status1, status2);
+ printf("copy from status %d %d\n", status1.visited.value.val, status2.visited.value.val);
+
  struct PAResource resource12;
  struct PAResource resource14;
  resource12.value.val = 32;
  resource14 = PAResourcePerformCopy(resource12,resource14);
  printf("resource copy %d, %d\n",resource12.value.val, resource14.value.val);
+
+ struct PATree tree1;
+ struct PATree tree2;
+
+ tree1 = PATreePerformConstruct();
+ tree2 = PATreePerformCopy(tree1,tree2);
+ printf("Tree1 %d %d\n", tree1.m.number.val, tree2.m.number.val);
+ printf("Tree1 %d %d\n", tree1.n.number.val, tree2.n.number.val);
+ printf("tree1.list.n %d, tree2.list.n %d\n", tree1.adj.n.number.val, tree2.adj.n.number.val);
 
  struct PANumber number;
  number = PANumberPerformConstruct();
@@ -1116,18 +1136,18 @@ int main()
  printf("Element resource test%d\n",element.index.Resource.value.val);
 
  printf("pastatus perform construct %d\n",status.visited.value.val);
- struct PATransposeTree tree2;
- tree2 = PATransposeTreePerformConstruct();
- printf("tree n=%d\n",tree2.tree.n.number.val);
- printf("tree n=%d\n",tree2.tree.m.number.val);
- printf("tree n=%d\n",tree2.tree.source.index.Resource.value.val);
+
+
+
+
+
  struct PASeries series;
  series = PASeriesPerformConstruct();
  printf("Series construct series %d\n", series.m.number.val);
  struct PAList list;
  list = PAListPerformConstruct();
  printf("List construct count%d\n", list.n.number.val);
-# 88 "test/test.c"
+# 108 "test/test.c"
  struct PANumber number1;
  struct PANumber number2;
  number1.val = 10;

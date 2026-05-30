@@ -466,11 +466,15 @@ void PAListPerformPrint(struct PAList List);
           struct PATree PATreePerformCopy(struct PATree from, struct PATree to)
 {
     struct PATree temp;
-    temp.n = PACountPerformCopy(from.n,to.n);
-    temp.m = PACountPerformCopy(from.m,to.m);
-    temp.adj = PAListPerformCopy(from.adj,to.adj);
+    temp.n = PACountPerformCopy(from.n,temp.n);
+    temp.m = PACountPerformCopy(from.m,temp.m);
+    temp.adj = PAListPerformCopy(from.adj,temp.adj);
 
-    return temp;
+    to.n = temp.n;
+    to.m = temp.m;
+    to.adj = temp.adj;
+
+    return to;
 }
           struct PATree PATreePerformRuin(struct PATree PA)
 {
@@ -478,10 +482,10 @@ void PAListPerformPrint(struct PAList List);
     PA.m = PACountPerformRuin(PA.m);
     PA.source = PAElementPerformRuin(PA.source);
     PA.adj = PAListPerformRuin(PA.adj);
-# 126 "src/PA/Tree.c"
+# 130 "src/PA/Tree.c"
     return PA;
 }
-# 168 "src/PA/Tree.c"
+# 172 "src/PA/Tree.c"
           struct PATree PATreePerformDelete(struct PATree Tree)
 {
 
