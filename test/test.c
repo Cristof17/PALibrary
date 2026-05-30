@@ -59,18 +59,21 @@ int main()
 	struct PATree tree2;
 	// tree2 = PATreePerformConstruct();
 	// tree1 = PATreePerformConstruct();
-	tree2 = PATreePerformCopy(tree1,tree2);
+	printf("tree.ls.n to, %d tree.ls.n. from %d\n", tree2.adj.n.number.val,tree1.adj.n.number.val);
+	// tree2 = PATreePerformCopy(tree1,tree2);
 	printf("Tree1 %d %d\n", tree1.m.number.val, tree2.m.number.val);
 	printf("Tree1 %d %d\n", tree1.n.number.val, tree2.n.number.val);
 	printf("tree1.list.n %d, tree2.list.n %d\n", tree1.adj.n.number.val, tree2.adj.n.number.val);
-	printf("tree.ls.n to, %d tree.ls.n. from %d", tree2.adj.n.number.val,tree1.adj.n.number.val);
-	struct PASeries series1;
-	struct PASeries series2;
+	// struct PASeries series1;
+	// struct PASeries series2;
 	// series1 = PASeriesPerformConstruct();
-	series2 = PASeriesPerformCopy(series1, series2);
-	printf("series one n %d, series two n %d\n", series1.m.number.val, series2.m.number.val);
+	// series2 = PASeriesPerformCopy(series1, series2);
+	// printf("series one n %d, series two n %d\n", series1.m.number.val, series2.m.number.val);
 
-
+	struct PASeries series1234;
+	struct PASeries series2345;
+	series2345 = PASeriesPerformCopy(series1234,series2345);
+	printf("series1.size %d series2.size %d\n", series1234.m.number.val, series2345.m.number.val);
 
 	// struct j
 	struct PANumber number345;

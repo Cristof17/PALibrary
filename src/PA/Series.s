@@ -118,14 +118,36 @@ _PASeriesPerformCopy:                   ; @PASeriesPerformCopy
 	sturb	w8, [x29, #-19]
 	mov	w8, #1                          ; =0x1
 	sturb	w8, [x29, #-20]
+	ldurb	w8, [x29, #-19]
+	ldurb	w9, [x29, #-18]
+	subs	w8, w8, w9
+	b.ge	LBB1_2
 	b	LBB1_1
-LBB1_1:                                 ; =>This Inner Loop Header: Depth=1
+LBB1_1:
+	ldurb	w8, [x29, #-25]
+	sturb	w8, [x29, #-19]
+	b	LBB1_5
+LBB1_2:
+	ldurb	w8, [x29, #-19]
+	ldurb	w9, [x29, #-18]
+	subs	w8, w8, w9
+	b.le	LBB1_4
+	b	LBB1_3
+LBB1_3:
+	ldurb	w8, [x29, #-18]
+	sturb	w8, [x29, #-19]
+	b	LBB1_4
+LBB1_4:
+	b	LBB1_5
+LBB1_5:
+	b	LBB1_6
+LBB1_6:                                 ; =>This Inner Loop Header: Depth=1
 	ldurb	w8, [x29, #-20]
 	ldurb	w9, [x29, #-19]
 	subs	w8, w8, w9
-	b.gt	LBB1_3
-	b	LBB1_2
-LBB1_2:                                 ;   in Loop: Header=BB1_1 Depth=1
+	b.gt	LBB1_8
+	b	LBB1_7
+LBB1_7:                                 ;   in Loop: Header=BB1_6 Depth=1
 	sub	x8, x29, #13
 	add	x8, x8, #1
 	ldurb	w9, [x29, #-20]
@@ -147,18 +169,18 @@ LBB1_2:                                 ;   in Loop: Header=BB1_1 Depth=1
 	ldurb	w8, [x29, #-20]
 	add	w8, w8, #1
 	sturb	w8, [x29, #-20]
-	b	LBB1_1
-LBB1_3:
+	b	LBB1_6
+LBB1_8:
 	mov	w8, #1                          ; =0x1
 	sturb	w8, [x29, #-20]
-	b	LBB1_4
-LBB1_4:                                 ; =>This Inner Loop Header: Depth=1
+	b	LBB1_9
+LBB1_9:                                 ; =>This Inner Loop Header: Depth=1
 	ldurb	w8, [x29, #-20]
 	ldurb	w9, [x29, #-19]
 	subs	w8, w8, w9
-	b.gt	LBB1_6
-	b	LBB1_5
-LBB1_5:                                 ;   in Loop: Header=BB1_4 Depth=1
+	b.gt	LBB1_11
+	b	LBB1_10
+LBB1_10:                                ;   in Loop: Header=BB1_9 Depth=1
 	sub	x8, x29, #25
 	add	x8, x8, #1
 	ldurb	w9, [x29, #-20]
@@ -180,8 +202,8 @@ LBB1_5:                                 ;   in Loop: Header=BB1_4 Depth=1
 	ldurb	w8, [x29, #-20]
 	add	w8, w8, #1
 	sturb	w8, [x29, #-20]
-	b	LBB1_4
-LBB1_6:
+	b	LBB1_9
+LBB1_11:
 	ldur	w8, [x29, #-18]
 	stur	w8, [x29, #-8]
 	ldurb	w8, [x29, #-14]

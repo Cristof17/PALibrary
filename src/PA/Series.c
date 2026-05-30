@@ -54,6 +54,14 @@ DllExport struct PASeries PASeriesPerformCopy(struct PASeries from, struct PASer
     to.m = PACountPerformCopy(temp.m, to.m);
     x.val = temp.m.number.val;
     y.val = FIRST;
+    if (x.val < to.m.number.val)
+    {
+        x.val = temp.m.number.val;
+    }
+    else if (x.val > to.m.number.val)
+    {
+        x.val = to.m.number.val;
+    }
     while (y.val <= x.val)
     {
         PAElementPerformCopy(from.adj[y.val],temp.adj[y.val]);
