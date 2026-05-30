@@ -70,6 +70,30 @@ int main()
 	series2 = PASeriesPerformCopy(series1, series2);
 	printf("series one n %d, series two n %d\n", series1.m.number.val, series2.m.number.val);
 
+
+	// struct j
+	struct PANumber number345;
+	struct PANumber number456;//s
+	number345  = PANumberPerformConstruct();
+	number456 = PANumberPerformCopy(number345,number456);
+	printf("forst number %d %d \n|", number345.val/*.*/,number456.val);
+
+	struct PAStatus status123;
+	struct PAStatus status456;
+	// struct PAStatus
+	// status456 = PAStatusPerformCopy(ssattus)
+	// statuc
+	status123 = PAStatusPerformConstruct();
+	status456 = PAStatusPerformCopy(status123,status456);
+	printf("status123 = %d status456 = %d\n", status123.visited.value.val, /*statut*/ status456.visited.value.val);
+
+	// struct PAResourcer
+	struct PAResource resource123;
+	struct PAResource resource124;
+	resource123 = PAResourcePerformConstruct();
+	resource124 = PAResourcePerformCopy(resource123,resource124);
+	printf("resource123 = %d resource124 = %d\n|,re",resource123.value.val, resource124.value.val);		
+
 	struct PANumber number;
 	number = PANumberPerformConstruct();
 	printf("testing PANumber %d\n()",number.val);
