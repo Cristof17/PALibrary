@@ -60,7 +60,7 @@ int main()
 	// tree2 = PATreePerformConstruct();
 	// tree1 = PATreePerformConstruct();
 	printf("tree.ls.n to, %d tree.ls.n. from %d\n", tree2.adj.n.number.val,tree1.adj.n.number.val);
-	// tree2 = PATreePerformCopy(tree1,tree2);
+	tree2 = PATreePerformCopy(tree1,tree2);
 	printf("Tree1 %d %d\n", tree1.m.number.val, tree2.m.number.val);
 	printf("Tree1 %d %d\n", tree1.n.number.val, tree2.n.number.val);
 	printf("tree1.list.n %d, tree2.list.n %d\n", tree1.adj.n.number.val, tree2.adj.n.number.val);

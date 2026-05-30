@@ -100,6 +100,7 @@ DllExport struct PATree PATreePerformCopy(struct PATree from, struct PATree to)
 
     to.n = temp.n;
     to.m = temp.m;
+    to.adj = temp.adj;
     // to.adj = temp.adj;
     // temp.source =PAElementPerformCopy
     return to;

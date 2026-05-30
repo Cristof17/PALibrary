@@ -228,24 +228,28 @@ _PATreePerformCopy:                     ; @PATreePerformCopy
 	ldur	x2, [x29, #-72]
 	ldur	x3, [x29, #-64]
 	bl	_PAListPerformCopy
-	ldr	x10, [sp, #8]                   ; 8-byte Folded Reload
+	ldr	x8, [sp, #8]                    ; 8-byte Folded Reload
 	ldr	x9, [sp, #16]                   ; 8-byte Folded Reload
 	sub	x11, x29, #88
 	stur	x0, [x29, #-88]
 	stur	x1, [x29, #-80]
 	ldur	x12, [x29, #-88]
-	add	x8, sp, #40
+	add	x10, sp, #40
 	str	x12, [sp, #40]
 	ldur	w11, [x11, #7]
-	stur	w11, [x8, #7]
+	stur	w11, [x10, #7]
 	ldr	x11, [sp, #40]
-	stur	x11, [x10, #4]
-	ldur	w8, [x8, #7]
-	stur	w8, [x10, #11]
-	ldrb	w8, [sp, #57]
-	strb	w8, [sp, #72]
-	ldrb	w8, [sp, #58]
-	strb	w8, [sp, #73]
+	stur	x11, [x8, #4]
+	ldur	w10, [x10, #7]
+	stur	w10, [x8, #11]
+	ldrb	w10, [sp, #57]
+	strb	w10, [sp, #72]
+	ldrb	w10, [sp, #58]
+	strb	w10, [sp, #73]
+	ldur	x10, [x8, #4]
+	stur	x10, [x9, #4]
+	ldur	w8, [x8, #11]
+	stur	w8, [x9, #11]
 	ldr	x10, [sp, #72]
 	add	x8, sp, #104
 	str	x10, [sp, #104]

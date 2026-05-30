@@ -472,6 +472,7 @@ void PAListPerformPrint(struct PAList List);
 
     to.n = temp.n;
     to.m = temp.m;
+    to.adj = temp.adj;
 
 
     return to;
@@ -482,10 +483,10 @@ void PAListPerformPrint(struct PAList List);
     PA.m = PACountPerformRuin(PA.m);
     PA.source = PAElementPerformRuin(PA.source);
     PA.adj = PAListPerformRuin(PA.adj);
-# 130 "src/PA/Tree.c"
+# 131 "src/PA/Tree.c"
     return PA;
 }
-# 172 "src/PA/Tree.c"
+# 173 "src/PA/Tree.c"
           struct PATree PATreePerformDelete(struct PATree Tree)
 {
 
