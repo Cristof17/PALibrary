@@ -1117,6 +1117,12 @@ int main()
  printf("Tree1 %d %d\n", tree1.n.number.val, tree2.n.number.val);
  printf("tree1.list.n %d, tree2.list.n %d\n", tree1.adj.n.number.val, tree2.adj.n.number.val);
 
+ struct PASeries series1;
+ struct PASeries series2;
+ series1 = PASeriesPerformConstruct();
+ series2 = PASeriesPerformCopy(series1, series2);
+ printf("series one n %d, series two n %d\n", series1.m.number.val, series2.m.number.val);
+
  struct PANumber number;
  number = PANumberPerformConstruct();
  printf("testing PANumber %d\n()",number.val);
@@ -1147,7 +1153,7 @@ int main()
  struct PAList list;
  list = PAListPerformConstruct();
  printf("List construct count%d\n", list.n.number.val);
-# 108 "test/test.c"
+# 114 "test/test.c"
  struct PANumber number1;
  struct PANumber number2;
  number1.val = 10;
