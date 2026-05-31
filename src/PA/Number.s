@@ -7,10 +7,6 @@ _PANumberPerformConstruct:              ; @PANumberPerformConstruct
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	mov	w8, #53                         ; =0x35
-	strb	w8, [sp, #14]
-	ldrb	w8, [sp, #14]
-	strb	w8, [sp, #15]
 	ldrb	w0, [sp, #15]
 	add	sp, sp, #16
 	ret

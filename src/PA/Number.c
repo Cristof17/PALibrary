@@ -6,9 +6,6 @@
 DllExport struct PANumber PANumberPerformConstruct()
 {
     struct PANumber number;
-    unsigned char val;
-    val = NULL_CHAR;
-    number.val = val;
     // number = PANumberPerformInit(number,NULL_CHAR);
     // unsigned char random;
     // number.val =  random;

@@ -388,9 +388,6 @@ struct Facade {
           struct PANumber PANumberPerformConstruct()
 {
     struct PANumber number;
-    unsigned char val;
-    val = '5';
-    number.val = val;
 
 
 
