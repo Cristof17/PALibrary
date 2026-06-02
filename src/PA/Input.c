@@ -14,7 +14,7 @@
 #include <PA\Element.h>
 #endif
 
-DllExport struct PAInput PAInputPerformConstruct()
+DllExport struct PAInput* PAInputPerformConstruct()
 {
 	struct PAInput input;
 	input.n = PACountPerformConstruct();
@@ -36,7 +36,7 @@ DllExport struct PAInput PAInputPerformConstruct()
 // //	copy.source=Input.source;
 // 	return copy;
 // }
-DllExport struct PAInput PAInputPerformInit(struct PAInput Input, struct PACount Value, struct PACount Value2, struct PAElement Value3)
+DllExport struct PAInput* PAInputPerformInit(struct PAInput* Input, struct PACount* Value, struct PACount* Value2, struct PAElement* Value3)
 {
 	struct PAInput temp;
 	temp.n = PACountPerformConstruct();
