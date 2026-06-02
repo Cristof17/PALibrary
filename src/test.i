@@ -1194,7 +1194,14 @@ int main()
  struct PAList list;
  list = PAListPerformConstruct();
  printf("List construct count%d\n", list.n.number.val);
-# 155 "test/test.c"
+
+ struct PAList list1;
+ struct PAList list1Copy;
+
+ list1Copy = PAListPerformCopy(list1,list1Copy);
+ printf("list1 %d list1Copy %d \n",list1.n.number.val, list1Copy.n.number.val);
+ printf("list1 randomElemente %d list1CopyRandomElement %d\n",list1.neigh->adj->index.Resource.value.val,list1Copy.neigh->adj->index.Resource.value.val);
+# 163 "test/test.c"
  struct PANumber number1;
  struct PANumber number2;
  number1.val = 10;
