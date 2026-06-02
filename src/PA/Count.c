@@ -22,7 +22,7 @@ DllExport struct PACount PACountPerformConstruct()
     // size.number = Value;
     return zies;
 }
-DllExport struct PACount PACountPerformInit(struct PACount Count, struct PANumber Value)
+DllExport struct PACount* PACountPerformInit(struct PACount* Count, struct PANumber* Value)
 {
     // struct PACount temp;
     struct PACount temp;

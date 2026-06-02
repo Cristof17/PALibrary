@@ -45,21 +45,21 @@ DllExport struct PAElement PAElementPerformInit(struct PAElement Element, struct
     // struct PAElement element;
     return Element;
 }
-DllExport void PAElementVisit(struct PAElement Element)
+DllExport void PAElementVisit(struct PAElement* Element)
 {
     Element.status.visited.value.val = TRUE;
     return;
 }
-DllExport PABool PAElementIsVisited(struct PAElement Element)
+DllExport PABool PAElementIsVisited(struct PAElement* Element)
 {
     return Element.status.visited.value.val;
 }
-DllExport void PAElementReset(struct PAElement Element)
+DllExport void PAElementReset(struct PAElement* Element)
 {
     Element.status.visited.value.val = FALSE;
     return;
 }
-DllExport struct PAElement PAElementPerformCopy(struct PAElement from, struct PAElement to)
+DllExport struct PAElement* PAElementPerformCopy(struct PAElement* from, struct PAElement* to)
 {
     struct PAElement temp;
     temp.index = PADataPerformCopy(from.index, to.index);
