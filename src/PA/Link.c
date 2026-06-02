@@ -12,7 +12,7 @@
 #include <PA\Pair.h>
 #endif
 
-DllExport struct PALink PALinkPerformConstruct()
+DllExport struct PALink* PALinkPerformConstruct()
 {
     struct PALink link;
     link.p = PAPairPerformConstruct();
@@ -23,7 +23,7 @@ DllExport struct PALink PALinkPerformConstruct()
     // return link;÷
     // link.p = P;÷
 }
-DllExport struct PALink PALinkPerformInit(struct PALink Link, struct PAPair Value)
+DllExport struct PALink* PALinkPerformInit(struct PALink* Link, struct PAPair* Value)
 {
     struct PALink link;
     link.p = PAPairPerformConstruct();
@@ -44,7 +44,7 @@ DllExport struct PALink PALinkPerformRuin(struct PALink PA)
     // return result;
     return PA;
 }
-struct PALink PALinkPerformCopy(struct PALink from, struct PALink to)
+struct PALink* PALinkPerformCopy(struct PALink* from, struct PALink* to)
 {
     struct PALink temp;
     temp.p = PAPairPerformCopy(from.p, to.p);
@@ -60,7 +60,7 @@ struct PALink PALinkPerformCopy(struct PALink from, struct PALink to)
     // return Link;
     // return reusult;
 // }
-DllExport struct PALink PALinkPerformDelete(struct PALink PA){
+DllExport struct PALink* PALinkPerformDelete(struct PALink* PA){
     // PAResult result;
     // struct PALink Empty;
     PA.p = PAPairPerformDelete(PA.p);
