@@ -24,8 +24,12 @@ DllExport struct PAStatus* PAStatusPerformConstruct()
 }
 DllExport struct PAStatus* PAStatusPerformInit(struct PAStatus* Status, struct PAResource Value)
 {
-    Status.visited = Value;
-    return Status;
+    struct PAStatus temp;
+    struct PAStatus* statusPointer;
+    statusPointer->visited = Value;
+    return statusPointer;
+    // Status.visited = Value;
+    // return Status;
 }
 DllExport struct PAStatus* PAStatusPerformCopy(struct PAStatus* from, struct PAStatus* to)
 {
