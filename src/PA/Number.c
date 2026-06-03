@@ -6,24 +6,28 @@
 DllExport struct PANumber* PANumberPerformConstruct()
 {
     struct PANumber number;
+    struct PANumber* numberPointer;
     // number = PANumberPerformInit(number,NULL_CHAR);
     // unsigned char random;
     // number.val =  random;
-    return number;
+    return numberPointer;
 }
 DllExport struct PANumber* PANumberPerformInit(struct PANumber* Number, unsigned char Value)
 {
     struct PANumber temp;
-    temp.val = Value;
-    Number = temp;
+    struct PANumber* numberPointer;
+    // numberPointer.
+    numberPointer->val = NULL;
+    // temp.val = Value;
+    // Number = temp;
     // temp = Number;
     // struct PANumber number;
     // Number.val = Value;
-    return Number;
+    return numberPointer;
 }
 DllExport struct PANumber* PANumberPerformDelete(struct PANumber* PA)
 {
-    PA.val = '0';
+    PA->val = NULL;
     // struct PANumber number;
     return PA;
 }
@@ -35,11 +39,11 @@ DllExport struct PANumber* PANumberPerformRuin(struct PANumber* PA)
     // struct PANumber number;
     // return number;
 }
-DllExport struct PANumber* PANumberPerformCopy(struct PANumber* from, struct PANumber to)
+DllExport struct PANumber* PANumberPerformCopy(struct PANumber* from, struct PANumber* to)
 {
     // struct PANumber temp;
-    char num = from.val;
-    to.val = num;  
+    char num = from->val;
+    to->val = num;  
     // = num;
     // to.val = num;
     // to.val = from.val;
