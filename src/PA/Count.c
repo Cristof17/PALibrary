@@ -40,7 +40,7 @@ DllExport struct PACount* PACountPerformInit(struct PACount* Count, struct PANum
     // count.number = Number;
     // return÷÷ Count;
 }
-DllExport struct PACount* PACountPerformRuin(struct PACount* PA)
+DllExport int PACountPerformRuin(struct PACount* PA)
 {
     //get the value at address pointed by stack pointer
     //that corresponsds to parameter PA

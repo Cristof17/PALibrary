@@ -34,7 +34,7 @@ DllExport struct PALink* PALinkPerformInit(struct PALink* Link, struct PAPair Va
     // return link;
     return Link;
 }
-DllExport struct PALink PALinkPerformRuin(struct PALink* PA)
+DllExport int PALinkPerformRuin(struct PALink* PA)
 {
     PA.p = PAPairPerformRuin(PA.p);    
     // struct PALink Empty;

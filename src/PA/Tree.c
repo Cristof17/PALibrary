@@ -105,7 +105,7 @@ DllExport struct PATree* PATreePerformCopy(struct PATree* from, struct PATree* t
     // temp.source =PAElementPerformCopy
     return to;
 }
-DllExport struct PATree* PATreePerformRuin(struct PATree* PA)
+DllExport int PATreePerformRuin(struct PATree* PA)
 {
     PA.n = PACountPerformRuin(PA.n);
     PA.m = PACountPerformRuin(PA.m);

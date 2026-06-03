@@ -35,7 +35,7 @@ DllExport struct PANormalTree* PANormalTreePerformInit(struct PANormalTree* Norm
 // //    copy.adj = Tree.adj;
 //     return copy;
 // }
-DllExport struct PANormalTree* PANormalTreePerformRuin(struct PANormalTree* PA)
+DllExport int PANormalTreePerformRuin(struct PANormalTree* PA)
 {
     struct PANormalTree Empty;
     PA.tree = PATreePerformRuin(PA.tree);

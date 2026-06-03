@@ -139,7 +139,7 @@ DllExport struct PAList* PAListPerformInit(struct PAList* List, struct PACount V
     // struct PAResult result;
     // return result;
 // }
-DllExport struct PAList* PAListPerformRuin(struct PAList* PA)
+DllExport int PAListPerformRuin(struct PAList* PA)
 {
     // struct PAList List;
     struct PACount x;

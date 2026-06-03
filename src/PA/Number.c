@@ -31,7 +31,7 @@ DllExport struct PANumber* PANumberPerformDelete(struct PANumber* PA)
     // struct PANumber number;
     return PA;
 }
-DllExport struct PANumber* PANumberPerformRuin(struct PANumber* PA)
+DllExport int PANumberPerformRuin(struct PANumber* PA)
 {
     // struct PANumber Empty;
     return PA;

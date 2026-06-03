@@ -98,7 +98,7 @@ struct PAPair* PAPairPerformCopy(struct PAPair* from, struct PAPair* to)
     //return Pair;
     // return pair;
 // }
-DllExport struct PAPair* PAPairPerformRuin(struct PAPair* PA)
+DllExport int PAPairPerformRuin(struct PAPair* PA)
 {
     PAElementPerformRuin(&PA->Node);
     PAElementPerformRuin(&PA->Neigh);

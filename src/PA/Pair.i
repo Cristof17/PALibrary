@@ -463,8 +463,8 @@ struct PAPair* PAPairPerformCopy(struct PAPair* from, struct PAPair* to)
 # 101 "src/PA/Pair.c"
           struct PAPair* PAPairPerformRuin(struct PAPair* PA)
 {
-    PA.Node = PAElementPerformRuin(PA.Node);
-    PA.Neigh = PAElementPerformRuin(PA.Neigh);
+    PAElementPerformRuin(&PA->Node);
+    PAElementPerformRuin(&PA->Neigh);
     return PA;
 
 
@@ -474,8 +474,8 @@ struct PAPair* PAPairPerformCopy(struct PAPair* from, struct PAPair* to)
 }
           struct PAPair* PAPairPerformDelete(struct PAPair* PA)
 {
-    PA.Node = PAElementPerformDelete(PA.Node);
-    PA.Neigh = PAElementPerformDelete(PA.Neigh);
+    PAElementPerformDelete(&PA->Node);
+    PAElementPerformDelete(&PA->Neigh);
     return PA;
 
 

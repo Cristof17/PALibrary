@@ -39,7 +39,7 @@ DllExport struct PAStatus* PAStatusPerformDelete(struct PAStatus* PA)
     PA.visited.value.val = FALSE;
     return PA;
 }
-DllExport struct PAStatus* PAStatusPerformRuin(struct PAStatus* PA)
+DllExport int PAStatusPerformRuin(struct PAStatus* PA)
 {
     // PAResult result;
     // return Status;

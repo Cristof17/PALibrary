@@ -70,7 +70,7 @@ DllExport struct PAInput* PAInputPerformInit(struct PAInput* Input, struct PACou
 	// input.source = Source;
 	return inputPointer;
 }
-DllExport struct PAInput* PAInputPerformRuin(struct PAInput* PA) {
+DllExport int PAInputPerformRuin(struct PAInput* PA) {
 	// PAResult result;
 	// struct PAInput Empty;
 	PACountPerformRuin(&PA->n);
