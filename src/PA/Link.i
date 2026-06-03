@@ -407,7 +407,7 @@ struct Facade {
 
 
           int PAPairPerformRuin(struct PAPair*);
-          struct PAPair* PAPairPerformDelete(struct PAPair*);
+          int PAPairPerformDelete(struct PAPair*);
 # 10 "src/PA/Link.c" 2
 
 

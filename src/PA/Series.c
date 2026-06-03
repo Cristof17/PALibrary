@@ -20,15 +20,15 @@
 */
 DllExport struct PASeries* PASeriesPerformConstruct() 
 {
-    struct PASeries series;
-    series.m = PACountPerformConstruct();
+    struct PASeries* series;
+    // series.m = PACountPerformConstruct();
     struct PANumber x;
     struct PANumber y;
     x.val = FIRST;
-    y.val = series.m.number.val;
+    // y.val = series.m.number.val;
     while (x.val < y.val)
     {
-        series.adj[x.val] = PAElementPerformInit(series.adj[x.val], series.adj[x.val].index, series.adj[x.val].status);
+        // series.adj[x.val] = PAElementPerformInit(series.adj[x.val], series.adj[x.val].index, series.adj[x.val].status);
         x.val++;
     }
     // series.m = sPACountPerformConstruct();
@@ -49,36 +49,36 @@ DllExport struct PASeries* PASeriesPerformCopy(struct PASeries* from, struct PAS
 {
     struct PACount x;
     struct PACount y;
-    struct PASeries temp;
-    temp = PASeriesPerformConstruct();
+    struct PASeries* temp;
+    // temp = PASeriesPerformConstruct();
     // x = PANumber
-    temp.m = PACountPerformCopy(from.m, temp.m);
-    x.number.val = temp.m.number.val;
-    if (temp.m.number.val < to.m.number.val)
+    // temp.m = PACountPerformCopy(from.m, temp.m);
+    // x.number.val = temp.m.number.val;
+    // if (temp.m.number.val < to.m.number.val)
     {
-        x.number.val = temp.m.number.val;
+        // x.number.val = temp.m.number.val;
     }
-    else if (temp.m.number.val > to.m.number.val)
+    // else if (temp.m.number.val > to.m.number.val)
     {
-        x.number.val = to.m.number.val;
+        // x.number.val = to.m.number.val;
     }
     y.number.val = FIRST;
     while (y.number.val <= x.number.val)
     {
         struct PAElement aux;
-        PAElementPerformCopy(from.adj[y.number.val],aux);
-        PAElementPerformCopy(aux,temp.adj[y.number.val]);
+        // PAElementPerformCopy(from.adj[y.number.val],aux);
+        // PAElementPerformCopy(aux,temp.adj[y.number.val]);
         y.number.val++;
     }
     y.number.val = FIRST;
     while (y.number.val <= x.number.val)
     {
         struct PAElement aux;
-        PAElementPerformCopy(temp.adj[y.number.val],aux);
-        PAElementPerformCopy(aux, to.adj[y.number.val]);
+        // PAElementPerformCopy(temp.adj[y.number.val],aux);
+        // PAElementPerformCopy(aux, to.adj[y.number.val]);
         y.number.val++;
     }
-    to.m = PACountPerformCopy(temp.m, to.m);
+    // to.m = PACountPerformCopy(temp.m, to.m);
     // return temp;
     return to;
 }
@@ -118,21 +118,21 @@ DllExport struct PASeries* PASeriesPerformInit(struct PASeries* Series,
         y.val = Value.number.val;
         while (x.val <= y.val)
         {
-            series.adj[x.val] = PAElementPerformInit(series.adj[x.val],series.adj[x.val].index, series.adj[x.val].status);
+            // series.adj[x.val] = PAElementPerformInit(series.adj[x.val],series.adj[x.val].index, series.adj[x.val].status);
             x.val++;
         }
         // series.adj = Value2;
-        return series;
+        // return series;
     }
     DllExport struct PASeries* PASeriesPerformDelete(struct PASeries* PA)
     {
         struct PANumber x;
         struct PANumber y;
-        x.val = PA.m.number.val;
+        // x.val = PA.m.number.val;
         y.val = FIRST;
         while (y.val <= x.val)
         {
-            PA.adj[y.val] = PAElementPerformDelete(PA.adj[y.val]);
+            // PA.adj[y.val] = PAElementPerformDelete(PA.adj[y.val]);
             y.val++;
         }
         // struct PASeries Empty;
@@ -152,11 +152,11 @@ DllExport struct PASeries* PASeriesPerformInit(struct PASeries* Series,
     {
         struct PACount x;
         struct PACount y;
-        x.number.val = PA.m.number.val;
+        // x.number.val = PA.m.number.val;
         y.number.val = FIRST;
         while (y.number.val <= x.number.val)
         {
-            PA.adj[y.number.val] = PAElementPerformRuin(PA.adj[y.number.val]);
+            // PA.adj[y.number.val] = PAElementPerformRuin(PA.adj[y.number.val]);
             y.number.val++;
         }
         // struct PASeries Empty;
@@ -205,7 +205,7 @@ DllExport struct PASeries* PASeriesPerformInit(struct PASeries* Series,
 DllExport
 struct PAResource* PASeriesGet(struct PAData* Data)
 {
-    struct PAResource resource;
+    struct PAResource* resource;
     return resource;
 }
 // PAResult PASeriesPutFirst(struct PAResource);

@@ -136,10 +136,11 @@ DllExport int PAElementPerformRuin(struct PAElement* PA)
     // return element;
   //  return Element;
 // }
-DllExport struct PAElement* PAElementPerformDelete(struct PAElement* PA)
+DllExport int PAElementPerformDelete(struct PAElement* PA)
 {
     // PAResult result;
-    // return result;
-    return PA;
+    // return result;    return PA;
+    int returnCode;
+    return returnCode;
     // return 0;
 }

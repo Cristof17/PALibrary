@@ -395,7 +395,7 @@ void PAListPerformPrint(struct PAList* List);
 # 8 "src/PA/List.c" 2
 # 1 "./include/PA/Count.h" 1
 # 13 "./include/PA/Count.h"
-          struct PACount PACountPerformConstruct();
+          struct PACount* PACountPerformConstruct();
           struct PACount* PACountPerformInit(struct PACount* Count, struct PANumber Number);
           struct PACount* PACountPerformCopy(struct PACount* from, struct PACount* to);
 
@@ -421,9 +421,6 @@ void PAListPerformPrint(struct PAList* List);
           struct PAList* PAListPerformConstruct()
 {
     struct PAList* list;
-
-
-    list->n = PACountPerformConstruct();
 # 33 "src/PA/List.c"
     return list;
 # 43 "src/PA/List.c"

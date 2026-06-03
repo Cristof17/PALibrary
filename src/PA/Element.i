@@ -394,7 +394,7 @@ struct Facade {
 
 
           int PAElementPerformRuin(struct PAElement*);
-          struct PAElement* PAElementPerformDelete(struct PAElement*);
+          int PAElementPerformDelete(struct PAElement*);
           struct PAElement* PAElementPerformCopy(struct PAElement*, struct PAElement*);
 # 7 "src/PA/Element.c" 2
 # 1 "./include/PA/Data.h" 1
@@ -468,10 +468,11 @@ struct PAElement* PAElementPerformConstruct()
 
 }
 # 139 "src/PA/Element.c"
-          struct PAElement* PAElementPerformDelete(struct PAElement* PA)
+          int PAElementPerformDelete(struct PAElement* PA)
 {
 
 
-    return PA;
+    int returnCode;
+    return returnCode;
 
 }

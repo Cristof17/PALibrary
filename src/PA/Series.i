@@ -387,7 +387,7 @@ struct Facade {
 # 8 "src/PA/Series.c" 2
 # 1 "./include/PA/Count.h" 1
 # 13 "./include/PA/Count.h"
-          struct PACount PACountPerformConstruct();
+          struct PACount* PACountPerformConstruct();
           struct PACount* PACountPerformInit(struct PACount* Count, struct PANumber Number);
           struct PACount* PACountPerformCopy(struct PACount* from, struct PACount* to);
 
@@ -411,21 +411,21 @@ struct Facade {
 
 
           int PAElementPerformRuin(struct PAElement*);
-          struct PAElement* PAElementPerformDelete(struct PAElement*);
+          int PAElementPerformDelete(struct PAElement*);
           struct PAElement* PAElementPerformCopy(struct PAElement*, struct PAElement*);
 # 10 "src/PA/Series.c" 2
 # 21 "src/PA/Series.c"
           struct PASeries* PASeriesPerformConstruct()
 {
-    struct PASeries series;
-    series.m = PACountPerformConstruct();
+    struct PASeries* series;
+
     struct PANumber x;
     struct PANumber y;
     x.val = (1);
-    y.val = series.m.number.val;
+
     while (x.val < y.val)
     {
-        series.adj[x.val] = PAElementPerformInit(series.adj[x.val], series.adj[x.val].index, series.adj[x.val].status);
+
         x.val++;
     }
 # 46 "src/PA/Series.c"
@@ -435,36 +435,36 @@ struct Facade {
 {
     struct PACount x;
     struct PACount y;
-    struct PASeries temp;
-    temp = PASeriesPerformConstruct();
+    struct PASeries* temp;
 
-    temp.m = PACountPerformCopy(from.m, temp.m);
-    x.number.val = temp.m.number.val;
-    if (temp.m.number.val < to.m.number.val)
+
+
+
+
     {
-        x.number.val = temp.m.number.val;
+
     }
-    else if (temp.m.number.val > to.m.number.val)
+
     {
-        x.number.val = to.m.number.val;
+
     }
     y.number.val = (1);
     while (y.number.val <= x.number.val)
     {
         struct PAElement aux;
-        PAElementPerformCopy(from.adj[y.number.val],aux);
-        PAElementPerformCopy(aux,temp.adj[y.number.val]);
+
+
         y.number.val++;
     }
     y.number.val = (1);
     while (y.number.val <= x.number.val)
     {
         struct PAElement aux;
-        PAElementPerformCopy(temp.adj[y.number.val],aux);
-        PAElementPerformCopy(aux, to.adj[y.number.val]);
+
+
         y.number.val++;
     }
-    to.m = PACountPerformCopy(temp.m, to.m);
+
 
     return to;
 }
@@ -481,21 +481,21 @@ struct Facade {
         y.val = Value.number.val;
         while (x.val <= y.val)
         {
-            series.adj[x.val] = PAElementPerformInit(series.adj[x.val],series.adj[x.val].index, series.adj[x.val].status);
+
             x.val++;
         }
 
-        return series;
+
     }
               struct PASeries* PASeriesPerformDelete(struct PASeries* PA)
     {
         struct PANumber x;
         struct PANumber y;
-        x.val = PA.m.number.val;
+
         y.val = (1);
         while (y.val <= x.val)
         {
-            PA.adj[y.val] = PAElementPerformDelete(PA.adj[y.val]);
+
             y.val++;
         }
 
@@ -507,11 +507,11 @@ struct Facade {
     {
         struct PACount x;
         struct PACount y;
-        x.number.val = PA.m.number.val;
+
         y.number.val = (1);
         while (y.number.val <= x.number.val)
         {
-            PA.adj[y.number.val] = PAElementPerformRuin(PA.adj[y.number.val]);
+
             y.number.val++;
         }
 # 170 "src/PA/Series.c"
@@ -520,7 +520,7 @@ struct Facade {
 # 206 "src/PA/Series.c"
 struct PAResource* PASeriesGet(struct PAData* Data)
 {
-    struct PAResource resource;
+    struct PAResource* resource;
     return resource;
 }
 # 227 "src/PA/Series.c"

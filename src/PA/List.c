@@ -21,7 +21,7 @@ DllExport struct PAList* PAListPerformConstruct()
     struct PAList* list;
     // struct PACount n = PACountPerformConstruct();
     // struct PACount x;
-    list->n = PACountPerformConstruct();
+    // list->n = PACountPerformConstruct();
     // list.m = PACountPerformConstruct();
     // struct PANumber y;
     // y.val = FIRST;

@@ -394,7 +394,7 @@ struct Facade {
 # 2 "test/test.c" 2
 # 1 "./include/PA/Count.h" 1
 # 13 "./include/PA/Count.h"
-          struct PACount PACountPerformConstruct();
+          struct PACount* PACountPerformConstruct();
           struct PACount* PACountPerformInit(struct PACount* Count, struct PANumber Number);
           struct PACount* PACountPerformCopy(struct PACount* from, struct PACount* to);
 
@@ -419,7 +419,7 @@ struct Facade {
 
 
           int PAElementPerformRuin(struct PAElement*);
-          struct PAElement* PAElementPerformDelete(struct PAElement*);
+          int PAElementPerformDelete(struct PAElement*);
           struct PAElement* PAElementPerformCopy(struct PAElement*, struct PAElement*);
 # 5 "test/test.c" 2
 # 1 "./include/PA/Data.h" 1

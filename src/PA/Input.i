@@ -394,7 +394,7 @@ struct Facade {
 # 9 "src/PA/Input.c" 2
 # 1 "./include/PA/Count.h" 1
 # 13 "./include/PA/Count.h"
-          struct PACount PACountPerformConstruct();
+          struct PACount* PACountPerformConstruct();
           struct PACount* PACountPerformInit(struct PACount* Count, struct PANumber Number);
           struct PACount* PACountPerformCopy(struct PACount* from, struct PACount* to);
 
@@ -418,7 +418,7 @@ struct Facade {
 
 
           int PAElementPerformRuin(struct PAElement*);
-          struct PAElement* PAElementPerformDelete(struct PAElement*);
+          int PAElementPerformDelete(struct PAElement*);
           struct PAElement* PAElementPerformCopy(struct PAElement*, struct PAElement*);
 # 11 "src/PA/Input.c" 2
 
@@ -435,8 +435,8 @@ struct Facade {
  struct PACount m;
  struct PAList list;
  struct PAElement element;
- inputPointer->n = PACountPerformConstruct();
- inputPointer->m = PACountPerformConstruct();
+
+
 
  n = inputPointer->n;
  m = inputPointer->m;
@@ -452,8 +452,8 @@ struct Facade {
 {
  struct PAInput temp;
  struct PAInput* inputPointer;
- inputPointer->n = PACountPerformConstruct();
- inputPointer->m = PACountPerformConstruct();
+
+
 
  temp = *inputPointer;
 # 71 "src/PA/Input.c"

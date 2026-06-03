@@ -19,11 +19,11 @@
 DllExport struct PATree* PATreePerformConstruct()
 {
     struct PATree* temp;
-    temp->n = PACountPerformConstruct();
-    temp->m = PACountPerformConstruct();
+    // temp->n = PACountPerformConstruct();
+    // temp->m = PACountPerformConstruct();
     // temp->adj = PAListPerformConstruct();
     // temp.adj = PAListPerformConstruct();
-    temp->source = PAElementPerformConstruct();
+    // temp->source = PAElementPerformConstruct();
     // temp = PATreePerformInit(temp,temp.n,temp.m,temp.adj,temp.source);
     return temp;
     // struct PACount n;
@@ -70,10 +70,10 @@ DllExport struct PATree* PATreePerformInit(struct PATree* Tree, struct PACount V
 {
     struct PATree tree;
     struct PATree* treePointer;
-    treePointer->n = PACountPerformConstruct();
-    treePointer->m = PACountPerformConstruct();
+    // treePointer->n = PACountPerformConstruct();
+    // treePointer->m = PACountPerformConstruct();
     // treePointer->adj = PAListPerformConstruct();
-    treePointer->source = PAElementPerformConstruct();
+    // treePointer->source = PAElementPerformConstruct();
     tree = *treePointer;
     // struct PATree tree;
     // tree.n.number = 2;

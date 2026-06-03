@@ -5,22 +5,10 @@
 _PAListPerformConstruct:                ; @PAListPerformConstruct
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #48
-	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
-	add	x29, sp, #32
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	ldur	x8, [x29, #-8]
-	str	x8, [sp, #8]                    ; 8-byte Folded Spill
-	bl	_PACountPerformConstruct
-	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload
-	sturb	w0, [x29, #-9]
-	ldurb	w8, [x29, #-9]
-	strb	w8, [x9]
-	ldur	x0, [x29, #-8]
-	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
-	add	sp, sp, #48
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	ldr	x0, [sp, #8]
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function

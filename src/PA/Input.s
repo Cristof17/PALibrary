@@ -5,26 +5,12 @@
 _PAInputPerformConstruct:               ; @PAInputPerformConstruct
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #80
-	stp	x29, x30, [sp, #64]             ; 16-byte Folded Spill
-	add	x29, sp, #64
+	sub	sp, sp, #64
+	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
+	add	x29, sp, #48
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	ldur	x8, [x29, #-16]
-	str	x8, [sp]                        ; 8-byte Folded Spill
-	bl	_PACountPerformConstruct
-	ldr	x9, [sp]                        ; 8-byte Folded Reload
-	strb	w0, [sp, #31]
-	ldrb	w8, [sp, #31]
-	strb	w8, [x9]
-	ldur	x8, [x29, #-16]
-	str	x8, [sp, #8]                    ; 8-byte Folded Spill
-	bl	_PACountPerformConstruct
-	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload
-	strb	w0, [sp, #30]
-	ldrb	w8, [sp, #30]
-	strb	w8, [x9, #1]
 	ldur	x8, [x29, #-16]
 	ldrb	w8, [x8]
 	sturb	w8, [x29, #-17]
@@ -33,20 +19,20 @@ _PAInputPerformConstruct:               ; @PAInputPerformConstruct
 	sturb	w8, [x29, #-18]
 	ldur	x8, [x29, #-16]
 	ldrh	w8, [x8, #2]
-	strh	w8, [sp, #32]
+	strh	w8, [sp, #16]
 	ldur	x0, [x29, #-16]
 	ldurb	w8, [x29, #-17]
 	mov	x1, x8
 	ldurb	w8, [x29, #-18]
 	mov	x2, x8
-	ldrh	w8, [sp, #32]
-	strh	w8, [sp, #16]
-	ldr	x3, [sp, #16]
+	ldrh	w8, [sp, #16]
+	strh	w8, [sp, #8]
+	ldr	x3, [sp, #8]
 	bl	_PAInputPerformInit
 	stur	x0, [x29, #-16]
 	ldur	x0, [x29, #-16]
-	ldp	x29, x30, [sp, #64]             ; 16-byte Folded Reload
-	add	sp, sp, #80
+	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
+	add	sp, sp, #64
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -55,39 +41,20 @@ _PAInputPerformConstruct:               ; @PAInputPerformConstruct
 _PAInputPerformInit:                    ; @PAInputPerformInit
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #80
-	stp	x29, x30, [sp, #64]             ; 16-byte Folded Spill
-	add	x29, sp, #64
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
 	mov	x8, x1
-	sturb	w8, [x29, #-1]
+	strb	w8, [sp, #31]
 	mov	x8, x2
-	sturb	w8, [x29, #-2]
+	strb	w8, [sp, #30]
 	mov	x8, x3
-	sturh	w8, [x29, #-4]
-	stur	x0, [x29, #-16]
-	ldr	x8, [sp, #32]
-	str	x8, [sp, #8]                    ; 8-byte Folded Spill
-	bl	_PACountPerformConstruct
-	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload
-	strb	w0, [sp, #31]
-	ldrb	w8, [sp, #31]
-	strb	w8, [x9]
-	ldr	x8, [sp, #32]
-	str	x8, [sp, #16]                   ; 8-byte Folded Spill
-	bl	_PACountPerformConstruct
-	ldr	x9, [sp, #16]                   ; 8-byte Folded Reload
-	strb	w0, [sp, #30]
-	ldrb	w8, [sp, #30]
-	strb	w8, [x9, #1]
-	ldr	x8, [sp, #32]
+	strh	w8, [sp, #28]
+	str	x0, [sp, #16]
+	ldr	x8, [sp]
 	ldr	w8, [x8]
-	stur	w8, [x29, #-20]
-	ldr	x0, [sp, #32]
-	ldp	x29, x30, [sp, #64]             ; 16-byte Folded Reload
-	add	sp, sp, #80
+	str	w8, [sp, #12]
+	ldr	x0, [sp]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function

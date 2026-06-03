@@ -381,7 +381,7 @@ struct Facade {
 
 # 1 "./include/PA/Count.h" 1
 # 13 "./include/PA/Count.h"
-          struct PACount PACountPerformConstruct();
+          struct PACount* PACountPerformConstruct();
           struct PACount* PACountPerformInit(struct PACount* Count, struct PANumber Number);
           struct PACount* PACountPerformCopy(struct PACount* from, struct PACount* to);
 
@@ -413,24 +413,27 @@ struct Facade {
           struct PACount* PACountPerformConstruct()
 {
     struct PACount zies;
-
-    zies.number = PANumberPerformConstruct();
-    zies = PACountPerformInit(zies,zies.number);
+    struct PACount* countPointer;
 
 
-    return zies;
+
+
+
+
+    return countPointer;
 }
-          struct PACount* PACountPerformInit(struct PACount* Count, struct PANumber* Value)
+          struct PACount* PACountPerformInit(struct PACount* Count, struct PANumber Value)
 {
 
     struct PACount temp;
+    struct PACount* cpuntPointer;
 
 
-    temp.number = PANumberPerformConstruct();
 
-    Count = temp;
 
-    return Count;
+
+
+    return cpuntPointer;
 
 
 
@@ -440,12 +443,14 @@ struct Facade {
 }
           int PACountPerformRuin(struct PACount* PA)
 {
-# 70 "src/PA/Count.c"
-    return PA;
+# 73 "src/PA/Count.c"
+    int returnCode;
+    return returnCode;
+
 }
           struct PACount* PACountPerformDelete(struct PACount* PA)
 {
-    PA.number.val = 0;
+
     return PA;
 
 
@@ -459,7 +464,7 @@ PAResult PACountPerformPrint(struct PACount* Count)
           struct PACount* PACountPerformCopy(struct PACount* from, struct PACount* to)
 {
     struct PACount temp;
-    temp.number = PANumberPerformCopy(from.number,to.number);
-    to.number = temp.number;
+
+
     return to;
 }
