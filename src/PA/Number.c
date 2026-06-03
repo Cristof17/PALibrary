@@ -3,7 +3,7 @@
 #elif defined _WIN95
 #include <PA\Number.h>
 #endif
-DllExport struct PANumber PANumberPerformConstruct()
+DllExport struct PANumber* PANumberPerformConstruct()
 {
     struct PANumber number;
     // number = PANumberPerformInit(number,NULL_CHAR);
@@ -11,7 +11,7 @@ DllExport struct PANumber PANumberPerformConstruct()
     // number.val =  random;
     return number;
 }
-DllExport struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char Value)
+DllExport struct PANumber* PANumberPerformInit(struct PANumber* Number, unsigned char Value)
 {
     struct PANumber temp;
     temp.val = Value;
@@ -21,13 +21,13 @@ DllExport struct PANumber PANumberPerformInit(struct PANumber Number, unsigned c
     // Number.val = Value;
     return Number;
 }
-DllExport struct PANumber PANumberPerformDelete(struct PANumber PA)
+DllExport struct PANumber* PANumberPerformDelete(struct PANumber* PA)
 {
     PA.val = '0';
     // struct PANumber number;
     return PA;
 }
-DllExport struct PANumber PANumberPerformRuin(struct PANumber PA)
+DllExport struct PANumber* PANumberPerformRuin(struct PANumber* PA)
 {
     // struct PANumber Empty;
     return PA;
@@ -35,7 +35,7 @@ DllExport struct PANumber PANumberPerformRuin(struct PANumber PA)
     // struct PANumber number;
     // return number;
 }
-DllExport struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to)
+DllExport struct PANumber* PANumberPerformCopy(struct PANumber* from, struct PANumber to)
 {
     // struct PANumber temp;
     char num = from.val;

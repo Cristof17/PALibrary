@@ -18,7 +18,7 @@
 *  Created on: 16 nov. 2025
 *      Author: AdministratorUser
 */
-DllExport struct PASeries PASeriesPerformConstruct() 
+DllExport struct PASeries* PASeriesPerformConstruct() 
 {
     struct PASeries series;
     series.m = PACountPerformConstruct();
@@ -45,7 +45,7 @@ DllExport struct PASeries PASeriesPerformConstruct()
     // } 
     return series;
 }
-DllExport struct PASeries PASeriesPerformCopy(struct PASeries from, struct PASeries to)
+DllExport struct PASeries* PASeriesPerformCopy(struct PASeries* from, struct PASeries* to)
 {
     struct PACount x;
     struct PACount y;
@@ -96,8 +96,8 @@ DllExport struct PASeries PASeriesPerformCopy(struct PASeries from, struct PASer
 //     }
 // }
 // }
-DllExport struct PASeries PASeriesPerformInit(struct PASeries Series,
-    struct PACount Value, struct PAElement Value2[])
+DllExport struct PASeries* PASeriesPerformInit(struct PASeries* Series,
+    struct PACount* Value, struct PAElement* Value2[])
     {
         // PAResult result;
         // return result;
@@ -148,7 +148,7 @@ DllExport struct PASeries PASeriesPerformInit(struct PASeries Series,
         // copy = PAListPerformInit(List);
         //return copy;
     // }
-    DllExport struct PASeries PASeriesPerformRuin(struct PASeries PA)
+    DllExport struct PASeries* PASeriesPerformRuin(struct PASeries* PA)
     {
         struct PACount x;
         struct PACount y;
@@ -203,7 +203,7 @@ DllExport struct PASeries PASeriesPerformInit(struct PASeries Series,
         // return result;
         // }
 DllExport
-struct PAResource PASeriesGet(struct PAData Data)
+struct PAResource* PASeriesGet(struct PAData Data)
 {
     struct PAResource resource;
     return resource;
