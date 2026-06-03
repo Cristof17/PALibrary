@@ -124,7 +124,7 @@ DllExport struct PASeries* PASeriesPerformInit(struct PASeries* Series,
         // series.adj = Value2;
         return series;
     }
-    DllExport struct PASeries PASeriesPerformDelete(struct PASeries PA)
+    DllExport struct PASeries* PASeriesPerformDelete(struct PASeries* PA)
     {
         struct PANumber x;
         struct PANumber y;
@@ -203,7 +203,7 @@ DllExport struct PASeries* PASeriesPerformInit(struct PASeries* Series,
         // return result;
         // }
 DllExport
-struct PAResource* PASeriesGet(struct PAData Data)
+struct PAResource* PASeriesGet(struct PAData* Data)
 {
     struct PAResource resource;
     return resource;
@@ -224,7 +224,7 @@ struct PAResource* PASeriesGet(struct PAData Data)
 //     struct PAList list;
 //     return list;
 // }
-void PASeriesPerformPrint(struct PASeries Series)
+void PASeriesPerformPrint(struct PASeries* Series)
 {
 
 }
