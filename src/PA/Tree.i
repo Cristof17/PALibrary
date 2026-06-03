@@ -255,7 +255,14 @@ struct BFSInput {
 struct BFSOutput {
  struct BFSRecord result;
 };
-# 301 "./include/types.h"
+struct Output {
+
+
+ };
+
+
+
+
 struct PALink {
  struct PAPair p;
 
@@ -435,7 +442,7 @@ void PAListPerformPrint(struct PAList* List);
     struct PATree* temp;
     temp->n = PACountPerformConstruct();
     temp->m = PACountPerformConstruct();
-    temp->adj = PAListPerformConstruct();
+
 
     temp->source = PAElementPerformConstruct();
 
@@ -446,11 +453,12 @@ void PAListPerformPrint(struct PAList* List);
           struct PATree* PATreePerformInit(struct PATree* Tree, struct PACount Value, struct PACount Value2, struct PAList Value3, struct PAElement Value4)
 {
     struct PATree tree;
-    tree.n = PACountPerformConstruct();
-    tree.m = PACountPerformConstruct();
-    tree.adj = PAListPerformConstruct();
-    tree.source = PAElementPerformConstruct();
-    Tree = tree;
+    struct PATree* treePointer;
+    treePointer->n = PACountPerformConstruct();
+    treePointer->m = PACountPerformConstruct();
+
+    treePointer->source = PAElementPerformConstruct();
+    tree = *treePointer;
 
 
 
@@ -460,7 +468,7 @@ void PAListPerformPrint(struct PAList* List);
 
     return Tree;
 }
-# 95 "src/PA/Tree.c"
+# 96 "src/PA/Tree.c"
           struct PATree* PATreePerformCopy(struct PATree* from, struct PATree* to)
 {
     struct PATree temp;
@@ -472,7 +480,7 @@ void PAListPerformPrint(struct PAList* List);
     to->m = temp.m;
     PAListPerformCopy(&temp.adj, &to->adj);
     to->source = temp.source;
-# 115 "src/PA/Tree.c"
+# 116 "src/PA/Tree.c"
     return to;
 }
           int PATreePerformRuin(struct PATree* PA)
@@ -490,10 +498,10 @@ void PAListPerformPrint(struct PAList* List);
 
     returnCode = returnCode1 & returnCode2 & returnCode3 & returnCode4;
     return returnCode;
-# 153 "src/PA/Tree.c"
-    return PA;
+# 155 "src/PA/Tree.c"
+    return returnCode;
 }
-# 195 "src/PA/Tree.c"
+# 197 "src/PA/Tree.c"
           struct PATree* PATreePerformDelete(struct PATree* Tree)
 {
 

@@ -290,10 +290,10 @@ struct BFSInput {
 struct BFSOutput {
 	struct BFSRecord result;
 };
-// struct Output {
-	// //	struct PARezultat rezultat;
-	// //	struct BFSOutput outputBFS;
-	// };
+struct Output {
+	//	struct PARezultat rezultat;
+	//	struct BFSOutput outputBFS;
+	};
 	//struct PASeries
 	//{
 		//

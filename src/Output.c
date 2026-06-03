@@ -12,22 +12,22 @@
 // #include <Output.h>
 // #include <types.h>
 #endif
-DllExport struct Output* OutputPerformConstruct()
+DllExport struct Output OutputPerformConstruct()
 {
-    struct Output* output;
+    struct Output output;
     return output;   
 }
-DllExport struct Output* OutputPerformInit(struct Output* output, struct PAOutput* Output2)
+DllExport struct Output OutputPerformInit(struct Output output, struct PAOutput Output2)
 {
     return output;
 }
-DllExport struct Output* OutputPerformCopy(struct Output* from, struct Output* to)
+DllExport struct Output OutputPerformCopy(struct Output from, struct Output to)
 {
     return from;
 }
-DllExport struct Output* OutputPerformRuin(struct Output* PA)
+DllExport void OutputPerformRuin(void)
 {
-    return PA;
+
 }
 // #include <PA/Output.h>
 //#include <types.h>

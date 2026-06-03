@@ -255,7 +255,14 @@ struct BFSInput {
 struct BFSOutput {
  struct BFSRecord result;
 };
-# 301 "./include/types.h"
+struct Output {
+
+
+ };
+
+
+
+
 struct PALink {
  struct PAPair p;
 
@@ -377,27 +384,27 @@ struct Facade {
           struct Output OutputPerformConstruct();
           struct Output OutputPerformInit(struct Output, struct PAOutput);
           struct Output OutputPerformCopy(struct Output, struct Output);
-          struct Output OutputPerformRuin(struct Output);
+          void OutputPerformRuin(void);
 
           void OutputPerformPrint(PAResult);
 # 5 "src/Output.c" 2
 # 15 "src/Output.c"
-          struct Output* OutputPerformConstruct()
+          struct Output OutputPerformConstruct()
 {
-    struct Output* output;
+    struct Output output;
     return output;
 }
-          struct Output* OutputPerformInit(struct Output* output, struct PAOutput* Output2)
+          struct Output OutputPerformInit(struct Output output, struct PAOutput Output2)
 {
     return output;
 }
-          struct Output* OutputPerformCopy(struct Output* from, struct Output* to)
+          struct Output OutputPerformCopy(struct Output from, struct Output to)
 {
     return from;
 }
-          struct Output* OutputPerformRuin(struct Output* PA)
+          void OutputPerformRuin(void)
 {
-    return PA;
+
 }
 
 
