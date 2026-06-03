@@ -16,12 +16,21 @@
 
 DllExport struct PAInput* PAInputPerformConstruct()
 {
-	struct PAInput input;
-	input.n = PACountPerformConstruct();
-	input.m = PACountPerformConstruct();
-	input.source = PAElementPerformConstruct();
-	input = PAInputPerformInit(input,input.n,input.m,input.source);
-	return input;
+	struct PAInput temp;
+	struct PAInput* inputPointer;
+	struct PACount n;
+	struct PACount m;
+	struct PAList list;
+	struct PAElement element;
+	inputPointer->n = PACountPerformConstruct();
+	inputPointer->m = PACountPerformConstruct();
+	inputPointer->source = PAElementPerformConstruct();
+	n = inputPointer->n;
+	m = inputPointer->m;
+	element = inputPointer->source;
+	// list = inputPointer.
+	inputPointer = PAInputPerformInit(inputPointer,n,m,element);
+	return inputPointer;
 	// PAResult result ;
 	// return result;
 }
@@ -39,10 +48,11 @@ DllExport struct PAInput* PAInputPerformConstruct()
 DllExport struct PAInput* PAInputPerformInit(struct PAInput* Input, struct PACount Value, struct PACount Value2, struct PAElement Value3)
 {
 	struct PAInput temp;
-	temp.n = PACountPerformConstruct();
-	temp.m = PACountPerformConstruct();
-	temp.source = PAElementPerformConstruct();
-	Input = temp;
+	struct PAInput* inputPointer;
+	inputPointer->n = PACountPerformConstruct();
+	inputPointer->m = PACountPerformConstruct();
+	inputPointer->source = PAElementPerformConstruct();
+	temp = *inputPointer;
 	// Input.n = Value;
 	// Input.m = Value2;
 	// Input.source = Value3;	
@@ -58,14 +68,14 @@ DllExport struct PAInput* PAInputPerformInit(struct PAInput* Input, struct PACou
 	// input.m=M;
 	// input.adj=ADJ;
 	// input.source = Source;
-	return Input;
+	return inputPointer;
 }
 DllExport struct PAInput* PAInputPerformRuin(struct PAInput* PA) {
 	// PAResult result;
 	// struct PAInput Empty;
-	PA.n = PACountPerformRuin(PA.n);
-	PA.m = PACountPerformRuin(PA.m);
-	PA.source = PAElementPerformRuin(PA.source);
+	PACountPerformRuin(&PA->n);
+	PACountPerformRuin(&PA->m);
+	PAElementPerformRuin(&PA->source);
 	return PA;
 	// return Empty;
 	// return result;

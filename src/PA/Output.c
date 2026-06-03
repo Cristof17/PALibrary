@@ -60,12 +60,13 @@
 DllExport struct PAOutput* PAOutputPerformConstruct()
 {
     struct PAOutput Output;
-    return Output;
+    struct PAOutput* outputPointer;
+    return outputPointer;
     // struct BFSRecord Record = BFSRecordConstruct()
 }
 DllExport struct PAOutput* PAOutputPerformInit(struct PAOutput* Output, struct BFSRecord Value)
 {
-    Output.result = Value;
+    Output->result = Value;
     return Output;
 }
 DllExport struct PAOutput* PAOutputPerformDelete(struct PAOutput* Output)

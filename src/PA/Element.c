@@ -80,7 +80,7 @@ DllExport struct PAElement* PAElementPerformCopy(struct PAElement* from, struct 
 //	copy.type=Element.type;
 	//return ;
 // }
-DllExport struct PAElement PAElementPerformRuin(struct PAElement PA)
+DllExport struct PAElement* PAElementPerformRuin(struct PAElement* PA)
 {
     PA.index = PADataPerformRuin(PA.index);
     PA.status = PAStatusPerformRuin(PA.status);
