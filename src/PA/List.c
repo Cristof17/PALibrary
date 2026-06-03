@@ -18,12 +18,12 @@
 // struct PAList PAListConstruct(struct PAElement Element) {
 DllExport struct PAList* PAListPerformConstruct()
 {
-    struct PAList list;
+    struct PAList* list;
     // struct PACount n = PACountPerformConstruct();
     // struct PACount x;
-    list.n = PACountPerformConstruct();
+    list->n = PACountPerformConstruct();
     // list.m = PACountPerformConstruct();
-    struct PANumber y;
+    // struct PANumber y;
     // y.val = FIRST;
     // while (y.val < list.n.number.val)
     // {
@@ -142,17 +142,24 @@ DllExport struct PAList* PAListPerformInit(struct PAList* List, struct PACount V
 DllExport int PAListPerformRuin(struct PAList* PA)
 {
     // struct PAList List;
-    struct PACount x;
-    struct PACount y;
-    x.number.val = FIRST;
-    y.number.val = PA.n.number.val;
-    while (x.number.val < y.number.val)
+    // struct PACount x;
+    // struct PACount y;
+    int returnCode1;
+    int returnCode2;
+    // int returnC
+    returnCode1 = PACountPerformRuin(&PA->n);
+    returnCode2 = PAListPerformRuin(&PA->neigh);
+    int returnCode = returnCode1 & returnCode2;
+    return returnCode;
+    // x.number.val = FIRST;
+    // y.number.val = PA.n.number.val;
+    // while (x.number.val < y.number.val)
     {
         // PA.adj[x.number.val]
-        PA.neigh[x.number.val] = PASeriesPerformRuin(PA.neigh[x.number.val]);
-        x.number.val ++;
+        // PA.neigh[x.number.val] = PASeriesPerformRuin(PA.neigh[x.number.val]);
+        // x.number.val ++;
     }
-    PA.n = PACountPerformRuin(PA.n);
+    // PA.n = PACountPerformRuin(PA.n);
     return PA;
     // return 0;
     // PAResult result;
