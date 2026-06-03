@@ -30,10 +30,14 @@ DllExport struct PAPair* PAPairPerformConstruct()
 DllExport struct PAPair* PAPairPerformInit(struct PAPair* Pair, struct PAElement Value, struct PAElement Value2)
 {
     struct PAPair temp;
-    temp.Node = PAElementPerformConstruct();
-    temp.Neigh = PAElementPerformConstruct();
+    Pair->Node.index = Value.index;
+    Pair->Node.status = Value.status;
+    Pair->Neigh.index = Value2.index;
+    Pair->Neigh.status = Value2.status;
+    //  = PAElementPerformConstruct();
+    // Pair->Neigh = PAElementPerformConstruct();
     // Pair = pair;
-    Pair = temp;
+    // Pair = temp;
     // Pair.Node = Value;
     // Pair.Neigh = Value2;
     // struct PAPair pair;
