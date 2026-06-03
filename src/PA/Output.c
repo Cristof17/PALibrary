@@ -63,7 +63,7 @@ DllExport struct PAOutput* PAOutputPerformConstruct()
     return Output;
     // struct BFSRecord Record = BFSRecordConstruct()
 }
-DllExport struct PAOutput* PAOutputPerformInit(struct PAOutput* Output, struct BFSRecord* Value)
+DllExport struct PAOutput* PAOutputPerformInit(struct PAOutput* Output, struct BFSRecord Value)
 {
     Output.result = Value;
     return Output;

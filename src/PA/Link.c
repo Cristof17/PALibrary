@@ -23,7 +23,7 @@ DllExport struct PALink* PALinkPerformConstruct()
     // return link;÷
     // link.p = P;÷
 }
-DllExport struct PALink* PALinkPerformInit(struct PALink* Link, struct PAPair* Value)
+DllExport struct PALink* PALinkPerformInit(struct PALink* Link, struct PAPair Value)
 {
     struct PALink link;
     link.p = PAPairPerformConstruct();
@@ -34,7 +34,7 @@ DllExport struct PALink* PALinkPerformInit(struct PALink* Link, struct PAPair* V
     // return link;
     return Link;
 }
-DllExport struct PALink PALinkPerformRuin(struct PALink PA)
+DllExport struct PALink PALinkPerformRuin(struct PALink* PA)
 {
     PA.p = PAPairPerformRuin(PA.p);    
     // struct PALink Empty;

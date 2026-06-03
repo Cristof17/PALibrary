@@ -16,7 +16,7 @@ DllExport struct PANormalTree* PANormalTreePerformConstruct()
     normalTree.tree = PATreePerformConstruct();
     return normalTree;
 }
-DllExport struct PANormalTree* PANormalTreePerformInit(struct PANormalTree* NormalTree, struct PATree* Value)
+DllExport struct PANormalTree* PANormalTreePerformInit(struct PANormalTree* NormalTree, struct PATree Value)
 {
     struct PANormalTree normalTree;
     normalTree.tree = PATreePerformConstruct();

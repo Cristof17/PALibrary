@@ -36,7 +36,7 @@ DllExport struct PAInput* PAInputPerformConstruct()
 // //	copy.source=Input.source;
 // 	return copy;
 // }
-DllExport struct PAInput* PAInputPerformInit(struct PAInput* Input, struct PACount* Value, struct PACount* Value2, struct PAElement* Value3)
+DllExport struct PAInput* PAInputPerformInit(struct PAInput* Input, struct PACount Value, struct PACount Value2, struct PAElement Value3)
 {
 	struct PAInput temp;
 	temp.n = PACountPerformConstruct();
@@ -60,7 +60,7 @@ DllExport struct PAInput* PAInputPerformInit(struct PAInput* Input, struct PACou
 	// input.source = Source;
 	return Input;
 }
-DllExport struct PAInput PAInputPerformRuin(struct PAInput PA) {
+DllExport struct PAInput* PAInputPerformRuin(struct PAInput* PA) {
 	// PAResult result;
 	// struct PAInput Empty;
 	PA.n = PACountPerformRuin(PA.n);
@@ -70,7 +70,7 @@ DllExport struct PAInput PAInputPerformRuin(struct PAInput PA) {
 	// return Empty;
 	// return result;
 }
-DllExport struct PAInput PAInputPerformDelete(struct PAInput Input)
+DllExport struct PAInput* PAInputPerformDelete(struct PAInput* Input)
 {
 	return Input;
 	// struct PAInput Empty;

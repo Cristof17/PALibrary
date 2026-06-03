@@ -28,7 +28,7 @@ DllExport struct PAPair* PAPairPerformConstruct()
     //return pair;
 }
 // struct PAPair PAPairRuin(struct PAPair Pair) {
-DllExport struct PAPair* PAPairPerformInit(struct PAPair* Pair, struct PAElement* Value, struct PAElement* Value2)
+DllExport struct PAPair* PAPairPerformInit(struct PAPair* Pair, struct PAElement Value, struct PAElement Value2)
 {
     struct PAPair temp;
     temp.Node = PAElementPerformConstruct();
