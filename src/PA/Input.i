@@ -437,7 +437,7 @@ struct Facade {
  struct PAElement element;
  inputPointer->n = PACountPerformConstruct();
  inputPointer->m = PACountPerformConstruct();
- inputPointer->source = PAElementPerformConstruct();
+
  n = inputPointer->n;
  m = inputPointer->m;
  element = inputPointer->source;
@@ -454,7 +454,7 @@ struct Facade {
  struct PAInput* inputPointer;
  inputPointer->n = PACountPerformConstruct();
  inputPointer->m = PACountPerformConstruct();
- inputPointer->source = PAElementPerformConstruct();
+
  temp = *inputPointer;
 # 71 "src/PA/Input.c"
  return inputPointer;
