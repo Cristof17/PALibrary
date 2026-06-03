@@ -24,7 +24,7 @@ DllExport struct PAResource* PAResourcePerformInit(struct PAResource* Resource, 
     Resource = resource;
     return Resource;
 }
-DllExport struct PAResource PAResourcePerformCopy(struct PAResource* from, struct PAResource* to)
+DllExport struct PAResource* PAResourcePerformCopy(struct PAResource* from, struct PAResource* to)
 {
     struct PAResource temp;
     temp.value = PANumberPerformCopy(from.value, temp.value);
