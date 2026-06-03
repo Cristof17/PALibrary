@@ -35,13 +35,13 @@ DllExport struct PANormalTree* PANormalTreePerformInit(struct PANormalTree* Norm
 // //    copy.adj = Tree.adj;
 //     return copy;
 // }
-DllExport struct PANormalTree PANormalTreePerformRuin(struct PANormalTree PA)
+DllExport struct PANormalTree* PANormalTreePerformRuin(struct PANormalTree* PA)
 {
     struct PANormalTree Empty;
     PA.tree = PATreePerformRuin(PA.tree);
     return PA;
 }
-DllExport struct PANormalTree PANormalTreePerformDelete(struct PANormalTree PA)
+DllExport struct PANormalTree* PANormalTreePerformDelete(struct PANormalTree* PA)
 {
     PA.tree = PATreePerformDelete(PA.tree);
     return PA;
