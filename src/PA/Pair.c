@@ -13,13 +13,12 @@
 DllExport struct PAPair* PAPairPerformConstruct()
 {
     struct PAPair pair;
-
+    struct PAPair* pairPointer;
     pair.Node = PAElementPerformConstruct();
     pair.Neigh = PAElementPerformConstruct();
-    pair = PAPairPerformInit(pair,pair.Node, pair.Neigh);
-
+    pairPointer = PAPairPerformInit(pairPointer,pair.Node, pair.Neigh);
     // pair.Node = PAElementPerformCopy(from)
-    return pair;
+    return pairPointer;
 	// PAResult result;
 	// return result;
     //struct PAPair pair;
