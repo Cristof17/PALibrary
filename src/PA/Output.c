@@ -77,14 +77,16 @@ DllExport struct PAOutput* PAOutputPerformDelete(struct PAOutput* Output)
 }
 DllExport int PAOutputPerformRuin(struct PAOutput* PA)
 {
-
+    int returnCode;
+    // returnCode = PA->
+    return PARESULT_SUCCESS;
     // PA.result = BFSRecordPerformRuin
     // struct PAOutput Output;
     // return Output;
     // struct PAOutput Empty;
     // return Empty;
     // return 0;
-    return PA;
+    // return PA;
 }
 DllExport void PAOutputPerformPrint(PAResult Result)
 {

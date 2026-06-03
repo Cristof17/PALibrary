@@ -100,9 +100,13 @@ struct PAPair* PAPairPerformCopy(struct PAPair* from, struct PAPair* to)
 // }
 DllExport int PAPairPerformRuin(struct PAPair* PA)
 {
-    PAElementPerformRuin(&PA->Node);
-    PAElementPerformRuin(&PA->Neigh);
-    return PA;
+    int returnCode1;
+    int returnCode2;
+    int returnCode;
+    returnCode1 = PAElementPerformRuin(&PA->Node);
+    returnCode2 = PAElementPerformRuin(&PA->Neigh);
+    returnCode = returnCode1 & returnCode2;
+    return returnCode;
     // struct PAPair Empty;
     // return Empty;
     // return 0;
@@ -111,9 +115,13 @@ DllExport int PAPairPerformRuin(struct PAPair* PA)
 }
 DllExport struct PAPair* PAPairPerformDelete(struct PAPair* PA)
 {
-    PAElementPerformDelete(&PA->Node);
-    PAElementPerformDelete(&PA->Neigh);
-    return PA;
+    int returnCode1;
+    int returnCode2;
+    int returnCode;
+    returnCode1 = PAElementPerformDelete(&PA->Node);
+    returnCode2 = PAElementPerformDelete(&PA->Neigh);
+    returnCode = returnCode1 & returnCode2;
+    return returnCode;
     // PAResult result;
     // return result;
 }

@@ -25,11 +25,15 @@ DllExport struct PANumber* PANumberPerformInit(struct PANumber* Number, unsigned
     // Number.val = Value;
     return numberPointer;
 }
-DllExport struct PANumber* PANumberPerformDelete(struct PANumber* PA)
+DllExport int PANumberPerformDelete(struct PANumber* PA)
 {
+    int returnCode;
+    // returnCode = PA-
     PA->val = NULL;
+    returnCode = PARESULT_SUCCESS;
+    return returnCode;
     // struct PANumber number;
-    return PA;
+    // return PA;
 }
 DllExport int PANumberPerformRuin(struct PANumber* PA)
 {

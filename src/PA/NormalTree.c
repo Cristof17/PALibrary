@@ -37,14 +37,20 @@ DllExport struct PANormalTree* PANormalTreePerformInit(struct PANormalTree* Norm
 // }
 DllExport int PANormalTreePerformRuin(struct PANormalTree* PA)
 {
-    struct PANormalTree Empty;
-    PA.tree = PATreePerformRuin(PA.tree);
-    return PA;
+    int returnCode;
+    returnCode = PATreePerformRuin(&PA->tree);
+    return returnCode;
+    // struct PANormalTree Empty;
+    // PA.tree = PATreePerformRuin(PA.tree);
+    // return PA;
 }
 DllExport struct PANormalTree* PANormalTreePerformDelete(struct PANormalTree* PA)
 {
-    PA.tree = PATreePerformDelete(PA.tree);
-    return PA;
+    int returnCode;
+    returnCode = PATreePerformDelete(&PA->tree);
+    return returnCode;
+    // PA.tree = PATreePerformDelete(PA.tree);
+    // return PA;
 }
 DllExport struct PANormalTree* PAGrafNormalBuildPart()
 {
