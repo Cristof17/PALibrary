@@ -381,7 +381,7 @@ struct Facade {
 
           struct PALink* PALinkPerformInit(struct PALink*, struct PAPair);
 
-          struct PALink* PALinkPerformRuin(struct PALink*);
+          int PALinkPerformRuin(struct PALink*);
           struct PALink* PALinkPerformDelete(struct PALink*);
 # 9 "src/PA/Link.c" 2
 # 1 "./include/PA/Pair.h" 1
@@ -399,7 +399,7 @@ struct Facade {
 
 
 
-          struct PAPair* PAPairPerformRuin(struct PAPair*);
+          int PAPairPerformRuin(struct PAPair*);
           struct PAPair* PAPairPerformDelete(struct PAPair*);
 # 10 "src/PA/Link.c" 2
 
@@ -429,7 +429,7 @@ struct Facade {
 
     return Link;
 }
-          struct PALink PALinkPerformRuin(struct PALink* PA)
+          int PALinkPerformRuin(struct PALink* PA)
 {
     PA.p = PAPairPerformRuin(PA.p);
 

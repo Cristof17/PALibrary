@@ -382,7 +382,7 @@ struct Facade {
 
 
 
-          struct PAInput* PAInputPerformRuin(struct PAInput*);
+          int PAInputPerformRuin(struct PAInput*);
           struct PAInput* PAInputPerformDelete(struct PAInput* i);
 # 9 "src/PA/Input.c" 2
 # 1 "./include/PA/Count.h" 1
@@ -393,7 +393,7 @@ struct Facade {
 
 
 
-          struct PACount* PACountPerformRuin(struct PACount*);
+          int PACountPerformRuin(struct PACount*);
 
 
           struct PACount* PACountPerformDelete(struct PACount* PA);
@@ -410,7 +410,7 @@ struct Facade {
 
 
 
-          struct PAElement* PAElementPerformRuin(struct PAElement*);
+          int PAElementPerformRuin(struct PAElement*);
           struct PAElement* PAElementPerformDelete(struct PAElement*);
           struct PAElement* PAElementPerformCopy(struct PAElement*, struct PAElement*);
 # 11 "src/PA/Input.c" 2
@@ -452,13 +452,15 @@ struct Facade {
 # 71 "src/PA/Input.c"
  return inputPointer;
 }
-          struct PAInput* PAInputPerformRuin(struct PAInput* PA) {
+          int PAInputPerformRuin(struct PAInput* PA) {
 
 
  PACountPerformRuin(&PA->n);
  PACountPerformRuin(&PA->m);
  PAElementPerformRuin(&PA->source);
- return PA;
+ int returnCode;
+ returnCode = ((int)0);
+
 
 
 }

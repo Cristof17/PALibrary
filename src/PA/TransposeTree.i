@@ -380,7 +380,7 @@ struct Facade {
           struct PATransposeTree* PATransposeTreePerformInit(struct PATransposeTree*, struct PATree);
           struct PATransposeTree* PATransposeTreePerformCopy(struct PATransposeTree*, struct PATransposeTree*);
 
-          struct PATransposeTree* PATransposeTreeRuin(struct PATransposeTree*);
+          int PATransposeTreeRuin(struct PATransposeTree*);
           struct PATransposeTree* PATransposeTreeDelete(struct PATransposeTree*);
 
           PAResult PATransposeTreeGetResult();
@@ -397,7 +397,7 @@ struct Facade {
 
 
 
-          struct PATree* PATreePerformRuin(struct PATree*);
+          int PATreePerformRuin(struct PATree*);
           struct PATree* PATreePerformDelete(struct PATree*);
 # 10 "src/PA/TransposeTree.c" 2
 
@@ -443,16 +443,18 @@ struct Facade {
     return To;
 }
 # 61 "src/PA/TransposeTree.c"
-          struct PATransposeTree* PATransposeTreePerformRuin(struct PATransposeTree* PA)
+          int PATransposeTreePerformRuin(struct PATransposeTree* PA)
 {
 
+    int rc = PATreePerformDelete(&PA->tree);
     return PA;
 }
-          struct PATransposeTree* PATransposeTreeDelete(struct PATransposeTree* Tree)
+          int PATransposeTreeDelete(struct PATransposeTree* PA)
 {
-    return Tree;
+    int rc = PATreePerformDelete(&PA->tree);
+    return rc;
 }
-# 80 "src/PA/TransposeTree.c"
+# 82 "src/PA/TransposeTree.c"
           PAResult PATransposeTreeGetResult()
 {
     PAResult result;

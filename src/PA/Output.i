@@ -381,7 +381,7 @@ struct Facade {
           struct PAOutput* PAOutputPerformConstruct();
           struct PAOutput* PAOutputPerformInit(struct PAOutput*, struct BFSRecord);
           struct PAOutput* PAOutputPerformDelete(struct PAOutput*);
-          struct PAOutput* PAOutputPerformRuin(struct PAOutput*);
+          int PAOutputPerformRuin(struct PAOutput*);
           void PAOutputPerformPrint(PAResult Result);
 # 6 "src/PA/Output.c" 2
 # 1 "./include/BFS/Record.h" 1
@@ -420,8 +420,11 @@ struct Facade {
 
     return Output;
 }
-          struct PAOutput* PAOutputPerformRuin(struct PAOutput* PA)
+          int PAOutputPerformRuin(struct PAOutput* PA)
 {
+    int returnCode;
+
+    return ((int)0);
 
 
 
@@ -429,7 +432,6 @@ struct Facade {
 
 
 
-    return PA;
 }
           void PAOutputPerformPrint(PAResult Result)
 {

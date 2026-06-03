@@ -110,24 +110,25 @@ _PAInputPerformInit:                    ; @PAInputPerformInit
 _PAInputPerformRuin:                    ; @PAInputPerformRuin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
-	add	x29, sp, #16
+	sub	sp, sp, #48
+	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
+	add	x29, sp, #32
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	str	x0, [sp, #8]
-	ldr	x0, [sp, #8]
+	str	x0, [sp, #16]
+	ldr	x0, [sp, #16]
 	bl	_PACountPerformRuin
-	ldr	x8, [sp, #8]
+	ldr	x8, [sp, #16]
 	add	x0, x8, #1
 	bl	_PACountPerformRuin
-	ldr	x8, [sp, #8]
+	ldr	x8, [sp, #16]
 	add	x0, x8, #2
 	bl	_PAElementPerformRuin
-	ldr	x0, [sp, #8]
-	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
-	add	sp, sp, #32
+	str	wzr, [sp, #12]
+	ldur	w0, [x29, #-4]
+	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function

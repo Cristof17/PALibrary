@@ -378,7 +378,7 @@ struct Facade {
           struct PAStatus* PAStatusPerformInit(struct PAStatus*, struct PAResource);
           struct PAStatus* PAStatusPerformDelete(struct PAStatus*);
           struct PAStatus* PAStatusPerformConstruct();
-          struct PAStatus* PAStatusPerformRuin(struct PAStatus*);
+          int PAStatusPerformRuin(struct PAStatus*);
           struct PAStatus* PAStatusPerformCopy(struct PAStatus*, struct PAStatus*);
 # 7 "src/PA/Status.c" 2
 # 1 "./include/PA/Resource.h" 1
@@ -389,7 +389,7 @@ struct Facade {
 
           struct PAResource* PAResourcePerformInit(struct PAResource*, struct PANumber);
           struct PAResource* PAResourcePerformConstruct();
-          struct PAResource* PAResourcePerformRuin(struct PAResource*);
+          int PAResourcePerformRuin(struct PAResource*);
           struct PAResource* PAResourcePerformDelete(struct PAResource*);
           struct PAResource* PAResourcePerformCopy(struct PAResource*, struct PAResource*);
 # 8 "src/PA/Status.c" 2
@@ -412,26 +412,34 @@ struct Facade {
 }
           struct PAStatus* PAStatusPerformInit(struct PAStatus* Status, struct PAResource Value)
 {
-    Status.visited = Value;
-    return Status;
+    struct PAStatus temp;
+    struct PAStatus* statusPointer;
+    statusPointer->visited = Value;
+    return statusPointer;
+
+
 }
-          struct PAStatus* PAStatusPerformCopy(struct PAStatus* from, struct PAStatus to)
+          struct PAStatus* PAStatusPerformCopy(struct PAStatus* from, struct PAStatus* to)
 {
     struct PAStatus temp;
-    temp.visited = PAResourcePerformCopy(from.visited, to.visited);
-    to.visited = temp.visited;
+    temp.visited = from->visited;
+    to->visited = temp.visited;
     return to;
+
+
+
 }
-          struct PAStatus* PAStatusPerformDelete(struct PAStatus* PA)
+          int PAStatusPerformDelete(struct PAStatus* PA)
 {
-    PA.visited.value.val = 0;
+    PAResourcePerformDelete(&PA->visited);
+
     return PA;
 }
-          struct PAStatus* PAStatusPerformRuin(struct PAStatus* PA)
+          int PAStatusPerformRuin(struct PAStatus* PA)
 {
 
 
-    PA.visited = PAResourcePerformRuin(PA.visited);
+    PAResourcePerformRuin(&PA->visited);
 
     return PA;
 }

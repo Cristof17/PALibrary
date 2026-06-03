@@ -380,7 +380,7 @@ struct Facade {
 
 
 
-          struct PAList* PAListPerformRuin(struct PAList*);
+          int PAListPerformRuin(struct PAList*);
           struct PAList* PAListPerformDelete(struct PAList*);
           struct PAList* PAListPerformCopy(struct PAList*, struct PAList*);
 
@@ -394,7 +394,7 @@ void PAListPerformPrint(struct PAList* List);
 
 
 
-          struct PACount* PACountPerformRuin(struct PACount*);
+          int PACountPerformRuin(struct PACount*);
 
 
           struct PACount* PACountPerformDelete(struct PACount* PA);
@@ -406,25 +406,18 @@ void PAListPerformPrint(struct PAList* List);
           struct PASeries* PASeriesPerformDelete(struct PASeries*);
           struct PASeries* PASeriesPerformCopy(struct PASeries*, struct PASeries*);
 
-          struct PASeries* PASeriesPerformRuin(struct PASeries*);
+          int PASeriesPerformRuin(struct PASeries*);
           struct PAResource* PASeriesGet(struct PAData* Data);
           void PASeriesPerformPrint(struct PASeries* Series);
 # 10 "src/PA/List.c" 2
 # 19 "src/PA/List.c"
           struct PAList* PAListPerformConstruct()
 {
-    struct PAList list;
+    struct PAList* list;
 
 
-    list.n = PACountPerformConstruct();
-
-    struct PANumber y;
-
-
-
-
-
-
+    list->n = PACountPerformConstruct();
+# 33 "src/PA/List.c"
     return list;
 # 43 "src/PA/List.c"
 }
@@ -496,20 +489,28 @@ void PAListPerformPrint(struct PAList* List);
     return List;
 }
 # 142 "src/PA/List.c"
-          struct PAList* PAListPerformRuin(struct PAList* PA)
+          int PAListPerformRuin(struct PAList* PA)
 {
 
-    struct PACount x;
-    struct PACount y;
-    x.number.val = (1);
-    y.number.val = PA.n.number.val;
-    while (x.number.val < y.number.val)
+
+
+    int returnCode1;
+    int returnCode2;
+    int returnCode;
+
+    returnCode1 = PACountPerformRuin(&PA->n);
+    returnCode2 = PAListPerformRuin(&PA->neigh);
+    returnCode = returnCode1 & returnCode2;
+    return returnCode;
+
+
+
     {
 
-        PA.neigh[x.number.val] = PASeriesPerformRuin(PA.neigh[x.number.val]);
-        x.number.val ++;
+
+
     }
-    PA.n = PACountPerformRuin(PA.n);
+
     return PA;
 
 
@@ -519,7 +520,7 @@ void Dispose()
 {
 
 }
-# 180 "src/PA/List.c"
+# 188 "src/PA/List.c"
           struct PAList* PAListPerformDelete(struct PAList* PA)
 {
     struct PACount n = PA.n;

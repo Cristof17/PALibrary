@@ -386,7 +386,7 @@ struct Facade {
 
 
 
-          struct PAElement* PAElementPerformRuin(struct PAElement*);
+          int PAElementPerformRuin(struct PAElement*);
           struct PAElement* PAElementPerformDelete(struct PAElement*);
           struct PAElement* PAElementPerformCopy(struct PAElement*, struct PAElement*);
 # 7 "src/PA/Element.c" 2
@@ -396,7 +396,7 @@ struct Facade {
           struct PAData PADataPerformInit(struct PAData*, struct PAResource);
 
 
-          struct PAData PADataPerformRuin(struct PAData*);
+          int PADataPerformRuin(struct PAData*);
           struct PAData PADataPerformDelete(struct PAData*);
           struct PAData PADataPerformCopy(struct PAData* from, struct PAData* to);
 # 8 "src/PA/Element.c" 2
@@ -412,7 +412,7 @@ struct Facade {
           struct PAStatus* PAStatusPerformInit(struct PAStatus*, struct PAResource);
           struct PAStatus* PAStatusPerformDelete(struct PAStatus*);
           struct PAStatus* PAStatusPerformConstruct();
-          struct PAStatus* PAStatusPerformRuin(struct PAStatus*);
+          int PAStatusPerformRuin(struct PAStatus*);
           struct PAStatus* PAStatusPerformCopy(struct PAStatus*, struct PAStatus*);
 # 9 "src/PA/Element.c" 2
 # 19 "src/PA/Element.c"
@@ -461,7 +461,7 @@ struct PAElement* PAElementPerformConstruct()
     return to;
 }
 # 83 "src/PA/Element.c"
-          struct PAElement* PAElementPerformRuin(struct PAElement* PA)
+          int PAElementPerformRuin(struct PAElement* PA)
 {
     PA.index = PADataPerformRuin(PA.index);
     PA.status = PAStatusPerformRuin(PA.status);

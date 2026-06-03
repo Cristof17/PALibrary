@@ -17,7 +17,7 @@ DllExport struct PAElement PAElementPerformInit(struct PAElement*,struct PAData,
 // DllExport HRESULT PAElementPerformPutData(struct PAData);
 // DllExport HRESULT PAElementPerformPutDestination(struct PADestination);
 // DllExport HRESULT PAElementPerformPutFeature(struct PAFeature);
-DllExport PAElementPerformRuin(struct PAElement*);
+DllExport int PAElementPerformRuin(struct PAElement*);
 DllExport struct PAElement* PAElementPerformDelete(struct PAElement*);
 DllExport struct PAElement* PAElementPerformCopy(struct PAElement*, struct PAElement*);
 // struct PANod;

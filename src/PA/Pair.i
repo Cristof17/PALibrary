@@ -387,7 +387,7 @@ struct Facade {
 
 
 
-          struct PAPair* PAPairPerformRuin(struct PAPair*);
+          int PAPairPerformRuin(struct PAPair*);
           struct PAPair* PAPairPerformDelete(struct PAPair*);
 # 7 "src/PA/Pair.c" 2
 # 1 "./include/PA/Element.h" 1
@@ -402,7 +402,7 @@ struct Facade {
 
 
 
-          struct PAElement* PAElementPerformRuin(struct PAElement*);
+          int PAElementPerformRuin(struct PAElement*);
           struct PAElement* PAElementPerformDelete(struct PAElement*);
           struct PAElement* PAElementPerformCopy(struct PAElement*, struct PAElement*);
 # 8 "src/PA/Pair.c" 2
@@ -461,11 +461,15 @@ struct PAPair* PAPairPerformCopy(struct PAPair* from, struct PAPair* to)
     return to;
 }
 # 101 "src/PA/Pair.c"
-          struct PAPair* PAPairPerformRuin(struct PAPair* PA)
+          int PAPairPerformRuin(struct PAPair* PA)
 {
-    PAElementPerformRuin(&PA->Node);
-    PAElementPerformRuin(&PA->Neigh);
-    return PA;
+    int returnCode1;
+    int returnCode2;
+    int returnCode;
+    returnCode1 = PAElementPerformRuin(&PA->Node);
+    returnCode2 = PAElementPerformRuin(&PA->Neigh);
+    returnCode = returnCode1 & returnCode2;
+    return returnCode;
 
 
 
@@ -474,9 +478,13 @@ struct PAPair* PAPairPerformCopy(struct PAPair* from, struct PAPair* to)
 }
           struct PAPair* PAPairPerformDelete(struct PAPair* PA)
 {
-    PAElementPerformDelete(&PA->Node);
-    PAElementPerformDelete(&PA->Neigh);
-    return PA;
+    int returnCode1;
+    int returnCode2;
+    int returnCode;
+    returnCode1 = PAElementPerformDelete(&PA->Node);
+    returnCode2 = PAElementPerformDelete(&PA->Neigh);
+    returnCode = returnCode1 & returnCode2;
+    return returnCode;
 
 
 }

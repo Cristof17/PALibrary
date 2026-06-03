@@ -377,7 +377,7 @@ struct Facade {
 
           struct PAResource* PAResourcePerformInit(struct PAResource*, struct PANumber);
           struct PAResource* PAResourcePerformConstruct();
-          struct PAResource* PAResourcePerformRuin(struct PAResource*);
+          int PAResourcePerformRuin(struct PAResource*);
           struct PAResource* PAResourcePerformDelete(struct PAResource*);
           struct PAResource* PAResourcePerformCopy(struct PAResource*, struct PAResource*);
 # 4 "src/PA/Resource.c" 2
@@ -389,7 +389,7 @@ struct Facade {
           struct PANumber* PANumberPerformConstruct();
           struct PANumber* PANumberPerformInit(struct PANumber* Number, unsigned char Value);
           struct PANumber* PANumberPerformDelete(struct PANumber*);
-          struct PANumber* PANumberPerformRuin(struct PANumber*);
+          int PANumberPerformRuin(struct PANumber*);
           struct PANumber* PANumberPerformCopy(struct PANumber* from, struct PANumber* to);
 # 5 "src/PA/Resource.c" 2
 
@@ -421,7 +421,7 @@ struct Facade {
     to.value = temp.value;
     return to;
 }
-          struct PAResource* PAResourcePerformRuin(struct PAResource* PA)
+          int PAResourcePerformRuin(struct PAResource* PA)
 {
     PA.value = PANumberPerformRuin(PA.value);
 

@@ -76,7 +76,9 @@ DllExport int PAInputPerformRuin(struct PAInput* PA) {
 	PACountPerformRuin(&PA->n);
 	PACountPerformRuin(&PA->m);
 	PAElementPerformRuin(&PA->source);
-	return PA;
+	int returnCode;
+	returnCode = PARESULT_SUCCESS;
+	// return PA;
 	// return Empty;
 	// return result;
 }
