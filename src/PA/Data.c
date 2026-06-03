@@ -61,7 +61,7 @@ DllExport struct PAData* PADataPerformCopy(struct PAData* from, struct PAData* t
     // Data.Resource = Resource;
     // return Data;
 // }
-DllExport struct PAData PADataPerformRuin(struct PAData Data) 
+DllExport struct PAData* PADataPerformRuin(struct PAData* Data) 
 {
     // PAInt Empty = NULL;
     // Resource = Empty;
@@ -70,7 +70,7 @@ DllExport struct PAData PADataPerformRuin(struct PAData Data)
     // PAResult result = (PAInt) PARESULT_SUCCESS;
     // return PARESULT_SUCCESS;
 }
-DllExport struct PAData PADataPerformDelete(struct PAData PA)
+DllExport struct PAData* PADataPerformDelete(struct PAData* PA)
 {
     return PA;
     // PAResult result = (PAInt) PARESULT_SUCCESS;
