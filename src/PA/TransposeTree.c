@@ -16,18 +16,22 @@
 DllExport struct PATransposeTree* PATransposeTreePerformConstruct()
 {
     struct PATransposeTree transposeTree;
-    transposeTree.tree = PATreePerformConstruct();
-    transposeTree = PATransposeTreePerformInit(transposeTree,transposeTree.tree);
+    struct PATransposeTree* transposeTreePointer;
+    transposeTreePointer = PATreePerformConstruct();
+    transposeTree.tree = (transposeTreePointer->tree);
+    transposeTreePointer = PATransposeTreePerformInit(transposeTreePointer,transposeTree.tree);
     // transposeTree.tree = PATreePerformConstruct();
-    return transposeTree;
+    return transposeTreePointer;
 }
 
-DllExport struct PATransposeTree* PATransposeTreePerformInit(struct PATransposeTree* TransposeTree, struct PATree* Value)
+DllExport struct PATransposeTree* PATransposeTreePerformInit(struct PATransposeTree* TransposeTree, struct PATree Value)
 {
-    struct PATransposeTree tree;
-    TransposeTree.tree = PATreePerformConstruct();
-    TransposeTree = tree;
-    TransposeTree.tree = Value;
+    struct PATransposeTree transposeTree;
+    struct PATree* treePointer;
+    treePointer = &(TransposeTree->tree);
+    treePointer = PATreePerformConstruct();
+    // transposeTree.tree = *treePointer;
+    transposeTree.tree = Value;
     // struct PATransposeTree transposeTree;
     // transposeTree = PATransposeTreePerformConstruct(TransposeTree.adj_trans);
     // transposeTree.adj_trans = Adj_trans;
