@@ -16,7 +16,7 @@
     // struct PACount size;
     // return size;
 // }
-DllExport struct PATree PATreePerformConstruct()
+DllExport struct PATree* PATreePerformConstruct()
 {
     struct PATree temp;
     temp.n = PACountPerformConstruct();
@@ -65,7 +65,7 @@ DllExport struct PATree PATreePerformConstruct()
     // return tree;
     return temp;
 }
-DllExport struct PATree PATreePerformInit(struct PATree Tree, struct PACount Value, struct PACount Value2, struct PAList Value3, struct PAElement Value4)
+DllExport struct PATree* PATreePerformInit(struct PATree* Tree, struct PACount* Value, struct PACount* Value2, struct PAList* Value3, struct PAElement* Value4)
 {
     struct PATree tree;
     tree.n = PACountPerformConstruct();
