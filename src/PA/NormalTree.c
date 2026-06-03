@@ -9,14 +9,14 @@
 #include <PA\Tree.h>
 #endif
 
-DllExport struct PANormalTree PANormalTreePerformConstruct()
+DllExport struct PANormalTree* PANormalTreePerformConstruct()
 {
     struct PANormalTree normalTree;
     // normalTree.tree = PATreePerformConstruct();
     normalTree.tree = PATreePerformConstruct();
     return normalTree;
 }
-DllExport struct PANormalTree PANormalTreePerformInit(struct PANormalTree NormalTree, struct PATree Value)
+DllExport struct PANormalTree* PANormalTreePerformInit(struct PANormalTree* NormalTree, struct PATree* Value)
 {
     struct PANormalTree normalTree;
     normalTree.tree = PATreePerformConstruct();
@@ -46,7 +46,7 @@ DllExport struct PANormalTree PANormalTreePerformDelete(struct PANormalTree PA)
     PA.tree = PATreePerformDelete(PA.tree);
     return PA;
 }
-DllExport struct PANormalTree PAGrafNormalBuildPart()
+DllExport struct PANormalTree* PAGrafNormalBuildPart()
 {
     struct PANormalTree tree;
     return tree;
