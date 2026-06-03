@@ -5,6 +5,6 @@
 DllExport struct PANumber* PANumberPerformConstruct();
 DllExport struct PANumber* PANumberPerformInit(struct PANumber* Number, unsigned char Value);
 DllExport struct PANumber* PANumberPerformDelete(struct PANumber*);
-DllExport struct PANumber* PANumberPerformRuin(struct PANumber*);
+DllExport int PANumberPerformRuin(struct PANumber*);
 DllExport struct PANumber* PANumberPerformCopy(struct PANumber* from, struct PANumber* to);
 #endif

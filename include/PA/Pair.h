@@ -12,7 +12,7 @@ DllExport struct PAPair* PAPairPerformCopy(struct PAPair* from, struct PAPair* t
 // DllExport HRESULT PAPairPerformCopy(struct PAPair);
 // DllExport HRESULT PAPairPerformPutNode(struct PAPair);
 // DllExport HRESULT PAPairPerformPutNeigh(struct PAPair);
-DllExport struct PAPair* PAPairPerformRuin(struct PAPair*);
+DllExport int PAPairPerformRuin(struct PAPair*);
 DllExport struct PAPair* PAPairPerformDelete(struct PAPair*);
 //typedef struct PAPair Pair;
 #endif
