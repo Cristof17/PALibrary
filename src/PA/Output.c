@@ -61,6 +61,7 @@ DllExport struct PAOutput* PAOutputPerformConstruct()
 {
     struct PAOutput Output;
     struct PAOutput* outputPointer;
+    // outputPointer-
     return outputPointer;
     // struct BFSRecord Record = BFSRecordConstruct()
 }
