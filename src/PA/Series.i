@@ -473,8 +473,8 @@ struct Facade {
     struct PACount Value, struct PAElement Value2[])
     {
 # 113 "src/PA/Series.c"
-        struct PASeries series;
-        series.m = Value;
+        struct PASeries* series;
+
         struct PANumber x;
         struct PANumber y;
         x.val = (1);
@@ -484,6 +484,7 @@ struct Facade {
 
             x.val++;
         }
+        return series;
 
 
     }
@@ -502,9 +503,11 @@ struct Facade {
         return PA;
 
     }
-# 151 "src/PA/Series.c"
+# 152 "src/PA/Series.c"
               int PASeriesPerformRuin(struct PASeries* PA)
     {
+
+        int returnCode;
         struct PACount x;
         struct PACount y;
 
@@ -514,16 +517,17 @@ struct Facade {
 
             y.number.val++;
         }
-# 170 "src/PA/Series.c"
-        return PA;
+# 173 "src/PA/Series.c"
+        return returnCode;
+
     }
-# 206 "src/PA/Series.c"
+# 210 "src/PA/Series.c"
 struct PAResource* PASeriesGet(struct PAData* Data)
 {
     struct PAResource* resource;
     return resource;
 }
-# 227 "src/PA/Series.c"
+# 231 "src/PA/Series.c"
 void PASeriesPerformPrint(struct PASeries* Series)
 {
 

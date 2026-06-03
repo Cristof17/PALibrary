@@ -110,8 +110,8 @@ DllExport struct PASeries* PASeriesPerformInit(struct PASeries* Series,
         //end of iterator
         // series.n = N;
         //return series;
-        struct PASeries series;
-        series.m = Value;
+        struct PASeries* series;
+        // series.m = Value;
         struct PANumber x;
         struct PANumber y;
         x.val = FIRST;
@@ -121,6 +121,7 @@ DllExport struct PASeries* PASeriesPerformInit(struct PASeries* Series,
             // series.adj[x.val] = PAElementPerformInit(series.adj[x.val],series.adj[x.val].index, series.adj[x.val].status);
             x.val++;
         }
+        return series;
         // series.adj = Value2;
         // return series;
     }
@@ -150,6 +151,8 @@ DllExport struct PASeries* PASeriesPerformInit(struct PASeries* Series,
     // }
     DllExport int PASeriesPerformRuin(struct PASeries* PA)
     {
+        // st
+        int returnCode;
         struct PACount x;
         struct PACount y;
         // x.number.val = PA.m.number.val;
@@ -167,7 +170,8 @@ DllExport struct PASeries* PASeriesPerformInit(struct PASeries* Series,
         //PAResult result;
         //return result;
         // return 0;
-        return PA;
+        return returnCode;
+        // return PA;
     }
     // struct PAList PAListPutElement(struct PAList List, struct PAElement Element) {
         //     // struct PAList list;
