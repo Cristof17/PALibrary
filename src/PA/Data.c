@@ -10,7 +10,7 @@
 //struct PAData {
 //
 //}
-DllExport struct PAData PADataPerformConstruct()
+DllExport struct PAData* PADataPerformConstruct()
 {
     struct PAData data;
     // struct PAResource resource;
@@ -23,7 +23,7 @@ DllExport struct PAData PADataPerformConstruct()
     // Data.Resource = PAResourcePerformConstruct(); 
     return data;
 }
-DllExport struct PAData PADataPerformInit(struct PAData* Data, struct PAResource* Value)
+DllExport struct PAData* PADataPerformInit(struct PAData* Data, struct PAResource* Value)
 {
     struct PAData temp;
     temp.Resource = PAResourcePerformConstruct();
