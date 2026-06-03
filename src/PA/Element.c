@@ -18,7 +18,7 @@
 // #include "../include/PAIndex.h"
 struct PAElement* PAElementPerformConstruct()
 {
-    struct PAElement temp;
+    struct PAElement* temp;
     // temp.index = PADataPerformConstruct();
     // temp.status = PAStatusPerformConstruct();
     // temp = PAElementPerformInit(temp,temp.index,temp.status);
@@ -29,6 +29,7 @@ struct PAElement* PAElementPerformConstruct()
     // return result;
  //   struct PAElement element;
   //  return element;
+  return temp;
 }
 DllExport struct PAElement* PAElementPerformInit(struct PAElement* Element, struct PAData Value, struct PAStatus Value2)
 {

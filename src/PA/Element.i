@@ -386,9 +386,9 @@ struct Facade {
           void PAElementVisit(struct PAElement*);
           PABool PAElementIsVisited(struct PAElement*);
           void PAElementReset(struct PAElement*);
-          struct PAElement PAElementPerformConstruct();
+          struct PAElement* PAElementPerformConstruct();
 
-          struct PAElement PAElementPerformInit(struct PAElement*,struct PAData,struct PAStatus);
+          struct PAElement* PAElementPerformInit(struct PAElement*,struct PAData,struct PAStatus);
 
 
 
@@ -425,12 +425,13 @@ struct Facade {
 # 19 "src/PA/Element.c"
 struct PAElement* PAElementPerformConstruct()
 {
-    struct PAElement temp;
+    struct PAElement* temp;
 # 32 "src/PA/Element.c"
+  return temp;
 }
           struct PAElement* PAElementPerformInit(struct PAElement* Element, struct PAData Value, struct PAStatus Value2)
 {
-# 46 "src/PA/Element.c"
+# 47 "src/PA/Element.c"
     return Element;
 }
           void PAElementVisit(struct PAElement* Element)
@@ -456,17 +457,17 @@ struct PAElement* PAElementPerformConstruct()
 
     return to;
 }
-# 83 "src/PA/Element.c"
+# 84 "src/PA/Element.c"
           int PAElementPerformRuin(struct PAElement* PA)
 {
-# 98 "src/PA/Element.c"
+# 99 "src/PA/Element.c"
     int returnCode;
     return returnCode;
 
 
 
 }
-# 138 "src/PA/Element.c"
+# 139 "src/PA/Element.c"
           struct PAElement* PAElementPerformDelete(struct PAElement* PA)
 {
 

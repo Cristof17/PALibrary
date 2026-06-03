@@ -402,9 +402,9 @@ struct Facade {
           void PAElementVisit(struct PAElement*);
           PABool PAElementIsVisited(struct PAElement*);
           void PAElementReset(struct PAElement*);
-          struct PAElement PAElementPerformConstruct();
+          struct PAElement* PAElementPerformConstruct();
 
-          struct PAElement PAElementPerformInit(struct PAElement*,struct PAData,struct PAStatus);
+          struct PAElement* PAElementPerformInit(struct PAElement*,struct PAData,struct PAStatus);
 
 
 
