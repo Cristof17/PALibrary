@@ -381,21 +381,21 @@ struct Facade {
 
           void OutputPerformPrint(PAResult);
 # 5 "src/Output.c" 2
-# 14 "src/Output.c"
-          struct Output OutputPerformConstruct()
+# 15 "src/Output.c"
+          struct Output* OutputPerformConstruct()
 {
-    struct Output output;
+    struct Output* output;
     return output;
 }
-          struct Output OutputPerformInit(struct Output output, struct PAOutput Output2)
+          struct Output* OutputPerformInit(struct Output* output, struct PAOutput* Output2)
 {
     return output;
 }
-          struct Output OutputPerformCopy(struct Output from, struct Output to)
+          struct Output* OutputPerformCopy(struct Output* from, struct Output* to)
 {
     return from;
 }
-          struct Output OutputPerformRuin(struct Output PA)
+          struct Output* OutputPerformRuin(struct Output* PA)
 {
     return PA;
 }
