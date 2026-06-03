@@ -419,14 +419,14 @@ struct Facade {
 {
     struct PANormalTree normalTree;
 
-    normalTree.tree = PATreePerformConstruct();
-    return normalTree;
+
+
 }
           struct PANormalTree* PANormalTreePerformInit(struct PANormalTree* NormalTree, struct PATree Value)
 {
     struct PANormalTree normalTree;
-    normalTree.tree = PATreePerformConstruct();
-    NormalTree = normalTree;
+
+
 
 
 

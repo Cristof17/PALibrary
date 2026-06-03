@@ -431,25 +431,25 @@ void PAListPerformPrint(struct PAList* List);
           struct PAList* PAListPerformCopy(struct PAList* from, struct PAList* to)
 {
     struct PAList temp;
-    temp.n = PACountPerformCopy(from.n,temp.n);
+
     struct PACount x;
     struct PACount y;
     x.number.val = (1);
     y.number.val = temp.n.number.val;
-    if (temp.n.number.val > to.n.number.val)
+
     {
-        y.number.val = to.n.number.val;
+
 
     }
-    else if (temp.n.number.val < to.n.number.val)
+
     {
         y.number.val = temp.n.number.val;
     }
     while (x.number.val <= y.number.val)
     {
         struct PASeries aux;
-        PASeriesPerformCopy(from.neigh[x.number.val], aux);
-        PASeriesPerformCopy(aux, temp.neigh[x.number.val]);
+
+
         x.number.val++;
     }
 
@@ -462,11 +462,11 @@ void PAListPerformPrint(struct PAList* List);
     while (x.number.val < y.number.val)
     {
         struct PASeries aux;
-        PASeriesPerformCopy(temp.neigh[x.number.val],aux);
-        PASeriesPerformCopy(aux, to.neigh[x.number.val]);
+
+
         x.number.val++;
     }
-    to.n = PACountPerformCopy(temp.n, to.n);
+
     return to;
 }
 
@@ -485,11 +485,11 @@ void PAListPerformPrint(struct PAList* List);
     while (x.val <= y.val)
     {
 
-        PASeriesPerformCopy(List.neigh[x.val],list.neigh[x.val]);
+
 
         x.val++;
     }
-    List.n = list.n;
+
 
 
 
@@ -517,8 +517,9 @@ void PAListPerformPrint(struct PAList* List);
 
 
     }
+    return returnCode;
 
-    return PA;
+
 
 
 
@@ -527,18 +528,19 @@ void Dispose()
 {
 
 }
-# 188 "src/PA/List.c"
+# 189 "src/PA/List.c"
           struct PAList* PAListPerformDelete(struct PAList* PA)
 {
-    struct PACount n = PA.n;
-    n = PACountPerformDelete(PA.n);
+
+    struct PACount* countPointer;
+
     struct PANumber x;
     struct PANumber y;
-    y = n.number;
+
     x.val = (1);
     while (x.val < y.val)
     {
-        PA.neigh[x.val] = PASeriesPerformDelete(PA.neigh[x.val]);
+
         x.val++;
     }
 

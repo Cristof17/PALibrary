@@ -387,8 +387,8 @@ struct Facade {
 
 
 
-          struct PAData PADataPerformConstruct();
-          struct PAData PADataPerformInit(struct PAData*, struct PAResource);
+          struct PAData* PADataPerformConstruct();
+          struct PAData* PADataPerformInit(struct PAData*, struct PAResource);
 
 
           int PADataPerformRuin(struct PAData*);

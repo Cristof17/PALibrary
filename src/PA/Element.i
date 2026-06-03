@@ -383,9 +383,9 @@ struct Facade {
 # 8 "./include/PA/Element.h" 2
 
 
-          void PAElementVisit(struct PAElement);
-          PABool PAElementIsVisited(struct PAElement);
-          void PAElementReset(struct PAElement);
+          void PAElementVisit(struct PAElement*);
+          PABool PAElementIsVisited(struct PAElement*);
+          void PAElementReset(struct PAElement*);
           struct PAElement PAElementPerformConstruct();
 
           struct PAElement PAElementPerformInit(struct PAElement*,struct PAData,struct PAStatus);
@@ -399,8 +399,8 @@ struct Facade {
 # 7 "src/PA/Element.c" 2
 # 1 "./include/PA/Data.h" 1
 # 11 "./include/PA/Data.h"
-          struct PAData PADataPerformConstruct();
-          struct PAData PADataPerformInit(struct PAData*, struct PAResource);
+          struct PAData* PADataPerformConstruct();
+          struct PAData* PADataPerformInit(struct PAData*, struct PAResource);
 
 
           int PADataPerformRuin(struct PAData*);
@@ -426,59 +426,48 @@ struct Facade {
 struct PAElement* PAElementPerformConstruct()
 {
     struct PAElement temp;
-    temp.index = PADataPerformConstruct();
-    temp.status = PAStatusPerformConstruct();
-    temp = PAElementPerformInit(temp,temp.index,temp.status);
-
-
-    return temp;
-
-
-
-
+# 32 "src/PA/Element.c"
 }
           struct PAElement* PAElementPerformInit(struct PAElement* Element, struct PAData Value, struct PAStatus Value2)
 {
-    Element.index = Value;
-    Element.status = Value2;
 # 46 "src/PA/Element.c"
     return Element;
 }
           void PAElementVisit(struct PAElement* Element)
 {
-    Element.status.visited.value.val = 1;
+
     return;
 }
           PABool PAElementIsVisited(struct PAElement* Element)
 {
-    return Element.status.visited.value.val;
+
 }
           void PAElementReset(struct PAElement* Element)
 {
-    Element.status.visited.value.val = 0;
+
     return;
 }
           struct PAElement* PAElementPerformCopy(struct PAElement* from, struct PAElement* to)
 {
     struct PAElement temp;
-    temp.index = PADataPerformCopy(from.index, to.index);
-    temp.status = PAStatusPerformCopy(from.status,to.status);
-    to.index = temp.index;
-    to.status = temp.status;
+
+
+
+
     return to;
 }
 # 83 "src/PA/Element.c"
           int PAElementPerformRuin(struct PAElement* PA)
 {
-    PA.index = PADataPerformRuin(PA.index);
-    PA.status = PAStatusPerformRuin(PA.status);
 # 98 "src/PA/Element.c"
-    return PA;
+    int returnCode;
+    return returnCode;
+
 
 
 }
-# 136 "src/PA/Element.c"
-          struct PAElement PAElementPerformDelete(struct PAElement PA)
+# 138 "src/PA/Element.c"
+          struct PAElement* PAElementPerformDelete(struct PAElement* PA)
 {
 
 

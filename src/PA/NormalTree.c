@@ -13,14 +13,14 @@ DllExport struct PANormalTree* PANormalTreePerformConstruct()
 {
     struct PANormalTree normalTree;
     // normalTree.tree = PATreePerformConstruct();
-    normalTree.tree = PATreePerformConstruct();
-    return normalTree;
+    // normalTree.tree = PATreePerformConstruct();
+    // return normalTree;
 }
 DllExport struct PANormalTree* PANormalTreePerformInit(struct PANormalTree* NormalTree, struct PATree Value)
 {
     struct PANormalTree normalTree;
-    normalTree.tree = PATreePerformConstruct();
-    NormalTree = normalTree;
+    // normalTree.tree = PATreePerformConstruct();
+    // NormalTree = normalTree;
     // NormalTree.tree = Value; 
     // struct PANormalTree normalTree;
     // normalTree.adj = Adj;

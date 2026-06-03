@@ -409,9 +409,9 @@ struct Facade {
 # 5 "src/PA/Tree.c" 2
 # 1 "./include/PA/Element.h" 1
 # 10 "./include/PA/Element.h"
-          void PAElementVisit(struct PAElement);
-          PABool PAElementIsVisited(struct PAElement);
-          void PAElementReset(struct PAElement);
+          void PAElementVisit(struct PAElement*);
+          PABool PAElementIsVisited(struct PAElement*);
+          void PAElementReset(struct PAElement*);
           struct PAElement PAElementPerformConstruct();
 
           struct PAElement PAElementPerformInit(struct PAElement*,struct PAData,struct PAStatus);
