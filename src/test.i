@@ -429,8 +429,8 @@ struct Facade {
 
 
           int PADataPerformRuin(struct PAData*);
-          struct PAData PADataPerformDelete(struct PAData*);
-          struct PAData PADataPerformCopy(struct PAData* from, struct PAData* to);
+          int PADataPerformDelete(struct PAData*);
+          struct PAData* PADataPerformCopy(struct PAData* from, struct PAData* to);
 # 6 "test/test.c" 2
 
 # 1 "./include/PA/List.h" 1

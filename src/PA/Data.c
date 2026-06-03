@@ -13,23 +13,25 @@
 DllExport struct PAData* PADataPerformConstruct()
 {
     struct PAData data;
+    struct PAData* dataPointer;
     // struct PAResource resource;
-    data.Resource = PAResourcePerformConstruct();
-    data = PADataPerformInit(data, data.Resource);
+    // data.Resource = PAResourcePerformConstruct();
+    dataPointer = PADataPerformInit(dataPointer, data.Resource);
     // data.Resource = resource;
     //  = data;
     // Data.Resource = PAResourcePerformInit(Data.Resource, )
     // PADataPerformInit(Data,)
     // Data.Resource = PAResourcePerformConstruct(); 
-    return data;
+    return dataPointer;
 }
 DllExport struct PAData* PADataPerformInit(struct PAData* Data, struct PAResource Value)
 {
     struct PAData temp;
-    temp.Resource = PAResourcePerformConstruct();
-    Data = temp;
-    Data.Resource.value.val = Value.value.val;
-    Data.Resource.value = Value.value;
+    struct PAData* dataPointer;
+    // temp.Resource = PAResourcePerformConstruct();
+    // Data = temp;
+    // Data.Resource.value.val = Value.value.val;
+    // Data.Resource.value = Value.value;
 
     return Data;
     // struct PAData data;
@@ -40,8 +42,8 @@ DllExport struct PAData* PADataPerformInit(struct PAData* Data, struct PAResourc
 DllExport struct PAData* PADataPerformCopy(struct PAData* from, struct PAData* to)
 {
     struct PAData temp;
-    temp.Resource = PAResourcePerformCopy(from.Resource, temp.Resource);
-    to.Resource = temp.Resource;
+    // temp.Resource = PAResourcePerformCopy(from.Resource, temp.Resource);
+    // to.Resource = temp.Resource;
     return to;
 }
 // struct PAData PADataPerformCopy(struct PAData Data)
@@ -66,13 +68,15 @@ DllExport int PADataPerformRuin(struct PAData* Data)
     // PAInt Empty = NULL;
     // Resource = Empty;
     // return Resource;
-    return Data;
+    return PARESULT_SUCCESS;
+    // return Data;
     // PAResult result = (PAInt) PARESULT_SUCCESS;
     // return PARESULT_SUCCESS;
 }
-DllExport struct PAData* PADataPerformDelete(struct PAData* PA)
+DllExport int PADataPerformDelete(struct PAData* PA)
 {
-    return PA;
+    return PARESULT_SUCCESS;
+    // return PA;
     // PAResult result = (PAInt) PARESULT_SUCCESS;
     // return PA;
 }

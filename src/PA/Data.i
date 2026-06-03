@@ -392,8 +392,8 @@ struct Facade {
 
 
           int PADataPerformRuin(struct PAData*);
-          struct PAData PADataPerformDelete(struct PAData*);
-          struct PAData PADataPerformCopy(struct PAData* from, struct PAData* to);
+          int PADataPerformDelete(struct PAData*);
+          struct PAData* PADataPerformCopy(struct PAData* from, struct PAData* to);
 # 4 "src/PA/Data.c" 2
 # 1 "./include/PA/Resource.h" 1
 
@@ -418,23 +418,25 @@ struct Facade {
           struct PAData* PADataPerformConstruct()
 {
     struct PAData data;
-
-    data.Resource = PAResourcePerformConstruct();
-    data = PADataPerformInit(data, data.Resource);
+    struct PAData* dataPointer;
 
 
+    dataPointer = PADataPerformInit(dataPointer, data.Resource);
 
 
 
-    return data;
+
+
+    return dataPointer;
 }
           struct PAData* PADataPerformInit(struct PAData* Data, struct PAResource Value)
 {
     struct PAData temp;
-    temp.Resource = PAResourcePerformConstruct();
-    Data = temp;
-    Data.Resource.value.val = Value.value.val;
-    Data.Resource.value = Value.value;
+    struct PAData* dataPointer;
+
+
+
+
 
     return Data;
 
@@ -445,23 +447,25 @@ struct Facade {
           struct PAData* PADataPerformCopy(struct PAData* from, struct PAData* to)
 {
     struct PAData temp;
-    temp.Resource = PAResourcePerformCopy(from.Resource, temp.Resource);
-    to.Resource = temp.Resource;
+
+
     return to;
 }
-# 64 "src/PA/Data.c"
+# 66 "src/PA/Data.c"
           int PADataPerformRuin(struct PAData* Data)
 {
 
 
 
-    return Data;
+    return ((int)0);
+
 
 
 }
-          struct PAData* PADataPerformDelete(struct PAData* PA)
+          int PADataPerformDelete(struct PAData* PA)
 {
-    return PA;
+    return ((int)0);
+
 
 
 }
