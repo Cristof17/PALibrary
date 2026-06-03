@@ -61,11 +61,13 @@ DllExport struct PATransposeTree* PATransposeTreePerformCopy(struct PATransposeT
 DllExport int PATransposeTreePerformRuin(struct PATransposeTree* PA)
 {
     // PA.tree = PATreePerformRuin(PA.tree);
+    int rc = PATreePerformDelete(&PA->tree);
     return PA;
 }
-DllExport struct PATransposeTree* PATransposeTreeDelete(struct PATransposeTree* Tree)
+DllExport int PATransposeTreeDelete(struct PATransposeTree* PA)
 {
-    return Tree;
+    int rc = PATreePerformDelete(&PA->tree);
+    return rc;
 }
 // struct PATransposeTree PATransposeTreeRuin(struct PATree Tree)
 // {

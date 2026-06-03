@@ -107,10 +107,23 @@ DllExport struct PATree* PATreePerformCopy(struct PATree* from, struct PATree* t
 }
 DllExport int PATreePerformRuin(struct PATree* PA)
 {
-    PA.n = PACountPerformRuin(PA.n);
-    PA.m = PACountPerformRuin(PA.m);
-    PA.source = PAElementPerformRuin(PA.source);
-    PA.adj = PAListPerformRuin(PA.adj);
+    int returnCode1 = PARESULT_FAIL;
+    int returnCode2 = PARESULT_FAIL;
+    int returnCode3 = PARESULT_FAIL;
+    int returnCode4 = PARESULT_FAIL;
+    int returnCode = PARESULT_FAIL;
+    returnCode1 = PACountPerformRuin(&PA->n);
+    returnCode2 = PACountPerformRuin(&PA->m);
+    returnCode3 = PAListPerformRuin(&PA->adj);
+    returnCode4 = PAElementPerformRuin(&PA->source);
+    // rc4 = PAListPerform
+
+    returnCode = returnCode1 & returnCode2 & returnCode3 & returnCode4;
+    return returnCode;
+    // PA.n = PACountPerformRuin(PA.n);
+    // PA.m = PACountPerformRuin(PA.m);
+    // PA.source = PAElementPerformRuin(PA.source);
+    // PA.adj = PAListPerformRuin(PA.adj);
     // struct PACount x;
     // struct PACount y;
     // x.number.val = FIRST;
