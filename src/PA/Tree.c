@@ -194,12 +194,15 @@ DllExport int PATreePerformRuin(struct PATree* PA)
 //     // struct PATree tree;
 //     return tree;
 // }
-DllExport struct PATree* PATreePerformDelete(struct PATree* Tree)
+DllExport int PATreePerformDelete(struct PATree* Tree)
 {
+    int returnCode;
     // struct PATree Tree;
     // PAResult result;
     // return result;
-    return Tree;
+    // return Tree;
+    returnCode = PARESULT_SUCCESS;
+    return returnCode;
     // return 0;
 }
 DllExport struct PATransposeTree PATransposeTreeBuildPart()

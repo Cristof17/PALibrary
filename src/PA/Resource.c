@@ -10,33 +10,44 @@
 DllExport struct PAResource* PAResourcePerformConstruct()
 {
     struct PAResource resource;
+    // struct PAResourfec
+    struct PAResource* resourcePointer;
     // resource = PAResourcePerformC
-    resource.value = PANumberPerformConstruct();
+    // resource.value = PANumberPerformConstruct();
     // resource = PAResourcePerformInit(Data,resource.value)
-    resource = PAResourcePerformInit(resource,resource.value);
-    return resource;
+    // resource = PAResourcePerformInit(resource,resource.value);
+    // retun 
+    return resourcePointer;
+    // return resource;
 }
 DllExport struct PAResource* PAResourcePerformInit(struct PAResource* Resource, struct PANumber Value)
 {
     struct PAResource resource;
-    resource.value = PANumberPerformConstruct();
+    struct PAResource* resourcePointer;
+    // resource.value = PANumberPerformConstruct();
     // resource.value = PANumberPerformInit(resource.value,NULL_CHAR);
-    Resource = resource;
-    return Resource;
+    // Resource = resource;
+    // return resourcePoiinte
+    return resourcePointer;
+    // return Resource;
 }
 DllExport struct PAResource* PAResourcePerformCopy(struct PAResource* from, struct PAResource* to)
 {
     struct PAResource temp;
-    temp.value = PANumberPerformCopy(from.value, temp.value);
-    to.value = temp.value;
-    return to;
+    struct PAResource* resourcePointer;
+    // temp.value = PANumberPerformCopy(from.value, temp.value);
+    // to.value = temp.value;
+    return resourcePointer;
+    // return to;
 }
 DllExport int PAResourcePerformRuin(struct PAResource* PA)
 {
-    PA.value = PANumberPerformRuin(PA.value);
+    int returnCode;
+    // PA.= PANumberPerformRuin(PA.value);
     // struct PAResource Empty;
     // return Empty;
-    return PA;
+    return returnCode;
+    // return PA;
 }
 DllExport struct PAResource* PAResourcePerformDelete(struct PAResource* Resource)
 {

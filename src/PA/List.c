@@ -148,8 +148,8 @@ DllExport int PAListPerformRuin(struct PAList* PA)
     int returnCode2;
     int returnCode;
     // int returnC
-    returnCode1 = PACountPerformRuin(&PA->n);
-    returnCode2 = PAListPerformRuin(&PA->neigh);
+    returnCode1 = PACountPerformRuin(&(PA->n));
+    // returnCode2 =(struct PASeries*) PAListPerformRuin(PA->neigh);
     returnCode = returnCode1 & returnCode2;
     return returnCode;
     // x.number.val = FIRST;

@@ -53,7 +53,10 @@ DllExport void PAElementVisit(struct PAElement* Element)
 }
 DllExport PABool PAElementIsVisited(struct PAElement* Element)
 {
+    // PABool retrun
+    PABool returnVale;
     // return Element.status.visited.value.val;
+    return returnVale;
 }
 DllExport void PAElementReset(struct PAElement* Element)
 {

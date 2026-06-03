@@ -43,17 +43,24 @@ DllExport struct PAStatus* PAStatusPerformCopy(struct PAStatus* from, struct PAS
 }
 DllExport int PAStatusPerformDelete(struct PAStatus* PA)
 {
+    int returnCode;
     PAResourcePerformDelete(&PA->visited);
     // PA.visited.value.val = FALSE;
-    return PA;
+    return returnCode;
+    // return PA;
 }
 DllExport int PAStatusPerformRuin(struct PAStatus* PA)
 {
     // PAResult result;
     // return Status;
+    // int rest;
+    // int returncode
+    int returnCode;
     PAResourcePerformRuin(&PA->visited);
     // return Empty;
-    return PA;
+    // return PA;
+    // return resultCode;
+    return returnCode;
 }
 // struct PAStatus PAStatusPerformCopy(struct PAStatus Status)
 // {

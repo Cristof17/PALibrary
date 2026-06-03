@@ -81,6 +81,7 @@ DllExport int PAInputPerformRuin(struct PAInput* PA) {
 	// return PA;
 	// return Empty;
 	// return result;
+	return returnCode;
 }
 DllExport struct PAInput* PAInputPerformDelete(struct PAInput* Input)
 {

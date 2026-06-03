@@ -9,7 +9,7 @@ DllExport struct PANormalTree* PANormalTreePerformConstruct();
 DllExport struct PANormalTree* PANormalTreePerformInit(struct PANormalTree*, struct PATree);
 DllExport struct PANormalTree* PANormalTreePerformCopy(struct PANormalTree*);
 DllExport int PANormalTreePerformRuin(struct PANormalTree*);
-DllExport struct PANormalTree* PANormalTreePerformDelete(struct PANormalTree*);
+DllExport int PANormalTreePerformDelete(struct PANormalTree*);
 // DllExport struct PANormalTree PANormalTreePerformConstruct(struct PATree tree);
 DllExport struct PANormalTree* PAGrafNormalBuildPart();
 // typedef struct GrafNormal PAGrafNormal;

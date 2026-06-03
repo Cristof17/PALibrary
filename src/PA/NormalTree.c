@@ -12,6 +12,15 @@
 DllExport struct PANormalTree* PANormalTreePerformConstruct()
 {
     struct PANormalTree normalTree;
+    // struct PANormaltT/
+    // struct PANormat
+    // struct PANormalTreePointer& normalTree;
+    // struct PANormat
+    // struct PAnor
+    // struct NA
+    struct PANormalTree* normalTreePointer;
+    // register
+    return normalTreePointer;
     // normalTree.tree = PATreePerformConstruct();
     // normalTree.tree = PATreePerformConstruct();
     // return normalTree;
@@ -44,7 +53,7 @@ DllExport int PANormalTreePerformRuin(struct PANormalTree* PA)
     // PA.tree = PATreePerformRuin(PA.tree);
     // return PA;
 }
-DllExport struct PANormalTree* PANormalTreePerformDelete(struct PANormalTree* PA)
+DllExport int PANormalTreePerformDelete(struct PANormalTree* PA)
 {
     int returnCode;
     returnCode = PATreePerformDelete(&PA->tree);
@@ -55,7 +64,9 @@ DllExport struct PANormalTree* PANormalTreePerformDelete(struct PANormalTree* PA
 DllExport struct PANormalTree* PAGrafNormalBuildPart()
 {
     struct PANormalTree tree;
-    return tree;
+    struct PANormalTree* treePointer;
+    // return tree;
+    return treePointer;
 }
 PAResult PAGrafNormalGetResult()
 {
