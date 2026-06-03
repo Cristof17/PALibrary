@@ -12,7 +12,7 @@
 
 #endif
 
-DllExport struct PACount PACountPerformConstruct()
+DllExport struct PACount* PACountPerformConstruct()
 {
     struct PACount zies;
     // struct PANumber number;
@@ -40,7 +40,7 @@ DllExport struct PACount* PACountPerformInit(struct PACount* Count, struct PANum
     // count.number = Number;
     // return÷÷ Count;
 }
-DllExport struct PACount PACountPerformRuin(struct PACount PA)
+DllExport struct PACount* PACountPerformRuin(struct PACount* PA)
 {
     //get the value at address pointed by stack pointer
     //that corresponsds to parameter PA
@@ -69,7 +69,7 @@ DllExport struct PACount PACountPerformRuin(struct PACount PA)
     // return Empty;
     return PA;    
 }
-DllExport struct PACount PACountPerformDelete(struct PACount PA)
+DllExport struct PACount* PACountPerformDelete(struct PACount* PA)
 {
     PA.number.val = 0;
     return PA;
@@ -77,12 +77,12 @@ DllExport struct PACount PACountPerformDelete(struct PACount PA)
     // PAResult result;
     // return result;
 }
-PAResult PACountPerformPrint(struct PACount Count)
+PAResult PACountPerformPrint(struct PACount* Count)
 {
     PAResult result;
     return result;
 }
-DllExport struct PACount PACountPerformCopy(struct PACount from, struct PACount to)
+DllExport struct PACount* PACountPerformCopy(struct PACount* from, struct PACount* to)
 {
     struct PACount temp;
     temp.number = PANumberPerformCopy(from.number,to.number);
