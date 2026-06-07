@@ -28,12 +28,13 @@ DllExport struct PANormalTree* PANormalTreePerformConstruct()
 DllExport struct PANormalTree* PANormalTreePerformInit(struct PANormalTree* NormalTree, struct PATree Value)
 {
     struct PANormalTree normalTree;
+    struct PANormalTree *normalTreePointer;
     // normalTree.tree = PATreePerformConstruct();
     // NormalTree = normalTree;
     // NormalTree.tree = Value; 
     // struct PANormalTree normalTree;
     // normalTree.adj = Adj;
-    return NormalTree;  
+    return normalTreePointer;  
 }
 // DllExport struct PANormalTree PANormalTreePerformCopy(struct PANormalTree NormalTree)
 // {

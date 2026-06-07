@@ -31,6 +31,7 @@ DllExport struct PAPair* PAPairPerformConstruct()
 DllExport struct PAPair* PAPairPerformInit(struct PAPair* Pair, struct PAElement Value, struct PAElement Value2)
 {
     struct PAPair temp;
+    struct PAPair *pairPointer;
     Pair->Node.index = Value.index;
     Pair->Node.status = Value.status;
     Pair->Neigh.index = Value2.index;
@@ -42,7 +43,7 @@ DllExport struct PAPair* PAPairPerformInit(struct PAPair* Pair, struct PAElement
     // Pair.Node = Value;
     // Pair.Neigh = Value2;
     // struct PAPair pair;
-    return Pair;
+    return pairPointer;
 	// PAResult result;
 	// return result;
     //struct PAPair pair;

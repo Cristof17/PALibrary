@@ -28,13 +28,14 @@ DllExport struct PALink* PALinkPerformConstruct()
 DllExport struct PALink* PALinkPerformInit(struct PALink* Link, struct PAPair Value)
 {
     struct PALink link;
+    struct PALink* linkPointer;
     // link.p = PAPairPerformConstruct();
     // Link = link;
     // struct PALink link;
     // struct PAPair pair;
     // Link.p = Pair;
     // return link;
-    return Link;
+    return linkPointer;
 }
 DllExport int PALinkPerformRuin(struct PALink* PA)
 {

@@ -99,7 +99,8 @@ DllExport int PAElementPerformRuin(struct PAElement* PA)
     // struct PAElement Element;
     // Element.index = PADataPerformRuin(PA.index);
     // Element.status = PAStatusPerformRuin(PA.status);
-    int returnCode;
+    // int returnCode;
+    int returnCode = PARESULT_SUCCESS;
     return returnCode;
     // return PA;
     // PAResult result;
@@ -143,7 +144,7 @@ DllExport int PAElementPerformDelete(struct PAElement* PA)
 {
     // PAResult result;
     // return result;    return PA;
-    int returnCode;
+    int returnCode = PARESULT_SUCCESS;
     return returnCode;
     // return 0;
 }

@@ -160,6 +160,7 @@ DllExport int PAListPerformRuin(struct PAList* PA)
         // PA.neigh[x.number.val] = PASeriesPerformRuin(PA.neigh[x.number.val]);
         // x.number.val ++;
     }
+    returnCode = PARESULT_SUCCESS;
     return returnCode;
     // PA.n = PACountPerformRuin(PA.n);
     // return PA;
