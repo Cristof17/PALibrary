@@ -46,7 +46,7 @@ _PADataPerformCopy:                     ; @PADataPerformCopy
 	.cfi_def_cfa_offset 32
 	str	x0, [sp, #24]
 	str	x1, [sp, #16]
-	ldr	x0, [sp, #16]
+	ldr	x0, [sp]
 	add	sp, sp, #32
 	ret
 	.cfi_endproc

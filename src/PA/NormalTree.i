@@ -434,14 +434,15 @@ struct Facade {
           struct PANormalTree* PANormalTreePerformInit(struct PANormalTree* NormalTree, struct PATree Value)
 {
     struct PANormalTree normalTree;
+    struct PANormalTree *normalTreePointer;
 
 
 
 
 
-    return NormalTree;
+    return normalTreePointer;
 }
-# 47 "src/PA/NormalTree.c"
+# 48 "src/PA/NormalTree.c"
           int PANormalTreePerformRuin(struct PANormalTree* PA)
 {
     int returnCode;

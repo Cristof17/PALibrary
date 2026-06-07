@@ -424,6 +424,7 @@ struct Facade {
           int PANumberPerformRuin(struct PANumber* PA)
 {
     int returnCode;
+    returnCode = ((int)0);
 
 
 

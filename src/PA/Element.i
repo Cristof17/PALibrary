@@ -463,19 +463,19 @@ struct PAElement* PAElementPerformConstruct()
 # 87 "src/PA/Element.c"
           int PAElementPerformRuin(struct PAElement* PA)
 {
-# 102 "src/PA/Element.c"
-    int returnCode;
+# 103 "src/PA/Element.c"
+    int returnCode = ((int)0);
     return returnCode;
 
 
 
 }
-# 142 "src/PA/Element.c"
+# 143 "src/PA/Element.c"
           int PAElementPerformDelete(struct PAElement* PA)
 {
 
 
-    int returnCode;
+    int returnCode = ((int)0);
     return returnCode;
 
 }

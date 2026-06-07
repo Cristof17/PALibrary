@@ -439,6 +439,7 @@ struct Facade {
           struct PAPair* PAPairPerformInit(struct PAPair* Pair, struct PAElement Value, struct PAElement Value2)
 {
     struct PAPair temp;
+    struct PAPair *pairPointer;
     Pair->Node.index = Value.index;
     Pair->Node.status = Value.status;
     Pair->Neigh.index = Value2.index;
@@ -450,8 +451,8 @@ struct Facade {
 
 
 
-    return Pair;
-# 58 "src/PA/Pair.c"
+    return pairPointer;
+# 59 "src/PA/Pair.c"
 }
 struct PAPair* PAPairPerformCopy(struct PAPair* from, struct PAPair* to)
 {
@@ -467,7 +468,7 @@ struct PAPair* PAPairPerformCopy(struct PAPair* from, struct PAPair* to)
 
     return to;
 }
-# 101 "src/PA/Pair.c"
+# 102 "src/PA/Pair.c"
           int PAPairPerformRuin(struct PAPair* PA)
 {
     int returnCode1;

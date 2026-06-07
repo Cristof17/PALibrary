@@ -88,6 +88,7 @@ _PAElementPerformRuin:                  ; @PAElementPerformRuin
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	str	x0, [sp, #8]
+	str	wzr, [sp, #4]
 	ldr	w0, [sp, #4]
 	add	sp, sp, #16
 	ret
@@ -101,6 +102,7 @@ _PAElementPerformDelete:                ; @PAElementPerformDelete
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	str	x0, [sp, #8]
+	str	wzr, [sp, #4]
 	ldr	w0, [sp, #4]
 	add	sp, sp, #16
 	ret

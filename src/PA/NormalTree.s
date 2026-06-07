@@ -36,8 +36,8 @@ _PANormalTreePerformInit:               ; @PANormalTreePerformInit
 	ldur	x8, [x8, #7]
 	stur	x8, [x9, #7]
 	str	x0, [sp, #32]
-	ldr	x8, [sp, #32]
-	str	x8, [sp, #8]                    ; 8-byte Folded Spill
+	ldr	x8, [sp, #8]
+	str	x8, [sp]                        ; 8-byte Folded Spill
 	ldur	x9, [x29, #-8]
 	adrp	x8, ___stack_chk_guard@GOTPAGE
 	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
@@ -48,7 +48,7 @@ _PANormalTreePerformInit:               ; @PANormalTreePerformInit
 LBB1_1:
 	bl	___stack_chk_fail
 LBB1_2:
-	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
+	ldr	x0, [sp]                        ; 8-byte Folded Reload
 	ldp	x29, x30, [sp, #80]             ; 16-byte Folded Reload
 	add	sp, sp, #96
 	ret

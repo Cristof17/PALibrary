@@ -12,23 +12,23 @@
 DllExport ArrayListObject ArrayListGet(struct ArrayListPosition);
 DllExport ArrayListSize ArrayListPerformSize();
 DllExport void ArrayListPut(struct ArrayListPosition, ArrayListObject);
-DllExport struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], struct ArrayListPosition);
-DllExport PAResult ArrayListPerformInit(struct ArrayList);
-DllExport struct ArrayList ArrayListPerformCopy(struct ArrayList);
-DllExport PAResult ArrayListPerformCopyTo(struct ArrayList Dest, struct PAList source, struct PAElement);
+DllExport struct ArrayList* ArrayListPerformConstruct(ArrayListObject* Data, struct ArrayListPosition*);
+DllExport struct ArrayList* ArrayListPerformInit(struct ArrayList*);
+DllExport struct ArrayList* ArrayListPerformCopy(struct ArrayList*, struct ArrayList*);
+// DllExport struct ArrayList* ArrayListPerformCopyTo(struct ArrayList Dest*, struct PAList source, struct PAElement);
 // struc  ArrayListPerformRuin(struct ArrayList List);
-DllExport HRESULT ArrayListPerformRuin(struct ArrayListPosition, ArrayListObject[]);
-DllExport HRESULT ArrayListPerformDelete(struct ArrayList);
+DllExport int ArrayListPerformRuin(struct ArrayList* PA);
+DllExport int ArrayListPerformDelete(struct ArrayList* PA);
 // struct ArrayList ArrayListPerformDelete(struct ArrayList List);
 // struct PAData ArrayListGet(struct PAData[],PAInt);
 // struct PARecord ArrayListPerformArrange(PAInt);
 // struct PARecord ArrayListPutCount(struct ArrayList, struct PACount);
 // sjt
 // struct A
-DllExport ArrayListObject ArrayListPerformGetFirst(struct ArrayList);
-DllExport ArrayListObject ArrayListPerformGetLast(struct ArrayList);
-DllExport ArrayListObject ArrayListPerformPutFirst(struct ArrayList, ArrayListObject);
-DllExport ArrayListObject ArrayListPerformPutLast(struct ArrayList, ArrayListObject);
+DllExport ArrayListObject ArrayListPerformGetFirst(struct ArrayList*);
+DllExport ArrayListObject ArrayListPerformGetLast(struct ArrayList*);
+DllExport ArrayListObject ArrayListPerformPutFirst(struct ArrayList*, ArrayListObject);
+DllExport ArrayListObject ArrayListPerformPutLast(struct ArrayList*, ArrayListObject);
 // struct PAData
 // struct PAData ArrayList
 #endif

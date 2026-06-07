@@ -55,7 +55,7 @@ _PAPairPerformInit:                     ; @PAPairPerformInit
 	ldr	x9, [sp, #16]
 	ldrb	w8, [sp, #29]
 	strb	w8, [x9, #3]
-	ldr	x0, [sp, #16]
+	ldr	x0, [sp]
 	add	sp, sp, #32
 	ret
 	.cfi_endproc

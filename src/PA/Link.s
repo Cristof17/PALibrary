@@ -25,7 +25,7 @@ _PALinkPerformInit:                     ; @PALinkPerformInit
                                         ; kill: def $w8 killed $w8 killed $x8
 	strh	w8, [sp, #30]
 	str	x0, [sp, #16]
-	ldr	x0, [sp, #16]
+	ldr	x0, [sp]
 	add	sp, sp, #32
 	ret
 	.cfi_endproc

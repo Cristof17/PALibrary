@@ -514,6 +514,7 @@ void PAListPerformPrint(struct PAList* List);
 
 
     }
+    returnCode = ((int)0);
     return returnCode;
 
 
@@ -525,7 +526,7 @@ void Dispose()
 {
 
 }
-# 189 "src/PA/List.c"
+# 190 "src/PA/List.c"
           struct PAList* PAListPerformDelete(struct PAList* PA)
 {
 

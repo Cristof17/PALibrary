@@ -33,7 +33,7 @@
 // 	return List;
 // }
 
-struct ArrayList ArrayListPerformCopy(struct ArrayList List)
+struct ArrayList* ArrayListPerformCopy(struct ArrayList *from, struct ArrayList *to)
 {
 // 	//struct ArrayList copy;
 // 	// copt
@@ -45,11 +45,11 @@ struct ArrayList ArrayListPerformCopy(struct ArrayList List)
 // 	//copy = ArrayList
 	// PAResult result;
 	// return result;
-	struct ArrayList list;
-	return list;
+	// struct ArrayList list;
+	return to;
 }
 
-PAResult ArrayListPerformCopyTo(struct ArrayList Array, struct PAList List, struct PAElement Element) {
+// PAResult ArrayListPerformCopyTo(struct ArrayList Array, struct PAList List, struct PAElement Element) {
 	// PAResult result = PARESULT_SUCCESS;
 	// struct ArrayListPosition total;
 	// struct PACount count;
@@ -74,8 +74,8 @@ PAResult ArrayListPerformCopyTo(struct ArrayList Array, struct PAList List, stru
 	// }
 	// if (result == PARESULT_FAIL)
 	// 	return result;
-	return PARESULT_SUCCESS;
-}
+	// return PARESULT_SUCCESS;
+// }
 // struct PAData ArrayListGet(struct PAData[],PAInt);
 // struct PARecord ArrayListPerformArrange(PAInt)
 // {
@@ -178,15 +178,16 @@ PAResult ArrayListPerformMove(struct ArrayList List)
 // {
 
 // }
-struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], struct ArrayListPosition M)
+struct ArrayList* ArrayListPerformConstruct(ArrayListObject* Data, struct ArrayListPosition* M)
 {
-	struct ArrayList list;
-	return list;
+	struct ArrayList *listPointer;
+	return listPointer;
 }
-PAResult ArrayListPerformInit(struct ArrayList List)
+struct ArrayList* ArrayListPerformInit(struct ArrayList* List)
 {
-	PAResult result = { PARESULT_SUCCESS };
-	return result;
+	return List;
+	// PAResult result = { PARESULT_SUCCESS };
+	// return result;
 	// srt
 	//struct ArrayList list;
 	//list = ArrayListPerformConstruct(List.objects,List.place);
@@ -214,12 +215,12 @@ void ArrayListPut(struct ArrayListPosition Position, ArrayListObject ListObject)
 {
 
 }
-PAResult ArrayListPerformRuin(struct ArrayListPosition place, ArrayListObject objects[])
+int ArrayListPerformRuin(struct ArrayList* PA)
 {
 	PAResult result = { PARESULT_SUCCESS } ;
 	return result;
 }
-PAResult ArrayListPerformDelete(struct ArrayList List)
+int ArrayListPerformDelete(struct ArrayList* PA)
 {
 	PAResult result = { PARESULT_SUCCESS };
 	return result;

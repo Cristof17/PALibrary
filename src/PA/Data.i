@@ -447,12 +447,13 @@ struct Facade {
           struct PAData* PADataPerformCopy(struct PAData* from, struct PAData* to)
 {
     struct PAData temp;
+    struct PAData *dataPointer;
 
 
-    return to;
+    return dataPointer;
 }
-# 66 "src/PA/Data.c"
-          int PADataPerformRuin(struct PAData* Data)
+# 67 "src/PA/Data.c"
+          int PADataPerformRuin(struct PAData* PA)
 {
 
 

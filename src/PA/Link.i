@@ -430,13 +430,14 @@ struct Facade {
           struct PALink* PALinkPerformInit(struct PALink* Link, struct PAPair Value)
 {
     struct PALink link;
+    struct PALink* linkPointer;
 
 
 
 
 
 
-    return Link;
+    return linkPointer;
 }
           int PALinkPerformRuin(struct PALink* PA)
 {
