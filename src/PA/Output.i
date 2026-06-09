@@ -385,9 +385,9 @@ struct Facade {
 
 
 
-          struct PAOutput* PAOutputCreate();
-          struct PAOutput* PAOutputCompleteBegin(struct PAOutput*, struct BFSRecord);
-          struct PAOutput* PAOutputDelete(struct PAOutput*);
+          struct PAOutput PAOutputCreate();
+          struct PAOutput PAOutputCompleteBegin(struct PAOutput, struct BFSRecord);
+          struct PAOutput PAOutputDelete(struct PAOutput);
           int PAOutputFinish(struct PAOutput*);
           void PAOutputPrint(PAResult Result);
 # 6 "src/PA/Output.c" 2

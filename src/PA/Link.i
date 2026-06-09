@@ -383,13 +383,13 @@ struct Facade {
 
 
 
-          struct PALink* PALinkCreate();
-          struct PALink* PALinkCopy(struct PALink*, struct PALink*);
+          struct PALink PALinkCreate();
+          struct PALink PALinkCopy(struct PALink, struct PALink);
 
-          struct PALink* PALinkCompleteBegin(struct PALink*, struct PAPair);
+          struct PALink PALinkCompleteBegin(struct PALink, struct PAPair);
 
           int PALinkFinish(struct PALink*);
-          struct PALink* PALinkDelete(struct PALink*);
+          struct PALink PALinkDelete(struct PALink);
 # 9 "src/PA/Link.c" 2
 # 1 "./include/PA/Pair.h" 1
 
@@ -400,9 +400,9 @@ struct Facade {
 
 
 
-          struct PAPair* PAPairCreate();
-          struct PAPair* PAPairCompleteBegin(struct PAPair*, struct PAElement, struct PAElement);
-          struct PAPair* PAPairCopy(struct PAPair* from, struct PAPair* to);
+          struct PAPair PAPairCreate();
+          struct PAPair PAPairCompleteBegin(struct PAPair*, struct PAElement, struct PAElement);
+          struct PAPair PAPairCopy(struct PAPair from, struct PAPair to);
 
 
 
@@ -471,7 +471,7 @@ struct PALink PALinkCopy(struct PALink from, struct PALink to)
 
 
 
-          struct PALink PALinkDelete(struct PALink* PA){
+          struct PALink PALinkDelete(struct PALink PA){
 
 
 

@@ -12,9 +12,9 @@ _PAElementCreate:                       ; @PAElementCreate
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAElementCompleteBegin         ; -- Begin function PAElementCompleteBegin
+	.globl	_PAElementBegin                 ; -- Begin function PAElementBegin
 	.p2align	2
-_PAElementCompleteBegin:                ; @PAElementCompleteBegin
+_PAElementBegin:                        ; @PAElementBegin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16
@@ -66,9 +66,9 @@ _PAElementReset:                        ; @PAElementReset
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAElementPerformCopy           ; -- Begin function PAElementPerformCopy
+	.globl	_PAElementCopy                  ; -- Begin function PAElementCopy
 	.p2align	2
-_PAElementPerformCopy:                  ; @PAElementPerformCopy
+_PAElementCopy:                         ; @PAElementCopy
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32
@@ -80,9 +80,9 @@ _PAElementPerformCopy:                  ; @PAElementPerformCopy
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAElementPerformFinish         ; -- Begin function PAElementPerformFinish
+	.globl	_PAElementFinish                ; -- Begin function PAElementFinish
 	.p2align	2
-_PAElementPerformFinish:                ; @PAElementPerformFinish
+_PAElementFinish:                       ; @PAElementFinish
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16
@@ -94,9 +94,9 @@ _PAElementPerformFinish:                ; @PAElementPerformFinish
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAElementPerformDelete         ; -- Begin function PAElementPerformDelete
+	.globl	_PAElementDelete                ; -- Begin function PAElementDelete
 	.p2align	2
-_PAElementPerformDelete:                ; @PAElementPerformDelete
+_PAElementDelete:                       ; @PAElementDelete
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16

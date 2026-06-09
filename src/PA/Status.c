@@ -46,22 +46,22 @@ DllExport struct PAStatus PAStatusCopy(struct PAStatus from, struct PAStatus to)
     // to.visited = temp.visited;
     // return to;
 }
-DllExport int PAStatusDelete(struct PAStatus* PA)
-{
-    int returnCode;
-    PAResourceDelete(&PA->visited);
-    // PA.visited.value.val = FALSE;
-    return returnCode;
-    // return PA;
-}
-DllExport int PAStatusFinish(struct PAStatus* PA)
+// DllExport int PAStatusDelete(struct PAStatus* PA)
+// {
+//     int returnCode;
+//     PAResourceDelete(&PA->visited);
+//     // PA.visited.value.val = FALSE;
+//     return returnCode;
+//     // return PA;
+// }
+DllExport int PAStatusFinish(struct PAStatus PA)
 {
     // PAResult result;
     // return Status;
     // int rest;
     // int returncode
     int returnCode;
-    PAResourceFinish(&PA->visited);
+    // PAResourceFinish(&PA->visited);
     // return Empty;
     // return PA;
     // return resultCode;

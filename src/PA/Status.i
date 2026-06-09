@@ -383,11 +383,11 @@ struct Facade {
 # 8 "./include/PA/Status.h" 2
 
           void PAStatusCauseVisit(PABool);
-          struct PAStatus* PAStatusCompleteBegin(struct PAStatus*, struct PAResource);
-          int PAStatusDelete(struct PAStatus*);
-          struct PAStatus* PAStatusCreate();
-          int PAStatusFinish(struct PAStatus*);
-          struct PAStatus* PAStatusCopy(struct PAStatus*, struct PAStatus*);
+          struct PAStatus PAStatusCompleteBegin(struct PAStatus, struct PAResource);
+          int PAStatusDelete(struct PAStatus);
+          struct PAStatus PAStatusCreate();
+
+          struct PAStatus PAStatusCopy(struct PAStatus, struct PAStatus);
 # 7 "src/PA/Status.c" 2
 # 1 "./include/PA/Resource.h" 1
 
@@ -395,11 +395,11 @@ struct Facade {
 
 
 
-          struct PAResource* PAResourceCompleteBegin(struct PAResource*, struct PANumber);
-          struct PAResource* PAResourceCreate();
-          int PAResourceFinish(struct PAResource*);
-          struct PAResource* PAResourceDelete(struct PAResource*);
-          struct PAResource* PAResourceCopy(struct PAResource*, struct PAResource*);
+          struct PAResource PAResourceCompleteBegin(struct PAResource, struct PANumber);
+          struct PAResource PAResourceCreate();
+          int PAResourceFinish(struct PAResource);
+          struct PAResource PAResourceDelete(struct PAResource);
+          struct PAResource PAResourceCopy(struct PAResource, struct PAResource);
 # 8 "src/PA/Status.c" 2
 
 
@@ -442,22 +442,15 @@ struct Facade {
 
 
 }
-          int PAStatusDelete(struct PAStatus* PA)
-{
-    int returnCode;
-    PAResourceDelete(&PA->visited);
-
-    return returnCode;
-
-}
-          int PAStatusFinish(struct PAStatus* PA)
+# 57 "src/PA/Status.c"
+          int PAStatusFinish(struct PAStatus PA)
 {
 
 
 
 
     int returnCode;
-    PAResourceFinish(&PA->visited);
+
 
 
 

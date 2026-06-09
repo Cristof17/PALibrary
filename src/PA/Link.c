@@ -69,7 +69,7 @@ struct PALink PALinkCopy(struct PALink from, struct PALink to)
     // return Link;
     // return reusult;
 // }
-DllExport struct PALink PALinkDelete(struct PALink* PA){
+DllExport struct PALink PALinkDelete(struct PALink PA){
     // PAResult result;
     // struct PALink Empty;
     // PA.p = PAPairPerformDelete(PA.p);

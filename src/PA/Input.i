@@ -383,9 +383,9 @@ struct Facade {
 
 # 1 "./include/PA/Input.h" 1
 # 10 "./include/PA/Input.h"
-          struct PAInput* PAInputCreate();
+          struct PAInput PAInputCreate();
 
-          struct PAInput* PAInputCompleteBegin(struct PAInput* PAInput, struct PACount, struct PACount, struct PAElement);
+          struct PAInput PAInputBegin(struct PAInput PAInput, struct PACount, struct PACount, struct PAElement);
 
 
 
@@ -446,8 +446,9 @@ struct Facade {
 
 
 
+ return temp;
 }
-# 48 "src/PA/Input.c"
+# 49 "src/PA/Input.c"
           struct PAInput PAInputBegin(struct PAInput Input, struct PACount Value, struct PACount Value2, struct PAElement Value3)
 {
  struct PAInput temp;
@@ -456,7 +457,7 @@ struct Facade {
 
 
  temp = *inputPointer;
-# 72 "src/PA/Input.c"
+# 73 "src/PA/Input.c"
  return Input;
 }
           int PAInputFinish(struct PAInput* PA) {

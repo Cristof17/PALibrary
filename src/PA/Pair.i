@@ -388,9 +388,9 @@ struct Facade {
 
 
 
-          struct PAPair* PAPairCreate();
-          struct PAPair* PAPairCompleteBegin(struct PAPair*, struct PAElement, struct PAElement);
-          struct PAPair* PAPairCopy(struct PAPair* from, struct PAPair* to);
+          struct PAPair PAPairCreate();
+          struct PAPair PAPairCompleteBegin(struct PAPair*, struct PAElement, struct PAElement);
+          struct PAPair PAPairCopy(struct PAPair from, struct PAPair to);
 
 
 
@@ -425,7 +425,7 @@ struct Facade {
 
 
 
-    pairPointer = PAPairBegin(pairPointer,pair.Node, pair.Neigh);
+
 
 
     return pair;
@@ -444,7 +444,7 @@ struct Facade {
     return temp;
 # 61 "src/PA/Pair.c"
 }
-struct PAPair* PAPairCopy(struct PAPair* from, struct PAPair* to)
+struct PAPair PAPairCopy(struct PAPair from, struct PAPair to)
 {
     struct PAPair temp;
     struct PAElement node;

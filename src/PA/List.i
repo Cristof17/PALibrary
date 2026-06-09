@@ -382,13 +382,13 @@ struct Facade {
 
 # 1 "./include/PA/List.h" 1
 # 11 "./include/PA/List.h"
-          struct PAList* PAListCreate();
-          struct PAList* PAListCompleteBegin(struct PAList*,struct PACount, struct PASeries[]);
+          struct PAList PAListCreate();
+          struct PAList PAListCompleteBegin(struct PAList*,struct PACount, struct PASeries[]);
 
 
 
           int PAListFinish(struct PAList*);
-          struct PAList* PAListDelete(struct PAList*);
+          int PAListDelete(struct PAList*);
           struct PAList* PAListCopy(struct PAList*, struct PAList*);
 
 void PAListPerformPrint(struct PAList* List);
@@ -425,7 +425,7 @@ void PAListPerformPrint(struct PAList* List);
     return list;
 # 43 "src/PA/List.c"
 }
-          struct PAList PAListCopy(struct PAList from, struct PAList to)
+          struct PAList* PAListCopy(struct PAList* from, struct PAList* to)
 {
     struct PAList temp;
 
@@ -527,7 +527,7 @@ void Dispose()
 
 }
 # 190 "src/PA/List.c"
-          struct PAList PAListDelete(struct PAList* PA)
+          int PAListDelete(struct PAList* PA)
 {
 
     struct PACount* countPointer;
@@ -542,12 +542,13 @@ void Dispose()
         x.val++;
     }
 
-    return PA;
+
+    return ((int)0);
 
 
 
 }
-void PAListPerformPrint(struct PAList* List)
+void PAListPrint(struct PAList* List)
 {
 
 }

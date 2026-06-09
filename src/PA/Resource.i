@@ -382,22 +382,22 @@ struct Facade {
 };
 # 5 "./include/PA/Resource.h" 2
 
-          struct PAResource* PAResourceCompleteBegin(struct PAResource*, struct PANumber);
-          struct PAResource* PAResourceCreate();
-          int PAResourceFinish(struct PAResource*);
-          struct PAResource* PAResourceDelete(struct PAResource*);
-          struct PAResource* PAResourceCopy(struct PAResource*, struct PAResource*);
+          struct PAResource PAResourceCompleteBegin(struct PAResource, struct PANumber);
+          struct PAResource PAResourceCreate();
+          int PAResourceFinish(struct PAResource);
+          struct PAResource PAResourceDelete(struct PAResource);
+          struct PAResource PAResourceCopy(struct PAResource, struct PAResource);
 # 4 "src/PA/Resource.c" 2
 # 1 "./include/PA/Number.h" 1
 
 
 
 
-          struct PANumber* PANumberCreate();
-          struct PANumber* PANumberCompleteBegin(struct PANumber* Number, unsigned char Value);
-          int PANumberDelete(struct PANumber*);
-          int PANumberFinish(struct PANumber*);
-          struct PANumber* PANumberPerformCopy(struct PANumber* from, struct PANumber* to);
+          struct PANumber PANumberCreate();
+          struct PANumber PANumberCompleteBegin(struct PANumber Number, unsigned char Value);
+          int PANumberDelete(struct PANumber);
+          int PANumberFinish(struct PANumber);
+          struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to);
 # 5 "src/PA/Resource.c" 2
 
 
@@ -433,7 +433,7 @@ struct Facade {
     return temp;
 
 }
-          int PAResourceFinish(struct PAResource* PA)
+          int PAResourceFinish(struct PAResource PA)
 {
     int returnCode;
 

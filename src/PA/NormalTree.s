@@ -1,8 +1,8 @@
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 15, 0	sdk_version 26, 2
-	.globl	_PANormalTreePerformCreate      ; -- Begin function PANormalTreePerformCreate
+	.globl	_PANormalTreeCreate             ; -- Begin function PANormalTreeCreate
 	.p2align	2
-_PANormalTreePerformCreate:             ; @PANormalTreePerformCreate
+_PANormalTreeCreate:                    ; @PANormalTreeCreate
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32
@@ -12,9 +12,9 @@ _PANormalTreePerformCreate:             ; @PANormalTreePerformCreate
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PANormalTreePerformBegin       ; -- Begin function PANormalTreePerformBegin
+	.globl	_PANormalTreeBegin              ; -- Begin function PANormalTreeBegin
 	.p2align	2
-_PANormalTreePerformBegin:              ; @PANormalTreePerformBegin
+_PANormalTreeBegin:                     ; @PANormalTreeBegin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #96
@@ -54,9 +54,9 @@ LBB1_2:
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PANormalTreePerformFinish      ; -- Begin function PANormalTreePerformFinish
+	.globl	_PANormalTreeFinish             ; -- Begin function PANormalTreeFinish
 	.p2align	2
-_PANormalTreePerformFinish:             ; @PANormalTreePerformFinish
+_PANormalTreeFinish:                    ; @PANormalTreeFinish
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32
@@ -67,7 +67,7 @@ _PANormalTreePerformFinish:             ; @PANormalTreePerformFinish
 	.cfi_offset w29, -16
 	str	x0, [sp, #8]
 	ldr	x0, [sp, #8]
-	bl	_PATreePerformFinish
+	bl	_PATreeFinish
 	str	w0, [sp, #4]
 	ldr	w0, [sp, #4]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
@@ -75,9 +75,9 @@ _PANormalTreePerformFinish:             ; @PANormalTreePerformFinish
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PANormalTreePerformDelete      ; -- Begin function PANormalTreePerformDelete
+	.globl	_PANormalTreeDelete             ; -- Begin function PANormalTreeDelete
 	.p2align	2
-_PANormalTreePerformDelete:             ; @PANormalTreePerformDelete
+_PANormalTreeDelete:                    ; @PANormalTreeDelete
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32
@@ -88,7 +88,7 @@ _PANormalTreePerformDelete:             ; @PANormalTreePerformDelete
 	.cfi_offset w29, -16
 	str	x0, [sp, #8]
 	ldr	x0, [sp, #8]
-	bl	_PATreePerformDelete
+	bl	_PATreeDelete
 	str	w0, [sp, #4]
 	ldr	w0, [sp, #4]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload

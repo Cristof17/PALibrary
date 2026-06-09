@@ -33,6 +33,7 @@ DllExport struct PAInput PAInputCreate()
 	// return inputPointer;
 	// PAResult result ;
 	// return result;
+	return temp;
 }
 // struct PAInput PAInputPerformCopy(struct PAInput Input)
 // {

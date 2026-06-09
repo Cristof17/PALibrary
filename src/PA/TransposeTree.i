@@ -413,14 +413,15 @@ struct Facade {
 
 
 
-          struct PATransposeTree PATransposeTreeCreate()
+          struct PATransposeTree* PATransposeTreeCreate()
 {
     struct PATransposeTree transposeTree;
+    struct PATransposeTree* transposeTreePointer;
 
 
-    transposeTree.tree = (transposeTreePointer->tree);
-    transposeTreePointer = PATransposeTreeBegin(transposeTreePointer,transposeTree.tree);
-    return transposeTree;
+
+    return transposeTreePointer;
+
 
 
 }
@@ -451,7 +452,7 @@ struct Facade {
 
     return To;
 }
-# 63 "src/PA/TransposeTree.c"
+# 64 "src/PA/TransposeTree.c"
           int PATransposeTreeFinish(struct PATransposeTree* PA)
 {
     int returnCode;
@@ -469,7 +470,7 @@ struct Facade {
 
     return returnCode;
 }
-# 90 "src/PA/TransposeTree.c"
+# 91 "src/PA/TransposeTree.c"
           PAResult PATransposeTreeGetResult()
 {
     PAResult result;

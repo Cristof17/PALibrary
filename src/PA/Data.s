@@ -5,35 +5,26 @@
 _PADataCreate:                          ; @PADataCreate
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
-	add	x29, sp, #16
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
 	ldr	x0, [sp]
-	ldurb	w8, [x29, #-1]
-	mov	x1, x8
-	bl	_PADataCompleteBegin
-	str	x0, [sp]
-	ldr	x0, [sp]
-	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
-	add	sp, sp, #32
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PADatCompleteBegin             ; -- Begin function PADatCompleteBegin
+	.globl	_PADataBegin                    ; -- Begin function PADataBegin
 	.p2align	2
-_PADatCompleteBegin:                    ; @PADatCompleteBegin
+_PADataBegin:                           ; @PADataBegin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	mov	x8, x0
+	strb	w8, [sp, #14]
 	mov	x8, x1
-	strb	w8, [sp, #31]
-	str	x0, [sp, #16]
-	ldr	x0, [sp]
-	add	sp, sp, #32
+	strb	w8, [sp, #13]
+	ldrb	w0, [sp, #15]
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -42,12 +33,14 @@ _PADatCompleteBegin:                    ; @PADatCompleteBegin
 _PADataCopy:                            ; @PADataCopy
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
-	str	x0, [sp, #24]
-	str	x1, [sp, #16]
-	ldr	x0, [sp]
-	add	sp, sp, #32
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	mov	x8, x0
+	strb	w8, [sp, #14]
+	mov	x8, x1
+	strb	w8, [sp, #13]
+	ldrb	w0, [sp, #15]
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function

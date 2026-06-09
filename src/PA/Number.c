@@ -27,17 +27,17 @@ DllExport struct PANumber PANumberBegin(struct PANumber Number, unsigned char Va
     // return numberPointer;
     return temp;
 }
-DllExport int PANumberDelete(struct PANumber* PA)
+DllExport int PANumberDelete(struct PANumber PA)
 {
     int returnCode;
     // returnCode = PA-
-    PA->val = NULL;
+    // PA->val = NULL;
     returnCode = PARESULT_SUCCESS;
     return returnCode;
     // struct PANumber number;
     // return PA;
 }
-DllExport int PANumberFinish(struct PANumber* PA)
+DllExport int PANumberFinish(struct PANumber PA)
 {
     int returnCode;
     returnCode = PARESULT_SUCCESS;

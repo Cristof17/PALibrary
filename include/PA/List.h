@@ -14,7 +14,7 @@ DllExport struct PAList PAListCompleteBegin(struct PAList*,struct PACount, struc
 // DllExport PAResult PAListPerformPutCount(struct PAList, struct PACount);
 // DllExport PAResult PAListPerformPutList(struct PAList);
 DllExport int PAListFinish(struct PAList*);
-DllExport struct PAList* PAListDelete(struct PAList*);
+DllExport int PAListDelete(struct PAList*);
 DllExport struct PAList* PAListCopy(struct PAList*, struct PAList*);
 // DllExport void PAListDispose(void);
 void PAListPerformPrint(struct PAList* List);

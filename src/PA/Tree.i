@@ -425,13 +425,13 @@ struct Facade {
 # 6 "src/PA/Tree.c" 2
 # 1 "./include/PA/List.h" 1
 # 11 "./include/PA/List.h"
-          struct PAList* PAListCreate();
-          struct PAList* PAListCompleteBegin(struct PAList*,struct PACount, struct PASeries[]);
+          struct PAList PAListCreate();
+          struct PAList PAListCompleteBegin(struct PAList*,struct PACount, struct PASeries[]);
 
 
 
           int PAListFinish(struct PAList*);
-          struct PAList* PAListDelete(struct PAList*);
+          int PAListDelete(struct PAList*);
           struct PAList* PAListCopy(struct PAList*, struct PAList*);
 
 void PAListPerformPrint(struct PAList* List);

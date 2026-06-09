@@ -16,7 +16,7 @@ DllExport struct PAData* PADataCreate()
     struct PAData* dataPointer;
     // struct PAResource resource;
     // data.Resource = PAResourcePerformConstruct();
-    dataPointer = PADataCompleteBegin(dataPointer, data.Resource);
+    // dataPointer = PADataBegin(dataPointer, data.Resource);
     // data.Resource = resource;
     //  = data;
     // Data.Resource = PAResourcePerformInit(Data.Resource, )
@@ -24,7 +24,7 @@ DllExport struct PAData* PADataCreate()
     // Data.Resource = PAResourcePerformConstruct(); 
     return dataPointer;
 }
-DllExport struct PAData* PADatBegin(struct PAData* Data, struct PAResource Value)
+DllExport struct PAData PADataBegin(struct PAData Data, struct PAResource Value)
 {
     struct PAData temp;
     struct PAData* dataPointer;
@@ -32,20 +32,21 @@ DllExport struct PAData* PADatBegin(struct PAData* Data, struct PAResource Value
     // Data = temp;
     // Data.Resource.value.val = Value.value.val;
     // Data.Resource.value = Value.value;
-
-    return dataPointer;
+    return temp;
+    // return dataPointer;
     // struct PAData data;
     // data.Resource = Data.Resource;
     // struct PAData data;
     // data.resource = Data.resource;
 }
-DllExport struct PAData* PADataCopy(struct PAData* from, struct PAData* to)
+DllExport struct PAData PADataCopy(struct PAData from, struct PAData to)
 {
     struct PAData temp;
     struct PAData *dataPointer;
     // temp.Resource = PAResourcePerformCopy(from.Resource, temp.Resource);
     // to.Resource = temp.Resource;
-    return dataPointer;
+    // return dataPointer;
+    return temp;
 }
 // struct PAData PADataPerformCopy(struct PAData Data)
 // {

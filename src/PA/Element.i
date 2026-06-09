@@ -417,11 +417,11 @@ struct Facade {
 
 
           void PAStatusCauseVisit(PABool);
-          struct PAStatus* PAStatusCompleteBegin(struct PAStatus*, struct PAResource);
-          int PAStatusDelete(struct PAStatus*);
-          struct PAStatus* PAStatusCreate();
-          int PAStatusFinish(struct PAStatus*);
-          struct PAStatus* PAStatusCopy(struct PAStatus*, struct PAStatus*);
+          struct PAStatus PAStatusCompleteBegin(struct PAStatus, struct PAResource);
+          int PAStatusDelete(struct PAStatus);
+          struct PAStatus PAStatusCreate();
+
+          struct PAStatus PAStatusCopy(struct PAStatus, struct PAStatus);
 # 9 "src/PA/Element.c" 2
 # 18 "src/PA/Element.c"
 struct PAElement* PAElementCreate()

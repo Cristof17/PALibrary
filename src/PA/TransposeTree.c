@@ -13,14 +13,15 @@
 #include <PA\Tree.h>
 
 #endif
-DllExport struct PATransposeTree PATransposeTreeCreate()
+DllExport struct PATransposeTree* PATransposeTreeCreate()
 {
     struct PATransposeTree transposeTree;
-    // struct PATransposeTree* transposeTreePointer;
+    struct PATransposeTree* transposeTreePointer;
     // transposeTreePointer->tree = PATreePerformConstruct();
-    transposeTree.tree = (transposeTreePointer->tree);
-    transposeTreePointer = PATransposeTreeBegin(transposeTreePointer,transposeTree.tree);
-    return transposeTree;
+    // transposeTree.tree = (transposeTreePointer->tree);
+    // transposeTreePointer = PATransposeTreeBegin(transposeTreePointer,transposeTree.tree);
+    return transposeTreePointer;
+    // return transposeTree;
     // transposeTree.tree = PATreePerformConstruct();
     // return transposeTreePointer;
 }

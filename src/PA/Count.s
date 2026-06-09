@@ -1,8 +1,8 @@
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 15, 0	sdk_version 26, 2
-	.globl	_PACountPerformCreate           ; -- Begin function PACountPerformCreate
+	.globl	_PACountCreate                  ; -- Begin function PACountCreate
 	.p2align	2
-_PACountPerformCreate:                  ; @PACountPerformCreate
+_PACountCreate:                         ; @PACountCreate
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16
@@ -12,9 +12,9 @@ _PACountPerformCreate:                  ; @PACountPerformCreate
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PACountPerformBegin            ; -- Begin function PACountPerformBegin
+	.globl	_PACountBegin                   ; -- Begin function PACountBegin
 	.p2align	2
-_PACountPerformBegin:                   ; @PACountPerformBegin
+_PACountBegin:                          ; @PACountBegin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32
@@ -27,9 +27,9 @@ _PACountPerformBegin:                   ; @PACountPerformBegin
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PACountPerformFinish           ; -- Begin function PACountPerformFinish
+	.globl	_PACountFinish                  ; -- Begin function PACountFinish
 	.p2align	2
-_PACountPerformFinish:                  ; @PACountPerformFinish
+_PACountFinish:                         ; @PACountFinish
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16
@@ -40,9 +40,9 @@ _PACountPerformFinish:                  ; @PACountPerformFinish
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PACountPerformDelete           ; -- Begin function PACountPerformDelete
+	.globl	_PACountDelete                  ; -- Begin function PACountDelete
 	.p2align	2
-_PACountPerformDelete:                  ; @PACountPerformDelete
+_PACountDelete:                         ; @PACountDelete
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16
@@ -53,9 +53,9 @@ _PACountPerformDelete:                  ; @PACountPerformDelete
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PACountPerformPrint            ; -- Begin function PACountPerformPrint
+	.globl	_PACountPrint                   ; -- Begin function PACountPrint
 	.p2align	2
-_PACountPerformPrint:                   ; @PACountPerformPrint
+_PACountPrint:                          ; @PACountPrint
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16
@@ -66,9 +66,9 @@ _PACountPerformPrint:                   ; @PACountPerformPrint
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PACountPerformCopy             ; -- Begin function PACountPerformCopy
+	.globl	_PACountCopy                    ; -- Begin function PACountCopy
 	.p2align	2
-_PACountPerformCopy:                    ; @PACountPerformCopy
+_PACountCopy:                           ; @PACountCopy
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32

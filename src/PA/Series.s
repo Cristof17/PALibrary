@@ -1,8 +1,8 @@
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 15, 0	sdk_version 26, 2
-	.globl	_PASeriesPerformCreate          ; -- Begin function PASeriesPerformCreate
+	.globl	_PASeriesCreate                 ; -- Begin function PASeriesCreate
 	.p2align	2
-_PASeriesPerformCreate:                 ; @PASeriesPerformCreate
+_PASeriesCreate:                        ; @PASeriesCreate
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16
@@ -27,9 +27,9 @@ LBB0_3:
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PASeriesPerformCopy            ; -- Begin function PASeriesPerformCopy
+	.globl	_PASeriesCopy                   ; -- Begin function PASeriesCopy
 	.p2align	2
-_PASeriesPerformCopy:                   ; @PASeriesPerformCopy
+_PASeriesCopy:                          ; @PASeriesCopy
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #48
@@ -71,9 +71,9 @@ LBB1_6:
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PASeriesPerformBegin           ; -- Begin function PASeriesPerformBegin
+	.globl	_PASeriesBegin                  ; -- Begin function PASeriesBegin
 	.p2align	2
-_PASeriesPerformBegin:                  ; @PASeriesPerformBegin
+_PASeriesBegin:                         ; @PASeriesBegin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #48
@@ -104,9 +104,9 @@ LBB2_3:
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PASeriesPerformDelete          ; -- Begin function PASeriesPerformDelete
+	.globl	_PASeriesDelete                 ; -- Begin function PASeriesDelete
 	.p2align	2
-_PASeriesPerformDelete:                 ; @PASeriesPerformDelete
+_PASeriesDelete:                        ; @PASeriesDelete
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16
@@ -132,9 +132,9 @@ LBB3_3:
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PASeriesPerformFinish          ; -- Begin function PASeriesPerformFinish
+	.globl	_PASeriesFinish                 ; -- Begin function PASeriesFinish
 	.p2align	2
-_PASeriesPerformFinish:                 ; @PASeriesPerformFinish
+_PASeriesFinish:                        ; @PASeriesFinish
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16
@@ -173,9 +173,9 @@ _PASeriesGet:                           ; @PASeriesGet
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PASeriesPerformPrint           ; -- Begin function PASeriesPerformPrint
+	.globl	_PASeriesPrint                  ; -- Begin function PASeriesPrint
 	.p2align	2
-_PASeriesPerformPrint:                  ; @PASeriesPerformPrint
+_PASeriesPrint:                         ; @PASeriesPrint
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16
