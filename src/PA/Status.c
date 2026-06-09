@@ -9,7 +9,10 @@
 #include <PA\Status.h>
 #include <PA\Resource.h>
 #endif
+DllExport void PAStatusCause(PABool visited)
+{
 
+}
 DllExport struct PAStatus* PAStatusPerformCreate()
 {
     struct PAStatus* status;

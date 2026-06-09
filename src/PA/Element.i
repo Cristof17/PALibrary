@@ -416,6 +416,7 @@ struct Facade {
 
 
 
+          void PAStatusCause(PABool);
           struct PAStatus* PAStatusPerformBegin(struct PAStatus*, struct PAResource);
           int PAStatusPerformDelete(struct PAStatus*);
           struct PAStatus* PAStatusPerformCreate();

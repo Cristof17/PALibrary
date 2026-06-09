@@ -382,6 +382,7 @@ struct Facade {
 };
 # 8 "./include/PA/Status.h" 2
 
+          void PAStatusCause(PABool);
           struct PAStatus* PAStatusPerformBegin(struct PAStatus*, struct PAResource);
           int PAStatusPerformDelete(struct PAStatus*);
           struct PAStatus* PAStatusPerformCreate();
@@ -404,7 +405,10 @@ struct Facade {
 
 
 
+          void PAStatusCause(PABool visited)
+{
 
+}
           struct PAStatus* PAStatusPerformCreate()
 {
     struct PAStatus* status;
