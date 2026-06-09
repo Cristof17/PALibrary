@@ -1,8 +1,8 @@
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 15, 0	sdk_version 26, 2
-	.globl	_PAStatusPerformConstruct       ; -- Begin function PAStatusPerformConstruct
+	.globl	_PAStatusPerformCreate          ; -- Begin function PAStatusPerformCreate
 	.p2align	2
-_PAStatusPerformConstruct:              ; @PAStatusPerformConstruct
+_PAStatusPerformCreate:                 ; @PAStatusPerformCreate
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #48
@@ -11,7 +11,7 @@ _PAStatusPerformConstruct:              ; @PAStatusPerformConstruct
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	bl	_PAResourcePerformConstruct
+	bl	_PAResourcePerformCreate
 	str	x0, [sp, #8]
 	ldr	x8, [sp, #8]
 	ldrb	w8, [x8]

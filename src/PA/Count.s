@@ -1,8 +1,8 @@
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 15, 0	sdk_version 26, 2
-	.globl	_PACountPerformConstruct        ; -- Begin function PACountPerformConstruct
+	.globl	_PACountPerformCreate           ; -- Begin function PACountPerformCreate
 	.p2align	2
-_PACountPerformConstruct:               ; @PACountPerformConstruct
+_PACountPerformCreate:                  ; @PACountPerformCreate
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16

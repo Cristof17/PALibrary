@@ -12,7 +12,7 @@
 #include <PA\Pair.h>
 #endif
 
-DllExport struct PALink* PALinkPerformConstruct()
+DllExport struct PALink* PALinkPerformCreate()
 {
     struct PALink link;
     struct PALink* linkPointer;

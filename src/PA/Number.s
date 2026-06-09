@@ -1,8 +1,8 @@
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 15, 0	sdk_version 26, 2
-	.globl	_PANumberPerformConstruct       ; -- Begin function PANumberPerformConstruct
+	.globl	_PANumberPerformCreate          ; -- Begin function PANumberPerformCreate
 	.p2align	2
-_PANumberPerformConstruct:              ; @PANumberPerformConstruct
+_PANumberPerformCreate:                 ; @PANumberPerformCreate
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16

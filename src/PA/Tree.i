@@ -382,7 +382,7 @@ struct Facade {
 
 
 
-          struct PATree* PATreePerformConstruct();
+          struct PATree* PATreePerformCreate();
           struct PATree* PATreePerformCopy(struct PATree* from, struct PATree* to);
 
           struct PATree* PATreePerformInit(struct PATree*, struct PACount, struct PACount, struct PAList, struct PAElement);
@@ -396,7 +396,7 @@ struct Facade {
 # 4 "src/PA/Tree.c" 2
 # 1 "./include/PA/Count.h" 1
 # 13 "./include/PA/Count.h"
-          struct PACount* PACountPerformConstruct();
+          struct PACount* PACountPerformCreate();
           struct PACount* PACountPerformBegin(struct PACount* Count, struct PANumber Number);
           struct PACount* PACountPerformCopy(struct PACount* from, struct PACount* to);
 
@@ -412,7 +412,7 @@ struct Facade {
           void PAElementVisit(struct PAElement*);
           PABool PAElementIsVisited(struct PAElement*);
           void PAElementReset(struct PAElement*);
-          struct PAElement* PAElementPerformConstruct();
+          struct PAElement* PAElementPerformCreate();
 
           struct PAElement* PAElementPerformBegin(struct PAElement*,struct PAData,struct PAStatus);
 
@@ -425,7 +425,7 @@ struct Facade {
 # 6 "src/PA/Tree.c" 2
 # 1 "./include/PA/List.h" 1
 # 11 "./include/PA/List.h"
-          struct PAList* PAListPerformConstruct();
+          struct PAList* PAListPerformCreate();
           struct PAList* PAListPerformBegin(struct PAList*,struct PACount, struct PASeries[]);
 
 
@@ -437,7 +437,7 @@ struct Facade {
 void PAListPerformPrint(struct PAList* List);
 # 7 "src/PA/Tree.c" 2
 # 19 "src/PA/Tree.c"
-          struct PATree* PATreePerformConstruct()
+          struct PATree* PATreePerformCreate()
 {
     struct PATree* temp;
 

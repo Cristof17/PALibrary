@@ -383,7 +383,7 @@ struct Facade {
 # 5 "./include/PA/Resource.h" 2
 
           struct PAResource* PAResourcePerformBegin(struct PAResource*, struct PANumber);
-          struct PAResource* PAResourcePerformConstruct();
+          struct PAResource* PAResourcePerformCreate();
           int PAResourcePerformRuin(struct PAResource*);
           struct PAResource* PAResourcePerformDelete(struct PAResource*);
           struct PAResource* PAResourcePerformCopy(struct PAResource*, struct PAResource*);
@@ -393,7 +393,7 @@ struct Facade {
 
 
 
-          struct PANumber* PANumberPerformConstruct();
+          struct PANumber* PANumberPerformCreate();
           struct PANumber* PANumberPerformBegin(struct PANumber* Number, unsigned char Value);
           int PANumberPerformDelete(struct PANumber*);
           int PANumberPerformRuin(struct PANumber*);
@@ -404,7 +404,7 @@ struct Facade {
 
 
 
-          struct PAResource* PAResourcePerformConstruct()
+          struct PAResource* PAResourcePerformCreate()
 {
     struct PAResource resource;
 

@@ -12,7 +12,7 @@
 
 #endif
 
-DllExport struct PACount* PACountPerformConstruct()
+DllExport struct PACount* PACountPerformCreate()
 {
     struct PACount zies;
     struct PACount* countPointer;

@@ -14,7 +14,7 @@
 #include <PA\Element.h>
 #endif
 
-DllExport struct PAInput* PAInputPerformConstruct()
+DllExport struct PAInput* PAInputPerformCreate()
 {
 	struct PAInput temp;
 	struct PAInput* inputPointer;

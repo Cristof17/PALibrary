@@ -57,7 +57,7 @@
 // {
 //     PAOutputPerformPrint(output);
 // }
-DllExport struct PAOutput* PAOutputPerformConstruct()
+DllExport struct PAOutput* PAOutputPerformCreate()
 {
     struct PAOutput Output;
     struct PAOutput* outputPointer;

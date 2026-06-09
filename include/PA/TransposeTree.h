@@ -7,7 +7,7 @@
 
 // struct GrafTranspus;
 // typedef struct GrafTranspus GrafTranspus;
-DllExport struct PATransposeTree* PATransposeTreePerformConstruct();
+DllExport struct PATransposeTree* PATransposeTreePerformCreate();
 DllExport struct PATransposeTree* PATransposeTreePerformBegin(struct PATransposeTree*, struct PATree);
 DllExport struct PATransposeTree* PATransposeTreePerformCopy(struct PATransposeTree*, struct PATransposeTree*);
 // DllExport struct PATransposeTree PATransposeTreeBuildPart();

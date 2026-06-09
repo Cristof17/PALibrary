@@ -10,7 +10,7 @@
 
 // struct PACount;
 //typedef struct PACount Count;
-DllExport struct PACount* PACountPerformConstruct();
+DllExport struct PACount* PACountPerformCreate();
 DllExport struct PACount* PACountPerformBegin(struct PACount* Count, struct PANumber Number);
 DllExport struct PACount* PACountPerformCopy(struct PACount* from, struct PACount* to);
 // DllExport struct PACount PACountPerformCopy(struct PACount);

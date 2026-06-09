@@ -384,7 +384,7 @@ struct Facade {
 
           struct PAStatus* PAStatusPerformBegin(struct PAStatus*, struct PAResource);
           int PAStatusPerformDelete(struct PAStatus*);
-          struct PAStatus* PAStatusPerformConstruct();
+          struct PAStatus* PAStatusPerformCreate();
           int PAStatusPerformRuin(struct PAStatus*);
           struct PAStatus* PAStatusPerformCopy(struct PAStatus*, struct PAStatus*);
 # 7 "src/PA/Status.c" 2
@@ -395,7 +395,7 @@ struct Facade {
 
 
           struct PAResource* PAResourcePerformBegin(struct PAResource*, struct PANumber);
-          struct PAResource* PAResourcePerformConstruct();
+          struct PAResource* PAResourcePerformCreate();
           int PAResourcePerformRuin(struct PAResource*);
           struct PAResource* PAResourcePerformDelete(struct PAResource*);
           struct PAResource* PAResourcePerformCopy(struct PAResource*, struct PAResource*);
@@ -405,12 +405,12 @@ struct Facade {
 
 
 
-          struct PAStatus* PAStatusPerformConstruct()
+          struct PAStatus* PAStatusPerformCreate()
 {
     struct PAStatus* status;
     struct PAResource resource;
     struct PAResource* resourcePointer;
-    resourcePointer = PAResourcePerformConstruct();
+    resourcePointer = PAResourcePerformCreate();
     resource = *(resourcePointer);
     status->visited = resource;
 

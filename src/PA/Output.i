@@ -385,7 +385,7 @@ struct Facade {
 
 
 
-          struct PAOutput* PAOutputPerformConstruct();
+          struct PAOutput* PAOutputPerformCreate();
           struct PAOutput* PAOutputPerformBegin(struct PAOutput*, struct BFSRecord);
           struct PAOutput* PAOutputPerformDelete(struct PAOutput*);
           int PAOutputPerformRuin(struct PAOutput*);
@@ -409,7 +409,7 @@ struct Facade {
           struct BFSRecord BFSRecordPutCount(struct BFSRecord, struct PACount);
 # 7 "src/PA/Output.c" 2
 # 60 "src/PA/Output.c"
-          struct PAOutput* PAOutputPerformConstruct()
+          struct PAOutput* PAOutputPerformCreate()
 {
     struct PAOutput Output;
     struct PAOutput* outputPointer;

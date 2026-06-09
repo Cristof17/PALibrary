@@ -10,7 +10,7 @@
 #include <PA\Element.h>
 #endif
 
-DllExport struct PAPair* PAPairPerformConstruct()
+DllExport struct PAPair* PAPairPerformCreate()
 {
     struct PAPair pair;
     struct PAPair* pairPointer;

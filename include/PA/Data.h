@@ -8,7 +8,7 @@
 #include <defs.h>
 // #include <defs.h>
 // struct PAData;
-DllExport struct PAData* PADataPerformConstruct();
+DllExport struct PAData* PADataPerformCreate();
 DllExport struct PAData* PADataPerformBegin(struct PAData*, struct PAResource);
 // DllExport struct PAData PADataPerformCopy(struct PAData);
 // DllExport struct PAData PADataPerformPutResource(struct PAData, PAResource);

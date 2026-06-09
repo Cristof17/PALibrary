@@ -1,8 +1,8 @@
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 15, 0	sdk_version 26, 2
-	.globl	_PASeriesPerformConstruct       ; -- Begin function PASeriesPerformConstruct
+	.globl	_PASeriesPerformCreate          ; -- Begin function PASeriesPerformCreate
 	.p2align	2
-_PASeriesPerformConstruct:              ; @PASeriesPerformConstruct
+_PASeriesPerformCreate:                 ; @PASeriesPerformCreate
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16

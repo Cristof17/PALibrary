@@ -1,8 +1,8 @@
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 15, 0	sdk_version 26, 2
-	.globl	_PAPairPerformConstruct         ; -- Begin function PAPairPerformConstruct
+	.globl	_PAPairPerformCreate            ; -- Begin function PAPairPerformCreate
 	.p2align	2
-_PAPairPerformConstruct:                ; @PAPairPerformConstruct
+_PAPairPerformCreate:                   ; @PAPairPerformCreate
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #48

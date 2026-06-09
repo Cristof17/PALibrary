@@ -380,7 +380,7 @@ struct Facade {
 };
 # 4 "./include/PA/Number.h" 2
 
-          struct PANumber* PANumberPerformConstruct();
+          struct PANumber* PANumberPerformCreate();
           struct PANumber* PANumberPerformBegin(struct PANumber* Number, unsigned char Value);
           int PANumberPerformDelete(struct PANumber*);
           int PANumberPerformRuin(struct PANumber*);
@@ -389,7 +389,7 @@ struct Facade {
 
 
 
-          struct PANumber* PANumberPerformConstruct()
+          struct PANumber* PANumberPerformCreate()
 {
     struct PANumber number;
     struct PANumber* numberPointer;

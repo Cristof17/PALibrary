@@ -10,7 +10,7 @@
 DllExport void PAElementVisit(struct PAElement*);
 DllExport PABool PAElementIsVisited(struct PAElement*);
 DllExport void PAElementReset(struct PAElement*);
-DllExport struct PAElement* PAElementPerformConstruct();
+DllExport struct PAElement* PAElementPerformCreate();
 // DllExport HRESULT PAElementPerformCopy();
 DllExport struct PAElement* PAElementPerformBegin(struct PAElement*,struct PAData,struct PAStatus);
 // DllExport HRESULT PAElementPerformPutStatus(struct PAStatus);

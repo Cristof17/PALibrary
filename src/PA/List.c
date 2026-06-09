@@ -16,7 +16,7 @@
 #endif
 
 // struct PAList PAListConstruct(struct PAElement Element) {
-DllExport struct PAList* PAListPerformConstruct()
+DllExport struct PAList* PAListPerformCreate()
 {
     struct PAList* list;
     // struct PACount n = PACountPerformConstruct();

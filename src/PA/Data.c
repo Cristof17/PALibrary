@@ -10,7 +10,7 @@
 //struct PAData {
 //
 //}
-DllExport struct PAData* PADataPerformConstruct()
+DllExport struct PAData* PADataPerformCreate()
 {
     struct PAData data;
     struct PAData* dataPointer;

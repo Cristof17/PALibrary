@@ -6,7 +6,7 @@
 #include <defs.h>
 
 // struct PAPair;
-DllExport struct PAPair* PAPairPerformConstruct();
+DllExport struct PAPair* PAPairPerformCreate();
 DllExport struct PAPair* PAPairPerformBegin(struct PAPair*, struct PAElement, struct PAElement);
 DllExport struct PAPair* PAPairPerformCopy(struct PAPair* from, struct PAPair* to);
 // DllExport HRESULT PAPairPerformCopy(struct PAPair);

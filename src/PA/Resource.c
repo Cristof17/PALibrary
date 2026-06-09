@@ -7,7 +7,7 @@
 #include <PA\Number.h>
 #endif
 
-DllExport struct PAResource* PAResourcePerformConstruct()
+DllExport struct PAResource* PAResourcePerformCreate()
 {
     struct PAResource resource;
     // struct PAResourfec

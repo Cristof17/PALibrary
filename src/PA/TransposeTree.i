@@ -383,7 +383,7 @@ struct Facade {
 
 # 1 "./include/PA/TransposeTree.h" 1
 # 10 "./include/PA/TransposeTree.h"
-          struct PATransposeTree* PATransposeTreePerformConstruct();
+          struct PATransposeTree* PATransposeTreePerformCreate();
           struct PATransposeTree* PATransposeTreePerformBegin(struct PATransposeTree*, struct PATree);
           struct PATransposeTree* PATransposeTreePerformCopy(struct PATransposeTree*, struct PATransposeTree*);
 
@@ -395,7 +395,7 @@ struct Facade {
 # 9 "src/PA/TransposeTree.c" 2
 # 1 "./include/PA/Tree.h" 1
 # 12 "./include/PA/Tree.h"
-          struct PATree* PATreePerformConstruct();
+          struct PATree* PATreePerformCreate();
           struct PATree* PATreePerformCopy(struct PATree* from, struct PATree* to);
 
           struct PATree* PATreePerformInit(struct PATree*, struct PACount, struct PACount, struct PAList, struct PAElement);
@@ -413,7 +413,7 @@ struct Facade {
 
 
 
-          struct PATransposeTree* PATransposeTreePerformConstruct()
+          struct PATransposeTree* PATransposeTreePerformCreate()
 {
     struct PATransposeTree transposeTree;
     struct PATransposeTree* transposeTreePointer;
@@ -429,7 +429,7 @@ struct Facade {
     struct PATransposeTree transposeTree;
     struct PATree* treePointer;
     treePointer = &(TransposeTree->tree);
-    treePointer = PATreePerformConstruct();
+    treePointer = PATreePerformCreate();
 
     transposeTree.tree = Value;
 

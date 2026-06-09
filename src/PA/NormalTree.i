@@ -386,7 +386,7 @@ struct Facade {
 
 
 
-          struct PANormalTree* PANormalTreePerformConstruct();
+          struct PANormalTree* PANormalTreePerformCreate();
           struct PANormalTree* PANormalTreePerformBegin(struct PANormalTree*, struct PATree);
           struct PANormalTree* PANormalTreePerformCopy(struct PANormalTree*);
           int PANormalTreePerformRuin(struct PANormalTree*);
@@ -398,7 +398,7 @@ struct Facade {
 # 6 "src/PA/NormalTree.c" 2
 # 1 "./include/PA/Tree.h" 1
 # 12 "./include/PA/Tree.h"
-          struct PATree* PATreePerformConstruct();
+          struct PATree* PATreePerformCreate();
           struct PATree* PATreePerformCopy(struct PATree* from, struct PATree* to);
 
           struct PATree* PATreePerformInit(struct PATree*, struct PACount, struct PACount, struct PAList, struct PAElement);
@@ -415,7 +415,7 @@ struct Facade {
 
 
 
-          struct PANormalTree* PANormalTreePerformConstruct()
+          struct PANormalTree* PANormalTreePerformCreate()
 {
     struct PANormalTree normalTree;
 

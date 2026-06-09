@@ -388,7 +388,7 @@ struct Facade {
 
 
 
-          struct PAPair* PAPairPerformConstruct();
+          struct PAPair* PAPairPerformCreate();
           struct PAPair* PAPairPerformBegin(struct PAPair*, struct PAElement, struct PAElement);
           struct PAPair* PAPairPerformCopy(struct PAPair* from, struct PAPair* to);
 
@@ -402,7 +402,7 @@ struct Facade {
           void PAElementVisit(struct PAElement*);
           PABool PAElementIsVisited(struct PAElement*);
           void PAElementReset(struct PAElement*);
-          struct PAElement* PAElementPerformConstruct();
+          struct PAElement* PAElementPerformCreate();
 
           struct PAElement* PAElementPerformBegin(struct PAElement*,struct PAData,struct PAStatus);
 
@@ -418,7 +418,7 @@ struct Facade {
 
 
 
-          struct PAPair* PAPairPerformConstruct()
+          struct PAPair* PAPairPerformCreate()
 {
     struct PAPair pair;
     struct PAPair* pairPointer;

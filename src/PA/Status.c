@@ -10,12 +10,12 @@
 #include <PA\Resource.h>
 #endif
 
-DllExport struct PAStatus* PAStatusPerformConstruct()
+DllExport struct PAStatus* PAStatusPerformCreate()
 {
     struct PAStatus* status;
     struct PAResource resource;
     struct PAResource* resourcePointer;
-    resourcePointer = PAResourcePerformConstruct();
+    resourcePointer = PAResourcePerformCreate();
     resource = *(resourcePointer);
     status->visited = resource;
     // status.visited = PAResourcePerformConstruct();

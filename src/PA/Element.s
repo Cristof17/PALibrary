@@ -1,8 +1,8 @@
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 15, 0	sdk_version 26, 2
-	.globl	_PAElementPerformConstruct      ; -- Begin function PAElementPerformConstruct
+	.globl	_PAElementPerformCreate         ; -- Begin function PAElementPerformCreate
 	.p2align	2
-_PAElementPerformConstruct:             ; @PAElementPerformConstruct
+_PAElementPerformCreate:                ; @PAElementPerformCreate
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16

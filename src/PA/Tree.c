@@ -16,7 +16,7 @@
     // struct PACount size;
     // return size;
 // }
-DllExport struct PATree* PATreePerformConstruct()
+DllExport struct PATree* PATreePerformCreate()
 {
     struct PATree* temp;
     // temp->n = PACountPerformConstruct();

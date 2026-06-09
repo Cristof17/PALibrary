@@ -382,7 +382,7 @@ struct Facade {
 
 # 1 "./include/PA/List.h" 1
 # 11 "./include/PA/List.h"
-          struct PAList* PAListPerformConstruct();
+          struct PAList* PAListPerformCreate();
           struct PAList* PAListPerformBegin(struct PAList*,struct PACount, struct PASeries[]);
 
 
@@ -395,7 +395,7 @@ void PAListPerformPrint(struct PAList* List);
 # 8 "src/PA/List.c" 2
 # 1 "./include/PA/Count.h" 1
 # 13 "./include/PA/Count.h"
-          struct PACount* PACountPerformConstruct();
+          struct PACount* PACountPerformCreate();
           struct PACount* PACountPerformBegin(struct PACount* Count, struct PANumber Number);
           struct PACount* PACountPerformCopy(struct PACount* from, struct PACount* to);
 
@@ -408,7 +408,7 @@ void PAListPerformPrint(struct PAList* List);
 # 9 "src/PA/List.c" 2
 # 1 "./include/PA/Series.h" 1
 # 17 "./include/PA/Series.h"
-          struct PASeries* PASeriesPerformConstruct();
+          struct PASeries* PASeriesPerformCreate();
           struct PASeries* PASeriesPerformBegin(struct PASeries*, struct PACount, struct PAElement[]);
           struct PASeries* PASeriesPerformDelete(struct PASeries*);
           struct PASeries* PASeriesPerformCopy(struct PASeries*, struct PASeries*);
@@ -418,7 +418,7 @@ void PAListPerformPrint(struct PAList* List);
           void PASeriesPerformPrint(struct PASeries* Series);
 # 10 "src/PA/List.c" 2
 # 19 "src/PA/List.c"
-          struct PAList* PAListPerformConstruct()
+          struct PAList* PAListPerformCreate()
 {
     struct PAList* list;
 # 33 "src/PA/List.c"

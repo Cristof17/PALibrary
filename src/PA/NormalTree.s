@@ -1,8 +1,8 @@
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 15, 0	sdk_version 26, 2
-	.globl	_PANormalTreePerformConstruct   ; -- Begin function PANormalTreePerformConstruct
+	.globl	_PANormalTreePerformCreate      ; -- Begin function PANormalTreePerformCreate
 	.p2align	2
-_PANormalTreePerformConstruct:          ; @PANormalTreePerformConstruct
+_PANormalTreePerformCreate:             ; @PANormalTreePerformCreate
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32

@@ -4,7 +4,7 @@
 #include <types.h>
 #include <defs.h>
 DllExport struct PAResource* PAResourcePerformBegin(struct PAResource*, struct PANumber);
-DllExport struct PAResource* PAResourcePerformConstruct();
+DllExport struct PAResource* PAResourcePerformCreate();
 DllExport int PAResourcePerformRuin(struct PAResource*);
 DllExport struct PAResource* PAResourcePerformDelete(struct PAResource*);
 DllExport struct PAResource* PAResourcePerformCopy(struct PAResource*, struct PAResource*);

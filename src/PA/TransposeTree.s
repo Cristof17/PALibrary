@@ -1,8 +1,8 @@
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 15, 0	sdk_version 26, 2
-	.globl	_PATransposeTreePerformConstruct ; -- Begin function PATransposeTreePerformConstruct
+	.globl	_PATransposeTreePerformCreate   ; -- Begin function PATransposeTreePerformCreate
 	.p2align	2
-_PATransposeTreePerformConstruct:       ; @PATransposeTreePerformConstruct
+_PATransposeTreePerformCreate:          ; @PATransposeTreePerformCreate
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #80
@@ -76,7 +76,7 @@ _PATransposeTreePerformBegin:           ; @PATransposeTreePerformBegin
 	str	x0, [sp, #48]
 	ldr	x8, [sp, #48]
 	str	x8, [sp, #24]
-	bl	_PATreePerformConstruct
+	bl	_PATreePerformCreate
 	ldr	x8, [sp, #8]                    ; 8-byte Folded Reload
 	str	x0, [sp, #24]
 	ldur	x10, [x29, #-40]

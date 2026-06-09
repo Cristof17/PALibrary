@@ -1,8 +1,8 @@
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 15, 0	sdk_version 26, 2
-	.globl	_PAOutputPerformConstruct       ; -- Begin function PAOutputPerformConstruct
+	.globl	_PAOutputPerformCreate          ; -- Begin function PAOutputPerformCreate
 	.p2align	2
-_PAOutputPerformConstruct:              ; @PAOutputPerformConstruct
+_PAOutputPerformCreate:                 ; @PAOutputPerformCreate
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32

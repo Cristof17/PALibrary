@@ -8,7 +8,7 @@
 // #include <PA/Feature.h>
 DllExport struct PAStatus* PAStatusPerformBegin(struct PAStatus*, struct PAResource);
 DllExport int PAStatusPerformDelete(struct PAStatus*);
-DllExport struct PAStatus* PAStatusPerformConstruct();
+DllExport struct PAStatus* PAStatusPerformCreate();
 DllExport int PAStatusPerformRuin(struct PAStatus*);
 DllExport struct PAStatus* PAStatusPerformCopy(struct PAStatus*, struct PAStatus*);
 // struct PAStatus/*.*/;

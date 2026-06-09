@@ -5,7 +5,7 @@
 // #include "../defs.h"
 #include <defs.h>
 // struct NormalTree;
-DllExport struct PANormalTree* PANormalTreePerformConstruct();
+DllExport struct PANormalTree* PANormalTreePerformCreate();
 DllExport struct PANormalTree* PANormalTreePerformBegin(struct PANormalTree*, struct PATree);
 DllExport struct PANormalTree* PANormalTreePerformCopy(struct PANormalTree*);
 DllExport int PANormalTreePerformRuin(struct PANormalTree*);

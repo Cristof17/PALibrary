@@ -3,7 +3,7 @@
 #elif defined _WIN95
 #include <PA\Number.h>
 #endif
-DllExport struct PANumber* PANumberPerformConstruct()
+DllExport struct PANumber* PANumberPerformCreate()
 {
     struct PANumber number;
     struct PANumber* numberPointer;

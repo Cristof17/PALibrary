@@ -16,7 +16,7 @@
 #include <types.h>
 // #include "//"
 // #include "../include/PAIndex.h"
-struct PAElement* PAElementPerformConstruct()
+struct PAElement* PAElementPerformCreate()
 {
     struct PAElement* temp;
     // temp.index = PADataPerformConstruct();

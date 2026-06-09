@@ -1,8 +1,8 @@
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 15, 0	sdk_version 26, 2
-	.globl	_PATreePerformConstruct         ; -- Begin function PATreePerformConstruct
+	.globl	_PATreePerformCreate            ; -- Begin function PATreePerformCreate
 	.p2align	2
-_PATreePerformConstruct:                ; @PATreePerformConstruct
+_PATreePerformCreate:                   ; @PATreePerformCreate
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16
