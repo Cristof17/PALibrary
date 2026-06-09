@@ -33,6 +33,25 @@
 // 	return List;
 // }
 
+DllExport int ArrayListStore(struct ArrayList*, struct PAData)
+{
+	int returnCode;
+	returnCode = PARESULT_SUCCESS;
+	return returnCode;
+}
+// DllExport int ArrayList(struct ArrayList*, ArrayListObject*)
+DllExport struct PAData* ArrayListRetrieve(struct ArrayList*)
+{
+	struct PAData data;
+	struct PAData* dataPointer;
+	return dataPointer;
+}
+
+DllExport void ArrayListPrint(struct ArrayList*)
+{
+	
+}
+
 struct ArrayList* ArrayListPerformCopy(struct ArrayList *from, struct ArrayList *to)
 {
 // 	//struct ArrayList copy;
