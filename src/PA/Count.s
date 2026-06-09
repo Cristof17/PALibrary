@@ -12,9 +12,9 @@ _PACountPerformConstruct:               ; @PACountPerformConstruct
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PACountPerformInit             ; -- Begin function PACountPerformInit
+	.globl	_PACountPerformBegin            ; -- Begin function PACountPerformBegin
 	.p2align	2
-_PACountPerformInit:                    ; @PACountPerformInit
+_PACountPerformBegin:                   ; @PACountPerformBegin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32

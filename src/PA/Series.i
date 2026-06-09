@@ -377,7 +377,7 @@ struct Facade {
 # 1 "./include/PA/Series.h" 1
 # 17 "./include/PA/Series.h"
           struct PASeries* PASeriesPerformConstruct();
-          struct PASeries* PASeriesPerformInit(struct PASeries*, struct PACount, struct PAElement[]);
+          struct PASeries* PASeriesPerformBegin(struct PASeries*, struct PACount, struct PAElement[]);
           struct PASeries* PASeriesPerformDelete(struct PASeries*);
           struct PASeries* PASeriesPerformCopy(struct PASeries*, struct PASeries*);
 
@@ -388,7 +388,7 @@ struct Facade {
 # 1 "./include/PA/Count.h" 1
 # 13 "./include/PA/Count.h"
           struct PACount* PACountPerformConstruct();
-          struct PACount* PACountPerformInit(struct PACount* Count, struct PANumber Number);
+          struct PACount* PACountPerformBegin(struct PACount* Count, struct PANumber Number);
           struct PACount* PACountPerformCopy(struct PACount* from, struct PACount* to);
 
 
@@ -405,7 +405,7 @@ struct Facade {
           void PAElementReset(struct PAElement*);
           struct PAElement* PAElementPerformConstruct();
 
-          struct PAElement* PAElementPerformInit(struct PAElement*,struct PAData,struct PAStatus);
+          struct PAElement* PAElementPerformBegin(struct PAElement*,struct PAData,struct PAStatus);
 
 
 
@@ -469,7 +469,7 @@ struct Facade {
     return to;
 }
 # 99 "src/PA/Series.c"
-          struct PASeries* PASeriesPerformInit(struct PASeries* Series,
+          struct PASeries* PASeriesPerformBegin(struct PASeries* Series,
     struct PACount Value, struct PAElement Value2[])
     {
 # 113 "src/PA/Series.c"

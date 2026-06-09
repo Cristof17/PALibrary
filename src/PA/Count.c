@@ -24,7 +24,7 @@ DllExport struct PACount* PACountPerformConstruct()
     // return zies;
     return countPointer;
 }
-DllExport struct PACount* PACountPerformInit(struct PACount* Count, struct PANumber Value)
+DllExport struct PACount* PACountPerformBegin(struct PACount* Count, struct PANumber Value)
 {
     // struct PACount temp;
     struct PACount temp;

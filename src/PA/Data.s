@@ -14,7 +14,7 @@ _PADataPerformConstruct:                ; @PADataPerformConstruct
 	ldr	x0, [sp]
 	ldurb	w8, [x29, #-1]
 	mov	x1, x8
-	bl	_PADataPerformInit
+	bl	_PADataPerformBegin
 	str	x0, [sp]
 	ldr	x0, [sp]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
@@ -22,9 +22,9 @@ _PADataPerformConstruct:                ; @PADataPerformConstruct
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PADataPerformInit              ; -- Begin function PADataPerformInit
+	.globl	_PADataPerformBegin             ; -- Begin function PADataPerformBegin
 	.p2align	2
-_PADataPerformInit:                     ; @PADataPerformInit
+_PADataPerformBegin:                    ; @PADataPerformBegin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32

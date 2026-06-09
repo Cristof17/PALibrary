@@ -16,7 +16,7 @@ DllExport struct PAData* PADataPerformConstruct()
     struct PAData* dataPointer;
     // struct PAResource resource;
     // data.Resource = PAResourcePerformConstruct();
-    dataPointer = PADataPerformInit(dataPointer, data.Resource);
+    dataPointer = PADataPerformBegin(dataPointer, data.Resource);
     // data.Resource = resource;
     //  = data;
     // Data.Resource = PAResourcePerformInit(Data.Resource, )
@@ -24,7 +24,7 @@ DllExport struct PAData* PADataPerformConstruct()
     // Data.Resource = PAResourcePerformConstruct(); 
     return dataPointer;
 }
-DllExport struct PAData* PADataPerformInit(struct PAData* Data, struct PAResource Value)
+DllExport struct PAData* PADataPerformBegin(struct PAData* Data, struct PAResource Value)
 {
     struct PAData temp;
     struct PAData* dataPointer;

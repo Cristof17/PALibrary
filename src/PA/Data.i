@@ -388,7 +388,7 @@ struct Facade {
 
 
           struct PAData* PADataPerformConstruct();
-          struct PAData* PADataPerformInit(struct PAData*, struct PAResource);
+          struct PAData* PADataPerformBegin(struct PAData*, struct PAResource);
 
 
           int PADataPerformRuin(struct PAData*);
@@ -401,7 +401,7 @@ struct Facade {
 
 
 
-          struct PAResource* PAResourcePerformInit(struct PAResource*, struct PANumber);
+          struct PAResource* PAResourcePerformBegin(struct PAResource*, struct PANumber);
           struct PAResource* PAResourcePerformConstruct();
           int PAResourcePerformRuin(struct PAResource*);
           struct PAResource* PAResourcePerformDelete(struct PAResource*);
@@ -421,7 +421,7 @@ struct Facade {
     struct PAData* dataPointer;
 
 
-    dataPointer = PADataPerformInit(dataPointer, data.Resource);
+    dataPointer = PADataPerformBegin(dataPointer, data.Resource);
 
 
 
@@ -429,7 +429,7 @@ struct Facade {
 
     return dataPointer;
 }
-          struct PAData* PADataPerformInit(struct PAData* Data, struct PAResource Value)
+          struct PAData* PADataPerformBegin(struct PAData* Data, struct PAResource Value)
 {
     struct PAData temp;
     struct PAData* dataPointer;

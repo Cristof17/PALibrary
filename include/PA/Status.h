@@ -6,7 +6,7 @@
 #include <defs.h>
 #include <types.h>
 // #include <PA/Feature.h>
-DllExport struct PAStatus* PAStatusPerformInit(struct PAStatus*, struct PAResource);
+DllExport struct PAStatus* PAStatusPerformBegin(struct PAStatus*, struct PAResource);
 DllExport int PAStatusPerformDelete(struct PAStatus*);
 DllExport struct PAStatus* PAStatusPerformConstruct();
 DllExport int PAStatusPerformRuin(struct PAStatus*);

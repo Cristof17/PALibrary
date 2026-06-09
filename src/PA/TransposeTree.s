@@ -29,7 +29,7 @@ _PATransposeTreePerformConstruct:       ; @PATransposeTreePerformConstruct
 	stur	x8, [x9, #7]
 	ldur	x1, [x29, #-24]
 	ldur	x2, [x29, #-16]
-	bl	_PATransposeTreePerformInit
+	bl	_PATransposeTreePerformBegin
 	str	x0, [sp, #16]
 	ldr	x8, [sp, #16]
 	str	x8, [sp, #8]                    ; 8-byte Folded Spill
@@ -49,9 +49,9 @@ LBB0_2:
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PATransposeTreePerformInit     ; -- Begin function PATransposeTreePerformInit
+	.globl	_PATransposeTreePerformBegin    ; -- Begin function PATransposeTreePerformBegin
 	.p2align	2
-_PATransposeTreePerformInit:            ; @PATransposeTreePerformInit
+_PATransposeTreePerformBegin:           ; @PATransposeTreePerformBegin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #112

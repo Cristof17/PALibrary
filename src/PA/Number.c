@@ -12,7 +12,7 @@ DllExport struct PANumber* PANumberPerformConstruct()
     // number.val =  random;
     return numberPointer;
 }
-DllExport struct PANumber* PANumberPerformInit(struct PANumber* Number, unsigned char Value)
+DllExport struct PANumber* PANumberPerformBegin(struct PANumber* Number, unsigned char Value)
 {
     struct PANumber temp;
     struct PANumber* numberPointer;

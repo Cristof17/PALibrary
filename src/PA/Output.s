@@ -12,9 +12,9 @@ _PAOutputPerformConstruct:              ; @PAOutputPerformConstruct
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAOutputPerformInit            ; -- Begin function PAOutputPerformInit
+	.globl	_PAOutputPerformBegin           ; -- Begin function PAOutputPerformBegin
 	.p2align	2
-_PAOutputPerformInit:                   ; @PAOutputPerformInit
+_PAOutputPerformBegin:                  ; @PAOutputPerformBegin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #80

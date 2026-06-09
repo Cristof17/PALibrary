@@ -382,7 +382,7 @@ struct Facade {
 # 1 "./include/PA/Count.h" 1
 # 13 "./include/PA/Count.h"
           struct PACount* PACountPerformConstruct();
-          struct PACount* PACountPerformInit(struct PACount* Count, struct PANumber Number);
+          struct PACount* PACountPerformBegin(struct PACount* Count, struct PANumber Number);
           struct PACount* PACountPerformCopy(struct PACount* from, struct PACount* to);
 
 
@@ -398,7 +398,7 @@ struct Facade {
 
 
           struct PANumber* PANumberPerformConstruct();
-          struct PANumber* PANumberPerformInit(struct PANumber* Number, unsigned char Value);
+          struct PANumber* PANumberPerformBegin(struct PANumber* Number, unsigned char Value);
           int PANumberPerformDelete(struct PANumber*);
           int PANumberPerformRuin(struct PANumber*);
           struct PANumber* PANumberPerformCopy(struct PANumber* from, struct PANumber* to);
@@ -422,7 +422,7 @@ struct Facade {
 
     return countPointer;
 }
-          struct PACount* PACountPerformInit(struct PACount* Count, struct PANumber Value)
+          struct PACount* PACountPerformBegin(struct PACount* Count, struct PANumber Value)
 {
 
     struct PACount temp;

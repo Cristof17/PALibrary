@@ -386,7 +386,7 @@ struct Facade {
           struct PALink* PALinkPerformConstruct();
           struct PALink* PALinkPerformCopy(struct PALink*, struct PALink*);
 
-          struct PALink* PALinkPerformInit(struct PALink*, struct PAPair);
+          struct PALink* PALinkPerformBegin(struct PALink*, struct PAPair);
 
           int PALinkPerformRuin(struct PALink*);
           struct PALink* PALinkPerformDelete(struct PALink*);
@@ -401,7 +401,7 @@ struct Facade {
 
 
           struct PAPair* PAPairPerformConstruct();
-          struct PAPair* PAPairPerformInit(struct PAPair*, struct PAElement, struct PAElement);
+          struct PAPair* PAPairPerformBegin(struct PAPair*, struct PAElement, struct PAElement);
           struct PAPair* PAPairPerformCopy(struct PAPair* from, struct PAPair* to);
 
 
@@ -427,7 +427,7 @@ struct Facade {
 
     return linkPointer;
 }
-          struct PALink* PALinkPerformInit(struct PALink* Link, struct PAPair Value)
+          struct PALink* PALinkPerformBegin(struct PALink* Link, struct PAPair Value)
 {
     struct PALink link;
     struct PALink* linkPointer;

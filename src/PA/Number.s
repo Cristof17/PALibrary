@@ -12,9 +12,9 @@ _PANumberPerformConstruct:              ; @PANumberPerformConstruct
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PANumberPerformInit            ; -- Begin function PANumberPerformInit
+	.globl	_PANumberPerformBegin           ; -- Begin function PANumberPerformBegin
 	.p2align	2
-_PANumberPerformInit:                   ; @PANumberPerformInit
+_PANumberPerformBegin:                  ; @PANumberPerformBegin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32

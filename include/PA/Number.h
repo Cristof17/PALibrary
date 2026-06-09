@@ -3,7 +3,7 @@
 #include <types.h>
 #include <defs.h>
 DllExport struct PANumber* PANumberPerformConstruct();
-DllExport struct PANumber* PANumberPerformInit(struct PANumber* Number, unsigned char Value);
+DllExport struct PANumber* PANumberPerformBegin(struct PANumber* Number, unsigned char Value);
 DllExport int PANumberPerformDelete(struct PANumber*);
 DllExport int PANumberPerformRuin(struct PANumber*);
 DllExport struct PANumber* PANumberPerformCopy(struct PANumber* from, struct PANumber* to);

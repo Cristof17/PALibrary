@@ -29,7 +29,7 @@ DllExport struct PAInput* PAInputPerformConstruct()
 	m = inputPointer->m;
 	element = inputPointer->source;
 	// list = inputPointer.
-	inputPointer = PAInputPerformInit(inputPointer,n,m,element);
+	inputPointer = PAInputPerformBegin(inputPointer,n,m,element);
 	return inputPointer;
 	// PAResult result ;
 	// return result;
@@ -45,7 +45,7 @@ DllExport struct PAInput* PAInputPerformConstruct()
 // //	copy.source=Input.source;
 // 	return copy;
 // }
-DllExport struct PAInput* PAInputPerformInit(struct PAInput* Input, struct PACount Value, struct PACount Value2, struct PAElement Value3)
+DllExport struct PAInput* PAInputPerformBegin(struct PAInput* Input, struct PACount Value, struct PACount Value2, struct PAElement Value3)
 {
 	struct PAInput temp;
 	struct PAInput* inputPointer;

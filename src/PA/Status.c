@@ -19,10 +19,10 @@ DllExport struct PAStatus* PAStatusPerformConstruct()
     resource = *(resourcePointer);
     status->visited = resource;
     // status.visited = PAResourcePerformConstruct();
-    status = PAStatusPerformInit(status,status->visited);
+    status = PAStatusPerformBegin(status,status->visited);
     return status;
 }
-DllExport struct PAStatus* PAStatusPerformInit(struct PAStatus* Status, struct PAResource Value)
+DllExport struct PAStatus* PAStatusPerformBegin(struct PAStatus* Status, struct PAResource Value)
 {
     struct PAStatus temp;
     struct PAStatus* statusPointer;

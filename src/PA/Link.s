@@ -12,9 +12,9 @@ _PALinkPerformConstruct:                ; @PALinkPerformConstruct
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PALinkPerformInit              ; -- Begin function PALinkPerformInit
+	.globl	_PALinkPerformBegin             ; -- Begin function PALinkPerformBegin
 	.p2align	2
-_PALinkPerformInit:                     ; @PALinkPerformInit
+_PALinkPerformBegin:                    ; @PALinkPerformBegin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32

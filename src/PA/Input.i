@@ -385,7 +385,7 @@ struct Facade {
 # 10 "./include/PA/Input.h"
           struct PAInput* PAInputPerformConstruct();
 
-          struct PAInput* PAInputPerformInit(struct PAInput* PAInput, struct PACount, struct PACount, struct PAElement);
+          struct PAInput* PAInputPerformBegin(struct PAInput* PAInput, struct PACount, struct PACount, struct PAElement);
 
 
 
@@ -395,7 +395,7 @@ struct Facade {
 # 1 "./include/PA/Count.h" 1
 # 13 "./include/PA/Count.h"
           struct PACount* PACountPerformConstruct();
-          struct PACount* PACountPerformInit(struct PACount* Count, struct PANumber Number);
+          struct PACount* PACountPerformBegin(struct PACount* Count, struct PANumber Number);
           struct PACount* PACountPerformCopy(struct PACount* from, struct PACount* to);
 
 
@@ -412,7 +412,7 @@ struct Facade {
           void PAElementReset(struct PAElement*);
           struct PAElement* PAElementPerformConstruct();
 
-          struct PAElement* PAElementPerformInit(struct PAElement*,struct PAData,struct PAStatus);
+          struct PAElement* PAElementPerformBegin(struct PAElement*,struct PAData,struct PAStatus);
 
 
 
@@ -442,13 +442,13 @@ struct Facade {
  m = inputPointer->m;
  element = inputPointer->source;
 
- inputPointer = PAInputPerformInit(inputPointer,n,m,element);
+ inputPointer = PAInputPerformBegin(inputPointer,n,m,element);
  return inputPointer;
 
 
 }
 # 48 "src/PA/Input.c"
-          struct PAInput* PAInputPerformInit(struct PAInput* Input, struct PACount Value, struct PACount Value2, struct PAElement Value3)
+          struct PAInput* PAInputPerformBegin(struct PAInput* Input, struct PACount Value, struct PACount Value2, struct PAElement Value3)
 {
  struct PAInput temp;
  struct PAInput* inputPointer;

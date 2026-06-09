@@ -12,9 +12,9 @@ _PANormalTreePerformConstruct:          ; @PANormalTreePerformConstruct
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PANormalTreePerformInit        ; -- Begin function PANormalTreePerformInit
+	.globl	_PANormalTreePerformBegin       ; -- Begin function PANormalTreePerformBegin
 	.p2align	2
-_PANormalTreePerformInit:               ; @PANormalTreePerformInit
+_PANormalTreePerformBegin:              ; @PANormalTreePerformBegin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #96

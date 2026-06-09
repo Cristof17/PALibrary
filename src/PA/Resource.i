@@ -382,7 +382,7 @@ struct Facade {
 };
 # 5 "./include/PA/Resource.h" 2
 
-          struct PAResource* PAResourcePerformInit(struct PAResource*, struct PANumber);
+          struct PAResource* PAResourcePerformBegin(struct PAResource*, struct PANumber);
           struct PAResource* PAResourcePerformConstruct();
           int PAResourcePerformRuin(struct PAResource*);
           struct PAResource* PAResourcePerformDelete(struct PAResource*);
@@ -394,7 +394,7 @@ struct Facade {
 
 
           struct PANumber* PANumberPerformConstruct();
-          struct PANumber* PANumberPerformInit(struct PANumber* Number, unsigned char Value);
+          struct PANumber* PANumberPerformBegin(struct PANumber* Number, unsigned char Value);
           int PANumberPerformDelete(struct PANumber*);
           int PANumberPerformRuin(struct PANumber*);
           struct PANumber* PANumberPerformCopy(struct PANumber* from, struct PANumber* to);
@@ -417,7 +417,7 @@ struct Facade {
     return resourcePointer;
 
 }
-          struct PAResource* PAResourcePerformInit(struct PAResource* Resource, struct PANumber Value)
+          struct PAResource* PAResourcePerformBegin(struct PAResource* Resource, struct PANumber Value)
 {
     struct PAResource resource;
     struct PAResource* resourcePointer;

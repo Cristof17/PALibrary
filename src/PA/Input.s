@@ -28,7 +28,7 @@ _PAInputPerformConstruct:               ; @PAInputPerformConstruct
 	ldrh	w8, [sp, #16]
 	strh	w8, [sp, #8]
 	ldr	x3, [sp, #8]
-	bl	_PAInputPerformInit
+	bl	_PAInputPerformBegin
 	stur	x0, [x29, #-16]
 	ldur	x0, [x29, #-16]
 	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
@@ -36,9 +36,9 @@ _PAInputPerformConstruct:               ; @PAInputPerformConstruct
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAInputPerformInit             ; -- Begin function PAInputPerformInit
+	.globl	_PAInputPerformBegin            ; -- Begin function PAInputPerformBegin
 	.p2align	2
-_PAInputPerformInit:                    ; @PAInputPerformInit
+_PAInputPerformBegin:                   ; @PAInputPerformBegin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32

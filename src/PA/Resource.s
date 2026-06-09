@@ -12,9 +12,9 @@ _PAResourcePerformConstruct:            ; @PAResourcePerformConstruct
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAResourcePerformInit          ; -- Begin function PAResourcePerformInit
+	.globl	_PAResourcePerformBegin         ; -- Begin function PAResourcePerformBegin
 	.p2align	2
-_PAResourcePerformInit:                 ; @PAResourcePerformInit
+_PAResourcePerformBegin:                ; @PAResourcePerformBegin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32

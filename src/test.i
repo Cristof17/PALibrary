@@ -395,7 +395,7 @@ struct Facade {
 # 1 "./include/PA/Count.h" 1
 # 13 "./include/PA/Count.h"
           struct PACount* PACountPerformConstruct();
-          struct PACount* PACountPerformInit(struct PACount* Count, struct PANumber Number);
+          struct PACount* PACountPerformBegin(struct PACount* Count, struct PANumber Number);
           struct PACount* PACountPerformCopy(struct PACount* from, struct PACount* to);
 
 
@@ -413,7 +413,7 @@ struct Facade {
           void PAElementReset(struct PAElement*);
           struct PAElement* PAElementPerformConstruct();
 
-          struct PAElement* PAElementPerformInit(struct PAElement*,struct PAData,struct PAStatus);
+          struct PAElement* PAElementPerformBegin(struct PAElement*,struct PAData,struct PAStatus);
 
 
 
@@ -425,7 +425,7 @@ struct Facade {
 # 1 "./include/PA/Data.h" 1
 # 11 "./include/PA/Data.h"
           struct PAData* PADataPerformConstruct();
-          struct PAData* PADataPerformInit(struct PAData*, struct PAResource);
+          struct PAData* PADataPerformBegin(struct PAData*, struct PAResource);
 
 
           int PADataPerformRuin(struct PAData*);
@@ -436,7 +436,7 @@ struct Facade {
 # 1 "./include/PA/List.h" 1
 # 11 "./include/PA/List.h"
           struct PAList* PAListPerformConstruct();
-          struct PAList* PAListPerformInit(struct PAList*,struct PACount, struct PASeries[]);
+          struct PAList* PAListPerformBegin(struct PAList*,struct PACount, struct PASeries[]);
 
 
 
@@ -452,7 +452,7 @@ void PAListPerformPrint(struct PAList* List);
 
 
 
-          struct PAResource* PAResourcePerformInit(struct PAResource*, struct PANumber);
+          struct PAResource* PAResourcePerformBegin(struct PAResource*, struct PANumber);
           struct PAResource* PAResourcePerformConstruct();
           int PAResourcePerformRuin(struct PAResource*);
           struct PAResource* PAResourcePerformDelete(struct PAResource*);
@@ -464,7 +464,7 @@ void PAListPerformPrint(struct PAList* List);
 
 
           struct PANumber* PANumberPerformConstruct();
-          struct PANumber* PANumberPerformInit(struct PANumber* Number, unsigned char Value);
+          struct PANumber* PANumberPerformBegin(struct PANumber* Number, unsigned char Value);
           int PANumberPerformDelete(struct PANumber*);
           int PANumberPerformRuin(struct PANumber*);
           struct PANumber* PANumberPerformCopy(struct PANumber* from, struct PANumber* to);
@@ -472,7 +472,7 @@ void PAListPerformPrint(struct PAList* List);
 # 1 "./include/PA/Series.h" 1
 # 17 "./include/PA/Series.h"
           struct PASeries* PASeriesPerformConstruct();
-          struct PASeries* PASeriesPerformInit(struct PASeries*, struct PACount, struct PAElement[]);
+          struct PASeries* PASeriesPerformBegin(struct PASeries*, struct PACount, struct PAElement[]);
           struct PASeries* PASeriesPerformDelete(struct PASeries*);
           struct PASeries* PASeriesPerformCopy(struct PASeries*, struct PASeries*);
 
@@ -489,7 +489,7 @@ void PAListPerformPrint(struct PAList* List);
 
 
 
-          struct PAStatus* PAStatusPerformInit(struct PAStatus*, struct PAResource);
+          struct PAStatus* PAStatusPerformBegin(struct PAStatus*, struct PAResource);
           int PAStatusPerformDelete(struct PAStatus*);
           struct PAStatus* PAStatusPerformConstruct();
           int PAStatusPerformRuin(struct PAStatus*);
@@ -498,7 +498,7 @@ void PAListPerformPrint(struct PAList* List);
 # 1 "./include/PA/TransposeTree.h" 1
 # 10 "./include/PA/TransposeTree.h"
           struct PATransposeTree* PATransposeTreePerformConstruct();
-          struct PATransposeTree* PATransposeTreePerformInit(struct PATransposeTree*, struct PATree);
+          struct PATransposeTree* PATransposeTreePerformBegin(struct PATransposeTree*, struct PATree);
           struct PATransposeTree* PATransposeTreePerformCopy(struct PATransposeTree*, struct PATransposeTree*);
 
           int PATransposeTreeRuin(struct PATransposeTree*);

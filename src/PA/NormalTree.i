@@ -387,7 +387,7 @@ struct Facade {
 
 
           struct PANormalTree* PANormalTreePerformConstruct();
-          struct PANormalTree* PANormalTreePerformInit(struct PANormalTree*, struct PATree);
+          struct PANormalTree* PANormalTreePerformBegin(struct PANormalTree*, struct PATree);
           struct PANormalTree* PANormalTreePerformCopy(struct PANormalTree*);
           int PANormalTreePerformRuin(struct PANormalTree*);
           int PANormalTreePerformDelete(struct PANormalTree*);
@@ -431,7 +431,7 @@ struct Facade {
 
 
 }
-          struct PANormalTree* PANormalTreePerformInit(struct PANormalTree* NormalTree, struct PATree Value)
+          struct PANormalTree* PANormalTreePerformBegin(struct PANormalTree* NormalTree, struct PATree Value)
 {
     struct PANormalTree normalTree;
     struct PANormalTree *normalTreePointer;

@@ -60,9 +60,9 @@ LBB1_6:
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAListPerformInit              ; -- Begin function PAListPerformInit
+	.globl	_PAListPerformBegin             ; -- Begin function PAListPerformBegin
 	.p2align	2
-_PAListPerformInit:                     ; @PAListPerformInit
+_PAListPerformBegin:                    ; @PAListPerformBegin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #48

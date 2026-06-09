@@ -20,7 +20,7 @@ DllExport struct PAResource* PAResourcePerformConstruct()
     return resourcePointer;
     // return resource;
 }
-DllExport struct PAResource* PAResourcePerformInit(struct PAResource* Resource, struct PANumber Value)
+DllExport struct PAResource* PAResourcePerformBegin(struct PAResource* Resource, struct PANumber Value)
 {
     struct PAResource resource;
     struct PAResource* resourcePointer;

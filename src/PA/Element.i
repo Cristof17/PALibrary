@@ -388,7 +388,7 @@ struct Facade {
           void PAElementReset(struct PAElement*);
           struct PAElement* PAElementPerformConstruct();
 
-          struct PAElement* PAElementPerformInit(struct PAElement*,struct PAData,struct PAStatus);
+          struct PAElement* PAElementPerformBegin(struct PAElement*,struct PAData,struct PAStatus);
 
 
 
@@ -400,7 +400,7 @@ struct Facade {
 # 1 "./include/PA/Data.h" 1
 # 11 "./include/PA/Data.h"
           struct PAData* PADataPerformConstruct();
-          struct PAData* PADataPerformInit(struct PAData*, struct PAResource);
+          struct PAData* PADataPerformBegin(struct PAData*, struct PAResource);
 
 
           int PADataPerformRuin(struct PAData*);
@@ -416,7 +416,7 @@ struct Facade {
 
 
 
-          struct PAStatus* PAStatusPerformInit(struct PAStatus*, struct PAResource);
+          struct PAStatus* PAStatusPerformBegin(struct PAStatus*, struct PAResource);
           int PAStatusPerformDelete(struct PAStatus*);
           struct PAStatus* PAStatusPerformConstruct();
           int PAStatusPerformRuin(struct PAStatus*);
@@ -429,7 +429,7 @@ struct PAElement* PAElementPerformConstruct()
 # 32 "src/PA/Element.c"
   return temp;
 }
-          struct PAElement* PAElementPerformInit(struct PAElement* Element, struct PAData Value, struct PAStatus Value2)
+          struct PAElement* PAElementPerformBegin(struct PAElement* Element, struct PAData Value, struct PAStatus Value2)
 {
 # 47 "src/PA/Element.c"
     return Element;

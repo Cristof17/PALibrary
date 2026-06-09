@@ -96,7 +96,7 @@ DllExport struct PASeries* PASeriesPerformCopy(struct PASeries* from, struct PAS
 //     }
 // }
 // }
-DllExport struct PASeries* PASeriesPerformInit(struct PASeries* Series,
+DllExport struct PASeries* PASeriesPerformBegin(struct PASeries* Series,
     struct PACount Value, struct PAElement Value2[])
     {
         // PAResult result;

@@ -11,7 +11,7 @@
 // struct PAData PADataPerformCopy(struct PAData Data);
 // strut BFSOutputRuin();
 DllExport struct PAOutput* PAOutputPerformConstruct();
-DllExport struct PAOutput* PAOutputPerformInit(struct PAOutput*, struct BFSRecord);
+DllExport struct PAOutput* PAOutputPerformBegin(struct PAOutput*, struct BFSRecord);
 DllExport struct PAOutput* PAOutputPerformDelete(struct PAOutput*);
 DllExport int PAOutputPerformRuin(struct PAOutput*);
 DllExport void PAOutputPerformPrint(PAResult Result);

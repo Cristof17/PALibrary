@@ -12,9 +12,9 @@ _PAElementPerformConstruct:             ; @PAElementPerformConstruct
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAElementPerformInit           ; -- Begin function PAElementPerformInit
+	.globl	_PAElementPerformBegin          ; -- Begin function PAElementPerformBegin
 	.p2align	2
-_PAElementPerformInit:                  ; @PAElementPerformInit
+_PAElementPerformBegin:                 ; @PAElementPerformBegin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16

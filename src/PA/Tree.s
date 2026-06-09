@@ -12,9 +12,9 @@ _PATreePerformConstruct:                ; @PATreePerformConstruct
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PATreePerformInit              ; -- Begin function PATreePerformInit
+	.globl	_PATreePerformBegin             ; -- Begin function PATreePerformBegin
 	.p2align	2
-_PATreePerformInit:                     ; @PATreePerformInit
+_PATreePerformBegin:                    ; @PATreePerformBegin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #112

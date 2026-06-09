@@ -23,7 +23,7 @@ _PAPairPerformConstruct:                ; @PAPairPerformConstruct
 	ldurh	w8, [x29, #-6]
 	strh	w8, [sp]
 	ldr	x2, [sp]
-	bl	_PAPairPerformInit
+	bl	_PAPairPerformBegin
 	str	x0, [sp, #16]
 	ldr	x0, [sp, #16]
 	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
@@ -31,9 +31,9 @@ _PAPairPerformConstruct:                ; @PAPairPerformConstruct
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAPairPerformInit              ; -- Begin function PAPairPerformInit
+	.globl	_PAPairPerformBegin             ; -- Begin function PAPairPerformBegin
 	.p2align	2
-_PAPairPerformInit:                     ; @PAPairPerformInit
+_PAPairPerformBegin:                    ; @PAPairPerformBegin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32

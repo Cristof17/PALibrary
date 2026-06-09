@@ -71,9 +71,9 @@ LBB1_6:
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PASeriesPerformInit            ; -- Begin function PASeriesPerformInit
+	.globl	_PASeriesPerformBegin           ; -- Begin function PASeriesPerformBegin
 	.p2align	2
-_PASeriesPerformInit:                   ; @PASeriesPerformInit
+_PASeriesPerformBegin:                  ; @PASeriesPerformBegin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #48

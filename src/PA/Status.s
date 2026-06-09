@@ -23,7 +23,7 @@ _PAStatusPerformConstruct:              ; @PAStatusPerformConstruct
 	ldur	x8, [x29, #-8]
 	ldrb	w8, [x8]
 	mov	x1, x8
-	bl	_PAStatusPerformInit
+	bl	_PAStatusPerformBegin
 	stur	x0, [x29, #-8]
 	ldur	x0, [x29, #-8]
 	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
@@ -31,9 +31,9 @@ _PAStatusPerformConstruct:              ; @PAStatusPerformConstruct
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAStatusPerformInit            ; -- Begin function PAStatusPerformInit
+	.globl	_PAStatusPerformBegin           ; -- Begin function PAStatusPerformBegin
 	.p2align	2
-_PAStatusPerformInit:                   ; @PAStatusPerformInit
+_PAStatusPerformBegin:                  ; @PAStatusPerformBegin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32
