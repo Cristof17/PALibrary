@@ -1,8 +1,8 @@
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 15, 0	sdk_version 26, 2
-	.globl	_PADataPerformCreate            ; -- Begin function PADataPerformCreate
+	.globl	_PADataCreate                   ; -- Begin function PADataCreate
 	.p2align	2
-_PADataPerformCreate:                   ; @PADataPerformCreate
+_PADataCreate:                          ; @PADataCreate
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32
@@ -14,7 +14,7 @@ _PADataPerformCreate:                   ; @PADataPerformCreate
 	ldr	x0, [sp]
 	ldurb	w8, [x29, #-1]
 	mov	x1, x8
-	bl	_PADataPerformBegin
+	bl	_PADataCompleteBegin
 	str	x0, [sp]
 	ldr	x0, [sp]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
@@ -22,9 +22,9 @@ _PADataPerformCreate:                   ; @PADataPerformCreate
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PADataPerformBegin             ; -- Begin function PADataPerformBegin
+	.globl	_PADatCompleteBegin             ; -- Begin function PADatCompleteBegin
 	.p2align	2
-_PADataPerformBegin:                    ; @PADataPerformBegin
+_PADatCompleteBegin:                    ; @PADatCompleteBegin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32
@@ -37,9 +37,9 @@ _PADataPerformBegin:                    ; @PADataPerformBegin
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PADataPerformCopy              ; -- Begin function PADataPerformCopy
+	.globl	_PADataCopy                     ; -- Begin function PADataCopy
 	.p2align	2
-_PADataPerformCopy:                     ; @PADataPerformCopy
+_PADataCopy:                            ; @PADataCopy
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32
@@ -51,9 +51,9 @@ _PADataPerformCopy:                     ; @PADataPerformCopy
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PADataPerformFinish            ; -- Begin function PADataPerformFinish
+	.globl	_PADataFinish                   ; -- Begin function PADataFinish
 	.p2align	2
-_PADataPerformFinish:                   ; @PADataPerformFinish
+_PADataFinish:                          ; @PADataFinish
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16
@@ -64,9 +64,9 @@ _PADataPerformFinish:                   ; @PADataPerformFinish
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PADataPerformDelete            ; -- Begin function PADataPerformDelete
+	.globl	_PADataDelete                   ; -- Begin function PADataDelete
 	.p2align	2
-_PADataPerformDelete:                   ; @PADataPerformDelete
+_PADataDelete:                          ; @PADataDelete
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16

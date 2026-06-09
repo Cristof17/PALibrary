@@ -386,11 +386,11 @@ struct Facade {
 
 
 
-          struct PANormalTree* PANormalTreePerformCreate();
-          struct PANormalTree* PANormalTreePerformBegin(struct PANormalTree*, struct PATree);
-          struct PANormalTree* PANormalTreePerformCopy(struct PANormalTree*);
-          int PANormalTreePerformFinish(struct PANormalTree*);
-          int PANormalTreePerformDelete(struct PANormalTree*);
+          struct PANormalTree* PANormalTreeCreate();
+          struct PANormalTree* PANormalTreeCompleteBegin(struct PANormalTree*, struct PATree);
+          struct PANormalTree* PANormalTreeCopy(struct PANormalTree*);
+          int PANormalTreeFinish(struct PANormalTree*);
+          int PANormalTreeDelete(struct PANormalTree*);
 
           struct PANormalTree* PAGrafNormalBuildPart();
 
@@ -398,24 +398,24 @@ struct Facade {
 # 6 "src/PA/NormalTree.c" 2
 # 1 "./include/PA/Tree.h" 1
 # 12 "./include/PA/Tree.h"
-          struct PATree* PATreePerformCreate();
-          struct PATree* PATreePerformCopy(struct PATree* from, struct PATree* to);
+          struct PATree* PATreeCreate();
+          struct PATree* PATreeCopy(struct PATree* from, struct PATree* to);
 
-          struct PATree* PATreePerformBegin(struct PATree*, struct PACount, struct PACount, struct PAList, struct PAElement);
-
-
+          struct PATree* PATreeCompleteBegin(struct PATree*, struct PACount, struct PACount, struct PAList, struct PAElement);
 
 
 
-          int PATreePerformFinish(struct PATree*);
-          int PATreePerformDelete(struct PATree*);
+
+
+          int PATreeFinish(struct PATree*);
+          int PATreeDelete(struct PATree*);
 # 7 "src/PA/NormalTree.c" 2
 
 
 
 
 
-          struct PANormalTree* PANormalTreePerformCreate()
+          struct PANormalTree* PANormalTreeCreate()
 {
     struct PANormalTree normalTree;
 
@@ -431,7 +431,7 @@ struct Facade {
 
 
 }
-          struct PANormalTree* PANormalTreePerformBegin(struct PANormalTree* NormalTree, struct PATree Value)
+          struct PANormalTree* PANormalTreeBegin(struct PANormalTree* NormalTree, struct PATree Value)
 {
     struct PANormalTree normalTree;
     struct PANormalTree *normalTreePointer;
@@ -443,19 +443,19 @@ struct Facade {
     return normalTreePointer;
 }
 # 48 "src/PA/NormalTree.c"
-          int PANormalTreePerformFinish(struct PANormalTree* PA)
+          int PANormalTreeFinish(struct PANormalTree* PA)
 {
     int returnCode;
-    returnCode = PATreePerformFinish(&PA->tree);
+    returnCode = PATreeFinish(&PA->tree);
     return returnCode;
 
 
 
 }
-          int PANormalTreePerformDelete(struct PANormalTree* PA)
+          int PANormalTreeDelete(struct PANormalTree* PA)
 {
     int returnCode;
-    returnCode = PATreePerformDelete(&PA->tree);
+    returnCode = PATreeDelete(&PA->tree);
     return returnCode;
 
 

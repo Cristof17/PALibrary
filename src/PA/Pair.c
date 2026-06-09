@@ -10,16 +10,17 @@
 #include <PA\Element.h>
 #endif
 
-DllExport struct PAPair* PAPairCreate()
+DllExport struct PAPair PAPairCreate()
 {
     struct PAPair pair;
-    struct PAPair* pairPointer;
+    // struct PAPair* pairPointer;
     // pairPointer->Node = PAElementPerformConstruct();
     // pairPointer->Neigh = PAElementPerformConstruct();
-    pair = *pairPointer;
-    pairPointer = PAPairPerformBegin(pairPointer,pair.Node, pair.Neigh);
+    // pair = *pairPointer;
+    pairPointer = PAPairBegin(pairPointer,pair.Node, pair.Neigh);
     // pair.Node = PAElementPerformCopy(from)
-    return pairPointer;
+    // return pairPointer;
+    return pair;
 	// PAResult result;
 	// return result;
     //struct PAPair pair;
@@ -28,14 +29,14 @@ DllExport struct PAPair* PAPairCreate()
     //return pair;
 }
 // struct PAPair PAPairRuin(struct PAPair Pair) {
-DllExport struct PAPair* PAPairCompleteBegin(struct PAPair* Pair, struct PAElement Value, struct PAElement Value2)
+DllExport struct PAPair PAPairBegin(struct PAPair Pair, struct PAElement Value, struct PAElement Value2)
 {
     struct PAPair temp;
-    struct PAPair *pairPointer;
-    Pair->Node.index = Value.index;
-    Pair->Node.status = Value.status;
-    Pair->Neigh.index = Value2.index;
-    Pair->Neigh.status = Value2.status;
+    // struct PAPair *pairPointer;
+    // Pair->Node.index = Value.index;
+    // Pair->Node.status = Value.status;
+    // Pair->Neigh.index = Value2.index;
+    // Pair->Neigh.status = Value2.status;
     //  = PAElementPerformConstruct();
     // Pair->Neigh = PAElementPerformConstruct();
     // Pair = pair;
@@ -43,7 +44,8 @@ DllExport struct PAPair* PAPairCompleteBegin(struct PAPair* Pair, struct PAEleme
     // Pair.Node = Value;
     // Pair.Neigh = Value2;
     // struct PAPair pair;
-    return pairPointer;
+    // return pairPointer;
+    return temp;
 	// PAResult result;
 	// return result;
     //struct PAPair pair;
@@ -114,13 +116,13 @@ DllExport int PAPairFinish(struct PAPair* PA)
 	// PAResult result;
 	// return result;
 }
-DllExport int PAPairPerformDelete(struct PAPair* PA)
+DllExport int PAPairDelete(struct PAPair* PA)
 {
     int returnCode1;
     int returnCode2;
     int returnCode;
-    returnCode1 = PAElementPerformDelete(&PA->Node);
-    returnCode2 = PAElementPerformDelete(&PA->Neigh);
+    returnCode1 = PAElementDelete(&PA->Node);
+    returnCode2 = PAElementDelete(&PA->Neigh);
     returnCode = returnCode1 & returnCode2;
     return returnCode;
     // PAResult result;

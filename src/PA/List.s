@@ -1,8 +1,8 @@
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 15, 0	sdk_version 26, 2
-	.globl	_PAListPerformCreate            ; -- Begin function PAListPerformCreate
+	.globl	_PAListCreate                   ; -- Begin function PAListCreate
 	.p2align	2
-_PAListPerformCreate:                   ; @PAListPerformCreate
+_PAListCreate:                          ; @PAListCreate
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16
@@ -12,9 +12,9 @@ _PAListPerformCreate:                   ; @PAListPerformCreate
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAListPerformCopy              ; -- Begin function PAListPerformCopy
+	.globl	_PAListCopy                     ; -- Begin function PAListCopy
 	.p2align	2
-_PAListPerformCopy:                     ; @PAListPerformCopy
+_PAListCopy:                            ; @PAListCopy
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #48
@@ -60,9 +60,9 @@ LBB1_6:
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAListPerformBegin             ; -- Begin function PAListPerformBegin
+	.globl	_PAListCompleteBegin            ; -- Begin function PAListCompleteBegin
 	.p2align	2
-_PAListPerformBegin:                    ; @PAListPerformBegin
+_PAListCompleteBegin:                   ; @PAListCompleteBegin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #48
@@ -101,9 +101,9 @@ LBB2_3:
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAListPerformFinish            ; -- Begin function PAListPerformFinish
+	.globl	_PAListFinish                   ; -- Begin function PAListFinish
 	.p2align	2
-_PAListPerformFinish:                   ; @PAListPerformFinish
+_PAListFinish:                          ; @PAListFinish
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #48
@@ -114,7 +114,7 @@ _PAListPerformFinish:                   ; @PAListPerformFinish
 	.cfi_offset w29, -16
 	stur	x0, [x29, #-8]
 	ldur	x0, [x29, #-8]
-	bl	_PACountPerformFinish
+	bl	_PACountFinish
 	stur	w0, [x29, #-12]
 	ldur	w8, [x29, #-12]
 	ldr	w9, [sp, #16]
@@ -134,9 +134,9 @@ _Dispose:                               ; @Dispose
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAListPerformDelete            ; -- Begin function PAListPerformDelete
+	.globl	_PAListDelete                   ; -- Begin function PAListDelete
 	.p2align	2
-_PAListPerformDelete:                   ; @PAListPerformDelete
+_PAListDelete:                          ; @PAListDelete
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32

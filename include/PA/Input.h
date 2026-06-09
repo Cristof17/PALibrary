@@ -7,9 +7,9 @@
 // #include <typee
 
 // struct PAInput;
-DllExport struct PAInput* PAInputCreate();
+DllExport struct PAInput PAInputCreate();
 // DllExport struct PAInput PAInputPerformCopy(struct PAInput);
-DllExport struct PAInput* PAInputCompleteBegin(struct PAInput* PAInput, struct PACount, struct PACount, struct PAElement);
+DllExport struct PAInput PAInputBegin(struct PAInput PAInput, struct PACount, struct PACount, struct PAElement);
 // vpo BFSInputRuin();
 // struct PAInput PAInputPerformConstruct(struct PACount, struct PACount, struct PAList, struct PAElement)l
 // struct 

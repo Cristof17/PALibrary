@@ -380,25 +380,26 @@ struct Facade {
 };
 # 4 "./include/PA/Number.h" 2
 
-          struct PANumber* PANumberPerformCreate();
-          struct PANumber* PANumberPerformBegin(struct PANumber* Number, unsigned char Value);
-          int PANumberPerformDelete(struct PANumber*);
-          int PANumberPerformFinish(struct PANumber*);
+          struct PANumber* PANumberCreate();
+          struct PANumber* PANumberCompleteBegin(struct PANumber* Number, unsigned char Value);
+          int PANumberDelete(struct PANumber*);
+          int PANumberFinish(struct PANumber*);
           struct PANumber* PANumberPerformCopy(struct PANumber* from, struct PANumber* to);
 # 3 "src/PA/Number.c" 2
 
 
 
-          struct PANumber* PANumberPerformCreate()
+          struct PANumber PANumberCreate()
 {
     struct PANumber number;
     struct PANumber* numberPointer;
 
 
 
-    return numberPointer;
+
+    return number;
 }
-          struct PANumber* PANumberPerformBegin(struct PANumber* Number, unsigned char Value)
+          struct PANumber PANumberBegin(struct PANumber Number, unsigned char Value)
 {
     struct PANumber temp;
     struct PANumber* numberPointer;
@@ -409,9 +410,10 @@ struct Facade {
 
 
 
-    return numberPointer;
+
+    return temp;
 }
-          int PANumberPerformDelete(struct PANumber* PA)
+          int PANumberDelete(struct PANumber* PA)
 {
     int returnCode;
 
@@ -421,7 +423,7 @@ struct Facade {
 
 
 }
-          int PANumberPerformFinish(struct PANumber* PA)
+          int PANumberFinish(struct PANumber* PA)
 {
     int returnCode;
     returnCode = ((int)0);
@@ -434,16 +436,8 @@ struct Facade {
 
 
 }
-          struct PANumber* PANumberPerformCopy(struct PANumber* from, struct PANumber* to)
+          struct PANumber PANumberCopy(struct PANumber from, struct PANumber to)
 {
-
-    char num = from->val;
-    to->val = num;
-
-
-
-
-
-
+# 64 "src/PA/Number.c"
     return to;
 }

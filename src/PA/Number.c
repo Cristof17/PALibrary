@@ -3,16 +3,17 @@
 #elif defined _WIN95
 #include <PA\Number.h>
 #endif
-DllExport struct PANumber* PANumberCreate()
+DllExport struct PANumber PANumberCreate()
 {
     struct PANumber number;
     struct PANumber* numberPointer;
     // number = PANumberPerformInit(number,NULL_CHAR);
     // unsigned char random;
     // number.val =  random;
-    return numberPointer;
+    // return numberPointer;
+    return number;
 }
-DllExport struct PANumber* PANumberCompleteBegin(struct PANumber* Number, unsigned char Value)
+DllExport struct PANumber PANumberBegin(struct PANumber Number, unsigned char Value)
 {
     struct PANumber temp;
     struct PANumber* numberPointer;
@@ -23,9 +24,10 @@ DllExport struct PANumber* PANumberCompleteBegin(struct PANumber* Number, unsign
     // temp = Number;
     // struct PANumber number;
     // Number.val = Value;
-    return numberPointer;
+    // return numberPointer;
+    return temp;
 }
-DllExport int PANumberPerformDelete(struct PANumber* PA)
+DllExport int PANumberDelete(struct PANumber* PA)
 {
     int returnCode;
     // returnCode = PA-
@@ -35,7 +37,7 @@ DllExport int PANumberPerformDelete(struct PANumber* PA)
     // struct PANumber number;
     // return PA;
 }
-DllExport int PANumberPerformFinish(struct PANumber* PA)
+DllExport int PANumberFinish(struct PANumber* PA)
 {
     int returnCode;
     returnCode = PARESULT_SUCCESS;
@@ -48,11 +50,11 @@ DllExport int PANumberPerformFinish(struct PANumber* PA)
     // struct PANumber number;
     // return number;
 }
-DllExport struct PANumber* PANumberPerformCopy(struct PANumber* from, struct PANumber* to)
+DllExport struct PANumber PANumberCopy(struct PANumber from, struct PANumber to)
 {
     // struct PANumber temp;
-    char num = from->val;
-    to->val = num;  
+    // char num = from->val;
+    // to->val = num;  
     // = num;
     // to.val = num;
     // to.val = from.val;

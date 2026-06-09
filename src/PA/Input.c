@@ -14,7 +14,7 @@
 #include <PA\Element.h>
 #endif
 
-DllExport struct PAInput* PAInputCreate()
+DllExport struct PAInput PAInputCreate()
 {
 	struct PAInput temp;
 	struct PAInput* inputPointer;
@@ -29,8 +29,8 @@ DllExport struct PAInput* PAInputCreate()
 	m = inputPointer->m;
 	element = inputPointer->source;
 	// list = inputPointer.
-	inputPointer = PAInputCompleteBegin(inputPointer,n,m,element);
-	return inputPointer;
+	// inputPointer = PAInputBegin(inputPointer,n,m,element);
+	// return inputPointer;
 	// PAResult result ;
 	// return result;
 }
@@ -45,7 +45,7 @@ DllExport struct PAInput* PAInputCreate()
 // //	copy.source=Input.source;
 // 	return copy;
 // }
-DllExport struct PAInput* PAInputPerformBegin(struct PAInput* Input, struct PACount Value, struct PACount Value2, struct PAElement Value3)
+DllExport struct PAInput PAInputBegin(struct PAInput Input, struct PACount Value, struct PACount Value2, struct PAElement Value3)
 {
 	struct PAInput temp;
 	struct PAInput* inputPointer;
@@ -68,14 +68,15 @@ DllExport struct PAInput* PAInputPerformBegin(struct PAInput* Input, struct PACo
 	// input.m=M;
 	// input.adj=ADJ;
 	// input.source = Source;
-	return inputPointer;
+	// return inputPointer;
+	return Input;
 }
-DllExport int PAInputPerformFinish(struct PAInput* PA) {
+DllExport int PAInputFinish(struct PAInput* PA) {
 	// PAResult result;
 	// struct PAInput Empty;
-	PACountPerformFinish(&PA->n);
-	PACountPerformFinish(&PA->m);
-	PAElementPerformFinish(&PA->source);
+	PACountFinish(&PA->n);
+	PACountFinish(&PA->m);
+	PAElementFinish(&PA->source);
 	int returnCode;
 	returnCode = PARESULT_SUCCESS;
 	// return PA;
@@ -83,7 +84,7 @@ DllExport int PAInputPerformFinish(struct PAInput* PA) {
 	// return result;
 	return returnCode;
 }
-DllExport struct PAInput* PAInputPerformDelete(struct PAInput* Input)
+DllExport struct PAInput* PAInputDelete(struct PAInput* Input)
 {
 	return Input;
 	// struct PAInput Empty;

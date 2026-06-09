@@ -30,7 +30,7 @@ struct PAElement* PAElementCreate()
   //  return element;
   return temp;
 }
-DllExport struct PAElement* PAElementCompleteBegin(struct PAElement* Element, struct PAData Value, struct PAStatus Value2)
+DllExport struct PAElement* PAElementBegin(struct PAElement* Element, struct PAData Value, struct PAStatus Value2)
 {
     // Element.index = Value;
     // Element.status = Value2;
@@ -62,7 +62,7 @@ DllExport void PAElementReset(struct PAElement* Element)
     // Element.status.visited.value.val = FALSE;
     return;
 }
-DllExport struct PAElement* PAElementPerformCopy(struct PAElement* from, struct PAElement* to)
+DllExport struct PAElement* PAElementCopy(struct PAElement* from, struct PAElement* to)
 {
     struct PAElement temp;
     // temp.index = PADataPerformCopy(from.index, to.index);
@@ -83,7 +83,7 @@ DllExport struct PAElement* PAElementPerformCopy(struct PAElement* from, struct 
 //	copy.type=Element.type;
 	//return ;
 // }
-DllExport int PAElementPerformFinish(struct PAElement* PA)
+DllExport int PAElementFinish(struct PAElement* PA)
 {
     // PA.index = PADataPerformRuin(PA.index);
     // PA.status = PAStatusPerformRuin(PA.status);
@@ -139,7 +139,7 @@ DllExport int PAElementPerformFinish(struct PAElement* PA)
     // return element;
   //  return Element;
 // }
-DllExport int PAElementPerformDelete(struct PAElement* PA)
+DllExport int PAElementDelete(struct PAElement* PA)
 {
     // PAResult result;
     // return result;    return PA;

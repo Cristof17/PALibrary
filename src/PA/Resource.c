@@ -7,37 +7,40 @@
 #include <PA\Number.h>
 #endif
 
-DllExport struct PAResource* PAResourceCreate()
+DllExport struct PAResource PAResourceCreate()
 {
     struct PAResource resource;
     // struct PAResourfec
-    struct PAResource* resourcePointer;
+    // struct PAResource* resourcePointer;
     // resource = PAResourcePerformC
     // resource.value = PANumberPerformConstruct();
     // resource = PAResourcePerformInit(Data,resource.value)
     // resource = PAResourcePerformInit(resource,resource.value);
     // retun 
-    return resourcePointer;
+    // return resourcePointer;
+    return resource;
     // return resource;
 }
-DllExport struct PAResource* PAResourceCompleteBegin(struct PAResource* Resource, struct PANumber Value)
-{
+DllExport struct PAResource PAResourceBegin(struct PAResource Resource, struct PANumber Value)
+{ 
     struct PAResource resource;
     struct PAResource* resourcePointer;
     // resource.value = PANumberPerformConstruct();
     // resource.value = PANumberPerformInit(resource.value,NULL_CHAR);
     // Resource = resource;
     // return resourcePoiinte
-    return resourcePointer;
+    // return resourcePointer;
+    return resource;
     // return Resource;
 }
-DllExport struct PAResource* PAResourceCopy(struct PAResource* from, struct PAResource* to)
+DllExport struct PAResource PAResourceCopy(struct PAResource from, struct PAResource to)
 {
     struct PAResource temp;
-    struct PAResource* resourcePointer;
+    // struct PAResource* resourcePointer;
     // temp.value = PANumberPerformCopy(from.value, temp.value);
     // to.value = temp.value;
-    return resourcePointer;
+    // return resourcePointer;
+    return temp;
     // return to;
 }
 DllExport int PAResourceFinish(struct PAResource* PA)
@@ -49,7 +52,7 @@ DllExport int PAResourceFinish(struct PAResource* PA)
     return returnCode;
     // return PA;
 }
-DllExport struct PAResource* PAResourceDelete(struct PAResource* Resource)
+DllExport struct PAResource PAResourceDelete(struct PAResource Resource)
 {
     return Resource;
 }

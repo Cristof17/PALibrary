@@ -376,46 +376,46 @@ struct Facade {
 
 # 1 "./include/PA/Series.h" 1
 # 17 "./include/PA/Series.h"
-          struct PASeries* PASeriesPerformCreate();
-          struct PASeries* PASeriesPerformBegin(struct PASeries*, struct PACount, struct PAElement[]);
-          struct PASeries* PASeriesPerformDelete(struct PASeries*);
-          struct PASeries* PASeriesPerformCopy(struct PASeries*, struct PASeries*);
+          struct PASeries* PASeriesCreate();
+          struct PASeries* PASeriesCompleteBegin(struct PASeries*, struct PACount, struct PAElement[]);
+          struct PASeries* PASeriesDelete(struct PASeries*);
+          struct PASeries* PASeriesCopy(struct PASeries*, struct PASeries*);
 
-          int PASeriesPerformFinish(struct PASeries*);
+          int PASeriesFinish(struct PASeries*);
           struct PAResource* PASeriesGet(struct PAData* Data);
-          void PASeriesPerformPrint(struct PASeries* Series);
+          void PASeriesPrint(struct PASeries* Series);
 # 8 "src/PA/Series.c" 2
 # 1 "./include/PA/Count.h" 1
 # 13 "./include/PA/Count.h"
-          struct PACount* PACountPerformCreate();
-          struct PACount* PACountPerformBegin(struct PACount* Count, struct PANumber Number);
-          struct PACount* PACountPerformCopy(struct PACount* from, struct PACount* to);
+          struct PACount* PACountCreate();
+          struct PACount* PACountCompleteBegin(struct PACount* Count, struct PANumber Number);
+          struct PACount* PACountCopy(struct PACount* from, struct PACount* to);
 
 
 
-          int PACountPerformFinish(struct PACount*);
+          int PACountFinish(struct PACount*);
 
 
-          struct PACount* PACountPerformDelete(struct PACount* PA);
+          struct PACount* PACountDelete(struct PACount* PA);
 # 9 "src/PA/Series.c" 2
 # 1 "./include/PA/Element.h" 1
 # 10 "./include/PA/Element.h"
           void PAElementVisit(struct PAElement*);
           PABool PAElementIsVisited(struct PAElement*);
           void PAElementReset(struct PAElement*);
-          struct PAElement* PAElementPerformCreate();
+          struct PAElement* PAElementCreate();
 
-          struct PAElement* PAElementPerformBegin(struct PAElement*,struct PAData,struct PAStatus);
-
-
+          struct PAElement* PAElementCompleteBegin(struct PAElement*,struct PAData,struct PAStatus);
 
 
-          int PAElementPerformFinish(struct PAElement*);
-          int PAElementPerformDelete(struct PAElement*);
-          struct PAElement* PAElementPerformCopy(struct PAElement*, struct PAElement*);
+
+
+          int PAElementFinish(struct PAElement*);
+          int PAElementDelete(struct PAElement*);
+          struct PAElement* PAElementCopy(struct PAElement*, struct PAElement*);
 # 10 "src/PA/Series.c" 2
 # 21 "src/PA/Series.c"
-          struct PASeries* PASeriesPerformCreate()
+          struct PASeries* PASeriesCreate()
 {
     struct PASeries* series;
 
@@ -431,7 +431,7 @@ struct Facade {
 # 46 "src/PA/Series.c"
     return series;
 }
-          struct PASeries* PASeriesPerformCopy(struct PASeries* from, struct PASeries* to)
+          struct PASeries* PASeriesCopy(struct PASeries* from, struct PASeries* to)
 {
     struct PACount x;
     struct PACount y;
@@ -469,7 +469,7 @@ struct Facade {
     return to;
 }
 # 99 "src/PA/Series.c"
-          struct PASeries* PASeriesPerformBegin(struct PASeries* Series,
+          struct PASeries* PASeriesBegin(struct PASeries* Series,
     struct PACount Value, struct PAElement Value2[])
     {
 # 113 "src/PA/Series.c"
@@ -488,7 +488,7 @@ struct Facade {
 
 
     }
-              struct PASeries* PASeriesPerformDelete(struct PASeries* PA)
+              struct PASeries* PASeriesDelete(struct PASeries* PA)
     {
         struct PANumber x;
         struct PANumber y;
@@ -504,7 +504,7 @@ struct Facade {
 
     }
 # 152 "src/PA/Series.c"
-              int PASeriesPerformFinish(struct PASeries* PA)
+              int PASeriesFinish(struct PASeries* PA)
     {
 
         int returnCode;
@@ -528,7 +528,7 @@ struct PAResource* PASeriesGet(struct PAData* Data)
     return resource;
 }
 # 231 "src/PA/Series.c"
-void PASeriesPerformPrint(struct PASeries* Series)
+void PASeriesPrint(struct PASeries* Series)
 {
 
 }

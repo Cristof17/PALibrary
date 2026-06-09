@@ -1,8 +1,8 @@
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 15, 0	sdk_version 26, 2
-	.globl	_PALinkPerformCreate            ; -- Begin function PALinkPerformCreate
+	.globl	_PALinkCreate                   ; -- Begin function PALinkCreate
 	.p2align	2
-_PALinkPerformCreate:                   ; @PALinkPerformCreate
+_PALinkCreate:                          ; @PALinkCreate
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16
@@ -12,9 +12,9 @@ _PALinkPerformCreate:                   ; @PALinkPerformCreate
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PALinkPerformBegin             ; -- Begin function PALinkPerformBegin
+	.globl	_PALinkCompleteBegin            ; -- Begin function PALinkCompleteBegin
 	.p2align	2
-_PALinkPerformBegin:                    ; @PALinkPerformBegin
+_PALinkCompleteBegin:                   ; @PALinkCompleteBegin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32
@@ -30,9 +30,9 @@ _PALinkPerformBegin:                    ; @PALinkPerformBegin
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PALinkPerformFinish            ; -- Begin function PALinkPerformFinish
+	.globl	_PALinkFinish                   ; -- Begin function PALinkFinish
 	.p2align	2
-_PALinkPerformFinish:                   ; @PALinkPerformFinish
+_PALinkFinish:                          ; @PALinkFinish
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16
@@ -43,9 +43,9 @@ _PALinkPerformFinish:                   ; @PALinkPerformFinish
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PALinkPerformCopy              ; -- Begin function PALinkPerformCopy
+	.globl	_PALinkCopy                     ; -- Begin function PALinkCopy
 	.p2align	2
-_PALinkPerformCopy:                     ; @PALinkPerformCopy
+_PALinkCopy:                            ; @PALinkCopy
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32
@@ -57,9 +57,9 @@ _PALinkPerformCopy:                     ; @PALinkPerformCopy
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PALinkPerformDelete            ; -- Begin function PALinkPerformDelete
+	.globl	_PALinkDelete                   ; -- Begin function PALinkDelete
 	.p2align	2
-_PALinkPerformDelete:                   ; @PALinkPerformDelete
+_PALinkDelete:                          ; @PALinkDelete
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16

@@ -98,11 +98,11 @@ DllExport struct PATree* PATreeCopy(struct PATree* from, struct PATree* to)
     struct PATree temp;
     temp.n = from->n;
     temp.m = from->m;
-    PAListPerformCopy(&from->adj, &temp.adj);
+    PAListCopy(&from->adj, &temp.adj);
     temp.source = from->source;
     to->n = temp.n;
     to->m = temp.m;
-    PAListPerformCopy(&temp.adj, &to->adj);
+    PAListCopy(&temp.adj, &to->adj);
     to->source = temp.source;
     // temp.n = PACountPerformCopy(from.n,temp.n);
     // temp.m = PACountPerformCopy(from.m,temp.m);

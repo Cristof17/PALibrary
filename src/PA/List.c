@@ -16,9 +16,9 @@
 #endif
 
 // struct PAList PAListConstruct(struct PAElement Element) {
-DllExport struct PAList* PAListCreate()
+DllExport struct PAList PAListCreate()
 {
-    struct PAList* list;
+    struct PAList list;
     // struct PACount n = PACountPerformConstruct();
     // struct PACount x;
     // list->n = PACountPerformConstruct();
@@ -41,7 +41,7 @@ DllExport struct PAList* PAListCreate()
     // list.adj = PASeriesPerformConstruct();
     // return list;
 }
-DllExport struct PAList* PAListCopy(struct PAList* from, struct PAList* to)
+DllExport struct PAList PAListCopy(struct PAList from, struct PAList to)
 {
     struct PAList temp;
     // temp.n = PACountPerformCopy(from.n,temp.n);
@@ -83,7 +83,7 @@ DllExport struct PAList* PAListCopy(struct PAList* from, struct PAList* to)
     return to;
 }
 
-DllExport struct PAList* PAListCompleteBegin(struct PAList* List, struct PACount Value, struct PASeries Value2[])
+DllExport struct PAList PAListBegin(struct PAList List, struct PACount Value, struct PASeries Value2[])
 {
     struct PAList list;
     list.n = Value;
@@ -187,7 +187,7 @@ void Dispose()
 //     struct PAList list;
 //     return list;
 // }
-DllExport struct PAList* PAListPerformDelete(struct PAList* PA)
+DllExport struct PAList PAListDelete(struct PAList* PA)
 {
     // struct PACount n = PA.n;
     struct PACount* countPointer;

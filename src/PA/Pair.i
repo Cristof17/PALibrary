@@ -388,46 +388,47 @@ struct Facade {
 
 
 
-          struct PAPair* PAPairPerformCreate();
-          struct PAPair* PAPairPerformBegin(struct PAPair*, struct PAElement, struct PAElement);
-          struct PAPair* PAPairPerformCopy(struct PAPair* from, struct PAPair* to);
+          struct PAPair* PAPairCreate();
+          struct PAPair* PAPairCompleteBegin(struct PAPair*, struct PAElement, struct PAElement);
+          struct PAPair* PAPairCopy(struct PAPair* from, struct PAPair* to);
 
 
 
-          int PAPairPerformFinish(struct PAPair*);
-          int PAPairPerformDelete(struct PAPair*);
+          int PAPairFinish(struct PAPair*);
+          int PAPairDelete(struct PAPair*);
 # 7 "src/PA/Pair.c" 2
 # 1 "./include/PA/Element.h" 1
 # 10 "./include/PA/Element.h"
           void PAElementVisit(struct PAElement*);
           PABool PAElementIsVisited(struct PAElement*);
           void PAElementReset(struct PAElement*);
-          struct PAElement* PAElementPerformCreate();
+          struct PAElement* PAElementCreate();
 
-          struct PAElement* PAElementPerformBegin(struct PAElement*,struct PAData,struct PAStatus);
-
-
+          struct PAElement* PAElementCompleteBegin(struct PAElement*,struct PAData,struct PAStatus);
 
 
-          int PAElementPerformFinish(struct PAElement*);
-          int PAElementPerformDelete(struct PAElement*);
-          struct PAElement* PAElementPerformCopy(struct PAElement*, struct PAElement*);
+
+
+          int PAElementFinish(struct PAElement*);
+          int PAElementDelete(struct PAElement*);
+          struct PAElement* PAElementCopy(struct PAElement*, struct PAElement*);
 # 8 "src/PA/Pair.c" 2
 
 
 
 
 
-          struct PAPair* PAPairPerformCreate()
+          struct PAPair PAPairCreate()
 {
     struct PAPair pair;
-    struct PAPair* pairPointer;
 
 
-    pair = *pairPointer;
-    pairPointer = PAPairPerformBegin(pairPointer,pair.Node, pair.Neigh);
 
-    return pairPointer;
+
+    pairPointer = PAPairBegin(pairPointer,pair.Node, pair.Neigh);
+
+
+    return pair;
 
 
 
@@ -436,25 +437,14 @@ struct Facade {
 
 }
 
-          struct PAPair* PAPairPerformBegin(struct PAPair* Pair, struct PAElement Value, struct PAElement Value2)
+          struct PAPair PAPairBegin(struct PAPair Pair, struct PAElement Value, struct PAElement Value2)
 {
     struct PAPair temp;
-    struct PAPair *pairPointer;
-    Pair->Node.index = Value.index;
-    Pair->Node.status = Value.status;
-    Pair->Neigh.index = Value2.index;
-    Pair->Neigh.status = Value2.status;
-
-
-
-
-
-
-
-    return pairPointer;
-# 59 "src/PA/Pair.c"
+# 48 "src/PA/Pair.c"
+    return temp;
+# 61 "src/PA/Pair.c"
 }
-struct PAPair* PAPairPerformCopy(struct PAPair* from, struct PAPair* to)
+struct PAPair* PAPairCopy(struct PAPair* from, struct PAPair* to)
 {
     struct PAPair temp;
     struct PAElement node;
@@ -468,14 +458,14 @@ struct PAPair* PAPairPerformCopy(struct PAPair* from, struct PAPair* to)
 
     return to;
 }
-# 102 "src/PA/Pair.c"
-          int PAPairPerformFinish(struct PAPair* PA)
+# 104 "src/PA/Pair.c"
+          int PAPairFinish(struct PAPair* PA)
 {
     int returnCode1;
     int returnCode2;
     int returnCode;
-    returnCode1 = PAElementPerformFinish(&PA->Node);
-    returnCode2 = PAElementPerformFinish(&PA->Neigh);
+    returnCode1 = PAElementFinish(&PA->Node);
+    returnCode2 = PAElementFinish(&PA->Neigh);
     returnCode = returnCode1 & returnCode2;
     return returnCode;
 
@@ -484,13 +474,13 @@ struct PAPair* PAPairPerformCopy(struct PAPair* from, struct PAPair* to)
 
 
 }
-          int PAPairPerformDelete(struct PAPair* PA)
+          int PAPairDelete(struct PAPair* PA)
 {
     int returnCode1;
     int returnCode2;
     int returnCode;
-    returnCode1 = PAElementPerformDelete(&PA->Node);
-    returnCode2 = PAElementPerformDelete(&PA->Neigh);
+    returnCode1 = PAElementDelete(&PA->Node);
+    returnCode2 = PAElementDelete(&PA->Neigh);
     returnCode = returnCode1 & returnCode2;
     return returnCode;
 

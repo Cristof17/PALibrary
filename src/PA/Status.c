@@ -13,41 +13,43 @@ DllExport void PAStatusCause(PABool visited)
 {
 
 }
-DllExport struct PAStatus* PAStatusCreate()
+DllExport struct PAStatus PAStatusCreate()
 {
-    struct PAStatus* status;
+    struct PAStatus status;
     struct PAResource resource;
-    struct PAResource* resourcePointer;
-    resourcePointer = PAResourcePerformCreate();
-    resource = *(resourcePointer);
-    status->visited = resource;
+    // struct PAResource* resourcePointer;
+    // resourcePointer = PAResourceCreate();
+    // resource = *(resourcePointer);
+    // status->visited = resource;
     // status.visited = PAResourcePerformConstruct();
-    status = PAStatusPerformBegin(status,status->visited);
+    // status = PAStatusBegin(status,status->visited);
+    // return status;
     return status;
 }
-DllExport struct PAStatus* PAStatusCompleteBegin(struct PAStatus* Status, struct PAResource Value)
+DllExport struct PAStatus PAStatusBegin(struct PAStatus Status, struct PAResource Value)
 {
     struct PAStatus temp;
     struct PAStatus* statusPointer;
     statusPointer->visited = Value;
-    return statusPointer;
+    // return statusPointer;
+    return temp;
     // Status.visited = Value;
     // return Status;
 }
-DllExport struct PAStatus* PAStatusCopy(struct PAStatus* from, struct PAStatus* to)
+DllExport struct PAStatus PAStatusCopy(struct PAStatus from, struct PAStatus to)
 {
     struct PAStatus temp;
-    temp.visited = from->visited;
-    to->visited = temp.visited;
+    // temp.visited = from->visited;
+    // to->visited = temp.visited;
     return to;
     // temp.visited = PAResourcePerformCopy(from.visited, to.visited);
     // to.visited = temp.visited;
     // return to;
 }
-DllExport int PAStatusPerformDelete(struct PAStatus* PA)
+DllExport int PAStatusDelete(struct PAStatus* PA)
 {
     int returnCode;
-    PAResourcePerformDelete(&PA->visited);
+    PAResourceDelete(&PA->visited);
     // PA.visited.value.val = FALSE;
     return returnCode;
     // return PA;
@@ -59,7 +61,7 @@ DllExport int PAStatusFinish(struct PAStatus* PA)
     // int rest;
     // int returncode
     int returnCode;
-    PAResourcePerformFinish(&PA->visited);
+    PAResourceFinish(&PA->visited);
     // return Empty;
     // return PA;
     // return resultCode;

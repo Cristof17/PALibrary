@@ -386,25 +386,25 @@ struct Facade {
           void PAElementVisit(struct PAElement*);
           PABool PAElementIsVisited(struct PAElement*);
           void PAElementReset(struct PAElement*);
-          struct PAElement* PAElementPerformCreate();
+          struct PAElement* PAElementCreate();
 
-          struct PAElement* PAElementPerformBegin(struct PAElement*,struct PAData,struct PAStatus);
-
-
+          struct PAElement* PAElementCompleteBegin(struct PAElement*,struct PAData,struct PAStatus);
 
 
-          int PAElementPerformFinish(struct PAElement*);
-          int PAElementPerformDelete(struct PAElement*);
-          struct PAElement* PAElementPerformCopy(struct PAElement*, struct PAElement*);
+
+
+          int PAElementFinish(struct PAElement*);
+          int PAElementDelete(struct PAElement*);
+          struct PAElement* PAElementCopy(struct PAElement*, struct PAElement*);
 # 7 "src/PA/Element.c" 2
 # 1 "./include/PA/Data.h" 1
 # 11 "./include/PA/Data.h"
-          struct PAData* PADataPerformCreate();
-          struct PAData* PADataPerformBegin(struct PAData*, struct PAResource);
+          struct PAData* PADataCreate();
+          struct PAData* PADataCompleteBegin(struct PAData*, struct PAResource);
 
 
-          int PADataPerformFinish(struct PAData*);
-          int PADataPerformDelete(struct PAData*);
+          int PADataFinish(struct PAData*);
+          int PADataDelete(struct PAData*);
           struct PAData* PADataPerformCopy(struct PAData* from, struct PAData* to);
 # 8 "src/PA/Element.c" 2
 # 1 "./include/PA/Status.h" 1
@@ -416,23 +416,23 @@ struct Facade {
 
 
 
-          void PAStatusCause(PABool);
-          struct PAStatus* PAStatusPerformBegin(struct PAStatus*, struct PAResource);
-          int PAStatusPerformDelete(struct PAStatus*);
-          struct PAStatus* PAStatusPerformCreate();
+          void PAStatusCauseVisit(PABool);
+          struct PAStatus* PAStatusCompleteBegin(struct PAStatus*, struct PAResource);
+          int PAStatusDelete(struct PAStatus*);
+          struct PAStatus* PAStatusCreate();
           int PAStatusFinish(struct PAStatus*);
-          struct PAStatus* PAStatusPerformCopy(struct PAStatus*, struct PAStatus*);
+          struct PAStatus* PAStatusCopy(struct PAStatus*, struct PAStatus*);
 # 9 "src/PA/Element.c" 2
-# 19 "src/PA/Element.c"
-struct PAElement* PAElementPerformCreate()
+# 18 "src/PA/Element.c"
+struct PAElement* PAElementCreate()
 {
     struct PAElement* temp;
-# 32 "src/PA/Element.c"
+# 31 "src/PA/Element.c"
   return temp;
 }
-          struct PAElement* PAElementPerformBegin(struct PAElement* Element, struct PAData Value, struct PAStatus Value2)
+          struct PAElement* PAElementBegin(struct PAElement* Element, struct PAData Value, struct PAStatus Value2)
 {
-# 47 "src/PA/Element.c"
+# 46 "src/PA/Element.c"
     return Element;
 }
           void PAElementCauseVisit(struct PAElement* Element)
@@ -452,7 +452,7 @@ struct PAElement* PAElementPerformCreate()
 
     return;
 }
-          struct PAElement* PAElementPerformCopy(struct PAElement* from, struct PAElement* to)
+          struct PAElement* PAElementCopy(struct PAElement* from, struct PAElement* to)
 {
     struct PAElement temp;
 
@@ -461,18 +461,18 @@ struct PAElement* PAElementPerformCreate()
 
     return to;
 }
-# 87 "src/PA/Element.c"
-          int PAElementPerformFinish(struct PAElement* PA)
+# 86 "src/PA/Element.c"
+          int PAElementFinish(struct PAElement* PA)
 {
-# 103 "src/PA/Element.c"
+# 102 "src/PA/Element.c"
     int returnCode = ((int)0);
     return returnCode;
 
 
 
 }
-# 143 "src/PA/Element.c"
-          int PAElementPerformDelete(struct PAElement* PA)
+# 142 "src/PA/Element.c"
+          int PAElementDelete(struct PAElement* PA)
 {
 
 

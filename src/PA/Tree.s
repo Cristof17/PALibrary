@@ -1,8 +1,8 @@
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 15, 0	sdk_version 26, 2
-	.globl	_PATreePerformCreate            ; -- Begin function PATreePerformCreate
+	.globl	_PATreeCreate                   ; -- Begin function PATreeCreate
 	.p2align	2
-_PATreePerformCreate:                   ; @PATreePerformCreate
+_PATreeCreate:                          ; @PATreeCreate
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16
@@ -12,9 +12,9 @@ _PATreePerformCreate:                   ; @PATreePerformCreate
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PATreePerformBegin             ; -- Begin function PATreePerformBegin
+	.globl	_PATreeCompleteBegin            ; -- Begin function PATreeCompleteBegin
 	.p2align	2
-_PATreePerformBegin:                    ; @PATreePerformBegin
+_PATreeCompleteBegin:                   ; @PATreeCompleteBegin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #112
@@ -66,9 +66,9 @@ LBB1_2:
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PATreePerformCopy              ; -- Begin function PATreePerformCopy
+	.globl	_PATreeCopy                     ; -- Begin function PATreeCopy
 	.p2align	2
-_PATreePerformCopy:                     ; @PATreePerformCopy
+_PATreeCopy:                            ; @PATreeCopy
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #64
@@ -90,7 +90,7 @@ _PATreePerformCopy:                     ; @PATreePerformCopy
 	ldur	x9, [x29, #-8]
 	add	x0, x9, #4
 	add	x1, x8, #4
-	bl	_PAListPerformCopy
+	bl	_PAListCopy
 	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload
 	ldur	x8, [x29, #-8]
 	ldrh	w8, [x8, #2]
@@ -104,7 +104,7 @@ _PATreePerformCopy:                     ; @PATreePerformCopy
 	ldur	x8, [x29, #-16]
 	add	x0, x9, #4
 	add	x1, x8, #4
-	bl	_PAListPerformCopy
+	bl	_PAListCopy
 	ldur	x9, [x29, #-16]
 	ldurh	w8, [sp, #19]
 	strh	w8, [x9, #2]
@@ -114,9 +114,9 @@ _PATreePerformCopy:                     ; @PATreePerformCopy
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PATreePerformFinish            ; -- Begin function PATreePerformFinish
+	.globl	_PATreeFinish                   ; -- Begin function PATreeFinish
 	.p2align	2
-_PATreePerformFinish:                   ; @PATreePerformFinish
+_PATreeFinish:                          ; @PATreeFinish
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #48
@@ -133,19 +133,19 @@ _PATreePerformFinish:                   ; @PATreePerformFinish
 	str	w8, [sp, #8]
 	str	w8, [sp, #4]
 	ldur	x0, [x29, #-8]
-	bl	_PACountPerformFinish
+	bl	_PACountFinish
 	stur	w0, [x29, #-12]
 	ldur	x8, [x29, #-8]
 	add	x0, x8, #1
-	bl	_PACountPerformFinish
+	bl	_PACountFinish
 	str	w0, [sp, #16]
 	ldur	x8, [x29, #-8]
 	add	x0, x8, #4
-	bl	_PAListPerformFinish
+	bl	_PAListFinish
 	str	w0, [sp, #12]
 	ldur	x8, [x29, #-8]
 	add	x0, x8, #2
-	bl	_PAElementPerformFinish
+	bl	_PAElementFinish
 	str	w0, [sp, #8]
 	ldur	w8, [x29, #-12]
 	ldr	w9, [sp, #16]
@@ -161,9 +161,9 @@ _PATreePerformFinish:                   ; @PATreePerformFinish
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PATreePerformDelete            ; -- Begin function PATreePerformDelete
+	.globl	_PATreeDelete                   ; -- Begin function PATreeDelete
 	.p2align	2
-_PATreePerformDelete:                   ; @PATreePerformDelete
+_PATreeDelete:                          ; @PATreeDelete
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16

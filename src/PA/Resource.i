@@ -382,21 +382,21 @@ struct Facade {
 };
 # 5 "./include/PA/Resource.h" 2
 
-          struct PAResource* PAResourcePerformBegin(struct PAResource*, struct PANumber);
-          struct PAResource* PAResourcePerformCreate();
-          int PAResourcePerformFinish(struct PAResource*);
-          struct PAResource* PAResourcePerformDelete(struct PAResource*);
-          struct PAResource* PAResourcePerformCopy(struct PAResource*, struct PAResource*);
+          struct PAResource* PAResourceCompleteBegin(struct PAResource*, struct PANumber);
+          struct PAResource* PAResourceCreate();
+          int PAResourceFinish(struct PAResource*);
+          struct PAResource* PAResourceDelete(struct PAResource*);
+          struct PAResource* PAResourceCopy(struct PAResource*, struct PAResource*);
 # 4 "src/PA/Resource.c" 2
 # 1 "./include/PA/Number.h" 1
 
 
 
 
-          struct PANumber* PANumberPerformCreate();
-          struct PANumber* PANumberPerformBegin(struct PANumber* Number, unsigned char Value);
-          int PANumberPerformDelete(struct PANumber*);
-          int PANumberPerformFinish(struct PANumber*);
+          struct PANumber* PANumberCreate();
+          struct PANumber* PANumberCompleteBegin(struct PANumber* Number, unsigned char Value);
+          int PANumberDelete(struct PANumber*);
+          int PANumberFinish(struct PANumber*);
           struct PANumber* PANumberPerformCopy(struct PANumber* from, struct PANumber* to);
 # 5 "src/PA/Resource.c" 2
 
@@ -404,20 +404,14 @@ struct Facade {
 
 
 
-          struct PAResource* PAResourcePerformCreate()
+          struct PAResource PAResourceCreate()
 {
     struct PAResource resource;
-
-    struct PAResource* resourcePointer;
-
-
-
-
-
-    return resourcePointer;
+# 21 "src/PA/Resource.c"
+    return resource;
 
 }
-          struct PAResource* PAResourcePerformBegin(struct PAResource* Resource, struct PANumber Value)
+          struct PAResource PAResourceBegin(struct PAResource Resource, struct PANumber Value)
 {
     struct PAResource resource;
     struct PAResource* resourcePointer;
@@ -425,19 +419,21 @@ struct Facade {
 
 
 
-    return resourcePointer;
+
+    return resource;
 
 }
-          struct PAResource* PAResourcePerformCopy(struct PAResource* from, struct PAResource* to)
+          struct PAResource PAResourceCopy(struct PAResource from, struct PAResource to)
 {
     struct PAResource temp;
-    struct PAResource* resourcePointer;
 
 
-    return resourcePointer;
+
+
+    return temp;
 
 }
-          int PAResourcePerformFinish(struct PAResource* PA)
+          int PAResourceFinish(struct PAResource* PA)
 {
     int returnCode;
 
@@ -446,7 +442,7 @@ struct Facade {
     return returnCode;
 
 }
-          struct PAResource* PAResourcePerformDelete(struct PAResource* Resource)
+          struct PAResource PAResourceDelete(struct PAResource Resource)
 {
     return Resource;
 }

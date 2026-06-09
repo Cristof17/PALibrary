@@ -1,8 +1,8 @@
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 15, 0	sdk_version 26, 2
-	.globl	_PAOutputPerformCreate          ; -- Begin function PAOutputPerformCreate
+	.globl	_PAOutputCreate                 ; -- Begin function PAOutputCreate
 	.p2align	2
-_PAOutputPerformCreate:                 ; @PAOutputPerformCreate
+_PAOutputCreate:                        ; @PAOutputCreate
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32
@@ -12,9 +12,9 @@ _PAOutputPerformCreate:                 ; @PAOutputPerformCreate
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAOutputPerformBegin           ; -- Begin function PAOutputPerformBegin
+	.globl	_PAOutputCompleteBegin          ; -- Begin function PAOutputCompleteBegin
 	.p2align	2
-_PAOutputPerformBegin:                  ; @PAOutputPerformBegin
+_PAOutputCompleteBegin:                 ; @PAOutputCompleteBegin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #80
@@ -57,9 +57,9 @@ LBB1_2:
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAOutputPerformDelete          ; -- Begin function PAOutputPerformDelete
+	.globl	_PAOutputDelete                 ; -- Begin function PAOutputDelete
 	.p2align	2
-_PAOutputPerformDelete:                 ; @PAOutputPerformDelete
+_PAOutputDelete:                        ; @PAOutputDelete
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16
@@ -70,9 +70,9 @@ _PAOutputPerformDelete:                 ; @PAOutputPerformDelete
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAOutputPerformFinish          ; -- Begin function PAOutputPerformFinish
+	.globl	_PAOutputFinish                 ; -- Begin function PAOutputFinish
 	.p2align	2
-_PAOutputPerformFinish:                 ; @PAOutputPerformFinish
+_PAOutputFinish:                        ; @PAOutputFinish
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16
@@ -83,9 +83,9 @@ _PAOutputPerformFinish:                 ; @PAOutputPerformFinish
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAOutputPerformPrint           ; -- Begin function PAOutputPerformPrint
+	.globl	_PAOutputPrint                  ; -- Begin function PAOutputPrint
 	.p2align	2
-_PAOutputPerformPrint:                  ; @PAOutputPerformPrint
+_PAOutputPrint:                         ; @PAOutputPrint
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16

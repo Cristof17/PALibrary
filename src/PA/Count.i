@@ -381,26 +381,26 @@ struct Facade {
 
 # 1 "./include/PA/Count.h" 1
 # 13 "./include/PA/Count.h"
-          struct PACount* PACountPerformCreate();
-          struct PACount* PACountPerformBegin(struct PACount* Count, struct PANumber Number);
-          struct PACount* PACountPerformCopy(struct PACount* from, struct PACount* to);
+          struct PACount* PACountCreate();
+          struct PACount* PACountCompleteBegin(struct PACount* Count, struct PANumber Number);
+          struct PACount* PACountCopy(struct PACount* from, struct PACount* to);
 
 
 
-          int PACountPerformFinish(struct PACount*);
+          int PACountFinish(struct PACount*);
 
 
-          struct PACount* PACountPerformDelete(struct PACount* PA);
+          struct PACount* PACountDelete(struct PACount* PA);
 # 7 "src/PA/Count.c" 2
 # 1 "./include/PA/Number.h" 1
 
 
 
 
-          struct PANumber* PANumberPerformCreate();
-          struct PANumber* PANumberPerformBegin(struct PANumber* Number, unsigned char Value);
-          int PANumberPerformDelete(struct PANumber*);
-          int PANumberPerformFinish(struct PANumber*);
+          struct PANumber* PANumberCreate();
+          struct PANumber* PANumberCompleteBegin(struct PANumber* Number, unsigned char Value);
+          int PANumberDelete(struct PANumber*);
+          int PANumberFinish(struct PANumber*);
           struct PANumber* PANumberPerformCopy(struct PANumber* from, struct PANumber* to);
 # 8 "src/PA/Count.c" 2
 
@@ -410,7 +410,7 @@ struct Facade {
 
 
 
-          struct PACount* PACountPerformCreate()
+          struct PACount* PACountCreate()
 {
     struct PACount zies;
     struct PACount* countPointer;
@@ -422,7 +422,7 @@ struct Facade {
 
     return countPointer;
 }
-          struct PACount* PACountPerformBegin(struct PACount* Count, struct PANumber Value)
+          struct PACount* PACountBegin(struct PACount* Count, struct PANumber Value)
 {
 
     struct PACount temp;
@@ -441,14 +441,14 @@ struct Facade {
 
 
 }
-          int PACountPerformFinish(struct PACount* PA)
+          int PACountFinish(struct PACount* PA)
 {
 # 73 "src/PA/Count.c"
     int returnCode;
     return returnCode;
 
 }
-          struct PACount* PACountPerformDelete(struct PACount* PA)
+          struct PACount* PACountDelete(struct PACount* PA)
 {
 
     return PA;
@@ -456,12 +456,12 @@ struct Facade {
 
 
 }
-PAResult PACountPerformPrint(struct PACount* Count)
+PAResult PACountPrint(struct PACount* Count)
 {
     PAResult result;
     return result;
 }
-          struct PACount* PACountPerformCopy(struct PACount* from, struct PACount* to)
+          struct PACount* PACountCopy(struct PACount* from, struct PACount* to)
 {
     struct PACount temp;
 

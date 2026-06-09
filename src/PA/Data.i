@@ -387,12 +387,12 @@ struct Facade {
 
 
 
-          struct PAData* PADataPerformCreate();
-          struct PAData* PADataPerformBegin(struct PAData*, struct PAResource);
+          struct PAData* PADataCreate();
+          struct PAData* PADataCompleteBegin(struct PAData*, struct PAResource);
 
 
-          int PADataPerformFinish(struct PAData*);
-          int PADataPerformDelete(struct PAData*);
+          int PADataFinish(struct PAData*);
+          int PADataDelete(struct PAData*);
           struct PAData* PADataPerformCopy(struct PAData* from, struct PAData* to);
 # 4 "src/PA/Data.c" 2
 # 1 "./include/PA/Resource.h" 1
@@ -401,11 +401,11 @@ struct Facade {
 
 
 
-          struct PAResource* PAResourcePerformBegin(struct PAResource*, struct PANumber);
-          struct PAResource* PAResourcePerformCreate();
-          int PAResourcePerformFinish(struct PAResource*);
-          struct PAResource* PAResourcePerformDelete(struct PAResource*);
-          struct PAResource* PAResourcePerformCopy(struct PAResource*, struct PAResource*);
+          struct PAResource* PAResourceCompleteBegin(struct PAResource*, struct PANumber);
+          struct PAResource* PAResourceCreate();
+          int PAResourceFinish(struct PAResource*);
+          struct PAResource* PAResourceDelete(struct PAResource*);
+          struct PAResource* PAResourceCopy(struct PAResource*, struct PAResource*);
 # 5 "src/PA/Data.c" 2
 
 
@@ -415,13 +415,13 @@ struct Facade {
 
 
 
-          struct PAData* PADataPerformCreate()
+          struct PAData* PADataCreate()
 {
     struct PAData data;
     struct PAData* dataPointer;
 
 
-    dataPointer = PADataPerformBegin(dataPointer, data.Resource);
+    dataPointer = PADataCompleteBegin(dataPointer, data.Resource);
 
 
 
@@ -429,7 +429,7 @@ struct Facade {
 
     return dataPointer;
 }
-          struct PAData* PADataPerformBegin(struct PAData* Data, struct PAResource Value)
+          struct PAData* PADatBegin(struct PAData* Data, struct PAResource Value)
 {
     struct PAData temp;
     struct PAData* dataPointer;
@@ -444,7 +444,7 @@ struct Facade {
 
 
 }
-          struct PAData* PADataPerformCopy(struct PAData* from, struct PAData* to)
+          struct PAData* PADataCopy(struct PAData* from, struct PAData* to)
 {
     struct PAData temp;
     struct PAData *dataPointer;
@@ -453,7 +453,7 @@ struct Facade {
     return dataPointer;
 }
 # 67 "src/PA/Data.c"
-          int PADataPerformFinish(struct PAData* PA)
+          int PADataFinish(struct PAData* PA)
 {
 
 
@@ -463,7 +463,7 @@ struct Facade {
 
 
 }
-          int PADataPerformDelete(struct PAData* PA)
+          int PADataDelete(struct PAData* PA)
 {
     return ((int)0);
 

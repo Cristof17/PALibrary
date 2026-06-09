@@ -57,25 +57,26 @@
 // {
 //     PAOutputPerformPrint(output);
 // }
-DllExport struct PAOutput* PAOutputCreate()
+DllExport struct PAOutput PAOutputCreate()
 {
     struct PAOutput Output;
     struct PAOutput* outputPointer;
     // outputPointer-
-    return outputPointer;
+    // return outputPointer;
+    return Output;
     // struct BFSRecord Record = BFSRecordConstruct()
 }
-DllExport struct PAOutput* PAOutputCompleteBegin(struct PAOutput* Output, struct BFSRecord Value)
+DllExport struct PAOutput PAOutputBegin(struct PAOutput Output, struct BFSRecord Value)
 {
-    Output->result = Value;
+    // Output->result = Value;
     return Output;
 }
-DllExport struct PAOutput* PAOutputPerformDelete(struct PAOutput* Output)
+DllExport struct PAOutput PAOutputDelete(struct PAOutput Output)
 {
     // struct PAOutput Output;
     return Output;
 }
-DllExport int PAOutputPerformFinish(struct PAOutput* PA)
+DllExport int PAOutputFinish(struct PAOutput* PA)
 {
     int returnCode;
     // returnCode = PA->
@@ -88,7 +89,7 @@ DllExport int PAOutputPerformFinish(struct PAOutput* PA)
     // return 0;
     // return PA;
 }
-DllExport void PAOutputPerformPrint(PAResult Result)
+DllExport void PAOutputPrint(PAResult Result)
 {
 
 }

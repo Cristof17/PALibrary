@@ -382,62 +382,62 @@ struct Facade {
 
 
 
-          struct PATree* PATreePerformCreate();
-          struct PATree* PATreePerformCopy(struct PATree* from, struct PATree* to);
+          struct PATree* PATreeCreate();
+          struct PATree* PATreeCopy(struct PATree* from, struct PATree* to);
 
-          struct PATree* PATreePerformBegin(struct PATree*, struct PACount, struct PACount, struct PAList, struct PAElement);
-
-
+          struct PATree* PATreeCompleteBegin(struct PATree*, struct PACount, struct PACount, struct PAList, struct PAElement);
 
 
 
-          int PATreePerformFinish(struct PATree*);
-          int PATreePerformDelete(struct PATree*);
+
+
+          int PATreeFinish(struct PATree*);
+          int PATreeDelete(struct PATree*);
 # 4 "src/PA/Tree.c" 2
 # 1 "./include/PA/Count.h" 1
 # 13 "./include/PA/Count.h"
-          struct PACount* PACountPerformCreate();
-          struct PACount* PACountPerformBegin(struct PACount* Count, struct PANumber Number);
-          struct PACount* PACountPerformCopy(struct PACount* from, struct PACount* to);
+          struct PACount* PACountCreate();
+          struct PACount* PACountCompleteBegin(struct PACount* Count, struct PANumber Number);
+          struct PACount* PACountCopy(struct PACount* from, struct PACount* to);
 
 
 
-          int PACountPerformFinish(struct PACount*);
+          int PACountFinish(struct PACount*);
 
 
-          struct PACount* PACountPerformDelete(struct PACount* PA);
+          struct PACount* PACountDelete(struct PACount* PA);
 # 5 "src/PA/Tree.c" 2
 # 1 "./include/PA/Element.h" 1
 # 10 "./include/PA/Element.h"
           void PAElementVisit(struct PAElement*);
           PABool PAElementIsVisited(struct PAElement*);
           void PAElementReset(struct PAElement*);
-          struct PAElement* PAElementPerformCreate();
+          struct PAElement* PAElementCreate();
 
-          struct PAElement* PAElementPerformBegin(struct PAElement*,struct PAData,struct PAStatus);
-
-
+          struct PAElement* PAElementCompleteBegin(struct PAElement*,struct PAData,struct PAStatus);
 
 
-          int PAElementPerformFinish(struct PAElement*);
-          int PAElementPerformDelete(struct PAElement*);
-          struct PAElement* PAElementPerformCopy(struct PAElement*, struct PAElement*);
+
+
+          int PAElementFinish(struct PAElement*);
+          int PAElementDelete(struct PAElement*);
+          struct PAElement* PAElementCopy(struct PAElement*, struct PAElement*);
 # 6 "src/PA/Tree.c" 2
 # 1 "./include/PA/List.h" 1
 # 11 "./include/PA/List.h"
-          struct PAList* PAListPerformCreate();
-          struct PAList* PAListPerformBegin(struct PAList*,struct PACount, struct PASeries[]);
+          struct PAList* PAListCreate();
+          struct PAList* PAListCompleteBegin(struct PAList*,struct PACount, struct PASeries[]);
 
 
 
-          int PAListPerformFinish(struct PAList*);
-          struct PAList* PAListPerformDelete(struct PAList*);
-          struct PAList* PAListPerformCopy(struct PAList*, struct PAList*);
+          int PAListFinish(struct PAList*);
+          struct PAList* PAListDelete(struct PAList*);
+          struct PAList* PAListCopy(struct PAList*, struct PAList*);
 
 void PAListPerformPrint(struct PAList* List);
 # 7 "src/PA/Tree.c" 2
 # 19 "src/PA/Tree.c"
-          struct PATree* PATreePerformCreate()
+          struct PATree* PATreeCreate()
 {
     struct PATree* temp;
 
@@ -450,7 +450,7 @@ void PAListPerformPrint(struct PAList* List);
 # 67 "src/PA/Tree.c"
     return temp;
 }
-          struct PATree* PATreePerformBegin(struct PATree* Tree, struct PACount Value, struct PACount Value2, struct PAList Value3, struct PAElement Value4)
+          struct PATree* PATreeCompleteBegin(struct PATree* Tree, struct PACount Value, struct PACount Value2, struct PAList Value3, struct PAElement Value4)
 {
     struct PATree tree;
     struct PATree* treePointer;
@@ -469,31 +469,31 @@ void PAListPerformPrint(struct PAList* List);
     return Tree;
 }
 # 96 "src/PA/Tree.c"
-          struct PATree* PATreePerformCopy(struct PATree* from, struct PATree* to)
+          struct PATree* PATreeCopy(struct PATree* from, struct PATree* to)
 {
     struct PATree temp;
     temp.n = from->n;
     temp.m = from->m;
-    PAListPerformCopy(&from->adj, &temp.adj);
+    PAListCopy(&from->adj, &temp.adj);
     temp.source = from->source;
     to->n = temp.n;
     to->m = temp.m;
-    PAListPerformCopy(&temp.adj, &to->adj);
+    PAListCopy(&temp.adj, &to->adj);
     to->source = temp.source;
 # 116 "src/PA/Tree.c"
     return to;
 }
-          int PATreePerformFinish(struct PATree* PA)
+          int PATreeFinish(struct PATree* PA)
 {
     int returnCode1 = ((int)1);
     int returnCode2 = ((int)1);
     int returnCode3 = ((int)1);
     int returnCode4 = ((int)1);
     int returnCode = ((int)1);
-    returnCode1 = PACountPerformFinish(&PA->n);
-    returnCode2 = PACountPerformFinish(&PA->m);
-    returnCode3 = PAListPerformFinish(&PA->adj);
-    returnCode4 = PAElementPerformFinish(&PA->source);
+    returnCode1 = PACountFinish(&PA->n);
+    returnCode2 = PACountFinish(&PA->m);
+    returnCode3 = PAListFinish(&PA->adj);
+    returnCode4 = PAElementFinish(&PA->source);
 
 
     returnCode = returnCode1 & returnCode2 & returnCode3 & returnCode4;
@@ -502,7 +502,7 @@ void PAListPerformPrint(struct PAList* List);
     return returnCode;
 }
 # 197 "src/PA/Tree.c"
-          int PATreePerformDelete(struct PATree* Tree)
+          int PATreeDelete(struct PATree* Tree)
 {
     int returnCode;
 

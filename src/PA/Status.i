@@ -382,12 +382,12 @@ struct Facade {
 };
 # 8 "./include/PA/Status.h" 2
 
-          void PAStatusCause(PABool);
-          struct PAStatus* PAStatusPerformBegin(struct PAStatus*, struct PAResource);
-          int PAStatusPerformDelete(struct PAStatus*);
-          struct PAStatus* PAStatusPerformCreate();
+          void PAStatusCauseVisit(PABool);
+          struct PAStatus* PAStatusCompleteBegin(struct PAStatus*, struct PAResource);
+          int PAStatusDelete(struct PAStatus*);
+          struct PAStatus* PAStatusCreate();
           int PAStatusFinish(struct PAStatus*);
-          struct PAStatus* PAStatusPerformCopy(struct PAStatus*, struct PAStatus*);
+          struct PAStatus* PAStatusCopy(struct PAStatus*, struct PAStatus*);
 # 7 "src/PA/Status.c" 2
 # 1 "./include/PA/Resource.h" 1
 
@@ -395,11 +395,11 @@ struct Facade {
 
 
 
-          struct PAResource* PAResourcePerformBegin(struct PAResource*, struct PANumber);
-          struct PAResource* PAResourcePerformCreate();
-          int PAResourcePerformFinish(struct PAResource*);
-          struct PAResource* PAResourcePerformDelete(struct PAResource*);
-          struct PAResource* PAResourcePerformCopy(struct PAResource*, struct PAResource*);
+          struct PAResource* PAResourceCompleteBegin(struct PAResource*, struct PANumber);
+          struct PAResource* PAResourceCreate();
+          int PAResourceFinish(struct PAResource*);
+          struct PAResource* PAResourceDelete(struct PAResource*);
+          struct PAResource* PAResourceCopy(struct PAResource*, struct PAResource*);
 # 8 "src/PA/Status.c" 2
 
 
@@ -409,53 +409,55 @@ struct Facade {
 {
 
 }
-          struct PAStatus* PAStatusPerformCreate()
+          struct PAStatus PAStatusCreate()
 {
-    struct PAStatus* status;
+    struct PAStatus status;
     struct PAResource resource;
-    struct PAResource* resourcePointer;
-    resourcePointer = PAResourcePerformCreate();
-    resource = *(resourcePointer);
-    status->visited = resource;
 
-    status = PAStatusPerformBegin(status,status->visited);
+
+
+
+
+
+
     return status;
 }
-          struct PAStatus* PAStatusPerformBegin(struct PAStatus* Status, struct PAResource Value)
+          struct PAStatus PAStatusBegin(struct PAStatus Status, struct PAResource Value)
 {
     struct PAStatus temp;
     struct PAStatus* statusPointer;
     statusPointer->visited = Value;
-    return statusPointer;
+
+    return temp;
 
 
 }
-          struct PAStatus* PAStatusPerformCopy(struct PAStatus* from, struct PAStatus* to)
+          struct PAStatus PAStatusCopy(struct PAStatus from, struct PAStatus to)
 {
     struct PAStatus temp;
-    temp.visited = from->visited;
-    to->visited = temp.visited;
+
+
     return to;
 
 
 
 }
-          int PAStatusPerformDelete(struct PAStatus* PA)
+          int PAStatusDelete(struct PAStatus* PA)
 {
     int returnCode;
-    PAResourcePerformDelete(&PA->visited);
+    PAResourceDelete(&PA->visited);
 
     return returnCode;
 
 }
-          int PAStatusPerformFinish(struct PAStatus* PA)
+          int PAStatusFinish(struct PAStatus* PA)
 {
 
 
 
 
     int returnCode;
-    PAResourcePerformFinish(&PA->visited);
+    PAResourceFinish(&PA->visited);
 
 
 

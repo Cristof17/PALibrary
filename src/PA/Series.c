@@ -96,7 +96,7 @@ DllExport struct PASeries* PASeriesCopy(struct PASeries* from, struct PASeries* 
 //     }
 // }
 // }
-DllExport struct PASeries* PASeriesCompleteBegin(struct PASeries* Series,
+DllExport struct PASeries* PASeriesBegin(struct PASeries* Series,
     struct PACount Value, struct PAElement Value2[])
     {
         // PAResult result;
@@ -125,7 +125,7 @@ DllExport struct PASeries* PASeriesCompleteBegin(struct PASeries* Series,
         // series.adj = Value2;
         // return series;
     }
-    DllExport struct PASeries* PASeriesPerformDelete(struct PASeries* PA)
+    DllExport struct PASeries* PASeriesDelete(struct PASeries* PA)
     {
         struct PANumber x;
         struct PANumber y;
@@ -149,7 +149,7 @@ DllExport struct PASeries* PASeriesCompleteBegin(struct PASeries* Series,
         // copy = PAListPerformInit(List);
         //return copy;
     // }
-    DllExport int PASeriesPerformFinish(struct PASeries* PA)
+    DllExport int PASeriesFinish(struct PASeries* PA)
     {
         // st
         int returnCode;
@@ -228,7 +228,7 @@ struct PAResource* PASeriesGet(struct PAData* Data)
 //     struct PAList list;
 //     return list;
 // }
-void PASeriesPerformPrint(struct PASeries* Series)
+void PASeriesPrint(struct PASeries* Series)
 {
 
 }

@@ -383,43 +383,43 @@ struct Facade {
 
 # 1 "./include/PA/Input.h" 1
 # 10 "./include/PA/Input.h"
-          struct PAInput* PAInputPerformCreate();
+          struct PAInput* PAInputCreate();
 
-          struct PAInput* PAInputPerformBegin(struct PAInput* PAInput, struct PACount, struct PACount, struct PAElement);
+          struct PAInput* PAInputCompleteBegin(struct PAInput* PAInput, struct PACount, struct PACount, struct PAElement);
 
 
 
-          int PAInputPerformFinish(struct PAInput*);
-          struct PAInput* PAInputPerformDelete(struct PAInput* i);
+          int PAInputFinish(struct PAInput*);
+          struct PAInput* PAInputDelete(struct PAInput* i);
 # 9 "src/PA/Input.c" 2
 # 1 "./include/PA/Count.h" 1
 # 13 "./include/PA/Count.h"
-          struct PACount* PACountPerformCreate();
-          struct PACount* PACountPerformBegin(struct PACount* Count, struct PANumber Number);
-          struct PACount* PACountPerformCopy(struct PACount* from, struct PACount* to);
+          struct PACount* PACountCreate();
+          struct PACount* PACountCompleteBegin(struct PACount* Count, struct PANumber Number);
+          struct PACount* PACountCopy(struct PACount* from, struct PACount* to);
 
 
 
-          int PACountPerformFinish(struct PACount*);
+          int PACountFinish(struct PACount*);
 
 
-          struct PACount* PACountPerformDelete(struct PACount* PA);
+          struct PACount* PACountDelete(struct PACount* PA);
 # 10 "src/PA/Input.c" 2
 # 1 "./include/PA/Element.h" 1
 # 10 "./include/PA/Element.h"
           void PAElementVisit(struct PAElement*);
           PABool PAElementIsVisited(struct PAElement*);
           void PAElementReset(struct PAElement*);
-          struct PAElement* PAElementPerformCreate();
+          struct PAElement* PAElementCreate();
 
-          struct PAElement* PAElementPerformBegin(struct PAElement*,struct PAData,struct PAStatus);
-
-
+          struct PAElement* PAElementCompleteBegin(struct PAElement*,struct PAData,struct PAStatus);
 
 
-          int PAElementPerformFinish(struct PAElement*);
-          int PAElementPerformDelete(struct PAElement*);
-          struct PAElement* PAElementPerformCopy(struct PAElement*, struct PAElement*);
+
+
+          int PAElementFinish(struct PAElement*);
+          int PAElementDelete(struct PAElement*);
+          struct PAElement* PAElementCopy(struct PAElement*, struct PAElement*);
 # 11 "src/PA/Input.c" 2
 
 
@@ -427,7 +427,7 @@ struct Facade {
 
 
 
-          struct PAInput* PAInputPerformCreate()
+          struct PAInput PAInputCreate()
 {
  struct PAInput temp;
  struct PAInput* inputPointer;
@@ -442,13 +442,13 @@ struct Facade {
  m = inputPointer->m;
  element = inputPointer->source;
 
- inputPointer = PAInputPerformBegin(inputPointer,n,m,element);
- return inputPointer;
+
+
 
 
 }
 # 48 "src/PA/Input.c"
-          struct PAInput* PAInputPerformBegin(struct PAInput* Input, struct PACount Value, struct PACount Value2, struct PAElement Value3)
+          struct PAInput PAInputBegin(struct PAInput Input, struct PACount Value, struct PACount Value2, struct PAElement Value3)
 {
  struct PAInput temp;
  struct PAInput* inputPointer;
@@ -456,15 +456,15 @@ struct Facade {
 
 
  temp = *inputPointer;
-# 71 "src/PA/Input.c"
- return inputPointer;
+# 72 "src/PA/Input.c"
+ return Input;
 }
-          int PAInputPerformFinish(struct PAInput* PA) {
+          int PAInputFinish(struct PAInput* PA) {
 
 
- PACountPerformFinish(&PA->n);
- PACountPerformFinish(&PA->m);
- PAElementPerformFinish(&PA->source);
+ PACountFinish(&PA->n);
+ PACountFinish(&PA->m);
+ PAElementFinish(&PA->source);
  int returnCode;
  returnCode = ((int)0);
 
@@ -472,7 +472,7 @@ struct Facade {
 
  return returnCode;
 }
-          struct PAInput* PAInputPerformDelete(struct PAInput* Input)
+          struct PAInput* PAInputDelete(struct PAInput* Input)
 {
  return Input;
 
