@@ -206,12 +206,12 @@ struct ArrayList* ArrayListPerformInit(struct ArrayList* List)
 //	//	return Lost;
 //		//return copy;
 //	}
-ArrayListObject ArrayListGet(struct ArrayListPosition Position)
+ArrayListObject* ArrayListGet(struct ArrayListPosition* Position)
 {
 	ArrayListObject object;
 	return object;
 }
-void ArrayListPut(struct ArrayListPosition Position, ArrayListObject ListObject)
+void ArrayListPut(struct ArrayListPosition* Position, ArrayListObject* ListObject)
 {
 
 }
