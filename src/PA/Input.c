@@ -14,7 +14,7 @@
 #include <PA\Element.h>
 #endif
 
-DllExport struct PAInput* PAInputPerformCreate()
+DllExport struct PAInput* PAInputCreate()
 {
 	struct PAInput temp;
 	struct PAInput* inputPointer;
@@ -29,7 +29,7 @@ DllExport struct PAInput* PAInputPerformCreate()
 	m = inputPointer->m;
 	element = inputPointer->source;
 	// list = inputPointer.
-	inputPointer = PAInputPerformBegin(inputPointer,n,m,element);
+	inputPointer = PAInputCompleteBegin(inputPointer,n,m,element);
 	return inputPointer;
 	// PAResult result ;
 	// return result;

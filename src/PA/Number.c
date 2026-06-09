@@ -3,7 +3,7 @@
 #elif defined _WIN95
 #include <PA\Number.h>
 #endif
-DllExport struct PANumber* PANumberPerformCreate()
+DllExport struct PANumber* PANumberCreate()
 {
     struct PANumber number;
     struct PANumber* numberPointer;
@@ -12,7 +12,7 @@ DllExport struct PANumber* PANumberPerformCreate()
     // number.val =  random;
     return numberPointer;
 }
-DllExport struct PANumber* PANumberPerformBegin(struct PANumber* Number, unsigned char Value)
+DllExport struct PANumber* PANumberCompleteBegin(struct PANumber* Number, unsigned char Value)
 {
     struct PANumber temp;
     struct PANumber* numberPointer;

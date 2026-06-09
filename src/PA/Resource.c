@@ -7,7 +7,7 @@
 #include <PA\Number.h>
 #endif
 
-DllExport struct PAResource* PAResourcePerformCreate()
+DllExport struct PAResource* PAResourceCreate()
 {
     struct PAResource resource;
     // struct PAResourfec
@@ -20,7 +20,7 @@ DllExport struct PAResource* PAResourcePerformCreate()
     return resourcePointer;
     // return resource;
 }
-DllExport struct PAResource* PAResourcePerformBegin(struct PAResource* Resource, struct PANumber Value)
+DllExport struct PAResource* PAResourceCompleteBegin(struct PAResource* Resource, struct PANumber Value)
 {
     struct PAResource resource;
     struct PAResource* resourcePointer;
@@ -31,7 +31,7 @@ DllExport struct PAResource* PAResourcePerformBegin(struct PAResource* Resource,
     return resourcePointer;
     // return Resource;
 }
-DllExport struct PAResource* PAResourcePerformCopy(struct PAResource* from, struct PAResource* to)
+DllExport struct PAResource* PAResourceCopy(struct PAResource* from, struct PAResource* to)
 {
     struct PAResource temp;
     struct PAResource* resourcePointer;
@@ -40,7 +40,7 @@ DllExport struct PAResource* PAResourcePerformCopy(struct PAResource* from, stru
     return resourcePointer;
     // return to;
 }
-DllExport int PAResourcePerformFinish(struct PAResource* PA)
+DllExport int PAResourceFinish(struct PAResource* PA)
 {
     int returnCode;
     // PA.= PANumberPerformRuin(PA.value);
@@ -49,7 +49,7 @@ DllExport int PAResourcePerformFinish(struct PAResource* PA)
     return returnCode;
     // return PA;
 }
-DllExport struct PAResource* PAResourcePerformDelete(struct PAResource* Resource)
+DllExport struct PAResource* PAResourceDelete(struct PAResource* Resource)
 {
     return Resource;
 }

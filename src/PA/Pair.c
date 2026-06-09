@@ -10,7 +10,7 @@
 #include <PA\Element.h>
 #endif
 
-DllExport struct PAPair* PAPairPerformCreate()
+DllExport struct PAPair* PAPairCreate()
 {
     struct PAPair pair;
     struct PAPair* pairPointer;
@@ -28,7 +28,7 @@ DllExport struct PAPair* PAPairPerformCreate()
     //return pair;
 }
 // struct PAPair PAPairRuin(struct PAPair Pair) {
-DllExport struct PAPair* PAPairPerformBegin(struct PAPair* Pair, struct PAElement Value, struct PAElement Value2)
+DllExport struct PAPair* PAPairCompleteBegin(struct PAPair* Pair, struct PAElement Value, struct PAElement Value2)
 {
     struct PAPair temp;
     struct PAPair *pairPointer;
@@ -57,7 +57,7 @@ DllExport struct PAPair* PAPairPerformBegin(struct PAPair* Pair, struct PAElemen
     // struct PAPair pair;
     // return result;
 }
-struct PAPair* PAPairPerformCopy(struct PAPair* from, struct PAPair* to)
+struct PAPair* PAPairCopy(struct PAPair* from, struct PAPair* to)
 {
     struct PAPair temp;
     struct PAElement node;
@@ -99,13 +99,13 @@ struct PAPair* PAPairPerformCopy(struct PAPair* from, struct PAPair* to)
     //return Pair;
     // return pair;
 // }
-DllExport int PAPairPerformFinish(struct PAPair* PA)
+DllExport int PAPairFinish(struct PAPair* PA)
 {
     int returnCode1;
     int returnCode2;
     int returnCode;
-    returnCode1 = PAElementPerformFinish(&PA->Node);
-    returnCode2 = PAElementPerformFinish(&PA->Neigh);
+    returnCode1 = PAElementFinish(&PA->Node);
+    returnCode2 = PAElementFinish(&PA->Neigh);
     returnCode = returnCode1 & returnCode2;
     return returnCode;
     // struct PAPair Empty;

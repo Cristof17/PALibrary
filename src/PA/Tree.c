@@ -16,7 +16,7 @@
     // struct PACount size;
     // return size;
 // }
-DllExport struct PATree* PATreePerformCreate()
+DllExport struct PATree* PATreeCreate()
 {
     struct PATree* temp;
     // temp->n = PACountPerformConstruct();
@@ -66,7 +66,7 @@ DllExport struct PATree* PATreePerformCreate()
     // return tree;
     return temp;
 }
-DllExport struct PATree* PATreePerformBegin(struct PATree* Tree, struct PACount Value, struct PACount Value2, struct PAList Value3, struct PAElement Value4)
+DllExport struct PATree* PATreeCompleteBegin(struct PATree* Tree, struct PACount Value, struct PACount Value2, struct PAList Value3, struct PAElement Value4)
 {
     struct PATree tree;
     struct PATree* treePointer;
@@ -93,7 +93,7 @@ DllExport struct PATree* PATreePerformBegin(struct PATree* Tree, struct PACount 
     // tree = PATreePerformInit(Tree);
     // return tree;
 // }
-DllExport struct PATree* PATreePerformCopy(struct PATree* from, struct PATree* to)
+DllExport struct PATree* PATreeCopy(struct PATree* from, struct PATree* to)
 {
     struct PATree temp;
     temp.n = from->n;
@@ -115,17 +115,17 @@ DllExport struct PATree* PATreePerformCopy(struct PATree* from, struct PATree* t
     // temp.source =PAElementPerformCopy
     return to;
 }
-DllExport int PATreePerformFinish(struct PATree* PA)
+DllExport int PATreeFinish(struct PATree* PA)
 {
     int returnCode1 = PARESULT_FAIL;
     int returnCode2 = PARESULT_FAIL;
     int returnCode3 = PARESULT_FAIL;
     int returnCode4 = PARESULT_FAIL;
     int returnCode = PARESULT_FAIL;
-    returnCode1 = PACountPerformFinish(&PA->n);
-    returnCode2 = PACountPerformFinish(&PA->m);
-    returnCode3 = PAListPerformFinish(&PA->adj);
-    returnCode4 = PAElementPerformFinish(&PA->source);
+    returnCode1 = PACountFinish(&PA->n);
+    returnCode2 = PACountFinish(&PA->m);
+    returnCode3 = PAListFinish(&PA->adj);
+    returnCode4 = PAElementFinish(&PA->source);
     // rc4 = PAListPerform
 
     returnCode = returnCode1 & returnCode2 & returnCode3 & returnCode4;
@@ -194,7 +194,7 @@ DllExport int PATreePerformFinish(struct PATree* PA)
 //     // struct PATree tree;
 //     return tree;
 // }
-DllExport int PATreePerformDelete(struct PATree* Tree)
+DllExport int PATreeDelete(struct PATree* Tree)
 {
     int returnCode;
     // struct PATree Tree;

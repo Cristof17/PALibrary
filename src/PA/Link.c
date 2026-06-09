@@ -12,7 +12,7 @@
 #include <PA\Pair.h>
 #endif
 
-DllExport struct PALink* PALinkPerformCreate()
+DllExport struct PALink* PALinkCreate()
 {
     struct PALink link;
     struct PALink* linkPointer;
@@ -25,7 +25,7 @@ DllExport struct PALink* PALinkPerformCreate()
     // link.p = P;÷
     return linkPointer;
 }
-DllExport struct PALink* PALinkPerformBegin(struct PALink* Link, struct PAPair Value)
+DllExport struct PALink* PALinkCompleteBegin(struct PALink* Link, struct PAPair Value)
 {
     struct PALink link;
     struct PALink* linkPointer;

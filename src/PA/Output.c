@@ -57,7 +57,7 @@
 // {
 //     PAOutputPerformPrint(output);
 // }
-DllExport struct PAOutput* PAOutputPerformCreate()
+DllExport struct PAOutput* PAOutputCreate()
 {
     struct PAOutput Output;
     struct PAOutput* outputPointer;
@@ -65,7 +65,7 @@ DllExport struct PAOutput* PAOutputPerformCreate()
     return outputPointer;
     // struct BFSRecord Record = BFSRecordConstruct()
 }
-DllExport struct PAOutput* PAOutputPerformBegin(struct PAOutput* Output, struct BFSRecord Value)
+DllExport struct PAOutput* PAOutputCompleteBegin(struct PAOutput* Output, struct BFSRecord Value)
 {
     Output->result = Value;
     return Output;

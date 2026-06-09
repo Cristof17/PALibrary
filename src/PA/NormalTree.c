@@ -9,7 +9,7 @@
 #include <PA\Tree.h>
 #endif
 
-DllExport struct PANormalTree* PANormalTreePerformCreate()
+DllExport struct PANormalTree* PANormalTreeCreate()
 {
     struct PANormalTree normalTree;
     // struct PANormaltT/
@@ -25,7 +25,7 @@ DllExport struct PANormalTree* PANormalTreePerformCreate()
     // normalTree.tree = PATreePerformConstruct();
     // return normalTree;
 }
-DllExport struct PANormalTree* PANormalTreePerformBegin(struct PANormalTree* NormalTree, struct PATree Value)
+DllExport struct PANormalTree* PANormalTreeCompleteBegin(struct PANormalTree* NormalTree, struct PATree Value)
 {
     struct PANormalTree normalTree;
     struct PANormalTree *normalTreePointer;

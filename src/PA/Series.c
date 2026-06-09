@@ -18,7 +18,7 @@
 *  Created on: 16 nov. 2025
 *      Author: AdministratorUser
 */
-DllExport struct PASeries* PASeriesPerformCreate() 
+DllExport struct PASeries* PASeriesCreate() 
 {
     struct PASeries* series;
     // series.m = PACountPerformConstruct();
@@ -45,7 +45,7 @@ DllExport struct PASeries* PASeriesPerformCreate()
     // } 
     return series;
 }
-DllExport struct PASeries* PASeriesPerformCopy(struct PASeries* from, struct PASeries* to)
+DllExport struct PASeries* PASeriesCopy(struct PASeries* from, struct PASeries* to)
 {
     struct PACount x;
     struct PACount y;
@@ -96,7 +96,7 @@ DllExport struct PASeries* PASeriesPerformCopy(struct PASeries* from, struct PAS
 //     }
 // }
 // }
-DllExport struct PASeries* PASeriesPerformBegin(struct PASeries* Series,
+DllExport struct PASeries* PASeriesCompleteBegin(struct PASeries* Series,
     struct PACount Value, struct PAElement Value2[])
     {
         // PAResult result;
