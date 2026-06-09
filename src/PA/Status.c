@@ -52,14 +52,14 @@ DllExport int PAStatusPerformDelete(struct PAStatus* PA)
     return returnCode;
     // return PA;
 }
-DllExport int PAStatusPerformCease(struct PAStatus* PA)
+DllExport int PAStatusPerformFinish(struct PAStatus* PA)
 {
     // PAResult result;
     // return Status;
     // int rest;
     // int returncode
     int returnCode;
-    PAResourcePerformCease(&PA->visited);
+    PAResourcePerformFinish(&PA->visited);
     // return Empty;
     // return PA;
     // return resultCode;

@@ -101,9 +101,9 @@ _PAStatusPerformDelete:                 ; @PAStatusPerformDelete
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAStatusPerformCease           ; -- Begin function PAStatusPerformCease
+	.globl	_PAStatusPerformFinish          ; -- Begin function PAStatusPerformFinish
 	.p2align	2
-_PAStatusPerformCease:                  ; @PAStatusPerformCease
+_PAStatusPerformFinish:                 ; @PAStatusPerformFinish
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32
@@ -114,7 +114,7 @@ _PAStatusPerformCease:                  ; @PAStatusPerformCease
 	.cfi_offset w29, -16
 	str	x0, [sp, #8]
 	ldr	x0, [sp, #8]
-	bl	_PAResourcePerformCease
+	bl	_PAResourcePerformFinish
 	ldr	w0, [sp, #4]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32

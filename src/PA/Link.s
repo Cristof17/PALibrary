@@ -30,9 +30,9 @@ _PALinkPerformBegin:                    ; @PALinkPerformBegin
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PALinkPerformCease             ; -- Begin function PALinkPerformCease
+	.globl	_PALinkPerformFinish            ; -- Begin function PALinkPerformFinish
 	.p2align	2
-_PALinkPerformCease:                    ; @PALinkPerformCease
+_PALinkPerformFinish:                   ; @PALinkPerformFinish
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16

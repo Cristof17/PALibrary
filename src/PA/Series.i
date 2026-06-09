@@ -381,7 +381,7 @@ struct Facade {
           struct PASeries* PASeriesPerformDelete(struct PASeries*);
           struct PASeries* PASeriesPerformCopy(struct PASeries*, struct PASeries*);
 
-          int PASeriesPerformCease(struct PASeries*);
+          int PASeriesPerformFinish(struct PASeries*);
           struct PAResource* PASeriesGet(struct PAData* Data);
           void PASeriesPerformPrint(struct PASeries* Series);
 # 8 "src/PA/Series.c" 2
@@ -393,7 +393,7 @@ struct Facade {
 
 
 
-          int PACountPerformCease(struct PACount*);
+          int PACountPerformFinish(struct PACount*);
 
 
           struct PACount* PACountPerformDelete(struct PACount* PA);
@@ -410,7 +410,7 @@ struct Facade {
 
 
 
-          int PAElementPerformCease(struct PAElement*);
+          int PAElementPerformFinish(struct PAElement*);
           int PAElementPerformDelete(struct PAElement*);
           struct PAElement* PAElementPerformCopy(struct PAElement*, struct PAElement*);
 # 10 "src/PA/Series.c" 2
@@ -504,7 +504,7 @@ struct Facade {
 
     }
 # 152 "src/PA/Series.c"
-              int PASeriesPerformCease(struct PASeries* PA)
+              int PASeriesPerformFinish(struct PASeries* PA)
     {
 
         int returnCode;

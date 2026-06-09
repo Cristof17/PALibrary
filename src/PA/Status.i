@@ -386,7 +386,7 @@ struct Facade {
           struct PAStatus* PAStatusPerformBegin(struct PAStatus*, struct PAResource);
           int PAStatusPerformDelete(struct PAStatus*);
           struct PAStatus* PAStatusPerformCreate();
-          int PAStatusCease(struct PAStatus*);
+          int PAStatusFinish(struct PAStatus*);
           struct PAStatus* PAStatusPerformCopy(struct PAStatus*, struct PAStatus*);
 # 7 "src/PA/Status.c" 2
 # 1 "./include/PA/Resource.h" 1
@@ -397,7 +397,7 @@ struct Facade {
 
           struct PAResource* PAResourcePerformBegin(struct PAResource*, struct PANumber);
           struct PAResource* PAResourcePerformCreate();
-          int PAResourcePerformCease(struct PAResource*);
+          int PAResourcePerformFinish(struct PAResource*);
           struct PAResource* PAResourcePerformDelete(struct PAResource*);
           struct PAResource* PAResourcePerformCopy(struct PAResource*, struct PAResource*);
 # 8 "src/PA/Status.c" 2
@@ -448,14 +448,14 @@ struct Facade {
     return returnCode;
 
 }
-          int PAStatusPerformCease(struct PAStatus* PA)
+          int PAStatusPerformFinish(struct PAStatus* PA)
 {
 
 
 
 
     int returnCode;
-    PAResourcePerformCease(&PA->visited);
+    PAResourcePerformFinish(&PA->visited);
 
 
 

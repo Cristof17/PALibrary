@@ -99,13 +99,13 @@ struct PAPair* PAPairPerformCopy(struct PAPair* from, struct PAPair* to)
     //return Pair;
     // return pair;
 // }
-DllExport int PAPairPerformCease(struct PAPair* PA)
+DllExport int PAPairPerformFinish(struct PAPair* PA)
 {
     int returnCode1;
     int returnCode2;
     int returnCode;
-    returnCode1 = PAElementPerformCease(&PA->Node);
-    returnCode2 = PAElementPerformCease(&PA->Neigh);
+    returnCode1 = PAElementPerformFinish(&PA->Node);
+    returnCode2 = PAElementPerformFinish(&PA->Neigh);
     returnCode = returnCode1 & returnCode2;
     return returnCode;
     // struct PAPair Empty;

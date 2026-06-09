@@ -27,9 +27,9 @@ _PACountPerformBegin:                   ; @PACountPerformBegin
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PACountPerformCease            ; -- Begin function PACountPerformCease
+	.globl	_PACountPerformFinish           ; -- Begin function PACountPerformFinish
 	.p2align	2
-_PACountPerformCease:                   ; @PACountPerformCease
+_PACountPerformFinish:                  ; @PACountPerformFinish
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16

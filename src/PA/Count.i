@@ -387,7 +387,7 @@ struct Facade {
 
 
 
-          int PACountPerformCease(struct PACount*);
+          int PACountPerformFinish(struct PACount*);
 
 
           struct PACount* PACountPerformDelete(struct PACount* PA);
@@ -400,7 +400,7 @@ struct Facade {
           struct PANumber* PANumberPerformCreate();
           struct PANumber* PANumberPerformBegin(struct PANumber* Number, unsigned char Value);
           int PANumberPerformDelete(struct PANumber*);
-          int PANumberPerformCease(struct PANumber*);
+          int PANumberPerformFinish(struct PANumber*);
           struct PANumber* PANumberPerformCopy(struct PANumber* from, struct PANumber* to);
 # 8 "src/PA/Count.c" 2
 
@@ -441,7 +441,7 @@ struct Facade {
 
 
 }
-          int PACountPerformCease(struct PACount* PA)
+          int PACountPerformFinish(struct PACount* PA)
 {
 # 73 "src/PA/Count.c"
     int returnCode;

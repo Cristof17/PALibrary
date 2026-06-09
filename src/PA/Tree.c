@@ -115,17 +115,17 @@ DllExport struct PATree* PATreePerformCopy(struct PATree* from, struct PATree* t
     // temp.source =PAElementPerformCopy
     return to;
 }
-DllExport int PATreePerformCease(struct PATree* PA)
+DllExport int PATreePerformFinish(struct PATree* PA)
 {
     int returnCode1 = PARESULT_FAIL;
     int returnCode2 = PARESULT_FAIL;
     int returnCode3 = PARESULT_FAIL;
     int returnCode4 = PARESULT_FAIL;
     int returnCode = PARESULT_FAIL;
-    returnCode1 = PACountPerformCease(&PA->n);
-    returnCode2 = PACountPerformCease(&PA->m);
-    returnCode3 = PAListPerformCease(&PA->adj);
-    returnCode4 = PAElementPerformCease(&PA->source);
+    returnCode1 = PACountPerformFinish(&PA->n);
+    returnCode2 = PACountPerformFinish(&PA->m);
+    returnCode3 = PAListPerformFinish(&PA->adj);
+    returnCode4 = PAElementPerformFinish(&PA->source);
     // rc4 = PAListPerform
 
     returnCode = returnCode1 & returnCode2 & returnCode3 & returnCode4;

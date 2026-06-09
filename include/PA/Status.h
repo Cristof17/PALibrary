@@ -10,7 +10,7 @@ DllExport void PAStatusCause(PABool);
 DllExport struct PAStatus* PAStatusPerformBegin(struct PAStatus*, struct PAResource);
 DllExport int PAStatusPerformDelete(struct PAStatus*);
 DllExport struct PAStatus* PAStatusPerformCreate();
-DllExport int PAStatusCease(struct PAStatus*);
+DllExport int PAStatusFinish(struct PAStatus*);
 DllExport struct PAStatus* PAStatusPerformCopy(struct PAStatus*, struct PAStatus*);
 // struct PAStatus/*.*/;
 // DllExport struct PAStatus PAStatusPerformConstruct(PAInt Visited);

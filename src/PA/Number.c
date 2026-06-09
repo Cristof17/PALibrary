@@ -35,7 +35,7 @@ DllExport int PANumberPerformDelete(struct PANumber* PA)
     // struct PANumber number;
     // return PA;
 }
-DllExport int PANumberPerformCease(struct PANumber* PA)
+DllExport int PANumberPerformFinish(struct PANumber* PA)
 {
     int returnCode;
     returnCode = PARESULT_SUCCESS;

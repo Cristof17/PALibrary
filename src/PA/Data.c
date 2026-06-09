@@ -64,7 +64,7 @@ DllExport struct PAData* PADataPerformCopy(struct PAData* from, struct PAData* t
     // Data.Resource = Resource;
     // return Data;
 // }
-DllExport int PADataPerformCease(struct PAData* PA) 
+DllExport int PADataPerformFinish(struct PAData* PA) 
 {
     // PAInt Empty = NULL;
     // Resource = Empty;

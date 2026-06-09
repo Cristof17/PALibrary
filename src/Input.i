@@ -442,7 +442,7 @@ struct PARecord ArrayListPutCount(struct ArrayList, struct PACount);
 {
     return PA;
 }
-          struct Input InputPerformRuin(struct Input PA)
+          struct Input InputPerformFinish(struct Input PA)
 {
     return PA;
 }

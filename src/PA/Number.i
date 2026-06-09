@@ -383,7 +383,7 @@ struct Facade {
           struct PANumber* PANumberPerformCreate();
           struct PANumber* PANumberPerformBegin(struct PANumber* Number, unsigned char Value);
           int PANumberPerformDelete(struct PANumber*);
-          int PANumberPerformCease(struct PANumber*);
+          int PANumberPerformFinish(struct PANumber*);
           struct PANumber* PANumberPerformCopy(struct PANumber* from, struct PANumber* to);
 # 3 "src/PA/Number.c" 2
 
@@ -421,7 +421,7 @@ struct Facade {
 
 
 }
-          int PANumberPerformCease(struct PANumber* PA)
+          int PANumberPerformFinish(struct PANumber* PA)
 {
     int returnCode;
     returnCode = ((int)0);

@@ -70,9 +70,9 @@ _PAOutputPerformDelete:                 ; @PAOutputPerformDelete
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAOutputPerformCease           ; -- Begin function PAOutputPerformCease
+	.globl	_PAOutputPerformFinish          ; -- Begin function PAOutputPerformFinish
 	.p2align	2
-_PAOutputPerformCease:                  ; @PAOutputPerformCease
+_PAOutputPerformFinish:                 ; @PAOutputPerformFinish
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16

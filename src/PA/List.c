@@ -139,7 +139,7 @@ DllExport struct PAList* PAListPerformBegin(struct PAList* List, struct PACount 
     // struct PAResult result;
     // return result;
 // }
-DllExport int PAListPerformCease(struct PAList* PA)
+DllExport int PAListPerformFinish(struct PAList* PA)
 {
     // struct PAList List;
     // struct PACount x;
@@ -148,7 +148,7 @@ DllExport int PAListPerformCease(struct PAList* PA)
     int returnCode2;
     int returnCode;
     // int returnC
-    returnCode1 = PACountPerformCease(&(PA->n));
+    returnCode1 = PACountPerformFinish(&(PA->n));
     // returnCode2 =(struct PASeries*) PAListPerformRuin(PA->neigh);
     returnCode = returnCode1 & returnCode2;
     return returnCode;

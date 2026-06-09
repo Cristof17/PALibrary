@@ -388,7 +388,7 @@ struct Facade {
 
           struct PALink* PALinkPerformBegin(struct PALink*, struct PAPair);
 
-          int PALinkPerformCease(struct PALink*);
+          int PALinkPerformFinish(struct PALink*);
           struct PALink* PALinkPerformDelete(struct PALink*);
 # 9 "src/PA/Link.c" 2
 # 1 "./include/PA/Pair.h" 1
@@ -406,7 +406,7 @@ struct Facade {
 
 
 
-          int PAPairPerformCease(struct PAPair*);
+          int PAPairPerformFinish(struct PAPair*);
           int PAPairPerformDelete(struct PAPair*);
 # 10 "src/PA/Link.c" 2
 
@@ -439,7 +439,7 @@ struct Facade {
 
     return linkPointer;
 }
-          int PALinkPerformCease(struct PALink* PA)
+          int PALinkPerformFinish(struct PALink* PA)
 {
 
 

@@ -70,12 +70,12 @@ DllExport struct PAInput* PAInputPerformBegin(struct PAInput* Input, struct PACo
 	// input.source = Source;
 	return inputPointer;
 }
-DllExport int PAInputPerformCease(struct PAInput* PA) {
+DllExport int PAInputPerformFinish(struct PAInput* PA) {
 	// PAResult result;
 	// struct PAInput Empty;
-	PACountPerformCease(&PA->n);
-	PACountPerformCease(&PA->m);
-	PAElementPerformCease(&PA->source);
+	PACountPerformFinish(&PA->n);
+	PACountPerformFinish(&PA->m);
+	PAElementPerformFinish(&PA->source);
 	int returnCode;
 	returnCode = PARESULT_SUCCESS;
 	// return PA;

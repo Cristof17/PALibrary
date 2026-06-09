@@ -72,9 +72,9 @@ _InputPerformDelete:                    ; @InputPerformDelete
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_InputPerformRuin               ; -- Begin function InputPerformRuin
+	.globl	_InputPerformFinish             ; -- Begin function InputPerformFinish
 	.p2align	2
-_InputPerformRuin:                      ; @InputPerformRuin
+_InputPerformFinish:                    ; @InputPerformFinish
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16

@@ -43,7 +43,7 @@ DllExport struct PACount* PACountPerformBegin(struct PACount* Count, struct PANu
     // count.number = Number;
     // return÷÷ Count;
 }
-DllExport int PACountPerformCease(struct PACount* PA)
+DllExport int PACountPerformFinish(struct PACount* PA)
 {
     //get the value at address pointed by stack pointer
     //that corresponsds to parameter PA

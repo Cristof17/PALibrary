@@ -391,7 +391,7 @@ struct Facade {
 
 
 
-          int PATreePerformCease(struct PATree*);
+          int PATreePerformFinish(struct PATree*);
           int PATreePerformDelete(struct PATree*);
 # 4 "src/PA/Tree.c" 2
 # 1 "./include/PA/Count.h" 1
@@ -402,7 +402,7 @@ struct Facade {
 
 
 
-          int PACountPerformCease(struct PACount*);
+          int PACountPerformFinish(struct PACount*);
 
 
           struct PACount* PACountPerformDelete(struct PACount* PA);
@@ -419,7 +419,7 @@ struct Facade {
 
 
 
-          int PAElementPerformCease(struct PAElement*);
+          int PAElementPerformFinish(struct PAElement*);
           int PAElementPerformDelete(struct PAElement*);
           struct PAElement* PAElementPerformCopy(struct PAElement*, struct PAElement*);
 # 6 "src/PA/Tree.c" 2
@@ -430,7 +430,7 @@ struct Facade {
 
 
 
-          int PAListPerformCease(struct PAList*);
+          int PAListPerformFinish(struct PAList*);
           struct PAList* PAListPerformDelete(struct PAList*);
           struct PAList* PAListPerformCopy(struct PAList*, struct PAList*);
 
@@ -483,17 +483,17 @@ void PAListPerformPrint(struct PAList* List);
 # 116 "src/PA/Tree.c"
     return to;
 }
-          int PATreePerformCease(struct PATree* PA)
+          int PATreePerformFinish(struct PATree* PA)
 {
     int returnCode1 = ((int)1);
     int returnCode2 = ((int)1);
     int returnCode3 = ((int)1);
     int returnCode4 = ((int)1);
     int returnCode = ((int)1);
-    returnCode1 = PACountPerformCease(&PA->n);
-    returnCode2 = PACountPerformCease(&PA->m);
-    returnCode3 = PAListPerformCease(&PA->adj);
-    returnCode4 = PAElementPerformCease(&PA->source);
+    returnCode1 = PACountPerformFinish(&PA->n);
+    returnCode2 = PACountPerformFinish(&PA->m);
+    returnCode3 = PAListPerformFinish(&PA->adj);
+    returnCode4 = PAElementPerformFinish(&PA->source);
 
 
     returnCode = returnCode1 & returnCode2 & returnCode3 & returnCode4;

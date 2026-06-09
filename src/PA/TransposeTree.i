@@ -387,7 +387,7 @@ struct Facade {
           struct PATransposeTree* PATransposeTreePerformBegin(struct PATransposeTree*, struct PATree);
           struct PATransposeTree* PATransposeTreePerformCopy(struct PATransposeTree*, struct PATransposeTree*);
 
-          int PATransposeTreeCease(struct PATransposeTree*);
+          int PATransposeTreeFinish(struct PATransposeTree*);
           int PATransposeTreeDelete(struct PATransposeTree*);
 
           PAResult PATransposeTreeGetResult();
@@ -404,7 +404,7 @@ struct Facade {
 
 
 
-          int PATreePerformCease(struct PATree*);
+          int PATreePerformFinish(struct PATree*);
           int PATreePerformDelete(struct PATree*);
 # 10 "src/PA/TransposeTree.c" 2
 
@@ -450,7 +450,7 @@ struct Facade {
     return To;
 }
 # 61 "src/PA/TransposeTree.c"
-          int PATransposeTreePerformCease(struct PATransposeTree* PA)
+          int PATransposeTreePerformFinish(struct PATransposeTree* PA)
 {
     int returnCode;
 

@@ -114,9 +114,9 @@ _PATreePerformCopy:                     ; @PATreePerformCopy
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PATreePerformCease             ; -- Begin function PATreePerformCease
+	.globl	_PATreePerformFinish            ; -- Begin function PATreePerformFinish
 	.p2align	2
-_PATreePerformCease:                    ; @PATreePerformCease
+_PATreePerformFinish:                   ; @PATreePerformFinish
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #48
@@ -133,19 +133,19 @@ _PATreePerformCease:                    ; @PATreePerformCease
 	str	w8, [sp, #8]
 	str	w8, [sp, #4]
 	ldur	x0, [x29, #-8]
-	bl	_PACountPerformCease
+	bl	_PACountPerformFinish
 	stur	w0, [x29, #-12]
 	ldur	x8, [x29, #-8]
 	add	x0, x8, #1
-	bl	_PACountPerformCease
+	bl	_PACountPerformFinish
 	str	w0, [sp, #16]
 	ldur	x8, [x29, #-8]
 	add	x0, x8, #4
-	bl	_PAListPerformCease
+	bl	_PAListPerformFinish
 	str	w0, [sp, #12]
 	ldur	x8, [x29, #-8]
 	add	x0, x8, #2
-	bl	_PAElementPerformCease
+	bl	_PAElementPerformFinish
 	str	w0, [sp, #8]
 	ldur	w8, [x29, #-12]
 	ldr	w9, [sp, #16]

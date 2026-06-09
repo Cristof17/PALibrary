@@ -78,9 +78,9 @@ _PAPairPerformCopy:                     ; @PAPairPerformCopy
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAPairPerformCease             ; -- Begin function PAPairPerformCease
+	.globl	_PAPairPerformFinish            ; -- Begin function PAPairPerformFinish
 	.p2align	2
-_PAPairPerformCease:                    ; @PAPairPerformCease
+_PAPairPerformFinish:                   ; @PAPairPerformFinish
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #48
@@ -91,11 +91,11 @@ _PAPairPerformCease:                    ; @PAPairPerformCease
 	.cfi_offset w29, -16
 	stur	x0, [x29, #-8]
 	ldur	x0, [x29, #-8]
-	bl	_PAElementPerformCease
+	bl	_PAElementPerformFinish
 	stur	w0, [x29, #-12]
 	ldur	x8, [x29, #-8]
 	add	x0, x8, #2
-	bl	_PAElementPerformCease
+	bl	_PAElementPerformFinish
 	str	w0, [sp, #16]
 	ldur	w8, [x29, #-12]
 	ldr	w9, [sp, #16]

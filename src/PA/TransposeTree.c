@@ -58,7 +58,7 @@ DllExport struct PATransposeTree* PATransposeTreePerformCopy(struct PATransposeT
 //     // struct PATransposeTree tree;
 //     return PA;
 // }
-DllExport int PATransposeTreePerformCease(struct PATransposeTree* PA)
+DllExport int PATransposeTreePerformFinish(struct PATransposeTree* PA)
 {
     int returnCode;
     // PA.tree = PATreePerformRuin(PA.tree);

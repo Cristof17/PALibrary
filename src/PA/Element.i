@@ -393,7 +393,7 @@ struct Facade {
 
 
 
-          int PAElementPerformCease(struct PAElement*);
+          int PAElementPerformFinish(struct PAElement*);
           int PAElementPerformDelete(struct PAElement*);
           struct PAElement* PAElementPerformCopy(struct PAElement*, struct PAElement*);
 # 7 "src/PA/Element.c" 2
@@ -403,7 +403,7 @@ struct Facade {
           struct PAData* PADataPerformBegin(struct PAData*, struct PAResource);
 
 
-          int PADataPerformCease(struct PAData*);
+          int PADataPerformFinish(struct PAData*);
           int PADataPerformDelete(struct PAData*);
           struct PAData* PADataPerformCopy(struct PAData* from, struct PAData* to);
 # 8 "src/PA/Element.c" 2
@@ -420,7 +420,7 @@ struct Facade {
           struct PAStatus* PAStatusPerformBegin(struct PAStatus*, struct PAResource);
           int PAStatusPerformDelete(struct PAStatus*);
           struct PAStatus* PAStatusPerformCreate();
-          int PAStatusCease(struct PAStatus*);
+          int PAStatusFinish(struct PAStatus*);
           struct PAStatus* PAStatusPerformCopy(struct PAStatus*, struct PAStatus*);
 # 9 "src/PA/Element.c" 2
 # 19 "src/PA/Element.c"
@@ -462,7 +462,7 @@ struct PAElement* PAElementPerformCreate()
     return to;
 }
 # 87 "src/PA/Element.c"
-          int PAElementPerformCease(struct PAElement* PA)
+          int PAElementPerformFinish(struct PAElement* PA)
 {
 # 103 "src/PA/Element.c"
     int returnCode = ((int)0);

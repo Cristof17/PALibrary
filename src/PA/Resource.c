@@ -40,7 +40,7 @@ DllExport struct PAResource* PAResourcePerformCopy(struct PAResource* from, stru
     return resourcePointer;
     // return to;
 }
-DllExport int PAResourcePerformCease(struct PAResource* PA)
+DllExport int PAResourcePerformFinish(struct PAResource* PA)
 {
     int returnCode;
     // PA.= PANumberPerformRuin(PA.value);

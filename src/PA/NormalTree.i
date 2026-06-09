@@ -389,7 +389,7 @@ struct Facade {
           struct PANormalTree* PANormalTreePerformCreate();
           struct PANormalTree* PANormalTreePerformBegin(struct PANormalTree*, struct PATree);
           struct PANormalTree* PANormalTreePerformCopy(struct PANormalTree*);
-          int PANormalTreePerformCease(struct PANormalTree*);
+          int PANormalTreePerformFinish(struct PANormalTree*);
           int PANormalTreePerformDelete(struct PANormalTree*);
 
           struct PANormalTree* PAGrafNormalBuildPart();
@@ -407,7 +407,7 @@ struct Facade {
 
 
 
-          int PATreePerformCease(struct PATree*);
+          int PATreePerformFinish(struct PATree*);
           int PATreePerformDelete(struct PATree*);
 # 7 "src/PA/NormalTree.c" 2
 
@@ -443,10 +443,10 @@ struct Facade {
     return normalTreePointer;
 }
 # 48 "src/PA/NormalTree.c"
-          int PANormalTreePerformCease(struct PANormalTree* PA)
+          int PANormalTreePerformFinish(struct PANormalTree* PA)
 {
     int returnCode;
-    returnCode = PATreePerformCease(&PA->tree);
+    returnCode = PATreePerformFinish(&PA->tree);
     return returnCode;
 
 

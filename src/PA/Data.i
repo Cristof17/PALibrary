@@ -391,7 +391,7 @@ struct Facade {
           struct PAData* PADataPerformBegin(struct PAData*, struct PAResource);
 
 
-          int PADataPerformCease(struct PAData*);
+          int PADataPerformFinish(struct PAData*);
           int PADataPerformDelete(struct PAData*);
           struct PAData* PADataPerformCopy(struct PAData* from, struct PAData* to);
 # 4 "src/PA/Data.c" 2
@@ -403,7 +403,7 @@ struct Facade {
 
           struct PAResource* PAResourcePerformBegin(struct PAResource*, struct PANumber);
           struct PAResource* PAResourcePerformCreate();
-          int PAResourcePerformCease(struct PAResource*);
+          int PAResourcePerformFinish(struct PAResource*);
           struct PAResource* PAResourcePerformDelete(struct PAResource*);
           struct PAResource* PAResourcePerformCopy(struct PAResource*, struct PAResource*);
 # 5 "src/PA/Data.c" 2
@@ -453,7 +453,7 @@ struct Facade {
     return dataPointer;
 }
 # 67 "src/PA/Data.c"
-          int PADataPerformCease(struct PAData* PA)
+          int PADataPerformFinish(struct PAData* PA)
 {
 
 
