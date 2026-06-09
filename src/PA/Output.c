@@ -75,7 +75,7 @@ DllExport struct PAOutput* PAOutputPerformDelete(struct PAOutput* Output)
     // struct PAOutput Output;
     return Output;
 }
-DllExport int PAOutputPerformRuin(struct PAOutput* PA)
+DllExport int PAOutputPerformCease(struct PAOutput* PA)
 {
     int returnCode;
     // returnCode = PA->

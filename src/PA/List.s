@@ -101,9 +101,9 @@ LBB2_3:
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAListPerformRuin              ; -- Begin function PAListPerformRuin
+	.globl	_PAListPerformCease             ; -- Begin function PAListPerformCease
 	.p2align	2
-_PAListPerformRuin:                     ; @PAListPerformRuin
+_PAListPerformCease:                    ; @PAListPerformCease
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #48
@@ -114,7 +114,7 @@ _PAListPerformRuin:                     ; @PAListPerformRuin
 	.cfi_offset w29, -16
 	stur	x0, [x29, #-8]
 	ldur	x0, [x29, #-8]
-	bl	_PACountPerformRuin
+	bl	_PACountPerformCease
 	stur	w0, [x29, #-12]
 	ldur	w8, [x29, #-12]
 	ldr	w9, [sp, #16]

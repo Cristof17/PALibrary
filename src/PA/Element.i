@@ -393,7 +393,7 @@ struct Facade {
 
 
 
-          int PAElementPerformRuin(struct PAElement*);
+          int PAElementPerformCease(struct PAElement*);
           int PAElementPerformDelete(struct PAElement*);
           struct PAElement* PAElementPerformCopy(struct PAElement*, struct PAElement*);
 # 7 "src/PA/Element.c" 2
@@ -403,7 +403,7 @@ struct Facade {
           struct PAData* PADataPerformBegin(struct PAData*, struct PAResource);
 
 
-          int PADataPerformRuin(struct PAData*);
+          int PADataPerformCease(struct PAData*);
           int PADataPerformDelete(struct PAData*);
           struct PAData* PADataPerformCopy(struct PAData* from, struct PAData* to);
 # 8 "src/PA/Element.c" 2
@@ -420,7 +420,7 @@ struct Facade {
           struct PAStatus* PAStatusPerformBegin(struct PAStatus*, struct PAResource);
           int PAStatusPerformDelete(struct PAStatus*);
           struct PAStatus* PAStatusPerformCreate();
-          int PAStatusPerformRuin(struct PAStatus*);
+          int PAStatusCease(struct PAStatus*);
           struct PAStatus* PAStatusPerformCopy(struct PAStatus*, struct PAStatus*);
 # 9 "src/PA/Element.c" 2
 # 19 "src/PA/Element.c"
@@ -435,7 +435,7 @@ struct PAElement* PAElementPerformCreate()
 # 47 "src/PA/Element.c"
     return Element;
 }
-          void PAElementVisit(struct PAElement* Element)
+          void PAElementCauseVisit(struct PAElement* Element)
 {
 
     return;
@@ -462,7 +462,7 @@ struct PAElement* PAElementPerformCreate()
     return to;
 }
 # 87 "src/PA/Element.c"
-          int PAElementPerformRuin(struct PAElement* PA)
+          int PAElementPerformCease(struct PAElement* PA)
 {
 # 103 "src/PA/Element.c"
     int returnCode = ((int)0);

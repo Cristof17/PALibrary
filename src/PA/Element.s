@@ -29,9 +29,9 @@ _PAElementPerformBegin:                 ; @PAElementPerformBegin
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAElementVisit                 ; -- Begin function PAElementVisit
+	.globl	_PAElementCauseVisit            ; -- Begin function PAElementCauseVisit
 	.p2align	2
-_PAElementVisit:                        ; @PAElementVisit
+_PAElementCauseVisit:                   ; @PAElementCauseVisit
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16
@@ -80,9 +80,9 @@ _PAElementPerformCopy:                  ; @PAElementPerformCopy
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAElementPerformRuin           ; -- Begin function PAElementPerformRuin
+	.globl	_PAElementPerformCease          ; -- Begin function PAElementPerformCease
 	.p2align	2
-_PAElementPerformRuin:                  ; @PAElementPerformRuin
+_PAElementPerformCease:                 ; @PAElementPerformCease
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16

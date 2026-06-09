@@ -44,9 +44,9 @@ _PANumberPerformDelete:                 ; @PANumberPerformDelete
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PANumberPerformRuin            ; -- Begin function PANumberPerformRuin
+	.globl	_PANumberPerformCease           ; -- Begin function PANumberPerformCease
 	.p2align	2
-_PANumberPerformRuin:                   ; @PANumberPerformRuin
+_PANumberPerformCease:                  ; @PANumberPerformCease
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16

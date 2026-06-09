@@ -45,10 +45,10 @@ DllExport struct PANormalTree* PANormalTreePerformBegin(struct PANormalTree* Nor
 // //    copy.adj = Tree.adj;
 //     return copy;
 // }
-DllExport int PANormalTreePerformRuin(struct PANormalTree* PA)
+DllExport int PANormalTreePerformCease(struct PANormalTree* PA)
 {
     int returnCode;
-    returnCode = PATreePerformRuin(&PA->tree);
+    returnCode = PATreePerformCease(&PA->tree);
     return returnCode;
     // struct PANormalTree Empty;
     // PA.tree = PATreePerformRuin(PA.tree);

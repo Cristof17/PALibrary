@@ -54,9 +54,9 @@ LBB1_2:
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PANormalTreePerformRuin        ; -- Begin function PANormalTreePerformRuin
+	.globl	_PANormalTreePerformCease       ; -- Begin function PANormalTreePerformCease
 	.p2align	2
-_PANormalTreePerformRuin:               ; @PANormalTreePerformRuin
+_PANormalTreePerformCease:              ; @PANormalTreePerformCease
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32
@@ -67,7 +67,7 @@ _PANormalTreePerformRuin:               ; @PANormalTreePerformRuin
 	.cfi_offset w29, -16
 	str	x0, [sp, #8]
 	ldr	x0, [sp, #8]
-	bl	_PATreePerformRuin
+	bl	_PATreePerformCease
 	str	w0, [sp, #4]
 	ldr	w0, [sp, #4]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload

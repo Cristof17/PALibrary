@@ -13,7 +13,7 @@
 DllExport struct PAOutput* PAOutputPerformCreate();
 DllExport struct PAOutput* PAOutputPerformBegin(struct PAOutput*, struct BFSRecord);
 DllExport struct PAOutput* PAOutputPerformDelete(struct PAOutput*);
-DllExport int PAOutputPerformRuin(struct PAOutput*);
+DllExport int PAOutputPerformCease(struct PAOutput*);
 DllExport void PAOutputPerformPrint(PAResult Result);
 //typedef struct BFSOutput BFSOutput;
 // struct PAOutput PAOutputPerformInit(struct BFSRecord);

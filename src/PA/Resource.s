@@ -41,9 +41,9 @@ _PAResourcePerformCopy:                 ; @PAResourcePerformCopy
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAResourcePerformRuin          ; -- Begin function PAResourcePerformRuin
+	.globl	_PAResourcePerformCease         ; -- Begin function PAResourcePerformCease
 	.p2align	2
-_PAResourcePerformRuin:                 ; @PAResourcePerformRuin
+_PAResourcePerformCease:                ; @PAResourcePerformCease
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16

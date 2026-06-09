@@ -46,7 +46,7 @@ DllExport struct PAElement* PAElementPerformBegin(struct PAElement* Element, str
     // struct PAElement element;
     return Element;
 }
-DllExport void PAElementVisit(struct PAElement* Element)
+DllExport void PAElementCauseVisit(struct PAElement* Element)
 {
     // Element.status.visited.value.val = TRUE;
     return;
@@ -84,7 +84,7 @@ DllExport struct PAElement* PAElementPerformCopy(struct PAElement* from, struct 
 //	copy.type=Element.type;
 	//return ;
 // }
-DllExport int PAElementPerformRuin(struct PAElement* PA)
+DllExport int PAElementPerformCease(struct PAElement* PA)
 {
     // PA.index = PADataPerformRuin(PA.index);
     // PA.status = PAStatusPerformRuin(PA.status);

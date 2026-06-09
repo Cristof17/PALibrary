@@ -132,9 +132,9 @@ LBB3_3:
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PASeriesPerformRuin            ; -- Begin function PASeriesPerformRuin
+	.globl	_PASeriesPerformCease           ; -- Begin function PASeriesPerformCease
 	.p2align	2
-_PASeriesPerformRuin:                   ; @PASeriesPerformRuin
+_PASeriesPerformCease:                  ; @PASeriesPerformCease
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16

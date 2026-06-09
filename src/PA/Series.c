@@ -149,7 +149,7 @@ DllExport struct PASeries* PASeriesPerformBegin(struct PASeries* Series,
         // copy = PAListPerformInit(List);
         //return copy;
     // }
-    DllExport int PASeriesPerformRuin(struct PASeries* PA)
+    DllExport int PASeriesPerformCease(struct PASeries* PA)
     {
         // st
         int returnCode;

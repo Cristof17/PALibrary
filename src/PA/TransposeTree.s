@@ -127,9 +127,9 @@ _PATransposeTreePerformCopy:            ; @PATransposeTreePerformCopy
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PATransposeTreePerformRuin     ; -- Begin function PATransposeTreePerformRuin
+	.globl	_PATransposeTreePerformCease    ; -- Begin function PATransposeTreePerformCease
 	.p2align	2
-_PATransposeTreePerformRuin:            ; @PATransposeTreePerformRuin
+_PATransposeTreePerformCease:           ; @PATransposeTreePerformCease
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32

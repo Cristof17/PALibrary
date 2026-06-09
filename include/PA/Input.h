@@ -13,7 +13,7 @@ DllExport struct PAInput* PAInputPerformBegin(struct PAInput* PAInput, struct PA
 // vpo BFSInputRuin();
 // struct PAInput PAInputPerformConstruct(struct PACount, struct PACount, struct PAList, struct PAElement)l
 // struct 
-DllExport int PAInputPerformRuin(struct PAInput*);
+DllExport int PAInputPerformCease(struct PAInput*);
 DllExport struct PAInput* PAInputPerformDelete(struct PAInput* i);
 // void BFSInputRuin();
 // struct BFSInput BFSInputArrange(struct BFSInput);

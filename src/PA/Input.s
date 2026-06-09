@@ -58,9 +58,9 @@ _PAInputPerformBegin:                   ; @PAInputPerformBegin
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAInputPerformRuin             ; -- Begin function PAInputPerformRuin
+	.globl	_PAInputPerformCease            ; -- Begin function PAInputPerformCease
 	.p2align	2
-_PAInputPerformRuin:                    ; @PAInputPerformRuin
+_PAInputPerformCease:                   ; @PAInputPerformCease
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32
@@ -71,13 +71,13 @@ _PAInputPerformRuin:                    ; @PAInputPerformRuin
 	.cfi_offset w29, -16
 	str	x0, [sp, #8]
 	ldr	x0, [sp, #8]
-	bl	_PACountPerformRuin
+	bl	_PACountPerformCease
 	ldr	x8, [sp, #8]
 	add	x0, x8, #1
-	bl	_PACountPerformRuin
+	bl	_PACountPerformCease
 	ldr	x8, [sp, #8]
 	add	x0, x8, #2
-	bl	_PAElementPerformRuin
+	bl	_PAElementPerformCease
 	str	wzr, [sp, #4]
 	ldr	w0, [sp, #4]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload

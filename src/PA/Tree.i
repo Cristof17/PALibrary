@@ -385,13 +385,13 @@ struct Facade {
           struct PATree* PATreePerformCreate();
           struct PATree* PATreePerformCopy(struct PATree* from, struct PATree* to);
 
-          struct PATree* PATreePerformInit(struct PATree*, struct PACount, struct PACount, struct PAList, struct PAElement);
+          struct PATree* PATreePerformBegin(struct PATree*, struct PACount, struct PACount, struct PAList, struct PAElement);
 
 
 
 
 
-          int PATreePerformRuin(struct PATree*);
+          int PATreePerformCease(struct PATree*);
           int PATreePerformDelete(struct PATree*);
 # 4 "src/PA/Tree.c" 2
 # 1 "./include/PA/Count.h" 1
@@ -402,7 +402,7 @@ struct Facade {
 
 
 
-          int PACountPerformRuin(struct PACount*);
+          int PACountPerformCease(struct PACount*);
 
 
           struct PACount* PACountPerformDelete(struct PACount* PA);
@@ -419,7 +419,7 @@ struct Facade {
 
 
 
-          int PAElementPerformRuin(struct PAElement*);
+          int PAElementPerformCease(struct PAElement*);
           int PAElementPerformDelete(struct PAElement*);
           struct PAElement* PAElementPerformCopy(struct PAElement*, struct PAElement*);
 # 6 "src/PA/Tree.c" 2
@@ -430,7 +430,7 @@ struct Facade {
 
 
 
-          int PAListPerformRuin(struct PAList*);
+          int PAListPerformCease(struct PAList*);
           struct PAList* PAListPerformDelete(struct PAList*);
           struct PAList* PAListPerformCopy(struct PAList*, struct PAList*);
 
@@ -483,17 +483,17 @@ void PAListPerformPrint(struct PAList* List);
 # 116 "src/PA/Tree.c"
     return to;
 }
-          int PATreePerformRuin(struct PATree* PA)
+          int PATreePerformCease(struct PATree* PA)
 {
     int returnCode1 = ((int)1);
     int returnCode2 = ((int)1);
     int returnCode3 = ((int)1);
     int returnCode4 = ((int)1);
     int returnCode = ((int)1);
-    returnCode1 = PACountPerformRuin(&PA->n);
-    returnCode2 = PACountPerformRuin(&PA->m);
-    returnCode3 = PAListPerformRuin(&PA->adj);
-    returnCode4 = PAElementPerformRuin(&PA->source);
+    returnCode1 = PACountPerformCease(&PA->n);
+    returnCode2 = PACountPerformCease(&PA->m);
+    returnCode3 = PAListPerformCease(&PA->adj);
+    returnCode4 = PAElementPerformCease(&PA->source);
 
 
     returnCode = returnCode1 & returnCode2 & returnCode3 & returnCode4;

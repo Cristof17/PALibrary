@@ -387,7 +387,7 @@ struct Facade {
 
 
 
-          int PAListPerformRuin(struct PAList*);
+          int PAListPerformCease(struct PAList*);
           struct PAList* PAListPerformDelete(struct PAList*);
           struct PAList* PAListPerformCopy(struct PAList*, struct PAList*);
 
@@ -401,7 +401,7 @@ void PAListPerformPrint(struct PAList* List);
 
 
 
-          int PACountPerformRuin(struct PACount*);
+          int PACountPerformCease(struct PACount*);
 
 
           struct PACount* PACountPerformDelete(struct PACount* PA);
@@ -413,7 +413,7 @@ void PAListPerformPrint(struct PAList* List);
           struct PASeries* PASeriesPerformDelete(struct PASeries*);
           struct PASeries* PASeriesPerformCopy(struct PASeries*, struct PASeries*);
 
-          int PASeriesPerformRuin(struct PASeries*);
+          int PASeriesPerformCease(struct PASeries*);
           struct PAResource* PASeriesGet(struct PAData* Data);
           void PASeriesPerformPrint(struct PASeries* Series);
 # 10 "src/PA/List.c" 2
@@ -493,7 +493,7 @@ void PAListPerformPrint(struct PAList* List);
     return List;
 }
 # 142 "src/PA/List.c"
-          int PAListPerformRuin(struct PAList* PA)
+          int PAListPerformCease(struct PAList* PA)
 {
 
 
@@ -502,7 +502,7 @@ void PAListPerformPrint(struct PAList* List);
     int returnCode2;
     int returnCode;
 
-    returnCode1 = PACountPerformRuin(&(PA->n));
+    returnCode1 = PACountPerformCease(&(PA->n));
 
     returnCode = returnCode1 & returnCode2;
     return returnCode;

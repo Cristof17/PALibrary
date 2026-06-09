@@ -51,9 +51,9 @@ _PADataPerformCopy:                     ; @PADataPerformCopy
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PADataPerformRuin              ; -- Begin function PADataPerformRuin
+	.globl	_PADataPerformCease             ; -- Begin function PADataPerformCease
 	.p2align	2
-_PADataPerformRuin:                     ; @PADataPerformRuin
+_PADataPerformCease:                    ; @PADataPerformCease
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16

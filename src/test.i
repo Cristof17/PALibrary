@@ -383,13 +383,13 @@ struct Facade {
           struct PATree* PATreePerformCreate();
           struct PATree* PATreePerformCopy(struct PATree* from, struct PATree* to);
 
-          struct PATree* PATreePerformInit(struct PATree*, struct PACount, struct PACount, struct PAList, struct PAElement);
+          struct PATree* PATreePerformBegin(struct PATree*, struct PACount, struct PACount, struct PAList, struct PAElement);
 
 
 
 
 
-          int PATreePerformRuin(struct PATree*);
+          int PATreePerformCease(struct PATree*);
           int PATreePerformDelete(struct PATree*);
 # 2 "test/test.c" 2
 # 1 "./include/PA/Count.h" 1
@@ -400,7 +400,7 @@ struct Facade {
 
 
 
-          int PACountPerformRuin(struct PACount*);
+          int PACountPerformCease(struct PACount*);
 
 
           struct PACount* PACountPerformDelete(struct PACount* PA);
@@ -418,7 +418,7 @@ struct Facade {
 
 
 
-          int PAElementPerformRuin(struct PAElement*);
+          int PAElementPerformCease(struct PAElement*);
           int PAElementPerformDelete(struct PAElement*);
           struct PAElement* PAElementPerformCopy(struct PAElement*, struct PAElement*);
 # 5 "test/test.c" 2
@@ -428,7 +428,7 @@ struct Facade {
           struct PAData* PADataPerformBegin(struct PAData*, struct PAResource);
 
 
-          int PADataPerformRuin(struct PAData*);
+          int PADataPerformCease(struct PAData*);
           int PADataPerformDelete(struct PAData*);
           struct PAData* PADataPerformCopy(struct PAData* from, struct PAData* to);
 # 6 "test/test.c" 2
@@ -440,7 +440,7 @@ struct Facade {
 
 
 
-          int PAListPerformRuin(struct PAList*);
+          int PAListPerformCease(struct PAList*);
           struct PAList* PAListPerformDelete(struct PAList*);
           struct PAList* PAListPerformCopy(struct PAList*, struct PAList*);
 
@@ -454,7 +454,7 @@ void PAListPerformPrint(struct PAList* List);
 
           struct PAResource* PAResourcePerformBegin(struct PAResource*, struct PANumber);
           struct PAResource* PAResourcePerformCreate();
-          int PAResourcePerformRuin(struct PAResource*);
+          int PAResourcePerformCease(struct PAResource*);
           struct PAResource* PAResourcePerformDelete(struct PAResource*);
           struct PAResource* PAResourcePerformCopy(struct PAResource*, struct PAResource*);
 # 9 "test/test.c" 2
@@ -466,7 +466,7 @@ void PAListPerformPrint(struct PAList* List);
           struct PANumber* PANumberPerformCreate();
           struct PANumber* PANumberPerformBegin(struct PANumber* Number, unsigned char Value);
           int PANumberPerformDelete(struct PANumber*);
-          int PANumberPerformRuin(struct PANumber*);
+          int PANumberPerformCease(struct PANumber*);
           struct PANumber* PANumberPerformCopy(struct PANumber* from, struct PANumber* to);
 # 10 "test/test.c" 2
 # 1 "./include/PA/Series.h" 1
@@ -476,7 +476,7 @@ void PAListPerformPrint(struct PAList* List);
           struct PASeries* PASeriesPerformDelete(struct PASeries*);
           struct PASeries* PASeriesPerformCopy(struct PASeries*, struct PASeries*);
 
-          int PASeriesPerformRuin(struct PASeries*);
+          int PASeriesPerformCease(struct PASeries*);
           struct PAResource* PASeriesGet(struct PAData* Data);
           void PASeriesPerformPrint(struct PASeries* Series);
 # 11 "test/test.c" 2
@@ -493,7 +493,7 @@ void PAListPerformPrint(struct PAList* List);
           struct PAStatus* PAStatusPerformBegin(struct PAStatus*, struct PAResource);
           int PAStatusPerformDelete(struct PAStatus*);
           struct PAStatus* PAStatusPerformCreate();
-          int PAStatusPerformRuin(struct PAStatus*);
+          int PAStatusCease(struct PAStatus*);
           struct PAStatus* PAStatusPerformCopy(struct PAStatus*, struct PAStatus*);
 # 12 "test/test.c" 2
 # 1 "./include/PA/TransposeTree.h" 1
@@ -502,7 +502,7 @@ void PAListPerformPrint(struct PAList* List);
           struct PATransposeTree* PATransposeTreePerformBegin(struct PATransposeTree*, struct PATree);
           struct PATransposeTree* PATransposeTreePerformCopy(struct PATransposeTree*, struct PATransposeTree*);
 
-          int PATransposeTreeRuin(struct PATransposeTree*);
+          int PATransposeTreeCease(struct PATransposeTree*);
           int PATransposeTreeDelete(struct PATransposeTree*);
 
           PAResult PATransposeTreeGetResult();

@@ -394,7 +394,7 @@ struct Facade {
 
 
 
-          int PAPairPerformRuin(struct PAPair*);
+          int PAPairPerformCease(struct PAPair*);
           int PAPairPerformDelete(struct PAPair*);
 # 7 "src/PA/Pair.c" 2
 # 1 "./include/PA/Element.h" 1
@@ -409,7 +409,7 @@ struct Facade {
 
 
 
-          int PAElementPerformRuin(struct PAElement*);
+          int PAElementPerformCease(struct PAElement*);
           int PAElementPerformDelete(struct PAElement*);
           struct PAElement* PAElementPerformCopy(struct PAElement*, struct PAElement*);
 # 8 "src/PA/Pair.c" 2
@@ -469,13 +469,13 @@ struct PAPair* PAPairPerformCopy(struct PAPair* from, struct PAPair* to)
     return to;
 }
 # 102 "src/PA/Pair.c"
-          int PAPairPerformRuin(struct PAPair* PA)
+          int PAPairPerformCease(struct PAPair* PA)
 {
     int returnCode1;
     int returnCode2;
     int returnCode;
-    returnCode1 = PAElementPerformRuin(&PA->Node);
-    returnCode2 = PAElementPerformRuin(&PA->Neigh);
+    returnCode1 = PAElementPerformCease(&PA->Node);
+    returnCode2 = PAElementPerformCease(&PA->Neigh);
     returnCode = returnCode1 & returnCode2;
     return returnCode;
 
