@@ -20,7 +20,11 @@ DllExport struct ArrayList* ArrayListPerformCopy(struct ArrayList*, struct Array
 DllExport int ArrayListStore(struct ArrayList*, struct PAData);
 // DllExport int ArrayList(struct ArrayList*, ArrayListObject*)
 DllExport struct PAData* ArrayListRetrieve(struct ArrayList*);
+// DllExport struct Arra
+// DllExport struct Arra
+DllExport int ArrayListIndicateSize(struct ArrayList*);
 DllExport void ArrayListPrint(struct ArrayList*);
+// DllExport ArrayLis
 DllExport int ArrayListPerformRuin(struct ArrayList* PA);
 DllExport int ArrayListPerformDelete(struct ArrayList* PA);
 // struct ArrayList ArrayListPerformDelete(struct ArrayList List);

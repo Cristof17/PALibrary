@@ -32,7 +32,11 @@
 // 	List.index = Data;
 // 	return List;
 // }
-
+DllExport int ArrayListIndicateSize(struct ArrayList* arrayList)
+{
+	int returnCode = PARESULT_SUCCESS;
+	return returnCode;
+}
 DllExport int ArrayListStore(struct ArrayList*, struct PAData)
 {
 	int returnCode;
@@ -49,7 +53,7 @@ DllExport struct PAData* ArrayListRetrieve(struct ArrayList*)
 
 DllExport void ArrayListPrint(struct ArrayList*)
 {
-	
+
 }
 
 struct ArrayList* ArrayListPerformCopy(struct ArrayList *from, struct ArrayList *to)

@@ -396,23 +396,25 @@ struct Facade {
           ArrayListObject ArrayListGet(struct ArrayListPosition);
           ArrayListSize ArrayListPerformSize();
           void ArrayListPut(struct ArrayListPosition, ArrayListObject);
-          struct ArrayList* ArrayListPerformConstruct(ArrayListObject* Data, struct ArrayListPosition*);
-          struct ArrayList* ArrayListPerformInit(struct ArrayList*);
+          struct ArrayList* ArrayListArrange(ArrayListObject* Data, struct ArrayListPosition*);
+
           struct ArrayList* ArrayListPerformCopy(struct ArrayList*, struct ArrayList*);
 
+
+          int ArrayListStore(struct ArrayList*, struct PAData);
+
+          struct PAData* ArrayListRetrieve(struct ArrayList*);
+
+
+          int ArrayListIndicateSize(struct ArrayList*);
+          void ArrayListPrint(struct ArrayList*);
 
           int ArrayListPerformRuin(struct ArrayList* PA);
           int ArrayListPerformDelete(struct ArrayList* PA);
 
 
-
-
-
-
-          ArrayListObject ArrayListPerformGetFirst(struct ArrayList*);
-          ArrayListObject ArrayListPerformGetLast(struct ArrayList*);
-          ArrayListObject ArrayListPerformPutFirst(struct ArrayList*, ArrayListObject);
-          ArrayListObject ArrayListPerformPutLast(struct ArrayList*, ArrayListObject);
+struct PARecord ArrayListPerformArrange(PAInt);
+struct PARecord ArrayListPutCount(struct ArrayList, struct PACount);
 # 6 "src/Input.c" 2
 # 1 "./include/PA/Result.h" 1
 # 7 "src/Input.c" 2
