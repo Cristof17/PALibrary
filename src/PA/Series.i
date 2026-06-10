@@ -396,7 +396,7 @@ struct Facade {
           int PACountFinish(struct PACount*);
 
 
-          struct PACount* PACountDelete(struct PACount* PA);
+          struct PACount PACountDelete(struct PACount PA);
 # 9 "src/PA/Series.c" 2
 # 1 "./include/PA/Element.h" 1
 # 10 "./include/PA/Element.h"

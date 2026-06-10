@@ -404,7 +404,7 @@ void PAListPerformPrint(struct PAList* List);
           int PACountFinish(struct PACount*);
 
 
-          struct PACount* PACountDelete(struct PACount* PA);
+          struct PACount PACountDelete(struct PACount PA);
 # 9 "src/PA/List.c" 2
 # 1 "./include/PA/Series.h" 1
 # 17 "./include/PA/Series.h"

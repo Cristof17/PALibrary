@@ -390,7 +390,7 @@ struct Facade {
           int PACountFinish(struct PACount*);
 
 
-          struct PACount* PACountDelete(struct PACount* PA);
+          struct PACount PACountDelete(struct PACount PA);
 # 7 "src/PA/Count.c" 2
 # 1 "./include/PA/Number.h" 1
 
@@ -450,7 +450,7 @@ struct Facade {
     return returnCode;
 
 }
-          struct PACount* PACountDelete(struct PACount* PA)
+          struct PACount PACountDelete(struct PACount PA)
 {
 
     return PA;
