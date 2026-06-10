@@ -399,13 +399,13 @@ struct Facade {
 # 7 "src/PA/Element.c" 2
 # 1 "./include/PA/Data.h" 1
 # 11 "./include/PA/Data.h"
-          struct PAData* PADataCreate();
-          struct PAData* PADataCompleteBegin(struct PAData*, struct PAResource);
+          struct PAData PADataCreate();
+          struct PAData PADataCompleteBegin(struct PAData, struct PAResource);
 
 
           int PADataFinish(struct PAData*);
           int PADataDelete(struct PAData*);
-          struct PAData* PADataPerformCopy(struct PAData* from, struct PAData* to);
+          struct PAData PADataPerformCopy(struct PAData from, struct PAData to);
 # 8 "src/PA/Element.c" 2
 # 1 "./include/PA/Status.h" 1
 

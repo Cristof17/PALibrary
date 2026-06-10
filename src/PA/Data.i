@@ -387,13 +387,13 @@ struct Facade {
 
 
 
-          struct PAData* PADataCreate();
-          struct PAData* PADataCompleteBegin(struct PAData*, struct PAResource);
+          struct PAData PADataCreate();
+          struct PAData PADataCompleteBegin(struct PAData, struct PAResource);
 
 
           int PADataFinish(struct PAData*);
           int PADataDelete(struct PAData*);
-          struct PAData* PADataPerformCopy(struct PAData* from, struct PAData* to);
+          struct PAData PADataPerformCopy(struct PAData from, struct PAData to);
 # 4 "src/PA/Data.c" 2
 # 1 "./include/PA/Resource.h" 1
 
@@ -415,12 +415,12 @@ struct Facade {
 
 
 
-          struct PAData* PADataCreate()
+          struct PAData PADataCreate()
 {
     struct PAData data;
     struct PAData* dataPointer;
-# 25 "src/PA/Data.c"
-    return dataPointer;
+# 26 "src/PA/Data.c"
+    return data;
 }
           struct PAData PADataBegin(struct PAData Data, struct PAResource Value)
 {
@@ -446,7 +446,7 @@ struct Facade {
 
     return temp;
 }
-# 68 "src/PA/Data.c"
+# 69 "src/PA/Data.c"
           int PADataFinish(struct PAData* PA)
 {
 

@@ -7,7 +7,7 @@ _PADataCreate:                          ; @PADataCreate
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	ldr	x0, [sp]
+	ldrb	w0, [sp, #15]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
