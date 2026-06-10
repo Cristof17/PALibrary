@@ -428,8 +428,8 @@ struct Facade {
           struct PAData PADataCompleteBegin(struct PAData, struct PAResource);
 
 
-          int PADataFinish(struct PAData*);
-          int PADataDelete(struct PAData*);
+          int PADataFinish(struct PAData);
+          int PADataDelete(struct PAData);
           struct PAData PADataPerformCopy(struct PAData from, struct PAData to);
 # 6 "test/test.c" 2
 

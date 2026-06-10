@@ -51,7 +51,8 @@ _PADataFinish:                          ; @PADataFinish
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	str	x0, [sp, #8]
+	mov	x8, x0
+	strb	w8, [sp, #15]
 	mov	w0, #0                          ; =0x0
 	add	sp, sp, #16
 	ret
@@ -64,7 +65,8 @@ _PADataDelete:                          ; @PADataDelete
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	str	x0, [sp, #8]
+	mov	x8, x0
+	strb	w8, [sp, #15]
 	mov	w0, #0                          ; =0x0
 	add	sp, sp, #16
 	ret
