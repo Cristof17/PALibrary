@@ -12,7 +12,7 @@
 
 #endif
 
-DllExport struct PACount* PACountCreate()
+DllExport struct PACount PACountCreate()
 {
     struct PACount zies;
     struct PACount* countPointer;
@@ -22,9 +22,10 @@ DllExport struct PACount* PACountCreate()
     // zies.number = PANumberPerformConstruct();
     // size.number = Value;
     // return zies;
-    return countPointer;
+    // return countPointer;
+    return zies;
 }
-DllExport struct PACount* PACountBegin(struct PACount* Count, struct PANumber Value)
+DllExport struct PACount PACountBegin(struct PACount Count, struct PANumber Value)
 {
     // struct PACount temp;
     struct PACount temp;
@@ -35,7 +36,8 @@ DllExport struct PACount* PACountBegin(struct PACount* Count, struct PANumber Va
     //Value.val;
     // Count = temp;
     //temp.number = value;
-    return cpuntPointer;
+    // return cpuntPointer;
+    return temp;
     // temp = Count.number;
     // temp.val = Value;
     // Count.number.val = Value.val;
@@ -82,12 +84,12 @@ DllExport struct PACount* PACountDelete(struct PACount* PA)
     // PAResult result;
     // return result;
 }
-PAResult PACountPrint(struct PACount* Count)
+PAResult PACountPrint(struct PACount Count)
 {
     PAResult result;
     return result;
 }
-DllExport struct PACount* PACountCopy(struct PACount* from, struct PACount* to)
+DllExport struct PACount PACountCopy(struct PACount from, struct PACount to)
 {
     struct PACount temp;
     // temp.number = PANumberPerformCopy(from.number,to.number);
