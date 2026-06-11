@@ -7,7 +7,7 @@ _PALinkCreate:                          ; @PALinkCreate
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	ldr	w0, [sp, #12]
+	ldr	x0, [sp, #8]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -19,10 +19,9 @@ _PALinkBegin:                           ; @PALinkBegin
 ; %bb.0:
 	sub	sp, sp, #32
 	.cfi_def_cfa_offset 32
-	mov	x8, x0
-	str	w8, [sp, #24]
 	mov	x8, x1
-	str	w8, [sp, #20]
+	str	w8, [sp, #24]
+	str	x0, [sp, #16]
 	ldr	w0, [sp, #28]
 	add	sp, sp, #32
 	ret
@@ -48,10 +47,8 @@ _PALinkCopy:                            ; @PALinkCopy
 ; %bb.0:
 	sub	sp, sp, #32
 	.cfi_def_cfa_offset 32
-	mov	x8, x0
-	str	w8, [sp, #24]
-	mov	x8, x1
-	str	w8, [sp, #20]
+	str	x0, [sp, #16]
+	str	x1, [sp, #8]
 	ldr	w0, [sp, #28]
 	add	sp, sp, #32
 	ret
@@ -64,10 +61,7 @@ _PALinkDelete:                          ; @PALinkDelete
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	str	w8, [sp, #8]
-	ldr	w8, [sp, #8]
-	str	w8, [sp, #12]
+	str	x0, [sp]
 	ldr	w0, [sp, #12]
 	add	sp, sp, #16
 	ret

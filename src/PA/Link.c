@@ -75,5 +75,7 @@ DllExport struct PALink PALinkDelete(struct PALink* PA){
     // struct PALink Empty;
     // PA.p = PAPairPerformDelete(PA.p);
     // return result;
-    return PA;
+    // return PA;
+    struct PALink link;
+    return link;
 }

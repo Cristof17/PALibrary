@@ -385,7 +385,7 @@ struct Facade {
           void PAStatusCauseVisit(PABool);
           struct PAStatus* PAStatusCreate();
           struct PAStatus PAStatusBegin(struct PAStatus*, struct PAResource);
-          PAResult PAStatusFinish(struct PAStatus);
+          PAResult PAStatusFinish(struct PAStatus*);
 
           struct PAStatus PAStatusCopy(struct PAStatus*, struct PAStatus*);
           struct PAStatus PAStatusDelete(struct PAStatus*);
@@ -410,20 +410,14 @@ struct Facade {
 {
 
 }
-          struct PAStatus PAStatusCreate()
+          struct PAStatus* PAStatusCreate()
 {
     struct PAStatus status;
-    struct PAResource resource;
-
-
-
-
-
-
-
-    return status;
+# 28 "src/PA/Status.c"
+    struct PAStatus* statusPointer;
+    return statusPointer;
 }
-          struct PAStatus PAStatusBegin(struct PAStatus Status, struct PAResource Value)
+          struct PAStatus PAStatusBegin(struct PAStatus* Status, struct PAResource Value)
 {
     struct PAStatus temp;
     struct PAStatus* statusPointer;
@@ -433,18 +427,19 @@ struct Facade {
 
 
 }
-          struct PAStatus PAStatusCopy(struct PAStatus from, struct PAStatus to)
+          struct PAStatus PAStatusCopy(struct PAStatus* from, struct PAStatus* to)
 {
     struct PAStatus temp;
 
 
-    return to;
+
+    return temp;
 
 
 
 }
-# 57 "src/PA/Status.c"
-          int PAStatusFinish(struct PAStatus PA)
+# 60 "src/PA/Status.c"
+          PAResult PAStatusFinish(struct PAStatus* PA)
 {
 
 

@@ -418,14 +418,15 @@ void PAListPerformPrint(struct PAList* List);
           void PASeriesPrint(struct PASeries*);
 # 10 "src/PA/List.c" 2
 # 19 "src/PA/List.c"
-          struct PAList PAListCreate()
+          struct PAList* PAListCreate()
 {
     struct PAList list;
-# 33 "src/PA/List.c"
-    return list;
-# 43 "src/PA/List.c"
+# 34 "src/PA/List.c"
+    struct PAList* listPointer;
+    return listPointer;
+# 45 "src/PA/List.c"
 }
-          struct PAList* PAListCopy(struct PAList* from, struct PAList* to)
+          struct PAList PAListCopy(struct PAList* from, struct PAList* to)
 {
     struct PAList temp;
 
@@ -464,10 +465,11 @@ void PAListPerformPrint(struct PAList* List);
         x.number.val++;
     }
 
-    return to;
+
+    return temp;
 }
 
-          struct PAList PAListBegin(struct PAList List, struct PACount Value, struct PASeries Value2[])
+          struct PAList PAListBegin(struct PAList* List, struct PACount Value, struct PASeries Value2[])
 {
     struct PAList list;
     list.n = Value;
@@ -490,10 +492,11 @@ void PAListPerformPrint(struct PAList* List);
 
 
 
-    return List;
+
+    return list;
 }
-# 142 "src/PA/List.c"
-          int PAListFinish(struct PAList* PA)
+# 146 "src/PA/List.c"
+          PAResult PAListFinish(struct PAList* PA)
 {
 
 
@@ -526,9 +529,10 @@ void Dispose()
 {
 
 }
-# 190 "src/PA/List.c"
-          int PAListDelete(struct PAList* PA)
+# 194 "src/PA/List.c"
+          struct PAList PAListDelete(struct PAList* PA)
 {
+    struct PAList aux;
 
     struct PACount* countPointer;
 
@@ -543,7 +547,8 @@ void Dispose()
     }
 
 
-    return ((int)0);
+
+    return aux;
 
 
 

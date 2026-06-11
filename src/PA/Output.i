@@ -409,26 +409,31 @@ struct Facade {
           struct BFSRecord BFSRecordPutCount(struct BFSRecord, struct PACount);
 # 7 "src/PA/Output.c" 2
 # 60 "src/PA/Output.c"
-          struct PAOutput PAOutputCreate()
+          struct PAOutput* PAOutputCreate()
 {
     struct PAOutput Output;
     struct PAOutput* outputPointer;
 
 
-    return Output;
+
+    return outputPointer;
 
 }
-          struct PAOutput PAOutputBegin(struct PAOutput Output, struct BFSRecord Value)
+          struct PAOutput PAOutputBegin(struct PAOutput* Output, struct BFSRecord Value)
 {
 
-    return Output;
+
+    struct PAOutput output;
+    return output;
 }
-          struct PAOutput PAOutputDelete(struct PAOutput Output)
+          struct PAOutput PAOutputDelete(struct PAOutput* Output)
 {
 
-    return Output;
+
+    struct PAOutput output;
+    return output;
 }
-          int PAOutputFinish(struct PAOutput* PA)
+          PAResult PAOutputFinish(struct PAOutput* PA)
 {
     int returnCode;
 

@@ -111,6 +111,7 @@ DllExport struct PASeries PASeriesBegin(struct PASeries* Series,
         // series.n = N;
         //return series;
         struct PASeries* series;
+        struct PASeries temp;
         // series.m = Value;
         struct PANumber x;
         struct PANumber y;
@@ -121,12 +122,14 @@ DllExport struct PASeries PASeriesBegin(struct PASeries* Series,
             // series.adj[x.val] = PAElementPerformInit(series.adj[x.val],series.adj[x.val].index, series.adj[x.val].status);
             x.val++;
         }
-        return series;
+        // return series;
+        return temp;
         // series.adj = Value2;
         // return series;
     }
-    DllExport struct PASeries* PASeriesDelete(struct PASeries* PA)
+    DllExport struct PASeries PASeriesDelete(struct PASeries* PA)
     {
+        struct PASeries series;
         struct PANumber x;
         struct PANumber y;
         // x.val = PA.m.number.val;
@@ -137,7 +140,8 @@ DllExport struct PASeries PASeriesBegin(struct PASeries* Series,
             y.val++;
         }
         // struct PASeries Empty;
-        return PA;
+        // return PA;
+        return series;
         // return Empty;
     }
     // PAResult PASeriesPerformCopy()

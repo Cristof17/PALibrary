@@ -7,7 +7,7 @@ _PANumberCreate:                        ; @PANumberCreate
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	ldrb	w0, [sp, #15]
+	ldr	x0, [sp]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -17,15 +17,14 @@ _PANumberCreate:                        ; @PANumberCreate
 _PANumberBegin:                         ; @PANumberBegin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	strb	w8, [sp, #14]
-	strb	w1, [sp, #13]
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #16]
+	strb	w1, [sp, #15]
 	ldr	x8, [sp]
 	strb	wzr, [x8]
-	ldrb	w0, [sp, #15]
-	add	sp, sp, #16
+	ldrb	w0, [sp, #31]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -34,13 +33,12 @@ _PANumberBegin:                         ; @PANumberBegin
 _PANumberDelete:                        ; @PANumberDelete
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	strb	w8, [sp, #15]
-	str	wzr, [sp, #8]
-	ldr	w0, [sp, #8]
-	add	sp, sp, #16
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #16]
+	str	wzr, [sp, #12]
+	ldrb	w0, [sp, #31]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -49,13 +47,12 @@ _PANumberDelete:                        ; @PANumberDelete
 _PANumberFinish:                        ; @PANumberFinish
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	strb	w8, [sp, #15]
-	str	wzr, [sp, #8]
-	ldr	w0, [sp, #8]
-	add	sp, sp, #16
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #16]
+	str	wzr, [sp, #12]
+	ldr	w0, [sp, #28]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -64,16 +61,12 @@ _PANumberFinish:                        ; @PANumberFinish
 _PANumberCopy:                          ; @PANumberCopy
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	strb	w8, [sp, #14]
-	mov	x8, x1
-	strb	w8, [sp, #13]
-	ldrb	w8, [sp, #13]
-	strb	w8, [sp, #15]
-	ldrb	w0, [sp, #15]
-	add	sp, sp, #16
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #16]
+	str	x1, [sp, #8]
+	ldrb	w0, [sp, #31]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function

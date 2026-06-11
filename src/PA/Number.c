@@ -28,17 +28,19 @@ DllExport struct PANumber PANumberBegin(struct PANumber* Number, unsigned char V
     // return numberPointer;
     return temp;
 }
-DllExport PAResult PANumberDelete(struct PANumber* PA)
+DllExport struct PANumber PANumberDelete(struct PANumber* PA)
 {
     int returnCode;
     // returnCode = PA-
     // PA->val = NULL;
     returnCode = PARESULT_SUCCESS;
-    return returnCode;
+    // return returnCode;
+    struct PANumber number;
+    return number;
     // struct PANumber number;
     // return PA;
 }
-DllExport struct PANumber PANumberFinish(struct PANumber* PA)
+DllExport PAResult PANumberFinish(struct PANumber* PA)
 {
     int returnCode;
     returnCode = PARESULT_SUCCESS;
@@ -48,7 +50,7 @@ DllExport struct PANumber PANumberFinish(struct PANumber* PA)
     // return returncode
     // return returnCode;
     struct PANumber aux;
-    return aux;
+    // return aux;
     // return Empty;
     // struct PANumber number;
     // return number;

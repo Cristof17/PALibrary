@@ -124,8 +124,8 @@ DllExport struct PAPair PAPairDelete(struct PAPair* PA)
     int returnCode1;
     int returnCode2;
     int returnCode;
-    returnCode1 = PAElementDelete(&PA->Node);
-    returnCode2 = PAElementDelete(&PA->Neigh);
+    // returnCode1 = PAElementDelete(&PA->Node);
+    // returnCode2 = PAElementDelete(&PA->Neigh);
     returnCode = returnCode1 & returnCode2;
     // return returnCode;
     struct PAPair pair;

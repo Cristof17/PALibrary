@@ -382,14 +382,14 @@ struct Facade {
 
           struct PANumber* PANumberCreate();
           struct PANumber PANumberBegin(struct PANumber* Number, unsigned char Value);
-          PAResult (struct PANumber);
-          struct PANumber PANumberFinish(struct PANumber*);
+          PAResult PANumberFinish(struct PANumber*);
+          struct PANumber PANumberDelete(struct PANumber*);
           struct PANumber PANumberCopy(struct PANumber* from, struct PANumber* to);
 # 3 "src/PA/Number.c" 2
 
 
 
-          struct PANumber PANumberCreate()
+          struct PANumber* PANumberCreate()
 {
     struct PANumber number;
     struct PANumber* numberPointer;
@@ -397,9 +397,10 @@ struct Facade {
 
 
 
-    return number;
+
+    return numberPointer;
 }
-          struct PANumber PANumberBegin(struct PANumber Number, unsigned char Value)
+          struct PANumber PANumberBegin(struct PANumber* Number, unsigned char Value)
 {
     struct PANumber temp;
     struct PANumber* numberPointer;
@@ -413,17 +414,19 @@ struct Facade {
 
     return temp;
 }
-          int PANumberDelete(struct PANumber PA)
+          struct PANumber PANumberDelete(struct PANumber* PA)
 {
     int returnCode;
 
 
     returnCode = ((int)0);
-    return returnCode;
+
+    struct PANumber number;
+    return number;
 
 
 }
-          int PANumberFinish(struct PANumber PA)
+          PAResult PANumberFinish(struct PANumber* PA)
 {
     int returnCode;
     returnCode = ((int)0);
@@ -431,13 +434,16 @@ struct Facade {
 
 
 
-    return returnCode;
+
+    struct PANumber aux;
+
 
 
 
 }
-          struct PANumber PANumberCopy(struct PANumber from, struct PANumber to)
+          struct PANumber PANumberCopy(struct PANumber* from, struct PANumber* to)
 {
-# 64 "src/PA/Number.c"
-    return to;
+# 70 "src/PA/Number.c"
+    struct PANumber number;
+    return number;
 }

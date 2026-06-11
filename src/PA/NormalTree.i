@@ -427,7 +427,7 @@ struct Facade {
 
 
 }
-          struct PANormalTree* PANormalTreeBegin(struct PANormalTree* NormalTree, struct PATree Value)
+          struct PANormalTree PANormalTreeBegin(struct PANormalTree* NormalTree, struct PATree Value)
 {
     struct PANormalTree normalTree;
     struct PANormalTree *normalTreePointer;
@@ -436,10 +436,11 @@ struct Facade {
 
 
 
-    return normalTreePointer;
+
+    return normalTree;
 }
-# 48 "src/PA/NormalTree.c"
-          int PANormalTreeFinish(struct PANormalTree* PA)
+# 49 "src/PA/NormalTree.c"
+          PAResult PANormalTreeFinish(struct PANormalTree* PA)
 {
     int returnCode;
     returnCode = PATreeFinish(&PA->tree);
@@ -448,25 +449,13 @@ struct Facade {
 
 
 }
-          int PANormalTreeDelete(struct PANormalTree* PA)
+          struct PANormalTree PANormalTreeDelete(struct PANormalTree* PA)
 {
     int returnCode;
-    returnCode = PATreeDelete(&PA->tree);
-    return returnCode;
 
 
-}
-          struct PANormalTree* PAGrafNormalBuildPart()
-{
     struct PANormalTree tree;
-    struct PANormalTree* treePointer;
-
-    return treePointer;
-}
-PAResult PAGrafNormalGetResult()
-{
+    return tree;
 
 
-    PAResult result;
-    return result;
 }

@@ -395,8 +395,8 @@ struct Facade {
 
           struct PANumber* PANumberCreate();
           struct PANumber PANumberBegin(struct PANumber* Number, unsigned char Value);
-          PAResult (struct PANumber);
-          struct PANumber PANumberFinish(struct PANumber*);
+          PAResult PANumberFinish(struct PANumber*);
+          struct PANumber PANumberDelete(struct PANumber*);
           struct PANumber PANumberCopy(struct PANumber* from, struct PANumber* to);
 # 5 "src/PA/Resource.c" 2
 
@@ -404,14 +404,15 @@ struct Facade {
 
 
 
-          struct PAResource PAResourceCreate()
+          struct PAResource* PAResourceCreate()
 {
-    struct PAResource resource;
+    struct PAResource* resourcePointer;
 # 21 "src/PA/Resource.c"
-    return resource;
+    return resourcePointer;
+
 
 }
-          struct PAResource PAResourceBegin(struct PAResource Resource, struct PANumber Value)
+          struct PAResource PAResourceBegin(struct PAResource* Resource, struct PANumber Value)
 {
     struct PAResource resource;
     struct PAResource* resourcePointer;
@@ -423,7 +424,7 @@ struct Facade {
     return resource;
 
 }
-          struct PAResource PAResourceCopy(struct PAResource from, struct PAResource to)
+          struct PAResource PAResourceCopy(struct PAResource* from, struct PAResource* to)
 {
     struct PAResource temp;
 
@@ -433,7 +434,7 @@ struct Facade {
     return temp;
 
 }
-          int PAResourceFinish(struct PAResource PA)
+          PAResult PAResourceFinish(struct PAResource* PA)
 {
     int returnCode;
 
@@ -442,7 +443,9 @@ struct Facade {
     return returnCode;
 
 }
-          struct PAResource PAResourceDelete(struct PAResource Resource)
+          struct PAResource PAResourceDelete(struct PAResource* Resource)
 {
-    return Resource;
+    struct PAResource resource;
+    return resource;
+
 }

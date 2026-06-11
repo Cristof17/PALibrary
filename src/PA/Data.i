@@ -392,7 +392,7 @@ struct Facade {
 
 
           int PADataFinish(struct PAData*);
-          int PADataDelete(struct PAData*);
+          struct PAData PADataDelete(struct PAData*);
           struct PAData PADataPerformCopy(struct PAData* from, struct PAData* to);
 # 4 "src/PA/Data.c" 2
 # 1 "./include/PA/Resource.h" 1
@@ -447,7 +447,7 @@ struct Facade {
     return temp;
 }
 # 70 "src/PA/Data.c"
-          int PADataFinish(struct PAData* PA)
+          PAResult PADataFinish(struct PAData* PA)
 {
 
 
@@ -457,9 +457,11 @@ struct Facade {
 
 
 }
-          int PADataDelete(struct PAData* PA)
+          struct PAData PADataDelete(struct PAData* PA)
 {
-    return ((int)0);
+    struct PAData temp;
+    return temp;
+
 
 
 

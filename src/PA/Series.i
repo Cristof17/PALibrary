@@ -411,7 +411,7 @@ struct Facade {
 
 
           int PAElementFinish(struct PAElement*);
-          int PAElementDelete(struct PAElement*);
+          struct PAElement PAElementDelete(struct PAElement*);
           struct PAElement PAElementCopy(struct PAElement*, struct PAElement*);
 # 10 "src/PA/Series.c" 2
 # 21 "src/PA/Series.c"
@@ -431,11 +431,11 @@ struct Facade {
 # 46 "src/PA/Series.c"
     return series;
 }
-          struct PASeries* PASeriesCopy(struct PASeries* from, struct PASeries* to)
+          struct PASeries PASeriesCopy(struct PASeries* from, struct PASeries* to)
 {
     struct PACount x;
     struct PACount y;
-    struct PASeries* temp;
+    struct PASeries temp;
 
 
 
@@ -465,15 +465,16 @@ struct Facade {
         y.number.val++;
     }
 
+    return temp;
 
-    return to;
 }
 # 99 "src/PA/Series.c"
-          struct PASeries* PASeriesBegin(struct PASeries* Series,
+          struct PASeries PASeriesBegin(struct PASeries* Series,
     struct PACount Value, struct PAElement Value2[])
     {
 # 113 "src/PA/Series.c"
         struct PASeries* series;
+        struct PASeries temp;
 
         struct PANumber x;
         struct PANumber y;
@@ -484,12 +485,14 @@ struct Facade {
 
             x.val++;
         }
-        return series;
+
+        return temp;
 
 
     }
-              struct PASeries* PASeriesDelete(struct PASeries* PA)
+              struct PASeries PASeriesDelete(struct PASeries* PA)
     {
+        struct PASeries series;
         struct PANumber x;
         struct PANumber y;
 
@@ -500,11 +503,12 @@ struct Facade {
             y.val++;
         }
 
-        return PA;
+
+        return series;
 
     }
-# 152 "src/PA/Series.c"
-              int PASeriesFinish(struct PASeries* PA)
+# 156 "src/PA/Series.c"
+              PAResult PASeriesFinish(struct PASeries* PA)
     {
 
         int returnCode;
@@ -517,17 +521,11 @@ struct Facade {
 
             y.number.val++;
         }
-# 173 "src/PA/Series.c"
+# 177 "src/PA/Series.c"
         return returnCode;
 
     }
-# 210 "src/PA/Series.c"
-struct PAResource* PASeriesGet(struct PAData* Data)
-{
-    struct PAResource* resource;
-    return resource;
-}
-# 231 "src/PA/Series.c"
+# 235 "src/PA/Series.c"
 void PASeriesPrint(struct PASeries* Series)
 {
 

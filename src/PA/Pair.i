@@ -410,7 +410,7 @@ struct Facade {
 
 
           int PAElementFinish(struct PAElement*);
-          int PAElementDelete(struct PAElement*);
+          struct PAElement PAElementDelete(struct PAElement*);
           struct PAElement PAElementCopy(struct PAElement*, struct PAElement*);
 # 8 "src/PA/Pair.c" 2
 
@@ -418,17 +418,12 @@ struct Facade {
 
 
 
-          struct PAPair PAPairCreate()
+          struct PAPair* PAPairCreate()
 {
-    struct PAPair pair;
 
-
-
-
-
-
-
-    return pair;
+    struct PAPair* pairPointer;
+# 25 "src/PA/Pair.c"
+    return pairPointer;
 
 
 
@@ -437,14 +432,14 @@ struct Facade {
 
 }
 
-          struct PAPair PAPairBegin(struct PAPair Pair, struct PAElement Value, struct PAElement Value2)
+          struct PAPair PAPairBegin(struct PAPair* Pair, struct PAElement Value, struct PAElement Value2)
 {
     struct PAPair temp;
-# 48 "src/PA/Pair.c"
+# 50 "src/PA/Pair.c"
     return temp;
-# 61 "src/PA/Pair.c"
+# 63 "src/PA/Pair.c"
 }
-struct PAPair PAPairCopy(struct PAPair from, struct PAPair to)
+struct PAPair PAPairCopy(struct PAPair* from, struct PAPair* to)
 {
     struct PAPair temp;
     struct PAElement node;
@@ -456,10 +451,11 @@ struct PAPair PAPairCopy(struct PAPair from, struct PAPair to)
 
 
 
-    return to;
+
+    return temp;
 }
-# 104 "src/PA/Pair.c"
-          int PAPairFinish(struct PAPair* PA)
+# 107 "src/PA/Pair.c"
+          PAResult PAPairFinish(struct PAPair* PA)
 {
     int returnCode1;
     int returnCode2;
@@ -474,15 +470,17 @@ struct PAPair PAPairCopy(struct PAPair from, struct PAPair to)
 
 
 }
-          int PAPairDelete(struct PAPair* PA)
+          struct PAPair PAPairDelete(struct PAPair* PA)
 {
     int returnCode1;
     int returnCode2;
     int returnCode;
-    returnCode1 = PAElementDelete(&PA->Node);
-    returnCode2 = PAElementDelete(&PA->Neigh);
+
+
     returnCode = returnCode1 & returnCode2;
-    return returnCode;
+
+    struct PAPair pair;
+    return pair;
 
 
 }

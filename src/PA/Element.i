@@ -394,7 +394,7 @@ struct Facade {
 
 
           int PAElementFinish(struct PAElement*);
-          int PAElementDelete(struct PAElement*);
+          struct PAElement PAElementDelete(struct PAElement*);
           struct PAElement PAElementCopy(struct PAElement*, struct PAElement*);
 # 7 "src/PA/Element.c" 2
 # 1 "./include/PA/Data.h" 1
@@ -404,7 +404,7 @@ struct Facade {
 
 
           int PADataFinish(struct PAData*);
-          int PADataDelete(struct PAData*);
+          struct PAData PADataDelete(struct PAData*);
           struct PAData PADataPerformCopy(struct PAData* from, struct PAData* to);
 # 8 "src/PA/Element.c" 2
 # 1 "./include/PA/Status.h" 1
@@ -419,7 +419,7 @@ struct Facade {
           void PAStatusCauseVisit(PABool);
           struct PAStatus* PAStatusCreate();
           struct PAStatus PAStatusBegin(struct PAStatus*, struct PAResource);
-          PAResult PAStatusFinish(struct PAStatus);
+          PAResult PAStatusFinish(struct PAStatus*);
 
           struct PAStatus PAStatusCopy(struct PAStatus*, struct PAStatus*);
           struct PAStatus PAStatusDelete(struct PAStatus*);
@@ -476,11 +476,13 @@ struct PAElement* PAElementCreate()
 
 }
 # 145 "src/PA/Element.c"
-          PAResult PAElementDelete(struct PAElement* PA)
+          struct PAElement PAElementDelete(struct PAElement* PA)
 {
 
 
-    int returnCode = ((int)0);
-    return returnCode;
+
+
+    struct PAElement element;
+    return element;
 
 }

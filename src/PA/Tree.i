@@ -420,7 +420,7 @@ struct Facade {
 
 
           int PAElementFinish(struct PAElement*);
-          int PAElementDelete(struct PAElement*);
+          struct PAElement PAElementDelete(struct PAElement*);
           struct PAElement PAElementCopy(struct PAElement*, struct PAElement*);
 # 6 "src/PA/Tree.c" 2
 # 1 "./include/PA/List.h" 1
@@ -469,7 +469,7 @@ void PAListPerformPrint(struct PAList* List);
     return Tree;
 }
 # 96 "src/PA/Tree.c"
-          struct PATree* PATreeCopy(struct PATree* from, struct PATree* to)
+          struct PATree PATreeCopy(struct PATree* from, struct PATree* to)
 {
     struct PATree temp;
     temp.n = from->n;
@@ -480,10 +480,10 @@ void PAListPerformPrint(struct PAList* List);
     to->m = temp.m;
     PAListCopy(&temp.adj, &to->adj);
     to->source = temp.source;
-# 116 "src/PA/Tree.c"
-    return to;
+# 117 "src/PA/Tree.c"
+    return temp;
 }
-          int PATreeFinish(struct PATree* PA)
+          PAResult PATreeFinish(struct PATree* PA)
 {
     int returnCode1 = ((int)1);
     int returnCode2 = ((int)1);
@@ -498,11 +498,11 @@ void PAListPerformPrint(struct PAList* List);
 
     returnCode = returnCode1 & returnCode2 & returnCode3 & returnCode4;
     return returnCode;
-# 155 "src/PA/Tree.c"
+# 156 "src/PA/Tree.c"
     return returnCode;
 }
-# 197 "src/PA/Tree.c"
-          int PATreeDelete(struct PATree* Tree)
+# 198 "src/PA/Tree.c"
+          struct PATree PATreeDelete(struct PATree* Tree)
 {
     int returnCode;
 
@@ -510,11 +510,6 @@ void PAListPerformPrint(struct PAList* List);
 
 
     returnCode = ((int)0);
-    return returnCode;
 
-}
-          struct PATransposeTree PATransposeTreeBuildPart()
-{
-    struct PATransposeTree tree;
-    return tree;
+
 }

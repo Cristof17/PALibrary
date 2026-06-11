@@ -398,8 +398,8 @@ struct Facade {
 
           struct PANumber* PANumberCreate();
           struct PANumber PANumberBegin(struct PANumber* Number, unsigned char Value);
-          PAResult (struct PANumber);
-          struct PANumber PANumberFinish(struct PANumber*);
+          PAResult PANumberFinish(struct PANumber*);
+          struct PANumber PANumberDelete(struct PANumber*);
           struct PANumber PANumberCopy(struct PANumber* from, struct PANumber* to);
 # 7 "src/PA/Count.c" 2
 
@@ -436,7 +436,7 @@ struct Facade {
 
 
 }
-          int PACountFinish(struct PACount* PA)
+          PAResult PACountFinish(struct PACount* PA)
 {
 # 75 "src/PA/Count.c"
     int returnCode;

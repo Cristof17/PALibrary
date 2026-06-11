@@ -19,7 +19,7 @@ _PAStatusCreate:                        ; @PAStatusCreate
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	ldrb	w0, [sp, #15]
+	ldr	x0, [sp]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -29,17 +29,16 @@ _PAStatusCreate:                        ; @PAStatusCreate
 _PAStatusBegin:                         ; @PAStatusBegin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	strb	w8, [sp, #14]
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
 	mov	x8, x1
-	strb	w8, [sp, #13]
-	ldr	x9, [sp]
-	ldrb	w8, [sp, #13]
+	strb	w8, [sp, #30]
+	str	x0, [sp, #16]
+	ldr	x9, [sp, #8]
+	ldrb	w8, [sp, #30]
 	strb	w8, [x9]
-	ldrb	w0, [sp, #15]
-	add	sp, sp, #16
+	ldrb	w0, [sp, #31]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -48,16 +47,12 @@ _PAStatusBegin:                         ; @PAStatusBegin
 _PAStatusCopy:                          ; @PAStatusCopy
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	strb	w8, [sp, #14]
-	mov	x8, x1
-	strb	w8, [sp, #13]
-	ldrb	w8, [sp, #13]
-	strb	w8, [sp, #15]
-	ldrb	w0, [sp, #15]
-	add	sp, sp, #16
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #16]
+	str	x1, [sp, #8]
+	ldrb	w0, [sp, #31]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -68,9 +63,8 @@ _PAStatusFinish:                        ; @PAStatusFinish
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	strb	w8, [sp, #15]
-	ldr	w0, [sp, #8]
+	str	x0, [sp, #8]
+	ldr	w0, [sp, #4]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc

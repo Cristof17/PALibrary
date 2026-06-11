@@ -419,7 +419,7 @@ struct Facade {
 
 
           int PAElementFinish(struct PAElement*);
-          int PAElementDelete(struct PAElement*);
+          struct PAElement PAElementDelete(struct PAElement*);
           struct PAElement PAElementCopy(struct PAElement*, struct PAElement*);
 # 5 "test/test.c" 2
 # 1 "./include/PA/Data.h" 1
@@ -429,7 +429,7 @@ struct Facade {
 
 
           int PADataFinish(struct PAData*);
-          int PADataDelete(struct PAData*);
+          struct PAData PADataDelete(struct PAData*);
           struct PAData PADataPerformCopy(struct PAData* from, struct PAData* to);
 # 6 "test/test.c" 2
 
@@ -465,8 +465,8 @@ void PAListPerformPrint(struct PAList* List);
 
           struct PANumber* PANumberCreate();
           struct PANumber PANumberBegin(struct PANumber* Number, unsigned char Value);
-          PAResult (struct PANumber);
-          struct PANumber PANumberFinish(struct PANumber*);
+          PAResult PANumberFinish(struct PANumber*);
+          struct PANumber PANumberDelete(struct PANumber*);
           struct PANumber PANumberCopy(struct PANumber* from, struct PANumber* to);
 # 10 "test/test.c" 2
 # 1 "./include/PA/Series.h" 1
@@ -492,7 +492,7 @@ void PAListPerformPrint(struct PAList* List);
           void PAStatusCauseVisit(PABool);
           struct PAStatus* PAStatusCreate();
           struct PAStatus PAStatusBegin(struct PAStatus*, struct PAResource);
-          PAResult PAStatusFinish(struct PAStatus);
+          PAResult PAStatusFinish(struct PAStatus*);
 
           struct PAStatus PAStatusCopy(struct PAStatus*, struct PAStatus*);
           struct PAStatus PAStatusDelete(struct PAStatus*);

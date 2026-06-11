@@ -384,7 +384,7 @@ struct Facade {
 
 
           struct PALink* PALinkCreate();
-          struct PALink PALinkCopy(struct PALink*, struct PALink);
+          struct PALink PALinkCopy(struct PALink*, struct PALink*);
 
           struct PALink PALinkBegin(struct PALink*, struct PAPair);
 
@@ -414,21 +414,15 @@ struct Facade {
 
 
 
-          struct PALink PALinkCreate()
+          struct PALink* PALinkCreate()
 {
-    struct PALink link;
+
     struct PALink* linkPointer;
-
-
-
-
-
-
-
-    return link;
+# 27 "src/PA/Link.c"
+    return linkPointer;
 
 }
-          struct PALink PALinkBegin(struct PALink Link, struct PAPair Value)
+          struct PALink PALinkBegin(struct PALink* Link, struct PAPair Value)
 {
     struct PALink link;
     struct PALink* linkPointer;
@@ -441,7 +435,7 @@ struct Facade {
 
     return link;
 }
-          int PALinkFinish(struct PALink* PA)
+          PAResult PALinkFinish(struct PALink* PA)
 {
 
 
@@ -452,7 +446,7 @@ struct Facade {
     int returnCode;
     return returnCode;
 }
-struct PALink PALinkCopy(struct PALink from, struct PALink to)
+struct PALink PALinkCopy(struct PALink* from, struct PALink* to)
 {
     struct PALink temp;
     struct PALink* linkPointer;
@@ -471,10 +465,12 @@ struct PALink PALinkCopy(struct PALink from, struct PALink to)
 
 
 
-          struct PALink PALinkDelete(struct PALink PA){
+          struct PALink PALinkDelete(struct PALink* PA){
 
 
 
 
-    return PA;
+
+    struct PALink link;
+    return link;
 }
