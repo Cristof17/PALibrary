@@ -2335,9 +2335,9 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
     struct PAResource temp;
     struct PAResource* resourcePointer;
-    PANumberBegin(&temp.value,Value.val);
+    temp.value = &Value;
     Resource->value = temp.value;
-# 50 "src/PA/Resource.c"
+# 52 "src/PA/Resource.c"
     return temp;
 
 }

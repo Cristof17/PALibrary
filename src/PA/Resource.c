@@ -28,8 +28,10 @@ DllExport struct PAResource PAResourceBegin(struct PAResource* Resource, struct 
     // PAResourceDelete()
     struct PAResource temp;
     struct PAResource* resourcePointer;
-    PANumberBegin(&temp.value,Value.val);
+    temp.value = &Value;
     Resource->value = temp.value;
+    // PANumberBegin(&temp.value,Value.val);
+    // Resource->value = temp.value;
     // temp = PANumberCreate();
     // temp = Value;
     // temp->val = Value;

@@ -2374,8 +2374,10 @@ int main()
 
 
  struct PAResource* resource123;
+ PANumberBegin(number,'o');
+ PANumberPrint(number);
  PAResourceBegin(resource123,*number);
  printf("resource %d\n", resource123->value->val);
-# 60 "test/test_pointers.c"
+# 62 "test/test_pointers.c"
  return 0;
 }
