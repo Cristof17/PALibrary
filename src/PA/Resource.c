@@ -7,9 +7,10 @@
 #include <PA\Number.h>
 #endif
 
-DllExport struct PAResource PAResourceCreate()
+DllExport struct PAResource* PAResourceCreate()
 {
-    struct PAResource resource;
+    struct PAResource* resourcePointer;
+    // struct PAResource resource;
     // struct PAResourfec
     // struct PAResource* resourcePointer;
     // resource = PAResourcePerformC
@@ -17,11 +18,11 @@ DllExport struct PAResource PAResourceCreate()
     // resource = PAResourcePerformInit(Data,resource.value)
     // resource = PAResourcePerformInit(resource,resource.value);
     // retun 
-    // return resourcePointer;
-    return resource;
+    return resourcePointer;
+    // return resource;
     // return resource;
 }
-DllExport struct PAResource PAResourceBegin(struct PAResource Resource, struct PANumber Value)
+DllExport struct PAResource PAResourceBegin(struct PAResource* Resource, struct PANumber Value)
 { 
     struct PAResource resource;
     struct PAResource* resourcePointer;
@@ -33,7 +34,7 @@ DllExport struct PAResource PAResourceBegin(struct PAResource Resource, struct P
     return resource;
     // return Resource;
 }
-DllExport struct PAResource PAResourceCopy(struct PAResource from, struct PAResource to)
+DllExport struct PAResource PAResourceCopy(struct PAResource* from, struct PAResource* to)
 {
     struct PAResource temp;
     // struct PAResource* resourcePointer;
@@ -43,7 +44,7 @@ DllExport struct PAResource PAResourceCopy(struct PAResource from, struct PAReso
     return temp;
     // return to;
 }
-DllExport int PAResourceFinish(struct PAResource PA)
+DllExport PAResult PAResourceFinish(struct PAResource* PA)
 {
     int returnCode;
     // PA.= PANumberPerformRuin(PA.value);
@@ -52,7 +53,9 @@ DllExport int PAResourceFinish(struct PAResource PA)
     return returnCode;
     // return PA;
 }
-DllExport struct PAResource PAResourceDelete(struct PAResource Resource)
+DllExport struct PAResource PAResourceDelete(struct PAResource* Resource)
 {
-    return Resource;
+    struct PAResource resource;
+    return resource;
+    // return Resource;
 }

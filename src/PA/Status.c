@@ -13,10 +13,10 @@ DllExport void PAStatusCause(PABool visited)
 {
 
 }
-DllExport struct PAStatus PAStatusCreate()
+DllExport struct PAStatus* PAStatusCreate()
 {
     struct PAStatus status;
-    struct PAResource resource;
+    // struct PAResource resource;
     // struct PAResource* resourcePointer;
     // resourcePointer = PAResourceCreate();
     // resource = *(resourcePointer);
@@ -24,9 +24,11 @@ DllExport struct PAStatus PAStatusCreate()
     // status.visited = PAResourcePerformConstruct();
     // status = PAStatusBegin(status,status->visited);
     // return status;
-    return status;
+    // return status;
+    struct PAStatus* statusPointer;
+    return statusPointer;
 }
-DllExport struct PAStatus PAStatusBegin(struct PAStatus Status, struct PAResource Value)
+DllExport struct PAStatus PAStatusBegin(struct PAStatus* Status, struct PAResource Value)
 {
     struct PAStatus temp;
     struct PAStatus* statusPointer;
@@ -36,7 +38,7 @@ DllExport struct PAStatus PAStatusBegin(struct PAStatus Status, struct PAResourc
     // Status.visited = Value;
     // return Status;
 }
-DllExport struct PAStatus PAStatusCopy(struct PAStatus from, struct PAStatus to)
+DllExport struct PAStatus PAStatusCopy(struct PAStatus* from, struct PAStatus* to)
 {
     struct PAStatus temp;
     // temp.visited = from->visited;
@@ -54,7 +56,7 @@ DllExport struct PAStatus PAStatusCopy(struct PAStatus from, struct PAStatus to)
 //     return returnCode;
 //     // return PA;
 // }
-DllExport int PAStatusFinish(struct PAStatus PA)
+DllExport PAResult PAStatusFinish(struct PAStatus* PA)
 {
     // PAResult result;
     // return Status;

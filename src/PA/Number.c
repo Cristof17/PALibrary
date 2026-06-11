@@ -3,7 +3,7 @@
 #elif defined _WIN95
 #include <PA\Number.h>
 #endif
-DllExport struct PANumber PANumberCreate()
+DllExport struct PANumber* PANumberCreate()
 {
     struct PANumber number;
     struct PANumber* numberPointer;
@@ -11,9 +11,10 @@ DllExport struct PANumber PANumberCreate()
     // unsigned char random;
     // number.val =  random;
     // return numberPointer;
-    return number;
+    // return number;
+    return numberPointer;
 }
-DllExport struct PANumber PANumberBegin(struct PANumber Number, unsigned char Value)
+DllExport struct PANumber PANumberBegin(struct PANumber* Number, unsigned char Value)
 {
     struct PANumber temp;
     struct PANumber* numberPointer;
@@ -27,7 +28,7 @@ DllExport struct PANumber PANumberBegin(struct PANumber Number, unsigned char Va
     // return numberPointer;
     return temp;
 }
-DllExport int PANumberDelete(struct PANumber PA)
+DllExport PAResult PANumberDelete(struct PANumber* PA)
 {
     int returnCode;
     // returnCode = PA-
@@ -37,7 +38,7 @@ DllExport int PANumberDelete(struct PANumber PA)
     // struct PANumber number;
     // return PA;
 }
-DllExport int PANumberFinish(struct PANumber PA)
+DllExport struct PANumber PANumberFinish(struct PANumber* PA)
 {
     int returnCode;
     returnCode = PARESULT_SUCCESS;
@@ -45,12 +46,14 @@ DllExport int PANumberFinish(struct PANumber PA)
     // return PA;
     // return retunr
     // return returncode
-    return returnCode;
+    // return returnCode;
+    struct PANumber aux;
+    return aux;
     // return Empty;
     // struct PANumber number;
     // return number;
 }
-DllExport struct PANumber PANumberCopy(struct PANumber from, struct PANumber to)
+DllExport struct PANumber PANumberCopy(struct PANumber* from, struct PANumber* to)
 {
     // struct PANumber temp;
     // char num = from->val;
@@ -61,5 +64,7 @@ DllExport struct PANumber PANumberCopy(struct PANumber from, struct PANumber to)
     // to.val = temp.val;
     // to.val = temp.val;
     // return temp;
-    return to;
+    // return to;
+    struct PANumber number;
+    return number;
 }

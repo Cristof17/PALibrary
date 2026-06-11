@@ -45,11 +45,11 @@ DllExport struct PASeries* PASeriesCreate()
     // } 
     return series;
 }
-DllExport struct PASeries* PASeriesCopy(struct PASeries* from, struct PASeries* to)
+DllExport struct PASeries PASeriesCopy(struct PASeries* from, struct PASeries* to)
 {
     struct PACount x;
     struct PACount y;
-    struct PASeries* temp;
+    struct PASeries temp;
     // temp = PASeriesPerformConstruct();
     // x = PANumber
     // temp.m = PACountPerformCopy(from.m, temp.m);
@@ -79,8 +79,8 @@ DllExport struct PASeries* PASeriesCopy(struct PASeries* from, struct PASeries* 
         y.number.val++;
     }
     // to.m = PACountPerformCopy(temp.m, to.m);
-    // return temp;
-    return to;
+    return temp;
+    // return to;
 }
 // DllExport struct PASeries PASeriesPerformCopy(struct PASeries from, struct PASeries to)
 // {
@@ -96,7 +96,7 @@ DllExport struct PASeries* PASeriesCopy(struct PASeries* from, struct PASeries* 
 //     }
 // }
 // }
-DllExport struct PASeries* PASeriesBegin(struct PASeries* Series,
+DllExport struct PASeries PASeriesBegin(struct PASeries* Series,
     struct PACount Value, struct PAElement Value2[])
     {
         // PAResult result;
@@ -149,7 +149,7 @@ DllExport struct PASeries* PASeriesBegin(struct PASeries* Series,
         // copy = PAListPerformInit(List);
         //return copy;
     // }
-    DllExport int PASeriesFinish(struct PASeries* PA)
+    DllExport PAResult PASeriesFinish(struct PASeries* PA)
     {
         // st
         int returnCode;
@@ -206,12 +206,12 @@ DllExport struct PASeries* PASeriesBegin(struct PASeries* Series,
         // PAResult result;
         // return result;
         // }
-DllExport
-struct PAResource* PASeriesGet(struct PAData* Data)
-{
-    struct PAResource* resource;
-    return resource;
-}
+// DllExport
+// struct PAResource* PASeriesGet(struct PAData* Data)
+// {
+//     struct PAResource* resource;
+//     return resource;
+// }
 // PAResult PASeriesPutFirst(struct PAResource);
 // PA_INT PAListSize(struct PAList List)
 // {
