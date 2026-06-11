@@ -14,6 +14,7 @@ DllExport struct PAPair* PAPairCreate()
 {
     // struct PAPair pair;
     struct PAPair* pairPointer;
+    pairPointer=(struct PAPair*) malloc(sizeof(struct PAPair));
     // struct PAPair* pairPointer;
     // pairPointer->Node = PAElementPerformConstruct();
     // pairPointer->Neigh = PAElementPerformConstruct();

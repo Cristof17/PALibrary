@@ -10,6 +10,7 @@
 DllExport struct PAResource* PAResourceCreate()
 {
     struct PAResource* resourcePointer;
+    resourcePointer=(struct PAResource*) malloc(sizeof(struct PAResource));
     // struct PAResource resource;
     // struct PAResourfec
     // struct PAResource* resourcePointer;
