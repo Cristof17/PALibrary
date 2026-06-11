@@ -6,12 +6,12 @@
 #include <defs.h>
 // struct NormalTree;
 DllExport struct PANormalTree* PANormalTreeCreate();
-DllExport struct PANormalTree* PANormalTreeCompleteBegin(struct PANormalTree*, struct PATree);
-DllExport struct PANormalTree* PANormalTreeCopy(struct PANormalTree*);
-DllExport int PANormalTreeFinish(struct PANormalTree*);
-DllExport int PANormalTreeDelete(struct PANormalTree*);
+DllExport struct PANormalTree PANormalTreeBegin(struct PANormalTree*, struct PATree);
+DllExport struct PANormalTree PANormalTreeCopy(struct PANormalTree*);
+DllExport PAResult PANormalTreeFinish(struct PANormalTree*);
+DllExport struct PANormalTree PANormalTreeDelete(struct PANormalTree*);
 // DllExport struct PANormalTree PANormalTreePerformConstruct(struct PATree tree);
-DllExport struct PANormalTree* PAGrafNormalBuildPart();
+// DllExport struct PANormalTree* PAGrafNormalBuildPart();
 // typedef struct GrafNormal PAGrafNormal;
-DllExport HRESULT PAGrafNormalGetResult();
+// DllExport HRESULT PAGrafNormalGetResult();
 #endif
