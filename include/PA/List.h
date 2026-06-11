@@ -5,6 +5,7 @@
 // #include "../defs.h"
 #include <defs.h>
 #include <types.h>
+#include <stdlib.h>
 // struct PAList;
 //typedef struct PAList List;
 // DllExport struct PAElement GetHead();

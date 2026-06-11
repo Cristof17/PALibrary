@@ -1,7 +1,7 @@
 //@Author Cristofor Rotsching
 /*@*/
 
-#include <types.h>
+// #include <types.h>
 #ifndef _WIN95
 #include <PA/Pair.h>
 #include <PA/Element.h>

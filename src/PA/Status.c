@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
 
-#include <defs.h>
+// #include <defs.h>
 
 #ifndef _WIN95
 #include <PA/Status.h>

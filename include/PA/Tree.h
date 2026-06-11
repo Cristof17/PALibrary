@@ -6,7 +6,7 @@
 // #include "../types.h"
 #include <defs.h>
 #include <types.h>
-
+#include <stdlib.h>
 // struct PATree;
 // struct PATree PATreeConstruct(struct OPAResult);
 DllExport struct PATree* PATreeCreate();

@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
 
-#include <types.h>
+// #include <types.h>
 #ifndef _WIN95
 #include <PA/NormalTree.h>
 #include <PA/Tree.h>

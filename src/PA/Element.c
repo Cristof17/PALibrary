@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
 
-#include <defs.h>
+// #include <defs.h>
 
 #ifndef _WIN95
 #include <PA/Element.h>
@@ -12,7 +12,7 @@
 #include <PA\Status.h>
 #endif
 
-#include <types.h>
+// #include <types.h>
 // #include "//"
 // #include "../include/PAIndex.h"
 struct PAElement* PAElementCreate()

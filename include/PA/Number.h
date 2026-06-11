@@ -2,6 +2,7 @@
 #define _INCLUDE_PA_NUMBER_H_   1
 #include <types.h>
 #include <defs.h>
+#include <stdlib.h>
 DllExport struct PANumber* PANumberCreate();
 DllExport struct PANumber PANumberBegin(struct PANumber* Number, unsigned char Value);
 DllExport PAResult PANumberFinish(struct PANumber*);

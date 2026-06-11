@@ -6,6 +6,7 @@
 // #include "defs.h"
 #include <defs.h>
 #include <types.h>
+#include <stdlib.h>
 // struct BFSOutput;
 // struct PAData PADataPerformConstruct(PAInt Resource);
 // struct PAData PADataPerformCopy(struct PAData Data);

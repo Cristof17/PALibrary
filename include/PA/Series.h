@@ -11,7 +11,8 @@
 
 // #include "../defs.h"
 #include <defs.h>
-
+#include <types.h>
+#include <stdlib.h>
 // struct PASeries;
 // struct PAList PAListPutElement(struct PAList, struct PAElement);
 DllExport struct PASeries* PASeriesCreate();

@@ -4,7 +4,8 @@
 
 // #include "../defs.h"
 #include <defs.h>
-
+#include <types.h>
+#include <stdlib.h>
 // struct GrafTranspus;
 // typedef struct GrafTranspus GrafTranspus;
 DllExport struct PATransposeTree* PATransposeTreeCreate();

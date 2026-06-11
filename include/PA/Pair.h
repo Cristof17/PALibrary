@@ -4,6 +4,8 @@
 
 // #include "../defs.h"
 #include <defs.h>
+#include <types.h>
+#include <stdlib.h>
 
 // struct PAPair;
 DllExport struct PAPair* PAPairCreate();

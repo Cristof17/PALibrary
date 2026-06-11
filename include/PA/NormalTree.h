@@ -4,6 +4,8 @@
 
 // #include "../defs.h"
 #include <defs.h>
+#include <types.h>
+#include <stdlib.h>
 // struct NormalTree;
 DllExport struct PANormalTree* PANormalTreeCreate();
 DllExport struct PANormalTree PANormalTreeBegin(struct PANormalTree*, struct PATree);

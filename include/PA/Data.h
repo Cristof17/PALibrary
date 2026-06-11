@@ -6,6 +6,7 @@
 // #include "../types.h"
 #include <types.h>
 #include <defs.h>
+#include <stdlib.h>
 // #include <defs.h>
 // struct PAData;
 DllExport struct PAData* PADataCreate();

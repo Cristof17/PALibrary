@@ -5,6 +5,7 @@
 // #include "../types.h"
 #include <defs.h>
 #include <types.h>
+#include <stdlib.h>
 
 // struct PAElement;
 DllExport void PAElementVisit(struct PAElement*);

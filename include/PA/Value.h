@@ -4,12 +4,12 @@
 
 // #include "../defs.h"
 #include <defs.h>
-
+#include <stdlib.h>
 // struct PAValue;
 // DllExport struct PAValue PAValuePerformConstruct(PAInt);
 // DllExport struct PAValue PAValuePerformCopy(struct PAValue);
 // DllExport struct PAValue PAValuePerformInit(struct PAValue);
-// DllExport struct PAValue PAValuePerformPutValue(struct PAValue, PAInt);
+// DllExport struct PAValue PAValuePerformPutValue(s truct PAValue, PAInt);
 // DllExport HRESULT PAValuePerformRuin(struct PAValue);
 // struct PAResult PAValueDelete(stru)
 //typedef struct PAValue Value;

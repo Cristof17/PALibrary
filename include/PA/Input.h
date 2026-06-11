@@ -4,6 +4,8 @@
 
 // #include "../defs.h"
 #include <defs.h>
+#include <types.h>
+#include <stdlib.h>
 // #include <typee
 
 // struct PAInput;

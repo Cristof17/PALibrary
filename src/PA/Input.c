@@ -1,7 +1,7 @@
 //@Author Cristofor Rotsching
 // #include <BFS/Input.h>
 
-#include <types.h>
+// #include <types.h>
 
 #ifndef _WIN95
 

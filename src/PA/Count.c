@@ -1,6 +1,6 @@
 //@Author Cristofor Rotsching
-
-#include <types.h>
+// #include <stdlib.h>
+// #include <types.h>
 #ifndef _WIN95
 #include <PA/Count.h>
 #include <PA/Number.h>

@@ -5,6 +5,7 @@
 // #include "../types.h"
 #include <defs.h>
 #include <types.h>
+#include <stdlib.h>
 // #include <PA/Feature.h>
 DllExport void PAStatusCauseVisit(PABool);
 DllExport struct PAStatus* PAStatusCreate();

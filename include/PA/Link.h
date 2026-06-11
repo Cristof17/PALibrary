@@ -4,6 +4,8 @@
 
 // #include "../defs.h"
 #include <defs.h>
+#include <types.h>
+#include <stdlib.h>
 // struct PALink;
 DllExport struct PALink* PALinkCreate();
 DllExport void PALinkCopy(struct PALink*, struct PALink*);
