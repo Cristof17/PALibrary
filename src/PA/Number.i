@@ -440,10 +440,14 @@ struct Facade {
 
 
 
+
+
+
+    return returnCode;
 }
           struct PANumber PANumberCopy(struct PANumber* from, struct PANumber* to)
 {
-# 70 "src/PA/Number.c"
+# 74 "src/PA/Number.c"
     struct PANumber number;
     return number;
 }

@@ -218,7 +218,6 @@ _PATreeDelete:                          ; @PATreeDelete
 	ldr	x8, [x8]
 	stur	x8, [x29, #-8]
 	str	x0, [sp, #32]
-	str	wzr, [sp, #28]
 	sub	x8, x29, #39
 	ldur	x10, [x29, #-39]
 	sub	x9, x29, #24

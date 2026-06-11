@@ -505,11 +505,13 @@ void PAListPerformPrint(struct PAList* List);
           struct PATree PATreeDelete(struct PATree* Tree)
 {
     int returnCode;
+    struct PATree tree;
 
 
 
 
-    returnCode = ((int)0);
+
+    return tree;
 
 
 }

@@ -54,6 +54,10 @@ DllExport PAResult PANumberFinish(struct PANumber* PA)
     // return Empty;
     // struct PANumber number;
     // return number;
+    // retunr 
+    // retun 
+    // return aux;
+    return returnCode;
 }
 DllExport struct PANumber PANumberCopy(struct PANumber* from, struct PANumber* to)
 {
