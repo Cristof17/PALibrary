@@ -334,15 +334,15 @@ assemblies_pa= Input.s \
 	PA/PAShape.s \
 	PA/PATextView.s
 
-sources_test_pa= test.i
+sources_test_pa= test.i test_pointers.i
 sources_test_bfs= 
 sources_test_arraylist=
-assemblies_test_pa= test.s
+assemblies_test_pa= test.s test_pointers.s
 assemblies_test_bfs=
 assemblies_test_arraylist =
 # objects_
 # as
-objects_test_pa= test.o
+objects_test_pa= test.o test_pointers.o
 objects_test_bfs=
 objects_test_arraylist= 
 # 	src/PA/Destination.s
