@@ -419,7 +419,7 @@ lib_bfs= libbfs.a
 lib_arraylist= libarraylist.a
 lib_pa= libpa.a
 
-output_dir= out
+output_dir= $(bindir) 
 output_bfs= $(output_dir)/$(lib_bfs)
 output_arraylist= $(output_dir)/$(lib_arraylist)
 output_pa= $(output_dir)/$(lib_pa)
@@ -1229,18 +1229,25 @@ mkinstalldirs: $(srcdir)/mkinstalldirs
 
 #installcheck:
 #	echo "installcheck"
-$(output_dir)/$(lib_pa):
-ifeq ($(host-type),arm64)
-	$(AR) -r $@ $(objects_pa)
-endif
-$(output_dir)/$(lib_bfs):
-ifeq ($(host-type),arm64)
-	$(AR) -r $@ $(objects_bfs)
-endif
-$(output_dir)/$(lib_arraylist):
-ifeq ($(host-type),arm64)
-	$(AR) -r $@ $(objects_arraylist)
-endif
+#
+#$(output_dir)/$(lib_pa): $(objects_pa)
+#ifeq ($(host-type),arm64)
+#	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
+#	$(AR) -v -s -q $(libdir)/$(output) $(foreach object,$^,$(libdir)/$(object))  
+#	$(AR) -v -t -s $(libdir)/$(output)
+#endif
+#$(output_dir)/$(lib_bfs): $(objects_bfs)
+#ifeq ($(host-type),arm64)
+#	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
+#	$(AR) -v -s -q $(libdir)/$(output) $(foreach object,$^,$(libdir)/$(object))  
+#	#$(AR) -r $@ $(objects_bfs)
+#endif
+#$(output_dir)/$(lib_arraylist): $(objects_arraylist)
+#ifeq ($(host-type),arm64)
+#	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
+#	$(AR) -v -s -q $(libdir)/$(output) $(foreach object,$^,$(libdir)/$(object))  
+##	$(AR) -r $@ $(objects_arraylist)
+#endif
 clean:
 #	${MAKE} ARCH=${host-type} build
 # # 	-rm libpa.a
