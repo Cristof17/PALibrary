@@ -382,7 +382,7 @@ struct Facade {
 
 
 
-          struct Input InputPerformConstruct();
+          struct Input* InputPerformConstruct();
           struct Input InputPerformInit(struct Input, struct PACount, struct PACount, struct ArrayList, struct PAElement);
           struct Input InputPerformCopy(struct Input, struct Input);
           struct Input InputPerformDelete(struct Input);
@@ -425,9 +425,10 @@ struct PARecord ArrayListPutCount(struct ArrayList, struct PACount);
 
 
 
-          struct Input InputPerformConstruct()
+          struct Input* InputPerformConstruct()
 {
-    struct Input input;
+
+    struct Input* input;
     return input;
 }
           struct Input InputPerformInit(struct Input input, struct PACount n, struct PACount m, struct ArrayList adj, struct PAElement source)

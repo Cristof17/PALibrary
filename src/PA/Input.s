@@ -16,7 +16,7 @@ _PAInputCreate:                         ; @PAInputCreate
 	ldr	x8, [sp, #16]
 	ldrh	w8, [x8, #2]
 	strh	w8, [sp]
-	ldr	w0, [sp, #28]
+	ldr	x0, [sp, #16]
 	add	sp, sp, #32
 	ret
 	.cfi_endproc
@@ -28,18 +28,15 @@ _PAInputBegin:                          ; @PAInputBegin
 ; %bb.0:
 	sub	sp, sp, #32
 	.cfi_def_cfa_offset 32
-	mov	x8, x0
-	str	w8, [sp, #24]
 	mov	x8, x1
-	strb	w8, [sp, #23]
+	strb	w8, [sp, #27]
 	mov	x8, x2
-	strb	w8, [sp, #22]
+	strb	w8, [sp, #26]
 	mov	x8, x3
-	strh	w8, [sp, #20]
+	strh	w8, [sp, #24]
+	str	x0, [sp, #16]
 	ldr	x8, [sp, #8]
 	ldr	w8, [x8]
-	str	w8, [sp, #16]
-	ldr	w8, [sp, #24]
 	str	w8, [sp, #28]
 	ldr	w0, [sp, #28]
 	add	sp, sp, #32
@@ -80,8 +77,8 @@ _PAInputDelete:                         ; @PAInputDelete
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	str	x0, [sp, #8]
-	ldr	x0, [sp, #8]
+	str	x0, [sp]
+	ldr	w0, [sp, #12]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc

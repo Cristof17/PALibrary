@@ -11,9 +11,10 @@
 #include <types.h>
 // #include <ty[].h>
 //#include <types.h>
-DllExport struct Input InputPerformConstruct()
+DllExport struct Input* InputPerformConstruct()
 {
-    struct Input input;
+    // struct Input input;
+    struct Input* input;
     return input;
 }
 DllExport struct Input InputPerformInit(struct Input input, struct PACount n, struct PACount m, struct ArrayList adj, struct PAElement source)

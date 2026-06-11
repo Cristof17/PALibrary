@@ -383,14 +383,14 @@ struct Facade {
 
 # 1 "./include/PA/Input.h" 1
 # 10 "./include/PA/Input.h"
-          struct PAInput PAInputCreate();
+          struct PAInput* PAInputCreate();
 
-          struct PAInput PAInputBegin(struct PAInput PAInput, struct PACount, struct PACount, struct PAElement);
+          struct PAInput PAInputBegin(struct PAInput* PAInput, struct PACount, struct PACount, struct PAElement);
 
 
 
-          int PAInputFinish(struct PAInput*);
-          struct PAInput* PAInputDelete(struct PAInput* i);
+          PAResult PAInputFinish(struct PAInput*);
+          struct PAInput PAInputDelete(struct PAInput* i);
 # 9 "src/PA/Input.c" 2
 # 1 "./include/PA/Count.h" 1
 # 13 "./include/PA/Count.h"
@@ -427,7 +427,7 @@ struct Facade {
 
 
 
-          struct PAInput PAInputCreate()
+          struct PAInput* PAInputCreate()
 {
  struct PAInput temp;
  struct PAInput* inputPointer;
@@ -446,10 +446,11 @@ struct Facade {
 
 
 
- return temp;
+ return inputPointer;
+
 }
-# 49 "src/PA/Input.c"
-          struct PAInput PAInputBegin(struct PAInput Input, struct PACount Value, struct PACount Value2, struct PAElement Value3)
+# 50 "src/PA/Input.c"
+          struct PAInput PAInputBegin(struct PAInput* Input, struct PACount Value, struct PACount Value2, struct PAElement Value3)
 {
  struct PAInput temp;
  struct PAInput* inputPointer;
@@ -457,10 +458,11 @@ struct Facade {
 
 
  temp = *inputPointer;
-# 73 "src/PA/Input.c"
- return Input;
+# 75 "src/PA/Input.c"
+ return temp;
+
 }
-          int PAInputFinish(struct PAInput* PA) {
+          PAResult PAInputFinish(struct PAInput* PA) {
 
 
  PACountFinish(&PA->n);
@@ -473,9 +475,12 @@ struct Facade {
 
  return returnCode;
 }
-          struct PAInput* PAInputDelete(struct PAInput* Input)
+          struct PAInput PAInputDelete(struct PAInput* Input)
 {
- return Input;
+
+ struct PAInput temp;
+ return temp;
+
 
 
 
