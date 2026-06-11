@@ -2052,12 +2052,6 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 7 "./include/PA/Number.h" 2
- struct PANumber* PANumberCreate();
-          struct PANumber PANumberBegin(struct PANumber* Number, unsigned char Value);
-          PAResult PANumberFinish(struct PANumber*);
-          struct PANumber PANumberDelete(struct PANumber*);
-          void PANumberCopy(struct PANumber* from, struct PANumber* to);
-# 4 "test/test_pointers.c" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 1 3 4
 # 61 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 1 3 4
@@ -2332,21 +2326,24 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
      const char * restrict, va_list);
 # 508 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
 # 62 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 2 3 4
+# 8 "./include/PA/Number.h" 2
+ struct PANumber* PANumberCreate();
+          struct PANumber PANumberBegin(struct PANumber* Number, unsigned char Value);
+          PAResult PANumberFinish(struct PANumber*);
+          struct PANumber PANumberDelete(struct PANumber*);
+          void PANumberCopy(struct PANumber* from, struct PANumber* to);
+          void PANumberPrint(struct PANumber*);
+# 4 "test/test_pointers.c" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 1 3 4
 # 5 "test/test_pointers.c" 2
 int main()
 {
  struct PANumber* number;
- number=PANumberCreate();
- PANumberBegin(number,'a');
- printf("number is %d\n",number->val);
- struct PAResource* resource;
- resource=PAResourceCreate();
- PAResourceBegin(resource,*number);
 
- struct PACount* count;
- count = PACountCreate();
- PACountBegin(count,*number);
-
-
+ struct PANumber* number123;
+ PANumberCopy(number,number123);
+ PANumberPrint(number);
+ PANumberPrint(number123);
+# 28 "test/test_pointers.c"
  return 0;
 }

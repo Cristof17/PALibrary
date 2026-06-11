@@ -2359,12 +2359,8 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 }
           void PANumberCopy(struct PANumber* from, struct PANumber* to)
 {
-
-    unsigned char aux;
-    aux = *from->val;
-
-    __builtin___memcpy_chk (to->val, &aux, sizeof(unsigned char), __builtin_object_size (to->val, 0));
-# 84 "src/PA/Number.c"
+    to->val = from->val;
+# 92 "src/PA/Number.c"
 }
           void PANumberPrint(struct PANumber* Number)
 {

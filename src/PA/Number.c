@@ -66,11 +66,19 @@ DllExport PAResult PANumberFinish(struct PANumber* PA)
 }
 DllExport void PANumberCopy(struct PANumber* from, struct PANumber* to)
 {
+    to->val = from->val;
     // *from->val = 
-    unsigned char aux;
-    aux = *from->val;
+    // struct PANumber* temp;
+    // unsigned char aux;
+    // temp = from;
+    // aux = *(temp->val);
+    // memset(to->val,aux,sizeof(unsigned char));
+    // memcpy
+    // memcpy(to->val,&aux,sizeof(unsigned char));
+    // aux = temp->val;
+    // aux = *temp->val;
     // to->val = aux;
-    memcpy(to->val,&aux, sizeof(unsigned char));
+    // memcpy(to->val,&aux, sizeof(unsigned char));
     // struct PANumber temp;
     // char num = from->val;
     // to->val = num;  

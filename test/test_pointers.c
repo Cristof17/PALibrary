@@ -5,17 +5,24 @@
 int main()
 {
 	struct PANumber* number;
-	number=PANumberCreate();
-	PANumberBegin(number,'a');
+	// srtuc
+	struct PANumber* number123;
+	PANumberCopy(number,number123);
 	PANumberPrint(number);
+	PANumberPrint(number123);
+	// printf(number,number123);
+	// PANumberPrint(number123);
+	// number=PANumberCreate();
+	// PANumberBegin(number,'a');
+	// PANumberPrint(number);
 	// printf("number is %d\n",number->val);
-	struct PAResource* resource;
-	resource=PAResourceCreate();
-	PAResourceBegin(resource,*number);
+	// struct PAResource* resource;
+	// resource=PAResourceCreate();
+	// PAResourceBegin(resource,*number);
 	// printf("resource = %d\n", resource->value.val);
-	struct PACount* count;
-	count = PACountCreate();
-	PACountBegin(count,*number);
+	// struct PACount* count;
+	// count = PACountCreate();
+	// PACountBegin(count,*number);
 	//PACountPrint(count);
 	// printf("count is %d\n", count->number.val);
 	return 0;
