@@ -5,4 +5,7 @@
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
 # 1 "test/test_pointers.c" 2
-
+int main()
+{
+ return 0;
+}

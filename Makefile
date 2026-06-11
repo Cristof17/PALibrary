@@ -729,10 +729,10 @@ ifeq ($(host-type),AArch64)
 endif
 
 test.out: $(objects) test.o libpa.a
-	$(CC) $(libdir)/test.o $(foreach object,$(objects_pa),$(libdir)/$(object)) -o $(bindir)/$(program_test_pa)
+	$(CC) $(libdir)/$< $(foreach object,$(objects_pa),$(libdir)/$(object)) -o $(bindir)/$(program_test_pa)
 
-test_pointers.out: $(objects) test_pointers.o libpa.a
-	$(CC) $(libdir)/test.o $(foreach object,$(objects_pa),$(libdir)/$(object)) -o $(bindir)/$(program_test_pointers_pa)
+test_pointers.out: test_pointers.o $(objects)  libpa.a
+	$(CC) $(libdir)/$< $(foreach object,$(objects_pa),$(libdir)/$(object)) -o $(bindir)/$(program_test_pointers_pa)
 
 #$(CC) -lc $(foreach dependency,$^,$(libdir)/$(dependency)) -o $(bindir)/$@
 
