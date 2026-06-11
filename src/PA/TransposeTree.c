@@ -28,7 +28,10 @@ DllExport struct PATransposeTree* PATransposeTreeCreate()
 
 DllExport struct PATransposeTree PATransposeTreeBegin(struct PATransposeTree* TransposeTree, struct PATree Value)
 {
-    struct PATransposeTree transposeTree;
+    struct PATransposeTree temp;
+    struct PATransposeTree* transposeTreePointer;
+    temp.tree = &Value;
+    TransposeTree->tree = temp.tree;
     // struct PATree* treePointer;
     // treePointer = &(TransposeTree->tree);
     // treePointer = PATreeCreate();
@@ -38,7 +41,7 @@ DllExport struct PATransposeTree PATransposeTreeBegin(struct PATransposeTree* Tr
     // transposeTree = PATransposeTreePerformConstruct(TransposeTree.adj_trans);
     // transposeTree.adj_trans = Adj_trans;
     // struct PATransposeTree tree;
-    return transposeTree;
+    return temp;
     // return TransposeTree;
 }
 DllExport void PATransposeTreeCopy(struct PATransposeTree* from, struct PATransposeTree* To)

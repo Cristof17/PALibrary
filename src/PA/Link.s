@@ -11,7 +11,7 @@ _PALinkCreate:                          ; @PALinkCreate
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	mov	x0, #32                         ; =0x20
+	mov	x0, #16                         ; =0x10
 	bl	_malloc
 	str	x0, [sp, #8]
 	ldr	x0, [sp, #8]
@@ -25,11 +25,19 @@ _PALinkCreate:                          ; @PALinkCreate
 _PALinkBegin:                           ; @PALinkBegin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
-	str	x0, [sp, #24]
+	sub	sp, sp, #48
+	.cfi_def_cfa_offset 48
 	str	x1, [sp, #16]
-	add	sp, sp, #32
+	str	x2, [sp, #24]
+	str	x0, [sp, #8]
+	ldr	q0, [sp, #16]
+	str	q0, [sp, #32]
+	ldr	x8, [sp, #8]
+	ldr	q0, [sp, #32]
+	str	q0, [x8]
+	ldr	x0, [sp, #32]
+	ldr	x1, [sp, #40]
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -51,11 +59,11 @@ _PALinkFinish:                          ; @PALinkFinish
 _PALinkCopy:                            ; @PALinkCopy
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #64
-	.cfi_def_cfa_offset 64
-	str	x0, [sp, #56]
-	str	x1, [sp, #48]
-	add	sp, sp, #64
+	sub	sp, sp, #48
+	.cfi_def_cfa_offset 48
+	str	x0, [sp, #40]
+	str	x1, [sp, #32]
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -64,10 +72,12 @@ _PALinkCopy:                            ; @PALinkCopy
 _PALinkDelete:                          ; @PALinkDelete
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
 	str	x0, [sp, #8]
-	add	sp, sp, #16
+	ldr	x0, [sp, #16]
+	ldr	x1, [sp, #24]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function

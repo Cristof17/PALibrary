@@ -198,11 +198,11 @@ struct PACount {
 struct PASeries {
 	struct PACount* m;
 	// struct PANumber adj[0];
-	struct PAElement adj[SIZE];
+	struct PAElement* adj;
 };
 struct PAList {
 	struct PACount* n;
-	struct PASeries neigh[SIZE];
+	struct PASeries* neigh;
 	// struct PANod Nod;
 };
 struct FlyweightFlyweightClient {
@@ -261,7 +261,7 @@ struct PACount n;
 	struct PAList d;
 };
 struct PAOutput {
-	struct BFSRecord result;
+	struct BFSRecord* result;
 };
 // struct PAData {
 // //    int Value;
@@ -274,9 +274,8 @@ struct PADestination {
     struct PAElement element;
 };
 struct PAPair {
-	struct
-	PAElement Node;
-	struct PAElement Neigh;
+	struct PAElement* Node;
+	struct PAElement* Neigh;
 	// PADDING_1_BYTE(2);
 };
 struct PAArrow {
@@ -306,11 +305,11 @@ struct PALink {
 	// 	PA_INT code;
 	// };
 struct PANormalTree {
-	struct PATree tree;
+	struct PATree* tree;
 	//struct PAList adj;
 };
 struct PATransposeTree {
-	struct PATree tree;
+	struct PATree* tree;
 	//struct PAList adj_trans;
 };
 struct FactoryProduct1 {

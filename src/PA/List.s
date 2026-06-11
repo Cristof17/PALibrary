@@ -5,10 +5,10 @@
 _PAListCreate:                          ; @PAListCreate
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #96
-	.cfi_def_cfa_offset 96
-	ldr	x0, [sp]
-	add	sp, sp, #96
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	ldr	x0, [sp, #8]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -17,11 +17,11 @@ _PAListCreate:                          ; @PAListCreate
 _PAListCopy:                            ; @PAListCopy
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #208
-	.cfi_def_cfa_offset 208
-	str	x0, [sp, #200]
-	str	x1, [sp, #192]
-	add	sp, sp, #208
+	sub	sp, sp, #80
+	.cfi_def_cfa_offset 80
+	str	x0, [sp, #72]
+	str	x1, [sp, #64]
+	add	sp, sp, #80
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -30,25 +30,18 @@ _PAListCopy:                            ; @PAListCopy
 _PAListBegin:                           ; @PAListBegin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
+	sub	sp, sp, #48
+	.cfi_def_cfa_offset 48
+	add	x8, sp, #24
 	str	x1, [sp, #24]
 	str	x0, [sp, #16]
 	str	x2, [sp, #8]
-	b	LBB2_1
-LBB2_1:                                 ; =>This Inner Loop Header: Depth=1
-	ldrb	w8, [sp, #7]
-	ldrb	w9, [sp, #6]
-	subs	w8, w8, w9
-	b.gt	LBB2_3
-	b	LBB2_2
-LBB2_2:                                 ;   in Loop: Header=BB2_1 Depth=1
-	ldrb	w8, [sp, #7]
-	add	w8, w8, #1
-	strb	w8, [sp, #7]
-	b	LBB2_1
-LBB2_3:
-	add	sp, sp, #32
+	str	x8, [sp, #32]
+	ldr	x8, [sp, #8]
+	str	x8, [sp, #40]
+	ldr	x0, [sp, #32]
+	ldr	x1, [sp, #40]
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -82,8 +75,8 @@ _Dispose:                               ; @Dispose
 _PAListDelete:                          ; @PAListDelete
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
+	sub	sp, sp, #48
+	.cfi_def_cfa_offset 48
 	str	x0, [sp, #24]
 	b	LBB5_1
 LBB5_1:                                 ; =>This Inner Loop Header: Depth=1
@@ -98,7 +91,9 @@ LBB5_2:                                 ;   in Loop: Header=BB5_1 Depth=1
 	strb	w8, [sp, #15]
 	b	LBB5_1
 LBB5_3:
-	add	sp, sp, #32
+	ldr	x0, [sp, #32]
+	ldr	x1, [sp, #40]
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function

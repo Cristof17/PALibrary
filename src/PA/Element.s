@@ -27,9 +27,19 @@ _PAElementBegin:                        ; @PAElementBegin
 ; %bb.0:
 	sub	sp, sp, #48
 	.cfi_def_cfa_offset 48
+	add	x9, sp, #24
 	str	x1, [sp, #24]
+	add	x8, sp, #16
 	str	x2, [sp, #16]
 	str	x0, [sp, #8]
+	str	x9, [sp, #32]
+	str	x8, [sp, #40]
+	ldr	x8, [sp, #32]
+	ldr	x9, [sp, #8]
+	str	x8, [x9]
+	ldr	x8, [sp, #40]
+	ldr	x9, [sp, #8]
+	str	x8, [x9, #8]
 	ldr	x0, [sp, #32]
 	ldr	x1, [sp, #40]
 	add	sp, sp, #48

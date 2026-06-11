@@ -5,18 +5,18 @@
 _PAInputCreate:                         ; @PAInputCreate
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #176
-	stp	x29, x30, [sp, #160]            ; 16-byte Folded Spill
-	add	x29, sp, #160
+	sub	sp, sp, #112
+	stp	x29, x30, [sp, #96]             ; 16-byte Folded Spill
+	add	x29, sp, #96
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
 	ldur	x8, [x29, #-40]
 	ldr	x8, [x8]
-	stur	x8, [x29, #-48]
+	str	x8, [sp, #48]
 	ldur	x8, [x29, #-40]
 	ldr	x8, [x8, #8]
-	stur	x8, [x29, #-56]
+	str	x8, [sp, #40]
 	ldur	x8, [x29, #-40]
 	ldr	q0, [x8, #16]
 	str	q0, [sp]
@@ -24,8 +24,8 @@ _PAInputCreate:                         ; @PAInputCreate
 	bl	_malloc
 	stur	x0, [x29, #-40]
 	ldur	x0, [x29, #-40]
-	ldp	x29, x30, [sp, #160]            ; 16-byte Folded Reload
-	add	sp, sp, #176
+	ldp	x29, x30, [sp, #96]             ; 16-byte Folded Reload
+	add	sp, sp, #112
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -36,14 +36,25 @@ _PAInputBegin:                          ; @PAInputBegin
 ; %bb.0:
 	sub	sp, sp, #48
 	.cfi_def_cfa_offset 48
+	mov	x9, x8
 	str	x1, [sp, #40]
 	str	x2, [sp, #32]
 	str	x3, [sp, #16]
 	str	x4, [sp, #24]
 	str	x0, [sp, #8]
-	ldr	x9, [sp]
-	ldr	q0, [x9]
-	str	q0, [x8]
+	ldr	x8, [sp, #40]
+	str	x8, [x9]
+	ldr	x8, [sp, #32]
+	str	x8, [x9, #8]
+	ldr	q0, [sp, #16]
+	str	q0, [x9, #16]
+	ldr	x10, [sp, #8]
+	ldr	x8, [x9, #8]
+	str	x8, [x10, #8]
+	ldr	x10, [sp, #8]
+	ldr	x8, [x9]
+	str	x8, [x10]
+	ldr	x8, [sp, #8]
 	ldr	q0, [x9, #16]
 	str	q0, [x8, #16]
 	add	sp, sp, #48

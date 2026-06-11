@@ -174,11 +174,11 @@ struct PACount {
 struct PASeries {
  struct PACount* m;
 
- struct PAElement adj[2];
+ struct PAElement* adj;
 };
 struct PAList {
  struct PACount* n;
- struct PASeries neigh[2];
+ struct PASeries* neigh;
 
 };
 struct FlyweightFlyweightClient {
@@ -230,7 +230,7 @@ struct PACount n;
  struct PAList d;
 };
 struct PAOutput {
- struct BFSRecord result;
+ struct BFSRecord* result;
 };
 
 
@@ -243,9 +243,8 @@ struct PADestination {
     struct PAElement element;
 };
 struct PAPair {
- struct
- PAElement Node;
- struct PAElement Neigh;
+ struct PAElement* Node;
+ struct PAElement* Neigh;
 
 };
 struct PAArrow {
@@ -275,11 +274,11 @@ struct PALink {
 
 
 struct PANormalTree {
- struct PATree tree;
+ struct PATree* tree;
 
 };
 struct PATransposeTree {
- struct PATree tree;
+ struct PATree* tree;
 
 };
 struct FactoryProduct1 {
@@ -1877,9 +1876,12 @@ extern char * suboptarg;
 
           struct PATransposeTree PATransposeTreeBegin(struct PATransposeTree* TransposeTree, struct PATree Value)
 {
-    struct PATransposeTree transposeTree;
-# 41 "src/PA/TransposeTree.c"
-    return transposeTree;
+    struct PATransposeTree temp;
+    struct PATransposeTree* transposeTreePointer;
+    temp.tree = &Value;
+    TransposeTree->tree = temp.tree;
+# 44 "src/PA/TransposeTree.c"
+    return temp;
 
 }
           void PATransposeTreeCopy(struct PATransposeTree* from, struct PATransposeTree* To)
@@ -1894,7 +1896,7 @@ extern char * suboptarg;
 
 
 }
-# 65 "src/PA/TransposeTree.c"
+# 68 "src/PA/TransposeTree.c"
           PAResult PATransposeTreeFinish(struct PATransposeTree* PA)
 {
     int returnCode;

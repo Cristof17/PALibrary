@@ -173,11 +173,11 @@ struct PACount {
 struct PASeries {
  struct PACount* m;
 
- struct PAElement adj[2];
+ struct PAElement* adj;
 };
 struct PAList {
  struct PACount* n;
- struct PASeries neigh[2];
+ struct PASeries* neigh;
 
 };
 struct FlyweightFlyweightClient {
@@ -229,7 +229,7 @@ struct PACount n;
  struct PAList d;
 };
 struct PAOutput {
- struct BFSRecord result;
+ struct BFSRecord* result;
 };
 
 
@@ -242,9 +242,8 @@ struct PADestination {
     struct PAElement element;
 };
 struct PAPair {
- struct
- PAElement Node;
- struct PAElement Neigh;
+ struct PAElement* Node;
+ struct PAElement* Neigh;
 
 };
 struct PAArrow {
@@ -274,11 +273,11 @@ struct PALink {
 
 
 struct PANormalTree {
- struct PATree tree;
+ struct PATree* tree;
 
 };
 struct PATransposeTree {
- struct PATree tree;
+ struct PATree* tree;
 
 };
 struct FactoryProduct1 {
@@ -1921,33 +1920,16 @@ void PAListPerformPrint(struct PAList* List);
 
 }
 
-          struct PAList PAListBegin(struct PAList* List, struct PACount Value, struct PASeries Value2[])
+          struct PAList PAListBegin(struct PAList* List, struct PACount Value, struct PASeries* Value2)
 {
-    struct PAList list;
-
-
-
-    struct PANumber x;
-    struct PANumber y;
-
-
-
-
-    while (x.val <= y.val)
-    {
-
-
-
-        x.val++;
-    }
-
-
-
-
-
-    return list;
+    struct PAList temp;
+    struct PAList* listPointer;
+    temp.n = &Value;
+    temp.neigh = Value2;
+# 118 "src/PA/List.c"
+    return temp;
 }
-# 147 "src/PA/List.c"
+# 151 "src/PA/List.c"
           PAResult PAListFinish(struct PAList* PA)
 {
 
@@ -1981,7 +1963,7 @@ void Dispose()
 {
 
 }
-# 195 "src/PA/List.c"
+# 199 "src/PA/List.c"
           struct PAList PAListDelete(struct PAList* PA)
 {
     struct PAList aux;

@@ -72,8 +72,12 @@ DllExport struct PAOutput PAOutputBegin(struct PAOutput* Output, struct BFSRecor
 {
     // Output->result = Value;
     // return Output;
-    struct PAOutput output;
-    return output;
+    struct PAOutput temp;
+    struct PAOutput* outputPointer;
+
+    temp.result = &Value;
+    Output->result = temp.result;
+    return temp;
 }
 DllExport struct PAOutput PAOutputDelete(struct PAOutput* Output)
 {

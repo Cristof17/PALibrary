@@ -170,11 +170,11 @@ struct PACount {
 struct PASeries {
  struct PACount* m;
 
- struct PAElement adj[2];
+ struct PAElement* adj;
 };
 struct PAList {
  struct PACount* n;
- struct PASeries neigh[2];
+ struct PASeries* neigh;
 
 };
 struct FlyweightFlyweightClient {
@@ -226,7 +226,7 @@ struct PACount n;
  struct PAList d;
 };
 struct PAOutput {
- struct BFSRecord result;
+ struct BFSRecord* result;
 };
 
 
@@ -239,9 +239,8 @@ struct PADestination {
     struct PAElement element;
 };
 struct PAPair {
- struct
- PAElement Node;
- struct PAElement Neigh;
+ struct PAElement* Node;
+ struct PAElement* Neigh;
 
 };
 struct PAArrow {
@@ -271,11 +270,11 @@ struct PALink {
 
 
 struct PANormalTree {
- struct PATree tree;
+ struct PATree* tree;
 
 };
 struct PATransposeTree {
- struct PATree tree;
+ struct PATree* tree;
 
 };
 struct FactoryProduct1 {
@@ -1922,7 +1921,7 @@ void PAListPerformPrint(struct PAList* List);
 # 67 "src/PA/Tree.c"
     return temp;
 }
-          struct PATree* PATreeCompleteBegin(struct PATree* Tree, struct PACount Value, struct PACount Value2, struct PAList Value3, struct PAElement Value4)
+          struct PATree PATreeBegin(struct PATree* Tree, struct PACount Value, struct PACount Value2, struct PAList Value3, struct PAElement Value4)
 {
     struct PATree tree;
     struct PATree* treePointer;
@@ -1930,7 +1929,15 @@ void PAListPerformPrint(struct PAList* List);
 
 
 
-    tree = *treePointer;
+
+    tree.n = Value;
+    tree.m = Value2;
+    tree.adj = Value3;
+    tree.source = Value4;
+    Tree->n = tree.n;
+    Tree->m = tree.m;
+    Tree->adj = tree.adj;
+    Tree->source = tree.source;
 
 
 
@@ -1938,9 +1945,9 @@ void PAListPerformPrint(struct PAList* List);
 
 
 
-    return Tree;
+    return tree;
 }
-# 96 "src/PA/Tree.c"
+# 104 "src/PA/Tree.c"
           void PATreeCopy(struct PATree* from, struct PATree* to)
 {
     struct PATree temp;
@@ -1952,7 +1959,7 @@ void PAListPerformPrint(struct PAList* List);
     to->m = temp.m;
     PAListCopy(&temp.adj, &to->adj);
     to->source = temp.source;
-# 118 "src/PA/Tree.c"
+# 126 "src/PA/Tree.c"
 }
           PAResult PATreeFinish(struct PATree* PA)
 {
@@ -1969,10 +1976,10 @@ void PAListPerformPrint(struct PAList* List);
 
     returnCode = returnCode1 & returnCode2 & returnCode3 & returnCode4;
     return returnCode;
-# 156 "src/PA/Tree.c"
+# 164 "src/PA/Tree.c"
     return returnCode;
 }
-# 198 "src/PA/Tree.c"
+# 206 "src/PA/Tree.c"
           struct PATree PATreeDelete(struct PATree* Tree)
 {
     int returnCode;

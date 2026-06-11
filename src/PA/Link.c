@@ -30,8 +30,10 @@ DllExport struct PALink* PALinkCreate()
 }
 DllExport struct PALink PALinkBegin(struct PALink* Link, struct PAPair Value)
 {
-    struct PALink link;
+    struct PALink temp;
     struct PALink* linkPointer;
+    temp.p = Value;
+    Link->p = temp.p;
     // link.p = PAPairPerformConstruct();
     // Link = link;
     // struct PALink link;
@@ -39,7 +41,7 @@ DllExport struct PALink PALinkBegin(struct PALink* Link, struct PAPair Value)
     // Link.p = Pair;
     // return link;
     // return linkPointer;
-    return link;
+    return temp;
 }
 DllExport PAResult PALinkFinish(struct PALink* PA)
 {

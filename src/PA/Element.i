@@ -172,11 +172,11 @@ struct PACount {
 struct PASeries {
  struct PACount* m;
 
- struct PAElement adj[2];
+ struct PAElement* adj;
 };
 struct PAList {
  struct PACount* n;
- struct PASeries neigh[2];
+ struct PASeries* neigh;
 
 };
 struct FlyweightFlyweightClient {
@@ -228,7 +228,7 @@ struct PACount n;
  struct PAList d;
 };
 struct PAOutput {
- struct BFSRecord result;
+ struct BFSRecord* result;
 };
 
 
@@ -241,9 +241,8 @@ struct PADestination {
     struct PAElement element;
 };
 struct PAPair {
- struct
- PAElement Node;
- struct PAElement Neigh;
+ struct PAElement* Node;
+ struct PAElement* Neigh;
 
 };
 struct PAArrow {
@@ -273,11 +272,11 @@ struct PALink {
 
 
 struct PANormalTree {
- struct PATree tree;
+ struct PATree* tree;
 
 };
 struct PATransposeTree {
- struct PATree tree;
+ struct PATree* tree;
 
 };
 struct FactoryProduct1 {
@@ -1886,9 +1885,14 @@ struct PAElement* PAElementCreate()
 }
           struct PAElement PAElementBegin(struct PAElement* Element, struct PAData Value, struct PAStatus Value2)
 {
-    struct PAElement element;
-# 48 "src/PA/Element.c"
-    return element;
+    struct PAElement temp;
+    struct PAElement* elementPointer;
+    temp.index = &Value;
+    temp.status = &Value2;
+    Element->index = temp.index;
+    Element->status = temp.status;
+# 53 "src/PA/Element.c"
+    return temp;
 
 }
           void PAElementCauseVisit(struct PAElement* Element)
@@ -1918,17 +1922,17 @@ struct PAElement* PAElementCreate()
 
 
 }
-# 90 "src/PA/Element.c"
+# 95 "src/PA/Element.c"
           PAResult PAElementFinish(struct PAElement* PA)
 {
-# 106 "src/PA/Element.c"
+# 111 "src/PA/Element.c"
     int returnCode = ((int)0);
     return returnCode;
 
 
 
 }
-# 146 "src/PA/Element.c"
+# 151 "src/PA/Element.c"
           struct PAElement PAElementDelete(struct PAElement* PA)
 {
 

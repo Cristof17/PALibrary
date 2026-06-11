@@ -31,6 +31,8 @@ DllExport struct PAData PADataBegin(struct PAData* Data, struct PAResource Value
 {
     struct PAData temp;
     struct PAData* dataPointer;
+    temp.Resource = &Value;
+    Data->Resource = temp.Resource;
     // temp.Resource = PAResourcePerformConstruct();
     // Data = temp;
     // Data.Resource.value.val = Value.value.val;

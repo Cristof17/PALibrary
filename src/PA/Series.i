@@ -169,11 +169,11 @@ struct PACount {
 struct PASeries {
  struct PACount* m;
 
- struct PAElement adj[2];
+ struct PAElement* adj;
 };
 struct PAList {
  struct PACount* n;
- struct PASeries neigh[2];
+ struct PASeries* neigh;
 
 };
 struct FlyweightFlyweightClient {
@@ -225,7 +225,7 @@ struct PACount n;
  struct PAList d;
 };
 struct PAOutput {
- struct BFSRecord result;
+ struct BFSRecord* result;
 };
 
 
@@ -238,9 +238,8 @@ struct PADestination {
     struct PAElement element;
 };
 struct PAPair {
- struct
- PAElement Node;
- struct PAElement Neigh;
+ struct PAElement* Node;
+ struct PAElement* Neigh;
 
 };
 struct PAArrow {
@@ -270,11 +269,11 @@ struct PALink {
 
 
 struct PANormalTree {
- struct PATree tree;
+ struct PATree* tree;
 
 };
 struct PATransposeTree {
- struct PATree tree;
+ struct PATree* tree;
 
 };
 struct FactoryProduct1 {
@@ -1936,22 +1935,16 @@ extern char * suboptarg;
 }
 # 99 "src/PA/Series.c"
           struct PASeries PASeriesBegin(struct PASeries* Series,
-    struct PACount Value, struct PAElement Value2[])
+    struct PACount Value, struct PAElement* Value2)
     {
 # 113 "src/PA/Series.c"
-        struct PASeries* series;
         struct PASeries temp;
-
-        struct PANumber x;
-        struct PANumber y;
-
-
-        while (x.val <= y.val)
-        {
-
-            x.val++;
-        }
-
+        struct PASeries* series;
+        temp.m = &Value;
+        temp.adj = Value2;
+        Series->adj = temp.adj;
+        Series->m = temp.m;
+# 130 "src/PA/Series.c"
         return temp;
 
 
@@ -1973,7 +1966,7 @@ extern char * suboptarg;
         return series;
 
     }
-# 156 "src/PA/Series.c"
+# 160 "src/PA/Series.c"
               PAResult PASeriesFinish(struct PASeries* PA)
     {
 
@@ -1987,11 +1980,11 @@ extern char * suboptarg;
 
 
         }
-# 177 "src/PA/Series.c"
+# 181 "src/PA/Series.c"
         return returnCode;
 
     }
-# 235 "src/PA/Series.c"
+# 239 "src/PA/Series.c"
 void PASeriesPrint(struct PASeries* Series)
 {
 

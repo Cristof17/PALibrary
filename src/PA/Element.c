@@ -33,7 +33,12 @@ struct PAElement* PAElementCreate()
 }
 DllExport struct PAElement PAElementBegin(struct PAElement* Element, struct PAData Value, struct PAStatus Value2)
 {
-    struct PAElement element;
+    struct PAElement temp;
+    struct PAElement* elementPointer;
+    temp.index = &Value;
+    temp.status = &Value2;
+    Element->index = temp.index;
+    Element->status = temp.status;
     // Element.index = Value;
     // Element.status = Value2;
     //struct PAElement element;
@@ -45,7 +50,7 @@ DllExport struct PAElement PAElementBegin(struct PAElement* Element, struct PADa
     // PAResult result;
     // return result;
     // struct PAElement element;
-    return element;
+    return temp;
     // return Element;
 }
 DllExport void PAElementCauseVisit(struct PAElement* Element)

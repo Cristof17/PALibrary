@@ -174,11 +174,11 @@ struct PACount {
 struct PASeries {
  struct PACount* m;
 
- struct PAElement adj[2];
+ struct PAElement* adj;
 };
 struct PAList {
  struct PACount* n;
- struct PASeries neigh[2];
+ struct PASeries* neigh;
 
 };
 struct FlyweightFlyweightClient {
@@ -230,7 +230,7 @@ struct PACount n;
  struct PAList d;
 };
 struct PAOutput {
- struct BFSRecord result;
+ struct BFSRecord* result;
 };
 
 
@@ -243,9 +243,8 @@ struct PADestination {
     struct PAElement element;
 };
 struct PAPair {
- struct
- PAElement Node;
- struct PAElement Neigh;
+ struct PAElement* Node;
+ struct PAElement* Neigh;
 
 };
 struct PAArrow {
@@ -275,11 +274,11 @@ struct PALink {
 
 
 struct PANormalTree {
- struct PATree tree;
+ struct PATree* tree;
 
 };
 struct PATransposeTree {
- struct PATree tree;
+ struct PATree* tree;
 
 };
 struct FactoryProduct1 {
@@ -1924,8 +1923,13 @@ extern char * suboptarg;
 
 
 
- temp = *inputPointer;
-# 77 "src/PA/Input.c"
+ temp.n = Value;
+ temp.m = Value2;
+ temp.source = Value3;
+ Input->m = temp.m;
+ Input->n = temp.n;
+ Input->source = temp.source;
+# 82 "src/PA/Input.c"
  return temp;
 
 }

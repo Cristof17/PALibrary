@@ -5,10 +5,10 @@
 _PATransposeTreeCreate:                 ; @PATransposeTreeCreate
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #128
-	.cfi_def_cfa_offset 128
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
 	ldr	x0, [sp]
-	add	sp, sp, #128
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -17,11 +17,17 @@ _PATransposeTreeCreate:                 ; @PATransposeTreeCreate
 _PATransposeTreeBegin:                  ; @PATransposeTreeBegin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	str	x0, [sp, #8]
-	str	x1, [sp]
-	add	sp, sp, #16
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #16]
+	mov	x8, x1
+	str	x8, [sp, #8]
+	str	x1, [sp, #24]
+	ldr	x8, [sp, #24]
+	ldr	x9, [sp, #16]
+	str	x8, [x9]
+	ldr	x0, [sp, #24]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -30,26 +36,17 @@ _PATransposeTreeBegin:                  ; @PATransposeTreeBegin
 _PATransposeTreeCopy:                   ; @PATransposeTreeCopy
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #176
-	stp	x29, x30, [sp, #160]            ; 16-byte Folded Spill
-	add	x29, sp, #160
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	stur	x0, [x29, #-8]
-	stur	x1, [x29, #-16]
-	ldur	x1, [x29, #-8]
-	add	x0, sp, #16
-	str	x0, [sp]                        ; 8-byte Folded Spill
-	mov	x2, #120                        ; =0x78
-	str	x2, [sp, #8]                    ; 8-byte Folded Spill
-	bl	_memcpy
-	ldr	x1, [sp]                        ; 8-byte Folded Reload
-	ldr	x2, [sp, #8]                    ; 8-byte Folded Reload
-	ldur	x0, [x29, #-16]
-	bl	_memcpy
-	ldp	x29, x30, [sp, #160]            ; 16-byte Folded Reload
-	add	sp, sp, #176
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #24]
+	str	x1, [sp, #16]
+	ldr	x8, [sp, #24]
+	ldr	x8, [x8]
+	str	x8, [sp]
+	ldr	x8, [sp]
+	ldr	x9, [sp, #16]
+	str	x8, [x9]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -71,10 +68,11 @@ _PATransposeTreeFinish:                 ; @PATransposeTreeFinish
 _PATransposeTreeDelete:                 ; @PATransposeTreeDelete
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	str	x0, [sp, #8]
-	add	sp, sp, #16
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #16]
+	ldr	x0, [sp, #24]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function

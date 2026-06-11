@@ -35,6 +35,12 @@ DllExport struct PAPair* PAPairCreate()
 DllExport struct PAPair PAPairBegin(struct PAPair* Pair, struct PAElement Value, struct PAElement Value2)
 {
     struct PAPair temp;
+    struct PAPair* pairPointer;
+
+    temp.Node = &Value;
+    temp.Neigh = &Value;
+    Pair->Node = temp.Node;
+    Pair->Neigh = temp.Neigh;
     // struct PAPair *pairPointer;
     // Pair->Node.index = Value.index;
     // Pair->Node.status = Value.status;
@@ -69,8 +75,8 @@ DllExport void PAPairCopy(struct PAPair* from, struct PAPair* to)
     struct PAElement neigh;
     // node = PAElementPerformConstruct();
     // neigh = PAElementPerformConstruct();
-    temp.Node = node;
-    temp.Neigh = neigh;
+    // temp.Node = node;
+    // temp.Neigh = neigh;
     // return temp;
     // temp.Node = PAElementPerformCopy(from.Node, to.Node);
     // temp.Neigh = PAElementPerformCopy(from.Neigh, to.Neigh);
@@ -110,9 +116,9 @@ DllExport PAResult PAPairFinish(struct PAPair* PA)
     int returnCode1;
     int returnCode2;
     int returnCode;
-    returnCode1 = PAElementFinish(&PA->Node);
-    returnCode2 = PAElementFinish(&PA->Neigh);
-    returnCode = returnCode1 & returnCode2;
+    // returnCode1 = PAElementFinish(&PA->Node);
+    // returnCode2 = PAElementFinish(&PA->Neigh);
+    // returnCode = returnCode1 & returnCode2;
     return returnCode;
     // struct PAPair Empty;
     // return Empty;
