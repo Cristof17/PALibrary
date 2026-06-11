@@ -1,6 +1,8 @@
 #include <PA/Count.h>
 #include <PA/Resource.h>
 #include <PA/Number.h>
+#include <PA/Status.h>
+// #include <PA/Data.h>
 #include <stdio.h>
 int main()
 {
@@ -44,6 +46,11 @@ int main()
 	PANumberPrint(number);
 	PAResourceBegin(resource123,*number);
 	printf("resource %d\n", resource123->value->val);
+
+	struct PAStatus *status;
+	status=PAStatusCreate();
+	PAStatusBegin(status,*resource123);
+	printf("status value %d\n",status->visited->value->val);
 	// printf(number,number123);
 	// PANumberPrint(number123);
 	// number=PANumberCreate();
