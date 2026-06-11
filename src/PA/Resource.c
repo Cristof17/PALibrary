@@ -18,7 +18,8 @@ DllExport struct PAResource* PAResourceCreate()
     // resource.value = PANumberPerformConstruct();
     // resource = PAResourcePerformInit(Data,resource.value)
     // resource = PAResourcePerformInit(resource,resource.value);
-    // retun 
+    // retun
+    resourcePointer->value = PANumberCreate();
     return resourcePointer;
     // return resource;
     // return resource;
@@ -27,9 +28,12 @@ DllExport struct PAResource PAResourceBegin(struct PAResource* Resource, struct 
 { 
     // PAResourceDelete()
     struct PAResource temp;
+    struct PANumber number;
     struct PAResource* resourcePointer;
-    temp.value = &Value;
-    Resource->value = temp.value;
+    number = Value;
+    PANumberCopy(&number,temp.value);
+    PANumberCopy(temp.value,Resource->value);
+    // Resource->value = temp.value;
     // PANumberBegin(&temp.value,Value.val);
     // Resource->value = temp.value;
     // temp = PANumberCreate();
@@ -54,7 +58,14 @@ DllExport struct PAResource PAResourceBegin(struct PAResource* Resource, struct 
 }
 DllExport void PAResourceCopy(struct PAResource* from, struct PAResource* to)
 {
+    PAResourceDelete(to);
     struct PAResource temp;
+    struct PANumber* aux;
+    // aux = from->value;
+    // to->value = aux;
+    PANumberCopy(from->value,to->value);
+    // temp = *from;
+    // to->value = temp.value;
     // struct PAResource* resourcePointer;
     // temp.value = PANumberPerformCopy(from.value, temp.value);
     // to.value = temp.value;

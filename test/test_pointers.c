@@ -42,15 +42,21 @@ int main()
 	// PAResourcePrint(resource);
 
 	struct PAResource* resource123;
+	struct PAResource* resource234;
 	PANumberBegin(number,'a');
 	PANumberPrint(number);
+	resource123 = PAResourceCreate();
+	resource234 = PAResourceCreate();
 	PAResourceBegin(resource123,*number);
+	PAResourceCopy(resource123,resource234);
+	// PAResourceBegin(resource123,*number);
 	printf("resource %d\n", resource123->value->val);
+	printf("resource %d\n", resource234->value->val);
 
 	struct PAStatus *status;
-	status=PAStatusCreate();
-	PAStatusBegin(status,*resource123);
-	printf("status value %d\n",status->visited->value->val);
+	// status=PAStatusCreate();
+	// PAStatusBegin(status,*resource123);
+	// printf("status value %d\n",status->visited->value->val);
 	// printf(number,number123);
 	// PANumberPrint(number123);
 	// number=PANumberCreate();
