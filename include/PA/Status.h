@@ -11,7 +11,7 @@ DllExport struct PAStatus* PAStatusCreate();
 DllExport struct PAStatus PAStatusBegin(struct PAStatus*, struct PAResource);
 DllExport PAResult PAStatusFinish(struct PAStatus*);
 // DllExport int PAStatusFinish(struct PAStatus);
-DllExport struct PAStatus PAStatusCopy(struct PAStatus*, struct PAStatus*);
+DllExport void PAStatusCopy(struct PAStatus*, struct PAStatus*);
 DllExport struct PAStatus PAStatusDelete(struct PAStatus*);
 // struct PAStatus/*.*/;
 // DllExport struct PAStatus PAStatusPerformConstruct(PAInt Visited);
