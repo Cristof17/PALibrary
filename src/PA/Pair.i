@@ -388,14 +388,14 @@ struct Facade {
 
 
 
-          struct PAPair PAPairCreate();
-          struct PAPair PAPairCompleteBegin(struct PAPair*, struct PAElement, struct PAElement);
-          struct PAPair PAPairCopy(struct PAPair from, struct PAPair to);
+          struct PAPair* PAPairCreate();
+          struct PAPair PAPairBegin(struct PAPair*, struct PAElement, struct PAElement);
+          struct PAPair PAPairCopy(struct PAPair* from, struct PAPair* to);
 
 
 
-          int PAPairFinish(struct PAPair*);
-          int PAPairDelete(struct PAPair*);
+          PAResult PAPairFinish(struct PAPair*);
+          struct PAPair PAPairDelete(struct PAPair*);
 # 7 "src/PA/Pair.c" 2
 # 1 "./include/PA/Element.h" 1
 # 10 "./include/PA/Element.h"

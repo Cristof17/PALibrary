@@ -377,13 +377,13 @@ struct Facade {
 # 1 "./include/PA/Series.h" 1
 # 17 "./include/PA/Series.h"
           struct PASeries* PASeriesCreate();
-          struct PASeries* PASeriesCompleteBegin(struct PASeries*, struct PACount, struct PAElement[]);
-          struct PASeries* PASeriesDelete(struct PASeries*);
-          struct PASeries* PASeriesCopy(struct PASeries*, struct PASeries*);
+          struct PASeries PASeriesBegin(struct PASeries*, struct PACount, struct PAElement[]);
+          struct PASeries PASeriesDelete(struct PASeries*);
+          struct PASeries PASeriesCopy(struct PASeries*, struct PASeries*);
 
-          int PASeriesFinish(struct PASeries*);
-          struct PAResource* PASeriesGet(struct PAData* Data);
-          void PASeriesPrint(struct PASeries* Series);
+          PAResult PASeriesFinish(struct PASeries*);
+
+          void PASeriesPrint(struct PASeries*);
 # 8 "src/PA/Series.c" 2
 # 1 "./include/PA/Count.h" 1
 # 13 "./include/PA/Count.h"

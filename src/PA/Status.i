@@ -383,11 +383,12 @@ struct Facade {
 # 8 "./include/PA/Status.h" 2
 
           void PAStatusCauseVisit(PABool);
-          struct PAStatus PAStatusCompleteBegin(struct PAStatus, struct PAResource);
-          int PAStatusDelete(struct PAStatus);
-          struct PAStatus PAStatusCreate();
+          struct PAStatus* PAStatusCreate();
+          struct PAStatus PAStatusBegin(struct PAStatus*, struct PAResource);
+          PAResult PAStatusFinish(struct PAStatus);
 
-          struct PAStatus PAStatusCopy(struct PAStatus, struct PAStatus);
+          struct PAStatus PAStatusCopy(struct PAStatus*, struct PAStatus*);
+          struct PAStatus PAStatusDelete(struct PAStatus*);
 # 7 "src/PA/Status.c" 2
 # 1 "./include/PA/Resource.h" 1
 
@@ -395,11 +396,11 @@ struct Facade {
 
 
 
-          struct PAResource PAResourceCompleteBegin(struct PAResource, struct PANumber);
-          struct PAResource PAResourceCreate();
-          int PAResourceFinish(struct PAResource);
-          struct PAResource PAResourceDelete(struct PAResource);
-          struct PAResource PAResourceCopy(struct PAResource, struct PAResource);
+          struct PAResource PAResourceBegin(struct PAResource*, struct PANumber);
+          struct PAResource* PAResourceCreate();
+          PAResult PAResourceFinish(struct PAResource*);
+          struct PAResource PAResourceDelete(struct PAResource*);
+          struct PAResource PAResourceCopy(struct PAResource*, struct PAResource*);
 # 8 "src/PA/Status.c" 2
 
 

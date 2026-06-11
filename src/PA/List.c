@@ -16,7 +16,7 @@
 #endif
 
 // struct PAList PAListConstruct(struct PAElement Element) {
-DllExport struct PAList PAListCreate()
+DllExport struct PAList* PAListCreate()
 {
     struct PAList list;
     // struct PACount n = PACountPerformConstruct();
@@ -30,7 +30,9 @@ DllExport struct PAList PAListCreate()
         // list.neigh[y.val] = PASeriesPerformInit(list.neigh[y.val],list.neigh[y.val].m, list.neigh[y.val].adj);
         // y.val++;
     // }
-    return list;
+    // return list;
+    struct PAList* listPointer;
+    return listPointer;
     // struct PASeries neigh[] = list.neigh;
     // x.number.val = FIRST;
     // while (x.number.val < n.number.val)
@@ -41,7 +43,7 @@ DllExport struct PAList PAListCreate()
     // list.adj = PASeriesPerformConstruct();
     // return list;
 }
-DllExport struct PAList* PAListCopy(struct PAList* from, struct PAList* to)
+DllExport struct PAList PAListCopy(struct PAList* from, struct PAList* to)
 {
     struct PAList temp;
     // temp.n = PACountPerformCopy(from.n,temp.n);
@@ -80,10 +82,11 @@ DllExport struct PAList* PAListCopy(struct PAList* from, struct PAList* to)
         x.number.val++;
     }
     // to.n = PACountPerformCopy(temp.n, to.n);
-    return to;
+    // return to;
+    return temp;
 }
 
-DllExport struct PAList PAListBegin(struct PAList List, struct PACount Value, struct PASeries Value2[])
+DllExport struct PAList PAListBegin(struct PAList* List, struct PACount Value, struct PASeries Value2[])
 {
     struct PAList list;
     list.n = Value;
@@ -106,7 +109,8 @@ DllExport struct PAList PAListBegin(struct PAList List, struct PACount Value, st
     // PASeries
     // struct PAList list;
     // list.adj = List.adj;
-    return List;
+    // return List;
+    return list;
 }
 // struct PAList PAListPerformCopy(struct PAList List)
 // {
@@ -139,7 +143,7 @@ DllExport struct PAList PAListBegin(struct PAList List, struct PACount Value, st
     // struct PAResult result;
     // return result;
 // }
-DllExport int PAListFinish(struct PAList* PA)
+DllExport PAResult PAListFinish(struct PAList* PA)
 {
     // struct PAList List;
     // struct PACount x;
@@ -187,8 +191,9 @@ void Dispose()
 //     struct PAList list;
 //     return list;
 // }
-DllExport int PAListDelete(struct PAList* PA)
+DllExport struct PAList PAListDelete(struct PAList* PA)
 {
+    struct PAList aux;
     // struct PACount n = PA.n;
     struct PACount* countPointer;
     // countPointer->number = PACountPerformDelete(PA.n);
@@ -203,7 +208,8 @@ DllExport int PAListDelete(struct PAList* PA)
     }
     // return List;
     // return PA;
-    return PARESULT_SUCCESS;
+    // return PARESULT_SUCCESS;
+    return aux;
     // return 0;
     // PAResult result;
     // return result;

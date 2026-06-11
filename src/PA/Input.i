@@ -390,7 +390,7 @@ struct Facade {
 
 
           PAResult PAInputFinish(struct PAInput*);
-          struct PAInput PAInputDelete(struct PAInput* i);
+          struct PAInput PAInputDelete(struct PAInput*);
 # 9 "src/PA/Input.c" 2
 # 1 "./include/PA/Count.h" 1
 # 13 "./include/PA/Count.h"

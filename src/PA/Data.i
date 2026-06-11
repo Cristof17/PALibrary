@@ -401,11 +401,11 @@ struct Facade {
 
 
 
-          struct PAResource PAResourceCompleteBegin(struct PAResource, struct PANumber);
-          struct PAResource PAResourceCreate();
-          int PAResourceFinish(struct PAResource);
-          struct PAResource PAResourceDelete(struct PAResource);
-          struct PAResource PAResourceCopy(struct PAResource, struct PAResource);
+          struct PAResource PAResourceBegin(struct PAResource*, struct PANumber);
+          struct PAResource* PAResourceCreate();
+          PAResult PAResourceFinish(struct PAResource*);
+          struct PAResource PAResourceDelete(struct PAResource*);
+          struct PAResource PAResourceCopy(struct PAResource*, struct PAResource*);
 # 5 "src/PA/Data.c" 2
 
 

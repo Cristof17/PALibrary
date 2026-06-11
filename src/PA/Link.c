@@ -12,9 +12,9 @@
 #include <PA\Pair.h>
 #endif
 
-DllExport struct PALink PALinkCreate()
+DllExport struct PALink* PALinkCreate()
 {
-    struct PALink link;
+    // struct PALink link;
     struct PALink* linkPointer;
     // link.p = PAPairPerformConstruct();
     // Link.p = PAPairPerformConstruct();
@@ -23,10 +23,11 @@ DllExport struct PALink PALinkCreate()
     // struct PALink link;
     // return link;÷
     // link.p = P;÷
-    return link;
+    // return link;
+    return linkPointer;
     // return linkPointer;
 }
-DllExport struct PALink PALinkBegin(struct PALink Link, struct PAPair Value)
+DllExport struct PALink PALinkBegin(struct PALink* Link, struct PAPair Value)
 {
     struct PALink link;
     struct PALink* linkPointer;
@@ -39,7 +40,7 @@ DllExport struct PALink PALinkBegin(struct PALink Link, struct PAPair Value)
     // return linkPointer;
     return link;
 }
-DllExport int PALinkFinish(struct PALink* PA)
+DllExport PAResult PALinkFinish(struct PALink* PA)
 {
     // PA.p = PAPairPerformRuin(PA.p);    
     // struct PALink Empty;
@@ -50,7 +51,7 @@ DllExport int PALinkFinish(struct PALink* PA)
     int returnCode;
     return returnCode;
 }
-struct PALink PALinkCopy(struct PALink from, struct PALink to)
+struct PALink PALinkCopy(struct PALink* from, struct PALink* to)
 {
     struct PALink temp;
     struct PALink* linkPointer;
@@ -69,7 +70,7 @@ struct PALink PALinkCopy(struct PALink from, struct PALink to)
     // return Link;
     // return reusult;
 // }
-DllExport struct PALink PALinkDelete(struct PALink PA){
+DllExport struct PALink PALinkDelete(struct PALink* PA){
     // PAResult result;
     // struct PALink Empty;
     // PA.p = PAPairPerformDelete(PA.p);

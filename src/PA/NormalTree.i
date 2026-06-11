@@ -387,28 +387,24 @@ struct Facade {
 
 
           struct PANormalTree* PANormalTreeCreate();
-          struct PANormalTree* PANormalTreeCompleteBegin(struct PANormalTree*, struct PATree);
-          struct PANormalTree* PANormalTreeCopy(struct PANormalTree*);
-          int PANormalTreeFinish(struct PANormalTree*);
-          int PANormalTreeDelete(struct PANormalTree*);
-
-          struct PANormalTree* PAGrafNormalBuildPart();
-
-          PAResult PAGrafNormalGetResult();
+          struct PANormalTree PANormalTreeBegin(struct PANormalTree*, struct PATree);
+          struct PANormalTree PANormalTreeCopy(struct PANormalTree*);
+          PAResult PANormalTreeFinish(struct PANormalTree*);
+          struct PANormalTree PANormalTreeDelete(struct PANormalTree*);
 # 6 "src/PA/NormalTree.c" 2
 # 1 "./include/PA/Tree.h" 1
 # 12 "./include/PA/Tree.h"
           struct PATree* PATreeCreate();
-          struct PATree* PATreeCopy(struct PATree* from, struct PATree* to);
+          struct PATree PATreeCopy(struct PATree* from, struct PATree* to);
 
-          struct PATree* PATreeCompleteBegin(struct PATree*, struct PACount, struct PACount, struct PAList, struct PAElement);
-
-
+          struct PATree PATreeBegin(struct PATree*, struct PACount, struct PACount, struct PAList, struct PAElement);
 
 
 
-          int PATreeFinish(struct PATree*);
-          int PATreeDelete(struct PATree*);
+
+
+          PAResult PATreeFinish(struct PATree*);
+          struct PATree PATreeDelete(struct PATree*);
 # 7 "src/PA/NormalTree.c" 2
 
 

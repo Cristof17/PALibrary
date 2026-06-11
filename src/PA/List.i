@@ -382,14 +382,14 @@ struct Facade {
 
 # 1 "./include/PA/List.h" 1
 # 11 "./include/PA/List.h"
-          struct PAList PAListCreate();
+          struct PAList* PAListCreate();
           struct PAList PAListCompleteBegin(struct PAList*,struct PACount, struct PASeries[]);
 
 
 
-          int PAListFinish(struct PAList*);
-          int PAListDelete(struct PAList*);
-          struct PAList* PAListCopy(struct PAList*, struct PAList*);
+          PAResult PAListFinish(struct PAList*);
+          struct PAList PAListDelete(struct PAList*);
+          struct PAList PAListCopy(struct PAList*, struct PAList*);
 
 void PAListPerformPrint(struct PAList* List);
 # 8 "src/PA/List.c" 2
@@ -409,13 +409,13 @@ void PAListPerformPrint(struct PAList* List);
 # 1 "./include/PA/Series.h" 1
 # 17 "./include/PA/Series.h"
           struct PASeries* PASeriesCreate();
-          struct PASeries* PASeriesCompleteBegin(struct PASeries*, struct PACount, struct PAElement[]);
-          struct PASeries* PASeriesDelete(struct PASeries*);
-          struct PASeries* PASeriesCopy(struct PASeries*, struct PASeries*);
+          struct PASeries PASeriesBegin(struct PASeries*, struct PACount, struct PAElement[]);
+          struct PASeries PASeriesDelete(struct PASeries*);
+          struct PASeries PASeriesCopy(struct PASeries*, struct PASeries*);
 
-          int PASeriesFinish(struct PASeries*);
-          struct PAResource* PASeriesGet(struct PAData* Data);
-          void PASeriesPrint(struct PASeries* Series);
+          PAResult PASeriesFinish(struct PASeries*);
+
+          void PASeriesPrint(struct PASeries*);
 # 10 "src/PA/List.c" 2
 # 19 "src/PA/List.c"
           struct PAList PAListCreate()

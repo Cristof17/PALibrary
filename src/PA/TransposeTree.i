@@ -384,28 +384,25 @@ struct Facade {
 # 1 "./include/PA/TransposeTree.h" 1
 # 10 "./include/PA/TransposeTree.h"
           struct PATransposeTree* PATransposeTreeCreate();
-          struct PATransposeTree* PATransposeTreeCompleteBegin(struct PATransposeTree*, struct PATree);
-          struct PATransposeTree* PATransposeTreeCopy(struct PATransposeTree*, struct PATransposeTree*);
+          struct PATransposeTree PATransposeTreeBegin(struct PATransposeTree*, struct PATree);
+          struct PATransposeTree PATransposeTreeCopy(struct PATransposeTree*, struct PATransposeTree*);
 
-          int PATransposeTreeFinish(struct PATransposeTree*);
-          int PATransposeTreeDelete(struct PATransposeTree*);
-
-          PAResult PATransposeTreeGetResult();
-          PAResult PATransposeTreeGetResult();
+          PAResult PATransposeTreeFinish(struct PATransposeTree*);
+          struct PATransposeTree PATransposeTreeDelete(struct PATransposeTree*);
 # 9 "src/PA/TransposeTree.c" 2
 # 1 "./include/PA/Tree.h" 1
 # 12 "./include/PA/Tree.h"
           struct PATree* PATreeCreate();
-          struct PATree* PATreeCopy(struct PATree* from, struct PATree* to);
+          struct PATree PATreeCopy(struct PATree* from, struct PATree* to);
 
-          struct PATree* PATreeCompleteBegin(struct PATree*, struct PACount, struct PACount, struct PAList, struct PAElement);
-
-
+          struct PATree PATreeBegin(struct PATree*, struct PACount, struct PACount, struct PAList, struct PAElement);
 
 
 
-          int PATreeFinish(struct PATree*);
-          int PATreeDelete(struct PATree*);
+
+
+          PAResult PATreeFinish(struct PATree*);
+          struct PATree PATreeDelete(struct PATree*);
 # 10 "src/PA/TransposeTree.c" 2
 
 

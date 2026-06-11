@@ -142,11 +142,13 @@ DllExport PAResult PAElementFinish(struct PAElement* PA)
     // return element;
   //  return Element;
 // }
-DllExport PAResult PAElementDelete(struct PAElement* PA)
+DllExport struct PAElement PAElementDelete(struct PAElement* PA)
 {
     // PAResult result;
     // return result;    return PA;
-    int returnCode = PARESULT_SUCCESS;
-    return returnCode;
+    // int returnCode = PARESULT_SUCCESS;
+    // return returnCode;
+    struct PAElement element;
+    return element;
     // return 0;
 }

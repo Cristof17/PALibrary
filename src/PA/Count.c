@@ -45,7 +45,7 @@ DllExport struct PACount PACountBegin(struct PACount* Count, struct PANumber Val
     // count.number = Number;
     // return÷÷ Count;
 }
-DllExport int PACountFinish(struct PACount* PA)
+DllExport PAResult PACountFinish(struct PACount* PA)
 {
     //get the value at address pointed by stack pointer
     //that corresponsds to parameter PA

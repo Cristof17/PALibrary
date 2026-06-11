@@ -380,11 +380,11 @@ struct Facade {
 };
 # 4 "./include/PA/Number.h" 2
 
-          struct PANumber PANumberCreate();
-          struct PANumber PANumberCompleteBegin(struct PANumber Number, unsigned char Value);
-          int PANumberDelete(struct PANumber);
-          int PANumberFinish(struct PANumber);
-          struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to);
+          struct PANumber* PANumberCreate();
+          struct PANumber PANumberBegin(struct PANumber* Number, unsigned char Value);
+          PAResult (struct PANumber);
+          struct PANumber PANumberFinish(struct PANumber*);
+          struct PANumber PANumberCopy(struct PANumber* from, struct PANumber* to);
 # 3 "src/PA/Number.c" 2
 
 

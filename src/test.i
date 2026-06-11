@@ -381,16 +381,16 @@ struct Facade {
 
 
           struct PATree* PATreeCreate();
-          struct PATree* PATreeCopy(struct PATree* from, struct PATree* to);
+          struct PATree PATreeCopy(struct PATree* from, struct PATree* to);
 
-          struct PATree* PATreeCompleteBegin(struct PATree*, struct PACount, struct PACount, struct PAList, struct PAElement);
-
-
+          struct PATree PATreeBegin(struct PATree*, struct PACount, struct PACount, struct PAList, struct PAElement);
 
 
 
-          int PATreeFinish(struct PATree*);
-          int PATreeDelete(struct PATree*);
+
+
+          PAResult PATreeFinish(struct PATree*);
+          struct PATree PATreeDelete(struct PATree*);
 # 2 "test/test.c" 2
 # 1 "./include/PA/Count.h" 1
 # 13 "./include/PA/Count.h"
@@ -435,14 +435,14 @@ struct Facade {
 
 # 1 "./include/PA/List.h" 1
 # 11 "./include/PA/List.h"
-          struct PAList PAListCreate();
+          struct PAList* PAListCreate();
           struct PAList PAListCompleteBegin(struct PAList*,struct PACount, struct PASeries[]);
 
 
 
-          int PAListFinish(struct PAList*);
-          int PAListDelete(struct PAList*);
-          struct PAList* PAListCopy(struct PAList*, struct PAList*);
+          PAResult PAListFinish(struct PAList*);
+          struct PAList PAListDelete(struct PAList*);
+          struct PAList PAListCopy(struct PAList*, struct PAList*);
 
 void PAListPerformPrint(struct PAList* List);
 # 8 "test/test.c" 2
@@ -452,33 +452,33 @@ void PAListPerformPrint(struct PAList* List);
 
 
 
-          struct PAResource PAResourceCompleteBegin(struct PAResource, struct PANumber);
-          struct PAResource PAResourceCreate();
-          int PAResourceFinish(struct PAResource);
-          struct PAResource PAResourceDelete(struct PAResource);
-          struct PAResource PAResourceCopy(struct PAResource, struct PAResource);
+          struct PAResource PAResourceBegin(struct PAResource*, struct PANumber);
+          struct PAResource* PAResourceCreate();
+          PAResult PAResourceFinish(struct PAResource*);
+          struct PAResource PAResourceDelete(struct PAResource*);
+          struct PAResource PAResourceCopy(struct PAResource*, struct PAResource*);
 # 9 "test/test.c" 2
 # 1 "./include/PA/Number.h" 1
 
 
 
 
-          struct PANumber PANumberCreate();
-          struct PANumber PANumberCompleteBegin(struct PANumber Number, unsigned char Value);
-          int PANumberDelete(struct PANumber);
-          int PANumberFinish(struct PANumber);
-          struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to);
+          struct PANumber* PANumberCreate();
+          struct PANumber PANumberBegin(struct PANumber* Number, unsigned char Value);
+          PAResult (struct PANumber);
+          struct PANumber PANumberFinish(struct PANumber*);
+          struct PANumber PANumberCopy(struct PANumber* from, struct PANumber* to);
 # 10 "test/test.c" 2
 # 1 "./include/PA/Series.h" 1
 # 17 "./include/PA/Series.h"
           struct PASeries* PASeriesCreate();
-          struct PASeries* PASeriesCompleteBegin(struct PASeries*, struct PACount, struct PAElement[]);
-          struct PASeries* PASeriesDelete(struct PASeries*);
-          struct PASeries* PASeriesCopy(struct PASeries*, struct PASeries*);
+          struct PASeries PASeriesBegin(struct PASeries*, struct PACount, struct PAElement[]);
+          struct PASeries PASeriesDelete(struct PASeries*);
+          struct PASeries PASeriesCopy(struct PASeries*, struct PASeries*);
 
-          int PASeriesFinish(struct PASeries*);
-          struct PAResource* PASeriesGet(struct PAData* Data);
-          void PASeriesPrint(struct PASeries* Series);
+          PAResult PASeriesFinish(struct PASeries*);
+
+          void PASeriesPrint(struct PASeries*);
 # 11 "test/test.c" 2
 # 1 "./include/PA/Status.h" 1
 
@@ -490,23 +490,21 @@ void PAListPerformPrint(struct PAList* List);
 
 
           void PAStatusCauseVisit(PABool);
-          struct PAStatus PAStatusCompleteBegin(struct PAStatus, struct PAResource);
-          int PAStatusDelete(struct PAStatus);
-          struct PAStatus PAStatusCreate();
+          struct PAStatus* PAStatusCreate();
+          struct PAStatus PAStatusBegin(struct PAStatus*, struct PAResource);
+          PAResult PAStatusFinish(struct PAStatus);
 
-          struct PAStatus PAStatusCopy(struct PAStatus, struct PAStatus);
+          struct PAStatus PAStatusCopy(struct PAStatus*, struct PAStatus*);
+          struct PAStatus PAStatusDelete(struct PAStatus*);
 # 12 "test/test.c" 2
 # 1 "./include/PA/TransposeTree.h" 1
 # 10 "./include/PA/TransposeTree.h"
           struct PATransposeTree* PATransposeTreeCreate();
-          struct PATransposeTree* PATransposeTreeCompleteBegin(struct PATransposeTree*, struct PATree);
-          struct PATransposeTree* PATransposeTreeCopy(struct PATransposeTree*, struct PATransposeTree*);
+          struct PATransposeTree PATransposeTreeBegin(struct PATransposeTree*, struct PATree);
+          struct PATransposeTree PATransposeTreeCopy(struct PATransposeTree*, struct PATransposeTree*);
 
-          int PATransposeTreeFinish(struct PATransposeTree*);
-          int PATransposeTreeDelete(struct PATransposeTree*);
-
-          PAResult PATransposeTreeGetResult();
-          PAResult PATransposeTreeGetResult();
+          PAResult PATransposeTreeFinish(struct PATransposeTree*);
+          struct PATransposeTree PATransposeTreeDelete(struct PATransposeTree*);
 # 13 "test/test.c" 2
 # 1 "./conf.h" 1
 # 14 "test/test.c" 2
