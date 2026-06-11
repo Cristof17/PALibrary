@@ -46,6 +46,8 @@ srcdir=
 #crt=@crt@
 #output=@output@
 output=libpa.a
+program_test_pa= test.out
+program_test_pointers_pa= test_pointers.out
 all: preprocess assemble compile $(program_test_pa) $(program_test_pointers_pa)
 # preprocess: $(sources)
 preprocess: preprocess_pa 
@@ -369,8 +371,6 @@ objects_test_arraylist=
 # 	src/PA/Destination.i
 # 	src/PA/Arrow.i
 # 	src/PA/Feature.i
-program_test_pa= test.out
-program_test_pointers_pa= test_pointers.out
 
 distclean:
 	rm $(foreach source,$(sources_pa),$(srcdir)/$(source))
@@ -385,7 +385,7 @@ distclean:
 	rm $(foreach object,$(objects_test_pa),$(libdir)/$(object))
 # 	rm $(foreach object,$(objects_bfs),$(libdir)/$(object))
 # 	rm $(foreach object,$(objects_arraylist),$(libdir)/$(object))
-	rm $(foreach program,$(program_test_pa),$(bindir)/$(program))
+	rm $(foreach program,$(program_test_pointers_pa),$(bindir)/$(program))
 
 objdirs= $(libdir)/ \
 	$(libdir)/BFS/ \
