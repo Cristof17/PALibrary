@@ -1,8 +1,8 @@
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 15, 0	sdk_version 26, 2
-	.globl	_InputPerformConstruct          ; -- Begin function InputPerformConstruct
+	.globl	_InputConstruct                 ; -- Begin function InputConstruct
 	.p2align	2
-_InputPerformConstruct:                 ; @InputPerformConstruct
+_InputConstruct:                        ; @InputConstruct
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16
@@ -12,9 +12,9 @@ _InputPerformConstruct:                 ; @InputPerformConstruct
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_InputPerformInit               ; -- Begin function InputPerformInit
+	.globl	_InputInit                      ; -- Begin function InputInit
 	.p2align	2
-_InputPerformInit:                      ; @InputPerformInit
+_InputInit:                             ; @InputInit
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #64
@@ -54,9 +54,9 @@ LBB1_2:
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_InputPerformCopy               ; -- Begin function InputPerformCopy
+	.globl	_InputCopy                      ; -- Begin function InputCopy
 	.p2align	2
-_InputPerformCopy:                      ; @InputPerformCopy
+_InputCopy:                             ; @InputCopy
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16
@@ -65,9 +65,9 @@ _InputPerformCopy:                      ; @InputPerformCopy
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_InputPerformDelete             ; -- Begin function InputPerformDelete
+	.globl	_InputDelete                    ; -- Begin function InputDelete
 	.p2align	2
-_InputPerformDelete:                    ; @InputPerformDelete
+_InputDelete:                           ; @InputDelete
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16
@@ -76,9 +76,9 @@ _InputPerformDelete:                    ; @InputPerformDelete
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_InputPerformFinish             ; -- Begin function InputPerformFinish
+	.globl	_InputFinish                    ; -- Begin function InputFinish
 	.p2align	2
-_InputPerformFinish:                    ; @InputPerformFinish
+_InputFinish:                           ; @InputFinish
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16

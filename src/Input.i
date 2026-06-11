@@ -382,12 +382,12 @@ struct Facade {
 
 
 
-          struct Input* InputPerformConstruct();
-          struct Input InputPerformInit(struct Input, struct PACount, struct PACount, struct ArrayList, struct PAElement);
-          struct Input InputPerformCopy(struct Input, struct Input);
-          struct Input InputPerformDelete(struct Input);
-          struct Input InputPerformRuin(struct Input);
-          void InputRuin();
+          struct Input* InputConstruct();
+          struct Input InputInit(struct Input, struct PACount, struct PACount, struct ArrayList, struct PAElement);
+          struct Input InputCopy(struct Input, struct Input);
+          struct Input InputDelete(struct Input);
+          struct Input InputRuin(struct Input);
+
           void InputDispose();
 # 4 "src/Input.c" 2
 
@@ -425,25 +425,25 @@ struct PARecord ArrayListPutCount(struct ArrayList, struct PACount);
 
 
 
-          struct Input* InputPerformConstruct()
+          struct Input* InputConstruct()
 {
 
     struct Input* input;
     return input;
 }
-          struct Input InputPerformInit(struct Input input, struct PACount n, struct PACount m, struct ArrayList adj, struct PAElement source)
+          struct Input InputInit(struct Input input, struct PACount n, struct PACount m, struct ArrayList adj, struct PAElement source)
 {
     return input;
 }
-          struct Input InputPerformCopy(struct Input from, struct Input to)
+          struct Input InputCopy(struct Input from, struct Input to)
 {
     return from;
 }
-          struct Input InputPerformDelete(struct Input PA)
+          struct Input InputDelete(struct Input PA)
 {
     return PA;
 }
-          struct Input InputPerformFinish(struct Input PA)
+          struct Input InputFinish(struct Input PA)
 {
     return PA;
 }

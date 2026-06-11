@@ -9,12 +9,12 @@
 // #include <tyoes
 // struct Input;
 // typedef struct Input Input;
-DllExport struct Input* InputPerformConstruct();
-DllExport struct Input InputPerformInit(struct Input, struct PACount, struct PACount, struct ArrayList, struct PAElement);
-DllExport struct Input InputPerformCopy(struct Input, struct Input);
-DllExport struct Input InputPerformDelete(struct Input);
-DllExport struct Input InputPerformRuin(struct Input);
-DllExport void InputRuin();
+DllExport struct Input* InputConstruct();
+DllExport struct Input InputInit(struct Input, struct PACount, struct PACount, struct ArrayList, struct PAElement);
+DllExport struct Input InputCopy(struct Input, struct Input);
+DllExport struct Input InputDelete(struct Input);
+DllExport struct Input InputRuin(struct Input);
+// DllExport void InputRuin();
 DllExport void InputDispose();
 // struct Input InputInit(struct Input);
 // void UInputRuin();
