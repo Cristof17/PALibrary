@@ -15,7 +15,7 @@
 DllExport struct Output OutputPerformConstruct()
 {
     struct Output output;
-    return output;   
+    return output;
 }
 DllExport struct Output OutputPerformInit(struct Output output, struct PAOutput Output2)
 {
