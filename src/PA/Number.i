@@ -115,7 +115,7 @@ struct PrototypeClient;
 struct PANumber {
 
 
- unsigned char* val;
+ unsigned char val;
 
 };
 struct PrototypeConcretePrototype1;
@@ -2309,7 +2309,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
     struct PANumber number;
     struct PANumber* numberPointer;
     numberPointer = (struct PANumber*) malloc (sizeof(struct PANumber));
-    numberPointer->val = (unsigned char*) malloc(sizeof(unsigned char));
+
 
 
 
@@ -2359,8 +2359,12 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 }
           void PANumberCopy(struct PANumber* from, struct PANumber* to)
 {
-    to->val = from->val;
-# 92 "src/PA/Number.c"
+    PANumberDelete(to);
+    struct PANumber number;
+    number=*from;
+
+    to->val = number.val;
+# 99 "src/PA/Number.c"
 }
           void PANumberPrint(struct PANumber* Number)
 {

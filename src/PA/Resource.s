@@ -32,8 +32,9 @@ _PAResourceBegin:                       ; @PAResourceBegin
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
 	mov	x8, x0
-	add	x0, sp, #16
-	str	x1, [sp, #16]
+	sub	x0, x29, #9
+	mov	x9, x1
+	sturb	w9, [x29, #-9]
 	str	x8, [sp, #8]
 	ldr	x8, [sp, #8]
 	ldr	x1, [x8]

@@ -27,7 +27,8 @@ _PACountBegin:                          ; @PACountBegin
 ; %bb.0:
 	sub	sp, sp, #32
 	.cfi_def_cfa_offset 32
-	str	x1, [sp, #16]
+	mov	x8, x1
+	strb	w8, [sp, #23]
 	str	x0, [sp, #8]
 	ldr	x0, [sp, #24]
 	add	sp, sp, #32

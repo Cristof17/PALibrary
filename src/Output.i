@@ -115,7 +115,7 @@ struct PrototypeClient;
 struct PANumber {
 
 
- unsigned char* val;
+ unsigned char val;
 
 };
 struct PrototypeConcretePrototype1;

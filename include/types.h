@@ -129,7 +129,7 @@ struct PrototypeClient;
 struct PANumber {
 	//  val;
 	// long long val;
-	unsigned char* val;
+	unsigned char val;
 	// PADDING_1_BYTE(0);
 };
 struct PrototypeConcretePrototype1;
