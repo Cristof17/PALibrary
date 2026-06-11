@@ -46,7 +46,7 @@ srcdir=
 #crt=@crt@
 #output=@output@
 output=libpa.a
-all: preprocess assemble compile test.out test
+all: preprocess assemble compile $(program_test_pa) $(program_test_pointers_pa)
 # preprocess: $(sources)
 preprocess: preprocess_pa 
 #preprocess_bfs preprocess_arraylist
@@ -55,10 +55,15 @@ compile: compile_pa
 assemble: assemble_pa 
 
 preprocess_test_pa: $(sources_test_pa)
+preprocess_test_pointers_pa: $(sources_test_pointers_pa)
 
-compile_test_pa: assemble_test_pa
+compile_test_pa: assemble_test_pa assemble_test_pointers_pa
+compile_test_pointers_pa: assemble_test_pointers_pa
 
-assemble_test_pa: preprocess_test_pa 
+assemble_test_pa: preprocess_test_pa preprocess_test_pointers_pa
+assemble_test_pointers_pa: preprocess_test_pointers_pa
+
+#test: compile_test_pa compile_test_pointers_pa
 
 #assemble_bfs assemble_arraylist
 #	${MAKE} obj/Input.o
@@ -130,6 +135,7 @@ mostlyclean:
 	rm $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
 	rm $(foreach source,$(sources_pa),$(srcdir)/$(source))
 	rm $(foreach test,$(sources_test_pa),$(srcdir)/$(test))
+	rm $(foreach binary,$(output_pa),$(bindir)/$(binary))
 # 	-rm $(objects_pa)
 # 	-rm $(assemblies_pa)
 # 	-rm $(sources_pa)
@@ -139,6 +145,11 @@ maintainer-clean:
 	rm $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
 	rm $(foreach source,$(sources_pa),$(srcdir)/$(source))
 	rm $(foreach test,$(sources_test_pa),$(srcdir)/$(test))
+	rm $(foreach test,$(assemblies_test_pa),$(srcdir)/$(test))
+	rm $(foreach test,$(objects_test_pa),$(libdir)/$(test))
+	rm $(foreach test,$(program_test_pa),$(bindir)/$(test))
+	rm $(foreach test,$(program_test_pointers_pa),$(bindir)/$(test))
+	rm $(foreach lib,$(output),$(libdir)/$(lib))
 # 	-rm $(libdir)/libpa.a
 # 	-rm $(sources_pa)
 # 	-rm $(sources_bfs)
