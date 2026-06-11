@@ -2344,6 +2344,12 @@ int main()
  PANumberCopy(number,number123);
  PANumberPrint(number);
  PANumberPrint(number123);
-# 28 "test/test_pointers.c"
+ struct PANumber* number34;
+ number34 = PANumberCreate();
+ PANumberCopy(number,number34);
+ PANumberPrint(number34);
+ PANumberDelete(number34);
+ PANumberPrint(number34);
+# 34 "test/test_pointers.c"
  return 0;
 }

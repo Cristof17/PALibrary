@@ -10,6 +10,12 @@ int main()
 	PANumberCopy(number,number123);
 	PANumberPrint(number);
 	PANumberPrint(number123);
+	struct PANumber* number34;
+	number34 = PANumberCreate();
+	PANumberCopy(number,number34);
+	PANumberPrint(number34);
+	PANumberDelete(number34);
+	PANumberPrint(number34);
 	// printf(number,number123);
 	// PANumberPrint(number123);
 	// number=PANumberCreate();

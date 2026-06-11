@@ -38,9 +38,10 @@ DllExport struct PANumber PANumberDelete(struct PANumber* PA)
     int returnCode;
     // returnCode = PA-
     // PA->val = NULL;
-    returnCode = PARESULT_SUCCESS;
+    // returnCode = PARESULT_SUCCESS;
     // return returnCode;
     struct PANumber number;
+    PA->val = NULL;
     return number;
     // struct PANumber number;
     // return PA;

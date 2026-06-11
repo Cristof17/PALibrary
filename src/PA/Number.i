@@ -2331,9 +2331,10 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
     int returnCode;
 
 
-    returnCode = ((int)0);
+
 
     struct PANumber number;
+    PA->val = 0;
     return number;
 
 
@@ -2364,7 +2365,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
     number=*from;
 
     to->val = number.val;
-# 99 "src/PA/Number.c"
+# 100 "src/PA/Number.c"
 }
           void PANumberPrint(struct PANumber* Number)
 {

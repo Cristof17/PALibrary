@@ -80,7 +80,8 @@ _PANumberDelete:                        ; @PANumberDelete
 	sub	sp, sp, #32
 	.cfi_def_cfa_offset 32
 	str	x0, [sp, #16]
-	str	wzr, [sp, #12]
+	ldr	x8, [sp, #16]
+	strb	wzr, [x8]
 	ldrb	w0, [sp, #31]
 	add	sp, sp, #32
 	ret
