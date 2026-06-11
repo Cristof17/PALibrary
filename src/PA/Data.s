@@ -7,7 +7,7 @@ _PADataCreate:                          ; @PADataCreate
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	ldrb	w0, [sp, #15]
+	ldr	x0, [sp, #8]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -17,14 +17,13 @@ _PADataCreate:                          ; @PADataCreate
 _PADataBegin:                           ; @PADataBegin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	strb	w8, [sp, #14]
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
 	mov	x8, x1
-	strb	w8, [sp, #13]
-	ldrb	w0, [sp, #15]
-	add	sp, sp, #16
+	strb	w8, [sp, #30]
+	str	x0, [sp, #16]
+	ldrb	w0, [sp, #31]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -33,14 +32,12 @@ _PADataBegin:                           ; @PADataBegin
 _PADataCopy:                            ; @PADataCopy
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	strb	w8, [sp, #14]
-	mov	x8, x1
-	strb	w8, [sp, #13]
-	ldrb	w0, [sp, #15]
-	add	sp, sp, #16
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #16]
+	str	x1, [sp, #8]
+	ldrb	w0, [sp, #31]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -51,8 +48,7 @@ _PADataFinish:                          ; @PADataFinish
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	strb	w8, [sp, #15]
+	str	x0, [sp, #8]
 	mov	w0, #0                          ; =0x0
 	add	sp, sp, #16
 	ret
@@ -65,8 +61,7 @@ _PADataDelete:                          ; @PADataDelete
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	strb	w8, [sp, #15]
+	str	x0, [sp, #8]
 	mov	w0, #0                          ; =0x0
 	add	sp, sp, #16
 	ret
