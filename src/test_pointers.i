@@ -2330,7 +2330,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
  struct PANumber* PANumberCreate();
           struct PANumber PANumberBegin(struct PANumber* Number, unsigned char Value);
           PAResult PANumberFinish(struct PANumber*);
-          struct PANumber PANumberDelete(struct PANumber*);
+          PAResult PANumberDelete(struct PANumber*);
           void PANumberCopy(struct PANumber* from, struct PANumber* to);
           void PANumberPrint(struct PANumber*);
 # 4 "test/test_pointers.c" 2
@@ -2348,8 +2348,11 @@ int main()
  number34 = PANumberCreate();
  PANumberCopy(number,number34);
  PANumberPrint(number34);
- PANumberDelete(number34);
+
+ PANumberFinish(number34);
+
+ PANumberFinish(number);
  PANumberPrint(number34);
-# 34 "test/test_pointers.c"
+# 37 "test/test_pointers.c"
  return 0;
 }

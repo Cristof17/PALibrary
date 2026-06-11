@@ -14,7 +14,10 @@ int main()
 	number34 = PANumberCreate();
 	PANumberCopy(number,number34);
 	PANumberPrint(number34);
-	PANumberDelete(number34);
+	// PANumberDelete(number34);
+	PANumberFinish(number34);
+	// PANu
+	PANumberFinish(number);
 	PANumberPrint(number34);
 	// printf(number,number123);
 	// PANumberPrint(number123);

@@ -8,7 +8,7 @@
 DllExport struct PANumber* PANumberCreate();
 DllExport struct PANumber PANumberBegin(struct PANumber* Number, unsigned char Value);
 DllExport PAResult PANumberFinish(struct PANumber*);
-DllExport struct PANumber PANumberDelete(struct PANumber*);
+DllExport PAResult PANumberDelete(struct PANumber*);
 DllExport void PANumberCopy(struct PANumber* from, struct PANumber* to);
 DllExport void PANumberPrint(struct PANumber*);
 #endif

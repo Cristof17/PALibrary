@@ -2320,7 +2320,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
  struct PANumber* PANumberCreate();
           struct PANumber PANumberBegin(struct PANumber* Number, unsigned char Value);
           PAResult PANumberFinish(struct PANumber*);
-          struct PANumber PANumberDelete(struct PANumber*);
+          PAResult PANumberDelete(struct PANumber*);
           void PANumberCopy(struct PANumber* from, struct PANumber* to);
           void PANumberPrint(struct PANumber*);
 # 7 "src/PA/Count.c" 2

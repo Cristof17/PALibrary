@@ -33,16 +33,18 @@ DllExport struct PANumber PANumberBegin(struct PANumber* Number, unsigned char V
     // return numberPointer;
     return temp;
 }
-DllExport struct PANumber PANumberDelete(struct PANumber* PA)
+DllExport PAResult PANumberDelete(struct PANumber* PA)
 {
     // int returnCode;
     // returnCode = PA-
     // PA->val = NULL;
-    // returnCode = PARESULT_SUCCESS;
+    int returnCode = PARESULT_SUCCESS;
     // return returnCode;
     struct PANumber number;
+    // number.val = NULL;
     PA->val = NULL;
-    return number;
+    // return number;
+    return returnCode;
     // struct PANumber number;
     // return PA;
 }
