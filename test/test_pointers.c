@@ -1,6 +1,7 @@
 #include <PA/Count.h>
 #include <PA/Resource.h>
 #include <PA/Number.h>
+#include <stdio.h>
 int main()
 {
 	struct PANumber* number;
@@ -11,7 +12,8 @@ int main()
 	PAResourceBegin(resource,*number);
 	struct PACount* count;
 	count = PACountCreate();
-	PACountBegin(count,*resource);
-	PACountPrint(count);
+	PACountBegin(count,*number);
+	//PACountPrint(count);
+	printf("count is %d\n", count->number.val);
 	return 0;
 }

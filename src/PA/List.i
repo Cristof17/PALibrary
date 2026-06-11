@@ -1851,7 +1851,7 @@ void PAListPerformPrint(struct PAList* List);
 
 
           struct PACount* PACountCreate();
-          struct PACount PACountCompleteBegin(struct PACount* Count, struct PANumber Number);
+          struct PACount PACountBegin(struct PACount* Count, struct PANumber Number);
           void PACountCopy(struct PACount* from, struct PACount* to);
 
 

@@ -18,6 +18,7 @@
 struct PAElement* PAElementCreate()
 {
     struct PAElement* temp;
+    temp = (struct PAElement*)malloc(sizeof(struct PAElement));
     // temp.index = PADataPerformConstruct();
     // temp.status = PAStatusPerformConstruct();
     // temp = PAElementPerformInit(temp,temp.index,temp.status);

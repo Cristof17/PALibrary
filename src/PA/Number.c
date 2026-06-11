@@ -7,6 +7,7 @@ DllExport struct PANumber* PANumberCreate()
 {
     struct PANumber number;
     struct PANumber* numberPointer;
+    numberPointer = (struct PANumber*) malloc (sizeof(struct PANumber));
     // number = PANumberPerformInit(number,NULL_CHAR);
     // unsigned char random;
     // number.val =  random;

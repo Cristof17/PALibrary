@@ -61,6 +61,7 @@ DllExport struct PAOutput* PAOutputCreate()
 {
     struct PAOutput Output;
     struct PAOutput* outputPointer;
+    outputPointer=(struct PAOutput*) malloc (sizeof(struct PAOutput));
     // outputPointer-
     // return outputPointer;
     // return Output;

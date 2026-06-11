@@ -1825,7 +1825,7 @@ extern char * suboptarg;
 
 
           struct PACount* PACountCreate();
-          struct PACount PACountCompleteBegin(struct PACount* Count, struct PANumber Number);
+          struct PACount PACountBegin(struct PACount* Count, struct PANumber Number);
           void PACountCopy(struct PACount* from, struct PACount* to);
 
 
@@ -1859,7 +1859,8 @@ extern char * suboptarg;
 {
 
     struct PACount* countPointer;
-# 26 "src/PA/Count.c"
+    countPointer =(struct PACount*)malloc(sizeof(struct PACount));
+# 27 "src/PA/Count.c"
     return countPointer;
 }
           struct PACount PACountBegin(struct PACount* Count, struct PANumber Value)
@@ -1884,7 +1885,7 @@ extern char * suboptarg;
 }
           PAResult PACountFinish(struct PACount* PA)
 {
-# 75 "src/PA/Count.c"
+# 76 "src/PA/Count.c"
     int returnCode;
     return returnCode;
 

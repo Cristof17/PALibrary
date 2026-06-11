@@ -14,6 +14,7 @@ DllExport struct PAData* PADataCreate()
 {
     // struct PAData data;
     struct PAData* dataPointer;
+    dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
     // struct PAResource resource;
     // data.Resource = PAResourcePerformConstruct();
     // dataPointer = PADataBegin(dataPointer, data.Resource);

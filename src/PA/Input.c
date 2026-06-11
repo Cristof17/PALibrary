@@ -28,6 +28,8 @@ DllExport struct PAInput* PAInputCreate()
 	n = inputPointer->n;
 	m = inputPointer->m;
 	element = inputPointer->source;
+
+	inputPointer = (struct PAInput*) malloc (sizeof(struct PAInput));
 	// list = inputPointer.
 	// inputPointer = PAInputBegin(inputPointer,n,m,element);
 	// return inputPointer;
