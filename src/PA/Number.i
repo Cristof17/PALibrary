@@ -384,7 +384,7 @@ struct Facade {
           struct PANumber PANumberBegin(struct PANumber* Number, unsigned char Value);
           PAResult PANumberFinish(struct PANumber*);
           struct PANumber PANumberDelete(struct PANumber*);
-          struct PANumber PANumberCopy(struct PANumber* from, struct PANumber* to);
+          void PANumberCopy(struct PANumber* from, struct PANumber* to);
 # 3 "src/PA/Number.c" 2
 
 
@@ -445,9 +445,9 @@ struct Facade {
 
     return returnCode;
 }
-          struct PANumber PANumberCopy(struct PANumber* from, struct PANumber* to)
+          void PANumberCopy(struct PANumber* from, struct PANumber* to)
 {
 # 74 "src/PA/Number.c"
     struct PANumber number;
-    return number;
+
 }

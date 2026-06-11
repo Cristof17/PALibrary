@@ -41,14 +41,14 @@ DllExport struct PAData PADataBegin(struct PAData* Data, struct PAResource Value
     // struct PAData data;
     // data.resource = Data.resource;
 }
-DllExport struct PAData PADataCopy(struct PAData* from, struct PAData* to)
+DllExport void PADataCopy(struct PAData* from, struct PAData* to)
 {
     struct PAData temp;
     struct PAData *dataPointer;
     // temp.Resource = PAResourcePerformCopy(from.Resource, temp.Resource);
     // to.Resource = temp.Resource;
     // return dataPointer;
-    return temp;
+    // return temp;
 }
 // struct PAData PADataPerformCopy(struct PAData Data)
 // {

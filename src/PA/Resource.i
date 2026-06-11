@@ -386,7 +386,7 @@ struct Facade {
           struct PAResource* PAResourceCreate();
           PAResult PAResourceFinish(struct PAResource*);
           struct PAResource PAResourceDelete(struct PAResource*);
-          struct PAResource PAResourceCopy(struct PAResource*, struct PAResource*);
+          void PAResourceCopy(struct PAResource*, struct PAResource*);
 # 4 "src/PA/Resource.c" 2
 # 1 "./include/PA/Number.h" 1
 
@@ -397,7 +397,7 @@ struct Facade {
           struct PANumber PANumberBegin(struct PANumber* Number, unsigned char Value);
           PAResult PANumberFinish(struct PANumber*);
           struct PANumber PANumberDelete(struct PANumber*);
-          struct PANumber PANumberCopy(struct PANumber* from, struct PANumber* to);
+          void PANumberCopy(struct PANumber* from, struct PANumber* to);
 # 5 "src/PA/Resource.c" 2
 
 
@@ -424,14 +424,14 @@ struct Facade {
     return resource;
 
 }
-          struct PAResource PAResourceCopy(struct PAResource* from, struct PAResource* to)
+          void PAResourceCopy(struct PAResource* from, struct PAResource* to)
 {
     struct PAResource temp;
 
 
 
 
-    return temp;
+
 
 }
           PAResult PAResourceFinish(struct PAResource* PA)

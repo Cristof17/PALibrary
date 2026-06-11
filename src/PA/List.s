@@ -17,76 +17,45 @@ _PAListCreate:                          ; @PAListCreate
 _PAListCopy:                            ; @PAListCopy
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #112
-	stp	x29, x30, [sp, #96]             ; 16-byte Folded Spill
-	add	x29, sp, #96
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	adrp	x8, ___stack_chk_guard@GOTPAGE
-	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
-	ldr	x8, [x8]
-	stur	x8, [x29, #-8]
-	str	x0, [sp, #48]
-	str	x1, [sp, #40]
+	sub	sp, sp, #48
+	.cfi_def_cfa_offset 48
+	str	x0, [sp, #40]
+	str	x1, [sp, #32]
 	mov	w8, #1                          ; =0x1
-	strb	w8, [sp, #39]
-	ldurb	w8, [x29, #-35]
-	strb	w8, [sp, #38]
-	ldurb	w8, [x29, #-35]
-	strb	w8, [sp, #38]
+	strb	w8, [sp, #20]
+	ldrb	w8, [sp, #21]
+	strb	w8, [sp, #19]
+	ldrb	w8, [sp, #21]
+	strb	w8, [sp, #19]
 	b	LBB1_1
 LBB1_1:                                 ; =>This Inner Loop Header: Depth=1
-	ldrb	w8, [sp, #39]
-	ldrb	w9, [sp, #38]
+	ldrb	w8, [sp, #20]
+	ldrb	w9, [sp, #19]
 	subs	w8, w8, w9
 	b.gt	LBB1_3
 	b	LBB1_2
 LBB1_2:                                 ;   in Loop: Header=BB1_1 Depth=1
-	ldrb	w8, [sp, #39]
+	ldrb	w8, [sp, #20]
 	add	w8, w8, #1
-	strb	w8, [sp, #39]
+	strb	w8, [sp, #20]
 	b	LBB1_1
 LBB1_3:
 	mov	w8, #1                          ; =0x1
-	strb	w8, [sp, #39]
+	strb	w8, [sp, #20]
 	b	LBB1_4
 LBB1_4:                                 ; =>This Inner Loop Header: Depth=1
-	ldrb	w8, [sp, #39]
-	ldrb	w9, [sp, #38]
+	ldrb	w8, [sp, #20]
+	ldrb	w9, [sp, #19]
 	subs	w8, w8, w9
 	b.ge	LBB1_6
 	b	LBB1_5
 LBB1_5:                                 ;   in Loop: Header=BB1_4 Depth=1
-	ldrb	w8, [sp, #39]
+	ldrb	w8, [sp, #20]
 	add	w8, w8, #1
-	strb	w8, [sp, #39]
+	strb	w8, [sp, #20]
 	b	LBB1_4
 LBB1_6:
-	sub	x8, x29, #35
-	ldur	x10, [x29, #-35]
-	sub	x9, x29, #24
-	stur	x10, [x29, #-24]
-	ldur	w8, [x8, #7]
-	stur	w8, [x9, #7]
-	ldur	x8, [x29, #-24]
-	str	x8, [sp, #8]                    ; 8-byte Folded Spill
-	ldur	x8, [x29, #-16]
-	str	x8, [sp, #16]                   ; 8-byte Folded Spill
-	ldur	x9, [x29, #-8]
-	adrp	x8, ___stack_chk_guard@GOTPAGE
-	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
-	ldr	x8, [x8]
-	subs	x8, x8, x9
-	b.eq	LBB1_8
-	b	LBB1_7
-LBB1_7:
-	bl	___stack_chk_fail
-LBB1_8:
-	ldr	x1, [sp, #16]                   ; 8-byte Folded Reload
-	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
-	ldp	x29, x30, [sp, #96]             ; 16-byte Folded Reload
-	add	sp, sp, #112
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function

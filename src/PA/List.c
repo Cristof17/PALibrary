@@ -43,7 +43,7 @@ DllExport struct PAList* PAListCreate()
     // list.adj = PASeriesPerformConstruct();
     // return list;
 }
-DllExport struct PAList PAListCopy(struct PAList* from, struct PAList* to)
+DllExport void PAListCopy(struct PAList* from, struct PAList* to)
 {
     struct PAList temp;
     // temp.n = PACountPerformCopy(from.n,temp.n);
@@ -83,7 +83,7 @@ DllExport struct PAList PAListCopy(struct PAList* from, struct PAList* to)
     }
     // to.n = PACountPerformCopy(temp.n, to.n);
     // return to;
-    return temp;
+    // return temp;
 }
 
 DllExport struct PAList PAListBegin(struct PAList* List, struct PACount Value, struct PASeries Value2[])

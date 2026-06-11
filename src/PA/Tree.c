@@ -93,7 +93,7 @@ DllExport struct PATree* PATreeCompleteBegin(struct PATree* Tree, struct PACount
     // tree = PATreePerformInit(Tree);
     // return tree;
 // }
-DllExport struct PATree PATreeCopy(struct PATree* from, struct PATree* to)
+DllExport void PATreeCopy(struct PATree* from, struct PATree* to)
 {
     struct PATree temp;
     temp.n = from->n;
@@ -114,7 +114,7 @@ DllExport struct PATree PATreeCopy(struct PATree* from, struct PATree* to)
     // to.adj = temp.adj;
     // temp.source =PAElementPerformCopy
     // return to;
-    return temp;
+    // return temp;
 }
 DllExport PAResult PATreeFinish(struct PATree* PA)
 {

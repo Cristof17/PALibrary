@@ -390,7 +390,7 @@ struct Facade {
 
           struct PAPair* PAPairCreate();
           struct PAPair PAPairBegin(struct PAPair*, struct PAElement, struct PAElement);
-          struct PAPair PAPairCopy(struct PAPair* from, struct PAPair* to);
+          void PAPairCopy(struct PAPair* from, struct PAPair* to);
 
 
 
@@ -411,7 +411,7 @@ struct Facade {
 
           int PAElementFinish(struct PAElement*);
           struct PAElement PAElementDelete(struct PAElement*);
-          struct PAElement PAElementCopy(struct PAElement*, struct PAElement*);
+          void PAElementCopy(struct PAElement*, struct PAElement*);
 # 8 "src/PA/Pair.c" 2
 
 
@@ -439,7 +439,7 @@ struct Facade {
     return temp;
 # 63 "src/PA/Pair.c"
 }
-struct PAPair PAPairCopy(struct PAPair* from, struct PAPair* to)
+          void PAPairCopy(struct PAPair* from, struct PAPair* to)
 {
     struct PAPair temp;
     struct PAElement node;
@@ -452,7 +452,7 @@ struct PAPair PAPairCopy(struct PAPair* from, struct PAPair* to)
 
 
 
-    return temp;
+
 }
 # 107 "src/PA/Pair.c"
           PAResult PAPairFinish(struct PAPair* PA)

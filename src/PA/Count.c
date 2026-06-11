@@ -90,10 +90,10 @@ PAResult PACountPrint(struct PACount* Count)
     PAResult result;
     return result;
 }
-DllExport struct PACount PACountCopy(struct PACount* from, struct PACount* to)
+DllExport void PACountCopy(struct PACount* from, struct PACount* to)
 {
-    struct PACount temp;
-    return temp;
+    // struct PACount temp;
+    // return temp;
     // temp.number = PANumberPerformCopy(from.number,to.number);
     // to.number = temp.number;
     // return to;

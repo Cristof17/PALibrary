@@ -61,7 +61,7 @@ DllExport struct PAPair PAPairBegin(struct PAPair* Pair, struct PAElement Value,
     // struct PAPair pair;
     // return result;
 }
-struct PAPair PAPairCopy(struct PAPair* from, struct PAPair* to)
+DllExport void PAPairCopy(struct PAPair* from, struct PAPair* to)
 {
     struct PAPair temp;
     struct PAElement node;
@@ -74,7 +74,7 @@ struct PAPair PAPairCopy(struct PAPair* from, struct PAPair* to)
     // temp.Node = PAElementPerformCopy(from.Node, to.Node);
     // temp.Neigh = PAElementPerformCopy(from.Neigh, to.Neigh);
     // return to;
-    return temp;
+    // return temp;
 }
 	// PAResult result;
 	// return result;

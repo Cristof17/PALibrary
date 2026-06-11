@@ -388,14 +388,14 @@ struct Facade {
 
           struct PANormalTree* PANormalTreeCreate();
           struct PANormalTree PANormalTreeBegin(struct PANormalTree*, struct PATree);
-          struct PANormalTree PANormalTreeCopy(struct PANormalTree*);
+          void PANormalTreeCopy(struct PANormalTree*);
           PAResult PANormalTreeFinish(struct PANormalTree*);
           struct PANormalTree PANormalTreeDelete(struct PANormalTree*);
 # 6 "src/PA/NormalTree.c" 2
 # 1 "./include/PA/Tree.h" 1
 # 12 "./include/PA/Tree.h"
           struct PATree* PATreeCreate();
-          struct PATree PATreeCopy(struct PATree* from, struct PATree* to);
+          void PATreeCopy(struct PATree* from, struct PATree* to);
 
           struct PATree PATreeBegin(struct PATree*, struct PACount, struct PACount, struct PAList, struct PAElement);
 

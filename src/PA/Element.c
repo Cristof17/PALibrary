@@ -64,15 +64,15 @@ DllExport void PAElementReset(struct PAElement* Element)
     // Element.status.visited.value.val = FALSE;
     return;
 }
-DllExport struct PAElement PAElementCopy(struct PAElement* from, struct PAElement* to)
+DllExport void PAElementCopy(struct PAElement* from, struct PAElement* to)
 {
-    struct PAElement temp;
+    // struct PAElement temp;
     // temp.index = PADataPerformCopy(from.index, to.index);
     // temp.status = PAStatusPerformCopy(from.status,to.status);
     // to.index = temp.index;
     // to.status = temp.status;
     // return to;
-    return temp;
+    // return temp;
 }   
 // PAResult PAElementPerformCopy()
 // {

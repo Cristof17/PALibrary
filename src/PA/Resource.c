@@ -34,14 +34,14 @@ DllExport struct PAResource PAResourceBegin(struct PAResource* Resource, struct 
     return resource;
     // return Resource;
 }
-DllExport struct PAResource PAResourceCopy(struct PAResource* from, struct PAResource* to)
+DllExport void PAResourceCopy(struct PAResource* from, struct PAResource* to)
 {
     struct PAResource temp;
     // struct PAResource* resourcePointer;
     // temp.value = PANumberPerformCopy(from.value, temp.value);
     // to.value = temp.value;
     // return resourcePointer;
-    return temp;
+    // return temp;
     // return to;
 }
 DllExport PAResult PAResourceFinish(struct PAResource* PA)

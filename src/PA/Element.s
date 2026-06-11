@@ -71,12 +71,11 @@ _PAElementReset:                        ; @PAElementReset
 _PAElementCopy:                         ; @PAElementCopy
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
-	str	x0, [sp, #16]
-	str	x1, [sp, #8]
-	ldrh	w0, [sp, #30]
-	add	sp, sp, #32
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	str	x0, [sp, #8]
+	str	x1, [sp]
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function

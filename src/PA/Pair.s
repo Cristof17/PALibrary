@@ -36,13 +36,12 @@ _PAPairCopy:                            ; @PAPairCopy
 ; %bb.0:
 	sub	sp, sp, #32
 	.cfi_def_cfa_offset 32
-	str	x0, [sp, #16]
-	str	x1, [sp, #8]
-	ldrh	w8, [sp, #6]
-	strh	w8, [sp, #28]
-	ldrh	w8, [sp, #4]
-	strh	w8, [sp, #30]
-	ldr	w0, [sp, #28]
+	str	x0, [sp, #24]
+	str	x1, [sp, #16]
+	ldrh	w8, [sp, #10]
+	strh	w8, [sp, #12]
+	ldrh	w8, [sp, #8]
+	strh	w8, [sp, #14]
 	add	sp, sp, #32
 	ret
 	.cfi_endproc

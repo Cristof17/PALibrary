@@ -384,7 +384,7 @@ struct Facade {
 
 
           struct PALink* PALinkCreate();
-          struct PALink PALinkCopy(struct PALink*, struct PALink*);
+          void PALinkCopy(struct PALink*, struct PALink*);
 
           struct PALink PALinkBegin(struct PALink*, struct PAPair);
 
@@ -402,7 +402,7 @@ struct Facade {
 
           struct PAPair* PAPairCreate();
           struct PAPair PAPairBegin(struct PAPair*, struct PAElement, struct PAElement);
-          struct PAPair PAPairCopy(struct PAPair* from, struct PAPair* to);
+          void PAPairCopy(struct PAPair* from, struct PAPair* to);
 
 
 
@@ -446,14 +446,14 @@ struct Facade {
     int returnCode;
     return returnCode;
 }
-struct PALink PALinkCopy(struct PALink* from, struct PALink* to)
+          void PALinkCopy(struct PALink* from, struct PALink* to)
 {
     struct PALink temp;
     struct PALink* linkPointer;
 
 
 
-    return temp;
+
 
 
 

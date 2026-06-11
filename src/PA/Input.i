@@ -396,7 +396,7 @@ struct Facade {
 # 13 "./include/PA/Count.h"
           struct PACount* PACountCreate();
           struct PACount PACountCompleteBegin(struct PACount* Count, struct PANumber Number);
-          struct PACount PACountCopy(struct PACount* from, struct PACount* to);
+          void PACountCopy(struct PACount* from, struct PACount* to);
 
 
 
@@ -419,7 +419,7 @@ struct Facade {
 
           int PAElementFinish(struct PAElement*);
           struct PAElement PAElementDelete(struct PAElement*);
-          struct PAElement PAElementCopy(struct PAElement*, struct PAElement*);
+          void PAElementCopy(struct PAElement*, struct PAElement*);
 # 11 "src/PA/Input.c" 2
 
 

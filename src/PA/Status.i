@@ -387,7 +387,7 @@ struct Facade {
           struct PAStatus PAStatusBegin(struct PAStatus*, struct PAResource);
           PAResult PAStatusFinish(struct PAStatus*);
 
-          struct PAStatus PAStatusCopy(struct PAStatus*, struct PAStatus*);
+          void PAStatusCopy(struct PAStatus*, struct PAStatus*);
           struct PAStatus PAStatusDelete(struct PAStatus*);
 # 7 "src/PA/Status.c" 2
 # 1 "./include/PA/Resource.h" 1
@@ -400,7 +400,7 @@ struct Facade {
           struct PAResource* PAResourceCreate();
           PAResult PAResourceFinish(struct PAResource*);
           struct PAResource PAResourceDelete(struct PAResource*);
-          struct PAResource PAResourceCopy(struct PAResource*, struct PAResource*);
+          void PAResourceCopy(struct PAResource*, struct PAResource*);
 # 8 "src/PA/Status.c" 2
 
 
@@ -427,13 +427,13 @@ struct Facade {
 
 
 }
-          struct PAStatus PAStatusCopy(struct PAStatus* from, struct PAStatus* to)
+          void PAStatusCopy(struct PAStatus* from, struct PAStatus* to)
 {
     struct PAStatus temp;
 
 
 
-    return temp;
+
 
 
 

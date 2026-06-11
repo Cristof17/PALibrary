@@ -68,52 +68,22 @@ LBB1_2:
 _PATransposeTreeCopy:                   ; @PATransposeTreeCopy
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #96
-	stp	x29, x30, [sp, #80]             ; 16-byte Folded Spill
-	add	x29, sp, #80
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	adrp	x8, ___stack_chk_guard@GOTPAGE
-	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
-	ldr	x8, [x8]
-	stur	x8, [x29, #-8]
-	str	x0, [sp, #32]
-	str	x1, [sp, #24]
-	ldr	x9, [sp, #32]
+	sub	sp, sp, #48
+	.cfi_def_cfa_offset 48
+	str	x0, [sp, #40]
+	str	x1, [sp, #32]
+	ldr	x9, [sp, #40]
 	ldr	x10, [x9]
-	add	x8, sp, #40
-	str	x10, [sp, #40]
+	add	x8, sp, #8
+	str	x10, [sp, #8]
 	ldur	x9, [x9, #7]
 	stur	x9, [x8, #7]
-	ldr	x10, [sp, #24]
-	ldr	x9, [sp, #40]
-	str	x9, [x10]
-	ldur	x9, [x8, #7]
-	stur	x9, [x10, #7]
-	ldr	x10, [sp, #40]
-	sub	x9, x29, #24
-	stur	x10, [x29, #-24]
+	ldr	x9, [sp, #32]
+	ldr	x10, [sp, #8]
+	str	x10, [x9]
 	ldur	x8, [x8, #7]
 	stur	x8, [x9, #7]
-	ldur	x8, [x29, #-24]
-	str	x8, [sp]                        ; 8-byte Folded Spill
-	ldur	x8, [x29, #-16]
-	str	x8, [sp, #8]                    ; 8-byte Folded Spill
-	ldur	x9, [x29, #-8]
-	adrp	x8, ___stack_chk_guard@GOTPAGE
-	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
-	ldr	x8, [x8]
-	subs	x8, x8, x9
-	b.eq	LBB2_2
-	b	LBB2_1
-LBB2_1:
-	bl	___stack_chk_fail
-LBB2_2:
-	ldr	x1, [sp, #8]                    ; 8-byte Folded Reload
-	ldr	x0, [sp]                        ; 8-byte Folded Reload
-	ldp	x29, x30, [sp, #80]             ; 16-byte Folded Reload
-	add	sp, sp, #96
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function

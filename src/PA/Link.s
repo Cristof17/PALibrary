@@ -47,9 +47,8 @@ _PALinkCopy:                            ; @PALinkCopy
 ; %bb.0:
 	sub	sp, sp, #32
 	.cfi_def_cfa_offset 32
-	str	x0, [sp, #16]
-	str	x1, [sp, #8]
-	ldr	w0, [sp, #28]
+	str	x0, [sp, #24]
+	str	x1, [sp, #16]
 	add	sp, sp, #32
 	ret
 	.cfi_endproc

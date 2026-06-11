@@ -59,7 +59,7 @@ DllExport PAResult PANumberFinish(struct PANumber* PA)
     // return aux;
     return returnCode;
 }
-DllExport struct PANumber PANumberCopy(struct PANumber* from, struct PANumber* to)
+DllExport void PANumberCopy(struct PANumber* from, struct PANumber* to)
 {
     // struct PANumber temp;
     // char num = from->val;
@@ -72,5 +72,5 @@ DllExport struct PANumber PANumberCopy(struct PANumber* from, struct PANumber* t
     // return temp;
     // return to;
     struct PANumber number;
-    return number;
+    // return number;
 }

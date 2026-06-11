@@ -382,7 +382,7 @@ struct Facade {
 # 13 "./include/PA/Count.h"
           struct PACount* PACountCreate();
           struct PACount PACountCompleteBegin(struct PACount* Count, struct PANumber Number);
-          struct PACount PACountCopy(struct PACount* from, struct PACount* to);
+          void PACountCopy(struct PACount* from, struct PACount* to);
 
 
 
@@ -400,7 +400,7 @@ struct Facade {
           struct PANumber PANumberBegin(struct PANumber* Number, unsigned char Value);
           PAResult PANumberFinish(struct PANumber*);
           struct PANumber PANumberDelete(struct PANumber*);
-          struct PANumber PANumberCopy(struct PANumber* from, struct PANumber* to);
+          void PANumberCopy(struct PANumber* from, struct PANumber* to);
 # 7 "src/PA/Count.c" 2
 
 
@@ -457,10 +457,10 @@ PAResult PACountPrint(struct PACount* Count)
     PAResult result;
     return result;
 }
-          struct PACount PACountCopy(struct PACount* from, struct PACount* to)
+          void PACountCopy(struct PACount* from, struct PACount* to)
 {
-    struct PACount temp;
-    return temp;
+
+
 
 
 
