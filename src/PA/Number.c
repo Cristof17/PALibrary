@@ -20,8 +20,9 @@ DllExport struct PANumber PANumberBegin(struct PANumber* Number, unsigned char V
 {
     struct PANumber temp;
     struct PANumber* numberPointer;
-    temp.val = Number->val;
-    PANumberCopy(Number,&temp);
+    temp.val = Value;
+    Number->val = temp.val;
+    // PANumberCopy(Number,&temp);
     // memcpy(to)
     // numberPointer.
     // numberPointer->val = Value;
@@ -40,7 +41,7 @@ DllExport PAResult PANumberDelete(struct PANumber* PA)
     // PA->val = NULL;
     int returnCode = PARESULT_SUCCESS;
     // return returnCode;
-    struct PANumber number;
+    // struct PANumber number;
     // number.val = NULL;
     PA->val = NULL;
     // return number;

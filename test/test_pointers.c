@@ -5,11 +5,22 @@
 int main()
 {
 	struct PANumber* number;
+	number = PANumberCreate();
+	// PANumberDelete(number);
+	// PANumberFinish(number);
 	// srtuc
 	struct PANumber* number123;
 	PANumberCopy(number,number123);
+	PANumberBegin(number,'a');
+	PANumberCopy(number,number123);
 	PANumberPrint(number);
 	PANumberPrint(number123);
+	// number->val = 323;
+	// number->val = 542;
+	// PANumberPrint(number);
+	// PANumberPrint(number);
+
+	// PANumberPrint(number123);
 	struct PANumber* number34;
 	number34 = PANumberCreate();
 	PANumberCopy(number,number34);
@@ -17,7 +28,7 @@ int main()
 	// PANumberDelete(number34);
 	PANumberFinish(number34);
 	// PANu
-	PANumberFinish(number);
+	// PANumberFinish(number);
 	PANumberPrint(number34);
 	// printf(number,number123);
 	// PANumberPrint(number123);

@@ -25,49 +25,17 @@ _PANumberCreate:                        ; @PANumberCreate
 _PANumberBegin:                         ; @PANumberBegin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #48
-	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
-	add	x29, sp, #32
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
 	str	x0, [sp, #16]
 	strb	w1, [sp, #15]
-	ldr	x8, [sp, #16]
-	ldrb	w8, [x8]
-	sub	x1, x29, #1
-	sturb	w8, [x29, #-1]
-	ldr	x0, [sp, #16]
-	bl	_PANumberCopy
-	ldurb	w0, [x29, #-1]
-	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
-	add	sp, sp, #48
-	ret
-	.cfi_endproc
-                                        ; -- End function
-	.globl	_PANumberCopy                   ; -- Begin function PANumberCopy
-	.p2align	2
-_PANumberCopy:                          ; @PANumberCopy
-	.cfi_startproc
-; %bb.0:
-	sub	sp, sp, #48
-	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
-	add	x29, sp, #32
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	stur	x0, [x29, #-8]
-	str	x1, [sp, #16]
-	ldr	x0, [sp, #16]
-	bl	_PANumberDelete
-	ldur	x8, [x29, #-8]
-	ldrb	w8, [x8]
-	strb	w8, [sp, #15]
 	ldrb	w8, [sp, #15]
+	strb	w8, [sp, #31]
+	ldrb	w8, [sp, #31]
 	ldr	x9, [sp, #16]
 	strb	w8, [x9]
-	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
-	add	sp, sp, #48
+	ldrb	w0, [sp, #31]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -105,6 +73,32 @@ _PANumberFinish:                        ; @PANumberFinish
 	ldr	w0, [sp, #4]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
+	ret
+	.cfi_endproc
+                                        ; -- End function
+	.globl	_PANumberCopy                   ; -- Begin function PANumberCopy
+	.p2align	2
+_PANumberCopy:                          ; @PANumberCopy
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #48
+	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
+	add	x29, sp, #32
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	stur	x0, [x29, #-8]
+	str	x1, [sp, #16]
+	ldr	x0, [sp, #16]
+	bl	_PANumberDelete
+	ldur	x8, [x29, #-8]
+	ldrb	w8, [x8]
+	strb	w8, [sp, #15]
+	ldrb	w8, [sp, #15]
+	ldr	x9, [sp, #16]
+	strb	w8, [x9]
+	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function

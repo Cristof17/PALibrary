@@ -2321,9 +2321,9 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 {
     struct PANumber temp;
     struct PANumber* numberPointer;
-    temp.val = Number->val;
-    PANumberCopy(Number,&temp);
-# 34 "src/PA/Number.c"
+    temp.val = Value;
+    Number->val = temp.val;
+# 35 "src/PA/Number.c"
     return temp;
 }
           PAResult PANumberDelete(struct PANumber* PA)
@@ -2333,7 +2333,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
     int returnCode = ((int)0);
 
-    struct PANumber number;
+
 
     PA->val = 0;
 
@@ -2368,7 +2368,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
     number=*from;
 
     to->val = number.val;
-# 103 "src/PA/Number.c"
+# 104 "src/PA/Number.c"
 }
           void PANumberPrint(struct PANumber* Number)
 {

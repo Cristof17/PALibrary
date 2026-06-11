@@ -12,8 +12,17 @@ _main:                                  ; @main
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
 	mov	w8, #0                          ; =0x0
-	str	w8, [sp, #12]                   ; 4-byte Folded Spill
+	str	w8, [sp, #4]                    ; 4-byte Folded Spill
 	stur	wzr, [x29, #-4]
+	bl	_PANumberCreate
+	stur	x0, [x29, #-16]
+	ldur	x0, [x29, #-16]
+	ldr	x1, [sp, #24]
+	bl	_PANumberCopy
+	ldur	x0, [x29, #-16]
+	mov	w1, #97                         ; =0x61
+	bl	_PANumberBegin
+	strb	w0, [sp, #23]
 	ldur	x0, [x29, #-16]
 	ldr	x1, [sp, #24]
 	bl	_PANumberCopy
@@ -22,19 +31,17 @@ _main:                                  ; @main
 	ldr	x0, [sp, #24]
 	bl	_PANumberPrint
 	bl	_PANumberCreate
-	str	x0, [sp, #16]
+	str	x0, [sp, #8]
 	ldur	x0, [x29, #-16]
-	ldr	x1, [sp, #16]
+	ldr	x1, [sp, #8]
 	bl	_PANumberCopy
-	ldr	x0, [sp, #16]
+	ldr	x0, [sp, #8]
 	bl	_PANumberPrint
-	ldr	x0, [sp, #16]
+	ldr	x0, [sp, #8]
 	bl	_PANumberFinish
-	ldur	x0, [x29, #-16]
-	bl	_PANumberFinish
-	ldr	x0, [sp, #16]
+	ldr	x0, [sp, #8]
 	bl	_PANumberPrint
-	ldr	w0, [sp, #12]                   ; 4-byte Folded Reload
+	ldr	w0, [sp, #4]                    ; 4-byte Folded Reload
 	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
 	add	sp, sp, #64
 	ret
