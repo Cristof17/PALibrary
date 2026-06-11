@@ -277,7 +277,7 @@ struct PAPair {
 	struct
 	PAElement Node;
 	struct PAElement Neigh;
-	PADDING_1_BYTE(2);
+	// PADDING_1_BYTE(2);
 };
 struct PAArrow {
 	struct PAPair p;
@@ -338,7 +338,7 @@ struct FactoryCreator
 	struct PATransposeTree transposeTree;
 };
 struct FlyWeight {
-	PAInt todo;
+	// PAInt todo;
 };
 struct Adaptee {
 	struct ArrayList list;

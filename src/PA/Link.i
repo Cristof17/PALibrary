@@ -30,7 +30,7 @@ struct PAArrow;
 
 struct PAData;
 
-struct NormalTree;
+struct PANormalTree;
 struct Adaptee;
 
 
@@ -236,7 +236,7 @@ struct PAPair {
  struct
  PAElement Node;
  struct PAElement Neigh;
- unsigned char padding[2];
+
 };
 struct PAArrow {
  struct PAPair p;
@@ -297,7 +297,7 @@ struct FactoryCreator
  struct PATransposeTree transposeTree;
 };
 struct FlyWeight {
- PAInt todo;
+
 };
 struct Adaptee {
  struct ArrayList list;

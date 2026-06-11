@@ -35,7 +35,7 @@ struct PAArrow;
 
 struct PAData;
 
-struct NormalTree;
+struct PANormalTree;
 struct Adaptee;
 
 
@@ -241,7 +241,7 @@ struct PAPair {
  struct
  PAElement Node;
  struct PAElement Neigh;
- unsigned char padding[2];
+
 };
 struct PAArrow {
  struct PAPair p;
@@ -302,7 +302,7 @@ struct FactoryCreator
  struct PATransposeTree transposeTree;
 };
 struct FlyWeight {
- PAInt todo;
+
 };
 struct Adaptee {
  struct ArrayList list;
@@ -394,16 +394,16 @@ struct Facade {
 # 9 "src/PA/Input.c" 2
 # 1 "./include/PA/Count.h" 1
 # 13 "./include/PA/Count.h"
-          struct PACount PACountCreate();
-          struct PACount PACountCompleteBegin(struct PACount Count, struct PANumber Number);
-          struct PACount PACountCopy(struct PACount from, struct PACount to);
+          struct PACount* PACountCreate();
+          struct PACount PACountCompleteBegin(struct PACount* Count, struct PANumber Number);
+          struct PACount PACountCopy(struct PACount* from, struct PACount* to);
 
 
 
           int PACountFinish(struct PACount*);
 
 
-          struct PACount PACountDelete(struct PACount PA);
+          struct PACount PACountDelete(struct PACount* PA);
 # 10 "src/PA/Input.c" 2
 # 1 "./include/PA/Element.h" 1
 # 10 "./include/PA/Element.h"

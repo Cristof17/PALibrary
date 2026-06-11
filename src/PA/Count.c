@@ -1,7 +1,6 @@
 //@Author Cristofor Rotsching
 
 #include <types.h>
-
 #ifndef _WIN95
 #include <PA/Count.h>
 #include <PA/Number.h>
@@ -12,9 +11,9 @@
 
 #endif
 
-DllExport struct PACount PACountCreate()
+DllExport struct PACount* PACountCreate()
 {
-    struct PACount zies;
+    // struct PACount zies;
     struct PACount* countPointer;
     // struct PANumber number;
     // zies.number = PANumberPerformConstruct();
@@ -23,9 +22,10 @@ DllExport struct PACount PACountCreate()
     // size.number = Value;
     // return zies;
     // return countPointer;
-    return zies;
+    // return zies;
+    return countPointer;
 }
-DllExport struct PACount PACountBegin(struct PACount Count, struct PANumber Value)
+DllExport struct PACount PACountBegin(struct PACount* Count, struct PANumber Value)
 {
     // struct PACount temp;
     struct PACount temp;
@@ -76,25 +76,27 @@ DllExport int PACountFinish(struct PACount* PA)
     return returnCode;
     // return PA;    /
 }
-DllExport struct PACount* PACountDelete(struct PACount* PA)
+DllExport struct PACount PACountDelete(struct PACount* PA)
 {
+    struct PACount count;
     // PA.number.val = 0;
-    return PA;
+    return count;
     // return PARESULT_SUCCESS;
     // PAResult result;
     // return result;
 }
-PAResult PACountPrint(struct PACount Count)
+PAResult PACountPrint(struct PACount* Count)
 {
     PAResult result;
     return result;
 }
-DllExport struct PACount PACountCopy(struct PACount from, struct PACount to)
+DllExport struct PACount PACountCopy(struct PACount* from, struct PACount* to)
 {
     struct PACount temp;
+    return temp;
     // temp.number = PANumberPerformCopy(from.number,to.number);
     // to.number = temp.number;
-    return to;
+    // return to;
 }
 // DllExport struct PACount PACountPerformCopy(struct PACount from, struct PACount to)
 // {

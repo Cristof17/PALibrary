@@ -7,7 +7,7 @@ _PACountCreate:                         ; @PACountCreate
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	ldrb	w0, [sp, #15]
+	ldr	x0, [sp, #8]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -17,14 +17,13 @@ _PACountCreate:                         ; @PACountCreate
 _PACountBegin:                          ; @PACountBegin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	strb	w8, [sp, #14]
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
 	mov	x8, x1
-	strb	w8, [sp, #13]
-	ldrb	w0, [sp, #15]
-	add	sp, sp, #16
+	strb	w8, [sp, #30]
+	str	x0, [sp, #16]
+	ldrb	w0, [sp, #31]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -48,10 +47,7 @@ _PACountDelete:                         ; @PACountDelete
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	strb	w8, [sp, #14]
-	ldrb	w8, [sp, #14]
-	strb	w8, [sp, #15]
+	str	x0, [sp]
 	ldrb	w0, [sp, #15]
 	add	sp, sp, #16
 	ret
@@ -64,9 +60,8 @@ _PACountPrint:                          ; @PACountPrint
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	strb	w8, [sp, #15]
-	ldr	w0, [sp, #8]
+	str	x0, [sp, #8]
+	ldr	w0, [sp, #4]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -76,16 +71,12 @@ _PACountPrint:                          ; @PACountPrint
 _PACountCopy:                           ; @PACountCopy
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	strb	w8, [sp, #14]
-	mov	x8, x1
-	strb	w8, [sp, #13]
-	ldrb	w8, [sp, #13]
-	strb	w8, [sp, #15]
-	ldrb	w0, [sp, #15]
-	add	sp, sp, #16
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #16]
+	str	x1, [sp, #8]
+	ldrb	w0, [sp, #31]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function

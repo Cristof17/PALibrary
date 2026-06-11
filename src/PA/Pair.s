@@ -7,16 +7,7 @@ _PAPairCreate:                          ; @PAPairCreate
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	ldur	w8, [sp, #10]
-	str	w8, [sp]
-	ldrh	w8, [sp, #14]
-	strh	w8, [sp, #4]
-	ldr	w8, [sp]
-                                        ; kill: def $x8 killed $w8
-	ldrh	w10, [sp, #4]
-                                        ; implicit-def: $x9
-	mov	x9, x10
-	orr	x0, x8, x9, lsl #32
+	ldr	w0, [sp, #12]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -26,28 +17,16 @@ _PAPairCreate:                          ; @PAPairCreate
 _PAPairBegin:                           ; @PAPairBegin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
-	lsr	x8, x0, #32
-	mov	x9, x0
-	str	w9, [sp, #20]
-                                        ; kill: def $w8 killed $w8 killed $x8
-	strh	w8, [sp, #24]
-	mov	x8, x1
-	strh	w8, [sp, #18]
-	mov	x8, x2
-	strh	w8, [sp, #16]
-	ldur	w8, [sp, #26]
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	mov	x8, x0
 	str	w8, [sp, #8]
-	ldrh	w8, [sp, #30]
-	strh	w8, [sp, #12]
-	ldr	w8, [sp, #8]
-                                        ; kill: def $x8 killed $w8
-	ldrh	w10, [sp, #12]
-                                        ; implicit-def: $x9
-	mov	x9, x10
-	orr	x0, x8, x9, lsl #32
-	add	sp, sp, #32
+	mov	x8, x1
+	strh	w8, [sp, #6]
+	mov	x8, x2
+	strh	w8, [sp, #4]
+	ldr	w0, [sp, #12]
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -56,37 +35,20 @@ _PAPairBegin:                           ; @PAPairBegin
 _PAPairCopy:                            ; @PAPairCopy
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #48
-	.cfi_def_cfa_offset 48
-	lsr	x8, x0, #32
-	mov	x9, x0
-	stur	w9, [sp, #34]
-                                        ; kill: def $w8 killed $w8 killed $x8
-	strh	w8, [sp, #38]
-	lsr	x8, x1, #32
-	mov	x9, x1
-	str	w9, [sp, #28]
-                                        ; kill: def $w8 killed $w8 killed $x8
-	strh	w8, [sp, #32]
-	ldrh	w8, [sp, #20]
-	strh	w8, [sp, #22]
-	ldrh	w8, [sp, #18]
-	strh	w8, [sp, #24]
-	ldr	w8, [sp, #28]
-	str	w8, [sp, #40]
-	ldrh	w8, [sp, #32]
-	strh	w8, [sp, #44]
-	ldr	w8, [sp, #40]
-	str	w8, [sp, #8]
-	ldrh	w8, [sp, #44]
-	strh	w8, [sp, #12]
-	ldr	w8, [sp, #8]
-                                        ; kill: def $x8 killed $w8
-	ldrh	w10, [sp, #12]
-                                        ; implicit-def: $x9
-	mov	x9, x10
-	orr	x0, x8, x9, lsl #32
-	add	sp, sp, #48
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	mov	x8, x0
+	str	w8, [sp, #24]
+	mov	x8, x1
+	str	w8, [sp, #20]
+	ldrh	w8, [sp, #14]
+	strh	w8, [sp, #16]
+	ldrh	w8, [sp, #12]
+	strh	w8, [sp, #18]
+	ldr	w8, [sp, #20]
+	str	w8, [sp, #28]
+	ldr	w0, [sp, #28]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
