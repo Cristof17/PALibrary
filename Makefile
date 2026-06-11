@@ -476,7 +476,7 @@ build: $(subdirs)
 #
 libpa.a: $(objects_pa)
 	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
-	$(AR) -v -s -m -a Input.o $(libdir)/$(output) $(foreach object,$^,$(libdir)/$(object))  
+	$(AR) -v -s -q $(libdir)/$(output) $(foreach object,$^,$(libdir)/$(object))  
 	$(AR) -v -t -s $(libdir)/$(output)
 #	$(AR) -d -b Input.o $(libdir)/$(output)
 
