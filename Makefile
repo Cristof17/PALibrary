@@ -475,7 +475,7 @@ build: $(subdirs)
 #
 libpa.a: $(objects_pa)
 	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
-	$(AR) -v -s -m -a Input.o $(libdir)/$(output) $(foreach object,$^,$(libdir)/$(object))  
+	$(AR) -v -s -q $(libdir)/$(output) $(foreach object,$^,$(libdir)/$(object))  
 	$(AR) -v -t -s $(libdir)/$(output)
 #	$(AR) -d -b Input.o $(libdir)/$(output)
 
@@ -499,7 +499,7 @@ srcdir=$(prefix)/src
 #CFLAGS+=-I$(abspath $(includedir)/Adapter)
 CPPFLAGS=
 CPPFLAGS+=-I$(prefix)/include -I$(prefix)
-libdir=$(prefix)/obj
+#libdir=$(prefix)/obj
 #datadir=dat
 #infodir=info
 #mandir=man
