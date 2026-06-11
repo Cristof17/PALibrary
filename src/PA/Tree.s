@@ -17,52 +17,25 @@ _PATreeCreate:                          ; @PATreeCreate
 _PATreeCompleteBegin:                   ; @PATreeCompleteBegin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #112
-	stp	x29, x30, [sp, #96]             ; 16-byte Folded Spill
-	add	x29, sp, #96
+	sub	sp, sp, #192
+	stp	x29, x30, [sp, #176]            ; 16-byte Folded Spill
+	add	x29, sp, #176
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	adrp	x8, ___stack_chk_guard@GOTPAGE
-	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
-	ldr	x8, [x8]
-	stur	x8, [x29, #-8]
-	mov	x8, x1
-	sturb	w8, [x29, #-25]
-	mov	x8, x2
-	sturb	w8, [x29, #-26]
-	sub	x8, x29, #24
-	stur	x3, [x29, #-24]
-	stur	x4, [x29, #-16]
-	ldur	x10, [x29, #-24]
-	sub	x9, x29, #40
-	stur	x10, [x29, #-40]
-	ldur	w8, [x8, #7]
-	stur	w8, [x9, #7]
-	mov	x8, x5
-	sturh	w8, [x29, #-42]
-	str	x0, [sp, #40]
-	ldr	x8, [sp, #16]
-	ldr	x10, [x8]
-	add	x9, sp, #24
-	str	x10, [sp, #24]
-	ldur	x8, [x8, #7]
-	stur	x8, [x9, #7]
-	ldr	x8, [sp, #40]
-	str	x8, [sp, #8]                    ; 8-byte Folded Spill
-	ldur	x9, [x29, #-8]
-	adrp	x8, ___stack_chk_guard@GOTPAGE
-	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
-	ldr	x8, [x8]
-	subs	x8, x8, x9
-	b.eq	LBB1_2
-	b	LBB1_1
-LBB1_1:
-	bl	___stack_chk_fail
-LBB1_2:
-	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
-	ldp	x29, x30, [sp, #96]             ; 16-byte Folded Reload
-	add	sp, sp, #112
+	stur	x1, [x29, #-8]
+	stur	x2, [x29, #-16]
+	stur	x4, [x29, #-32]
+	stur	x5, [x29, #-24]
+	stur	x0, [x29, #-40]
+	stur	x3, [x29, #-48]
+	ldr	x1, [sp]
+	add	x0, sp, #8
+	mov	x2, #120                        ; =0x78
+	bl	_memcpy
+	ldur	x0, [x29, #-40]
+	ldp	x29, x30, [sp, #176]            ; 16-byte Folded Reload
+	add	sp, sp, #192
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -71,45 +44,45 @@ LBB1_2:
 _PATreeCopy:                            ; @PATreeCopy
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #64
-	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
-	add	x29, sp, #48
+	sub	sp, sp, #160
+	stp	x29, x30, [sp, #144]            ; 16-byte Folded Spill
+	add	x29, sp, #144
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
 	stur	x0, [x29, #-8]
 	stur	x1, [x29, #-16]
 	ldur	x8, [x29, #-8]
-	ldrb	w9, [x8]
-	add	x8, sp, #17
-	str	x8, [sp, #8]                    ; 8-byte Folded Spill
-	strb	w9, [sp, #17]
+	ldr	x9, [x8]
+	add	x8, sp, #8
+	str	x8, [sp]                        ; 8-byte Folded Spill
+	str	x9, [sp, #8]
 	ldur	x9, [x29, #-8]
-	ldrb	w9, [x9, #1]
-	strb	w9, [sp, #18]
+	ldr	x9, [x9, #8]
+	str	x9, [sp, #16]
 	ldur	x9, [x29, #-8]
-	add	x0, x9, #4
-	add	x1, x8, #4
+	add	x0, x9, #32
+	add	x1, x8, #32
 	bl	_PAListCopy
-	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload
+	ldr	x9, [sp]                        ; 8-byte Folded Reload
 	ldur	x8, [x29, #-8]
-	ldrh	w8, [x8, #2]
-	sturh	w8, [sp, #19]
+	ldr	q0, [x8, #16]
+	stur	q0, [sp, #24]
 	ldur	x10, [x29, #-16]
-	ldrb	w8, [sp, #17]
-	strb	w8, [x10]
+	ldr	x8, [sp, #8]
+	str	x8, [x10]
 	ldur	x10, [x29, #-16]
-	ldrb	w8, [sp, #18]
-	strb	w8, [x10, #1]
+	ldr	x8, [sp, #16]
+	str	x8, [x10, #8]
 	ldur	x8, [x29, #-16]
-	add	x0, x9, #4
-	add	x1, x8, #4
+	add	x0, x9, #32
+	add	x1, x8, #32
 	bl	_PAListCopy
-	ldur	x9, [x29, #-16]
-	ldurh	w8, [sp, #19]
-	strh	w8, [x9, #2]
-	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
-	add	sp, sp, #64
+	ldur	x8, [x29, #-16]
+	ldur	q0, [sp, #24]
+	str	q0, [x8, #16]
+	ldp	x29, x30, [sp, #144]            ; 16-byte Folded Reload
+	add	sp, sp, #160
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -135,15 +108,15 @@ _PATreeFinish:                          ; @PATreeFinish
 	bl	_PACountFinish
 	stur	w0, [x29, #-12]
 	ldur	x8, [x29, #-8]
-	add	x0, x8, #1
+	add	x0, x8, #8
 	bl	_PACountFinish
 	str	w0, [sp, #16]
 	ldur	x8, [x29, #-8]
-	add	x0, x8, #4
+	add	x0, x8, #32
 	bl	_PAListFinish
 	str	w0, [sp, #12]
 	ldur	x8, [x29, #-8]
-	add	x0, x8, #2
+	add	x0, x8, #16
 	bl	_PAElementFinish
 	str	w0, [sp, #8]
 	ldur	w8, [x29, #-12]
@@ -165,41 +138,10 @@ _PATreeFinish:                          ; @PATreeFinish
 _PATreeDelete:                          ; @PATreeDelete
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #96
-	stp	x29, x30, [sp, #80]             ; 16-byte Folded Spill
-	add	x29, sp, #80
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	adrp	x8, ___stack_chk_guard@GOTPAGE
-	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
-	ldr	x8, [x8]
-	stur	x8, [x29, #-8]
-	str	x0, [sp, #32]
-	sub	x8, x29, #39
-	ldur	x10, [x29, #-39]
-	sub	x9, x29, #24
-	stur	x10, [x29, #-24]
-	ldur	x8, [x8, #7]
-	stur	x8, [x9, #7]
-	ldur	x8, [x29, #-24]
-	str	x8, [sp, #8]                    ; 8-byte Folded Spill
-	ldur	x8, [x29, #-16]
-	str	x8, [sp, #16]                   ; 8-byte Folded Spill
-	ldur	x9, [x29, #-8]
-	adrp	x8, ___stack_chk_guard@GOTPAGE
-	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
-	ldr	x8, [x8]
-	subs	x8, x8, x9
-	b.eq	LBB4_2
-	b	LBB4_1
-LBB4_1:
-	bl	___stack_chk_fail
-LBB4_2:
-	ldr	x1, [sp, #16]                   ; 8-byte Folded Reload
-	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
-	ldp	x29, x30, [sp, #80]             ; 16-byte Folded Reload
-	add	sp, sp, #96
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	str	x0, [sp, #8]
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function

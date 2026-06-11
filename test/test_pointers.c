@@ -7,13 +7,16 @@ int main()
 	struct PANumber* number;
 	number=PANumberCreate();
 	PANumberBegin(number,'a');
+	PANumberPrint(number);
+	// printf("number is %d\n",number->val);
 	struct PAResource* resource;
 	resource=PAResourceCreate();
 	PAResourceBegin(resource,*number);
+	// printf("resource = %d\n", resource->value.val);
 	struct PACount* count;
 	count = PACountCreate();
 	PACountBegin(count,*number);
 	//PACountPrint(count);
-	printf("count is %d\n", count->number.val);
+	// printf("count is %d\n", count->number.val);
 	return 0;
 }

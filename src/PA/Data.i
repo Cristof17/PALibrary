@@ -120,7 +120,7 @@ struct PrototypeClient;
 struct PANumber {
 
 
- unsigned char val;
+ unsigned char* val;
 
 };
 struct PrototypeConcretePrototype1;
@@ -145,40 +145,40 @@ struct PAResource {
 
 
 
- struct PANumber value;
+ struct PANumber* value;
 
 };
 struct PAStatus {
- struct PAResource visited;
+ struct PAResource* visited;
 };
 struct PAData {
- struct PAResource Resource;
+ struct PAResource* Resource;
 
 };
 struct PAElement {
 
- struct PAData index;
+ struct PAData* index;
 
- struct PAStatus status;
+ struct PAStatus* status;
 
 
 };
 struct PAFeature {
- PAInt kind;
+ PAInt* kind;
 };
 struct PACount {
 
- struct PANumber number;
+ struct PANumber* number;
 };
 
 
 struct PASeries {
- struct PACount m;
+ struct PACount* m;
 
  struct PAElement adj[2];
 };
 struct PAList {
- struct PACount n;
+ struct PACount* n;
  struct PASeries neigh[2];
 
 };
@@ -1860,7 +1860,8 @@ extern char * suboptarg;
 {
 
     struct PAData* dataPointer;
-# 27 "src/PA/Data.c"
+    dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
+# 28 "src/PA/Data.c"
     return dataPointer;
 }
           struct PAData PADataBegin(struct PAData* Data, struct PAResource Value)
@@ -1887,7 +1888,7 @@ extern char * suboptarg;
 
 
 }
-# 70 "src/PA/Data.c"
+# 71 "src/PA/Data.c"
           PAResult PADataFinish(struct PAData* PA)
 {
 

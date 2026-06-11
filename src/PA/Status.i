@@ -117,7 +117,7 @@ struct PrototypeClient;
 struct PANumber {
 
 
- unsigned char val;
+ unsigned char* val;
 
 };
 struct PrototypeConcretePrototype1;
@@ -142,40 +142,40 @@ struct PAResource {
 
 
 
- struct PANumber value;
+ struct PANumber* value;
 
 };
 struct PAStatus {
- struct PAResource visited;
+ struct PAResource* visited;
 };
 struct PAData {
- struct PAResource Resource;
+ struct PAResource* Resource;
 
 };
 struct PAElement {
 
- struct PAData index;
+ struct PAData* index;
 
- struct PAStatus status;
+ struct PAStatus* status;
 
 
 };
 struct PAFeature {
- PAInt kind;
+ PAInt* kind;
 };
 struct PACount {
 
- struct PANumber number;
+ struct PANumber* number;
 };
 
 
 struct PASeries {
- struct PACount m;
+ struct PACount* m;
 
  struct PAElement adj[2];
 };
 struct PAList {
- struct PACount n;
+ struct PACount* n;
  struct PASeries neigh[2];
 
 };
@@ -1856,13 +1856,14 @@ extern char * suboptarg;
     struct PAStatus status;
 # 28 "src/PA/Status.c"
     struct PAStatus* statusPointer;
+    statusPointer=(struct PAStatus*)malloc(sizeof(struct PAStatus));
     return statusPointer;
 }
           struct PAStatus PAStatusBegin(struct PAStatus* Status, struct PAResource Value)
 {
     struct PAStatus temp;
     struct PAStatus* statusPointer;
-    statusPointer->visited = Value;
+
 
     return temp;
 
@@ -1879,7 +1880,7 @@ extern char * suboptarg;
 
 
 }
-# 60 "src/PA/Status.c"
+# 61 "src/PA/Status.c"
           PAResult PAStatusFinish(struct PAStatus* PA)
 {
 

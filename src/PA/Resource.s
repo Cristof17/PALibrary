@@ -5,10 +5,18 @@
 _PAResourceCreate:                      ; @PAResourceCreate
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
+	sub	sp, sp, #32
+	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
+	add	x29, sp, #16
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	mov	x0, #8                          ; =0x8
+	bl	_malloc
+	str	x0, [sp, #8]
 	ldr	x0, [sp, #8]
-	add	sp, sp, #16
+	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -17,13 +25,22 @@ _PAResourceCreate:                      ; @PAResourceCreate
 _PAResourceBegin:                       ; @PAResourceBegin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
-	mov	x8, x1
-	strb	w8, [sp, #30]
-	str	x0, [sp, #16]
-	ldrb	w0, [sp, #31]
-	add	sp, sp, #32
+	sub	sp, sp, #48
+	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
+	add	x29, sp, #32
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	mov	x8, x0
+	add	x0, sp, #16
+	str	x1, [sp, #16]
+	str	x8, [sp, #8]
+	ldr	x8, [sp, #8]
+	ldr	x1, [x8]
+	bl	_PANumberCopy
+	ldur	x0, [x29, #-8]
+	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -61,7 +78,7 @@ _PAResourceDelete:                      ; @PAResourceDelete
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	str	x0, [sp]
-	ldrb	w0, [sp, #15]
+	ldr	x0, [sp, #8]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc

@@ -119,7 +119,7 @@ struct PrototypeClient;
 struct PANumber {
 
 
- unsigned char val;
+ unsigned char* val;
 
 };
 struct PrototypeConcretePrototype1;
@@ -144,40 +144,40 @@ struct PAResource {
 
 
 
- struct PANumber value;
+ struct PANumber* value;
 
 };
 struct PAStatus {
- struct PAResource visited;
+ struct PAResource* visited;
 };
 struct PAData {
- struct PAResource Resource;
+ struct PAResource* Resource;
 
 };
 struct PAElement {
 
- struct PAData index;
+ struct PAData* index;
 
- struct PAStatus status;
+ struct PAStatus* status;
 
 
 };
 struct PAFeature {
- PAInt kind;
+ PAInt* kind;
 };
 struct PACount {
 
- struct PANumber number;
+ struct PANumber* number;
 };
 
 
 struct PASeries {
- struct PACount m;
+ struct PACount* m;
 
  struct PAElement adj[2];
 };
 struct PAList {
- struct PACount n;
+ struct PACount* n;
  struct PASeries neigh[2];
 
 };

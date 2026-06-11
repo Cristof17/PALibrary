@@ -33,7 +33,7 @@ DllExport struct PAStatus PAStatusBegin(struct PAStatus* Status, struct PAResour
 {
     struct PAStatus temp;
     struct PAStatus* statusPointer;
-    statusPointer->visited = Value;
+    // statusPointer->visited = Value;
     // return statusPointer;
     return temp;
     // Status.visited = Value;

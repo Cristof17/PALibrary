@@ -22,48 +22,48 @@ int main()
 	struct PANumber* number221;
 	// number123 = PANumberPerformConstruct();
 	// number221 = PANumberPerformConstruct();
-	number123->val = 20;
+	// number123->val = 20;
 	// number221 = PANumberPerformCopy(number123, number221);
 	// printf("Number copy source = %d, destination = %d\n", number123val, number221.val);
 
 	struct PAElement element12;
 	struct PAElement element245;
-	element12.index.Resource.value.val = 20;
+	// element12.index.Resource.value.val = 20;
 	// element245 = PAElementPerformCopy(element12, element245);
-	printf("Element copy source = %d, destination = %d\n", element12.index.Resource.value.val, element245.index.Resource.value.val);
+	// printf("Element copy source = %d, destination = %d\n", element12.index.Resource.value.val, element245.index.Resource.value.val);
 
 	struct PACount count123;
 	struct PACount count234;
 	// count123 = PACountPerformConstruct();
 	// count234 = PACountPerformCopy(count123,count234);
-	printf("Count1 = %d, count2 = %d\n", count123.number.val, count234.number.val);
+	// printf("Count1 = %d, count2 = %d\n", count123.number.val, count234.number.val);
 
 	struct PAData data123;
 	struct PAData data124;
-	data123.Resource.value.val = 50;
+	// data123.Resource.value.val = 50;
 	// data124 = PADataPerformCopy(data123,data124);
-	printf("copy padata %d from %d\n", data123.Resource.value.val, data124.Resource.value.val);
+	// printf("copy padata %d from %d\n", data123.Resource.value.val, data124.Resource.value.val);
 
 	struct PAStatus status1;
 	struct PAStatus status2;
 	// status2 = PAStatusPerformCopy(status1, status2);
-	printf("copy from status %d %d\n", status1.visited.value.val, status2.visited.value.val);
+	// printf("copy from status %d %d\n", status1.visited.value.val, status2.visited.value.val);
 
 	struct PAResource resource12;
 	struct PAResource resource14;
-	resource12.value.val = 32;
+	// resource12.value.val = 32;
 	// resource14 = PAResourcePerformCopy(resource12,resource14);
-	printf("resource copy %d, %d\n",resource12.value.val, resource14.value.val);
+	// printf("resource copy %d, %d\n",resource12.value.val, resource14.value.val);
 
 	struct PATree tree1;
 	struct PATree tree2;
 	// tree2 = PATreePerformConstruct();
 	// tree1 = PATreePerformConstruct();
-	printf("tree.ls.n to, %d tree.ls.n. from %d\n", tree2.adj.n.number.val,tree1.adj.n.number.val);
+	// printf("tree.ls.n to, %d tree.ls.n. from %d\n", tree2.adj.n.number.val,tree1.adj.n.number.val);
 	// tree2 = PATreePerformCopy(tree1,tree2);
-	printf("Tree1 %d %d\n", tree1.m.number.val, tree2.m.number.val);
-	printf("Tree1 %d %d\n", tree1.n.number.val, tree2.n.number.val);
-	printf("tree1.list.n %d, tree2.list.n %d\n", tree1.adj.n.number.val, tree2.adj.n.number.val);
+	// printf("Tree1 %d %d\n", tree1.m.number.val, tree2.m.number.val);
+	// printf("Tree1 %d %d\n", tree1.n.number.val, tree2.n.number.val);
+	// printf("tree1.list.n %d, tree2.list.n %d\n", tree1.adj.n.number.val, tree2.adj.n.number.val);
 	// struct PASeries series1;
 	// struct PASeries series2;
 	// series1 = PASeriesPerformConstruct();
@@ -73,22 +73,22 @@ int main()
 	struct PASeries series1234;
 	struct PASeries series2345;
 	// series2345 = PASeriesPerformCopy(series1234,series2345);
-	printf("series1.size %d series2.size %d\n", series1234.m.number.val, series2345.m.number.val);
+	// printf("series1.size %d series2.size %d\n", series1234.m.number.val, series2345.m.number.val);
 
 	struct PAList list12334;
 	struct PAList list2345;
 	// printf(:"")
 	// p
-	list12334.n.number.val = 30;
+	// list12334.n.number.val = 30;
 	// list2345 = PAListPerformCopy(list12334, list2345);
-	printf("First list %d` second list %d,\n",list12334.n.number.val, list2345.n.number.val);
+	// printf("First list %d` second list %d,\n",list12334.n.number.val, list2345.n.number.val);
 
 	// struct j
 	struct PANumber number345;
 	struct PANumber number456;//s
 	// number345  = PANumberPerformConstruct();
 	// number456 = PANumberPerformCopy(number345,number456);
-	printf("forst number %d %d \n|", number345.val/*.*/,number456.val);
+	// printf("forst number %d %d \n|", number345.val/*.*/,number456.val);
 
 	struct PAStatus status123;
 	struct PAStatus status456;
@@ -97,26 +97,26 @@ int main()
 	// statuc
 	// status123 = PAStatusPerformConstruct();
 	// status456 = PAStatusPerformCopy(status123,status456);
-	printf("status123 = %d status456 = %d\n", status123.visited.value.val, /*statut*/ status456.visited.value.val);
+	// printf("status123 = %d status456 = %d\n", status123.visited.value.val, /*statut*/ status456.visited.value.val);
 
 	// struct PAResourcer
 	struct PAResource resource123;
 	struct PAResource resource124;
 	// resource123 = PAResourcePerformConstruct();
 	// resource124 = PAResourcePerformCopy(resource123,resource124);
-	printf("resource123 = %d resource124 = %d\n|,re",resource123.value.val, resource124.value.val);		
+	// printf("resource123 = %d resource124 = %d\n|,re",resource123.value.val, resource124.value.val);		
 
 	struct PAElement element1234;
 	struct PAElement element2345;
 	// element2345 = PAElementPerformCopy(element1234,element2345);
-	printf("resource1234 %d %d \n", element1234.index.Resource.value.val, element2345.index.Resource.value.val);
+	// printf("resource1234 %d %d \n", element1234.index.Resource.value.val, element2345.index.Resource.value.val);
 
 	struct PANumber number;
 	// number = PANumberPerformConstruct();
-	printf("testing PANumber %d\n()",number.val);
+	// printf("testing PANumber %d\n()",number.val);
 	struct PAResource resource;
 	// resource = PAResourcePerformConstruct();
-	printf("testing Resource %d\n",resource.value.val);
+	// printf("testing Resource %d\n",resource.value.val);
 	//struct PATree tree = PATreePerformConstruct();
 	// struct PATree tree = PATreePerformConstruct();
 	///struct PATree tree2 = PATreePerformConstruct();
@@ -127,9 +127,9 @@ int main()
 	// status = PAStatusPerformConstruct();
 	struct PAElement element;
 	// element = PAElementPerformConstruct();
-	printf("Element resource test%d\n",element.index.Resource.value.val);
+	// printf("Element resource test%d\n",element.index.Resource.value.val);
 	//printf("pastatus perform construct %d\n",status.resource.number.val);
-	printf("pastatus perform construct %d\n",status.visited.value.val);
+	// printf("pastatus perform construct %d\n",status.visited.value.val);
 	// struct PATransposeTree tree2;
 	// tree2 = PATranspose`TreePerformConstruct();
 	// printf("tree n=%d\n",tree2.tree.n.number.val);
@@ -137,17 +137,17 @@ int main()
 	// printf("tree n=%d\n",tree2.tree.source.index.Resource.value.val);
 	struct PASeries series;
 	// series = PASeriesPerformConstruct();
-	printf("Series construct series %d\n", series.m.number.val);
+	// printf("Series construct series %d\n", series.m.number.val);
 	struct PAList list;
 	// list = PAListPerformConstruct();
-	printf("List construct count%d\n", list.n.number.val);
+	// printf("List construct count%d\n", list.n.number.val);
 
 	struct PAList list1;
 	struct PAList list1Copy;
 
 	// list1Copy = PAListPerformCopy(list1,list1Copy);
-	printf("list1 %d list1Copy %d \n",list1.n.number.val, list1Copy.n.number.val);
-	printf("list1 randomElemente %d list1CopyRandomElement %d\n",list1.neigh->adj->index.Resource.value.val,list1Copy.neigh->adj->index.Resource.value.val);
+	// printf("list1 %d list1Copy %d \n",list1.n.number.val, list1Copy.n.number.val);
+	// printf("list1 randomElemente %d list1CopyRandomElement %d\n",list1.neigh->adj->index.Resource.value.val,list1Copy.neigh->adj->index.Resource.value.val);
 	// printf(;ist)
 	// printf("tree n=%d\n",tree2.tree.source.index.Resource.value.val);
 	//printf("testing copy %d\n", tree2.n.number.val);
@@ -162,7 +162,7 @@ int main()
 	// PATreePerformCopy(tree,tree2);
 	struct PANumber number1;
 	struct PANumber number2;
-	number1.val = 10;
+	// number1.val = 10;
 	// number2 = PANumberPerformCopy(number1,number2);
 	// printf("number1 = %d, number2 = %d\n",number1.val,number2.val);
 	struct PASeries copyTest1;
@@ -170,40 +170,40 @@ int main()
 
 	// copyTest1 = PASeriesPerformConstruct();
 	// copyTest2 = PASeriesPerformConstruct();
-	copyTest1.m.number.val = 40;
-	copyTest1.adj[1].index.Resource.value.val = 40;
+	// copyTest1.m.number.val = 40;
+	// copyTest1.adj[1].index.Resource.value.val = 40;
 	// copyTest2 = PASeriesPerformCopy(copyTest1,copyTest2);
 	// copyTest1.adj[0].index.Resource.value.val = 40;
 	// PASeriesPerformCons
 	struct PAData data1;
 	struct PAData data2;
-	data1.Resource.value.val = 40;
+	// data1.Resource.value.val = 40;
 	// data2 = PADataPerformCopy(data1,data2);
-	printf("data2=%d, from %d\n",data1.Resource.value.val, data2.Resource.value.val);
+	// printf("data2=%d, from %d\n",data1.Resource.value.val, data2.Resource.value.val);
 	// copyTest2 = PASeriesPerformCopy(copyTest1, copyTest2);
-	printf("copy test for series %d copy is %d\n",copyTest1.m.number.val, copyTest2.m.number.val);
+	// printf("copy test for series %d copy is %d\n",copyTest1.m.number.val, copyTest2.m.number.val);
 	// printf("copy series test %d\n", s)
 	// printf("copy test for series %d copy is %d\n",copyTest1.adj[0].index.Resource.value.val,copyTest2.adj[0].index.Resource.value.val);
-	printf("copy test for series %d copy is %d\n",copyTest1.adj[0].index.Resource.value.val, copyTest2.adj[0].index.Resource.value.val);
+	// printf("copy test for series %d copy is %d\n",copyTest1.adj[0].index.Resource.value.val, copyTest2.adj[0].index.Resource.value.val);
 
 	struct PACount count1;
-	count1.number.val = 20;
+	// count1.number.val = 20;
 	struct PACount count2;
 	struct PAResource resource1;
 	struct PAResource resource2;
 	struct PAElement element1;
 	struct PAElement element2;
-	element1.index.Resource.value.val = 20;
+	// element1.index.Resource.value.val = 20;
 	// element2 = PAElementPerformCopy(element1,element2);
-	printf("element1.index = %d, element2.index = %d\n", element1.index.Resource.value.val, element2.index.Resource.value.val);
+	// printf("element1.index = %d, element2.index = %d\n", element1.index.Resource.value.val, element2.index.Resource.value.val);
 	// resource2 = PAResourcePerformCopy(resource1,resource2);
-	printf("resource1.number.val = %d, resource2.number.val=%d\n",resource1.value.val, resource2.value.val);
+	// printf("resource1.number.val = %d, resource2.number.val=%d\n",resource1.value.val, resource2.value.val);
 	// count2 = PACountPerformCopy(count1,count2);
-	printf("count1 = %d, count2 = %d\n",count1.number.val,count2.number.val);
-	list.n.number.val = 2;
+	// printf("count1 = %d, count2 = %d\n",count1.number.val,count2.number.val);
+	// list.n.number.val = 2;
 	// PAListPerformInit(list,list.n,list.neigh);
-	printf("count1 = %d, count2 = %d\n",count1.number.val,count2.number.val);
-	printf("list.n = %d",list.n.number.val);
+	// printf("count1 = %d, count2 = %d\n",count1.number.val,count2.number.val);
+	// printf("list.n = %d",list.n.number.val);
 
 	// PASeriesPerformInit(series, series.m, series.adj);
 	return 0;

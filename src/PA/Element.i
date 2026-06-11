@@ -117,7 +117,7 @@ struct PrototypeClient;
 struct PANumber {
 
 
- unsigned char val;
+ unsigned char* val;
 
 };
 struct PrototypeConcretePrototype1;
@@ -142,40 +142,40 @@ struct PAResource {
 
 
 
- struct PANumber value;
+ struct PANumber* value;
 
 };
 struct PAStatus {
- struct PAResource visited;
+ struct PAResource* visited;
 };
 struct PAData {
- struct PAResource Resource;
+ struct PAResource* Resource;
 
 };
 struct PAElement {
 
- struct PAData index;
+ struct PAData* index;
 
- struct PAStatus status;
+ struct PAStatus* status;
 
 
 };
 struct PAFeature {
- PAInt kind;
+ PAInt* kind;
 };
 struct PACount {
 
- struct PANumber number;
+ struct PANumber* number;
 };
 
 
 struct PASeries {
- struct PACount m;
+ struct PACount* m;
 
  struct PAElement adj[2];
 };
 struct PAList {
- struct PACount n;
+ struct PACount* n;
  struct PASeries neigh[2];
 
 };
@@ -1880,13 +1880,14 @@ extern char * suboptarg;
 struct PAElement* PAElementCreate()
 {
     struct PAElement* temp;
-# 31 "src/PA/Element.c"
+    temp = (struct PAElement*)malloc(sizeof(struct PAElement));
+# 32 "src/PA/Element.c"
   return temp;
 }
           struct PAElement PAElementBegin(struct PAElement* Element, struct PAData Value, struct PAStatus Value2)
 {
     struct PAElement element;
-# 47 "src/PA/Element.c"
+# 48 "src/PA/Element.c"
     return element;
 
 }
@@ -1917,17 +1918,17 @@ struct PAElement* PAElementCreate()
 
 
 }
-# 89 "src/PA/Element.c"
+# 90 "src/PA/Element.c"
           PAResult PAElementFinish(struct PAElement* PA)
 {
-# 105 "src/PA/Element.c"
+# 106 "src/PA/Element.c"
     int returnCode = ((int)0);
     return returnCode;
 
 
 
 }
-# 145 "src/PA/Element.c"
+# 146 "src/PA/Element.c"
           struct PAElement PAElementDelete(struct PAElement* PA)
 {
 

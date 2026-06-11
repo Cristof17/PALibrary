@@ -118,7 +118,7 @@ struct PrototypeClient;
 struct PANumber {
 
 
- unsigned char val;
+ unsigned char* val;
 
 };
 struct PrototypeConcretePrototype1;
@@ -143,40 +143,40 @@ struct PAResource {
 
 
 
- struct PANumber value;
+ struct PANumber* value;
 
 };
 struct PAStatus {
- struct PAResource visited;
+ struct PAResource* visited;
 };
 struct PAData {
- struct PAResource Resource;
+ struct PAResource* Resource;
 
 };
 struct PAElement {
 
- struct PAData index;
+ struct PAData* index;
 
- struct PAStatus status;
+ struct PAStatus* status;
 
 
 };
 struct PAFeature {
- PAInt kind;
+ PAInt* kind;
 };
 struct PACount {
 
- struct PANumber number;
+ struct PANumber* number;
 };
 
 
 struct PASeries {
- struct PACount m;
+ struct PACount* m;
 
  struct PAElement adj[2];
 };
 struct PAList {
- struct PACount n;
+ struct PACount* n;
  struct PASeries neigh[2];
 
 };
@@ -1880,10 +1880,10 @@ void PAListPerformPrint(struct PAList* List);
           struct PAList* PAListCreate()
 {
     struct PAList list;
-# 34 "src/PA/List.c"
+# 35 "src/PA/List.c"
     struct PAList* listPointer;
     return listPointer;
-# 45 "src/PA/List.c"
+# 46 "src/PA/List.c"
 }
           void PAListCopy(struct PAList* from, struct PAList* to)
 {
@@ -1891,8 +1891,8 @@ void PAListPerformPrint(struct PAList* List);
 
     struct PACount x;
     struct PACount y;
-    x.number.val = (1);
-    y.number.val = temp.n.number.val;
+
+
 
     {
 
@@ -1900,28 +1900,21 @@ void PAListPerformPrint(struct PAList* List);
     }
 
     {
-        y.number.val = temp.n.number.val;
+
     }
-    while (x.number.val <= y.number.val)
+
     {
         struct PASeries aux;
 
 
-        x.number.val++;
+
     }
-
-
-
-
-
-
-    x.number.val = (1);
-    while (x.number.val < y.number.val)
+# 79 "src/PA/List.c"
     {
         struct PASeries aux;
 
 
-        x.number.val++;
+
     }
 
 
@@ -1931,13 +1924,13 @@ void PAListPerformPrint(struct PAList* List);
           struct PAList PAListBegin(struct PAList* List, struct PACount Value, struct PASeries Value2[])
 {
     struct PAList list;
-    list.n = Value;
+
 
 
     struct PANumber x;
     struct PANumber y;
-    x.val = (1);
-    y.val = Value2[x.val].m.number.val;
+
+
 
 
     while (x.val <= y.val)
@@ -1954,7 +1947,7 @@ void PAListPerformPrint(struct PAList* List);
 
     return list;
 }
-# 146 "src/PA/List.c"
+# 147 "src/PA/List.c"
           PAResult PAListFinish(struct PAList* PA)
 {
 
@@ -1964,7 +1957,7 @@ void PAListPerformPrint(struct PAList* List);
     int returnCode2;
     int returnCode;
 
-    returnCode1 = PACountFinish(&(PA->n));
+
 
     returnCode = returnCode1 & returnCode2;
     return returnCode;
@@ -1988,7 +1981,7 @@ void Dispose()
 {
 
 }
-# 194 "src/PA/List.c"
+# 195 "src/PA/List.c"
           struct PAList PAListDelete(struct PAList* PA)
 {
     struct PAList aux;
@@ -1998,7 +1991,7 @@ void Dispose()
     struct PANumber x;
     struct PANumber y;
 
-    x.val = (1);
+
     while (x.val < y.val)
     {
 

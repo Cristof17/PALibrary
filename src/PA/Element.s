@@ -5,10 +5,18 @@
 _PAElementCreate:                       ; @PAElementCreate
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
+	sub	sp, sp, #32
+	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
+	add	x29, sp, #16
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	mov	x0, #16                         ; =0x10
+	bl	_malloc
+	str	x0, [sp, #8]
 	ldr	x0, [sp, #8]
-	add	sp, sp, #16
+	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -17,15 +25,14 @@ _PAElementCreate:                       ; @PAElementCreate
 _PAElementBegin:                        ; @PAElementBegin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	mov	x8, x1
-	strb	w8, [sp, #13]
-	mov	x8, x2
-	strb	w8, [sp, #12]
-	str	x0, [sp]
-	ldrh	w0, [sp, #14]
-	add	sp, sp, #16
+	sub	sp, sp, #48
+	.cfi_def_cfa_offset 48
+	str	x1, [sp, #24]
+	str	x2, [sp, #16]
+	str	x0, [sp, #8]
+	ldr	x0, [sp, #32]
+	ldr	x1, [sp, #40]
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -98,11 +105,12 @@ _PAElementFinish:                       ; @PAElementFinish
 _PAElementDelete:                       ; @PAElementDelete
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	str	x0, [sp]
-	ldrh	w0, [sp, #14]
-	add	sp, sp, #16
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #8]
+	ldr	x0, [sp, #16]
+	ldr	x1, [sp, #24]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function

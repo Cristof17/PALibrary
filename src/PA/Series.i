@@ -114,7 +114,7 @@ struct PrototypeClient;
 struct PANumber {
 
 
- unsigned char val;
+ unsigned char* val;
 
 };
 struct PrototypeConcretePrototype1;
@@ -139,40 +139,40 @@ struct PAResource {
 
 
 
- struct PANumber value;
+ struct PANumber* value;
 
 };
 struct PAStatus {
- struct PAResource visited;
+ struct PAResource* visited;
 };
 struct PAData {
- struct PAResource Resource;
+ struct PAResource* Resource;
 
 };
 struct PAElement {
 
- struct PAData index;
+ struct PAData* index;
 
- struct PAStatus status;
+ struct PAStatus* status;
 
 
 };
 struct PAFeature {
- PAInt kind;
+ PAInt* kind;
 };
 struct PACount {
 
- struct PANumber number;
+ struct PANumber* number;
 };
 
 
 struct PASeries {
- struct PACount m;
+ struct PACount* m;
 
  struct PAElement adj[2];
 };
 struct PAList {
- struct PACount n;
+ struct PACount* n;
  struct PASeries neigh[2];
 
 };
@@ -1887,7 +1887,7 @@ extern char * suboptarg;
 
     struct PANumber x;
     struct PANumber y;
-    x.val = (1);
+
 
     while (x.val < y.val)
     {
@@ -1914,21 +1914,21 @@ extern char * suboptarg;
     {
 
     }
-    y.number.val = (1);
-    while (y.number.val <= x.number.val)
+
+
     {
         struct PAElement aux;
 
 
-        y.number.val++;
+
     }
-    y.number.val = (1);
-    while (y.number.val <= x.number.val)
+
+
     {
         struct PAElement aux;
 
 
-        y.number.val++;
+
     }
 
 
@@ -1944,8 +1944,8 @@ extern char * suboptarg;
 
         struct PANumber x;
         struct PANumber y;
-        x.val = (1);
-        y.val = Value.number.val;
+
+
         while (x.val <= y.val)
         {
 
@@ -1962,7 +1962,7 @@ extern char * suboptarg;
         struct PANumber x;
         struct PANumber y;
 
-        y.val = (1);
+
         while (y.val <= x.val)
         {
 
@@ -1981,11 +1981,11 @@ extern char * suboptarg;
         struct PACount x;
         struct PACount y;
 
-        y.number.val = (1);
-        while (y.number.val <= x.number.val)
+
+
         {
 
-            y.number.val++;
+
         }
 # 177 "src/PA/Series.c"
         return returnCode;

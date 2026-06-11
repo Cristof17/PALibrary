@@ -113,7 +113,7 @@ struct PrototypeClient;
 struct PANumber {
 
 
- unsigned char val;
+ unsigned char* val;
 
 };
 struct PrototypeConcretePrototype1;
@@ -138,40 +138,40 @@ struct PAResource {
 
 
 
- struct PANumber value;
+ struct PANumber* value;
 
 };
 struct PAStatus {
- struct PAResource visited;
+ struct PAResource* visited;
 };
 struct PAData {
- struct PAResource Resource;
+ struct PAResource* Resource;
 
 };
 struct PAElement {
 
- struct PAData index;
+ struct PAData* index;
 
- struct PAStatus status;
+ struct PAStatus* status;
 
 
 };
 struct PAFeature {
- PAInt kind;
+ PAInt* kind;
 };
 struct PACount {
 
- struct PANumber number;
+ struct PANumber* number;
 };
 
 
 struct PASeries {
- struct PACount m;
+ struct PACount* m;
 
  struct PAElement adj[2];
 };
 struct PAList {
- struct PACount n;
+ struct PACount* n;
  struct PASeries neigh[2];
 
 };
@@ -1950,69 +1950,206 @@ void PAListPerformPrint(struct PAList* List);
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 6 "./include/PA/Number.h" 2
- struct PANumber* PANumberCreate();
-          struct PANumber PANumberBegin(struct PANumber* Number, unsigned char Value);
-          PAResult PANumberFinish(struct PANumber*);
-          struct PANumber PANumberDelete(struct PANumber*);
-          void PANumberCopy(struct PANumber* from, struct PANumber* to);
-# 10 "test/test.c" 2
-# 1 "./include/PA/Series.h" 1
-# 15 "./include/PA/Series.h"
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 16 "./include/PA/Series.h" 2
-
-
-          struct PASeries* PASeriesCreate();
-          struct PASeries PASeriesBegin(struct PASeries*, struct PACount, struct PAElement[]);
-          struct PASeries PASeriesDelete(struct PASeries*);
-          void PASeriesCopy(struct PASeries*, struct PASeries*);
-
-          PAResult PASeriesFinish(struct PASeries*);
-
-          void PASeriesPrint(struct PASeries*);
-# 11 "test/test.c" 2
-# 1 "./include/PA/Status.h" 1
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 1 3 4
+# 64 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
+# 65 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_size_t.h" 1 3 4
+# 66 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_null.h" 1 3 4
+# 67 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 
 
 
 
 
 
+void *
+  memchr(const void * __s, int __c, size_t __n);
+int memcmp(const void * __s1, const void * __s2,
+  size_t __n);
+void *
+  memcpy(void * __dst, const void * __src,
+  size_t __n);
+void *
+  memmove(void * __dst,
+  const void * __src, size_t __len);
+void *
+  memset(void * __b, int __c, size_t __len);
+char *
+  strcat(char * __s1, const char *__s2)
+                                  ;
+char * strchr(const char *__s, int __c);
+int strcmp(const char *__s1, const char *__s2);
+int strcoll(const char *__s1, const char *__s2);
+char *
+  strcpy(char * __dst, const char *__src)
+                                  ;
+size_t strcspn(const char *__s, const char *__charset);
+char * strerror(int __errnum) __asm("_" "strerror" );
+size_t strlen(const char *__s);
+char *
+  strncat(char * __s1,
+  const char * __s2, size_t __n)
+                                  ;
+int strncmp(const char * __s1,
+  const char * __s2, size_t __n);
+char *
+  strncpy(char * __dst,
+        const char * __src, size_t __n)
+                                        ;
+char * strpbrk(const char *__s, const char *__charset);
+char * strrchr(const char *__s, int __c);
+size_t strspn(const char *__s, const char *__charset);
+char * strstr(const char *__big, const char *__little);
+char * strtok(char * __str, const char *__sep);
+size_t strxfrm(char * __s1, const char *__s2, size_t __n);
+# 125 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 3 4
+char *
+        strtok_r(char * __str, const char *__sep,
+        char * *__lasts);
+# 139 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 3 4
+int strerror_r(int __errnum, char * __strerrbuf,
+        size_t __buflen);
+char * strdup(const char *__s1);
+void *
+        memccpy(void * __dst, const void * __src,
+        int __c, size_t __n);
+# 156 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 3 4
+char *
+        stpcpy(char * __dst, const char *__src) ;
+char *
+        stpncpy(char * __dst,
+        const char * __src, size_t __n)
+        __attribute__((availability(macosx,introduced=10.7)))
+                                        ;
+char * strndup(const char * __s1, size_t __n) __attribute__((availability(macosx,introduced=10.7)));
+size_t strnlen(const char * __s1, size_t __n) __attribute__((availability(macosx,introduced=10.7)));
+char * strsignal(int __sig);
 
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Status.h" 2
-
-          void PAStatusCauseVisit(PABool);
-          struct PAStatus* PAStatusCreate();
-          struct PAStatus PAStatusBegin(struct PAStatus*, struct PAResource);
-          PAResult PAStatusFinish(struct PAStatus*);
-
-          void PAStatusCopy(struct PAStatus*, struct PAStatus*);
-          struct PAStatus PAStatusDelete(struct PAStatus*);
-# 12 "test/test.c" 2
-# 1 "./include/PA/TransposeTree.h" 1
 
 
 
 
 
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_rsize_t.h" 1 3 4
+# 50 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_rsize_t.h" 3 4
+typedef __darwin_size_t rsize_t;
+# 173 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_errno_t.h" 1 3 4
+# 30 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_errno_t.h" 3 4
+typedef int errno_t;
+# 174 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 
 
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/TransposeTree.h" 2
+errno_t memset_s(void * __s, rsize_t __smax, int __c, rsize_t __n) __attribute__((availability(macosx,introduced=10.9)));
 
 
-          struct PATransposeTree* PATransposeTreeCreate();
-          struct PATransposeTree PATransposeTreeBegin(struct PATransposeTree*, struct PATree);
-          void PATransposeTreeCopy(struct PATransposeTree*, struct PATransposeTree*);
-
-          PAResult PATransposeTreeFinish(struct PATransposeTree*);
-          struct PATransposeTree PATransposeTreeDelete(struct PATransposeTree*);
-# 13 "test/test.c" 2
-# 1 "./conf.h" 1
-# 14 "test/test.c" 2
 
 
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_ssize_t.h" 1 3 4
+# 31 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_ssize_t.h" 3 4
+typedef __darwin_ssize_t ssize_t;
+# 184 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
+
+
+void *
+        memmem(const void * __big, size_t __big_len,
+        const void * __little, size_t __little_len) __attribute__((availability(macosx,introduced=10.7)));
+void memset_pattern4(void * __b, const void * __pattern4, size_t __len) __attribute__((availability(macosx,introduced=10.5)));
+void memset_pattern8(void * __b, const void * __pattern8, size_t __len) __attribute__((availability(macosx,introduced=10.5)));
+void memset_pattern16(void * __b, const void * __pattern16, size_t __len) __attribute__((availability(macosx,introduced=10.5)));
+
+char *
+        strcasestr(const char *__big, const char *__little);
+__attribute__((availability(macosx,introduced=15.4))) __attribute__((availability(ios,introduced=18.4)))
+__attribute__((availability(tvos,introduced=18.4))) __attribute__((availability(watchos,introduced=11.4)))
+char *
+        strchrnul(const char *__s, int __c);
+char *
+        strnstr(const char * __big, const char *__little, size_t __len);
+size_t strlcat(char * __dst, const char *__source, size_t __size);
+size_t strlcpy(char * __dst, const char *__source, size_t __size);
+void strmode(int __mode, char * __bp);
+char *
+        strsep(char * *__stringp, const char *__delim);
+
+
+void swab(const void * restrict, void * restrict, ssize_t __len);
+
+__attribute__((availability(macosx,introduced=10.12.1))) __attribute__((availability(ios,introduced=10.1)))
+__attribute__((availability(tvos,introduced=10.0.1))) __attribute__((availability(watchos,introduced=3.1)))
+int timingsafe_bcmp(const void * __b1, const void * __b2, size_t __len);
+
+__attribute__((availability(macosx,introduced=11.0))) __attribute__((availability(ios,introduced=14.0)))
+__attribute__((availability(tvos,introduced=14.0))) __attribute__((availability(watchos,introduced=7.0)))
+int strsignal_r(int __sig, char * __strsignalbuf, size_t __buflen);
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_strings.h" 1 3 4
+# 65 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_strings.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
+# 66 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_strings.h" 2 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_size_t.h" 1 3 4
+# 67 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_strings.h" 2 3 4
+
+
+
+
+
+
+int bcmp(const void *, const void *, size_t __n) ;
+void bcopy(const void *, void *, size_t __n) ;
+void bzero(void *, size_t __n) ;
+char * index(const char *, int) ;
+char * rindex(const char *, int) ;
+
+
+int ffs(int);
+int strcasecmp(const char *, const char *);
+int strncasecmp(const char *, const char *, size_t);
+
+
+
+
+
+int ffsl(long) __attribute__((availability(macosx,introduced=10.5)));
+int ffsll(long long) __attribute__((availability(macosx,introduced=10.9)));
+int fls(int) __attribute__((availability(macosx,introduced=10.5)));
+int flsl(long) __attribute__((availability(macosx,introduced=10.5)));
+int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_strings.h" 1 3 4
+# 32 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_strings.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
+# 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_strings.h" 2 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_common.h" 1 3 4
+# 34 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_strings.h" 2 3 4
+# 99 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_strings.h" 2 3 4
+# 223 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 1 3 4
+# 32 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
+# 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 2 3 4
+# 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
+# 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
+# 7 "./include/PA/Number.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 1 3 4
 # 61 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 1 3 4
@@ -2244,13 +2381,7 @@ int vfscanf(FILE * restrict __stream, const char * restrict __format, va_list) _
 int vscanf(const char * restrict __format, va_list) __attribute__((__format__ (__scanf__, 1, 0)));
 int vsnprintf(char * restrict __str, size_t __size, const char * restrict __format, va_list) __attribute__((__format__ (__printf__, 3, 0)));
 int vsscanf(const char * restrict __str, const char * restrict __format, va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-# 454 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_ssize_t.h" 1 3 4
-# 31 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_ssize_t.h" 3 4
-typedef __darwin_ssize_t ssize_t;
-# 455 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
-
-
+# 457 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 3 4
 int dprintf(int, const char * restrict, ...) __attribute__((__format__ (__printf__, 2, 3))) __attribute__((availability(macosx,introduced=10.7)));
 int vdprintf(int, const char * restrict, va_list) __attribute__((__format__ (__printf__, 2, 0))) __attribute__((availability(macosx,introduced=10.7)));
 ssize_t getdelim(char * *restrict __linep, size_t * restrict __linecapp, int __delimiter, FILE * restrict __stream) __attribute__((availability(macosx,introduced=10.7)));
@@ -2281,14 +2412,7 @@ FILE *funopen(const void *,
      int (* _Nullable)(void *));
 # 507 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h" 1 3 4
-# 32 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h" 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_common.h" 1 3 4
-# 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h" 2 3 4
-
-
-
-
-
+# 38 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h" 3 4
 extern int __snprintf_chk (char * restrict , size_t __maxlen, int, size_t,
      const char * restrict, ...);
 extern int __vsnprintf_chk (char * restrict , size_t __maxlen, int, size_t,
@@ -2300,6 +2424,72 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
      const char * restrict, va_list);
 # 508 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
 # 62 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 2 3 4
+# 8 "./include/PA/Number.h" 2
+ struct PANumber* PANumberCreate();
+          struct PANumber PANumberBegin(struct PANumber* Number, unsigned char Value);
+          PAResult PANumberFinish(struct PANumber*);
+          struct PANumber PANumberDelete(struct PANumber*);
+          void PANumberCopy(struct PANumber* from, struct PANumber* to);
+          void PANumberPrint(struct PANumber*);
+# 10 "test/test.c" 2
+# 1 "./include/PA/Series.h" 1
+# 15 "./include/PA/Series.h"
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 16 "./include/PA/Series.h" 2
+
+
+          struct PASeries* PASeriesCreate();
+          struct PASeries PASeriesBegin(struct PASeries*, struct PACount, struct PAElement[]);
+          struct PASeries PASeriesDelete(struct PASeries*);
+          void PASeriesCopy(struct PASeries*, struct PASeries*);
+
+          PAResult PASeriesFinish(struct PASeries*);
+
+          void PASeriesPrint(struct PASeries*);
+# 11 "test/test.c" 2
+# 1 "./include/PA/Status.h" 1
+
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/PA/Status.h" 2
+
+          void PAStatusCauseVisit(PABool);
+          struct PAStatus* PAStatusCreate();
+          struct PAStatus PAStatusBegin(struct PAStatus*, struct PAResource);
+          PAResult PAStatusFinish(struct PAStatus*);
+
+          void PAStatusCopy(struct PAStatus*, struct PAStatus*);
+          struct PAStatus PAStatusDelete(struct PAStatus*);
+# 12 "test/test.c" 2
+# 1 "./include/PA/TransposeTree.h" 1
+
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/PA/TransposeTree.h" 2
+
+
+          struct PATransposeTree* PATransposeTreeCreate();
+          struct PATransposeTree PATransposeTreeBegin(struct PATransposeTree*, struct PATree);
+          void PATransposeTreeCopy(struct PATransposeTree*, struct PATransposeTree*);
+
+          PAResult PATransposeTreeFinish(struct PATransposeTree*);
+          struct PATransposeTree PATransposeTreeDelete(struct PATransposeTree*);
+# 13 "test/test.c" 2
+# 1 "./conf.h" 1
+# 14 "test/test.c" 2
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 1 3 4
 # 17 "test/test.c" 2
 
 int main()
@@ -2309,178 +2499,113 @@ int main()
  struct PANumber* number221;
 
 
- number123->val = 20;
+
 
 
 
  struct PAElement element12;
  struct PAElement element245;
- element12.index.Resource.value.val = 20;
 
- printf("Element copy source = %d, destination = %d\n", element12.index.Resource.value.val, element245.index.Resource.value.val);
+
+
 
  struct PACount count123;
  struct PACount count234;
 
 
- printf("Count1 = %d, count2 = %d\n", count123.number.val, count234.number.val);
+
 
  struct PAData data123;
  struct PAData data124;
- data123.Resource.value.val = 50;
 
- printf("copy padata %d from %d\n", data123.Resource.value.val, data124.Resource.value.val);
+
+
 
  struct PAStatus status1;
  struct PAStatus status2;
 
- printf("copy from status %d %d\n", status1.visited.value.val, status2.visited.value.val);
+
 
  struct PAResource resource12;
  struct PAResource resource14;
- resource12.value.val = 32;
 
- printf("resource copy %d, %d\n",resource12.value.val, resource14.value.val);
+
+
 
  struct PATree tree1;
  struct PATree tree2;
-
-
- printf("tree.ls.n to, %d tree.ls.n. from %d\n", tree2.adj.n.number.val,tree1.adj.n.number.val);
-
- printf("Tree1 %d %d\n", tree1.m.number.val, tree2.m.number.val);
- printf("Tree1 %d %d\n", tree1.n.number.val, tree2.n.number.val);
- printf("tree1.list.n %d, tree2.list.n %d\n", tree1.adj.n.number.val, tree2.adj.n.number.val);
-
-
-
-
-
-
+# 73 "test/test.c"
  struct PASeries series1234;
  struct PASeries series2345;
 
- printf("series1.size %d series2.size %d\n", series1234.m.number.val, series2345.m.number.val);
+
 
  struct PAList list12334;
  struct PAList list2345;
 
 
- list12334.n.number.val = 30;
 
- printf("First list %d` second list %d,\n",list12334.n.number.val, list2345.n.number.val);
+
+
 
 
  struct PANumber number345;
  struct PANumber number456;
 
 
- printf("forst number %d %d \n|", number345.val ,number456.val);
+
 
  struct PAStatus status123;
  struct PAStatus status456;
-
-
-
-
-
- printf("status123 = %d status456 = %d\n", status123.visited.value.val, status456.visited.value.val);
-
-
+# 103 "test/test.c"
  struct PAResource resource123;
  struct PAResource resource124;
 
 
- printf("resource123 = %d resource124 = %d\n|,re",resource123.value.val, resource124.value.val);
+
 
  struct PAElement element1234;
  struct PAElement element2345;
 
- printf("resource1234 %d %d \n", element1234.index.Resource.value.val, element2345.index.Resource.value.val);
+
 
  struct PANumber number;
 
- printf("testing PANumber %d\n()",number.val);
+
  struct PAResource resource;
-
- printf("testing Resource %d\n",resource.value.val);
-
-
-
-
-
-
+# 126 "test/test.c"
  struct PAStatus status;
 
  struct PAElement element;
-
- printf("Element resource test%d\n",element.index.Resource.value.val);
-
- printf("pastatus perform construct %d\n",status.visited.value.val);
-
-
-
-
-
+# 138 "test/test.c"
  struct PASeries series;
 
- printf("Series construct series %d\n", series.m.number.val);
+
  struct PAList list;
 
- printf("List construct count%d\n", list.n.number.val);
+
 
  struct PAList list1;
  struct PAList list1Copy;
-
-
- printf("list1 %d list1Copy %d \n",list1.n.number.val, list1Copy.n.number.val);
- printf("list1 randomElemente %d list1CopyRandomElement %d\n",list1.neigh->adj->index.Resource.value.val,list1Copy.neigh->adj->index.Resource.value.val);
 # 163 "test/test.c"
  struct PANumber number1;
  struct PANumber number2;
- number1.val = 10;
+
 
 
  struct PASeries copyTest1;
  struct PASeries copyTest2;
-
-
-
- copyTest1.m.number.val = 40;
- copyTest1.adj[1].index.Resource.value.val = 40;
-
-
-
+# 178 "test/test.c"
  struct PAData data1;
  struct PAData data2;
- data1.Resource.value.val = 40;
-
- printf("data2=%d, from %d\n",data1.Resource.value.val, data2.Resource.value.val);
-
- printf("copy test for series %d copy is %d\n",copyTest1.m.number.val, copyTest2.m.number.val);
-
-
- printf("copy test for series %d copy is %d\n",copyTest1.adj[0].index.Resource.value.val, copyTest2.adj[0].index.Resource.value.val);
-
+# 189 "test/test.c"
  struct PACount count1;
- count1.number.val = 20;
+
  struct PACount count2;
  struct PAResource resource1;
  struct PAResource resource2;
  struct PAElement element1;
  struct PAElement element2;
- element1.index.Resource.value.val = 20;
-
- printf("element1.index = %d, element2.index = %d\n", element1.index.Resource.value.val, element2.index.Resource.value.val);
-
- printf("resource1.number.val = %d, resource2.number.val=%d\n",resource1.value.val, resource2.value.val);
-
- printf("count1 = %d, count2 = %d\n",count1.number.val,count2.number.val);
- list.n.number.val = 2;
-
- printf("count1 = %d, count2 = %d\n",count1.number.val,count2.number.val);
- printf("list.n = %d",list.n.number.val);
-
-
+# 209 "test/test.c"
  return 0;
 }

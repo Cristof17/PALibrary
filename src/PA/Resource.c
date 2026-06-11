@@ -26,7 +26,9 @@ DllExport struct PAResource* PAResourceCreate()
 DllExport struct PAResource PAResourceBegin(struct PAResource* Resource, struct PANumber Value)
 { 
     struct PAResource resource;
-    struct PAResource* resourcePointer;
+    // struct PAResource* resourcePointer;
+    PANumberCopy(&Value,Resource->value);
+    // PAResourceCopy(Value,Resource->value);
     // resource.value = PANumberPerformConstruct();
     // resource.value = PANumberPerformInit(resource.value,NULL_CHAR);
     // Resource = resource;

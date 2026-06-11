@@ -117,7 +117,7 @@ struct PrototypeClient;
 struct PANumber {
 
 
- unsigned char val;
+ unsigned char* val;
 
 };
 struct PrototypeConcretePrototype1;
@@ -142,40 +142,40 @@ struct PAResource {
 
 
 
- struct PANumber value;
+ struct PANumber* value;
 
 };
 struct PAStatus {
- struct PAResource visited;
+ struct PAResource* visited;
 };
 struct PAData {
- struct PAResource Resource;
+ struct PAResource* Resource;
 
 };
 struct PAElement {
 
- struct PAData index;
+ struct PAData* index;
 
- struct PAStatus status;
+ struct PAStatus* status;
 
 
 };
 struct PAFeature {
- PAInt kind;
+ PAInt* kind;
 };
 struct PACount {
 
- struct PANumber number;
+ struct PANumber* number;
 };
 
 
 struct PASeries {
- struct PACount m;
+ struct PACount* m;
 
  struct PAElement adj[2];
 };
 struct PAList {
- struct PACount n;
+ struct PACount* n;
  struct PASeries neigh[2];
 
 };
@@ -1866,7 +1866,8 @@ extern char * suboptarg;
 {
 
     struct PAPair* pairPointer;
-# 25 "src/PA/Pair.c"
+    pairPointer=(struct PAPair*) malloc(sizeof(struct PAPair));
+# 26 "src/PA/Pair.c"
     return pairPointer;
 
 
@@ -1879,9 +1880,9 @@ extern char * suboptarg;
           struct PAPair PAPairBegin(struct PAPair* Pair, struct PAElement Value, struct PAElement Value2)
 {
     struct PAPair temp;
-# 50 "src/PA/Pair.c"
+# 51 "src/PA/Pair.c"
     return temp;
-# 63 "src/PA/Pair.c"
+# 64 "src/PA/Pair.c"
 }
           void PAPairCopy(struct PAPair* from, struct PAPair* to)
 {
@@ -1898,7 +1899,7 @@ extern char * suboptarg;
 
 
 }
-# 107 "src/PA/Pair.c"
+# 108 "src/PA/Pair.c"
           PAResult PAPairFinish(struct PAPair* PA)
 {
     int returnCode1;

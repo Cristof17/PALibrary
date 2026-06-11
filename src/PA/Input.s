@@ -5,19 +5,27 @@
 _PAInputCreate:                         ; @PAInputCreate
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
-	ldr	x8, [sp, #16]
-	ldrb	w8, [x8]
-	strb	w8, [sp, #15]
-	ldr	x8, [sp, #16]
-	ldrb	w8, [x8, #1]
-	strb	w8, [sp, #14]
-	ldr	x8, [sp, #16]
-	ldrh	w8, [x8, #2]
-	strh	w8, [sp]
-	ldr	x0, [sp, #16]
-	add	sp, sp, #32
+	sub	sp, sp, #176
+	stp	x29, x30, [sp, #160]            ; 16-byte Folded Spill
+	add	x29, sp, #160
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	ldur	x8, [x29, #-40]
+	ldr	x8, [x8]
+	stur	x8, [x29, #-48]
+	ldur	x8, [x29, #-40]
+	ldr	x8, [x8, #8]
+	stur	x8, [x29, #-56]
+	ldur	x8, [x29, #-40]
+	ldr	q0, [x8, #16]
+	str	q0, [sp]
+	mov	x0, #32                         ; =0x20
+	bl	_malloc
+	stur	x0, [x29, #-40]
+	ldur	x0, [x29, #-40]
+	ldp	x29, x30, [sp, #160]            ; 16-byte Folded Reload
+	add	sp, sp, #176
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -26,20 +34,19 @@ _PAInputCreate:                         ; @PAInputCreate
 _PAInputBegin:                          ; @PAInputBegin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
-	mov	x8, x1
-	strb	w8, [sp, #27]
-	mov	x8, x2
-	strb	w8, [sp, #26]
-	mov	x8, x3
-	strh	w8, [sp, #24]
-	str	x0, [sp, #16]
-	ldr	x8, [sp, #8]
-	ldr	w8, [x8]
-	str	w8, [sp, #28]
-	ldr	w0, [sp, #28]
-	add	sp, sp, #32
+	sub	sp, sp, #48
+	.cfi_def_cfa_offset 48
+	str	x1, [sp, #40]
+	str	x2, [sp, #32]
+	str	x3, [sp, #16]
+	str	x4, [sp, #24]
+	str	x0, [sp, #8]
+	ldr	x9, [sp]
+	ldr	q0, [x9]
+	str	q0, [x8]
+	ldr	q0, [x9, #16]
+	str	q0, [x8, #16]
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -58,10 +65,10 @@ _PAInputFinish:                         ; @PAInputFinish
 	ldr	x0, [sp, #8]
 	bl	_PACountFinish
 	ldr	x8, [sp, #8]
-	add	x0, x8, #1
+	add	x0, x8, #8
 	bl	_PACountFinish
 	ldr	x8, [sp, #8]
-	add	x0, x8, #2
+	add	x0, x8, #16
 	bl	_PAElementFinish
 	str	wzr, [sp, #4]
 	ldr	w0, [sp, #4]
@@ -77,8 +84,7 @@ _PAInputDelete:                         ; @PAInputDelete
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	str	x0, [sp]
-	ldr	w0, [sp, #12]
+	str	x0, [sp, #8]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc

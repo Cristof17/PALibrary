@@ -8,6 +8,7 @@ DllExport struct PANumber* PANumberCreate()
     struct PANumber number;
     struct PANumber* numberPointer;
     numberPointer = (struct PANumber*) malloc (sizeof(struct PANumber));
+    numberPointer->val = (unsigned char*) malloc(sizeof(unsigned char));
     // number = PANumberPerformInit(number,NULL_CHAR);
     // unsigned char random;
     // number.val =  random;
@@ -19,8 +20,11 @@ DllExport struct PANumber PANumberBegin(struct PANumber* Number, unsigned char V
 {
     struct PANumber temp;
     struct PANumber* numberPointer;
+    temp.val = Number->val;
+    PANumberCopy(Number,&temp);
+    // memcpy(to)
     // numberPointer.
-    numberPointer->val = NULL;
+    // numberPointer->val = Value;
     // temp.val = Value;
     // Number = temp;
     // temp = Number;
@@ -62,6 +66,11 @@ DllExport PAResult PANumberFinish(struct PANumber* PA)
 }
 DllExport void PANumberCopy(struct PANumber* from, struct PANumber* to)
 {
+    // *from->val = 
+    unsigned char aux;
+    aux = *from->val;
+    // to->val = aux;
+    memcpy(to->val,&aux, sizeof(unsigned char));
     // struct PANumber temp;
     // char num = from->val;
     // to->val = num;  
@@ -71,7 +80,9 @@ DllExport void PANumberCopy(struct PANumber* from, struct PANumber* to)
     // to.val = temp.val;
     // to.val = temp.val;
     // return temp;
-    // return to;
-    struct PANumber number;
-    // return number;
+    // return to;    // return number;
+}
+DllExport void PANumberPrint(struct PANumber* Number)
+{
+    printf("%d\n",(unsigned char)Number->val);
 }
