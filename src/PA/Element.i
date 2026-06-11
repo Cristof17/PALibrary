@@ -388,14 +388,14 @@ struct Facade {
           void PAElementReset(struct PAElement*);
           struct PAElement* PAElementCreate();
 
-          struct PAElement* PAElementCompleteBegin(struct PAElement*,struct PAData,struct PAStatus);
+          struct PAElement PAElementCompleteBegin(struct PAElement*,struct PAData,struct PAStatus);
 
 
 
 
           int PAElementFinish(struct PAElement*);
           int PAElementDelete(struct PAElement*);
-          struct PAElement* PAElementCopy(struct PAElement*, struct PAElement*);
+          struct PAElement PAElementCopy(struct PAElement*, struct PAElement*);
 # 7 "src/PA/Element.c" 2
 # 1 "./include/PA/Data.h" 1
 # 11 "./include/PA/Data.h"
@@ -430,10 +430,12 @@ struct PAElement* PAElementCreate()
 # 31 "src/PA/Element.c"
   return temp;
 }
-          struct PAElement* PAElementBegin(struct PAElement* Element, struct PAData Value, struct PAStatus Value2)
+          struct PAElement PAElementBegin(struct PAElement* Element, struct PAData Value, struct PAStatus Value2)
 {
-# 46 "src/PA/Element.c"
-    return Element;
+    struct PAElement element;
+# 47 "src/PA/Element.c"
+    return element;
+
 }
           void PAElementCauseVisit(struct PAElement* Element)
 {
@@ -452,27 +454,28 @@ struct PAElement* PAElementCreate()
 
     return;
 }
-          struct PAElement* PAElementCopy(struct PAElement* from, struct PAElement* to)
+          struct PAElement PAElementCopy(struct PAElement* from, struct PAElement* to)
 {
     struct PAElement temp;
 
 
 
 
-    return to;
+
+    return temp;
 }
-# 86 "src/PA/Element.c"
-          int PAElementFinish(struct PAElement* PA)
+# 89 "src/PA/Element.c"
+          PAResult PAElementFinish(struct PAElement* PA)
 {
-# 102 "src/PA/Element.c"
+# 105 "src/PA/Element.c"
     int returnCode = ((int)0);
     return returnCode;
 
 
 
 }
-# 142 "src/PA/Element.c"
-          int PAElementDelete(struct PAElement* PA)
+# 145 "src/PA/Element.c"
+          PAResult PAElementDelete(struct PAElement* PA)
 {
 
 

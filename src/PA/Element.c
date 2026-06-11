@@ -30,8 +30,9 @@ struct PAElement* PAElementCreate()
   //  return element;
   return temp;
 }
-DllExport struct PAElement* PAElementBegin(struct PAElement* Element, struct PAData Value, struct PAStatus Value2)
+DllExport struct PAElement PAElementBegin(struct PAElement* Element, struct PAData Value, struct PAStatus Value2)
 {
+    struct PAElement element;
     // Element.index = Value;
     // Element.status = Value2;
     //struct PAElement element;
@@ -43,7 +44,8 @@ DllExport struct PAElement* PAElementBegin(struct PAElement* Element, struct PAD
     // PAResult result;
     // return result;
     // struct PAElement element;
-    return Element;
+    return element;
+    // return Element;
 }
 DllExport void PAElementCauseVisit(struct PAElement* Element)
 {
@@ -62,14 +64,15 @@ DllExport void PAElementReset(struct PAElement* Element)
     // Element.status.visited.value.val = FALSE;
     return;
 }
-DllExport struct PAElement* PAElementCopy(struct PAElement* from, struct PAElement* to)
+DllExport struct PAElement PAElementCopy(struct PAElement* from, struct PAElement* to)
 {
     struct PAElement temp;
     // temp.index = PADataPerformCopy(from.index, to.index);
     // temp.status = PAStatusPerformCopy(from.status,to.status);
     // to.index = temp.index;
     // to.status = temp.status;
-    return to;
+    // return to;
+    return temp;
 }   
 // PAResult PAElementPerformCopy()
 // {
@@ -83,7 +86,7 @@ DllExport struct PAElement* PAElementCopy(struct PAElement* from, struct PAEleme
 //	copy.type=Element.type;
 	//return ;
 // }
-DllExport int PAElementFinish(struct PAElement* PA)
+DllExport PAResult PAElementFinish(struct PAElement* PA)
 {
     // PA.index = PADataPerformRuin(PA.index);
     // PA.status = PAStatusPerformRuin(PA.status);
@@ -139,7 +142,7 @@ DllExport int PAElementFinish(struct PAElement* PA)
     // return element;
   //  return Element;
 // }
-DllExport int PAElementDelete(struct PAElement* PA)
+DllExport PAResult PAElementDelete(struct PAElement* PA)
 {
     // PAResult result;
     // return result;    return PA;

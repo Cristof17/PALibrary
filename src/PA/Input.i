@@ -412,14 +412,14 @@ struct Facade {
           void PAElementReset(struct PAElement*);
           struct PAElement* PAElementCreate();
 
-          struct PAElement* PAElementCompleteBegin(struct PAElement*,struct PAData,struct PAStatus);
+          struct PAElement PAElementCompleteBegin(struct PAElement*,struct PAData,struct PAStatus);
 
 
 
 
           int PAElementFinish(struct PAElement*);
           int PAElementDelete(struct PAElement*);
-          struct PAElement* PAElementCopy(struct PAElement*, struct PAElement*);
+          struct PAElement PAElementCopy(struct PAElement*, struct PAElement*);
 # 11 "src/PA/Input.c" 2
 
 

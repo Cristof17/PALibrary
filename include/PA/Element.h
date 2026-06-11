@@ -12,14 +12,14 @@ DllExport PABool PAElementIsVisited(struct PAElement*);
 DllExport void PAElementReset(struct PAElement*);
 DllExport struct PAElement* PAElementCreate();
 // DllExport HRESULT PAElementPerformCopy();
-DllExport struct PAElement* PAElementCompleteBegin(struct PAElement*,struct PAData,struct PAStatus);
+DllExport struct PAElement PAElementCompleteBegin(struct PAElement*,struct PAData,struct PAStatus);
 // DllExport HRESULT PAElementPerformPutStatus(struct PAStatus);
 // DllExport HRESULT PAElementPerformPutData(struct PAData);
 // DllExport HRESULT PAElementPerformPutDestination(struct PADestination);
 // DllExport HRESULT PAElementPerformPutFeature(struct PAFeature);
 DllExport int PAElementFinish(struct PAElement*);
 DllExport int PAElementDelete(struct PAElement*);
-DllExport struct PAElement* PAElementCopy(struct PAElement*, struct PAElement*);
+DllExport struct PAElement PAElementCopy(struct PAElement*, struct PAElement*);
 // struct PANod;
 //typedef struct PAElement Element;
 #endif

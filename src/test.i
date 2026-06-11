@@ -413,14 +413,14 @@ struct Facade {
           void PAElementReset(struct PAElement*);
           struct PAElement* PAElementCreate();
 
-          struct PAElement* PAElementCompleteBegin(struct PAElement*,struct PAData,struct PAStatus);
+          struct PAElement PAElementCompleteBegin(struct PAElement*,struct PAData,struct PAStatus);
 
 
 
 
           int PAElementFinish(struct PAElement*);
           int PAElementDelete(struct PAElement*);
-          struct PAElement* PAElementCopy(struct PAElement*, struct PAElement*);
+          struct PAElement PAElementCopy(struct PAElement*, struct PAElement*);
 # 5 "test/test.c" 2
 # 1 "./include/PA/Data.h" 1
 # 11 "./include/PA/Data.h"

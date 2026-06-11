@@ -20,11 +20,11 @@ _PAElementBegin:                        ; @PAElementBegin
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	mov	x8, x1
-	strb	w8, [sp, #15]
+	strb	w8, [sp, #13]
 	mov	x8, x2
-	strb	w8, [sp, #14]
+	strb	w8, [sp, #12]
 	str	x0, [sp]
-	ldr	x0, [sp]
+	ldrh	w0, [sp, #14]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -73,9 +73,9 @@ _PAElementCopy:                         ; @PAElementCopy
 ; %bb.0:
 	sub	sp, sp, #32
 	.cfi_def_cfa_offset 32
-	str	x0, [sp, #24]
-	str	x1, [sp, #16]
-	ldr	x0, [sp, #16]
+	str	x0, [sp, #16]
+	str	x1, [sp, #8]
+	ldrh	w0, [sp, #30]
 	add	sp, sp, #32
 	ret
 	.cfi_endproc
