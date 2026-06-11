@@ -728,10 +728,10 @@ ifeq ($(host-type),AArch64)
 	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 
-test.out: $(objects) test.o test.out libpa.a
+test.out: $(objects) test.o libpa.a
 	$(CC) $(libdir)/test.o $(foreach object,$(objects_pa),$(libdir)/$(object)) -o $(bindir)/$(program_test_pa)
 
-test_pointers.out: $(objects) test_pointers.o test.out libpa.a
+test_pointers.out: $(objects) test_pointers.o libpa.a
 	$(CC) $(libdir)/test.o $(foreach object,$(objects_pa),$(libdir)/$(object)) -o $(bindir)/$(program_test_pointers_pa)
 
 #$(CC) -lc $(foreach dependency,$^,$(libdir)/$(dependency)) -o $(bindir)/$@
