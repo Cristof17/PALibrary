@@ -359,6 +359,7 @@ objects_test_arraylist=
 # 	src/PA/Arrow.i
 # 	src/PA/Feature.i
 program_test_pa= test.out
+program_test_pointers_pa= test_pointers.out
 
 distclean:
 	rm $(foreach source,$(sources_pa),$(srcdir)/$(source))
@@ -700,7 +701,23 @@ test.i: test/test.c
 test.s: test.i
 	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 
+test_pointers.i: test/test_pointers.c
+	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
+test_pointers.s: test_pointers.i
+	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+
 test.o: test.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+
+test_pointers.o: test_pointers.s
 ifeq ($(host-type),arm64)
 	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
@@ -713,6 +730,10 @@ endif
 
 test.out: $(objects) test.o test.out libpa.a
 	$(CC) $(libdir)/test.o $(foreach object,$(objects_pa),$(libdir)/$(object)) -o $(bindir)/$(program_test_pa)
+
+test_pointers.out: $(objects) test_pointers.o test.out libpa.a
+	$(CC) $(libdir)/test.o $(foreach object,$(objects_pa),$(libdir)/$(object)) -o $(bindir)/$(program_test_pointers_pa)
+
 #$(CC) -lc $(foreach dependency,$^,$(libdir)/$(dependency)) -o $(bindir)/$@
 
 ASFLAGS=
