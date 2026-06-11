@@ -40,7 +40,7 @@ int main()
 	// PAResourcePrint(resource);
 
 	struct PAResource* resource123;
-	PANumberBegin(number,'o');
+	PANumberBegin(number,'a');
 	PANumberPrint(number);
 	PAResourceBegin(resource123,*number);
 	printf("resource %d\n", resource123->value->val);
