@@ -2332,16 +2332,13 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 }
           struct PAResource PAResourceBegin(struct PAResource* Resource, struct PANumber Value)
 {
-    struct PAResource resource;
 
-    PANumberCopy(&Value,Resource->value);
-
-
-
-
-
-
-    return resource;
+    struct PAResource temp;
+    struct PAResource* resourcePointer;
+    PANumberBegin(&temp.value,Value.val);
+    Resource->value = temp.value;
+# 50 "src/PA/Resource.c"
+    return temp;
 
 }
           void PAResourceCopy(struct PAResource* from, struct PAResource* to)
@@ -2363,6 +2360,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
     return returnCode;
 
 }
+
           struct PAResource PAResourceDelete(struct PAResource* Resource)
 {
     struct PAResource resource;

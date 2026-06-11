@@ -25,23 +25,25 @@ _PAResourceCreate:                      ; @PAResourceCreate
 _PAResourceBegin:                       ; @PAResourceBegin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #48
-	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
-	add	x29, sp, #32
+	sub	sp, sp, #64
+	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
+	add	x29, sp, #48
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	mov	x8, x0
-	sub	x0, x29, #9
-	mov	x9, x1
-	sturb	w9, [x29, #-9]
-	str	x8, [sp, #8]
-	ldr	x8, [sp, #8]
-	ldr	x1, [x8]
-	bl	_PANumberCopy
+	mov	x8, x1
+	sturb	w8, [x29, #-9]
+	str	x0, [sp, #24]
+	ldurb	w1, [x29, #-9]
+	sub	x0, x29, #8
+	bl	_PANumberBegin
+	strb	w0, [sp, #15]
+	ldur	x8, [x29, #-8]
+	ldr	x9, [sp, #24]
+	str	x8, [x9]
 	ldur	x0, [x29, #-8]
-	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
-	add	sp, sp, #48
+	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
+	add	sp, sp, #64
 	ret
 	.cfi_endproc
                                         ; -- End function

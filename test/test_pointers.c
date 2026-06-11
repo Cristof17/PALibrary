@@ -11,7 +11,7 @@ int main()
 	// srtuc
 	struct PANumber* number123;
 	PANumberCopy(number,number123);
-	PANumberBegin(number,'a');
+	PANumberBegin(number,'o');
 	PANumberCopy(number,number123);
 	PANumberPrint(number);
 	PANumberPrint(number123);
@@ -24,12 +24,24 @@ int main()
 	struct PANumber* number34;
 	number34 = PANumberCreate();
 	PANumberCopy(number,number34);
+	PANumberDelete(number);
 	PANumberPrint(number34);
-	// PANumberDelete(number34);
-	PANumberFinish(number34);
+	PANumberPrint(number);
+	PANumberDelete(number34);
+	PANumberDelete(number);
+	// PANumberFinish(number34);
 	// PANu
 	// PANumberFinish(number);
+	PANumberDelete(number34);
 	PANumberPrint(number34);
+
+	struct PAResource resource;
+	// resource = PAResourcePrint();
+	// PAResourcePrint(resource);
+
+	struct PAResource* resource123;
+	PAResourceBegin(resource123,*number);
+	printf("resource %d\n", resource123->value->val);
 	// printf(number,number123);
 	// PANumberPrint(number123);
 	// number=PANumberCreate();
