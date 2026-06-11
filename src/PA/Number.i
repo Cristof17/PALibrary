@@ -2328,7 +2328,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 }
           struct PANumber PANumberDelete(struct PANumber* PA)
 {
-    int returnCode;
+
 
 
 
@@ -2343,6 +2343,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 {
     int returnCode;
     returnCode = ((int)0);
+    free(PA);
 
 
 
@@ -2365,7 +2366,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
     number=*from;
 
     to->val = number.val;
-# 100 "src/PA/Number.c"
+# 101 "src/PA/Number.c"
 }
           void PANumberPrint(struct PANumber* Number)
 {
