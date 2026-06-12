@@ -1933,20 +1933,11 @@ void PAListPerformPrint(struct PAList* List);
 # 152 "src/PA/List.c"
           PAResult PAListFinish(struct PAList* PA)
 {
-
-
-
-    int returnCode1;
-    int returnCode2;
     int returnCode;
-
-
-
-    returnCode = returnCode1 & returnCode2;
-    return returnCode;
-
-
-
+    returnCode = PACountFinish(PA->n);
+    free(PA);
+    return ((int)0);
+# 172 "src/PA/List.c"
     {
 
 
@@ -1964,12 +1955,12 @@ void Dispose()
 {
 
 }
-# 200 "src/PA/List.c"
+# 204 "src/PA/List.c"
           struct PAList PAListDelete(struct PAList* PA)
 {
-    PACountDelete(PA->n);
-    free(PA);
-# 220 "src/PA/List.c"
+
+    struct PAList aux;
+# 223 "src/PA/List.c"
     return aux;
 
 

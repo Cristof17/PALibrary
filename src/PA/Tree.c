@@ -79,10 +79,10 @@ DllExport struct PATree PATreeBegin(struct PATree* Tree, struct PACount Value, s
     // treePointer->adj = PAListPerformConstruct();
     // treePointer->source = PAElementPerformConstruct();
     // tree = *treePointer;
-    tree.n = Value;
-    tree.m = Value2;
-    tree.adj = Value3;
-    tree.source = Value4;
+    // tree.n = Value;
+    // tree.m = Value2;
+    // tree.adj = Value3;
+    // tree.source = Value4;
     Tree->n = tree.n;
     Tree->m = tree.m;
     Tree->adj = tree.adj;
@@ -110,11 +110,11 @@ DllExport void PATreeCopy(struct PATree* from, struct PATree* to)
     struct PATree temp;
     temp.n = from->n;
     temp.m = from->m;
-    PAListCopy(&from->adj, &temp.adj);
+    // PAListCopy(&from->adj, &temp.adj);
     temp.source = from->source;
     to->n = temp.n;
     to->m = temp.m;
-    PAListCopy(&temp.adj, &to->adj);
+    // PAListCopy(&temp.adj, &to->adj);
     to->source = temp.source;
     // temp.n = PACountPerformCopy(from.n,temp.n);
     // temp.m = PACountPerformCopy(from.m,temp.m);
@@ -130,19 +130,24 @@ DllExport void PATreeCopy(struct PATree* from, struct PATree* to)
 }
 DllExport PAResult PATreeFinish(struct PATree* PA)
 {
-    int returnCode1 = PARESULT_FAIL;
-    int returnCode2 = PARESULT_FAIL;
-    int returnCode3 = PARESULT_FAIL;
-    int returnCode4 = PARESULT_FAIL;
-    int returnCode = PARESULT_FAIL;
-    returnCode1 = PACountFinish(&PA->n);
-    returnCode2 = PACountFinish(&PA->m);
-    returnCode3 = PAListFinish(&PA->adj);
-    returnCode4 = PAElementFinish(&PA->source);
+    int returnCode;
+    int returnCode2;
+    returnCode = PACountFinish(PA->n);
+    returnCode2 = PACountFinish(PA->m);
+    returnCode = PARESULT_SUCCESS;
+    // int returnCode1 = PARESULT_FAIL;
+    // int returnCode2 = PARESULT_FAIL;
+    // int returnCode3 = PARESULT_FAIL;
+    // int returnCode4 = PARESULT_FAIL;
+    // int returnCode = PARESULT_FAIL;
+    // returnCode1 = PACountFinish(&PA->n);
+    // returnCode2 = PACountFinish(&PA->m);
+    // returnCode3 = PAListFinish(&PA->adj);
+    // returnCode4 = PAElementFinish(&PA->source);
     // rc4 = PAListPerform
 
-    returnCode = returnCode1 & returnCode2 & returnCode3 & returnCode4;
-    return returnCode;
+    // returnCode = returnCode1 & returnCode2 & returnCode3 & returnCode4;
+    // return returnCode;
     // PA.n = PACountPerformRuin(PA.n);
     // PA.m = PACountPerformRuin(PA.m);
     // PA.source = PAElementPerformRuin(PA.source);

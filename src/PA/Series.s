@@ -5,23 +5,21 @@
 _PASeriesCreate:                        ; @PASeriesCreate
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	b	LBB0_1
-LBB0_1:                                 ; =>This Inner Loop Header: Depth=1
-	ldrb	w8, [sp, #7]
-	ldrb	w9, [sp, #6]
-	subs	w8, w8, w9
-	b.ge	LBB0_3
-	b	LBB0_2
-LBB0_2:                                 ;   in Loop: Header=BB0_1 Depth=1
-	ldrb	w8, [sp, #7]
-	add	w8, w8, #1
-	strb	w8, [sp, #7]
-	b	LBB0_1
-LBB0_3:
+	sub	sp, sp, #32
+	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
+	add	x29, sp, #16
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	mov	x0, #16                         ; =0x10
+	bl	_malloc
+	str	x0, [sp, #8]
+	bl	_PACountCreate
+	ldr	x8, [sp, #8]
+	str	x0, [x8]
 	ldr	x0, [sp, #8]
-	add	sp, sp, #16
+	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -97,9 +95,19 @@ _PASeriesFinish:                        ; @PASeriesFinish
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
-	str	x0, [sp, #24]
-	ldr	w0, [sp, #20]
+	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
+	add	x29, sp, #16
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	str	x0, [sp, #8]
+	ldr	x8, [sp, #8]
+	ldr	x0, [x8]
+	bl	_PACountFinish
+	ldr	x0, [sp, #8]
+	bl	_free
+	ldr	w0, [sp, #4]
+	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
 	ret
 	.cfi_endproc
