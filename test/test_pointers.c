@@ -62,10 +62,13 @@ int main()
 	PAStatusCopy(status,status123);
 	printf("status value %d\n",status->visited->value->val);
 
+	struct PACount* count1;
+	count1 = PACountCreate();
+	PACountBegin(count1,number123);
 	struct PASeries* series;
 	series = PASeriesCreate();
 	printf("series.count %d\n", series->m->number->val);
-
+	// PASeriesBegin(series,count)
 	struct PATree *Tree;
 	// printf(number,number123);
 	// PANumberPrint(number123);

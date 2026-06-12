@@ -27,12 +27,14 @@ DllExport struct PACount* PACountCreate()
     countPointer->number = PANumberCreate();
     return countPointer;
 }
-DllExport struct PACount PACountBegin(struct PACount* Count, struct PANumber Value)
+DllExport struct PACount PACountBegin(struct PACount* Count, struct PANumber* Value)
 {
     // struct PACount temp;
     struct PACount temp;
     struct PACount* cpuntPointer;
-    temp.number = &Value;
+    temp = *Count;
+    temp.number = Value;
+    // temp.number = &Value;
     Count->number = temp.number;
     // struct PANumber value;
     // value = PANumberPerformConstruct();
