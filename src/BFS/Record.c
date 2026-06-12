@@ -17,18 +17,21 @@
 	// struct PACardinal Cardinal;
 DllExport struct BFSRecord* BFSRecordCreate()
 {
-
+    struct BFSRecord* recordPointer;
+    recordPointer = (struct BFSRecord*) malloc (sizeof(struct BFSRecord));
+    return recordPointer;
 }
 // void BFSRecordDestroy();
-DllExport int BFSRecordFinish(struct BFSRecord*)
+DllExport int BFSRecordFinish(struct BFSRecord* PA)
 {
-
+    free(PA);
+    return PARESULT_SUCCESS;
 }
 DllExport struct BFSRecord BFSRecordDelete(struct BFSRecord*)
 {
 
 }
-DllExport void BFSRecordPrint(struct BFSRecord*)
+DllExport void BFSRecordPrint(struct BFSRecord* PA)
 {
 
 }
