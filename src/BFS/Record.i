@@ -1909,19 +1909,22 @@ void PAListPerformPrint(struct PAList* List);
     free(PA);
     return ((int)0);
 }
-          struct BFSRecord BFSRecordDelete(struct BFSRecord*)
+          struct BFSRecord BFSRecordDelete(struct BFSRecord* PA)
 {
     struct BFSRecord record;
+    return record;
 }
           void BFSRecordPrint(struct BFSRecord* PA)
 {
 
 }
-          struct BFSRecord BFSRecordBegin(struct BFSRecord*, struct PAList* d, struct PACount* n)
+          struct BFSRecord BFSRecordBegin(struct BFSRecord* Record, struct PAList* d, struct PACount* n)
 {
-
+    struct BFSRecord record;
+    return record;
 }
           struct BFSRecord BFSRecordCopy(struct BFSRecord* from, struct BFSRecord* to)
 {
-
+    struct BFSRecord record;
+    return record;
 }

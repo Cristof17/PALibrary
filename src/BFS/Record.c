@@ -27,21 +27,24 @@ DllExport int BFSRecordFinish(struct BFSRecord* PA)
     free(PA);
     return PARESULT_SUCCESS;
 }
-DllExport struct BFSRecord BFSRecordDelete(struct BFSRecord*)
+DllExport struct BFSRecord BFSRecordDelete(struct BFSRecord* PA)
 {
     struct BFSRecord record;
+    return record;
 }
 DllExport void BFSRecordPrint(struct BFSRecord* PA)
 {
 
 }
-DllExport struct BFSRecord BFSRecordBegin(struct BFSRecord*, struct PAList* d, struct PACount* n)
+DllExport struct BFSRecord BFSRecordBegin(struct BFSRecord* Record, struct PAList* d, struct PACount* n)
 {
-
+    struct BFSRecord record;
+    return record;
 }
 DllExport struct BFSRecord BFSRecordCopy(struct BFSRecord* from, struct BFSRecord* to)
 {
-    
+    struct BFSRecord record;
+    return record;
 }
 // void BFSRecordPrint(struct BFSRecord Record) {
 //     // PAListPerformPrint(Record.d);
