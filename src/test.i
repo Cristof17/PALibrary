@@ -1924,7 +1924,7 @@ extern char * suboptarg;
 
 
           struct PAList* PAListCreate();
-          struct PAList PAListCompleteBegin(struct PAList*,struct PACount, struct PASeries[]);
+          struct PAList PAListBegin(struct PAList*,struct PACount*, struct PASeries[]);
 
 
 
@@ -1932,7 +1932,7 @@ extern char * suboptarg;
           struct PAList PAListDelete(struct PAList*);
           void PAListCopy(struct PAList*, struct PAList*);
 
-void PAListPerformPrint(struct PAList* List);
+void PAListPrint(struct PAList* List);
 # 8 "test/test.c" 2
 # 1 "./include/PA/Resource.h" 1
 

@@ -2397,9 +2397,34 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 void PAListPrint(struct PAList* List);
 # 7 "test/test_pointers.c" 2
+# 1 "./include/PA/Tree.h" 1
+
+
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 10 "./include/PA/Tree.h" 2
+
+
+          struct PATree* PATreeCreate();
+          void PATreeCopy(struct PATree* from, struct PATree* to);
+
+          struct PATree PATreeBegin(struct PATree*, struct PACount, struct PACount, struct PAList, struct PAElement);
+
+
+
+
+
+          PAResult PATreeFinish(struct PATree*);
+          struct PATree PATreeDelete(struct PATree*);
+# 8 "test/test_pointers.c" 2
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 1 3 4
-# 9 "test/test_pointers.c" 2
+# 10 "test/test_pointers.c" 2
 int main()
 {
  struct PANumber* number;
@@ -2474,6 +2499,9 @@ int main()
 
 
  struct PATree *Tree;
-# 98 "test/test_pointers.c"
+ Tree = PATreeCreate();
+ printf("Tree.m %d\n", Tree->m->number->val);
+ printf("Tree.n %d\n", Tree->n->number->val);
+# 102 "test/test_pointers.c"
  return 0;
 }

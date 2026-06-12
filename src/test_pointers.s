@@ -171,6 +171,30 @@ _main:                                  ; @main
 	mov	x8, x10
 	str	x8, [x9]
 	bl	_printf
+	bl	_PATreeCreate
+	str	x0, [sp, #40]
+	ldr	x8, [sp, #40]
+	ldr	x8, [x8, #8]
+	ldr	x8, [x8]
+	ldrb	w10, [x8]
+	mov	x9, sp
+                                        ; implicit-def: $x8
+	mov	x8, x10
+	str	x8, [x9]
+	adrp	x0, l_.str.4@PAGE
+	add	x0, x0, l_.str.4@PAGEOFF
+	bl	_printf
+	ldr	x8, [sp, #40]
+	ldr	x8, [x8]
+	ldr	x8, [x8]
+	ldrb	w10, [x8]
+	mov	x9, sp
+                                        ; implicit-def: $x8
+	mov	x8, x10
+	str	x8, [x9]
+	adrp	x0, l_.str.5@PAGE
+	add	x0, x0, l_.str.5@PAGEOFF
+	bl	_printf
 	ldr	w0, [sp, #36]                   ; 4-byte Folded Reload
 	ldp	x29, x30, [sp, #224]            ; 16-byte Folded Reload
 	add	sp, sp, #240
@@ -189,5 +213,11 @@ l_.str.2:                               ; @.str.2
 
 l_.str.3:                               ; @.str.3
 	.asciz	"list.n alloc %d\n"
+
+l_.str.4:                               ; @.str.4
+	.asciz	"Tree.m %d\n"
+
+l_.str.5:                               ; @.str.5
+	.asciz	"Tree.n %d\n"
 
 .subsections_via_symbols

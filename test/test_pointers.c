@@ -4,6 +4,7 @@
 #include <PA/Status.h>
 #include <PA/Series.h>
 #include <PA/List.h>
+#include <PA/Tree.h>
 // #include <PA/Data.h>
 #include <stdio.h>
 int main()
@@ -80,6 +81,9 @@ int main()
 
 	// PASeriesBegin(series,count)
 	struct PATree *Tree;
+	Tree = PATreeCreate();
+	printf("Tree.m %d\n", Tree->m->number->val);
+	printf("Tree.n %d\n", Tree->n->number->val);
 	// printf(number,number123);
 	// PANumberPrint(number123);
 	// number=PANumberCreate();

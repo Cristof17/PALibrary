@@ -23,6 +23,7 @@ DllExport struct PATree* PATreeCreate()
     treePointer = (struct PATree*) malloc (sizeof(struct PATree));
     treePointer->n = PACountCreate();
     treePointer->m = PACountCreate();
+    treePointer->source = PAElementCreate();
     // temp->n = PACountPerformConstruct();
     // temp->m = PACountPerformConstruct();
     // temp->adj = PAListPerformConstruct();
@@ -71,7 +72,7 @@ DllExport struct PATree* PATreeCreate()
     // return tree;
     return temp;
 }
-DllExport struct PATree PATreeBegin(struct PATree* Tree, struct PACount Value, struct PACount Value2, struct PAList Value3, struct PAElement Value4)
+DllExport struct PATree PATreeBegin(struct PATree* Tree, struct PACount* Value, struct PACount* Value2, struct PAList Value3, struct PAElement* Value4)
 {
     struct PATree tree;
     struct PATree* treePointer;
@@ -84,10 +85,17 @@ DllExport struct PATree PATreeBegin(struct PATree* Tree, struct PACount Value, s
     // tree.m = Value2;
     // tree.adj = Value3;
     // tree.source = Value4;
+    tree = *Tree;
+    tree.n = Value;
+    tree.m = Value2;
+    tree.source = Value4;
     Tree->n = tree.n;
     Tree->m = tree.m;
-    Tree->adj = tree.adj;
     Tree->source = tree.source;
+    // Tree->n = tree.n;
+    // Tree->m = tree.m;
+    // Tree->adj = tree.adj;
+    // Tree->source = tree.source;
     // struct PATree tree;
     // tree.n.number = 2;
     // tree.m.number = 3;
@@ -133,12 +141,17 @@ DllExport PAResult PATreeFinish(struct PATree* PA)
 {
     int returnCode;
     int returnCode2;
+    int returnCode3;
     returnCode = PACountFinish(PA->n);
     returnCode2 = PACountFinish(PA->m);
+    returnCode3 = PAElementFinish(PA->source);
     if (returnCode == PARESULT_SUCCESS)
         if (returnCode2 == PARESULT_SUCCESS)
         // ) && returnCode2)
-            returnCode = PARESULT_SUCCESS;
+            if (returnCode3 == PARESULT_SUCCESS)
+                returnCode = PARESULT_SUCCESS;
+            else
+                returnCode = PARESULT_FAIL;
         else
             returnCode = PARESULT_FAIL;
     else
