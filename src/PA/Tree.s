@@ -20,6 +20,9 @@ _PATreeCreate:                          ; @PATreeCreate
 	bl	_PACountCreate
 	ldr	x8, [sp]
 	str	x0, [x8, #8]
+	bl	_PAElementCreate
+	ldr	x8, [sp]
+	str	x0, [x8, #16]
 	ldr	x0, [sp]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
@@ -33,24 +36,31 @@ _PATreeBegin:                           ; @PATreeBegin
 ; %bb.0:
 	sub	sp, sp, #64
 	.cfi_def_cfa_offset 64
-	str	x1, [sp, #56]
-	str	x2, [sp, #48]
-	str	x3, [sp, #32]
-	str	x4, [sp, #40]
+	str	x3, [sp, #48]
+	str	x4, [sp, #56]
+	str	x0, [sp, #40]
+	str	x1, [sp, #32]
+	str	x2, [sp, #24]
 	str	x5, [sp, #16]
-	str	x6, [sp, #24]
-	str	x0, [sp, #8]
+	ldr	x9, [sp, #40]
+	ldr	q0, [x9]
+	str	q0, [x8]
+	ldr	q0, [x9, #16]
+	str	q0, [x8, #16]
+	ldr	x9, [sp, #32]
+	str	x9, [x8]
+	ldr	x9, [sp, #24]
+	str	x9, [x8, #8]
+	ldr	x9, [sp, #16]
+	str	x9, [x8, #16]
 	ldr	x9, [x8]
-	ldr	x10, [sp, #8]
+	ldr	x10, [sp, #40]
 	str	x9, [x10]
 	ldr	x9, [x8, #8]
-	ldr	x10, [sp, #8]
+	ldr	x10, [sp, #40]
 	str	x9, [x10, #8]
-	ldr	x9, [x8, #24]
-	ldr	x10, [sp, #8]
-	str	x9, [x10, #24]
 	ldr	x8, [x8, #16]
-	ldr	x9, [sp, #8]
+	ldr	x9, [sp, #40]
 	str	x8, [x9, #16]
 	add	sp, sp, #64
 	ret
@@ -92,45 +102,59 @@ _PATreeCopy:                            ; @PATreeCopy
 _PATreeFinish:                          ; @PATreeFinish
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
-	add	x29, sp, #16
+	sub	sp, sp, #48
+	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
+	add	x29, sp, #32
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	str	x0, [sp, #8]
-	ldr	x8, [sp, #8]
+	stur	x0, [x29, #-8]
+	ldur	x8, [x29, #-8]
 	ldr	x0, [x8]
 	bl	_PACountFinish
-	str	w0, [sp, #4]
-	ldr	x8, [sp, #8]
+	stur	w0, [x29, #-12]
+	ldur	x8, [x29, #-8]
 	ldr	x0, [x8, #8]
 	bl	_PACountFinish
-	str	w0, [sp]
-	ldr	w8, [sp, #4]
-	cbnz	w8, LBB3_5
+	str	w0, [sp, #16]
+	ldur	x8, [x29, #-8]
+	ldr	x0, [x8, #16]
+	bl	_PAElementFinish
+	str	w0, [sp, #12]
+	ldur	w8, [x29, #-12]
+	cbnz	w8, LBB3_8
 	b	LBB3_1
 LBB3_1:
-	ldr	w8, [sp]
-	cbnz	w8, LBB3_3
+	ldr	w8, [sp, #16]
+	cbnz	w8, LBB3_6
 	b	LBB3_2
 LBB3_2:
-	str	wzr, [sp, #4]
-	b	LBB3_4
+	ldr	w8, [sp, #12]
+	cbnz	w8, LBB3_4
+	b	LBB3_3
 LBB3_3:
-	mov	w8, #1                          ; =0x1
-	str	w8, [sp, #4]
-	b	LBB3_4
+	stur	wzr, [x29, #-12]
+	b	LBB3_5
 LBB3_4:
-	b	LBB3_6
-LBB3_5:
 	mov	w8, #1                          ; =0x1
-	str	w8, [sp, #4]
-	b	LBB3_6
+	stur	w8, [x29, #-12]
+	b	LBB3_5
+LBB3_5:
+	b	LBB3_7
 LBB3_6:
-	ldr	w0, [sp, #4]
-	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
-	add	sp, sp, #32
+	mov	w8, #1                          ; =0x1
+	stur	w8, [x29, #-12]
+	b	LBB3_7
+LBB3_7:
+	b	LBB3_9
+LBB3_8:
+	mov	w8, #1                          ; =0x1
+	stur	w8, [x29, #-12]
+	b	LBB3_9
+LBB3_9:
+	ldur	w0, [x29, #-12]
+	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function

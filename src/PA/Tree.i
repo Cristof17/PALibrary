@@ -1828,7 +1828,7 @@ extern char * suboptarg;
           struct PATree* PATreeCreate();
           void PATreeCopy(struct PATree* from, struct PATree* to);
 
-          struct PATree PATreeBegin(struct PATree*, struct PACount, struct PACount, struct PAList, struct PAElement);
+          struct PATree PATreeBegin(struct PATree*, struct PACount*, struct PACount*, struct PAList, struct PAElement*);
 
 
 
@@ -1921,6 +1921,7 @@ void PAListPrint(struct PAList* List);
     treePointer = (struct PATree*) malloc (sizeof(struct PATree));
     treePointer->n = PACountCreate();
     treePointer->m = PACountCreate();
+    treePointer->source = PAElementCreate();
 
 
 
@@ -1929,28 +1930,25 @@ void PAListPrint(struct PAList* List);
 
 
     return treePointer;
-# 72 "src/PA/Tree.c"
+# 73 "src/PA/Tree.c"
     return temp;
 }
-          struct PATree PATreeBegin(struct PATree* Tree, struct PACount Value, struct PACount Value2, struct PAList Value3, struct PAElement Value4)
+          struct PATree PATreeBegin(struct PATree* Tree, struct PACount* Value, struct PACount* Value2, struct PAList Value3, struct PAElement* Value4)
 {
     struct PATree tree;
     struct PATree* treePointer;
-# 87 "src/PA/Tree.c"
+# 88 "src/PA/Tree.c"
+    tree = *Tree;
+    tree.n = Value;
+    tree.m = Value2;
+    tree.source = Value4;
     Tree->n = tree.n;
     Tree->m = tree.m;
-    Tree->adj = tree.adj;
     Tree->source = tree.source;
-
-
-
-
-
-
-
+# 106 "src/PA/Tree.c"
     return tree;
 }
-# 109 "src/PA/Tree.c"
+# 117 "src/PA/Tree.c"
           void PATreeCopy(struct PATree* from, struct PATree* to)
 {
     struct PATree temp;
@@ -1962,26 +1960,31 @@ void PAListPrint(struct PAList* List);
     to->m = temp.m;
 
     to->source = temp.source;
-# 131 "src/PA/Tree.c"
+# 139 "src/PA/Tree.c"
 }
           PAResult PATreeFinish(struct PATree* PA)
 {
     int returnCode;
     int returnCode2;
+    int returnCode3;
     returnCode = PACountFinish(PA->n);
     returnCode2 = PACountFinish(PA->m);
+    returnCode3 = PAElementFinish(PA->source);
     if (returnCode == ((int)0))
         if (returnCode2 == ((int)0))
 
-            returnCode = ((int)0);
+            if (returnCode3 == ((int)0))
+                returnCode = ((int)0);
+            else
+                returnCode = ((int)1);
         else
             returnCode = ((int)1);
     else
         returnCode = ((int)1);
-# 181 "src/PA/Tree.c"
+# 194 "src/PA/Tree.c"
     return returnCode;
 }
-# 223 "src/PA/Tree.c"
+# 236 "src/PA/Tree.c"
           struct PATree PATreeDelete(struct PATree* Tree)
 {
     int returnCode;

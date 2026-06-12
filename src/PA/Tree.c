@@ -72,7 +72,7 @@ DllExport struct PATree* PATreeCreate()
     // return tree;
     return temp;
 }
-DllExport struct PATree PATreeBegin(struct PATree* Tree, struct PACount* Value, struct PACount* Value2, struct PAList Value3, struct PAElement* Value4)
+DllExport struct PATree PATreeBegin(struct PATree* Tree, struct PACount* Value, struct PACount* Value2, struct PAList* Value3, struct PAElement* Value4)
 {
     struct PATree tree;
     struct PATree* treePointer;

@@ -84,6 +84,9 @@ int main()
 	Tree = PATreeCreate();
 	printf("Tree.m %d\n", Tree->m->number->val);
 	printf("Tree.n %d\n", Tree->n->number->val);
+	PATreeBegin(Tree,count1,count1,0,count1);
+	printf("Tree.m %d\n", Tree->m->number->val);
+	printf("Tree.n %d\n", Tree->n->number->val);
 	// printf(number,number123);
 	// PANumberPrint(number123);
 	// number=PANumberCreate();
