@@ -144,9 +144,9 @@ struct Facade;
 	// struct PASeries adj_trans;
 // };
 
-// struct Input {
-// 	struct Algorithm algorithm;
-// };
+struct Input {
+	// struct Algorithm algorithm;
+};
 // struct Output {
 
 // };

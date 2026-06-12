@@ -1146,8 +1146,6 @@ ifeq ($(host-type),AArch64)
 	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 
-
-
 ArrayList/ArrayList.o: ArrayList/ArrayList.s
 ifeq ($(host-type),arm64)
 	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
@@ -1158,8 +1156,6 @@ endif
 ifeq ($(host-type),AArch64)
 	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
-
-
 
 ArrayList/ArrayListPosition.o : ArrayList/ArrayListPosition.s
 ifeq ($(host-type),arm64)
