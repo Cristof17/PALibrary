@@ -11,25 +11,29 @@
 #include <types.h>
 // #include <ty[].h>
 //#include <types.h>
-DllExport struct Input* InputConstruct()
+DllExport struct Input* InputCreate()
 {
     // struct Input input;
     struct Input* input;
+    input = (struct Input*) malloc (sizeof(struct Input));
+    // return i
     return input;
 }
-DllExport struct Input InputInit(struct Input input, struct PACount n, struct PACount m, struct ArrayList adj, struct PAElement source)
+DllExport struct Input InputBegin(struct Input* input, struct PACount n, struct PACount m, struct ArrayList adj, struct PAElement source)
 {
-    return input;
+    return *input;
 }
-DllExport struct Input InputCopy(struct Input from, struct Input to)
+DllExport struct Input InputCopy(struct Input* from, struct Input* to)
 {
-    return from;
+    struct Input aux;
+    // return from;
+    return aux;
 }
-DllExport struct Input InputDelete(struct Input PA)
+DllExport struct Input InputDelete(struct Input* PA)
 {
     return PA;
 }
-DllExport struct Input InputFinish(struct Input PA)
+DllExport struct Input InputFinish(struct Input* PA)
 {
     return PA;
 }

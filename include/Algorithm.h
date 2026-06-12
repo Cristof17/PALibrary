@@ -6,7 +6,7 @@
 // #include "defs.h"
 #include <defs.h>
 #include <types.h>
-
+#include <stdlib.h>
 // struct Algorithm;
 // typedef struct Algorithm Algorithm;
 DllExport struct Algorithm* AlgorithmCreate();
