@@ -750,7 +750,7 @@ ifeq ($(host-type),AArch64)
 endif
 
 test.out: $(objects) test.o $(lib_pa) $(lib_bfs) $(lib_arraylist)
-	$(CC) $(libdir)/$< $(foreach object,$(objects_pa),$(libdir)/$(object)) $(libdir)/$(libpa) $(libdir)/$(lib_bfs) $(libdir)/$(lib_arraylist) -o $(bindir)/$(program_test_pa)
+	$(CC) $(libdir)/$< $(foreach object,$(objects_pa),$(libdir)/$(object)) $(libdir)/$(lib_pa) $(libdir)/$(lib_bfs) $(libdir)/$(lib_arraylist) -o $(bindir)/$(program_test_pa)
 
 test_pointers.out: test_pointers.o $(objects) $(lib_pa) $(lib_bfs) $(lib_arraylist)
 	$(CC) $(libdir)/$< $(foreach object,$(objects_pa),$(libdir)/$(object)) $(libdir)/$(lib_pa) $(libdir)/$(lib_bfs) $(libdir)/$(lib_arraylist) -o $(bindir)/$(program_test_pointers_pa)
