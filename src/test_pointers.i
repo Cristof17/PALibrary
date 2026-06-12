@@ -2413,7 +2413,7 @@ void PAListPrint(struct PAList* List);
           struct PATree* PATreeCreate();
           void PATreeCopy(struct PATree* from, struct PATree* to);
 
-          struct PATree PATreeBegin(struct PATree*, struct PACount*, struct PACount*, struct PAList, struct PAElement*);
+          struct PATree PATreeBegin(struct PATree*, struct PACount*, struct PACount*, struct PAList*, struct PAElement*);
 
 
 
@@ -2422,9 +2422,35 @@ void PAListPrint(struct PAList* List);
           PAResult PATreeFinish(struct PATree*);
           struct PATree PATreeDelete(struct PATree*);
 # 8 "test/test_pointers.c" 2
+# 1 "./include/PA/Element.h" 1
+
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/PA/Element.h" 2
+
+
+          void PAElementVisit(struct PAElement*);
+          PABool PAElementIsVisited(struct PAElement*);
+          void PAElementReset(struct PAElement*);
+          struct PAElement* PAElementCreate();
+
+          struct PAElement PAElementCompleteBegin(struct PAElement*,struct PAData,struct PAStatus);
+
+
+
+
+          int PAElementFinish(struct PAElement*);
+          struct PAElement PAElementDelete(struct PAElement*);
+          void PAElementCopy(struct PAElement*, struct PAElement*);
+# 9 "test/test_pointers.c" 2
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 1 3 4
-# 10 "test/test_pointers.c" 2
+# 11 "test/test_pointers.c" 2
 int main()
 {
  struct PANumber* number;
@@ -2497,11 +2523,17 @@ int main()
  printf("list.n alloc %d\n", list->n->number->val);
 
 
+ struct PAElement* element1;
+ element1 = PAElementCreate();
+
 
  struct PATree *Tree;
  Tree = PATreeCreate();
  printf("Tree.m %d\n", Tree->m->number->val);
  printf("Tree.n %d\n", Tree->n->number->val);
-# 102 "test/test_pointers.c"
+ PATreeBegin(Tree,count1,count1,0,element1);
+ printf("Tree.m %d\n", Tree->m->number->val);
+ printf("Tree.n %d\n", Tree->n->number->val);
+# 109 "test/test_pointers.c"
  return 0;
 }

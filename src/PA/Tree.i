@@ -1828,7 +1828,7 @@ extern char * suboptarg;
           struct PATree* PATreeCreate();
           void PATreeCopy(struct PATree* from, struct PATree* to);
 
-          struct PATree PATreeBegin(struct PATree*, struct PACount*, struct PACount*, struct PAList, struct PAElement*);
+          struct PATree PATreeBegin(struct PATree*, struct PACount*, struct PACount*, struct PAList*, struct PAElement*);
 
 
 
@@ -1933,7 +1933,7 @@ void PAListPrint(struct PAList* List);
 # 73 "src/PA/Tree.c"
     return temp;
 }
-          struct PATree PATreeBegin(struct PATree* Tree, struct PACount* Value, struct PACount* Value2, struct PAList Value3, struct PAElement* Value4)
+          struct PATree PATreeBegin(struct PATree* Tree, struct PACount* Value, struct PACount* Value2, struct PAList* Value3, struct PAElement* Value4)
 {
     struct PATree tree;
     struct PATree* treePointer;

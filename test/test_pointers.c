@@ -5,6 +5,7 @@
 #include <PA/Series.h>
 #include <PA/List.h>
 #include <PA/Tree.h>
+#include <PA/Element.h>
 // #include <PA/Data.h>
 #include <stdio.h>
 int main()
@@ -79,12 +80,15 @@ int main()
 	printf("list.n alloc %d\n", list->n->number->val);
 	// PAListCompleteBegin
 
+	struct PAElement* element1;
+	element1 = PAElementCreate();
+	// printf("element1.")
 	// PASeriesBegin(series,count)
 	struct PATree *Tree;
 	Tree = PATreeCreate();
 	printf("Tree.m %d\n", Tree->m->number->val);
 	printf("Tree.n %d\n", Tree->n->number->val);
-	PATreeBegin(Tree,count1,count1,0,count1);
+	PATreeBegin(Tree,count1,count1,0,element1);
 	printf("Tree.m %d\n", Tree->m->number->val);
 	printf("Tree.n %d\n", Tree->n->number->val);
 	// printf(number,number123);

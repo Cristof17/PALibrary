@@ -34,14 +34,13 @@ _PATreeCreate:                          ; @PATreeCreate
 _PATreeBegin:                           ; @PATreeBegin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #64
-	.cfi_def_cfa_offset 64
-	str	x3, [sp, #48]
-	str	x4, [sp, #56]
+	sub	sp, sp, #48
+	.cfi_def_cfa_offset 48
 	str	x0, [sp, #40]
 	str	x1, [sp, #32]
 	str	x2, [sp, #24]
-	str	x5, [sp, #16]
+	str	x3, [sp, #16]
+	str	x4, [sp, #8]
 	ldr	x9, [sp, #40]
 	ldr	q0, [x9]
 	str	q0, [x8]
@@ -51,7 +50,7 @@ _PATreeBegin:                           ; @PATreeBegin
 	str	x9, [x8]
 	ldr	x9, [sp, #24]
 	str	x9, [x8, #8]
-	ldr	x9, [sp, #16]
+	ldr	x9, [sp, #8]
 	str	x9, [x8, #16]
 	ldr	x9, [x8]
 	ldr	x10, [sp, #40]
@@ -62,7 +61,7 @@ _PATreeBegin:                           ; @PATreeBegin
 	ldr	x8, [x8, #16]
 	ldr	x9, [sp, #40]
 	str	x8, [x9, #16]
-	add	sp, sp, #64
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function

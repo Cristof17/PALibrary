@@ -1847,7 +1847,7 @@ extern char * suboptarg;
           struct PATree* PATreeCreate();
           void PATreeCopy(struct PATree* from, struct PATree* to);
 
-          struct PATree PATreeBegin(struct PATree*, struct PACount*, struct PACount*, struct PAList, struct PAElement*);
+          struct PATree PATreeBegin(struct PATree*, struct PACount*, struct PACount*, struct PAList*, struct PAElement*);
 
 
 
