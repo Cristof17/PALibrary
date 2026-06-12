@@ -1878,15 +1878,7 @@ extern char * suboptarg;
 
     struct PAStatus temp;
     struct PAResource* visited;
-
-    PAResourceCopy(from->visited,to->visited);
-
-
-
-
-
-
-
+# 61 "src/PA/Status.c"
 }
 # 70 "src/PA/Status.c"
           struct PAStatus PAStatusDelete(struct PAStatus* PA)

@@ -2311,7 +2311,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
  struct PANumber* PANumberCreate();
           struct PANumber PANumberBegin(struct PANumber* Number, unsigned char Value);
           PAResult PANumberFinish(struct PANumber*);
-          PAResult PANumberDelete(struct PANumber*);
+          struct PANumber PANumberDelete(struct PANumber*);
           void PANumberCopy(struct PANumber* from, struct PANumber* to);
           void PANumberPrint(struct PANumber*);
 # 5 "src/PA/Resource.c" 2
@@ -2363,9 +2363,10 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 }
 
-          struct PAResource PAResourceDelete(struct PAResource* Resource)
+          struct PAResource PAResourceDelete(struct PAResource* PA)
 {
     struct PAResource resource;
+    PANumberDelete(PA->value);
     return resource;
 
 }

@@ -2329,7 +2329,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
  struct PANumber* PANumberCreate();
           struct PANumber PANumberBegin(struct PANumber* Number, unsigned char Value);
           PAResult PANumberFinish(struct PANumber*);
-          PAResult PANumberDelete(struct PANumber*);
+          struct PANumber PANumberDelete(struct PANumber*);
           void PANumberCopy(struct PANumber* from, struct PANumber* to);
           void PANumberPrint(struct PANumber*);
 # 4 "test/test_pointers.c" 2
@@ -2409,7 +2409,6 @@ int main()
  status=PAStatusCreate();
  PAStatusBegin(status,*resource123);
  PAStatusCopy(status,status123);
- printf("status value %d\n",status->visited->value->val);
 # 77 "test/test_pointers.c"
  return 0;
 }

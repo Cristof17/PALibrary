@@ -58,7 +58,7 @@ int main()
 	status=PAStatusCreate();
 	PAStatusBegin(status,*resource123);
 	PAStatusCopy(status,status123);
-	printf("status value %d\n",status->visited->value->val);
+	// printf("status value %d\n",status->visited->value->val);
 	// printf(number,number123);
 	// PANumberPrint(number123);
 	// number=PANumberCreate();

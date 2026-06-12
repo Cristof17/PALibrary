@@ -50,7 +50,7 @@ DllExport void PAStatusCopy(struct PAStatus* from, struct PAStatus* to)
     struct PAStatus temp;
     struct PAResource* visited;
 
-    PAResourceCopy(from->visited,to->visited);
+    // PAResourceCopy(from->visited,to->visited);
     // temp.visited = from->visited;
     // to->visited = temp.visited;
     // return to;

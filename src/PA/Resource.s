@@ -83,11 +83,20 @@ _PAResourceCopy:                        ; @PAResourceCopy
 _PAResourceDelete:                      ; @PAResourceDelete
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	str	x0, [sp]
-	ldr	x0, [sp, #8]
-	add	sp, sp, #16
+	sub	sp, sp, #48
+	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
+	add	x29, sp, #32
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	str	x0, [sp, #16]
+	ldr	x8, [sp, #16]
+	ldr	x0, [x8]
+	bl	_PANumberDelete
+	strb	w0, [sp, #15]
+	ldur	x0, [x29, #-8]
+	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function

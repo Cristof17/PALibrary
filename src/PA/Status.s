@@ -70,11 +70,6 @@ _PAStatusCopy:                          ; @PAStatusCopy
 	ldur	x0, [x29, #-16]
 	bl	_PAStatusDelete
 	str	x0, [sp, #24]
-	ldur	x8, [x29, #-8]
-	ldr	x0, [x8]
-	ldur	x8, [x29, #-16]
-	ldr	x1, [x8]
-	bl	_PAResourceCopy
 	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
 	add	sp, sp, #64
 	ret
