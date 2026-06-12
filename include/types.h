@@ -150,9 +150,9 @@ struct Input {
 // struct Output {
 
 // };
-struct Input {
-	;
-};
+// struct Input {
+// 	;
+// };
 struct Algorithm {
 	struct Input* input;
 };

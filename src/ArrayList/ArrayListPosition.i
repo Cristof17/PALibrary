@@ -115,10 +115,16 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 153 "./include/types.h"
+# 147 "./include/types.h"
 struct Input {
- ;
+
 };
+
+
+
+
+
+
 struct Algorithm {
  struct Input* input;
 };
