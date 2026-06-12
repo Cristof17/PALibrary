@@ -485,10 +485,20 @@ build: $(subdirs)
 # 	@echo "Build"
 # 	@echo "$<"
 #
-libpa.a: $(objects_pa)
+$(lib_pa): $(objects_pa)
 	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
-	$(AR) -v -s -q $(libdir)/$(output) $(foreach object,$^,$(libdir)/$(object))  
-	$(AR) -v -t -s $(libdir)/$(output)
+	$(AR) -v -s -q $(libdir)/$(lib_pa) $(foreach object,$^,$(libdir)/$(object))  
+	$(AR) -v -t -s $(libdir)/$(lib_pa)
+
+$(lib_bfs): $(objects_bfs)
+	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
+	$(AR) -v -s -q $(libdir)/$(lib_bfs) $(foreach object,$^,$(libdir)/$(object))  
+	$(AR) -v -t -s $(libdir)/$(lib_bfs)
+
+$(lib_arraylist): $(objects_arraylist)
+	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
+	$(AR) -v -s -q $(libdir)/$(lib_arraylist) $(foreach object,$^,$(libdir)/$(object))  
+	$(AR) -v -t -s $(libdir)/$(lib_arraylist)
 #	$(AR) -d -b Input.o $(libdir)/$(output)
 
 #libpa.a: $(objects_pa)
@@ -742,7 +752,7 @@ endif
 test.out: $(objects) test.o libpa.a
 	$(CC) $(libdir)/$< $(foreach object,$(objects_pa),$(libdir)/$(object)) -o $(bindir)/$(program_test_pa)
 
-test_pointers.out: test_pointers.o $(objects)  libpa.a
+test_pointers.out: test_pointers.o $(objects) libpa.a libbfs.a
 	$(CC) $(libdir)/$< $(foreach object,$(objects_pa),$(libdir)/$(object)) -o $(bindir)/$(program_test_pointers_pa)
 
 #$(CC) -lc $(foreach dependency,$^,$(libdir)/$(dependency)) -o $(bindir)/$@

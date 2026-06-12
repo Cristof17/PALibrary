@@ -37,21 +37,21 @@ DllExport int ArrayListIndicateSize(struct ArrayList* arrayList)
 	int returnCode = PARESULT_SUCCESS;
 	return returnCode;
 }
-DllExport int ArrayListStore(struct ArrayList*, struct PAData)
+DllExport int ArrayListStore(struct ArrayList* ArrayList, struct PAData Value)
 {
 	int returnCode;
 	returnCode = PARESULT_SUCCESS;
 	return returnCode;
 }
 // DllExport int ArrayList(struct ArrayList*, ArrayListObject*)
-DllExport struct PAData* ArrayListRetrieve(struct ArrayList*)
+DllExport struct PAData* ArrayListRetrieve(struct ArrayList* ArrayList)
 {
 	struct PAData data;
 	struct PAData* dataPointer;
 	return dataPointer;
 }
 
-DllExport void ArrayListPrint(struct ArrayList*)
+DllExport void ArrayListPrint(struct ArrayList* ArrayList)
 {
 
 }
@@ -229,15 +229,15 @@ struct ArrayList* ArrayListPerformInit(struct ArrayList* List)
 //	//	return Lost;
 //		//return copy;
 //	}
-ArrayListObject* ArrayListGet(struct ArrayListPosition* Position)
-{
-	ArrayListObject object;
-	return object;
-}
-void ArrayListPut(struct ArrayListPosition* Position, ArrayListObject* ListObject)
-{
+// ArrayListObject* ArrayListGet(struct ArrayListPosition* Position)
+// {
+// 	ArrayListObject* object;
+// 	return object;
+// }
+// void ArrayListPut(struct ArrayListPosition* Position, ArrayListObject* ListObject)
+// {
 
-}
+// }
 int ArrayListPerformRuin(struct ArrayList* PA)
 {
 	PAResult result = { PARESULT_SUCCESS } ;

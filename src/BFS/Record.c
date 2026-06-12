@@ -29,7 +29,7 @@ DllExport int BFSRecordFinish(struct BFSRecord* PA)
 }
 DllExport struct BFSRecord BFSRecordDelete(struct BFSRecord*)
 {
-
+    struct BFSRecord record;
 }
 DllExport void BFSRecordPrint(struct BFSRecord* PA)
 {
