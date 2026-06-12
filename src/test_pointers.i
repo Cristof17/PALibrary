@@ -1,14 +1,10 @@
-# 1 "src/PA/Count.c"
+# 1 "test/test_pointers.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/PA/Count.c" 2
-
-
-
-
+# 1 "test/test_pointers.c" 2
 # 1 "./include/PA/Count.h" 1
 
 
@@ -1839,7 +1835,21 @@ extern char * suboptarg;
 
 
           struct PACount PACountDelete(struct PACount* PA);
-# 6 "src/PA/Count.c" 2
+# 2 "test/test_pointers.c" 2
+# 1 "./include/PA/Resource.h" 1
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 7 "./include/PA/Resource.h" 2
+ struct PAResource PAResourceBegin(struct PAResource*, struct PANumber);
+          struct PAResource* PAResourceCreate();
+          PAResult PAResourceFinish(struct PAResource*);
+          struct PAResource PAResourceDelete(struct PAResource*);
+          void PAResourceCopy(struct PAResource*, struct PAResource*);
+# 3 "test/test_pointers.c" 2
 # 1 "./include/PA/Number.h" 1
 
 
@@ -2328,7 +2338,8 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
           struct PANumber PANumberDelete(struct PANumber*);
           void PANumberCopy(struct PANumber* from, struct PANumber* to);
           void PANumberPrint(struct PANumber*);
-# 7 "src/PA/Count.c" 2
+# 4 "test/test_pointers.c" 2
+# 1 "./include/PA/Status.h" 1
 
 
 
@@ -2336,63 +2347,97 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
 
-          struct PACount* PACountCreate()
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/PA/Status.h" 2
+
+          void PAStatusCauseVisit(PABool);
+          struct PAStatus* PAStatusCreate();
+          struct PAStatus PAStatusBegin(struct PAStatus*, struct PAResource*);
+          PAResult PAStatusFinish(struct PAStatus*);
+
+          void PAStatusCopy(struct PAStatus*, struct PAStatus*);
+          struct PAStatus PAStatusDelete(struct PAStatus*);
+# 5 "test/test_pointers.c" 2
+# 1 "./include/PA/Series.h" 1
+# 15 "./include/PA/Series.h"
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 16 "./include/PA/Series.h" 2
+
+
+          struct PASeries* PASeriesCreate();
+          struct PASeries PASeriesBegin(struct PASeries*, struct PACount, struct PAElement[]);
+          struct PASeries PASeriesDelete(struct PASeries*);
+          void PASeriesCopy(struct PASeries*, struct PASeries*);
+
+          PAResult PASeriesFinish(struct PASeries*);
+
+          void PASeriesPrint(struct PASeries*);
+# 6 "test/test_pointers.c" 2
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 1 3 4
+# 8 "test/test_pointers.c" 2
+int main()
 {
+ struct PANumber* number;
+ number = PANumberCreate();
 
-    struct PACount* countPointer;
-    countPointer =(struct PACount*)malloc(sizeof(struct PACount));
-# 27 "src/PA/Count.c"
-    countPointer->number = PANumberCreate();
-    return countPointer;
-}
-          struct PACount PACountBegin(struct PACount* Count, struct PANumber Value)
-{
 
-    struct PACount temp;
-    struct PACount* cpuntPointer;
-    temp.number = &Value;
-    Count->number = temp.number;
+
+ struct PANumber* number123;
+ PANumberCopy(number,number123);
+ PANumberBegin(number,'o');
+ PANumberCopy(number,number123);
+ PANumberPrint(number);
+ PANumberPrint(number123);
 
 
 
 
 
 
-
-    return temp;
-
-
-
-
-
-
-}
-          PAResult PACountFinish(struct PACount* PA)
-{
-# 79 "src/PA/Count.c"
-    int returnCode;
-    return returnCode;
-
-}
-          struct PACount PACountDelete(struct PACount* PA)
-{
-    struct PACount count;
-
-    return count;
+ struct PANumber* number34;
+ number34 = PANumberCreate();
+ PANumberCopy(number,number34);
+ PANumberDelete(number);
+ PANumberPrint(number34);
+ PANumberPrint(number);
+ PANumberDelete(number34);
+ PANumberDelete(number);
 
 
 
-}
-PAResult PACountPrint(struct PACount* Count)
-{
-    PAResult result;
-    return result;
-}
-          void PACountCopy(struct PACount* from, struct PACount* to)
-{
+ PANumberDelete(number34);
+ PANumberPrint(number34);
+
+ struct PAResource resource;
 
 
 
+ struct PAResource* resource123;
+ struct PAResource* resource234;
+ PANumberBegin(number,'a');
+ PANumberPrint(number);
+ resource123 = PAResourceCreate();
+ resource234 = PAResourceCreate();
+ PAResourceBegin(resource123,*number);
+ PAResourceCopy(resource123,resource234);
 
+ printf("resource %d\n", resource123->value->val);
+ printf("resource %d\n", resource234->value->val);
 
+ struct PAStatus *status;
+ struct PAStatus *status123;
+ status=PAStatusCreate();
+ status123=PAStatusCreate();
+ PAStatusBegin(status,resource123);
+ PAStatusCopy(status,status123);
+ printf("status value %d\n",status->visited->value->val);
+
+ struct PASeries* series;
+ series = PASeriesCreate();
+ printf("series.count %d\n", series->m->number->val);
+
+ struct PATree *Tree;
+# 85 "test/test_pointers.c"
+ return 0;
 }

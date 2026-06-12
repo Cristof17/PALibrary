@@ -2,6 +2,7 @@
 #include <PA/Resource.h>
 #include <PA/Number.h>
 #include <PA/Status.h>
+#include <PA/Series.h>
 // #include <PA/Data.h>
 #include <stdio.h>
 int main()
@@ -60,6 +61,10 @@ int main()
 	PAStatusBegin(status,resource123);
 	PAStatusCopy(status,status123);
 	printf("status value %d\n",status->visited->value->val);
+
+	struct PASeries* series;
+	series = PASeriesCreate();
+	printf("series.count %d\n", series->m->number->val);
 
 	struct PATree *Tree;
 	// printf(number,number123);

@@ -1,8 +1,8 @@
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 15, 0	sdk_version 26, 2
-	.globl	_PACountCreate                  ; -- Begin function PACountCreate
+	.globl	_BFSRecordCreate                ; -- Begin function BFSRecordCreate
 	.p2align	2
-_PACountCreate:                         ; @PACountCreate
+_BFSRecordCreate:                       ; @BFSRecordCreate
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32
@@ -11,80 +11,76 @@ _PACountCreate:                         ; @PACountCreate
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	mov	x0, #8                          ; =0x8
+	mov	x0, #24                         ; =0x18
 	bl	_malloc
 	str	x0, [sp, #8]
-	bl	_PANumberCreate
-	ldr	x8, [sp, #8]
-	str	x0, [x8]
 	ldr	x0, [sp, #8]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PACountBegin                   ; -- Begin function PACountBegin
+	.globl	_BFSRecordFinish                ; -- Begin function BFSRecordFinish
 	.p2align	2
-_PACountBegin:                          ; @PACountBegin
+_BFSRecordFinish:                       ; @BFSRecordFinish
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
-	add	x8, sp, #23
-	mov	x9, x1
-	strb	w9, [sp, #23]
+	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
+	add	x29, sp, #16
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
 	str	x0, [sp, #8]
-	str	x8, [sp, #24]
-	ldr	x8, [sp, #24]
-	ldr	x9, [sp, #8]
-	str	x8, [x9]
-	ldr	x0, [sp, #24]
+	ldr	x0, [sp, #8]
+	bl	_free
+	mov	w0, #0                          ; =0x0
+	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PACountFinish                  ; -- Begin function PACountFinish
+	.globl	_BFSRecordDelete                ; -- Begin function BFSRecordDelete
 	.p2align	2
-_PACountFinish:                         ; @PACountFinish
+_BFSRecordDelete:                       ; @BFSRecordDelete
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	str	x0, [sp, #8]
-	ldr	w0, [sp, #4]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PACountDelete                  ; -- Begin function PACountDelete
+	.globl	_BFSRecordPrint                 ; -- Begin function BFSRecordPrint
 	.p2align	2
-_PACountDelete:                         ; @PACountDelete
-	.cfi_startproc
-; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	str	x0, [sp]
-	ldr	x0, [sp, #8]
-	add	sp, sp, #16
-	ret
-	.cfi_endproc
-                                        ; -- End function
-	.globl	_PACountPrint                   ; -- Begin function PACountPrint
-	.p2align	2
-_PACountPrint:                          ; @PACountPrint
+_BFSRecordPrint:                        ; @BFSRecordPrint
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	str	x0, [sp, #8]
-	ldr	w0, [sp, #4]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PACountCopy                    ; -- Begin function PACountCopy
+	.globl	_BFSRecordBegin                 ; -- Begin function BFSRecordBegin
 	.p2align	2
-_PACountCopy:                           ; @PACountCopy
+_BFSRecordBegin:                        ; @BFSRecordBegin
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #24]
+	str	x1, [sp, #16]
+	str	x2, [sp, #8]
+	add	sp, sp, #32
+	ret
+	.cfi_endproc
+                                        ; -- End function
+	.globl	_BFSRecordCopy                  ; -- Begin function BFSRecordCopy
+	.p2align	2
+_BFSRecordCopy:                         ; @BFSRecordCopy
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16

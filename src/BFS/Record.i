@@ -1,23 +1,20 @@
-# 1 "src/PA/Count.c"
+# 1 "src/BFS/Record.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/PA/Count.c" 2
+# 1 "src/BFS/Record.c" 2
 
 
-
-
-# 1 "./include/PA/Count.h" 1
+# 1 "./include/types.h" 1
 
 
 
 
 
 # 1 "./include/defs.h" 1
-# 7 "./include/PA/Count.h" 2
-# 1 "./include/types.h" 1
+# 7 "./include/types.h" 2
 # 18 "./include/types.h"
 struct PANumber;
 typedef int PAInt;
@@ -384,7 +381,17 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 8 "./include/PA/Count.h" 2
+# 4 "src/BFS/Record.c" 2
+
+
+# 1 "./include/PA/List.h" 1
+
+
+
+
+
+
+
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 1 3 4
@@ -1823,6 +1830,30 @@ unsigned long long
 
 extern char * suboptarg;
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 2 3 4
+# 9 "./include/PA/List.h" 2
+
+
+
+          struct PAList* PAListCreate();
+          struct PAList PAListCompleteBegin(struct PAList*,struct PACount, struct PASeries[]);
+
+
+
+          PAResult PAListFinish(struct PAList*);
+          struct PAList PAListDelete(struct PAList*);
+          void PAListCopy(struct PAList*, struct PAList*);
+
+void PAListPerformPrint(struct PAList* List);
+# 7 "src/BFS/Record.c" 2
+# 1 "./include/PA/Count.h" 1
+
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 9 "./include/PA/Count.h" 2
 
 
@@ -1839,560 +1870,61 @@ extern char * suboptarg;
 
 
           struct PACount PACountDelete(struct PACount* PA);
-# 6 "src/PA/Count.c" 2
-# 1 "./include/PA/Number.h" 1
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 6 "./include/PA/Number.h" 2
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
-# 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 1 3 4
-# 64 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
-# 65 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_size_t.h" 1 3 4
-# 66 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_null.h" 1 3 4
-# 67 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
-
-
-
-
-
-
-void *
-  memchr(const void * __s, int __c, size_t __n);
-int memcmp(const void * __s1, const void * __s2,
-  size_t __n);
-void *
-  memcpy(void * __dst, const void * __src,
-  size_t __n);
-void *
-  memmove(void * __dst,
-  const void * __src, size_t __len);
-void *
-  memset(void * __b, int __c, size_t __len);
-char *
-  strcat(char * __s1, const char *__s2)
-                                  ;
-char * strchr(const char *__s, int __c);
-int strcmp(const char *__s1, const char *__s2);
-int strcoll(const char *__s1, const char *__s2);
-char *
-  strcpy(char * __dst, const char *__src)
-                                  ;
-size_t strcspn(const char *__s, const char *__charset);
-char * strerror(int __errnum) __asm("_" "strerror" );
-size_t strlen(const char *__s);
-char *
-  strncat(char * __s1,
-  const char * __s2, size_t __n)
-                                  ;
-int strncmp(const char * __s1,
-  const char * __s2, size_t __n);
-char *
-  strncpy(char * __dst,
-        const char * __src, size_t __n)
-                                        ;
-char * strpbrk(const char *__s, const char *__charset);
-char * strrchr(const char *__s, int __c);
-size_t strspn(const char *__s, const char *__charset);
-char * strstr(const char *__big, const char *__little);
-char * strtok(char * __str, const char *__sep);
-size_t strxfrm(char * __s1, const char *__s2, size_t __n);
-# 125 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 3 4
-char *
-        strtok_r(char * __str, const char *__sep,
-        char * *__lasts);
-# 139 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 3 4
-int strerror_r(int __errnum, char * __strerrbuf,
-        size_t __buflen);
-char * strdup(const char *__s1);
-void *
-        memccpy(void * __dst, const void * __src,
-        int __c, size_t __n);
-# 156 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 3 4
-char *
-        stpcpy(char * __dst, const char *__src) ;
-char *
-        stpncpy(char * __dst,
-        const char * __src, size_t __n)
-        __attribute__((availability(macosx,introduced=10.7)))
-                                        ;
-char * strndup(const char * __s1, size_t __n) __attribute__((availability(macosx,introduced=10.7)));
-size_t strnlen(const char * __s1, size_t __n) __attribute__((availability(macosx,introduced=10.7)));
-char * strsignal(int __sig);
+# 8 "src/BFS/Record.c" 2
+# 1 "./include/PA/Result.h" 1
+# 9 "src/BFS/Record.c" 2
+# 1 "./include/BFS/Record.h" 1
 
 
 
 
 
 
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_rsize_t.h" 1 3 4
-# 50 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_rsize_t.h" 3 4
-typedef __darwin_size_t rsize_t;
-# 173 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_errno_t.h" 1 3 4
-# 30 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_errno_t.h" 3 4
-typedef int errno_t;
-# 174 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 
+          struct BFSRecord* BFSRecordCreate();
 
-errno_t memset_s(void * __s, rsize_t __smax, int __c, rsize_t __n) __attribute__((availability(macosx,introduced=10.9)));
+          int BFSRecordFinish(struct BFSRecord*);
+          struct BFSRecord BFSRecordDelete(struct BFSRecord*);
+          void BFSRecordPrint(struct BFSRecord*);
+          struct BFSRecord BFSRecordBegin(struct BFSRecord*, struct PAList* d, struct PACount* n);
+          struct BFSRecord BFSRecordCopy(struct BFSRecord* from, struct BFSRecord* to);
+# 10 "src/BFS/Record.c" 2
 
 
 
 
 
 
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_ssize_t.h" 1 3 4
-# 31 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_ssize_t.h" 3 4
-typedef __darwin_ssize_t ssize_t;
-# 184 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 
 
-void *
-        memmem(const void * __big, size_t __big_len,
-        const void * __little, size_t __little_len) __attribute__((availability(macosx,introduced=10.7)));
-void memset_pattern4(void * __b, const void * __pattern4, size_t __len) __attribute__((availability(macosx,introduced=10.5)));
-void memset_pattern8(void * __b, const void * __pattern8, size_t __len) __attribute__((availability(macosx,introduced=10.5)));
-void memset_pattern16(void * __b, const void * __pattern16, size_t __len) __attribute__((availability(macosx,introduced=10.5)));
-
-char *
-        strcasestr(const char *__big, const char *__little);
-__attribute__((availability(macosx,introduced=15.4))) __attribute__((availability(ios,introduced=18.4)))
-__attribute__((availability(tvos,introduced=18.4))) __attribute__((availability(watchos,introduced=11.4)))
-char *
-        strchrnul(const char *__s, int __c);
-char *
-        strnstr(const char * __big, const char *__little, size_t __len);
-size_t strlcat(char * __dst, const char *__source, size_t __size);
-size_t strlcpy(char * __dst, const char *__source, size_t __size);
-void strmode(int __mode, char * __bp);
-char *
-        strsep(char * *__stringp, const char *__delim);
-
-
-void swab(const void * restrict, void * restrict, ssize_t __len);
-
-__attribute__((availability(macosx,introduced=10.12.1))) __attribute__((availability(ios,introduced=10.1)))
-__attribute__((availability(tvos,introduced=10.0.1))) __attribute__((availability(watchos,introduced=3.1)))
-int timingsafe_bcmp(const void * __b1, const void * __b2, size_t __len);
-
-__attribute__((availability(macosx,introduced=11.0))) __attribute__((availability(ios,introduced=14.0)))
-__attribute__((availability(tvos,introduced=14.0))) __attribute__((availability(watchos,introduced=7.0)))
-int strsignal_r(int __sig, char * __strsignalbuf, size_t __buflen);
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_strings.h" 1 3 4
-# 65 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_strings.h" 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
-# 66 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_strings.h" 2 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_size_t.h" 1 3 4
-# 67 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_strings.h" 2 3 4
-
-
-
-
-
-
-int bcmp(const void *, const void *, size_t __n) ;
-void bcopy(const void *, void *, size_t __n) ;
-void bzero(void *, size_t __n) ;
-char * index(const char *, int) ;
-char * rindex(const char *, int) ;
-
-
-int ffs(int);
-int strcasecmp(const char *, const char *);
-int strncasecmp(const char *, const char *, size_t);
-
-
-
-
-
-int ffsl(long) __attribute__((availability(macosx,introduced=10.5)));
-int ffsll(long long) __attribute__((availability(macosx,introduced=10.9)));
-int fls(int) __attribute__((availability(macosx,introduced=10.5)));
-int flsl(long) __attribute__((availability(macosx,introduced=10.5)));
-int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_strings.h" 1 3 4
-# 32 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_strings.h" 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
-# 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_strings.h" 2 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_common.h" 1 3 4
-# 34 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_strings.h" 2 3 4
-# 99 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_strings.h" 2 3 4
-# 223 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 1 3 4
-# 32 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
-# 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 2 3 4
-# 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
-# 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
-# 7 "./include/PA/Number.h" 2
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 1 3 4
-# 61 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 1 3 4
-# 71 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
-# 72 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_va_list.h" 1 3 4
-# 44 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_va_list.h" 3 4
-typedef __darwin_va_list va_list;
-# 78 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_size_t.h" 1 3 4
-# 79 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_null.h" 1 3 4
-# 80 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/stdio.h" 1 3 4
-# 44 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/stdio.h" 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
-# 45 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/stdio.h" 2 3 4
-
-
-
-int renameat(int, const char *, int, const char *) __attribute__((availability(macosx,introduced=10.10)));
-
-
-
-int renamex_np(const char *, const char *, unsigned int) __attribute__((availability(macosx,introduced=10.12))) __attribute__((availability(ios,introduced=10.0))) __attribute__((availability(tvos,introduced=10.0))) __attribute__((availability(watchos,introduced=3.0)));
-int renameatx_np(int, const char *, int, const char *, unsigned int) __attribute__((availability(macosx,introduced=10.12))) __attribute__((availability(ios,introduced=10.0))) __attribute__((availability(tvos,introduced=10.0))) __attribute__((availability(watchos,introduced=3.0)));
-# 82 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_printf.h" 1 3 4
-# 34 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_printf.h" 3 4
-int printf(const char * restrict, ...) __attribute__((__format__ (__printf__, 1, 2)));
-# 83 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
-
-
-
-typedef __darwin_off_t fpos_t;
-# 97 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 3 4
-struct __sbuf {
- unsigned char * _base;
- int _size;
-};
-
-
-struct __sFILEX;
-# 131 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 3 4
-typedef struct __sFILE {
- unsigned char * _p;
- int _r;
- int _w;
- short _flags;
- short _file;
- struct __sbuf _bf;
- int _lbfsize;
-
-
- void *_cookie;
- int (* _Nullable _close)(void *);
- int (* _Nullable _read) (void *, char *, int __n);
- fpos_t (* _Nullable _seek) (void *, fpos_t, int);
- int (* _Nullable _write)(void *, const char *, int __n);
-
-
- struct __sbuf _ub;
- struct __sFILEX *_extra;
- int _ur;
-
-
- unsigned char _ubuf[3];
- unsigned char _nbuf[1];
-
-
- struct __sbuf _lb;
-
-
- int _blksize;
- fpos_t _offset;
-} FILE;
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_seek_set.h" 1 3 4
-# 165 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
-
-
-extern FILE *__stdinp __attribute__((__swift_attr__("nonisolated(unsafe)")));
-extern FILE *__stdoutp __attribute__((__swift_attr__("nonisolated(unsafe)")));
-extern FILE *__stderrp __attribute__((__swift_attr__("nonisolated(unsafe)")));
-# 232 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 3 4
-void clearerr(FILE *);
-int fclose(FILE *);
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-int fgetc(FILE *);
-int fgetpos(FILE * restrict, fpos_t *);
-char * fgets(char * restrict , int __size, FILE *);
-
-
-
-FILE *fopen(const char * restrict __filename, const char * restrict __mode) __asm("_" "fopen" );
-
-int fprintf(FILE * restrict, const char * restrict, ...) __attribute__((__format__ (__printf__, 2, 3)));
-int fputc(int, FILE *);
-int fputs(const char * restrict, FILE * restrict) __asm("_" "fputs" );
-size_t fread(void * restrict __ptr, size_t __size, size_t __nitems, FILE * restrict __stream);
-FILE *freopen(const char * restrict, const char * restrict,
-     FILE * restrict) __asm("_" "freopen" );
-int fscanf(FILE * restrict, const char * restrict, ...) __attribute__((__format__ (__scanf__, 2, 3)));
-int fseek(FILE *, long, int);
-int fsetpos(FILE *, const fpos_t *);
-long ftell(FILE *);
-size_t fwrite(const void * restrict __ptr, size_t __size, size_t __nitems, FILE * restrict __stream) __asm("_" "fwrite" );
-int getc(FILE *);
-int getchar(void);
-
-
-__attribute__((__deprecated__("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of gets(3), it is highly recommended that you use fgets(3) instead.")))
-
-char * gets(char *) ;
-
-void perror(const char *) __attribute__((__cold__));
-int putc(int, FILE *);
-int putchar(int);
-int puts(const char *);
-int remove(const char *);
-int rename (const char *__old, const char *__new);
-void rewind(FILE *);
-int scanf(const char * restrict, ...) __attribute__((__format__ (__scanf__, 1, 2)));
-void setbuf(FILE * restrict, char * restrict );
-int setvbuf(FILE * restrict, char * restrict , int, size_t __size);
-
-__attribute__((__availability__(swift, unavailable, message="Use snprintf instead.")))
-
-
-__attribute__((__deprecated__("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")))
-
-int sprintf(char * restrict , const char * restrict, ...) __attribute__((__format__ (__printf__, 2, 3))) ;
-
-int sscanf(const char * restrict, const char * restrict, ...) __attribute__((__format__ (__scanf__, 2, 3)));
-FILE *tmpfile(void);
-
-__attribute__((__availability__(swift, unavailable, message="Use mkstemp(3) instead.")))
-
-__attribute__((__deprecated__("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tmpnam(3), it is highly recommended that you use mkstemp(3) instead.")))
-
-char * tmpnam(char *);
-
-int ungetc(int, FILE *);
-int vfprintf(FILE * restrict, const char * restrict, va_list) __attribute__((__format__ (__printf__, 2, 0)));
-int vprintf(const char * restrict, va_list) __attribute__((__format__ (__printf__, 1, 0)));
-
-__attribute__((__availability__(swift, unavailable, message="Use vsnprintf instead.")))
-
-
-__attribute__((__deprecated__("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use vsnprintf(3) instead.")))
-
-int vsprintf(char * restrict , const char * restrict, va_list) __attribute__((__format__ (__printf__, 2, 0))) ;
-# 315 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_ctermid.h" 1 3 4
-# 38 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_ctermid.h" 3 4
-char * ctermid(char *);
-# 316 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
-
-
-
-
-
-
-FILE *fdopen(int, const char *) __asm("_" "fdopen" );
-
-int fileno(FILE *);
-# 335 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 3 4
-int pclose(FILE *) __attribute__((__availability__(swift, unavailable, message="Use posix_spawn APIs or NSTask instead. (On iOS, process spawning is unavailable.)")));
-
-
-
-FILE *popen(const char *, const char *) __asm("_" "popen" ) __attribute__((__availability__(swift, unavailable, message="Use posix_spawn APIs or NSTask instead. (On iOS, process spawning is unavailable.)")));
-# 354 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 3 4
-int __srget(FILE *);
-int __svfscanf(FILE *, const char *, va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-int __swbuf(int, FILE *);
-# 365 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 3 4
-inline __attribute__ ((__always_inline__)) int __sputc(int _c, FILE *_p) {
- if (--_p->_w >= 0 || (_p->_w >= _p->_lbfsize && (char)_c != '\n'))
-  return (*_p->_p++ = _c);
- else
-  return (__swbuf(_c, _p));
+          struct BFSRecord* BFSRecordCreate()
+{
+    struct BFSRecord* recordPointer;
+    recordPointer = (struct BFSRecord*) malloc (sizeof(struct BFSRecord));
+    return recordPointer;
 }
-# 391 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 3 4
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
 
-
-
-int getw(FILE *);
-int putw(int, FILE *);
-
-
-__attribute__((__availability__(swift, unavailable, message="Use mkstemp(3) instead.")))
-
-__attribute__((__deprecated__("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tempnam(3), it is highly recommended that you use mkstemp(3) instead.")))
-
-char * tempnam(const char *__dir, const char *__prefix) __asm("_" "tempnam" );
-# 429 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_off_t.h" 1 3 4
-# 31 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_off_t.h" 3 4
-typedef __darwin_off_t off_t;
-# 430 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
-
-
-int fseeko(FILE * __stream, off_t __offset, int __whence);
-off_t ftello(FILE * __stream);
-
-
-
-
-
-int snprintf(char * restrict __str, size_t __size, const char * restrict __format, ...) __attribute__((__format__ (__printf__, 3, 4)));
-int vfscanf(FILE * restrict __stream, const char * restrict __format, va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-int vscanf(const char * restrict __format, va_list) __attribute__((__format__ (__scanf__, 1, 0)));
-int vsnprintf(char * restrict __str, size_t __size, const char * restrict __format, va_list) __attribute__((__format__ (__printf__, 3, 0)));
-int vsscanf(const char * restrict __str, const char * restrict __format, va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-# 457 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 3 4
-int dprintf(int, const char * restrict, ...) __attribute__((__format__ (__printf__, 2, 3))) __attribute__((availability(macosx,introduced=10.7)));
-int vdprintf(int, const char * restrict, va_list) __attribute__((__format__ (__printf__, 2, 0))) __attribute__((availability(macosx,introduced=10.7)));
-ssize_t getdelim(char * *restrict __linep, size_t * restrict __linecapp, int __delimiter, FILE * restrict __stream) __attribute__((availability(macosx,introduced=10.7)));
-ssize_t getline(char * *restrict __linep, size_t * restrict __linecapp, FILE * restrict __stream) __attribute__((availability(macosx,introduced=10.7)));
-FILE *fmemopen(void * restrict __buf , size_t __size, const char * restrict __mode) __attribute__((availability(macos,introduced=10.13))) __attribute__((availability(ios,introduced=11.0))) __attribute__((availability(tvos,introduced=11.0))) __attribute__((availability(watchos,introduced=4.0)));
-FILE *open_memstream(char * *__bufp, size_t *__sizep) __attribute__((availability(macos,introduced=10.13))) __attribute__((availability(ios,introduced=11.0))) __attribute__((availability(tvos,introduced=11.0))) __attribute__((availability(watchos,introduced=4.0)));
-# 472 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 3 4
-extern const int sys_nerr;
-extern const char *const sys_errlist[];
-
-int asprintf(char * *restrict, const char * restrict, ...) __attribute__((__format__ (__printf__, 2, 3)));
-char * ctermid_r(char *);
-char * fgetln(FILE *, size_t *__len);
-const char *fmtcheck(const char *, const char *) __attribute__((format_arg(2)));
-int fpurge(FILE *);
-void setbuffer(FILE *, char *, int __size);
-int setlinebuf(FILE *);
-int vasprintf(char * *restrict, const char * restrict, va_list) __attribute__((__format__ (__printf__, 2, 0)));
-
-
-
-
-
-FILE *funopen(const void *,
-     int (* _Nullable)(void *, char *, int __n),
-     int (* _Nullable)(void *, const char *, int __n),
-     fpos_t (* _Nullable)(void *, fpos_t, int),
-     int (* _Nullable)(void *));
-# 507 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h" 1 3 4
-# 38 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h" 3 4
-extern int __snprintf_chk (char * restrict , size_t __maxlen, int, size_t,
-     const char * restrict, ...);
-extern int __vsnprintf_chk (char * restrict , size_t __maxlen, int, size_t,
-     const char * restrict, va_list);
-
-extern int __sprintf_chk (char * restrict , int, size_t,
-     const char * restrict, ...);
-extern int __vsprintf_chk (char * restrict , int, size_t,
-     const char * restrict, va_list);
-# 508 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
-# 62 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 2 3 4
-# 8 "./include/PA/Number.h" 2
- struct PANumber* PANumberCreate();
-          struct PANumber PANumberBegin(struct PANumber* Number, unsigned char Value);
-          PAResult PANumberFinish(struct PANumber*);
-          struct PANumber PANumberDelete(struct PANumber*);
-          void PANumberCopy(struct PANumber* from, struct PANumber* to);
-          void PANumberPrint(struct PANumber*);
-# 7 "src/PA/Count.c" 2
-
-
-
-
-
-
-
-          struct PACount* PACountCreate()
+          int BFSRecordFinish(struct BFSRecord* PA)
+{
+    free(PA);
+    return ((int)0);
+}
+          struct BFSRecord BFSRecordDelete(struct BFSRecord* PA)
+{
+    struct BFSRecord record;
+    return record;
+}
+          void BFSRecordPrint(struct BFSRecord* PA)
 {
 
-    struct PACount* countPointer;
-    countPointer =(struct PACount*)malloc(sizeof(struct PACount));
-# 27 "src/PA/Count.c"
-    countPointer->number = PANumberCreate();
-    return countPointer;
 }
-          struct PACount PACountBegin(struct PACount* Count, struct PANumber Value)
+          struct BFSRecord BFSRecordBegin(struct BFSRecord* Record, struct PAList* d, struct PACount* n)
 {
-
-    struct PACount temp;
-    struct PACount* cpuntPointer;
-    temp.number = &Value;
-    Count->number = temp.number;
-
-
-
-
-
-
-
-    return temp;
-
-
-
-
-
-
+    struct BFSRecord record;
+    return record;
 }
-          PAResult PACountFinish(struct PACount* PA)
+          struct BFSRecord BFSRecordCopy(struct BFSRecord* from, struct BFSRecord* to)
 {
-# 79 "src/PA/Count.c"
-    int returnCode;
-    return returnCode;
-
-}
-          struct PACount PACountDelete(struct PACount* PA)
-{
-    struct PACount count;
-
-    return count;
-
-
-
-}
-PAResult PACountPrint(struct PACount* Count)
-{
-    PAResult result;
-    return result;
-}
-          void PACountCopy(struct PACount* from, struct PACount* to)
-{
-
-
-
-
-
+    struct BFSRecord record;
+    return record;
 }
