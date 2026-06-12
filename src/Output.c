@@ -1,7 +1,5 @@
 //@Author Cristofor Rotsching
-
 #include <Output.h>
-
 
 #ifndef _WIN95
 // #include <Output.h>
@@ -11,27 +9,31 @@
 // #include <Output.h>
 // #include <types.h>
 #endif
-DllExport struct Output OutputPerformConstruct()
+DllExport struct Output* OutputCreate()
 {
-    struct Output output;
-    return output;
+    struct Output* outputPointer;
+    // output = Output
+    return outputPointer;
 }
-DllExport struct Output OutputPerformInit(struct Output output, struct PAOutput Output2)
+DllExport struct Output OutputBegin(struct Output* output, struct PAOutput* Value)
 {
-    return output;
+    return *output;
 }
-DllExport struct Output OutputPerformCopy(struct Output from, struct Output to)
+DllExport struct Output OutputCopy(struct Output* from, struct Output* to)
 {
-    return from;
+    struct Output temp;
+    return temp;
 }
-DllExport void OutputPerformRuin(void)
+DllExport int OutputFinish(struct Output* PA)
 {
-
+    int returnCode = PARESULT_SUCCESS;
+    return returnCode;
 }
 // #include <PA/Output.h>
 //#include <types.h>
-void OutputPerformPrint(PAResult result)
+void OutputPerformPrint(struct Output* PA)
 {
+    
     // int a = result;
     // int b = result;
     // int c = result;

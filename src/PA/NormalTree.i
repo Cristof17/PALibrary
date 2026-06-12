@@ -256,9 +256,9 @@ struct BFSOutput {
  struct BFSRecord result;
 };
 struct Output {
+ struct PAOutput result;
 
-
- };
+};
 
 
 

@@ -6,7 +6,6 @@
 # 1 "<built-in>" 2
 # 1 "src/Output.c" 2
 
-
 # 1 "./include/Output.h" 1
 
 
@@ -254,9 +253,9 @@ struct BFSOutput {
  struct BFSRecord result;
 };
 struct Output {
+ struct PAOutput result;
 
-
- };
+};
 
 
 
@@ -377,53 +376,42 @@ struct Facade {
  struct FactoryCreator factory;
 };
 # 8 "./include/Output.h" 2
-# 1 "./include/BFS/Record.h" 1
 
 
 
+          struct Output* OutputCreate();
+          struct Output OutputBegin(struct Output*, struct PAOutput*);
+          struct Output OutputCopy(struct Output*, struct Output*);
+          int OutputFinish(struct Output*);
 
-
-
-
-          struct BFSRecord* BFSRecordCreate();
-
-          int BFSRecordFinish(struct BFSRecord*);
-          struct BFSRecord BFSRecordDelete(struct BFSRecord*);
-          void BFSRecordPrint(struct BFSRecord*);
-          struct BFSRecord BFSRecordBegin(struct BFSRecord*, struct PAList* d, struct PACount* n);
-          struct BFSRecord BFSRecordCopy(struct BFSRecord* from, struct BFSRecord* to);
-# 9 "./include/Output.h" 2
-
-
-          struct Output OutputPerformConstruct();
-          struct Output OutputPerformInit(struct Output, struct PAOutput);
-          struct Output OutputPerformCopy(struct Output, struct Output);
-          void OutputPerformRuin(void);
-
-          void OutputPerformPrint(PAResult);
-# 4 "src/Output.c" 2
-# 14 "src/Output.c"
-          struct Output OutputPerformConstruct()
+          void OutputPrint(struct Output*);
+# 3 "src/Output.c" 2
+# 12 "src/Output.c"
+          struct Output* OutputCreate()
 {
-    struct Output output;
-    return output;
+    struct Output* outputPointer;
+
+    return outputPointer;
 }
-          struct Output OutputPerformInit(struct Output output, struct PAOutput Output2)
+          struct Output OutputBegin(struct Output* output, struct PAOutput* Value)
 {
-    return output;
+    return *output;
 }
-          struct Output OutputPerformCopy(struct Output from, struct Output to)
+          struct Output OutputCopy(struct Output* from, struct Output* to)
 {
-    return from;
+    struct Output temp;
+    return temp;
 }
-          void OutputPerformRuin(void)
+          int OutputFinish(struct Output* PA)
 {
-
+    int returnCode = ((int)0);
+    return returnCode;
 }
 
 
-void OutputPerformPrint(PAResult result)
+void OutputPerformPrint(struct Output* PA)
 {
+
 
 
 

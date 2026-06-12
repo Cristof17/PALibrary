@@ -1,41 +1,59 @@
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 15, 0	sdk_version 26, 2
-	.globl	_OutputPerformConstruct         ; -- Begin function OutputPerformConstruct
+	.globl	_OutputCreate                   ; -- Begin function OutputCreate
 	.p2align	2
-_OutputPerformConstruct:                ; @OutputPerformConstruct
-	.cfi_startproc
-; %bb.0:
-	ret
-	.cfi_endproc
-                                        ; -- End function
-	.globl	_OutputPerformInit              ; -- Begin function OutputPerformInit
-	.p2align	2
-_OutputPerformInit:                     ; @OutputPerformInit
+_OutputCreate:                          ; @OutputCreate
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	str	x0, [sp]
+	ldr	x0, [sp, #8]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_OutputPerformCopy              ; -- Begin function OutputPerformCopy
+	.globl	_OutputBegin                    ; -- Begin function OutputBegin
 	.p2align	2
-_OutputPerformCopy:                     ; @OutputPerformCopy
+_OutputBegin:                           ; @OutputBegin
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #16]
+	str	x1, [sp, #8]
+	ldr	x8, [sp, #16]
+	ldr	x8, [x8]
+	str	x8, [sp, #24]
+	ldr	x0, [sp, #24]
+	add	sp, sp, #32
+	ret
+	.cfi_endproc
+                                        ; -- End function
+	.globl	_OutputCopy                     ; -- Begin function OutputCopy
+	.p2align	2
+_OutputCopy:                            ; @OutputCopy
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #16]
+	str	x1, [sp, #8]
+	ldr	x0, [sp, #24]
+	add	sp, sp, #32
+	ret
+	.cfi_endproc
+                                        ; -- End function
+	.globl	_OutputFinish                   ; -- Begin function OutputFinish
+	.p2align	2
+_OutputFinish:                          ; @OutputFinish
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
+	str	x0, [sp, #8]
+	str	wzr, [sp, #4]
+	ldr	w0, [sp, #4]
 	add	sp, sp, #16
-	ret
-	.cfi_endproc
-                                        ; -- End function
-	.globl	_OutputPerformRuin              ; -- Begin function OutputPerformRuin
-	.p2align	2
-_OutputPerformRuin:                     ; @OutputPerformRuin
-	.cfi_startproc
-; %bb.0:
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -46,7 +64,7 @@ _OutputPerformPrint:                    ; @OutputPerformPrint
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	str	w0, [sp, #12]
+	str	x0, [sp, #8]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
