@@ -94,6 +94,7 @@ DllExport void PAElementCopy(struct PAElement* from, struct PAElement* to)
 // }
 DllExport PAResult PAElementFinish(struct PAElement* PA)
 {
+    free(PA);
     // PA.index = PADataPerformRuin(PA.index);
     // PA.status = PAStatusPerformRuin(PA.status);
     // Element.padding[0] = NULL;

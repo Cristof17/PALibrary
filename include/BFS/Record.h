@@ -5,12 +5,13 @@
 #include <types.h>
 
 //typedef struct BFSRecord Record;
-DllExport void BFSRecordConstruct(struct PAList, struct PACount);
+DllExport struct BFSRecord* BFSRecordCreate();
 // void BFSRecordDestroy();
-DllExport void BFSRecordRuin();
-DllExport void BFSRecordPrint(struct BFSRecord);
-DllExport struct BFSRecord BFSRecordInit(struct BFSRecord);
-DllExport struct BFSRecord BFSRecordCopy(struct BFSRecord);
-DllExport struct BFSRecord BFSRecordPutList(struct BFSRecord, struct PAList);
-DllExport struct BFSRecord BFSRecordPutCount(struct BFSRecord, struct PACount);
+DllExport int BFSRecordFinish(struct BFSRecord*);
+DllExport struct BFSRecord BFSRecordDelete(struct BFSRecord*);
+DllExport void BFSRecordPrint(struct BFSRecord*);
+DllExport struct BFSRecord BFSRecordBegin(struct BFSRecord*, struct PAList* d, struct PACount* n);
+DllExport struct BFSRecord BFSRecordCopy(struct BFSRecord* from, struct BFSRecord* to);
+// DllExport struct BFSRecord BFSRecordPutList(struct BFSRecord, struct PAList);
+// DllExport struct BFSRecord BFSRecordPutCount(struct BFSRecord, struct PACount);
 #endif
