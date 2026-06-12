@@ -5,14 +5,14 @@
 _main:                                  ; @main
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #192
-	stp	x29, x30, [sp, #176]            ; 16-byte Folded Spill
-	add	x29, sp, #176
+	sub	sp, sp, #208
+	stp	x29, x30, [sp, #192]            ; 16-byte Folded Spill
+	add	x29, sp, #192
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
 	mov	w8, #0                          ; =0x0
-	str	w8, [sp, #28]                   ; 4-byte Folded Spill
+	str	w8, [sp, #20]                   ; 4-byte Folded Spill
 	stur	wzr, [x29, #-4]
 	bl	_PANumberCreate
 	stur	x0, [x29, #-16]
@@ -68,7 +68,7 @@ _main:                                  ; @main
 	ldrb	w8, [x8]
 	mov	x1, x8
 	bl	_PAResourceBegin
-	str	x0, [sp, #88]
+	stur	x0, [x29, #-88]
 	ldur	x0, [x29, #-64]
 	ldur	x1, [x29, #-72]
 	bl	_PAResourceCopy
@@ -81,9 +81,9 @@ _main:                                  ; @main
 	str	x8, [x9]
 	adrp	x0, l_.str@PAGE
 	add	x0, x0, l_.str@PAGEOFF
-	str	x0, [sp, #16]                   ; 8-byte Folded Spill
+	str	x0, [sp, #8]                    ; 8-byte Folded Spill
 	bl	_printf
-	ldr	x0, [sp, #16]                   ; 8-byte Folded Reload
+	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
 	ldur	x8, [x29, #-72]
 	ldr	x8, [x8]
 	ldrb	w10, [x8]
@@ -93,17 +93,17 @@ _main:                                  ; @main
 	str	x8, [x9]
 	bl	_printf
 	bl	_PAStatusCreate
-	str	x0, [sp, #80]
+	str	x0, [sp, #96]
 	bl	_PAStatusCreate
-	str	x0, [sp, #72]
-	ldr	x0, [sp, #80]
+	str	x0, [sp, #88]
+	ldr	x0, [sp, #96]
 	ldur	x1, [x29, #-64]
 	bl	_PAStatusBegin
-	str	x0, [sp, #64]
-	ldr	x0, [sp, #80]
-	ldr	x1, [sp, #72]
+	str	x0, [sp, #80]
+	ldr	x0, [sp, #96]
+	ldr	x1, [sp, #88]
 	bl	_PAStatusCopy
-	ldr	x8, [sp, #80]
+	ldr	x8, [sp, #96]
 	ldr	x8, [x8]
 	ldr	x8, [x8]
 	ldrb	w10, [x8]
@@ -115,14 +115,20 @@ _main:                                  ; @main
 	add	x0, x0, l_.str.1@PAGEOFF
 	bl	_printf
 	bl	_PACountCreate
-	str	x0, [sp, #56]
-	ldr	x0, [sp, #56]
+	str	x0, [sp, #72]
+	ldr	x0, [sp, #72]
 	ldur	x1, [x29, #-24]
 	bl	_PACountBegin
-	str	x0, [sp, #48]
+	str	x0, [sp, #64]
 	bl	_PASeriesCreate
+	str	x0, [sp, #56]
+	ldr	x0, [sp, #56]
+	ldr	x1, [sp, #72]
+	mov	x2, #0                          ; =0x0
+	bl	_PASeriesBegin
 	str	x0, [sp, #40]
-	ldr	x8, [sp, #40]
+	str	x1, [sp, #48]
+	ldr	x8, [sp, #56]
 	ldr	x8, [x8]
 	ldr	x8, [x8]
 	ldrb	w10, [x8]
@@ -133,9 +139,22 @@ _main:                                  ; @main
 	adrp	x0, l_.str.2@PAGE
 	add	x0, x0, l_.str.2@PAGEOFF
 	bl	_printf
-	ldr	w0, [sp, #28]                   ; 4-byte Folded Reload
-	ldp	x29, x30, [sp, #176]            ; 16-byte Folded Reload
-	add	sp, sp, #192
+	bl	_PAListCreate
+	str	x0, [sp, #32]
+	ldr	x8, [sp, #32]
+	ldr	x8, [x8]
+	ldr	x8, [x8]
+	ldrb	w10, [x8]
+	mov	x9, sp
+                                        ; implicit-def: $x8
+	mov	x8, x10
+	str	x8, [x9]
+	adrp	x0, l_.str.3@PAGE
+	add	x0, x0, l_.str.3@PAGEOFF
+	bl	_printf
+	ldr	w0, [sp, #20]                   ; 4-byte Folded Reload
+	ldp	x29, x30, [sp, #192]            ; 16-byte Folded Reload
+	add	sp, sp, #208
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -148,5 +167,8 @@ l_.str.1:                               ; @.str.1
 
 l_.str.2:                               ; @.str.2
 	.asciz	"series.count %d\n"
+
+l_.str.3:                               ; @.str.3
+	.asciz	"list.n alloc %d\n"
 
 .subsections_via_symbols

@@ -2365,7 +2365,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
           struct PASeries* PASeriesCreate();
-          struct PASeries PASeriesBegin(struct PASeries*, struct PACount, struct PAElement[]);
+          struct PASeries PASeriesBegin(struct PASeries*, struct PACount*, struct PAElement[]);
           struct PASeries PASeriesDelete(struct PASeries*);
           void PASeriesCopy(struct PASeries*, struct PASeries*);
 
@@ -2373,9 +2373,33 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
           void PASeriesPrint(struct PASeries*);
 # 6 "test/test_pointers.c" 2
+# 1 "./include/PA/List.h" 1
+
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/PA/List.h" 2
+
+
+
+          struct PAList* PAListCreate();
+          struct PAList PAListCompleteBegin(struct PAList*,struct PACount, struct PASeries[]);
+
+
+
+          PAResult PAListFinish(struct PAList*);
+          struct PAList PAListDelete(struct PAList*);
+          void PAListCopy(struct PAList*, struct PAList*);
+
+void PAListPerformPrint(struct PAList* List);
+# 7 "test/test_pointers.c" 2
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 1 3 4
-# 8 "test/test_pointers.c" 2
+# 9 "test/test_pointers.c" 2
 int main()
 {
  struct PANumber* number;
@@ -2438,9 +2462,15 @@ int main()
  PACountBegin(count1,number123);
  struct PASeries* series;
  series = PASeriesCreate();
+ PASeriesBegin(series,count1,0);
  printf("series.count %d\n", series->m->number->val);
 
+ struct PAList* list;
+ list = PAListCreate();
+ printf("list.n alloc %d\n", list->n->number->val);
+
+
  struct PATree *Tree;
-# 88 "test/test_pointers.c"
+# 95 "test/test_pointers.c"
  return 0;
 }

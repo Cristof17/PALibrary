@@ -3,6 +3,7 @@
 #include <PA/Number.h>
 #include <PA/Status.h>
 #include <PA/Series.h>
+#include <PA/List.h>
 // #include <PA/Data.h>
 #include <stdio.h>
 int main()
@@ -69,6 +70,12 @@ int main()
 	series = PASeriesCreate();
 	PASeriesBegin(series,count1,0);
 	printf("series.count %d\n", series->m->number->val);
+
+	struct PAList* list;
+	list = PAListCreate();
+	printf("list.n alloc %d\n", list->n->number->val);
+	// PAListCompleteBegin
+
 	// PASeriesBegin(series,count)
 	struct PATree *Tree;
 	// printf(number,number123);

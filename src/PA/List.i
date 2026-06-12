@@ -1873,7 +1873,7 @@ void PAListPerformPrint(struct PAList* List);
 
 
           struct PASeries* PASeriesCreate();
-          struct PASeries PASeriesBegin(struct PASeries*, struct PACount, struct PAElement[]);
+          struct PASeries PASeriesBegin(struct PASeries*, struct PACount*, struct PAElement[]);
           struct PASeries PASeriesDelete(struct PASeries*);
           void PASeriesCopy(struct PASeries*, struct PASeries*);
 
