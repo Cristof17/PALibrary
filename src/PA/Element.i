@@ -1875,7 +1875,7 @@ extern char * suboptarg;
 
           void PAStatusCauseVisit(PABool);
           struct PAStatus* PAStatusCreate();
-          struct PAStatus PAStatusBegin(struct PAStatus*, struct PAResource);
+          struct PAStatus PAStatusBegin(struct PAStatus*, struct PAResource*);
           PAResult PAStatusFinish(struct PAStatus*);
 
           void PAStatusCopy(struct PAStatus*, struct PAStatus*);

@@ -57,7 +57,7 @@ int main()
 	struct PAStatus *status123;
 	status=PAStatusCreate();
 	status123=PAStatusCreate();
-	PAStatusBegin(status,*resource123);
+	PAStatusBegin(status,resource123);
 	PAStatusCopy(status,status123);
 	printf("status value %d\n",status->visited->value->val);
 	// printf(number,number123);

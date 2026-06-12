@@ -30,12 +30,13 @@ DllExport struct PAStatus* PAStatusCreate()
     statusPointer->visited = PAResourceCreate();
     return statusPointer;
 }
-DllExport struct PAStatus PAStatusBegin(struct PAStatus* Status, struct PAResource Value)
+DllExport struct PAStatus PAStatusBegin(struct PAStatus* Status, struct PAResource* Value)
 {
     struct PAStatus temp;
     struct PAStatus* statusPointer;
+    temp = *Status;
     // statusPointer->visited = Value;
-    temp.visited = &Value;
+    temp.visited = Value;
     Status->visited = temp.visited;
     // PAStatu
     // return statusPointer;

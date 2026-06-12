@@ -134,8 +134,14 @@ link: link_pa link_bfs link_arraylist
 
 mostlyclean:
 	rm $(foreach object,$(objects_pa),$(libdir)/$(object))
+	rm $(foreach object,$(objects_arraylist),$(libdir)/$(object))
+	rm $(foreach object,$(objects_bfs),$(libdir)/$(object))
 	rm $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
+	rm $(foreach assembly,$(assemblies_arraylist),$(srcdir)/$(assembly))
+	rm $(foreach assembly,$(assemblies_bfs),$(srcdir)/$(assembly))
 	rm $(foreach source,$(sources_pa),$(srcdir)/$(source))
+	rm $(foreach source,$(sources_arraylist),$(srcdir)/$(source))
+	rm $(foreach source,$(sources_bfs),$(srcdir)/$(source))
 	rm $(foreach test,$(sources_test_pa),$(srcdir)/$(test))
 	rm $(foreach binary,$(output_pa),$(bindir)/$(binary))
 # 	-rm $(objects_pa)
@@ -144,8 +150,17 @@ mostlyclean:
 #
 maintainer-clean:
 	rm $(foreach object,$(objects_pa),$(libdir)/$(object))
+	rm $(foreach object,$(objects_bfs),$(libdir)/$(object))
+	rm $(foreach object,$(objects_arraylist),$(libdir)/$(object))
 	rm $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
+	rm $(foreach assembly,$(assemblies_bfs),$(srcdir)/$(assembly))
+	rm $(foreach assembly,$(assemblies_arraylist),$(srcdir)/$(assembly))
 	rm $(foreach source,$(sources_pa),$(srcdir)/$(source))
+	rm $(foreach source,$(sources_bfs),$(srcdir)/$(source))
+	rm $(foreach source,$(sources_arraylist),$(srcdir)/$(source))
+	rm $(libdir)/$(lib_pa)
+	rm $(libdir)/$(lib_arraylist)
+	rm $(libdir)/$(lib_bfs)
 	rm $(foreach test,$(sources_test_pa),$(srcdir)/$(test))
 	rm $(foreach test,$(assemblies_test_pa),$(srcdir)/$(test))
 	rm $(foreach test,$(objects_test_pa),$(libdir)/$(test))

@@ -1828,7 +1828,7 @@ extern char * suboptarg;
 
           void PAStatusCauseVisit(PABool);
           struct PAStatus* PAStatusCreate();
-          struct PAStatus PAStatusBegin(struct PAStatus*, struct PAResource);
+          struct PAStatus PAStatusBegin(struct PAStatus*, struct PAResource*);
           PAResult PAStatusFinish(struct PAStatus*);
 
           void PAStatusCopy(struct PAStatus*, struct PAStatus*);
@@ -1865,12 +1865,13 @@ extern char * suboptarg;
     statusPointer->visited = PAResourceCreate();
     return statusPointer;
 }
-          struct PAStatus PAStatusBegin(struct PAStatus* Status, struct PAResource Value)
+          struct PAStatus PAStatusBegin(struct PAStatus* Status, struct PAResource* Value)
 {
     struct PAStatus temp;
     struct PAStatus* statusPointer;
+    temp = *Status;
 
-    temp.visited = &Value;
+    temp.visited = Value;
     Status->visited = temp.visited;
 
 
@@ -1884,9 +1885,9 @@ extern char * suboptarg;
 
     struct PAStatus temp;
     struct PAResource* visited;
-# 61 "src/PA/Status.c"
+# 62 "src/PA/Status.c"
 }
-# 70 "src/PA/Status.c"
+# 71 "src/PA/Status.c"
           struct PAStatus PAStatusDelete(struct PAStatus* PA)
 {
     struct PAStatus temp;

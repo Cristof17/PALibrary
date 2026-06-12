@@ -2352,7 +2352,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
           void PAStatusCauseVisit(PABool);
           struct PAStatus* PAStatusCreate();
-          struct PAStatus PAStatusBegin(struct PAStatus*, struct PAResource);
+          struct PAStatus PAStatusBegin(struct PAStatus*, struct PAResource*);
           PAResult PAStatusFinish(struct PAStatus*);
 
           void PAStatusCopy(struct PAStatus*, struct PAStatus*);
@@ -2414,7 +2414,7 @@ int main()
  struct PAStatus *status123;
  status=PAStatusCreate();
  status123=PAStatusCreate();
- PAStatusBegin(status,*resource123);
+ PAStatusBegin(status,resource123);
  PAStatusCopy(status,status123);
  printf("status value %d\n",status->visited->value->val);
 # 78 "test/test_pointers.c"

@@ -97,8 +97,7 @@ _main:                                  ; @main
 	bl	_PAStatusCreate
 	str	x0, [sp, #40]
 	ldr	x0, [sp, #48]
-	ldur	x8, [x29, #-64]
-	ldr	x1, [x8]
+	ldur	x1, [x29, #-64]
 	bl	_PAStatusBegin
 	str	x0, [sp, #32]
 	ldr	x0, [sp, #48]

@@ -42,12 +42,15 @@ _PAStatusBegin:                         ; @PAStatusBegin
 ; %bb.0:
 	sub	sp, sp, #32
 	.cfi_def_cfa_offset 32
-	add	x8, sp, #16
-	str	x1, [sp, #16]
-	str	x0, [sp, #8]
+	str	x0, [sp, #16]
+	str	x1, [sp, #8]
+	ldr	x8, [sp, #16]
+	ldr	x8, [x8]
+	str	x8, [sp, #24]
+	ldr	x8, [sp, #8]
 	str	x8, [sp, #24]
 	ldr	x8, [sp, #24]
-	ldr	x9, [sp, #8]
+	ldr	x9, [sp, #16]
 	str	x8, [x9]
 	ldr	x0, [sp, #24]
 	add	sp, sp, #32
