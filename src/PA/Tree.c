@@ -29,7 +29,8 @@ DllExport struct PATree* PATreeCreate()
     // temp.adj = PAListPerformConstruct();
     // temp->source = PAElementPerformConstruct();
     // temp = PATreePerformInit(temp,temp.n,temp.m,temp.adj,temp.source);
-    return temp;
+    // return temp;
+    return treePointer;
     // struct PACount n;
     // struct PACount m;
     // struct PAList adj;

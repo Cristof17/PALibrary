@@ -20,7 +20,7 @@ _PATreeCreate:                          ; @PATreeCreate
 	bl	_PACountCreate
 	ldr	x8, [sp]
 	str	x0, [x8, #8]
-	ldr	x0, [sp, #8]
+	ldr	x0, [sp]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
 	ret

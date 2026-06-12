@@ -1921,15 +1921,16 @@ void PAListPerformPrint(struct PAList* List);
 
 
 
-    return temp;
-# 71 "src/PA/Tree.c"
+
+    return treePointer;
+# 72 "src/PA/Tree.c"
     return temp;
 }
           struct PATree PATreeBegin(struct PATree* Tree, struct PACount Value, struct PACount Value2, struct PAList Value3, struct PAElement Value4)
 {
     struct PATree tree;
     struct PATree* treePointer;
-# 86 "src/PA/Tree.c"
+# 87 "src/PA/Tree.c"
     Tree->n = tree.n;
     Tree->m = tree.m;
     Tree->adj = tree.adj;
@@ -1943,7 +1944,7 @@ void PAListPerformPrint(struct PAList* List);
 
     return tree;
 }
-# 108 "src/PA/Tree.c"
+# 109 "src/PA/Tree.c"
           void PATreeCopy(struct PATree* from, struct PATree* to)
 {
     struct PATree temp;
@@ -1955,7 +1956,7 @@ void PAListPerformPrint(struct PAList* List);
     to->m = temp.m;
 
     to->source = temp.source;
-# 130 "src/PA/Tree.c"
+# 131 "src/PA/Tree.c"
 }
           PAResult PATreeFinish(struct PATree* PA)
 {
@@ -1964,10 +1965,10 @@ void PAListPerformPrint(struct PAList* List);
     returnCode = PACountFinish(PA->n);
     returnCode2 = PACountFinish(PA->m);
     returnCode = ((int)0);
-# 173 "src/PA/Tree.c"
+# 174 "src/PA/Tree.c"
     return returnCode;
 }
-# 215 "src/PA/Tree.c"
+# 216 "src/PA/Tree.c"
           struct PATree PATreeDelete(struct PATree* Tree)
 {
     int returnCode;
