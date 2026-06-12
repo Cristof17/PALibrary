@@ -153,9 +153,9 @@ struct Facade;
 struct Input {
 	;
 };
-	// struct Algorithm {
-			// struct Input input;
-		// };
+struct Algorithm {
+	struct Input input;
+};
 struct ArrayListPosition {
 	int position;
 };
