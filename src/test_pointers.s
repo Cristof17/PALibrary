@@ -5,14 +5,14 @@
 _main:                                  ; @main
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #208
-	stp	x29, x30, [sp, #192]            ; 16-byte Folded Spill
-	add	x29, sp, #192
+	sub	sp, sp, #240
+	stp	x29, x30, [sp, #224]            ; 16-byte Folded Spill
+	add	x29, sp, #224
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
 	mov	w8, #0                          ; =0x0
-	str	w8, [sp, #20]                   ; 4-byte Folded Spill
+	str	w8, [sp, #36]                   ; 4-byte Folded Spill
 	stur	wzr, [x29, #-4]
 	bl	_PANumberCreate
 	stur	x0, [x29, #-16]
@@ -93,17 +93,17 @@ _main:                                  ; @main
 	str	x8, [x9]
 	bl	_printf
 	bl	_PAStatusCreate
-	str	x0, [sp, #96]
+	stur	x0, [x29, #-96]
 	bl	_PAStatusCreate
-	str	x0, [sp, #88]
-	ldr	x0, [sp, #96]
+	stur	x0, [x29, #-104]
+	ldur	x0, [x29, #-96]
 	ldur	x1, [x29, #-64]
 	bl	_PAStatusBegin
-	str	x0, [sp, #80]
-	ldr	x0, [sp, #96]
-	ldr	x1, [sp, #88]
+	str	x0, [sp, #112]
+	ldur	x0, [x29, #-96]
+	ldur	x1, [x29, #-104]
 	bl	_PAStatusCopy
-	ldr	x8, [sp, #96]
+	ldur	x8, [x29, #-96]
 	ldr	x8, [x8]
 	ldr	x8, [x8]
 	ldrb	w10, [x8]
@@ -115,20 +115,21 @@ _main:                                  ; @main
 	add	x0, x0, l_.str.1@PAGEOFF
 	bl	_printf
 	bl	_PACountCreate
-	str	x0, [sp, #72]
-	ldr	x0, [sp, #72]
+	str	x0, [sp, #104]
+	ldr	x0, [sp, #104]
 	ldur	x1, [x29, #-24]
 	bl	_PACountBegin
-	str	x0, [sp, #64]
+	str	x0, [sp, #96]
 	bl	_PASeriesCreate
-	str	x0, [sp, #56]
-	ldr	x0, [sp, #56]
-	ldr	x1, [sp, #72]
+	str	x0, [sp, #88]
+	ldr	x0, [sp, #88]
+	ldr	x1, [sp, #104]
 	mov	x2, #0                          ; =0x0
+	str	x2, [sp, #16]                   ; 8-byte Folded Spill
 	bl	_PASeriesBegin
-	str	x0, [sp, #40]
-	str	x1, [sp, #48]
-	ldr	x8, [sp, #56]
+	str	x0, [sp, #72]
+	str	x1, [sp, #80]
+	ldr	x8, [sp, #88]
 	ldr	x8, [x8]
 	ldr	x8, [x8]
 	ldrb	w10, [x8]
@@ -140,8 +141,8 @@ _main:                                  ; @main
 	add	x0, x0, l_.str.2@PAGEOFF
 	bl	_printf
 	bl	_PAListCreate
-	str	x0, [sp, #32]
-	ldr	x8, [sp, #32]
+	str	x0, [sp, #64]
+	ldr	x8, [sp, #64]
 	ldr	x8, [x8]
 	ldr	x8, [x8]
 	ldrb	w10, [x8]
@@ -151,10 +152,28 @@ _main:                                  ; @main
 	str	x8, [x9]
 	adrp	x0, l_.str.3@PAGE
 	add	x0, x0, l_.str.3@PAGEOFF
+	str	x0, [sp, #24]                   ; 8-byte Folded Spill
 	bl	_printf
-	ldr	w0, [sp, #20]                   ; 4-byte Folded Reload
-	ldp	x29, x30, [sp, #192]            ; 16-byte Folded Reload
-	add	sp, sp, #208
+	ldr	x2, [sp, #16]                   ; 8-byte Folded Reload
+	ldr	x0, [sp, #64]
+	ldr	x1, [sp, #104]
+	bl	_PAListBegin
+	mov	x8, x0
+	ldr	x0, [sp, #24]                   ; 8-byte Folded Reload
+	str	x8, [sp, #48]
+	str	x1, [sp, #56]
+	ldr	x8, [sp, #64]
+	ldr	x8, [x8]
+	ldr	x8, [x8]
+	ldrb	w10, [x8]
+	mov	x9, sp
+                                        ; implicit-def: $x8
+	mov	x8, x10
+	str	x8, [x9]
+	bl	_printf
+	ldr	w0, [sp, #36]                   ; 4-byte Folded Reload
+	ldp	x29, x30, [sp, #224]            ; 16-byte Folded Reload
+	add	sp, sp, #240
 	ret
 	.cfi_endproc
                                         ; -- End function

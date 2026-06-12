@@ -43,13 +43,17 @@ _PAListBegin:                           ; @PAListBegin
 ; %bb.0:
 	sub	sp, sp, #48
 	.cfi_def_cfa_offset 48
-	add	x8, sp, #24
-	str	x1, [sp, #24]
-	str	x0, [sp, #16]
+	str	x0, [sp, #24]
+	str	x1, [sp, #16]
 	str	x2, [sp, #8]
+	ldr	x8, [sp, #24]
+	ldr	q0, [x8]
+	str	q0, [sp, #32]
+	ldr	x8, [sp, #16]
 	str	x8, [sp, #32]
-	ldr	x8, [sp, #8]
-	str	x8, [sp, #40]
+	ldr	x8, [sp, #32]
+	ldr	x9, [sp, #24]
+	str	x8, [x9]
 	ldr	x0, [sp, #32]
 	ldr	x1, [sp, #40]
 	add	sp, sp, #48

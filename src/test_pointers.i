@@ -2387,7 +2387,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
           struct PAList* PAListCreate();
-          struct PAList PAListCompleteBegin(struct PAList*,struct PACount, struct PASeries[]);
+          struct PAList PAListBegin(struct PAList*,struct PACount*, struct PASeries[]);
 
 
 
@@ -2395,7 +2395,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
           struct PAList PAListDelete(struct PAList*);
           void PAListCopy(struct PAList*, struct PAList*);
 
-void PAListPerformPrint(struct PAList* List);
+void PAListPrint(struct PAList* List);
 # 7 "test/test_pointers.c" 2
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 1 3 4
@@ -2468,9 +2468,12 @@ int main()
  struct PAList* list;
  list = PAListCreate();
  printf("list.n alloc %d\n", list->n->number->val);
+ PAListBegin(list,count1,0);
+ printf("list.n alloc %d\n", list->n->number->val);
+
 
 
  struct PATree *Tree;
-# 95 "test/test_pointers.c"
+# 98 "test/test_pointers.c"
  return 0;
 }

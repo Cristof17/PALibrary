@@ -74,6 +74,8 @@ int main()
 	struct PAList* list;
 	list = PAListCreate();
 	printf("list.n alloc %d\n", list->n->number->val);
+	PAListBegin(list,count1,0);
+	printf("list.n alloc %d\n", list->n->number->val);
 	// PAListCompleteBegin
 
 	// PASeriesBegin(series,count)

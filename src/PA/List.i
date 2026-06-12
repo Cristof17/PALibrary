@@ -1830,7 +1830,7 @@ extern char * suboptarg;
 
 
           struct PAList* PAListCreate();
-          struct PAList PAListCompleteBegin(struct PAList*,struct PACount, struct PASeries[]);
+          struct PAList PAListBegin(struct PAList*,struct PACount*, struct PASeries[]);
 
 
 
@@ -1838,7 +1838,7 @@ extern char * suboptarg;
           struct PAList PAListDelete(struct PAList*);
           void PAListCopy(struct PAList*, struct PAList*);
 
-void PAListPerformPrint(struct PAList* List);
+void PAListPrint(struct PAList* List);
 # 8 "src/PA/List.c" 2
 # 1 "./include/PA/Count.h" 1
 
@@ -1927,23 +1927,24 @@ void PAListPerformPrint(struct PAList* List);
 
 }
 
-          struct PAList PAListBegin(struct PAList* List, struct PACount Value, struct PASeries* Value2)
+          struct PAList PAListBegin(struct PAList* List, struct PACount* Value, struct PASeries* Value2)
 {
     struct PAList temp;
     struct PAList* listPointer;
-    temp.n = &Value;
-    temp.neigh = Value2;
-# 119 "src/PA/List.c"
+    temp = *List;
+    temp.n = Value;
+    List->n = temp.n;
+# 120 "src/PA/List.c"
     return temp;
 }
-# 152 "src/PA/List.c"
+# 153 "src/PA/List.c"
           PAResult PAListFinish(struct PAList* PA)
 {
     int returnCode;
     returnCode = PACountFinish(PA->n);
     free(PA);
     return ((int)0);
-# 172 "src/PA/List.c"
+# 173 "src/PA/List.c"
     {
 
 
@@ -1961,12 +1962,12 @@ void Dispose()
 {
 
 }
-# 204 "src/PA/List.c"
+# 205 "src/PA/List.c"
           struct PAList PAListDelete(struct PAList* PA)
 {
 
     struct PAList aux;
-# 223 "src/PA/List.c"
+# 224 "src/PA/List.c"
     return aux;
 
 

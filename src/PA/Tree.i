@@ -1903,7 +1903,7 @@ extern char * suboptarg;
 
 
           struct PAList* PAListCreate();
-          struct PAList PAListCompleteBegin(struct PAList*,struct PACount, struct PASeries[]);
+          struct PAList PAListBegin(struct PAList*,struct PACount*, struct PASeries[]);
 
 
 
@@ -1911,7 +1911,7 @@ extern char * suboptarg;
           struct PAList PAListDelete(struct PAList*);
           void PAListCopy(struct PAList*, struct PAList*);
 
-void PAListPerformPrint(struct PAList* List);
+void PAListPrint(struct PAList* List);
 # 7 "src/PA/Tree.c" 2
 # 19 "src/PA/Tree.c"
           struct PATree* PATreeCreate()

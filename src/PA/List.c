@@ -88,13 +88,14 @@ DllExport void PAListCopy(struct PAList* from, struct PAList* to)
     // return temp;
 }
 
-DllExport struct PAList PAListBegin(struct PAList* List, struct PACount Value, struct PASeries* Value2)
+DllExport struct PAList PAListBegin(struct PAList* List, struct PACount* Value, struct PASeries* Value2)
 {
     struct PAList temp;
     struct PAList* listPointer;
-    temp.n = &Value;
-    temp.neigh = Value2;
-
+    temp = *List;
+    temp.n = Value;
+    List->n = temp.n;
+    // temp.neigh = Value2;
     // list.n = Value;
     // list.n = PACountPerformConstruct();
     // list.m = PACountPerformConstruct()
