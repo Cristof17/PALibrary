@@ -2517,23 +2517,17 @@ int main()
  printf("series.count %d\n", series->m->number->val);
 
  struct PAList* list;
- list = PAListCreate();
- printf("list.n alloc %d\n", list->n->number->val);
- PAListBegin(list,count1,0);
- printf("list.n alloc %d\n", list->n->number->val);
+
+
+
+
 
 
  struct PAElement* element1;
- element1 = PAElementCreate();
+
 
 
  struct PATree *Tree;
- Tree = PATreeCreate();
- printf("Tree.m %d\n", Tree->m->number->val);
- printf("Tree.n %d\n", Tree->n->number->val);
- PATreeBegin(Tree,count1,count1,0,element1);
- printf("Tree.m %d\n", Tree->m->number->val);
- printf("Tree.n %d\n", Tree->n->number->val);
 # 109 "test/test_pointers.c"
  return 0;
 }
