@@ -62,6 +62,7 @@ DllExport struct PAOutput* PAOutputCreate()
     struct PAOutput Output;
     struct PAOutput* outputPointer;
     outputPointer=(struct PAOutput*) malloc (sizeof(struct PAOutput));
+    outputPointer->result = BFSRecordCreate();
     // outputPointer-
     // return outputPointer;
     // return Output;
@@ -90,7 +91,9 @@ DllExport PAResult PAOutputFinish(struct PAOutput* PA)
 {
     int returnCode;
     // returnCode = PA->
-    return PARESULT_SUCCESS;
+    returnCode = BFSRecordFinish(PA->result);
+    // return PARESULT_SUCCESS;
+    return returnCode;
     // PA.result = BFSRecordPerformRuin
     // struct PAOutput Output;
     // return Output;
