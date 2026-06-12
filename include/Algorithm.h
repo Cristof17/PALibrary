@@ -7,6 +7,7 @@
 #include <defs.h>
 #include <types.h>
 #include <stdlib.h>
+#include <Input.h>
 // struct Algorithm;
 // typedef struct Algorithm Algorithm;
 DllExport struct Algorithm* AlgorithmCreate();

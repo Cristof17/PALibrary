@@ -1887,5 +1887,7 @@ struct PARecord ArrayListPutCount(struct ArrayList, struct PACount);
 }
           int InputFinish(struct Input* PA)
 {
-    return PA;
+    int returnCode;
+    returnCode = ((int)0);
+
 }
