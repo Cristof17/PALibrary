@@ -753,7 +753,7 @@ test.out: $(objects) test.o libpa.a
 	$(CC) $(libdir)/$< $(foreach object,$(objects_pa),$(libdir)/$(object)) -o $(bindir)/$(program_test_pa)
 
 test_pointers.out: test_pointers.o $(objects) libpa.a libbfs.a
-	$(CC) $(libdir)/$< $(foreach object,$(objects_pa),$(libdir)/$(object)) -o $(bindir)/$(program_test_pointers_pa)
+	$(CC) $(libdir)/$< $(foreach object,$(objects_pa),$(libdir)/$(object)) $(libdir)/$(lib_pa) $(libdir)/$(lib_bfs) -o $(bindir)/$(program_test_pointers_pa)
 
 #$(CC) -lc $(foreach dependency,$^,$(libdir)/$(dependency)) -o $(bindir)/$@
 
