@@ -7,15 +7,14 @@
 # 1 "src/Output.c" 2
 
 
-# 1 "./include/defs.h" 1
-# 4 "src/Output.c" 2
 # 1 "./include/Output.h" 1
 
 
 
 
 
-
+# 1 "./include/defs.h" 1
+# 7 "./include/Output.h" 2
 # 1 "./include/types.h" 1
 # 18 "./include/types.h"
 struct PANumber;
@@ -126,7 +125,7 @@ struct Input {
  ;
 };
 struct Algorithm {
- struct Input input;
+ struct Input* input;
 };
 struct ArrayListPosition {
  int position;
@@ -378,6 +377,22 @@ struct Facade {
  struct FactoryCreator factory;
 };
 # 8 "./include/Output.h" 2
+# 1 "./include/BFS/Record.h" 1
+
+
+
+
+
+
+
+          struct BFSRecord* BFSRecordCreate();
+
+          int BFSRecordFinish(struct BFSRecord*);
+          struct BFSRecord BFSRecordDelete(struct BFSRecord*);
+          void BFSRecordPrint(struct BFSRecord*);
+          struct BFSRecord BFSRecordBegin(struct BFSRecord*, struct PAList* d, struct PACount* n);
+          struct BFSRecord BFSRecordCopy(struct BFSRecord* from, struct BFSRecord* to);
+# 9 "./include/Output.h" 2
 
 
           struct Output OutputPerformConstruct();
@@ -386,8 +401,8 @@ struct Facade {
           void OutputPerformRuin(void);
 
           void OutputPerformPrint(PAResult);
-# 5 "src/Output.c" 2
-# 15 "src/Output.c"
+# 4 "src/Output.c" 2
+# 14 "src/Output.c"
           struct Output OutputPerformConstruct()
 {
     struct Output output;

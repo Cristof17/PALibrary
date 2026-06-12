@@ -124,7 +124,7 @@ struct Input {
  ;
 };
 struct Algorithm {
- struct Input input;
+ struct Input* input;
 };
 struct ArrayListPosition {
  int position;
@@ -1890,4 +1890,5 @@ struct PARecord ArrayListPutCount(struct ArrayList, struct PACount);
     int returnCode;
     returnCode = ((int)0);
 
+    return returnCode;
 }

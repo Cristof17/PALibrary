@@ -38,4 +38,5 @@ DllExport int InputFinish(struct Input* PA)
     int returnCode;
     returnCode = PARESULT_SUCCESS;
     // return PA;
+    return returnCode;
 }

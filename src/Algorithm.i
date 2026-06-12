@@ -126,7 +126,7 @@ struct Input {
  ;
 };
 struct Algorithm {
- struct Input input;
+ struct Input* input;
 };
 struct ArrayListPosition {
  int position;
@@ -1817,6 +1817,28 @@ unsigned long long
 extern char * suboptarg;
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 2 3 4
 # 10 "./include/Algorithm.h" 2
+# 1 "./include/Input.h" 1
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 8 "./include/Input.h" 2
+
+
+
+
+
+          struct Input* InputCreate();
+          struct Input InputBegin(struct Input*, struct PACount, struct PACount, struct ArrayList, struct PAElement);
+          struct Input InputCopy(struct Input*, struct Input*);
+          struct Input InputDelete(struct Input*);
+          int InputFinish(struct Input*);
+
+          void InputDispose();
+# 11 "./include/Algorithm.h" 2
 
 
           struct Algorithm* AlgorithmCreate();
@@ -1833,16 +1855,20 @@ extern char * suboptarg;
     algorithmPointer->input = InputCreate();
     return algorithmPointer;
 }
-          int AlgorithmFinish(struct Algorithm*)
+          int AlgorithmFinish(struct Algorithm* PA)
 {
-
+    int returnCode;
+    returnCode = ((int)0);
+    return returnCode;
 }
-          struct Algorithm AlgorithmDelete(struct Algorithm*)
+          struct Algorithm AlgorithmDelete(struct Algorithm* PA)
 {
     struct Algorithm temp;
     return temp;
 }
           struct Algorithm AlgorithmCopy(struct Algorithm* from, struct Algorithm* to)
 {
+    struct Algorithm temp;
 
+    return temp;
 }

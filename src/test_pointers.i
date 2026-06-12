@@ -123,7 +123,7 @@ struct Input {
  ;
 };
 struct Algorithm {
- struct Input input;
+ struct Input* input;
 };
 struct ArrayListPosition {
  int position;
