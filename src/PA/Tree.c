@@ -135,8 +135,10 @@ DllExport PAResult PATreeFinish(struct PATree* PA)
     int returnCode2;
     returnCode = PACountFinish(PA->n);
     returnCode2 = PACountFinish(PA->m);
-    if (returnCode && returnCode2)
-        returnCode = PARESULT_SUCCESS;
+    if (returnCode == PARESULT_SUCCESS)
+        if (returnCode2 == PARESULT_SUCCESS)
+        // ) && returnCode2)
+            returnCode = PARESULT_SUCCESS;
     else
         returnCode = PARESULT_FAIL;
     // int returnCode1 = PARESULT_FAIL;
