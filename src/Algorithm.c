@@ -14,7 +14,7 @@ DllExport struct Algorithm* AlgorithmCreate()
 {
     struct Algorithm* algorithmPointer;
     algorithmPointer = (struct Algorithm*) malloc (sizeof(struct Algorithm*));
-    // algorithmPointer->input = InputCreate();
+    algorithmPointer->input = InputCreate();
     return algorithmPointer;
 }
 DllExport int AlgorithmFinish(struct Algorithm*)

@@ -31,9 +31,11 @@ DllExport struct Input InputCopy(struct Input* from, struct Input* to)
 }
 DllExport struct Input InputDelete(struct Input* PA)
 {
-    return PA;
+    return *PA;
 }
-DllExport struct Input InputFinish(struct Input* PA)
+DllExport int InputFinish(struct Input* PA)
 {
-    return PA;
+    int returnCode;
+    returnCode = PARESULT_SUCCESS;
+    // return PA;
 }
