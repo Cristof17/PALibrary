@@ -67,6 +67,7 @@ int main()
 	PACountBegin(count1,number123);
 	struct PASeries* series;
 	series = PASeriesCreate();
+	PASeriesBegin(series,count1,0);
 	printf("series.count %d\n", series->m->number->val);
 	// PASeriesBegin(series,count)
 	struct PATree *Tree;

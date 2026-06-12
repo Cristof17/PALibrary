@@ -1855,7 +1855,7 @@ extern char * suboptarg;
 
 
           struct PACount* PACountCreate();
-          struct PACount PACountBegin(struct PACount* Count, struct PANumber Number);
+          struct PACount PACountBegin(struct PACount* Count, struct PANumber* Number);
           void PACountCopy(struct PACount* from, struct PACount* to);
 
 

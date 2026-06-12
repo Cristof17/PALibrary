@@ -1826,7 +1826,7 @@ extern char * suboptarg;
 
 
           struct PACount* PACountCreate();
-          struct PACount PACountBegin(struct PACount* Count, struct PANumber Number);
+          struct PACount PACountBegin(struct PACount* Count, struct PANumber* Number);
           void PACountCopy(struct PACount* from, struct PACount* to);
 
 
@@ -2433,11 +2433,14 @@ int main()
  PAStatusCopy(status,status123);
  printf("status value %d\n",status->visited->value->val);
 
+ struct PACount* count1;
+ count1 = PACountCreate();
+ PACountBegin(count1,number123);
  struct PASeries* series;
  series = PASeriesCreate();
  printf("series.count %d\n", series->m->number->val);
 
  struct PATree *Tree;
-# 85 "test/test_pointers.c"
+# 88 "test/test_pointers.c"
  return 0;
 }

@@ -30,13 +30,15 @@ _PACountBegin:                          ; @PACountBegin
 ; %bb.0:
 	sub	sp, sp, #32
 	.cfi_def_cfa_offset 32
-	add	x8, sp, #23
-	mov	x9, x1
-	strb	w9, [sp, #23]
-	str	x0, [sp, #8]
+	str	x0, [sp, #16]
+	str	x1, [sp, #8]
+	ldr	x8, [sp, #16]
+	ldr	x8, [x8]
+	str	x8, [sp, #24]
+	ldr	x8, [sp, #8]
 	str	x8, [sp, #24]
 	ldr	x8, [sp, #24]
-	ldr	x9, [sp, #8]
+	ldr	x9, [sp, #16]
 	str	x8, [x9]
 	ldr	x0, [sp, #24]
 	add	sp, sp, #32
@@ -48,11 +50,22 @@ _PACountBegin:                          ; @PACountBegin
 _PACountFinish:                         ; @PACountFinish
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
+	sub	sp, sp, #32
+	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
+	add	x29, sp, #16
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
 	str	x0, [sp, #8]
+	ldr	x8, [sp, #8]
+	ldr	x0, [x8]
+	bl	_PANumberFinish
+	str	w0, [sp, #4]
+	ldr	x0, [sp, #8]
+	bl	_free
 	ldr	w0, [sp, #4]
-	add	sp, sp, #16
+	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function

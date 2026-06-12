@@ -100,7 +100,7 @@ DllExport void PASeriesCopy(struct PASeries* from, struct PASeries* to)
 // }
 // }
 DllExport struct PASeries PASeriesBegin(struct PASeries* Series,
-    struct PACount Value, struct PAElement* Value2)
+    struct PACount* Value, struct PAElement* Value2)
     {
         // PAResult result;
         // return result;
@@ -114,11 +114,14 @@ DllExport struct PASeries PASeriesBegin(struct PASeries* Series,
         // series.n = N;
         //return series;
         struct PASeries temp;
-        struct PASeries* series;
-        temp.m = &Value;
-        temp.adj = Value2;
-        Series->adj = temp.adj;
+        temp = *Series;
+        temp.m = Value;
         Series->m = temp.m;
+        // Series
+        // struct PASeries* series;
+        // temp.m = &Value;
+        // temp.adj = Value2;
+        // Series->adj = temp.adj;
         // series.m = Value;
         // struct PANumber x;
         // struct PANumber y;

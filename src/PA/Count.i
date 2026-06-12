@@ -1830,7 +1830,7 @@ extern char * suboptarg;
 
 
           struct PACount* PACountCreate();
-          struct PACount PACountBegin(struct PACount* Count, struct PANumber Number);
+          struct PACount PACountBegin(struct PACount* Count, struct PANumber* Number);
           void PACountCopy(struct PACount* from, struct PACount* to);
 
 
@@ -2345,12 +2345,14 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
     countPointer->number = PANumberCreate();
     return countPointer;
 }
-          struct PACount PACountBegin(struct PACount* Count, struct PANumber Value)
+          struct PACount PACountBegin(struct PACount* Count, struct PANumber* Value)
 {
 
     struct PACount temp;
     struct PACount* cpuntPointer;
-    temp.number = &Value;
+    temp = *Count;
+    temp.number = Value;
+
     Count->number = temp.number;
 
 
@@ -2369,8 +2371,10 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 }
           PAResult PACountFinish(struct PACount* PA)
 {
-# 79 "src/PA/Count.c"
+# 81 "src/PA/Count.c"
     int returnCode;
+    returnCode = PANumberFinish(PA->number);
+    free(PA);
     return returnCode;
 
 }
