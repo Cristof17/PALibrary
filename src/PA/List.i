@@ -1931,20 +1931,17 @@ void PAListPrint(struct PAList* List);
 {
     struct PAList temp;
     struct PAList* listPointer;
-    temp = *List;
-    temp.n = Value;
-    List->n = temp.n;
-# 120 "src/PA/List.c"
+# 121 "src/PA/List.c"
     return temp;
 }
-# 153 "src/PA/List.c"
+# 154 "src/PA/List.c"
           PAResult PAListFinish(struct PAList* PA)
 {
     int returnCode;
     returnCode = PACountFinish(PA->n);
     free(PA);
     return ((int)0);
-# 173 "src/PA/List.c"
+# 174 "src/PA/List.c"
     {
 
 
@@ -1962,12 +1959,12 @@ void Dispose()
 {
 
 }
-# 205 "src/PA/List.c"
+# 206 "src/PA/List.c"
           struct PAList PAListDelete(struct PAList* PA)
 {
 
     struct PAList aux;
-# 224 "src/PA/List.c"
+# 225 "src/PA/List.c"
     return aux;
 
 

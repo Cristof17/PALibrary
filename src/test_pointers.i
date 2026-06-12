@@ -2516,18 +2516,19 @@ int main()
  PASeriesBegin(series,count1,0);
  printf("series.count %d\n", series->m->number->val);
 
+ struct PACount* count123;
+ struct PANumber* number213;
+ number213 = PANumberCreate();
+
+
+ PANumberBegin(number213,'g');
+ count123 = PACountCreate();
+ PACountBegin(count123,number213);
+
  struct PAList* list;
+ list = PAListCreate();
 
-
-
-
-
-
- struct PAElement* element1;
-
-
-
- struct PATree *Tree;
-# 109 "test/test_pointers.c"
+ printf("list.n alloc %d\n", list->n->number->val);
+# 121 "test/test_pointers.c"
  return 0;
 }

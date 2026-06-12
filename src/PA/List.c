@@ -92,9 +92,10 @@ DllExport struct PAList PAListBegin(struct PAList* List, struct PACount* Value, 
 {
     struct PAList temp;
     struct PAList* listPointer;
-    temp = *List;
-    temp.n = Value;
-    List->n = temp.n;
+    // listPointer = List;
+    // temp = *listPointer;
+    // temp.n = Value;
+    // List->n = temp.n;
     // temp.neigh = Value2;
     // list.n = Value;
     // list.n = PACountPerformConstruct();

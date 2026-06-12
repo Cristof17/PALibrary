@@ -73,18 +73,30 @@ int main()
 	PASeriesBegin(series,count1,0);
 	printf("series.count %d\n", series->m->number->val);
 
+	struct PACount* count123;
+	struct PANumber* number213;
+	number213 = PANumberCreate();
+	// PANumberBegin(count213,'g');
+	// PANumberCreate
+	PANumberBegin(number213,'g');
+	count123 = PACountCreate();
+	PACountBegin(count123,number213);
+	// PACountBegin(count123,number)
 	struct PAList* list;
-	// list = PAListCreate();
-	// printf("list.n alloc %d\n", list->n->number->val);
-	// PAListBegin(list,count1,0);
+	list = PAListCreate();
+	// PAListBegin(list,count123,0);
+	printf("list.n alloc %d\n", list->n->number->val);
+	// PAListBegin(count123);
+	// PAListBegin(list,count123);
+	// PAListBegin(list,count123,0);
 	// printf("list.n alloc %d\n", list->n->number->val);
 	// PAListCompleteBegin
 
-	struct PAElement* element1;
+	// struct PAElement* element1;
 	// element1 = PAElementCreate();
 	// printf("element1.")
 	// PASeriesBegin(series,count)
-	struct PATree *Tree;
+	// struct PATree *Tree;
 	// Tree = PATreeCreate();
 	// printf("Tree.m %d\n", Tree->m->number->val);
 	// printf("Tree.n %d\n", Tree->n->number->val);
