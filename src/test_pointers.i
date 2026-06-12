@@ -2407,8 +2407,9 @@ int main()
  struct PAStatus *status;
  struct PAStatus *status123;
  status=PAStatusCreate();
+ status123=PAStatusCreate();
  PAStatusBegin(status,*resource123);
  PAStatusCopy(status,status123);
-# 77 "test/test_pointers.c"
+# 78 "test/test_pointers.c"
  return 0;
 }

@@ -94,6 +94,8 @@ _main:                                  ; @main
 	bl	_printf
 	bl	_PAStatusCreate
 	str	x0, [sp, #48]
+	bl	_PAStatusCreate
+	str	x0, [sp, #40]
 	ldr	x0, [sp, #48]
 	ldur	x8, [x29, #-64]
 	ldr	x1, [x8]
