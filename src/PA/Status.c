@@ -27,6 +27,7 @@ DllExport struct PAStatus* PAStatusCreate()
     // return status;
     struct PAStatus* statusPointer;
     statusPointer=(struct PAStatus*)malloc(sizeof(struct PAStatus));
+    statusPointer->visited = PAResourceCreate();
     return statusPointer;
 }
 DllExport struct PAStatus PAStatusBegin(struct PAStatus* Status, struct PAResource Value)
@@ -44,7 +45,12 @@ DllExport struct PAStatus PAStatusBegin(struct PAStatus* Status, struct PAResour
 }
 DllExport void PAStatusCopy(struct PAStatus* from, struct PAStatus* to)
 {
+    PAStatusDelete(to);
+    // PAStatusDelete(to);
     struct PAStatus temp;
+    struct PAResource* visited;
+
+    PAResourceCopy(from->visited,to->visited);
     // temp.visited = from->visited;
     // to->visited = temp.visited;
     // return to;
@@ -61,6 +67,12 @@ DllExport void PAStatusCopy(struct PAStatus* from, struct PAStatus* to)
 //     return returnCode;
 //     // return PA;
 // }
+DllExport struct PAStatus PAStatusDelete(struct PAStatus* PA)
+{
+    struct PAStatus temp;
+    PAResourceDelete(PA->visited);
+    return temp;
+}
 DllExport PAResult PAStatusFinish(struct PAStatus* PA)
 {
     // PAResult result;

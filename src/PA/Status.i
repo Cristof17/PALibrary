@@ -1856,6 +1856,7 @@ extern char * suboptarg;
 # 28 "src/PA/Status.c"
     struct PAStatus* statusPointer;
     statusPointer=(struct PAStatus*)malloc(sizeof(struct PAStatus));
+    statusPointer->visited = PAResourceCreate();
     return statusPointer;
 }
           struct PAStatus PAStatusBegin(struct PAStatus* Status, struct PAResource Value)
@@ -1873,7 +1874,12 @@ extern char * suboptarg;
 }
           void PAStatusCopy(struct PAStatus* from, struct PAStatus* to)
 {
+    PAStatusDelete(to);
+
     struct PAStatus temp;
+    struct PAResource* visited;
+
+    PAResourceCopy(from->visited,to->visited);
 
 
 
@@ -1882,7 +1888,13 @@ extern char * suboptarg;
 
 
 }
-# 64 "src/PA/Status.c"
+# 70 "src/PA/Status.c"
+          struct PAStatus PAStatusDelete(struct PAStatus* PA)
+{
+    struct PAStatus temp;
+    PAResourceDelete(PA->visited);
+    return temp;
+}
           PAResult PAStatusFinish(struct PAStatus* PA)
 {
 

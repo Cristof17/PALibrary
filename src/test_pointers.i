@@ -2405,6 +2405,11 @@ int main()
  printf("resource %d\n", resource234->value->val);
 
  struct PAStatus *status;
-# 75 "test/test_pointers.c"
+ struct PAStatus *status123;
+ status=PAStatusCreate();
+ PAStatusBegin(status,*resource123);
+ PAStatusCopy(status,status123);
+ printf("status value %d\n",status->visited->value->val);
+# 77 "test/test_pointers.c"
  return 0;
 }

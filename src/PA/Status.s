@@ -26,6 +26,9 @@ _PAStatusCreate:                        ; @PAStatusCreate
 	mov	x0, #8                          ; =0x8
 	bl	_malloc
 	str	x0, [sp]
+	bl	_PAResourceCreate
+	ldr	x8, [sp]
+	str	x0, [x8]
 	ldr	x0, [sp]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
@@ -56,11 +59,46 @@ _PAStatusBegin:                         ; @PAStatusBegin
 _PAStatusCopy:                          ; @PAStatusCopy
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
+	sub	sp, sp, #64
+	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
+	add	x29, sp, #48
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	stur	x0, [x29, #-8]
+	stur	x1, [x29, #-16]
+	ldur	x0, [x29, #-16]
+	bl	_PAStatusDelete
 	str	x0, [sp, #24]
-	str	x1, [sp, #16]
-	add	sp, sp, #32
+	ldur	x8, [x29, #-8]
+	ldr	x0, [x8]
+	ldur	x8, [x29, #-16]
+	ldr	x1, [x8]
+	bl	_PAResourceCopy
+	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
+	add	sp, sp, #64
+	ret
+	.cfi_endproc
+                                        ; -- End function
+	.globl	_PAStatusDelete                 ; -- Begin function PAStatusDelete
+	.p2align	2
+_PAStatusDelete:                        ; @PAStatusDelete
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #48
+	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
+	add	x29, sp, #32
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	str	x0, [sp, #16]
+	ldr	x8, [sp, #16]
+	ldr	x0, [x8]
+	bl	_PAResourceDelete
+	str	x0, [sp, #8]
+	ldur	x0, [x29, #-8]
+	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function
