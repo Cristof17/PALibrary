@@ -227,10 +227,10 @@ struct FlyweightUnsharedConcreteFlyweight {
 	//PAInt todo;
 };
 struct PATree  {
-	struct PACount n;
-	struct PACount m;
-	struct PAElement source;
-	struct PAList adj;
+	struct PACount* n;
+	struct PACount* m;
+	struct PAElement* source;
+	struct PAList* adj;
 };
 struct BridgeAbstraction {
 	struct PAElement elements[SIZE];

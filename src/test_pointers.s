@@ -104,6 +104,17 @@ _main:                                  ; @main
 	ldr	x0, [sp, #48]
 	ldr	x1, [sp, #40]
 	bl	_PAStatusCopy
+	ldr	x8, [sp, #48]
+	ldr	x8, [x8]
+	ldr	x8, [x8]
+	ldrb	w10, [x8]
+	mov	x9, sp
+                                        ; implicit-def: $x8
+	mov	x8, x10
+	str	x8, [x9]
+	adrp	x0, l_.str.1@PAGE
+	add	x0, x0, l_.str.1@PAGEOFF
+	bl	_printf
 	ldr	w0, [sp, #28]                   ; 4-byte Folded Reload
 	ldp	x29, x30, [sp, #144]            ; 16-byte Folded Reload
 	add	sp, sp, #160
@@ -113,5 +124,8 @@ _main:                                  ; @main
 	.section	__TEXT,__cstring,cstring_literals
 l_.str:                                 ; @.str
 	.asciz	"resource %d\n"
+
+l_.str.1:                               ; @.str.1
+	.asciz	"status value %d\n"
 
 .subsections_via_symbols

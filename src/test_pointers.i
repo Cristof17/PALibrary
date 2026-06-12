@@ -196,10 +196,10 @@ struct FlyweightUnsharedConcreteFlyweight {
 
 };
 struct PATree {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
- struct PAList adj;
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
+ struct PAList* adj;
 };
 struct BridgeAbstraction {
  struct PAElement elements[2];
@@ -2410,6 +2410,7 @@ int main()
  status123=PAStatusCreate();
  PAStatusBegin(status,*resource123);
  PAStatusCopy(status,status123);
+ printf("status value %d\n",status->visited->value->val);
 # 78 "test/test_pointers.c"
  return 0;
 }

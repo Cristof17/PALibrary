@@ -202,10 +202,10 @@ struct FlyweightUnsharedConcreteFlyweight {
 
 };
 struct PATree {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
- struct PAList adj;
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
+ struct PAList* adj;
 };
 struct BridgeAbstraction {
  struct PAElement elements[2];
@@ -1878,11 +1878,12 @@ void PAListPerformPrint(struct PAList* List);
 # 19 "src/PA/List.c"
           struct PAList* PAListCreate()
 {
-    struct PAList list;
-# 35 "src/PA/List.c"
     struct PAList* listPointer;
+    listPointer = (struct PAList*) malloc (sizeof(struct PAList));
+# 36 "src/PA/List.c"
+    listPointer->n = PACountCreate();
     return listPointer;
-# 46 "src/PA/List.c"
+# 47 "src/PA/List.c"
 }
           void PAListCopy(struct PAList* from, struct PAList* to)
 {
@@ -1908,7 +1909,7 @@ void PAListPerformPrint(struct PAList* List);
 
 
     }
-# 79 "src/PA/List.c"
+# 80 "src/PA/List.c"
     {
         struct PASeries aux;
 
@@ -1926,10 +1927,10 @@ void PAListPerformPrint(struct PAList* List);
     struct PAList* listPointer;
     temp.n = &Value;
     temp.neigh = Value2;
-# 118 "src/PA/List.c"
+# 119 "src/PA/List.c"
     return temp;
 }
-# 151 "src/PA/List.c"
+# 152 "src/PA/List.c"
           PAResult PAListFinish(struct PAList* PA)
 {
 
@@ -1963,25 +1964,12 @@ void Dispose()
 {
 
 }
-# 199 "src/PA/List.c"
+# 200 "src/PA/List.c"
           struct PAList PAListDelete(struct PAList* PA)
 {
-    struct PAList aux;
-
-    struct PACount* countPointer;
-
-    struct PANumber x;
-    struct PANumber y;
-
-
-    while (x.val < y.val)
-    {
-
-        x.val++;
-    }
-
-
-
+    PACountDelete(PA->n);
+    free(PA);
+# 220 "src/PA/List.c"
     return aux;
 
 

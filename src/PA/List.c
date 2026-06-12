@@ -18,8 +18,8 @@
 // struct PAList PAListConstruct(struct PAElement Element) {
 DllExport struct PAList* PAListCreate()
 {
-    struct PAList list;
-
+    struct PAList* listPointer;
+    listPointer = (struct PAList*) malloc (sizeof(struct PAList));
     // struct PACount n = PACountPerformConstruct();
     // struct PACount x;
     // list->n = PACountPerformConstruct();
@@ -32,7 +32,8 @@ DllExport struct PAList* PAListCreate()
         // y.val++;
     // }
     // return list;
-    struct PAList* listPointer;
+    // struct PAList* listPointer;
+    listPointer->n = PACountCreate();
     return listPointer;
     // struct PASeries neigh[] = list.neigh;
     // x.number.val = FIRST;
@@ -150,17 +151,21 @@ DllExport struct PAList PAListBegin(struct PAList* List, struct PACount Value, s
 // }
 DllExport PAResult PAListFinish(struct PAList* PA)
 {
+    int returnCode;
+    returnCode = PACountFinish(PA->n);
+    free(PA);
+    return PARESULT_SUCCESS;
     // struct PAList List;
     // struct PACount x;
     // struct PACount y;
-    int returnCode1;
-    int returnCode2;
-    int returnCode;
+    // int returnCode1;
+    // int returnCode2;
+    // int returnCode;
     // int returnC
     // returnCode1 = PACountFinish(&(PA->n));
     // returnCode2 =(struct PASeries*) PAListPerformRuin(PA->neigh);
-    returnCode = returnCode1 & returnCode2;
-    return returnCode;
+    // returnCode = returnCode1 & returnCode2;
+    // return returnCode;
     // x.number.val = FIRST;
     // y.number.val = PA.n.number.val;
     // while (x.number.val < y.number.val)
@@ -198,19 +203,20 @@ void Dispose()
 // }
 DllExport struct PAList PAListDelete(struct PAList* PA)
 {
+    
     struct PAList aux;
     // struct PACount n = PA.n;
-    struct PACount* countPointer;
+    // struct PACount* countPointer;
     // countPointer->number = PACountPerformDelete(PA.n);
-    struct PANumber x;
-    struct PANumber y;
+    // struct PANumber x;
+    // struct PANumber y;
     // y = n.number;
     // x.val = FIRST;
-    while (x.val < y.val)
-    {
+    // while (x.val < y.val)
+    // {
         // PA.neigh[x.val] = PASeriesPerformDelete(PA.neigh[x.val]);
-        x.val++;
-    }
+        // x.val++;
+    // }
     // return List;
     // return PA;
     // return PARESULT_SUCCESS;

@@ -20,17 +20,19 @@
 */
 DllExport struct PASeries* PASeriesCreate() 
 {
-    struct PASeries* series;
+    struct PASeries* seriesPointer;
+    seriesPointer = (struct PASeries*) malloc (sizeof (struct PASeries));
+    seriesPointer->m = PACountCreate();
     // series.m = PACountPerformConstruct();
-    struct PANumber x;
-    struct PANumber y;
+    // struct PANumber x;
+    // struct PANumber y;
     // x.val = FIRST;
     // y.val = series.m.number.val;
-    while (x.val < y.val)
-    {
+    // while (x.val < y.val)
+    // {
         // series.adj[x.val] = PAElementPerformInit(series.adj[x.val], series.adj[x.val].index, series.adj[x.val].status);
-        x.val++;
-    }
+        // x.val++;
+    // }
     // series.m = sPACountPerformConstruct();
 
     // struct PANumber iterator;
@@ -43,7 +45,8 @@ DllExport struct PASeries* PASeriesCreate()
     // {
     //     series.adj[iterator.val] = PAElementPerformConstruct();
     // } 
-    return series;
+    // return series;
+    return seriesPointer;
 }
 DllExport void PASeriesCopy(struct PASeries* from, struct PASeries* to)
 {
@@ -161,15 +164,17 @@ DllExport struct PASeries PASeriesBegin(struct PASeries* Series,
     {
         // st
         int returnCode;
-        struct PACount x;
-        struct PACount y;
+        PACountFinish(PA->m);
+        free(PA);
+        // struct PACount x;
+        // struct PACount y;
         // x.number.val = PA.m.number.val;
         // y.number.val = FIRST;
         // while (y.number.val <= x.number.val)
-        {
+        // {
             // PA.adj[y.number.val] = PAElementPerformRuin(PA.adj[y.number.val]);
             // y.number.val++;
-        }
+        // }
         // struct PASeries Empty;
         // struct PACount 
         // struct PASeries Empty;

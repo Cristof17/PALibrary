@@ -198,10 +198,10 @@ struct FlyweightUnsharedConcreteFlyweight {
 
 };
 struct PATree {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
- struct PAList adj;
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
+ struct PAList* adj;
 };
 struct BridgeAbstraction {
  struct PAElement elements[2];
@@ -1882,19 +1882,11 @@ extern char * suboptarg;
 # 21 "src/PA/Series.c"
           struct PASeries* PASeriesCreate()
 {
-    struct PASeries* series;
-
-    struct PANumber x;
-    struct PANumber y;
-
-
-    while (x.val < y.val)
-    {
-
-        x.val++;
-    }
-# 46 "src/PA/Series.c"
-    return series;
+    struct PASeries* seriesPointer;
+    seriesPointer = (struct PASeries*) malloc (sizeof (struct PASeries));
+    seriesPointer->m = PACountCreate();
+# 49 "src/PA/Series.c"
+    return seriesPointer;
 }
           void PASeriesCopy(struct PASeries* from, struct PASeries* to)
 {
@@ -1933,18 +1925,18 @@ extern char * suboptarg;
 
 
 }
-# 99 "src/PA/Series.c"
+# 102 "src/PA/Series.c"
           struct PASeries PASeriesBegin(struct PASeries* Series,
     struct PACount Value, struct PAElement* Value2)
     {
-# 113 "src/PA/Series.c"
+# 116 "src/PA/Series.c"
         struct PASeries temp;
         struct PASeries* series;
         temp.m = &Value;
         temp.adj = Value2;
         Series->adj = temp.adj;
         Series->m = temp.m;
-# 130 "src/PA/Series.c"
+# 133 "src/PA/Series.c"
         return temp;
 
 
@@ -1966,25 +1958,18 @@ extern char * suboptarg;
         return series;
 
     }
-# 160 "src/PA/Series.c"
+# 163 "src/PA/Series.c"
               PAResult PASeriesFinish(struct PASeries* PA)
     {
 
         int returnCode;
-        struct PACount x;
-        struct PACount y;
-
-
-
-        {
-
-
-        }
-# 181 "src/PA/Series.c"
+        PACountFinish(PA->m);
+        free(PA);
+# 186 "src/PA/Series.c"
         return returnCode;
 
     }
-# 239 "src/PA/Series.c"
+# 244 "src/PA/Series.c"
 void PASeriesPrint(struct PASeries* Series)
 {
 

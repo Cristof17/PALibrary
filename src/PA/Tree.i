@@ -199,10 +199,10 @@ struct FlyweightUnsharedConcreteFlyweight {
 
 };
 struct PATree {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
- struct PAList adj;
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
+ struct PAList* adj;
 };
 struct BridgeAbstraction {
  struct PAElement elements[2];
@@ -1911,6 +1911,10 @@ void PAListPerformPrint(struct PAList* List);
           struct PATree* PATreeCreate()
 {
     struct PATree* temp;
+    struct PATree* treePointer;
+    treePointer = (struct PATree*) malloc (sizeof(struct PATree));
+    treePointer->n = PACountCreate();
+    treePointer->m = PACountCreate();
 
 
 
@@ -1918,7 +1922,7 @@ void PAListPerformPrint(struct PAList* List);
 
 
     return temp;
-# 67 "src/PA/Tree.c"
+# 71 "src/PA/Tree.c"
     return temp;
 }
           struct PATree PATreeBegin(struct PATree* Tree, struct PACount Value, struct PACount Value2, struct PAList Value3, struct PAElement Value4)
@@ -1947,7 +1951,7 @@ void PAListPerformPrint(struct PAList* List);
 
     return tree;
 }
-# 104 "src/PA/Tree.c"
+# 108 "src/PA/Tree.c"
           void PATreeCopy(struct PATree* from, struct PATree* to)
 {
     struct PATree temp;
@@ -1959,7 +1963,7 @@ void PAListPerformPrint(struct PAList* List);
     to->m = temp.m;
     PAListCopy(&temp.adj, &to->adj);
     to->source = temp.source;
-# 126 "src/PA/Tree.c"
+# 130 "src/PA/Tree.c"
 }
           PAResult PATreeFinish(struct PATree* PA)
 {
@@ -1976,10 +1980,10 @@ void PAListPerformPrint(struct PAList* List);
 
     returnCode = returnCode1 & returnCode2 & returnCode3 & returnCode4;
     return returnCode;
-# 164 "src/PA/Tree.c"
+# 168 "src/PA/Tree.c"
     return returnCode;
 }
-# 206 "src/PA/Tree.c"
+# 210 "src/PA/Tree.c"
           struct PATree PATreeDelete(struct PATree* Tree)
 {
     int returnCode;
