@@ -9,6 +9,10 @@
 
 // struct Algorithm;
 // typedef struct Algorithm Algorithm;
+DllExport struct Algorithm* AlgorithmCreate();
+DllExport int AlgorithmFinish(struct Algorithm*);
+DllExport struct Algorithm AlgorithmDelete(struct Algorithm*);
+DllExport struct Algorithm AlgorithmCopy(struct Algorithm* from, struct Algorithm* to);
 DllExport struct Output AlgorithmPerformRun(struct Input);
 // struct Algorithm AlgorithmConstruct(struct Input);
 // struct PAResult AlgorithmRuin();
