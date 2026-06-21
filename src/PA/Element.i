@@ -1875,11 +1875,11 @@ extern char * suboptarg;
 
           void PAStatusCauseVisit(PABool);
           struct PAStatus* PAStatusCreate();
-          struct PAStatus PAStatusBegin(struct PAStatus*, struct PAResource*);
+          struct PAStatus* PAStatusBegin(struct PAStatus*, struct PAResource*);
           PAResult PAStatusFinish(struct PAStatus*);
 
-          void PAStatusCopy(struct PAStatus*, struct PAStatus*);
-          struct PAStatus PAStatusDelete(struct PAStatus*);
+          struct PAStatus* PAStatusCopy(struct PAStatus*, struct PAStatus*);
+          struct PAStatus* PAStatusDelete(struct PAStatus*);
 # 9 "src/PA/Element.c" 2
 # 18 "src/PA/Element.c"
 struct PAElement* PAElementCreate()

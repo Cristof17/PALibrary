@@ -9,11 +9,11 @@
 // #include <PA/Feature.h>
 DllExport void PAStatusCauseVisit(PABool);
 DllExport struct PAStatus* PAStatusCreate();
-DllExport struct PAStatus PAStatusBegin(struct PAStatus*, struct PAResource*);
+DllExport struct PAStatus* PAStatusBegin(struct PAStatus*, struct PAResource*);
 DllExport PAResult PAStatusFinish(struct PAStatus*);
 // DllExport int PAStatusFinish(struct PAStatus);
-DllExport void PAStatusCopy(struct PAStatus*, struct PAStatus*);
-DllExport struct PAStatus PAStatusDelete(struct PAStatus*);
+DllExport struct PAStatus* PAStatusCopy(struct PAStatus*, struct PAStatus*);
+DllExport struct PAStatus* PAStatusDelete(struct PAStatus*);
 // struct PAStatus/*.*/;
 // DllExport struct PAStatus PAStatusPerformConstruct(PAInt Visited);
 // DllExport struct PAStatus PAStatusPerformCopy(struct PAStatus);

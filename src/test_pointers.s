@@ -99,7 +99,6 @@ _main:                                  ; @main
 	ldur	x0, [x29, #-96]
 	ldur	x1, [x29, #-64]
 	bl	_PAStatusBegin
-	str	x0, [sp, #112]
 	ldur	x0, [x29, #-96]
 	ldur	x1, [x29, #-104]
 	bl	_PAStatusCopy
@@ -115,20 +114,20 @@ _main:                                  ; @main
 	add	x0, x0, l_.str.1@PAGEOFF
 	bl	_printf
 	bl	_PACountCreate
-	str	x0, [sp, #104]
-	ldr	x0, [sp, #104]
+	str	x0, [sp, #112]
+	ldr	x0, [sp, #112]
 	ldur	x1, [x29, #-24]
 	bl	_PACountBegin
-	str	x0, [sp, #96]
+	str	x0, [sp, #104]
 	bl	_PASeriesCreate
-	str	x0, [sp, #88]
-	ldr	x0, [sp, #88]
-	ldr	x1, [sp, #104]
+	str	x0, [sp, #96]
+	ldr	x0, [sp, #96]
+	ldr	x1, [sp, #112]
 	mov	x2, #0                          ; =0x0
 	bl	_PASeriesBegin
-	str	x0, [sp, #72]
-	str	x1, [sp, #80]
-	ldr	x8, [sp, #88]
+	str	x0, [sp, #80]
+	str	x1, [sp, #88]
+	ldr	x8, [sp, #96]
 	ldr	x8, [x8]
 	ldr	x8, [x8]
 	ldrb	w10, [x8]
@@ -140,20 +139,20 @@ _main:                                  ; @main
 	add	x0, x0, l_.str.2@PAGEOFF
 	bl	_printf
 	bl	_PANumberCreate
-	str	x0, [sp, #56]
-	ldr	x0, [sp, #56]
-	mov	w1, #103                        ; =0x67
-	bl	_PANumberBegin
-	strb	w0, [sp, #55]
-	bl	_PACountCreate
 	str	x0, [sp, #64]
 	ldr	x0, [sp, #64]
-	ldr	x1, [sp, #56]
+	mov	w1, #103                        ; =0x67
+	bl	_PANumberBegin
+	strb	w0, [sp, #63]
+	bl	_PACountCreate
+	str	x0, [sp, #72]
+	ldr	x0, [sp, #72]
+	ldr	x1, [sp, #64]
 	bl	_PACountBegin
-	str	x0, [sp, #40]
+	str	x0, [sp, #48]
 	bl	_PAListCreate
-	str	x0, [sp, #32]
-	ldr	x8, [sp, #32]
+	str	x0, [sp, #40]
+	ldr	x8, [sp, #40]
 	ldr	x8, [x8]
 	ldr	x8, [x8]
 	ldrb	w10, [x8]
@@ -163,6 +162,23 @@ _main:                                  ; @main
 	str	x8, [x9]
 	adrp	x0, l_.str.3@PAGE
 	add	x0, x0, l_.str.3@PAGEOFF
+	bl	_printf
+	bl	_PAStatusCreate
+	stur	x0, [x29, #-104]
+	ldur	x0, [x29, #-96]
+	ldur	x1, [x29, #-64]
+	bl	_PAStatusBegin
+	stur	x0, [x29, #-104]
+	ldur	x8, [x29, #-104]
+	ldr	x8, [x8]
+	ldr	x8, [x8]
+	ldrb	w10, [x8]
+	mov	x9, sp
+                                        ; implicit-def: $x8
+	mov	x8, x10
+	str	x8, [x9]
+	adrp	x0, l_.str.4@PAGE
+	add	x0, x0, l_.str.4@PAGEOFF
 	bl	_printf
 	ldr	w0, [sp, #28]                   ; 4-byte Folded Reload
 	ldp	x29, x30, [sp, #224]            ; 16-byte Folded Reload
@@ -182,5 +198,8 @@ l_.str.2:                               ; @.str.2
 
 l_.str.3:                               ; @.str.3
 	.asciz	"list.n alloc %d\n"
+
+l_.str.4:                               ; @.str.4
+	.asciz	"Status = %d\n"
 
 .subsections_via_symbols

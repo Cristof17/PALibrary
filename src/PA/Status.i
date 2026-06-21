@@ -1828,11 +1828,11 @@ extern char * suboptarg;
 
           void PAStatusCauseVisit(PABool);
           struct PAStatus* PAStatusCreate();
-          struct PAStatus PAStatusBegin(struct PAStatus*, struct PAResource*);
+          struct PAStatus* PAStatusBegin(struct PAStatus*, struct PAResource*);
           PAResult PAStatusFinish(struct PAStatus*);
 
-          void PAStatusCopy(struct PAStatus*, struct PAStatus*);
-          struct PAStatus PAStatusDelete(struct PAStatus*);
+          struct PAStatus* PAStatusCopy(struct PAStatus*, struct PAStatus*);
+          struct PAStatus* PAStatusDelete(struct PAStatus*);
 # 7 "src/PA/Status.c" 2
 # 1 "./include/PA/Resource.h" 1
 
@@ -1865,7 +1865,7 @@ extern char * suboptarg;
     statusPointer->visited = PAResourceCreate();
     return statusPointer;
 }
-          struct PAStatus PAStatusBegin(struct PAStatus* Status, struct PAResource* Value)
+          struct PAStatus* PAStatusBegin(struct PAStatus* Status, struct PAResource* Value)
 {
     struct PAStatus temp;
     struct PAStatus* statusPointer;
@@ -1875,24 +1875,27 @@ extern char * suboptarg;
     Status->visited = temp.visited;
 
 
-    return temp;
 
 
+
+    return Status;
 }
-          void PAStatusCopy(struct PAStatus* from, struct PAStatus* to)
+          struct PAStatus* PAStatusCopy(struct PAStatus* from, struct PAStatus* to)
 {
     PAStatusDelete(to);
 
     struct PAStatus temp;
     struct PAResource* visited;
-# 62 "src/PA/Status.c"
+    return to;
+# 64 "src/PA/Status.c"
 }
-# 71 "src/PA/Status.c"
-          struct PAStatus PAStatusDelete(struct PAStatus* PA)
+# 73 "src/PA/Status.c"
+          struct PAStatus* PAStatusDelete(struct PAStatus* PA)
 {
     struct PAStatus temp;
     PAResourceDelete(PA->visited);
-    return temp;
+
+    return PA;
 }
           PAResult PAStatusFinish(struct PAStatus* PA)
 {

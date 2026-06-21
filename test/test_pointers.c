@@ -1,6 +1,7 @@
 #include <PA/Count.h>
 #include <PA/Resource.h>
 #include <PA/Number.h>
+// #include <PA/Status.h>
 #include <PA/Status.h>
 #include <PA/Series.h>
 #include <PA/List.h>
@@ -86,6 +87,11 @@ int main()
 	list = PAListCreate();
 	// PAListBegin(list,count123,0);
 	printf("list.n alloc %d\n", list->n->number->val);
+
+	struct PAStatus* status1223;
+	status123 = PAStatusCreate();
+	status123 = PAStatusBegin(status,resource123);
+	printf("Status = %d\n", status123->visited->value->val);
 	// PAListBegin(count123);
 	// PAListBegin(list,count123);
 	// PAListBegin(list,count123,0);

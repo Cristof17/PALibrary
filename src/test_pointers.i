@@ -2339,6 +2339,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
           void PANumberCopy(struct PANumber* from, struct PANumber* to);
           void PANumberPrint(struct PANumber*);
 # 4 "test/test_pointers.c" 2
+
 # 1 "./include/PA/Status.h" 1
 
 
@@ -2352,12 +2353,12 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
           void PAStatusCauseVisit(PABool);
           struct PAStatus* PAStatusCreate();
-          struct PAStatus PAStatusBegin(struct PAStatus*, struct PAResource*);
+          struct PAStatus* PAStatusBegin(struct PAStatus*, struct PAResource*);
           PAResult PAStatusFinish(struct PAStatus*);
 
-          void PAStatusCopy(struct PAStatus*, struct PAStatus*);
-          struct PAStatus PAStatusDelete(struct PAStatus*);
-# 5 "test/test_pointers.c" 2
+          struct PAStatus* PAStatusCopy(struct PAStatus*, struct PAStatus*);
+          struct PAStatus* PAStatusDelete(struct PAStatus*);
+# 6 "test/test_pointers.c" 2
 # 1 "./include/PA/Series.h" 1
 # 15 "./include/PA/Series.h"
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
@@ -2372,7 +2373,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
           PAResult PASeriesFinish(struct PASeries*);
 
           void PASeriesPrint(struct PASeries*);
-# 6 "test/test_pointers.c" 2
+# 7 "test/test_pointers.c" 2
 # 1 "./include/PA/List.h" 1
 
 
@@ -2396,7 +2397,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
           void PAListCopy(struct PAList*, struct PAList*);
 
 void PAListPrint(struct PAList* List);
-# 7 "test/test_pointers.c" 2
+# 8 "test/test_pointers.c" 2
 # 1 "./include/PA/Tree.h" 1
 
 
@@ -2421,7 +2422,7 @@ void PAListPrint(struct PAList* List);
 
           PAResult PATreeFinish(struct PATree*);
           struct PATree PATreeDelete(struct PATree*);
-# 8 "test/test_pointers.c" 2
+# 9 "test/test_pointers.c" 2
 # 1 "./include/PA/Element.h" 1
 
 
@@ -2447,10 +2448,10 @@ void PAListPrint(struct PAList* List);
           int PAElementFinish(struct PAElement*);
           struct PAElement PAElementDelete(struct PAElement*);
           void PAElementCopy(struct PAElement*, struct PAElement*);
-# 9 "test/test_pointers.c" 2
+# 10 "test/test_pointers.c" 2
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 1 3 4
-# 11 "test/test_pointers.c" 2
+# 12 "test/test_pointers.c" 2
 int main()
 {
  struct PANumber* number;
@@ -2529,6 +2530,11 @@ int main()
  list = PAListCreate();
 
  printf("list.n alloc %d\n", list->n->number->val);
-# 121 "test/test_pointers.c"
+
+ struct PAStatus* status1223;
+ status123 = PAStatusCreate();
+ status123 = PAStatusBegin(status,resource123);
+ printf("Status = %d\n", status123->visited->value->val);
+# 127 "test/test_pointers.c"
  return 0;
 }
