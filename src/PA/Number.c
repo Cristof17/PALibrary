@@ -56,7 +56,7 @@ DllExport PAResult PANumberFinish(struct PANumber* PA)
 {
     int returnCode;
     returnCode = PARESULT_SUCCESS;
-    free(PA);
+    // free(PA);
     // struct PANumber Empty;
     // return PA;
     // return retunr

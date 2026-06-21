@@ -155,7 +155,7 @@ DllExport PAResult PAListFinish(struct PAList* PA)
 {
     int returnCode;
     returnCode = PACountFinish(PA->n);
-    free(PA);
+    // free(PA);
     return PARESULT_SUCCESS;
     // struct PAList List;
     // struct PACount x;

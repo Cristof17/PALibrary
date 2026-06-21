@@ -92,6 +92,10 @@ int main()
 	status123 = PAStatusCreate();
 	status123 = PAStatusBegin(status,resource123);
 	printf("Status = %d\n", status123->visited->value->val);
+	PAStatusDelete(status123);
+	printf("Status = %d\n", status123->visited->value->val);
+	PAStatusFinish(status123);
+	printf("Status = %d\n", status123->visited->value->val);
 	// PAListBegin(count123);
 	// PAListBegin(list,count123);
 	// PAListBegin(list,count123,0);
