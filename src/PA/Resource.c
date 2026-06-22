@@ -62,12 +62,12 @@ DllExport void PAResourceCopy(struct PAResource* from, struct PAResource* to)
 {
     // PAResourceDelete(to);
     // struct PAResource temp;
-    struct PAResource* aux;
-    aux = PAResourceCreate();
-    aux->value = from->value;
-    to->value = aux->value;
-    PAResourceDelete(aux);
-    PAResourceFinish(aux);
+    struct PAResource temp;
+    // aux = PAResourceCreate();
+    temp.value = from->value;
+    to->value = temp.value;
+    // PAResourceDelete(aux);
+    // PAResourceFinish(aux);
     // from->value =
     // aux = from;
     // PANumberPrint(from->value);

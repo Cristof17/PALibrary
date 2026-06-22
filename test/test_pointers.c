@@ -78,13 +78,18 @@ int main()
 	PAStatusCopy(status,status123);
 	printf("status value %d\n",status->visited->value->val);
 
-	// struct PACount* count1;
-	// count1 = PACountCreate();
-	// PACountBegin(count1,number123);
-	// struct PASeries* series;
-	// series = PASeriesCreate();
-	// PASeriesBegin(series,count1,0);
-	// printf("series.count %d\n", series->m->number->val);
+	struct PACount* count1;
+	count1 = PACountCreate();
+	PANumberPrint(number123);
+	PANumberBegin(number123,'a');
+	PACountBegin(count1,number123);
+	// PACount
+	printf("count1 %d\n", count1->number->val);
+
+	struct PASeries* series;
+	series = PASeriesCreate();
+	PASeriesBegin(series,count1,0);
+	printf("series.count %d\n", series->m->number->val);
 
 	// struct PACount* count123;
 	// struct PANumber* number213;
@@ -95,10 +100,10 @@ int main()
 	// count123 = PACountCreate();
 	// PACountBegin(count123,number213);
 	// // PACountBegin(count123,number)
-	// struct PAList* list;
-	// list = PAListCreate();
-	// // PAListBegin(list,count123,0);
-	// printf("list.n alloc %d\n", list->n->number->val);
+	struct PAList* list;
+	list = PAListCreate();
+	PAListBegin(list,count1,0);
+	printf("list.n alloc %d\n", list->n->number->val);
 
 	// struct PAStatus* status1223;
 	// status123 = PAStatusCreate();

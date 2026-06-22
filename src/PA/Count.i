@@ -2340,9 +2340,9 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 }
           struct PACount PACountBegin(struct PACount* Count, struct PANumber* Value)
 {
-
     struct PACount temp;
-    struct PACount* cpuntPointer;
+
+
     temp = *Count;
     temp.number = Value;
 

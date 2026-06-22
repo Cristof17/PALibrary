@@ -2368,12 +2368,12 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
           void PANumberCopy(struct PANumber* from, struct PANumber* to)
 {
 
-    struct PANumber* number;
-    number = PANumberCreate();
-    number->val = from->val;
-    to->val = number->val;
-    PANumberDelete(number);
-    PANumberFinish(number);
+    struct PANumber temp;
+
+    temp.val = from->val;
+    to->val = temp.val;
+
+
 
 
 

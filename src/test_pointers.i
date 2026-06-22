@@ -2514,6 +2514,24 @@ int main()
  PAStatusBegin(status,resource123);
  PAStatusCopy(status,status123);
  printf("status value %d\n",status->visited->value->val);
-# 143 "test/test_pointers.c"
+
+ struct PACount* count1;
+ count1 = PACountCreate();
+ PANumberPrint(number123);
+ PANumberBegin(number123,'a');
+ PACountBegin(count1,number123);
+
+ printf("count1 %d\n", count1->number->val);
+
+ struct PASeries* series;
+ series = PASeriesCreate();
+ PASeriesBegin(series,count1,0);
+ printf("series.count %d\n", series->m->number->val);
+# 103 "test/test_pointers.c"
+ struct PAList* list;
+ list = PAListCreate();
+ PAListBegin(list,count1,0);
+ printf("list.n alloc %d\n", list->n->number->val);
+# 148 "test/test_pointers.c"
  return 0;
 }

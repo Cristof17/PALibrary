@@ -29,9 +29,9 @@ DllExport struct PACount* PACountCreate()
 }
 DllExport struct PACount PACountBegin(struct PACount* Count, struct PANumber* Value)
 {
-    // struct PACount temp;
     struct PACount temp;
-    struct PACount* cpuntPointer;
+    // struct PACount temp;
+    // struct PACount* cpuntPointer;
     temp = *Count;
     temp.number = Value;
     // temp.number = &Value;
