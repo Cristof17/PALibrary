@@ -22,6 +22,8 @@ int main()
 	PANumberCopy(number,number123);
 	PANumberPrint(number);
 	PANumberPrint(number123);
+	// PANumberDelete()
+	// PANumberFinish(number123);
 	// number->val = 323;
 	// number->val = 542;
 	// PANumberPrint(number);
@@ -41,7 +43,7 @@ int main()
 	// PANumberFinish(number);
 	PANumberDelete(number34);
 	PANumberPrint(number34);
-	PANumberFinish(number34);
+	// PANumberFinish(number34);
 	PANumberPrint(number34);
 	struct PAResource resource;
 	// resource = PAResourcePrint();
@@ -95,7 +97,7 @@ int main()
 	printf("Status = %d\n", status123->visited->value->val);
 	PAStatusDelete(status123);
 	printf("Status = %d\n", status123->visited->value->val);
-	PAStatusFinish(status123);
+	// PAStatusFinish(status123);
 	printf("Status = %d\n", status123->visited->value->val);
 	// PAListBegin(count123);
 	// PAListBegin(list,count123);
