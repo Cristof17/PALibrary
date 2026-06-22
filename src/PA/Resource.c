@@ -60,12 +60,15 @@ DllExport struct PAResource PAResourceBegin(struct PAResource* Resource, struct 
 }
 DllExport void PAResourceCopy(struct PAResource* from, struct PAResource* to)
 {
-    PAResourceDelete(to);
+    // PAResourceDelete(to);
     struct PAResource temp;
-    struct PANumber* aux;
+    struct PAResource* aux;
+    // from->value = 
+    aux->value = from->value;
+    to->value = aux->value;
     // aux = from->value;
     // to->value = aux;
-    PANumberCopy(from->value,to->value);
+    // PANumberCopy(from->value,to->value);
     // temp = *from;
     // to->value = temp.value;
     // struct PAResource* resourcePointer;

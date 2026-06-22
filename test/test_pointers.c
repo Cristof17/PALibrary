@@ -56,7 +56,7 @@ int main()
 	resource123 = PAResourceCreate();
 	resource234 = PAResourceCreate();
 	PAResourceBegin(resource123,number);
-	// PAResourceCopy(resource123,resource234);
+	PAResourceCopy(resource123,resource234);
 	// PAResourceBegin(resource123,*number);
 	printf("resource %d\n", resource123->value->val);
 	// printf("resource %d\n", resource234->value->val);

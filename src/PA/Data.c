@@ -46,8 +46,10 @@ DllExport struct PAData PADataBegin(struct PAData* Data, struct PAResource Value
 }
 DllExport void PADataCopy(struct PAData* from, struct PAData* to)
 {
-    struct PAData temp;
+    // struct PAData temp;
     struct PAData *dataPointer;
+    dataPointer->Resource = from->Resource;
+    to->Resource = dataPointer->Resource;
     // temp.Resource = PAResourcePerformCopy(from.Resource, temp.Resource);
     // to.Resource = temp.Resource;
     // return dataPointer;

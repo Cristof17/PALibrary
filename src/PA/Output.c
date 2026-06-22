@@ -22,9 +22,11 @@
 // 	init.result = Result;
 // 	return init;
 // }
-// struct PAOutput PAOutputPerformCopy(struct PAOutput Output)
-// {
-// 	struct PAOutput copy;
+DllExport void PAOutputPerformCopy(struct PAOutput* from, struct PAOutput* to)
+{
+	struct PAOutput* copy;
+    copy->result = from->result;
+    to->result = copy->result;
 // 	copy = PAOutputPerformConstruct();
 // 	copy = PAOutputPerformInit(Output.result);
 // 	return copy;
@@ -45,7 +47,8 @@
 // {
 // 	struct PAResult result;
 // 	return result;
-// }
+    return copy;
+}
 
 // struct BFSOutput BFSOutputPerformInit(struct BFSOutput output) 
 // {

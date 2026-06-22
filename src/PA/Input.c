@@ -38,17 +38,18 @@ DllExport struct PAInput* PAInputCreate()
 	return inputPointer;
 	// return temp;
 }
-// struct PAInput PAInputPerformCopy(struct PAInput Input)
-// {
-// 	struct PAInput copy;
+DllExport void PAInputCopy(struct PAInput* from, struct PAInput* to)
+{
+	// struct PAInput* copy;
+	
 // 	// copy = PAInputPerformConstruct(Input.n,Input.m,Input.adj,Input.source);
 // 	// copy = PAInputPerformInit(Input);
 // //	copy.n=Input.n;
 // //	copy.m=Input.m;
 // //	copy.adj=Input.adj;
 // //	copy.source=Input.source;
-// 	return copy;
-// }
+// 	return copy;DllExport void
+}
 DllExport struct PAInput PAInputBegin(struct PAInput* Input, struct PACount* Value, struct PACount* Value2, struct PAElement* Value3)
 {
 	struct PAInput temp;
