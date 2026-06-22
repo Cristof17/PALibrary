@@ -116,15 +116,15 @@ DllExport struct PATree PATreeBegin(struct PATree* Tree, struct PACount* Value, 
 // }
 DllExport void PATreeCopy(struct PATree* from, struct PATree* to)
 {
-    struct PATree temp;
-    temp.n = from->n;
-    temp.m = from->m;
+    struct PATree* temp;
+    temp->n = from->n;
+    temp->m = from->m;
     // PAListCopy(&from->adj, &temp.adj);
-    temp.source = from->source;
-    to->n = temp.n;
-    to->m = temp.m;
+    // temp.source = from->source;
+    to->n = temp->n;
+    to->m = temp->m;
     // PAListCopy(&temp.adj, &to->adj);
-    to->source = temp.source;
+    // to->source = temp.source;
     // temp.n = PACountPerformCopy(from.n,temp.n);
     // temp.m = PACountPerformCopy(from.m,temp.m);
     // temp.adj = PAListPerformCopy(from.adj,temp.adj);

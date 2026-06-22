@@ -45,13 +45,15 @@ DllExport struct PAStatus* PAStatusBegin(struct PAStatus* Status, struct PAResou
     // return Status;
     return Status;
 }
-DllExport struct PAStatus* PAStatusCopy(struct PAStatus* from, struct PAStatus* to)
+DllExport void PAStatusCopy(struct PAStatus* from, struct PAStatus* to)
 {
     PAStatusDelete(to);
     // PAStatusDelete(to);
-    struct PAStatus temp;
-    struct PAResource* visited;
-    return to;
+    struct PAStatus* temp;
+    // struct PAResource* visited;
+    temp->visited = from->visited;
+    to->visited = temp->visited;
+    // return to;
 
     // PAResourceCopy(from->visited,to->visited);
     // temp.visited = from->visited;

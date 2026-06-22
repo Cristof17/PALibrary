@@ -49,10 +49,13 @@ DllExport struct PATransposeTree PATransposeTreeBegin(struct PATransposeTree* Tr
 }
 DllExport void PATransposeTreeCopy(struct PATransposeTree* from, struct PATransposeTree* To)
 {
-    struct PATransposeTree* copy;
-    struct PATransposeTree temp;
-    temp = *from;
-    To->tree = temp.tree;
+    // struct PATransposeTree* copy;
+    struct PATransposeTree* temp;
+    temp->tree = from->tree;
+    // temp.
+    To->tree = temp->tree;
+    // temp = *from;
+    // To->tree = temp.tree;
     // copy = PATransposeTreePerformConstruct(TransposeTree.adj_trans);
     // copy = PATransposeTreePerformInit(TransposeTree);
     // return tree;
