@@ -19,7 +19,7 @@ DllExport struct PAResource* PAResourceCreate()
     // resource = PAResourcePerformInit(Data,resource.value)
     // resource = PAResourcePerformInit(resource,resource.value);
     // retun
-    resourcePointer->value = PANumberCreate();
+    // resourcePointer->value = PANumberCreate();
     return resourcePointer;
     // return resource;
     // return resource;

@@ -24,7 +24,7 @@ DllExport struct PACount* PACountCreate()
     // return zies;
     // return countPointer;
     // return zies;
-    countPointer->number = PANumberCreate();
+    // countPointer->number = PANumberCreate();
     return countPointer;
 }
 DllExport struct PACount PACountBegin(struct PACount* Count, struct PANumber* Value)

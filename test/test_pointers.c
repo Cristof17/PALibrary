@@ -56,50 +56,50 @@ int main()
 	resource123 = PAResourceCreate();
 	resource234 = PAResourceCreate();
 	PAResourceBegin(resource123,number);
-	PAResourceCopy(resource123,resource234);
+	// PAResourceCopy(resource123,resource234);
 	// PAResourceBegin(resource123,*number);
 	printf("resource %d\n", resource123->value->val);
-	printf("resource %d\n", resource234->value->val);
+	// printf("resource %d\n", resource234->value->val);
 
-	struct PAStatus *status;
-	struct PAStatus *status123;
-	status=PAStatusCreate();
-	status123=PAStatusCreate();
-	PAStatusBegin(status,resource123);
-	PAStatusCopy(status,status123);
-	printf("status value %d\n",status->visited->value->val);
+	// struct PAStatus *status;
+	// struct PAStatus *status123;
+	// status=PAStatusCreate();
+	// status123=PAStatusCreate();
+	// PAStatusBegin(status,resource123);
+	// PAStatusCopy(status,status123);
+	// printf("status value %d\n",status->visited->value->val);
 
-	struct PACount* count1;
-	count1 = PACountCreate();
-	PACountBegin(count1,number123);
-	struct PASeries* series;
-	series = PASeriesCreate();
-	PASeriesBegin(series,count1,0);
-	printf("series.count %d\n", series->m->number->val);
+	// struct PACount* count1;
+	// count1 = PACountCreate();
+	// PACountBegin(count1,number123);
+	// struct PASeries* series;
+	// series = PASeriesCreate();
+	// PASeriesBegin(series,count1,0);
+	// printf("series.count %d\n", series->m->number->val);
 
-	struct PACount* count123;
-	struct PANumber* number213;
-	number213 = PANumberCreate();
-	// PANumberBegin(count213,'g');
-	// PANumberCreate
-	PANumberBegin(number213,'g');
-	count123 = PACountCreate();
-	PACountBegin(count123,number213);
-	// PACountBegin(count123,number)
-	struct PAList* list;
-	list = PAListCreate();
-	// PAListBegin(list,count123,0);
-	printf("list.n alloc %d\n", list->n->number->val);
+	// struct PACount* count123;
+	// struct PANumber* number213;
+	// number213 = PANumberCreate();
+	// // PANumberBegin(count213,'g');
+	// // PANumberCreate
+	// PANumberBegin(number213,'g');
+	// count123 = PACountCreate();
+	// PACountBegin(count123,number213);
+	// // PACountBegin(count123,number)
+	// struct PAList* list;
+	// list = PAListCreate();
+	// // PAListBegin(list,count123,0);
+	// printf("list.n alloc %d\n", list->n->number->val);
 
-	struct PAStatus* status1223;
-	status123 = PAStatusCreate();
-	status123 = PAStatusBegin(status,resource123);
-	printf("Status = %d\n", status123->visited->value->val);
-	PAStatusDelete(status123);
-	printf("Status = %d\n", status123->visited->value->val);
-	// PAStatusFinish(status123);
-	printf("Status = %d\n", status123->visited->value->val);
-	// PAListBegin(count123);
+	// struct PAStatus* status1223;
+	// status123 = PAStatusCreate();
+	// status123 = PAStatusBegin(status,resource123);
+	// printf("Status = %d\n", status123->visited->value->val);
+	// PAStatusDelete(status123);
+	// printf("Status = %d\n", status123->visited->value->val);
+	// // PAStatusFinish(status123);
+	// printf("Status = %d\n", status123->visited->value->val);
+	// // PAListBegin(count123);
 	// PAListBegin(list,count123);
 	// PAListBegin(list,count123,0);
 	// printf("list.n alloc %d\n", list->n->number->val);

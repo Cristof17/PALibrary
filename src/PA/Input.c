@@ -16,12 +16,12 @@
 
 DllExport struct PAInput* PAInputCreate()
 {
-	struct PAInput temp;
+	// struct PAInput temp;
 	struct PAInput* inputPointer;
-	struct PACount n;
-	struct PACount m;
-	struct PAList list;
-	struct PAElement element;
+	// struct PACount n;
+	// struct PACount m;
+	// struct PAList list;
+	// struct PAElement element;
 	// inputPointer->n = PACountPerformConstruct();
 	// inputPointer->m = PACountPerformConstruct();
 	// inputPointer->source = PAElementPerformConstruct();
