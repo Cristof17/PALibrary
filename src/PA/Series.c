@@ -50,9 +50,13 @@ DllExport struct PASeries* PASeriesCreate()
 }
 DllExport void PASeriesCopy(struct PASeries* from, struct PASeries* to)
 {
-    struct PACount x;
-    struct PACount y;
-    struct PASeries temp;
+    // struct PACount x;
+    // struct PACount y;
+    struct PASeries* temp;
+    temp->adj = from->adj;
+    temp->m = from->m;
+    to->adj = temp->adj;
+    to->m = temp->m;
     // temp = PASeriesPerformConstruct();
     // x = PANumber
     // temp.m = PACountPerformCopy(from.m, temp.m);
