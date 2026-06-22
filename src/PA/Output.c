@@ -47,7 +47,7 @@ DllExport void PAOutputPerformCopy(struct PAOutput* from, struct PAOutput* to)
 // {
 // 	struct PAResult result;
 // 	return result;
-    return copy;
+    // return copy;
 }
 
 // struct BFSOutput BFSOutputPerformInit(struct BFSOutput output) 
