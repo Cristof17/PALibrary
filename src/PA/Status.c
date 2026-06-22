@@ -84,6 +84,8 @@ DllExport PAResult PAStatusFinish(struct PAStatus* PA)
     // int rest;
     // int returncode
     int returnCode;
+    returnCode = PARESULT_SUCCESS;
+    free(PA);
     // PAResourceFinish(&PA->visited);
     // return Empty;
     // return PA;

@@ -113,9 +113,11 @@ DllExport void PAPairCopy(struct PAPair* from, struct PAPair* to)
 // }
 DllExport PAResult PAPairFinish(struct PAPair* PA)
 {
-    int returnCode1;
-    int returnCode2;
+    // int returnCode1;
+    // int returnCode2;
     int returnCode;
+    returnCode = PARESULT_SUCCESS;
+    free(PA);
     // returnCode1 = PAElementFinish(&PA->Node);
     // returnCode2 = PAElementFinish(&PA->Neigh);
     // returnCode = returnCode1 & returnCode2;

@@ -14,7 +14,7 @@ DllExport struct PAData* PADataCreate()
 {
     // struct PAData data;
     struct PAData* dataPointer;
-    dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
+    // dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
     // struct PAResource resource;
     // data.Resource = PAResourcePerformConstruct();
     // dataPointer = PADataBegin(dataPointer, data.Resource);
@@ -75,6 +75,8 @@ DllExport PAResult PADataFinish(struct PAData* PA)
     // PAInt Empty = NULL;
     // Resource = Empty;
     // return Resource;
+    // g
+    free(PA);
     return PARESULT_SUCCESS;
     // return Data;
     // PAResult result = (PAInt) PARESULT_SUCCESS;

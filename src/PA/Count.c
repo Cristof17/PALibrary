@@ -79,7 +79,8 @@ DllExport PAResult PACountFinish(struct PACount* PA)
     // return PARESULT_SUCCESS;
     // return Empty;
     int returnCode;
-    returnCode = PANumberFinish(PA->number);
+    free(PA);
+    // returnCode = PANumberFinish(PA->number);
     // free(PA);
     return returnCode;
     // return PA;    /

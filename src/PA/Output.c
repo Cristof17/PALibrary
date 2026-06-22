@@ -91,7 +91,9 @@ DllExport PAResult PAOutputFinish(struct PAOutput* PA)
 {
     int returnCode;
     // returnCode = PA->
-    returnCode = BFSRecordFinish(PA->result);
+    returnCode = PARESULT_SUCCESS;
+    free(PA);
+    // returnCode = BFSRecordFinish(PA->result);
     // return PARESULT_SUCCESS;
     return returnCode;
     // PA.result = BFSRecordPerformRuin

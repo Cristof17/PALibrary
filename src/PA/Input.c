@@ -85,9 +85,10 @@ DllExport struct PAInput PAInputBegin(struct PAInput* Input, struct PACount Valu
 DllExport PAResult PAInputFinish(struct PAInput* PA) {
 	// PAResult result;
 	// struct PAInput Empty;
-	PACountFinish(&PA->n);
-	PACountFinish(&PA->m);
-	PAElementFinish(&PA->source);
+	free(PA);
+	// PACountFinish(&PA->n);
+	// PACountFinish(&PA->m);
+	// PAElementFinish(&PA->source);
 	int returnCode;
 	returnCode = PARESULT_SUCCESS;
 	// return PA;

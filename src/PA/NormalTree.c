@@ -53,6 +53,7 @@ DllExport struct PANormalTree PANormalTreeBegin(struct PANormalTree* NormalTree,
 DllExport PAResult PANormalTreeFinish(struct PANormalTree* PA)
 {
     int returnCode;
+    free(PA);
     // returnCode = PATreeFinish(&PA->tree);
     return returnCode;
     // struct PANormalTree Empty;

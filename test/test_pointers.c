@@ -41,7 +41,8 @@ int main()
 	// PANumberFinish(number);
 	PANumberDelete(number34);
 	PANumberPrint(number34);
-
+	PANumberFinish(number34);
+	PANumberPrint(number34);
 	struct PAResource resource;
 	// resource = PAResourcePrint();
 	// PAResourcePrint(resource);
