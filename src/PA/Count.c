@@ -15,7 +15,7 @@ DllExport struct PACount* PACountCreate()
 {
     // struct PACount zies;
     struct PACount* countPointer;
-    countPointer =(struct PACount*)malloc(sizeof(struct PACount));
+    countPointer =(struct PACount*)malloc(size);
     // struct PANumber number;
     // zies.number = PANumberPerformConstruct();
     // zies = PACountPerformInit(zies,zies.number);
