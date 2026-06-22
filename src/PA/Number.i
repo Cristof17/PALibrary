@@ -2369,13 +2369,18 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 {
 
     struct PANumber* number;
+    number = PANumberCreate();
     number->val = from->val;
     to->val = number->val;
+    PANumberDelete(number);
+    PANumberFinish(number);
+
+
 
 
 
     return;
-# 112 "src/PA/Number.c"
+# 117 "src/PA/Number.c"
 }
           void PANumberPrint(struct PANumber* Number)
 {

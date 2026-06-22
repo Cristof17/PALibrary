@@ -78,8 +78,13 @@ DllExport void PANumberCopy(struct PANumber* from, struct PANumber* to)
 {
     // PANumberDelete(to);
     struct PANumber* number;
+    number = PANumberCreate();
     number->val = from->val;
     to->val = number->val;
+    PANumberDelete(number);
+    PANumberFinish(number);
+    // number->val = from->val;
+    // to->val = number->val;
     // number=from;
     // number.val =
     // to->val = number.val;

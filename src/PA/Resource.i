@@ -2346,11 +2346,6 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
     struct PAResource* aux;
     aux = PAResourceCreate();
     aux->value = from->value;
-
-
-
-
-
     to->value = aux->value;
     PAResourceDelete(aux);
     PAResourceFinish(aux);

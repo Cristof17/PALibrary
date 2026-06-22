@@ -81,11 +81,17 @@ _PANumberFinish:                        ; @PANumberFinish
 _PANumberCopy:                          ; @PANumberCopy
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
-	str	x0, [sp, #24]
+	sub	sp, sp, #48
+	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
+	add	x29, sp, #32
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	stur	x0, [x29, #-8]
 	str	x1, [sp, #16]
-	ldr	x8, [sp, #24]
+	bl	_PANumberCreate
+	str	x0, [sp, #8]
+	ldur	x8, [x29, #-8]
 	ldrb	w8, [x8]
 	ldr	x9, [sp, #8]
 	strb	w8, [x9]
@@ -93,7 +99,12 @@ _PANumberCopy:                          ; @PANumberCopy
 	ldrb	w8, [x8]
 	ldr	x9, [sp, #16]
 	strb	w8, [x9]
-	add	sp, sp, #32
+	ldr	x0, [sp, #8]
+	bl	_PANumberDelete
+	ldr	x0, [sp, #8]
+	bl	_PANumberFinish
+	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function
