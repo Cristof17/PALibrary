@@ -33,7 +33,7 @@ DllExport struct PAList* PAListCreate()
     // }
     // return list;
     // struct PAList* listPointer;
-    listPointer->n = PACountCreate();
+    // listPointer->n = PACountCreate();
     return listPointer;
     // struct PASeries neigh[] = list.neigh;
     // x.number.val = FIRST;

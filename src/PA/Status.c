@@ -27,7 +27,7 @@ DllExport struct PAStatus* PAStatusCreate()
     // return status;
     struct PAStatus* statusPointer;
     statusPointer=(struct PAStatus*)malloc(sizeof(struct PAStatus));
-    statusPointer->visited = PAResourceCreate();
+    // statusPointer->visited = PAResourceCreate();
     return statusPointer;
 }
 DllExport struct PAStatus* PAStatusBegin(struct PAStatus* Status, struct PAResource* Value)

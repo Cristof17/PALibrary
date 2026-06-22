@@ -17,6 +17,7 @@ DllExport struct PATransposeTree* PATransposeTreeCreate()
 {
     struct PATransposeTree transposeTree;
     struct PATransposeTree* transposeTreePointer;
+    transposeTreePointer = (struct PATransposeTree*) malloc(sizeof(struct PATransposeTree));
     // transposeTreePointer->tree = PATreePerformConstruct();
     // transposeTree.tree = (transposeTreePointer->tree);
     // transposeTreePointer = PATransposeTreeBegin(transposeTreePointer,transposeTree.tree);

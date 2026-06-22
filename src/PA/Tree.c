@@ -21,9 +21,9 @@ DllExport struct PATree* PATreeCreate()
     struct PATree* temp;
     struct PATree* treePointer;
     treePointer = (struct PATree*) malloc (sizeof(struct PATree));
-    treePointer->n = PACountCreate();
-    treePointer->m = PACountCreate();
-    treePointer->source = PAElementCreate();
+    // treePointer->n = PACountCreate();
+    // treePointer->m = PACountCreate();
+    // treePointer->source = PAElementCreate();
     // temp->n = PACountPerformConstruct();
     // temp->m = PACountPerformConstruct();
     // temp->adj = PAListPerformConstruct();

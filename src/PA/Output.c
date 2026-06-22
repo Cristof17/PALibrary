@@ -62,7 +62,7 @@ DllExport struct PAOutput* PAOutputCreate()
     struct PAOutput Output;
     struct PAOutput* outputPointer;
     outputPointer=(struct PAOutput*) malloc (sizeof(struct PAOutput));
-    outputPointer->result = BFSRecordCreate();
+    // outputPointer->result = BFSRecordCreate();
     // outputPointer-
     // return outputPointer;
     // return Output;
