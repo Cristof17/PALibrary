@@ -61,7 +61,9 @@ DllExport void PALinkCopy(struct PALink* from, struct PALink* to)
 {
     // struct PALink temp;
     struct PALink* aux;
-    aux = (struct PAList*) malloc (sizeof(struct PAList));
+    // aux = (struct PAList*) malloc (sizeof(struct PAList));
+    // aux = (struct PAList*) malloc (sizeof(struct PALink&));
+    aux = (struct PALink*) malloc (sizeof(struct PALink));
     // aux = PALinkCreate();
     aux->p = from->p;
     to->p = aux->p;

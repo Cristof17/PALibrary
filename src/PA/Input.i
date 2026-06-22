@@ -1907,11 +1907,6 @@ extern char * suboptarg;
 }
           void PAInputCopy(struct PAInput* from, struct PAInput* to)
 {
-# 52 "src/PA/Input.c"
-}
-          struct PAInput PAInputBegin(struct PAInput* Input, struct PACount* Value, struct PACount* Value2, struct PAElement* Value3)
-{
-
 
  struct PAInput* aux;
 
@@ -1919,14 +1914,25 @@ extern char * suboptarg;
 
 
 
- aux->n = Value;
- aux->m = Value2;
- aux->source = Value3;
- Input->m = aux->m;
- Input->n = aux->n;
- Input->source = aux->source;
- aux = 0;
+ aux->n = from->n;
+ aux->m = from->m;
+ aux->source = from->source;
+ to->m = aux->m;
+ to->n = aux->n;
+ to->source = aux->source;
+
  free(aux);
+
+
+
+
+
+
+
+}
+          struct PAInput PAInputBegin(struct PAInput* Input, struct PACount* Value, struct PACount* Value2, struct PAElement* Value3)
+{
+ struct PAInput temp;
 # 88 "src/PA/Input.c"
  return temp;
 

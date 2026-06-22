@@ -65,7 +65,7 @@ DllExport void PAInputCopy(struct PAInput* from, struct PAInput* to)
 }
 DllExport struct PAInput PAInputBegin(struct PAInput* Input, struct PACount* Value, struct PACount* Value2, struct PAElement* Value3)
 {
-	// struct PAInput temp;
+	struct PAInput temp;
 
 	
 	// Input.n = Value;
