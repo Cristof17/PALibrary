@@ -52,17 +52,22 @@ DllExport void PAInputCopy(struct PAInput* from, struct PAInput* to)
 }
 DllExport struct PAInput PAInputBegin(struct PAInput* Input, struct PACount* Value, struct PACount* Value2, struct PAElement* Value3)
 {
-	struct PAInput temp;
-	struct PAInput* inputPointer;
+	// struct PAInput temp;
+
+	struct PAInput* aux;
+	// inputPointer = (struct PAInput) malloc (sizeof (strr))
+	aux = (struct PAInput*) malloc (sizeof(struct PAInput));
 	// inputPointer->n = PACountPerformConstruct();
 	// inputPointer->m = PACountPerformConstruct();
 	// inputPointer->source = PAElementPerformConstruct();
-	temp.n = Value;
-	temp.m = Value2;
-	temp.source = Value3;
-	Input->m = temp.m;
-	Input->n = temp.n;
-	Input->source = temp.source;
+	aux->n = Value;
+	aux->m = Value2;
+	aux->source = Value3;
+	Input->m = aux->m;
+	Input->n = aux->n;
+	Input->source = aux->source;
+	aux = NULL;
+	free(aux);
 	// Input.n = Value;
 	// Input.m = Value2;
 	// Input.source = Value3;	

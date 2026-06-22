@@ -107,11 +107,14 @@ PAResult PACountPrint(struct PACount* Count)
 DllExport void PACountCopy(struct PACount* from, struct PACount* to)
 {
     struct PACount* aux;
-    aux = PACountCreate();
+    aux = (struct PACount*) malloc (sizeof(struct PACount));
+    // aux = PACountCreate();
     aux->number = from->number;
     to->number = aux->number;
-    PACountDelete(aux);
-    PACountFinish(aux);
+    aux->number = NULL;
+    free(aux);
+    // PACountDelete(aux);
+    // PACountFinish(aux);
     // aux->number = from->number;
     // to->number = aux->number;
     // struct PACount temp;

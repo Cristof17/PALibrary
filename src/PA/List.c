@@ -48,7 +48,8 @@ DllExport struct PAList* PAListCreate()
 DllExport void PAListCopy(struct PAList* from, struct PAList* to)
 {
     struct PAList* aux;
-    aux = PAListCreate();
+    // aux = PAListCreate();
+    aux = (struct PAList*) malloc (sizeof(struct PAList));
     // temp.n = PACountPerformCopy(from.n,temp.n);
     // struct PACount x;
     // struct PACount y;
@@ -56,8 +57,11 @@ DllExport void PAListCopy(struct PAList* from, struct PAList* to)
     aux->neigh = from->neigh;
     to->n = aux->n;
     to->neigh = aux->neigh;
-    PAListDelete(aux);
-    PAListFinish(aux);
+    aux->n = NULL;
+    aux->neigh = NULL;
+    free(aux);
+    // PAListDelete(aux);
+    // PAListFinish(aux);
     // x.number.val = FIRST;
     // y.number.val = temp.n.number.val;
     // if (temp.n.number.val > to.n.number.val)

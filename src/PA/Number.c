@@ -78,11 +78,14 @@ DllExport void PANumberCopy(struct PANumber* from, struct PANumber* to)
 {
     // PANumberDelete(to);
     struct PANumber* aux;
-    aux = PANumberCreate();
+    aux = (struct PANumber*) malloc (sizeof(struct PANumber));
+    // aux = PANumberCreate();
     aux->val = from->val;
     to->val = aux->val;
-    PANumberDelete(aux);
-    PANumberFinish(aux);
+    aux->val = NULL;
+    free(aux);
+    // PANumberDelete(aux);
+    // PANumberFinish(aux);
     // number = PANumberCreate();
     // temp.val = from->val;
     // to->val = temp.val;

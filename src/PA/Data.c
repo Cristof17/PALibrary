@@ -48,11 +48,15 @@ DllExport void PADataCopy(struct PAData* from, struct PAData* to)
 {
     // struct PAData temp;
     struct PAData *aux;
-    aux = PADataCreate();
+    // aux = (struct PAData) malloc (su)
+    aux = (struct PAData*) malloc (sizeof (struct PAData));
+    // aux = PADataCreate();
     aux->Resource = from->Resource;
     to->Resource = aux->Resource;
-    PADataDelete(aux);
-    PADataFinish(aux);
+    aux->Resource = NULL;
+    free(aux);
+    // PADataDelete(aux);
+    // PADataFinish(aux);
     // dataPointer->Resource = from->Resource;
     // to->Resource = dataPointer->Resource;
     // temp.Resource = PAResourcePerformCopy(from.Resource, temp.Resource);
