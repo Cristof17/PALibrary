@@ -123,18 +123,12 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 147 "./include/types.h"
+# 153 "./include/types.h"
 struct Input {
-
+ ;
 };
-
-
-
-
-
-
 struct Algorithm {
- struct Input* input;
+ struct Input input;
 };
 struct ArrayListPosition {
  int position;
@@ -225,9 +219,9 @@ struct BridgeConcreteImplementorB {
 };
 # 254 "./include/types.h"
 struct PAInput {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
 };
 struct BFSRecord {
 struct PACount n;
@@ -263,15 +257,15 @@ struct BFSOutput {
  struct BFSRecord result;
 };
 struct Output {
- struct PAOutput result;
 
-};
+
+ };
 
 
 
 
 struct PALink {
- struct PAPair p;
+ struct PAPair* p;
 
 };
 
@@ -1828,7 +1822,7 @@ extern char * suboptarg;
 
 
           struct PAPair* PAPairCreate();
-          struct PAPair PAPairBegin(struct PAPair*, struct PAElement, struct PAElement);
+          struct PAPair PAPairBegin(struct PAPair*, struct PAElement*, struct PAElement*);
           void PAPairCopy(struct PAPair* from, struct PAPair* to);
 
 
@@ -1853,7 +1847,7 @@ extern char * suboptarg;
           void PAElementReset(struct PAElement*);
           struct PAElement* PAElementCreate();
 
-          struct PAElement PAElementCompleteBegin(struct PAElement*,struct PAData,struct PAStatus);
+          struct PAElement PAElementCompleteBegin(struct PAElement*,struct PAData*,struct PAStatus*);
 
 
 
@@ -1882,27 +1876,29 @@ extern char * suboptarg;
 
 }
 
-          struct PAPair PAPairBegin(struct PAPair* Pair, struct PAElement Value, struct PAElement Value2)
+          struct PAPair PAPairBegin(struct PAPair* Pair, struct PAElement* Value, struct PAElement* Value2)
 {
-    struct PAPair temp;
-    struct PAPair* pairPointer;
 
-    temp.Node = &Value;
-    temp.Neigh = &Value;
-    Pair->Node = temp.Node;
-    Pair->Neigh = temp.Neigh;
-# 57 "src/PA/Pair.c"
+
+    struct PAPair temp;
+    Pair->Node = Value;
+    Pair->Node = Value2;
+
+
+
+    temp = *Pair;
+# 59 "src/PA/Pair.c"
     return temp;
-# 70 "src/PA/Pair.c"
+# 72 "src/PA/Pair.c"
 }
           void PAPairCopy(struct PAPair* from, struct PAPair* to)
 {
     struct PAPair temp;
     struct PAElement node;
     struct PAElement neigh;
-# 85 "src/PA/Pair.c"
+# 87 "src/PA/Pair.c"
 }
-# 114 "src/PA/Pair.c"
+# 116 "src/PA/Pair.c"
           PAResult PAPairFinish(struct PAPair* PA)
 {
 
@@ -1920,17 +1916,14 @@ extern char * suboptarg;
 
 
 }
-          struct PAPair PAPairDelete(struct PAPair* PA)
+          int PAPairDelete(struct PAPair* PA)
 {
-    int returnCode1;
-    int returnCode2;
+
+
     int returnCode;
-
-
-    returnCode = returnCode1 & returnCode2;
-
-    struct PAPair pair;
-    return pair;
-
-
+    PA->Neigh = 0;
+    PA->Node = 0;
+    returnCode = ((int)0);
+# 149 "src/PA/Pair.c"
+    return returnCode;
 }

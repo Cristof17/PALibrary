@@ -250,7 +250,7 @@ DllExport int PATreeDelete(struct PATree* PA)
     // return Tree;
     // returnCode = PARESULT_SUCCESS;
     // return tree;
-    // return returnCode;
+    return returnCode;
     // return 0;
 }
 // DllExport struct PATransposeTree PATransposeTreeBuildPart()

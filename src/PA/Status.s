@@ -83,20 +83,15 @@ _PAStatusCopy:                          ; @PAStatusCopy
 _PAStatusDelete:                        ; @PAStatusDelete
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #48
-	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
-	add	x29, sp, #32
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	stur	x0, [x29, #-8]
-	ldur	x8, [x29, #-8]
-	ldr	x0, [x8]
-	bl	_PAResourceDelete
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
 	str	x0, [sp, #8]
-	ldur	x0, [x29, #-8]
-	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
-	add	sp, sp, #48
+	str	wzr, [sp, #4]
+	ldr	x8, [sp, #8]
+                                        ; kill: def $x9 killed $xzr
+	str	xzr, [x8]
+	ldr	w0, [sp, #4]
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function

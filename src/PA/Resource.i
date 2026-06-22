@@ -123,18 +123,12 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 147 "./include/types.h"
+# 153 "./include/types.h"
 struct Input {
-
+ ;
 };
-
-
-
-
-
-
 struct Algorithm {
- struct Input* input;
+ struct Input input;
 };
 struct ArrayListPosition {
  int position;
@@ -225,9 +219,9 @@ struct BridgeConcreteImplementorB {
 };
 # 254 "./include/types.h"
 struct PAInput {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
 };
 struct BFSRecord {
 struct PACount n;
@@ -263,15 +257,15 @@ struct BFSOutput {
  struct BFSRecord result;
 };
 struct Output {
- struct PAOutput result;
 
-};
+
+ };
 
 
 
 
 struct PALink {
- struct PAPair p;
+ struct PAPair* p;
 
 };
 
@@ -1826,7 +1820,7 @@ unsigned long long
 extern char * suboptarg;
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 2 3 4
 # 7 "./include/PA/Resource.h" 2
- struct PAResource PAResourceBegin(struct PAResource*, struct PANumber);
+ struct PAResource PAResourceBegin(struct PAResource*, struct PANumber*);
           struct PAResource* PAResourceCreate();
           PAResult PAResourceFinish(struct PAResource*);
           int PAResourceDelete(struct PAResource*);
@@ -2336,16 +2330,13 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
 }
-          struct PAResource PAResourceBegin(struct PAResource* Resource, struct PANumber Value)
+          struct PAResource PAResourceBegin(struct PAResource* Resource, struct PANumber* Value)
 {
 
     struct PAResource temp;
-    struct PANumber number;
-    struct PAResource* resourcePointer;
-    number = Value;
-    PANumberCopy(&number,temp.value);
-    PANumberCopy(temp.value,Resource->value);
-# 56 "src/PA/Resource.c"
+    Resource->value = Value;
+    temp = *Resource;
+# 58 "src/PA/Resource.c"
     return temp;
 
 }
@@ -2357,7 +2348,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
     PANumberCopy(from->value,to->value);
-# 75 "src/PA/Resource.c"
+# 77 "src/PA/Resource.c"
 }
           PAResult PAResourceFinish(struct PAResource* PA)
 {
@@ -2371,10 +2362,14 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 }
 
-          struct PAResource PAResourceDelete(struct PAResource* PA)
+          int PAResourceDelete(struct PAResource* PA)
 {
-    struct PAResource resource;
-    PANumberDelete(PA->value);
-    return resource;
+    int returnCode;
+    PA->value = 0;
+    returnCode = ((int)0);
+    return returnCode;
+
+
+
 
 }

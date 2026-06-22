@@ -124,18 +124,12 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 147 "./include/types.h"
+# 153 "./include/types.h"
 struct Input {
-
+ ;
 };
-
-
-
-
-
-
 struct Algorithm {
- struct Input* input;
+ struct Input input;
 };
 struct ArrayListPosition {
  int position;
@@ -226,9 +220,9 @@ struct BridgeConcreteImplementorB {
 };
 # 254 "./include/types.h"
 struct PAInput {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
 };
 struct BFSRecord {
 struct PACount n;
@@ -264,15 +258,15 @@ struct BFSOutput {
  struct BFSRecord result;
 };
 struct Output {
- struct PAOutput result;
 
-};
+
+ };
 
 
 
 
 struct PALink {
- struct PAPair p;
+ struct PAPair* p;
 
 };
 
@@ -1962,12 +1956,14 @@ void Dispose()
 
 }
 # 208 "src/PA/List.c"
-          struct PAList PAListDelete(struct PAList* PA)
+          int PAListDelete(struct PAList* PA)
 {
-
-    struct PAList aux;
-# 227 "src/PA/List.c"
-    return aux;
+    int returnCode;
+    returnCode = ((int)0);
+    PA->n = 0;
+    PA->neigh = 0;
+# 231 "src/PA/List.c"
+    return returnCode;
 
 
 

@@ -123,18 +123,12 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 147 "./include/types.h"
+# 153 "./include/types.h"
 struct Input {
-
+ ;
 };
-
-
-
-
-
-
 struct Algorithm {
- struct Input* input;
+ struct Input input;
 };
 struct ArrayListPosition {
  int position;
@@ -225,9 +219,9 @@ struct BridgeConcreteImplementorB {
 };
 # 254 "./include/types.h"
 struct PAInput {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
 };
 struct BFSRecord {
 struct PACount n;
@@ -263,15 +257,15 @@ struct BFSOutput {
  struct BFSRecord result;
 };
 struct Output {
- struct PAOutput result;
 
-};
+
+ };
 
 
 
 
 struct PALink {
- struct PAPair p;
+ struct PAPair* p;
 
 };
 
@@ -1830,7 +1824,7 @@ extern char * suboptarg;
 
 
           struct PAOutput* PAOutputCreate();
-          struct PAOutput PAOutputBegin(struct PAOutput*, struct BFSRecord);
+          struct PAOutput PAOutputBegin(struct PAOutput*, struct BFSRecord*);
           int PAOutputDelete(struct PAOutput*);
           PAResult PAOutputFinish(struct PAOutput*);
           void PAOutputPrint(PAResult Result);
@@ -1864,23 +1858,28 @@ extern char * suboptarg;
     return outputPointer;
 
 }
-          struct PAOutput PAOutputBegin(struct PAOutput* Output, struct BFSRecord Value)
+          struct PAOutput PAOutputBegin(struct PAOutput* Output, struct BFSRecord* Value)
 {
 
 
     struct PAOutput temp;
-    struct PAOutput* outputPointer;
 
-    temp.result = &Value;
-    Output->result = temp.result;
+    Output->result = Value;
+    temp = *Output;
+
+
     return temp;
 }
-          struct PAOutput PAOutputDelete(struct PAOutput* Output)
+          int PAOutputDelete(struct PAOutput* PA)
 {
+    int returnCode;
+    PA->result = 0;
+    returnCode = ((int)0);
 
 
-    struct PAOutput output;
-    return output;
+
+
+    return returnCode;
 }
           PAResult PAOutputFinish(struct PAOutput* PA)
 {

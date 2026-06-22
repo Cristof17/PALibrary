@@ -122,12 +122,17 @@ _PAElementFinish:                       ; @PAElementFinish
 _PAElementDelete:                       ; @PAElementDelete
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
 	str	x0, [sp, #8]
-	ldr	x0, [sp, #16]
-	ldr	x1, [sp, #24]
-	add	sp, sp, #32
+	str	wzr, [sp, #4]
+	ldr	x8, [sp, #8]
+                                        ; kill: def $x9 killed $xzr
+	str	xzr, [x8]
+	ldr	x8, [sp, #8]
+	str	xzr, [x8, #8]
+	ldr	w0, [sp, #4]
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function

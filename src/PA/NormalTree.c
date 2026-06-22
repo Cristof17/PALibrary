@@ -25,13 +25,14 @@ DllExport struct PANormalTree* PANormalTreeCreate()
     // normalTree.tree = PATreePerformConstruct();
     // return normalTree;
 }
-DllExport struct PANormalTree PANormalTreeBegin(struct PANormalTree* NormalTree, struct PATree Value)
+DllExport struct PANormalTree PANormalTreeBegin(struct PANormalTree* NormalTree, struct PATree* Value)
 {
     struct PANormalTree temp;
-    struct PANormalTree *normalTreePointer;
-
-    temp.tree = &Value;
-    NormalTree->tree = temp.tree;
+    // struct PANormalTree *normalTreePointer;
+    NormalTree->tree = Value;
+    temp = *NormalTree;
+    // temp.tree = &Value;
+    // NormalTree->tree = temp.tree;
 
     // normalTree.tree = PATreePerformConstruct();
     // NormalTree = normalTree;
@@ -71,6 +72,7 @@ DllExport int PANormalTreeDelete(struct PANormalTree* PA)
     // return tree;
     // PA.tree = PATreePerformDelete(PA.tree);
     // return PA;
+    return returnCode;
 }
 // DllExport struct PANormalTree* PAGrafNormalBuildPart()
 // {

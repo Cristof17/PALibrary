@@ -97,6 +97,7 @@ DllExport int PACountDelete(struct PACount* PA)
     // return PARESULT_SUCCESS;
     // PAResult result;
     // return result;
+    return returnCode;
 }
 PAResult PACountPrint(struct PACount* Count)
 {

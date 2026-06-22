@@ -125,18 +125,12 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 147 "./include/types.h"
+# 153 "./include/types.h"
 struct Input {
-
+ ;
 };
-
-
-
-
-
-
 struct Algorithm {
- struct Input* input;
+ struct Input input;
 };
 struct ArrayListPosition {
  int position;
@@ -227,9 +221,9 @@ struct BridgeConcreteImplementorB {
 };
 # 254 "./include/types.h"
 struct PAInput {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
 };
 struct BFSRecord {
 struct PACount n;
@@ -265,15 +259,15 @@ struct BFSOutput {
  struct BFSRecord result;
 };
 struct Output {
- struct PAOutput result;
 
-};
+
+ };
 
 
 
 
 struct PALink {
- struct PAPair p;
+ struct PAPair* p;
 
 };
 
@@ -1832,7 +1826,7 @@ extern char * suboptarg;
 
           struct PAInput* PAInputCreate();
 
-          struct PAInput PAInputBegin(struct PAInput* PAInput, struct PACount, struct PACount, struct PAElement);
+          struct PAInput PAInputBegin(struct PAInput* PAInput, struct PACount*, struct PACount*, struct PAElement*);
 
 
 
@@ -1882,7 +1876,7 @@ extern char * suboptarg;
           void PAElementReset(struct PAElement*);
           struct PAElement* PAElementCreate();
 
-          struct PAElement PAElementCompleteBegin(struct PAElement*,struct PAData,struct PAStatus);
+          struct PAElement PAElementCompleteBegin(struct PAElement*,struct PAData*,struct PAStatus*);
 
 
 
@@ -1908,9 +1902,9 @@ extern char * suboptarg;
 
 
 
- n = inputPointer->n;
- m = inputPointer->m;
- element = inputPointer->source;
+
+
+
 
  inputPointer = (struct PAInput*) malloc (sizeof(struct PAInput));
 
@@ -1922,7 +1916,7 @@ extern char * suboptarg;
 
 }
 # 52 "src/PA/Input.c"
-          struct PAInput PAInputBegin(struct PAInput* Input, struct PACount Value, struct PACount Value2, struct PAElement Value3)
+          struct PAInput PAInputBegin(struct PAInput* Input, struct PACount* Value, struct PACount* Value2, struct PAElement* Value3)
 {
  struct PAInput temp;
  struct PAInput* inputPointer;
@@ -1961,4 +1955,5 @@ extern char * suboptarg;
  PA->n = 0;
  PA->source = 0;
 # 114 "src/PA/Input.c"
+ return returnCode;
 }

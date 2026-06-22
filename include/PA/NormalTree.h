@@ -8,7 +8,7 @@
 #include <stdlib.h>
 // struct NormalTree;
 DllExport struct PANormalTree* PANormalTreeCreate();
-DllExport struct PANormalTree PANormalTreeBegin(struct PANormalTree*, struct PATree);
+DllExport struct PANormalTree PANormalTreeBegin(struct PANormalTree*, struct PATree*);
 DllExport void PANormalTreeCopy(struct PANormalTree*);
 DllExport PAResult PANormalTreeFinish(struct PANormalTree*);
 DllExport int PANormalTreeDelete(struct PANormalTree*);

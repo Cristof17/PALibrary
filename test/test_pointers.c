@@ -55,7 +55,7 @@ int main()
 	PANumberPrint(number);
 	resource123 = PAResourceCreate();
 	resource234 = PAResourceCreate();
-	PAResourceBegin(resource123,*number);
+	PAResourceBegin(resource123,number);
 	PAResourceCopy(resource123,resource234);
 	// PAResourceBegin(resource123,*number);
 	printf("resource %d\n", resource123->value->val);

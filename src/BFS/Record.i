@@ -119,18 +119,12 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 147 "./include/types.h"
+# 153 "./include/types.h"
 struct Input {
-
+ ;
 };
-
-
-
-
-
-
 struct Algorithm {
- struct Input* input;
+ struct Input input;
 };
 struct ArrayListPosition {
  int position;
@@ -221,9 +215,9 @@ struct BridgeConcreteImplementorB {
 };
 # 254 "./include/types.h"
 struct PAInput {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
 };
 struct BFSRecord {
 struct PACount n;
@@ -259,15 +253,15 @@ struct BFSOutput {
  struct BFSRecord result;
 };
 struct Output {
- struct PAOutput result;
 
-};
+
+ };
 
 
 
 
 struct PALink {
- struct PAPair p;
+ struct PAPair* p;
 
 };
 
@@ -1840,7 +1834,7 @@ extern char * suboptarg;
 
 
           PAResult PAListFinish(struct PAList*);
-          struct PAList PAListDelete(struct PAList*);
+          int PAListDelete(struct PAList*);
           void PAListCopy(struct PAList*, struct PAList*);
 
 void PAListPrint(struct PAList* List);
@@ -1869,7 +1863,7 @@ void PAListPrint(struct PAList* List);
           int PACountFinish(struct PACount*);
 
 
-          struct PACount PACountDelete(struct PACount* PA);
+          int PACountDelete(struct PACount* PA);
 # 8 "src/BFS/Record.c" 2
 # 1 "./include/PA/Result.h" 1
 # 9 "src/BFS/Record.c" 2

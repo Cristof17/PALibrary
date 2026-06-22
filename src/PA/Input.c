@@ -25,9 +25,9 @@ DllExport struct PAInput* PAInputCreate()
 	// inputPointer->n = PACountPerformConstruct();
 	// inputPointer->m = PACountPerformConstruct();
 	// inputPointer->source = PAElementPerformConstruct();
-	n = inputPointer->n;
-	m = inputPointer->m;
-	element = inputPointer->source;
+	// n = inputPointer->n;
+	// m = inputPointer->m;
+	// element = inputPointer->source;
 
 	inputPointer = (struct PAInput*) malloc (sizeof(struct PAInput));
 	// list = inputPointer.
@@ -49,7 +49,7 @@ DllExport struct PAInput* PAInputCreate()
 // //	copy.source=Input.source;
 // 	return copy;
 // }
-DllExport struct PAInput PAInputBegin(struct PAInput* Input, struct PACount Value, struct PACount Value2, struct PAElement Value3)
+DllExport struct PAInput PAInputBegin(struct PAInput* Input, struct PACount* Value, struct PACount* Value2, struct PAElement* Value3)
 {
 	struct PAInput temp;
 	struct PAInput* inputPointer;
@@ -111,4 +111,5 @@ DllExport int PAInputDelete(struct PAInput* PA)
 	// return Empty;
 	// PAResult result;
     // return result;
+	return returnCode;
 }

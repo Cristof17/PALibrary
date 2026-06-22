@@ -123,18 +123,12 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 147 "./include/types.h"
+# 153 "./include/types.h"
 struct Input {
-
+ ;
 };
-
-
-
-
-
-
 struct Algorithm {
- struct Input* input;
+ struct Input input;
 };
 struct ArrayListPosition {
  int position;
@@ -225,9 +219,9 @@ struct BridgeConcreteImplementorB {
 };
 # 254 "./include/types.h"
 struct PAInput {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
 };
 struct BFSRecord {
 struct PACount n;
@@ -263,15 +257,15 @@ struct BFSOutput {
  struct BFSRecord result;
 };
 struct Output {
- struct PAOutput result;
 
-};
+
+ };
 
 
 
 
 struct PALink {
- struct PAPair p;
+ struct PAPair* p;
 
 };
 
@@ -1842,7 +1836,7 @@ extern char * suboptarg;
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 7 "./include/PA/Resource.h" 2
- struct PAResource PAResourceBegin(struct PAResource*, struct PANumber);
+ struct PAResource PAResourceBegin(struct PAResource*, struct PANumber*);
           struct PAResource* PAResourceCreate();
           PAResult PAResourceFinish(struct PAResource*);
           int PAResourceDelete(struct PAResource*);
@@ -1890,12 +1884,16 @@ extern char * suboptarg;
 # 64 "src/PA/Status.c"
 }
 # 73 "src/PA/Status.c"
-          struct PAStatus* PAStatusDelete(struct PAStatus* PA)
+          int PAStatusDelete(struct PAStatus* PA)
 {
-    struct PAStatus temp;
-    PAResourceDelete(PA->visited);
+    int returnCode;
+    returnCode = ((int)0);
+    PA->visited = 0;
 
-    return PA;
+
+
+
+    return returnCode;
 }
           PAResult PAStatusFinish(struct PAStatus* PA)
 {

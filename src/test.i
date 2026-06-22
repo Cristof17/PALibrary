@@ -119,18 +119,12 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 147 "./include/types.h"
+# 153 "./include/types.h"
 struct Input {
-
+ ;
 };
-
-
-
-
-
-
 struct Algorithm {
- struct Input* input;
+ struct Input input;
 };
 struct ArrayListPosition {
  int position;
@@ -221,9 +215,9 @@ struct BridgeConcreteImplementorB {
 };
 # 254 "./include/types.h"
 struct PAInput {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
 };
 struct BFSRecord {
 struct PACount n;
@@ -259,15 +253,15 @@ struct BFSOutput {
  struct BFSRecord result;
 };
 struct Output {
- struct PAOutput result;
 
-};
+
+ };
 
 
 
 
 struct PALink {
- struct PAPair p;
+ struct PAPair* p;
 
 };
 
@@ -1879,7 +1873,7 @@ extern char * suboptarg;
           void PAElementReset(struct PAElement*);
           struct PAElement* PAElementCreate();
 
-          struct PAElement PAElementCompleteBegin(struct PAElement*,struct PAData,struct PAStatus);
+          struct PAElement PAElementCompleteBegin(struct PAElement*,struct PAData*,struct PAStatus*);
 
 
 
@@ -1902,7 +1896,7 @@ extern char * suboptarg;
 
 
           struct PAData* PADataCreate();
-          struct PAData PADataCompleteBegin(struct PAData*, struct PAResource);
+          struct PAData PADataCompleteBegin(struct PAData*, struct PAResource*);
 
 
           int PADataFinish(struct PAData*);
@@ -1942,7 +1936,7 @@ void PAListPrint(struct PAList* List);
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 7 "./include/PA/Resource.h" 2
- struct PAResource PAResourceBegin(struct PAResource*, struct PANumber);
+ struct PAResource PAResourceBegin(struct PAResource*, struct PANumber*);
           struct PAResource* PAResourceCreate();
           PAResult PAResourceFinish(struct PAResource*);
           int PAResourceDelete(struct PAResource*);
@@ -2484,7 +2478,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
           struct PATransposeTree* PATransposeTreeCreate();
-          struct PATransposeTree PATransposeTreeBegin(struct PATransposeTree*, struct PATree);
+          struct PATransposeTree PATransposeTreeBegin(struct PATransposeTree*, struct PATree*);
           void PATransposeTreeCopy(struct PATransposeTree*, struct PATransposeTree*);
 
           PAResult PATransposeTreeFinish(struct PATransposeTree*);

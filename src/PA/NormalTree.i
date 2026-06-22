@@ -122,18 +122,12 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 147 "./include/types.h"
+# 153 "./include/types.h"
 struct Input {
-
+ ;
 };
-
-
-
-
-
-
 struct Algorithm {
- struct Input* input;
+ struct Input input;
 };
 struct ArrayListPosition {
  int position;
@@ -224,9 +218,9 @@ struct BridgeConcreteImplementorB {
 };
 # 254 "./include/types.h"
 struct PAInput {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
 };
 struct BFSRecord {
 struct PACount n;
@@ -262,15 +256,15 @@ struct BFSOutput {
  struct BFSRecord result;
 };
 struct Output {
- struct PAOutput result;
 
-};
+
+ };
 
 
 
 
 struct PALink {
- struct PAPair p;
+ struct PAPair* p;
 
 };
 
@@ -1826,7 +1820,7 @@ extern char * suboptarg;
 # 9 "./include/PA/NormalTree.h" 2
 
           struct PANormalTree* PANormalTreeCreate();
-          struct PANormalTree PANormalTreeBegin(struct PANormalTree*, struct PATree);
+          struct PANormalTree PANormalTreeBegin(struct PANormalTree*, struct PATree*);
           void PANormalTreeCopy(struct PANormalTree*);
           PAResult PANormalTreeFinish(struct PANormalTree*);
           int PANormalTreeDelete(struct PANormalTree*);
@@ -1877,23 +1871,16 @@ extern char * suboptarg;
 
 
 }
-          struct PANormalTree PANormalTreeBegin(struct PANormalTree* NormalTree, struct PATree Value)
+          struct PANormalTree PANormalTreeBegin(struct PANormalTree* NormalTree, struct PATree* Value)
 {
     struct PANormalTree temp;
-    struct PANormalTree *normalTreePointer;
 
-    temp.tree = &Value;
-    NormalTree->tree = temp.tree;
-
-
-
-
-
-
-
+    NormalTree->tree = Value;
+    temp = *NormalTree;
+# 43 "src/PA/NormalTree.c"
     return temp;
 }
-# 53 "src/PA/NormalTree.c"
+# 54 "src/PA/NormalTree.c"
           PAResult PANormalTreeFinish(struct PANormalTree* PA)
 {
     int returnCode;
@@ -1904,13 +1891,16 @@ extern char * suboptarg;
 
 
 }
-          struct PANormalTree PANormalTreeDelete(struct PANormalTree* PA)
+          int PANormalTreeDelete(struct PANormalTree* PA)
 {
     int returnCode;
+    PA->tree = 0;
+    returnCode = ((int)0);
 
 
-    struct PANormalTree tree;
-    return tree;
 
 
+
+
+    return returnCode;
 }

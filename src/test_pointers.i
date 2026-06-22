@@ -118,18 +118,12 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 147 "./include/types.h"
+# 153 "./include/types.h"
 struct Input {
-
+ ;
 };
-
-
-
-
-
-
 struct Algorithm {
- struct Input* input;
+ struct Input input;
 };
 struct ArrayListPosition {
  int position;
@@ -220,9 +214,9 @@ struct BridgeConcreteImplementorB {
 };
 # 254 "./include/types.h"
 struct PAInput {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
 };
 struct BFSRecord {
 struct PACount n;
@@ -258,15 +252,15 @@ struct BFSOutput {
  struct BFSRecord result;
 };
 struct Output {
- struct PAOutput result;
 
-};
+
+ };
 
 
 
 
 struct PALink {
- struct PAPair p;
+ struct PAPair* p;
 
 };
 
@@ -1844,7 +1838,7 @@ extern char * suboptarg;
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 7 "./include/PA/Resource.h" 2
- struct PAResource PAResourceBegin(struct PAResource*, struct PANumber);
+ struct PAResource PAResourceBegin(struct PAResource*, struct PANumber*);
           struct PAResource* PAResourceCreate();
           PAResult PAResourceFinish(struct PAResource*);
           int PAResourceDelete(struct PAResource*);
@@ -2440,7 +2434,7 @@ void PAListPrint(struct PAList* List);
           void PAElementReset(struct PAElement*);
           struct PAElement* PAElementCreate();
 
-          struct PAElement PAElementCompleteBegin(struct PAElement*,struct PAData,struct PAStatus);
+          struct PAElement PAElementCompleteBegin(struct PAElement*,struct PAData*,struct PAStatus*);
 
 
 
@@ -2491,7 +2485,7 @@ int main()
  PANumberPrint(number);
  resource123 = PAResourceCreate();
  resource234 = PAResourceCreate();
- PAResourceBegin(resource123,*number);
+ PAResourceBegin(resource123,number);
  PAResourceCopy(resource123,resource234);
 
  printf("resource %d\n", resource123->value->val);

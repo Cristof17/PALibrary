@@ -20,12 +20,13 @@ _PATransposeTreeBegin:                  ; @PATransposeTreeBegin
 	sub	sp, sp, #32
 	.cfi_def_cfa_offset 32
 	str	x0, [sp, #16]
-	mov	x8, x1
-	str	x8, [sp, #8]
-	str	x1, [sp, #24]
-	ldr	x8, [sp, #24]
+	str	x1, [sp, #8]
+	ldr	x8, [sp, #8]
 	ldr	x9, [sp, #16]
 	str	x8, [x9]
+	ldr	x8, [sp, #16]
+	ldr	x8, [x8]
+	str	x8, [sp, #24]
 	ldr	x0, [sp, #24]
 	add	sp, sp, #32
 	ret
@@ -76,11 +77,15 @@ _PATransposeTreeFinish:                 ; @PATransposeTreeFinish
 _PATransposeTreeDelete:                 ; @PATransposeTreeDelete
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
-	str	x0, [sp, #16]
-	ldr	x0, [sp, #24]
-	add	sp, sp, #32
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	str	x0, [sp, #8]
+	str	wzr, [sp, #4]
+	ldr	x8, [sp, #8]
+                                        ; kill: def $x9 killed $xzr
+	str	xzr, [x8]
+	ldr	w0, [sp, #4]
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function

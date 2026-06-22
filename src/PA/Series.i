@@ -120,18 +120,12 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 147 "./include/types.h"
+# 153 "./include/types.h"
 struct Input {
-
+ ;
 };
-
-
-
-
-
-
 struct Algorithm {
- struct Input* input;
+ struct Input input;
 };
 struct ArrayListPosition {
  int position;
@@ -222,9 +216,9 @@ struct BridgeConcreteImplementorB {
 };
 # 254 "./include/types.h"
 struct PAInput {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
 };
 struct BFSRecord {
 struct PACount n;
@@ -260,15 +254,15 @@ struct BFSOutput {
  struct BFSRecord result;
 };
 struct Output {
- struct PAOutput result;
 
-};
+
+ };
 
 
 
 
 struct PALink {
- struct PAPair p;
+ struct PAPair* p;
 
 };
 
@@ -1876,7 +1870,7 @@ extern char * suboptarg;
           void PAElementReset(struct PAElement*);
           struct PAElement* PAElementCreate();
 
-          struct PAElement PAElementCompleteBegin(struct PAElement*,struct PAData,struct PAStatus);
+          struct PAElement PAElementCompleteBegin(struct PAElement*,struct PAData*,struct PAStatus*);
 
 
 
@@ -1945,35 +1939,27 @@ extern char * suboptarg;
 
 
     }
-              struct PASeries PASeriesDelete(struct PASeries* PA)
+              int PASeriesDelete(struct PASeries* PA)
     {
-        struct PASeries series;
-        struct PANumber x;
-        struct PANumber y;
-
-
-        while (y.val <= x.val)
-        {
-
-            y.val++;
-        }
-
-
-        return series;
-
+        int returnCode;
+        returnCode = ((int)0);
+        PA->adj = 0;
+        PA->m = 0;
+# 160 "src/PA/Series.c"
+        return returnCode;
     }
-# 166 "src/PA/Series.c"
+# 171 "src/PA/Series.c"
               PAResult PASeriesFinish(struct PASeries* PA)
     {
 
         int returnCode;
         free(PA);
         returnCode = ((int)0);
-# 191 "src/PA/Series.c"
+# 196 "src/PA/Series.c"
         return returnCode;
 
     }
-# 249 "src/PA/Series.c"
+# 254 "src/PA/Series.c"
 void PASeriesPrint(struct PASeries* Series)
 {
 

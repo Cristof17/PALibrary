@@ -46,10 +46,11 @@ _PANumberDelete:                        ; @PANumberDelete
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	str	x0, [sp]
-	ldr	x8, [sp]
+	str	x0, [sp, #8]
+	ldr	x8, [sp, #8]
 	strb	wzr, [x8]
-	ldrb	w0, [sp, #15]
+	str	wzr, [sp, #4]
+	ldr	w0, [sp, #4]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -90,11 +91,10 @@ _PANumberCopy:                          ; @PANumberCopy
 	str	x1, [sp, #16]
 	ldr	x0, [sp, #16]
 	bl	_PANumberDelete
-	strb	w0, [sp, #15]
 	ldur	x8, [x29, #-8]
 	ldrb	w8, [x8]
-	strb	w8, [sp, #14]
-	ldrb	w8, [sp, #14]
+	strb	w8, [sp, #15]
+	ldrb	w8, [sp, #15]
 	ldr	x9, [sp, #16]
 	strb	w8, [x9]
 	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload

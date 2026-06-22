@@ -125,18 +125,12 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 147 "./include/types.h"
+# 153 "./include/types.h"
 struct Input {
-
+ ;
 };
-
-
-
-
-
-
 struct Algorithm {
- struct Input* input;
+ struct Input input;
 };
 struct ArrayListPosition {
  int position;
@@ -227,9 +221,9 @@ struct BridgeConcreteImplementorB {
 };
 # 254 "./include/types.h"
 struct PAInput {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
 };
 struct BFSRecord {
 struct PACount n;
@@ -265,15 +259,15 @@ struct BFSOutput {
  struct BFSRecord result;
 };
 struct Output {
- struct PAOutput result;
 
-};
+
+ };
 
 
 
 
 struct PALink {
- struct PAPair p;
+ struct PAPair* p;
 
 };
 
@@ -1830,7 +1824,7 @@ extern char * suboptarg;
 
 
           struct PATransposeTree* PATransposeTreeCreate();
-          struct PATransposeTree PATransposeTreeBegin(struct PATransposeTree*, struct PATree);
+          struct PATransposeTree PATransposeTreeBegin(struct PATransposeTree*, struct PATree*);
           void PATransposeTreeCopy(struct PATransposeTree*, struct PATransposeTree*);
 
           PAResult PATransposeTreeFinish(struct PATransposeTree*);
@@ -1880,13 +1874,14 @@ extern char * suboptarg;
 
 }
 
-          struct PATransposeTree PATransposeTreeBegin(struct PATransposeTree* TransposeTree, struct PATree Value)
+          struct PATransposeTree PATransposeTreeBegin(struct PATransposeTree* TransposeTree, struct PATree* Value)
 {
     struct PATransposeTree temp;
-    struct PATransposeTree* transposeTreePointer;
-    temp.tree = &Value;
-    TransposeTree->tree = temp.tree;
-# 44 "src/PA/TransposeTree.c"
+
+
+    TransposeTree->tree = Value;
+    temp = *TransposeTree;
+# 46 "src/PA/TransposeTree.c"
     return temp;
 
 }
@@ -1902,7 +1897,7 @@ extern char * suboptarg;
 
 
 }
-# 68 "src/PA/TransposeTree.c"
+# 70 "src/PA/TransposeTree.c"
           PAResult PATransposeTreeFinish(struct PATransposeTree* PA)
 {
     int returnCode;
@@ -1913,13 +1908,16 @@ extern char * suboptarg;
 
     return returnCode;
 }
-          struct PATransposeTree PATransposeTreeDelete(struct PATransposeTree* PA)
+          int PATransposeTreeDelete(struct PATransposeTree* PA)
 {
 
 
     int returnCode;
-    struct PATransposeTree tree;
-    return tree;
+    returnCode = ((int)0);
+    PA->tree = 0;
+
+
+    return returnCode;
 
 
 

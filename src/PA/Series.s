@@ -65,25 +65,17 @@ _PASeriesBegin:                         ; @PASeriesBegin
 _PASeriesDelete:                        ; @PASeriesDelete
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
 	str	x0, [sp, #8]
-	b	LBB3_1
-LBB3_1:                                 ; =>This Inner Loop Header: Depth=1
-	ldrb	w8, [sp, #6]
-	ldrb	w9, [sp, #7]
-	subs	w8, w8, w9
-	b.gt	LBB3_3
-	b	LBB3_2
-LBB3_2:                                 ;   in Loop: Header=BB3_1 Depth=1
-	ldrb	w8, [sp, #6]
-	add	w8, w8, #1
-	strb	w8, [sp, #6]
-	b	LBB3_1
-LBB3_3:
-	ldr	x0, [sp, #16]
-	ldr	x1, [sp, #24]
-	add	sp, sp, #32
+	str	wzr, [sp, #4]
+	ldr	x8, [sp, #8]
+                                        ; kill: def $x9 killed $xzr
+	str	xzr, [x8, #8]
+	ldr	x8, [sp, #8]
+	str	xzr, [x8]
+	ldr	w0, [sp, #4]
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function

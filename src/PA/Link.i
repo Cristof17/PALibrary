@@ -125,18 +125,12 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 147 "./include/types.h"
+# 153 "./include/types.h"
 struct Input {
-
+ ;
 };
-
-
-
-
-
-
 struct Algorithm {
- struct Input* input;
+ struct Input input;
 };
 struct ArrayListPosition {
  int position;
@@ -227,9 +221,9 @@ struct BridgeConcreteImplementorB {
 };
 # 254 "./include/types.h"
 struct PAInput {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
 };
 struct BFSRecord {
 struct PACount n;
@@ -265,15 +259,15 @@ struct BFSOutput {
  struct BFSRecord result;
 };
 struct Output {
- struct PAOutput result;
 
-};
+
+ };
 
 
 
 
 struct PALink {
- struct PAPair p;
+ struct PAPair* p;
 
 };
 
@@ -1831,7 +1825,7 @@ extern char * suboptarg;
           struct PALink* PALinkCreate();
           void PALinkCopy(struct PALink*, struct PALink*);
 
-          struct PALink PALinkBegin(struct PALink*, struct PAPair);
+          struct PALink PALinkBegin(struct PALink*, struct PAPair*);
 
           PAResult PALinkFinish(struct PALink*);
           int PALinkDelete(struct PALink*);
@@ -1849,7 +1843,7 @@ extern char * suboptarg;
 
 
           struct PAPair* PAPairCreate();
-          struct PAPair PAPairBegin(struct PAPair*, struct PAElement, struct PAElement);
+          struct PAPair PAPairBegin(struct PAPair*, struct PAElement*, struct PAElement*);
           void PAPairCopy(struct PAPair* from, struct PAPair* to);
 
 
@@ -1871,12 +1865,13 @@ extern char * suboptarg;
     return linkPointer;
 
 }
-          struct PALink PALinkBegin(struct PALink* Link, struct PAPair Value)
+          struct PALink PALinkBegin(struct PALink* Link, struct PAPair* Value)
 {
     struct PALink temp;
-    struct PALink* linkPointer;
-    temp.p = Value;
-    Link->p = temp.p;
+
+
+    Link->p = Value;
+    temp = *Link;
 
 
 
@@ -1903,7 +1898,7 @@ extern char * suboptarg;
 {
     struct PALink temp;
     struct PALink* linkPointer;
-# 71 "src/PA/Link.c"
+# 72 "src/PA/Link.c"
 }
 
 
@@ -1912,12 +1907,16 @@ extern char * suboptarg;
 
 
 
-          struct PALink PALinkDelete(struct PALink* PA){
+          int PALinkDelete(struct PALink* PA){
+
+    int returnCode;
+    returnCode = ((int)0);
+    PA->p = 0;
+    return returnCode;
 
 
 
 
 
-    struct PALink link;
-    return link;
+
 }

@@ -123,18 +123,12 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 147 "./include/types.h"
+# 153 "./include/types.h"
 struct Input {
-
+ ;
 };
-
-
-
-
-
-
 struct Algorithm {
- struct Input* input;
+ struct Input input;
 };
 struct ArrayListPosition {
  int position;
@@ -225,9 +219,9 @@ struct BridgeConcreteImplementorB {
 };
 # 254 "./include/types.h"
 struct PAInput {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
 };
 struct BFSRecord {
 struct PACount n;
@@ -263,15 +257,15 @@ struct BFSOutput {
  struct BFSRecord result;
 };
 struct Output {
- struct PAOutput result;
 
-};
+
+ };
 
 
 
 
 struct PALink {
- struct PAPair p;
+ struct PAPair* p;
 
 };
 
@@ -1832,7 +1826,7 @@ extern char * suboptarg;
           void PAElementReset(struct PAElement*);
           struct PAElement* PAElementCreate();
 
-          struct PAElement PAElementCompleteBegin(struct PAElement*,struct PAData,struct PAStatus);
+          struct PAElement PAElementCompleteBegin(struct PAElement*,struct PAData*,struct PAStatus*);
 
 
 
@@ -1855,7 +1849,7 @@ extern char * suboptarg;
 
 
           struct PAData* PADataCreate();
-          struct PAData PADataCompleteBegin(struct PAData*, struct PAResource);
+          struct PAData PADataCompleteBegin(struct PAData*, struct PAResource*);
 
 
           int PADataFinish(struct PAData*);
@@ -1941,7 +1935,7 @@ struct PAElement* PAElementCreate()
 
 }
 # 154 "src/PA/Element.c"
-          struct PAElement PAElementDelete(struct PAElement* PA)
+          int PAElementDelete(struct PAElement* PA)
 {
     int returnCode;
     returnCode = ((int)0);

@@ -157,6 +157,7 @@ DllExport struct PASeries PASeriesBegin(struct PASeries* Series,
         // return PA;
         // return series;
         // return Empty;
+        return returnCode;
     }
     // PAResult PASeriesPerformCopy()
     // {

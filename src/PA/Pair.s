@@ -25,26 +25,23 @@ _PAPairCreate:                          ; @PAPairCreate
 _PAPairBegin:                           ; @PAPairBegin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #64
-	.cfi_def_cfa_offset 64
-	add	x8, sp, #32
-	str	x1, [sp, #32]
-	str	x2, [sp, #40]
-	str	x3, [sp, #16]
-	str	x4, [sp, #24]
-	str	x0, [sp, #8]
-	mov	x9, x8
-	str	x9, [sp, #48]
-	str	x8, [sp, #56]
-	ldr	x8, [sp, #48]
-	ldr	x9, [sp, #8]
+	sub	sp, sp, #48
+	.cfi_def_cfa_offset 48
+	str	x0, [sp, #24]
+	str	x1, [sp, #16]
+	str	x2, [sp, #8]
+	ldr	x8, [sp, #16]
+	ldr	x9, [sp, #24]
 	str	x8, [x9]
-	ldr	x8, [sp, #56]
-	ldr	x9, [sp, #8]
-	str	x8, [x9, #8]
-	ldr	x0, [sp, #48]
-	ldr	x1, [sp, #56]
-	add	sp, sp, #64
+	ldr	x8, [sp, #8]
+	ldr	x9, [sp, #24]
+	str	x8, [x9]
+	ldr	x8, [sp, #24]
+	ldr	q0, [x8]
+	str	q0, [sp, #32]
+	ldr	x0, [sp, #32]
+	ldr	x1, [sp, #40]
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -87,16 +84,17 @@ _PAPairFinish:                          ; @PAPairFinish
 _PAPairDelete:                          ; @PAPairDelete
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #48
-	.cfi_def_cfa_offset 48
-	str	x0, [sp, #24]
-	ldr	w8, [sp, #20]
-	ldr	w9, [sp, #16]
-	and	w8, w8, w9
-	str	w8, [sp, #12]
-	ldr	x0, [sp, #32]
-	ldr	x1, [sp, #40]
-	add	sp, sp, #48
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	str	x0, [sp, #8]
+	ldr	x8, [sp, #8]
+                                        ; kill: def $x9 killed $xzr
+	str	xzr, [x8, #8]
+	ldr	x8, [sp, #8]
+	str	xzr, [x8]
+	str	wzr, [sp, #4]
+	ldr	w0, [sp, #4]
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function

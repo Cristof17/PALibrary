@@ -26,12 +26,14 @@ DllExport struct PATransposeTree* PATransposeTreeCreate()
     // return transposeTreePointer;
 }
 
-DllExport struct PATransposeTree PATransposeTreeBegin(struct PATransposeTree* TransposeTree, struct PATree Value)
+DllExport struct PATransposeTree PATransposeTreeBegin(struct PATransposeTree* TransposeTree, struct PATree* Value)
 {
     struct PATransposeTree temp;
-    struct PATransposeTree* transposeTreePointer;
-    temp.tree = &Value;
-    TransposeTree->tree = temp.tree;
+    // struct PATransposeTree* transposeTreePointer;
+    // temp.tree = &Value;
+    TransposeTree->tree = Value;
+    temp = *TransposeTree;
+    // TransposeTree->tree = temp.tree;
     // struct PATree* treePointer;
     // treePointer = &(TransposeTree->tree);
     // treePointer = PATreeCreate();

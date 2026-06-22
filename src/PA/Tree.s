@@ -122,10 +122,21 @@ _PATreeFinish:                          ; @PATreeFinish
 _PATreeDelete:                          ; @PATreeDelete
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	str	x0, [sp, #8]
-	add	sp, sp, #16
+	sub	sp, sp, #48
+	.cfi_def_cfa_offset 48
+	str	x0, [sp, #40]
+	ldr	x8, [sp, #40]
+                                        ; kill: def $x9 killed $xzr
+	str	xzr, [x8, #24]
+	ldr	x8, [sp, #40]
+	str	xzr, [x8, #8]
+	ldr	x8, [sp, #40]
+	str	xzr, [x8]
+	ldr	x8, [sp, #40]
+	str	xzr, [x8, #16]
+	str	wzr, [sp, #36]
+	ldr	w0, [sp, #36]
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function

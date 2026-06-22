@@ -119,18 +119,12 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 147 "./include/types.h"
+# 153 "./include/types.h"
 struct Input {
-
+ ;
 };
-
-
-
-
-
-
 struct Algorithm {
- struct Input* input;
+ struct Input input;
 };
 struct ArrayListPosition {
  int position;
@@ -221,9 +215,9 @@ struct BridgeConcreteImplementorB {
 };
 # 254 "./include/types.h"
 struct PAInput {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
 };
 struct BFSRecord {
 struct PACount n;
@@ -259,15 +253,15 @@ struct BFSOutput {
  struct BFSRecord result;
 };
 struct Output {
- struct PAOutput result;
 
-};
+
+ };
 
 
 
 
 struct PALink {
- struct PAPair p;
+ struct PAPair* p;
 
 };
 
@@ -1886,7 +1880,7 @@ extern char * suboptarg;
 
 
           PAResult PATreeFinish(struct PATree*);
-          struct PATree PATreeDelete(struct PATree*);
+          int PATreeDelete(struct PATree*);
 # 9 "src/BFS/Procedure.c" 2
 # 1 "./include/PA/Element.h" 1
 
@@ -1905,13 +1899,13 @@ extern char * suboptarg;
           void PAElementReset(struct PAElement*);
           struct PAElement* PAElementCreate();
 
-          struct PAElement PAElementCompleteBegin(struct PAElement*,struct PAData,struct PAStatus);
+          struct PAElement PAElementCompleteBegin(struct PAElement*,struct PAData*,struct PAStatus*);
 
 
 
 
           int PAElementFinish(struct PAElement*);
-          struct PAElement PAElementDelete(struct PAElement*);
+          int PAElementDelete(struct PAElement*);
           void PAElementCopy(struct PAElement*, struct PAElement*);
 # 10 "src/BFS/Procedure.c" 2
 # 1 "./include/BFS/Procedure.h" 1
@@ -1947,12 +1941,12 @@ extern char * suboptarg;
 
           struct PAInput* PAInputCreate();
 
-          struct PAInput PAInputBegin(struct PAInput* PAInput, struct PACount, struct PACount, struct PAElement);
+          struct PAInput PAInputBegin(struct PAInput* PAInput, struct PACount*, struct PACount*, struct PAElement*);
 
 
 
           PAResult PAInputFinish(struct PAInput*);
-          struct PAInput PAInputDelete(struct PAInput*);
+          int PAInputDelete(struct PAInput*);
 # 13 "src/BFS/Procedure.c" 2
 # 26 "src/BFS/Procedure.c"
 PAResult BFS()

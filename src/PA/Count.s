@@ -73,8 +73,12 @@ _PACountDelete:                         ; @PACountDelete
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	str	x0, [sp]
-	ldr	x0, [sp, #8]
+	str	x0, [sp, #8]
+	ldr	x8, [sp, #8]
+                                        ; kill: def $x9 killed $xzr
+	str	xzr, [x8]
+	str	wzr, [sp, #4]
+	ldr	w0, [sp, #4]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc

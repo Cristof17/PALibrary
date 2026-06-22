@@ -32,15 +32,17 @@ DllExport struct PAPair* PAPairCreate()
     //return pair;
 }
 // struct PAPair PAPairRuin(struct PAPair Pair) {
-DllExport struct PAPair PAPairBegin(struct PAPair* Pair, struct PAElement Value, struct PAElement Value2)
+DllExport struct PAPair PAPairBegin(struct PAPair* Pair, struct PAElement* Value, struct PAElement* Value2)
 {
+        // struct PAPair* pairPointer;
+        
     struct PAPair temp;
-    struct PAPair* pairPointer;
-
-    temp.Node = &Value;
-    temp.Neigh = &Value;
-    Pair->Node = temp.Node;
-    Pair->Neigh = temp.Neigh;
+    Pair->Node = Value;
+    Pair->Node = Value2;
+    // temp.Neigh = Value;
+    // Pair->Node = temp.Node;
+    // Pair->Neigh = temp.Neigh;
+    temp = *Pair;
     // struct PAPair *pairPointer;
     // Pair->Node.index = Value.index;
     // Pair->Node.status = Value.status;
@@ -143,5 +145,6 @@ DllExport int PAPairDelete(struct PAPair* PA)
     // struct PAPair pair;
     // return pair;
     // PAResult result;
-    // return result;
+    //
+    return returnCode;
 }

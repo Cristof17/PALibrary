@@ -28,12 +28,13 @@ DllExport struct PALink* PALinkCreate()
     return linkPointer;
     // return linkPointer;
 }
-DllExport struct PALink PALinkBegin(struct PALink* Link, struct PAPair Value)
+DllExport struct PALink PALinkBegin(struct PALink* Link, struct PAPair* Value)
 {
     struct PALink temp;
-    struct PALink* linkPointer;
-    temp.p = Value;
-    Link->p = temp.p;
+    // struct PALink* linkPointer;
+    // temp= Value;
+    Link->p = Value;
+    temp = *Link;
     // link.p = PAPairPerformConstruct();
     // Link = link;
     // struct PALink link;
@@ -81,6 +82,7 @@ DllExport int PALinkDelete(struct PALink* PA){
     int returnCode;
     returnCode = PARESULT_SUCCESS;
     PA->p = NULL;
+    return returnCode;
     // struct PALink Empty;
     // PA.p = PAPairPerformDelete(PA.p);
     // return result;

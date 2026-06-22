@@ -70,12 +70,16 @@ DllExport struct PAStatus* PAStatusCopy(struct PAStatus* from, struct PAStatus* 
 //     return returnCode;
 //     // return PA;
 // }
-DllExport struct PAStatus* PAStatusDelete(struct PAStatus* PA)
+DllExport int PAStatusDelete(struct PAStatus* PA)
 {
-    struct PAStatus temp;
-    PAResourceDelete(PA->visited);
+    int returnCode;
+    returnCode = PARESULT_SUCCESS;
+    PA->visited = NULL;
+    // struct PAStatus temp;
+
+    // PAResourceDelete(PA->visited);
     // return temp;
-    return PA;
+    return returnCode;
 }
 DllExport PAResult PAStatusFinish(struct PAStatus* PA)
 {

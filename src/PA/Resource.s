@@ -28,27 +28,18 @@ _PAResourceCreate:                      ; @PAResourceCreate
 _PAResourceBegin:                       ; @PAResourceBegin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #64
-	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
-	add	x29, sp, #48
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	mov	x8, x1
-	sturb	w8, [x29, #-9]
-	str	x0, [sp, #24]
-	ldurb	w8, [x29, #-9]
-	add	x0, sp, #23
-	strb	w8, [sp, #23]
-	ldur	x1, [x29, #-8]
-	bl	_PANumberCopy
-	ldur	x0, [x29, #-8]
-	ldr	x8, [sp, #24]
-	ldr	x1, [x8]
-	bl	_PANumberCopy
-	ldur	x0, [x29, #-8]
-	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
-	add	sp, sp, #64
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #16]
+	str	x1, [sp, #8]
+	ldr	x8, [sp, #8]
+	ldr	x9, [sp, #16]
+	str	x8, [x9]
+	ldr	x8, [sp, #16]
+	ldr	x8, [x8]
+	str	x8, [sp, #24]
+	ldr	x0, [sp, #24]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -57,24 +48,23 @@ _PAResourceBegin:                       ; @PAResourceBegin
 _PAResourceCopy:                        ; @PAResourceCopy
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #64
-	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
-	add	x29, sp, #48
+	sub	sp, sp, #48
+	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
+	add	x29, sp, #32
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
 	stur	x0, [x29, #-8]
-	stur	x1, [x29, #-16]
-	ldur	x0, [x29, #-16]
+	str	x1, [sp, #16]
+	ldr	x0, [sp, #16]
 	bl	_PAResourceDelete
-	str	x0, [sp, #24]
 	ldur	x8, [x29, #-8]
 	ldr	x0, [x8]
-	ldur	x8, [x29, #-16]
+	ldr	x8, [sp, #16]
 	ldr	x1, [x8]
 	bl	_PANumberCopy
-	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
-	add	sp, sp, #64
+	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -83,20 +73,15 @@ _PAResourceCopy:                        ; @PAResourceCopy
 _PAResourceDelete:                      ; @PAResourceDelete
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #48
-	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
-	add	x29, sp, #32
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	str	x0, [sp, #16]
-	ldr	x8, [sp, #16]
-	ldr	x0, [x8]
-	bl	_PANumberDelete
-	strb	w0, [sp, #15]
-	ldur	x0, [x29, #-8]
-	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
-	add	sp, sp, #48
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	str	x0, [sp, #8]
+	ldr	x8, [sp, #8]
+                                        ; kill: def $x9 killed $xzr
+	str	xzr, [x8]
+	str	wzr, [sp, #4]
+	ldr	w0, [sp, #4]
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function
