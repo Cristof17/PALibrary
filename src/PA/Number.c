@@ -55,8 +55,8 @@ DllExport struct PANumber PANumberDelete(struct PANumber* PA)
 DllExport PAResult PANumberFinish(struct PANumber* PA)
 {
     int returnCode;
-    returnCode = PARESULT_SUCCESS;
     free(PA);
+    returnCode = PARESULT_SUCCESS;
     // free(PA);
     // struct PANumber Empty;
     // return PA;

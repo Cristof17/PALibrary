@@ -76,8 +76,11 @@ DllExport PAResult PADataFinish(struct PAData* PA)
     // Resource = Empty;
     // return Resource;
     // g
+    int returnCode;
+    returnCode = PARESULT_SUCCESS;
     free(PA);
-    return PARESULT_SUCCESS;
+    return returnCode;
+    // return PARESULT_SUCCESS;
     // return Data;
     // PAResult result = (PAInt) PARESULT_SUCCESS;
     // return PARESULT_SUCCESS;

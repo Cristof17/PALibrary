@@ -76,8 +76,8 @@ DllExport void PAResourceCopy(struct PAResource* from, struct PAResource* to)
 DllExport PAResult PAResourceFinish(struct PAResource* PA)
 {
     int returnCode;
-    returnCode = PARESULT_SUCCESS;
     free(PA);
+    returnCode = PARESULT_SUCCESS;
     // PA.= PANumberPerformRuin(PA.value);
     // struct PAResource Empty;
     // return Empty;

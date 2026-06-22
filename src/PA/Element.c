@@ -109,8 +109,9 @@ DllExport PAResult PAElementFinish(struct PAElement* PA)
     // Element.index = PADataPerformRuin(PA.index);
     // Element.status = PAStatusPerformRuin(PA.status);
     // int returnCode;
-    int returnCode = PARESULT_SUCCESS;
+    int returnCode;
     free(PA);
+    returnCode = PARESULT_SUCCESS;
     return returnCode;
     // return PA;
     // PAResult result;

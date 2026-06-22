@@ -140,8 +140,8 @@ DllExport void PATreeCopy(struct PATree* from, struct PATree* to)
 DllExport PAResult PATreeFinish(struct PATree* PA)
 {
     int returnCode;
-    returnCode = PARESULT_SUCCESS;
     free(PA);
+    returnCode = PARESULT_SUCCESS;
     // int returnCode2;
     // int returnCode3;
     // returnCode = PACountFinish(PA->n);

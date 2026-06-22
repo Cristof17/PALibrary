@@ -53,6 +53,7 @@ DllExport PAResult PALinkFinish(struct PALink* PA)
     // return result;
     int returnCode;
     free(PA);
+    returnCode = PARESULT_SUCCESS;
     return returnCode;
 }
 DllExport void PALinkCopy(struct PALink* from, struct PALink* to)
