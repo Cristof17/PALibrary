@@ -42,10 +42,10 @@ int main()
 	PANumberPrint(number);
 	PANumberDelete(number34);
 	PANumberDelete(number);
-	PANumberFinish(number34);
+	// PANumberFinish(number34);
 	// PANu
-	PANumberFinish(number);
-	PANumberDelete(number34);
+	// PANumberFinish(number);
+	// PANumberDelete(number34);
 	PANumberPrint(number34);
 	// PANumberFinish(number34);
 	PANumberPrint(number34);
@@ -55,14 +55,19 @@ int main()
 
 	struct PAResource* resource123;
 	struct PAResource* resource234;
-	// PANumberBegin(number,'a');
+	PANumberBegin(number,'a');
+	PANumberPrint(number);
 	// PANumberPrint(number);
-	// resource123 = PAResourceCreate();
-	// resource234 = PAResourceCreate();
+	resource123 = PAResourceCreate();
+	resource234 = PAResourceCreate();
+	PAResourceBegin(resource123,number);
+	PANumberPrint(resource123->value);
+	PAResourceCopy(resource123,resource234);
+	// PAResourcePri
+	PANumberPrint(resource123->value);
+	PANumberPrint(resource234->value);
 	// PAResourceBegin(resource123,number);
-	// PAResourceCopy(resource123,resource234);
-	// PAResourceBegin(resource123,*number);
-	printf("resource %d\n", resource123->value->val);
+	// printf("resource %d\n", resource123->value->val);
 	// printf("resource %d\n", resource234->value->val);
 
 	// struct PAStatus *status;

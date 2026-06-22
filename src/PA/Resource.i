@@ -2342,12 +2342,19 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
           void PAResourceCopy(struct PAResource* from, struct PAResource* to)
 {
 
-    struct PAResource temp;
-    struct PAResource* aux;
 
+    struct PAResource* aux;
+    aux = PAResourceCreate();
     aux->value = from->value;
+
+
+
+
+
     to->value = aux->value;
-# 80 "src/PA/Resource.c"
+    PAResourceDelete(aux);
+    PAResourceFinish(aux);
+# 87 "src/PA/Resource.c"
 }
           PAResult PAResourceFinish(struct PAResource* PA)
 {

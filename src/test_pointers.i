@@ -2479,10 +2479,10 @@ int main()
  PANumberPrint(number);
  PANumberDelete(number34);
  PANumberDelete(number);
- PANumberFinish(number34);
 
- PANumberFinish(number);
- PANumberDelete(number34);
+
+
+
  PANumberPrint(number34);
 
  PANumberPrint(number34);
@@ -2492,14 +2492,17 @@ int main()
 
  struct PAResource* resource123;
  struct PAResource* resource234;
+ PANumberBegin(number,'a');
+ PANumberPrint(number);
 
+ resource123 = PAResourceCreate();
+ resource234 = PAResourceCreate();
+ PAResourceBegin(resource123,number);
+ PANumberPrint(resource123->value);
+ PAResourceCopy(resource123,resource234);
 
-
-
-
-
-
- printf("resource %d\n", resource123->value->val);
-# 138 "test/test_pointers.c"
+ PANumberPrint(resource123->value);
+ PANumberPrint(resource234->value);
+# 143 "test/test_pointers.c"
  return 0;
 }

@@ -5,9 +5,9 @@
 _main:                                  ; @main
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #112
-	stp	x29, x30, [sp, #96]             ; 16-byte Folded Spill
-	add	x29, sp, #96
+	sub	sp, sp, #128
+	stp	x29, x30, [sp, #112]            ; 16-byte Folded Spill
+	add	x29, sp, #112
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
@@ -80,36 +80,43 @@ _main:                                  ; @main
 	ldur	x0, [x29, #-16]
 	bl	_PANumberDelete
 	ldur	x0, [x29, #-40]
-	bl	_PANumberFinish
+	bl	_PANumberPrint
+	ldur	x0, [x29, #-40]
+	bl	_PANumberPrint
 	ldur	x0, [x29, #-16]
-	bl	_PANumberFinish
-	ldur	x0, [x29, #-40]
-	bl	_PANumberDelete
-	ldur	x0, [x29, #-40]
+	mov	w1, #97                         ; =0x61
+	bl	_PANumberBegin
+	strb	w0, [sp, #47]
+	ldur	x0, [x29, #-16]
 	bl	_PANumberPrint
-	ldur	x0, [x29, #-40]
+	bl	_PAResourceCreate
+	str	x0, [sp, #56]
+	bl	_PAResourceCreate
+	str	x0, [sp, #48]
+	ldr	x0, [sp, #56]
+	ldur	x1, [x29, #-16]
+	bl	_PAResourceBegin
+	str	x0, [sp, #32]
+	ldr	x8, [sp, #56]
+	ldr	x0, [x8]
 	bl	_PANumberPrint
-	ldr	x8, [sp, #40]
-	ldr	x8, [x8]
-	ldrb	w10, [x8]
-	mov	x9, sp
-                                        ; implicit-def: $x8
-	mov	x8, x10
-	str	x8, [x9]
-	adrp	x0, l_.str.1@PAGE
-	add	x0, x0, l_.str.1@PAGEOFF
-	bl	_printf
+	ldr	x0, [sp, #56]
+	ldr	x1, [sp, #48]
+	bl	_PAResourceCopy
+	ldr	x8, [sp, #56]
+	ldr	x0, [x8]
+	bl	_PANumberPrint
+	ldr	x8, [sp, #48]
+	ldr	x0, [x8]
+	bl	_PANumberPrint
 	ldr	w0, [sp, #28]                   ; 4-byte Folded Reload
-	ldp	x29, x30, [sp, #96]             ; 16-byte Folded Reload
-	add	sp, sp, #112
+	ldp	x29, x30, [sp, #112]            ; 16-byte Folded Reload
+	add	sp, sp, #128
 	ret
 	.cfi_endproc
                                         ; -- End function
 	.section	__TEXT,__cstring,cstring_literals
 l_.str:                                 ; @.str
 	.asciz	"number create %d\n"
-
-l_.str.1:                               ; @.str.1
-	.asciz	"resource %d\n"
 
 .subsections_via_symbols
