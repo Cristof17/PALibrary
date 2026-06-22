@@ -50,12 +50,16 @@ DllExport void PAStatusCopy(struct PAStatus* from, struct PAStatus* to)
     // PAStatusDelete(to);
 
     // PAStatusDelete(to);
-    struct PAStatus* temp;
-    temp = PAStatusCreate();
-    temp->visited = from->visited;
-    to->visited = temp->visited;
-    PAStatusDelete(temp);
-    PAStatusFinish(temp);
+    struct PAStatus* aux;
+    // temp = PAStatusCreate();
+    aux = (struct PAStatus*) malloc (sizeof(struct PAStatus));
+    aux->visited = from->visited;
+    to->visited = aux->visited;
+    free(aux);
+    // temp->visited = from->visited;
+    // to->visited = temp->visited;
+    // PAStatusDelete(temp);
+    // PAStatusFinish(temp);
     // struct PAResource* visited;
     // temp->visited = from->visited;
     // to->visited = temp->visited;

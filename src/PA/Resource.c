@@ -62,10 +62,15 @@ DllExport void PAResourceCopy(struct PAResource* from, struct PAResource* to)
 {
     // PAResourceDelete(to);
     // struct PAResource temp;
-    struct PAResource temp;
+    // struct PAResource temp;
+    struct PAResource *aux;
+    aux = (struct PAResource*) malloc (sizeof(struct PAResource));
+    aux->value = from->value;
+    to->value = aux->value;
+    free(aux);
     // aux = PAResourceCreate();
-    temp.value = from->value;
-    to->value = temp.value;
+    // temp.value = from->value;
+    // to->value = temp.value;
     // PAResourceDelete(aux);
     // PAResourceFinish(aux);
     // from->value =
