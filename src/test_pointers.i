@@ -2450,16 +2450,27 @@ int main()
 {
  struct PANumber* number;
  number = PANumberCreate();
+ PANumberBegin(number,'o');
+ printf("number create %d\n", number->val);
 
 
 
  struct PANumber* number123;
+ number123 = PANumberCreate();
  PANumberCopy(number,number123);
- PANumberBegin(number,'o');
+ printf("number create %d\n", number->val);
+
  PANumberCopy(number,number123);
  PANumberPrint(number);
  PANumberPrint(number123);
-# 33 "test/test_pointers.c"
+ PANumberDelete(number123);
+ PANumberFinish(number123);
+ number->val = (unsigned char) 323;
+ number->val = (unsigned char) 542;
+ PANumberPrint(number);
+ PANumberPrint(number);
+
+
  struct PANumber* number34;
  number34 = PANumberCreate();
  PANumberCopy(number,number34);
@@ -2468,9 +2479,9 @@ int main()
  PANumberPrint(number);
  PANumberDelete(number34);
  PANumberDelete(number);
+ PANumberFinish(number34);
 
-
-
+ PANumberFinish(number);
  PANumberDelete(number34);
  PANumberPrint(number34);
 
@@ -2481,14 +2492,14 @@ int main()
 
  struct PAResource* resource123;
  struct PAResource* resource234;
- PANumberBegin(number,'a');
- PANumberPrint(number);
- resource123 = PAResourceCreate();
- resource234 = PAResourceCreate();
- PAResourceBegin(resource123,number);
- PAResourceCopy(resource123,resource234);
+
+
+
+
+
+
 
  printf("resource %d\n", resource123->value->val);
-# 134 "test/test_pointers.c"
+# 138 "test/test_pointers.c"
  return 0;
 }
