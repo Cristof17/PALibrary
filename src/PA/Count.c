@@ -111,7 +111,7 @@ DllExport void PACountCopy(struct PACount* from, struct PACount* to)
     // aux = PACountCreate();
     aux->number = from->number;
     to->number = aux->number;
-    aux->number = NULL;
+    // aux->number = NULL;
     free(aux);
     // PACountDelete(aux);
     // PACountFinish(aux);

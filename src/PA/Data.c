@@ -53,7 +53,7 @@ DllExport void PADataCopy(struct PAData* from, struct PAData* to)
     // aux = PADataCreate();
     aux->Resource = from->Resource;
     to->Resource = aux->Resource;
-    aux->Resource = NULL;
+    // aux->Resource = NULL;
     free(aux);
     // PADataDelete(aux);
     // PADataFinish(aux);

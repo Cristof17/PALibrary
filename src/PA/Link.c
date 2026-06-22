@@ -67,7 +67,7 @@ DllExport void PALinkCopy(struct PALink* from, struct PALink* to)
     // aux = PALinkCreate();
     aux->p = from->p;
     to->p = aux->p;
-    aux->p = NULL;
+    // aux->p = NULL;
     free(aux);
     // PALinkDelete(aux);
     // PALinkFinish(aux);

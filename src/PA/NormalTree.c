@@ -50,7 +50,7 @@ DllExport void PANormalTreePerformCopy(struct PANormalTree* from, struct PANorma
     aux->tree = from->tree;
     to->tree = aux->tree;
     // aux/.
-    aux->tree = NULL;
+    // aux->tree = NULL;
     free(aux);
     // PANormalTreeDelete(aux);
     // PANormalTreeDelete(aux);

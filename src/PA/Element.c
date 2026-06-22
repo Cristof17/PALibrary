@@ -79,8 +79,8 @@ DllExport void PAElementCopy(struct PAElement* from, struct PAElement* to)
     aux->status = from->status;
     to->index = aux->index;
     to->status = aux->status;
-    aux->index = NULL;
-    aux->status = NULL;
+    // aux->index = NULL;
+    // aux->status = NULL;
     free(aux);
     // PAElementDelete(aux);
     // PAElementFinish(aux);

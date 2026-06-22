@@ -57,8 +57,8 @@ DllExport void PAListCopy(struct PAList* from, struct PAList* to)
     aux->neigh = from->neigh;
     to->n = aux->n;
     to->neigh = aux->neigh;
-    aux->n = NULL;
-    aux->neigh = NULL;
+    // aux->n = NULL;
+    // aux->neigh = NULL;
     free(aux);
     // PAListDelete(aux);
     // PAListFinish(aux);
