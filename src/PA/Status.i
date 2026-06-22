@@ -1876,15 +1876,18 @@ extern char * suboptarg;
 }
           void PAStatusCopy(struct PAStatus* from, struct PAStatus* to)
 {
-    PAStatusDelete(to);
+
+
 
     struct PAStatus* temp;
-
+    temp = PAStatusCreate();
     temp->visited = from->visited;
     to->visited = temp->visited;
-# 66 "src/PA/Status.c"
+    PAStatusDelete(temp);
+    PAStatusFinish(temp);
+# 72 "src/PA/Status.c"
 }
-# 75 "src/PA/Status.c"
+# 81 "src/PA/Status.c"
           int PAStatusDelete(struct PAStatus* PA)
 {
     int returnCode;

@@ -2503,6 +2503,17 @@ int main()
 
  PANumberPrint(resource123->value);
  PANumberPrint(resource234->value);
+ PAResourceBegin(resource123,number);
+ printf("resource %d\n", resource123->value->val);
+ printf("resource %d\n", resource234->value->val);
+
+ struct PAStatus *status;
+ struct PAStatus *status123;
+ status=PAStatusCreate();
+ status123=PAStatusCreate();
+ PAStatusBegin(status,resource123);
+ PAStatusCopy(status,status123);
+ printf("status value %d\n",status->visited->value->val);
 # 143 "test/test_pointers.c"
  return 0;
 }
