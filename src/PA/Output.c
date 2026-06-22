@@ -24,9 +24,14 @@
 // }
 DllExport void PAOutputPerformCopy(struct PAOutput* from, struct PAOutput* to)
 {
-	struct PAOutput* copy;
-    copy->result = from->result;
-    to->result = copy->result;
+	struct PAOutput* aux;
+    aux = PAOutputCreate();
+    aux->result = from->result;
+    to->result = aux->result;
+    PAOutputDelete(aux);
+    PAOutputFinish(aux);
+    // temp.result = from->result;
+    // to->result = temp.result;
 // 	copy = PAOutputPerformConstruct();
 // 	copy = PAOutputPerformInit(Output.result);
 // 	return copy;

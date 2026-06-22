@@ -73,10 +73,13 @@ DllExport void PAElementReset(struct PAElement* Element)
 DllExport void PAElementCopy(struct PAElement* from, struct PAElement* to)
 {
     struct PAElement* aux;
+    aux = PAElementCreate();
     aux->index = from->index;
     aux->status = from->status;
     to->index = aux->index;
     to->status = aux->status;
+    PAElementDelete(aux);
+    PAElementFinish(aux);
     // struct PAElement temp;
     // temp.index = PADataPerformCopy(from.index, to.index);
     // temp.status = PAStatusPerformCopy(from.status,to.status);

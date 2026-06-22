@@ -44,9 +44,12 @@ DllExport struct PANormalTree PANormalTreeBegin(struct PANormalTree* NormalTree,
 }
 DllExport void PANormalTreePerformCopy(struct PANormalTree* from, struct PANormalTree* to)
 {
-    struct PANormalTree* tree;
-    tree->tree = from->tree;
-    to->tree = tree->tree;
+    struct PANormalTree* aux;
+    aux = PANormalTreeCreate();
+    aux->tree = from->tree;
+    to->tree = aux->tree;
+    PANormalTreeDelete(aux);
+    PANormalTreeDelete(aux);
 //     // struct PANormalTree
 //     struct PANormalTree copy;
 //     // copy = PANormalTreePerformConstruct(NormalTree.adj);

@@ -59,9 +59,13 @@ DllExport PAResult PALinkFinish(struct PALink* PA)
 }
 DllExport void PALinkCopy(struct PALink* from, struct PALink* to)
 {
-    struct PALink temp;
-    struct PALink* linkPointer;
-    
+    // struct PALink temp;
+    struct PALink* aux;
+    aux = PALinkCreate();
+    aux->p = from->p;
+    to->p = aux->p;
+    PALinkDelete(aux);
+    PALinkFinish(aux);
     // temp.p = PAPairPerformCopy(from.p, to.p);
     // return temp;
     // return linkPointer;

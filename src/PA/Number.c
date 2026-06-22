@@ -77,10 +77,15 @@ DllExport PAResult PANumberFinish(struct PANumber* PA)
 DllExport void PANumberCopy(struct PANumber* from, struct PANumber* to)
 {
     // PANumberDelete(to);
-    struct PANumber temp;
+    struct PANumber* aux;
+    aux = PANumberCreate();
+    aux->val = from->val;
+    to->val = aux->val;
+    PANumberDelete(aux);
+    PANumberFinish(aux);
     // number = PANumberCreate();
-    temp.val = from->val;
-    to->val = temp.val;
+    // temp.val = from->val;
+    // to->val = temp.val;
     // PANumberDelete(number);
     // PANumberFinish(number);
     // number->val = from->val;
