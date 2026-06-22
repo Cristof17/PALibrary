@@ -1835,7 +1835,7 @@ extern char * suboptarg;
 
 
           PAResult PATreeFinish(struct PATree*);
-          struct PATree PATreeDelete(struct PATree*);
+          int PATreeDelete(struct PATree*);
 # 4 "src/PA/Tree.c" 2
 # 1 "./include/PA/Count.h" 1
 
@@ -1861,7 +1861,7 @@ extern char * suboptarg;
           int PACountFinish(struct PACount*);
 
 
-          struct PACount PACountDelete(struct PACount* PA);
+          int PACountDelete(struct PACount* PA);
 # 5 "src/PA/Tree.c" 2
 # 1 "./include/PA/Element.h" 1
 
@@ -1886,7 +1886,7 @@ extern char * suboptarg;
 
 
           int PAElementFinish(struct PAElement*);
-          struct PAElement PAElementDelete(struct PAElement*);
+          int PAElementDelete(struct PAElement*);
           void PAElementCopy(struct PAElement*, struct PAElement*);
 # 6 "src/PA/Tree.c" 2
 # 1 "./include/PA/List.h" 1
@@ -1908,7 +1908,7 @@ extern char * suboptarg;
 
 
           PAResult PAListFinish(struct PAList*);
-          struct PAList PAListDelete(struct PAList*);
+          int PAListDelete(struct PAList*);
           void PAListCopy(struct PAList*, struct PAList*);
 
 void PAListPrint(struct PAList* List);

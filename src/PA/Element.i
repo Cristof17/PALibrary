@@ -1838,7 +1838,7 @@ extern char * suboptarg;
 
 
           int PAElementFinish(struct PAElement*);
-          struct PAElement PAElementDelete(struct PAElement*);
+          int PAElementDelete(struct PAElement*);
           void PAElementCopy(struct PAElement*, struct PAElement*);
 # 7 "src/PA/Element.c" 2
 # 1 "./include/PA/Data.h" 1
@@ -1859,7 +1859,7 @@ extern char * suboptarg;
 
 
           int PADataFinish(struct PAData*);
-          struct PAData PADataDelete(struct PAData*);
+          int PADataDelete(struct PAData*);
           void PADataCopy(struct PAData* from, struct PAData* to);
 # 8 "src/PA/Element.c" 2
 # 1 "./include/PA/Status.h" 1
@@ -1879,7 +1879,7 @@ extern char * suboptarg;
           PAResult PAStatusFinish(struct PAStatus*);
 
           struct PAStatus* PAStatusCopy(struct PAStatus*, struct PAStatus*);
-          struct PAStatus* PAStatusDelete(struct PAStatus*);
+          int PAStatusDelete(struct PAStatus*);
 # 9 "src/PA/Element.c" 2
 # 18 "src/PA/Element.c"
 struct PAElement* PAElementCreate()
@@ -1943,11 +1943,16 @@ struct PAElement* PAElementCreate()
 # 154 "src/PA/Element.c"
           struct PAElement PAElementDelete(struct PAElement* PA)
 {
+    int returnCode;
+    returnCode = ((int)0);
+    PA->index = 0;
+    PA->status = 0;
 
 
 
 
-    struct PAElement element;
-    return element;
+
+
+    return returnCode;
 
 }

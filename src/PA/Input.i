@@ -1837,7 +1837,7 @@ extern char * suboptarg;
 
 
           PAResult PAInputFinish(struct PAInput*);
-          struct PAInput PAInputDelete(struct PAInput*);
+          int PAInputDelete(struct PAInput*);
 # 9 "src/PA/Input.c" 2
 # 1 "./include/PA/Count.h" 1
 
@@ -1863,7 +1863,7 @@ extern char * suboptarg;
           int PACountFinish(struct PACount*);
 
 
-          struct PACount PACountDelete(struct PACount* PA);
+          int PACountDelete(struct PACount* PA);
 # 10 "src/PA/Input.c" 2
 # 1 "./include/PA/Element.h" 1
 
@@ -1888,7 +1888,7 @@ extern char * suboptarg;
 
 
           int PAElementFinish(struct PAElement*);
-          struct PAElement PAElementDelete(struct PAElement*);
+          int PAElementDelete(struct PAElement*);
           void PAElementCopy(struct PAElement*, struct PAElement*);
 # 11 "src/PA/Input.c" 2
 
@@ -1953,14 +1953,12 @@ extern char * suboptarg;
 
  return returnCode;
 }
-          struct PAInput PAInputDelete(struct PAInput* Input)
+          int PAInputDelete(struct PAInput* PA)
 {
-
- struct PAInput temp;
- return temp;
-
-
-
-
-
+ int returnCode;
+ returnCode = ((int)0);
+ PA->m = 0;
+ PA->n = 0;
+ PA->source = 0;
+# 114 "src/PA/Input.c"
 }

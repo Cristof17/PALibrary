@@ -1836,7 +1836,7 @@ extern char * suboptarg;
 
 
           int PADataFinish(struct PAData*);
-          struct PAData PADataDelete(struct PAData*);
+          int PADataDelete(struct PAData*);
           void PADataCopy(struct PAData* from, struct PAData* to);
 # 4 "src/PA/Data.c" 2
 # 1 "./include/PA/Resource.h" 1
@@ -1850,7 +1850,7 @@ extern char * suboptarg;
  struct PAResource PAResourceBegin(struct PAResource*, struct PANumber);
           struct PAResource* PAResourceCreate();
           PAResult PAResourceFinish(struct PAResource*);
-          struct PAResource PAResourceDelete(struct PAResource*);
+          int PAResourceDelete(struct PAResource*);
           void PAResourceCopy(struct PAResource*, struct PAResource*);
 # 5 "src/PA/Data.c" 2
 
@@ -1910,10 +1910,13 @@ extern char * suboptarg;
 
 
 }
-          struct PAData PADataDelete(struct PAData* PA)
+          int PADataDelete(struct PAData* PA)
 {
-    struct PAData temp;
-    return temp;
+    int returnCode;
+    PA->Resource = 0;
+    return ((int)0);
+
+
 
 
 

@@ -86,11 +86,14 @@ DllExport PAResult PACountFinish(struct PACount* PA)
     return returnCode;
     // return PA;    /
 }
-DllExport struct PACount PACountDelete(struct PACount* PA)
+DllExport int PACountDelete(struct PACount* PA)
 {
-    struct PACount count;
+    int returnCode;
+    PA->number = NULL;
+    returnCode = PARESULT_SUCCESS;
+    // struct PACount count;
     // PA.number.val = 0;
-    return count;
+    // return count;
     // return PARESULT_SUCCESS;
     // PAResult result;
     // return result;

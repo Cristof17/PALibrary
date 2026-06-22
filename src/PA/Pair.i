@@ -1834,7 +1834,7 @@ extern char * suboptarg;
 
 
           PAResult PAPairFinish(struct PAPair*);
-          struct PAPair PAPairDelete(struct PAPair*);
+          int PAPairDelete(struct PAPair*);
 # 7 "src/PA/Pair.c" 2
 # 1 "./include/PA/Element.h" 1
 
@@ -1859,7 +1859,7 @@ extern char * suboptarg;
 
 
           int PAElementFinish(struct PAElement*);
-          struct PAElement PAElementDelete(struct PAElement*);
+          int PAElementDelete(struct PAElement*);
           void PAElementCopy(struct PAElement*, struct PAElement*);
 # 8 "src/PA/Pair.c" 2
 

@@ -85,10 +85,13 @@ DllExport PAResult PAResourceFinish(struct PAResource* PA)
     // return PA;
 }
 
-DllExport struct PAResource PAResourceDelete(struct PAResource* PA)
+DllExport int PAResourceDelete(struct PAResource* PA)
 {
-    struct PAResource resource;
-    PANumberDelete(PA->value);
-    return resource;
+    int returnCode;
+    PA->value = NULL;
+    returnCode = PARESULT_SUCCESS;
+    // struct PAResource resource;
+    // PANumberDelete(PA->value);
+    // return resource;
     // return Resource;
 }

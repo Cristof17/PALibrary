@@ -1834,7 +1834,7 @@ extern char * suboptarg;
           void PATransposeTreeCopy(struct PATransposeTree*, struct PATransposeTree*);
 
           PAResult PATransposeTreeFinish(struct PATransposeTree*);
-          struct PATransposeTree PATransposeTreeDelete(struct PATransposeTree*);
+          int PATransposeTreeDelete(struct PATransposeTree*);
 # 9 "src/PA/TransposeTree.c" 2
 # 1 "./include/PA/Tree.h" 1
 
@@ -1859,7 +1859,7 @@ extern char * suboptarg;
 
 
           PAResult PATreeFinish(struct PATree*);
-          struct PATree PATreeDelete(struct PATree*);
+          int PATreeDelete(struct PATree*);
 # 10 "src/PA/TransposeTree.c" 2
 
 

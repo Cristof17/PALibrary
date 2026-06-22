@@ -1829,7 +1829,7 @@ extern char * suboptarg;
  struct PAResource PAResourceBegin(struct PAResource*, struct PANumber);
           struct PAResource* PAResourceCreate();
           PAResult PAResourceFinish(struct PAResource*);
-          struct PAResource PAResourceDelete(struct PAResource*);
+          int PAResourceDelete(struct PAResource*);
           void PAResourceCopy(struct PAResource*, struct PAResource*);
 # 4 "src/PA/Resource.c" 2
 # 1 "./include/PA/Number.h" 1
@@ -2317,7 +2317,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
  struct PANumber* PANumberCreate();
           struct PANumber PANumberBegin(struct PANumber* Number, unsigned char Value);
           PAResult PANumberFinish(struct PANumber*);
-          struct PANumber PANumberDelete(struct PANumber*);
+          int PANumberDelete(struct PANumber*);
           void PANumberCopy(struct PANumber* from, struct PANumber* to);
           void PANumberPrint(struct PANumber*);
 # 5 "src/PA/Resource.c" 2

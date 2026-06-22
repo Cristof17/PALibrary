@@ -1834,7 +1834,7 @@ extern char * suboptarg;
           struct PALink PALinkBegin(struct PALink*, struct PAPair);
 
           PAResult PALinkFinish(struct PALink*);
-          struct PALink PALinkDelete(struct PALink*);
+          int PALinkDelete(struct PALink*);
 # 9 "src/PA/Link.c" 2
 # 1 "./include/PA/Pair.h" 1
 
@@ -1855,7 +1855,7 @@ extern char * suboptarg;
 
 
           PAResult PAPairFinish(struct PAPair*);
-          struct PAPair PAPairDelete(struct PAPair*);
+          int PAPairDelete(struct PAPair*);
 # 10 "src/PA/Link.c" 2
 
 

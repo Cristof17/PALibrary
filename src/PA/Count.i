@@ -1838,7 +1838,7 @@ extern char * suboptarg;
           int PACountFinish(struct PACount*);
 
 
-          struct PACount PACountDelete(struct PACount* PA);
+          int PACountDelete(struct PACount* PA);
 # 6 "src/PA/Count.c" 2
 # 1 "./include/PA/Number.h" 1
 
@@ -2325,7 +2325,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
  struct PANumber* PANumberCreate();
           struct PANumber PANumberBegin(struct PANumber* Number, unsigned char Value);
           PAResult PANumberFinish(struct PANumber*);
-          struct PANumber PANumberDelete(struct PANumber*);
+          int PANumberDelete(struct PANumber*);
           void PANumberCopy(struct PANumber* from, struct PANumber* to);
           void PANumberPrint(struct PANumber*);
 # 7 "src/PA/Count.c" 2
@@ -2380,11 +2380,14 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
     return returnCode;
 
 }
-          struct PACount PACountDelete(struct PACount* PA)
+          int PACountDelete(struct PACount* PA)
 {
-    struct PACount count;
+    int returnCode;
+    PA->number = 0;
+    returnCode = ((int)0);
 
-    return count;
+
+
 
 
 

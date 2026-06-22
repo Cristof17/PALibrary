@@ -1835,7 +1835,7 @@ extern char * suboptarg;
 
 
           PAResult PAListFinish(struct PAList*);
-          struct PAList PAListDelete(struct PAList*);
+          int PAListDelete(struct PAList*);
           void PAListCopy(struct PAList*, struct PAList*);
 
 void PAListPrint(struct PAList* List);
@@ -1864,7 +1864,7 @@ void PAListPrint(struct PAList* List);
           int PACountFinish(struct PACount*);
 
 
-          struct PACount PACountDelete(struct PACount* PA);
+          int PACountDelete(struct PACount* PA);
 # 9 "src/PA/List.c" 2
 # 1 "./include/PA/Series.h" 1
 # 15 "./include/PA/Series.h"
@@ -1874,7 +1874,7 @@ void PAListPrint(struct PAList* List);
 
           struct PASeries* PASeriesCreate();
           struct PASeries PASeriesBegin(struct PASeries*, struct PACount*, struct PAElement[]);
-          struct PASeries PASeriesDelete(struct PASeries*);
+          int PASeriesDelete(struct PASeries*);
           void PASeriesCopy(struct PASeries*, struct PASeries*);
 
           PAResult PASeriesFinish(struct PASeries*);

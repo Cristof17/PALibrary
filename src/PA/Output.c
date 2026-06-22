@@ -80,12 +80,15 @@ DllExport struct PAOutput PAOutputBegin(struct PAOutput* Output, struct BFSRecor
     Output->result = temp.result;
     return temp;
 }
-DllExport struct PAOutput PAOutputDelete(struct PAOutput* Output)
+DllExport int PAOutputDelete(struct PAOutput* PA)
 {
+    int returnCode;
+    PA->result = NULL;
+    returnCode = PARESULT_SUCCESS;
     // struct PAOutput Output;
     // return Output;
-    struct PAOutput output;
-    return output;
+    // struct PAOutput output;
+    // return output;
 }
 DllExport PAResult PAOutputFinish(struct PAOutput* PA)
 {

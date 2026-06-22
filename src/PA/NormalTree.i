@@ -1829,7 +1829,7 @@ extern char * suboptarg;
           struct PANormalTree PANormalTreeBegin(struct PANormalTree*, struct PATree);
           void PANormalTreeCopy(struct PANormalTree*);
           PAResult PANormalTreeFinish(struct PANormalTree*);
-          struct PANormalTree PANormalTreeDelete(struct PANormalTree*);
+          int PANormalTreeDelete(struct PANormalTree*);
 # 6 "src/PA/NormalTree.c" 2
 # 1 "./include/PA/Tree.h" 1
 
@@ -1854,7 +1854,7 @@ extern char * suboptarg;
 
 
           PAResult PATreeFinish(struct PATree*);
-          struct PATree PATreeDelete(struct PATree*);
+          int PATreeDelete(struct PATree*);
 # 7 "src/PA/NormalTree.c" 2
 
 

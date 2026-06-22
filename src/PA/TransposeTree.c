@@ -75,13 +75,16 @@ DllExport PAResult PATransposeTreeFinish(struct PATransposeTree* PA)
     // return PA;
     return returnCode;
 }
-DllExport struct PATransposeTree PATransposeTreeDelete(struct PATransposeTree* PA)
+DllExport int PATransposeTreeDelete(struct PATransposeTree* PA)
 {
     // int retutrn
     // int returncode;
     int returnCode;
-    struct PATransposeTree tree;
-    return tree;
+    returnCode = PARESULT_SUCCESS;
+    PA->tree = NULL;
+    // struct PATransposeTree tree;
+    // return tree;
+    return returnCode;
     // returnCode = PATreeDelete(&PA->tree);
     // return rc;
     // return returnCode;

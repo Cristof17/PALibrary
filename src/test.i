@@ -1833,7 +1833,7 @@ extern char * suboptarg;
 
 
           PAResult PATreeFinish(struct PATree*);
-          struct PATree PATreeDelete(struct PATree*);
+          int PATreeDelete(struct PATree*);
 # 2 "test/test.c" 2
 # 1 "./include/PA/Count.h" 1
 
@@ -1859,7 +1859,7 @@ extern char * suboptarg;
           int PACountFinish(struct PACount*);
 
 
-          struct PACount PACountDelete(struct PACount* PA);
+          int PACountDelete(struct PACount* PA);
 # 3 "test/test.c" 2
 
 # 1 "./include/PA/Element.h" 1
@@ -1885,7 +1885,7 @@ extern char * suboptarg;
 
 
           int PAElementFinish(struct PAElement*);
-          struct PAElement PAElementDelete(struct PAElement*);
+          int PAElementDelete(struct PAElement*);
           void PAElementCopy(struct PAElement*, struct PAElement*);
 # 5 "test/test.c" 2
 # 1 "./include/PA/Data.h" 1
@@ -1906,7 +1906,7 @@ extern char * suboptarg;
 
 
           int PADataFinish(struct PAData*);
-          struct PAData PADataDelete(struct PAData*);
+          int PADataDelete(struct PAData*);
           void PADataCopy(struct PAData* from, struct PAData* to);
 # 6 "test/test.c" 2
 
@@ -1929,7 +1929,7 @@ extern char * suboptarg;
 
 
           PAResult PAListFinish(struct PAList*);
-          struct PAList PAListDelete(struct PAList*);
+          int PAListDelete(struct PAList*);
           void PAListCopy(struct PAList*, struct PAList*);
 
 void PAListPrint(struct PAList* List);
@@ -1945,7 +1945,7 @@ void PAListPrint(struct PAList* List);
  struct PAResource PAResourceBegin(struct PAResource*, struct PANumber);
           struct PAResource* PAResourceCreate();
           PAResult PAResourceFinish(struct PAResource*);
-          struct PAResource PAResourceDelete(struct PAResource*);
+          int PAResourceDelete(struct PAResource*);
           void PAResourceCopy(struct PAResource*, struct PAResource*);
 # 9 "test/test.c" 2
 # 1 "./include/PA/Number.h" 1
@@ -2433,7 +2433,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
  struct PANumber* PANumberCreate();
           struct PANumber PANumberBegin(struct PANumber* Number, unsigned char Value);
           PAResult PANumberFinish(struct PANumber*);
-          struct PANumber PANumberDelete(struct PANumber*);
+          int PANumberDelete(struct PANumber*);
           void PANumberCopy(struct PANumber* from, struct PANumber* to);
           void PANumberPrint(struct PANumber*);
 # 10 "test/test.c" 2
@@ -2445,7 +2445,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
           struct PASeries* PASeriesCreate();
           struct PASeries PASeriesBegin(struct PASeries*, struct PACount*, struct PAElement[]);
-          struct PASeries PASeriesDelete(struct PASeries*);
+          int PASeriesDelete(struct PASeries*);
           void PASeriesCopy(struct PASeries*, struct PASeries*);
 
           PAResult PASeriesFinish(struct PASeries*);
@@ -2469,7 +2469,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
           PAResult PAStatusFinish(struct PAStatus*);
 
           struct PAStatus* PAStatusCopy(struct PAStatus*, struct PAStatus*);
-          struct PAStatus* PAStatusDelete(struct PAStatus*);
+          int PAStatusDelete(struct PAStatus*);
 # 12 "test/test.c" 2
 # 1 "./include/PA/TransposeTree.h" 1
 
@@ -2488,7 +2488,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
           void PATransposeTreeCopy(struct PATransposeTree*, struct PATransposeTree*);
 
           PAResult PATransposeTreeFinish(struct PATransposeTree*);
-          struct PATransposeTree PATransposeTreeDelete(struct PATransposeTree*);
+          int PATransposeTreeDelete(struct PATransposeTree*);
 # 13 "test/test.c" 2
 # 1 "./conf.h" 1
 # 14 "test/test.c" 2

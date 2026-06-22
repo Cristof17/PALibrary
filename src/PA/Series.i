@@ -1826,7 +1826,7 @@ extern char * suboptarg;
 
           struct PASeries* PASeriesCreate();
           struct PASeries PASeriesBegin(struct PASeries*, struct PACount*, struct PAElement[]);
-          struct PASeries PASeriesDelete(struct PASeries*);
+          int PASeriesDelete(struct PASeries*);
           void PASeriesCopy(struct PASeries*, struct PASeries*);
 
           PAResult PASeriesFinish(struct PASeries*);
@@ -1857,7 +1857,7 @@ extern char * suboptarg;
           int PACountFinish(struct PACount*);
 
 
-          struct PACount PACountDelete(struct PACount* PA);
+          int PACountDelete(struct PACount* PA);
 # 9 "src/PA/Series.c" 2
 # 1 "./include/PA/Element.h" 1
 
@@ -1882,7 +1882,7 @@ extern char * suboptarg;
 
 
           int PAElementFinish(struct PAElement*);
-          struct PAElement PAElementDelete(struct PAElement*);
+          int PAElementDelete(struct PAElement*);
           void PAElementCopy(struct PAElement*, struct PAElement*);
 # 10 "src/PA/Series.c" 2
 # 21 "src/PA/Series.c"

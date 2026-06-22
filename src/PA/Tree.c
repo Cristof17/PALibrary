@@ -235,16 +235,21 @@ DllExport PAResult PATreeFinish(struct PATree* PA)
 //     // struct PATree tree;
 //     return tree;
 // }
-DllExport struct PATree PATreeDelete(struct PATree* Tree)
+DllExport int PATreeDelete(struct PATree* PA)
 {
     int returnCode;
     struct PATree tree;
+    PA->adj = NULL;
+    PA->m = NULL;
+    PA->n  = NULL;
+    PA->source = NULL;
+    returnCode = PARESULT_SUCCESS;
     // struct PATree Tree;
     // PAResult result;
     // return result;
     // return Tree;
     // returnCode = PARESULT_SUCCESS;
-    return tree;
+    // return tree;
     // return returnCode;
     // return 0;
 }

@@ -205,10 +205,13 @@ void Dispose()
 //     struct PAList list;
 //     return list;
 // }
-DllExport struct PAList PAListDelete(struct PAList* PA)
+DllExport int PAListDelete(struct PAList* PA)
 {
-    
-    struct PAList aux;
+    int returnCode;
+    returnCode = PARESULT_SUCCESS;
+    PA->n = NULL;
+    PA->neigh = NULL;
+    // struct PAList aux;
     // struct PACount n = PA.n;
     // struct PACount* countPointer;
     // countPointer->number = PACountPerformDelete(PA.n);
@@ -224,7 +227,8 @@ DllExport struct PAList PAListDelete(struct PAList* PA)
     // return List;
     // return PA;
     // return PARESULT_SUCCESS;
-    return aux;
+    // return aux;
+    return returnCode;
     // return 0;
     // PAResult result;
     // return result;

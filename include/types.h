@@ -141,21 +141,21 @@ struct Facade;
 // };
 	// struct PASeries adj;
 // };
-	// struct PASeries adj_trans;
+	// struct PASeries adgij_trans;
 // };
 
-struct Input {
-	// struct Algorithm algorithm;
-};
+// struct Input {
+// 	struct Algorithm algorithm;
+// };
 // struct Output {
 
 // };
-// struct Input {
-// 	;
-// };
-struct Algorithm {
-	struct Input* input;
+struct Input {
+	;
 };
+	// struct Algorithm {
+			// struct Input input;
+		// };
 struct ArrayListPosition {
 	int position;
 };
@@ -252,9 +252,9 @@ struct BridgeConcreteImplementorB {
 // struct BFSPorce
 
 struct PAInput {
-	struct PACount n;
-	struct PACount m;
-	struct PAElement source;
+	struct PACount* n;
+	struct PACount* m;
+	struct PAElement* source;
 };
 struct BFSRecord {
 struct PACount n;
@@ -290,15 +290,15 @@ struct BFSOutput {
 	struct BFSRecord result;
 };
 struct Output {
-	struct PAOutput result;
+	//	struct PARezultat rezultat;
 	//	struct BFSOutput outputBFS;
-};
+	};
 	//struct PASeries
 	//{
 		//
 		//};
 struct PALink {
-	struct PAPair p;
+	struct PAPair* p;
 	// PADDING_1_BYTE(0);
 };
 // struct PAResult {

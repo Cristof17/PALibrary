@@ -60,13 +60,15 @@ DllExport PAResult PANormalTreeFinish(struct PANormalTree* PA)
     // PA.tree = PATreePerformRuin(PA.tree);
     // return PA;
 }
-DllExport struct PANormalTree PANormalTreeDelete(struct PANormalTree* PA)
+DllExport int PANormalTreeDelete(struct PANormalTree* PA)
 {
     int returnCode;
+    PA->tree = NULL;
+    returnCode = PARESULT_SUCCESS;
     // returnCode = PATreeDelete(&PA->tree);
     // return returnCode;
-    struct PANormalTree tree;
-    return tree;
+    // struct PANormalTree tree;
+    // return tree;
     // PA.tree = PATreePerformDelete(PA.tree);
     // return PA;
 }

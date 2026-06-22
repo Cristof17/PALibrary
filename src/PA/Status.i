@@ -1832,7 +1832,7 @@ extern char * suboptarg;
           PAResult PAStatusFinish(struct PAStatus*);
 
           struct PAStatus* PAStatusCopy(struct PAStatus*, struct PAStatus*);
-          struct PAStatus* PAStatusDelete(struct PAStatus*);
+          int PAStatusDelete(struct PAStatus*);
 # 7 "src/PA/Status.c" 2
 # 1 "./include/PA/Resource.h" 1
 
@@ -1845,7 +1845,7 @@ extern char * suboptarg;
  struct PAResource PAResourceBegin(struct PAResource*, struct PANumber);
           struct PAResource* PAResourceCreate();
           PAResult PAResourceFinish(struct PAResource*);
-          struct PAResource PAResourceDelete(struct PAResource*);
+          int PAResourceDelete(struct PAResource*);
           void PAResourceCopy(struct PAResource*, struct PAResource*);
 # 8 "src/PA/Status.c" 2
 

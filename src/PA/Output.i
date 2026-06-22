@@ -1831,7 +1831,7 @@ extern char * suboptarg;
 
           struct PAOutput* PAOutputCreate();
           struct PAOutput PAOutputBegin(struct PAOutput*, struct BFSRecord);
-          struct PAOutput PAOutputDelete(struct PAOutput*);
+          int PAOutputDelete(struct PAOutput*);
           PAResult PAOutputFinish(struct PAOutput*);
           void PAOutputPrint(PAResult Result);
 # 6 "src/PA/Output.c" 2

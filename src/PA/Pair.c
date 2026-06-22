@@ -128,17 +128,20 @@ DllExport PAResult PAPairFinish(struct PAPair* PA)
 	// PAResult result;
 	// return result;
 }
-DllExport struct PAPair PAPairDelete(struct PAPair* PA)
+DllExport int PAPairDelete(struct PAPair* PA)
 {
-    int returnCode1;
-    int returnCode2;
+    // int returnCode1;
+    // int returnCode2;
     int returnCode;
+    PA->Neigh = NULL;
+    PA->Node = NULL;
+    returnCode = PARESULT_SUCCESS;
     // returnCode1 = PAElementDelete(&PA->Node);
     // returnCode2 = PAElementDelete(&PA->Neigh);
-    returnCode = returnCode1 & returnCode2;
+    // returnCode = returnCode1 & returnCode2;
     // return returnCode;
-    struct PAPair pair;
-    return pair;
+    // struct PAPair pair;
+    // return pair;
     // PAResult result;
     // return result;
 }
