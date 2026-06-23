@@ -18,8 +18,9 @@
 # 1 "./include/defs.h" 1
 # 7 "./include/PA/Count.h" 2
 # 1 "./include/types.h" 1
-# 18 "./include/types.h"
-struct PANumber;
+# 17 "./include/types.h"
+typedef char PANumber;
+
 typedef int PAInt;
 
 
@@ -113,12 +114,12 @@ struct BridgeConcreteImplementorB;
 struct BridgeImplementor;
 struct PrototypePrototype;
 struct PrototypeClient;
-struct PANumber {
 
 
- unsigned char val;
 
-};
+
+
+
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
@@ -141,7 +142,7 @@ struct PAResource {
 
 
 
- struct PANumber* value;
+ PANumber* value;
 
 };
 struct PAStatus {
@@ -164,7 +165,7 @@ struct PAFeature {
 };
 struct PACount {
 
- struct PANumber* number;
+ PAInt* number;
 };
 
 
@@ -1823,8 +1824,8 @@ extern char * suboptarg;
 
 
 
-          struct PACount* PACountCreate();
-          struct PACount PACountBegin(struct PACount* Count, struct PANumber* Number);
+          struct PACount* PACountCreate(PAInt value);
+          struct PACount* PACountBegin(struct PACount* value);
           void PACountCopy(struct PACount* from, struct PACount* to);
 
 
@@ -2316,8 +2317,8 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 508 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
 # 62 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 2 3 4
 # 8 "./include/PA/Number.h" 2
- struct PANumber* PANumberCreate();
-          struct PANumber PANumberBegin(struct PANumber* Number, unsigned char Value);
+ struct PANumber* PANumberCreate(unsigned char value);
+          struct PANumber* PANumberBegin(struct PANumber* Number, unsigned char Value);
           PAResult PANumberFinish(struct PANumber*);
           int PANumberDelete(struct PANumber*);
           void PANumberCopy(struct PANumber* from, struct PANumber* to);
@@ -2330,42 +2331,30 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
 
-          struct PACount* PACountCreate()
+          struct PACount* PACountCreate(PAInt value)
 {
 
     struct PACount* countPointer;
     countPointer =(struct PACount*)malloc(sizeof(struct PACount));
-# 28 "src/PA/Count.c"
+    countPointer->number = (PAInt*) malloc (sizeof(PAInt));
+
+    countPointer->number = &value;
+# 31 "src/PA/Count.c"
     return countPointer;
 }
-          struct PACount PACountBegin(struct PACount* Count, struct PANumber* Value)
+          struct PACount* PACountBegin(struct PACount* Count)
 {
-    struct PACount temp;
-
-
-    temp = *Count;
-    temp.number = Value;
-
-    Count->number = temp.number;
-
-
-
-
-
-
-
+    struct PACount* temp;
+    temp = (struct PACount*) malloc (sizeof(struct PACount));
+    temp->number = Count->number;
     return temp;
-
-
-
-
-
-
+# 59 "src/PA/Count.c"
 }
           PAResult PACountFinish(struct PACount* PA)
 {
-# 81 "src/PA/Count.c"
+# 87 "src/PA/Count.c"
     int returnCode;
+    free(PA->number);
     free(PA);
     returnCode = ((int)0);
 
@@ -2400,5 +2389,5 @@ PAResult PACountPrint(struct PACount* Count)
     to->number = aux->number;
 
     free(aux);
-# 125 "src/PA/Count.c"
+# 132 "src/PA/Count.c"
 }

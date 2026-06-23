@@ -11,64 +11,64 @@
 #include <stdio.h>
 int main()
 {
-	struct PANumber* number;
-	number = PANumberCreate();
-	PANumberBegin(number,'o');
-	printf("number create %d\n", number->val);
+	// struct PANumber* number;
+	// number = PANumberCreate();
+	// PANumberBegin(number,'o');
+	// printf("number create %d\n", number->val);
 	// PANumberDelete(number);
 	// PANumberFinish(number);
 	// srtuc
-	struct PANumber* number123;
-	number123 = PANumberCreate();
-	PANumberCopy(number,number123);
-	printf("number create %d\n", number->val);
+	// struct PANumber* number123;
+	// number123 = PANumberCreate();
+	// PANumberCopy(number,number123);
+	// printf("number create %d\n", number->val);
 
-	PANumberCopy(number,number123);
-	PANumberPrint(number);
-	PANumberPrint(number123);
-	PANumberDelete(number123);
-	PANumberFinish(number123);
-	number->val = (unsigned char) 323;
-	number->val = (unsigned char) 542;
-	PANumberPrint(number);
-	PANumberPrint(number);
+	// PANumberCopy(number,number123);
+	// PANumberPrint(number);
+	// PANumberPrint(number123);
+	// PANumberDelete(number123);
+	// PANumberFinish(number123);
+	// number->val = (unsigned char) 323;
+	// number->val = (unsigned char) 542;
+	// PANumberPrint(number);
+	// PANumberPrint(number);
 
 	// PANumberPrint(number123);
-	struct PANumber* number34;
-	number34 = PANumberCreate();
-	PANumberCopy(number,number34);
-	PANumberDelete(number);
-	PANumberPrint(number34);
-	PANumberPrint(number);
-	PANumberDelete(number34);
-	PANumberDelete(number);
+	// struct PANumber* number34;
+	// number34 = PANumberCreate();
+	// PANumberCopy(number,number34);
+	// PANumberDelete(number);
+	// PANumberPrint(number34);
+	// PANumberPrint(number);
+	// PANumberDelete(number34);
+	// PANumberDelete(number);
 	// PANumberFinish(number34);
 	// PANu
 	// PANumberFinish(number);
 	// PANumberDelete(number34);
-	PANumberPrint(number34);
+	// PANumberPrint(number34);
 	// PANumberFinish(number34);
-	PANumberPrint(number34);
+	// PANumberPrint(number34);
 	struct PAResource resource;
 	// resource = PAResourcePrint();
 	// PAResourcePrint(resource);
 
 	struct PAResource* resource123;
 	struct PAResource* resource234;
-	PANumberBegin(number,'a');
-	PANumberPrint(number);
+	// PANumberBegin(number,'a');
+	// PANumberPrint(number);
 	// PANumberPrint(number);
 	resource123 = PAResourceCreate();
 	resource234 = PAResourceCreate();
-	PAResourceBegin(resource123,number);
-	PANumberPrint(resource123->value);
+	// PAResourceBegin(resource123,number);
+	// PANumberPrint(resource123->value);
 	PAResourceCopy(resource123,resource234);
 	// PAResourcePri
-	PANumberPrint(resource123->value);
-	PANumberPrint(resource234->value);
-	PAResourceBegin(resource123,number);
-	printf("resource %d\n", resource123->value->val);
-	printf("resource %d\n", resource234->value->val);
+	// PANumberPrint(resource123->value);
+	// PANumberPrint(resource234->value);
+	// PAResourceBegin(resource123,number);
+	// printf("resource %d\n", resource123->value->val);
+	// printf("resource %d\n", resource234->value->val);
 
 	struct PAStatus *status;
 	struct PAStatus *status123;
@@ -76,20 +76,20 @@ int main()
 	status123=PAStatusCreate();
 	PAStatusBegin(status,resource123);
 	PAStatusCopy(status,status123);
-	printf("status value %d\n",status->visited->value->val);
+	// printf("status value %d\n",status->visited->value->val);
 
 	struct PACount* count1;
-	count1 = PACountCreate();
-	PANumberPrint(number123);
-	PANumberBegin(number123,'a');
-	PACountBegin(count1,number123);
+	// count1 = PACountCreate();
+	// PANumberPrint(number123);
+	// PANumberBegin(number123,'a');
+	// PACountBegin(count1,number123);
 	// PACount
-	printf("count1 %d\n", count1->number->val);
+	// printf("count1 %d\n", count1->number->val);
 
 	struct PASeries* series;
 	series = PASeriesCreate();
 	PASeriesBegin(series,count1,0);
-	printf("series.count %d\n", series->m->number->val);
+	// printf("series.count %d\n", series->m->number->val);
 
 	// struct PACount* count123;
 	// struct PANumber* number213;
@@ -103,7 +103,7 @@ int main()
 	struct PAList* list;
 	list = PAListCreate();
 	PAListBegin(list,count1,0);
-	printf("list.n alloc %d\n", list->n->number->val);
+	// printf("list.n alloc %d\n", list->n->number->val);
 
 	// struct PAStatus* status1223;
 	// status123 = PAStatusCreate();

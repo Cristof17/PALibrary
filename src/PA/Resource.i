@@ -19,8 +19,9 @@
 
 # 1 "./include/defs.h" 1
 # 7 "./include/types.h" 2
-# 18 "./include/types.h"
-struct PANumber;
+# 17 "./include/types.h"
+typedef char PANumber;
+
 typedef int PAInt;
 
 
@@ -114,12 +115,12 @@ struct BridgeConcreteImplementorB;
 struct BridgeImplementor;
 struct PrototypePrototype;
 struct PrototypeClient;
-struct PANumber {
 
 
- unsigned char val;
 
-};
+
+
+
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
@@ -142,7 +143,7 @@ struct PAResource {
 
 
 
- struct PANumber* value;
+ PANumber* value;
 
 };
 struct PAStatus {
@@ -165,7 +166,7 @@ struct PAFeature {
 };
 struct PACount {
 
- struct PANumber* number;
+ PAInt* number;
 };
 
 
@@ -1820,7 +1821,7 @@ unsigned long long
 extern char * suboptarg;
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 2 3 4
 # 7 "./include/PA/Resource.h" 2
- struct PAResource PAResourceBegin(struct PAResource*, struct PANumber*);
+ struct PAResource PAResourceBegin(struct PAResource*, PANumber);
           struct PAResource* PAResourceCreate();
           PAResult PAResourceFinish(struct PAResource*);
           int PAResourceDelete(struct PAResource*);
@@ -2308,69 +2309,11 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 508 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
 # 62 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 2 3 4
 # 8 "./include/PA/Number.h" 2
- struct PANumber* PANumberCreate();
-          struct PANumber PANumberBegin(struct PANumber* Number, unsigned char Value);
+ struct PANumber* PANumberCreate(unsigned char value);
+          struct PANumber* PANumberBegin(struct PANumber* Number, unsigned char Value);
           PAResult PANumberFinish(struct PANumber*);
           int PANumberDelete(struct PANumber*);
           void PANumberCopy(struct PANumber* from, struct PANumber* to);
           void PANumberPrint(struct PANumber*);
 # 5 "src/PA/Resource.c" 2
 
-
-
-
-
-          struct PAResource* PAResourceCreate()
-{
-    struct PAResource* resourcePointer;
-    resourcePointer=(struct PAResource*) malloc(sizeof(struct PAResource));
-# 23 "src/PA/Resource.c"
-    return resourcePointer;
-
-
-}
-          struct PAResource PAResourceBegin(struct PAResource* Resource, struct PANumber* Value)
-{
-
-    struct PAResource temp;
-    Resource->value = Value;
-    temp = *Resource;
-# 58 "src/PA/Resource.c"
-    return temp;
-
-}
-          void PAResourceCopy(struct PAResource* from, struct PAResource* to)
-{
-
-
-
-    struct PAResource *aux;
-    aux = (struct PAResource*) malloc (sizeof(struct PAResource));
-    aux->value = from->value;
-    to->value = aux->value;
-    free(aux);
-# 92 "src/PA/Resource.c"
-}
-          PAResult PAResourceFinish(struct PAResource* PA)
-{
-    int returnCode;
-    free(PA);
-    returnCode = ((int)0);
-
-
-
-    return returnCode;
-
-}
-
-          int PAResourceDelete(struct PAResource* PA)
-{
-    int returnCode;
-    PA->value = 0;
-    returnCode = ((int)0);
-    return returnCode;
-
-
-
-
-}

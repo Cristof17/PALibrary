@@ -15,8 +15,9 @@
 
 # 1 "./include/defs.h" 1
 # 7 "./include/types.h" 2
-# 18 "./include/types.h"
-struct PANumber;
+# 17 "./include/types.h"
+typedef char PANumber;
+
 typedef int PAInt;
 
 
@@ -110,12 +111,12 @@ struct BridgeConcreteImplementorB;
 struct BridgeImplementor;
 struct PrototypePrototype;
 struct PrototypeClient;
-struct PANumber {
 
 
- unsigned char val;
 
-};
+
+
+
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
@@ -138,7 +139,7 @@ struct PAResource {
 
 
 
- struct PANumber* value;
+ PANumber* value;
 
 };
 struct PAStatus {
@@ -161,7 +162,7 @@ struct PAFeature {
 };
 struct PACount {
 
- struct PANumber* number;
+ PAInt* number;
 };
 
 
@@ -1854,8 +1855,8 @@ void PAListPrint(struct PAList* List);
 
 
 
-          struct PACount* PACountCreate();
-          struct PACount PACountBegin(struct PACount* Count, struct PANumber* Number);
+          struct PACount* PACountCreate(PAInt value);
+          struct PACount* PACountBegin(struct PACount* value);
           void PACountCopy(struct PACount* from, struct PACount* to);
 
 

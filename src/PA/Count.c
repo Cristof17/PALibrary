@@ -11,11 +11,14 @@
 
 #endif
 
-DllExport struct PACount* PACountCreate()
+DllExport struct PACount* PACountCreate(PAInt value)
 {
     // struct PACount zies;
     struct PACount* countPointer;
     countPointer =(struct PACount*)malloc(sizeof(struct PACount));
+    countPointer->number = (PAInt*) malloc (sizeof(PAInt));
+    // countPointer->number = PANumberCreate(value);
+    countPointer->number = &value;
     // struct PANumber number;
     // zies.number = PANumberPerformConstruct();
     // zies = PACountPerformInit(zies,zies.number);
@@ -27,15 +30,18 @@ DllExport struct PACount* PACountCreate()
     // countPointer->number = PANumberCreate();
     return countPointer;
 }
-DllExport struct PACount PACountBegin(struct PACount* Count, struct PANumber* Value)
+DllExport struct PACount* PACountBegin(struct PACount* Count)
 {
-    struct PACount temp;
+    struct PACount* temp;
+    temp = (struct PACount*) malloc (sizeof(struct PACount));
+    temp->number = Count->number;
+    return temp;
     // struct PACount temp;
     // struct PACount* cpuntPointer;
-    temp = *Count;
-    temp.number = Value;
+    // temp = *Count;
+    // temp.number = 
     // temp.number = &Value;
-    Count->number = temp.number;
+    // Count->number = temp.number;
     // struct PANumber value;
     // value = PANumberPerformConstruct();
     // temp.number = PANumberPerformConstruct();
@@ -43,7 +49,7 @@ DllExport struct PACount PACountBegin(struct PACount* Count, struct PANumber* Va
     // Count = temp;
     //temp.number = value;
     // return cpuntPointer;
-    return temp;
+    // return temp;
     // temp = Count.number;
     // temp.val = Value;
     // Count.number.val = Value.val;
@@ -79,6 +85,7 @@ DllExport PAResult PACountFinish(struct PACount* PA)
     // return PARESULT_SUCCESS;
     // return Empty;
     int returnCode;
+    free(PA->number);
     free(PA);
     returnCode = PARESULT_SUCCESS;
     // returnCode = PANumberFinish(PA->number);

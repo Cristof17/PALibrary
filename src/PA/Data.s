@@ -5,10 +5,30 @@
 _PADataCreate:                          ; @PADataCreate
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	ldr	x0, [sp, #8]
-	add	sp, sp, #16
+	sub	sp, sp, #48
+	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
+	add	x29, sp, #32
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	sturb	w0, [x29, #-1]
+	mov	x0, #8                          ; =0x8
+	str	x0, [sp, #8]                    ; 8-byte Folded Spill
+	bl	_malloc
+	mov	x8, x0
+	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
+	str	x8, [sp, #16]
+	bl	_malloc
+	ldr	x8, [sp, #16]
+	str	x0, [x8]
+	ldurb	w8, [x29, #-1]
+	ldr	x9, [sp, #16]
+	ldr	x9, [x9]
+	ldr	x9, [x9]
+	strb	w8, [x9]
+	ldr	x0, [sp, #16]
+	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -18,15 +38,21 @@ _PADataBegin:                           ; @PADataBegin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
-	add	x8, sp, #16
-	str	x1, [sp, #16]
+	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
+	add	x29, sp, #16
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
 	str	x0, [sp, #8]
-	str	x8, [sp, #24]
-	ldr	x8, [sp, #24]
-	ldr	x9, [sp, #8]
+	mov	x0, #8                          ; =0x8
+	bl	_malloc
+	str	x0, [sp]
+	ldr	x8, [sp, #8]
+	ldr	x8, [x8]
+	ldr	x9, [sp]
 	str	x8, [x9]
-	ldr	x0, [sp, #24]
+	ldr	x0, [sp]
+	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
 	ret
 	.cfi_endproc
@@ -75,6 +101,9 @@ _PADataFinish:                          ; @PADataFinish
 	.cfi_offset w29, -16
 	str	x0, [sp, #8]
 	str	wzr, [sp, #4]
+	ldr	x8, [sp, #8]
+	ldr	x0, [x8]
+	bl	_free
 	ldr	x0, [sp, #8]
 	bl	_free
 	ldr	w0, [sp, #4]

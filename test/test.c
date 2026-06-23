@@ -18,8 +18,8 @@
 int main()
 {
 
-	struct PANumber* number123;
-	struct PANumber* number221;
+	// struct PANumber* number123;
+	// struct PANumber* number221;
 	// number123 = PANumberPerformConstruct();
 	// number221 = PANumberPerformConstruct();
 	// number123->val = 20;
@@ -84,8 +84,8 @@ int main()
 	// printf("First list %d` second list %d,\n",list12334.n.number.val, list2345.n.number.val);
 
 	// struct j
-	struct PANumber number345;
-	struct PANumber number456;//s
+	// struct PANumber number345;
+	// struct PANumber number456;//s
 	// number345  = PANumberPerformConstruct();
 	// number456 = PANumberPerformCopy(number345,number456);
 	// printf("forst number %d %d \n|", number345.val/*.*/,number456.val);
@@ -111,7 +111,7 @@ int main()
 	// element2345 = PAElementPerformCopy(element1234,element2345);
 	// printf("resource1234 %d %d \n", element1234.index.Resource.value.val, element2345.index.Resource.value.val);
 
-	struct PANumber number;
+	// struct PANumber number;
 	// number = PANumberPerformConstruct();
 	// printf("testing PANumber %d\n()",number.val);
 	struct PAResource resource;
@@ -160,8 +160,8 @@ int main()
 	
 	// printf("testing element %d,%d,%d\n",element.status.)
 	// PATreePerformCopy(tree,tree2);
-	struct PANumber number1;
-	struct PANumber number2;
+	// struct PANumber number1;
+	// struct PANumber number2;
 	// number1.val = 10;
 	// number2 = PANumberPerformCopy(number1,number2);
 	// printf("number1 = %d, number2 = %d\n",number1.val,number2.val);

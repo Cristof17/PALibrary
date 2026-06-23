@@ -10,10 +10,16 @@
 //struct PAData {
 //
 //}
-DllExport struct PAData* PADataCreate()
+DllExport struct PAData* PADataCreate(PANumber Resource)
 {
     // struct PAData data;
     struct PAData* dataPointer;
+    dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
+    dataPointer->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
+    *dataPointer->Resource->value = (PANumber) Resource;
+    // dataPointer->Resource->value = (struct PANumber*) malloc (sizeof(struct PANumber));
+
+    // dataPointer->Resource->value
     // dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
     // struct PAResource resource;
     // data.Resource = PAResourcePerformConstruct();
@@ -27,17 +33,20 @@ DllExport struct PAData* PADataCreate()
     // return data;
     return dataPointer;
 }
-DllExport struct PAData PADataBegin(struct PAData* Data, struct PAResource Value)
+DllExport struct PAData* PADataBegin(struct PAData* Data)
 {
-    struct PAData temp;
+    // struct PAData temp;
     struct PAData* dataPointer;
-    temp.Resource = &Value;
-    Data->Resource = temp.Resource;
+    dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
+    dataPointer->Resource = Data->Resource;
+    // temp.Resource = &Value;
+    // Data->Resource = temp.Resource;
     // temp.Resource = PAResourcePerformConstruct();
     // Data = temp;
     // Data.Resource.value.val = Value.value.val;
     // Data.Resource.value = Value.value;
-    return temp;
+    // return temp;
+    return dataPointer;
     // return dataPointer;
     // struct PAData data;
     // data.Resource = Data.Resource;
@@ -81,7 +90,7 @@ DllExport void PADataCopy(struct PAData* from, struct PAData* to)
     // Data.Resource = Resource;
     // return Data;
 // }
-DllExport PAResult PADataFinish(struct PAData* PA) 
+DllExport int PADataFinish(struct PAResource* PA) 
 {
     // PAInt Empty = NULL;
     // Resource = Empty;
@@ -89,6 +98,8 @@ DllExport PAResult PADataFinish(struct PAData* PA)
     // g
     int returnCode;
     returnCode = PARESULT_SUCCESS;
+    // free(PA);
+    free(PA->value);
     free(PA);
     return returnCode;
     // return PARESULT_SUCCESS;

@@ -22,8 +22,9 @@
 
 # 1 "./include/defs.h" 1
 # 7 "./include/types.h" 2
-# 18 "./include/types.h"
-struct PANumber;
+# 17 "./include/types.h"
+typedef char PANumber;
+
 typedef int PAInt;
 
 
@@ -117,12 +118,12 @@ struct BridgeConcreteImplementorB;
 struct BridgeImplementor;
 struct PrototypePrototype;
 struct PrototypeClient;
-struct PANumber {
 
 
- unsigned char val;
 
-};
+
+
+
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
@@ -145,7 +146,7 @@ struct PAResource {
 
 
 
- struct PANumber* value;
+ PANumber* value;
 
 };
 struct PAStatus {
@@ -168,7 +169,7 @@ struct PAFeature {
 };
 struct PACount {
 
- struct PANumber* number;
+ PAInt* number;
 };
 
 
@@ -1825,11 +1826,11 @@ extern char * suboptarg;
 # 10 "./include/PA/Data.h" 2
 
 
-          struct PAData* PADataCreate();
-          struct PAData PADataCompleteBegin(struct PAData*, struct PAResource*);
+          struct PAData* PADataCreate(PANumber Resource);
+          struct PAData* PADataBegin(struct PAData*);
 
 
-          int PADataFinish(struct PAData*);
+          int PADataFinish(struct PAResource*);
           int PADataDelete(struct PAData*);
           void PADataCopy(struct PAData* from, struct PAData* to);
 # 4 "src/PA/Data.c" 2
@@ -1841,7 +1842,7 @@ extern char * suboptarg;
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 7 "./include/PA/Resource.h" 2
- struct PAResource PAResourceBegin(struct PAResource*, struct PANumber*);
+ struct PAResource PAResourceBegin(struct PAResource*, PANumber);
           struct PAResource* PAResourceCreate();
           PAResult PAResourceFinish(struct PAResource*);
           int PAResourceDelete(struct PAResource*);
@@ -1855,24 +1856,30 @@ extern char * suboptarg;
 
 
 
-          struct PAData* PADataCreate()
+          struct PAData* PADataCreate(PANumber Resource)
 {
 
     struct PAData* dataPointer;
-# 28 "src/PA/Data.c"
+    dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
+    dataPointer->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
+    *dataPointer->Resource->value = (PANumber) Resource;
+# 34 "src/PA/Data.c"
     return dataPointer;
 }
-          struct PAData PADataBegin(struct PAData* Data, struct PAResource Value)
+          struct PAData* PADataBegin(struct PAData* Data)
 {
-    struct PAData temp;
+
     struct PAData* dataPointer;
-    temp.Resource = &Value;
-    Data->Resource = temp.Resource;
+    dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
+    dataPointer->Resource = Data->Resource;
 
 
 
 
-    return temp;
+
+
+
+    return dataPointer;
 
 
 
@@ -1890,10 +1897,10 @@ extern char * suboptarg;
     to->Resource = aux->Resource;
 
     free(aux);
-# 66 "src/PA/Data.c"
+# 75 "src/PA/Data.c"
 }
-# 84 "src/PA/Data.c"
-          PAResult PADataFinish(struct PAData* PA)
+# 93 "src/PA/Data.c"
+          int PADataFinish(struct PAResource* PA)
 {
 
 
@@ -1901,6 +1908,8 @@ extern char * suboptarg;
 
     int returnCode;
     returnCode = ((int)0);
+
+    free(PA->value);
     free(PA);
     return returnCode;
 

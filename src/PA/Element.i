@@ -19,8 +19,9 @@
 # 1 "./include/defs.h" 1
 # 7 "./include/PA/Element.h" 2
 # 1 "./include/types.h" 1
-# 18 "./include/types.h"
-struct PANumber;
+# 17 "./include/types.h"
+typedef char PANumber;
+
 typedef int PAInt;
 
 
@@ -114,12 +115,12 @@ struct BridgeConcreteImplementorB;
 struct BridgeImplementor;
 struct PrototypePrototype;
 struct PrototypeClient;
-struct PANumber {
 
 
- unsigned char val;
 
-};
+
+
+
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
@@ -142,7 +143,7 @@ struct PAResource {
 
 
 
- struct PANumber* value;
+ PANumber* value;
 
 };
 struct PAStatus {
@@ -165,7 +166,7 @@ struct PAFeature {
 };
 struct PACount {
 
- struct PANumber* number;
+ PAInt* number;
 };
 
 
@@ -1848,11 +1849,11 @@ extern char * suboptarg;
 # 10 "./include/PA/Data.h" 2
 
 
-          struct PAData* PADataCreate();
-          struct PAData PADataCompleteBegin(struct PAData*, struct PAResource*);
+          struct PAData* PADataCreate(PANumber Resource);
+          struct PAData* PADataBegin(struct PAData*);
 
 
-          int PADataFinish(struct PAData*);
+          int PADataFinish(struct PAResource*);
           int PADataDelete(struct PAData*);
           void PADataCopy(struct PAData* from, struct PAData* to);
 # 8 "src/PA/Element.c" 2

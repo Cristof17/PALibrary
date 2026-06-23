@@ -14,8 +14,8 @@ typedef int PAResult;
 typedef int ArrayListSize;
 typedef int ArrayListObject;
 #else
-// typedef int PANumber;
-struct PANumber;
+typedef char PANumber;
+// struct PANumber;
 typedef int PAInt;
 //#define PAInt int
 // typedef int PAResource;
@@ -126,12 +126,12 @@ struct BridgeConcreteImplementorB;
 struct BridgeImplementor;
 struct PrototypePrototype;
 struct PrototypeClient;
-struct PANumber {
-	//  val;
-	// long long val;
-	unsigned char val;
-	// PADDING_1_BYTE(0);
-};
+// struct PANumber {
+// 	//  val;
+// 	// long long val;
+// 	unsigned char val;
+// 	// PADDING_1_BYTE(0);
+// };
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
@@ -168,7 +168,7 @@ struct PAResource {
 	// struct
 	// PA_INt
 	// PAInt value;
-	struct PANumber* value;
+	PANumber* value;
 	// PADDING_1_BYTE(0);
 };
 struct PAStatus {
@@ -191,7 +191,7 @@ struct PAFeature {
 };
 struct PACount {
 	// PADDING_1_BYTE(0);
-	struct PANumber* number;
+	PAInt* number;
 };
 // };
 

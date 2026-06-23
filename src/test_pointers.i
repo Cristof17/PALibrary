@@ -14,8 +14,9 @@
 # 1 "./include/defs.h" 1
 # 7 "./include/PA/Count.h" 2
 # 1 "./include/types.h" 1
-# 18 "./include/types.h"
-struct PANumber;
+# 17 "./include/types.h"
+typedef char PANumber;
+
 typedef int PAInt;
 
 
@@ -109,12 +110,12 @@ struct BridgeConcreteImplementorB;
 struct BridgeImplementor;
 struct PrototypePrototype;
 struct PrototypeClient;
-struct PANumber {
 
 
- unsigned char val;
 
-};
+
+
+
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
@@ -137,7 +138,7 @@ struct PAResource {
 
 
 
- struct PANumber* value;
+ PANumber* value;
 
 };
 struct PAStatus {
@@ -160,7 +161,7 @@ struct PAFeature {
 };
 struct PACount {
 
- struct PANumber* number;
+ PAInt* number;
 };
 
 
@@ -1819,8 +1820,8 @@ extern char * suboptarg;
 
 
 
-          struct PACount* PACountCreate();
-          struct PACount PACountBegin(struct PACount* Count, struct PANumber* Number);
+          struct PACount* PACountCreate(PAInt value);
+          struct PACount* PACountBegin(struct PACount* value);
           void PACountCopy(struct PACount* from, struct PACount* to);
 
 
@@ -1838,7 +1839,7 @@ extern char * suboptarg;
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 7 "./include/PA/Resource.h" 2
- struct PAResource PAResourceBegin(struct PAResource*, struct PANumber*);
+ struct PAResource PAResourceBegin(struct PAResource*, PANumber);
           struct PAResource* PAResourceCreate();
           PAResult PAResourceFinish(struct PAResource*);
           int PAResourceDelete(struct PAResource*);
@@ -2326,8 +2327,8 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 508 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
 # 62 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 2 3 4
 # 8 "./include/PA/Number.h" 2
- struct PANumber* PANumberCreate();
-          struct PANumber PANumberBegin(struct PANumber* Number, unsigned char Value);
+ struct PANumber* PANumberCreate(unsigned char value);
+          struct PANumber* PANumberBegin(struct PANumber* Number, unsigned char Value);
           PAResult PANumberFinish(struct PANumber*);
           int PANumberDelete(struct PANumber*);
           void PANumberCopy(struct PANumber* from, struct PANumber* to);
@@ -2448,64 +2449,27 @@ void PAListPrint(struct PAList* List);
 # 12 "test/test_pointers.c" 2
 int main()
 {
- struct PANumber* number;
- number = PANumberCreate();
- PANumberBegin(number,'o');
- printf("number create %d\n", number->val);
-
-
-
- struct PANumber* number123;
- number123 = PANumberCreate();
- PANumberCopy(number,number123);
- printf("number create %d\n", number->val);
-
- PANumberCopy(number,number123);
- PANumberPrint(number);
- PANumberPrint(number123);
- PANumberDelete(number123);
- PANumberFinish(number123);
- number->val = (unsigned char) 323;
- number->val = (unsigned char) 542;
- PANumberPrint(number);
- PANumberPrint(number);
-
-
- struct PANumber* number34;
- number34 = PANumberCreate();
- PANumberCopy(number,number34);
- PANumberDelete(number);
- PANumberPrint(number34);
- PANumberPrint(number);
- PANumberDelete(number34);
- PANumberDelete(number);
-
-
-
-
- PANumberPrint(number34);
-
- PANumberPrint(number34);
+# 52 "test/test_pointers.c"
  struct PAResource resource;
 
 
 
  struct PAResource* resource123;
  struct PAResource* resource234;
- PANumberBegin(number,'a');
- PANumberPrint(number);
+
+
 
  resource123 = PAResourceCreate();
  resource234 = PAResourceCreate();
- PAResourceBegin(resource123,number);
- PANumberPrint(resource123->value);
+
+
  PAResourceCopy(resource123,resource234);
 
- PANumberPrint(resource123->value);
- PANumberPrint(resource234->value);
- PAResourceBegin(resource123,number);
- printf("resource %d\n", resource123->value->val);
- printf("resource %d\n", resource234->value->val);
+
+
+
+
+
 
  struct PAStatus *status;
  struct PAStatus *status123;
@@ -2513,25 +2477,23 @@ int main()
  status123=PAStatusCreate();
  PAStatusBegin(status,resource123);
  PAStatusCopy(status,status123);
- printf("status value %d\n",status->visited->value->val);
+
 
  struct PACount* count1;
- count1 = PACountCreate();
- PANumberPrint(number123);
- PANumberBegin(number123,'a');
- PACountBegin(count1,number123);
 
- printf("count1 %d\n", count1->number->val);
+
+
+
+
+
 
  struct PASeries* series;
  series = PASeriesCreate();
  PASeriesBegin(series,count1,0);
- printf("series.count %d\n", series->m->number->val);
 # 103 "test/test_pointers.c"
  struct PAList* list;
  list = PAListCreate();
  PAListBegin(list,count1,0);
- printf("list.n alloc %d\n", list->n->number->val);
 # 148 "test/test_pointers.c"
  return 0;
 }
