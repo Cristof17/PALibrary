@@ -100,8 +100,6 @@ _PANumberCopy:                          ; @PANumberCopy
 	ldrb	w8, [x8]
 	ldr	x9, [sp, #16]
 	strb	w8, [x9]
-	ldr	x8, [sp, #8]
-	strb	wzr, [x8]
 	ldr	x0, [sp, #8]
 	bl	_free
 	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload

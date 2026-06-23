@@ -2373,7 +2373,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
     aux->val = from->val;
     to->val = aux->val;
-    aux->val = 0;
+
     free(aux);
 # 99 "src/PA/Number.c"
     return;

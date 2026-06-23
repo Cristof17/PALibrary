@@ -1904,7 +1904,7 @@ extern char * suboptarg;
 
     aux->p = from->p;
     to->p = aux->p;
-    aux->p = 0;
+
     free(aux);
 # 81 "src/PA/Link.c"
 }

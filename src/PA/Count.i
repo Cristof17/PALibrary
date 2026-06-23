@@ -2398,7 +2398,7 @@ PAResult PACountPrint(struct PACount* Count)
 
     aux->number = from->number;
     to->number = aux->number;
-    aux->number = 0;
+
     free(aux);
 # 125 "src/PA/Count.c"
 }

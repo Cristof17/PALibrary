@@ -1896,8 +1896,8 @@ void PAListPrint(struct PAList* List);
     aux->neigh = from->neigh;
     to->n = aux->n;
     to->neigh = aux->neigh;
-    aux->n = 0;
-    aux->neigh = 0;
+
+
     free(aux);
 
 

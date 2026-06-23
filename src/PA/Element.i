@@ -1921,8 +1921,8 @@ struct PAElement* PAElementCreate()
     aux->status = from->status;
     to->index = aux->index;
     to->status = aux->status;
-    aux->index = 0;
-    aux->status = 0;
+
+
     free(aux);
 # 94 "src/PA/Element.c"
 }

@@ -117,9 +117,6 @@ _PACountCopy:                           ; @PACountCopy
 	ldr	x8, [x8]
 	ldr	x9, [sp, #16]
 	str	x8, [x9]
-	ldr	x8, [sp, #8]
-                                        ; kill: def $x9 killed $xzr
-	str	xzr, [x8]
 	ldr	x0, [sp, #8]
 	bl	_free
 	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload

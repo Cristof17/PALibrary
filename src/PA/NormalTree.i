@@ -1888,7 +1888,7 @@ extern char * suboptarg;
     aux->tree = from->tree;
     to->tree = aux->tree;
 
-    aux->tree = 0;
+
     free(aux);
 # 63 "src/PA/NormalTree.c"
 }

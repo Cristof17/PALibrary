@@ -1888,7 +1888,7 @@ extern char * suboptarg;
 
     aux->Resource = from->Resource;
     to->Resource = aux->Resource;
-    aux->Resource = 0;
+
     free(aux);
 # 66 "src/PA/Data.c"
 }
