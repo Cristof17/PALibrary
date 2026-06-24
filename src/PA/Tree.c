@@ -16,11 +16,15 @@
     // struct PACount size;
     // return size;
 // }
-DllExport struct PATree* PATreeCreate()
+DllExport struct PATree* PATreeCreate(struct PACount* n, struct PACount* m, struct PASeries* adj, struct PAElement* source)
 {
-    struct PATree* temp;
+    // struct PATree* temp;
     struct PATree* treePointer;
     treePointer = (struct PATree*) malloc (sizeof(struct PATree));
+    treePointer->n = n;
+    treePointer->m = m;
+    // treePointer->adj = adj;
+    treePointer->source = source;
     // treePointer->n = PACountCreate();
     // treePointer->m = PACountCreate();
     // treePointer->source = PAElementCreate();
@@ -31,7 +35,7 @@ DllExport struct PATree* PATreeCreate()
     // temp->source = PAElementPerformConstruct();
     // temp = PATreePerformInit(temp,temp.n,temp.m,temp.adj,temp.source);
     // return temp;
-    return treePointer;
+    // return treePointer;
     // struct PACount n;
     // struct PACount m;
     // struct PAList adj;
@@ -70,12 +74,17 @@ DllExport struct PATree* PATreeCreate()
     // tree.adj = Adj;
     // tree.source = Source;
     // return tree;
-    return temp;
+    return treePointer;
+    // return temp;
 }
-DllExport struct PATree PATreeBegin(struct PATree* Tree, struct PACount* Value, struct PACount* Value2, struct PAList* Value3, struct PAElement* Value4)
+DllExport struct PATree* PATreeBegin(struct PATree* tree)
 {
-    struct PATree tree;
+    // struct PATree tree;/
     struct PATree* treePointer;
+    treePointer->n = tree->n;
+    treePointer->m = tree->m;
+    treePointer->adj = tree->adj;
+    treePointer->source = tree->source;
     // treePointer->n = PACountPerformConstruct();
     // treePointer->m = PACountPerformConstruct();
     // treePointer->adj = PAListPerformConstruct();
@@ -85,13 +94,13 @@ DllExport struct PATree PATreeBegin(struct PATree* Tree, struct PACount* Value, 
     // tree.m = Value2;
     // tree.adj = Value3;
     // tree.source = Value4;
-    tree = *Tree;
-    tree.n = Value;
-    tree.m = Value2;
-    tree.source = Value4;
-    Tree->n = tree.n;
-    Tree->m = tree.m;
-    Tree->source = tree.source;
+    // tree = *Tree;
+    // tree.n = Value;
+    // tree.m = Value2;
+    // tree.source = Value4;
+    // Tree->n = tree.n;
+    // Tree->m = tree.m;
+    // Tree->source = tree.source;
     // Tree->n = tree.n;
     // Tree->m = tree.m;
     // Tree->adj = tree.adj;
@@ -103,7 +112,8 @@ DllExport struct PATree PATreeBegin(struct PATree* Tree, struct PACount* Value, 
     // tree.adj = PASeriesPerformInit(tree.adj);
     // tree.source.;
     // tree.adj = ()
-    return tree;
+    // return tree;
+    return treePointer;
 }
 // DllExport PAResult PATreePerformCopy(struct PATransposeTree Tree)
 // {

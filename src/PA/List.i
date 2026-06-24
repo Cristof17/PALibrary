@@ -1,20 +1,25 @@
-# 1 "src/BFS/Procedure.c"
+# 1 "src/PA/List.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/BFS/Procedure.c" 2
+# 1 "src/PA/List.c" 2
 
 
-# 1 "./include/types.h" 1
+
+
+
+
+# 1 "./include/PA/List.h" 1
 
 
 
 
 
 # 1 "./include/defs.h" 1
-# 7 "./include/types.h" 2
+# 7 "./include/PA/List.h" 2
+# 1 "./include/types.h" 1
 # 17 "./include/types.h"
 typedef char PANumber;
 
@@ -376,16 +381,7 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 4 "src/BFS/Procedure.c" 2
-# 1 "./include/Algorithm.h" 1
-
-
-
-
-
-
-
-
+# 8 "./include/PA/List.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 1 3 4
@@ -1824,41 +1820,22 @@ unsigned long long
 
 extern char * suboptarg;
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 2 3 4
-# 10 "./include/Algorithm.h" 2
-# 1 "./include/Input.h" 1
+# 9 "./include/PA/List.h" 2
 
 
 
+          struct PAList* PAListCreate(struct PACount* n, struct ArrayList* array);
+          struct PAList* PAListBegin(struct PAList* list);
 
 
 
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 8 "./include/Input.h" 2
+          PAResult PAListFinish(struct PAList*);
+          int PAListDelete(struct PAList*);
+          void PAListCopy(struct PAList*, struct PAList*);
 
-
-
-
-
-          struct PAInput* PAInputCreate(struct PACount* n, struct PACount* m, struct PAList* adj, struct PAElement* element);
-          struct Input InputCopy(struct Input*, struct Input*);
-          struct Input InputDelete(struct Input*);
-          int InputFinish(struct Input*);
-
-          void InputDispose();
-# 11 "./include/Algorithm.h" 2
-
-
-          struct Algorithm* AlgorithmCreate();
-          int AlgorithmFinish(struct Algorithm*);
-          struct Algorithm AlgorithmDelete(struct Algorithm*);
-          struct Algorithm AlgorithmCopy(struct Algorithm* from, struct Algorithm* to);
-          struct Output AlgorithmPerformRun(struct Input);
-# 5 "src/BFS/Procedure.c" 2
-
-
-
-# 1 "./include/PA/Tree.h" 1
-
+void PAListPrint(struct PAList* List);
+# 8 "src/PA/List.c" 2
+# 1 "./include/PA/Count.h" 1
 
 
 
@@ -1867,120 +1844,144 @@ extern char * suboptarg;
 
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 10 "./include/PA/Tree.h" 2
-
-
-          struct PATree* PATreeCreate(struct PACount*, struct PACount*m, struct PASeries[], struct PAElement*);
-          void PATreeCopy(struct PATree* from, struct PATree* to);
-
-          struct PATree* PATreeBegin(struct PATree*);
+# 9 "./include/PA/Count.h" 2
 
 
 
 
 
-          PAResult PATreeFinish(struct PATree*);
-          int PATreeDelete(struct PATree*);
-# 9 "src/BFS/Procedure.c" 2
-# 1 "./include/PA/Element.h" 1
+          struct PACount* PACountCreate(PAInt value);
+          struct PACount* PACountBegin(struct PACount* value);
+          void PACountCopy(struct PACount* from, struct PACount* to);
 
 
 
+          int PACountFinish(struct PACount*);
 
 
-
-
+          int PACountDelete(struct PACount* PA);
+# 9 "src/PA/List.c" 2
+# 1 "./include/PA/Series.h" 1
+# 15 "./include/PA/Series.h"
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Element.h" 2
+# 16 "./include/PA/Series.h" 2
 
 
-          void PAElementVisit(struct PAElement*);
-          PABool PAElementIsVisited(struct PAElement*);
-          void PAElementReset(struct PAElement*);
-          struct PAElement* PAElementCreate();
+          struct PASeries* PASeriesCreate(struct PACount*, struct PAList*[]);
+          struct PASeries* PASeriesBegin(struct PASeries*);
+          int PASeriesDelete(struct PASeries*);
+          void PASeriesCopy(struct PASeries*, struct PASeries*);
 
-          struct PAElement PAElementCompleteBegin(struct PAElement*,struct PAData*,struct PAStatus*);
+          PAResult PASeriesFinish(struct PASeries*);
 
-
-
-
-          int PAElementFinish(struct PAElement*);
-          int PAElementDelete(struct PAElement*);
-          void PAElementCopy(struct PAElement*, struct PAElement*);
-# 10 "src/BFS/Procedure.c" 2
-# 1 "./include/BFS/Procedure.h" 1
-
-
-
-
-
-
-
-          PAResult BFS();
-          struct BFSProcedure BFSProcedureConstruct(struct PAInput);
-          struct BFSProcedure BFSProcedurePutInput(struct BFSProcedure, struct PAInput);
-
-
-
-          PAResult BFSProcedureRuin();
-          PAResult BFSProcedureSubroutine();
-# 11 "src/BFS/Procedure.c" 2
-
-# 1 "./include/PA/Input.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Input.h" 2
-
-
-
-          struct PAInput* PAInputCreate(struct PACount* n, struct PACount* m, struct PAList* adj, struct PAElement* element);
-
-          struct PAInput PAInputBegin(struct PAInput* PAInput, struct PACount*, struct PACount*, struct PAElement*);
-
-
-
-          PAResult PAInputFinish(struct PAInput*);
-          int PAInputDelete(struct PAInput*);
-# 13 "src/BFS/Procedure.c" 2
-# 26 "src/BFS/Procedure.c"
-PAResult BFS()
+          void PASeriesPrint(struct PASeries*);
+# 10 "src/PA/List.c" 2
+# 19 "src/PA/List.c"
+          struct PAList* PAListCreate(struct PACount* m, struct ArrayList* edges)
 {
-    PAResult result;
-    return result;
+    struct PAList* listPointer;
+    listPointer = (struct PAList*) malloc (sizeof(struct PAList));
+    listPointer->n = m;
+# 39 "src/PA/List.c"
+    return listPointer;
+# 49 "src/PA/List.c"
+}
+          void PAListCopy(struct PAList* from, struct PAList* to)
+{
+    struct PAList* aux;
+
+    aux = (struct PAList*) malloc (sizeof(struct PAList));
+
+
+
+    aux->n = from->n;
+    aux->neigh = from->neigh;
+    to->n = aux->n;
+    to->neigh = aux->neigh;
+
+
+    free(aux);
+
+
+
+
+
+    {
+
+
+    }
+
+    {
+
+    }
+
+    {
+
+
+
+
+    }
+# 93 "src/PA/List.c"
+    {
+
+
+
+
+    }
+
 
 
 }
-struct BFSProcedure BFSProcedureConstruct(struct PAInput Input)
 
+          struct PAList* PAListBegin(struct PAList* List)
 {
-    struct BFSProcedure procedure;
-    return procedure;
-}
 
-struct BFSProcedure BFSProcedurePutTree(struct BFSProcedure Procedure, struct PATree Tree)
-{
-    struct BFSProcedure procedure;
-    return procedure;
+    struct PAList* listPointer;
+    listPointer->n = List->n;
+# 142 "src/PA/List.c"
+    return listPointer;
 }
-struct BFSProcedure BFSProcedurePutInput(struct BFSProcedure Procedure, struct PAInput Input)
+# 175 "src/PA/List.c"
+          PAResult PAListFinish(struct PAList* PA)
 {
-    struct BFSProcedure procedure;
-    return procedure;
-}
+    int returnCode;
 
-PAResult BFSProcedureRuin()
-{
-    PAResult result;
-    return result;
+    free(PA);
+    returnCode = ((int)0);
+
+    return returnCode;
+# 197 "src/PA/List.c"
+    {
+
+
+
+    }
+    returnCode = ((int)0);
+    return returnCode;
+
+
+
+
+
 }
-PAResult BFSProcedureSubroutine()
+void Dispose()
 {
-    PAResult result;
-    return result;
+
+}
+# 229 "src/PA/List.c"
+          int PAListDelete(struct PAList* PA)
+{
+    int returnCode;
+    returnCode = ((int)0);
+    PA->n = 0;
+    PA->neigh = 0;
+# 252 "src/PA/List.c"
+    return returnCode;
+
+
+
+}
+void PAListPrint(struct PAList* List)
+{
+
 }

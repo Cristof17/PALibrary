@@ -1,20 +1,24 @@
-# 1 "src/BFS/Procedure.c"
+# 1 "src/PA/Output.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/BFS/Procedure.c" 2
+# 1 "src/PA/Output.c" 2
 
 
-# 1 "./include/types.h" 1
+
+
+# 1 "./include/PA/Output.h" 1
+
 
 
 
 
 
 # 1 "./include/defs.h" 1
-# 7 "./include/types.h" 2
+# 8 "./include/PA/Output.h" 2
+# 1 "./include/types.h" 1
 # 17 "./include/types.h"
 typedef char PANumber;
 
@@ -376,16 +380,7 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 4 "src/BFS/Procedure.c" 2
-# 1 "./include/Algorithm.h" 1
-
-
-
-
-
-
-
-
+# 9 "./include/PA/Output.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 1 3 4
@@ -1824,163 +1819,99 @@ unsigned long long
 
 extern char * suboptarg;
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 2 3 4
-# 10 "./include/Algorithm.h" 2
-# 1 "./include/Input.h" 1
+# 10 "./include/PA/Output.h" 2
 
 
 
 
+          struct PAOutput* PAOutputCreate();
+          struct PAOutput PAOutputBegin(struct PAOutput*, struct BFSRecord*);
+          int PAOutputDelete(struct PAOutput*);
+          PAResult PAOutputFinish(struct PAOutput*);
+          void PAOutputPrint(PAResult Result);
+# 6 "src/PA/Output.c" 2
+# 1 "./include/BFS/Record.h" 1
 
 
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 8 "./include/Input.h" 2
 
 
 
 
 
-          struct PAInput* PAInputCreate(struct PACount* n, struct PACount* m, struct PAList* adj, struct PAElement* element);
-          struct Input InputCopy(struct Input*, struct Input*);
-          struct Input InputDelete(struct Input*);
-          int InputFinish(struct Input*);
+          struct BFSRecord* BFSRecordCreate();
 
-          void InputDispose();
-# 11 "./include/Algorithm.h" 2
-
-
-          struct Algorithm* AlgorithmCreate();
-          int AlgorithmFinish(struct Algorithm*);
-          struct Algorithm AlgorithmDelete(struct Algorithm*);
-          struct Algorithm AlgorithmCopy(struct Algorithm* from, struct Algorithm* to);
-          struct Output AlgorithmPerformRun(struct Input);
-# 5 "src/BFS/Procedure.c" 2
-
-
-
-# 1 "./include/PA/Tree.h" 1
-
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 10 "./include/PA/Tree.h" 2
-
-
-          struct PATree* PATreeCreate(struct PACount*, struct PACount*m, struct PASeries[], struct PAElement*);
-          void PATreeCopy(struct PATree* from, struct PATree* to);
-
-          struct PATree* PATreeBegin(struct PATree*);
-
-
-
-
-
-          PAResult PATreeFinish(struct PATree*);
-          int PATreeDelete(struct PATree*);
-# 9 "src/BFS/Procedure.c" 2
-# 1 "./include/PA/Element.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Element.h" 2
-
-
-          void PAElementVisit(struct PAElement*);
-          PABool PAElementIsVisited(struct PAElement*);
-          void PAElementReset(struct PAElement*);
-          struct PAElement* PAElementCreate();
-
-          struct PAElement PAElementCompleteBegin(struct PAElement*,struct PAData*,struct PAStatus*);
-
-
-
-
-          int PAElementFinish(struct PAElement*);
-          int PAElementDelete(struct PAElement*);
-          void PAElementCopy(struct PAElement*, struct PAElement*);
-# 10 "src/BFS/Procedure.c" 2
-# 1 "./include/BFS/Procedure.h" 1
-
-
-
-
-
-
-
-          PAResult BFS();
-          struct BFSProcedure BFSProcedureConstruct(struct PAInput);
-          struct BFSProcedure BFSProcedurePutInput(struct BFSProcedure, struct PAInput);
-
-
-
-          PAResult BFSProcedureRuin();
-          PAResult BFSProcedureSubroutine();
-# 11 "src/BFS/Procedure.c" 2
-
-# 1 "./include/PA/Input.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Input.h" 2
-
-
-
-          struct PAInput* PAInputCreate(struct PACount* n, struct PACount* m, struct PAList* adj, struct PAElement* element);
-
-          struct PAInput PAInputBegin(struct PAInput* PAInput, struct PACount*, struct PACount*, struct PAElement*);
-
-
-
-          PAResult PAInputFinish(struct PAInput*);
-          int PAInputDelete(struct PAInput*);
-# 13 "src/BFS/Procedure.c" 2
-# 26 "src/BFS/Procedure.c"
-PAResult BFS()
+          int BFSRecordFinish(struct BFSRecord*);
+          struct BFSRecord BFSRecordDelete(struct BFSRecord*);
+          void BFSRecordPrint(struct BFSRecord*);
+          struct BFSRecord BFSRecordBegin(struct BFSRecord*, struct PAList* d, struct PACount* n);
+          struct BFSRecord BFSRecordCopy(struct BFSRecord* from, struct BFSRecord* to);
+# 7 "src/PA/Output.c" 2
+# 25 "src/PA/Output.c"
+          void PAOutputPerformCopy(struct PAOutput* from, struct PAOutput* to)
 {
-    PAResult result;
-    return result;
+ struct PAOutput* aux;
+
+
+    aux = (struct PAOutput*) malloc (sizeof(struct PAOutput));
+    aux->result = from->result;
+    to->result = aux->result;
+    free(aux);
+# 59 "src/PA/Output.c"
+}
+# 71 "src/PA/Output.c"
+          struct PAOutput* PAOutputCreate()
+{
+    struct PAOutput Output;
+    struct PAOutput* outputPointer;
+    outputPointer=(struct PAOutput*) malloc (sizeof(struct PAOutput));
+
+
+
+
+    return outputPointer;
+
+}
+          struct PAOutput PAOutputBegin(struct PAOutput* Output, struct BFSRecord* Value)
+{
+
+
+    struct PAOutput temp;
+
+    Output->result = Value;
+    temp = *Output;
+
+
+    return temp;
+}
+          int PAOutputDelete(struct PAOutput* PA)
+{
+    int returnCode;
+    PA->result = 0;
+    returnCode = ((int)0);
+
+
+
+
+    return returnCode;
+}
+          PAResult PAOutputFinish(struct PAOutput* PA)
+{
+    int returnCode;
+
+    free(PA);
+    returnCode = ((int)0);
+
+
+    return returnCode;
+
+
+
+
+
 
 
 }
-struct BFSProcedure BFSProcedureConstruct(struct PAInput Input)
+          void PAOutputPrint(PAResult Result)
+{
 
-{
-    struct BFSProcedure procedure;
-    return procedure;
-}
-
-struct BFSProcedure BFSProcedurePutTree(struct BFSProcedure Procedure, struct PATree Tree)
-{
-    struct BFSProcedure procedure;
-    return procedure;
-}
-struct BFSProcedure BFSProcedurePutInput(struct BFSProcedure Procedure, struct PAInput Input)
-{
-    struct BFSProcedure procedure;
-    return procedure;
-}
-
-PAResult BFSProcedureRuin()
-{
-    PAResult result;
-    return result;
-}
-PAResult BFSProcedureSubroutine()
-{
-    PAResult result;
-    return result;
 }
