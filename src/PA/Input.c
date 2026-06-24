@@ -13,11 +13,19 @@
 #include <PA\Count.h>
 #include <PA\Element.h>
 #endif
-
-DllExport struct PAInput* PAInputCreate()
+DllExport struct PAInput* PAInputCreate(struct PACount* n, struct PACount* m, struct PAList* adj, struct PAElement* element)
 {
 	// struct PAInput temp;
 	struct PAInput* inputPointer;
+	inputPointer = (struct PAInput*) malloc (sizeof(struct PAInput));
+	inputPointer->n = (struct PACount*) malloc (sizeof(struct PACount));
+	inputPointer->m = (struct PACount*) malloc (sizeof(struct PACount*));
+	// inputPointer->source = (struct PACount*) malloc (sizeof(struct PACount));
+	inputPointer->source = (struct PAElement*) malloc (sizeof(struct PAElement));
+	inputPointer->n = n;
+	inputPointer->m = m;
+	inputPointer->source = element;
+	return inputPointer;
 	// struct PACount n;
 	// struct PACount m;
 	// struct PAList list;
@@ -29,13 +37,11 @@ DllExport struct PAInput* PAInputCreate()
 	// m = inputPointer->m;
 	// element = inputPointer->source;
 
-	inputPointer = (struct PAInput*) malloc (sizeof(struct PAInput));
 	// list = inputPointer.
 	// inputPointer = PAInputBegin(inputPointer,n,m,element);
 	// return inputPointer;
 	// PAResult result ;
 	// return result;
-	return inputPointer;
 	// return temp;
 }
 DllExport void PAInputCopy(struct PAInput* from, struct PAInput* to)

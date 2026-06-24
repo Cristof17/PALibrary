@@ -5,18 +5,45 @@
 _PAInputCreate:                         ; @PAInputCreate
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
-	add	x29, sp, #16
+	sub	sp, sp, #64
+	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
+	add	x29, sp, #48
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
+	stur	x0, [x29, #-8]
+	stur	x1, [x29, #-16]
+	str	x2, [sp, #24]
+	str	x3, [sp, #16]
 	mov	x0, #24                         ; =0x18
 	bl	_malloc
 	str	x0, [sp, #8]
+	mov	x0, #8                          ; =0x8
+	str	x0, [sp]                        ; 8-byte Folded Spill
+	bl	_malloc
+	mov	x8, x0
+	ldr	x0, [sp]                        ; 8-byte Folded Reload
+	ldr	x9, [sp, #8]
+	str	x8, [x9]
+	bl	_malloc
+	ldr	x8, [sp, #8]
+	str	x0, [x8, #8]
+	mov	x0, #16                         ; =0x10
+	bl	_malloc
+	ldr	x8, [sp, #8]
+	str	x0, [x8, #16]
+	ldur	x8, [x29, #-8]
+	ldr	x9, [sp, #8]
+	str	x8, [x9]
+	ldur	x8, [x29, #-16]
+	ldr	x9, [sp, #8]
+	str	x8, [x9, #8]
+	ldr	x8, [sp, #16]
+	ldr	x9, [sp, #8]
+	str	x8, [x9, #16]
 	ldr	x0, [sp, #8]
-	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
-	add	sp, sp, #32
+	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
+	add	sp, sp, #64
 	ret
 	.cfi_endproc
                                         ; -- End function

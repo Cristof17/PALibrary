@@ -1839,8 +1839,7 @@ extern char * suboptarg;
 
 
 
-          struct Input* InputCreate();
-          struct Input InputBegin(struct Input*, struct PACount, struct PACount, struct ArrayList, struct PAElement);
+          struct PAInput* PAInputCreate(struct PACount* n, struct PACount* m, struct PAList* adj, struct PAElement* element);
           struct Input InputCopy(struct Input*, struct Input*);
           struct Input InputDelete(struct Input*);
           int InputFinish(struct Input*);
@@ -1940,7 +1939,7 @@ extern char * suboptarg;
 
 
 
-          struct PAInput* PAInputCreate();
+          struct PAInput* PAInputCreate(struct PACount* n, struct PACount* m, struct PAList* adj, struct PAElement* element);
 
           struct PAInput PAInputBegin(struct PAInput* PAInput, struct PACount*, struct PACount*, struct PAElement*);
 

@@ -1825,7 +1825,7 @@ extern char * suboptarg;
 
 
 
-          struct PAInput* PAInputCreate();
+          struct PAInput* PAInputCreate(struct PACount* n, struct PACount* m, struct PAList* adj, struct PAElement* element);
 
           struct PAInput PAInputBegin(struct PAInput* PAInput, struct PACount*, struct PACount*, struct PAElement*);
 
@@ -1891,20 +1891,20 @@ extern char * suboptarg;
 
 
 
-
-          struct PAInput* PAInputCreate()
+          struct PAInput* PAInputCreate(struct PACount* n, struct PACount* m, struct PAList* adj, struct PAElement* element)
 {
 
  struct PAInput* inputPointer;
-# 32 "src/PA/Input.c"
  inputPointer = (struct PAInput*) malloc (sizeof(struct PAInput));
+ inputPointer->n = (struct PACount*) malloc (sizeof(struct PACount));
+ inputPointer->m = (struct PACount*) malloc (sizeof(struct PACount*));
 
-
-
-
-
+ inputPointer->source = (struct PAElement*) malloc (sizeof(struct PAElement));
+ inputPointer->n = n;
+ inputPointer->m = m;
+ inputPointer->source = element;
  return inputPointer;
-
+# 46 "src/PA/Input.c"
 }
           void PAInputCopy(struct PAInput* from, struct PAInput* to)
 {
@@ -1934,7 +1934,7 @@ extern char * suboptarg;
           struct PAInput PAInputBegin(struct PAInput* Input, struct PACount* Value, struct PACount* Value2, struct PAElement* Value3)
 {
  struct PAInput temp;
-# 88 "src/PA/Input.c"
+# 94 "src/PA/Input.c"
  return temp;
 
 }
@@ -1959,6 +1959,6 @@ extern char * suboptarg;
  PA->m = 0;
  PA->n = 0;
  PA->source = 0;
-# 120 "src/PA/Input.c"
+# 126 "src/PA/Input.c"
  return returnCode;
 }
