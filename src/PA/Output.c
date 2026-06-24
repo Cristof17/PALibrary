@@ -68,26 +68,29 @@ DllExport void PAOutputPerformCopy(struct PAOutput* from, struct PAOutput* to)
 // {
 //     PAOutputPerformPrint(output);
 // }
-DllExport struct PAOutput* PAOutputCreate()
+DllExport struct PAOutput* PAOutputCreate(struct BFSRecord* record)
 {
-    struct PAOutput Output;
-    struct PAOutput* outputPointer;
-    outputPointer=(struct PAOutput*) malloc (sizeof(struct PAOutput));
+    struct PAOutput* result;
+    // struct PAOutput Output;
+    // struct PAOutput* outputPointer;
+    result =(struct PAOutput*) malloc (sizeof(struct PAOutput));
+    result->result = record;
     // outputPointer->result = BFSRecordCreate();
     // outputPointer-
     // return outputPointer;
     // return Output;
-    return outputPointer;
+    return result;
     // struct BFSRecord Record = BFSRecordConstruct()
 }
-DllExport struct PAOutput PAOutputBegin(struct PAOutput* Output, struct BFSRecord* Value)
+DllExport struct PAOutput* PAOutputBegin(struct PAOutput* Output)
 {
     // Output->result = Value;
     // return Output;
-    struct PAOutput temp;
+    struct PAOutput* temp;
     // struct PAOutput* outputPointer;
-    Output->result = Value;
-    temp = *Output;
+    // Output->result = Value;
+    temp->result = Output->result;
+    // temp = *Output;
     // temp.result = &Value;
     // Output->result = temp.result;
     return temp;
