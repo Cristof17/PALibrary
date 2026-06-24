@@ -12,11 +12,14 @@
 #include <PA\Pair.h>
 #endif
 
-DllExport struct PALink* PALinkCreate()
+// DllExport struct PALink* PALinkCreate(struct )
+DllExport struct PALink* PALinkCreate(struct PAPair* p)
 {
     // struct PALink link;
     struct PALink* linkPointer;
     linkPointer = (struct PALink*) malloc (sizeof(struct PALink));
+    linkPointer->p = p;
+    return linkPointer;
     // link.p = PAPairPerformConstruct();
     // Link.p = PAPairPerformConstruct();
     // link = PALinkPerformInit(link,link.p);
@@ -25,24 +28,26 @@ DllExport struct PALink* PALinkCreate()
     // return link;÷
     // link.p = P;÷
     // return link;
-    return linkPointer;
     // return linkPointer;
 }
-DllExport struct PALink PALinkBegin(struct PALink* Link, struct PAPair* Value)
+DllExport struct PALink* PALinkBegin(struct PALink* Link)
 {
-    struct PALink temp;
+    // struct PALink temp;
+    struct PALink* linkPointer;
+    linkPointer = (struct PALink*) malloc (sizeof(struct PALink));
+    linkPointer->p = Link->p;
     // struct PALink* linkPointer;
     // temp= Value;
-    Link->p = Value;
-    temp = *Link;
+    // Link->p = Value;
+    // temp = *Link;
     // link.p = PAPairPerformConstruct();
     // Link = link;
     // struct PALink link;
     // struct PAPair pair;
     // Link.p = Pair;
     // return link;
-    // return linkPointer;
-    return temp;
+    return linkPointer;
+    // return temp;
 }
 DllExport PAResult PALinkFinish(struct PALink* PA)
 {
