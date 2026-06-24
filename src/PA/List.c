@@ -20,7 +20,8 @@ DllExport struct PAList* PAListCreate(struct PACount* m, struct ArrayList* edges
 {
     struct PAList* listPointer;
     listPointer = (struct PAList*) malloc (sizeof(struct PAList));
-    listPointer->n = m;
+    listPointer->m = m;
+    listPointer->neigh = edges;
     // listPointer->neigh = 
     // struct PACount n = PACountPerformConstruct();
     // struct PACount x;
@@ -55,10 +56,12 @@ DllExport void PAListCopy(struct PAList* from, struct PAList* to)
     // temp.n = PACountPerformCopy(from.n,temp.n);
     // struct PACount x;
     // struct PACount y;
-    aux->n = from->n;
+    // aux->n = from->n;
+    aux->m = from->m;
     aux->neigh = from->neigh;
-    to->n = aux->n;
+    // to->n = aux->n;
     to->neigh = aux->neigh;
+    to->m = aux->m;
     // aux->n = NULL;
     // aux->neigh = NULL;
     free(aux);
@@ -105,7 +108,7 @@ DllExport struct PAList* PAListBegin(struct PAList* List)
 {
     // struct PAList temp;
     struct PAList* listPointer;
-    listPointer->n = List->n;
+    listPointer->m = List->m;
     // listPointer->neigh = 
     // temp = *List;
     // temp.n = Value;
@@ -230,7 +233,7 @@ DllExport int PAListDelete(struct PAList* PA)
 {
     int returnCode;
     returnCode = PARESULT_SUCCESS;
-    PA->n = NULL;
+    PA->m = NULL;
     PA->neigh = NULL;
     // struct PAList aux;
     // struct PACount n = PA.n;

@@ -198,11 +198,11 @@ struct PACount {
 struct PASeries {
 	struct PACount* m;
 	// struct PANumber adj[0];
-	struct PAList* adj[BLK_SIZE];
+	struct ArrayList adj;
 };
 struct PAList {
-	struct PACount* n;
-	struct PASeries* neigh;
+	struct PACount* m;
+	struct ArrayList* neigh;
 	// struct PANod Nod;
 };
 struct FlyweightFlyweightClient {
@@ -255,6 +255,7 @@ struct PAInput {
 	struct PACount* n;
 	struct PACount* m;
 	struct PAElement* source;
+	struct PAList* adj;
 };
 struct BFSRecord {
 struct PACount n;

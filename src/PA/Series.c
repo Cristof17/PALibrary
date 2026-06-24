@@ -23,6 +23,7 @@ DllExport struct PASeries* PASeriesCreate(struct PACount* m, struct PAList* adj[
     struct PASeries* seriesPointer;
     seriesPointer = (struct PASeries*) malloc (sizeof (struct PASeries));
     seriesPointer->m = m;
+    // seriesPointer->adj = adj;
     // seriesPointer->adj = &(adj[0]);
     // seriesPointer->m = PACountCreate();
     // series.m = PACountPerformConstruct();

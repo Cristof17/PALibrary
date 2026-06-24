@@ -69,11 +69,14 @@ DllExport void PAInputCopy(struct PAInput* from, struct PAInput* to)
 // //	copy.source=Input.source;
 // 	return copy;DllExport void
 }
-DllExport struct PAInput PAInputBegin(struct PAInput* Input, struct PACount* Value, struct PACount* Value2, struct PAElement* Value3)
+DllExport struct PAInput* PAInputBegin(struct PAInput* Input)
 {
-	struct PAInput temp;
-
-	
+	// struct PAInput temp;
+	struct PAInput* aux;
+	aux->m = Input->m;
+	aux->n = Input->n;
+	aux->adj = Input->adj;
+	aux->source = Input->source;
 	// Input.n = Value;
 	// Input.m = Value2;
 	// Input.source = Value3;	
@@ -91,7 +94,7 @@ DllExport struct PAInput PAInputBegin(struct PAInput* Input, struct PACount* Val
 	// input.source = Source;
 	// return inputPointer;
 	// return Input;
-	return temp;
+	return aux;
 	// return inputPointer;
 }
 DllExport PAResult PAInputFinish(struct PAInput* PA) {
