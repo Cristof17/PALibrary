@@ -1839,7 +1839,7 @@ extern char * suboptarg;
 # 10 "./include/PA/Tree.h" 2
 
 
-          struct PATree* PATreeCreate(struct PACount*, struct PACount*m, struct PASeries[], struct PAElement*);
+          struct PATree* PATreeCreate(struct PACount*, struct PACount*m, struct PASeries, struct PAElement*);
           void PATreeCopy(struct PATree* from, struct PATree* to);
 
           struct PATree* PATreeBegin(struct PATree*);
