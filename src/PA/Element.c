@@ -15,7 +15,7 @@
 // #include <types.h>
 // #include "//"
 // #include "../include/PAIndex.h"
-struct PAElement* PAElementCreate()
+struct PAElement* PAElementCreate(struct PAData* index, struct PAElement* next, struct PAStatus* status)
 {
     struct PAElement* temp;
     temp = (struct PAElement*)malloc(sizeof(struct PAElement));

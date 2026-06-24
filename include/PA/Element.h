@@ -11,7 +11,7 @@
 DllExport void PAElementVisit(struct PAElement*);
 DllExport PABool PAElementIsVisited(struct PAElement*);
 DllExport void PAElementReset(struct PAElement*);
-DllExport struct PAElement* PAElementCreate();
+DllExport struct PAElement* PAElementCreate(struct PAData* index, struct PAElement* next, struct PAStatus* status);
 // DllExport HRESULT PAElementPerformCopy();
 DllExport struct PAElement PAElementCompleteBegin(struct PAElement*,struct PAData*,struct PAStatus*);
 // DllExport HRESULT PAElementPerformPutStatus(struct PAStatus);
