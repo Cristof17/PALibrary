@@ -1829,8 +1829,8 @@ extern char * suboptarg;
 
 
 
-          struct PAList* PAListCreate();
-          struct PAList PAListBegin(struct PAList*,struct PACount*, struct PASeries[]);
+          struct PAList* PAListCreate(struct PACount* n, struct ArrayList* array);
+          struct PAList* PAListBegin(struct PAList* list);
 
 
 

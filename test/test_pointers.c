@@ -101,8 +101,9 @@ int main()
 	// PACountBegin(count123,number213);
 	// // PACountBegin(count123,number)
 	struct PAList* list;
-	list = PAListCreate();
-	PAListBegin(list,count1,0);
+	struct ArrayList* array;
+	list = PAListCreate(count1,array);
+	struct PAList* list2 = PAListBegin(list);
 	// printf("list.n alloc %d\n", list->n->number->val);
 
 	// struct PAStatus* status1223;

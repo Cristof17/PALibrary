@@ -16,10 +16,12 @@
 #endif
 
 // struct PAList PAListConstruct(struct PAElement Element) {
-DllExport struct PAList* PAListCreate()
+DllExport struct PAList* PAListCreate(struct PACount* m, struct ArrayList* edges)
 {
     struct PAList* listPointer;
     listPointer = (struct PAList*) malloc (sizeof(struct PAList));
+    listPointer->n = m;
+    // listPointer->neigh = 
     // struct PACount n = PACountPerformConstruct();
     // struct PACount x;
     // list->n = PACountPerformConstruct();
@@ -99,15 +101,17 @@ DllExport void PAListCopy(struct PAList* from, struct PAList* to)
     // return temp;
 }
 
-DllExport struct PAList PAListBegin(struct PAList* List, struct PACount* Value, struct PASeries* Value2)
+DllExport struct PAList* PAListBegin(struct PAList* List)
 {
-    struct PAList temp;
+    // struct PAList temp;
     struct PAList* listPointer;
-    temp = *List;
-    temp.n = Value;
-    temp.neigh = Value2;
-    List->n = temp.n;
-    List->neigh = temp.neigh;
+    listPointer->n = List->n;
+    // listPointer->neigh = 
+    // temp = *List;
+    // temp.n = Value;
+    // temp.neigh = Value2;
+    // List->n = temp.n;
+    // List->neigh = temp.neigh;
     // listPointer = List;
     // temp = *listPointer;
     // temp.n = Value;
@@ -134,7 +138,8 @@ DllExport struct PAList PAListBegin(struct PAList* List, struct PACount* Value, 
     // struct PAList list;
     // list.adj = List.adj;
     // return List;
-    return temp;
+    // return temp;
+    return listPointer;
 }
 // struct PAList PAListPerformCopy(struct PAList List)
 // {
