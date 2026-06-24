@@ -9,7 +9,7 @@
 #include <stdlib.h>
 // struct PATree;
 // struct PATree PATreeConstruct(struct OPAResult);
-DllExport struct PATree* PATreeCreate(struct PACount*, struct PACount*m, struct PASeries, struct PAElement*);
+DllExport struct PATree* PATreeCreate(struct PACount*, struct PACount*m, struct PASeries*, struct PAElement*);
 DllExport void PATreeCopy(struct PATree* from, struct PATree* to);
 // DllExport struct PACount PATreeSize();
 DllExport struct PATree* PATreeBegin(struct PATree*);

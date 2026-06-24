@@ -1820,7 +1820,7 @@ extern char * suboptarg;
 # 10 "./include/PA/Tree.h" 2
 
 
-          struct PATree* PATreeCreate(struct PACount*, struct PACount*m, struct PASeries, struct PAElement*);
+          struct PATree* PATreeCreate(struct PACount*, struct PACount*m, struct PASeries*, struct PAElement*);
           void PATreeCopy(struct PATree* from, struct PATree* to);
 
           struct PATree* PATreeBegin(struct PATree*);
@@ -1909,7 +1909,7 @@ extern char * suboptarg;
 void PAListPrint(struct PAList* List);
 # 7 "src/PA/Tree.c" 2
 # 19 "src/PA/Tree.c"
-          struct PATree* PATreeCreate(struct PACount* n, struct PACount* m, struct PASeries adj, struct PAElement* source)
+          struct PATree* PATreeCreate(struct PACount* n, struct PACount* m, struct PASeries* adj, struct PAElement* source)
 {
 
     struct PATree* treePointer;

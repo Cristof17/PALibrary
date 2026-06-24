@@ -16,7 +16,7 @@
     // struct PACount size;
     // return size;
 // }
-DllExport struct PATree* PATreeCreate(struct PACount* n, struct PACount* m, struct PASeries adj, struct PAElement* source)
+DllExport struct PATree* PATreeCreate(struct PACount* n, struct PACount* m, struct PASeries* adj, struct PAElement* source)
 {
     // struct PATree* temp;
     struct PATree* treePointer;
