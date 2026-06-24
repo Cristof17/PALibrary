@@ -1825,9 +1825,9 @@ extern char * suboptarg;
           void PAElementVisit(struct PAElement*);
           PABool PAElementIsVisited(struct PAElement*);
           void PAElementReset(struct PAElement*);
-          struct PAElement* PAElementCreate();
+          struct PAElement* PAElementCreate(struct PAData* index, struct PAElement* next, struct PAStatus* status);
 
-          struct PAElement PAElementCompleteBegin(struct PAElement*,struct PAData*,struct PAStatus*);
+          struct PAElement PAElementBegin(struct PAElement* );
 
 
 
@@ -1877,21 +1877,17 @@ extern char * suboptarg;
           int PAStatusDelete(struct PAStatus*);
 # 9 "src/PA/Element.c" 2
 # 18 "src/PA/Element.c"
-struct PAElement* PAElementCreate()
+struct PAElement* PAElementCreate(struct PAData* index, struct PAElement* next, struct PAStatus* status)
 {
     struct PAElement* temp;
     temp = (struct PAElement*)malloc(sizeof(struct PAElement));
 # 32 "src/PA/Element.c"
   return temp;
 }
-          struct PAElement PAElementBegin(struct PAElement* Element, struct PAData Value, struct PAStatus Value2)
+          struct PAElement PAElementBegin(struct PAElement* element)
 {
     struct PAElement temp;
     struct PAElement* elementPointer;
-    temp.index = &Value;
-    temp.status = &Value2;
-    Element->index = temp.index;
-    Element->status = temp.status;
 # 53 "src/PA/Element.c"
     return temp;
 

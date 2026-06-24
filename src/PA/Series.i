@@ -1869,9 +1869,9 @@ extern char * suboptarg;
           void PAElementVisit(struct PAElement*);
           PABool PAElementIsVisited(struct PAElement*);
           void PAElementReset(struct PAElement*);
-          struct PAElement* PAElementCreate();
+          struct PAElement* PAElementCreate(struct PAData* index, struct PAElement* next, struct PAStatus* status);
 
-          struct PAElement PAElementCompleteBegin(struct PAElement*,struct PAData*,struct PAStatus*);
+          struct PAElement PAElementBegin(struct PAElement* );
 
 
 

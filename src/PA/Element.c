@@ -31,14 +31,14 @@ struct PAElement* PAElementCreate(struct PAData* index, struct PAElement* next, 
   //  return element;
   return temp;
 }
-DllExport struct PAElement PAElementBegin(struct PAElement* Element, struct PAData Value, struct PAStatus Value2)
+DllExport struct PAElement PAElementBegin(struct PAElement* element)
 {
     struct PAElement temp;
     struct PAElement* elementPointer;
-    temp.index = &Value;
-    temp.status = &Value2;
-    Element->index = temp.index;
-    Element->status = temp.status;
+    // temp.index = &Value;
+    // temp.status = &Value2;
+    // Element->index = temp.index;
+    // Element->status = temp.status;
     // Element.index = Value;
     // Element.status = Value2;
     //struct PAElement element;
