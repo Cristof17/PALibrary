@@ -87,8 +87,8 @@ int main()
 	// printf("count1 %d\n", count1->number->val);
 
 	struct PASeries* series;
-	series = PASeriesCreate();
-	PASeriesBegin(series,count1,0);
+	// series = PASeriesCreate();
+	// PASeriesBegin(series,count1,0);
 	// printf("series.count %d\n", series->m->number->val);
 
 	// struct PACount* count123;

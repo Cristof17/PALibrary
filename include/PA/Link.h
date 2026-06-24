@@ -7,7 +7,7 @@
 #include <types.h>
 #include <stdlib.h>
 // struct PALink;
-DllExport struct PALink* PALinkCreate();
+DllExport struct PALink* PALinkCreate(struct PAPair* p);
 DllExport void PALinkCopy(struct PALink*, struct PALink*);
 // DllExport struct PALink PALinkPerformCopy(struct PALink);
 DllExport struct PALink* PALinkBegin(struct PALink*);

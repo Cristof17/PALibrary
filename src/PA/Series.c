@@ -23,7 +23,7 @@ DllExport struct PASeries* PASeriesCreate(struct PACount* m, struct PAList* adj[
     struct PASeries* seriesPointer;
     seriesPointer = (struct PASeries*) malloc (sizeof (struct PASeries));
     seriesPointer->m = m;
-    seriesPointer->adj = adj;
+    // seriesPointer->adj = &(adj[0]);
     // seriesPointer->m = PACountCreate();
     // series.m = PACountPerformConstruct();
     // struct PANumber x;
@@ -56,9 +56,9 @@ DllExport void PASeriesCopy(struct PASeries* from, struct PASeries* to)
     // struct PACount y;
     struct PASeries* aux;
     aux = (struct PASeries*) malloc (sizeof(struct PASeries));
-    aux->adj = from->adj;
+    // aux->adj = from->adj;
     aux->m = from->m;
-    to->adj = aux->adj;
+    // to->adj = aux->adj;
     to->m = aux->m;
     free(aux);
     // temp = PASeriesPerformConstruct();
@@ -107,12 +107,12 @@ DllExport void PASeriesCopy(struct PASeries* from, struct PASeries* to)
 //     }
 // }
 // }
-DllExport struct PASeries PASeriesBegin(struct PASeries* series)
+DllExport struct PASeries* PASeriesBegin(struct PASeries* series)
     {
         struct PASeries* seriesPointer;
         seriesPointer = (struct PASeries*) malloc (sizeof(struct PASeries));
         seriesPointer->m = series->m;
-        seriesPointer->adj = series->adj;
+        // seriesPointer->adj = &series->adj[0];
         // PAResult result;
         // return result;
         //struct PASeries series;
@@ -153,7 +153,7 @@ DllExport struct PASeries PASeriesBegin(struct PASeries* series)
     {
         int returnCode;
         returnCode = PARESULT_SUCCESS;
-        PA->adj = NULL;
+        // PA->adj = NULL;
         PA->m = NULL;
         // struct PASeries series;
         // struct PANumber x;

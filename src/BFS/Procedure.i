@@ -169,7 +169,7 @@ struct PACount {
 struct PASeries {
  struct PACount* m;
 
- struct PAElement* adj;
+ struct PAList* adj[((int)4096)];
 };
 struct PAList {
  struct PACount* n;
