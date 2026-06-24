@@ -180,6 +180,7 @@ struct PAData {
 };
 struct PAElement { 
 	//	struct PAData data;
+	struct PAElement* next;
 	struct PAData* index;
 	// struct PADestination Next;
 	struct PAStatus* status;

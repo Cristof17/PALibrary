@@ -151,6 +151,7 @@ struct PAData {
 };
 struct PAElement {
 
+ struct PAElement* next;
  struct PAData* index;
 
  struct PAStatus* status;
@@ -214,7 +215,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 254 "./include/types.h"
+# 255 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;

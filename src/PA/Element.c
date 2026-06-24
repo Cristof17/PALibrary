@@ -19,6 +19,9 @@ struct PAElement* PAElementCreate(struct PAData* index, struct PAElement* next, 
 {
     struct PAElement* temp;
     temp = (struct PAElement*)malloc(sizeof(struct PAElement));
+    temp->index = index;
+    temp->status = status;
+    temp->next = next;
     // temp.index = PADataPerformConstruct();
     // temp.status = PAStatusPerformConstruct();
     // temp = PAElementPerformInit(temp,temp.index,temp.status);
@@ -31,10 +34,14 @@ struct PAElement* PAElementCreate(struct PAData* index, struct PAElement* next, 
   //  return element;
   return temp;
 }
-DllExport struct PAElement PAElementBegin(struct PAElement* element)
+DllExport struct PAElement* PAElementBegin(struct PAElement* element)
 {
-    struct PAElement temp;
+    // struct PAElement temp;
+
     struct PAElement* elementPointer;
+    elementPointer->index = element->index;
+    elementPointer->next = element->next;
+    elementPointer->status = element->status;
     // temp.index = &Value;
     // temp.status = &Value2;
     // Element->index = temp.index;
@@ -50,7 +57,8 @@ DllExport struct PAElement PAElementBegin(struct PAElement* element)
     // PAResult result;
     // return result;
     // struct PAElement element;
-    return temp;
+    // return temp;
+    return elementPointer;
     // return Element;
 }
 DllExport void PAElementCauseVisit(struct PAElement* Element)
