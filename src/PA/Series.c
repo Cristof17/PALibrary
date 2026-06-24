@@ -18,10 +18,12 @@
 *  Created on: 16 nov. 2025
 *      Author: AdministratorUser
 */
-DllExport struct PASeries* PASeriesCreate() 
+DllExport struct PASeries* PASeriesCreate(struct PACount* m, struct PAList* adj[]) 
 {
     struct PASeries* seriesPointer;
     seriesPointer = (struct PASeries*) malloc (sizeof (struct PASeries));
+    seriesPointer->m = m;
+    seriesPointer->adj = adj;
     // seriesPointer->m = PACountCreate();
     // series.m = PACountPerformConstruct();
     // struct PANumber x;
@@ -105,9 +107,12 @@ DllExport void PASeriesCopy(struct PASeries* from, struct PASeries* to)
 //     }
 // }
 // }
-DllExport struct PASeries PASeriesBegin(struct PASeries* Series,
-    struct PACount* Value, struct PAElement* Value2)
+DllExport struct PASeries PASeriesBegin(struct PASeries* series)
     {
+        struct PASeries* seriesPointer;
+        seriesPointer = (struct PASeries*) malloc (sizeof(struct PASeries));
+        seriesPointer->m = series->m;
+        seriesPointer->adj = series->adj;
         // PAResult result;
         // return result;
         //struct PASeries series;
@@ -119,10 +124,10 @@ DllExport struct PASeries PASeriesBegin(struct PASeries* Series,
         //end of iterator
         // series.n = N;
         //return series;
-        struct PASeries temp;
-        temp = *Series;
-        temp.m = Value;
-        Series->m = temp.m;
+        // struct PASeries temp;
+        // temp = *Series;
+        // temp.m = Value;
+        // Series->m = temp.m;
         // Series
         // struct PASeries* series;
         // temp.m = &Value;
@@ -139,9 +144,10 @@ DllExport struct PASeries PASeriesBegin(struct PASeries* Series,
         //     x.val++;
         // }
         // return series;
-        return temp;
+        // return temp;
         // series.adj = Value2;
         // return series;
+        return seriesPointer;
     }
     DllExport int PASeriesDelete(struct PASeries* PA)
     {
