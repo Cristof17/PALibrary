@@ -1860,13 +1860,13 @@ extern char * suboptarg;
 # 59 "src/PA/Output.c"
 }
 # 71 "src/PA/Output.c"
-          struct PAOutput* PAOutputCreate(struct BFSRecord* record)
+          struct PAOutput* PAOutputCreate(struct BFSRecord* Result)
 {
     struct PAOutput* result;
 
 
     result =(struct PAOutput*) malloc (sizeof(struct PAOutput));
-    result->result = record;
+    result->result = Result;
 
 
 
