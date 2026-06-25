@@ -12,12 +12,12 @@
 // struct ArrayList;
 //typedef struct ArrayList ArrayList;
 
-DllExport ArrayListObject ArrayListGet(struct ArrayListPosition);
-DllExport ArrayListSize ArrayListPerformSize();
-struct ArrayList* ArrayListPerformConstruct(size_t n);
+// DllExport ArrayListObject ArrayListGet(struct ArrayListPosition);
+// DllExport ArrayListSize ArrayListPerformSize();
+struct ArrayList* ArrayListPerformConstruct(struct ArrayListSize* sizwe);
 // struct ArrayList* ArrayListPerformRuin(size_t n);
-DllExport void ArrayListPut(struct ArrayListPosition, ArrayListObject);
-DllExport struct ArrayList* ArrayListArrange(ArrayListObject* Data, struct ArrayListPosition*);
+// DllExport void ArrayListPut(struct ArrayListPosition, ArrayListObject);
+// DllExport struct ArrayList* ArrayListArrange(ArrayListObject* Data, struct ArrayListPosition*);
 DllExport struct ArrayList* ArrayListPerformCopy(struct ArrayList*, struct ArrayList*);
 // DllExport struct ArrayList* ArrayListPerformCopyTo(struct ArrayList Dest*, struct PAList source, struct PAElement);
 // struc  ArrayListPerformRuin(struct ArrayList List);

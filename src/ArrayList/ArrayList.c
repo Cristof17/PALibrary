@@ -126,15 +126,15 @@ struct ArrayList* ArrayListPerformCopy(struct ArrayList *from, struct ArrayList 
 // 	//n+1 is for NULL terminatior in List workld
 // 	// return FIRST;
 // }
-ArrayListObject ArrayListPerformGetFirst(struct ArrayList List)
+struct ArrayListObject ArrayListPerformGetFirst(struct ArrayList List)
 {
-	ArrayListObject first;
+	struct ArrayListObject first;
 	first = List.array[FIRST];
 	return first;
 }
-ArrayListObject ArrayListPerformGetLast(struct ArrayList List)
+struct ArrayListObject ArrayListPerformGetLast(struct ArrayList List)
 {
-	return List.array[LAST(List.place)];
+	return List.array[LAST(*List.place.position)];
 }
 	// struct PAData last;
 	// ArrayListObject last;
@@ -150,7 +150,7 @@ ArrayListObject ArrayListPerformGetLast(struct ArrayList List)
 	// }
 	// last = List.objects[(LAST(place.position))];
 	// return last;
-ArrayListObject ArrayListPerformPutFirst(struct ArrayList List, ArrayListObject Object)
+struct ArrayListObject ArrayListPerformPutFirst(struct ArrayList List,struct ArrayListObject Object)
 {
 //	struct PADAta
 	// int first = List.index[FIRST];
@@ -167,7 +167,7 @@ ArrayListObject ArrayListPerformPutFirst(struct ArrayList List, ArrayListObject 
 	return Object;
 }
 // ArrayListObject ArrayListPerformPutFirst(struct ArrayList);
-ArrayListObject ArrayListPerformPutLast(struct ArrayList List, ArrayListObject Object)
+struct ArrayListObject ArrayListPerformPutLast(struct ArrayList List, struct ArrayListObject Object)
 {
 	// ArrayListObject
 	return Object;
@@ -201,15 +201,16 @@ PAResult ArrayListPerformMove(struct ArrayList List)
 // {
 
 // }
-struct ArrayList* ArrayListPerformConstruct(size_t n)
+struct ArrayList* ArrayListPerformConstruct(struct ArrayListSize* size)
 {
-	void* listPointer = malloc (n);
+	void* listPointer = malloc ((size_t) *size->n);
 	struct ArrayList *array = (struct ArrayList*) listPointer;
-	array->place = 0;
-	array->size = n;
+	array->place.position = 0;
+	array->size = *size;
+	// array->size = n;
 	return array;
 }
-PAResult ArrayListPerformInit(struct ArrayList* List, ArrayListObject value, size_t size)
+PAResult ArrayListPerformInit(struct ArrayList* List, struct ArrayListObject object, struct ArrayListSize)
 {
 	struct ArrayListPosition position;
 	return PARESULT_SUCCESS;

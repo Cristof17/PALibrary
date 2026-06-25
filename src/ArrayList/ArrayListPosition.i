@@ -1464,9 +1464,10 @@ typedef int PAInt;
 
 typedef int PABool;
 typedef int PAResult;
-typedef int ArrayListSize;
-typedef int ArrayListObject;
-# 36 "./include/types.h"
+
+
+struct ArrayListObject;
+# 37 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -1515,7 +1516,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 94 "./include/types.h"
+# 95 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -1561,7 +1562,7 @@ struct PrototypeClient;
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 154 "./include/types.h"
+# 155 "./include/types.h"
 struct Input {
  ;
 };
@@ -1569,18 +1570,23 @@ struct Algorithm {
  struct Input input;
 };
 struct ArrayListSize {
- size_t size;
+ int* n;
 };
 struct ArrayListPosition {
- size_t position;
+ int* position;
 };
+struct ArrayListObject {
+ int* element;
+};
+
 struct ArrayList {
 
- ArrayListObject* array;
- size_t place;
- size_t size;
+ struct ArrayListObject* array;
+ struct ArrayListPosition place;
+ struct ArrayListSize size;
 
 };
+
 struct PAResource {
 
 
@@ -1661,7 +1667,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 261 "./include/types.h"
+# 267 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -1827,11 +1833,11 @@ struct Facade {
 # 13 "./include/ArrayList/ArrayListPosition.h" 2
 
 
-          struct ArrayListPosition ArrayListPositionPerformConstruct(struct ArrayListPosition);
-          struct ArrayListPosition ArrayListPositionPerformInit(struct ArrayListPosition);
-          struct ArrayListPosition ArrayListPositionPerformCopy(struct ArrayListPosition);
-          PAResult ArrayListPositionPerformDelete(struct ArrayListPosition);
-          PAResult ArrayListPositionPerformRuin(struct ArrayListPosition);
+          struct ArrayListPosition* ArrayListPositionPerformConstruct(struct ArrayListPosition*);
+          struct ArrayListPosition* ArrayListPositionPerformInit(struct ArrayListPosition*);
+          struct ArrayListPosition* ArrayListPositionPerformCopy(struct ArrayListPosition*);
+          PAResult ArrayListPositionPerformDelete(struct ArrayListPosition*);
+          PAResult ArrayListPositionPerformRuin(struct ArrayListPosition*);
 # 11 "src/ArrayList/ArrayListPosition.c" 2
 
 
@@ -1839,32 +1845,32 @@ struct Facade {
 
 
 
-struct ArrayListPosition ArrayListPositionPerformConstruct(struct ArrayListPosition place)
+struct ArrayListPosition* ArrayListPositionPerformConstruct(struct ArrayListPosition* place)
 {
- struct ArrayListPosition position = { (1) };
- return position;
+
+ return place;
 }
-struct ArrayListPosition ArrayListPositionPerformInit(struct ArrayListPosition ListPosition)
+struct ArrayListPosition* ArrayListPositionPerformInit(struct ArrayListPosition* ListPosition)
 {
-    struct ArrayListPosition position;
+    struct ArrayListPosition* position;
  position = ArrayListPositionPerformConstruct(ListPosition);
 
- return position;
+ return ListPosition;
 }
-struct ArrayListPosition ArrayListPositionPerformCopy(struct ArrayListPosition ListPosition)
+struct ArrayListPosition* ArrayListPositionPerformCopy(struct ArrayListPosition* ListPosition)
 {
- struct ArrayListPosition copy;
+ struct ArrayListPosition* copy;
  copy = ArrayListPositionPerformConstruct(ListPosition);
 
  copy = ArrayListPositionPerformInit(ListPosition);
  return copy;
 }
-PAResult ArrayListPositionPerformDelete(struct ArrayListPosition Position)
+PAResult ArrayListPositionPerformDelete(struct ArrayListPosition* Position)
 {
  PAResult result = { ((int)0) };
  return result;
 }
-PAResult ArrayListPositionPerformRuin(struct ArrayListPosition Position)
+PAResult ArrayListPositionPerformRuin(struct ArrayListPosition* Position)
 {
  PAResult result = { ((int)0) };
  return result;

@@ -22,8 +22,9 @@ typedef int PAInt;
 // typedef int PAResource;
 typedef int PABool;
 typedef int PAResult;
-typedef int ArrayListSize;
-typedef int ArrayListObject;
+// typedef int ArrayListSize;
+// typedef int ArrayListObject;
+struct ArrayListObject;
 // typedef int ArrayListPosition;
 #endif
 // struct Client;
@@ -158,18 +159,23 @@ struct Algorithm {
 	struct Input input;
 };
 struct ArrayListSize {
-	size_t size;
+	int* n;
 };
 struct ArrayListPosition {
-	size_t position;
+	int* position;
 };
+struct ArrayListObject {
+	int* element;
+};
+
 struct ArrayList {
 	// struct Position position;
-	ArrayListObject* array;
-	size_t place;
-	size_t size;
+	struct ArrayListObject* array;
+	struct ArrayListPosition place;
+	struct ArrayListSize size;
 	// ArrayListPosition
 };
+
 struct PAResource {
 	// struct
 	// PA_INt

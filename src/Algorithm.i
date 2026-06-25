@@ -1470,9 +1470,10 @@ typedef int PAInt;
 
 typedef int PABool;
 typedef int PAResult;
-typedef int ArrayListSize;
-typedef int ArrayListObject;
-# 36 "./include/types.h"
+
+
+struct ArrayListObject;
+# 37 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -1521,7 +1522,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 94 "./include/types.h"
+# 95 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -1567,7 +1568,7 @@ struct PrototypeClient;
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 154 "./include/types.h"
+# 155 "./include/types.h"
 struct Input {
  ;
 };
@@ -1575,18 +1576,23 @@ struct Algorithm {
  struct Input input;
 };
 struct ArrayListSize {
- size_t size;
+ int* n;
 };
 struct ArrayListPosition {
- size_t position;
+ int* position;
 };
+struct ArrayListObject {
+ int* element;
+};
+
 struct ArrayList {
 
- ArrayListObject* array;
- size_t place;
- size_t size;
+ struct ArrayListObject* array;
+ struct ArrayListPosition place;
+ struct ArrayListSize size;
 
 };
+
 struct PAResource {
 
 
@@ -1667,7 +1673,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 261 "./include/types.h"
+# 267 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
