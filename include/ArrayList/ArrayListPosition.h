@@ -12,7 +12,7 @@
 #include <types.h>
 // #include "../defs.h"
 // #include "../types.h"
-DllExport struct ArrayListPosition* ArrayListPositionPerformConstruct(struct ArrayListPosition*);
+DllExport struct ArrayListPosition* ArrayListPositionPerformConstruct();
 DllExport struct ArrayListPosition* ArrayListPositionPerformInit(struct ArrayListPosition*, int* Value);
 DllExport struct ArrayListPosition* ArrayListPositionPerformCopy(struct ArrayListPosition*, struct ArrayListPosition*);
 DllExport void ArrayListPositionPerformDelete(struct ArrayListPosition*);

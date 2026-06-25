@@ -272,7 +272,7 @@ DllExport void ArrayListPerformRuin(struct ArrayList* PA)
 	free(PA);
 	// return result;
 }
-void ArrayListPerformDelete(struct ArrayList* PA)
+DllExport void ArrayListPerformDelete(struct ArrayList* PA)
 {
 	free(PA);
 	// PAResult result = { PARESULT_SUCCESS };

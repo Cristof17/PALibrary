@@ -15,7 +15,7 @@
 #include <types.h>
 #include <string.h>
 
-struct ArrayListPosition* ArrayListPositionPerformConstruct(struct ArrayListPosition* place)
+struct ArrayListPosition* ArrayListPositionPerformConstruct()
 {
 	struct ArrayListPosition* arrayListPosition;
 	arrayListPosition = (struct ArrayListPosition*) malloc (sizeof(struct ArrayListPosition));

@@ -2049,7 +2049,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          struct ArrayList* ArrayListPerformConstruct(struct ArrayListSize* sizwe);
+          struct ArrayList* ArrayListPerformConstruct(struct ArrayListSize*);
           struct ArrayList* ArrayListPerformInit(struct ArrayList*, struct ArrayListObject*, struct ArrayListSize*);
 
 
@@ -2107,7 +2107,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
  free(PA);
 
 }
-void ArrayListPerformDelete(struct ArrayList* PA)
+          void ArrayListPerformDelete(struct ArrayList* PA)
 {
  free(PA);
 

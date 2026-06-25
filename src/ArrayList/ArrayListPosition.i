@@ -1833,7 +1833,7 @@ struct Facade {
 # 13 "./include/ArrayList/ArrayListPosition.h" 2
 
 
-          struct ArrayListPosition* ArrayListPositionPerformConstruct(struct ArrayListPosition*);
+          struct ArrayListPosition* ArrayListPositionPerformConstruct();
           struct ArrayListPosition* ArrayListPositionPerformInit(struct ArrayListPosition*, int* Value);
           struct ArrayListPosition* ArrayListPositionPerformCopy(struct ArrayListPosition*, struct ArrayListPosition*);
           void ArrayListPositionPerformDelete(struct ArrayListPosition*);
@@ -2045,7 +2045,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 17 "src/ArrayList/ArrayListPosition.c" 2
 
-struct ArrayListPosition* ArrayListPositionPerformConstruct(struct ArrayListPosition* place)
+struct ArrayListPosition* ArrayListPositionPerformConstruct()
 {
  struct ArrayListPosition* arrayListPosition;
  arrayListPosition = (struct ArrayListPosition*) malloc (sizeof(struct ArrayListPosition));
