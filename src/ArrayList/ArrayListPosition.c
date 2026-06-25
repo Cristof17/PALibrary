@@ -34,13 +34,18 @@ struct ArrayListPosition* ArrayListPositionPerformInit(struct ArrayListPosition*
 	// position.position = ListPosition;
 	return ListPosition;
 }
-struct ArrayListPosition* ArrayListPositionPerformCopy(struct ArrayListPosition* ListPosition)
+struct ArrayListPosition* ArrayListPositionPerformCopy(struct ArrayListPosition* src, struct ArrayListPosition* dst)
 {
-	struct ArrayListPosition* copy;
+	// struct ArrayListPosition* copy;
+	struct ArrayListPosition from;
+	from = *src;
+	// struct ArrayListPosition to;
+	memcpy(dst,src,sizeof(struct ArrayListPosition));
 	// copy = ArrayListPositionPerformConstruct(ListPosition);
 //	copy = ArrayListPositionPeoformInit(Position.position);
 	// copy = ArrayListPositionPerformInit(ListPosition);
-	return copy;
+	// return copy;
+	return dst;
 }
 PAResult ArrayListPositionPerformDelete(struct ArrayListPosition* Position)
 {

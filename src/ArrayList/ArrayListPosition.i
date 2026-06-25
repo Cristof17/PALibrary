@@ -1835,7 +1835,7 @@ struct Facade {
 
           struct ArrayListPosition* ArrayListPositionPerformConstruct(struct ArrayListPosition*);
           struct ArrayListPosition* ArrayListPositionPerformInit(struct ArrayListPosition*, int* Value);
-          struct ArrayListPosition* ArrayListPositionPerformCopy(struct ArrayListPosition*);
+          struct ArrayListPosition* ArrayListPositionPerformCopy(struct ArrayListPosition*, struct ArrayListPosition*);
           PAResult ArrayListPositionPerformDelete(struct ArrayListPosition*);
           PAResult ArrayListPositionPerformRuin(struct ArrayListPosition*);
 # 11 "src/ArrayList/ArrayListPosition.c" 2
@@ -2064,13 +2064,18 @@ struct ArrayListPosition* ArrayListPositionPerformInit(struct ArrayListPosition*
 
  return ListPosition;
 }
-struct ArrayListPosition* ArrayListPositionPerformCopy(struct ArrayListPosition* ListPosition)
+struct ArrayListPosition* ArrayListPositionPerformCopy(struct ArrayListPosition* src, struct ArrayListPosition* dst)
 {
- struct ArrayListPosition* copy;
+
+ struct ArrayListPosition from;
+ from = *src;
+
+ __builtin___memcpy_chk (dst, src,sizeof(struct ArrayListPosition), __builtin_object_size (dst, 0));
 
 
 
- return copy;
+
+ return dst;
 }
 PAResult ArrayListPositionPerformDelete(struct ArrayListPosition* Position)
 {

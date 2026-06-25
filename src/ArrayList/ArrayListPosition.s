@@ -51,11 +51,25 @@ _ArrayListPositionPerformInit:          ; @ArrayListPositionPerformInit
 _ArrayListPositionPerformCopy:          ; @ArrayListPositionPerformCopy
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	str	x0, [sp, #8]
-	ldr	x0, [sp]
-	add	sp, sp, #16
+	sub	sp, sp, #48
+	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
+	add	x29, sp, #32
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	stur	x0, [x29, #-8]
+	str	x1, [sp, #16]
+	ldur	x8, [x29, #-8]
+	ldr	x8, [x8]
+	str	x8, [sp, #8]
+	ldr	x0, [sp, #16]
+	ldur	x1, [x29, #-8]
+	mov	x2, #8                          ; =0x8
+	mov	x3, #-1                         ; =0xffffffffffffffff
+	bl	___memcpy_chk
+	ldr	x0, [sp, #16]
+	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function
