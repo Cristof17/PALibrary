@@ -15,6 +15,7 @@
 // DllExport ArrayListObject ArrayListGet(struct ArrayListPosition);
 // DllExport ArrayListSize ArrayListPerformSize();
 struct ArrayList* ArrayListPerformConstruct(struct ArrayListSize* sizwe);
+struct ArrayList* ArrayListPerformInit(struct ArrayList*, struct ArrayListSize size);
 // struct ArrayList* ArrayListPerformRuin(size_t n);
 // DllExport void ArrayListPut(struct ArrayListPosition, ArrayListObject);
 // DllExport struct ArrayList* ArrayListArrange(ArrayListObject* Data, struct ArrayListPosition*);
@@ -26,12 +27,12 @@ DllExport int ArrayListStore(struct ArrayList*, struct PAData);
 DllExport struct PAData* ArrayListRetrieve(struct ArrayList*);
 // DllExport struct Arra
 // DllExport struct Arra
-DllExport int ArrayListIndicateSize(struct ArrayList*);
+DllExport struct ArrayListSize ArrayListIndicateSize(struct ArrayList*);
 DllExport void ArrayListPrint(struct ArrayList*);
 // DllExport ArrayLis
-DllExport int ArrayListPerformRuin(struct ArrayList* PA);
+DllExport void ArrayListPerformRuin(struct ArrayList* PA);
 // DllExport int ArrayListPerformRuin(struct ArrayList* PA);
-DllExport int ArrayListPerformDelete(struct ArrayList* PA);
+DllExport void ArrayListPerformDelete(struct ArrayList* PA);
 // struct ArrayList ArrayListPerformDelete(struct ArrayList List);
 // struct PAData ArrayListGet(struct ArrayList, struct PAData[],PAInt);
 struct PARecord ArrayListPerformArrange(PAInt);

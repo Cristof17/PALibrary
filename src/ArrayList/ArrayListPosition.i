@@ -1576,12 +1576,12 @@ struct ArrayListPosition {
  int* position;
 };
 struct ArrayListObject {
- int* element;
+ int element;
 };
 
 struct ArrayList {
 
- struct ArrayListObject* array;
+ int* array;
  struct ArrayListPosition place;
  struct ArrayListSize size;
 

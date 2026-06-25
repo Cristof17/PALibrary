@@ -7,9 +7,11 @@ _ArrayListIndicateSize:                 ; @ArrayListIndicateSize
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	str	x0, [sp, #8]
-	str	wzr, [sp, #4]
-	ldr	w0, [sp, #4]
+	str	x0, [sp]
+	ldr	x8, [sp]
+	ldr	x8, [x8, #16]
+	str	x8, [sp, #8]
+	ldr	x0, [sp, #8]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -59,12 +61,36 @@ _ArrayListPrint:                        ; @ArrayListPrint
 _ArrayListPerformCopy:                  ; @ArrayListPerformCopy
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	str	x0, [sp, #8]
-	str	x1, [sp]
-	ldr	x0, [sp]
-	add	sp, sp, #16
+	sub	sp, sp, #80
+	stp	x29, x30, [sp, #64]             ; 16-byte Folded Spill
+	add	x29, sp, #64
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	stur	x0, [x29, #-8]
+	stur	x1, [x29, #-16]
+	ldur	x8, [x29, #-8]
+	ldr	x8, [x8]
+	stur	x8, [x29, #-24]
+	ldur	x8, [x29, #-24]
+	str	x8, [sp, #32]
+	ldur	x8, [x29, #-16]
+	ldr	x8, [x8]
+	str	x8, [sp, #24]
+	ldur	x8, [x29, #-8]
+	ldr	x8, [x8, #16]
+	str	x8, [sp, #16]
+	ldr	x8, [sp, #16]
+	ldrsw	x8, [x8]
+	str	x8, [sp, #8]
+	ldr	x0, [sp, #24]
+	ldur	x1, [x29, #-24]
+	ldr	x2, [sp, #8]
+	mov	x3, #-1                         ; =0xffffffffffffffff
+	bl	___memcpy_chk
+	ldr	x0, [sp, #24]
+	ldp	x29, x30, [sp, #64]             ; 16-byte Folded Reload
+	add	sp, sp, #80
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -73,15 +99,17 @@ _ArrayListPerformCopy:                  ; @ArrayListPerformCopy
 _ArrayListPerformGetFirst:              ; @ArrayListPerformGetFirst
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	str	x8, [sp]
-	ldr	x8, [x0]
-	ldr	x8, [x8, #8]
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #16]
+	ldr	x8, [sp, #16]
+	ldr	x8, [x8]
 	str	x8, [sp, #8]
-	ldr	x0, [sp, #8]
-	add	sp, sp, #16
+	ldr	x8, [sp, #8]
+	ldr	w8, [x8]
+	str	w8, [sp, #28]
+	ldr	w0, [sp, #28]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -90,17 +118,20 @@ _ArrayListPerformGetFirst:              ; @ArrayListPerformGetFirst
 _ArrayListPerformGetLast:               ; @ArrayListPerformGetLast
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	str	x8, [sp]
-	ldr	x8, [x0]
-	ldr	x9, [x0, #8]
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #16]
+	ldr	x8, [sp, #16]
+	ldr	x8, [x8]
+	ldr	x9, [sp, #16]
+	ldr	x9, [x9, #8]
 	ldrsw	x9, [x9]
-	ldr	x8, [x8, x9, lsl #3]
-	str	x8, [sp, #8]
-	ldr	x0, [sp, #8]
-	add	sp, sp, #16
+	ldr	w8, [x8, x9, lsl #2]
+	str	w8, [sp, #12]
+	ldr	w8, [sp, #12]
+	str	w8, [sp, #28]
+	ldr	w0, [sp, #28]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -109,14 +140,15 @@ _ArrayListPerformGetLast:               ; @ArrayListPerformGetLast
 _ArrayListPerformPutFirst:              ; @ArrayListPerformPutFirst
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
-	str	x1, [sp, #16]
-	str	x0, [sp, #8]
-	ldr	x8, [sp, #16]
-	str	x8, [sp, #24]
-	ldr	x0, [sp, #24]
-	add	sp, sp, #32
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	mov	x8, x1
+	str	w8, [sp, #8]
+	str	x0, [sp]
+	ldr	w8, [sp, #8]
+	str	w8, [sp, #12]
+	ldr	w0, [sp, #12]
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -125,14 +157,15 @@ _ArrayListPerformPutFirst:              ; @ArrayListPerformPutFirst
 _ArrayListPerformPutLast:               ; @ArrayListPerformPutLast
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
-	str	x1, [sp, #16]
-	str	x0, [sp, #8]
-	ldr	x8, [sp, #16]
-	str	x8, [sp, #24]
-	ldr	x0, [sp, #24]
-	add	sp, sp, #32
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	mov	x8, x1
+	str	w8, [sp, #8]
+	str	x0, [sp]
+	ldr	w8, [sp, #8]
+	str	w8, [sp, #12]
+	ldr	w0, [sp, #12]
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -204,9 +237,11 @@ _ArrayListPerformInit:                  ; @ArrayListPerformInit
 	sub	sp, sp, #32
 	.cfi_def_cfa_offset 32
 	str	x1, [sp, #24]
-	str	x2, [sp, #16]
-	str	x0, [sp, #8]
-	mov	w0, #0                          ; =0x0
+	str	x0, [sp, #16]
+	ldr	x9, [sp, #16]
+	ldr	x8, [sp, #24]
+	str	x8, [x9, #16]
+	ldr	x0, [sp, #16]
 	add	sp, sp, #32
 	ret
 	.cfi_endproc
@@ -223,10 +258,8 @@ _ArrayListPerformRuin:                  ; @ArrayListPerformRuin
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
 	str	x0, [sp, #8]
-	str	wzr, [sp, #4]
 	ldr	x0, [sp, #8]
 	bl	_free
-	ldr	w0, [sp, #4]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
 	ret
@@ -237,12 +270,17 @@ _ArrayListPerformRuin:                  ; @ArrayListPerformRuin
 _ArrayListPerformDelete:                ; @ArrayListPerformDelete
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
+	sub	sp, sp, #32
+	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
+	add	x29, sp, #16
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
 	str	x0, [sp, #8]
-	str	wzr, [sp, #4]
-	ldr	w0, [sp, #4]
-	add	sp, sp, #16
+	ldr	x0, [sp, #8]
+	bl	_free
+	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function

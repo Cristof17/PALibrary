@@ -1580,12 +1580,12 @@ struct ArrayListPosition {
  int* position;
 };
 struct ArrayListObject {
- int* element;
+ int element;
 };
 
 struct ArrayList {
 
- struct ArrayListObject* array;
+ int* array;
  struct ArrayListPosition place;
  struct ArrayListSize size;
 
@@ -2068,6 +2068,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 struct ArrayList* ArrayListPerformConstruct(struct ArrayListSize* sizwe);
+struct ArrayList* ArrayListPerformInit(struct ArrayList*, struct ArrayListSize size);
 
 
 
@@ -2079,12 +2080,12 @@ struct ArrayList* ArrayListPerformConstruct(struct ArrayListSize* sizwe);
           struct PAData* ArrayListRetrieve(struct ArrayList*);
 
 
-          int ArrayListIndicateSize(struct ArrayList*);
+          struct ArrayListSize ArrayListIndicateSize(struct ArrayList*);
           void ArrayListPrint(struct ArrayList*);
 
-          int ArrayListPerformRuin(struct ArrayList* PA);
+          void ArrayListPerformRuin(struct ArrayList* PA);
 
-          int ArrayListPerformDelete(struct ArrayList* PA);
+          void ArrayListPerformDelete(struct ArrayList* PA);
 
 
 struct PARecord ArrayListPerformArrange(PAInt);

@@ -32,10 +32,13 @@
 // 	List.index = Data;
 // 	return List;
 // }
-DllExport int ArrayListIndicateSize(struct ArrayList* arrayList)
+DllExport struct ArrayListSize ArrayListIndicateSize(struct ArrayList* ArrayList)
 {
-	int returnCode = PARESULT_SUCCESS;
-	return returnCode;
+	struct ArrayListSize size;
+	size = ArrayList->size;
+	return size;
+	// int returnCode = PARESULT_SUCCESS;
+	// return returnCode;
 }
 DllExport int ArrayListStore(struct ArrayList* ArrayList, struct PAData Value)
 {
@@ -58,6 +61,13 @@ DllExport void ArrayListPrint(struct ArrayList* ArrayList)
 
 struct ArrayList* ArrayListPerformCopy(struct ArrayList *from, struct ArrayList *to)
 {
+	const char* src = (from->array);
+	const void* src_addr = src;
+	void* dst = to->array;
+	struct ArrayListSize ListSize = from->size;
+	size_t size = *(ListSize.n);
+	memcpy(dst,src,size);
+	return dst;
 // 	//struct ArrayList copy;
 // 	// copt
 // 	// copy. 
@@ -69,7 +79,7 @@ struct ArrayList* ArrayListPerformCopy(struct ArrayList *from, struct ArrayList 
 	// PAResult result;
 	// return result;
 	// struct ArrayList list;
-	return to;
+	// return to;
 }
 
 // PAResult ArrayListPerformCopyTo(struct ArrayList Array, struct PAList List, struct PAElement Element) {
@@ -126,15 +136,22 @@ struct ArrayList* ArrayListPerformCopy(struct ArrayList *from, struct ArrayList 
 // 	//n+1 is for NULL terminatior in List workld
 // 	// return FIRST;
 // }
-struct ArrayListObject ArrayListPerformGetFirst(struct ArrayList List)
+struct ArrayListObject ArrayListPerformGetFirst(struct ArrayList* List)
 {
-	struct ArrayListObject first;
-	first = List.array[FIRST];
-	return first;
+	struct ArrayListObject object;
+	int* first = List->array;
+	// first = List->array;
+	object.element = *first;
+	return object;
 }
-struct ArrayListObject ArrayListPerformGetLast(struct ArrayList List)
+struct ArrayListObject ArrayListPerformGetLast(struct ArrayList* List)
 {
-	return List.array[LAST(*List.place.position)];
+	struct ArrayListObject returnValue;
+	int value = (int) (List->array[*(List->place.position)]);
+	returnValue.element = value;
+	return returnValue;
+	// return returnValue;
+	// return List.array[*(List.place.position)];
 }
 	// struct PAData last;
 	// ArrayListObject last;
@@ -210,10 +227,13 @@ struct ArrayList* ArrayListPerformConstruct(struct ArrayListSize* size)
 	// array->size = n;
 	return array;
 }
-PAResult ArrayListPerformInit(struct ArrayList* List, struct ArrayListObject object, struct ArrayListSize)
+struct ArrayList* ArrayListPerformInit(struct ArrayList* List, struct ArrayListSize Size)
 {
 	struct ArrayListPosition position;
-	return PARESULT_SUCCESS;
+	List->size = Size;
+	return List;
+	// List->place = NULL;
+	// return PARESULT_SUCCESS;
 	// return List;
 	// PAResult result = { PARESULT_SUCCESS };
 	// return result;
@@ -244,16 +264,17 @@ PAResult ArrayListPerformInit(struct ArrayList* List, struct ArrayListObject obj
 // {
 
 // }
-DllExport int ArrayListPerformRuin(struct ArrayList* PA)
+DllExport void ArrayListPerformRuin(struct ArrayList* PA)
 {
-	PAResult result = { PARESULT_SUCCESS } ;
+	// PAResult result = { PARESULT_SUCCESS } ;
 	free(PA);
-	return result;
+	// return result;
 }
-int ArrayListPerformDelete(struct ArrayList* PA)
+void ArrayListPerformDelete(struct ArrayList* PA)
 {
-	PAResult result = { PARESULT_SUCCESS };
-	return result;
+	free(PA);
+	// PAResult result = { PARESULT_SUCCESS };
+	// return result;
 }
 // struct PAData ArrayListPerformGet(struct PAIndex Array[],PAInt Position) {
 // 	struct PAData index;
