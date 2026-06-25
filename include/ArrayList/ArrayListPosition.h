@@ -15,7 +15,7 @@
 DllExport struct ArrayListPosition* ArrayListPositionPerformConstruct(struct ArrayListPosition*);
 DllExport struct ArrayListPosition* ArrayListPositionPerformInit(struct ArrayListPosition*, int* Value);
 DllExport struct ArrayListPosition* ArrayListPositionPerformCopy(struct ArrayListPosition*, struct ArrayListPosition*);
-DllExport HRESULT ArrayListPositionPerformDelete(struct ArrayListPosition*);
-DllExport HRESULT ArrayListPositionPerformRuin(struct ArrayListPosition*);
+DllExport void ArrayListPositionPerformDelete(struct ArrayListPosition*);
+DllExport void ArrayListPositionPerformRuin(struct ArrayListPosition*);
 
 #endif /* INCLUDE_ARRAYLIST_ARRAYLISTPOSITION_H_ */

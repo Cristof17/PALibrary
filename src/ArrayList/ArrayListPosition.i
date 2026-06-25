@@ -1836,8 +1836,8 @@ struct Facade {
           struct ArrayListPosition* ArrayListPositionPerformConstruct(struct ArrayListPosition*);
           struct ArrayListPosition* ArrayListPositionPerformInit(struct ArrayListPosition*, int* Value);
           struct ArrayListPosition* ArrayListPositionPerformCopy(struct ArrayListPosition*, struct ArrayListPosition*);
-          PAResult ArrayListPositionPerformDelete(struct ArrayListPosition*);
-          PAResult ArrayListPositionPerformRuin(struct ArrayListPosition*);
+          void ArrayListPositionPerformDelete(struct ArrayListPosition*);
+          void ArrayListPositionPerformRuin(struct ArrayListPosition*);
 # 11 "src/ArrayList/ArrayListPosition.c" 2
 
 
@@ -2077,16 +2077,16 @@ struct ArrayListPosition* ArrayListPositionPerformCopy(struct ArrayListPosition*
 
  return dst;
 }
-PAResult ArrayListPositionPerformDelete(struct ArrayListPosition* Position)
+          void ArrayListPositionPerformDelete(struct ArrayListPosition* Position)
 {
 
  free(Position);
 
- return ((int)0);
+
 }
-PAResult ArrayListPositionPerformRuin(struct ArrayListPosition* Position)
+          void ArrayListPositionPerformRuin(struct ArrayListPosition* Position)
 {
  free(Position);
 
- return ((int)0);
+
 }

@@ -87,7 +87,6 @@ _ArrayListPositionPerformDelete:        ; @ArrayListPositionPerformDelete
 	str	x0, [sp, #8]
 	ldr	x0, [sp, #8]
 	bl	_free
-	mov	w0, #0                          ; =0x0
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
 	ret
@@ -107,7 +106,6 @@ _ArrayListPositionPerformRuin:          ; @ArrayListPositionPerformRuin
 	str	x0, [sp, #8]
 	ldr	x0, [sp, #8]
 	bl	_free
-	mov	w0, #0                          ; =0x0
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
 	ret

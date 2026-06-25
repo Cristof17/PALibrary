@@ -47,16 +47,16 @@ struct ArrayListPosition* ArrayListPositionPerformCopy(struct ArrayListPosition*
 	// return copy;
 	return dst;
 }
-PAResult ArrayListPositionPerformDelete(struct ArrayListPosition* Position)
+DllExport void ArrayListPositionPerformDelete(struct ArrayListPosition* Position)
 {
 	// free(List);
 	free(Position);
 	// PAResult result = { PARESULT_SUCCESS };
-	return PARESULT_SUCCESS;
+	// return PARESULT_SUCCESS;
 }
-PAResult ArrayListPositionPerformRuin(struct ArrayListPosition* Position)
+DllExport void ArrayListPositionPerformRuin(struct ArrayListPosition* Position)
 {
 	free(Position);
 	// PAResult result = { PARESULT_SUCCESS };
-	return PARESULT_SUCCESS;
+	// return PARESULT_SUCCESS;
 }
