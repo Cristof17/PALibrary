@@ -10,13 +10,13 @@
 //struct PAData {
 //
 //}
-DllExport struct PAData* PADataCreate(PANumber Resource)
+DllExport struct PAData* PADataCreate(PAInt* Resource)
 {
     // struct PAData data;
     struct PAData* dataPointer;
     dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
     dataPointer->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
-    *dataPointer->Resource->value = (PANumber) Resource;
+    dataPointer->Resource->value = ((PANumber) *Resource);
     // dataPointer->Resource->value = (struct PANumber*) malloc (sizeof(struct PANumber));
 
     // dataPointer->Resource->value
