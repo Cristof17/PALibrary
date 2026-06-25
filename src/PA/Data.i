@@ -146,7 +146,7 @@ struct PAResource {
 
 
 
- PANumber* value;
+ PANumber value;
 
 };
 struct PAStatus {
@@ -1864,7 +1864,7 @@ extern char * suboptarg;
     struct PAData* dataPointer;
     dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
     dataPointer->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
-    *dataPointer->Resource->value = (PANumber) Resource;
+    dataPointer->Resource->value = ((PANumber) *Resource);
 # 34 "src/PA/Data.c"
     return dataPointer;
 }
@@ -1911,7 +1911,7 @@ extern char * suboptarg;
     int returnCode;
     returnCode = ((int)0);
 
-    free(PA->value);
+
     free(PA);
     return returnCode;
 

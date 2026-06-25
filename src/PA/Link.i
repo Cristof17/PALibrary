@@ -145,7 +145,7 @@ struct PAResource {
 
 
 
- PANumber* value;
+ PANumber value;
 
 };
 struct PAStatus {

@@ -99,7 +99,7 @@ DllExport int PADataFinish(struct PAResource* PA)
     int returnCode;
     returnCode = PARESULT_SUCCESS;
     // free(PA);
-    free(PA->value);
+    // free(PA->value);
     free(PA);
     return returnCode;
     // return PARESULT_SUCCESS;

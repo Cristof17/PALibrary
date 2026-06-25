@@ -168,7 +168,7 @@ struct PAResource {
 	// struct
 	// PA_INt
 	// PAInt value;
-	PANumber* value;
+	PANumber value;
 	// PADDING_1_BYTE(0);
 };
 struct PAStatus {
