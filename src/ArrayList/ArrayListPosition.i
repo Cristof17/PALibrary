@@ -2074,11 +2074,14 @@ struct ArrayListPosition* ArrayListPositionPerformCopy(struct ArrayListPosition*
 }
 PAResult ArrayListPositionPerformDelete(struct ArrayListPosition* Position)
 {
- PAResult result = { ((int)0) };
- return result;
+
+ free(Position);
+
+ return ((int)0);
 }
 PAResult ArrayListPositionPerformRuin(struct ArrayListPosition* Position)
 {
- PAResult result = { ((int)0) };
- return result;
+ free(Position);
+
+ return ((int)0);
 }

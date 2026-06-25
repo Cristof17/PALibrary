@@ -44,11 +44,14 @@ struct ArrayListPosition* ArrayListPositionPerformCopy(struct ArrayListPosition*
 }
 PAResult ArrayListPositionPerformDelete(struct ArrayListPosition* Position)
 {
-	PAResult result = { PARESULT_SUCCESS };
-	return result;
+	// free(List);
+	free(Position);
+	// PAResult result = { PARESULT_SUCCESS };
+	return PARESULT_SUCCESS;
 }
 PAResult ArrayListPositionPerformRuin(struct ArrayListPosition* Position)
 {
-	PAResult result = { PARESULT_SUCCESS };
-	return result;
+	free(Position);
+	// PAResult result = { PARESULT_SUCCESS };
+	return PARESULT_SUCCESS;
 }
