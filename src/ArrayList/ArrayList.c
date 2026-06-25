@@ -40,32 +40,32 @@ DllExport struct ArrayListSize ArrayListIndicateSize(struct ArrayList* ArrayList
 	// int returnCode = PARESULT_SUCCESS;
 	// return returnCode;
 }
-DllExport int ArrayListStore(struct ArrayList* ArrayList, struct PAData Value)
-{
-	int returnCode;
-	returnCode = PARESULT_SUCCESS;
-	return returnCode;
-}
+// DllExport int ArrayListStore(struct ArrayList* ArrayList, struct PAData Value)
+// {
+// 	int returnCode;
+// 	returnCode = PARESULT_SUCCESS;
+// 	return returnCode;
+// }
 // DllExport int ArrayList(struct ArrayList*, ArrayListObject*)
-DllExport struct PAData* ArrayListRetrieve(struct ArrayList* ArrayList)
-{
-	struct PAData data;
-	struct PAData* dataPointer;
-	return dataPointer;
-}
+// DllExport struct PAData* ArrayListRetrieve(struct ArrayList* ArrayList)
+// {
+// 	struct PAData data;
+// 	struct PAData* dataPointer;
+// 	return dataPointer;
+// }
 
-DllExport void ArrayListPrint(struct ArrayList* ArrayList)
-{
+// DllExport void ArrayListPrint(struct ArrayList* ArrayList)
+// {
 
-}
+// }
 
-struct ArrayList* ArrayListPerformCopy(struct ArrayList *from, struct ArrayList *to)
+DllExport struct ArrayList* ArrayListPerformCopy(struct ArrayList *from, struct ArrayList *to)
 {
-	const char* src = (from->array);
+	const int* src = (from->array);
 	const void* src_addr = src;
 	void* dst = to->array;
 	struct ArrayListSize ListSize = from->size;
-	size_t size = *(ListSize.n);
+	size_t size = *(ListSize.n) * sizeof(int);
 	memcpy(dst,src,size);
 	return dst;
 // 	//struct ArrayList copy;
@@ -136,23 +136,23 @@ struct ArrayList* ArrayListPerformCopy(struct ArrayList *from, struct ArrayList 
 // 	//n+1 is for NULL terminatior in List workld
 // 	// return FIRST;
 // }
-struct ArrayListObject ArrayListPerformGetFirst(struct ArrayList* List)
-{
-	struct ArrayListObject object;
-	int* first = List->array;
-	// first = List->array;
-	object.element = *first;
-	return object;
-}
-struct ArrayListObject ArrayListPerformGetLast(struct ArrayList* List)
-{
-	struct ArrayListObject returnValue;
-	int value = (int) (List->array[*(List->place.position)]);
-	returnValue.element = value;
-	return returnValue;
-	// return returnValue;
-	// return List.array[*(List.place.position)];
-}
+// struct ArrayListObject ArrayListPerformGetFirst(struct ArrayList* List)
+// {
+// 	struct ArrayListObject object;
+// 	int* first = List->array;
+// 	// first = List->array;
+// 	object.element = *first;
+// 	return object;
+// }
+// struct ArrayListObject ArrayListPerformGetLast(struct ArrayList* List)
+// {
+// 	struct ArrayListObject returnValue;
+// 	int value = (int) (List->array[*(List->place.position)]);
+// 	returnValue.element = value;
+// 	return returnValue;
+// 	// return returnValue;
+// 	// return List.array[*(List.place.position)];
+// }
 	// struct PAData last;
 	// ArrayListObject last;
 	// struct ArrayListPosition place;
@@ -167,70 +167,72 @@ struct ArrayListObject ArrayListPerformGetLast(struct ArrayList* List)
 	// }
 	// last = List.objects[(LAST(place.position))];
 	// return last;
-struct ArrayListObject ArrayListPerformPutFirst(struct ArrayList List,struct ArrayListObject Object)
-{
-//	struct PADAta
-	// int first = List.index[FIRST];
-	//pseudicod
-	//daca array-ul esye plin aloca un nou array
-	//daca load-factor-ul este mare aloca un nou array
-	// /'/'
-	//daa e gol adauga
-	//altfel daca nu  e gol
-	//verifica load factor
-	//daca load factor e mare -> realloc
-	//altrfel 
-	//adauga element
-	return Object;
-}
+// struct ArrayListObject ArrayListPerformPutFirst(struct ArrayList List,struct ArrayListObject Object)
+// {
+// //	struct PADAta
+// 	// int first = List.index[FIRST];
+// 	//pseudicod
+// 	//daca array-ul esye plin aloca un nou array
+// 	//daca load-factor-ul este mare aloca un nou array
+// 	// /'/'
+// 	//daa e gol adauga
+// 	//altfel daca nu  e gol
+// 	//verifica load factor
+// 	//daca load factor e mare -> realloc
+// 	//altrfel 
+// 	//adauga element
+// 	return Object;
+// }
 // ArrayListObject ArrayListPerformPutFirst(struct ArrayList);
-struct ArrayListObject ArrayListPerformPutLast(struct ArrayList List, struct ArrayListObject Object)
-{
-	// ArrayListObject
-	return Object;
-}
-PAResult ArrayListPerformAdapt(struct ArrayList List)
-{
-	PAResult result = { PARESULT_SUCCESS };
-	return result;
-}
-PAResult ArrayListPerformMove(struct ArrayList List)
-{
-	PAResult result = { PARESULT_SUCCESS };
-	return result;
-	//start, first position for i is 1
-	//while not end of line
-	//move to the right all elements and then realloc array with the new size for the next addFirst, or AddLast
-	//element[i+1] = element[iu];
-	//element[i] = element[i-1];
-	//if i == 1
-	//element[i-1] = new_element
-	//This is kinda reverse for add directly
-	//you add by first moving all elements and the inserting the new element on position 0
-	//this is elementary programming from highschool
-	//buit it workds`
-	//this is not business nor logical 
-	//this is not math
-	//this should be done usnng diagrams and helper functions
-	//#noiu #sa #fim #sanatosi
-}
+// struct ArrayListObject ArrayListPerformPutLast(struct ArrayList List, struct ArrayListObject Object)
+// {
+// 	// ArrayListObject
+// 	return Object;
+// }
+// PAResult ArrayListPerformAdapt(struct ArrayList List)
+// {
+// 	PAResult result = { PARESULT_SUCCESS };
+// 	return result;
+// }
+// PAResult ArrayListPerformMove(struct ArrayList List)
+// {
+// 	PAResult result = { PARESULT_SUCCESS };
+// 	return result;
+// 	//start, first position for i is 1
+// 	//while not end of line
+// 	//move to the right all elements and then realloc array with the new size for the next addFirst, or AddLast
+// 	//element[i+1] = element[iu];
+// 	//element[i] = element[i-1];
+// 	//if i == 1
+// 	//element[i-1] = new_element
+// 	//This is kinda reverse for add directly
+// 	//you add by first moving all elements and the inserting the new element on position 0
+// 	//this is elementary programming from highschool
+// 	//buit it workds`
+// 	//this is not business nor logical 
+// 	//this is not math
+// 	//this should be done usnng diagrams and helper functions
+// 	//#noiu #sa #fim #sanatosi
+// }
 // ArrayListObject ArrayListPerformPutLast(struct ArrayList List)
 // {
 
 // }
-struct ArrayList* ArrayListPerformConstruct(struct ArrayListSize* size)
+DllExport struct ArrayList* ArrayListPerformConstruct(struct ArrayListSize* size)
 {
 	void* listPointer = malloc ((size_t) *size->n);
 	struct ArrayList *array = (struct ArrayList*) listPointer;
-	array->place.position = 0;
 	array->size = *size;
+	// array->place.position = 0;
 	// array->size = n;
 	return array;
 }
-struct ArrayList* ArrayListPerformInit(struct ArrayList* List, struct ArrayListSize Size)
+DllExport struct ArrayList* ArrayListPerformInit(struct ArrayList* List, struct ArrayListObject* init, struct ArrayListSize* Size)
 {
 	struct ArrayListPosition position;
-	List->size = Size;
+	int size = *Size->n;
+	memset(List->array,init->element,size);
+	// List->size = Size;
 	return List;
 	// List->place = NULL;
 	// return PARESULT_SUCCESS;

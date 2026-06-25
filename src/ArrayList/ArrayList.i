@@ -2049,29 +2049,16 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-struct ArrayList* ArrayListPerformConstruct(struct ArrayListSize* sizwe);
-struct ArrayList* ArrayListPerformInit(struct ArrayList*, struct ArrayListSize size);
+          struct ArrayList* ArrayListPerformConstruct(struct ArrayListSize* sizwe);
+          struct ArrayList* ArrayListPerformInit(struct ArrayList*, struct ArrayListObject*, struct ArrayListSize*);
 
 
 
           struct ArrayList* ArrayListPerformCopy(struct ArrayList*, struct ArrayList*);
-
-
-          int ArrayListStore(struct ArrayList*, struct PAData);
-
-          struct PAData* ArrayListRetrieve(struct ArrayList*);
-
-
-          struct ArrayListSize ArrayListIndicateSize(struct ArrayList*);
-          void ArrayListPrint(struct ArrayList*);
-
+# 33 "./include/ArrayList/ArrayList.h"
           void ArrayListPerformRuin(struct ArrayList* PA);
 
           void ArrayListPerformDelete(struct ArrayList* PA);
-
-
-struct PARecord ArrayListPerformArrange(PAInt);
-struct PARecord ArrayListPutCount(struct ArrayList, struct PACount);
 # 8 "src/ArrayList/ArrayList.c" 2
 # 35 "src/ArrayList/ArrayList.c"
           struct ArrayListSize ArrayListIndicateSize(struct ArrayList* ArrayList)
@@ -2082,98 +2069,38 @@ struct PARecord ArrayListPutCount(struct ArrayList, struct PACount);
 
 
 }
-          int ArrayListStore(struct ArrayList* ArrayList, struct PAData Value)
+# 62 "src/ArrayList/ArrayList.c"
+          struct ArrayList* ArrayListPerformCopy(struct ArrayList *from, struct ArrayList *to)
 {
- int returnCode;
- returnCode = ((int)0);
- return returnCode;
-}
-
-          struct PAData* ArrayListRetrieve(struct ArrayList* ArrayList)
-{
- struct PAData data;
- struct PAData* dataPointer;
- return dataPointer;
-}
-
-          void ArrayListPrint(struct ArrayList* ArrayList)
-{
-
-}
-
-struct ArrayList* ArrayListPerformCopy(struct ArrayList *from, struct ArrayList *to)
-{
- const char* src = (from->array);
+ const int* src = (from->array);
  const void* src_addr = src;
  void* dst = to->array;
  struct ArrayListSize ListSize = from->size;
- size_t size = *(ListSize.n);
+ size_t size = *(ListSize.n) * sizeof(int);
  __builtin___memcpy_chk (dst, src,size, __builtin_object_size (dst, 0));
  return dst;
 # 83 "src/ArrayList/ArrayList.c"
 }
-# 139 "src/ArrayList/ArrayList.c"
-struct ArrayListObject ArrayListPerformGetFirst(struct ArrayList* List)
-{
- struct ArrayListObject object;
- int* first = List->array;
-
- object.element = *first;
- return object;
-}
-struct ArrayListObject ArrayListPerformGetLast(struct ArrayList* List)
-{
- struct ArrayListObject returnValue;
- int value = (int) (List->array[*(List->place.position)]);
- returnValue.element = value;
- return returnValue;
-
-
-}
-# 170 "src/ArrayList/ArrayList.c"
-struct ArrayListObject ArrayListPerformPutFirst(struct ArrayList List,struct ArrayListObject Object)
-{
-# 184 "src/ArrayList/ArrayList.c"
- return Object;
-}
-
-struct ArrayListObject ArrayListPerformPutLast(struct ArrayList List, struct ArrayListObject Object)
-{
-
- return Object;
-}
-PAResult ArrayListPerformAdapt(struct ArrayList List)
-{
- PAResult result = { ((int)0) };
- return result;
-}
-PAResult ArrayListPerformMove(struct ArrayList List)
-{
- PAResult result = { ((int)0) };
- return result;
-# 216 "src/ArrayList/ArrayList.c"
-}
-
-
-
-
-struct ArrayList* ArrayListPerformConstruct(struct ArrayListSize* size)
+# 221 "src/ArrayList/ArrayList.c"
+          struct ArrayList* ArrayListPerformConstruct(struct ArrayListSize* size)
 {
  void* listPointer = malloc ((size_t) *size->n);
  struct ArrayList *array = (struct ArrayList*) listPointer;
- array->place.position = 0;
  array->size = *size;
+
 
  return array;
 }
-struct ArrayList* ArrayListPerformInit(struct ArrayList* List, struct ArrayListSize Size)
+          struct ArrayList* ArrayListPerformInit(struct ArrayList* List, struct ArrayListObject* init, struct ArrayListSize* Size)
 {
  struct ArrayListPosition position;
- List->size = Size;
+ int size = *Size->n;
+ __builtin___memset_chk (List->array, init->element,size, __builtin_object_size (List->array, 0));
+
  return List;
-# 246 "src/ArrayList/ArrayList.c"
+# 248 "src/ArrayList/ArrayList.c"
 }
-# 267 "src/ArrayList/ArrayList.c"
+# 269 "src/ArrayList/ArrayList.c"
           void ArrayListPerformRuin(struct ArrayList* PA)
 {
 

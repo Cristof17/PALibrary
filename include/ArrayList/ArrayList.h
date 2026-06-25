@@ -14,29 +14,29 @@
 
 // DllExport ArrayListObject ArrayListGet(struct ArrayListPosition);
 // DllExport ArrayListSize ArrayListPerformSize();
-struct ArrayList* ArrayListPerformConstruct(struct ArrayListSize* sizwe);
-struct ArrayList* ArrayListPerformInit(struct ArrayList*, struct ArrayListSize size);
+DllExport struct ArrayList* ArrayListPerformConstruct(struct ArrayListSize* sizwe);
+DllExport struct ArrayList* ArrayListPerformInit(struct ArrayList*, struct ArrayListObject*, struct ArrayListSize*);
 // struct ArrayList* ArrayListPerformRuin(size_t n);
 // DllExport void ArrayListPut(struct ArrayListPosition, ArrayListObject);
 // DllExport struct ArrayList* ArrayListArrange(ArrayListObject* Data, struct ArrayListPosition*);
 DllExport struct ArrayList* ArrayListPerformCopy(struct ArrayList*, struct ArrayList*);
 // DllExport struct ArrayList* ArrayListPerformCopyTo(struct ArrayList Dest*, struct PAList source, struct PAElement);
 // struc  ArrayListPerformRuin(struct ArrayList List);
-DllExport int ArrayListStore(struct ArrayList*, struct PAData);
+// DllExport int ArrayListStore(struct ArrayList*, struct PAData);
 // DllExport int ArrayList(struct ArrayList*, ArrayListObject*)
-DllExport struct PAData* ArrayListRetrieve(struct ArrayList*);
+// DllExport struct PAData* ArrayListRetrieve(struct ArrayList*);
 // DllExport struct Arra
 // DllExport struct Arra
-DllExport struct ArrayListSize ArrayListIndicateSize(struct ArrayList*);
-DllExport void ArrayListPrint(struct ArrayList*);
+// DllExport struct ArrayListSize ArrayListIndicateSize(struct ArrayList*);
+// DllExport void ArrayListPrint(struct ArrayList*);
 // DllExport ArrayLis
 DllExport void ArrayListPerformRuin(struct ArrayList* PA);
 // DllExport int ArrayListPerformRuin(struct ArrayList* PA);
 DllExport void ArrayListPerformDelete(struct ArrayList* PA);
 // struct ArrayList ArrayListPerformDelete(struct ArrayList List);
 // struct PAData ArrayListGet(struct ArrayList, struct PAData[],PAInt);
-struct PARecord ArrayListPerformArrange(PAInt);
-struct PARecord ArrayListPutCount(struct ArrayList, struct PACount);
+// struct PARecord ArrayListPerformArrange(PAInt);
+// struct PARecord ArrayListPutCount(struct ArrayList, struct PACount);
 // sjt
 // struct A
 // DllExport ArrayListObject* ArrayListPerformGetFirst(struct ArrayList*);

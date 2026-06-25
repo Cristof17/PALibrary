@@ -13,25 +13,33 @@
 #endif
 #include <defs.h>
 #include <types.h>
+#include <string.h>
 
 struct ArrayListPosition* ArrayListPositionPerformConstruct(struct ArrayListPosition* place)
 {
+	struct ArrayListPosition* arrayListPosition;
+	arrayListPosition = (struct ArrayListPosition*) malloc (sizeof(struct ArrayListPosition));
+	// return
 	// struct ArrayListPosition position = { FIRST };
-	return place;
+	return arrayListPosition;
+	// return place;
 }
-struct ArrayListPosition* ArrayListPositionPerformInit(struct ArrayListPosition* ListPosition)
+struct ArrayListPosition* ArrayListPositionPerformInit(struct ArrayListPosition* ListPosition, int* Value)
 {
     struct ArrayListPosition* position;
-	position = ArrayListPositionPerformConstruct(ListPosition);
+	// position = ListPosition;
+	memset(ListPosition,*Value,sizeof(struct ArrayListPosition));
+	return ListPosition;
+	// position = ArrayListPositionPerformConstruct(ListPosition);
 	// position.position = ListPosition;
 	return ListPosition;
 }
 struct ArrayListPosition* ArrayListPositionPerformCopy(struct ArrayListPosition* ListPosition)
 {
 	struct ArrayListPosition* copy;
-	copy = ArrayListPositionPerformConstruct(ListPosition);
+	// copy = ArrayListPositionPerformConstruct(ListPosition);
 //	copy = ArrayListPositionPeoformInit(Position.position);
-	copy = ArrayListPositionPerformInit(ListPosition);
+	// copy = ArrayListPositionPerformInit(ListPosition);
 	return copy;
 }
 PAResult ArrayListPositionPerformDelete(struct ArrayListPosition* Position)

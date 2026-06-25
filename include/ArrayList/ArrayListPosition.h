@@ -13,7 +13,7 @@
 // #include "../defs.h"
 // #include "../types.h"
 DllExport struct ArrayListPosition* ArrayListPositionPerformConstruct(struct ArrayListPosition*);
-DllExport struct ArrayListPosition* ArrayListPositionPerformInit(struct ArrayListPosition*);
+DllExport struct ArrayListPosition* ArrayListPositionPerformInit(struct ArrayListPosition*, int* Value);
 DllExport struct ArrayListPosition* ArrayListPositionPerformCopy(struct ArrayListPosition*);
 DllExport HRESULT ArrayListPositionPerformDelete(struct ArrayListPosition*);
 DllExport HRESULT ArrayListPositionPerformRuin(struct ArrayListPosition*);
