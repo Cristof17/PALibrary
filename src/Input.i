@@ -15,370 +15,12 @@
 # 1 "./include/defs.h" 1
 # 6 "./include/Input.h" 2
 # 1 "./include/types.h" 1
-# 17 "./include/types.h"
-typedef char PANumber;
 
-typedef int PAInt;
 
 
-typedef int PABool;
-typedef int PAResult;
-typedef int ArrayListSize;
-typedef int ArrayListObject;
-# 35 "./include/types.h"
-struct Adapter;
-struct PADestination;
-struct PAArrow;
 
 
 
-
-struct PAData;
-
-struct PANormalTree;
-struct Adaptee;
-
-
-
-
-struct PAResource;
-struct PACount;
-struct PANormalTree;
-struct PATransposeTree;
-
-
-
-
-
-
-struct PAInput;
-struct PAOutput;
-
-struct PAData;
-struct PAValue;
-struct List;
-struct PAList;
-struct PAStatus;
-
-
-
-
-
-struct PAElement;
-struct PADestination;
-struct PAPair;
-struct PAArrow;
-struct BFSInput;
-struct BFSRecord;
-struct BFSOutput;
-struct PASeries;
-struct PATree;
-struct PALink;
-# 93 "./include/types.h"
-struct AdapterTarget;
-struct AdapterClient;
-struct Adapter;
-
-
-struct Adaptee;
-
-struct Adapter;
-struct IteratorClient;
-struct Target;
-struct Builder;
-struct Director;
-struct NormalTree;
-struct Product ;
-struct TransposeTree;
-struct IteratorAggregate;
-struct IteratorConcreteAggregate;
-struct IteratorConcreteIterator;
-struct IteratorIterator ;
-struct BuilderClient ;
-struct BFSProcedure;
-struct Input;
-struct Algorithm;
-struct Output;
-struct FlyweightClient;
-struct FlyweightFlyweightFactory;
-struct FlyweightConcreteFlyweight;
-struct FlyweightUnsharedConcreteFlyweight;
-struct FlyweightFlyweight;
-struct BridgeAbstraction;
-struct BridgeClient;
-struct BridgeConcreteImplementorA;
-struct BridgeConcreteImplementorB;
-struct BridgeImplementor;
-struct PrototypePrototype;
-struct PrototypeClient;
-
-
-
-
-
-
-struct PrototypeConcretePrototype1;
-struct PrototypeConcretePrototype2;
-struct Facade;
-# 153 "./include/types.h"
-struct Input {
- ;
-};
-struct Algorithm {
- struct Input input;
-};
-struct ArrayListPosition {
- int position;
-};
-struct ArrayList {
-
- struct ArrayListPosition place;
- ArrayListObject objects[2];
-};
-struct PAResource {
-
-
-
- PANumber value;
-
-};
-struct PAStatus {
- struct PAResource* visited;
-};
-struct PAData {
- struct PAResource* Resource;
-
-};
-struct PAElement {
-
- struct PAElement* next;
- struct PAData* index;
-
- struct PAStatus* status;
-
-
-};
-struct PAFeature {
- PAInt* kind;
-};
-struct PACount {
-
- PAInt* number;
-};
-
-
-struct PASeries {
- struct PACount* m;
-
- struct ArrayList adj;
-};
-struct PAList {
- struct PACount* m;
- struct ArrayList* neigh;
-
-};
-struct FlyweightFlyweightClient {
-
-
- struct PASeries series;
-};
-struct FlyweightFlyweight {
- struct PAElement allState;
-
-};
-struct FlyweightFlyweightFactory {
- struct FlyweightFlyweight flyweight;
-
-};
-struct FlyweightConcreteFlyweight {
- struct PAList list;
-
-};
-struct FlyweightUnsharedConcreteFlyweight {
- struct PASeries intrinsicState;
-
-};
-struct PATree {
- struct PACount* n;
- struct PACount* m;
- struct PAElement* source;
- struct PAList* adj;
-};
-struct BridgeAbstraction {
- struct PAElement elements[2];
-};
-struct BridgeClient{
- struct PATree tree;
-};
-struct BridgeConcreteImplementorA {
- struct ArrayList list;
-};
-struct BridgeConcreteImplementorB {
-};
-# 255 "./include/types.h"
-struct PAInput {
- struct PACount* n;
- struct PACount* m;
- struct PAElement* source;
- struct PAList* adj;
-};
-struct BFSRecord {
-struct PACount n;
- struct PAList d;
-};
-struct PAOutput {
- struct BFSRecord* result;
-};
-
-
-
-
-struct PAValue {
- PAInt value;
-};
-struct PADestination {
-    struct PAElement element;
-};
-struct PAPair {
- struct PAElement* Node;
- struct PAElement* Neigh;
-
-};
-struct PAArrow {
- struct PAPair p;
-};
-struct BFSInput {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
-};
-struct BFSOutput {
- struct BFSRecord result;
-};
-struct Output {
-
-
- };
-
-
-
-
-struct PALink {
- struct PAPair* p;
-
-};
-
-
-
-struct PANormalTree {
- struct PATree* tree;
-
-};
-struct PATransposeTree {
- struct PATree* tree;
-
-};
-struct FactoryProduct1 {
- struct PANormalTree tree;
-};
-struct FactoryProduct2 {
- struct PATransposeTree trans;
-};
-
-struct FactoryConcreteProduct
-{
- struct PANormalTree tree;
-};
-struct FactoryConcreteCreator {
-
- struct PANormalTree tree;
-};
-struct FactoryConcreteCreator2 {
-
- struct PATransposeTree tree;
-};
-struct FactoryCreator
-{
- struct PANormalTree normalTree;
- struct PATransposeTree transposeTree;
-};
-struct FlyWeight {
-
-};
-struct Adaptee {
- struct ArrayList list;
-};
-struct Adapter {
- struct Adaptee adaptee;
-
-};
-struct IteratorClient {
- struct PATree tree;
-};
-struct AdapterTarget {
- struct PAList list;
-
-};
-struct AdapterClient {
- struct AdapterTarget target;
-};
-struct BuilderProduct {
- struct PATree tree;
-};
-struct Builder {
-
-
- struct BuilderProduct Product;
-};
-struct Director {
- struct Builder builder;
-};
-struct IteratorIterator {
- struct PAList series;
-};
-struct IteratorAggregate {
- struct IteratorIterator iterator;
-};
-struct ConcreteBuilder {
- struct Builder builder;
-};
-struct IteratorConcreteIterator {
- PAInt position;
-};
-struct IteratorConcreteAggregate {
- struct IteratorConcreteIterator iterator;
-};
-
-
-struct PrototypePrototype {
- struct PASeries adj;
-};
-struct PrototypeClient {
- struct PrototypePrototype prototype;
-};
-struct PrototypeConcretePrototype1 {
- struct PASeries adj;
-};
-struct PrototypeConcretePrototype2 {
- struct PASeries adj_trans;
-};
-struct BFSProcedure {
-
- struct BFSInput input;
- struct PAList adj;
-
-
-};
-struct Facade {
- struct PASeries series;
- struct PACount size;
- struct PAList list;
- struct PAElement element;
- struct PALink link;
- struct PAData data;
- struct FactoryCreator factory;
-};
-# 7 "./include/Input.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 1 3 4
@@ -1817,6 +1459,377 @@ unsigned long long
 
 extern char * suboptarg;
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 2 3 4
+# 8 "./include/types.h" 2
+# 18 "./include/types.h"
+typedef char PANumber;
+
+typedef int PAInt;
+
+
+typedef int PABool;
+typedef int PAResult;
+typedef int ArrayListSize;
+typedef int ArrayListObject;
+# 36 "./include/types.h"
+struct Adapter;
+struct PADestination;
+struct PAArrow;
+
+
+
+
+struct PAData;
+
+struct PANormalTree;
+struct Adaptee;
+
+
+
+
+struct PAResource;
+struct PACount;
+struct PANormalTree;
+struct PATransposeTree;
+
+
+
+
+
+
+struct PAInput;
+struct PAOutput;
+
+struct PAData;
+struct PAValue;
+struct List;
+struct PAList;
+struct PAStatus;
+
+
+
+
+
+struct PAElement;
+struct PADestination;
+struct PAPair;
+struct PAArrow;
+struct BFSInput;
+struct BFSRecord;
+struct BFSOutput;
+struct PASeries;
+struct PATree;
+struct PALink;
+# 94 "./include/types.h"
+struct AdapterTarget;
+struct AdapterClient;
+struct Adapter;
+
+
+struct Adaptee;
+
+struct Adapter;
+struct IteratorClient;
+struct Target;
+struct Builder;
+struct Director;
+struct NormalTree;
+struct Product ;
+struct TransposeTree;
+struct IteratorAggregate;
+struct IteratorConcreteAggregate;
+struct IteratorConcreteIterator;
+struct IteratorIterator ;
+struct BuilderClient ;
+struct BFSProcedure;
+struct Input;
+struct Algorithm;
+struct Output;
+struct FlyweightClient;
+struct FlyweightFlyweightFactory;
+struct FlyweightConcreteFlyweight;
+struct FlyweightUnsharedConcreteFlyweight;
+struct FlyweightFlyweight;
+struct BridgeAbstraction;
+struct BridgeClient;
+struct BridgeConcreteImplementorA;
+struct BridgeConcreteImplementorB;
+struct BridgeImplementor;
+struct PrototypePrototype;
+struct PrototypeClient;
+
+
+
+
+
+
+struct PrototypeConcretePrototype1;
+struct PrototypeConcretePrototype2;
+struct Facade;
+# 154 "./include/types.h"
+struct Input {
+ ;
+};
+struct Algorithm {
+ struct Input input;
+};
+struct ArrayListSize {
+ size_t size;
+};
+struct ArrayListPosition {
+ size_t position;
+};
+struct ArrayList {
+
+ ArrayListObject* array;
+ size_t place;
+ size_t size;
+
+};
+struct PAResource {
+
+
+
+ PANumber value;
+
+};
+struct PAStatus {
+ struct PAResource* visited;
+};
+struct PAData {
+ struct PAResource* Resource;
+
+};
+struct PAElement {
+
+ struct PAElement* next;
+ struct PAData* index;
+
+ struct PAStatus* status;
+
+
+};
+struct PAFeature {
+ PAInt* kind;
+};
+struct PACount {
+
+ PAInt* number;
+};
+
+
+struct PASeries {
+ struct PACount* m;
+
+ struct ArrayList adj;
+};
+struct PAList {
+ struct PACount* m;
+ struct ArrayList* neigh;
+
+};
+struct FlyweightFlyweightClient {
+
+
+ struct PASeries series;
+};
+struct FlyweightFlyweight {
+ struct PAElement allState;
+
+};
+struct FlyweightFlyweightFactory {
+ struct FlyweightFlyweight flyweight;
+
+};
+struct FlyweightConcreteFlyweight {
+ struct PAList list;
+
+};
+struct FlyweightUnsharedConcreteFlyweight {
+ struct PASeries intrinsicState;
+
+};
+struct PATree {
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
+ struct PAList* adj;
+};
+struct BridgeAbstraction {
+ struct PAElement elements[2];
+};
+struct BridgeClient{
+ struct PATree tree;
+};
+struct BridgeConcreteImplementorA {
+ struct ArrayList list;
+};
+struct BridgeConcreteImplementorB {
+};
+# 261 "./include/types.h"
+struct PAInput {
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
+ struct PAList* adj;
+};
+struct BFSRecord {
+struct PACount n;
+ struct PAList d;
+};
+struct PAOutput {
+ struct BFSRecord* result;
+};
+
+
+
+
+struct PAValue {
+ PAInt value;
+};
+struct PADestination {
+    struct PAElement element;
+};
+struct PAPair {
+ struct PAElement* Node;
+ struct PAElement* Neigh;
+
+};
+struct PAArrow {
+ struct PAPair p;
+};
+struct BFSInput {
+ struct PACount n;
+ struct PACount m;
+ struct PAElement source;
+};
+struct BFSOutput {
+ struct BFSRecord result;
+};
+struct Output {
+
+
+ };
+
+
+
+
+struct PALink {
+ struct PAPair* p;
+
+};
+
+
+
+struct PANormalTree {
+ struct PATree* tree;
+
+};
+struct PATransposeTree {
+ struct PATree* tree;
+
+};
+struct FactoryProduct1 {
+ struct PANormalTree tree;
+};
+struct FactoryProduct2 {
+ struct PATransposeTree trans;
+};
+
+struct FactoryConcreteProduct
+{
+ struct PANormalTree tree;
+};
+struct FactoryConcreteCreator {
+
+ struct PANormalTree tree;
+};
+struct FactoryConcreteCreator2 {
+
+ struct PATransposeTree tree;
+};
+struct FactoryCreator
+{
+ struct PANormalTree normalTree;
+ struct PATransposeTree transposeTree;
+};
+struct FlyWeight {
+
+};
+struct Adaptee {
+ struct ArrayList list;
+};
+struct Adapter {
+ struct Adaptee adaptee;
+
+};
+struct IteratorClient {
+ struct PATree tree;
+};
+struct AdapterTarget {
+ struct PAList list;
+
+};
+struct AdapterClient {
+ struct AdapterTarget target;
+};
+struct BuilderProduct {
+ struct PATree tree;
+};
+struct Builder {
+
+
+ struct BuilderProduct Product;
+};
+struct Director {
+ struct Builder builder;
+};
+struct IteratorIterator {
+ struct PAList series;
+};
+struct IteratorAggregate {
+ struct IteratorIterator iterator;
+};
+struct ConcreteBuilder {
+ struct Builder builder;
+};
+struct IteratorConcreteIterator {
+ PAInt position;
+};
+struct IteratorConcreteAggregate {
+ struct IteratorConcreteIterator iterator;
+};
+
+
+struct PrototypePrototype {
+ struct PASeries adj;
+};
+struct PrototypeClient {
+ struct PrototypePrototype prototype;
+};
+struct PrototypeConcretePrototype1 {
+ struct PASeries adj;
+};
+struct PrototypeConcretePrototype2 {
+ struct PASeries adj_trans;
+};
+struct BFSProcedure {
+
+ struct BFSInput input;
+ struct PAList adj;
+
+
+};
+struct Facade {
+ struct PASeries series;
+ struct PACount size;
+ struct PAList list;
+ struct PAElement element;
+ struct PALink link;
+ struct PAData data;
+ struct FactoryCreator factory;
+};
+# 7 "./include/Input.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 8 "./include/Input.h" 2
 
 
@@ -1832,12 +1845,226 @@ extern char * suboptarg;
 # 4 "src/Input.c" 2
 
 # 1 "./include/ArrayList/ArrayList.h" 1
-# 12 "./include/ArrayList/ArrayList.h"
+
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/ArrayList/ArrayList.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 1 3 4
+# 64 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
+# 65 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_size_t.h" 1 3 4
+# 66 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_null.h" 1 3 4
+# 67 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
+
+
+
+
+
+
+void *
+  memchr(const void * __s, int __c, size_t __n);
+int memcmp(const void * __s1, const void * __s2,
+  size_t __n);
+void *
+  memcpy(void * __dst, const void * __src,
+  size_t __n);
+void *
+  memmove(void * __dst,
+  const void * __src, size_t __len);
+void *
+  memset(void * __b, int __c, size_t __len);
+char *
+  strcat(char * __s1, const char *__s2)
+                                  ;
+char * strchr(const char *__s, int __c);
+int strcmp(const char *__s1, const char *__s2);
+int strcoll(const char *__s1, const char *__s2);
+char *
+  strcpy(char * __dst, const char *__src)
+                                  ;
+size_t strcspn(const char *__s, const char *__charset);
+char * strerror(int __errnum) __asm("_" "strerror" );
+size_t strlen(const char *__s);
+char *
+  strncat(char * __s1,
+  const char * __s2, size_t __n)
+                                  ;
+int strncmp(const char * __s1,
+  const char * __s2, size_t __n);
+char *
+  strncpy(char * __dst,
+        const char * __src, size_t __n)
+                                        ;
+char * strpbrk(const char *__s, const char *__charset);
+char * strrchr(const char *__s, int __c);
+size_t strspn(const char *__s, const char *__charset);
+char * strstr(const char *__big, const char *__little);
+char * strtok(char * __str, const char *__sep);
+size_t strxfrm(char * __s1, const char *__s2, size_t __n);
+# 125 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 3 4
+char *
+        strtok_r(char * __str, const char *__sep,
+        char * *__lasts);
+# 139 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 3 4
+int strerror_r(int __errnum, char * __strerrbuf,
+        size_t __buflen);
+char * strdup(const char *__s1);
+void *
+        memccpy(void * __dst, const void * __src,
+        int __c, size_t __n);
+# 156 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 3 4
+char *
+        stpcpy(char * __dst, const char *__src) ;
+char *
+        stpncpy(char * __dst,
+        const char * __src, size_t __n)
+        __attribute__((availability(macosx,introduced=10.7)))
+                                        ;
+char * strndup(const char * __s1, size_t __n) __attribute__((availability(macosx,introduced=10.7)));
+size_t strnlen(const char * __s1, size_t __n) __attribute__((availability(macosx,introduced=10.7)));
+char * strsignal(int __sig);
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_rsize_t.h" 1 3 4
+# 50 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_rsize_t.h" 3 4
+typedef __darwin_size_t rsize_t;
+# 173 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_errno_t.h" 1 3 4
+# 30 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_errno_t.h" 3 4
+typedef int errno_t;
+# 174 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
+
+
+errno_t memset_s(void * __s, rsize_t __smax, int __c, rsize_t __n) __attribute__((availability(macosx,introduced=10.9)));
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_ssize_t.h" 1 3 4
+# 31 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_ssize_t.h" 3 4
+typedef __darwin_ssize_t ssize_t;
+# 184 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
+
+
+void *
+        memmem(const void * __big, size_t __big_len,
+        const void * __little, size_t __little_len) __attribute__((availability(macosx,introduced=10.7)));
+void memset_pattern4(void * __b, const void * __pattern4, size_t __len) __attribute__((availability(macosx,introduced=10.5)));
+void memset_pattern8(void * __b, const void * __pattern8, size_t __len) __attribute__((availability(macosx,introduced=10.5)));
+void memset_pattern16(void * __b, const void * __pattern16, size_t __len) __attribute__((availability(macosx,introduced=10.5)));
+
+char *
+        strcasestr(const char *__big, const char *__little);
+__attribute__((availability(macosx,introduced=15.4))) __attribute__((availability(ios,introduced=18.4)))
+__attribute__((availability(tvos,introduced=18.4))) __attribute__((availability(watchos,introduced=11.4)))
+char *
+        strchrnul(const char *__s, int __c);
+char *
+        strnstr(const char * __big, const char *__little, size_t __len);
+size_t strlcat(char * __dst, const char *__source, size_t __size);
+size_t strlcpy(char * __dst, const char *__source, size_t __size);
+void strmode(int __mode, char * __bp);
+char *
+        strsep(char * *__stringp, const char *__delim);
+
+
+void swab(const void * restrict, void * restrict, ssize_t __len);
+
+__attribute__((availability(macosx,introduced=10.12.1))) __attribute__((availability(ios,introduced=10.1)))
+__attribute__((availability(tvos,introduced=10.0.1))) __attribute__((availability(watchos,introduced=3.1)))
+int timingsafe_bcmp(const void * __b1, const void * __b2, size_t __len);
+
+__attribute__((availability(macosx,introduced=11.0))) __attribute__((availability(ios,introduced=14.0)))
+__attribute__((availability(tvos,introduced=14.0))) __attribute__((availability(watchos,introduced=7.0)))
+int strsignal_r(int __sig, char * __strsignalbuf, size_t __buflen);
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_strings.h" 1 3 4
+# 65 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_strings.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
+# 66 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_strings.h" 2 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_size_t.h" 1 3 4
+# 67 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_strings.h" 2 3 4
+
+
+
+
+
+
+int bcmp(const void *, const void *, size_t __n) ;
+void bcopy(const void *, void *, size_t __n) ;
+void bzero(void *, size_t __n) ;
+char * index(const char *, int) ;
+char * rindex(const char *, int) ;
+
+
+int ffs(int);
+int strcasecmp(const char *, const char *);
+int strncasecmp(const char *, const char *, size_t);
+
+
+
+
+
+int ffsl(long) __attribute__((availability(macosx,introduced=10.5)));
+int ffsll(long long) __attribute__((availability(macosx,introduced=10.9)));
+int fls(int) __attribute__((availability(macosx,introduced=10.5)));
+int flsl(long) __attribute__((availability(macosx,introduced=10.5)));
+int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_strings.h" 1 3 4
+# 32 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_strings.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
+# 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_strings.h" 2 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_common.h" 1 3 4
+# 34 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_strings.h" 2 3 4
+# 99 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_strings.h" 2 3 4
+# 223 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 1 3 4
+# 32 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
+# 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 2 3 4
+# 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
+# 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
+# 10 "./include/ArrayList/ArrayList.h" 2
+
+
+
+
+
           ArrayListObject ArrayListGet(struct ArrayListPosition);
           ArrayListSize ArrayListPerformSize();
+struct ArrayList* ArrayListPerformConstruct(size_t n);
+
           void ArrayListPut(struct ArrayListPosition, ArrayListObject);
           struct ArrayList* ArrayListArrange(ArrayListObject* Data, struct ArrayListPosition*);
-
           struct ArrayList* ArrayListPerformCopy(struct ArrayList*, struct ArrayList*);
 
 
@@ -1850,6 +2077,7 @@ extern char * suboptarg;
           void ArrayListPrint(struct ArrayList*);
 
           int ArrayListPerformRuin(struct ArrayList* PA);
+
           int ArrayListPerformDelete(struct ArrayList* PA);
 
 

@@ -13,7 +13,7 @@ _PASeriesCreate:                        ; @PASeriesCreate
 	.cfi_offset w29, -16
 	stur	x0, [x29, #-8]
 	str	x1, [sp, #16]
-	mov	x0, #24                         ; =0x18
+	mov	x0, #32                         ; =0x20
 	bl	_malloc
 	str	x0, [sp, #8]
 	ldur	x8, [x29, #-8]
@@ -38,7 +38,7 @@ _PASeriesCopy:                          ; @PASeriesCopy
 	.cfi_offset w29, -16
 	stur	x0, [x29, #-8]
 	stur	x1, [x29, #-16]
-	mov	x0, #24                         ; =0x18
+	mov	x0, #32                         ; =0x20
 	bl	_malloc
 	stur	x0, [x29, #-24]
 	ldur	x8, [x29, #-8]
@@ -68,7 +68,7 @@ _PASeriesBegin:                         ; @PASeriesBegin
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
 	str	x0, [sp, #8]
-	mov	x0, #24                         ; =0x18
+	mov	x0, #32                         ; =0x20
 	bl	_malloc
 	str	x0, [sp]
 	ldr	x8, [sp, #8]

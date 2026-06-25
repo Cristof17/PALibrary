@@ -25,38 +25,14 @@ _InputCreate:                           ; @InputCreate
 _InputBegin:                            ; @InputBegin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #96
-	stp	x29, x30, [sp, #80]             ; 16-byte Folded Spill
-	add	x29, sp, #80
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	adrp	x8, ___stack_chk_guard@GOTPAGE
-	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
-	ldr	x8, [x8]
-	stur	x8, [x29, #-8]
-	str	x1, [sp, #40]
-	str	x2, [sp, #32]
-	stur	x3, [x29, #-24]
-	stur	x4, [x29, #-16]
-	ldur	x8, [x29, #-24]
-	str	x8, [sp, #16]
-	ldur	w8, [x29, #-16]
-	str	w8, [sp, #24]
-	str	x0, [sp, #8]
-	str	x5, [sp]
-	ldur	x9, [x29, #-8]
-	adrp	x8, ___stack_chk_guard@GOTPAGE
-	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
-	ldr	x8, [x8]
-	subs	x8, x8, x9
-	b.eq	LBB1_2
-	b	LBB1_1
-LBB1_1:
-	bl	___stack_chk_fail
-LBB1_2:
-	ldp	x29, x30, [sp, #80]             ; 16-byte Folded Reload
-	add	sp, sp, #96
+	sub	sp, sp, #48
+	.cfi_def_cfa_offset 48
+	str	x1, [sp, #32]
+	str	x2, [sp, #24]
+	str	x0, [sp, #16]
+	str	x3, [sp, #8]
+	str	x4, [sp]
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function

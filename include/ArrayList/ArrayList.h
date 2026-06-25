@@ -5,15 +5,19 @@
 // #include "../types.h"
 #include <defs.h>
 #include <types.h>
+#include <stdlib.h>
+#include <string.h>
+// #include <string.h>
 
 // struct ArrayList;
 //typedef struct ArrayList ArrayList;
 
 DllExport ArrayListObject ArrayListGet(struct ArrayListPosition);
 DllExport ArrayListSize ArrayListPerformSize();
+struct ArrayList* ArrayListPerformConstruct(size_t n);
+// struct ArrayList* ArrayListPerformRuin(size_t n);
 DllExport void ArrayListPut(struct ArrayListPosition, ArrayListObject);
 DllExport struct ArrayList* ArrayListArrange(ArrayListObject* Data, struct ArrayListPosition*);
-// DllExport struct ArrayList* ArrayListPerformInit(struct ArrayList*);
 DllExport struct ArrayList* ArrayListPerformCopy(struct ArrayList*, struct ArrayList*);
 // DllExport struct ArrayList* ArrayListPerformCopyTo(struct ArrayList Dest*, struct PAList source, struct PAElement);
 // struc  ArrayListPerformRuin(struct ArrayList List);
@@ -26,6 +30,7 @@ DllExport int ArrayListIndicateSize(struct ArrayList*);
 DllExport void ArrayListPrint(struct ArrayList*);
 // DllExport ArrayLis
 DllExport int ArrayListPerformRuin(struct ArrayList* PA);
+// DllExport int ArrayListPerformRuin(struct ArrayList* PA);
 DllExport int ArrayListPerformDelete(struct ArrayList* PA);
 // struct ArrayList ArrayListPerformDelete(struct ArrayList List);
 // struct PAData ArrayListGet(struct ArrayList, struct PAData[],PAInt);

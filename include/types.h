@@ -4,6 +4,7 @@
 #define INCLUDE_TYPES_H_	1
 
 #include <defs.h>
+#include <stdlib.h>
 #ifdef _WIN95
 //#define short HALF_PTR;
 typedef PAInt int32_t;
@@ -156,13 +157,18 @@ struct Input {
 struct Algorithm {
 	struct Input input;
 };
+struct ArrayListSize {
+	size_t size;
+};
 struct ArrayListPosition {
-	int position;
+	size_t position;
 };
 struct ArrayList {
 	// struct Position position;
-	struct ArrayListPosition place;
-	ArrayListObject objects[SIZE];
+	ArrayListObject* array;
+	size_t place;
+	size_t size;
+	// ArrayListPosition
 };
 struct PAResource {
 	// struct
