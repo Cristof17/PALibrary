@@ -1837,105 +1837,6 @@ struct Facade {
 # 9 "./include/PA/Tree.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 10 "./include/PA/Tree.h" 2
-
-
-          struct PATree* PATreeCreate(struct PACount*, struct PACount*m, struct PASeries*, struct PAElement*);
-          void PATreeCopy(struct PATree* from, struct PATree* to);
-
-          struct PATree* PATreeBegin(struct PATree*);
-
-
-
-
-
-          PAResult PATreeFinish(struct PATree*);
-          int PATreeDelete(struct PATree*);
-# 2 "test/test.c" 2
-# 1 "./include/PA/Count.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Count.h" 2
-
-
-
-
-
-          struct PACount* PACountCreate(PAInt value);
-          struct PACount* PACountBegin(struct PACount* value);
-          void PACountCopy(struct PACount* from, struct PACount* to);
-
-
-
-          int PACountFinish(struct PACount*);
-
-
-          int PACountDelete(struct PACount* PA);
-# 3 "test/test.c" 2
-
-# 1 "./include/PA/Element.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Element.h" 2
-
-
-          void PAElementVisit(struct PAElement*);
-          PABool PAElementIsVisited(struct PAElement*);
-          void PAElementReset(struct PAElement*);
-          struct PAElement* PAElementCreate(struct PAData* index, struct PAElement* next, struct PAStatus* status);
-
-          struct PAElement* PAElementBegin(struct PAElement* );
-
-
-
-
-          int PAElementFinish(struct PAElement*);
-          int PAElementDelete(struct PAElement*);
-          void PAElementCopy(struct PAElement*, struct PAElement*);
-# 5 "test/test.c" 2
-# 1 "./include/PA/Data.h" 1
-
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 10 "./include/PA/Data.h" 2
-
-
-          struct PAData* PADataCreate(PAInt* Resource);
-          struct PAData* PADataBegin(struct PAData*);
-
-
-          int PADataFinish(struct PAResource*);
-          int PADataDelete(struct PAData*);
-          void PADataCopy(struct PAData* from, struct PAData* to);
-# 6 "test/test.c" 2
-
-# 1 "./include/PA/List.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/List.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 1 3 4
@@ -2135,6 +2036,108 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 2 3 4
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
+# 11 "./include/PA/Tree.h" 2
+
+
+
+          struct PATree* PATreeCreate();
+          void PATreeCopy(struct PATree* from, struct PATree* to);
+
+          struct PATree* PATreeBegin(struct PATree*, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source);
+
+
+
+
+
+          PAResult PATreeFinish(struct PATree*);
+          int PATreeDelete(struct PATree*);
+# 2 "test/test.c" 2
+# 1 "./include/PA/Count.h" 1
+
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/PA/Count.h" 2
+
+
+
+
+
+          struct PACount* PACountCreate(PAInt value);
+          struct PACount* PACountBegin(struct PACount* value);
+          void PACountCopy(struct PACount* from, struct PACount* to);
+
+
+
+          int PACountFinish(struct PACount*);
+
+
+          int PACountDelete(struct PACount* PA);
+# 3 "test/test.c" 2
+
+# 1 "./include/PA/Element.h" 1
+
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/PA/Element.h" 2
+
+
+          void PAElementVisit(struct PAElement*);
+          PABool PAElementIsVisited(struct PAElement*);
+          void PAElementReset(struct PAElement*);
+          struct PAElement* PAElementCreate(struct PAData* index, struct PAElement* next, struct PAStatus* status);
+
+          struct PAElement* PAElementBegin(struct PAElement* );
+
+
+
+
+          int PAElementFinish(struct PAElement*);
+          int PAElementDelete(struct PAElement*);
+          void PAElementCopy(struct PAElement*, struct PAElement*);
+# 5 "test/test.c" 2
+# 1 "./include/PA/Data.h" 1
+
+
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 10 "./include/PA/Data.h" 2
+
+
+          struct PAData* PADataCreate(PAInt* Resource);
+          struct PAData* PADataBegin(struct PAData*);
+
+
+          int PADataFinish(struct PAResource*);
+          int PADataDelete(struct PAData*);
+          void PADataCopy(struct PAData* from, struct PAData* to);
+# 6 "test/test.c" 2
+
+# 1 "./include/PA/List.h" 1
+
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/PA/List.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 10 "./include/PA/List.h" 2
 
 

@@ -1883,74 +1883,6 @@ struct Facade {
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 10 "./include/PA/Tree.h" 2
-
-
-          struct PATree* PATreeCreate(struct PACount*, struct PACount*m, struct PASeries*, struct PAElement*);
-          void PATreeCopy(struct PATree* from, struct PATree* to);
-
-          struct PATree* PATreeBegin(struct PATree*);
-
-
-
-
-
-          PAResult PATreeFinish(struct PATree*);
-          int PATreeDelete(struct PATree*);
-# 9 "src/BFS/Procedure.c" 2
-# 1 "./include/PA/Element.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Element.h" 2
-
-
-          void PAElementVisit(struct PAElement*);
-          PABool PAElementIsVisited(struct PAElement*);
-          void PAElementReset(struct PAElement*);
-          struct PAElement* PAElementCreate(struct PAData* index, struct PAElement* next, struct PAStatus* status);
-
-          struct PAElement* PAElementBegin(struct PAElement* );
-
-
-
-
-          int PAElementFinish(struct PAElement*);
-          int PAElementDelete(struct PAElement*);
-          void PAElementCopy(struct PAElement*, struct PAElement*);
-# 10 "src/BFS/Procedure.c" 2
-# 1 "./include/BFS/Procedure.h" 1
-
-
-
-
-
-
-
-          PAResult BFS();
-          struct BFSProcedure BFSProcedureConstruct(struct PAInput);
-          struct BFSProcedure BFSProcedurePutInput(struct BFSProcedure, struct PAInput);
-
-
-
-          PAResult BFSProcedureRuin();
-          PAResult BFSProcedureSubroutine();
-# 11 "src/BFS/Procedure.c" 2
-
-# 1 "./include/PA/Input.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Input.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 1 3 4
@@ -2150,6 +2082,77 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 2 3 4
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
+# 11 "./include/PA/Tree.h" 2
+
+
+
+          struct PATree* PATreeCreate();
+          void PATreeCopy(struct PATree* from, struct PATree* to);
+
+          struct PATree* PATreeBegin(struct PATree*, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source);
+
+
+
+
+
+          PAResult PATreeFinish(struct PATree*);
+          int PATreeDelete(struct PATree*);
+# 9 "src/BFS/Procedure.c" 2
+# 1 "./include/PA/Element.h" 1
+
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/PA/Element.h" 2
+
+
+          void PAElementVisit(struct PAElement*);
+          PABool PAElementIsVisited(struct PAElement*);
+          void PAElementReset(struct PAElement*);
+          struct PAElement* PAElementCreate(struct PAData* index, struct PAElement* next, struct PAStatus* status);
+
+          struct PAElement* PAElementBegin(struct PAElement* );
+
+
+
+
+          int PAElementFinish(struct PAElement*);
+          int PAElementDelete(struct PAElement*);
+          void PAElementCopy(struct PAElement*, struct PAElement*);
+# 10 "src/BFS/Procedure.c" 2
+# 1 "./include/BFS/Procedure.h" 1
+
+
+
+
+
+
+
+          PAResult BFS();
+          struct BFSProcedure BFSProcedureConstruct(struct PAInput);
+          struct BFSProcedure BFSProcedurePutInput(struct BFSProcedure, struct PAInput);
+
+
+
+          PAResult BFSProcedureRuin();
+          PAResult BFSProcedureSubroutine();
+# 11 "src/BFS/Procedure.c" 2
+
+# 1 "./include/PA/Input.h" 1
+
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/PA/Input.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 10 "./include/PA/Input.h" 2
 
 

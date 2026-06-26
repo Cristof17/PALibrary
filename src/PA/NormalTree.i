@@ -2061,12 +2061,15 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 10 "./include/PA/Tree.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 11 "./include/PA/Tree.h" 2
 
 
-          struct PATree* PATreeCreate(struct PACount*, struct PACount*m, struct PASeries*, struct PAElement*);
+
+          struct PATree* PATreeCreate();
           void PATreeCopy(struct PATree* from, struct PATree* to);
 
-          struct PATree* PATreeBegin(struct PATree*);
+          struct PATree* PATreeBegin(struct PATree*, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source);
 
 
 

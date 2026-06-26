@@ -1839,82 +1839,6 @@ struct Facade {
 # 9 "./include/PA/Tree.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 10 "./include/PA/Tree.h" 2
-
-
-          struct PATree* PATreeCreate(struct PACount*, struct PACount*m, struct PASeries*, struct PAElement*);
-          void PATreeCopy(struct PATree* from, struct PATree* to);
-
-          struct PATree* PATreeBegin(struct PATree*);
-
-
-
-
-
-          PAResult PATreeFinish(struct PATree*);
-          int PATreeDelete(struct PATree*);
-# 4 "src/PA/Tree.c" 2
-# 1 "./include/PA/Count.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Count.h" 2
-
-
-
-
-
-          struct PACount* PACountCreate(PAInt value);
-          struct PACount* PACountBegin(struct PACount* value);
-          void PACountCopy(struct PACount* from, struct PACount* to);
-
-
-
-          int PACountFinish(struct PACount*);
-
-
-          int PACountDelete(struct PACount* PA);
-# 5 "src/PA/Tree.c" 2
-# 1 "./include/PA/Element.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Element.h" 2
-
-
-          void PAElementVisit(struct PAElement*);
-          PABool PAElementIsVisited(struct PAElement*);
-          void PAElementReset(struct PAElement*);
-          struct PAElement* PAElementCreate(struct PAData* index, struct PAElement* next, struct PAStatus* status);
-
-          struct PAElement* PAElementBegin(struct PAElement* );
-
-
-
-
-          int PAElementFinish(struct PAElement*);
-          int PAElementDelete(struct PAElement*);
-          void PAElementCopy(struct PAElement*, struct PAElement*);
-# 6 "src/PA/Tree.c" 2
-# 1 "./include/PA/List.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/List.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 1 3 4
@@ -2114,6 +2038,85 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 2 3 4
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
+# 11 "./include/PA/Tree.h" 2
+
+
+
+          struct PATree* PATreeCreate();
+          void PATreeCopy(struct PATree* from, struct PATree* to);
+
+          struct PATree* PATreeBegin(struct PATree*, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source);
+
+
+
+
+
+          PAResult PATreeFinish(struct PATree*);
+          int PATreeDelete(struct PATree*);
+# 4 "src/PA/Tree.c" 2
+# 1 "./include/PA/Count.h" 1
+
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/PA/Count.h" 2
+
+
+
+
+
+          struct PACount* PACountCreate(PAInt value);
+          struct PACount* PACountBegin(struct PACount* value);
+          void PACountCopy(struct PACount* from, struct PACount* to);
+
+
+
+          int PACountFinish(struct PACount*);
+
+
+          int PACountDelete(struct PACount* PA);
+# 5 "src/PA/Tree.c" 2
+# 1 "./include/PA/Element.h" 1
+
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/PA/Element.h" 2
+
+
+          void PAElementVisit(struct PAElement*);
+          PABool PAElementIsVisited(struct PAElement*);
+          void PAElementReset(struct PAElement*);
+          struct PAElement* PAElementCreate(struct PAData* index, struct PAElement* next, struct PAStatus* status);
+
+          struct PAElement* PAElementBegin(struct PAElement* );
+
+
+
+
+          int PAElementFinish(struct PAElement*);
+          int PAElementDelete(struct PAElement*);
+          void PAElementCopy(struct PAElement*, struct PAElement*);
+# 6 "src/PA/Tree.c" 2
+# 1 "./include/PA/List.h" 1
+
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/PA/List.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 10 "./include/PA/List.h" 2
 
 
@@ -2133,31 +2136,30 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 void PAListPrint(struct PAList* List);
 # 7 "src/PA/Tree.c" 2
 # 19 "src/PA/Tree.c"
-          struct PATree* PATreeCreate(struct PACount* n, struct PACount* m, struct PASeries* adj, struct PAElement* source)
+          struct PATree* PATreeCreate()
 {
 
     struct PATree* treePointer;
     treePointer = (struct PATree*) malloc (sizeof(struct PATree));
-    treePointer->n = n;
-    treePointer->m = m;
-
-    treePointer->source = source;
 # 77 "src/PA/Tree.c"
     return treePointer;
 
 }
-          struct PATree* PATreeBegin(struct PATree* tree)
+          struct PATree* PATreeBegin(struct PATree* tree, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source)
 {
 
-    struct PATree* treePointer;
-    treePointer->n = tree->n;
-    treePointer->m = tree->m;
-    treePointer->adj = tree->adj;
-    treePointer->source = tree->source;
-# 116 "src/PA/Tree.c"
-    return treePointer;
+    struct PATree* aux;
+    aux = (struct PATree*) malloc (sizeof(struct PATree));
+
+    __builtin___memcpy_chk (aux->n, N,sizeof(struct PACount), __builtin_object_size (aux->n, 0));
+    __builtin___memcpy_chk (aux->m, M,sizeof(struct PACount), __builtin_object_size (aux->m, 0));
+    __builtin___memcpy_chk (aux->adj, adj,sizeof(struct PASeries), __builtin_object_size (aux->adj, 0));
+    __builtin___memcpy_chk (aux->source, source,sizeof(struct PAElement), __builtin_object_size (aux->source, 0));
+    __builtin___memcpy_chk (tree, aux,sizeof(struct PATree), __builtin_object_size (tree, 0));
+# 123 "src/PA/Tree.c"
+    return tree;
 }
-# 127 "src/PA/Tree.c"
+# 134 "src/PA/Tree.c"
           void PATreeCopy(struct PATree* from, struct PATree* to)
 {
     struct PATree* aux;
@@ -2167,17 +2169,17 @@ void PAListPrint(struct PAList* List);
     to->n = aux->n;
     to->m = aux->m;
     free(aux);
-# 153 "src/PA/Tree.c"
+# 160 "src/PA/Tree.c"
 }
           PAResult PATreeFinish(struct PATree* PA)
 {
     int returnCode;
     free(PA);
     returnCode = ((int)0);
-# 210 "src/PA/Tree.c"
+# 217 "src/PA/Tree.c"
     return returnCode;
 }
-# 252 "src/PA/Tree.c"
+# 259 "src/PA/Tree.c"
           int PATreeDelete(struct PATree* PA)
 {
     int returnCode;

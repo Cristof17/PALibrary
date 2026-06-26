@@ -16,15 +16,15 @@
     // struct PACount size;
     // return size;
 // }
-DllExport struct PATree* PATreeCreate(struct PACount* n, struct PACount* m, struct PASeries* adj, struct PAElement* source)
+DllExport struct PATree* PATreeCreate()
 {
     // struct PATree* temp;
     struct PATree* treePointer;
     treePointer = (struct PATree*) malloc (sizeof(struct PATree));
-    treePointer->n = n;
-    treePointer->m = m;
+    // treePointer->n = n;
+    // treePointer->m = m;
     // treePointer->adj = adj;
-    treePointer->source = source;
+    // treePointer->source = source;
     // treePointer->n = PACountCreate();
     // treePointer->m = PACountCreate();
     // treePointer->source = PAElementCreate();
@@ -77,14 +77,21 @@ DllExport struct PATree* PATreeCreate(struct PACount* n, struct PACount* m, stru
     return treePointer;
     // return temp;
 }
-DllExport struct PATree* PATreeBegin(struct PATree* tree)
+DllExport struct PATree* PATreeBegin(struct PATree* tree, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source)
 {
     // struct PATree tree;/
-    struct PATree* treePointer;
-    treePointer->n = tree->n;
-    treePointer->m = tree->m;
-    treePointer->adj = tree->adj;
-    treePointer->source = tree->source;
+    struct PATree* aux;
+    aux = (struct PATree*) malloc (sizeof(struct PATree));
+    // memcpy(aux,from,sizeof())
+    memcpy(aux->n,N,sizeof(struct PACount));
+    memcpy(aux->m,M,sizeof(struct PACount));
+    memcpy(aux->adj,adj,sizeof(struct PASeries));
+    memcpy(aux->source,source,sizeof(struct PAElement));
+    memcpy(tree,aux,sizeof(struct PATree));
+    // treePointer->n = tree->n;
+    // treePointer->m = tree->m;
+    // treePointer->adj = tree->adj;
+    // treePointer->source = tree->source;
     // treePointer->n = PACountPerformConstruct();
     // treePointer->m = PACountPerformConstruct();
     // treePointer->adj = PAListPerformConstruct();
@@ -113,7 +120,7 @@ DllExport struct PATree* PATreeBegin(struct PATree* tree)
     // tree.source.;
     // tree.adj = ()
     // return tree;
-    return treePointer;
+    return tree;
 }
 // DllExport PAResult PATreePerformCopy(struct PATransposeTree Tree)
 // {
