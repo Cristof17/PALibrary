@@ -22,14 +22,16 @@
 // 	init.result = Result;
 // 	return init;
 // }
-DllExport void PAOutputPerformCopy(struct PAOutput* from, struct PAOutput* to)
+DllExport void PAOutputCopy(struct PAOutput* from, struct PAOutput* to)
 {
 	struct PAOutput* aux;
     // aux = PAOutputCreate();
     // aux = (struct )
     aux = (struct PAOutput*) malloc (sizeof(struct PAOutput));
-    aux->result = from->result;
-    to->result = aux->result;
+    memcpy(aux,from,sizeof(struct PAOutput));
+    memcpy(to,aux, sizeof(struct PAOutput));
+    // aux->result = from->result;
+    // to->result = aux->result;
     free(aux);
     // PAOutputDelete(aux);
     // PAOutputFinish(aux);
@@ -56,6 +58,7 @@ DllExport void PAOutputPerformCopy(struct PAOutput* from, struct PAOutput* to)
 // 	struct PAResult result;
 // 	return result;
     // return copy;
+    // return to
 }
 
 // struct BFSOutput BFSOutputPerformInit(struct BFSOutput output) 
@@ -68,32 +71,33 @@ DllExport void PAOutputPerformCopy(struct PAOutput* from, struct PAOutput* to)
 // {
 //     PAOutputPerformPrint(output);
 // }
-DllExport struct PAOutput* PAOutputCreate(struct BFSRecord* Result)
+DllExport struct PAOutput* PAOutputCreate()
 {
-    struct PAOutput* result;
+    // struct PAOutput* result;
+    struct PAOutput* outputPointer;
     // struct PAOutput Output;
     // struct PAOutput* outputPointer;
-    result =(struct PAOutput*) malloc (sizeof(struct PAOutput));
-    result->result = Result;
+    outputPointer = (struct PAOutput*) malloc (sizeof(struct PAOutput));
+    // result->result = Result;
     // outputPointer->result = BFSRecordCreate();
     // outputPointer-
     // return outputPointer;
     // return Output;
-    return result;
+    return outputPointer;
     // struct BFSRecord Record = BFSRecordConstruct()
 }
 DllExport struct PAOutput* PAOutputBegin(struct PAOutput* Output)
 {
     // Output->result = Value;
     // return Output;
-    struct PAOutput* temp;
+    struct PAOutput* aux;
     // struct PAOutput* outputPointer;
     // Output->result = Value;
-    temp->result = Output->result;
+    // temp->result = Output->result;
     // temp = *Output;
     // temp.result = &Value;
     // Output->result = temp.result;
-    return temp;
+    return Output;
 }
 DllExport int PAOutputDelete(struct PAOutput* PA)
 {
