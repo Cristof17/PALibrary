@@ -2505,10 +2505,13 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 9 "./include/PA/TransposeTree.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 10 "./include/PA/TransposeTree.h" 2
+
 
 
           struct PATransposeTree* PATransposeTreeCreate();
-          struct PATransposeTree PATransposeTreeBegin(struct PATransposeTree*, struct PATree*);
+          struct PATransposeTree* PATransposeTreeBegin(struct PATransposeTree*, struct PATree*);
           void PATransposeTreeCopy(struct PATransposeTree*, struct PATransposeTree*);
 
           PAResult PATransposeTreeFinish(struct PATransposeTree*);

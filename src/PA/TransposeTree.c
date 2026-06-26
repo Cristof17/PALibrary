@@ -27,13 +27,18 @@ DllExport struct PATransposeTree* PATransposeTreeCreate()
     // return transposeTreePointer;
 }
 
-DllExport struct PATransposeTree PATransposeTreeBegin(struct PATransposeTree* TransposeTree, struct PATree* Value)
+DllExport struct PATransposeTree* PATransposeTreeBegin(struct PATransposeTree* TransposeTree, struct PATree* Value)
 {
-    struct PATransposeTree temp;
+    struct PATransposeTree* aux;
+    // aux = (struct PATransposeTree*) malloc (soz)
+    // aux = (struct PATransposeTree*) malloc (sizeof*s)
+    aux = (struct PATransposeTree*) malloc (sizeof(struct PATransposeTree));
+    memcpy(aux->tree,Value,sizeof(struct PATree));
+    memcpy(aux,TransposeTree,sizeof(struct PATransposeTree));
     // struct PATransposeTree* transposeTreePointer;
     // temp.tree = &Value;
-    TransposeTree->tree = Value;
-    temp = *TransposeTree;
+    // TransposeTree->tree = Value;
+    // temp = *TransposeTree;
     // TransposeTree->tree = temp.tree;
     // struct PATree* treePointer;
     // treePointer = &(TransposeTree->tree);
@@ -44,7 +49,8 @@ DllExport struct PATransposeTree PATransposeTreeBegin(struct PATransposeTree* Tr
     // transposeTree = PATransposeTreePerformConstruct(TransposeTree.adj_trans);
     // transposeTree.adj_trans = Adj_trans;
     // struct PATransposeTree tree;
-    return temp;
+    // return temp;
+    return TransposeTree;
     // return TransposeTree;
 }
 DllExport void PATransposeTreeCopy(struct PATransposeTree* from, struct PATransposeTree* to)
@@ -52,8 +58,10 @@ DllExport void PATransposeTreeCopy(struct PATransposeTree* from, struct PATransp
     // struct PATransposeTree* copy;
     struct PATransposeTree* aux;
     aux = (struct PATransposeTree*) malloc (sizeof(struct PATransposeTree));
-    aux->tree = from->tree;
-    to->tree = aux->tree;
+    memcpy(aux,from,sizeof(struct PATransposeTree));
+    memcpy(to,aux,sizeof(struct PATransposeTree));
+    // aux->tree = from->tree;
+    // to->tree = aux->tree;
     free(aux);
     // temp.
     // To->tree = temp->tree;
