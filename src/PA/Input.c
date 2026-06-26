@@ -123,10 +123,10 @@ DllExport PAResult PAInputFinish(struct PAInput* PA) {
 DllExport int PAInputDelete(struct PAInput* PA)
 {
 	int returnCode;
-	returnCode = PARESULT_SUCCESS;
 	PA->m = NULL;
 	PA->n = NULL;
 	PA->source = NULL;
+	returnCode = PARESULT_SUCCESS;
 	// struct PAInput 
 	// struct PAInput temp;
 	// return temp;

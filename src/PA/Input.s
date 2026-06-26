@@ -128,7 +128,6 @@ _PAInputDelete:                         ; @PAInputDelete
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	str	x0, [sp, #8]
-	str	wzr, [sp, #4]
 	ldr	x8, [sp, #8]
                                         ; kill: def $x9 killed $xzr
 	str	xzr, [x8, #8]
@@ -136,6 +135,7 @@ _PAInputDelete:                         ; @PAInputDelete
 	str	xzr, [x8]
 	ldr	x8, [sp, #8]
 	str	xzr, [x8, #16]
+	str	wzr, [sp, #4]
 	ldr	w0, [sp, #4]
 	add	sp, sp, #16
 	ret
