@@ -2400,11 +2400,15 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 9 "./include/PA/List.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 10 "./include/PA/List.h" 2
 
 
 
-          struct PAList* PAListCreate(struct PACount* n, struct ArrayList* array);
-          struct PAList* PAListBegin(struct PAList* list);
+
+          struct PAList* PAListCreate();
+
+          struct PAList* PAListBegin(struct PAList* list, struct PACount* N, struct PASeries* adj);
 
 
 
@@ -2513,7 +2517,6 @@ int main()
  struct PAList* list;
  struct ArrayList* array;
  list = PAListCreate(count1,array);
- struct PAList* list2 = PAListBegin(list);
 # 149 "test/test_pointers.c"
  return 0;
 }

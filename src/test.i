@@ -1936,41 +1936,6 @@ struct Facade {
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 9 "./include/PA/List.h" 2
-
-
-
-          struct PAList* PAListCreate(struct PACount* n, struct ArrayList* array);
-          struct PAList* PAListBegin(struct PAList* list);
-
-
-
-          PAResult PAListFinish(struct PAList*);
-          int PAListDelete(struct PAList*);
-          void PAListCopy(struct PAList*, struct PAList*);
-
-void PAListPrint(struct PAList* List);
-# 8 "test/test.c" 2
-# 1 "./include/PA/Resource.h" 1
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 7 "./include/PA/Resource.h" 2
- struct PAResource PAResourceBegin(struct PAResource*, PANumber);
-          struct PAResource* PAResourceCreate();
-          PAResult PAResourceFinish(struct PAResource*);
-          int PAResourceDelete(struct PAResource*);
-          void PAResourceCopy(struct PAResource*, struct PAResource*);
-# 9 "test/test.c" 2
-# 1 "./include/PA/Number.h" 1
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 6 "./include/PA/Number.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 1 3 4
@@ -2170,6 +2135,45 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 2 3 4
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
+# 10 "./include/PA/List.h" 2
+
+
+
+
+          struct PAList* PAListCreate();
+
+          struct PAList* PAListBegin(struct PAList* list, struct PACount* N, struct PASeries* adj);
+
+
+
+          PAResult PAListFinish(struct PAList*);
+          int PAListDelete(struct PAList*);
+          void PAListCopy(struct PAList*, struct PAList*);
+
+void PAListPrint(struct PAList* List);
+# 8 "test/test.c" 2
+# 1 "./include/PA/Resource.h" 1
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 7 "./include/PA/Resource.h" 2
+ struct PAResource PAResourceBegin(struct PAResource*, PANumber);
+          struct PAResource* PAResourceCreate();
+          PAResult PAResourceFinish(struct PAResource*);
+          int PAResourceDelete(struct PAResource*);
+          void PAResourceCopy(struct PAResource*, struct PAResource*);
+# 9 "test/test.c" 2
+# 1 "./include/PA/Number.h" 1
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 6 "./include/PA/Number.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 7 "./include/PA/Number.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 1 3 4
 # 61 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 3 4

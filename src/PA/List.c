@@ -16,12 +16,12 @@
 #endif
 
 // struct PAList PAListConstruct(struct PAElement Element) {
-DllExport struct PAList* PAListCreate(struct PACount* m, struct ArrayList* edges)
+DllExport struct PAList* PAListCreate()
 {
     struct PAList* listPointer;
     listPointer = (struct PAList*) malloc (sizeof(struct PAList));
-    listPointer->m = m;
-    listPointer->neigh = edges;
+    // listPointer->m = m;
+    // listPointer->neigh = edges;
     // listPointer->neigh = 
     // struct PACount n = PACountPerformConstruct();
     // struct PACount x;
@@ -53,15 +53,17 @@ DllExport void PAListCopy(struct PAList* from, struct PAList* to)
     struct PAList* aux;
     // aux = PAListCreate();
     aux = (struct PAList*) malloc (sizeof(struct PAList));
+    memcpy(aux,from,sizeof(struct PAList));
+    memcpy(to,aux,sizeof(struct PAList));
     // temp.n = PACountPerformCopy(from.n,temp.n);
     // struct PACount x;
     // struct PACount y;
     // aux->n = from->n;
-    aux->m = from->m;
-    aux->neigh = from->neigh;
+    // aux->m = from->m;
+    // aux->neigh = from->neigh;
     // to->n = aux->n;
-    to->neigh = aux->neigh;
-    to->m = aux->m;
+    // to->neigh = aux->neigh;
+    // to->m = aux->m;
     // aux->n = NULL;
     // aux->neigh = NULL;
     free(aux);
@@ -70,21 +72,21 @@ DllExport void PAListCopy(struct PAList* from, struct PAList* to)
     // x.number.val = FIRST;
     // y.number.val = temp.n.number.val;
     // if (temp.n.number.val > to.n.number.val)
-    {
+    // {
         // y.number.val = to.n.number.val;
         // temp.n.number.val = .n.number.val;
-    }
+    // }
     // else if (temp.n.number.val < to.n.number.val)
-    {
+    // {
         // y.number.val = temp.n.number.val;
-    }
+    // }
     // while (x.number.val <= y.number.val)
-    {
+    // {
         // struct PASeries aux;
         // PASeriesPerformCopy(from.neigh[x.number.val], aux);
         // PASeriesPerformCopy(aux, temp.neigh[x.number.val]);
         // x.number.val++;
-    }
+    // }
     // x.number.val = FIRST;
     // while (x.number.val < y.number.val)
     // {
@@ -93,18 +95,18 @@ DllExport void PAListCopy(struct PAList* from, struct PAList* to)
     // }
     // x.number.val = FIRST;
     // while (x.number.val < y.number.val)
-    {
+    // {
         // struct PASeries aux;
         // PASeriesPerformCopy(temp.neigh[x.number.val],aux);
         // PASeriesPerformCopy(aux, to.neigh[x.number.val]);
         // x.number.val++;
-    }
+    // }
     // to.n = PACountPerformCopy(temp.n, to.n);
     // return to;
     // return temp;
 }
 
-DllExport struct PAList* PAListBegin(struct PAList* List)
+DllExport struct PAList* PAListBegin(struct PAList* List, struct PACount* N, struct PASeries* adj)
 {
     // struct PAList temp;
     struct PAList* listPointer;

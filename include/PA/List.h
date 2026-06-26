@@ -6,11 +6,14 @@
 #include <defs.h>
 #include <types.h>
 #include <stdlib.h>
+#include <string.h>
+
 // struct PAList;
 //typedef struct PAList List;
 // DllExport struct PAElement GetHead();
-DllExport struct PAList* PAListCreate(struct PACount* n, struct ArrayList* array);
-DllExport struct PAList* PAListBegin(struct PAList* list);
+DllExport struct PAList* PAListCreate();
+// DllExport struct PAList* PAListBegin(struct PAList* list, struct PACount M);
+DllExport struct PAList* PAListBegin(struct PAList* list, struct PACount* N, struct PASeries* adj);
 // DllExport struct PAList PAListPerformCopy(struct PAList);
 // DllExport PAResult PAListPerformPutCount(struct PAList, struct PACount);
 // DllExport PAResult PAListPerformPutList(struct PAList);
