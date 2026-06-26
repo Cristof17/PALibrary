@@ -211,7 +211,7 @@ struct PACount {
 struct PASeries {
 	struct PACount* m;
 	// struct PANumber adj[0];
-	struct ArrayList adj;
+	struct ArrayList* adj;
 };
 struct PAList {
 	struct PACount* m;

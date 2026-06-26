@@ -1626,7 +1626,7 @@ struct PACount {
 struct PASeries {
  struct PACount* m;
 
- struct ArrayList adj;
+ struct ArrayList* adj;
 };
 struct PAList {
  struct PACount* m;
@@ -2468,7 +2468,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
           struct PASeries* PASeriesCreate();
-          struct PASeries* PASeriesBegin(struct PASeries*);
+          struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct ArrayList*);
           int PASeriesDelete(struct PASeries*);
           void PASeriesCopy(struct PASeries*, struct PASeries*);
 

@@ -1627,7 +1627,7 @@ struct PACount {
 struct PASeries {
  struct PACount* m;
 
- struct ArrayList adj;
+ struct ArrayList* adj;
 };
 struct PAList {
  struct PACount* m;
@@ -2042,7 +2042,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           struct PASeries* PASeriesCreate();
-          struct PASeries* PASeriesBegin(struct PASeries*);
+          struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct ArrayList*);
           int PASeriesDelete(struct PASeries*);
           void PASeriesCopy(struct PASeries*, struct PASeries*);
 
@@ -2155,14 +2155,19 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 }
-# 113 "src/PA/Series.c"
-          struct PASeries* PASeriesBegin(struct PASeries* series)
+# 114 "src/PA/Series.c"
+          struct PASeries* PASeriesBegin(struct PASeries* series, struct PACount* M, struct ArrayList* List)
     {
-        struct PASeries* seriesPointer;
-        seriesPointer = (struct PASeries*) malloc (sizeof(struct PASeries));
-        seriesPointer->m = series->m;
-# 153 "src/PA/Series.c"
-        return seriesPointer;
+        struct PASeries* aux;
+
+        aux = (struct PASeries*) malloc (sizeof(struct PASeries));
+
+        __builtin___memcpy_chk (aux->m, M, sizeof(struct PACount), __builtin_object_size (aux->m, 0));
+        __builtin___memcpy_chk (aux->adj, List,sizeof(struct ArrayList), __builtin_object_size (aux->adj, 0));
+        __builtin___memcpy_chk (series, aux,sizeof(struct PASeries), __builtin_object_size (series, 0));
+# 158 "src/PA/Series.c"
+        free(aux);
+        return aux;
     }
               int PASeriesDelete(struct PASeries* PA)
     {
@@ -2170,21 +2175,21 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
         returnCode = ((int)0);
 
         PA->m = 0;
-# 175 "src/PA/Series.c"
+# 181 "src/PA/Series.c"
         return returnCode;
     }
-# 186 "src/PA/Series.c"
+# 192 "src/PA/Series.c"
               PAResult PASeriesFinish(struct PASeries* PA)
     {
 
         int returnCode;
         free(PA);
         returnCode = ((int)0);
-# 211 "src/PA/Series.c"
+# 217 "src/PA/Series.c"
         return returnCode;
 
     }
-# 269 "src/PA/Series.c"
+# 275 "src/PA/Series.c"
 void PASeriesPrint(struct PASeries* Series)
 {
 

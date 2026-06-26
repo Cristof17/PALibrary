@@ -1631,7 +1631,7 @@ struct PACount {
 struct PASeries {
  struct PACount* m;
 
- struct ArrayList adj;
+ struct ArrayList* adj;
 };
 struct PAList {
  struct PACount* m;
@@ -2095,7 +2095,7 @@ void PAListPrint(struct PAList* List);
 
 
           struct PASeries* PASeriesCreate();
-          struct PASeries* PASeriesBegin(struct PASeries*);
+          struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct ArrayList*);
           int PASeriesDelete(struct PASeries*);
           void PASeriesCopy(struct PASeries*, struct PASeries*);
 

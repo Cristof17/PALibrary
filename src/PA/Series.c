@@ -110,11 +110,16 @@ DllExport void PASeriesCopy(struct PASeries* from, struct PASeries* to)
 //     }
 // }
 // }
-DllExport struct PASeries* PASeriesBegin(struct PASeries* series)
+// DllExport struct PASeries* PASeriesBegin(struct PASeries* series, struct PACCoun)
+DllExport struct PASeries* PASeriesBegin(struct PASeries* series, struct PACount* M, struct ArrayList* List)
     {
-        struct PASeries* seriesPointer;
-        seriesPointer = (struct PASeries*) malloc (sizeof(struct PASeries));
-        seriesPointer->m = series->m;
+        struct PASeries* aux;
+
+        aux = (struct PASeries*) malloc (sizeof(struct PASeries));
+        // seriesPointer->m = series->m;
+        memcpy(aux->m, M, sizeof(struct PACount));
+        memcpy(aux->adj,List,sizeof(struct ArrayList));
+        memcpy(series,aux,sizeof(struct PASeries));
         // seriesPointer->adj = &series->adj[0];
         // PAResult result;
         // return result;
@@ -150,7 +155,8 @@ DllExport struct PASeries* PASeriesBegin(struct PASeries* series)
         // return temp;
         // series.adj = Value2;
         // return series;
-        return seriesPointer;
+        free(aux);
+        return aux;
     }
     DllExport int PASeriesDelete(struct PASeries* PA)
     {
