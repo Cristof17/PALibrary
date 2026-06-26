@@ -32,17 +32,23 @@ DllExport struct PAPair* PAPairCreate()
     //return pair;
 }
 // struct PAPair PAPairRuin(struct PAPair Pair) {
-DllExport struct PAPair PAPairBegin(struct PAPair* Pair, struct PAElement* Value, struct PAElement* Value2)
+DllExport struct PAPair* PAPairBegin(struct PAPair* Pair, struct PAElement* Value, struct PAElement* Value2)
 {
         // struct PAPair* pairPointer;
         
-    struct PAPair temp;
-    Pair->Node = Value;
-    Pair->Node = Value2;
+    struct PAPair* aux;
+    aux = (struct PAPair*) malloc (sizeof(struct PAPair));
+    // memset(aux->Node,Value)
+    memcpy(aux->Node,Value,sizeof(struct PAElement));
+    memcpy(aux->Node,Value2,sizeof(struct PAElement));
+    memcpy(Pair,aux,sizeof(struct PAPair));
+    // memcpy(aux->Neigh,Value2,sizeof(struct PAP))
+    // Pair->Node = Value;
+    // Pair->Node = Value2;
     // temp.Neigh = Value;
     // Pair->Node = temp.Node;
     // Pair->Neigh = temp.Neigh;
-    temp = *Pair;
+    // temp = *Pair;
     // struct PAPair *pairPointer;
     // Pair->Node.index = Value.index;
     // Pair->Node.status = Value.status;
@@ -56,7 +62,8 @@ DllExport struct PAPair PAPairBegin(struct PAPair* Pair, struct PAElement* Value
     // Pair.Neigh = Value2;
     // struct PAPair pair;
     // return pairPointer;
-    return temp;
+    // return temp;
+    return Pair;
 	// PAResult result;
 	// return result;
     //struct PAPair pair;
@@ -75,12 +82,16 @@ DllExport void PAPairCopy(struct PAPair* from, struct PAPair* to)
     // struct PAPair temp;
     // sutr
     struct PAPair* aux;
+    // aux = (struct PAPair*).
+    aux = (struct PAPair*) malloc (sizeof(struct PAPair));
+    memcpy(aux,from,sizeof(struct PAPair));
+    memcpy(to,aux,sizeof(struct PAPair));
     // struct PAElement node;
     // struct PAElement neigh;
-    aux->Node = from->Node;
-    aux->Neigh = from->Neigh;
-    to->Neigh = aux->Neigh;
-    to->Node = aux->Node;
+    // aux->Node = from->Node;
+    // aux->Neigh = from->Neigh;
+    // to->Neigh = aux->Neigh;
+    // to->Node = aux->Node;
     free(aux);
     // node = PAElementPerformConstruct();
     // neigh = PAElementPerformConstruct();
