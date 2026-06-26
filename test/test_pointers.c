@@ -102,7 +102,7 @@ int main()
 	// // PACountBegin(count123,number)
 	struct PAList* list;
 	struct ArrayList* array;
-	list = PAListCreate(count1,array);
+	// list = PAListCreate(count1,array);
 	// struct PAList* list2 = PAListBegin(list);
 	// printf("list.n alloc %d\n", list->n->number->val);
 

@@ -2517,7 +2517,6 @@ int main()
 # 103 "test/test_pointers.c"
  struct PAList* list;
  struct ArrayList* array;
- list = PAListCreate(count1,array);
 # 149 "test/test_pointers.c"
  return 0;
 }

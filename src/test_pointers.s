@@ -31,12 +31,7 @@ _main:                                  ; @main
 	ldur	x0, [x29, #-32]
 	ldr	x1, [sp, #40]
 	bl	_PAStatusCopy
-	ldr	x0, [sp, #32]
-	ldr	x1, [sp, #8]
-	bl	_PAListCreate
-	mov	x8, x0
 	ldr	w0, [sp, #4]                    ; 4-byte Folded Reload
-	str	x8, [sp, #16]
 	ldp	x29, x30, [sp, #80]             ; 16-byte Folded Reload
 	add	sp, sp, #96
 	ret

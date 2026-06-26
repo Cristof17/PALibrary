@@ -11,26 +11,31 @@
 
 DllExport struct PANormalTree* PANormalTreeCreate()
 {
-    struct PANormalTree normalTree;
+    struct PANormalTree* normalTreePointer;
+    // struct PANormalTree* normalTree;
     // struct PANormaltT/
     // struct PANormat
     // struct PANormalTreePointer& normalTree;
     // struct PANormat
     // struct PAnor
     // struct NA
-    struct PANormalTree* normalTreePointer;
+    // nro
+    normalTreePointer = (struct PANormalTree*) malloc (sizeof(struct PANormalTree));
     // register
     return normalTreePointer;
     // normalTree.tree = PATreePerformConstruct();
     // normalTree.tree = PATreePerformConstruct();
     // return normalTree;
 }
-DllExport struct PANormalTree PANormalTreeBegin(struct PANormalTree* NormalTree, struct PATree* Value)
+DllExport struct PANormalTree* PANormalTreeBegin(struct PANormalTree* NormalTree, struct PATree* Value)
 {
-    struct PANormalTree temp;
+    struct PANormalTree* aux;
+    memcpy(aux->tree,Value,sizeof(struct PATree));
+    memcpy(NormalTree, aux, sizeof(struct PANormalTree));
+    return NormalTree;
     // struct PANormalTree *normalTreePointer;
-    NormalTree->tree = Value;
-    temp = *NormalTree;
+    // NormalTree->tree = Value;
+    // temp = *NormalTree;
     // temp.tree = &Value;
     // NormalTree->tree = temp.tree;
 
@@ -40,7 +45,7 @@ DllExport struct PANormalTree PANormalTreeBegin(struct PANormalTree* NormalTree,
     // struct PANormalTree normalTree;
     // normalTree.adj = Adj;
     // return normalTreePointer;  
-    return temp;
+    // return temp;
 }
 DllExport void PANormalTreePerformCopy(struct PANormalTree* from, struct PANormalTree* to)
 {
