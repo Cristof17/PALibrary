@@ -30,12 +30,15 @@ DllExport struct PALink* PALinkCreate(struct PAPair* p)
     // return link;
     // return linkPointer;
 }
-DllExport struct PALink* PALinkBegin(struct PALink* Link)
+DllExport struct PALink* PALinkBegin(struct PALink* Link, struct PAPair* pair)
 {
     // struct PALink temp;
-    struct PALink* linkPointer;
-    linkPointer = (struct PALink*) malloc (sizeof(struct PALink));
-    linkPointer->p = Link->p;
+    struct PALink* aux;
+    aux = (struct PALink*) malloc (sizeof(struct PALink));
+    // memcpy(aux->p,pair,sizeof(struct PAPiar)
+    memcpy(aux->p,pair,sizeof(struct PAPair));
+    memcpy(Link,aux,sizeof(struct PAPair));
+    // aux->p = Link->p;
     // struct PALink* linkPointer;
     // temp= Value;
     // Link->p = Value;
@@ -46,7 +49,7 @@ DllExport struct PALink* PALinkBegin(struct PALink* Link)
     // struct PAPair pair;
     // Link.p = Pair;
     // return link;
-    return linkPointer;
+    return aux;
     // return temp;
 }
 DllExport PAResult PALinkFinish(struct PALink* PA)
@@ -69,9 +72,11 @@ DllExport void PALinkCopy(struct PALink* from, struct PALink* to)
     // aux = (struct PAList*) malloc (sizeof(struct PAList));
     // aux = (struct PAList*) malloc (sizeof(struct PALink&));
     aux = (struct PALink*) malloc (sizeof(struct PALink));
+    memcpy(aux,from,sizeof(struct PALink));
+    memcpy(to,aux,sizeof(struct PALink));
     // aux = PALinkCreate();
-    aux->p = from->p;
-    to->p = aux->p;
+    // aux->p = from->p;
+    // to->p = aux->p;
     // aux->p = NULL;
     free(aux);
     // PALinkDelete(aux);
