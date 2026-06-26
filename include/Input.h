@@ -10,7 +10,7 @@
 // #include <tyoes
 // struct Input;
 // typedef struct Input Input;
-DllExport struct PAInput* PAInputCreate(struct PACount* n, struct PACount* m, struct PAList* adj, struct PAElement* element);
+DllExport struct Input* InputCreate();
 DllExport struct Input InputCopy(struct Input*, struct Input*);
 DllExport struct Input InputDelete(struct Input*);
 DllExport int InputFinish(struct Input*);

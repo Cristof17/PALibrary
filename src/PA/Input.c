@@ -2,9 +2,9 @@
 // #include <BFS/Input.h>
 
 // #include <types.h>
+// #include <string.h>
 
 #ifndef _WIN95
-
 #include <PA/Input.h>
 #include <PA/Count.h>
 #include <PA/Element.h>
@@ -13,18 +13,18 @@
 #include <PA\Count.h>
 #include <PA\Element.h>
 #endif
-DllExport struct PAInput* PAInputCreate(struct PACount* n, struct PACount* m, struct PAList* adj, struct PAElement* element)
+DllExport struct PAInput* PAInputCreate()
 {
 	// struct PAInput temp;
 	struct PAInput* inputPointer;
 	inputPointer = (struct PAInput*) malloc (sizeof(struct PAInput));
-	inputPointer->n = (struct PACount*) malloc (sizeof(struct PACount));
-	inputPointer->m = (struct PACount*) malloc (sizeof(struct PACount*));
+	// inputPointer->n = (struct PACount*) malloc (sizeof(struct PACount));
+// inputPointer->m = (struct PACount*) malloc (sizeof(struct PACount*));
 	// inputPointer->source = (struct PACount*) malloc (sizeof(struct PACount));
-	inputPointer->source = (struct PAElement*) malloc (sizeof(struct PAElement));
-	inputPointer->n = n;
-	inputPointer->m = m;
-	inputPointer->source = element;
+	// inputPointer->source = (struct PAElement*) malloc (sizeof(struct PAElement));
+	// inputPointer->n = n;
+	// inputPointer->m = m;
+	// inputPointer->source = element;
 	return inputPointer;
 	// struct PACount n;
 	// struct PACount m;
@@ -48,17 +48,19 @@ DllExport void PAInputCopy(struct PAInput* from, struct PAInput* to)
 {
 	// struct PAInput* copy;
 	struct PAInput* aux;
-	// inputPointer = (struct PAInput) malloc (sizeof (strr))
-	aux = (struct PAInput*) malloc (sizeof(struct PAInput));
+	aux = (struct PAInput*) malloc (sizeof (struct PAInput));
+	memcpy(from,aux,sizeof(struct PAInput));
+	memcpy(aux,to,sizeof(struct PAInput));
+	// aux = (struct PAInput*) malloc (sizeof(struct PAInput));
 	// inputPointer->n = PACountPerformConstruct();
 	// inputPointer->m = PACountPerformConstruct();
 	// inputPointer->source = PAElementPerformConstruct();
-	aux->n = from->n;
-	aux->m = from->m;
-	aux->source = from->source;
-	to->m = aux->m;
-	to->n = aux->n;
-	to->source = aux->source;
+	// aux->n = from->n;
+	// aux->m = from->m;
+	// aux->source = from->source;
+	// to->m = aux->m;
+	// to->n = aux->n;
+	// to->source = aux->source;
 	// aux = NULL;
 	free(aux);
 // 	// copy = PAInputPerformConstruct(Input.n,Input.m,Input.adj,Input.source);

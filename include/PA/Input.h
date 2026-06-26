@@ -6,10 +6,11 @@
 #include <defs.h>
 #include <types.h>
 #include <stdlib.h>
+#include <string.h>
 // #include <typee
 
 // struct PAInput;
-DllExport struct PAInput* PAInputCreate(struct PACount* n, struct PACount* m, struct PAList* adj, struct PAElement* element);
+DllExport struct PAInput* PAInputCreate();
 // DllExport struct PAInput PAInputPerformCopy(struct PAInput);
 DllExport struct PAInput* PAInputBegin(struct PAInput* PA);
 // vpo BFSInputRuin();
