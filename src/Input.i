@@ -1,20 +1,26 @@
-# 1 "src/BFS/Procedure.c"
+# 1 "src/Input.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/BFS/Procedure.c" 2
+# 1 "src/Input.c" 2
 
 
+# 1 "./include/Input.h" 1
+
+
+
+
+# 1 "./include/defs.h" 1
+# 6 "./include/Input.h" 2
 # 1 "./include/types.h" 1
 
 
 
 
 
-# 1 "./include/defs.h" 1
-# 7 "./include/types.h" 2
+
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 1 3 4
@@ -1828,25 +1834,7 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 4 "src/BFS/Procedure.c" 2
-# 1 "./include/Algorithm.h" 1
-
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 10 "./include/Algorithm.h" 2
-# 1 "./include/Input.h" 1
-
-
-
-
-
-
+# 7 "./include/Input.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 8 "./include/Input.h" 2
 
@@ -1860,20 +1848,9 @@ struct Facade {
           int InputFinish(struct Input*);
 
           void InputDispose();
-# 11 "./include/Algorithm.h" 2
+# 4 "src/Input.c" 2
 
-
-          struct Algorithm* AlgorithmCreate();
-          int AlgorithmFinish(struct Algorithm*);
-          struct Algorithm AlgorithmDelete(struct Algorithm*);
-          struct Algorithm AlgorithmCopy(struct Algorithm* from, struct Algorithm* to);
-          struct Output AlgorithmPerformRun(struct Input);
-# 5 "src/BFS/Procedure.c" 2
-
-
-
-# 1 "./include/PA/Tree.h" 1
-
+# 1 "./include/ArrayList/ArrayList.h" 1
 
 
 
@@ -1882,75 +1859,7 @@ struct Facade {
 
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 10 "./include/PA/Tree.h" 2
-
-
-          struct PATree* PATreeCreate(struct PACount*, struct PACount*m, struct PASeries*, struct PAElement*);
-          void PATreeCopy(struct PATree* from, struct PATree* to);
-
-          struct PATree* PATreeBegin(struct PATree*);
-
-
-
-
-
-          PAResult PATreeFinish(struct PATree*);
-          int PATreeDelete(struct PATree*);
-# 9 "src/BFS/Procedure.c" 2
-# 1 "./include/PA/Element.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Element.h" 2
-
-
-          void PAElementVisit(struct PAElement*);
-          PABool PAElementIsVisited(struct PAElement*);
-          void PAElementReset(struct PAElement*);
-          struct PAElement* PAElementCreate(struct PAData* index, struct PAElement* next, struct PAStatus* status);
-
-          struct PAElement* PAElementBegin(struct PAElement* );
-
-
-
-
-          int PAElementFinish(struct PAElement*);
-          int PAElementDelete(struct PAElement*);
-          void PAElementCopy(struct PAElement*, struct PAElement*);
-# 10 "src/BFS/Procedure.c" 2
-# 1 "./include/BFS/Procedure.h" 1
-
-
-
-
-
-
-
-          PAResult BFS();
-          struct BFSProcedure BFSProcedureConstruct(struct PAInput);
-          struct BFSProcedure BFSProcedurePutInput(struct BFSProcedure, struct PAInput);
-
-
-
-          PAResult BFSProcedureRuin();
-          PAResult BFSProcedureSubroutine();
-# 11 "src/BFS/Procedure.c" 2
-
-# 1 "./include/PA/Input.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Input.h" 2
+# 9 "./include/ArrayList/ArrayList.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 1 3 4
@@ -2150,52 +2059,60 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 2 3 4
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
-# 10 "./include/PA/Input.h" 2
+# 10 "./include/ArrayList/ArrayList.h" 2
 
 
 
-          struct PAInput* PAInputCreate();
-
-          struct PAInput* PAInputBegin(struct PAInput* PA, struct PACount* N, struct PACount* M, struct PAElement* Source, struct PASeries* Series);
 
 
 
-          PAResult PAInputFinish(struct PAInput*);
-          int PAInputDelete(struct PAInput*);
-# 13 "src/BFS/Procedure.c" 2
-# 26 "src/BFS/Procedure.c"
-PAResult BFS()
+
+          struct ArrayList* ArrayListPerformConstruct(struct ArrayListSize*);
+          struct ArrayList* ArrayListPerformInit(struct ArrayList*, struct ArrayListObject*, struct ArrayListSize*);
+
+
+
+          struct ArrayList* ArrayListPerformCopy(struct ArrayList*, struct ArrayList*);
+# 33 "./include/ArrayList/ArrayList.h"
+          void ArrayListPerformRuin(struct ArrayList* PA);
+
+          void ArrayListPerformDelete(struct ArrayList* PA);
+# 6 "src/Input.c" 2
+# 1 "./include/PA/Result.h" 1
+# 7 "src/Input.c" 2
+
+
+
+
+
+
+
+          struct Input* InputCreate()
 {
-    PAResult result;
-    return result;
 
+    struct Input* input;
+    input = (struct Input*) malloc (sizeof(struct Input));
 
+    return input;
 }
-struct BFSProcedure BFSProcedureConstruct(struct PAInput Input)
+          struct Input InputBegin(struct Input* input, struct PACount n, struct PACount m, struct ArrayList adj, struct PAElement source)
+{
+    return *input;
+}
+          struct Input InputCopy(struct Input* from, struct Input* to)
+{
+    struct Input aux;
 
-{
-    struct BFSProcedure procedure;
-    return procedure;
+    return aux;
 }
+          struct Input InputDelete(struct Input* PA)
+{
+    return *PA;
+}
+          int InputFinish(struct Input* PA)
+{
+    int returnCode;
+    returnCode = ((int)0);
 
-struct BFSProcedure BFSProcedurePutTree(struct BFSProcedure Procedure, struct PATree Tree)
-{
-    struct BFSProcedure procedure;
-    return procedure;
-}
-struct BFSProcedure BFSProcedurePutInput(struct BFSProcedure Procedure, struct PAInput Input)
-{
-    struct BFSProcedure procedure;
-    return procedure;
-}
-
-PAResult BFSProcedureRuin()
-{
-    PAResult result;
-    return result;
-}
-PAResult BFSProcedureSubroutine()
-{
-    PAResult result;
-    return result;
+    return returnCode;
 }

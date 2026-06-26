@@ -1,20 +1,32 @@
-# 1 "src/BFS/Procedure.c"
+# 1 "src/PA/Link.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/BFS/Procedure.c" 2
+# 1 "src/PA/Link.c" 2
 
 
-# 1 "./include/types.h" 1
+
+
+
+
+
+# 1 "./include/PA/Link.h" 1
 
 
 
 
 
 # 1 "./include/defs.h" 1
-# 7 "./include/types.h" 2
+# 7 "./include/PA/Link.h" 2
+# 1 "./include/types.h" 1
+
+
+
+
+
+
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 1 3 4
@@ -1828,9 +1840,19 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 4 "src/BFS/Procedure.c" 2
-# 1 "./include/Algorithm.h" 1
+# 8 "./include/PA/Link.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/PA/Link.h" 2
 
+          struct PALink* PALinkCreate(struct PAPair* p);
+          void PALinkCopy(struct PALink*, struct PALink*);
+
+          struct PALink* PALinkBegin(struct PALink*);
+
+          PAResult PALinkFinish(struct PALink*);
+          int PALinkDelete(struct PALink*);
+# 9 "src/PA/Link.c" 2
+# 1 "./include/PA/Pair.h" 1
 
 
 
@@ -1839,363 +1861,87 @@ struct Facade {
 
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 10 "./include/Algorithm.h" 2
-# 1 "./include/Input.h" 1
+# 9 "./include/PA/Pair.h" 2
 
 
+          struct PAPair* PAPairCreate();
+          struct PAPair PAPairBegin(struct PAPair*, struct PAElement*, struct PAElement*);
+          void PAPairCopy(struct PAPair* from, struct PAPair* to);
 
 
 
+          PAResult PAPairFinish(struct PAPair*);
+          int PAPairDelete(struct PAPair*);
+# 10 "src/PA/Link.c" 2
 
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 8 "./include/Input.h" 2
 
 
 
 
 
-          struct Input* InputCreate();
-          struct Input InputCopy(struct Input*, struct Input*);
-          struct Input InputDelete(struct Input*);
-          int InputFinish(struct Input*);
-
-          void InputDispose();
-# 11 "./include/Algorithm.h" 2
-
-
-          struct Algorithm* AlgorithmCreate();
-          int AlgorithmFinish(struct Algorithm*);
-          struct Algorithm AlgorithmDelete(struct Algorithm*);
-          struct Algorithm AlgorithmCopy(struct Algorithm* from, struct Algorithm* to);
-          struct Output AlgorithmPerformRun(struct Input);
-# 5 "src/BFS/Procedure.c" 2
-
-
-
-# 1 "./include/PA/Tree.h" 1
-
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 10 "./include/PA/Tree.h" 2
-
-
-          struct PATree* PATreeCreate(struct PACount*, struct PACount*m, struct PASeries*, struct PAElement*);
-          void PATreeCopy(struct PATree* from, struct PATree* to);
-
-          struct PATree* PATreeBegin(struct PATree*);
-
-
-
-
-
-          PAResult PATreeFinish(struct PATree*);
-          int PATreeDelete(struct PATree*);
-# 9 "src/BFS/Procedure.c" 2
-# 1 "./include/PA/Element.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Element.h" 2
-
-
-          void PAElementVisit(struct PAElement*);
-          PABool PAElementIsVisited(struct PAElement*);
-          void PAElementReset(struct PAElement*);
-          struct PAElement* PAElementCreate(struct PAData* index, struct PAElement* next, struct PAStatus* status);
-
-          struct PAElement* PAElementBegin(struct PAElement* );
-
-
-
-
-          int PAElementFinish(struct PAElement*);
-          int PAElementDelete(struct PAElement*);
-          void PAElementCopy(struct PAElement*, struct PAElement*);
-# 10 "src/BFS/Procedure.c" 2
-# 1 "./include/BFS/Procedure.h" 1
-
-
-
-
-
-
-
-          PAResult BFS();
-          struct BFSProcedure BFSProcedureConstruct(struct PAInput);
-          struct BFSProcedure BFSProcedurePutInput(struct BFSProcedure, struct PAInput);
-
-
-
-          PAResult BFSProcedureRuin();
-          PAResult BFSProcedureSubroutine();
-# 11 "src/BFS/Procedure.c" 2
-
-# 1 "./include/PA/Input.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Input.h" 2
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
-# 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 1 3 4
-# 64 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
-# 65 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_size_t.h" 1 3 4
-# 66 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_null.h" 1 3 4
-# 67 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
-
-
-
-
-
-
-void *
-  memchr(const void * __s, int __c, size_t __n);
-int memcmp(const void * __s1, const void * __s2,
-  size_t __n);
-void *
-  memcpy(void * __dst, const void * __src,
-  size_t __n);
-void *
-  memmove(void * __dst,
-  const void * __src, size_t __len);
-void *
-  memset(void * __b, int __c, size_t __len);
-char *
-  strcat(char * __s1, const char *__s2)
-                                  ;
-char * strchr(const char *__s, int __c);
-int strcmp(const char *__s1, const char *__s2);
-int strcoll(const char *__s1, const char *__s2);
-char *
-  strcpy(char * __dst, const char *__src)
-                                  ;
-size_t strcspn(const char *__s, const char *__charset);
-char * strerror(int __errnum) __asm("_" "strerror" );
-size_t strlen(const char *__s);
-char *
-  strncat(char * __s1,
-  const char * __s2, size_t __n)
-                                  ;
-int strncmp(const char * __s1,
-  const char * __s2, size_t __n);
-char *
-  strncpy(char * __dst,
-        const char * __src, size_t __n)
-                                        ;
-char * strpbrk(const char *__s, const char *__charset);
-char * strrchr(const char *__s, int __c);
-size_t strspn(const char *__s, const char *__charset);
-char * strstr(const char *__big, const char *__little);
-char * strtok(char * __str, const char *__sep);
-size_t strxfrm(char * __s1, const char *__s2, size_t __n);
-# 125 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 3 4
-char *
-        strtok_r(char * __str, const char *__sep,
-        char * *__lasts);
-# 139 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 3 4
-int strerror_r(int __errnum, char * __strerrbuf,
-        size_t __buflen);
-char * strdup(const char *__s1);
-void *
-        memccpy(void * __dst, const void * __src,
-        int __c, size_t __n);
-# 156 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 3 4
-char *
-        stpcpy(char * __dst, const char *__src) ;
-char *
-        stpncpy(char * __dst,
-        const char * __src, size_t __n)
-        __attribute__((availability(macosx,introduced=10.7)))
-                                        ;
-char * strndup(const char * __s1, size_t __n) __attribute__((availability(macosx,introduced=10.7)));
-size_t strnlen(const char * __s1, size_t __n) __attribute__((availability(macosx,introduced=10.7)));
-char * strsignal(int __sig);
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_rsize_t.h" 1 3 4
-# 50 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_rsize_t.h" 3 4
-typedef __darwin_size_t rsize_t;
-# 173 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_errno_t.h" 1 3 4
-# 30 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_errno_t.h" 3 4
-typedef int errno_t;
-# 174 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
-
-
-errno_t memset_s(void * __s, rsize_t __smax, int __c, rsize_t __n) __attribute__((availability(macosx,introduced=10.9)));
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_ssize_t.h" 1 3 4
-# 31 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_ssize_t.h" 3 4
-typedef __darwin_ssize_t ssize_t;
-# 184 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
-
-
-void *
-        memmem(const void * __big, size_t __big_len,
-        const void * __little, size_t __little_len) __attribute__((availability(macosx,introduced=10.7)));
-void memset_pattern4(void * __b, const void * __pattern4, size_t __len) __attribute__((availability(macosx,introduced=10.5)));
-void memset_pattern8(void * __b, const void * __pattern8, size_t __len) __attribute__((availability(macosx,introduced=10.5)));
-void memset_pattern16(void * __b, const void * __pattern16, size_t __len) __attribute__((availability(macosx,introduced=10.5)));
-
-char *
-        strcasestr(const char *__big, const char *__little);
-__attribute__((availability(macosx,introduced=15.4))) __attribute__((availability(ios,introduced=18.4)))
-__attribute__((availability(tvos,introduced=18.4))) __attribute__((availability(watchos,introduced=11.4)))
-char *
-        strchrnul(const char *__s, int __c);
-char *
-        strnstr(const char * __big, const char *__little, size_t __len);
-size_t strlcat(char * __dst, const char *__source, size_t __size);
-size_t strlcpy(char * __dst, const char *__source, size_t __size);
-void strmode(int __mode, char * __bp);
-char *
-        strsep(char * *__stringp, const char *__delim);
-
-
-void swab(const void * restrict, void * restrict, ssize_t __len);
-
-__attribute__((availability(macosx,introduced=10.12.1))) __attribute__((availability(ios,introduced=10.1)))
-__attribute__((availability(tvos,introduced=10.0.1))) __attribute__((availability(watchos,introduced=3.1)))
-int timingsafe_bcmp(const void * __b1, const void * __b2, size_t __len);
-
-__attribute__((availability(macosx,introduced=11.0))) __attribute__((availability(ios,introduced=14.0)))
-__attribute__((availability(tvos,introduced=14.0))) __attribute__((availability(watchos,introduced=7.0)))
-int strsignal_r(int __sig, char * __strsignalbuf, size_t __buflen);
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_strings.h" 1 3 4
-# 65 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_strings.h" 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
-# 66 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_strings.h" 2 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_size_t.h" 1 3 4
-# 67 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_strings.h" 2 3 4
-
-
-
-
-
-
-int bcmp(const void *, const void *, size_t __n) ;
-void bcopy(const void *, void *, size_t __n) ;
-void bzero(void *, size_t __n) ;
-char * index(const char *, int) ;
-char * rindex(const char *, int) ;
-
-
-int ffs(int);
-int strcasecmp(const char *, const char *);
-int strncasecmp(const char *, const char *, size_t);
-
-
-
-
-
-int ffsl(long) __attribute__((availability(macosx,introduced=10.5)));
-int ffsll(long long) __attribute__((availability(macosx,introduced=10.9)));
-int fls(int) __attribute__((availability(macosx,introduced=10.5)));
-int flsl(long) __attribute__((availability(macosx,introduced=10.5)));
-int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_strings.h" 1 3 4
-# 32 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_strings.h" 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
-# 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_strings.h" 2 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_common.h" 1 3 4
-# 34 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_strings.h" 2 3 4
-# 99 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_strings.h" 2 3 4
-# 223 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 1 3 4
-# 32 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
-# 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 2 3 4
-# 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
-# 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
-# 10 "./include/PA/Input.h" 2
-
-
-
-          struct PAInput* PAInputCreate();
-
-          struct PAInput* PAInputBegin(struct PAInput* PA, struct PACount* N, struct PACount* M, struct PAElement* Source, struct PASeries* Series);
-
-
-
-          PAResult PAInputFinish(struct PAInput*);
-          int PAInputDelete(struct PAInput*);
-# 13 "src/BFS/Procedure.c" 2
-# 26 "src/BFS/Procedure.c"
-PAResult BFS()
+          struct PALink* PALinkCreate(struct PAPair* p)
 {
-    PAResult result;
-    return result;
 
+    struct PALink* linkPointer;
+    linkPointer = (struct PALink*) malloc (sizeof(struct PALink));
+    linkPointer->p = p;
+    return linkPointer;
+# 32 "src/PA/Link.c"
+}
+          struct PALink* PALinkBegin(struct PALink* Link)
+{
+
+    struct PALink* linkPointer;
+    linkPointer = (struct PALink*) malloc (sizeof(struct PALink));
+    linkPointer->p = Link->p;
+# 49 "src/PA/Link.c"
+    return linkPointer;
 
 }
-struct BFSProcedure BFSProcedureConstruct(struct PAInput Input)
+          PAResult PALinkFinish(struct PALink* PA)
+{
 
+
+
+
+
+
+    int returnCode;
+    free(PA);
+    returnCode = ((int)0);
+    return returnCode;
+}
+          void PALinkCopy(struct PALink* from, struct PALink* to)
 {
-    struct BFSProcedure procedure;
-    return procedure;
+
+    struct PALink* aux;
+
+
+    aux = (struct PALink*) malloc (sizeof(struct PALink));
+
+    aux->p = from->p;
+    to->p = aux->p;
+
+    free(aux);
+# 86 "src/PA/Link.c"
 }
 
-struct BFSProcedure BFSProcedurePutTree(struct BFSProcedure Procedure, struct PATree Tree)
-{
-    struct BFSProcedure procedure;
-    return procedure;
-}
-struct BFSProcedure BFSProcedurePutInput(struct BFSProcedure Procedure, struct PAInput Input)
-{
-    struct BFSProcedure procedure;
-    return procedure;
-}
 
-PAResult BFSProcedureRuin()
-{
-    PAResult result;
-    return result;
-}
-PAResult BFSProcedureSubroutine()
-{
-    PAResult result;
-    return result;
+
+
+
+
+
+          int PALinkDelete(struct PALink* PA){
+
+    int returnCode;
+    returnCode = ((int)0);
+    PA->p = 0;
+    return returnCode;
+
+
+
+
+
+
 }
