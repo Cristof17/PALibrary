@@ -2121,7 +2121,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PAList* PAListCreate();
 
-          struct PAList* PAListBegin(struct PAList* list, struct PACount* N, struct PASeries* adj);
+
+          struct PAList* PAListBegin(struct PAList* list, struct PACount* N, struct ArrayList* adj);
 
 
 

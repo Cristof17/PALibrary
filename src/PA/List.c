@@ -106,11 +106,14 @@ DllExport void PAListCopy(struct PAList* from, struct PAList* to)
     // return temp;
 }
 
-DllExport struct PAList* PAListBegin(struct PAList* List, struct PACount* N, struct PASeries* adj)
+// DllExport struct PAList* PAListBegin(struct PAList* List, struct PACount* M, struct PASeries* adj)
+DllExport struct PAList* PAListBegin(struct PAList* List, struct PACount* M, struct ArrayList* adj)
 {
     // struct PAList temp;
     struct PAList* listPointer;
-    listPointer->m = List->m;
+    // listPointer->m = List->m;
+    memcpy(List->m,M,sizeof(struct PACount));
+    memcpy(List->neigh,adj,sizeof(struct ArrayList));
     // listPointer->neigh = 
     // temp = *List;
     // temp.n = Value;

@@ -2408,7 +2408,8 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
           struct PAList* PAListCreate();
 
-          struct PAList* PAListBegin(struct PAList* list, struct PACount* N, struct PASeries* adj);
+
+          struct PAList* PAListBegin(struct PAList* list, struct PACount* N, struct ArrayList* adj);
 
 
 

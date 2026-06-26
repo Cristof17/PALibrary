@@ -13,7 +13,8 @@
 // DllExport struct PAElement GetHead();
 DllExport struct PAList* PAListCreate();
 // DllExport struct PAList* PAListBegin(struct PAList* list, struct PACount M);
-DllExport struct PAList* PAListBegin(struct PAList* list, struct PACount* N, struct PASeries* adj);
+// DllExport struct PAList* PAListBegin(struct PAList* list, struct PACount* N, struct PASeries* adj);
+DllExport struct PAList* PAListBegin(struct PAList* list, struct PACount* N, struct ArrayList* adj);
 // DllExport struct PAList PAListPerformCopy(struct PAList);
 // DllExport PAResult PAListPerformPutCount(struct PAList, struct PACount);
 // DllExport PAResult PAListPerformPutList(struct PAList);

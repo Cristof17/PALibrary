@@ -2048,7 +2048,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PAList* PAListCreate();
 
-          struct PAList* PAListBegin(struct PAList* list, struct PACount* N, struct PASeries* adj);
+
+          struct PAList* PAListBegin(struct PAList* list, struct PACount* N, struct ArrayList* adj);
 
 
 
@@ -2120,15 +2121,18 @@ void PAListPrint(struct PAList* List);
 # 107 "src/PA/List.c"
 }
 
-          struct PAList* PAListBegin(struct PAList* List, struct PACount* N, struct PASeries* adj)
+
+          struct PAList* PAListBegin(struct PAList* List, struct PACount* M, struct ArrayList* adj)
 {
 
     struct PAList* listPointer;
-    listPointer->m = List->m;
-# 147 "src/PA/List.c"
+
+    __builtin___memcpy_chk (List->m, M,sizeof(struct PACount), __builtin_object_size (List->m, 0));
+    __builtin___memcpy_chk (List->neigh, adj,sizeof(struct ArrayList), __builtin_object_size (List->neigh, 0));
+# 150 "src/PA/List.c"
     return listPointer;
 }
-# 180 "src/PA/List.c"
+# 183 "src/PA/List.c"
           PAResult PAListFinish(struct PAList* PA)
 {
     int returnCode;
@@ -2137,7 +2141,7 @@ void PAListPrint(struct PAList* List);
     returnCode = ((int)0);
 
     return returnCode;
-# 202 "src/PA/List.c"
+# 205 "src/PA/List.c"
     {
 
 
@@ -2155,14 +2159,14 @@ void Dispose()
 {
 
 }
-# 234 "src/PA/List.c"
+# 237 "src/PA/List.c"
           int PAListDelete(struct PAList* PA)
 {
     int returnCode;
     returnCode = ((int)0);
     PA->m = 0;
     PA->neigh = 0;
-# 257 "src/PA/List.c"
+# 260 "src/PA/List.c"
     return returnCode;
 
 
