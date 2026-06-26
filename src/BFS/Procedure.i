@@ -2157,6 +2157,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           struct PAInput* PAInputCreate();
 
           struct PAInput* PAInputBegin(struct PAInput* PA, struct PACount* N, struct PACount* M, struct PAElement* Source, struct PASeries* Series);
+          void PAInputCopy(struct PAInput* from, struct PAInput* to);
 
 
 
