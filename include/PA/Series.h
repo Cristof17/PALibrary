@@ -13,9 +13,11 @@
 #include <defs.h>
 #include <types.h>
 #include <stdlib.h>
+#include <string.h>
+
 // struct PASeries;
 // struct PAList PAListPutElement(struct PAList, struct PAElement);
-DllExport struct PASeries* PASeriesCreate(struct PACount*, struct PAList*[]);
+DllExport struct PASeries* PASeriesCreate();
 DllExport struct PASeries* PASeriesBegin(struct PASeries*);
 DllExport int PASeriesDelete(struct PASeries*);
 DllExport void PASeriesCopy(struct PASeries*, struct PASeries*);

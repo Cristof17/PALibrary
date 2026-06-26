@@ -18,11 +18,11 @@
 *  Created on: 16 nov. 2025
 *      Author: AdministratorUser
 */
-DllExport struct PASeries* PASeriesCreate(struct PACount* m, struct PAList* adj[]) 
+DllExport struct PASeries* PASeriesCreate() 
 {
     struct PASeries* seriesPointer;
     seriesPointer = (struct PASeries*) malloc (sizeof (struct PASeries));
-    seriesPointer->m = m;
+    // seriesPointer->m = m;
     // seriesPointer->adj = adj;
     // seriesPointer->adj = &(adj[0]);
     // seriesPointer->m = PACountCreate();
@@ -57,10 +57,12 @@ DllExport void PASeriesCopy(struct PASeries* from, struct PASeries* to)
     // struct PACount y;
     struct PASeries* aux;
     aux = (struct PASeries*) malloc (sizeof(struct PASeries));
+    memcpy(aux,from,sizeof(struct PASeries));
+    memcpy(to,aux,sizeof(struct PASeries));
     // aux->adj = from->adj;
-    aux->m = from->m;
+    // aux->m = from->m;
     // to->adj = aux->adj;
-    to->m = aux->m;
+    // to->m = aux->m;
     free(aux);
     // temp = PASeriesPerformConstruct();
     // x = PANumber
@@ -77,7 +79,7 @@ DllExport void PASeriesCopy(struct PASeries* from, struct PASeries* to)
     // y.number.val = FIRST;
     // while (y.number.val <= x.number.val)
     {
-        struct PAElement aux;
+        // struct PAElement aux;
         // PAElementPerformCopy(from.adj[y.number.val],aux);
         // PAElementPerformCopy(aux,temp.adj[y.number.val]);
         // y.number.val++;
@@ -85,7 +87,7 @@ DllExport void PASeriesCopy(struct PASeries* from, struct PASeries* to)
     // y.number.val = FIRST;
     // while (y.number.val <= x.number.val)
     {
-        struct PAElement aux;
+        // struct PAElement aux;
         // PAElementPerformCopy(temp.adj[y.number.val],aux);
         // PAElementPerformCopy(aux, to.adj[y.number.val]);
         // y.number.val++;
