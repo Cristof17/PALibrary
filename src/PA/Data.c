@@ -42,6 +42,7 @@ DllExport struct PAData* PADataBegin(struct PAData* Data, PAInt resource)
     // struct PAData temp;
     // struct PAData* dataPointer;
     // struct 
+    // struct PAResource* aux;
     struct PAResource* aux;
     aux = (struct PAResource*) malloc (sizeof(struct PAResource));
     memcpy(aux->value,&resource,sizeof(PAInt));
