@@ -30,7 +30,7 @@ DllExport struct PASize* PASizeBegin(struct PASize* Size, size_t value)
 DllExport int PASizeDelete(struct PASize* PA)
 {
     int returnCode = PARESULT_SUCCESS;
-    bzero(PA->value,sizeof(int));
+    bzero(PA->value,sizeof(size_t));
     bzero(PA,sizeof(struct PASize));
     return returnCode;
 }
