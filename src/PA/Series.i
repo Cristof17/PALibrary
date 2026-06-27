@@ -1497,7 +1497,7 @@ struct PATransposeTree;
 
 
 
-
+struct PASize;
 struct PAInput;
 struct PAOutput;
 
@@ -1583,7 +1583,9 @@ struct ArrayListPosition {
 struct ArrayListObject {
  int element;
 };
+struct PASize {
 
+};
 struct ArrayList {
 
  int* array;
@@ -1672,7 +1674,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 267 "./include/types.h"
+# 269 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2170,23 +2172,22 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     {
         int returnCode;
         returnCode = ((int)0);
-
-        PA->m = 0;
-# 181 "src/PA/Series.c"
+        __builtin___memset_chk(PA, 0, sizeof(struct PASeries), __builtin_object_size (PA, 0));
+# 182 "src/PA/Series.c"
         return returnCode;
     }
-# 192 "src/PA/Series.c"
+# 193 "src/PA/Series.c"
               PAResult PASeriesFinish(struct PASeries* PA)
     {
 
         int returnCode;
         free(PA);
         returnCode = ((int)0);
-# 217 "src/PA/Series.c"
+# 218 "src/PA/Series.c"
         return returnCode;
 
     }
-# 275 "src/PA/Series.c"
+# 276 "src/PA/Series.c"
 void PASeriesPrint(struct PASeries* Series)
 {
 

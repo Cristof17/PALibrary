@@ -1501,7 +1501,7 @@ struct PATransposeTree;
 
 
 
-
+struct PASize;
 struct PAInput;
 struct PAOutput;
 
@@ -1587,7 +1587,9 @@ struct ArrayListPosition {
 struct ArrayListObject {
  int element;
 };
+struct PASize {
 
+};
 struct ArrayList {
 
  int* array;
@@ -1676,7 +1678,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 267 "./include/types.h"
+# 269 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2136,6 +2138,17 @@ void PAListPrint(struct PAList* List);
     return listPointer;
 }
 # 183 "src/PA/List.c"
+          PAResult PAListDelete(struct PAList* PA)
+{
+    int returnCode;
+    returnCode = ((int)0);
+    __builtin___memset_chk(PA, 0, sizeof(struct PAList), __builtin_object_size (PA, 0));
+# 207 "src/PA/List.c"
+    return returnCode;
+
+
+
+}
           PAResult PAListFinish(struct PAList* PA)
 {
     int returnCode;
@@ -2144,7 +2157,7 @@ void PAListPrint(struct PAList* List);
     returnCode = ((int)0);
 
     return returnCode;
-# 205 "src/PA/List.c"
+# 234 "src/PA/List.c"
     {
 
 
@@ -2162,19 +2175,7 @@ void Dispose()
 {
 
 }
-# 237 "src/PA/List.c"
-          PAResult PAListDelete(struct PAList* PA)
-{
-    int returnCode;
-    returnCode = ((int)0);
-    PA->m = 0;
-    PA->neigh = 0;
-# 260 "src/PA/List.c"
-    return returnCode;
-
-
-
-}
+# 267 "src/PA/List.c"
 void PAListPrint(struct PAList* List)
 {
 

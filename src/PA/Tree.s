@@ -116,6 +116,30 @@ _PATreeCopy:                            ; @PATreeCopy
 	ret
 	.cfi_endproc
                                         ; -- End function
+	.globl	_PATreeDelete                   ; -- Begin function PATreeDelete
+	.p2align	2
+_PATreeDelete:                          ; @PATreeDelete
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #64
+	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
+	add	x29, sp, #48
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	stur	x0, [x29, #-8]
+	ldur	x0, [x29, #-8]
+	mov	w1, #0                          ; =0x0
+	mov	x2, #32                         ; =0x20
+	mov	x3, #-1                         ; =0xffffffffffffffff
+	bl	___memset_chk
+	stur	wzr, [x29, #-12]
+	ldur	w0, [x29, #-12]
+	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
+	add	sp, sp, #64
+	ret
+	.cfi_endproc
+                                        ; -- End function
 	.globl	_PATreeFinish                   ; -- Begin function PATreeFinish
 	.p2align	2
 _PATreeFinish:                          ; @PATreeFinish
@@ -134,29 +158,6 @@ _PATreeFinish:                          ; @PATreeFinish
 	ldr	w0, [sp, #4]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
-	ret
-	.cfi_endproc
-                                        ; -- End function
-	.globl	_PATreeDelete                   ; -- Begin function PATreeDelete
-	.p2align	2
-_PATreeDelete:                          ; @PATreeDelete
-	.cfi_startproc
-; %bb.0:
-	sub	sp, sp, #48
-	.cfi_def_cfa_offset 48
-	str	x0, [sp, #40]
-	ldr	x8, [sp, #40]
-                                        ; kill: def $x9 killed $xzr
-	str	xzr, [x8, #24]
-	ldr	x8, [sp, #40]
-	str	xzr, [x8, #8]
-	ldr	x8, [sp, #40]
-	str	xzr, [x8]
-	ldr	x8, [sp, #40]
-	str	xzr, [x8, #16]
-	str	wzr, [sp, #36]
-	ldr	w0, [sp, #36]
-	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function

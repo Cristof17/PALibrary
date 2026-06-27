@@ -1497,7 +1497,7 @@ struct PATransposeTree;
 
 
 
-
+struct PASize;
 struct PAInput;
 struct PAOutput;
 
@@ -1583,7 +1583,9 @@ struct ArrayListPosition {
 struct ArrayListObject {
  int element;
 };
+struct PASize {
 
+};
 struct ArrayList {
 
  int* array;
@@ -1672,7 +1674,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 267 "./include/types.h"
+# 269 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -1910,6 +1912,20 @@ struct Facade {
 # 75 "src/PA/Data.c"
 }
 # 93 "src/PA/Data.c"
+          PAResult PADataDelete(struct PAData* PA)
+{
+    int returnCode;
+
+    bzero(PA,sizeof(struct PAData));
+
+    return ((int)0);
+
+
+
+
+
+
+}
           PAResult PADataFinish(struct PAResource* PA)
 {
 
@@ -1922,18 +1938,6 @@ struct Facade {
 
     free(PA);
     return returnCode;
-
-
-
-
-}
-          PAResult PADataDelete(struct PAData* PA)
-{
-    int returnCode;
-    PA->Resource = 0;
-    return ((int)0);
-
-
 
 
 

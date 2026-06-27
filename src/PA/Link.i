@@ -1502,7 +1502,7 @@ struct PATransposeTree;
 
 
 
-
+struct PASize;
 struct PAInput;
 struct PAOutput;
 
@@ -1588,7 +1588,9 @@ struct ArrayListPosition {
 struct ArrayListObject {
  int element;
 };
+struct PASize {
 
+};
 struct ArrayList {
 
  int* array;
@@ -1677,7 +1679,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 267 "./include/types.h"
+# 269 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2103,19 +2105,6 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     return aux;
 
 }
-          PAResult PALinkFinish(struct PALink* PA)
-{
-
-
-
-
-
-
-    int returnCode;
-    free(PA);
-    returnCode = ((int)0);
-    return returnCode;
-}
           void PALinkCopy(struct PALink* from, struct PALink* to)
 {
 
@@ -2130,20 +2119,14 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
     free(aux);
-# 91 "src/PA/Link.c"
+# 78 "src/PA/Link.c"
 }
-
-
-
-
-
-
-
           PAResult PALinkDelete(struct PALink* PA){
 
     int returnCode;
     returnCode = ((int)0);
-    PA->p = 0;
+    __builtin___memset_chk(PA, 0, sizeof(struct PALink), __builtin_object_size (PA, 0));
+
     return returnCode;
 
 
@@ -2151,4 +2134,17 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
+}
+          PAResult PALinkFinish(struct PALink* PA)
+{
+
+
+
+
+
+
+    int returnCode;
+    free(PA);
+    returnCode = ((int)0);
+    return returnCode;
 }

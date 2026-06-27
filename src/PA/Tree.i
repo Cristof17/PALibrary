@@ -1498,7 +1498,7 @@ struct PATransposeTree;
 
 
 
-
+struct PASize;
 struct PAInput;
 struct PAOutput;
 
@@ -1584,7 +1584,9 @@ struct ArrayListPosition {
 struct ArrayListObject {
  int element;
 };
+struct PASize {
 
+};
 struct ArrayList {
 
  int* array;
@@ -1673,7 +1675,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 267 "./include/types.h"
+# 269 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2168,30 +2170,30 @@ void PAListPrint(struct PAList* List);
     free(aux);
 # 160 "src/PA/Tree.c"
 }
+          PAResult PATreeDelete(struct PATree* PA)
+{
+    int returnCode;
+    struct PATree tree;
+
+
+
+
+    __builtin___memset_chk(PA, 0, sizeof(struct PATree), __builtin_object_size (PA, 0));
+    returnCode = ((int)0);
+
+
+
+
+
+
+    return returnCode;
+
+}
           PAResult PATreeFinish(struct PATree* PA)
 {
     int returnCode;
     free(PA);
     returnCode = ((int)0);
-# 217 "src/PA/Tree.c"
+# 236 "src/PA/Tree.c"
     return returnCode;
-}
-# 259 "src/PA/Tree.c"
-          PAResult PATreeDelete(struct PATree* PA)
-{
-    int returnCode;
-    struct PATree tree;
-    PA->adj = 0;
-    PA->m = 0;
-    PA->n = 0;
-    PA->source = 0;
-    returnCode = ((int)0);
-
-
-
-
-
-
-    return returnCode;
-
 }

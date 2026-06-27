@@ -1499,7 +1499,7 @@ struct PATransposeTree;
 
 
 
-
+struct PASize;
 struct PAInput;
 struct PAOutput;
 
@@ -1585,7 +1585,9 @@ struct ArrayListPosition {
 struct ArrayListObject {
  int element;
 };
+struct PASize {
 
+};
 struct ArrayList {
 
  int* array;
@@ -1674,7 +1676,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 267 "./include/types.h"
+# 269 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2102,7 +2104,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     return NormalTree;
 # 49 "src/PA/NormalTree.c"
 }
-          void PANormalTreePerformCopy(struct PANormalTree* from, struct PANormalTree* to)
+          void PANormalTreeCopy(struct PANormalTree* from, struct PANormalTree* to)
 {
     struct PANormalTree* aux;
     aux = (struct PANormalTree*) malloc (sizeof(struct PANormalTree));
@@ -2114,6 +2116,20 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     free(aux);
 # 68 "src/PA/NormalTree.c"
 }
+          PAResult PANormalTreeDelete(struct PANormalTree* PA)
+{
+    int returnCode;
+
+    __builtin___memset_chk(PA, 0, sizeof(struct PANormalTree), __builtin_object_size (PA, 0));
+    returnCode = ((int)0);
+
+
+
+
+
+
+    return returnCode;
+}
           PAResult PANormalTreeFinish(struct PANormalTree* PA)
 {
     int returnCode;
@@ -2123,17 +2139,4 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-}
-          PAResult PANormalTreeDelete(struct PANormalTree* PA)
-{
-    int returnCode;
-    PA->tree = 0;
-    returnCode = ((int)0);
-
-
-
-
-
-
-    return returnCode;
 }

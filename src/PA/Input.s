@@ -99,6 +99,30 @@ _PAInputBegin:                          ; @PAInputBegin
 	ret
 	.cfi_endproc
                                         ; -- End function
+	.globl	_PAInputDelete                  ; -- Begin function PAInputDelete
+	.p2align	2
+_PAInputDelete:                         ; @PAInputDelete
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #32
+	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
+	add	x29, sp, #16
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	str	x0, [sp, #8]
+	ldr	x0, [sp, #8]
+	mov	w1, #0                          ; =0x0
+	mov	x2, #32                         ; =0x20
+	mov	x3, #-1                         ; =0xffffffffffffffff
+	bl	___memset_chk
+	str	wzr, [sp, #4]
+	ldr	w0, [sp, #4]
+	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
+	add	sp, sp, #32
+	ret
+	.cfi_endproc
+                                        ; -- End function
 	.globl	_PAInputFinish                  ; -- Begin function PAInputFinish
 	.p2align	2
 _PAInputFinish:                         ; @PAInputFinish
@@ -117,27 +141,6 @@ _PAInputFinish:                         ; @PAInputFinish
 	ldr	w0, [sp, #4]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
-	ret
-	.cfi_endproc
-                                        ; -- End function
-	.globl	_PAInputDelete                  ; -- Begin function PAInputDelete
-	.p2align	2
-_PAInputDelete:                         ; @PAInputDelete
-	.cfi_startproc
-; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	str	x0, [sp, #8]
-	ldr	x8, [sp, #8]
-                                        ; kill: def $x9 killed $xzr
-	str	xzr, [x8, #8]
-	ldr	x8, [sp, #8]
-	str	xzr, [x8]
-	ldr	x8, [sp, #8]
-	str	xzr, [x8, #16]
-	str	wzr, [sp, #4]
-	ldr	w0, [sp, #4]
-	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function

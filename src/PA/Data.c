@@ -10,13 +10,14 @@
 //struct PAData {
 //
 //}
-DllExport struct PAData* PADataCreate(PAInt* Resource)
+DllExport struct PAData* PADataCreate()
 {
     // struct PAData data;
     struct PAData* dataPointer;
     dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
-    dataPointer->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
-    dataPointer->Resource->value = ((PANumber) *Resource);
+
+    // dataPointer->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
+    // dataPointer->Resource->value = ((PANumber) *Resource);
     // dataPointer->Resource->value = (struct PANumber*) malloc (sizeof(struct PANumber));
 
     // dataPointer->Resource->value
@@ -33,12 +34,13 @@ DllExport struct PAData* PADataCreate(PAInt* Resource)
     // return data;
     return dataPointer;
 }
-DllExport struct PAData* PADataBegin(struct PAData* Data)
+DllExport struct PAData* PADataBegin(struct PAData* Data, PAResource* resource)
 {
     // struct PAData temp;
     struct PAData* dataPointer;
     dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
-    dataPointer->Resource = Data->Resource;
+    memcpy(dataPointer->Resource,resource,sizeof(PAResource));
+    // dataPointer->Resource = Data->Resource;
     // temp.Resource = &Value;
     // Data->Resource = temp.Resource;
     // temp.Resource = PAResourcePerformConstruct();
@@ -60,8 +62,10 @@ DllExport void PADataCopy(struct PAData* from, struct PAData* to)
     // aux = (struct PAData) malloc (su)
     aux = (struct PAData*) malloc (sizeof (struct PAData));
     // aux = PADataCreate();
-    aux->Resource = from->Resource;
-    to->Resource = aux->Resource;
+    memcpy(aux,from,sizeof(struct PAData));
+    memcpy(to,aux,sizeof(struct PAData));
+    // aux->Resource = from->Resource;
+    // to->Resource = aux->Resource;
     // aux->Resource = NULL;
     free(aux);
     // PADataDelete(aux);

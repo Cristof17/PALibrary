@@ -1500,7 +1500,7 @@ struct PATransposeTree;
 
 
 
-
+struct PASize;
 struct PAInput;
 struct PAOutput;
 
@@ -1586,7 +1586,9 @@ struct ArrayListPosition {
 struct ArrayListObject {
  int element;
 };
+struct PASize {
 
+};
 struct ArrayList {
 
  int* array;
@@ -1675,7 +1677,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 267 "./include/types.h"
+# 269 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2068,21 +2070,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           struct BFSRecord BFSRecordBegin(struct BFSRecord*, struct PAList* d, struct PACount* n);
           struct BFSRecord BFSRecordCopy(struct BFSRecord* from, struct BFSRecord* to);
 # 7 "src/PA/Output.c" 2
-# 25 "src/PA/Output.c"
-          void PAOutputCopy(struct PAOutput* from, struct PAOutput* to)
-{
- struct PAOutput* aux;
-
-
-    aux = (struct PAOutput*) malloc (sizeof(struct PAOutput));
-    __builtin___memcpy_chk (aux, from,sizeof(struct PAOutput), __builtin_object_size (aux, 0));
-    __builtin___memcpy_chk (to, aux, sizeof(struct PAOutput), __builtin_object_size (to, 0));
-
-
-    free(aux);
-# 62 "src/PA/Output.c"
-}
-# 74 "src/PA/Output.c"
+# 35 "src/PA/Output.c"
           struct PAOutput* PAOutputCreate()
 {
 
@@ -2111,10 +2099,27 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     return Output;
 }
+          void PAOutputCopy(struct PAOutput* from, struct PAOutput* to)
+{
+ struct PAOutput* aux;
+
+
+    aux = (struct PAOutput*) malloc (sizeof(struct PAOutput));
+    __builtin___memcpy_chk (aux, from,sizeof(struct PAOutput), __builtin_object_size (aux, 0));
+    __builtin___memcpy_chk (to, aux, sizeof(struct PAOutput), __builtin_object_size (to, 0));
+
+
+    free(aux);
+# 100 "src/PA/Output.c"
+}
+
           PAResult PAOutputDelete(struct PAOutput* PA)
 {
     int returnCode;
-    PA->result = 0;
+
+
+    __builtin___memset_chk(PA, 0, sizeof(struct PAOutput), __builtin_object_size (PA, 0));
+
     returnCode = ((int)0);
 
 

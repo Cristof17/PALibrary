@@ -1499,7 +1499,7 @@ struct PATransposeTree;
 
 
 
-
+struct PASize;
 struct PAInput;
 struct PAOutput;
 
@@ -1585,7 +1585,9 @@ struct ArrayListPosition {
 struct ArrayListObject {
  int element;
 };
+struct PASize {
 
+};
 struct ArrayList {
 
  int* array;
@@ -1674,7 +1676,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 267 "./include/types.h"
+# 269 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2371,36 +2373,6 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
     return temp;
 # 59 "src/PA/Count.c"
 }
-          PAResult PACountFinish(struct PACount* PA)
-{
-# 87 "src/PA/Count.c"
-    int returnCode;
-    free(PA->number);
-    free(PA);
-    returnCode = ((int)0);
-
-
-    return returnCode;
-
-}
-          PAResult PACountDelete(struct PACount* PA)
-{
-    int returnCode;
-    PA->number = 0;
-    returnCode = ((int)0);
-
-
-
-
-
-
-    return returnCode;
-}
-PAResult PACountPrint(struct PACount* Count)
-{
-    PAResult result;
-    return result;
-}
           void PACountCopy(struct PACount* from, struct PACount* to)
 {
     struct PACount* aux;
@@ -2410,5 +2382,37 @@ PAResult PACountPrint(struct PACount* Count)
     to->number = aux->number;
 
     free(aux);
-# 132 "src/PA/Count.c"
+# 78 "src/PA/Count.c"
+}
+          PAResult PACountDelete(struct PACount* PA)
+{
+    int returnCode;
+
+    __builtin___memset_chk(PA, 0, sizeof(struct PACount), __builtin_object_size (PA, 0));
+    returnCode = ((int)0);
+
+
+
+
+
+
+    return returnCode;
+}
+          PAResult PACountFinish(struct PACount* PA)
+{
+# 120 "src/PA/Count.c"
+    int returnCode;
+    free(PA->number);
+    free(PA);
+    returnCode = ((int)0);
+
+
+    return returnCode;
+
+}
+
+PAResult PACountPrint(struct PACount* Count)
+{
+    PAResult result;
+    return result;
 }
