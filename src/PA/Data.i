@@ -2049,7 +2049,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           void PADataCopy(struct PAData* from, struct PAData* to);
 
 
-          PAResult PADataFinish(struct PAResource*);
+          PAResult PADataFinish(struct PAData*);
           PAResult PADataDelete(struct PAData*);
 # 4 "src/PA/Data.c" 2
 # 1 "./include/PA/Resource.h" 1
@@ -2074,7 +2074,9 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     struct PAData* dataPointer;
     dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
-# 35 "src/PA/Data.c"
+    dataPointer->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
+    dataPointer->Resource->value = (PANumber) malloc (sizeof(PANumber));
+# 36 "src/PA/Data.c"
     return dataPointer;
 }
           struct PAData* PADataBegin(struct PAData* Data, PAInt resource)
@@ -2084,14 +2086,9 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     PAInt* aux;
     aux = (PAInt*) malloc (sizeof(PAInt));
-
-
     __builtin___memcpy_chk (aux, &resource,sizeof(PAInt), __builtin_object_size (aux, 0));
-    dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
-    dataPointer->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
-    dataPointer->Resource->value = (char*) malloc (sizeof(PAInt));
     __builtin___memcpy_chk (dataPointer->Resource->value, aux,sizeof(PAInt), __builtin_object_size (dataPointer->Resource->value, 0));
-# 59 "src/PA/Data.c"
+# 60 "src/PA/Data.c"
     free(aux);
     return dataPointer;
 
@@ -2113,9 +2110,9 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
     free(aux);
-# 88 "src/PA/Data.c"
+# 89 "src/PA/Data.c"
 }
-# 106 "src/PA/Data.c"
+# 107 "src/PA/Data.c"
           PAResult PADataDelete(struct PAData* PA)
 {
     int returnCode;
@@ -2130,14 +2127,15 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 }
-          PAResult PADataFinish(struct PAResource* PA)
+          PAResult PADataFinish(struct PAData* PA)
 {
 
 
 
 
     int returnCode;
-    free(PA->value);
+    free(PA->Resource->value);
+    free(PA->Resource);
     free(PA);
     returnCode = ((int)0);
 

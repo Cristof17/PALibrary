@@ -12,8 +12,20 @@ _PADataCreate:                          ; @PADataCreate
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
 	mov	x0, #8                          ; =0x8
+	str	x0, [sp]                        ; 8-byte Folded Spill
 	bl	_malloc
-	str	x0, [sp, #8]
+	mov	x8, x0
+	ldr	x0, [sp]                        ; 8-byte Folded Reload
+	str	x8, [sp, #8]
+	bl	_malloc
+	mov	x8, x0
+	ldr	x0, [sp]                        ; 8-byte Folded Reload
+	ldr	x9, [sp, #8]
+	str	x8, [x9]
+	bl	_malloc
+	ldr	x8, [sp, #8]
+	ldr	x8, [x8]
+	str	x0, [x8]
 	ldr	x0, [sp, #8]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
@@ -33,35 +45,20 @@ _PADataBegin:                           ; @PADataBegin
 	.cfi_offset w29, -16
 	stur	x0, [x29, #-8]
 	sub	x8, x29, #12
-	str	x8, [sp]                        ; 8-byte Folded Spill
+	str	x8, [sp, #8]                    ; 8-byte Folded Spill
 	stur	w1, [x29, #-12]
 	mov	x0, #4                          ; =0x4
 	str	x0, [sp, #16]                   ; 8-byte Folded Spill
 	bl	_malloc
-	ldr	x1, [sp]                        ; 8-byte Folded Reload
+	ldr	x1, [sp, #8]                    ; 8-byte Folded Reload
 	ldr	x2, [sp, #16]                   ; 8-byte Folded Reload
 	str	x0, [sp, #32]
 	ldr	x0, [sp, #32]
 	mov	x3, #-1                         ; =0xffffffffffffffff
 	str	x3, [sp, #24]                   ; 8-byte Folded Spill
 	bl	___memcpy_chk
-	mov	x0, #8                          ; =0x8
-	str	x0, [sp, #8]                    ; 8-byte Folded Spill
-	bl	_malloc
-	mov	x8, x0
-	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
-	stur	x8, [x29, #-24]
-	bl	_malloc
-	mov	x8, x0
-	ldr	x0, [sp, #16]                   ; 8-byte Folded Reload
-	ldur	x9, [x29, #-24]
-	str	x8, [x9]
-	bl	_malloc
 	ldr	x2, [sp, #16]                   ; 8-byte Folded Reload
 	ldr	x3, [sp, #24]                   ; 8-byte Folded Reload
-	ldur	x8, [x29, #-24]
-	ldr	x8, [x8]
-	str	x0, [x8]
 	ldur	x8, [x29, #-24]
 	ldr	x8, [x8]
 	ldr	x0, [x8]
@@ -146,6 +143,10 @@ _PADataFinish:                          ; @PADataFinish
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
 	str	x0, [sp, #8]
+	ldr	x8, [sp, #8]
+	ldr	x8, [x8]
+	ldr	x0, [x8]
+	bl	_free
 	ldr	x8, [sp, #8]
 	ldr	x0, [x8]
 	bl	_free
