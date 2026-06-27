@@ -51,9 +51,9 @@ _PANormalTreeBegin:                     ; @PANormalTreeBegin
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PANormalTreePerformCopy        ; -- Begin function PANormalTreePerformCopy
+	.globl	_PANormalTreeCopy               ; -- Begin function PANormalTreeCopy
 	.p2align	2
-_PANormalTreePerformCopy:               ; @PANormalTreePerformCopy
+_PANormalTreeCopy:                      ; @PANormalTreeCopy
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #48
@@ -82,6 +82,30 @@ _PANormalTreePerformCopy:               ; @PANormalTreePerformCopy
 	ret
 	.cfi_endproc
                                         ; -- End function
+	.globl	_PANormalTreeDelete             ; -- Begin function PANormalTreeDelete
+	.p2align	2
+_PANormalTreeDelete:                    ; @PANormalTreeDelete
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #32
+	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
+	add	x29, sp, #16
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	str	x0, [sp, #8]
+	ldr	x0, [sp, #8]
+	mov	w1, #0                          ; =0x0
+	mov	x2, #8                          ; =0x8
+	mov	x3, #-1                         ; =0xffffffffffffffff
+	bl	___memset_chk
+	str	wzr, [sp, #4]
+	ldr	w0, [sp, #4]
+	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
+	add	sp, sp, #32
+	ret
+	.cfi_endproc
+                                        ; -- End function
 	.globl	_PANormalTreeFinish             ; -- Begin function PANormalTreeFinish
 	.p2align	2
 _PANormalTreeFinish:                    ; @PANormalTreeFinish
@@ -99,23 +123,6 @@ _PANormalTreeFinish:                    ; @PANormalTreeFinish
 	ldr	w0, [sp, #4]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
-	ret
-	.cfi_endproc
-                                        ; -- End function
-	.globl	_PANormalTreeDelete             ; -- Begin function PANormalTreeDelete
-	.p2align	2
-_PANormalTreeDelete:                    ; @PANormalTreeDelete
-	.cfi_startproc
-; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	str	x0, [sp, #8]
-	ldr	x8, [sp, #8]
-                                        ; kill: def $x9 killed $xzr
-	str	xzr, [x8]
-	str	wzr, [sp, #4]
-	ldr	w0, [sp, #4]
-	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function

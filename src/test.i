@@ -2115,10 +2115,13 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 10 "./include/PA/Data.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 11 "./include/PA/Data.h" 2
 
 
-          struct PAData* PADataCreate(PAInt* Resource);
-          struct PAData* PADataBegin(struct PAData*);
+
+          struct PAData* PADataCreate();
+          struct PAData* PADataBegin(struct PAData* Data, struct PAResource* resource);
           void PADataCopy(struct PAData* from, struct PAData* to);
 
 

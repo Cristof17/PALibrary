@@ -1,8 +1,8 @@
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 15, 0	sdk_version 26, 2
-	.globl	_PALinkCreate                   ; -- Begin function PALinkCreate
+	.globl	_PADataCreate                   ; -- Begin function PADataCreate
 	.p2align	2
-_PALinkCreate:                          ; @PALinkCreate
+_PADataCreate:                          ; @PADataCreate
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32
@@ -11,57 +11,46 @@ _PALinkCreate:                          ; @PALinkCreate
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	str	x0, [sp, #8]
 	mov	x0, #8                          ; =0x8
 	bl	_malloc
-	str	x0, [sp]
-	ldr	x8, [sp, #8]
-	ldr	x9, [sp]
-	str	x8, [x9]
-	ldr	x0, [sp]
+	str	x0, [sp, #8]
+	ldr	x0, [sp, #8]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PALinkBegin                    ; -- Begin function PALinkBegin
+	.globl	_PADataBegin                    ; -- Begin function PADataBegin
 	.p2align	2
-_PALinkBegin:                           ; @PALinkBegin
+_PADataBegin:                           ; @PADataBegin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #64
-	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
-	add	x29, sp, #48
+	sub	sp, sp, #48
+	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
+	add	x29, sp, #32
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
 	stur	x0, [x29, #-8]
-	stur	x1, [x29, #-16]
+	str	x1, [sp, #16]
 	mov	x0, #8                          ; =0x8
 	bl	_malloc
-	str	x0, [sp, #24]
-	ldr	x8, [sp, #24]
+	str	x0, [sp, #8]
+	ldr	x8, [sp, #8]
 	ldr	x0, [x8]
-	ldur	x1, [x29, #-16]
-	mov	x2, #16                         ; =0x10
-	str	x2, [sp, #8]                    ; 8-byte Folded Spill
+	ldr	x1, [sp, #16]
+	mov	x2, #1                          ; =0x1
 	mov	x3, #-1                         ; =0xffffffffffffffff
-	str	x3, [sp, #16]                   ; 8-byte Folded Spill
 	bl	___memcpy_chk
-	ldr	x2, [sp, #8]                    ; 8-byte Folded Reload
-	ldr	x3, [sp, #16]                   ; 8-byte Folded Reload
-	ldur	x0, [x29, #-8]
-	ldr	x1, [sp, #24]
-	bl	___memcpy_chk
-	ldr	x0, [sp, #24]
-	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
-	add	sp, sp, #64
+	ldr	x0, [sp, #8]
+	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PALinkCopy                     ; -- Begin function PALinkCopy
+	.globl	_PADataCopy                     ; -- Begin function PADataCopy
 	.p2align	2
-_PALinkCopy:                            ; @PALinkCopy
+_PADataCopy:                            ; @PADataCopy
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #64
@@ -94,9 +83,9 @@ _PALinkCopy:                            ; @PALinkCopy
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PALinkDelete                   ; -- Begin function PALinkDelete
+	.globl	_PADataDelete                   ; -- Begin function PADataDelete
 	.p2align	2
-_PALinkDelete:                          ; @PALinkDelete
+_PADataDelete:                          ; @PADataDelete
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32
@@ -106,21 +95,21 @@ _PALinkDelete:                          ; @PALinkDelete
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
 	str	x0, [sp, #8]
-	mov	w1, #0                          ; =0x0
-	str	wzr, [sp, #4]
 	ldr	x0, [sp, #8]
+	mov	w1, #0                          ; =0x0
+	str	w1, [sp]                        ; 4-byte Folded Spill
 	mov	x2, #8                          ; =0x8
 	mov	x3, #-1                         ; =0xffffffffffffffff
 	bl	___memset_chk
-	ldr	w0, [sp, #4]
+	ldr	w0, [sp]                        ; 4-byte Folded Reload
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PALinkFinish                   ; -- Begin function PALinkFinish
+	.globl	_PADataFinish                   ; -- Begin function PADataFinish
 	.p2align	2
-_PALinkFinish:                          ; @PALinkFinish
+_PADataFinish:                          ; @PADataFinish
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32

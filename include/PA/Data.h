@@ -7,10 +7,12 @@
 #include <types.h>
 #include <defs.h>
 #include <stdlib.h>
+#include <string.h>
+
 // #include <defs.h>
 // struct PAData;
-DllExport struct PAData* PADataCreate(PAInt* Resource);
-DllExport struct PAData* PADataBegin(struct PAData*);
+DllExport struct PAData* PADataCreate();
+DllExport struct PAData* PADataBegin(struct PAData* Data, struct PAResource* resource);
 DllExport void PADataCopy(struct PAData* from, struct PAData* to);
 // DllExport struct PAData PADataPerformCopy(struct PAData);
 // DllExport struct PAData PADataPerformPutResource(struct PAData, PAResource);

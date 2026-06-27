@@ -168,7 +168,7 @@ struct ArrayListObject {
 	int element;
 };
 struct PASize {
-
+	
 };
 struct ArrayList {
 	// struct Position position;

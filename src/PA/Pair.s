@@ -98,6 +98,30 @@ _PAPairCopy:                            ; @PAPairCopy
 	ret
 	.cfi_endproc
                                         ; -- End function
+	.globl	_PAPairDelete                   ; -- Begin function PAPairDelete
+	.p2align	2
+_PAPairDelete:                          ; @PAPairDelete
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #32
+	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
+	add	x29, sp, #16
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	str	x0, [sp, #8]
+	ldr	x0, [sp, #8]
+	mov	w1, #0                          ; =0x0
+	mov	x2, #16                         ; =0x10
+	mov	x3, #-1                         ; =0xffffffffffffffff
+	bl	___memset_chk
+	str	wzr, [sp, #4]
+	ldr	w0, [sp, #4]
+	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
+	add	sp, sp, #32
+	ret
+	.cfi_endproc
+                                        ; -- End function
 	.globl	_PAPairFinish                   ; -- Begin function PAPairFinish
 	.p2align	2
 _PAPairFinish:                          ; @PAPairFinish
@@ -116,25 +140,6 @@ _PAPairFinish:                          ; @PAPairFinish
 	ldr	w0, [sp, #4]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
-	ret
-	.cfi_endproc
-                                        ; -- End function
-	.globl	_PAPairDelete                   ; -- Begin function PAPairDelete
-	.p2align	2
-_PAPairDelete:                          ; @PAPairDelete
-	.cfi_startproc
-; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	str	x0, [sp, #8]
-	ldr	x8, [sp, #8]
-                                        ; kill: def $x9 killed $xzr
-	str	xzr, [x8, #8]
-	ldr	x8, [sp, #8]
-	str	xzr, [x8]
-	str	wzr, [sp, #4]
-	ldr	w0, [sp, #4]
-	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function

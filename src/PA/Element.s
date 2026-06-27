@@ -144,6 +144,30 @@ _PAElementCopy:                         ; @PAElementCopy
 	ret
 	.cfi_endproc
                                         ; -- End function
+	.globl	_PAElementDelete                ; -- Begin function PAElementDelete
+	.p2align	2
+_PAElementDelete:                       ; @PAElementDelete
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #32
+	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
+	add	x29, sp, #16
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	str	x0, [sp, #8]
+	mov	w1, #0                          ; =0x0
+	str	wzr, [sp, #4]
+	ldr	x0, [sp, #8]
+	mov	x2, #24                         ; =0x18
+	mov	x3, #-1                         ; =0xffffffffffffffff
+	bl	___memset_chk
+	ldr	w0, [sp, #4]
+	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
+	add	sp, sp, #32
+	ret
+	.cfi_endproc
+                                        ; -- End function
 	.globl	_PAElementFinish                ; -- Begin function PAElementFinish
 	.p2align	2
 _PAElementFinish:                       ; @PAElementFinish
@@ -162,25 +186,6 @@ _PAElementFinish:                       ; @PAElementFinish
 	ldr	w0, [sp, #4]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
-	ret
-	.cfi_endproc
-                                        ; -- End function
-	.globl	_PAElementDelete                ; -- Begin function PAElementDelete
-	.p2align	2
-_PAElementDelete:                       ; @PAElementDelete
-	.cfi_startproc
-; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	str	x0, [sp, #8]
-	str	wzr, [sp, #4]
-	ldr	x8, [sp, #8]
-                                        ; kill: def $x9 killed $xzr
-	str	xzr, [x8, #8]
-	ldr	x8, [sp, #8]
-	str	xzr, [x8, #16]
-	ldr	w0, [sp, #4]
-	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function
