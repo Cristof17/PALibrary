@@ -2089,7 +2089,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     struct PAResource* aux;
     aux = (struct PAResource*) malloc (sizeof(struct PAResource));
-    __builtin___memcpy_chk (aux->value, &resource,sizeof(PAInt), __builtin_object_size (aux->value, 0));
+    __builtin___memcpy_chk (aux->value, &resource,Data->Resource->size.value, __builtin_object_size (aux->value, 0));
     __builtin___memcpy_chk (Data->Resource, aux,sizeof(struct PAResource), __builtin_object_size (Data->Resource, 0));
 # 62 "src/PA/Data.c"
     free(aux);

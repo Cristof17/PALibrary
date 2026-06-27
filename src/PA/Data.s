@@ -53,7 +53,9 @@ _PADataBegin:                           ; @PADataBegin
 	str	x0, [sp, #24]
 	ldr	x8, [sp, #24]
 	ldr	x0, [x8]
-	mov	x2, #4                          ; =0x4
+	ldur	x8, [x29, #-8]
+	ldr	x8, [x8]
+	ldr	x2, [x8, #8]
 	mov	x3, #-1                         ; =0xffffffffffffffff
 	str	x3, [sp, #16]                   ; 8-byte Folded Spill
 	bl	___memcpy_chk
