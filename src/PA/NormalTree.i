@@ -2124,7 +2124,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 }
-          int PANormalTreeDelete(struct PANormalTree* PA)
+          PAResult PANormalTreeDelete(struct PANormalTree* PA)
 {
     int returnCode;
     PA->tree = 0;

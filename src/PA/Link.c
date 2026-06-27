@@ -96,7 +96,7 @@ DllExport void PALinkCopy(struct PALink* from, struct PALink* to)
     // return Link;
     // return reusult;
 // }
-DllExport int PALinkDelete(struct PALink* PA){
+DllExport PAResult PALinkDelete(struct PALink* PA){
     // PAResult result;
     int returnCode;
     returnCode = PARESULT_SUCCESS;

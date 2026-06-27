@@ -2169,7 +2169,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
  return returnCode;
 }
-          int PAInputDelete(struct PAInput* PA)
+          PAResult PAInputDelete(struct PAInput* PA)
 {
  int returnCode;
  PA->m = 0;

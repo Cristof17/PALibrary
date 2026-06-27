@@ -1910,7 +1910,7 @@ struct Facade {
 # 75 "src/PA/Data.c"
 }
 # 93 "src/PA/Data.c"
-          int PADataFinish(struct PAResource* PA)
+          PAResult PADataFinish(struct PAResource* PA)
 {
 
 
@@ -1927,7 +1927,7 @@ struct Facade {
 
 
 }
-          int PADataDelete(struct PAData* PA)
+          PAResult PADataDelete(struct PAData* PA)
 {
     int returnCode;
     PA->Resource = 0;

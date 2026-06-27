@@ -99,7 +99,7 @@ DllExport struct PAOutput* PAOutputBegin(struct PAOutput* Output)
     // Output->result = temp.result;
     return Output;
 }
-DllExport int PAOutputDelete(struct PAOutput* PA)
+DllExport PAResult PAOutputDelete(struct PAOutput* PA)
 {
     int returnCode;
     PA->result = NULL;

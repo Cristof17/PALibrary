@@ -2166,7 +2166,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
         free(aux);
         return aux;
     }
-              int PASeriesDelete(struct PASeries* PA)
+              PAResult PASeriesDelete(struct PASeries* PA)
     {
         int returnCode;
         returnCode = ((int)0);
@@ -2176,7 +2176,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
         return returnCode;
     }
 # 192 "src/PA/Series.c"
-              int PASeriesFinish(struct PASeries* PA)
+              PAResult PASeriesFinish(struct PASeries* PA)
     {
 
         int returnCode;

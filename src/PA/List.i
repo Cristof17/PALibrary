@@ -2163,7 +2163,7 @@ void Dispose()
 
 }
 # 237 "src/PA/List.c"
-          int PAListDelete(struct PAList* PA)
+          PAResult PAListDelete(struct PAList* PA)
 {
     int returnCode;
     returnCode = ((int)0);

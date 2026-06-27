@@ -180,7 +180,7 @@ DllExport PAResult PAElementFinish(struct PAElement* PA)
     // return element;
   //  return Element;
 // }
-DllExport int PAElementDelete(struct PAElement* PA)
+DllExport PAResult PAElementDelete(struct PAElement* PA)
 {
     int returnCode;
     returnCode = PARESULT_SUCCESS;

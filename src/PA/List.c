@@ -234,7 +234,7 @@ void Dispose()
 //     struct PAList list;
 //     return list;
 // }
-DllExport int PAListDelete(struct PAList* PA)
+DllExport PAResult PAListDelete(struct PAList* PA)
 {
     int returnCode;
     returnCode = PARESULT_SUCCESS;

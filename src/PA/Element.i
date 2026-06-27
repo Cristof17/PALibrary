@@ -2161,7 +2161,7 @@ struct PAElement* PAElementCreate()
 
 }
 # 183 "src/PA/Element.c"
-          int PAElementDelete(struct PAElement* PA)
+          PAResult PAElementDelete(struct PAElement* PA)
 {
     int returnCode;
     returnCode = ((int)0);

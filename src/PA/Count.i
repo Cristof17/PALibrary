@@ -2383,7 +2383,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
     return returnCode;
 
 }
-          int PACountDelete(struct PACount* PA)
+          PAResult PACountDelete(struct PACount* PA)
 {
     int returnCode;
     PA->number = 0;

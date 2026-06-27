@@ -2139,7 +2139,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          int PALinkDelete(struct PALink* PA){
+          PAResult PALinkDelete(struct PALink* PA){
 
     int returnCode;
     returnCode = ((int)0);

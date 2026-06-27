@@ -131,7 +131,7 @@ DllExport void PAPairCopy(struct PAPair* from, struct PAPair* to)
     //return Pair;
     // return pair;
 // }
-DllExport int PAPairFinish(struct PAPair* PA)
+DllExport PAResult PAPairFinish(struct PAPair* PA)
 {
     // int returnCode1;
     // int returnCode2;
@@ -148,7 +148,7 @@ DllExport int PAPairFinish(struct PAPair* PA)
 	// PAResult result;
 	// return result;
 }
-DllExport int PAPairDelete(struct PAPair* PA)
+DllExport PAResult PAPairDelete(struct PAPair* PA)
 {
     // int returnCode1;
     // int returnCode2;
