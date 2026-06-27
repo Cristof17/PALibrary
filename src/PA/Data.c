@@ -15,7 +15,8 @@ DllExport struct PAData* PADataCreate()
     // struct PAData data;
     struct PAData* dataPointer;
     dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
-
+    dataPointer->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
+    dataPointer->Resource->value = (PAInt*) malloc (sizeof(PAInt));
     // dataPointer->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
     // dataPointer->Resource->value = ((PANumber) *Resource);
     // dataPointer->Resource->value = (struct PANumber*) malloc (sizeof(struct PANumber));
@@ -41,13 +42,13 @@ DllExport struct PAData* PADataBegin(struct PAData* Data, PAInt resource)
     // struct 
     PAInt* aux;
     aux = (PAInt*) malloc (sizeof(PAInt));
+    memcpy(aux,&resource,sizeof(PAInt));
+    memcpy(dataPointer->Resource->value,aux,sizeof(PAInt));
     // memcpy(aux,)
     // *aux = resource;
-    memcpy(aux,&resource,sizeof(PAInt));
-    dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
-    dataPointer->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
-    dataPointer->Resource->value = (char*) malloc (sizeof(PAInt));
-    memcpy(dataPointer->Resource->value,aux,sizeof(PAInt));
+    // dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
+    // dataPointer->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
+    // dataPointer->Resource->value = (char*) malloc (sizeof(PAInt));
     // dataPointer->Resource = Data->Resource;
     // temp.Resource = &Value;
     // Data->Resource = temp.Resource;
