@@ -2085,11 +2085,13 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     PAInt* aux;
     aux = (PAInt*) malloc (sizeof(PAInt));
 
-    *aux = resource;
+
+    __builtin___memcpy_chk (aux, &resource,sizeof(PAInt), __builtin_object_size (aux, 0));
     dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
     dataPointer->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
+    dataPointer->Resource->value = (char*) malloc (sizeof(PAInt));
     __builtin___memcpy_chk (dataPointer->Resource->value, aux,sizeof(PAInt), __builtin_object_size (dataPointer->Resource->value, 0));
-# 57 "src/PA/Data.c"
+# 59 "src/PA/Data.c"
     free(aux);
     return dataPointer;
 
@@ -2111,9 +2113,9 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
     free(aux);
-# 86 "src/PA/Data.c"
+# 88 "src/PA/Data.c"
 }
-# 104 "src/PA/Data.c"
+# 106 "src/PA/Data.c"
           PAResult PADataDelete(struct PAData* PA)
 {
     int returnCode;
