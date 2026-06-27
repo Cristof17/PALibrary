@@ -6,6 +6,7 @@
 #include <defs.h>
 #include <types.h>
 #include <stdlib.h>
+#include <string.h>
 
 // struct PAElement;
 DllExport void PAElementVisit(struct PAElement*);

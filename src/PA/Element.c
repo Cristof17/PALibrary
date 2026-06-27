@@ -40,7 +40,10 @@ DllExport struct PAElement* PAElementBegin(struct PAElement* element,struct PADa
 
     struct PAElement* aux;
     aux =(struct PAElement*) malloc (sizeof(struct PAElement));
-
+    memcpy(aux->index,index,sizeof(struct PAData));
+    memcpy(aux->next,next,sizeof(struct PAElement));
+    memcpy(aux->status,status,sizeof(struct PAStatus));
+    memcpy(element,aux,sizeof(struct PAElement));
     // elementPointer->index = element->index;
     // elementPointer->next = element->next;
     // elementPointer->status = element->status;
@@ -85,11 +88,14 @@ DllExport void PAElementCopy(struct PAElement* from, struct PAElement* to)
 {
     struct PAElement* aux;
     aux = (struct PAElement*) malloc (sizeof(struct PAElement));
+    memcpy(aux,from,sizeof(struct PAElement));
+    // memcpy*
+    memcpy(to,aux,sizeof(struct PAElement));
     // aux = PAElementCreate();
-    aux->index = from->index;
-    aux->status = from->status;
-    to->index = aux->index;
-    to->status = aux->status;
+    // aux->index = from->index;
+    // aux->status = from->status;
+    // to->index = aux->index;
+    // to->status = aux->status;
     // aux->index = NULL;
     // aux->status = NULL;
     free(aux);
