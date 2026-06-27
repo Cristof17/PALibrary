@@ -22,7 +22,7 @@ DllExport struct PASize* PASizeBegin(struct PASize* Size, size_t value)
     // memcpy(aux,S)
     // memcpy(Size,auto)
     // __MEMORY_SCOPE_DEVICE
-    memcpy(aux,Size);
+    memcpy(aux,Size,sizeof(struct PASize));
     free(aux);
     return Size;
 }
