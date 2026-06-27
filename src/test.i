@@ -2122,7 +2122,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          struct PAData* PADataCreate();
+          struct PAData* PADataCreate(struct PASize* size);
           struct PAData* PADataBegin(struct PAData* Data, PAInt Resource);
           void PADataCopy(struct PAData* from, struct PAData* to);
 

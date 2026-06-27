@@ -2046,7 +2046,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          struct PAData* PADataCreate();
+          struct PAData* PADataCreate(struct PASize* size);
           struct PAData* PADataBegin(struct PAData* Data, PAInt Resource);
           void PADataCopy(struct PAData* from, struct PAData* to);
 
@@ -2071,15 +2071,13 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          struct PAData* PADataCreate()
+          struct PAData* PADataCreate(struct PASize* size)
 {
 
     struct PAData* dataPointer;
     dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
     dataPointer->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
-
-    dataPointer->Resource->value = (PANumber) malloc (sizeof(PAInt));
-    dataPointer->Resource->size.value = sizeof(PAInt);
+    dataPointer->Resource->value = (PANumber) malloc (size->value);
 # 38 "src/PA/Data.c"
     return dataPointer;
 }

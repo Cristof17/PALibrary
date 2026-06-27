@@ -11,10 +11,25 @@ DllExport struct PASize* PASizeConstruct(){
     size = (struct PASize*) malloc (sizeof(struct PASize));
     return size;
 }
+DllExport struct PASize* PASizeBegin(struct PASize* Size, int value)
+{
+    struct PASize* aux;
+    aux = (struct PASize*) malloc (sizeof(struct PASize));
+    // aux->value = ;
+    memcpy(aux->value,&value,sizeof(int));
+    // memcpy(Size,aix)
+    // memcpy(aux,S)
+    // memcpy(Size,auto)
+    // __MEMORY_SCOPE_DEVICE
+    memcpy(aux,Size);
+    free(aux);
+    return Size;
+}
 // // void PASize(PA_INT);
 DllExport int PASizeDelete(struct PASize* PA)
 {
     int returnCode = PARESULT_SUCCESS;
+    bzero(PA->value,sizeof(int));
     bzero(PA,sizeof(struct PASize));
     return returnCode;
 }

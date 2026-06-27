@@ -11,24 +11,21 @@ _PADataCreate:                          ; @PADataCreate
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
+	str	x0, [sp, #8]
 	mov	x0, #8                          ; =0x8
 	bl	_malloc
-	str	x0, [sp, #8]
+	str	x0, [sp]
 	mov	x0, #16                         ; =0x10
 	bl	_malloc
-	ldr	x8, [sp, #8]
+	ldr	x8, [sp]
 	str	x0, [x8]
-	mov	x0, #4                          ; =0x4
-	str	x0, [sp]                        ; 8-byte Folded Spill
+	ldr	x8, [sp, #8]
+	ldr	x0, [x8]
 	bl	_malloc
-	ldr	x8, [sp]                        ; 8-byte Folded Reload
-	ldr	x9, [sp, #8]
-	ldr	x9, [x9]
-	str	x0, [x9]
-	ldr	x9, [sp, #8]
-	ldr	x9, [x9]
-	str	x8, [x9, #8]
-	ldr	x0, [sp, #8]
+	ldr	x8, [sp]
+	ldr	x8, [x8]
+	str	x0, [x8]
+	ldr	x0, [sp]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
 	ret
