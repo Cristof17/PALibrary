@@ -11,12 +11,13 @@ DllExport struct PASize* PASizeConstruct(){
     size = (struct PASize*) malloc (sizeof(struct PASize));
     return size;
 }
-DllExport struct PASize* PASizeBegin(struct PASize* Size, int value)
+DllExport struct PASize* PASizeBegin(struct PASize* Size, size_t value)
 {
     struct PASize* aux;
     aux = (struct PASize*) malloc (sizeof(struct PASize));
     // aux->value = ;
-    memcpy(aux->value,&value,sizeof(int));
+    // memcpy(aux->value,&value,sizeof(value));
+    memcpy(aux->value,&value,sizeof(size_t));
     // memcpy(Size,aix)
     // memcpy(aux,S)
     // memcpy(Size,auto)
