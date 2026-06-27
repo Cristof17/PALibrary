@@ -1836,11 +1836,6 @@ struct Facade {
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 7 "./include/PA/Resource.h" 2
- struct PAResource PAResourceBegin(struct PAResource*, PANumber);
-          struct PAResource* PAResourceCreate();
-          PAResult PAResourceFinish(struct PAResource*);
-          int PAResourceDelete(struct PAResource*);
-          void PAResourceCopy(struct PAResource*, struct PAResource*);
 # 4 "src/PA/Resource.c" 2
 # 1 "./include/PA/Number.h" 1
 

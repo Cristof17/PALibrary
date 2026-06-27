@@ -1846,8 +1846,8 @@ struct Facade {
           void PADataCopy(struct PAData* from, struct PAData* to);
 
 
-          int PADataFinish(struct PAResource*);
-          int PADataDelete(struct PAData*);
+          PAResult PADataFinish(struct PAResource*);
+          PAResult PADataDelete(struct PAData*);
 # 4 "src/PA/Data.c" 2
 # 1 "./include/PA/Resource.h" 1
 
@@ -1857,11 +1857,6 @@ struct Facade {
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 7 "./include/PA/Resource.h" 2
- struct PAResource PAResourceBegin(struct PAResource*, PANumber);
-          struct PAResource* PAResourceCreate();
-          PAResult PAResourceFinish(struct PAResource*);
-          int PAResourceDelete(struct PAResource*);
-          void PAResourceCopy(struct PAResource*, struct PAResource*);
 # 5 "src/PA/Data.c" 2
 
 

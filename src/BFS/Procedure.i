@@ -2095,8 +2095,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAResult PATreeFinish(struct PATree*);
           int PATreeDelete(struct PATree*);
+          int PATreeFinish(struct PATree*);
 # 9 "src/BFS/Procedure.c" 2
 # 1 "./include/PA/Element.h" 1
 
@@ -2115,8 +2115,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           struct PAElement* PAElementCreate();
           struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus* status);
           void PAElementCopy(struct PAElement*, struct PAElement*);
-          int PAElementDelete(struct PAElement*);
-          int PAElementFinish(struct PAElement*);
+          PAResult PAElementDelete(struct PAElement*);
+          PAResult PAElementFinish(struct PAElement*);
           void PAElementVisit(struct PAElement*);
           PABool PAElementIsVisited(struct PAElement*);
           void PAElementReset(struct PAElement*);
@@ -2161,7 +2161,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          int PAInputDelete(struct PAInput*);
+          PAResult PAInputDelete(struct PAInput*);
           PAResult PAInputFinish(struct PAInput*);
 # 13 "src/BFS/Procedure.c" 2
 # 26 "src/BFS/Procedure.c"

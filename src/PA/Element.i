@@ -2046,8 +2046,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           struct PAElement* PAElementCreate();
           struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus* status);
           void PAElementCopy(struct PAElement*, struct PAElement*);
-          int PAElementDelete(struct PAElement*);
-          int PAElementFinish(struct PAElement*);
+          PAResult PAElementDelete(struct PAElement*);
+          PAResult PAElementFinish(struct PAElement*);
           void PAElementVisit(struct PAElement*);
           PABool PAElementIsVisited(struct PAElement*);
           void PAElementReset(struct PAElement*);
@@ -2070,8 +2070,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           void PADataCopy(struct PAData* from, struct PAData* to);
 
 
-          int PADataFinish(struct PAResource*);
-          int PADataDelete(struct PAData*);
+          PAResult PADataFinish(struct PAResource*);
+          PAResult PADataDelete(struct PAData*);
 # 8 "src/PA/Element.c" 2
 # 1 "./include/PA/Status.h" 1
 
@@ -2084,13 +2084,12 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 9 "./include/PA/Status.h" 2
 
-          void PAStatusCauseVisit(PABool);
           struct PAStatus* PAStatusCreate();
           struct PAStatus* PAStatusBegin(struct PAStatus*, struct PAResource*);
-          PAResult PAStatusFinish(struct PAStatus*);
-
           void PAStatusCopy(struct PAStatus*, struct PAStatus*);
-          int PAStatusDelete(struct PAStatus*);
+          PAResult PAStatusDelete(struct PAStatus*);
+          PAResult PAStatusFinish(struct PAStatus*);
+          void PAStatusCauseVisit(PABool);
 # 9 "src/PA/Element.c" 2
 # 18 "src/PA/Element.c"
 struct PAElement* PAElementCreate()

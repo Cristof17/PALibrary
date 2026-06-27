@@ -2053,7 +2053,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           void PAListCopy(struct PAList*, struct PAList*);
-          int PAListDelete(struct PAList*);
+          PAResult PAListDelete(struct PAList*);
           PAResult PAListFinish(struct PAList*);
 
 void PAListPrint(struct PAList* List);
@@ -2079,10 +2079,10 @@ void PAListPrint(struct PAList* List);
 
 
 
-          int PACountFinish(struct PACount*);
+          PAResult PACountFinish(struct PACount*);
 
 
-          int PACountDelete(struct PACount* PA);
+          PAResult PACountDelete(struct PACount* PA);
 # 8 "src/BFS/Record.c" 2
 # 1 "./include/PA/Result.h" 1
 # 9 "src/BFS/Record.c" 2

@@ -58,11 +58,11 @@ int main()
 	// PANumberBegin(number,'a');
 	// PANumberPrint(number);
 	// PANumberPrint(number);
-	resource123 = PAResourceCreate();
-	resource234 = PAResourceCreate();
+	// resource123 = PAResourceCreate();
+	// resource234 = PAResourceCreate();
 	// PAResourceBegin(resource123,number);
 	// PANumberPrint(resource123->value);
-	PAResourceCopy(resource123,resource234);
+	// PAResourceCopy(resource123,resource234);
 	// PAResourcePri
 	// PANumberPrint(resource123->value);
 	// PANumberPrint(resource234->value);

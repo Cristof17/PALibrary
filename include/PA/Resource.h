@@ -4,9 +4,9 @@
 #include <types.h>
 #include <defs.h>
 #include <stdlib.h>
-DllExport struct PAResource PAResourceBegin(struct PAResource*, PANumber);
-DllExport struct PAResource* PAResourceCreate();
-DllExport PAResult PAResourceFinish(struct PAResource*);
-DllExport int PAResourceDelete(struct PAResource*);
-DllExport void PAResourceCopy(struct PAResource*, struct PAResource*);
+// DllExport struct PAResource* PAResourceCreate();
+// DllExport struct PAResource PAResourceBegin(struct PAResource*, PANumber);
+// DllExport void PAResourceCopy(struct PAResource*, struct PAResource*);
+// DllExport int PAResourceDelete(struct PAResource*);
+// DllExport int PAResourceFinish(struct PAResource*);
 #endif

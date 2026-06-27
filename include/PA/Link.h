@@ -15,6 +15,6 @@ DllExport void PALinkCopy(struct PALink*, struct PALink*);
 // DllExport struct PALink PALinkPerformCopy(struct PALink);
 // DllExport struct PALink PALinkPerformPutPair(struct PALink,struct PAPair);
 DllExport PAResult PALinkFinish(struct PALink*);
-DllExport int PALinkDelete(struct PALink*);
+DllExport PAResult PALinkDelete(struct PALink*);
 //typedef struct PALink Link;
 #endif

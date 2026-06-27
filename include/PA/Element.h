@@ -12,8 +12,8 @@
 DllExport struct PAElement* PAElementCreate();
 DllExport struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus* status);
 DllExport void PAElementCopy(struct PAElement*, struct PAElement*);
-DllExport int PAElementDelete(struct PAElement*);
-DllExport int PAElementFinish(struct PAElement*);
+DllExport PAResult PAElementDelete(struct PAElement*);
+DllExport PAResult PAElementFinish(struct PAElement*);
 DllExport void PAElementVisit(struct PAElement*);
 DllExport PABool PAElementIsVisited(struct PAElement*);
 DllExport void PAElementReset(struct PAElement*);

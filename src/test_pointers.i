@@ -1847,10 +1847,10 @@ struct Facade {
 
 
 
-          int PACountFinish(struct PACount*);
+          PAResult PACountFinish(struct PACount*);
 
 
-          int PACountDelete(struct PACount* PA);
+          PAResult PACountDelete(struct PACount* PA);
 # 2 "test/test_pointers.c" 2
 # 1 "./include/PA/Resource.h" 1
 
@@ -1860,11 +1860,6 @@ struct Facade {
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 7 "./include/PA/Resource.h" 2
- struct PAResource PAResourceBegin(struct PAResource*, PANumber);
-          struct PAResource* PAResourceCreate();
-          PAResult PAResourceFinish(struct PAResource*);
-          int PAResourceDelete(struct PAResource*);
-          void PAResourceCopy(struct PAResource*, struct PAResource*);
 # 3 "test/test_pointers.c" 2
 # 1 "./include/PA/Number.h" 1
 
@@ -2367,13 +2362,12 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 9 "./include/PA/Status.h" 2
 
-          void PAStatusCauseVisit(PABool);
           struct PAStatus* PAStatusCreate();
           struct PAStatus* PAStatusBegin(struct PAStatus*, struct PAResource*);
-          PAResult PAStatusFinish(struct PAStatus*);
-
           void PAStatusCopy(struct PAStatus*, struct PAStatus*);
-          int PAStatusDelete(struct PAStatus*);
+          PAResult PAStatusDelete(struct PAStatus*);
+          PAResult PAStatusFinish(struct PAStatus*);
+          void PAStatusCauseVisit(PABool);
 # 6 "test/test_pointers.c" 2
 # 1 "./include/PA/Series.h" 1
 # 15 "./include/PA/Series.h"
@@ -2386,10 +2380,10 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
           struct PASeries* PASeriesCreate();
           struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct ArrayList*);
-          int PASeriesDelete(struct PASeries*);
           void PASeriesCopy(struct PASeries*, struct PASeries*);
-
+          PAResult PASeriesDelete(struct PASeries*);
           PAResult PASeriesFinish(struct PASeries*);
+
 
           void PASeriesPrint(struct PASeries*);
 # 7 "test/test_pointers.c" 2
@@ -2417,7 +2411,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
           void PAListCopy(struct PAList*, struct PAList*);
-          int PAListDelete(struct PAList*);
+          PAResult PAListDelete(struct PAList*);
           PAResult PAListFinish(struct PAList*);
 
 void PAListPrint(struct PAList* List);
@@ -2447,8 +2441,8 @@ void PAListPrint(struct PAList* List);
 
 
 
-          PAResult PATreeFinish(struct PATree*);
           int PATreeDelete(struct PATree*);
+          int PATreeFinish(struct PATree*);
 # 9 "test/test_pointers.c" 2
 # 1 "./include/PA/Element.h" 1
 
@@ -2467,8 +2461,8 @@ void PAListPrint(struct PAList* List);
           struct PAElement* PAElementCreate();
           struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus* status);
           void PAElementCopy(struct PAElement*, struct PAElement*);
-          int PAElementDelete(struct PAElement*);
-          int PAElementFinish(struct PAElement*);
+          PAResult PAElementDelete(struct PAElement*);
+          PAResult PAElementFinish(struct PAElement*);
           void PAElementVisit(struct PAElement*);
           PABool PAElementIsVisited(struct PAElement*);
           void PAElementReset(struct PAElement*);
@@ -2485,21 +2479,7 @@ int main()
 
  struct PAResource* resource123;
  struct PAResource* resource234;
-
-
-
- resource123 = PAResourceCreate();
- resource234 = PAResourceCreate();
-
-
- PAResourceCopy(resource123,resource234);
-
-
-
-
-
-
-
+# 73 "test/test_pointers.c"
  struct PAStatus *status;
  struct PAStatus *status123;
  status=PAStatusCreate();

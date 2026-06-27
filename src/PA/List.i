@@ -2054,7 +2054,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           void PAListCopy(struct PAList*, struct PAList*);
-          int PAListDelete(struct PAList*);
+          PAResult PAListDelete(struct PAList*);
           PAResult PAListFinish(struct PAList*);
 
 void PAListPrint(struct PAList* List);
@@ -2080,10 +2080,10 @@ void PAListPrint(struct PAList* List);
 
 
 
-          int PACountFinish(struct PACount*);
+          PAResult PACountFinish(struct PACount*);
 
 
-          int PACountDelete(struct PACount* PA);
+          PAResult PACountDelete(struct PACount* PA);
 # 9 "src/PA/List.c" 2
 # 1 "./include/PA/Series.h" 1
 # 15 "./include/PA/Series.h"
@@ -2096,10 +2096,10 @@ void PAListPrint(struct PAList* List);
 
           struct PASeries* PASeriesCreate();
           struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct ArrayList*);
-          int PASeriesDelete(struct PASeries*);
           void PASeriesCopy(struct PASeries*, struct PASeries*);
-
+          PAResult PASeriesDelete(struct PASeries*);
           PAResult PASeriesFinish(struct PASeries*);
+
 
           void PASeriesPrint(struct PASeries*);
 # 10 "src/PA/List.c" 2

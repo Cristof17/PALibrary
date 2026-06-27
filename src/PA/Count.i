@@ -1851,10 +1851,10 @@ struct Facade {
 
 
 
-          int PACountFinish(struct PACount*);
+          PAResult PACountFinish(struct PACount*);
 
 
-          int PACountDelete(struct PACount* PA);
+          PAResult PACountDelete(struct PACount* PA);
 # 6 "src/PA/Count.c" 2
 # 1 "./include/PA/Number.h" 1
 

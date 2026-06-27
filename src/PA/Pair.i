@@ -2049,8 +2049,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          int PAPairDelete(struct PAPair*);
-          int PAPairFinish(struct PAPair*);
+          PAResult PAPairDelete(struct PAPair*);
+          PAResult PAPairFinish(struct PAPair*);
 # 7 "src/PA/Pair.c" 2
 # 1 "./include/PA/Element.h" 1
 
@@ -2069,8 +2069,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           struct PAElement* PAElementCreate();
           struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus* status);
           void PAElementCopy(struct PAElement*, struct PAElement*);
-          int PAElementDelete(struct PAElement*);
-          int PAElementFinish(struct PAElement*);
+          PAResult PAElementDelete(struct PAElement*);
+          PAResult PAElementFinish(struct PAElement*);
           void PAElementVisit(struct PAElement*);
           PABool PAElementIsVisited(struct PAElement*);
           void PAElementReset(struct PAElement*);

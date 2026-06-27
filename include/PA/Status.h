@@ -7,13 +7,13 @@
 #include <types.h>
 #include <stdlib.h>
 // #include <PA/Feature.h>
-DllExport void PAStatusCauseVisit(PABool);
 DllExport struct PAStatus* PAStatusCreate();
 DllExport struct PAStatus* PAStatusBegin(struct PAStatus*, struct PAResource*);
-DllExport PAResult PAStatusFinish(struct PAStatus*);
-// DllExport int PAStatusFinish(struct PAStatus);
 DllExport void PAStatusCopy(struct PAStatus*, struct PAStatus*);
-DllExport int PAStatusDelete(struct PAStatus*);
+DllExport PAResult PAStatusDelete(struct PAStatus*);
+DllExport PAResult PAStatusFinish(struct PAStatus*);
+DllExport void PAStatusCauseVisit(PABool);
+// DllExport int PAStatusFinish(struct PAStatus);
 // struct PAStatus/*.*/;
 // DllExport struct PAStatus PAStatusPerformConstruct(PAInt Visited);
 // DllExport struct PAStatus PAStatusPerformCopy(struct PAStatus);

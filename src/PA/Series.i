@@ -2043,10 +2043,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PASeries* PASeriesCreate();
           struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct ArrayList*);
-          int PASeriesDelete(struct PASeries*);
           void PASeriesCopy(struct PASeries*, struct PASeries*);
-
+          PAResult PASeriesDelete(struct PASeries*);
           PAResult PASeriesFinish(struct PASeries*);
+
 
           void PASeriesPrint(struct PASeries*);
 # 8 "src/PA/Series.c" 2
@@ -2071,10 +2071,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          int PACountFinish(struct PACount*);
+          PAResult PACountFinish(struct PACount*);
 
 
-          int PACountDelete(struct PACount* PA);
+          PAResult PACountDelete(struct PACount* PA);
 # 9 "src/PA/Series.c" 2
 # 1 "./include/PA/Element.h" 1
 
@@ -2093,8 +2093,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           struct PAElement* PAElementCreate();
           struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus* status);
           void PAElementCopy(struct PAElement*, struct PAElement*);
-          int PAElementDelete(struct PAElement*);
-          int PAElementFinish(struct PAElement*);
+          PAResult PAElementDelete(struct PAElement*);
+          PAResult PAElementFinish(struct PAElement*);
           void PAElementVisit(struct PAElement*);
           PABool PAElementIsVisited(struct PAElement*);
           void PAElementReset(struct PAElement*);
@@ -2176,7 +2176,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
         return returnCode;
     }
 # 192 "src/PA/Series.c"
-              PAResult PASeriesFinish(struct PASeries* PA)
+              int PASeriesFinish(struct PASeries* PA)
     {
 
         int returnCode;

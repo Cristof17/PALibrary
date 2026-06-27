@@ -19,10 +19,10 @@
 // struct PAList PAListPutElement(struct PAList, struct PAElement);
 DllExport struct PASeries* PASeriesCreate();
 DllExport struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct ArrayList*);
-DllExport int PASeriesDelete(struct PASeries*);
 DllExport void PASeriesCopy(struct PASeries*, struct PASeries*);
-// PAResult PASeriesPerformCopy();
+DllExport PAResult PASeriesDelete(struct PASeries*);
 DllExport PAResult PASeriesFinish(struct PASeries*);
+// PAResult PASeriesPerformCopy();
 // DllExport struct PAResource* PASeriesGet(struct PAData* Data);
 DllExport void PASeriesPrint(struct PASeries*);
 // DllExport HRESULT PASerisPerformPutCount(struct PACount);

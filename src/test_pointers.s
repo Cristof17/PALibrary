@@ -14,13 +14,6 @@ _main:                                  ; @main
 	mov	w8, #0                          ; =0x0
 	str	w8, [sp, #4]                    ; 4-byte Folded Spill
 	stur	wzr, [x29, #-4]
-	bl	_PAResourceCreate
-	stur	x0, [x29, #-16]
-	bl	_PAResourceCreate
-	stur	x0, [x29, #-24]
-	ldur	x0, [x29, #-16]
-	ldur	x1, [x29, #-24]
-	bl	_PAResourceCopy
 	bl	_PAStatusCreate
 	stur	x0, [x29, #-32]
 	bl	_PAStatusCreate
