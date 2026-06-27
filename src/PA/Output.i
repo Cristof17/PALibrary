@@ -2045,9 +2045,9 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-
           struct PAOutput* PAOutputCreate();
           struct PAOutput* PAOutputBegin(struct PAOutput*);
+          void PADataPerformCopy(struct PAOutput* from, struct PAOutput* to);
           int PAOutputDelete(struct PAOutput*);
           PAResult PAOutputFinish(struct PAOutput*);
           void PAOutputPrint(PAResult Result);

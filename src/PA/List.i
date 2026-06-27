@@ -2053,9 +2053,9 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAResult PAListFinish(struct PAList*);
-          int PAListDelete(struct PAList*);
           void PAListCopy(struct PAList*, struct PAList*);
+          int PAListDelete(struct PAList*);
+          PAResult PAListFinish(struct PAList*);
 
 void PAListPrint(struct PAList* List);
 # 8 "src/PA/List.c" 2

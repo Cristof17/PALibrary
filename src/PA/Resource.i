@@ -2326,9 +2326,9 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 8 "./include/PA/Number.h" 2
  struct PANumber* PANumberCreate(unsigned char value);
           struct PANumber* PANumberBegin(struct PANumber* Number, unsigned char Value);
-          PAResult PANumberFinish(struct PANumber*);
-          int PANumberDelete(struct PANumber*);
           void PANumberCopy(struct PANumber* from, struct PANumber* to);
+          int PANumberDelete(struct PANumber*);
+          PAResult PANumberFinish(struct PANumber*);
           void PANumberPrint(struct PANumber*);
 # 5 "src/PA/Resource.c" 2
 

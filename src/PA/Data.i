@@ -1843,11 +1843,11 @@ struct Facade {
 
           struct PAData* PADataCreate(PAInt* Resource);
           struct PAData* PADataBegin(struct PAData*);
+          void PADataCopy(struct PAData* from, struct PAData* to);
 
 
           int PADataFinish(struct PAResource*);
           int PADataDelete(struct PAData*);
-          void PADataCopy(struct PAData* from, struct PAData* to);
 # 4 "src/PA/Data.c" 2
 # 1 "./include/PA/Resource.h" 1
 

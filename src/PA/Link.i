@@ -2046,9 +2046,9 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           struct PALink* PALinkCreate(struct PAPair* p);
+          struct PALink* PALinkBegin(struct PALink*, struct PAPair*);
           void PALinkCopy(struct PALink*, struct PALink*);
 
-          struct PALink* PALinkBegin(struct PALink*, struct PAPair*);
 
           PAResult PALinkFinish(struct PALink*);
           int PALinkDelete(struct PALink*);
@@ -2073,8 +2073,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAResult PAPairFinish(struct PAPair*);
           int PAPairDelete(struct PAPair*);
+          int PAPairFinish(struct PAPair*);
 # 10 "src/PA/Link.c" 2
 
 

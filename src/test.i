@@ -2093,19 +2093,14 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 10 "./include/PA/Element.h" 2
 
 
+          struct PAElement* PAElementCreate();
+          struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus* status);
+          void PAElementCopy(struct PAElement*, struct PAElement*);
+          int PAElementDelete(struct PAElement*);
+          int PAElementFinish(struct PAElement*);
           void PAElementVisit(struct PAElement*);
           PABool PAElementIsVisited(struct PAElement*);
           void PAElementReset(struct PAElement*);
-          struct PAElement* PAElementCreate();
-
-          struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus* status);
-
-
-
-
-          int PAElementFinish(struct PAElement*);
-          int PAElementDelete(struct PAElement*);
-          void PAElementCopy(struct PAElement*, struct PAElement*);
 # 5 "test/test.c" 2
 # 1 "./include/PA/Data.h" 1
 
@@ -2122,11 +2117,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PAData* PADataCreate(PAInt* Resource);
           struct PAData* PADataBegin(struct PAData*);
+          void PADataCopy(struct PAData* from, struct PAData* to);
 
 
           int PADataFinish(struct PAResource*);
           int PADataDelete(struct PAData*);
-          void PADataCopy(struct PAData* from, struct PAData* to);
 # 6 "test/test.c" 2
 
 # 1 "./include/PA/List.h" 1
@@ -2152,9 +2147,9 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAResult PAListFinish(struct PAList*);
-          int PAListDelete(struct PAList*);
           void PAListCopy(struct PAList*, struct PAList*);
+          int PAListDelete(struct PAList*);
+          PAResult PAListFinish(struct PAList*);
 
 void PAListPrint(struct PAList* List);
 # 8 "test/test.c" 2
@@ -2458,9 +2453,9 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 8 "./include/PA/Number.h" 2
  struct PANumber* PANumberCreate(unsigned char value);
           struct PANumber* PANumberBegin(struct PANumber* Number, unsigned char Value);
-          PAResult PANumberFinish(struct PANumber*);
-          int PANumberDelete(struct PANumber*);
           void PANumberCopy(struct PANumber* from, struct PANumber* to);
+          int PANumberDelete(struct PANumber*);
+          PAResult PANumberFinish(struct PANumber*);
           void PANumberPrint(struct PANumber*);
 # 10 "test/test.c" 2
 # 1 "./include/PA/Series.h" 1
