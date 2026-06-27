@@ -15,7 +15,7 @@ _PADataCreate:                          ; @PADataCreate
 	mov	x0, #8                          ; =0x8
 	bl	_malloc
 	str	x0, [sp]
-	mov	x0, #16                         ; =0x10
+	mov	x0, #24                         ; =0x18
 	bl	_malloc
 	ldr	x8, [sp]
 	str	x0, [x8]
@@ -47,7 +47,7 @@ _PADataBegin:                           ; @PADataBegin
 	sub	x8, x29, #12
 	str	x8, [sp]                        ; 8-byte Folded Spill
 	stur	w1, [x29, #-12]
-	mov	x0, #16                         ; =0x10
+	mov	x0, #24                         ; =0x18
 	str	x0, [sp, #8]                    ; 8-byte Folded Spill
 	bl	_malloc
 	ldr	x1, [sp]                        ; 8-byte Folded Reload
@@ -132,7 +132,7 @@ _PADataDelete:                          ; @PADataDelete
 	ldr	w1, [sp, #16]                   ; 4-byte Folded Reload
 	ldur	x8, [x29, #-8]
 	ldr	x0, [x8]
-	mov	x2, #16                         ; =0x10
+	mov	x2, #24                         ; =0x18
 	bl	___memset_chk
 	ldr	x3, [sp, #8]                    ; 8-byte Folded Reload
 	ldr	w1, [sp, #16]                   ; 4-byte Folded Reload
