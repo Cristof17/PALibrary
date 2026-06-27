@@ -98,7 +98,8 @@ DllExport PAResult PATransposeTreeDelete(struct PATransposeTree* PA)
     // int returncode;
     int returnCode;
     returnCode = PARESULT_SUCCESS;
-    PA->tree = NULL;
+    // PA->tree = NULL;
+    bzero(PA,sizeof(struct PATransposeTree));
     // struct PATransposeTree tree;
     // return tree;
     return returnCode;

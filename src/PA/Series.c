@@ -162,8 +162,9 @@ DllExport struct PASeries* PASeriesBegin(struct PASeries* series, struct PACount
     {
         int returnCode;
         returnCode = PARESULT_SUCCESS;
+        bzero(PA,sizeof(struct PASeries));
         // PA->adj = NULL;
-        PA->m = NULL;
+        // PA->m = NULL;
         // struct PASeries series;
         // struct PANumber x;
         // struct PANumber y;

@@ -100,7 +100,8 @@ DllExport PAResult PALinkDelete(struct PALink* PA){
     // PAResult result;
     int returnCode;
     returnCode = PARESULT_SUCCESS;
-    PA->p = NULL;
+    bzero(PA,sizeof(struct PALink));
+    // PA->p = NULL;
     return returnCode;
     // struct PALink Empty;
     // PA.p = PAPairPerformDelete(PA.p);

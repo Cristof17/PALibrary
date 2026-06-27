@@ -238,8 +238,9 @@ DllExport PAResult PAListDelete(struct PAList* PA)
 {
     int returnCode;
     returnCode = PARESULT_SUCCESS;
-    PA->m = NULL;
-    PA->neigh = NULL;
+    bzero(PA,sizeof(struct PAList));
+    // PA->m = NULL;
+    // PA->neigh = NULL;
     // struct PAList aux;
     // struct PACount n = PA.n;
     // struct PACount* countPointer;

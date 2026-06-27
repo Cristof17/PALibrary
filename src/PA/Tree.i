@@ -2177,7 +2177,7 @@ void PAListPrint(struct PAList* List);
     return returnCode;
 }
 # 259 "src/PA/Tree.c"
-          int PATreeDelete(struct PATree* PA)
+          PAResult PATreeDelete(struct PATree* PA)
 {
     int returnCode;
     struct PATree tree;

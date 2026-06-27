@@ -153,8 +153,9 @@ DllExport PAResult PAPairDelete(struct PAPair* PA)
     // int returnCode1;
     // int returnCode2;
     int returnCode;
-    PA->Neigh = NULL;
-    PA->Node = NULL;
+    bzero(PA,sizeof(struct PAPair));
+    // PA->Neigh = NULL;
+    // PA->Node = NULL;
     returnCode = PARESULT_SUCCESS;
     // returnCode1 = PAElementDelete(&PA->Node);
     // returnCode2 = PAElementDelete(&PA->Neigh);

@@ -260,10 +260,11 @@ DllExport PAResult PATreeDelete(struct PATree* PA)
 {
     int returnCode;
     struct PATree tree;
-    PA->adj = NULL;
-    PA->m = NULL;
-    PA->n  = NULL;
-    PA->source = NULL;
+    // PA->adj = NULL;
+    // PA->m = NULL;
+    // PA->n  = NULL;
+    // PA->source = NULL;
+    bzero(PA,sizeof(struct PATree));
     returnCode = PARESULT_SUCCESS;
     // struct PATree Tree;
     // PAResult result;

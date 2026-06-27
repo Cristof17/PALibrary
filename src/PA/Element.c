@@ -184,8 +184,9 @@ DllExport PAResult PAElementDelete(struct PAElement* PA)
 {
     int returnCode;
     returnCode = PARESULT_SUCCESS;
-    PA->index = NULL;
-    PA->status = NULL;
+    bzero(PA,sizeof(struct PAElement));
+    // PA->index = NULL;
+    // PA->status = NULL;
     // PAResult result;
     // return result;    return PA;
     // int returnCode = PARESULT_SUCCESS;

@@ -58,7 +58,7 @@ struct PATransposeTree;
 // struct PAElement;
 // struct PACount;
 // typedef struct PAData PAData;
-// struct PASize;
+struct PASize;
 struct PAInput;
 struct PAOutput;
 // struct PAResource;
@@ -167,7 +167,9 @@ struct ArrayListPosition {
 struct ArrayListObject {
 	int element;
 };
+struct PASize {
 
+};
 struct ArrayList {
 	// struct Position position;
 	int* array;

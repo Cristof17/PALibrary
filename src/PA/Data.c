@@ -110,7 +110,9 @@ DllExport PAResult PADataFinish(struct PAResource* PA)
 DllExport PAResult PADataDelete(struct PAData* PA)
 {
     int returnCode;
-    PA->Resource = NULL;
+    // bzero(PA,sizeof(struct PA));
+    bzero(PA,sizeof(struct PAData));
+    // PA->Resource = NULL;
     return PARESULT_SUCCESS;
     // struct PAData temp;
     // return temp;

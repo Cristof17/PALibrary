@@ -15,6 +15,7 @@ DllExport struct PASize* PASizeConstruct(){
 DllExport int PASizeDelete(struct PASize* PA)
 {
     int returnCode = PARESULT_SUCCESS;
+    bzero(PA,sizeof(struct PASize));
     return returnCode;
 }
 DllExport PAResult PASizeFinish(struct PASize* PA)

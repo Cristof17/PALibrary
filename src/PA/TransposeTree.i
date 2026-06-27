@@ -2136,7 +2136,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     return returnCode;
 }
-          int PATransposeTreeDelete(struct PATransposeTree* PA)
+          PAResult PATransposeTreeDelete(struct PATransposeTree* PA)
 {
 
 

@@ -102,7 +102,10 @@ DllExport struct PAOutput* PAOutputBegin(struct PAOutput* Output)
 DllExport PAResult PAOutputDelete(struct PAOutput* PA)
 {
     int returnCode;
-    PA->result = NULL;
+    // bzero(PA,sizeof(struct PAAOu))
+    // bzero(PA,sizef)
+    bzero(PA,sizeof(struct PAOutput));
+    // PA->result = NULL;
     returnCode = PARESULT_SUCCESS;
     // struct PAOutput Output;
     // return Output;

@@ -79,7 +79,8 @@ DllExport PAResult PANormalTreeFinish(struct PANormalTree* PA)
 DllExport PAResult PANormalTreeDelete(struct PANormalTree* PA)
 {
     int returnCode;
-    PA->tree = NULL;
+    // PA->tree = NULL;
+    bzero(PA,sizeof(struct PANormalTree));
     returnCode = PARESULT_SUCCESS;
     // returnCode = PATreeDelete(&PA->tree);
     // return returnCode;
