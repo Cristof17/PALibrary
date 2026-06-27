@@ -1460,7 +1460,7 @@ extern char * suboptarg;
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 2 3 4
 # 8 "./include/types.h" 2
 # 18 "./include/types.h"
-typedef char PANumber;
+typedef char* PANumber;
 
 typedef int PAInt;
 

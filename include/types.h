@@ -15,7 +15,7 @@ typedef int PAResult;
 typedef int ArrayListSize;
 typedef int ArrayListObject;
 #else
-typedef char PANumber;
+typedef char* PANumber;
 // struct PANumber;
 typedef int PAInt;
 //#define PAInt int

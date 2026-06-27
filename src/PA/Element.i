@@ -1465,7 +1465,7 @@ extern char * suboptarg;
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 2 3 4
 # 8 "./include/types.h" 2
 # 18 "./include/types.h"
-typedef char PANumber;
+typedef char* PANumber;
 
 typedef int PAInt;
 
@@ -2071,7 +2071,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           struct PAData* PADataCreate();
-          struct PAData* PADataBegin(struct PAData* Data, struct PAResource* resource);
+          struct PAData* PADataBegin(struct PAData* Data, PAInt Resource);
           void PADataCopy(struct PAData* from, struct PAData* to);
 
 

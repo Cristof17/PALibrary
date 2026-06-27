@@ -34,12 +34,18 @@ DllExport struct PAData* PADataCreate()
     // return data;
     return dataPointer;
 }
-DllExport struct PAData* PADataBegin(struct PAData* Data, struct PAResource* resource)
+DllExport struct PAData* PADataBegin(struct PAData* Data, PAInt resource)
 {
     // struct PAData temp;
     struct PAData* dataPointer;
+    // struct 
+    PAInt* aux;
+    aux = (PAInt*) malloc (sizeof(PAInt));
+    // memcpy(aux,)
+    *aux = resource;
     dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
-    memcpy(dataPointer->Resource,resource,sizeof(struct PAResource));
+    dataPointer->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
+    memcpy(dataPointer->Resource->value,aux,sizeof(PAInt));
     // dataPointer->Resource = Data->Resource;
     // temp.Resource = &Value;
     // Data->Resource = temp.Resource;
@@ -48,6 +54,7 @@ DllExport struct PAData* PADataBegin(struct PAData* Data, struct PAResource* res
     // Data.Resource.value.val = Value.value.val;
     // Data.Resource.value = Value.value;
     // return temp;
+    free(aux);
     return dataPointer;
     // return dataPointer;
     // struct PAData data;
@@ -115,6 +122,7 @@ DllExport PAResult PADataFinish(struct PAResource* PA)
     // return Resource;
     // g
     int returnCode;
+    free(PA->value);
     free(PA);
     returnCode = PARESULT_SUCCESS;
     // free(PA);

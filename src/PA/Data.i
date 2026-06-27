@@ -1462,7 +1462,7 @@ extern char * suboptarg;
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 2 3 4
 # 8 "./include/types.h" 2
 # 18 "./include/types.h"
-typedef char PANumber;
+typedef char* PANumber;
 
 typedef int PAInt;
 
@@ -2045,7 +2045,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           struct PAData* PADataCreate();
-          struct PAData* PADataBegin(struct PAData* Data, struct PAResource* resource);
+          struct PAData* PADataBegin(struct PAData* Data, PAInt Resource);
           void PADataCopy(struct PAData* from, struct PAData* to);
 
 
@@ -2077,13 +2077,20 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 35 "src/PA/Data.c"
     return dataPointer;
 }
-          struct PAData* PADataBegin(struct PAData* Data, struct PAResource* resource)
+          struct PAData* PADataBegin(struct PAData* Data, PAInt resource)
 {
 
     struct PAData* dataPointer;
+
+    PAInt* aux;
+    aux = (PAInt*) malloc (sizeof(PAInt));
+
+    *aux = resource;
     dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
-    __builtin___memcpy_chk (dataPointer->Resource, resource,sizeof(struct PAResource), __builtin_object_size (dataPointer->Resource, 0));
-# 51 "src/PA/Data.c"
+    dataPointer->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
+    __builtin___memcpy_chk (dataPointer->Resource->value, aux,sizeof(PAInt), __builtin_object_size (dataPointer->Resource->value, 0));
+# 57 "src/PA/Data.c"
+    free(aux);
     return dataPointer;
 
 
@@ -2104,9 +2111,9 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
     free(aux);
-# 79 "src/PA/Data.c"
+# 86 "src/PA/Data.c"
 }
-# 97 "src/PA/Data.c"
+# 104 "src/PA/Data.c"
           PAResult PADataDelete(struct PAData* PA)
 {
     int returnCode;
@@ -2128,6 +2135,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
     int returnCode;
+    free(PA->value);
     free(PA);
     returnCode = ((int)0);
 
