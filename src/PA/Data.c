@@ -16,7 +16,7 @@ DllExport struct PAData* PADataCreate(struct PASize* size)
     struct PAData* dataPointer;
     dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
     dataPointer->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
-    dataPointer->Resource->value = (PANumber) malloc (size->value);//todo replace with conert to size_t
+    dataPointer->Resource->value = (PANumber) malloc ((size->value[0]));//todo replace with conert to size_t
     // dataPointer->Resource->size.valie = sizeof(PAInt);
     // dataPointer->Resource->size.value = ;
     // dataPointer->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
@@ -44,7 +44,7 @@ DllExport struct PAData* PADataBegin(struct PAData* Data, PAInt resource)
     // struct 
     struct PAResource* aux;
     aux = (struct PAResource*) malloc (sizeof(struct PAResource));
-    memcpy(aux->value,&resource,Data->Resource->size.value);
+    memcpy(aux->value,&resource,sizeof(PAInt));
     memcpy(Data->Resource,aux,sizeof(struct PAResource));
     // memcpy(aux,)
     // *aux = resource;
