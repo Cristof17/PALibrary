@@ -1846,9 +1846,9 @@ struct Facade {
           void PAElementVisit(struct PAElement*);
           PABool PAElementIsVisited(struct PAElement*);
           void PAElementReset(struct PAElement*);
-          struct PAElement* PAElementCreate(struct PAData* index, struct PAElement* next, struct PAStatus* status);
+          struct PAElement* PAElementCreate();
 
-          struct PAElement* PAElementBegin(struct PAElement* );
+          struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus* status);
 
 
 
@@ -1898,26 +1898,22 @@ struct Facade {
           int PAStatusDelete(struct PAStatus*);
 # 9 "src/PA/Element.c" 2
 # 18 "src/PA/Element.c"
-struct PAElement* PAElementCreate(struct PAData* index, struct PAElement* next, struct PAStatus* status)
+struct PAElement* PAElementCreate()
 {
     struct PAElement* temp;
     temp = (struct PAElement*)malloc(sizeof(struct PAElement));
-    temp->index = index;
-    temp->status = status;
-    temp->next = next;
 # 35 "src/PA/Element.c"
   return temp;
 }
-          struct PAElement* PAElementBegin(struct PAElement* element)
+          struct PAElement* PAElementBegin(struct PAElement* element,struct PAData* index, struct PAElement* next, struct PAStatus* status)
 {
 
 
-    struct PAElement* elementPointer;
-    elementPointer->index = element->index;
-    elementPointer->next = element->next;
-    elementPointer->status = element->status;
-# 61 "src/PA/Element.c"
-    return elementPointer;
+    struct PAElement* aux;
+    aux =(struct PAElement*) malloc (sizeof(struct PAElement));
+# 63 "src/PA/Element.c"
+    free(aux);
+    return element;
 
 }
           void PAElementCauseVisit(struct PAElement* Element)
@@ -1949,12 +1945,12 @@ struct PAElement* PAElementCreate(struct PAData* index, struct PAElement* next, 
 
 
     free(aux);
-# 102 "src/PA/Element.c"
+# 105 "src/PA/Element.c"
 }
-# 115 "src/PA/Element.c"
+# 118 "src/PA/Element.c"
           PAResult PAElementFinish(struct PAElement* PA)
 {
-# 132 "src/PA/Element.c"
+# 135 "src/PA/Element.c"
     int returnCode;
     free(PA);
     returnCode = ((int)0);
@@ -1963,7 +1959,7 @@ struct PAElement* PAElementCreate(struct PAData* index, struct PAElement* next, 
 
 
 }
-# 174 "src/PA/Element.c"
+# 177 "src/PA/Element.c"
           int PAElementDelete(struct PAElement* PA)
 {
     int returnCode;

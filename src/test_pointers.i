@@ -2465,9 +2465,9 @@ void PAListPrint(struct PAList* List);
           void PAElementVisit(struct PAElement*);
           PABool PAElementIsVisited(struct PAElement*);
           void PAElementReset(struct PAElement*);
-          struct PAElement* PAElementCreate(struct PAData* index, struct PAElement* next, struct PAStatus* status);
+          struct PAElement* PAElementCreate();
 
-          struct PAElement* PAElementBegin(struct PAElement* );
+          struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus* status);
 
 
 
