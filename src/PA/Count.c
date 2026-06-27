@@ -57,6 +57,39 @@ DllExport struct PACount* PACountBegin(struct PACount* Count)
     // count.number = Number;
     // return÷÷ Count;
 }
+DllExport void PACountCopy(struct PACount* from, struct PACount* to)
+{
+    struct PACount* aux;
+    aux = (struct PACount*) malloc (sizeof(struct PACount));
+    // aux = PACountCreate();
+    aux->number = from->number;
+    to->number = aux->number;
+    // aux->number = NULL;
+    free(aux);
+    // PACountDelete(aux);
+    // PACountFinish(aux);
+    // aux->number = from->number;
+    // to->number = aux->number;
+    // struct PACount temp;
+    // return temp;
+    // temp.number = PANumberPerformCopy(from.number,to.number);
+    // to.number = temp.number;
+    // return to;
+}
+DllExport PAResult PACountDelete(struct PACount* PA)
+{
+    int returnCode;
+    // PA->number = NULL;
+    bzero(PA,sizeof(struct PACount));
+    returnCode = PARESULT_SUCCESS;
+    // struct PACount count;
+    // PA.number.val = 0;
+    // return count;
+    // return PARESULT_SUCCESS;
+    // PAResult result;
+    // return result;
+    return returnCode;
+}
 DllExport PAResult PACountFinish(struct PACount* PA)
 {
     //get the value at address pointed by stack pointer
@@ -93,44 +126,13 @@ DllExport PAResult PACountFinish(struct PACount* PA)
     return returnCode;
     // return PA;    /
 }
-DllExport PAResult PACountDelete(struct PACount* PA)
-{
-    int returnCode;
-    // PA->number = NULL;
-    bzero(PA,sizeof(struct PACount));
-    returnCode = PARESULT_SUCCESS;
-    // struct PACount count;
-    // PA.number.val = 0;
-    // return count;
-    // return PARESULT_SUCCESS;
-    // PAResult result;
-    // return result;
-    return returnCode;
-}
+
 PAResult PACountPrint(struct PACount* Count)
 {
     PAResult result;
     return result;
 }
-DllExport void PACountCopy(struct PACount* from, struct PACount* to)
-{
-    struct PACount* aux;
-    aux = (struct PACount*) malloc (sizeof(struct PACount));
-    // aux = PACountCreate();
-    aux->number = from->number;
-    to->number = aux->number;
-    // aux->number = NULL;
-    free(aux);
-    // PACountDelete(aux);
-    // PACountFinish(aux);
-    // aux->number = from->number;
-    // to->number = aux->number;
-    // struct PACount temp;
-    // return temp;
-    // temp.number = PANumberPerformCopy(from.number,to.number);
-    // to.number = temp.number;
-    // return to;
-}
+
 // DllExport struct PACount PACountPerformCopy(struct PACount from, struct PACount to)
 // {
 	// struct PACount copy;

@@ -131,23 +131,6 @@ DllExport void PAPairCopy(struct PAPair* from, struct PAPair* to)
     //return Pair;
     // return pair;
 // }
-DllExport PAResult PAPairFinish(struct PAPair* PA)
-{
-    // int returnCode1;
-    // int returnCode2;
-    int returnCode;
-    free(PA);
-    returnCode = PARESULT_SUCCESS;
-    // returnCode1 = PAElementFinish(&PA->Node);
-    // returnCode2 = PAElementFinish(&PA->Neigh);
-    // returnCode = returnCode1 & returnCode2;
-    return returnCode;
-    // struct PAPair Empty;
-    // return Empty;
-    // return 0;
-	// PAResult result;
-	// return result;
-}
 DllExport PAResult PAPairDelete(struct PAPair* PA)
 {
     // int returnCode1;
@@ -167,3 +150,21 @@ DllExport PAResult PAPairDelete(struct PAPair* PA)
     //
     return returnCode;
 }
+DllExport PAResult PAPairFinish(struct PAPair* PA)
+{
+    // int returnCode1;
+    // int returnCode2;
+    int returnCode;
+    free(PA);
+    returnCode = PARESULT_SUCCESS;
+    // returnCode1 = PAElementFinish(&PA->Node);
+    // returnCode2 = PAElementFinish(&PA->Neigh);
+    // returnCode = returnCode1 & returnCode2;
+    return returnCode;
+    // struct PAPair Empty;
+    // return Empty;
+    // return 0;
+	// PAResult result;
+	// return result;
+}
+

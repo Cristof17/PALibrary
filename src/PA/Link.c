@@ -52,19 +52,6 @@ DllExport struct PALink* PALinkBegin(struct PALink* Link, struct PAPair* pair)
     return aux;
     // return temp;
 }
-DllExport PAResult PALinkFinish(struct PALink* PA)
-{
-    // PA.p = PAPairPerformRuin(PA.p);    
-    // struct PALink Empty;
-    // return Empty;
-    // return 0;
-    // PAResult result;
-    // return result;
-    int returnCode;
-    free(PA);
-    returnCode = PARESULT_SUCCESS;
-    return returnCode;
-}
 DllExport void PALinkCopy(struct PALink* from, struct PALink* to)
 {
     // struct PALink temp;
@@ -89,13 +76,6 @@ DllExport void PALinkCopy(struct PALink* from, struct PALink* to)
 //    link.p = Link.p;
     // return link;
 }
-// struct PALink PALinkPerformPutPair(struct PALink Link,struct PAPair P)
-// {
-    // PAResult reusult;
-    // Link.p = P;
-    // return Link;
-    // return reusult;
-// }
 DllExport PAResult PALinkDelete(struct PALink* PA){
     // PAResult result;
     int returnCode;
@@ -110,3 +90,25 @@ DllExport PAResult PALinkDelete(struct PALink* PA){
     // struct PALink link;
     // return link;
 }
+DllExport PAResult PALinkFinish(struct PALink* PA)
+{
+    // PA.p = PAPairPerformRuin(PA.p);    
+    // struct PALink Empty;
+    // return Empty;
+    // return 0;
+    // PAResult result;
+    // return result;
+    int returnCode;
+    free(PA);
+    returnCode = PARESULT_SUCCESS;
+    return returnCode;
+}
+
+// struct PALink PALinkPerformPutPair(struct PALink Link,struct PAPair P)
+// {
+    // PAResult reusult;
+    // Link.p = P;
+    // return Link;
+    // return reusult;
+// }
+

@@ -22,6 +22,44 @@
 // 	init.result = Result;
 // 	return init;
 // }
+// struct BFSOutput BFSOutputPerformInit(struct BFSOutput output) 
+// {
+// 	struct BFSOutput copy;
+// 	return copy;
+// }
+// // void BFSOutputPrint(struct BFSOutput output) {
+// void BFSOutputPerformPrint(struct PAOutput output) 
+// {
+//     PAOutputPerformPrint(output);
+// }
+DllExport struct PAOutput* PAOutputCreate()
+{
+    // struct PAOutput* result;
+    struct PAOutput* outputPointer;
+    // struct PAOutput Output;
+    // struct PAOutput* outputPointer;
+    outputPointer = (struct PAOutput*) malloc (sizeof(struct PAOutput));
+    // result->result = Result;
+    // outputPointer->result = BFSRecordCreate();
+    // outputPointer-
+    // return outputPointer;
+    // return Output;
+    return outputPointer;
+    // struct BFSRecord Record = BFSRecordConstruct()
+}
+DllExport struct PAOutput* PAOutputBegin(struct PAOutput* Output)
+{
+    // Output->result = Value;
+    // return Output;
+    struct PAOutput* aux;
+    // struct PAOutput* outputPointer;
+    // Output->result = Value;
+    // temp->result = Output->result;
+    // temp = *Output;
+    // temp.result = &Value;
+    // Output->result = temp.result;
+    return Output;
+}
 DllExport void PAOutputCopy(struct PAOutput* from, struct PAOutput* to)
 {
 	struct PAOutput* aux;
@@ -61,44 +99,6 @@ DllExport void PAOutputCopy(struct PAOutput* from, struct PAOutput* to)
     // return to
 }
 
-// struct BFSOutput BFSOutputPerformInit(struct BFSOutput output) 
-// {
-// 	struct BFSOutput copy;
-// 	return copy;
-// }
-// // void BFSOutputPrint(struct BFSOutput output) {
-// void BFSOutputPerformPrint(struct PAOutput output) 
-// {
-//     PAOutputPerformPrint(output);
-// }
-DllExport struct PAOutput* PAOutputCreate()
-{
-    // struct PAOutput* result;
-    struct PAOutput* outputPointer;
-    // struct PAOutput Output;
-    // struct PAOutput* outputPointer;
-    outputPointer = (struct PAOutput*) malloc (sizeof(struct PAOutput));
-    // result->result = Result;
-    // outputPointer->result = BFSRecordCreate();
-    // outputPointer-
-    // return outputPointer;
-    // return Output;
-    return outputPointer;
-    // struct BFSRecord Record = BFSRecordConstruct()
-}
-DllExport struct PAOutput* PAOutputBegin(struct PAOutput* Output)
-{
-    // Output->result = Value;
-    // return Output;
-    struct PAOutput* aux;
-    // struct PAOutput* outputPointer;
-    // Output->result = Value;
-    // temp->result = Output->result;
-    // temp = *Output;
-    // temp.result = &Value;
-    // Output->result = temp.result;
-    return Output;
-}
 DllExport PAResult PAOutputDelete(struct PAOutput* PA)
 {
     int returnCode;

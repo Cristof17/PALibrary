@@ -180,6 +180,35 @@ DllExport struct PAList* PAListBegin(struct PAList* List, struct PACount* M, str
     // struct PAResult result;
     // return result;
 // }
+DllExport PAResult PAListDelete(struct PAList* PA)
+{
+    int returnCode;
+    returnCode = PARESULT_SUCCESS;
+    bzero(PA,sizeof(struct PAList));
+    // PA->m = NULL;
+    // PA->neigh = NULL;
+    // struct PAList aux;
+    // struct PACount n = PA.n;
+    // struct PACount* countPointer;
+    // countPointer->number = PACountPerformDelete(PA.n);
+    // struct PANumber x;
+    // struct PANumber y;
+    // y = n.number;
+    // x.val = FIRST;
+    // while (x.val < y.val)
+    // {
+        // PA.neigh[x.val] = PASeriesPerformDelete(PA.neigh[x.val]);
+        // x.val++;
+    // }
+    // return List;
+    // return PA;
+    // return PARESULT_SUCCESS;
+    // return aux;
+    return returnCode;
+    // return 0;
+    // PAResult result;
+    // return result;
+}
 DllExport PAResult PAListFinish(struct PAList* PA)
 {
     int returnCode;
@@ -234,35 +263,7 @@ void Dispose()
 //     struct PAList list;
 //     return list;
 // }
-DllExport PAResult PAListDelete(struct PAList* PA)
-{
-    int returnCode;
-    returnCode = PARESULT_SUCCESS;
-    bzero(PA,sizeof(struct PAList));
-    // PA->m = NULL;
-    // PA->neigh = NULL;
-    // struct PAList aux;
-    // struct PACount n = PA.n;
-    // struct PACount* countPointer;
-    // countPointer->number = PACountPerformDelete(PA.n);
-    // struct PANumber x;
-    // struct PANumber y;
-    // y = n.number;
-    // x.val = FIRST;
-    // while (x.val < y.val)
-    // {
-        // PA.neigh[x.val] = PASeriesPerformDelete(PA.neigh[x.val]);
-        // x.val++;
-    // }
-    // return List;
-    // return PA;
-    // return PARESULT_SUCCESS;
-    // return aux;
-    return returnCode;
-    // return 0;
-    // PAResult result;
-    // return result;
-}
+
 void PAListPrint(struct PAList* List)
 {
 

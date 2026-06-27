@@ -121,6 +121,22 @@ DllExport void PAElementCopy(struct PAElement* from, struct PAElement* to)
 //	copy.type=Element.type;
 	//return ;
 // }
+DllExport PAResult PAElementDelete(struct PAElement* PA)
+{
+    int returnCode;
+    returnCode = PARESULT_SUCCESS;
+    bzero(PA,sizeof(struct PAElement));
+    // PA->index = NULL;
+    // PA->status = NULL;
+    // PAResult result;
+    // return result;    return PA;
+    // int returnCode = PARESULT_SUCCESS;
+    // return returnCode;
+    // struct PAElement element;
+    // return element;
+    return returnCode;
+    // return 0;
+}
 DllExport PAResult PAElementFinish(struct PAElement* PA)
 {
     // free(PA);
@@ -180,19 +196,4 @@ DllExport PAResult PAElementFinish(struct PAElement* PA)
     // return element;
   //  return Element;
 // }
-DllExport PAResult PAElementDelete(struct PAElement* PA)
-{
-    int returnCode;
-    returnCode = PARESULT_SUCCESS;
-    bzero(PA,sizeof(struct PAElement));
-    // PA->index = NULL;
-    // PA->status = NULL;
-    // PAResult result;
-    // return result;    return PA;
-    // int returnCode = PARESULT_SUCCESS;
-    // return returnCode;
-    // struct PAElement element;
-    // return element;
-    return returnCode;
-    // return 0;
-}
+

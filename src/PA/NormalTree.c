@@ -47,7 +47,7 @@ DllExport struct PANormalTree* PANormalTreeBegin(struct PANormalTree* NormalTree
     // return normalTreePointer;  
     // return temp;
 }
-DllExport void PANormalTreePerformCopy(struct PANormalTree* from, struct PANormalTree* to)
+DllExport void PANormalTreeCopy(struct PANormalTree* from, struct PANormalTree* to)
 {
     struct PANormalTree* aux;
     aux = (struct PANormalTree*) malloc (sizeof(struct PANormalTree));
@@ -66,16 +66,6 @@ DllExport void PANormalTreePerformCopy(struct PANormalTree* from, struct PANorma
 // //    copy.adj = Tree.adj;
 //     return copy;
 }
-DllExport PAResult PANormalTreeFinish(struct PANormalTree* PA)
-{
-    int returnCode;
-    free(PA);
-    // returnCode = PATreeFinish(&PA->tree);
-    return returnCode;
-    // struct PANormalTree Empty;
-    // PA.tree = PATreePerformRuin(PA.tree);
-    // return PA;
-}
 DllExport PAResult PANormalTreeDelete(struct PANormalTree* PA)
 {
     int returnCode;
@@ -90,6 +80,17 @@ DllExport PAResult PANormalTreeDelete(struct PANormalTree* PA)
     // return PA;
     return returnCode;
 }
+DllExport PAResult PANormalTreeFinish(struct PANormalTree* PA)
+{
+    int returnCode;
+    free(PA);
+    // returnCode = PATreeFinish(&PA->tree);
+    return returnCode;
+    // struct PANormalTree Empty;
+    // PA.tree = PATreePerformRuin(PA.tree);
+    // return PA;
+}
+
 // DllExport struct PANormalTree* PAGrafNormalBuildPart()
 // {
 //     struct PANormalTree tree;

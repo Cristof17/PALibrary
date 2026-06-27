@@ -82,16 +82,6 @@ DllExport void PATransposeTreeCopy(struct PATransposeTree* from, struct PATransp
 //     // struct PATransposeTree tree;
 //     return PA;
 // }
-DllExport PAResult PATransposeTreeFinish(struct PATransposeTree* PA)
-{
-    int returnCode;
-    free(PA);
-    returnCode = PARESULT_SUCCESS;
-    // PA.tree = PATreePerformRuin(PA.tree);
-    // returnCode = PATreeDelete(&PA->tree);
-    // return PA;
-    return returnCode;
-}
 DllExport PAResult PATransposeTreeDelete(struct PATransposeTree* PA)
 {
     // int retutrn
@@ -107,6 +97,17 @@ DllExport PAResult PATransposeTreeDelete(struct PATransposeTree* PA)
     // return rc;
     // return returnCode;
 }
+DllExport PAResult PATransposeTreeFinish(struct PATransposeTree* PA)
+{
+    int returnCode;
+    free(PA);
+    returnCode = PARESULT_SUCCESS;
+    // PA.tree = PATreePerformRuin(PA.tree);
+    // returnCode = PATreeDelete(&PA->tree);
+    // return PA;
+    return returnCode;
+}
+
 // struct PATransposeTree PATransposeTreeRuin(struct PATree Tree)
 // {
     // struct PATransposeTree tree;
