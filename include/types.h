@@ -169,7 +169,7 @@ struct ArrayListObject {
 };
 struct PASize {
 	// size_t valie;
-	size_t value;
+	size_t* value;
 };
 struct ArrayList {
 	// struct Position position;

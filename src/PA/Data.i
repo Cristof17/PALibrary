@@ -1585,7 +1585,7 @@ struct ArrayListObject {
 };
 struct PASize {
 
- size_t value;
+ size_t* value;
 };
 struct ArrayList {
 
@@ -2077,7 +2077,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     struct PAData* dataPointer;
     dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
     dataPointer->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
-    dataPointer->Resource->value = (PANumber) malloc (size->value);
+    dataPointer->Resource->value = (PANumber) malloc (*(size->value));
 # 38 "src/PA/Data.c"
     return dataPointer;
 }

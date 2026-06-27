@@ -1584,7 +1584,7 @@ struct ArrayListObject {
 };
 struct PASize {
 
- size_t value;
+ size_t* value;
 };
 struct ArrayList {
 

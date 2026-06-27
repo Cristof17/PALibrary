@@ -20,6 +20,7 @@ _PADataCreate:                          ; @PADataCreate
 	ldr	x8, [sp]
 	str	x0, [x8]
 	ldr	x8, [sp, #8]
+	ldr	x8, [x8]
 	ldr	x0, [x8]
 	bl	_malloc
 	ldr	x8, [sp]
