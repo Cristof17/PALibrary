@@ -16,7 +16,9 @@ DllExport struct PAData* PADataCreate()
     struct PAData* dataPointer;
     dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
     dataPointer->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
+    // dataPointer->Resource->size.valie = sizeof(PAInt);
     dataPointer->Resource->value = (PANumber) malloc (sizeof(PAInt));
+    dataPointer->Resource->size.value = sizeof(PAInt);
     // dataPointer->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
     // dataPointer->Resource->value = ((PANumber) *Resource);
     // dataPointer->Resource->value = (struct PANumber*) malloc (sizeof(struct PANumber));

@@ -1590,6 +1590,7 @@ struct ArrayListObject {
 };
 struct PASize {
 
+ size_t value;
 };
 struct ArrayList {
 
@@ -1604,6 +1605,7 @@ struct PAResource {
 
 
  PANumber value;
+ struct PASize size;
 
 };
 struct PAStatus {
@@ -1679,7 +1681,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 269 "./include/types.h"
+# 271 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;

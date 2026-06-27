@@ -12,19 +12,22 @@ _PADataCreate:                          ; @PADataCreate
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
 	mov	x0, #8                          ; =0x8
-	str	x0, [sp]                        ; 8-byte Folded Spill
 	bl	_malloc
-	mov	x8, x0
-	ldr	x0, [sp]                        ; 8-byte Folded Reload
-	str	x8, [sp, #8]
+	str	x0, [sp, #8]
+	mov	x0, #16                         ; =0x10
 	bl	_malloc
 	ldr	x8, [sp, #8]
 	str	x0, [x8]
 	mov	x0, #4                          ; =0x4
+	str	x0, [sp]                        ; 8-byte Folded Spill
 	bl	_malloc
-	ldr	x8, [sp, #8]
-	ldr	x8, [x8]
-	str	x0, [x8]
+	ldr	x8, [sp]                        ; 8-byte Folded Reload
+	ldr	x9, [sp, #8]
+	ldr	x9, [x9]
+	str	x0, [x9]
+	ldr	x9, [sp, #8]
+	ldr	x9, [x9]
+	str	x8, [x9, #8]
 	ldr	x0, [sp, #8]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
@@ -36,38 +39,38 @@ _PADataCreate:                          ; @PADataCreate
 _PADataBegin:                           ; @PADataBegin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #80
-	stp	x29, x30, [sp, #64]             ; 16-byte Folded Spill
-	add	x29, sp, #64
+	sub	sp, sp, #64
+	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
+	add	x29, sp, #48
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
 	stur	x0, [x29, #-8]
 	sub	x8, x29, #12
-	str	x8, [sp, #8]                    ; 8-byte Folded Spill
+	str	x8, [sp]                        ; 8-byte Folded Spill
 	stur	w1, [x29, #-12]
-	mov	x0, #8                          ; =0x8
-	str	x0, [sp, #16]                   ; 8-byte Folded Spill
+	mov	x0, #16                         ; =0x10
+	str	x0, [sp, #8]                    ; 8-byte Folded Spill
 	bl	_malloc
-	ldr	x1, [sp, #8]                    ; 8-byte Folded Reload
-	str	x0, [sp, #32]
-	ldr	x8, [sp, #32]
+	ldr	x1, [sp]                        ; 8-byte Folded Reload
+	str	x0, [sp, #24]
+	ldr	x8, [sp, #24]
 	ldr	x0, [x8]
 	mov	x2, #4                          ; =0x4
 	mov	x3, #-1                         ; =0xffffffffffffffff
-	str	x3, [sp, #24]                   ; 8-byte Folded Spill
+	str	x3, [sp, #16]                   ; 8-byte Folded Spill
 	bl	___memcpy_chk
-	ldr	x2, [sp, #16]                   ; 8-byte Folded Reload
-	ldr	x3, [sp, #24]                   ; 8-byte Folded Reload
-	ldur	x8, [x29, #-24]
+	ldr	x2, [sp, #8]                    ; 8-byte Folded Reload
+	ldr	x3, [sp, #16]                   ; 8-byte Folded Reload
+	ldur	x8, [x29, #-8]
 	ldr	x0, [x8]
-	ldr	x1, [sp, #32]
+	ldr	x1, [sp, #24]
 	bl	___memcpy_chk
-	ldr	x0, [sp, #32]
+	ldr	x0, [sp, #24]
 	bl	_free
-	ldur	x0, [x29, #-24]
-	ldp	x29, x30, [sp, #64]             ; 16-byte Folded Reload
-	add	sp, sp, #80
+	ldur	x0, [x29, #-8]
+	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
+	add	sp, sp, #64
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -131,13 +134,12 @@ _PADataDelete:                          ; @PADataDelete
 	ldr	w1, [sp, #16]                   ; 4-byte Folded Reload
 	ldur	x8, [x29, #-8]
 	ldr	x0, [x8]
-	mov	x2, #8                          ; =0x8
-	str	x2, [sp]                        ; 8-byte Folded Spill
+	mov	x2, #16                         ; =0x10
 	bl	___memset_chk
-	ldr	x2, [sp]                        ; 8-byte Folded Reload
 	ldr	x3, [sp, #8]                    ; 8-byte Folded Reload
 	ldr	w1, [sp, #16]                   ; 4-byte Folded Reload
 	ldur	x0, [x29, #-8]
+	mov	x2, #8                          ; =0x8
 	bl	___memset_chk
 	ldr	w0, [sp, #16]                   ; 4-byte Folded Reload
 	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload

@@ -168,7 +168,8 @@ struct ArrayListObject {
 	int element;
 };
 struct PASize {
-	
+	// size_t valie;
+	size_t value;
 };
 struct ArrayList {
 	// struct Position position;
@@ -183,6 +184,7 @@ struct PAResource {
 	// PA_INt
 	// PAInt value;
 	PANumber value;
+	struct PASize size;
 	// PADDING_1_BYTE(0);
 };
 struct PAStatus {

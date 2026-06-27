@@ -1585,6 +1585,7 @@ struct ArrayListObject {
 };
 struct PASize {
 
+ size_t value;
 };
 struct ArrayList {
 
@@ -1599,6 +1600,7 @@ struct PAResource {
 
 
  PANumber value;
+ struct PASize size;
 
 };
 struct PAStatus {
@@ -1674,7 +1676,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 269 "./include/types.h"
+# 271 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2075,22 +2077,24 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     struct PAData* dataPointer;
     dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
     dataPointer->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
+
     dataPointer->Resource->value = (PANumber) malloc (sizeof(PAInt));
-# 36 "src/PA/Data.c"
+    dataPointer->Resource->size.value = sizeof(PAInt);
+# 38 "src/PA/Data.c"
     return dataPointer;
 }
           struct PAData* PADataBegin(struct PAData* Data, PAInt resource)
 {
 
-    struct PAData* dataPointer;
+
 
     struct PAResource* aux;
     aux = (struct PAResource*) malloc (sizeof(struct PAResource));
     __builtin___memcpy_chk (aux->value, &resource,sizeof(PAInt), __builtin_object_size (aux->value, 0));
-    __builtin___memcpy_chk (dataPointer->Resource, aux,sizeof(struct PAResource), __builtin_object_size (dataPointer->Resource, 0));
-# 60 "src/PA/Data.c"
+    __builtin___memcpy_chk (Data->Resource, aux,sizeof(struct PAResource), __builtin_object_size (Data->Resource, 0));
+# 62 "src/PA/Data.c"
     free(aux);
-    return dataPointer;
+    return Data;
 
 
 
@@ -2110,9 +2114,9 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
     free(aux);
-# 89 "src/PA/Data.c"
+# 91 "src/PA/Data.c"
 }
-# 107 "src/PA/Data.c"
+# 109 "src/PA/Data.c"
           PAResult PADataDelete(struct PAData* PA)
 {
     int returnCode;
