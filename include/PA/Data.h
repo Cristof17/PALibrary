@@ -11,10 +11,10 @@
 // struct PAData;
 DllExport struct PAData* PADataCreate(PAInt* Resource);
 DllExport struct PAData* PADataBegin(struct PAData*);
+DllExport void PADataCopy(struct PAData* from, struct PAData* to);
 // DllExport struct PAData PADataPerformCopy(struct PAData);
 // DllExport struct PAData PADataPerformPutResource(struct PAData, PAResource);
 DllExport int PADataFinish(struct PAResource*);
 DllExport int PADataDelete(struct PAData*);
-DllExport void PADataCopy(struct PAData* from, struct PAData* to);
 //typedef struct PAData Data;
 #endif
