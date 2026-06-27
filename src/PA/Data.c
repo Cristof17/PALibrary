@@ -38,12 +38,12 @@ DllExport struct PAData* PADataCreate()
 DllExport struct PAData* PADataBegin(struct PAData* Data, PAInt resource)
 {
     // struct PAData temp;
-    struct PAData* dataPointer;
+    // struct PAData* dataPointer;
     // struct 
     struct PAResource* aux;
     aux = (struct PAResource*) malloc (sizeof(struct PAResource));
     memcpy(aux->value,&resource,sizeof(PAInt));
-    memcpy(dataPointer->Resource,aux,sizeof(struct PAResource));
+    memcpy(Data->Resource,aux,sizeof(struct PAResource));
     // memcpy(aux,)
     // *aux = resource;
     // dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
@@ -58,7 +58,7 @@ DllExport struct PAData* PADataBegin(struct PAData* Data, PAInt resource)
     // Data.Resource.value = Value.value;
     // return temp;
     free(aux);
-    return dataPointer;
+    return Data;
     // return dataPointer;
     // struct PAData data;
     // data.Resource = Data.Resource;
