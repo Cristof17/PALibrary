@@ -2075,7 +2075,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     struct PAData* dataPointer;
     dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
     dataPointer->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
-    dataPointer->Resource->value = (PANumber) malloc (sizeof(PANumber));
+    dataPointer->Resource->value = (PANumber) malloc (sizeof(PAInt));
 # 36 "src/PA/Data.c"
     return dataPointer;
 }
@@ -2084,10 +2084,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     struct PAData* dataPointer;
 
-    PAInt* aux;
-    aux = (PAInt*) malloc (sizeof(PAInt));
-    __builtin___memcpy_chk (aux, &resource,sizeof(PAInt), __builtin_object_size (aux, 0));
-    __builtin___memcpy_chk (dataPointer->Resource->value, aux,sizeof(PAInt), __builtin_object_size (dataPointer->Resource->value, 0));
+    struct PAResource* aux;
+    aux = (struct PAResource*) malloc (sizeof(struct PAResource));
+    __builtin___memcpy_chk (aux->value, &resource,sizeof(PAInt), __builtin_object_size (aux->value, 0));
+    __builtin___memcpy_chk (dataPointer->Resource, aux,sizeof(struct PAResource), __builtin_object_size (dataPointer->Resource, 0));
 # 60 "src/PA/Data.c"
     free(aux);
     return dataPointer;
@@ -2117,6 +2117,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 {
     int returnCode;
 
+    __builtin___memset_chk(PA->Resource->value, 0, sizeof(PAInt), __builtin_object_size (PA->Resource->value, 0));
+    __builtin___memset_chk(PA->Resource, 0, sizeof(struct PAResource), __builtin_object_size (PA->Resource, 0));
     __builtin___memset_chk(PA, 0, sizeof(struct PAData), __builtin_object_size (PA, 0));
 
     return ((int)0);
