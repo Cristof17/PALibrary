@@ -2101,12 +2101,12 @@ void PAListPrint(struct PAList* List);
 
 
           struct BFSRecord* BFSRecordCreate();
+          struct BFSRecord* BFSRecordBegin(struct BFSRecord*, struct PAList* d, struct PACount* n);
+          struct BFSRecord* BFSRecordCopy(struct BFSRecord* from, struct BFSRecord* to);
 
+          int BFSRecordDelete(struct BFSRecord*);
           int BFSRecordFinish(struct BFSRecord*);
-          struct BFSRecord BFSRecordDelete(struct BFSRecord*);
           void BFSRecordPrint(struct BFSRecord*);
-          struct BFSRecord BFSRecordBegin(struct BFSRecord*, struct PAList* d, struct PACount* n);
-          struct BFSRecord BFSRecordCopy(struct BFSRecord* from, struct BFSRecord* to);
 # 10 "src/BFS/Record.c" 2
 
 
@@ -2128,22 +2128,23 @@ void PAListPrint(struct PAList* List);
     free(PA);
     return ((int)0);
 }
-          struct BFSRecord BFSRecordDelete(struct BFSRecord* PA)
+          int BFSRecordDelete(struct BFSRecord* PA)
 {
     struct BFSRecord record;
-    return record;
+
 }
           void BFSRecordPrint(struct BFSRecord* PA)
 {
 
 }
-          struct BFSRecord BFSRecordBegin(struct BFSRecord* Record, struct PAList* d, struct PACount* n)
+          struct BFSRecord* BFSRecordBegin(struct BFSRecord* Record, struct PAList* d, struct PACount* n)
 {
-    struct BFSRecord record;
+    struct BFSRecord* record;
     return record;
 }
-          struct BFSRecord BFSRecordCopy(struct BFSRecord* from, struct BFSRecord* to)
+          struct BFSRecord* BFSRecordCopy(struct BFSRecord* from, struct BFSRecord* to)
 {
-    struct BFSRecord record;
-    return record;
+    struct BFSRecord* record;
+
+    return to;
 }
