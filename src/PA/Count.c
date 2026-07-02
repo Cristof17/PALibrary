@@ -57,7 +57,7 @@ DllExport struct PACount* PACountBegin(struct PACount* Count)
     // count.number = Number;
     // return÷÷ Count;
 }
-DllExport void PACountCopy(struct PACount* from, struct PACount* to)
+DllExport struct PACount* PACountCopy(struct PACount* from, struct PACount* to)
 {
     struct PACount* aux;
     aux = (struct PACount*) malloc (sizeof(struct PACount));

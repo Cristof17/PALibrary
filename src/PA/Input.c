@@ -44,7 +44,7 @@ DllExport struct PAInput* PAInputCreate()
 	// return result;
 	// return temp;
 }
-DllExport void PAInputCopy(struct PAInput* from, struct PAInput* to)
+DllExport struct PAInput* PAInputCopy(struct PAInput* from, struct PAInput* to)
 {
 	// struct PAInput* copy;
 	struct PAInput* aux;

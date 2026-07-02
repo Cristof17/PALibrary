@@ -52,7 +52,7 @@ DllExport struct PALink* PALinkBegin(struct PALink* Link, struct PAPair* pair)
     return aux;
     // return temp;
 }
-DllExport void PALinkCopy(struct PALink* from, struct PALink* to)
+DllExport struct PALink* PALinkCopy(struct PALink* from, struct PALink* to)
 {
     // struct PALink temp;
     struct PALink* aux;

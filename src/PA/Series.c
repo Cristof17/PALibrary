@@ -51,7 +51,7 @@ DllExport struct PASeries* PASeriesCreate()
     // return series;
     return seriesPointer;
 }
-DllExport void PASeriesCopy(struct PASeries* from, struct PASeries* to)
+DllExport struct PASeries* PASeriesCopy(struct PASeries* from, struct PASeries* to)
 {
     // struct PACount x;
     // struct PACount y;

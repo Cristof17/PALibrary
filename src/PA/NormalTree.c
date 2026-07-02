@@ -47,7 +47,7 @@ DllExport struct PANormalTree* PANormalTreeBegin(struct PANormalTree* NormalTree
     // return normalTreePointer;  
     // return temp;
 }
-DllExport void PANormalTreeCopy(struct PANormalTree* from, struct PANormalTree* to)
+DllExport struct PANormalTree* PANormalTreeCopy(struct PANormalTree* from, struct PANormalTree* to)
 {
     struct PANormalTree* aux;
     aux = (struct PANormalTree*) malloc (sizeof(struct PANormalTree));

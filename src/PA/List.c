@@ -48,7 +48,7 @@ DllExport struct PAList* PAListCreate()
     // list.adj = PASeriesPerformConstruct();
     // return list;
 }
-DllExport void PAListCopy(struct PAList* from, struct PAList* to)
+DllExport struct PAList* PAListCopy(struct PAList* from, struct PAList* to)
 {
     struct PAList* aux;
     // aux = PAListCreate();

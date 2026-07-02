@@ -68,7 +68,7 @@ DllExport struct PAData* PADataBegin(struct PAData* Data, PAInt resource)
     // struct PAData data;
     // data.resource = Data.resource;
 }
-DllExport void PADataCopy(struct PAData* from, struct PAData* to)
+DllExport struct PAData* PADataCopy(struct PAData* from, struct PAData* to)
 {
     // struct PAData temp;
     struct PAData *aux;

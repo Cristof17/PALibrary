@@ -53,7 +53,7 @@ DllExport struct PATransposeTree* PATransposeTreeBegin(struct PATransposeTree* T
     return TransposeTree;
     // return TransposeTree;
 }
-DllExport void PATransposeTreeCopy(struct PATransposeTree* from, struct PATransposeTree* to)
+DllExport struct PATransposeTree* PATransposeTreeCopy(struct PATransposeTree* from, struct PATransposeTree* to)
 {
     // struct PATransposeTree* copy;
     struct PATransposeTree* aux;
