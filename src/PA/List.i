@@ -2058,7 +2058,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          void PAListCopy(struct PAList*, struct PAList*);
+          struct PAList* PAListCopy(struct PAList*, struct PAList*);
           PAResult PAListDelete(struct PAList*);
           PAResult PAListFinish(struct PAList*);
 
@@ -2081,7 +2081,7 @@ void PAListPrint(struct PAList* List);
 
           struct PACount* PACountCreate(PAInt value);
           struct PACount* PACountBegin(struct PACount* value);
-          void PACountCopy(struct PACount* from, struct PACount* to);
+          struct PACount* PACountCopy(struct PACount* from, struct PACount* to);
 
 
 
@@ -2101,7 +2101,7 @@ void PAListPrint(struct PAList* List);
 
           struct PASeries* PASeriesCreate();
           struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct ArrayList*);
-          void PASeriesCopy(struct PASeries*, struct PASeries*);
+          struct PASeries* PASeriesCopy(struct PASeries*, struct PASeries*);
           PAResult PASeriesDelete(struct PASeries*);
           PAResult PASeriesFinish(struct PASeries*);
 
@@ -2117,7 +2117,7 @@ void PAListPrint(struct PAList* List);
     return listPointer;
 # 50 "src/PA/List.c"
 }
-          void PAListCopy(struct PAList* from, struct PAList* to)
+          struct PAList* PAListCopy(struct PAList* from, struct PAList* to)
 {
     struct PAList* aux;
 
@@ -2126,7 +2126,8 @@ void PAListPrint(struct PAList* List);
     __builtin___memcpy_chk (to, aux,sizeof(struct PAList), __builtin_object_size (to, 0));
 # 69 "src/PA/List.c"
     free(aux);
-# 107 "src/PA/List.c"
+    return to;
+# 108 "src/PA/List.c"
 }
 
 
@@ -2137,16 +2138,16 @@ void PAListPrint(struct PAList* List);
 
     __builtin___memcpy_chk (List->m, M,sizeof(struct PACount), __builtin_object_size (List->m, 0));
     __builtin___memcpy_chk (List->neigh, adj,sizeof(struct ArrayList), __builtin_object_size (List->neigh, 0));
-# 150 "src/PA/List.c"
+# 151 "src/PA/List.c"
     return listPointer;
 }
-# 183 "src/PA/List.c"
+# 184 "src/PA/List.c"
           PAResult PAListDelete(struct PAList* PA)
 {
     int returnCode;
     returnCode = ((int)0);
     __builtin___memset_chk(PA, 0, sizeof(struct PAList), __builtin_object_size (PA, 0));
-# 207 "src/PA/List.c"
+# 208 "src/PA/List.c"
     return returnCode;
 
 
@@ -2160,7 +2161,7 @@ void PAListPrint(struct PAList* List);
     returnCode = ((int)0);
 
     return returnCode;
-# 234 "src/PA/List.c"
+# 235 "src/PA/List.c"
     {
 
 
@@ -2178,7 +2179,7 @@ void Dispose()
 {
 
 }
-# 267 "src/PA/List.c"
+# 268 "src/PA/List.c"
 void PAListPrint(struct PAList* List)
 {
 

@@ -13,7 +13,7 @@
 // struct PAData;
 DllExport struct PAData* PADataCreate(struct PASize* size);
 DllExport struct PAData* PADataBegin(struct PAData* Data, PAInt Resource);
-DllExport struct PACount* PADataCopy(struct PAData* from, struct PAData* to);
+DllExport struct PAData* PADataCopy(struct PAData* from, struct PAData* to);
 // DllExport struct PAData PADataPerformCopy(struct PAData);
 // DllExport struct PAData PADataPerformPutResource(struct PAData, PAResource);
 DllExport PAResult PADataFinish(struct PAData*);

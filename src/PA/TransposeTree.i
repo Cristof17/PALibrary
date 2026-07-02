@@ -2053,7 +2053,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PATransposeTree* PATransposeTreeCreate();
           struct PATransposeTree* PATransposeTreeBegin(struct PATransposeTree*, struct PATree*);
-          void PATransposeTreeCopy(struct PATransposeTree*, struct PATransposeTree*);
+          struct PATransposeTree* PATransposeTreeCopy(struct PATransposeTree*, struct PATransposeTree*);
 
           PAResult PATransposeTreeDelete(struct PATransposeTree*);
           PAResult PATransposeTreeFinish(struct PATransposeTree*);
@@ -2075,7 +2075,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           struct PATree* PATreeCreate();
-          void PATreeCopy(struct PATree* from, struct PATree* to);
+          struct PATree* PATreeCopy(struct PATree* from, struct PATree* to);
 
           struct PATree* PATreeBegin(struct PATree*, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source);
 
@@ -2118,7 +2118,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     return TransposeTree;
 
 }
-          void PATransposeTreeCopy(struct PATransposeTree* from, struct PATransposeTree* to)
+          struct PATransposeTree* PATransposeTreeCopy(struct PATransposeTree* from, struct PATransposeTree* to)
 {
 
     struct PATransposeTree* aux;
@@ -2128,9 +2128,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
     free(aux);
-# 75 "src/PA/TransposeTree.c"
+    return to;
+# 76 "src/PA/TransposeTree.c"
 }
-# 85 "src/PA/TransposeTree.c"
+# 86 "src/PA/TransposeTree.c"
           PAResult PATransposeTreeDelete(struct PATransposeTree* PA)
 {
 

@@ -2048,7 +2048,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PASeries* PASeriesCreate();
           struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct ArrayList*);
-          void PASeriesCopy(struct PASeries*, struct PASeries*);
+          struct PASeries* PASeriesCopy(struct PASeries*, struct PASeries*);
           PAResult PASeriesDelete(struct PASeries*);
           PAResult PASeriesFinish(struct PASeries*);
 
@@ -2072,7 +2072,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PACount* PACountCreate(PAInt value);
           struct PACount* PACountBegin(struct PACount* value);
-          void PACountCopy(struct PACount* from, struct PACount* to);
+          struct PACount* PACountCopy(struct PACount* from, struct PACount* to);
 
 
 
@@ -2097,7 +2097,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PAElement* PAElementCreate();
           struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus* status);
-          void PAElementCopy(struct PAElement*, struct PAElement*);
+          struct PACount* PAElementCopy(struct PAElement*, struct PAElement*);
           PAResult PAElementDelete(struct PAElement*);
           PAResult PAElementFinish(struct PAElement*);
           void PAElementVisit(struct PAElement*);
@@ -2112,7 +2112,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 52 "src/PA/Series.c"
     return seriesPointer;
 }
-          void PASeriesCopy(struct PASeries* from, struct PASeries* to)
+          struct PASeries* PASeriesCopy(struct PASeries* from, struct PASeries* to)
 {
 
 
@@ -2125,6 +2125,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
     free(aux);
+    return to;
 
 
 
@@ -2157,7 +2158,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 }
-# 114 "src/PA/Series.c"
+# 115 "src/PA/Series.c"
           struct PASeries* PASeriesBegin(struct PASeries* series, struct PACount* M, struct ArrayList* List)
     {
         struct PASeries* aux;
@@ -2167,7 +2168,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
         __builtin___memcpy_chk (aux->m, M, sizeof(struct PACount), __builtin_object_size (aux->m, 0));
         __builtin___memcpy_chk (aux->adj, List,sizeof(struct ArrayList), __builtin_object_size (aux->adj, 0));
         __builtin___memcpy_chk (series, aux,sizeof(struct PASeries), __builtin_object_size (series, 0));
-# 158 "src/PA/Series.c"
+# 159 "src/PA/Series.c"
         free(aux);
         return aux;
     }
@@ -2176,21 +2177,21 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
         int returnCode;
         returnCode = ((int)0);
         __builtin___memset_chk(PA, 0, sizeof(struct PASeries), __builtin_object_size (PA, 0));
-# 182 "src/PA/Series.c"
+# 183 "src/PA/Series.c"
         return returnCode;
     }
-# 193 "src/PA/Series.c"
+# 194 "src/PA/Series.c"
               PAResult PASeriesFinish(struct PASeries* PA)
     {
 
         int returnCode;
         free(PA);
         returnCode = ((int)0);
-# 218 "src/PA/Series.c"
+# 219 "src/PA/Series.c"
         return returnCode;
 
     }
-# 276 "src/PA/Series.c"
+# 277 "src/PA/Series.c"
 void PASeriesPrint(struct PASeries* Series)
 {
 

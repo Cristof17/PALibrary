@@ -2050,7 +2050,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PAPair* PAPairCreate();
           struct PAPair* PAPairBegin(struct PAPair*, struct PAElement*, struct PAElement*);
-          void PAPairCopy(struct PAPair* from, struct PAPair* to);
+          struct PAPair* PAPAPairCopy(struct PAPair* from, struct PAPair* to);
 
 
 
@@ -2073,7 +2073,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PAElement* PAElementCreate();
           struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus* status);
-          void PAElementCopy(struct PAElement*, struct PAElement*);
+          struct PACount* PAElementCopy(struct PAElement*, struct PAElement*);
           PAResult PAElementDelete(struct PAElement*);
           PAResult PAElementFinish(struct PAElement*);
           void PAElementVisit(struct PAElement*);
@@ -2114,7 +2114,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     return Pair;
 # 79 "src/PA/Pair.c"
 }
-          void PAPairCopy(struct PAPair* from, struct PAPair* to)
+          struct PAPair* PAPairCopy(struct PAPair* from, struct PAPair* to)
 {
 
 
@@ -2130,9 +2130,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
     free(aux);
-# 105 "src/PA/Pair.c"
+    return to;
+# 106 "src/PA/Pair.c"
 }
-# 134 "src/PA/Pair.c"
+# 135 "src/PA/Pair.c"
           PAResult PAPairDelete(struct PAPair* PA)
 {
 
@@ -2142,7 +2143,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
     returnCode = ((int)0);
-# 151 "src/PA/Pair.c"
+# 152 "src/PA/Pair.c"
     return returnCode;
 }
           PAResult PAPairFinish(struct PAPair* PA)

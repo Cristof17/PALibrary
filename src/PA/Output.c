@@ -60,7 +60,7 @@ DllExport struct PAOutput* PAOutputBegin(struct PAOutput* Output)
     // Output->result = temp.result;
     return Output;
 }
-DllExport void PAOutputCopy(struct PAOutput* from, struct PAOutput* to)
+DllExport struct PAOutput* PAOutputCopy(struct PAOutput* from, struct PAOutput* to)
 {
 	struct PAOutput* aux;
     // aux = PAOutputCreate();
@@ -71,6 +71,7 @@ DllExport void PAOutputCopy(struct PAOutput* from, struct PAOutput* to)
     // aux->result = from->result;
     // to->result = aux->result;
     free(aux);
+    return to;
     // PAOutputDelete(aux);
     // PAOutputFinish(aux);
     // temp.result = from->result;

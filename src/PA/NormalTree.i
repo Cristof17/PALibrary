@@ -2051,7 +2051,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           struct PANormalTree* PANormalTreeCreate();
           struct PANormalTree* PANormalTreeBegin(struct PANormalTree* NormalTree, struct PATree* Tree);
 
-          void PANormalTreeCopy(struct PANormalTree* from, struct PANormalTree* to);
+          struct PANormalTree* PANormalTreeCopy(struct PANormalTree* from, struct PANormalTree* to);
           PAResult PANormalTreeDelete(struct PANormalTree* PA);
           PAResult PANormalTreeFinish(struct PANormalTree* PA);
 # 6 "src/PA/NormalTree.c" 2
@@ -2072,7 +2072,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           struct PATree* PATreeCreate();
-          void PATreeCopy(struct PATree* from, struct PATree* to);
+          struct PATree* PATreeCopy(struct PATree* from, struct PATree* to);
 
           struct PATree* PATreeBegin(struct PATree*, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source);
 
@@ -2107,7 +2107,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     return NormalTree;
 # 49 "src/PA/NormalTree.c"
 }
-          void PANormalTreeCopy(struct PANormalTree* from, struct PANormalTree* to)
+          struct PANormalTree* PANormalTreeCopy(struct PANormalTree* from, struct PANormalTree* to)
 {
     struct PANormalTree* aux;
     aux = (struct PANormalTree*) malloc (sizeof(struct PANormalTree));
@@ -2117,7 +2117,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
     free(aux);
-# 68 "src/PA/NormalTree.c"
+    return to;
+# 69 "src/PA/NormalTree.c"
 }
           PAResult PANormalTreeDelete(struct PANormalTree* PA)
 {

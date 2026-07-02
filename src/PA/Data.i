@@ -2049,7 +2049,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PAData* PADataCreate(struct PASize* size);
           struct PAData* PADataBegin(struct PAData* Data, PAInt Resource);
-          void PADataCopy(struct PAData* from, struct PAData* to);
+          struct PAData* PADataCopy(struct PAData* from, struct PAData* to);
 
 
           PAResult PADataFinish(struct PAData*);
@@ -2101,7 +2101,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 }
-          void PADataCopy(struct PAData* from, struct PAData* to)
+          struct PAData* PADataCopy(struct PAData* from, struct PAData* to)
 {
 
     struct PAData *aux;
@@ -2114,9 +2114,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
     free(aux);
-# 92 "src/PA/Data.c"
+    return to;
+# 93 "src/PA/Data.c"
 }
-# 110 "src/PA/Data.c"
+# 111 "src/PA/Data.c"
           PAResult PADataDelete(struct PAData* PA)
 {
     int returnCode;

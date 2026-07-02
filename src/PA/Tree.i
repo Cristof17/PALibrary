@@ -2048,7 +2048,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           struct PATree* PATreeCreate();
-          void PATreeCopy(struct PATree* from, struct PATree* to);
+          struct PATree* PATreeCopy(struct PATree* from, struct PATree* to);
 
           struct PATree* PATreeBegin(struct PATree*, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source);
 
@@ -2076,7 +2076,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PACount* PACountCreate(PAInt value);
           struct PACount* PACountBegin(struct PACount* value);
-          void PACountCopy(struct PACount* from, struct PACount* to);
+          struct PACount* PACountCopy(struct PACount* from, struct PACount* to);
 
 
 
@@ -2101,7 +2101,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PAElement* PAElementCreate();
           struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus* status);
-          void PAElementCopy(struct PAElement*, struct PAElement*);
+          struct PACount* PAElementCopy(struct PAElement*, struct PAElement*);
           PAResult PAElementDelete(struct PAElement*);
           PAResult PAElementFinish(struct PAElement*);
           void PAElementVisit(struct PAElement*);
@@ -2131,7 +2131,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          void PAListCopy(struct PAList*, struct PAList*);
+          struct PAList* PAListCopy(struct PAList*, struct PAList*);
           PAResult PAListDelete(struct PAList*);
           PAResult PAListFinish(struct PAList*);
 
@@ -2162,7 +2162,7 @@ void PAListPrint(struct PAList* List);
     return tree;
 }
 # 134 "src/PA/Tree.c"
-          void PATreeCopy(struct PATree* from, struct PATree* to)
+          struct PATree* PATreeCopy(struct PATree* from, struct PATree* to)
 {
     struct PATree* aux;
     aux = (struct PATree*) malloc (sizeof(struct PATree));
@@ -2171,7 +2171,10 @@ void PAListPrint(struct PAList* List);
     to->n = aux->n;
     to->m = aux->m;
     free(aux);
-# 160 "src/PA/Tree.c"
+
+
+    return to;
+# 163 "src/PA/Tree.c"
 }
           PAResult PATreeDelete(struct PATree* PA)
 {
@@ -2197,6 +2200,6 @@ void PAListPrint(struct PAList* List);
     int returnCode;
     free(PA);
     returnCode = ((int)0);
-# 236 "src/PA/Tree.c"
+# 239 "src/PA/Tree.c"
     return returnCode;
 }

@@ -2052,7 +2052,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PALink* PALinkCreate(struct PAPair* p);
           struct PALink* PALinkBegin(struct PALink*, struct PAPair*);
-          void PALinkCopy(struct PALink*, struct PALink*);
+          struct PALink* PALinkCopy(struct PALink*, struct PALink*);
 
 
           PAResult PALinkFinish(struct PALink*);
@@ -2074,7 +2074,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PAPair* PAPairCreate();
           struct PAPair* PAPairBegin(struct PAPair*, struct PAElement*, struct PAElement*);
-          void PAPairCopy(struct PAPair* from, struct PAPair* to);
+          struct PAPair* PAPAPairCopy(struct PAPair* from, struct PAPair* to);
 
 
 
@@ -2108,7 +2108,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     return aux;
 
 }
-          void PALinkCopy(struct PALink* from, struct PALink* to)
+          struct PALink* PALinkCopy(struct PALink* from, struct PALink* to)
 {
 
     struct PALink* aux;
@@ -2122,7 +2122,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
     free(aux);
-# 78 "src/PA/Link.c"
+    return to;
+# 79 "src/PA/Link.c"
 }
           PAResult PALinkDelete(struct PALink* PA){
 

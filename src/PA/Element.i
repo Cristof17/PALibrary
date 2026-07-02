@@ -2050,7 +2050,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PAElement* PAElementCreate();
           struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus* status);
-          void PAElementCopy(struct PAElement*, struct PAElement*);
+          struct PACount* PAElementCopy(struct PAElement*, struct PAElement*);
           PAResult PAElementDelete(struct PAElement*);
           PAResult PAElementFinish(struct PAElement*);
           void PAElementVisit(struct PAElement*);
@@ -2075,7 +2075,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PAData* PADataCreate(struct PASize* size);
           struct PAData* PADataBegin(struct PAData* Data, PAInt Resource);
-          void PADataCopy(struct PAData* from, struct PAData* to);
+          struct PAData* PADataCopy(struct PAData* from, struct PAData* to);
 
 
           PAResult PADataFinish(struct PAData*);
@@ -2094,7 +2094,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PAStatus* PAStatusCreate();
           struct PAStatus* PAStatusBegin(struct PAStatus*, struct PAResource*);
-          void PAStatusCopy(struct PAStatus*, struct PAStatus*);
+          struct PAStatus* PAStatusCopy(struct PAStatus*, struct PAStatus*);
           PAResult PAStatusDelete(struct PAStatus*);
           PAResult PAStatusFinish(struct PAStatus*);
           void PAStatusCauseVisit(PABool);
@@ -2139,7 +2139,7 @@ struct PAElement* PAElementCreate()
 
     return;
 }
-          void PAElementCopy(struct PAElement* from, struct PAElement* to)
+          struct PAElement* PAElementCopy(struct PAElement* from, struct PAElement* to)
 {
     struct PAElement* aux;
     aux = (struct PAElement*) malloc (sizeof(struct PAElement));
@@ -2154,21 +2154,23 @@ struct PAElement* PAElementCreate()
 
 
     free(aux);
-# 111 "src/PA/Element.c"
+
+    return to;
+# 113 "src/PA/Element.c"
 }
-# 124 "src/PA/Element.c"
+# 126 "src/PA/Element.c"
           PAResult PAElementDelete(struct PAElement* PA)
 {
     int returnCode;
     returnCode = ((int)0);
     __builtin___memset_chk(PA, 0, sizeof(struct PAElement), __builtin_object_size (PA, 0));
-# 137 "src/PA/Element.c"
+# 139 "src/PA/Element.c"
     return returnCode;
 
 }
           PAResult PAElementFinish(struct PAElement* PA)
 {
-# 157 "src/PA/Element.c"
+# 159 "src/PA/Element.c"
     int returnCode;
     free(PA);
     returnCode = ((int)0);

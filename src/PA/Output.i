@@ -2052,7 +2052,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PAOutput* PAOutputCreate();
           struct PAOutput* PAOutputBegin(struct PAOutput*);
-          void PADataPerformCopy(struct PAOutput* from, struct PAOutput* to);
+
+          struct PAOutput* PAOutputCopy(struct PAOutput* from, struct PAOutput* to);
           PAResult PAOutputDelete(struct PAOutput*);
           PAResult PAOutputFinish(struct PAOutput*);
           void PAOutputPrint(PAResult Result);
@@ -2102,7 +2103,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     return Output;
 }
-          void PAOutputCopy(struct PAOutput* from, struct PAOutput* to)
+          struct PAOutput* PAOutputCopy(struct PAOutput* from, struct PAOutput* to)
 {
  struct PAOutput* aux;
 
@@ -2113,7 +2114,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
     free(aux);
-# 100 "src/PA/Output.c"
+    return to;
+# 101 "src/PA/Output.c"
 }
 
           PAResult PAOutputDelete(struct PAOutput* PA)

@@ -111,6 +111,7 @@ _PATreeCopy:                            ; @PATreeCopy
 	str	x8, [x9, #8]
 	ldr	x0, [sp, #8]
 	bl	_free
+	ldr	x0, [sp, #16]
 	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
 	add	sp, sp, #48
 	ret

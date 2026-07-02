@@ -2054,7 +2054,9 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           struct PAInput* PAInputCreate();
 
           struct PAInput* PAInputBegin(struct PAInput* PA, struct PACount* N, struct PACount* M, struct PAElement* Source, struct PASeries* Series);
-          void PAInputCopy(struct PAInput* from, struct PAInput* to);
+
+
+          struct PAInput* PAInputCopy(struct PAInput* from, struct PAInput* to);
 
 
 
@@ -2078,7 +2080,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PACount* PACountCreate(PAInt value);
           struct PACount* PACountBegin(struct PACount* value);
-          void PACountCopy(struct PACount* from, struct PACount* to);
+          struct PACount* PACountCopy(struct PACount* from, struct PACount* to);
 
 
 
@@ -2103,7 +2105,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PAElement* PAElementCreate();
           struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus* status);
-          void PAElementCopy(struct PAElement*, struct PAElement*);
+          struct PACount* PAElementCopy(struct PAElement*, struct PAElement*);
           PAResult PAElementDelete(struct PAElement*);
           PAResult PAElementFinish(struct PAElement*);
           void PAElementVisit(struct PAElement*);
@@ -2130,7 +2132,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
  return inputPointer;
 # 46 "src/PA/Input.c"
 }
-          void PAInputCopy(struct PAInput* from, struct PAInput* to)
+          struct PAInput* PAInputCopy(struct PAInput* from, struct PAInput* to)
 {
 
  struct PAInput* aux;
@@ -2139,6 +2141,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
  __builtin___memcpy_chk (aux, to,sizeof(struct PAInput), __builtin_object_size (aux, 0));
 # 65 "src/PA/Input.c"
  free(aux);
+ return to;
 
 
 
@@ -2156,7 +2159,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
  __builtin___memcpy_chk (aux->n, N,sizeof(struct PACount), __builtin_object_size (aux->n, 0));
  __builtin___memcpy_chk (aux->m, M,sizeof(struct PACount), __builtin_object_size (aux->m, 0));
  __builtin___memcpy_chk (aux->source, Source,sizeof(struct PAElement), __builtin_object_size (aux->source, 0));
-# 106 "src/PA/Input.c"
+# 107 "src/PA/Input.c"
  return aux;
 
 }
@@ -2168,7 +2171,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
  returnCode = ((int)0);
-# 125 "src/PA/Input.c"
+# 126 "src/PA/Input.c"
  return returnCode;
 }
           PAResult PAInputFinish(struct PAInput* PA) {
