@@ -1847,8 +1847,8 @@ struct Facade {
 
 
 
-          struct PACount* PACountCreate(PAInt value);
-          struct PACount* PACountBegin(struct PACount* value);
+          struct PACount* PACountCreate();
+          struct PACount* PACountBegin(struct PACount*, PAInt);
           struct PACount* PACountCopy(struct PACount* from, struct PACount* to);
 
 
