@@ -2057,7 +2057,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          void PAListCopy(struct PAList*, struct PAList*);
+          struct PAList* PAListCopy(struct PAList*, struct PAList*);
           PAResult PAListDelete(struct PAList*);
           PAResult PAListFinish(struct PAList*);
 
@@ -2080,7 +2080,7 @@ void PAListPrint(struct PAList* List);
 
           struct PACount* PACountCreate(PAInt value);
           struct PACount* PACountBegin(struct PACount* value);
-          void PACountCopy(struct PACount* from, struct PACount* to);
+          struct PACount* PACountCopy(struct PACount* from, struct PACount* to);
 
 
 

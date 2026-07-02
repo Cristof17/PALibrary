@@ -2092,7 +2092,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           struct PATree* PATreeCreate();
-          void PATreeCopy(struct PATree* from, struct PATree* to);
+          struct PATree* PATreeCopy(struct PATree* from, struct PATree* to);
 
           struct PATree* PATreeBegin(struct PATree*, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source);
 
@@ -2119,7 +2119,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PAElement* PAElementCreate();
           struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus* status);
-          void PAElementCopy(struct PAElement*, struct PAElement*);
+          struct PAElement* PAElementCopy(struct PAElement*, struct PAElement*);
           PAResult PAElementDelete(struct PAElement*);
           PAResult PAElementFinish(struct PAElement*);
           void PAElementVisit(struct PAElement*);
@@ -2162,7 +2162,9 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           struct PAInput* PAInputCreate();
 
           struct PAInput* PAInputBegin(struct PAInput* PA, struct PACount* N, struct PACount* M, struct PAElement* Source, struct PASeries* Series);
-          void PAInputCopy(struct PAInput* from, struct PAInput* to);
+
+
+          struct PAInput* PAInputCopy(struct PAInput* from, struct PAInput* to);
 
 
 

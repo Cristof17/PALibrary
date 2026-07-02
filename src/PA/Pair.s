@@ -93,6 +93,7 @@ _PAPairCopy:                            ; @PAPairCopy
 	bl	___memcpy_chk
 	ldr	x0, [sp, #24]
 	bl	_free
+	ldur	x0, [x29, #-16]
 	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
 	add	sp, sp, #64
 	ret
