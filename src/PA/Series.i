@@ -2108,10 +2108,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 21 "src/PA/Series.c"
           struct PASeries* PASeriesCreate()
 {
-    struct PASeries* seriesPointer;
-    seriesPointer = (struct PASeries*) malloc (sizeof (struct PASeries));
+    struct PASeries* series;
+    series = (struct PASeries*) malloc (sizeof (struct PASeries));
 # 52 "src/PA/Series.c"
-    return seriesPointer;
+    return series;
 }
           struct PASeries* PASeriesCopy(struct PASeries* from, struct PASeries* to)
 {

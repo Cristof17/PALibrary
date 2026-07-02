@@ -2103,10 +2103,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 18 "src/PA/Element.c"
 struct PAElement* PAElementCreate()
 {
-    struct PAElement* temp;
-    temp = (struct PAElement*)malloc(sizeof(struct PAElement));
+    struct PAElement* element;
+    element = (struct PAElement*)malloc(sizeof(struct PAElement));
 # 35 "src/PA/Element.c"
-  return temp;
+  return element;
 }
           struct PAElement* PAElementBegin(struct PAElement* element,struct PAData* index, struct PAElement* next, struct PAStatus* status)
 {

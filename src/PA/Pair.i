@@ -2089,10 +2089,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           struct PAPair* PAPairCreate()
 {
 
-    struct PAPair* pairPointer;
-    pairPointer=(struct PAPair*) malloc(sizeof(struct PAPair));
+    struct PAPair* pair;
+    pair =(struct PAPair*) malloc(sizeof(struct PAPair));
 # 26 "src/PA/Pair.c"
-    return pairPointer;
+    return pair;
 
 
 

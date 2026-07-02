@@ -35,16 +35,16 @@
 DllExport struct PAOutput* PAOutputCreate()
 {
     // struct PAOutput* result;
-    struct PAOutput* outputPointer;
+    struct PAOutput* output;
     // struct PAOutput Output;
     // struct PAOutput* outputPointer;
-    outputPointer = (struct PAOutput*) malloc (sizeof(struct PAOutput));
+    output = (struct PAOutput*) malloc (sizeof(struct PAOutput));
     // result->result = Result;
     // outputPointer->result = BFSRecordCreate();
     // outputPointer-
     // return outputPointer;
     // return Output;
-    return outputPointer;
+    return output;
     // struct BFSRecord Record = BFSRecordConstruct()
 }
 DllExport struct PAOutput* PAOutputBegin(struct PAOutput* Output)

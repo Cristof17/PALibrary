@@ -2076,12 +2076,12 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           struct PAData* PADataCreate(struct PASize* size)
 {
 
-    struct PAData* dataPointer;
-    dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
-    dataPointer->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
-    dataPointer->Resource->value = (PANumber) malloc ((size->value[0]));
+    struct PAData* data;
+    data = (struct PAData*) malloc (sizeof(struct PAData));
+    data->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
+    data->Resource->value = (PANumber) malloc ((size->value[0]));
 # 38 "src/PA/Data.c"
-    return dataPointer;
+    return data;
 }
           struct PAData* PADataBegin(struct PAData* Data, PAInt resource)
 {

@@ -2142,10 +2142,10 @@ void PAListPrint(struct PAList* List);
           struct PATree* PATreeCreate()
 {
 
-    struct PATree* treePointer;
-    treePointer = (struct PATree*) malloc (sizeof(struct PATree));
+    struct PATree* tree;
+    tree = (struct PATree*) malloc (sizeof(struct PATree));
 # 77 "src/PA/Tree.c"
-    return treePointer;
+    return tree;
 
 }
           struct PATree* PATreeBegin(struct PATree* tree, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source)

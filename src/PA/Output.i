@@ -2079,16 +2079,16 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           struct PAOutput* PAOutputCreate()
 {
 
-    struct PAOutput* outputPointer;
+    struct PAOutput* output;
 
 
-    outputPointer = (struct PAOutput*) malloc (sizeof(struct PAOutput));
+    output = (struct PAOutput*) malloc (sizeof(struct PAOutput));
 
 
 
 
 
-    return outputPointer;
+    return output;
 
 }
           struct PAOutput* PAOutputBegin(struct PAOutput* Output)

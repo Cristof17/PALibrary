@@ -11,7 +11,7 @@
 
 DllExport struct PANormalTree* PANormalTreeCreate()
 {
-    struct PANormalTree* normalTreePointer;
+    struct PANormalTree* normalTree;
     // struct PANormalTree* normalTree;
     // struct PANormaltT/
     // struct PANormat
@@ -20,9 +20,9 @@ DllExport struct PANormalTree* PANormalTreeCreate()
     // struct PAnor
     // struct NA
     // nro
-    normalTreePointer = (struct PANormalTree*) malloc (sizeof(struct PANormalTree));
+    normalTree = (struct PANormalTree*) malloc (sizeof(struct PANormalTree));
     // register
-    return normalTreePointer;
+    return normalTree;
     // normalTree.tree = PATreePerformConstruct();
     // normalTree.tree = PATreePerformConstruct();
     // return normalTree;

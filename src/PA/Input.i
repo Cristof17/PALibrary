@@ -2121,8 +2121,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           struct PAInput* PAInputCreate()
 {
 
- struct PAInput* inputPointer;
- inputPointer = (struct PAInput*) malloc (sizeof(struct PAInput));
+ struct PAInput* input;
+ input = (struct PAInput*) malloc (sizeof(struct PAInput));
 
 
 
@@ -2130,7 +2130,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
- return inputPointer;
+ return input;
 # 46 "src/PA/Input.c"
 }
           struct PAInput* PAInputCopy(struct PAInput* from, struct PAInput* to)

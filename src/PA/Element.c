@@ -17,8 +17,8 @@
 // #include "../include/PAIndex.h"
 struct PAElement* PAElementCreate()
 {
-    struct PAElement* temp;
-    temp = (struct PAElement*)malloc(sizeof(struct PAElement));
+    struct PAElement* element;
+    element = (struct PAElement*)malloc(sizeof(struct PAElement));
     // temp->index = index;
     // temp->status = status;
     // temp->next = next;
@@ -32,7 +32,7 @@ struct PAElement* PAElementCreate()
     // return result;
  //   struct PAElement element;
   //  return element;
-  return temp;
+  return element;
 }
 DllExport struct PAElement* PAElementBegin(struct PAElement* element,struct PAData* index, struct PAElement* next, struct PAStatus* status)
 {

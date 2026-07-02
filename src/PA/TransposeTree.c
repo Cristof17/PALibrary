@@ -15,13 +15,13 @@
 #endif
 DllExport struct PATransposeTree* PATransposeTreeCreate()
 {
-    struct PATransposeTree transposeTree;
-    struct PATransposeTree* transposeTreePointer;
-    transposeTreePointer = (struct PATransposeTree*) malloc(sizeof(struct PATransposeTree));
+    struct PATransposeTree* transposeTree;
+    // struct PATransposeTree* transposeTreePointer;
+    transposeTree = (struct PATransposeTree*) malloc(sizeof(struct PATransposeTree));
     // transposeTreePointer->tree = PATreePerformConstruct();
     // transposeTree.tree = (transposeTreePointer->tree);
     // transposeTreePointer = PATransposeTreeBegin(transposeTreePointer,transposeTree.tree);
-    return transposeTreePointer;
+    return transposeTree;
     // return transposeTree;
     // transposeTree.tree = PATreePerformConstruct();
     // return transposeTreePointer;

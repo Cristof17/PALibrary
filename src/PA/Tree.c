@@ -19,8 +19,8 @@
 DllExport struct PATree* PATreeCreate()
 {
     // struct PATree* temp;
-    struct PATree* treePointer;
-    treePointer = (struct PATree*) malloc (sizeof(struct PATree));
+    struct PATree* tree;
+    tree = (struct PATree*) malloc (sizeof(struct PATree));
     // treePointer->n = n;
     // treePointer->m = m;
     // treePointer->adj = adj;
@@ -74,7 +74,7 @@ DllExport struct PATree* PATreeCreate()
     // tree.adj = Adj;
     // tree.source = Source;
     // return tree;
-    return treePointer;
+    return tree;
     // return temp;
 }
 DllExport struct PATree* PATreeBegin(struct PATree* tree, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source)

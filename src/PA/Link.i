@@ -2091,10 +2091,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           struct PALink* PALinkCreate(struct PAPair* p)
 {
 
-    struct PALink* linkPointer;
-    linkPointer = (struct PALink*) malloc (sizeof(struct PALink));
-    linkPointer->p = p;
-    return linkPointer;
+    struct PALink* link;
+    link = (struct PALink*) malloc (sizeof(struct PALink));
+    link->p = p;
+    return link;
 # 32 "src/PA/Link.c"
 }
           struct PALink* PALinkBegin(struct PALink* Link, struct PAPair* pair)

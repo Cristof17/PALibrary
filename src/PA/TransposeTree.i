@@ -2095,13 +2095,13 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PATransposeTree* PATransposeTreeCreate()
 {
-    struct PATransposeTree transposeTree;
-    struct PATransposeTree* transposeTreePointer;
-    transposeTreePointer = (struct PATransposeTree*) malloc(sizeof(struct PATransposeTree));
+    struct PATransposeTree* transposeTree;
+
+    transposeTree = (struct PATransposeTree*) malloc(sizeof(struct PATransposeTree));
 
 
 
-    return transposeTreePointer;
+    return transposeTree;
 
 
 

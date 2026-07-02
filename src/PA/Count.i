@@ -2361,13 +2361,13 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
           struct PACount* PACountCreate(PAInt value)
 {
 
-    struct PACount* countPointer;
-    countPointer =(struct PACount*)malloc(sizeof(struct PACount));
-    countPointer->number = (PAInt*) malloc (sizeof(PAInt));
+    struct PACount* count;
+    count =(struct PACount*)malloc(sizeof(struct PACount));
+    count->number = (PAInt*) malloc (sizeof(PAInt));
 
-    countPointer->number = &value;
+    count->number = &value;
 # 31 "src/PA/Count.c"
-    return countPointer;
+    return count;
 }
           struct PACount* PACountBegin(struct PACount* Count)
 {

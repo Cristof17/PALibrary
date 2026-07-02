@@ -2091,11 +2091,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PANormalTree* PANormalTreeCreate()
 {
-    struct PANormalTree* normalTreePointer;
+    struct PANormalTree* normalTree;
 # 23 "src/PA/NormalTree.c"
-    normalTreePointer = (struct PANormalTree*) malloc (sizeof(struct PANormalTree));
+    normalTree = (struct PANormalTree*) malloc (sizeof(struct PANormalTree));
 
-    return normalTreePointer;
+    return normalTree;
 
 
 

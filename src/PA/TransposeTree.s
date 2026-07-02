@@ -13,8 +13,8 @@ _PATransposeTreeCreate:                 ; @PATransposeTreeCreate
 	.cfi_offset w29, -16
 	mov	x0, #8                          ; =0x8
 	bl	_malloc
-	str	x0, [sp]
-	ldr	x0, [sp]
+	str	x0, [sp, #8]
+	ldr	x0, [sp, #8]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
 	ret

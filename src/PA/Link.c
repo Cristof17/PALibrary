@@ -16,10 +16,10 @@
 DllExport struct PALink* PALinkCreate(struct PAPair* p)
 {
     // struct PALink link;
-    struct PALink* linkPointer;
-    linkPointer = (struct PALink*) malloc (sizeof(struct PALink));
-    linkPointer->p = p;
-    return linkPointer;
+    struct PALink* link;
+    link = (struct PALink*) malloc (sizeof(struct PALink));
+    link->p = p;
+    return link;
     // link.p = PAPairPerformConstruct();
     // Link.p = PAPairPerformConstruct();
     // link = PALinkPerformInit(link,link.p);

@@ -13,8 +13,8 @@
 DllExport struct PAPair* PAPairCreate()
 {
     // struct PAPair pair;
-    struct PAPair* pairPointer;
-    pairPointer=(struct PAPair*) malloc(sizeof(struct PAPair));
+    struct PAPair* pair;
+    pair =(struct PAPair*) malloc(sizeof(struct PAPair));
     // struct PAPair* pairPointer;
     // pairPointer->Node = PAElementPerformConstruct();
     // pairPointer->Neigh = PAElementPerformConstruct();
@@ -23,7 +23,7 @@ DllExport struct PAPair* PAPairCreate()
     // pair.Node = PAElementPerformCopy(from)
     // return pairPointer;
     // return pair;
-    return pairPointer;
+    return pair;
 	// PAResult result;
 	// return result;
     //struct PAPair pair;

@@ -20,8 +20,8 @@
 */
 DllExport struct PASeries* PASeriesCreate() 
 {
-    struct PASeries* seriesPointer;
-    seriesPointer = (struct PASeries*) malloc (sizeof (struct PASeries));
+    struct PASeries* series;
+    series = (struct PASeries*) malloc (sizeof (struct PASeries));
     // seriesPointer->m = m;
     // seriesPointer->adj = adj;
     // seriesPointer->adj = &(adj[0]);
@@ -49,7 +49,7 @@ DllExport struct PASeries* PASeriesCreate()
     //     series.adj[iterator.val] = PAElementPerformConstruct();
     // } 
     // return series;
-    return seriesPointer;
+    return series;
 }
 DllExport struct PASeries* PASeriesCopy(struct PASeries* from, struct PASeries* to)
 {
