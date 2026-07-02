@@ -43,7 +43,6 @@ _PAElementBegin:                        ; @PAElementBegin
 	ldr	x0, [x8, #8]
 	ldur	x1, [x29, #-16]
 	mov	x2, #8                          ; =0x8
-	str	x2, [sp]                        ; 8-byte Folded Spill
 	mov	x3, #-1                         ; =0xffffffffffffffff
 	str	x3, [sp, #16]                   ; 8-byte Folded Spill
 	bl	___memcpy_chk
@@ -53,11 +52,11 @@ _PAElementBegin:                        ; @PAElementBegin
 	ldr	x0, [x8]
 	ldur	x1, [x29, #-24]
 	bl	___memcpy_chk
-	ldr	x2, [sp]                        ; 8-byte Folded Reload
 	ldr	x3, [sp, #16]                   ; 8-byte Folded Reload
 	ldr	x8, [sp, #24]
 	ldr	x0, [x8, #16]
 	ldr	x1, [sp, #32]
+	mov	x2, #4                          ; =0x4
 	bl	___memcpy_chk
 	ldr	x2, [sp, #8]                    ; 8-byte Folded Reload
 	ldr	x3, [sp, #16]                   ; 8-byte Folded Reload

@@ -6,13 +6,13 @@ _main:                                  ; @main
 	.cfi_startproc
 ; %bb.0:
 	stp	x28, x27, [sp, #-16]!           ; 16-byte Folded Spill
-	sub	sp, sp, #672
-	.cfi_def_cfa_offset 688
+	sub	sp, sp, #656
+	.cfi_def_cfa_offset 672
 	.cfi_offset w27, -8
 	.cfi_offset w28, -16
 	mov	w0, #0                          ; =0x0
-	str	wzr, [sp, #668]
-	add	sp, sp, #672
+	str	wzr, [sp, #652]
+	add	sp, sp, #656
 	ldp	x28, x27, [sp], #16             ; 16-byte Folded Reload
 	ret
 	.cfi_endproc

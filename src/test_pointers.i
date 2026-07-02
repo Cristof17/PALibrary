@@ -1603,7 +1603,8 @@ struct PAResource {
 
 };
 struct PAStatus {
- struct PAResource* visited;
+
+ PABool visited;
 };
 struct PAData {
  struct PAResource* Resource;
@@ -1675,7 +1676,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 272 "./include/types.h"
+# 273 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
