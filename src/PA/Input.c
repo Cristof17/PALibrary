@@ -63,6 +63,7 @@ DllExport struct PAInput* PAInputCopy(struct PAInput* from, struct PAInput* to)
 	// to->source = aux->source;
 	// aux = NULL;
 	free(aux);
+	return to;
 // 	// copy = PAInputPerformConstruct(Input.n,Input.m,Input.adj,Input.source);
 // 	// copy = PAInputPerformInit(Input);
 // //	copy.n=Input.n;

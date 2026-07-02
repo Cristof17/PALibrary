@@ -63,6 +63,7 @@ DllExport struct PATransposeTree* PATransposeTreeCopy(struct PATransposeTree* fr
     // aux->tree = from->tree;
     // to->tree = aux->tree;
     free(aux);
+    return to;
     // temp.
     // To->tree = temp->tree;
     // temp = *from;

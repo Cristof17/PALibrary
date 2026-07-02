@@ -93,6 +93,7 @@ DllExport struct PAPair* PAPairCopy(struct PAPair* from, struct PAPair* to)
     // to->Neigh = aux->Neigh;
     // to->Node = aux->Node;
     free(aux);
+    return to;
     // node = PAElementPerformConstruct();
     // neigh = PAElementPerformConstruct();
     // temp.Node = node;

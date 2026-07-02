@@ -67,6 +67,7 @@ DllExport struct PAList* PAListCopy(struct PAList* from, struct PAList* to)
     // aux->n = NULL;
     // aux->neigh = NULL;
     free(aux);
+    return to;
     // PAListDelete(aux);
     // PAListFinish(aux);
     // x.number.val = FIRST;

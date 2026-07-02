@@ -57,6 +57,7 @@ DllExport struct PANormalTree* PANormalTreeCopy(struct PANormalTree* from, struc
     // aux/.
     // aux->tree = NULL;
     free(aux);
+    return to;
     // PANormalTreeDelete(aux);
     // PANormalTreeDelete(aux);
 //     // struct PANormalTree

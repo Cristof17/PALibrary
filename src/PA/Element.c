@@ -99,6 +99,8 @@ DllExport struct PAElement* PAElementCopy(struct PAElement* from, struct PAEleme
     // aux->index = NULL;
     // aux->status = NULL;
     free(aux);
+    // return tp
+    return to;
     // PAElementDelete(aux);
     // PAElementFinish(aux);
     // struct PAElement temp;

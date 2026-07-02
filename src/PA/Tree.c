@@ -140,6 +140,9 @@ DllExport struct PATree* PATreeCopy(struct PATree* from, struct PATree* to)
     to->n = aux->n;
     to->m = aux->m;
     free(aux);
+    // return to/
+    // return t.
+    return to;
     // PAListCopy(&from->adj, &temp.adj);
     // temp.source = from->source;
     // to->n = temp->n;
