@@ -2051,7 +2051,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           struct PAElement* PAElementCreate();
-          struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, PAStatus Status);
+          struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus Status);
           struct PAElement* PAElementCopy(struct PAElement*, struct PAElement*);
           PAResult PAElementDelete(struct PAElement*);
           PAResult PAElementFinish(struct PAElement*);
@@ -2104,7 +2104,7 @@ struct PAElement* PAElementCreate()
 # 35 "src/PA/Element.c"
   return element;
 }
-          struct PAElement* PAElementBegin(struct PAElement* element,struct PAData* index, struct PAElement* next, PAStatus status)
+          struct PAElement* PAElementBegin(struct PAElement* element,struct PAData* index, struct PAElement* next, struct PAStatus status)
 {
 
 

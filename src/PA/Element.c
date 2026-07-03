@@ -34,7 +34,7 @@ struct PAElement* PAElementCreate()
   //  return element;
   return element;
 }
-DllExport struct PAElement* PAElementBegin(struct PAElement* element,struct PAData* index, struct PAElement* next, PAStatus status)
+DllExport struct PAElement* PAElementBegin(struct PAElement* element,struct PAData* index, struct PAElement* next, struct PAStatus status)
 {
     // struct PAElement temp;
 
