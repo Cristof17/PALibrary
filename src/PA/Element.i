@@ -1468,6 +1468,7 @@ extern char * suboptarg;
 typedef char* PANumber;
 
 typedef int PAInt;
+typedef int PAStatus ;
 
 
 typedef int PABool;
@@ -1475,7 +1476,7 @@ typedef int PAResult;
 
 
 struct ArrayListObject;
-# 37 "./include/types.h"
+# 38 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -1508,7 +1509,7 @@ struct PAData;
 struct PAValue;
 struct List;
 struct PAList;
-struct PAStatus;
+
 
 
 
@@ -1524,7 +1525,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 95 "./include/types.h"
+# 96 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -1570,7 +1571,7 @@ struct PrototypeClient;
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 155 "./include/types.h"
+# 156 "./include/types.h"
 struct Input {
  ;
 };
@@ -1607,10 +1608,10 @@ struct PAResource {
  struct PASize size;
 
 };
-struct PAStatus {
 
- PABool visited;
-};
+
+
+
 struct PAData {
  struct PAResource* Resource;
 
@@ -1620,7 +1621,7 @@ struct PAElement {
  struct PAElement* next;
  struct PAData* index;
 
- struct PAStatus* status;
+ PAStatus status;
 
 
 };
@@ -1681,7 +1682,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 273 "./include/types.h"
+# 274 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2050,7 +2051,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           struct PAElement* PAElementCreate();
-          struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus* status);
+          struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, PAStatus Status);
           struct PAElement* PAElementCopy(struct PAElement*, struct PAElement*);
           PAResult PAElementDelete(struct PAElement*);
           PAResult PAElementFinish(struct PAElement*);
@@ -2092,13 +2093,6 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 9 "./include/PA/Status.h" 2
-
-          struct PAStatus* PAStatusCreate();
-          struct PAStatus* PAStatusBegin(struct PAStatus*, struct PAResource*);
-          struct PAStatus* PAStatusCopy(struct PAStatus*, struct PAStatus*);
-          PAResult PAStatusDelete(struct PAStatus*);
-          PAResult PAStatusFinish(struct PAStatus*);
-          void PAStatusCauseVisit(PABool);
 # 9 "src/PA/Element.c" 2
 # 18 "src/PA/Element.c"
 struct PAElement* PAElementCreate()
@@ -2108,7 +2102,7 @@ struct PAElement* PAElementCreate()
 # 35 "src/PA/Element.c"
   return element;
 }
-          struct PAElement* PAElementBegin(struct PAElement* element,struct PAData* index, struct PAElement* next, struct PAStatus* status)
+          struct PAElement* PAElementBegin(struct PAElement* element,struct PAData* index, struct PAElement* next, PAStatus status)
 {
 
 
@@ -2116,7 +2110,7 @@ struct PAElement* PAElementCreate()
     aux =(struct PAElement*) malloc (sizeof(struct PAElement));
     __builtin___memcpy_chk (aux->index, index,sizeof(struct PAData), __builtin_object_size (aux->index, 0));
     __builtin___memcpy_chk (aux->next, next,sizeof(struct PAElement), __builtin_object_size (aux->next, 0));
-    __builtin___memcpy_chk (aux->status, status,sizeof(struct PAStatus), __builtin_object_size (aux->status, 0));
+
     __builtin___memcpy_chk (element, aux,sizeof(struct PAElement), __builtin_object_size (element, 0));
 # 66 "src/PA/Element.c"
     free(aux);

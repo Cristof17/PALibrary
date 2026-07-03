@@ -70,12 +70,12 @@ int main()
 	// printf("resource %d\n", resource123->value->val);
 	// printf("resource %d\n", resource234->value->val);
 
-	struct PAStatus *status;
-	struct PAStatus *status123;
-	status=PAStatusCreate();
-	status123=PAStatusCreate();
-	PAStatusBegin(status,resource123);
-	PAStatusCopy(status,status123);
+	// struct PAStatus *status;
+	// struct PAStatus *status123;
+	// status=PAStatusCreate();
+	// status123=PAStatusCreate();
+	// PAStatusBegin(status,resource123);
+	// PAStatusCopy(status,status123);
 	// printf("status value %d\n",status->visited->value->val);
 
 	struct PACount* count1;

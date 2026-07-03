@@ -1463,6 +1463,7 @@ extern char * suboptarg;
 typedef char* PANumber;
 
 typedef int PAInt;
+typedef int PAStatus ;
 
 
 typedef int PABool;
@@ -1470,7 +1471,7 @@ typedef int PAResult;
 
 
 struct ArrayListObject;
-# 37 "./include/types.h"
+# 38 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -1503,7 +1504,7 @@ struct PAData;
 struct PAValue;
 struct List;
 struct PAList;
-struct PAStatus;
+
 
 
 
@@ -1519,7 +1520,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 95 "./include/types.h"
+# 96 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -1565,7 +1566,7 @@ struct PrototypeClient;
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 155 "./include/types.h"
+# 156 "./include/types.h"
 struct Input {
  ;
 };
@@ -1602,10 +1603,10 @@ struct PAResource {
  struct PASize size;
 
 };
-struct PAStatus {
 
- PABool visited;
-};
+
+
+
 struct PAData {
  struct PAResource* Resource;
 
@@ -1615,7 +1616,7 @@ struct PAElement {
  struct PAElement* next;
  struct PAData* index;
 
- struct PAStatus* status;
+ PAStatus status;
 
 
 };
@@ -1676,7 +1677,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 273 "./include/types.h"
+# 274 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2367,13 +2368,6 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 9 "./include/PA/Status.h" 2
-
-          struct PAStatus* PAStatusCreate();
-          struct PAStatus* PAStatusBegin(struct PAStatus*, struct PAResource*);
-          struct PAStatus* PAStatusCopy(struct PAStatus*, struct PAStatus*);
-          PAResult PAStatusDelete(struct PAStatus*);
-          PAResult PAStatusFinish(struct PAStatus*);
-          void PAStatusCauseVisit(PABool);
 # 6 "test/test_pointers.c" 2
 # 1 "./include/PA/Series.h" 1
 # 15 "./include/PA/Series.h"
@@ -2465,7 +2459,7 @@ void PAListPrint(struct PAList* List);
 
 
           struct PAElement* PAElementCreate();
-          struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus* status);
+          struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, PAStatus Status);
           struct PAElement* PAElementCopy(struct PAElement*, struct PAElement*);
           PAResult PAElementDelete(struct PAElement*);
           PAResult PAElementFinish(struct PAElement*);
@@ -2485,15 +2479,7 @@ int main()
 
  struct PAResource* resource123;
  struct PAResource* resource234;
-# 73 "test/test_pointers.c"
- struct PAStatus *status;
- struct PAStatus *status123;
- status=PAStatusCreate();
- status123=PAStatusCreate();
- PAStatusBegin(status,resource123);
- PAStatusCopy(status,status123);
-
-
+# 81 "test/test_pointers.c"
  struct PACount* count1;
 
 

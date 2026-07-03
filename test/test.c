@@ -44,8 +44,8 @@ int main()
 	// data124 = PADataPerformCopy(data123,data124);
 	// printf("copy padata %d from %d\n", data123.Resource.value.val, data124.Resource.value.val);
 
-	struct PAStatus status1;
-	struct PAStatus status2;
+	// struct PAStatus status1;
+	// struct PAStatus status2;
 	// status2 = PAStatusPerformCopy(status1, status2);
 	// printf("copy from status %d %d\n", status1.visited.value.val, status2.visited.value.val);
 
@@ -90,8 +90,8 @@ int main()
 	// number456 = PANumberPerformCopy(number345,number456);
 	// printf("forst number %d %d \n|", number345.val/*.*/,number456.val);
 
-	struct PAStatus status123;
-	struct PAStatus status456;
+	// struct PAStatus status123;
+	// struct PAStatus status456;
 	// struct PAStatus
 	// status456 = PAStatusPerformCopy(ssattus)
 	// statuc
@@ -123,7 +123,7 @@ int main()
 	// printf("testing tree %d\n", tree.n.number.val);
 	// struct PASeries pa = PASeriesPerformConstruct();
 	// printf("testing series number:%d\n",pa.m.number.val);
-	struct PAStatus status;
+	// struct PAStatus status;
 	// status = PAStatusPerformConstruct();
 	struct PAElement element;
 	// element = PAElementPerformConstruct();

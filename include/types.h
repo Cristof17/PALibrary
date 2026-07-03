@@ -18,6 +18,7 @@ typedef int ArrayListObject;
 typedef char* PANumber;
 // struct PANumber;
 typedef int PAInt;
+typedef int PAStatus ;
 //#define PAInt int
 // typedef int PAResource;
 typedef int PABool;
@@ -66,7 +67,7 @@ struct PAData;
 struct PAValue;
 struct List;
 struct PAList;
-struct PAStatus;
+// struct PAStatus;
 // struct PAFeature;
 // struct PAValue;
 // struct PADestination;
@@ -188,10 +189,10 @@ struct PAResource {
 	struct PASize size;
 	// PADDING_1_BYTE(0);
 };
-struct PAStatus {
-	// struct PAResource* visited;
-	PABool visited;
-};
+// struct PAStatus {
+// 	// struct PAResource* visited;
+// 	PABool visited;
+// };
 struct PAData {
 	struct PAResource* Resource;
 	// PADDING_1_BYTE(0);
@@ -201,7 +202,7 @@ struct PAElement {
 	struct PAElement* next;
 	struct PAData* index;
 	// struct PADestination Next;
-	struct PAStatus* status;
+	PAStatus status;
 	// struct PAFeature type;
 	// PADDING_1_BYTE(0);
 };

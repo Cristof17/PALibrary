@@ -34,7 +34,7 @@ struct PAElement* PAElementCreate()
   //  return element;
   return element;
 }
-DllExport struct PAElement* PAElementBegin(struct PAElement* element,struct PAData* index, struct PAElement* next, struct PAStatus* status)
+DllExport struct PAElement* PAElementBegin(struct PAElement* element,struct PAData* index, struct PAElement* next, PAStatus status)
 {
     // struct PAElement temp;
 
@@ -42,7 +42,7 @@ DllExport struct PAElement* PAElementBegin(struct PAElement* element,struct PADa
     aux =(struct PAElement*) malloc (sizeof(struct PAElement));
     memcpy(aux->index,index,sizeof(struct PAData));
     memcpy(aux->next,next,sizeof(struct PAElement));
-    memcpy(aux->status,status,sizeof(struct PAStatus));
+    // memcpy(aux->status,status,sizeof(struct PAStatus));
     memcpy(element,aux,sizeof(struct PAElement));
     // elementPointer->index = element->index;
     // elementPointer->next = element->next;
