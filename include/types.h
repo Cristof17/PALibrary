@@ -189,10 +189,10 @@ struct PAResource {
 	struct PASize size;
 	// PADDING_1_BYTE(0);
 };
-// struct PAStatus {
-// 	// struct PAResource* visited;
-// 	PABool visited;
-// };
+struct PAStatus {
+	// struct PAResource* visited;
+	PABool visited;
+};
 struct PAData {
 	struct PAResource* Resource;
 	// PADDING_1_BYTE(0);

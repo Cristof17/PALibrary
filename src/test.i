@@ -1464,11 +1464,11 @@ extern char * suboptarg;
 typedef char* PANumber;
 
 typedef int PAInt;
-typedef int PABool;
-typedef PABool PAStatus ;
-
-
 typedef int PAResult;
+typedef int PABool;
+typedef PABool PAStatus;
+
+
 
 
 struct ArrayListObject;
@@ -1604,10 +1604,10 @@ struct PAResource {
  struct PASize size;
 
 };
+struct PAStatus {
 
-
-
-
+ PABool visited;
+};
 struct PAData {
  struct PAResource* Resource;
 
@@ -2491,6 +2491,14 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 9 "./include/PA/Status.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 10 "./include/PA/Status.h" 2
+
+          struct PAStatus* PAStatusCreate();
+          struct PAStatus* PAStatusBegin(struct PAStatus*, PABool);
+          struct PAStatus* PAStatusCopy(struct PAStatus*, struct PAStatus*);
+          PAResult PAStatusDelete(struct PAStatus*);
+          PAResult PAStatusFinish(struct PAStatus*);
 # 12 "test/test.c" 2
 # 1 "./include/PA/TransposeTree.h" 1
 

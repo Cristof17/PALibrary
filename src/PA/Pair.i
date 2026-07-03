@@ -1468,11 +1468,11 @@ extern char * suboptarg;
 typedef char* PANumber;
 
 typedef int PAInt;
-typedef int PABool;
-typedef PABool PAStatus ;
-
-
 typedef int PAResult;
+typedef int PABool;
+typedef PABool PAStatus;
+
+
 
 
 struct ArrayListObject;
@@ -1608,10 +1608,10 @@ struct PAResource {
  struct PASize size;
 
 };
+struct PAStatus {
 
-
-
-
+ PABool visited;
+};
 struct PAData {
  struct PAResource* Resource;
 

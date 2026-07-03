@@ -1,21 +1,21 @@
 // //@Author Cristofor Rotsching
 
-// // #include <defs.h>
+// #include <defs.h>
 
-// #ifndef _WIN95
-// #include <PA/Status.h>
-// #include <PA/Resource.h>
-// #elif defined _WIN95
-// #include <PA\Status.h>
-// #include <PA\Resource.h>
-// #endif
+#ifndef _WIN95
+#include <PA/Status.h>
+#include <PA/Resource.h>
+#elif defined _WIN95
+#include <PA\Status.h>
+#include <PA\Resource.h>
+#endif
 // DllExport void PAStatusCause(PABool visited)
 // {
 
 // }
-// DllExport struct PAStatus* PAStatusCreate()
-// {
-//     struct PAStatus status;
+DllExport struct PAStatus* PAStatusCreate()
+{
+    struct PAStatus* status;
 //     // struct PAResource resource;
 //     // struct PAResource* resourcePointer;
 //     // resourcePointer = PAResourceCreate();
@@ -26,14 +26,14 @@
 //     // return status;
 //     // return status;
 //     struct PAStatus* statusPointer;
-//     statusPointer=(struct PAStatus*)malloc(sizeof(struct PAStatus));
+    status = (struct PAStatus*)malloc(sizeof(struct PAStatus));
 //     // statusPointer->visited = PAResourceCreate();
-//     return statusPointer;
-// }
-// DllExport struct PAStatus* PAStatusBegin(struct PAStatus* Status, struct PAResource* Value)
-// {
+    return status;
+}
+DllExport struct PAStatus* PAStatusBegin(struct PAStatus* Status, PABool Value)
+{
 //     struct PAStatus temp;
-//     struct PAStatus* statusPointer;
+    struct PAStatus* statusPointer;
 //     temp = *Status;
 //     // statusPointer->visited = Value;
 //     temp.visited = Value;
@@ -43,17 +43,20 @@
 //     // return temp;
 //     // Status.visited = Value;
 //     // return Status;
-//     return Status;
-// }
-// DllExport void PAStatusCopy(struct PAStatus* from, struct PAStatus* to)
-// {
+    return Status;
+}
+DllExport struct PAStatus* PAStatusCopy(struct PAStatus* from, struct PAStatus* to)
+{
 //     // PAStatusDelete(to);
 
 //     // PAStatusDelete(to);
-//     struct PAStatus* aux;
+    struct PAStatus* aux;
 //     // temp = PAStatusCreate();
-//     aux = (struct PAStatus*) malloc (sizeof(struct PAStatus));
-//     aux->visited = from->visited;
+    aux = (struct PAStatus*) malloc (sizeof(struct PAStatus));
+    // memcpy(aux,status,sizeof(struct PAStatus));
+    memcpy(aux,from,sizeof(struct PAStatus));
+    memcpy(to,aux,sizeof(struct PAStatus));
+    // aux->visited = from->visited;
 //     to->visited = aux->visited;
 //     free(aux);
 //     // temp->visited = from->visited;
@@ -73,7 +76,9 @@
 //     // temp.visited = PAResourcePerformCopy(from.visited, to.visited);
 //     // to.visited = temp.visited;
 //     // return to;
-// }
+    free(aux);
+    return to;
+}
 // // DllExport int PAStatusDelete(struct PAStatus* PA)
 // // {
 // //     int returnCode;
@@ -132,4 +137,4 @@
 // // {
 // //     struct PAResult result;
 // //     return result;
-// // }
+// }
