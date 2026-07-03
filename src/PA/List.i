@@ -1611,7 +1611,7 @@ struct PAResource {
 };
 struct PAStatus {
 
- PABool visited;
+ PABool Visited;
 };
 struct PAData {
  struct PAResource* Resource;
