@@ -8,11 +8,11 @@
 #include <stdlib.h>
 #include <string.h>
 // #include <PA/Feature.h>
-DllExport struct PAStatus* PAStatusCreate();
-DllExport struct PAStatus* PAStatusBegin(struct PAStatus*, PABool);
-DllExport struct PAStatus* PAStatusCopy(struct PAStatus*, struct PAStatus*);
-DllExport PAResult PAStatusDelete(struct PAStatus*);
-DllExport PAResult PAStatusFinish(struct PAStatus*);
+// DllExport struct PAStatus* PAStatusCreate();
+// DllExport struct PAStatus* PAStatusBegin(struct PAStatus*, PABool);
+// DllExport struct PAStatus* PAStatusCopy(struct PAStatus*, struct PAStatus*);
+// DllExport PAResult PAStatusDelete(struct PAStatus*);
+// DllExport PAResult PAStatusFinish(struct PAStatus*);
 // DllExport void PAStatusCauseVisit(PABool);
 // DllExport int PAStatusFinish(struct PAStatus);
 // struct PAStatus/*.*/;

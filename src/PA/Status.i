@@ -2048,12 +2048,6 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 10 "./include/PA/Status.h" 2
-
-          struct PAStatus* PAStatusCreate();
-          struct PAStatus* PAStatusBegin(struct PAStatus*, PABool);
-          struct PAStatus* PAStatusCopy(struct PAStatus*, struct PAStatus*);
-          PAResult PAStatusDelete(struct PAStatus*);
-          PAResult PAStatusFinish(struct PAStatus*);
 # 7 "src/PA/Status.c" 2
 # 1 "./include/PA/Resource.h" 1
 
@@ -2065,40 +2059,3 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 7 "./include/PA/Resource.h" 2
 # 8 "src/PA/Status.c" 2
 
-
-
-
-
-
-
-
-          struct PAStatus* PAStatusCreate()
-{
-    struct PAStatus* status;
-# 29 "src/PA/Status.c"
-    status = (struct PAStatus*)malloc(sizeof(struct PAStatus));
-
-    return status;
-}
-          struct PAStatus* PAStatusBegin(struct PAStatus* Status, PABool Value)
-{
-
-    struct PAStatus* statusPointer;
-# 46 "src/PA/Status.c"
-    return Status;
-}
-          struct PAStatus* PAStatusCopy(struct PAStatus* from, struct PAStatus* to)
-{
-
-
-
-    struct PAStatus* aux;
-
-    aux = (struct PAStatus*) malloc (sizeof(struct PAStatus));
-
-    __builtin___memcpy_chk (aux, from,sizeof(struct PAStatus), __builtin_object_size (aux, 0));
-    __builtin___memcpy_chk (to, aux,sizeof(struct PAStatus), __builtin_object_size (to, 0));
-# 79 "src/PA/Status.c"
-    free(aux);
-    return to;
-}

@@ -2095,12 +2095,6 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 9 "./include/PA/Status.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 10 "./include/PA/Status.h" 2
-
-          struct PAStatus* PAStatusCreate();
-          struct PAStatus* PAStatusBegin(struct PAStatus*, PABool);
-          struct PAStatus* PAStatusCopy(struct PAStatus*, struct PAStatus*);
-          PAResult PAStatusDelete(struct PAStatus*);
-          PAResult PAStatusFinish(struct PAStatus*);
 # 9 "src/PA/Element.c" 2
 # 18 "src/PA/Element.c"
 struct PAElement* PAElementCreate()

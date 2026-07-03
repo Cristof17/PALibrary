@@ -2370,12 +2370,6 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 9 "./include/PA/Status.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 10 "./include/PA/Status.h" 2
-
-          struct PAStatus* PAStatusCreate();
-          struct PAStatus* PAStatusBegin(struct PAStatus*, PABool);
-          struct PAStatus* PAStatusCopy(struct PAStatus*, struct PAStatus*);
-          PAResult PAStatusDelete(struct PAStatus*);
-          PAResult PAStatusFinish(struct PAStatus*);
 # 6 "test/test_pointers.c" 2
 # 1 "./include/PA/Series.h" 1
 # 15 "./include/PA/Series.h"
