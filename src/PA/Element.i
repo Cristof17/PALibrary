@@ -2110,7 +2110,7 @@ struct PAElement* PAElementCreate()
     aux =(struct PAElement*) malloc (sizeof(struct PAElement));
     __builtin___memcpy_chk (aux->index, index,sizeof(struct PAData), __builtin_object_size (aux->index, 0));
     __builtin___memcpy_chk (aux->next, next,sizeof(struct PAElement), __builtin_object_size (aux->next, 0));
-
+    __builtin___memcpy_chk (&aux->status, &status,sizeof(PAStatus), __builtin_object_size (&aux->status, 0));
     __builtin___memcpy_chk (element, aux,sizeof(struct PAElement), __builtin_object_size (element, 0));
 # 66 "src/PA/Element.c"
     free(aux);
