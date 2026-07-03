@@ -71,7 +71,7 @@ struct PAList;
 // struct PAFeature;
 // struct PAValue;
 // struct PADestination;
-// struct PAStatus/*.*/;
+struct PAStatus/*.*/;
 // struct PAPair;struct PAPair;
 struct PAElement;
 struct PADestination;
