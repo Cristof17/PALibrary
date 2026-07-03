@@ -1458,10 +1458,10 @@ extern char * suboptarg;
 typedef char* PANumber;
 
 typedef int PAInt;
-typedef int PAStatus ;
-
-
 typedef int PABool;
+typedef PABool PAStatus ;
+
+
 typedef int PAResult;
 
 

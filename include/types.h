@@ -18,10 +18,10 @@ typedef int ArrayListObject;
 typedef char* PANumber;
 // struct PANumber;
 typedef int PAInt;
-typedef int PAStatus ;
+typedef int PABool;
+typedef PABool PAStatus ;
 //#define PAInt int
 // typedef int PAResource;
-typedef int PABool;
 typedef int PAResult;
 // typedef int ArrayListSize;
 // typedef int ArrayListObject;
