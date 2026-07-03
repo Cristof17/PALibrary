@@ -2105,7 +2105,7 @@ void PAListPrint(struct PAList* List);
           struct BFSRecord* BFSRecordBegin(struct BFSRecord*, struct PAList* d, struct PACount* n);
           struct BFSRecord* BFSRecordCopy(struct BFSRecord* from, struct BFSRecord* to);
 
-          int BFSRecordDelete(struct BFSRecord*);
+          struct BFSRecord BFSRecordDelete(struct BFSRecord*);
           int BFSRecordFinish(struct BFSRecord*);
           void BFSRecordPrint(struct BFSRecord*);
 # 10 "src/BFS/Record.c" 2
@@ -2129,10 +2129,10 @@ void PAListPrint(struct PAList* List);
     free(PA);
     return ((int)0);
 }
-          int BFSRecordDelete(struct BFSRecord* PA)
+          struct BFSRecord BFSRecordDelete(struct BFSRecord* PA)
 {
     struct BFSRecord record;
-
+    return record;
 }
           void BFSRecordPrint(struct BFSRecord* PA)
 {

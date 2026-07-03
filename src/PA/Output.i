@@ -2072,7 +2072,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           struct BFSRecord* BFSRecordBegin(struct BFSRecord*, struct PAList* d, struct PACount* n);
           struct BFSRecord* BFSRecordCopy(struct BFSRecord* from, struct BFSRecord* to);
 
-          int BFSRecordDelete(struct BFSRecord*);
+          struct BFSRecord BFSRecordDelete(struct BFSRecord*);
           int BFSRecordFinish(struct BFSRecord*);
           void BFSRecordPrint(struct BFSRecord*);
 # 7 "src/PA/Output.c" 2

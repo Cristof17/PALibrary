@@ -9,7 +9,7 @@ DllExport struct BFSRecord* BFSRecordCreate();
 DllExport struct BFSRecord* BFSRecordBegin(struct BFSRecord*, struct PAList* d, struct PACount* n);
 DllExport struct BFSRecord* BFSRecordCopy(struct BFSRecord* from, struct BFSRecord* to);
 // void BFSRecordDestroy();
-DllExport int BFSRecordDelete(struct BFSRecord*);
+DllExport struct BFSRecord BFSRecordDelete(struct BFSRecord*);
 DllExport int BFSRecordFinish(struct BFSRecord*);
 DllExport void BFSRecordPrint(struct BFSRecord*);
 // DllExport struct BFSRecord BFSRecordPutList(struct BFSRecord, struct PAList);

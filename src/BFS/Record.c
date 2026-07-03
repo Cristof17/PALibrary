@@ -27,10 +27,10 @@ DllExport int BFSRecordFinish(struct BFSRecord* PA)
     free(PA);
     return PARESULT_SUCCESS;
 }
-DllExport int BFSRecordDelete(struct BFSRecord* PA)
+DllExport struct BFSRecord BFSRecordDelete(struct BFSRecord* PA)
 {
     struct BFSRecord record;
-    // return record;
+    return record;
 }
 DllExport void BFSRecordPrint(struct BFSRecord* PA)
 {
