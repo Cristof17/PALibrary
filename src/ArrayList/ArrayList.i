@@ -1502,7 +1502,7 @@ struct PAList;
 
 
 
-
+struct PAStatus ;
 
 struct PAElement;
 struct PADestination;
