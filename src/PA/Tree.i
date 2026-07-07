@@ -1,20 +1,28 @@
-# 1 "src/BFS/Procedure.c"
+# 1 "src/PA/Tree.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/BFS/Procedure.c" 2
+# 1 "src/PA/Tree.c" 2
 
 
-# 1 "./include/types.h" 1
+# 1 "./include/PA/Tree.h" 1
+
 
 
 
 
 
 # 1 "./include/defs.h" 1
-# 7 "./include/types.h" 2
+# 8 "./include/PA/Tree.h" 2
+# 1 "./include/types.h" 1
+
+
+
+
+
+
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 1 3 4
@@ -1835,59 +1843,7 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 4 "src/BFS/Procedure.c" 2
-# 1 "./include/Algorithm.h" 1
-
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 10 "./include/Algorithm.h" 2
-# 1 "./include/Input.h" 1
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 8 "./include/Input.h" 2
-
-
-
-
-
-          struct Input* InputCreate();
-          struct Input InputCopy(struct Input*, struct Input*);
-          struct Input InputDelete(struct Input*);
-          int InputFinish(struct Input*);
-
-          void InputDispose();
-# 11 "./include/Algorithm.h" 2
-
-
-          struct Algorithm* AlgorithmCreate();
-          int AlgorithmFinish(struct Algorithm*);
-          struct Algorithm AlgorithmDelete(struct Algorithm*);
-          struct Algorithm AlgorithmCopy(struct Algorithm* from, struct Algorithm* to);
-          struct Output AlgorithmPerformRun(struct Input);
-# 5 "src/BFS/Procedure.c" 2
-
-
-
-# 1 "./include/PA/Tree.h" 1
-
-
-
-
-
-
-
-
+# 9 "./include/PA/Tree.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 10 "./include/PA/Tree.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
@@ -2104,7 +2060,33 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           int PATreeDelete(struct PATree*);
           int PATreeFinish(struct PATree*);
-# 9 "src/BFS/Procedure.c" 2
+# 4 "src/PA/Tree.c" 2
+# 1 "./include/PA/Count.h" 1
+
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/PA/Count.h" 2
+
+
+
+
+
+          struct PACount* PACountCreate();
+          struct PACount* PACountBegin(struct PACount*, PAInt);
+          struct PACount* PACountCopy(struct PACount* from, struct PACount* to);
+
+
+
+          PAResult PACountFinish(struct PACount*);
+
+
+          PAResult PACountDelete(struct PACount* PA);
+# 5 "src/PA/Tree.c" 2
 # 1 "./include/PA/Element.h" 1
 
 
@@ -2127,26 +2109,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           void PAElementVisit(struct PAElement*);
           PABool PAElementIsVisited(struct PAElement*);
           void PAElementReset(struct PAElement*);
-# 10 "src/BFS/Procedure.c" 2
-# 1 "./include/BFS/Procedure.h" 1
-
-
-
-
-
-
-
-          PAResult BFS();
-          struct BFSProcedure BFSProcedureConstruct(struct PAInput);
-          struct BFSProcedure BFSProcedurePutInput(struct BFSProcedure, struct PAInput);
-
-
-
-          PAResult BFSProcedureRuin();
-          PAResult BFSProcedureSubroutine();
-# 11 "src/BFS/Procedure.c" 2
-
-# 1 "./include/PA/Input.h" 1
+# 6 "src/PA/Tree.c" 2
+# 1 "./include/PA/List.h" 1
 
 
 
@@ -2155,57 +2119,89 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Input.h" 2
+# 9 "./include/PA/List.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
-# 10 "./include/PA/Input.h" 2
+# 10 "./include/PA/List.h" 2
 
 
 
-          struct PAInput* PAInputCreate();
 
-          struct PAInput* PAInputBegin(struct PAInput* PA, struct PACount* N, struct PACount* M, struct PAElement* Source, struct PASeries* Series);
-
-
-          struct PAInput* PAInputCopy(struct PAInput* from, struct PAInput* to);
+          struct PAList* PAListCreate();
 
 
+          struct PAList* PAListBegin(struct PAList* list, struct PACount* N, struct ArrayList* adj);
 
-          PAResult PAInputDelete(struct PAInput*);
-          PAResult PAInputFinish(struct PAInput*);
-# 13 "src/BFS/Procedure.c" 2
-# 26 "src/BFS/Procedure.c"
-PAResult BFS()
+
+
+          struct PAList* PAListCopy(struct PAList*, struct PAList*);
+          PAResult PAListDelete(struct PAList*);
+          PAResult PAListFinish(struct PAList*);
+
+void PAListPrint(struct PAList* List);
+# 7 "src/PA/Tree.c" 2
+# 19 "src/PA/Tree.c"
+          struct PATree* PATreeCreate()
 {
-    PAResult result;
-    return result;
 
+    struct PATree* tree;
+    tree = (struct PATree*) malloc (sizeof(struct PATree));
+# 77 "src/PA/Tree.c"
+    return tree;
 
 }
-struct BFSProcedure BFSProcedureConstruct(struct PAInput Input)
+          struct PATree* PATreeBegin(struct PATree* tree, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source)
+{
 
-{
-    struct BFSProcedure procedure;
-    return procedure;
-}
+    struct PATree* aux;
+    aux = (struct PATree*) malloc (sizeof(struct PATree));
 
-struct BFSProcedure BFSProcedurePutTree(struct BFSProcedure Procedure, struct PATree Tree)
-{
-    struct BFSProcedure procedure;
-    return procedure;
+    __builtin___memcpy_chk (aux->n, N,sizeof(struct PACount), __builtin_object_size (aux->n, 0));
+    __builtin___memcpy_chk (aux->m, M,sizeof(struct PACount), __builtin_object_size (aux->m, 0));
+    __builtin___memcpy_chk (aux->adj, adj,sizeof(struct PASeries), __builtin_object_size (aux->adj, 0));
+    __builtin___memcpy_chk (aux->source, source,sizeof(struct PAElement), __builtin_object_size (aux->source, 0));
+    __builtin___memcpy_chk (tree, aux,sizeof(struct PATree), __builtin_object_size (tree, 0));
+# 123 "src/PA/Tree.c"
+    return tree;
 }
-struct BFSProcedure BFSProcedurePutInput(struct BFSProcedure Procedure, struct PAInput Input)
+# 134 "src/PA/Tree.c"
+          struct PATree* PATreeCopy(struct PATree* from, struct PATree* to)
 {
-    struct BFSProcedure procedure;
-    return procedure;
-}
+    struct PATree* aux;
+    aux = (struct PATree*) malloc (sizeof(struct PATree));
+    aux->n = from->n;
+    aux->m = from->m;
+    to->n = aux->n;
+    to->m = aux->m;
+    free(aux);
 
-PAResult BFSProcedureRuin()
-{
-    PAResult result;
-    return result;
+
+    return to;
+# 163 "src/PA/Tree.c"
 }
-PAResult BFSProcedureSubroutine()
+          PAResult PATreeDelete(struct PATree* PA)
 {
-    PAResult result;
-    return result;
+    int returnCode;
+    struct PATree tree;
+
+
+
+
+    __builtin___memset_chk(PA, 0, sizeof(struct PATree), __builtin_object_size (PA, 0));
+    returnCode = ((int)0);
+
+
+
+
+
+
+    return returnCode;
+
+}
+          PAResult PATreeFinish(struct PATree* PA)
+{
+    int returnCode;
+    free(PA);
+    returnCode = ((int)0);
+# 239 "src/PA/Tree.c"
+    return returnCode;
 }

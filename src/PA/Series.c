@@ -112,14 +112,14 @@ DllExport struct PASeries* PASeriesCopy(struct PASeries* from, struct PASeries* 
 // }
 // }
 // DllExport struct PASeries* PASeriesBegin(struct PASeries* series, struct PACCoun)
-DllExport struct PASeries* PASeriesBegin(struct PASeries* series, struct PACount* M, struct ArrayList* List)
+DllExport struct PASeries* PASeriesBegin(struct PASeries* series, struct PACount* M, struct PAElement* List)
     {
         struct PASeries* aux;
 
         aux = (struct PASeries*) malloc (sizeof(struct PASeries));
         // seriesPointer->m = series->m;
         memcpy(aux->m, M, sizeof(struct PACount));
-        memcpy(aux->adj,List,sizeof(struct ArrayList));
+        memcpy(aux->neigh,List,sizeof(struct PAElement));
         memcpy(series,aux,sizeof(struct PASeries));
         // seriesPointer->adj = &series->adj[0];
         // PAResult result;

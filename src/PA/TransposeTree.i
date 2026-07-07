@@ -1,20 +1,32 @@
-# 1 "src/BFS/Procedure.c"
+# 1 "src/PA/TransposeTree.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/BFS/Procedure.c" 2
+# 1 "src/PA/TransposeTree.c" 2
 
 
-# 1 "./include/types.h" 1
+
+
+
+
+
+# 1 "./include/PA/TransposeTree.h" 1
 
 
 
 
 
 # 1 "./include/defs.h" 1
-# 7 "./include/types.h" 2
+# 7 "./include/PA/TransposeTree.h" 2
+# 1 "./include/types.h" 1
+
+
+
+
+
+
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 1 3 4
@@ -1835,61 +1847,9 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 4 "src/BFS/Procedure.c" 2
-# 1 "./include/Algorithm.h" 1
-
-
-
-
-
-
-
-
+# 8 "./include/PA/TransposeTree.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 10 "./include/Algorithm.h" 2
-# 1 "./include/Input.h" 1
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 8 "./include/Input.h" 2
-
-
-
-
-
-          struct Input* InputCreate();
-          struct Input InputCopy(struct Input*, struct Input*);
-          struct Input InputDelete(struct Input*);
-          int InputFinish(struct Input*);
-
-          void InputDispose();
-# 11 "./include/Algorithm.h" 2
-
-
-          struct Algorithm* AlgorithmCreate();
-          int AlgorithmFinish(struct Algorithm*);
-          struct Algorithm AlgorithmDelete(struct Algorithm*);
-          struct Algorithm AlgorithmCopy(struct Algorithm* from, struct Algorithm* to);
-          struct Output AlgorithmPerformRun(struct Input);
-# 5 "src/BFS/Procedure.c" 2
-
-
-
-# 1 "./include/PA/Tree.h" 1
-
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 10 "./include/PA/Tree.h" 2
+# 9 "./include/PA/TransposeTree.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 1 3 4
@@ -2089,6 +2049,29 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 2 3 4
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
+# 10 "./include/PA/TransposeTree.h" 2
+
+
+
+          struct PATransposeTree* PATransposeTreeCreate();
+          struct PATransposeTree* PATransposeTreeBegin(struct PATransposeTree*, struct PATree*);
+          struct PATransposeTree* PATransposeTreeCopy(struct PATransposeTree*, struct PATransposeTree*);
+
+          PAResult PATransposeTreeDelete(struct PATransposeTree*);
+          PAResult PATransposeTreeFinish(struct PATransposeTree*);
+# 9 "src/PA/TransposeTree.c" 2
+# 1 "./include/PA/Tree.h" 1
+
+
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 10 "./include/PA/Tree.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 11 "./include/PA/Tree.h" 2
 
 
@@ -2104,108 +2087,75 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           int PATreeDelete(struct PATree*);
           int PATreeFinish(struct PATree*);
-# 9 "src/BFS/Procedure.c" 2
-# 1 "./include/PA/Element.h" 1
+# 10 "src/PA/TransposeTree.c" 2
 
 
 
 
 
 
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Element.h" 2
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
-# 10 "./include/PA/Element.h" 2
-
-
-          struct PAElement* PAElementCreate();
-          struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus Status);
-          struct PAElement* PAElementCopy(struct PAElement*, struct PAElement*);
-          PAResult PAElementDelete(struct PAElement*);
-          PAResult PAElementFinish(struct PAElement*);
-          void PAElementVisit(struct PAElement*);
-          PABool PAElementIsVisited(struct PAElement*);
-          void PAElementReset(struct PAElement*);
-# 10 "src/BFS/Procedure.c" 2
-# 1 "./include/BFS/Procedure.h" 1
-
-
-
-
-
-
-
-          PAResult BFS();
-          struct BFSProcedure BFSProcedureConstruct(struct PAInput);
-          struct BFSProcedure BFSProcedurePutInput(struct BFSProcedure, struct PAInput);
-
-
-
-          PAResult BFSProcedureRuin();
-          PAResult BFSProcedureSubroutine();
-# 11 "src/BFS/Procedure.c" 2
-
-# 1 "./include/PA/Input.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Input.h" 2
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
-# 10 "./include/PA/Input.h" 2
-
-
-
-          struct PAInput* PAInputCreate();
-
-          struct PAInput* PAInputBegin(struct PAInput* PA, struct PACount* N, struct PACount* M, struct PAElement* Source, struct PASeries* Series);
-
-
-          struct PAInput* PAInputCopy(struct PAInput* from, struct PAInput* to);
-
-
-
-          PAResult PAInputDelete(struct PAInput*);
-          PAResult PAInputFinish(struct PAInput*);
-# 13 "src/BFS/Procedure.c" 2
-# 26 "src/BFS/Procedure.c"
-PAResult BFS()
+          struct PATransposeTree* PATransposeTreeCreate()
 {
-    PAResult result;
-    return result;
+    struct PATransposeTree* transposeTree;
+
+    transposeTree = (struct PATransposeTree*) malloc(sizeof(struct PATransposeTree));
+
+
+
+    return transposeTree;
+
 
 
 }
-struct BFSProcedure BFSProcedureConstruct(struct PAInput Input)
 
+          struct PATransposeTree* PATransposeTreeBegin(struct PATransposeTree* TransposeTree, struct PATree* Value)
 {
-    struct BFSProcedure procedure;
-    return procedure;
-}
+    struct PATransposeTree* aux;
 
-struct BFSProcedure BFSProcedurePutTree(struct BFSProcedure Procedure, struct PATree Tree)
-{
-    struct BFSProcedure procedure;
-    return procedure;
-}
-struct BFSProcedure BFSProcedurePutInput(struct BFSProcedure Procedure, struct PAInput Input)
-{
-    struct BFSProcedure procedure;
-    return procedure;
-}
 
-PAResult BFSProcedureRuin()
-{
-    PAResult result;
-    return result;
+    aux = (struct PATransposeTree*) malloc (sizeof(struct PATransposeTree));
+    __builtin___memcpy_chk (aux->tree, Value,sizeof(struct PATree), __builtin_object_size (aux->tree, 0));
+    __builtin___memcpy_chk (aux, TransposeTree,sizeof(struct PATransposeTree), __builtin_object_size (aux, 0));
+# 53 "src/PA/TransposeTree.c"
+    return TransposeTree;
+
 }
-PAResult BFSProcedureSubroutine()
+          struct PATransposeTree* PATransposeTreeCopy(struct PATransposeTree* from, struct PATransposeTree* to)
 {
-    PAResult result;
-    return result;
+
+    struct PATransposeTree* aux;
+    aux = (struct PATransposeTree*) malloc (sizeof(struct PATransposeTree));
+    __builtin___memcpy_chk (aux, from,sizeof(struct PATransposeTree), __builtin_object_size (aux, 0));
+    __builtin___memcpy_chk (to, aux,sizeof(struct PATransposeTree), __builtin_object_size (to, 0));
+
+
+    free(aux);
+    return to;
+# 76 "src/PA/TransposeTree.c"
+}
+# 86 "src/PA/TransposeTree.c"
+          PAResult PATransposeTreeDelete(struct PATransposeTree* PA)
+{
+
+
+    int returnCode;
+    returnCode = ((int)0);
+
+    __builtin___memset_chk(PA, 0, sizeof(struct PATransposeTree), __builtin_object_size (PA, 0));
+
+
+    return returnCode;
+
+
+
+}
+          PAResult PATransposeTreeFinish(struct PATransposeTree* PA)
+{
+    int returnCode;
+    free(PA);
+    returnCode = ((int)0);
+
+
+
+    return returnCode;
 }

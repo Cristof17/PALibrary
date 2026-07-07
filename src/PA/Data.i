@@ -1,10 +1,17 @@
-# 1 "src/BFS/Procedure.c"
+# 1 "src/PA/Data.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/BFS/Procedure.c" 2
+# 1 "src/PA/Data.c" 2
+
+
+# 1 "./include/PA/Data.h" 1
+
+
+
+
 
 
 # 1 "./include/types.h" 1
@@ -1835,61 +1842,10 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 4 "src/BFS/Procedure.c" 2
-# 1 "./include/Algorithm.h" 1
-
-
-
-
-
-
-
+# 8 "./include/PA/Data.h" 2
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 10 "./include/Algorithm.h" 2
-# 1 "./include/Input.h" 1
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 8 "./include/Input.h" 2
-
-
-
-
-
-          struct Input* InputCreate();
-          struct Input InputCopy(struct Input*, struct Input*);
-          struct Input InputDelete(struct Input*);
-          int InputFinish(struct Input*);
-
-          void InputDispose();
-# 11 "./include/Algorithm.h" 2
-
-
-          struct Algorithm* AlgorithmCreate();
-          int AlgorithmFinish(struct Algorithm*);
-          struct Algorithm AlgorithmDelete(struct Algorithm*);
-          struct Algorithm AlgorithmCopy(struct Algorithm* from, struct Algorithm* to);
-          struct Output AlgorithmPerformRun(struct Input);
-# 5 "src/BFS/Procedure.c" 2
-
-
-
-# 1 "./include/PA/Tree.h" 1
-
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 10 "./include/PA/Tree.h" 2
+# 10 "./include/PA/Data.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 1 3 4
@@ -2089,46 +2045,27 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 2 3 4
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
-# 11 "./include/PA/Tree.h" 2
+# 11 "./include/PA/Data.h" 2
 
 
 
-          struct PATree* PATreeCreate();
-          struct PATree* PATreeCopy(struct PATree* from, struct PATree* to);
-
-          struct PATree* PATreeBegin(struct PATree*, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source);
-
+          struct PAData* PADataCreate(struct PASize* size);
+          struct PAData* PADataBegin(struct PAData* Data, PAInt Resource);
+          struct PAData* PADataCopy(struct PAData* from, struct PAData* to);
 
 
-
-
-          int PATreeDelete(struct PATree*);
-          int PATreeFinish(struct PATree*);
-# 9 "src/BFS/Procedure.c" 2
-# 1 "./include/PA/Element.h" 1
-
-
+          PAResult PADataFinish(struct PAData*);
+          PAResult PADataDelete(struct PAData*);
+# 4 "src/PA/Data.c" 2
+# 1 "./include/PA/Resource.h" 1
 
 
 
 
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Element.h" 2
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
-# 10 "./include/PA/Element.h" 2
-
-
-          struct PAElement* PAElementCreate();
-          struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus Status);
-          struct PAElement* PAElementCopy(struct PAElement*, struct PAElement*);
-          PAResult PAElementDelete(struct PAElement*);
-          PAResult PAElementFinish(struct PAElement*);
-          void PAElementVisit(struct PAElement*);
-          PABool PAElementIsVisited(struct PAElement*);
-          void PAElementReset(struct PAElement*);
-# 10 "src/BFS/Procedure.c" 2
-# 1 "./include/BFS/Procedure.h" 1
+# 7 "./include/PA/Resource.h" 2
+# 5 "src/PA/Data.c" 2
 
 
 
@@ -2136,76 +2073,85 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAResult BFS();
-          struct BFSProcedure BFSProcedureConstruct(struct PAInput);
-          struct BFSProcedure BFSProcedurePutInput(struct BFSProcedure, struct PAInput);
 
-
-
-          PAResult BFSProcedureRuin();
-          PAResult BFSProcedureSubroutine();
-# 11 "src/BFS/Procedure.c" 2
-
-# 1 "./include/PA/Input.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Input.h" 2
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
-# 10 "./include/PA/Input.h" 2
-
-
-
-          struct PAInput* PAInputCreate();
-
-          struct PAInput* PAInputBegin(struct PAInput* PA, struct PACount* N, struct PACount* M, struct PAElement* Source, struct PASeries* Series);
-
-
-          struct PAInput* PAInputCopy(struct PAInput* from, struct PAInput* to);
-
-
-
-          PAResult PAInputDelete(struct PAInput*);
-          PAResult PAInputFinish(struct PAInput*);
-# 13 "src/BFS/Procedure.c" 2
-# 26 "src/BFS/Procedure.c"
-PAResult BFS()
+          struct PAData* PADataCreate(struct PASize* size)
 {
-    PAResult result;
-    return result;
+
+    struct PAData* data;
+    data = (struct PAData*) malloc (sizeof(struct PAData));
+    data->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
+    data->Resource->value = (PANumber) malloc ((size->value[0]));
+# 38 "src/PA/Data.c"
+    return data;
+}
+          struct PAData* PADataBegin(struct PAData* Data, PAInt resource)
+{
+
+
+
+
+    struct PAResource* aux;
+    aux = (struct PAResource*) malloc (sizeof(struct PAResource));
+    __builtin___memcpy_chk (aux->value, &resource,sizeof(PAInt), __builtin_object_size (aux->value, 0));
+    __builtin___memcpy_chk (Data->Resource, aux,sizeof(struct PAResource), __builtin_object_size (Data->Resource, 0));
+# 63 "src/PA/Data.c"
+    free(aux);
+    return Data;
+
+
+
 
 
 }
-struct BFSProcedure BFSProcedureConstruct(struct PAInput Input)
+          struct PAData* PADataCopy(struct PAData* from, struct PAData* to)
+{
 
-{
-    struct BFSProcedure procedure;
-    return procedure;
-}
+    struct PAData *aux;
 
-struct BFSProcedure BFSProcedurePutTree(struct BFSProcedure Procedure, struct PATree Tree)
-{
-    struct BFSProcedure procedure;
-    return procedure;
-}
-struct BFSProcedure BFSProcedurePutInput(struct BFSProcedure Procedure, struct PAInput Input)
-{
-    struct BFSProcedure procedure;
-    return procedure;
-}
+    aux = (struct PAData*) malloc (sizeof (struct PAData));
 
-PAResult BFSProcedureRuin()
-{
-    PAResult result;
-    return result;
+    __builtin___memcpy_chk (aux, from,sizeof(struct PAData), __builtin_object_size (aux, 0));
+    __builtin___memcpy_chk (to, aux,sizeof(struct PAData), __builtin_object_size (to, 0));
+
+
+
+    free(aux);
+    return to;
+# 93 "src/PA/Data.c"
 }
-PAResult BFSProcedureSubroutine()
+# 111 "src/PA/Data.c"
+          PAResult PADataDelete(struct PAData* PA)
 {
-    PAResult result;
-    return result;
+    int returnCode;
+
+    __builtin___memset_chk(PA->Resource->value, 0, sizeof(PAInt), __builtin_object_size (PA->Resource->value, 0));
+    __builtin___memset_chk(PA->Resource, 0, sizeof(struct PAResource), __builtin_object_size (PA->Resource, 0));
+    __builtin___memset_chk(PA, 0, sizeof(struct PAData), __builtin_object_size (PA, 0));
+
+    return ((int)0);
+
+
+
+
+
+
+}
+          PAResult PADataFinish(struct PAData* PA)
+{
+
+
+
+
+    int returnCode;
+    free(PA->Resource->value);
+    free(PA->Resource);
+    free(PA);
+    returnCode = ((int)0);
+
+
+    return returnCode;
+
+
+
+
 }
