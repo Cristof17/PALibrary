@@ -18,8 +18,15 @@ typedef int ArrayListObject;
 typedef char* PANumber;
 // struct PANumber;
 typedef int PAInt;
+#ifndef ARCH_x86_64
 typedef int PAResult;
 typedef int PABool;
+#elif ARCH_x86_64
+typedef unsigned long PABool;
+#else
+typedef long PABool;
+#endif 
+
 typedef PABool PAStatus;
 //#define PAInt int
 // typedef int PAResource;
