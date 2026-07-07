@@ -112,7 +112,7 @@ DllExport struct PASeries* PASeriesCopy(struct PASeries* from, struct PASeries* 
 // }
 // }
 // DllExport struct PASeries* PASeriesBegin(struct PASeries* series, struct PACCoun)
-DllExport struct PASeries* PASeriesBegin(struct PASeries* series, struct PACount* M, struct PAElement* List)
+DllExport struct PASeries* PASeriesBegin(struct PASeries* series, struct PACount* M, struct PAElement** List)
     {
         struct PASeries* aux;
 
