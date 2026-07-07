@@ -3,6 +3,8 @@
 #define INCLUDE_PA_SIZE_H_	1
 #include <defs.h>
 #include <types.h>
+#include <stdlib.h>
+#include <string.h>
 // #ifndef _WIN95
 // #include <PA/Result.h>
 // #elif defined _WIN95

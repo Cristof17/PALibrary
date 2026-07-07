@@ -270,7 +270,8 @@ objects_pa= Input.o \
 	PA/PADrawingEditor.o \
 	PA/PALine.o \
 	PA/PAShape.o \
-	PA/PATextView.o
+	PA/PATextView.o \
+	PA/Size.o
 # 	src/PA/Data.i \
 
 sources_arraylist= ArrayList/ArrayList.i \
@@ -300,7 +301,8 @@ sources_pa= Input.i \
 	PA/PADrawingEditor.i \
 	PA/PALine.i \
 	PA/PAShape.i \
-	PA/PATextView.i
+	PA/PATextView.i \
+	PA/Size.i
 # sources_arraylist= src/Input.i
 
 designs_arraylist= ArrayList/ArrayList.c \
@@ -331,7 +333,8 @@ designs_pa=$(srcdir)/Input.c \
 	$(srcdir)/PA/TransposeTree.c \
 	$(srcdir)/PA/PALine.c \
 	$(srcdir)/PA/PAShape.c \
-	$(srcdir)/PA/PATextView.c
+	$(srcdir)/PA/PATextView.c \
+	$(srcdir)/PA/Size.c
 
 assemblies_arraylist= ArrayList/ArrayListPosition.s \
  	ArrayList/ArrayList.s
@@ -360,7 +363,8 @@ assemblies_pa= Input.s \
 	PA/PADrawingEditor.s \
 	PA/PALine.s \
 	PA/PAShape.s \
-	PA/PATextView.s
+	PA/PATextView.s \
+	PA/Size.s
 
 sources_test_pa= test.i test_pointers.i
 sources_test_bfs= 
@@ -666,6 +670,8 @@ ArrayList/ArrayList.i: $(srcdir)/ArrayList/ArrayList.c $(includedir)/defs.h $(in
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 ArrayList/ArrayListPosition.i : $(srcdir)/ArrayList/ArrayListPosition.c $(includedir)/ArrayList/ArrayList.h $(includedir)/defs.h $(includedir)/types.h
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
+PA/Size.i : $(srcdir)/PA/Size.c $(includedir)/defs.h $(includedir)/PA/Size.h $(includedir)/types.h
+	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 
 Input.s: Input.i
 	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
@@ -730,6 +736,8 @@ PA/PATextView.s: PA/PATextView.i
 ArrayList/ArrayList.s: ArrayList/ArrayList.i
 	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 ArrayList/ArrayListPosition.s: ArrayList/ArrayListPosition.i
+	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+PA/Size.s: PA/Size.i
 	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 
 test.i: test/test.c
@@ -966,6 +974,16 @@ endif
 # endif
 
 
+PA/Size.o: PA/Size.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
 
 PA/Element.o: PA/Element.s
 ifeq ($(host-type),arm64)
