@@ -119,7 +119,7 @@ DllExport struct PASeries* PASeriesBegin(struct PASeries* series, struct PACount
         aux = (struct PASeries*) malloc (sizeof(struct PASeries));
         // seriesPointer->m = series->m;
         memcpy(aux->m, M, sizeof(struct PACount));
-        memcpy(aux->neigh,List,sizeof(struct PAElement));
+        memcpy(aux->neigh,List,sizeof(struct PAElement*));
         memcpy(series,aux,sizeof(struct PASeries));
         // seriesPointer->adj = &series->adj[0];
         // PAResult result;

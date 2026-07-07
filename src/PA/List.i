@@ -2102,7 +2102,7 @@ void PAListPrint(struct PAList* List);
 
 
           struct PASeries* PASeriesCreate();
-          struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct PAElement*);
+          struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct PAElement**);
           struct PASeries* PASeriesCopy(struct PASeries*, struct PASeries*);
           PAResult PASeriesDelete(struct PASeries*);
           PAResult PASeriesFinish(struct PASeries*);
