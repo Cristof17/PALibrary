@@ -538,7 +538,19 @@ srcdir=$(prefix)/src
 #CFLAGS+=-I$(abspath $(includedir)/Iterator)
 #CFLAGS+=-I$(abspath $(includedir)/ArrayList)
 #CFLAGS+=-I$(abspath $(includedir)/Adapter)
+CPPFLAGS=
+ifeq ($(host-type),arm64)
 CPPFLAGS=-Dx86_64
+else
+endif
+ifeq ($(host-type),Aarch64)
+CPPFLAGS=-Dx86_64
+else
+endif
+ifeq ($(host-type),armv6)
+CPPFLAGS=-Dx86_64
+else
+endif
 CPPFLAGS+=-I$(prefix)/include -I$(prefix)
 #libdir=$(prefix)/obj
 #datadir=dat
