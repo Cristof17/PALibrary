@@ -1,20 +1,32 @@
-# 1 "src/BFS/Record.c"
+# 1 "src/PA/Input.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/BFS/Record.c" 2
+# 1 "src/PA/Input.c" 2
 
 
-# 1 "./include/types.h" 1
+
+
+
+
+
+# 1 "./include/PA/Input.h" 1
 
 
 
 
 
 # 1 "./include/defs.h" 1
-# 7 "./include/types.h" 2
+# 7 "./include/PA/Input.h" 2
+# 1 "./include/types.h" 1
+
+
+
+
+
+
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 1 3 4
@@ -1841,19 +1853,9 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 4 "src/BFS/Record.c" 2
-
-
-# 1 "./include/PA/List.h" 1
-
-
-
-
-
-
-
+# 8 "./include/PA/Input.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/List.h" 2
+# 9 "./include/PA/Input.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 1 3 4
@@ -2053,24 +2055,22 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 2 3 4
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
-# 10 "./include/PA/List.h" 2
+# 10 "./include/PA/Input.h" 2
 
 
 
+          struct PAInput* PAInputCreate();
 
-          struct PAList* PAListCreate();
-
-
-          struct PAList* PAListBegin(struct PAList* list, struct PACount* N, struct ArrayList* adj);
+          struct PAInput* PAInputBegin(struct PAInput* PA, struct PACount* N, struct PACount* M, struct PAElement* Source, struct PASeries* Series);
 
 
+          struct PAInput* PAInputCopy(struct PAInput* from, struct PAInput* to);
 
-          struct PAList* PAListCopy(struct PAList*, struct PAList*);
-          PAResult PAListDelete(struct PAList*);
-          PAResult PAListFinish(struct PAList*);
 
-void PAListPrint(struct PAList* List);
-# 7 "src/BFS/Record.c" 2
+
+          PAResult PAInputDelete(struct PAInput*);
+          PAResult PAInputFinish(struct PAInput*);
+# 9 "src/PA/Input.c" 2
 # 1 "./include/PA/Count.h" 1
 
 
@@ -2096,10 +2096,8 @@ void PAListPrint(struct PAList* List);
 
 
           PAResult PACountDelete(struct PACount* PA);
-# 8 "src/BFS/Record.c" 2
-# 1 "./include/PA/Result.h" 1
-# 9 "src/BFS/Record.c" 2
-# 1 "./include/BFS/Record.h" 1
+# 10 "src/PA/Input.c" 2
+# 1 "./include/PA/Element.h" 1
 
 
 
@@ -2107,51 +2105,94 @@ void PAListPrint(struct PAList* List);
 
 
 
-          struct BFSRecord* BFSRecordCreate();
-          struct BFSRecord* BFSRecordBegin(struct BFSRecord*, struct PAList* d, struct PACount* n);
-          struct BFSRecord* BFSRecordCopy(struct BFSRecord* from, struct BFSRecord* to);
-
-          struct BFSRecord BFSRecordDelete(struct BFSRecord*);
-          int BFSRecordFinish(struct BFSRecord*);
-          void BFSRecordPrint(struct BFSRecord*);
-# 10 "src/BFS/Record.c" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/PA/Element.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 10 "./include/PA/Element.h" 2
 
 
+          struct PAElement* PAElementCreate();
+          struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus Status);
+          struct PAElement* PAElementCopy(struct PAElement*, struct PAElement*);
+          PAResult PAElementDelete(struct PAElement*);
+          PAResult PAElementFinish(struct PAElement*);
+          void PAElementVisit(struct PAElement*);
+          PABool PAElementIsVisited(struct PAElement*);
+          void PAElementReset(struct PAElement*);
+# 11 "src/PA/Input.c" 2
 
 
 
 
 
-
-          struct BFSRecord* BFSRecordCreate()
+          struct PAInput* PAInputCreate()
 {
-    struct BFSRecord* recordPointer;
-    recordPointer = (struct BFSRecord*) malloc (sizeof(struct BFSRecord));
-    return recordPointer;
+
+ struct PAInput* input;
+ input = (struct PAInput*) malloc (sizeof(struct PAInput));
+
+
+
+
+
+
+
+ return input;
+# 46 "src/PA/Input.c"
 }
-
-          int BFSRecordFinish(struct BFSRecord* PA)
-{
-    free(PA);
-    return ((int)0);
-}
-          struct BFSRecord BFSRecordDelete(struct BFSRecord* PA)
-{
-    struct BFSRecord record;
-    return record;
-}
-          void BFSRecordPrint(struct BFSRecord* PA)
+          struct PAInput* PAInputCopy(struct PAInput* from, struct PAInput* to)
 {
 
-}
-          struct BFSRecord* BFSRecordBegin(struct BFSRecord* Record, struct PAList* d, struct PACount* n)
-{
-    struct BFSRecord* record;
-    return record;
-}
-          struct BFSRecord* BFSRecordCopy(struct BFSRecord* from, struct BFSRecord* to)
-{
-    struct BFSRecord* record;
+ struct PAInput* aux;
+ aux = (struct PAInput*) malloc (sizeof (struct PAInput));
+ __builtin___memcpy_chk (from, aux,sizeof(struct PAInput), __builtin_object_size (from, 0));
+ __builtin___memcpy_chk (aux, to,sizeof(struct PAInput), __builtin_object_size (aux, 0));
+# 65 "src/PA/Input.c"
+ free(aux);
+ return to;
 
-    return to;
+
+
+
+
+
+
+}
+          struct PAInput* PAInputBegin(struct PAInput* Input, struct PACount* N, struct PACount* M, struct PAElement* Source, struct PASeries* Adj)
+{
+
+ struct PAInput* aux;
+ aux = Input;
+
+ __builtin___memcpy_chk (aux->n, N,sizeof(struct PACount), __builtin_object_size (aux->n, 0));
+ __builtin___memcpy_chk (aux->m, M,sizeof(struct PACount), __builtin_object_size (aux->m, 0));
+ __builtin___memcpy_chk (aux->source, Source,sizeof(struct PAElement), __builtin_object_size (aux->source, 0));
+# 107 "src/PA/Input.c"
+ return aux;
+
+}
+          PAResult PAInputDelete(struct PAInput* PA)
+{
+ int returnCode;
+ __builtin___memset_chk(PA, 0, sizeof(struct PAInput), __builtin_object_size (PA, 0));
+
+
+
+ returnCode = ((int)0);
+# 126 "src/PA/Input.c"
+ return returnCode;
+}
+          PAResult PAInputFinish(struct PAInput* PA) {
+
+
+
+
+
+ int returnCode;
+ free(PA);
+ returnCode = ((int)0);
+
+
+
+ return returnCode;
 }

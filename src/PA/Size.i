@@ -1,20 +1,26 @@
-# 1 "src/BFS/Record.c"
+# 1 "src/PA/Size.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/BFS/Record.c" 2
+# 1 "src/PA/Size.c" 2
 
 
+
+# 1 "./include/PA/Size.h" 1
+
+
+
+# 1 "./include/defs.h" 1
+# 5 "./include/PA/Size.h" 2
 # 1 "./include/types.h" 1
 
 
 
 
 
-# 1 "./include/defs.h" 1
-# 7 "./include/types.h" 2
+
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 1 3 4
@@ -1841,19 +1847,9 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 4 "src/BFS/Record.c" 2
-
-
-# 1 "./include/PA/List.h" 1
-
-
-
-
-
-
-
+# 6 "./include/PA/Size.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/List.h" 2
+# 7 "./include/PA/Size.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 1 3 4
@@ -2053,25 +2049,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 2 3 4
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
-# 10 "./include/PA/List.h" 2
-
-
-
-
-          struct PAList* PAListCreate();
-
-
-          struct PAList* PAListBegin(struct PAList* list, struct PACount* N, struct ArrayList* adj);
-
-
-
-          struct PAList* PAListCopy(struct PAList*, struct PAList*);
-          PAResult PAListDelete(struct PAList*);
-          PAResult PAListFinish(struct PAList*);
-
-void PAListPrint(struct PAList* List);
-# 7 "src/BFS/Record.c" 2
-# 1 "./include/PA/Count.h" 1
+# 8 "./include/PA/Size.h" 2
 
 
 
@@ -2079,79 +2057,52 @@ void PAListPrint(struct PAList* List);
 
 
 
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Count.h" 2
+          struct PASize* PASizeConstruct();
+
+          PAResult PASizeDelete(struct PASize* PA);
+          PAResult PASizeFinish(struct PASize* PA);
+# 5 "src/PA/Size.c" 2
 
 
 
 
-
-          struct PACount* PACountCreate();
-          struct PACount* PACountBegin(struct PACount*, PAInt);
-          struct PACount* PACountCopy(struct PACount* from, struct PACount* to);
-
-
-
-          PAResult PACountFinish(struct PACount*);
-
-
-          PAResult PACountDelete(struct PACount* PA);
-# 8 "src/BFS/Record.c" 2
-# 1 "./include/PA/Result.h" 1
-# 9 "src/BFS/Record.c" 2
-# 1 "./include/BFS/Record.h" 1
-
-
-
-
-
-
-
-          struct BFSRecord* BFSRecordCreate();
-          struct BFSRecord* BFSRecordBegin(struct BFSRecord*, struct PAList* d, struct PACount* n);
-          struct BFSRecord* BFSRecordCopy(struct BFSRecord* from, struct BFSRecord* to);
-
-          struct BFSRecord BFSRecordDelete(struct BFSRecord*);
-          int BFSRecordFinish(struct BFSRecord*);
-          void BFSRecordPrint(struct BFSRecord*);
-# 10 "src/BFS/Record.c" 2
-
-
-
-
-
-
-
-
-          struct BFSRecord* BFSRecordCreate()
+          struct PASize* PASizeConstruct(){
+    struct PASize* size;
+    size = (struct PASize*) malloc (sizeof(struct PASize));
+    return size;
+}
+          struct PASize* PASizeBegin(struct PASize* Size, size_t* value, size_t digits)
 {
-    struct BFSRecord* recordPointer;
-    recordPointer = (struct BFSRecord*) malloc (sizeof(struct BFSRecord));
-    return recordPointer;
+    struct PASize* aux;
+    aux = (struct PASize*) malloc (sizeof(struct PASize));
+    aux->value = (size_t*) malloc (sizeof(size_t)*digits);
+
+
+    __builtin___memcpy_chk (aux, Size,sizeof(struct PASize), __builtin_object_size (aux, 0));
+    __builtin___memcpy_chk (aux->value, value,digits, __builtin_object_size (aux->value, 0));
+    __builtin___memcpy_chk (aux, Size,sizeof(struct PASize), __builtin_object_size (aux, 0));
+    __builtin___memcpy_chk (Size->value, aux->value,digits, __builtin_object_size (Size->value, 0));
+
+
+
+
+
+    free(aux->value);
+    free(aux);
+    return Size;
 }
 
-          int BFSRecordFinish(struct BFSRecord* PA)
+          int PASizeDelete(struct PASize* PA)
 {
+    int returnCode = ((int)0);
+    __builtin___memset_chk(PA->value, 0, sizeof(size_t), __builtin_object_size (PA->value, 0));
+    __builtin___memset_chk(PA, 0, sizeof(struct PASize), __builtin_object_size (PA, 0));
+    return returnCode;
+}
+          PAResult PASizeFinish(struct PASize* PA)
+{
+    int returnCode;
+    returnCode = ((int)0);
     free(PA);
-    return ((int)0);
-}
-          struct BFSRecord BFSRecordDelete(struct BFSRecord* PA)
-{
-    struct BFSRecord record;
-    return record;
-}
-          void BFSRecordPrint(struct BFSRecord* PA)
-{
-
-}
-          struct BFSRecord* BFSRecordBegin(struct BFSRecord* Record, struct PAList* d, struct PACount* n)
-{
-    struct BFSRecord* record;
-    return record;
-}
-          struct BFSRecord* BFSRecordCopy(struct BFSRecord* from, struct BFSRecord* to)
-{
-    struct BFSRecord* record;
-
-    return to;
+    return returnCode;
 }

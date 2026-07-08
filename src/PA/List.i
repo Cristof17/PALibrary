@@ -1,20 +1,31 @@
-# 1 "src/BFS/Record.c"
+# 1 "src/PA/List.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/BFS/Record.c" 2
+# 1 "src/PA/List.c" 2
 
 
-# 1 "./include/types.h" 1
+
+
+
+
+# 1 "./include/PA/List.h" 1
 
 
 
 
 
 # 1 "./include/defs.h" 1
-# 7 "./include/types.h" 2
+# 7 "./include/PA/List.h" 2
+# 1 "./include/types.h" 1
+
+
+
+
+
+
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 1 3 4
@@ -1841,17 +1852,7 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 4 "src/BFS/Record.c" 2
-
-
-# 1 "./include/PA/List.h" 1
-
-
-
-
-
-
-
+# 8 "./include/PA/List.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 9 "./include/PA/List.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
@@ -2070,7 +2071,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           PAResult PAListFinish(struct PAList*);
 
 void PAListPrint(struct PAList* List);
-# 7 "src/BFS/Record.c" 2
+# 8 "src/PA/List.c" 2
 # 1 "./include/PA/Count.h" 1
 
 
@@ -2096,62 +2097,98 @@ void PAListPrint(struct PAList* List);
 
 
           PAResult PACountDelete(struct PACount* PA);
-# 8 "src/BFS/Record.c" 2
-# 1 "./include/PA/Result.h" 1
-# 9 "src/BFS/Record.c" 2
-# 1 "./include/BFS/Record.h" 1
+# 9 "src/PA/List.c" 2
+# 1 "./include/PA/Series.h" 1
+# 15 "./include/PA/Series.h"
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 16 "./include/PA/Series.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 17 "./include/PA/Series.h" 2
 
 
 
+          struct PASeries* PASeriesCreate();
+          struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct PAElement**);
+          struct PASeries* PASeriesCopy(struct PASeries*, struct PASeries*);
+          PAResult PASeriesDelete(struct PASeries*);
+          PAResult PASeriesFinish(struct PASeries*);
 
 
-
-
-          struct BFSRecord* BFSRecordCreate();
-          struct BFSRecord* BFSRecordBegin(struct BFSRecord*, struct PAList* d, struct PACount* n);
-          struct BFSRecord* BFSRecordCopy(struct BFSRecord* from, struct BFSRecord* to);
-
-          struct BFSRecord BFSRecordDelete(struct BFSRecord*);
-          int BFSRecordFinish(struct BFSRecord*);
-          void BFSRecordPrint(struct BFSRecord*);
-# 10 "src/BFS/Record.c" 2
-
-
-
-
-
-
-
-
-          struct BFSRecord* BFSRecordCreate()
+          void PASeriesPrint(struct PASeries*);
+# 10 "src/PA/List.c" 2
+# 19 "src/PA/List.c"
+          struct PAList* PAListCreate()
 {
-    struct BFSRecord* recordPointer;
-    recordPointer = (struct BFSRecord*) malloc (sizeof(struct BFSRecord));
-    return recordPointer;
+    struct PAList* listPointer;
+    listPointer = (struct PAList*) malloc (sizeof(struct PAList));
+# 40 "src/PA/List.c"
+    return listPointer;
+# 50 "src/PA/List.c"
 }
+          struct PAList* PAListCopy(struct PAList* from, struct PAList* to)
+{
+    struct PAList* aux;
 
-          int BFSRecordFinish(struct BFSRecord* PA)
-{
-    free(PA);
-    return ((int)0);
-}
-          struct BFSRecord BFSRecordDelete(struct BFSRecord* PA)
-{
-    struct BFSRecord record;
-    return record;
-}
-          void BFSRecordPrint(struct BFSRecord* PA)
-{
-
-}
-          struct BFSRecord* BFSRecordBegin(struct BFSRecord* Record, struct PAList* d, struct PACount* n)
-{
-    struct BFSRecord* record;
-    return record;
-}
-          struct BFSRecord* BFSRecordCopy(struct BFSRecord* from, struct BFSRecord* to)
-{
-    struct BFSRecord* record;
-
+    aux = (struct PAList*) malloc (sizeof(struct PAList));
+    __builtin___memcpy_chk (aux, from,sizeof(struct PAList), __builtin_object_size (aux, 0));
+    __builtin___memcpy_chk (to, aux,sizeof(struct PAList), __builtin_object_size (to, 0));
+# 69 "src/PA/List.c"
+    free(aux);
     return to;
+# 108 "src/PA/List.c"
+}
+
+
+          struct PAList* PAListBegin(struct PAList* List, struct PACount* M, struct ArrayList* adj)
+{
+
+    struct PAList* listPointer;
+
+    __builtin___memcpy_chk (List->m, M,sizeof(struct PACount), __builtin_object_size (List->m, 0));
+    __builtin___memcpy_chk (List->neigh, adj,sizeof(struct ArrayList), __builtin_object_size (List->neigh, 0));
+# 151 "src/PA/List.c"
+    return listPointer;
+}
+# 184 "src/PA/List.c"
+          PAResult PAListDelete(struct PAList* PA)
+{
+    int returnCode;
+    returnCode = ((int)0);
+    __builtin___memset_chk(PA, 0, sizeof(struct PAList), __builtin_object_size (PA, 0));
+# 208 "src/PA/List.c"
+    return returnCode;
+
+
+
+}
+          PAResult PAListFinish(struct PAList* PA)
+{
+    int returnCode;
+
+    free(PA);
+    returnCode = ((int)0);
+
+    return returnCode;
+# 235 "src/PA/List.c"
+    {
+
+
+
+    }
+    returnCode = ((int)0);
+    return returnCode;
+
+
+
+
+
+}
+void Dispose()
+{
+
+}
+# 268 "src/PA/List.c"
+void PAListPrint(struct PAList* List)
+{
+
 }

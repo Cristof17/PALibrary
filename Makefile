@@ -538,7 +538,7 @@ srcdir=$(prefix)/src
 #CFLAGS+=-I$(abspath $(includedir)/Iterator)
 #CFLAGS+=-I$(abspath $(includedir)/ArrayList)
 #CFLAGS+=-I$(abspath $(includedir)/Adapter)
-CPPFLAGS=
+CPPFLAGS=-Dx86_64
 CPPFLAGS+=-I$(prefix)/include -I$(prefix)
 #libdir=$(prefix)/obj
 #datadir=dat
@@ -843,7 +843,7 @@ ifeq ($(host-type),AArch64)
 	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 
-
+# ifeq
 
 PA/Input.o: PA/Input.s
 ifeq ($(host-type),arm64)

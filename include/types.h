@@ -17,7 +17,13 @@ typedef int ArrayListObject;
 #else
 typedef char* PANumber;
 // struct PANumber;
+#ifndef x86_64
 typedef int PAInt;
+#elif defined x86_64
+typedef long PAInt;
+#endif
+// endif
+// typedef int PAInt;
 typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
