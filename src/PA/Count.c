@@ -82,11 +82,11 @@ DllExport struct PACount* PACountCopy(struct PACount* from, struct PACount* to)
     // to.number = temp.number;
     // return to;
 }
-DllExport PAResult PACountDelete(struct PACount* PA)
+DllExport PAResult PACountDelete(PAInt* PA)
 {
     int returnCode;
     // PA->number = NULL;
-    bzero(PA,sizeof(struct PACount));
+    bzero(PA,sizeof(PAInt));
     returnCode = PARESULT_SUCCESS;
     // struct PACount count;
     // PA.number.val = 0;
