@@ -139,7 +139,8 @@ DllExport PAResult PAElementDelete(struct PAElement* PA)
     return returnCode;
     // return 0;
 }
-DllExport PAResult PAElementFinish(struct PAElement* PA)
+// DllExport PAResult PAElementFinish(struct PAElement* PA)
+DllExport PAResult PAElementFinish(struct PAData* Data, struct PAElement* Element, PAStatus* Status)
 {
     // free(PA);
     // PA.index = PADataPerformRuin(PA.index);
@@ -157,7 +158,9 @@ DllExport PAResult PAElementFinish(struct PAElement* PA)
     // Element.status = PAStatusPerformRuin(PA.status);
     // int returnCode;
     int returnCode;
-    free(PA);
+    free(Data);
+    free(Element);
+    free(Status);
     returnCode = PARESULT_SUCCESS;
     return returnCode;
     // return PA;

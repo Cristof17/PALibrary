@@ -176,19 +176,25 @@ _PAElementDelete:                       ; @PAElementDelete
 _PAElementFinish:                       ; @PAElementFinish
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
-	add	x29, sp, #16
+	sub	sp, sp, #48
+	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
+	add	x29, sp, #32
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	str	x0, [sp, #8]
+	stur	x0, [x29, #-8]
+	str	x1, [sp, #16]
+	str	x2, [sp, #8]
+	ldur	x0, [x29, #-8]
+	bl	_free
+	ldr	x0, [sp, #16]
+	bl	_free
 	ldr	x0, [sp, #8]
 	bl	_free
 	str	wzr, [sp, #4]
 	ldr	w0, [sp, #4]
-	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
-	add	sp, sp, #32
+	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function
