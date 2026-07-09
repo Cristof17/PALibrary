@@ -2061,7 +2061,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PANormalTree* PANormalTreeCopy(struct PANormalTree* from, struct PANormalTree* to);
           PAResult PANormalTreeDelete(struct PANormalTree* PA);
-          PAResult PANormalTreeFinish(struct PANormalTree* PA);
+          PAResult PANormalTreeFinish(struct PATree* PA);
 # 6 "src/PA/NormalTree.c" 2
 # 1 "./include/PA/Tree.h" 1
 
@@ -2142,10 +2142,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     return returnCode;
 }
-          PAResult PANormalTreeFinish(struct PANormalTree* PA)
+          PAResult PANormalTreeFinish(struct PATree* Tree)
 {
     int returnCode;
-    free(PA);
+    free(Tree);
 
     return returnCode;
 

@@ -15,7 +15,7 @@ DllExport struct PANormalTree* PANormalTreeBegin(struct PANormalTree* NormalTree
 // DllExport void PANormalTreeCopy(struct PANormalTree* NormalTree, struct PANormalTree* Tree);
 DllExport struct PANormalTree* PANormalTreeCopy(struct PANormalTree* from, struct PANormalTree* to);
 DllExport PAResult PANormalTreeDelete(struct PANormalTree* PA);
-DllExport PAResult PANormalTreeFinish(struct PANormalTree* PA);
+DllExport PAResult PANormalTreeFinish(struct PATree* PA);
 // DllExport struct PANormalTree PANormalTreePerformConstruct(struct PATree tree);
 // DllExport struct PANormalTree* PAGrafNormalBuildPart();
 // typedef struct GrafNormal PAGrafNormal;
