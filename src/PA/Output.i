@@ -2063,7 +2063,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PAOutput* PAOutputCopy(struct PAOutput* from, struct PAOutput* to);
           PAResult PAOutputDelete(struct PAOutput*);
-          PAResult PAOutputFinish(struct PAOutput*);
+          PAResult PAOutputFinish(struct BFSRecord*);
           void PAOutputPrint(PAResult Result);
 # 6 "src/PA/Output.c" 2
 # 1 "./include/BFS/Record.h" 1
@@ -2140,7 +2140,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     return returnCode;
 }
-          PAResult PAOutputFinish(struct PAOutput* PA)
+          PAResult PAOutputFinish(struct BFSRecord* PA)
 {
     int returnCode;
 

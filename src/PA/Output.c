@@ -114,7 +114,7 @@ DllExport PAResult PAOutputDelete(struct PAOutput* PA)
     // return output;
     return returnCode;
 }
-DllExport PAResult PAOutputFinish(struct PAOutput* PA)
+DllExport PAResult PAOutputFinish(struct BFSRecord* PA)
 {
     int returnCode;
     // returnCode = PA->
