@@ -1860,10 +1860,10 @@ struct Facade {
 
 
 
-          PAResult PACountFinish(struct PACount*);
+          PAResult PACountFinish(PAInt*);
 
 
-          PAResult PACountDelete(PAInt* PA);
+          PAResult PACountDelete(struct PACount* PA);
 # 2 "test/test_pointers.c" 2
 # 1 "./include/PA/Resource.h" 1
 

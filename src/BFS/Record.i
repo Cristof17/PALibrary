@@ -2092,7 +2092,7 @@ void PAListPrint(struct PAList* List);
 
 
 
-          PAResult PACountFinish(struct PACount*);
+          PAResult PACountFinish(PAInt*);
 
 
           PAResult PACountDelete(struct PACount* PA);

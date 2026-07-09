@@ -2093,10 +2093,10 @@ void PAListPrint(struct PAList* List);
 
 
 
-          PAResult PACountFinish(struct PACount*);
+          PAResult PACountFinish(PAInt*);
 
 
-          PAResult PACountDelete(PAInt* PA);
+          PAResult PACountDelete(struct PACount* PA);
 # 9 "src/PA/List.c" 2
 # 1 "./include/PA/Series.h" 1
 # 15 "./include/PA/Series.h"

@@ -2086,10 +2086,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAResult PACountFinish(struct PACount*);
+          PAResult PACountFinish(PAInt*);
 
 
-          PAResult PACountDelete(PAInt* PA);
+          PAResult PACountDelete(struct PACount* PA);
 # 3 "test/test.c" 2
 
 # 1 "./include/PA/Element.h" 1

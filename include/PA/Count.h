@@ -17,8 +17,8 @@ DllExport struct PACount* PACountCopy(struct PACount* from, struct PACount* to);
 // DllExport struct PACount PACountPerformCopy(struct PACount);
 // void PASize(PA_INT);
 // DllExport HRESULT PACountPerformPrint(struct PACount);
-DllExport PAResult PACountFinish(struct PACount*);
+DllExport PAResult PACountFinish(PAInt*);
 // DllExport struct PACount PACountPerformPutValue(struct PACount, PAInt);
 // struct 
-DllExport PAResult PACountDelete(PAInt* PA);
+DllExport PAResult PACountDelete(struct PACount* PA);
 #endif

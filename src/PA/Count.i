@@ -1864,10 +1864,10 @@ struct Facade {
 
 
 
-          PAResult PACountFinish(struct PACount*);
+          PAResult PACountFinish(PAInt*);
 
 
-          PAResult PACountDelete(PAInt* PA);
+          PAResult PACountDelete(struct PACount* PA);
 # 6 "src/PA/Count.c" 2
 # 1 "./include/PA/Number.h" 1
 
@@ -2399,11 +2399,11 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
     return to;
 # 84 "src/PA/Count.c"
 }
-          PAResult PACountDelete(struct PAInt* PA)
+          PAResult PACountDelete(struct PACount* PA)
 {
     int returnCode;
 
-    __builtin___memset_chk(PA, 0, sizeof(PAInt), __builtin_object_size (PA, 0));
+    __builtin___memset_chk(PA, 0, sizeof(struct PACount), __builtin_object_size (PA, 0));
     returnCode = ((int)0);
 
 
@@ -2413,11 +2413,11 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
     return returnCode;
 }
-          PAResult PACountFinish(struct PACount* PA)
+          PAResult PACountFinish(PAInt* PA)
 {
 # 126 "src/PA/Count.c"
     int returnCode;
-    free(PA->number);
+
     free(PA);
     returnCode = ((int)0);
 
