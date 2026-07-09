@@ -2058,7 +2058,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct PAElement**);
           struct PASeries* PASeriesCopy(struct PASeries*, struct PASeries*);
           PAResult PASeriesDelete(struct PASeries*);
-          PAResult PASeriesFinish(struct PASeries*);
+          PAResult PASeriesFinish(struct PACount*, struct PAList**);
 
 
           void PASeriesPrint(struct PASeries*);
@@ -2189,11 +2189,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
         return returnCode;
     }
 # 194 "src/PA/Series.c"
-              PAResult PASeriesFinish(struct PASeries* PA)
+              PAResult PASeriesFinish(struct PACount* Count, struct PAList** List)
     {
 
         int returnCode;
-        free(PA);
+        free(Count);
         returnCode = ((int)0);
 # 219 "src/PA/Series.c"
         return returnCode;

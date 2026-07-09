@@ -2111,7 +2111,7 @@ void PAListPrint(struct PAList* List);
           struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct PAElement**);
           struct PASeries* PASeriesCopy(struct PASeries*, struct PASeries*);
           PAResult PASeriesDelete(struct PASeries*);
-          PAResult PASeriesFinish(struct PASeries*);
+          PAResult PASeriesFinish(struct PACount*, struct PAList**);
 
 
           void PASeriesPrint(struct PASeries*);
