@@ -91,7 +91,7 @@ DllExport PAResult PALinkDelete(struct PALink* PA){
     // struct PALink link;
     // return link;
 }
-DllExport PAResult PALinkFinish(struct PALink* PA)
+DllExport PAResult PALinkFinish(struct PAPair* Pair)
 {
     // PA.p = PAPairPerformRuin(PA.p);    
     // struct PALink Empty;
@@ -100,7 +100,7 @@ DllExport PAResult PALinkFinish(struct PALink* PA)
     // PAResult result;
     // return result;
     int returnCode;
-    free(PA);
+    free(Pair);
     returnCode = PARESULT_SUCCESS;
     return returnCode;
 }
