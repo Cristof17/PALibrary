@@ -2060,7 +2060,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           struct PAData* PADataCopy(struct PAData* from, struct PAData* to);
 
 
-          PAResult PADataFinish(struct PAData*);
+          PAResult PADataFinish(PAInt*);
           PAResult PADataDelete(struct PAData*);
 # 4 "src/PA/Data.c" 2
 # 1 "./include/PA/Resource.h" 1
@@ -2142,15 +2142,15 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 }
-          PAResult PADataFinish(struct PAData* PA)
+          PAResult PADataFinish(PAInt* PA)
 {
 
 
 
 
     int returnCode;
-    free(PA->Resource->value);
-    free(PA->Resource);
+
+
     free(PA);
     returnCode = ((int)0);
 

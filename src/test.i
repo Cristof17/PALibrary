@@ -2136,7 +2136,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           struct PAData* PADataCopy(struct PAData* from, struct PAData* to);
 
 
-          PAResult PADataFinish(struct PAData*);
+          PAResult PADataFinish(PAInt*);
           PAResult PADataDelete(struct PAData*);
 # 6 "test/test.c" 2
 

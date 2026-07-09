@@ -159,13 +159,6 @@ _PADataFinish:                          ; @PADataFinish
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
 	str	x0, [sp, #8]
-	ldr	x8, [sp, #8]
-	ldr	x8, [x8]
-	ldr	x0, [x8]
-	bl	_free
-	ldr	x8, [sp, #8]
-	ldr	x0, [x8]
-	bl	_free
 	ldr	x0, [sp, #8]
 	bl	_free
 	str	wzr, [sp, #4]

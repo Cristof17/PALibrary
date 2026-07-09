@@ -124,15 +124,15 @@ DllExport PAResult PADataDelete(struct PAData* PA)
     // PAResult result = (PAInt) PARESULT_SUCCESS;
     // return PA;
 }
-DllExport PAResult PADataFinish(struct PAData* PA) 
+DllExport PAResult PADataFinish(PAInt* PA) 
 {
     // PAInt Empty = NULL;
     // Resource = Empty;
     // return Resource;
     // g
     int returnCode;
-    free(PA->Resource->value);
-    free(PA->Resource);
+    // free(PA->Resource->value);
+    // free(PA->Resource);
     free(PA);
     returnCode = PARESULT_SUCCESS;
     // free(PA);

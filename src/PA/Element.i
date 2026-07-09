@@ -2086,7 +2086,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           struct PAData* PADataCopy(struct PAData* from, struct PAData* to);
 
 
-          PAResult PADataFinish(struct PAData*);
+          PAResult PADataFinish(PAInt*);
           PAResult PADataDelete(struct PAData*);
 # 8 "src/PA/Element.c" 2
 # 1 "./include/PA/Status.h" 1
