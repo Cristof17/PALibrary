@@ -2165,7 +2165,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PAList* PAListCopy(struct PAList*, struct PAList*);
           PAResult PAListDelete(struct PAList*);
-          PAResult PAListFinish(struct PAList*);
+          PAResult PAListFinish(struct PACount*, struct ArrayList*);
 
 void PAListPrint(struct PAList* List);
 # 8 "test/test.c" 2

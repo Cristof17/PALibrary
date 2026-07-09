@@ -2177,7 +2177,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           PAResult PAInputDelete(struct PAInput*);
-          PAResult PAInputFinish(struct PAInput*);
+          PAResult PAInputFinish(struct PACount*, struct PACount*, struct PAElement*, struct PASeries*);
 # 13 "src/BFS/Procedure.c" 2
 # 26 "src/BFS/Procedure.c"
 PAResult BFS()

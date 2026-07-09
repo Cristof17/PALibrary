@@ -2420,7 +2420,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
           struct PAList* PAListCopy(struct PAList*, struct PAList*);
           PAResult PAListDelete(struct PAList*);
-          PAResult PAListFinish(struct PAList*);
+          PAResult PAListFinish(struct PACount*, struct ArrayList*);
 
 void PAListPrint(struct PAList* List);
 # 8 "test/test_pointers.c" 2

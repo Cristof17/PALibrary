@@ -210,11 +210,12 @@ DllExport PAResult PAListDelete(struct PAList* PA)
     // PAResult result;
     // return result;
 }
-DllExport PAResult PAListFinish(struct PAList* PA)
+DllExport PAResult PAListFinish(struct PACount* Count, struct ArrayList* Edges)
 {
     int returnCode;
     // returnCode = PACountFinish(PA->n);
-    free(PA);
+    free(Count);
+    free(Edges);
     returnCode = PARESULT_SUCCESS;
     // free(PA);
     return returnCode;

@@ -2068,7 +2068,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PAList* PAListCopy(struct PAList*, struct PAList*);
           PAResult PAListDelete(struct PAList*);
-          PAResult PAListFinish(struct PAList*);
+          PAResult PAListFinish(struct PACount*, struct ArrayList*);
 
 void PAListPrint(struct PAList* List);
 # 8 "src/PA/List.c" 2
@@ -2161,15 +2161,16 @@ void PAListPrint(struct PAList* List);
 
 
 }
-          PAResult PAListFinish(struct PAList* PA)
+          PAResult PAListFinish(struct PACount* Count, struct ArrayList* Edges)
 {
     int returnCode;
 
-    free(PA);
+    free(Count);
+    free(Edges);
     returnCode = ((int)0);
 
     return returnCode;
-# 235 "src/PA/List.c"
+# 236 "src/PA/List.c"
     {
 
 
@@ -2187,7 +2188,7 @@ void Dispose()
 {
 
 }
-# 268 "src/PA/List.c"
+# 269 "src/PA/List.c"
 void PAListPrint(struct PAList* List)
 {
 

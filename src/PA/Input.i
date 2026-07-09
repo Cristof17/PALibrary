@@ -2069,7 +2069,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           PAResult PAInputDelete(struct PAInput*);
-          PAResult PAInputFinish(struct PAInput*);
+          PAResult PAInputFinish(struct PACount*, struct PACount*, struct PAElement*, struct PASeries*);
 # 9 "src/PA/Input.c" 2
 # 1 "./include/PA/Count.h" 1
 
@@ -2182,14 +2182,19 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 126 "src/PA/Input.c"
  return returnCode;
 }
-          PAResult PAInputFinish(struct PAInput* PA) {
+
+          PAResult PAInputFinish(struct PACount* N, struct PACount* M, struct PAElement* Source, struct PASeries* Adj) {
 
 
 
 
 
  int returnCode;
- free(PA);
+
+ free(N);
+ free(M);
+ free(Source);
+ free(Adj);
  returnCode = ((int)0);
 
 

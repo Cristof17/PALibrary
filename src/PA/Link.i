@@ -2063,7 +2063,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           struct PALink* PALinkCopy(struct PALink*, struct PALink*);
 
 
-          PAResult PALinkFinish(struct PALink*);
+          PAResult PALinkFinish(struct PAPair*);
           PAResult PALinkDelete(struct PALink*);
 # 9 "src/PA/Link.c" 2
 # 1 "./include/PA/Pair.h" 1
@@ -2147,7 +2147,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 }
-          PAResult PALinkFinish(struct PALink* PA)
+          PAResult PALinkFinish(struct PAPair* Pair)
 {
 
 
@@ -2156,7 +2156,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
     int returnCode;
-    free(PA);
+    free(Pair);
     returnCode = ((int)0);
     return returnCode;
 }
