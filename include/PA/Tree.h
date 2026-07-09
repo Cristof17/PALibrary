@@ -21,6 +21,6 @@ DllExport struct PATree* PATreeBegin(struct PATree*, struct PACount* N, struct P
 // DllExport HRESULT PATreePerformPutElement();
 // DllExport HRESULT PATreePerformPutSeries();
 DllExport int PATreeDelete(struct PATree*);
-DllExport int PATreeFinish(struct PATree*);
+DllExport int PATreeFinish(struct PACount*, struct PACount*, struct PAList*, struct PAElement*);
 //typedef struct PATree Tree;
 #endif

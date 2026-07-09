@@ -98,7 +98,7 @@ DllExport PAResult PATransposeTreeDelete(struct PATransposeTree* PA)
     // return rc;
     // return returnCode;
 }
-DllExport PAResult PATransposeTreeFinish(struct PATransposeTree* PA)
+DllExport PAResult PATransposeTreeFinish(struct PATree* PA)
 {
     int returnCode;
     free(PA);

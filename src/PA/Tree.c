@@ -180,10 +180,13 @@ DllExport PAResult PATreeDelete(struct PATree* PA)
     return returnCode;
     // return 0;
 }
-DllExport PAResult PATreeFinish(struct PATree* PA)
+DllExport PAResult PATreeFinish(struct PACount* N, struct PACount* M, struct PAList* List, struct PAElement* Source)
 {
     int returnCode;
-    free(PA);
+    free(N);
+    free(M);
+    free(List);
+    free(Source);
     returnCode = PARESULT_SUCCESS;
     // int returnCode2;
     // int returnCode3;
