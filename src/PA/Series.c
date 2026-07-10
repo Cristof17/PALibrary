@@ -196,6 +196,7 @@ DllExport struct PASeries* PASeriesBegin(struct PASeries* series, struct PACount
         // st
         int returnCode;
         free(Count);
+        free(List);
         returnCode = PARESULT_SUCCESS;
         // returnCode = PACountFinish(PA->m);
         // free(PA);

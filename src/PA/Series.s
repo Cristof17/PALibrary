@@ -140,6 +140,8 @@ _PASeriesFinish:                        ; @PASeriesFinish
 	str	x1, [sp, #16]
 	ldur	x0, [x29, #-8]
 	bl	_free
+	ldr	x0, [sp, #16]
+	bl	_free
 	str	wzr, [sp, #12]
 	ldr	w0, [sp, #12]
 	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload

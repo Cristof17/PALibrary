@@ -2187,12 +2187,13 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
         int returnCode;
         free(Count);
+        free(List);
         returnCode = ((int)0);
-# 219 "src/PA/Series.c"
+# 220 "src/PA/Series.c"
         return returnCode;
 
     }
-# 277 "src/PA/Series.c"
+# 278 "src/PA/Series.c"
 void PASeriesPrint(struct PASeries* Series)
 {
 
