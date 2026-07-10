@@ -44,9 +44,9 @@ _PADataBegin:                           ; @PADataBegin
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
 	stur	x0, [x29, #-8]
-	sub	x8, x29, #12
+	sub	x8, x29, #16
 	str	x8, [sp]                        ; 8-byte Folded Spill
-	stur	w1, [x29, #-12]
+	stur	x1, [x29, #-16]
 	mov	x0, #24                         ; =0x18
 	str	x0, [sp, #8]                    ; 8-byte Folded Spill
 	bl	_malloc
@@ -54,7 +54,7 @@ _PADataBegin:                           ; @PADataBegin
 	str	x0, [sp, #24]
 	ldr	x8, [sp, #24]
 	ldr	x0, [x8]
-	mov	x2, #4                          ; =0x4
+	mov	x2, #8                          ; =0x8
 	mov	x3, #-1                         ; =0xffffffffffffffff
 	str	x3, [sp, #16]                   ; 8-byte Folded Spill
 	bl	___memcpy_chk
@@ -125,7 +125,8 @@ _PADataDelete:                          ; @PADataDelete
 	ldr	x0, [x8]
 	mov	w1, #0                          ; =0x0
 	str	w1, [sp, #16]                   ; 4-byte Folded Spill
-	mov	x2, #4                          ; =0x4
+	mov	x2, #8                          ; =0x8
+	str	x2, [sp]                        ; 8-byte Folded Spill
 	mov	x3, #-1                         ; =0xffffffffffffffff
 	str	x3, [sp, #8]                    ; 8-byte Folded Spill
 	bl	___memset_chk
@@ -135,10 +136,10 @@ _PADataDelete:                          ; @PADataDelete
 	ldr	x0, [x8]
 	mov	x2, #24                         ; =0x18
 	bl	___memset_chk
+	ldr	x2, [sp]                        ; 8-byte Folded Reload
 	ldr	x3, [sp, #8]                    ; 8-byte Folded Reload
 	ldr	w1, [sp, #16]                   ; 4-byte Folded Reload
 	ldur	x0, [x29, #-8]
-	mov	x2, #8                          ; =0x8
 	bl	___memset_chk
 	ldr	w0, [sp, #16]                   ; 4-byte Folded Reload
 	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload

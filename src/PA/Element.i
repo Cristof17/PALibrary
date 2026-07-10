@@ -1466,14 +1466,6 @@ extern char * suboptarg;
 # 8 "./include/types.h" 2
 # 18 "./include/types.h"
 typedef char* PANumber;
-
-
-typedef int PAInt;
-
-
-
-
-typedef int PAInt;
 # 37 "./include/types.h"
 typedef int PAResult;
 typedef int PABool;
@@ -1633,11 +1625,11 @@ struct PAElement {
 
 };
 struct PAFeature {
- PAInt* kind;
+ long* kind;
 };
 struct PACount {
 
- PAInt* number;
+ long* number;
 };
 
 
@@ -1708,7 +1700,7 @@ struct PAOutput {
 
 
 struct PAValue {
- PAInt value;
+ long value;
 };
 struct PADestination {
     struct PAElement element;
@@ -1817,7 +1809,7 @@ struct ConcreteBuilder {
  struct Builder builder;
 };
 struct IteratorConcreteIterator {
- PAInt position;
+ long position;
 };
 struct IteratorConcreteAggregate {
  struct IteratorConcreteIterator iterator;
@@ -2083,11 +2075,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           struct PAData* PADataCreate(struct PASize* size);
-          struct PAData* PADataBegin(struct PAData* Data, PAInt Resource);
+          struct PAData* PADataBegin(struct PAData* Data, long Resource);
           struct PAData* PADataCopy(struct PAData* from, struct PAData* to);
 
 
-          PAResult PADataFinish(PAInt*);
+          PAResult PADataFinish(long*);
           PAResult PADataDelete(struct PAData*);
 # 8 "src/PA/Element.c" 2
 # 1 "./include/PA/Status.h" 1

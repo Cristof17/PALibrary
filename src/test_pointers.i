@@ -1461,14 +1461,6 @@ extern char * suboptarg;
 # 8 "./include/types.h" 2
 # 18 "./include/types.h"
 typedef char* PANumber;
-
-
-typedef int PAInt;
-
-
-
-
-typedef int PAInt;
 # 37 "./include/types.h"
 typedef int PAResult;
 typedef int PABool;
@@ -1628,11 +1620,11 @@ struct PAElement {
 
 };
 struct PAFeature {
- PAInt* kind;
+ long* kind;
 };
 struct PACount {
 
- PAInt* number;
+ long* number;
 };
 
 
@@ -1703,7 +1695,7 @@ struct PAOutput {
 
 
 struct PAValue {
- PAInt value;
+ long value;
 };
 struct PADestination {
     struct PAElement element;
@@ -1812,7 +1804,7 @@ struct ConcreteBuilder {
  struct Builder builder;
 };
 struct IteratorConcreteIterator {
- PAInt position;
+ long position;
 };
 struct IteratorConcreteAggregate {
  struct IteratorConcreteIterator iterator;
@@ -1856,12 +1848,12 @@ struct Facade {
 
 
           struct PACount* PACountCreate();
-          struct PACount* PACountBegin(struct PACount*, PAInt);
+          struct PACount* PACountBegin(struct PACount*, long);
           struct PACount* PACountCopy(struct PACount* from, struct PACount* to);
 
 
 
-          PAResult PACountFinish(PAInt*);
+          PAResult PACountFinish(long*);
 
 
           PAResult PACountDelete(struct PACount* PA);

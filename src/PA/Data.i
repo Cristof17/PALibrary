@@ -1463,14 +1463,6 @@ extern char * suboptarg;
 # 8 "./include/types.h" 2
 # 18 "./include/types.h"
 typedef char* PANumber;
-
-
-typedef int PAInt;
-
-
-
-
-typedef int PAInt;
 # 37 "./include/types.h"
 typedef int PAResult;
 typedef int PABool;
@@ -1630,11 +1622,11 @@ struct PAElement {
 
 };
 struct PAFeature {
- PAInt* kind;
+ long* kind;
 };
 struct PACount {
 
- PAInt* number;
+ long* number;
 };
 
 
@@ -1705,7 +1697,7 @@ struct PAOutput {
 
 
 struct PAValue {
- PAInt value;
+ long value;
 };
 struct PADestination {
     struct PAElement element;
@@ -1814,7 +1806,7 @@ struct ConcreteBuilder {
  struct Builder builder;
 };
 struct IteratorConcreteIterator {
- PAInt position;
+ long position;
 };
 struct IteratorConcreteAggregate {
  struct IteratorConcreteIterator iterator;
@@ -2057,11 +2049,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           struct PAData* PADataCreate(struct PASize* size);
-          struct PAData* PADataBegin(struct PAData* Data, PAInt Resource);
+          struct PAData* PADataBegin(struct PAData* Data, long Resource);
           struct PAData* PADataCopy(struct PAData* from, struct PAData* to);
 
 
-          PAResult PADataFinish(PAInt*);
+          PAResult PADataFinish(long*);
           PAResult PADataDelete(struct PAData*);
 # 4 "src/PA/Data.c" 2
 # 1 "./include/PA/Resource.h" 1
@@ -2091,7 +2083,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 38 "src/PA/Data.c"
     return data;
 }
-          struct PAData* PADataBegin(struct PAData* Data, PAInt resource)
+          struct PAData* PADataBegin(struct PAData* Data, long resource)
 {
 
 
@@ -2099,7 +2091,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     struct PAResource* aux;
     aux = (struct PAResource*) malloc (sizeof(struct PAResource));
-    __builtin___memcpy_chk (aux->value, &resource,sizeof(PAInt), __builtin_object_size (aux->value, 0));
+    __builtin___memcpy_chk (aux->value, &resource,sizeof(long), __builtin_object_size (aux->value, 0));
     __builtin___memcpy_chk (Data->Resource, aux,sizeof(struct PAResource), __builtin_object_size (Data->Resource, 0));
 # 63 "src/PA/Data.c"
     free(aux);
@@ -2131,7 +2123,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 {
     int returnCode;
 
-    __builtin___memset_chk(PA->Resource->value, 0, sizeof(PAInt), __builtin_object_size (PA->Resource->value, 0));
+    __builtin___memset_chk(PA->Resource->value, 0, sizeof(long), __builtin_object_size (PA->Resource->value, 0));
     __builtin___memset_chk(PA->Resource, 0, sizeof(struct PAResource), __builtin_object_size (PA->Resource, 0));
     __builtin___memset_chk(PA, 0, sizeof(struct PAData), __builtin_object_size (PA, 0));
 
@@ -2143,7 +2135,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 }
-          PAResult PADataFinish(PAInt* PA)
+          PAResult PADataFinish(long* PA)
 {
 
 

@@ -1465,14 +1465,6 @@ extern char * suboptarg;
 # 8 "./include/types.h" 2
 # 18 "./include/types.h"
 typedef char* PANumber;
-
-
-typedef int PAInt;
-
-
-
-
-typedef int PAInt;
 # 37 "./include/types.h"
 typedef int PAResult;
 typedef int PABool;
@@ -1632,11 +1624,11 @@ struct PAElement {
 
 };
 struct PAFeature {
- PAInt* kind;
+ long* kind;
 };
 struct PACount {
 
- PAInt* number;
+ long* number;
 };
 
 
@@ -1707,7 +1699,7 @@ struct PAOutput {
 
 
 struct PAValue {
- PAInt value;
+ long value;
 };
 struct PADestination {
     struct PAElement element;
@@ -1816,7 +1808,7 @@ struct ConcreteBuilder {
  struct Builder builder;
 };
 struct IteratorConcreteIterator {
- PAInt position;
+ long position;
 };
 struct IteratorConcreteAggregate {
  struct IteratorConcreteIterator iterator;
@@ -1860,12 +1852,12 @@ struct Facade {
 
 
           struct PACount* PACountCreate();
-          struct PACount* PACountBegin(struct PACount*, PAInt);
+          struct PACount* PACountBegin(struct PACount*, long);
           struct PACount* PACountCopy(struct PACount* from, struct PACount* to);
 
 
 
-          PAResult PACountFinish(PAInt*);
+          PAResult PACountFinish(long*);
 
 
           PAResult PACountDelete(struct PACount* PA);
@@ -2371,17 +2363,17 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
     struct PACount* count;
     count =(struct PACount*)malloc(sizeof(struct PACount));
-    count->number = (PAInt*) malloc (sizeof(PAInt));
+    count->number = (long*) malloc (sizeof(long));
 # 31 "src/PA/Count.c"
     return count;
 }
-          struct PACount* PACountBegin(struct PACount* Count, PAInt value)
+          struct PACount* PACountBegin(struct PACount* Count, long value)
 {
     struct PACount* aux;
     aux = (struct PACount*) malloc (sizeof(struct PACount));
 
 
-    __builtin___memcpy_chk (aux->number, &value,sizeof(PAInt), __builtin_object_size (aux->number, 0));
+    __builtin___memcpy_chk (aux->number, &value,sizeof(long), __builtin_object_size (aux->number, 0));
     __builtin___memcpy_chk (aux, Count,sizeof(struct PACount), __builtin_object_size (aux, 0));
 
     free(aux);
@@ -2414,7 +2406,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
     return returnCode;
 }
-          PAResult PACountFinish(PAInt* PA)
+          PAResult PACountFinish(long* PA)
 {
 # 126 "src/PA/Count.c"
     int returnCode;
