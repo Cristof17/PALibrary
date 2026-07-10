@@ -1460,7 +1460,7 @@ extern char * suboptarg;
 # 8 "./include/types.h" 2
 # 18 "./include/types.h"
 typedef char* PANumber;
-# 37 "./include/types.h"
+# 35 "./include/types.h"
 typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
@@ -1469,7 +1469,7 @@ typedef PABool PAStatus;
 
 
 struct ArrayListObject;
-# 54 "./include/types.h"
+# 52 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -1518,7 +1518,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 112 "./include/types.h"
+# 110 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -1564,7 +1564,7 @@ struct PrototypeClient;
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 172 "./include/types.h"
+# 170 "./include/types.h"
 struct Input {
  ;
 };
@@ -1675,7 +1675,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 290 "./include/types.h"
+# 288 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;

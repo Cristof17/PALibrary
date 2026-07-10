@@ -17,20 +17,18 @@ typedef int ArrayListObject;
 #else
 typedef char* PANumber;
 // struct PANumber;
-#ifndef Aarch64
-#define PAInt int
-#elif defined Aarch64
+#ifdef Aarch64
 #define PAInt long
+#else
+#ifdef armv6
+#define PAInt long
+#else
+#ifdef arm64
+#define PAInt long
+#else
+#define PAInt int
 #endif
-#ifndef armv6
-#define PAInt int
-#elif defined armv6
-#define PAInt long
 #endif
-#ifndef arm64
-#define PAInt int
-#elif defined arm64
-#define PAInt long
 #endif
 // endif
 // typedef int PAInt;
