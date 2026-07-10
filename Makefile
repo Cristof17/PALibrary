@@ -540,15 +540,15 @@ srcdir=$(prefix)/src
 #CFLAGS+=-I$(abspath $(includedir)/Adapter)
 CPPFLAGS=
 ifeq ($(host-type),arm64)
-CPPFLAGS=-Dx86_64
+CPPFLAGS=-Darm64
 else
 endif
 ifeq ($(host-type),Aarch64)
-CPPFLAGS=-Dx86_64
+CPPFLAGS=-DAarch64
 else
 endif
 ifeq ($(host-type),armv6)
-CPPFLAGS=-Dx86_64
+CPPFLAGS=-Darmv6
 else
 endif
 CPPFLAGS+=-I$(prefix)/include -I$(prefix)

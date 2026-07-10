@@ -23,10 +23,8 @@ typedef char* PANumber;
 typedef int PAInt;
 #elif defined armv6
 typedef long PAInt;
-#endif
 #elif defined arm64
 typedef long PAInt;
-#endif
 #elif defined AArch64
 typedef long PAInt;
 #endif
