@@ -10,7 +10,7 @@
 //struct PAData {
 //
 //}
-DllExport struct PAData* PADataCreate(PAInt Resource)
+DllExport struct PAData* PADataCreate(PAInt* Resource)
 {
     // struct PAData data;
     struct PAData* data;
@@ -19,7 +19,7 @@ DllExport struct PAData* PADataCreate(PAInt Resource)
     data->Resource->value = (PANumber) malloc (sizeof(PANumber));//todo replace with conert to size_t
     struct PAResource* aux;
     aux = (struct PAResource*) malloc (sizeof(struct PAResource));
-    memcpy(aux->value,&Resource,sizeof(PAInt));
+    memcpy(aux->value,Resource,sizeof(PAInt));
     memcpy(data->Resource,aux,sizeof(struct PAResource));
     free(aux);
     // dataPointer->Resource->size.valie = sizeof(PAInt);
