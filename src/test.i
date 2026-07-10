@@ -1632,7 +1632,7 @@ struct PACount {
 struct PASeries {
  struct PACount* m;
 
- struct PAElement** neigh;
+ struct PAList** adj;
 };
 struct PAList {
  struct PACount* m;
@@ -2472,7 +2472,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
           struct PASeries* PASeriesCreate();
-          struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct PAElement**);
+          struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct PAList* Adj[]);
           struct PASeries* PASeriesCopy(struct PASeries*, struct PASeries*);
           PAResult PASeriesDelete(struct PASeries*);
           PAResult PASeriesFinish(struct PACount*, struct PAList**);

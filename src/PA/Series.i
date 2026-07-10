@@ -1633,7 +1633,7 @@ struct PACount {
 struct PASeries {
  struct PACount* m;
 
- struct PAElement** neigh;
+ struct PAList** adj;
 };
 struct PAList {
  struct PACount* m;
@@ -2048,7 +2048,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           struct PASeries* PASeriesCreate();
-          struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct PAElement**);
+          struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct PAList* Adj[]);
           struct PASeries* PASeriesCopy(struct PASeries*, struct PASeries*);
           PAResult PASeriesDelete(struct PASeries*);
           PAResult PASeriesFinish(struct PACount*, struct PAList**);
@@ -2160,14 +2160,14 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 }
 # 115 "src/PA/Series.c"
-          struct PASeries* PASeriesBegin(struct PASeries* series, struct PACount* M, struct PAElement** List)
+          struct PASeries* PASeriesBegin(struct PASeries* series, struct PACount* M, struct PAList* Adj[])
     {
         struct PASeries* aux;
 
         aux = (struct PASeries*) malloc (sizeof(struct PASeries));
 
         __builtin___memcpy_chk (aux->m, M, sizeof(struct PACount), __builtin_object_size (aux->m, 0));
-        __builtin___memcpy_chk (aux->neigh, List,sizeof(struct PAElement*), __builtin_object_size (aux->neigh, 0));
+        __builtin___memcpy_chk (aux->adj, Adj,sizeof(struct PAElement*), __builtin_object_size (aux->adj, 0));
         __builtin___memcpy_chk (series, aux,sizeof(struct PASeries), __builtin_object_size (series, 0));
 # 159 "src/PA/Series.c"
         free(aux);

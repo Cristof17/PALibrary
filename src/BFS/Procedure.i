@@ -1626,7 +1626,7 @@ struct PACount {
 struct PASeries {
  struct PACount* m;
 
- struct PAElement** neigh;
+ struct PAList** adj;
 };
 struct PAList {
  struct PACount* m;
