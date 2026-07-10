@@ -2073,16 +2073,16 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          struct PACount* PACountCreate();
-          struct PACount* PACountBegin(struct PACount*, long);
+          struct PACount* PACountCreate(long value);
+          struct PACount* PACountBegin(struct PACount*);
           struct PACount* PACountCopy(struct PACount* from, struct PACount* to);
 
 
 
-          PAResult PACountFinish(long*);
+          int PACountFinish(long*);
 
 
-          PAResult PACountDelete(struct PACount* PA);
+          int PACountDelete(struct PACount* PA);
 # 3 "test/test.c" 2
 
 # 1 "./include/PA/Element.h" 1
@@ -2102,8 +2102,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           struct PAElement* PAElementCreate();
           struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus Status);
           struct PAElement* PAElementCopy(struct PAElement*, struct PAElement*);
-          PAResult PAElementDelete(struct PAElement*);
-          PAResult PAElementFinish(struct PAData*, struct PAElement*, PAStatus*);
+          int PAElementDelete(struct PAElement*);
+          int PAElementFinish(struct PAData*, struct PAElement*, PAStatus*);
           void PAElementVisit(struct PAElement*);
           PABool PAElementIsVisited(struct PAElement*);
           void PAElementReset(struct PAElement*);
@@ -2124,13 +2124,13 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          struct PAData* PADataCreate(struct PASize* size);
-          struct PAData* PADataBegin(struct PAData* Data, long Resource);
+          struct PAData* PADataCreate(long size);
+          struct PAData* PADataBegin(struct PAData* Data);
           struct PAData* PADataCopy(struct PAData* from, struct PAData* to);
 
 
-          PAResult PADataFinish(long*);
-          PAResult PADataDelete(struct PAData*);
+          int PADataFinish(long*);
+          int PADataDelete(struct PAData*);
 # 6 "test/test.c" 2
 
 # 1 "./include/PA/List.h" 1
@@ -2157,8 +2157,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           struct PAList* PAListCopy(struct PAList*, struct PAList*);
-          PAResult PAListDelete(struct PAList*);
-          PAResult PAListFinish(struct PACount*, struct ArrayList*);
+          int PAListDelete(struct PAList*);
+          int PAListFinish(struct PACount*, struct ArrayList*);
 
 void PAListPrint(struct PAList* List);
 # 8 "test/test.c" 2
@@ -2459,7 +2459,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
           struct PANumber* PANumberBegin(struct PANumber* Number, unsigned char Value);
           struct PANumber* PANumberCopy(struct PANumber* from, struct PANumber* to);
           int PANumberDelete(struct PANumber*);
-          PAResult PANumberFinish(struct PANumber*);
+          int PANumberFinish(struct PANumber*);
           void PANumberPrint(struct PANumber*);
 # 10 "test/test.c" 2
 # 1 "./include/PA/Series.h" 1
@@ -2474,8 +2474,8 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
           struct PASeries* PASeriesCreate();
           struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct PAList* Adj[]);
           struct PASeries* PASeriesCopy(struct PASeries*, struct PASeries*);
-          PAResult PASeriesDelete(struct PASeries*);
-          PAResult PASeriesFinish(struct PACount*, struct PAList**);
+          int PASeriesDelete(struct PASeries*);
+          int PASeriesFinish(struct PACount*, struct PAList**);
 
 
           void PASeriesPrint(struct PASeries*);
@@ -2512,8 +2512,8 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
           struct PATransposeTree* PATransposeTreeBegin(struct PATransposeTree*, struct PATree*);
           struct PATransposeTree* PATransposeTreeCopy(struct PATransposeTree*, struct PATransposeTree*);
 
-          PAResult PATransposeTreeDelete(struct PATransposeTree*);
-          PAResult PATransposeTreeFinish(struct PATree*);
+          int PATransposeTreeDelete(struct PATransposeTree*);
+          int PATransposeTreeFinish(struct PATree*);
 # 13 "test/test.c" 2
 # 1 "./conf.h" 1
 # 14 "test/test.c" 2

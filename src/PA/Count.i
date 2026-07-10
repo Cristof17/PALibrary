@@ -1851,16 +1851,16 @@ struct Facade {
 
 
 
-          struct PACount* PACountCreate();
-          struct PACount* PACountBegin(struct PACount*, long);
+          struct PACount* PACountCreate(long value);
+          struct PACount* PACountBegin(struct PACount*);
           struct PACount* PACountCopy(struct PACount* from, struct PACount* to);
 
 
 
-          PAResult PACountFinish(long*);
+          int PACountFinish(long*);
 
 
-          PAResult PACountDelete(struct PACount* PA);
+          int PACountDelete(struct PACount* PA);
 # 6 "src/PA/Count.c" 2
 # 1 "./include/PA/Number.h" 1
 
@@ -2348,7 +2348,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
           struct PANumber* PANumberBegin(struct PANumber* Number, unsigned char Value);
           struct PANumber* PANumberCopy(struct PANumber* from, struct PANumber* to);
           int PANumberDelete(struct PANumber*);
-          PAResult PANumberFinish(struct PANumber*);
+          int PANumberFinish(struct PANumber*);
           void PANumberPrint(struct PANumber*);
 # 7 "src/PA/Count.c" 2
 
@@ -2358,27 +2358,25 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
 
-          struct PACount* PACountCreate()
+          struct PACount* PACountCreate(long value)
 {
 
     struct PACount* count;
     count =(struct PACount*)malloc(sizeof(struct PACount));
     count->number = (long*) malloc (sizeof(long));
-# 31 "src/PA/Count.c"
-    return count;
-}
-          struct PACount* PACountBegin(struct PACount* Count, long value)
-{
-    struct PACount* aux;
+     struct PACount* aux;
     aux = (struct PACount*) malloc (sizeof(struct PACount));
 
-
     __builtin___memcpy_chk (aux->number, &value,sizeof(long), __builtin_object_size (aux->number, 0));
-    __builtin___memcpy_chk (aux, Count,sizeof(struct PACount), __builtin_object_size (aux, 0));
-
+    __builtin___memcpy_chk (aux, count,sizeof(struct PACount), __builtin_object_size (aux, 0));
     free(aux);
-    return aux;
-# 64 "src/PA/Count.c"
+# 37 "src/PA/Count.c"
+    return count;
+}
+          struct PACount* PACountBegin(struct PACount* Count)
+{
+    return Count;
+# 63 "src/PA/Count.c"
 }
           struct PACount* PACountCopy(struct PACount* from, struct PACount* to)
 {
@@ -2390,7 +2388,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
     free(aux);
     return to;
-# 84 "src/PA/Count.c"
+# 83 "src/PA/Count.c"
 }
           int PACountDelete(struct PACount* PA)
 {
@@ -2408,7 +2406,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 }
           int PACountFinish(long* PA)
 {
-# 126 "src/PA/Count.c"
+# 125 "src/PA/Count.c"
     int returnCode;
 
     free(PA);

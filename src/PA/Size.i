@@ -2052,8 +2052,9 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PASize* PASizeConstruct();
 
-          PAResult PASizeDelete(struct PASize* PA);
-          PAResult PASizeFinish(struct PASize* PA);
+          int PASizeDelete(struct PASize* PA);
+          int PASizeFinish(struct PASize* PA);
+          struct PASize* PASizeBegin(struct PASize*, size_t* digits, size_t num_digits);
 # 5 "src/PA/Size.c" 2
 
 

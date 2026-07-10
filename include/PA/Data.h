@@ -11,8 +11,8 @@
 
 // #include <defs.h>
 // struct PAData;
-DllExport struct PAData* PADataCreate(struct PASize* size);
-DllExport struct PAData* PADataBegin(struct PAData* Data, PAInt Resource);
+DllExport struct PAData* PADataCreate(PAInt size);
+DllExport struct PAData* PADataBegin(struct PAData* Data);
 DllExport struct PAData* PADataCopy(struct PAData* from, struct PAData* to);
 // DllExport struct PAData PADataPerformCopy(struct PAData);
 // DllExport struct PAData PADataPerformPutResource(struct PAData, PAResource);

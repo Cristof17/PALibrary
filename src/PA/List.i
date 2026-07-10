@@ -2060,8 +2060,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           struct PAList* PAListCopy(struct PAList*, struct PAList*);
-          PAResult PAListDelete(struct PAList*);
-          PAResult PAListFinish(struct PACount*, struct ArrayList*);
+          int PAListDelete(struct PAList*);
+          int PAListFinish(struct PACount*, struct ArrayList*);
 
 void PAListPrint(struct PAList* List);
 # 8 "src/PA/List.c" 2
@@ -2080,16 +2080,16 @@ void PAListPrint(struct PAList* List);
 
 
 
-          struct PACount* PACountCreate();
-          struct PACount* PACountBegin(struct PACount*, long);
+          struct PACount* PACountCreate(long value);
+          struct PACount* PACountBegin(struct PACount*);
           struct PACount* PACountCopy(struct PACount* from, struct PACount* to);
 
 
 
-          PAResult PACountFinish(long*);
+          int PACountFinish(long*);
 
 
-          PAResult PACountDelete(struct PACount* PA);
+          int PACountDelete(struct PACount* PA);
 # 9 "src/PA/List.c" 2
 # 1 "./include/PA/Series.h" 1
 # 15 "./include/PA/Series.h"
@@ -2103,8 +2103,8 @@ void PAListPrint(struct PAList* List);
           struct PASeries* PASeriesCreate();
           struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct PAList* Adj[]);
           struct PASeries* PASeriesCopy(struct PASeries*, struct PASeries*);
-          PAResult PASeriesDelete(struct PASeries*);
-          PAResult PASeriesFinish(struct PACount*, struct PAList**);
+          int PASeriesDelete(struct PASeries*);
+          int PASeriesFinish(struct PACount*, struct PAList**);
 
 
           void PASeriesPrint(struct PASeries*);

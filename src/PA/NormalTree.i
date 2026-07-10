@@ -2053,8 +2053,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           struct PANormalTree* PANormalTreeBegin(struct PANormalTree* NormalTree, struct PATree* Tree);
 
           struct PANormalTree* PANormalTreeCopy(struct PANormalTree* from, struct PANormalTree* to);
-          PAResult PANormalTreeDelete(struct PANormalTree* PA);
-          PAResult PANormalTreeFinish(struct PATree* PA);
+          int PANormalTreeDelete(struct PANormalTree* PA);
+          int PANormalTreeFinish(struct PATree* PA);
 # 6 "src/PA/NormalTree.c" 2
 # 1 "./include/PA/Tree.h" 1
 

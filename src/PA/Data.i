@@ -2048,13 +2048,13 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          struct PAData* PADataCreate(struct PASize* size);
-          struct PAData* PADataBegin(struct PAData* Data, long Resource);
+          struct PAData* PADataCreate(long size);
+          struct PAData* PADataBegin(struct PAData* Data);
           struct PAData* PADataCopy(struct PAData* from, struct PAData* to);
 
 
-          PAResult PADataFinish(long*);
-          PAResult PADataDelete(struct PAData*);
+          int PADataFinish(long*);
+          int PADataDelete(struct PAData*);
 # 4 "src/PA/Data.c" 2
 # 1 "./include/PA/Resource.h" 1
 
@@ -2073,28 +2073,24 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          struct PAData* PADataCreate(struct PASize* size)
+          struct PAData* PADataCreate(long Resource)
 {
 
     struct PAData* data;
     data = (struct PAData*) malloc (sizeof(struct PAData));
     data->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
-    data->Resource->value = (PANumber) malloc ((size->value[0]));
-# 38 "src/PA/Data.c"
-    return data;
-}
-          struct PAData* PADataBegin(struct PAData* Data, long resource)
-{
-
-
-
-
+    data->Resource->value = (PANumber) malloc (sizeof(PANumber));
     struct PAResource* aux;
     aux = (struct PAResource*) malloc (sizeof(struct PAResource));
-    __builtin___memcpy_chk (aux->value, &resource,sizeof(long), __builtin_object_size (aux->value, 0));
-    __builtin___memcpy_chk (Data->Resource, aux,sizeof(struct PAResource), __builtin_object_size (Data->Resource, 0));
-# 63 "src/PA/Data.c"
+    __builtin___memcpy_chk (aux->value, &Resource,sizeof(long), __builtin_object_size (aux->value, 0));
+    __builtin___memcpy_chk (data->Resource, aux,sizeof(struct PAResource), __builtin_object_size (data->Resource, 0));
     free(aux);
+# 43 "src/PA/Data.c"
+    return data;
+}
+          struct PAData* PADataBegin(struct PAData* Data)
+{
+# 66 "src/PA/Data.c"
     return Data;
 
 
@@ -2116,9 +2112,9 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     free(aux);
     return to;
-# 93 "src/PA/Data.c"
+# 95 "src/PA/Data.c"
 }
-# 111 "src/PA/Data.c"
+# 113 "src/PA/Data.c"
           int PADataDelete(struct PAData* PA)
 {
     int returnCode;
