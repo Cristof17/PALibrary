@@ -14,8 +14,8 @@
 // void PASizePrint(struct PASize);
 DllExport struct PASize* PASizeConstruct();
 // // void PASize(PA_INT);
-DllExport PAResult PASizeDelete(struct PASize* PA);
-DllExport PAResult PASizeFinish(struct PASize* PA);
+DllExport int PASizeDelete(struct PASize* PA);
+DllExport int PASizeFinish(struct PASize* PA);
 // DllExport struct PASize* PASizeBegin(struct PASize*);
 // struct PASize PASizeArrange(struct PASize);
 // struct PASize PASizePutValue(struct PASize, PA_INT);

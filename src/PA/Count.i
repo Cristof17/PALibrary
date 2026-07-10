@@ -2392,7 +2392,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
     return to;
 # 84 "src/PA/Count.c"
 }
-          PAResult PACountDelete(struct PACount* PA)
+          int PACountDelete(struct PACount* PA)
 {
     int returnCode;
 
@@ -2406,7 +2406,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
     return returnCode;
 }
-          PAResult PACountFinish(long* PA)
+          int PACountFinish(long* PA)
 {
 # 126 "src/PA/Count.c"
     int returnCode;

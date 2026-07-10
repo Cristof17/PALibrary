@@ -20,8 +20,8 @@
 DllExport struct PASeries* PASeriesCreate();
 DllExport struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct PAList* Adj[]);
 DllExport struct PASeries* PASeriesCopy(struct PASeries*, struct PASeries*);
-DllExport PAResult PASeriesDelete(struct PASeries*);
-DllExport PAResult PASeriesFinish(struct PACount*, struct PAList**);
+DllExport int PASeriesDelete(struct PASeries*);
+DllExport int PASeriesFinish(struct PACount*, struct PAList**);
 // PAResult PASeriesPerformCopy();
 // DllExport struct PAResource* PASeriesGet(struct PAData* Data);
 DllExport void PASeriesPrint(struct PASeries*);

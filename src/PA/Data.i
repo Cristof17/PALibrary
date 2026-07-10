@@ -2119,7 +2119,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 93 "src/PA/Data.c"
 }
 # 111 "src/PA/Data.c"
-          PAResult PADataDelete(struct PAData* PA)
+          int PADataDelete(struct PAData* PA)
 {
     int returnCode;
 
@@ -2135,7 +2135,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 }
-          PAResult PADataFinish(long* PA)
+          int PADataFinish(long* PA)
 {
 
 

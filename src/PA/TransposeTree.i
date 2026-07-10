@@ -2133,7 +2133,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 76 "src/PA/TransposeTree.c"
 }
 # 86 "src/PA/TransposeTree.c"
-          PAResult PATransposeTreeDelete(struct PATransposeTree* PA)
+          int PATransposeTreeDelete(struct PATransposeTree* PA)
 {
 
 
@@ -2148,7 +2148,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 }
-          PAResult PATransposeTreeFinish(struct PATree* PA)
+          int PATransposeTreeFinish(struct PATree* PA)
 {
     int returnCode;
     free(PA);

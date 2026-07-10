@@ -2155,7 +2155,7 @@ struct PAElement* PAElementCreate()
 # 113 "src/PA/Element.c"
 }
 # 126 "src/PA/Element.c"
-          PAResult PAElementDelete(struct PAElement* PA)
+          int PAElementDelete(struct PAElement* PA)
 {
     int returnCode;
     returnCode = ((int)0);
@@ -2165,7 +2165,7 @@ struct PAElement* PAElementCreate()
 
 }
 
-          PAResult PAElementFinish(struct PAData* Data, struct PAElement* Element, PAStatus* Status)
+          int PAElementFinish(struct PAData* Data, struct PAElement* Element, PAStatus* Status)
 {
 # 160 "src/PA/Element.c"
     int returnCode;

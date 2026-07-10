@@ -2092,7 +2092,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     __builtin___memset_chk(PA, 0, sizeof(struct PASize), __builtin_object_size (PA, 0));
     return returnCode;
 }
-          PAResult PASizeFinish(struct PASize* PA)
+          int PASizeFinish(struct PASize* PA)
 {
     int returnCode;
     returnCode = ((int)0);

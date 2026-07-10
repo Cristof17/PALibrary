@@ -2119,7 +2119,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 101 "src/PA/Output.c"
 }
 
-          PAResult PAOutputDelete(struct PAOutput* PA)
+          int PAOutputDelete(struct PAOutput* PA)
 {
     int returnCode;
 
@@ -2133,7 +2133,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     return returnCode;
 }
-          PAResult PAOutputFinish(struct BFSRecord* Record)
+          int PAOutputFinish(struct BFSRecord* Record)
 {
     int returnCode;
 

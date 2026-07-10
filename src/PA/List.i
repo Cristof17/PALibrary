@@ -2143,7 +2143,7 @@ void PAListPrint(struct PAList* List);
     return listPointer;
 }
 # 184 "src/PA/List.c"
-          PAResult PAListDelete(struct PAList* PA)
+          int PAListDelete(struct PAList* PA)
 {
     int returnCode;
     returnCode = ((int)0);
@@ -2154,7 +2154,7 @@ void PAListPrint(struct PAList* List);
 
 
 }
-          PAResult PAListFinish(struct PACount* Count, struct ArrayList* Edges)
+          int PAListFinish(struct PACount* Count, struct ArrayList* Edges)
 {
     int returnCode;
 

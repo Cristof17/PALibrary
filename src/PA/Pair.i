@@ -2135,7 +2135,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 106 "src/PA/Pair.c"
 }
 # 135 "src/PA/Pair.c"
-          PAResult PAPairDelete(struct PAPair* PA)
+          int PAPairDelete(struct PAPair* PA)
 {
 
 
@@ -2147,7 +2147,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 152 "src/PA/Pair.c"
     return returnCode;
 }
-          PAResult PAPairFinish(struct PAPair* PA)
+          int PAPairFinish(struct PAPair* PA)
 {
 
 

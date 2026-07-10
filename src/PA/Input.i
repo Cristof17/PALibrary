@@ -2164,7 +2164,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
  return aux;
 
 }
-          PAResult PAInputDelete(struct PAInput* PA)
+          int PAInputDelete(struct PAInput* PA)
 {
  int returnCode;
  __builtin___memset_chk(PA, 0, sizeof(struct PAInput), __builtin_object_size (PA, 0));
@@ -2176,7 +2176,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
  return returnCode;
 }
 
-          PAResult PAInputFinish(struct PACount* N, struct PACount* M, struct PAElement* Source, struct PASeries* Adj) {
+          int PAInputFinish(struct PACount* N, struct PACount* M, struct PAElement* Source, struct PASeries* Adj) {
 
 
 

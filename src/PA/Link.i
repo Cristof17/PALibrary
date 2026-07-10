@@ -2126,7 +2126,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     return to;
 # 79 "src/PA/Link.c"
 }
-          PAResult PALinkDelete(struct PALink* PA){
+          int PALinkDelete(struct PALink* PA){
 
     int returnCode;
     returnCode = ((int)0);
@@ -2140,7 +2140,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 }
-          PAResult PALinkFinish(struct PAPair* Pair)
+          int PALinkFinish(struct PAPair* Pair)
 {
 
 
