@@ -17,9 +17,34 @@ typedef int ArrayListObject;
 #else
 typedef char* PANumber;
 // struct PANumber;
-#ifndef x86_64
+#ifndef AArch64
+#ifndef arm64
+#ifndef armv6
 typedef int PAInt;
-#elif defined x86_64
+#elif defined armv6
+typedef long PAInt;
+#endif
+#elif defined arm64
+typedef long PAInt;
+#endif
+#elif defined AArch64
+typedef long PAInt;
+#endif
+// #ifndef AArch64
+// typedef int PAInt;
+// #elif defined AArch64
+// typedef int PAInt;
+// #elif defined AArch64
+// typedef long PAInt;
+// #endif
+// #ifndef AArch64
+// typedef int PAInt;
+// #elif defined AArch64
+typedef int PAInt;
+#elif defined AArch64
+typedef long PAInt;
+#endif
+
 typedef long PAInt;
 #endif
 // endif

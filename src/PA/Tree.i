@@ -2065,7 +2065,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           int PATreeDelete(struct PATree*);
-          int PATreeFinish(struct PATree*);
+          int PATreeFinish(struct PACount*, struct PACount*, struct PAList*, struct PAElement*);
 # 4 "src/PA/Tree.c" 2
 # 1 "./include/PA/Count.h" 1
 
@@ -2203,11 +2203,14 @@ void PAListPrint(struct PAList* List);
     return returnCode;
 
 }
-          PAResult PATreeFinish(struct PATree* PA)
+          PAResult PATreeFinish(struct PACount* N, struct PACount* M, struct PAList* List, struct PAElement* Source)
 {
     int returnCode;
-    free(PA);
+    free(N);
+    free(M);
+    free(List);
+    free(Source);
     returnCode = ((int)0);
-# 239 "src/PA/Tree.c"
+# 242 "src/PA/Tree.c"
     return returnCode;
 }

@@ -2063,7 +2063,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           int PATreeDelete(struct PATree*);
-          int PATreeFinish(struct PATree*);
+          int PATreeFinish(struct PACount*, struct PACount*, struct PAList*, struct PAElement*);
 # 2 "test/test.c" 2
 # 1 "./include/PA/Count.h" 1
 
@@ -2520,7 +2520,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
           struct PATransposeTree* PATransposeTreeCopy(struct PATransposeTree*, struct PATransposeTree*);
 
           PAResult PATransposeTreeDelete(struct PATransposeTree*);
-          PAResult PATransposeTreeFinish(struct PATransposeTree*);
+          PAResult PATransposeTreeFinish(struct PATree*);
 # 13 "test/test.c" 2
 # 1 "./conf.h" 1
 # 14 "test/test.c" 2

@@ -2450,7 +2450,7 @@ void PAListPrint(struct PAList* List);
 
 
           int PATreeDelete(struct PATree*);
-          int PATreeFinish(struct PATree*);
+          int PATreeFinish(struct PACount*, struct PACount*, struct PAList*, struct PAElement*);
 # 9 "test/test_pointers.c" 2
 # 1 "./include/PA/Element.h" 1
 

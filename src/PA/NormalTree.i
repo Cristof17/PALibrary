@@ -2089,7 +2089,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           int PATreeDelete(struct PATree*);
-          int PATreeFinish(struct PATree*);
+          int PATreeFinish(struct PACount*, struct PACount*, struct PAList*, struct PAElement*);
 # 7 "src/PA/NormalTree.c" 2
 
 
