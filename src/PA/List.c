@@ -181,7 +181,7 @@ DllExport struct PAList* PAListBegin(struct PAList* List, struct PACount* M, str
     // struct PAResult result;
     // return result;
 // }
-DllExport PAResult PAListDelete(struct PAList* PA)
+DllExport int PAListDelete(struct PAList* PA)
 {
     int returnCode;
     returnCode = PARESULT_SUCCESS;
@@ -210,7 +210,7 @@ DllExport PAResult PAListDelete(struct PAList* PA)
     // PAResult result;
     // return result;
 }
-DllExport PAResult PAListFinish(struct PACount* Count, struct ArrayList* Edges)
+DllExport int PAListFinish(struct PACount* Count, struct ArrayList* Edges)
 {
     int returnCode;
     // returnCode = PACountFinish(PA->n);

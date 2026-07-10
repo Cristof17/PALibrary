@@ -39,7 +39,7 @@ DllExport int PASizeDelete(struct PASize* PA)
     bzero(PA,sizeof(struct PASize));
     return returnCode;
 }
-DllExport PAResult PASizeFinish(struct PASize* PA)
+DllExport int PASizeFinish(struct PASize* PA)
 {
     int returnCode;
     returnCode = PARESULT_SUCCESS;

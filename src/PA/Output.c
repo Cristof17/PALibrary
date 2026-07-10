@@ -100,7 +100,7 @@ DllExport struct PAOutput* PAOutputCopy(struct PAOutput* from, struct PAOutput* 
     // return to
 }
 
-DllExport PAResult PAOutputDelete(struct PAOutput* PA)
+DllExport int PAOutputDelete(struct PAOutput* PA)
 {
     int returnCode;
     // bzero(PA,sizeof(struct PAAOu))
@@ -114,7 +114,7 @@ DllExport PAResult PAOutputDelete(struct PAOutput* PA)
     // return output;
     return returnCode;
 }
-DllExport PAResult PAOutputFinish(struct BFSRecord* Record)
+DllExport int PAOutputFinish(struct BFSRecord* Record)
 {
     int returnCode;
     // returnCode = PA->

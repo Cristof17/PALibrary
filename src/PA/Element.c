@@ -123,7 +123,7 @@ DllExport struct PAElement* PAElementCopy(struct PAElement* from, struct PAEleme
 //	copy.type=Element.type;
 	//return ;
 // }
-DllExport PAResult PAElementDelete(struct PAElement* PA)
+DllExport int PAElementDelete(struct PAElement* PA)
 {
     int returnCode;
     returnCode = PARESULT_SUCCESS;
@@ -140,7 +140,7 @@ DllExport PAResult PAElementDelete(struct PAElement* PA)
     // return 0;
 }
 // DllExport PAResult PAElementFinish(struct PAElement* PA)
-DllExport PAResult PAElementFinish(struct PAData* Data, struct PAElement* Element, PAStatus* Status)
+DllExport int PAElementFinish(struct PAData* Data, struct PAElement* Element, PAStatus* Status)
 {
     // free(PA);
     // PA.index = PADataPerformRuin(PA.index);

@@ -161,7 +161,7 @@ DllExport struct PATree* PATreeCopy(struct PATree* from, struct PATree* to)
     // return to;
     // return temp;
 }
-DllExport PAResult PATreeDelete(struct PATree* PA)
+DllExport int PATreeDelete(struct PATree* PA)
 {
     int returnCode;
     struct PATree tree;
@@ -180,7 +180,7 @@ DllExport PAResult PATreeDelete(struct PATree* PA)
     return returnCode;
     // return 0;
 }
-DllExport PAResult PATreeFinish(struct PACount* N, struct PACount* M, struct PAList* List, struct PAElement* Source)
+DllExport int PATreeFinish(struct PACount* N, struct PACount* M, struct PAList* List, struct PAElement* Source)
 {
     int returnCode;
     free(N);

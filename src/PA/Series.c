@@ -159,7 +159,7 @@ DllExport struct PASeries* PASeriesBegin(struct PASeries* series, struct PACount
         free(aux);
         return aux;
     }
-    DllExport PAResult PASeriesDelete(struct PASeries* PA)
+    DllExport int PASeriesDelete(struct PASeries* PA)
     {
         int returnCode;
         returnCode = PARESULT_SUCCESS;
@@ -191,7 +191,7 @@ DllExport struct PASeries* PASeriesBegin(struct PASeries* series, struct PACount
         // copy = PAListPerformInit(List);
         //return copy;
     // }
-    DllExport PAResult PASeriesFinish(struct PACount* Count, struct PAList** List)
+    DllExport int PASeriesFinish(struct PACount* Count, struct PAList** List)
     {
         // st
         int returnCode;

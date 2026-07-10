@@ -107,7 +107,7 @@ DllExport struct PAInput* PAInputBegin(struct PAInput* Input, struct PACount* N,
 	return aux;
 	// return inputPointer;
 }
-DllExport PAResult PAInputDelete(struct PAInput* PA)
+DllExport int PAInputDelete(struct PAInput* PA)
 {
 	int returnCode;
 	bzero(PA,sizeof(struct PAInput));
@@ -126,7 +126,7 @@ DllExport PAResult PAInputDelete(struct PAInput* PA)
 	return returnCode;
 }
 // DllExport PAResult PAInputFinish(struct PACount* N, struct PACount*) {
-DllExport PAResult PAInputFinish(struct PACount* N, struct PACount* M, struct PAElement* Source, struct PASeries* Adj) {
+DllExport int PAInputFinish(struct PACount* N, struct PACount* M, struct PAElement* Source, struct PASeries* Adj) {
 	// PAResult result;
 	// struct PAInput Empty;
 	// PACountFinish(&PA->n);

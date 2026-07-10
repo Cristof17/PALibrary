@@ -82,7 +82,7 @@ DllExport struct PACount* PACountCopy(struct PACount* from, struct PACount* to)
     // to.number = temp.number;
     // return to;
 }
-DllExport PAResult PACountDelete(struct PACount* PA)
+DllExport int PACountDelete(struct PACount* PA)
 {
     int returnCode;
     // PA->number = NULL;
@@ -96,7 +96,7 @@ DllExport PAResult PACountDelete(struct PACount* PA)
     // return result;
     return returnCode;
 }
-DllExport PAResult PACountFinish(PAInt* PA)
+DllExport int PACountFinish(PAInt* PA)
 {
     //get the value at address pointed by stack pointer
     //that corresponsds to parameter PA

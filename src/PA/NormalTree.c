@@ -67,7 +67,7 @@ DllExport struct PANormalTree* PANormalTreeCopy(struct PANormalTree* from, struc
 // //    copy.adj = Tree.adj;
 //     return copy;
 }
-DllExport PAResult PANormalTreeDelete(struct PANormalTree* PA)
+DllExport int PANormalTreeDelete(struct PANormalTree* PA)
 {
     int returnCode;
     // PA->tree = NULL;
@@ -81,7 +81,7 @@ DllExport PAResult PANormalTreeDelete(struct PANormalTree* PA)
     // return PA;
     return returnCode;
 }
-DllExport PAResult PANormalTreeFinish(struct PATree* Tree)
+DllExport int PANormalTreeFinish(struct PATree* Tree)
 {
     int returnCode;
     free(Tree);

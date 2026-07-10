@@ -83,7 +83,7 @@ DllExport struct PATransposeTree* PATransposeTreeCopy(struct PATransposeTree* fr
 //     // struct PATransposeTree tree;
 //     return PA;
 // }
-DllExport PAResult PATransposeTreeDelete(struct PATransposeTree* PA)
+DllExport int PATransposeTreeDelete(struct PATransposeTree* PA)
 {
     // int retutrn
     // int returncode;
@@ -98,7 +98,7 @@ DllExport PAResult PATransposeTreeDelete(struct PATransposeTree* PA)
     // return rc;
     // return returnCode;
 }
-DllExport PAResult PATransposeTreeFinish(struct PATree* PA)
+DllExport int PATransposeTreeFinish(struct PATree* PA)
 {
     int returnCode;
     free(PA);
