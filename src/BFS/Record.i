@@ -2085,7 +2085,7 @@ void PAListPrint(struct PAList* List);
 
 
 
-          int PACountFinish(long*);
+          int PACountFinish(void*);
 
 
           int PACountDelete(struct PACount* PA);

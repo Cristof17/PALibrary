@@ -101,7 +101,7 @@ DllExport int PACountDelete(struct PACount* PA)
     // return result;
     return returnCode;
 }
-DllExport int PACountFinish(PAInt* PA)
+DllExport int PACountFinish(void* PA)
 {
     //get the value at address pointed by stack pointer
     //that corresponsds to parameter PA

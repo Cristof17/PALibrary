@@ -1857,7 +1857,7 @@ struct Facade {
 
 
 
-          int PACountFinish(long*);
+          int PACountFinish(void*);
 
 
           int PACountDelete(struct PACount* PA);
@@ -2403,7 +2403,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
     return returnCode;
 }
-          int PACountFinish(long* PA)
+          int PACountFinish(void* PA)
 {
 # 131 "src/PA/Count.c"
     int returnCode;

@@ -2085,7 +2085,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          int PACountFinish(long*);
+          int PACountFinish(void*);
 
 
           int PACountDelete(struct PACount* PA);
