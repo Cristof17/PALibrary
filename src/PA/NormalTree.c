@@ -9,7 +9,7 @@
 #include <PA\Tree.h>
 #endif
 
-DllExport struct PANormalTree* PANormalTreeCreate()
+DllExport void* PANormalTreeCreate(size_t size)
 {
     struct PANormalTree* normalTree;
     // struct PANormalTree* normalTree;
@@ -20,7 +20,7 @@ DllExport struct PANormalTree* PANormalTreeCreate()
     // struct PAnor
     // struct NA
     // nro
-    normalTree = (struct PANormalTree*) malloc (sizeof(struct PANormalTree));
+    normalTree = malloc (size);
     // register
     return normalTree;
     // normalTree.tree = PATreePerformConstruct();
@@ -81,7 +81,7 @@ DllExport int PANormalTreeDelete(struct PANormalTree* PA)
     // return PA;
     return returnCode;
 }
-DllExport int PANormalTreeFinish(struct PATree* Tree)
+DllExport int PANormalTreeFinish(void* Tree)
 {
     int returnCode;
     free(Tree);

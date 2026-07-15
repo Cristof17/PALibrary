@@ -2049,12 +2049,12 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 12 "./include/PA/NormalTree.h" 2
 
-          struct PANormalTree* PANormalTreeCreate();
+          void* PANormalTreeCreate(size_t size);
           struct PANormalTree* PANormalTreeBegin(struct PANormalTree* NormalTree, struct PATree* Tree);
 
           struct PANormalTree* PANormalTreeCopy(struct PANormalTree* from, struct PANormalTree* to);
           int PANormalTreeDelete(struct PANormalTree* PA);
-          int PANormalTreeFinish(struct PATree* PA);
+          int PANormalTreeFinish(void* PA);
 # 6 "src/PA/NormalTree.c" 2
 # 1 "./include/PA/Tree.h" 1
 
@@ -2089,11 +2089,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          struct PANormalTree* PANormalTreeCreate()
+          void* PANormalTreeCreate(size_t size)
 {
     struct PANormalTree* normalTree;
 # 23 "src/PA/NormalTree.c"
-    normalTree = (struct PANormalTree*) malloc (sizeof(struct PANormalTree));
+    normalTree = malloc (size);
 
     return normalTree;
 
@@ -2135,7 +2135,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     return returnCode;
 }
-          int PANormalTreeFinish(struct PATree* Tree)
+          int PANormalTreeFinish(void* Tree)
 {
     int returnCode;
     free(Tree);
