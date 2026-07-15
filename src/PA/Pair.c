@@ -10,11 +10,11 @@
 #include <PA\Element.h>
 #endif
 
-DllExport struct PAPair* PAPairCreate()
+DllExport void* PAPairCreate(size_t size)
 {
     // struct PAPair pair;
-    struct PAPair* pair;
-    pair =(struct PAPair*) malloc(sizeof(struct PAPair));
+    void* pair;
+    pair = malloc(size);
     // struct PAPair* pairPointer;
     // pairPointer->Node = PAElementPerformConstruct();
     // pairPointer->Neigh = PAElementPerformConstruct();
@@ -151,7 +151,7 @@ DllExport int PAPairDelete(struct PAPair* PA)
     //
     return returnCode;
 }
-DllExport int PAPairFinish(struct PAPair* PA)
+DllExport int PAPairFinish(void* PA)
 {
     // int returnCode1;
     // int returnCode2;

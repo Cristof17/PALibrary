@@ -2073,14 +2073,14 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 10 "./include/PA/Pair.h" 2
 
 
-          struct PAPair* PAPairCreate();
+          void* PAPairCreate(size_t size);
           struct PAPair* PAPairBegin(struct PAPair*, struct PAElement*, struct PAElement*);
           struct PAPair* PAPAPairCopy(struct PAPair* from, struct PAPair* to);
 
 
 
           int PAPairDelete(struct PAPair*);
-          int PAPairFinish(struct PAPair*);
+          int PAPairFinish(void*);
 # 10 "src/PA/Link.c" 2
 
 

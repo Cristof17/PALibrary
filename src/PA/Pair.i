@@ -2049,14 +2049,14 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 10 "./include/PA/Pair.h" 2
 
 
-          struct PAPair* PAPairCreate();
+          void* PAPairCreate(size_t size);
           struct PAPair* PAPairBegin(struct PAPair*, struct PAElement*, struct PAElement*);
           struct PAPair* PAPAPairCopy(struct PAPair* from, struct PAPair* to);
 
 
 
           int PAPairDelete(struct PAPair*);
-          int PAPairFinish(struct PAPair*);
+          int PAPairFinish(void*);
 # 7 "src/PA/Pair.c" 2
 # 1 "./include/PA/Element.h" 1
 
@@ -2086,11 +2086,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          struct PAPair* PAPairCreate()
+          void* PAPairCreate(size_t size)
 {
 
-    struct PAPair* pair;
-    pair =(struct PAPair*) malloc(sizeof(struct PAPair));
+    void* pair;
+    pair = malloc(size);
 # 26 "src/PA/Pair.c"
     return pair;
 
@@ -2147,7 +2147,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 152 "src/PA/Pair.c"
     return returnCode;
 }
-          int PAPairFinish(struct PAPair* PA)
+          int PAPairFinish(void* PA)
 {
 
 
