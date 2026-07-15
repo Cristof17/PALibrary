@@ -11,7 +11,7 @@
 
 // struct PATree;
 // struct PATree PATreeConstruct(struct OPAResult);
-DllExport struct PATree* PATreeCreate();
+DllExport void* PATreeCreate(size_t size);
 DllExport struct PATree* PATreeCopy(struct PATree* from, struct PATree* to);
 // DllExport struct PACount PATreeSize();
 DllExport struct PATree* PATreeBegin(struct PATree*, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source);
@@ -21,6 +21,6 @@ DllExport struct PATree* PATreeBegin(struct PATree*, struct PACount* N, struct P
 // DllExport HRESULT PATreePerformPutElement();
 // DllExport HRESULT PATreePerformPutSeries();
 DllExport int PATreeDelete(struct PATree*);
-DllExport int PATreeFinish(struct PACount*, struct PACount*, struct PAList*, struct PAElement*);
+DllExport int PATreeFinish(void*);
 //typedef struct PATree Tree;
 #endif

@@ -2048,7 +2048,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          struct PATree* PATreeCreate();
+          void* PATreeCreate(size_t size);
           struct PATree* PATreeCopy(struct PATree* from, struct PATree* to);
 
           struct PATree* PATreeBegin(struct PATree*, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source);
@@ -2058,7 +2058,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           int PATreeDelete(struct PATree*);
-          int PATreeFinish(struct PACount*, struct PACount*, struct PAList*, struct PAElement*);
+          int PATreeFinish(void*);
 # 4 "src/PA/Tree.c" 2
 # 1 "./include/PA/Count.h" 1
 
@@ -2139,11 +2139,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 void PAListPrint(struct PAList* List);
 # 7 "src/PA/Tree.c" 2
 # 19 "src/PA/Tree.c"
-          struct PATree* PATreeCreate()
+          void* PATreeCreate(size_t size)
 {
 
-    struct PATree* tree;
-    tree = (struct PATree*) malloc (sizeof(struct PATree));
+    void* tree;
+    tree = malloc (size);
 # 77 "src/PA/Tree.c"
     return tree;
 
@@ -2196,14 +2196,15 @@ void PAListPrint(struct PAList* List);
     return returnCode;
 
 }
-          int PATreeFinish(struct PACount* N, struct PACount* M, struct PAList* List, struct PAElement* Source)
+          int PATreeFinish(void* PA)
 {
     int returnCode;
-    free(N);
-    free(M);
-    free(List);
-    free(Source);
+
+
+
+
+    free(PA);
     returnCode = ((int)0);
-# 242 "src/PA/Tree.c"
+# 243 "src/PA/Tree.c"
     return returnCode;
 }

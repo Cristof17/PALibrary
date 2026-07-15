@@ -16,11 +16,11 @@
     // struct PACount size;
     // return size;
 // }
-DllExport struct PATree* PATreeCreate()
+DllExport void* PATreeCreate(size_t size)
 {
     // struct PATree* temp;
-    struct PATree* tree;
-    tree = (struct PATree*) malloc (sizeof(struct PATree));
+    void* tree;
+    tree = malloc (size);
     // treePointer->n = n;
     // treePointer->m = m;
     // treePointer->adj = adj;
@@ -180,13 +180,14 @@ DllExport int PATreeDelete(struct PATree* PA)
     return returnCode;
     // return 0;
 }
-DllExport int PATreeFinish(struct PACount* N, struct PACount* M, struct PAList* List, struct PAElement* Source)
+DllExport int PATreeFinish(void* PA)
 {
     int returnCode;
-    free(N);
-    free(M);
-    free(List);
-    free(Source);
+    // free(N);
+    // free(M);
+    // free(List);
+    // free(Source);
+    free(PA);
     returnCode = PARESULT_SUCCESS;
     // int returnCode2;
     // int returnCode3;

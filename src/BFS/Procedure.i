@@ -2092,7 +2092,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          struct PATree* PATreeCreate();
+          void* PATreeCreate(size_t size);
           struct PATree* PATreeCopy(struct PATree* from, struct PATree* to);
 
           struct PATree* PATreeBegin(struct PATree*, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source);
@@ -2102,7 +2102,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           int PATreeDelete(struct PATree*);
-          int PATreeFinish(struct PACount*, struct PACount*, struct PAList*, struct PAElement*);
+          int PATreeFinish(void*);
 # 9 "src/BFS/Procedure.c" 2
 # 1 "./include/PA/Element.h" 1
 
