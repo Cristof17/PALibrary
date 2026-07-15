@@ -2048,12 +2048,12 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          struct PAData* PADataCreate(long* size);
+          void* PADataCreate(size_t size);
           struct PAData* PADataBegin(struct PAData* Data);
           struct PAData* PADataCopy(struct PAData* from, struct PAData* to);
 
 
-          int PADataFinish(long*);
+          int PADataFinish(void*);
           int PADataDelete(struct PAData*);
 # 4 "src/PA/Data.c" 2
 # 1 "./include/PA/Resource.h" 1
@@ -2073,24 +2073,18 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          struct PAData* PADataCreate(long* Resource)
+          void* PADataCreate(size_t size)
 {
 
-    struct PAData* data;
-    data = (struct PAData*) malloc (sizeof(struct PAData));
-    data->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
-    data->Resource->value = (PANumber) malloc (sizeof(PANumber));
-    struct PAResource* aux;
-    aux = (struct PAResource*) malloc (sizeof(struct PAResource));
-    __builtin___memcpy_chk (aux->value, Resource,sizeof(long), __builtin_object_size (aux->value, 0));
-    __builtin___memcpy_chk (data->Resource, aux,sizeof(struct PAResource), __builtin_object_size (data->Resource, 0));
-    free(aux);
-# 43 "src/PA/Data.c"
+
+    void* data;
+    data = malloc (size);
+# 44 "src/PA/Data.c"
     return data;
 }
           struct PAData* PADataBegin(struct PAData* Data)
 {
-# 66 "src/PA/Data.c"
+# 67 "src/PA/Data.c"
     return Data;
 
 
@@ -2112,9 +2106,9 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     free(aux);
     return to;
-# 95 "src/PA/Data.c"
+# 96 "src/PA/Data.c"
 }
-# 113 "src/PA/Data.c"
+# 114 "src/PA/Data.c"
           int PADataDelete(struct PAData* PA)
 {
     int returnCode;
@@ -2131,7 +2125,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 }
-          int PADataFinish(long* PA)
+          int PADataFinish(void* PA)
 {
 
 

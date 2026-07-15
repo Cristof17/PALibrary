@@ -15,10 +15,10 @@
 // #include <types.h>
 // #include "//"
 // #include "../include/PAIndex.h"
-struct PAElement* PAElementCreate()
+DllExport void* PAElementCreate(size_t size)
 {
-    struct PAElement* element;
-    element = (struct PAElement*)malloc(sizeof(struct PAElement));
+    void* element;
+    element = malloc(size);
     // temp->index = index;
     // temp->status = status;
     // temp->next = next;
@@ -140,7 +140,7 @@ DllExport int PAElementDelete(struct PAElement* PA)
     // return 0;
 }
 // DllExport PAResult PAElementFinish(struct PAElement* PA)
-DllExport int PAElementFinish(struct PAData* Data, struct PAElement* Element, PAStatus* Status)
+DllExport int PAElementFinish(void* PA)
 {
     // free(PA);
     // PA.index = PADataPerformRuin(PA.index);
@@ -158,9 +158,10 @@ DllExport int PAElementFinish(struct PAData* Data, struct PAElement* Element, PA
     // Element.status = PAStatusPerformRuin(PA.status);
     // int returnCode;
     int returnCode;
-    free(Data);
-    free(Element);
-    free(Status);
+    // free(Data);
+    free(PA);
+    // free(Element);
+    // free(Status);
     returnCode = PARESULT_SUCCESS;
     return returnCode;
     // return PA;

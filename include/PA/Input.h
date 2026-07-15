@@ -10,7 +10,7 @@
 // #include <typee
 
 // struct PAInput;
-DllExport struct PAInput* PAInputCreate();
+DllExport void* PAInputCreate(size_t size);
 // DllExport struct PAInput PAInputPerformCopy(struct PAInput);
 DllExport struct PAInput* PAInputBegin(struct PAInput* PA, struct PACount* N, struct PACount* M, struct PAElement* Source, struct PASeries* Series);
 // DllExport struct s PAInputCopy(struct PAInput* from, struct PAInput* to);
@@ -20,7 +20,7 @@ DllExport struct PAInput* PAInputCopy(struct PAInput* from, struct PAInput* to);
 // struct PAInput PAInputPerformConstruct(struct PACount, struct PACount, struct PAList, struct PAElement)l
 // struct 
 DllExport int PAInputDelete(struct PAInput*);
-DllExport int PAInputFinish(struct PACount*, struct PACount*, struct PAElement*, struct PASeries*);
+DllExport int PAInputFinish(void* PA);
 // void BFSInputRuin();
 // struct BFSInput BFSInputArrange(struct BFSInput);
 //typedef struct BFSInput Input;

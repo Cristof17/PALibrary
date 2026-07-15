@@ -13,11 +13,11 @@
 #include <PA\Count.h>
 #include <PA\Element.h>
 #endif
-DllExport struct PAInput* PAInputCreate()
+DllExport void* PAInputCreate(size_t size)
 {
 	// struct PAInput temp;
-	struct PAInput* input;
-	input = (struct PAInput*) malloc (sizeof(struct PAInput));
+	void* input;
+	input = malloc(size);
 	// inputPointer->n = (struct PACount*) malloc (sizeof(struct PACount));
 // inputPointer->m = (struct PACount*) malloc (sizeof(struct PACount*));
 	// inputPointer->source = (struct PACount*) malloc (sizeof(struct PACount));
@@ -126,7 +126,7 @@ DllExport int PAInputDelete(struct PAInput* PA)
 	return returnCode;
 }
 // DllExport PAResult PAInputFinish(struct PACount* N, struct PACount*) {
-DllExport int PAInputFinish(struct PACount* N, struct PACount* M, struct PAElement* Source, struct PASeries* Adj) {
+DllExport int PAInputFinish(void* PA) {
 	// PAResult result;
 	// struct PAInput Empty;
 	// PACountFinish(&PA->n);
@@ -134,10 +134,10 @@ DllExport int PAInputFinish(struct PACount* N, struct PACount* M, struct PAEleme
 	// PAElementFinish(&PA->source);
 	int returnCode;
 	// free(PA);
-	free(N);
-	free(M);
-	free(Source);
-	free(Adj);
+	// free(N);
+	// free(M);
+	// free(Source);
+	free(PA);
 	returnCode = PARESULT_SUCCESS;
 	// return PA;
 	// return Empty;

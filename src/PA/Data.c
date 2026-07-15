@@ -127,7 +127,7 @@ DllExport int PADataDelete(struct PAData* PA)
     // PAResult result = (PAInt) PARESULT_SUCCESS;
     // return PA;
 }
-DllExport int PADataFinish(PAInt* PA) 
+DllExport int PADataFinish(void* PA) 
 {
     // PAInt Empty = NULL;
     // Resource = Empty;
