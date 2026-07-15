@@ -12,10 +12,10 @@
 // #endif
 // //typedef struct PACount Count;
 // void PASizePrint(struct PASize);
-DllExport struct PASize* PASizeConstruct();
+DllExport void* PASizeConstruct(size_t size);
 // // void PASize(PA_INT);
 DllExport int PASizeDelete(struct PASize* PA);
-DllExport int PASizeFinish(struct PASize* PA);
+DllExport int PASizeFinish(void* PA);
 DllExport struct PASize* PASizeBegin(struct PASize*, size_t* digits, size_t num_digits);
 // struct PASize PASizeArrange(struct PASize);
 // struct PASize PASizePutValue(struct PASize, PA_INT);
