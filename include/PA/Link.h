@@ -9,7 +9,7 @@
 #include <string.h>
 
 // struct PALink;
-DllExport void* PALinkCreate(size_t size);
+DllExport Memory PALinkCreate(size_t size);
 DllExport struct PALink* PALinkBegin(struct PALink*, struct PAPair*);
 DllExport struct PALink* PALinkCopy(struct PALink*, struct PALink*);
 // DllExport struct PALink PALinkPerformCopy(struct PALink);

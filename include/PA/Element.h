@@ -9,7 +9,7 @@
 #include <string.h>
 
 // struct PAElement;
-DllExport void* PAElementCreate(size_t size);
+DllExport Memory PAElementCreate(size_t size);
 DllExport struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus Status);
 DllExport struct PAElement* PAElementCopy(struct PAElement*, struct PAElement*);
 DllExport int PAElementDelete(struct PAElement*);

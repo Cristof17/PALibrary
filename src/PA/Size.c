@@ -6,7 +6,7 @@
 #include <PA\Size.h>
 #endif
 
-DllExport void* PASizeConstruct(size_t size){
+DllExport Memory PASizeConstruct(size_t size){
     void* sizeStruct;
     sizeStruct = malloc (size);
     return sizeStruct;

@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-DllExport void* PANumberCreate(size_t size);
+DllExport Memory PANumberCreate(size_t size);
 DllExport struct PANumber* PANumberBegin(struct PANumber* Number, unsigned char Value);
 DllExport struct PANumber* PANumberCopy(struct PANumber* from, struct PANumber* to);
 DllExport int PANumberDelete(struct PANumber*);

@@ -9,7 +9,7 @@
 #include <PA\Tree.h>
 #endif
 
-DllExport void* PANormalTreeCreate(size_t size)
+DllExport Memory PANormalTreeCreate(size_t size)
 {
     struct PANormalTree* normalTree;
     // struct PANormalTree* normalTree;

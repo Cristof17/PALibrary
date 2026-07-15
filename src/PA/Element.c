@@ -15,7 +15,7 @@
 // #include <types.h>
 // #include "//"
 // #include "../include/PAIndex.h"
-DllExport void* PAElementCreate(size_t size)
+DllExport Memory PAElementCreate(size_t size)
 {
     void* element;
     element = malloc(size);

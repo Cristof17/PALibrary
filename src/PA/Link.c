@@ -13,7 +13,7 @@
 #endif
 
 // DllExport struct PALink* PALinkCreate(struct )
-DllExport void* PALinkCreate(size_t size)
+DllExport Memory PALinkCreate(size_t size)
 {
     // struct PALink link;
     void* link;

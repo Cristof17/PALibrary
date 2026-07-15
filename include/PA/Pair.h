@@ -9,7 +9,7 @@
 #include <string.h>
 
 // struct PAPair;
-DllExport void* PAPairCreate(size_t size);
+DllExport Memory PAPairCreate(size_t size);
 DllExport struct PAPair* PAPairBegin(struct PAPair*, struct PAElement*, struct PAElement*);
 DllExport struct PAPair* PAPAPairCopy(struct PAPair* from, struct PAPair* to);
 // DllExport HRESULT PAPairPerformCopy(struct PAPair);

@@ -10,7 +10,7 @@
 // #include <typee
 
 // struct PAInput;
-DllExport void* PAInputCreate(size_t size);
+DllExport Memory PAInputCreate(size_t size);
 // DllExport struct PAInput PAInputPerformCopy(struct PAInput);
 DllExport struct PAInput* PAInputBegin(struct PAInput* PA, struct PACount* N, struct PACount* M, struct PAElement* Source, struct PASeries* Series);
 // DllExport struct s PAInputCopy(struct PAInput* from, struct PAInput* to);

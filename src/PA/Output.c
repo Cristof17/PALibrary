@@ -32,7 +32,7 @@
 // {
 //     PAOutputPerformPrint(output);
 // }
-DllExport void* PAOutputCreate(size_t size)
+DllExport Memory PAOutputCreate(size_t size)
 {
     // struct PAOutput* result;
     void* output;

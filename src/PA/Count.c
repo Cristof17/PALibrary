@@ -11,7 +11,7 @@
 
 #endif
 
-DllExport void* PACountCreate(size_t size)
+DllExport Memory PACountCreate(size_t size)
 {
     // struct PACount zies;
     void* count;
@@ -130,7 +130,7 @@ DllExport int PACountFinish(void* PA)
     // return Empty;
     int returnCode;
     // free(PA->number);
-    free(PA);
+    free(PA);`
     returnCode = PARESULT_SUCCESS;
     // returnCode = PANumberFinish(PA->number);
     // free(PA);

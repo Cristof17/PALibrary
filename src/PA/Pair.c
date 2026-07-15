@@ -10,7 +10,7 @@
 #include <PA\Element.h>
 #endif
 
-DllExport void* PAPairCreate(size_t size)
+DllExport Memory PAPairCreate(size_t size)
 {
     // struct PAPair pair;
     void* pair;

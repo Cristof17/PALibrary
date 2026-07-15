@@ -10,7 +10,7 @@
 //struct PAData {
 //
 //}
-DllExport void* PADataCreate(size_t size)
+DllExport Memory PADataCreate(size_t size)
 {
     // struct PAData data;
     // struct PAData* data;

@@ -16,7 +16,7 @@
     // struct PACount size;
     // return size;
 // }
-DllExport void* PATreeCreate(size_t size)
+DllExport Memory PATreeCreate(size_t size)
 {
     // struct PATree* temp;
     void* tree;

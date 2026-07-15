@@ -11,7 +11,7 @@
 // struct PAList;
 //typedef struct PAList List;
 // DllExport struct PAElement GetHead();
-DllExport void*  PAListCreate(size_t size);
+DllExport Memory PAListCreate(size_t size);
 // DllExport struct PAList* PAListBegin(struct PAList* list, struct PACount M);
 // DllExport struct PAList* PAListBegin(struct PAList* list, struct PACount* N, struct PASeries* adj);
 DllExport struct PAList* PAListBegin(struct PAList* list, struct PACount* N, struct ArrayList* adj);

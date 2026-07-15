@@ -11,7 +11,7 @@
 
 // struct PATree;
 // struct PATree PATreeConstruct(struct OPAResult);
-DllExport void* PATreeCreate(size_t size);
+DllExport Memory PATreeCreate(size_t size);
 DllExport struct PATree* PATreeCopy(struct PATree* from, struct PATree* to);
 // DllExport struct PACount PATreeSize();
 DllExport struct PATree* PATreeBegin(struct PATree*, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source);

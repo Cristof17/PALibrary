@@ -16,7 +16,7 @@
 #endif
 
 // struct PAList PAListConstruct(struct PAElement Element) {
-DllExport void* PAListCreate(size_t size)
+DllExport Memory PAListCreate(size_t size)
 {
     void* listPointer;
     listPointer = malloc (size);

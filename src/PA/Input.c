@@ -13,7 +13,7 @@
 #include <PA\Count.h>
 #include <PA\Element.h>
 #endif
-DllExport void* PAInputCreate(size_t size)
+DllExport Memory PAInputCreate(size_t size)
 {
 	// struct PAInput temp;
 	void* input;

@@ -18,7 +18,7 @@
 *  Created on: 16 nov. 2025
 *      Author: AdministratorUser
 */
-DllExport void* PASeriesCreate(size_t size) 
+DllExport Memory PASeriesCreate(size_t size) 
 {
     void * series;
     series = malloc (size);

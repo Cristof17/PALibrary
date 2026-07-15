@@ -13,7 +13,7 @@
 #include <PA\Tree.h>
 
 #endif
-DllExport void* PATransposeTreeCreate(size_t size)
+DllExport Memory PATransposeTreeCreate(size_t size)
 {
     void* transposeTree;
     // struct PATransposeTree* transposeTreePointer;
