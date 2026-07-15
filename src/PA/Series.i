@@ -2047,11 +2047,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          struct PASeries* PASeriesCreate();
+          void* PASeriesCreate(size_t size);
           struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct PAList* Adj[]);
           struct PASeries* PASeriesCopy(struct PASeries*, struct PASeries*);
           int PASeriesDelete(struct PASeries*);
-          int PASeriesFinish(struct PACount*, struct PAList**);
+          int PASeriesFinish(void*);
 
 
           void PASeriesPrint(struct PASeries*);
@@ -2106,10 +2106,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           void PAElementReset(struct PAElement*);
 # 10 "src/PA/Series.c" 2
 # 21 "src/PA/Series.c"
-          struct PASeries* PASeriesCreate()
+          void* PASeriesCreate(size_t size)
 {
-    struct PASeries* series;
-    series = (struct PASeries*) malloc (sizeof (struct PASeries));
+    void * series;
+    series = malloc (size);
 # 52 "src/PA/Series.c"
     return series;
 }
@@ -2182,18 +2182,19 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
         return returnCode;
     }
 # 194 "src/PA/Series.c"
-              int PASeriesFinish(struct PACount* Count, struct PAList** List)
+              int PASeriesFinish(void* PA)
     {
 
         int returnCode;
-        free(Count);
-        free(List);
+
+
+        free(PA);
         returnCode = ((int)0);
-# 220 "src/PA/Series.c"
+# 221 "src/PA/Series.c"
         return returnCode;
 
     }
-# 278 "src/PA/Series.c"
+# 279 "src/PA/Series.c"
 void PASeriesPrint(struct PASeries* Series)
 {
 

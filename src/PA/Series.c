@@ -18,10 +18,10 @@
 *  Created on: 16 nov. 2025
 *      Author: AdministratorUser
 */
-DllExport struct PASeries* PASeriesCreate() 
+DllExport void* PASeriesCreate(size_t size) 
 {
-    struct PASeries* series;
-    series = (struct PASeries*) malloc (sizeof (struct PASeries));
+    void * series;
+    series = malloc (size);
     // seriesPointer->m = m;
     // seriesPointer->adj = adj;
     // seriesPointer->adj = &(adj[0]);
@@ -191,12 +191,13 @@ DllExport struct PASeries* PASeriesBegin(struct PASeries* series, struct PACount
         // copy = PAListPerformInit(List);
         //return copy;
     // }
-    DllExport int PASeriesFinish(struct PACount* Count, struct PAList** List)
+    DllExport int PASeriesFinish(void* PA)
     {
         // st
         int returnCode;
-        free(Count);
-        free(List);
+        // free(Count);
+        // free(List);
+        free(PA);
         returnCode = PARESULT_SUCCESS;
         // returnCode = PACountFinish(PA->m);
         // free(PA);

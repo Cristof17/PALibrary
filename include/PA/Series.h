@@ -17,11 +17,11 @@
 
 // struct PASeries;
 // struct PAList PAListPutElement(struct PAList, struct PAElement);
-DllExport struct PASeries* PASeriesCreate();
+DllExport void* PASeriesCreate(size_t size);
 DllExport struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct PAList* Adj[]);
 DllExport struct PASeries* PASeriesCopy(struct PASeries*, struct PASeries*);
 DllExport int PASeriesDelete(struct PASeries*);
-DllExport int PASeriesFinish(struct PACount*, struct PAList**);
+DllExport int PASeriesFinish(void*);
 // PAResult PASeriesPerformCopy();
 // DllExport struct PAResource* PASeriesGet(struct PAData* Data);
 DllExport void PASeriesPrint(struct PASeries*);
