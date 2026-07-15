@@ -2051,12 +2051,12 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          struct PAOutput* PAOutputCreate();
+          void* PAOutputCreate(size_t size);
           struct PAOutput* PAOutputBegin(struct PAOutput*);
 
           struct PAOutput* PAOutputCopy(struct PAOutput* from, struct PAOutput* to);
           int PAOutputDelete(struct PAOutput*);
-          int PAOutputFinish(struct BFSRecord*);
+          int PAOutputFinish(void*);
           void PAOutputPrint(PAResult Result);
 # 6 "src/PA/Output.c" 2
 # 1 "./include/BFS/Record.h" 1
@@ -2076,13 +2076,13 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           void BFSRecordPrint(struct BFSRecord*);
 # 7 "src/PA/Output.c" 2
 # 35 "src/PA/Output.c"
-          struct PAOutput* PAOutputCreate()
+          void* PAOutputCreate(size_t size)
 {
 
-    struct PAOutput* output;
+    void* output;
 
 
-    output = (struct PAOutput*) malloc (sizeof(struct PAOutput));
+    output = malloc (size);
 
 
 
@@ -2133,11 +2133,12 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     return returnCode;
 }
-          int PAOutputFinish(struct BFSRecord* Record)
+          int PAOutputFinish(void* PA)
 {
     int returnCode;
 
-    free(Record);
+
+    free(PA);
     returnCode = ((int)0);
 
 

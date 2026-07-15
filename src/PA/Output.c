@@ -32,13 +32,13 @@
 // {
 //     PAOutputPerformPrint(output);
 // }
-DllExport struct PAOutput* PAOutputCreate()
+DllExport void* PAOutputCreate(size_t size)
 {
     // struct PAOutput* result;
-    struct PAOutput* output;
+    void* output;
     // struct PAOutput Output;
     // struct PAOutput* outputPointer;
-    output = (struct PAOutput*) malloc (sizeof(struct PAOutput));
+    output = malloc (size);
     // result->result = Result;
     // outputPointer->result = BFSRecordCreate();
     // outputPointer-
@@ -114,11 +114,12 @@ DllExport int PAOutputDelete(struct PAOutput* PA)
     // return output;
     return returnCode;
 }
-DllExport int PAOutputFinish(struct BFSRecord* Record)
+DllExport int PAOutputFinish(void* PA)
 {
     int returnCode;
     // returnCode = PA->
-    free(Record);
+    // free(Record);
+    free(PA);
     returnCode = PARESULT_SUCCESS;
     // returnCode = BFSRecordFinish(PA->result);
     // return PARESULT_SUCCESS;

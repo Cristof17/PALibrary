@@ -2349,11 +2349,11 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 508 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
 # 62 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 2 3 4
 # 8 "./include/PA/Number.h" 2
- struct PANumber* PANumberCreate(unsigned char value);
+ void* PANumberCreate(size_t size);
           struct PANumber* PANumberBegin(struct PANumber* Number, unsigned char Value);
           struct PANumber* PANumberCopy(struct PANumber* from, struct PANumber* to);
           int PANumberDelete(struct PANumber*);
-          int PANumberFinish(struct PANumber*);
+          int PANumberFinish(void*);
           void PANumberPrint(struct PANumber*);
 # 4 "test/test_pointers.c" 2
 
