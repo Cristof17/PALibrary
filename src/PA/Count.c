@@ -11,18 +11,18 @@
 
 #endif
 
-DllExport struct PACount* PACountCreate(PAInt value)
+DllExport struct PACount* PACountCreate()
 {
     // struct PACount zies;
     struct PACount* count;
     count =(struct PACount*)malloc(sizeof(struct PACount));
-    count->number = (PAInt*) malloc (sizeof(PAInt));
-     struct PACount* aux;
-    aux = (struct PACount*) malloc (sizeof(struct PACount));
+    // count->number = (PAInt*) malloc (sizeof(PAInt));
+    //  struct PACount* aux;
+    // aux = (struct PACount*) malloc (sizeof(struct PACount));
     // temp->number = Count->number;
-    memcpy(aux->number,&value,sizeof(PAInt));
-    memcpy(aux,count,sizeof(struct PACount));
-    free(aux);
+    // memcpy(aux->number,&value,sizeof(PAInt));
+    // memcpy(aux,count,sizeof(struct PACount));
+    // free(aux);
     // countPointer->number = PANumberCreate(value);
     // count->number = &value;
     // struct PANumber number;
