@@ -2508,12 +2508,12 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
 
-          struct PATransposeTree* PATransposeTreeCreate();
+          void* PATransposeTreeCreate(size_t size);
           struct PATransposeTree* PATransposeTreeBegin(struct PATransposeTree*, struct PATree*);
           struct PATransposeTree* PATransposeTreeCopy(struct PATransposeTree*, struct PATransposeTree*);
 
           int PATransposeTreeDelete(struct PATransposeTree*);
-          int PATransposeTreeFinish(struct PATree*);
+          int PATransposeTreeFinish(void*);
 # 13 "test/test.c" 2
 # 1 "./conf.h" 1
 # 14 "test/test.c" 2

@@ -13,11 +13,11 @@
 #include <PA\Tree.h>
 
 #endif
-DllExport struct PATransposeTree* PATransposeTreeCreate()
+DllExport void* PATransposeTreeCreate(size_t size)
 {
-    struct PATransposeTree* transposeTree;
+    void* transposeTree;
     // struct PATransposeTree* transposeTreePointer;
-    transposeTree = (struct PATransposeTree*) malloc(sizeof(struct PATransposeTree));
+    transposeTree = malloc(size);
     // transposeTreePointer->tree = PATreePerformConstruct();
     // transposeTree.tree = (transposeTreePointer->tree);
     // transposeTreePointer = PATransposeTreeBegin(transposeTreePointer,transposeTree.tree);
@@ -98,7 +98,7 @@ DllExport int PATransposeTreeDelete(struct PATransposeTree* PA)
     // return rc;
     // return returnCode;
 }
-DllExport int PATransposeTreeFinish(struct PATree* PA)
+DllExport int PATransposeTreeFinish(void* PA)
 {
     int returnCode;
     free(PA);
