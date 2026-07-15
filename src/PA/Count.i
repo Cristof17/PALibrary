@@ -1851,7 +1851,7 @@ struct Facade {
 
 
 
-          struct PACount* PACountCreate(long value);
+          void* PACountCreate(size_t size);
           struct PACount* PACountBegin(struct PACount*, long*);
           struct PACount* PACountCopy(struct PACount* from, struct PACount* to);
 
@@ -2358,18 +2358,11 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
 
-          struct PACount* PACountCreate(long value)
+          void* PACountCreate(size_t size)
 {
 
-    struct PACount* count;
-    count =(struct PACount*)malloc(sizeof(struct PACount));
-    count->number = (long*) malloc (sizeof(long));
-     struct PACount* aux;
-    aux = (struct PACount*) malloc (sizeof(struct PACount));
-
-    __builtin___memcpy_chk (aux->number, &value,sizeof(long), __builtin_object_size (aux->number, 0));
-    __builtin___memcpy_chk (aux, count,sizeof(struct PACount), __builtin_object_size (aux, 0));
-    free(aux);
+    void* count;
+    count = malloc(size);
 # 37 "src/PA/Count.c"
     return count;
 }

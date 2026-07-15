@@ -11,11 +11,11 @@
 
 #endif
 
-DllExport struct PACount* PACountCreate()
+DllExport void* PACountCreate(size_t size)
 {
     // struct PACount zies;
-    struct PACount* count;
-    count =(struct PACount*)malloc(sizeof(struct PACount));
+    void* count;
+    count = malloc(size);
     // count->number = (PAInt*) malloc (sizeof(PAInt));
     //  struct PACount* aux;
     // aux = (struct PACount*) malloc (sizeof(struct PACount));
