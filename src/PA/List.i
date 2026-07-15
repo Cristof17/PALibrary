@@ -2052,7 +2052,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          struct PAList* PAListCreate();
+          void* PAListCreate(size_t size);
 
 
           struct PAList* PAListBegin(struct PAList* list, struct PACount* N, struct ArrayList* adj);
@@ -2061,7 +2061,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PAList* PAListCopy(struct PAList*, struct PAList*);
           int PAListDelete(struct PAList*);
-          int PAListFinish(struct PACount*, struct ArrayList*);
+          int PAListFinish(void* PA);
 
 void PAListPrint(struct PAList* List);
 # 8 "src/PA/List.c" 2
@@ -2110,10 +2110,10 @@ void PAListPrint(struct PAList* List);
           void PASeriesPrint(struct PASeries*);
 # 10 "src/PA/List.c" 2
 # 19 "src/PA/List.c"
-          struct PAList* PAListCreate()
+          void* PAListCreate(size_t size)
 {
-    struct PAList* listPointer;
-    listPointer = (struct PAList*) malloc (sizeof(struct PAList));
+    void* listPointer;
+    listPointer = malloc (size);
 # 40 "src/PA/List.c"
     return listPointer;
 # 50 "src/PA/List.c"
@@ -2154,16 +2154,17 @@ void PAListPrint(struct PAList* List);
 
 
 }
-          int PAListFinish(struct PACount* Count, struct ArrayList* Edges)
+          int PAListFinish(void* PA)
 {
     int returnCode;
 
-    free(Count);
-    free(Edges);
+
+
+    free(PA);
     returnCode = ((int)0);
 
     return returnCode;
-# 236 "src/PA/List.c"
+# 237 "src/PA/List.c"
     {
 
 
@@ -2181,7 +2182,7 @@ void Dispose()
 {
 
 }
-# 269 "src/PA/List.c"
+# 270 "src/PA/List.c"
 void PAListPrint(struct PAList* List)
 {
 

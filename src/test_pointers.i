@@ -2404,7 +2404,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
 
-          struct PAList* PAListCreate();
+          void* PAListCreate(size_t size);
 
 
           struct PAList* PAListBegin(struct PAList* list, struct PACount* N, struct ArrayList* adj);
@@ -2413,7 +2413,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
           struct PAList* PAListCopy(struct PAList*, struct PAList*);
           int PAListDelete(struct PAList*);
-          int PAListFinish(struct PACount*, struct ArrayList*);
+          int PAListFinish(void* PA);
 
 void PAListPrint(struct PAList* List);
 # 8 "test/test_pointers.c" 2

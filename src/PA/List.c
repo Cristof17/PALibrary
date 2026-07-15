@@ -16,10 +16,10 @@
 #endif
 
 // struct PAList PAListConstruct(struct PAElement Element) {
-DllExport struct PAList* PAListCreate()
+DllExport void* PAListCreate(size_t size)
 {
-    struct PAList* listPointer;
-    listPointer = (struct PAList*) malloc (sizeof(struct PAList));
+    void* listPointer;
+    listPointer = malloc (size);
     // listPointer->m = m;
     // listPointer->neigh = edges;
     // listPointer->neigh = 
@@ -210,12 +210,13 @@ DllExport int PAListDelete(struct PAList* PA)
     // PAResult result;
     // return result;
 }
-DllExport int PAListFinish(struct PACount* Count, struct ArrayList* Edges)
+DllExport int PAListFinish(void* PA)
 {
     int returnCode;
     // returnCode = PACountFinish(PA->n);
-    free(Count);
-    free(Edges);
+    // free(Count);
+    // free(Edges);
+    free(PA);
     returnCode = PARESULT_SUCCESS;
     // free(PA);
     return returnCode;
