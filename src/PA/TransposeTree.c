@@ -15,7 +15,7 @@
 #endif
 DllExport Memory PATransposeTreeCreate(size_t size)
 {
-    void* transposeTree;
+    Memory transposeTree;
     // struct PATransposeTree* transposeTreePointer;
     transposeTree = malloc(size);
     // transposeTreePointer->tree = PATreePerformConstruct();

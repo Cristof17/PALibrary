@@ -2113,7 +2113,7 @@ void PAListPrint(struct PAList* List);
 # 19 "src/PA/List.c"
           Memory PAListCreate(size_t size)
 {
-    void* listPointer;
+    Memory listPointer;
     listPointer = malloc (size);
 # 40 "src/PA/List.c"
     return listPointer;

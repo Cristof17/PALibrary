@@ -14,7 +14,7 @@ DllExport Memory PADataCreate(size_t size)
 {
     // struct PAData data;
     // struct PAData* data;
-    void* data;
+    Memory data;
     data = malloc (size);
     // data->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
     // data->Resource->value = (PANumber) malloc (sizeof(PANumber));//todo replace with conert to size_t

@@ -2109,7 +2109,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 21 "src/PA/Series.c"
           Memory PASeriesCreate(size_t size)
 {
-    void * series;
+    Memory series;
     series = malloc (size);
 # 52 "src/PA/Series.c"
     return series;

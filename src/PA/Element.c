@@ -17,7 +17,7 @@
 // #include "../include/PAIndex.h"
 DllExport Memory PAElementCreate(size_t size)
 {
-    void* element;
+    Memory element;
     element = malloc(size);
     // temp->index = index;
     // temp->status = status;

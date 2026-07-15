@@ -16,7 +16,7 @@
 DllExport Memory PAInputCreate(size_t size)
 {
 	// struct PAInput temp;
-	void* input;
+	Memory input;
 	input = malloc(size);
 	// inputPointer->n = (struct PACount*) malloc (sizeof(struct PACount));
 // inputPointer->m = (struct PACount*) malloc (sizeof(struct PACount*));

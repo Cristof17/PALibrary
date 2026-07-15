@@ -2092,7 +2092,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           Memory PALinkCreate(size_t size)
 {
 
-    void* link;
+    Memory link;
     link = malloc (size);
 
     return link;

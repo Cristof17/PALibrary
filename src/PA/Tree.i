@@ -2143,7 +2143,7 @@ void PAListPrint(struct PAList* List);
           Memory PATreeCreate(size_t size)
 {
 
-    void* tree;
+    Memory tree;
     tree = malloc (size);
 # 77 "src/PA/Tree.c"
     return tree;

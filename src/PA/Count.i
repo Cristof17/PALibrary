@@ -2362,7 +2362,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
           Memory PACountCreate(size_t size)
 {
 
-    void* count;
+    Memory count;
     count = malloc(size);
 # 37 "src/PA/Count.c"
     return count;

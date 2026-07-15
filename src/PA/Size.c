@@ -7,7 +7,7 @@
 #endif
 
 DllExport Memory PASizeConstruct(size_t size){
-    void* sizeStruct;
+    Memory sizeStruct;
     sizeStruct = malloc (size);
     return sizeStruct;
 }

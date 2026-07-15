@@ -2096,7 +2096,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory PATransposeTreeCreate(size_t size)
 {
-    void* transposeTree;
+    Memory transposeTree;
 
     transposeTree = malloc(size);
 

@@ -2122,7 +2122,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           Memory PAInputCreate(size_t size)
 {
 
- void* input;
+ Memory input;
  input = malloc(size);
 
 

@@ -2090,7 +2090,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           Memory PAPairCreate(size_t size)
 {
 
-    void* pair;
+    Memory pair;
     pair = malloc(size);
 # 26 "src/PA/Pair.c"
     return pair;

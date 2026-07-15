@@ -2080,7 +2080,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           Memory PAOutputCreate(size_t size)
 {
 
-    void* output;
+    Memory output;
 
 
     output = malloc (size);

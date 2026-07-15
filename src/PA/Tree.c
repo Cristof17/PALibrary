@@ -19,7 +19,7 @@
 DllExport Memory PATreeCreate(size_t size)
 {
     // struct PATree* temp;
-    void* tree;
+    Memory tree;
     tree = malloc (size);
     // treePointer->n = n;
     // treePointer->m = m;

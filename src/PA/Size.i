@@ -2062,7 +2062,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           Memory PASizeConstruct(size_t size){
-    void* sizeStruct;
+    Memory sizeStruct;
     sizeStruct = malloc (size);
     return sizeStruct;
 }

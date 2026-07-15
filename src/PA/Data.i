@@ -2078,7 +2078,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 {
 
 
-    void* data;
+    Memory data;
     data = malloc (size);
 # 44 "src/PA/Data.c"
     return data;

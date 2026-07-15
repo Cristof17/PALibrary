@@ -13,7 +13,7 @@
 DllExport Memory PAPairCreate(size_t size)
 {
     // struct PAPair pair;
-    void* pair;
+    Memory pair;
     pair = malloc(size);
     // struct PAPair* pairPointer;
     // pairPointer->Node = PAElementPerformConstruct();

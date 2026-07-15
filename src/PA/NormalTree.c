@@ -11,7 +11,7 @@
 
 DllExport Memory PANormalTreeCreate(size_t size)
 {
-    struct PANormalTree* normalTree;
+    Memory normalTree;
     // struct PANormalTree* normalTree;
     // struct PANormaltT/
     // struct PANormat

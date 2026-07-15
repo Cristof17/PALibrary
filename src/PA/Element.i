@@ -2099,7 +2099,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 18 "src/PA/Element.c"
           Memory PAElementCreate(size_t size)
 {
-    void* element;
+    Memory element;
     element = malloc(size);
 # 35 "src/PA/Element.c"
   return element;

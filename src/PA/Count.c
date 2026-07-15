@@ -14,7 +14,7 @@
 DllExport Memory PACountCreate(size_t size)
 {
     // struct PACount zies;
-    void* count;
+    Memory count;
     count = malloc(size);
     // count->number = (PAInt*) malloc (sizeof(PAInt));
     //  struct PACount* aux;

@@ -35,7 +35,7 @@
 DllExport Memory PAOutputCreate(size_t size)
 {
     // struct PAOutput* result;
-    void* output;
+    Memory output;
     // struct PAOutput Output;
     // struct PAOutput* outputPointer;
     output = malloc (size);

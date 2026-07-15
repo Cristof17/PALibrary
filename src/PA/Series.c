@@ -20,7 +20,7 @@
 */
 DllExport Memory PASeriesCreate(size_t size) 
 {
-    void * series;
+    Memory series;
     series = malloc (size);
     // seriesPointer->m = m;
     // seriesPointer->adj = adj;

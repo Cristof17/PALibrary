@@ -18,7 +18,7 @@
 // struct PAList PAListConstruct(struct PAElement Element) {
 DllExport Memory PAListCreate(size_t size)
 {
-    void* listPointer;
+    Memory listPointer;
     listPointer = malloc (size);
     // listPointer->m = m;
     // listPointer->neigh = edges;

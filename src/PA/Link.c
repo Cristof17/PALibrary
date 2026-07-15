@@ -16,7 +16,7 @@
 DllExport Memory PALinkCreate(size_t size)
 {
     // struct PALink link;
-    void* link;
+    Memory link;
     link = malloc (size);
     // link->p = p;
     return link;

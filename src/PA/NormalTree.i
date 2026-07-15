@@ -2092,7 +2092,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory PANormalTreeCreate(size_t size)
 {
-    struct PANormalTree* normalTree;
+    Memory normalTree;
 # 23 "src/PA/NormalTree.c"
     normalTree = malloc (size);
 
