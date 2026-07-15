@@ -126,7 +126,7 @@ DllExport int PAInputDelete(struct PAInput* PA)
 	return returnCode;
 }
 // DllExport PAResult PAInputFinish(struct PACount* N, struct PACount*) {
-DllExport int PAInputFinish(void* PA) {
+DllExport int PAInputFinish(Memory PA) {
 	// PAResult result;
 	// struct PAInput Empty;
 	// PACountFinish(&PA->n);

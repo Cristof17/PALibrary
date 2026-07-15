@@ -81,7 +81,7 @@ DllExport int PANormalTreeDelete(struct PANormalTree* PA)
     // return PA;
     return returnCode;
 }
-DllExport int PANormalTreeFinish(void* Tree)
+DllExport int PANormalTreeFinish(Memory Tree)
 {
     int returnCode;
     free(Tree);

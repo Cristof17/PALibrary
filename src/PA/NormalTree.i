@@ -1469,12 +1469,13 @@ typedef char* PANumber;
 typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
+typedef void* Memory;
 
 
 
 
 struct ArrayListObject;
-# 52 "./include/types.h"
+# 53 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -1523,7 +1524,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 110 "./include/types.h"
+# 111 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -1569,7 +1570,7 @@ struct PrototypeClient;
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 170 "./include/types.h"
+# 171 "./include/types.h"
 struct Input {
  ;
 };
@@ -1680,7 +1681,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 288 "./include/types.h"
+# 289 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2049,12 +2050,12 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 12 "./include/PA/NormalTree.h" 2
 
-          void* PANormalTreeCreate(size_t size);
+          Memory PANormalTreeCreate(size_t size);
           struct PANormalTree* PANormalTreeBegin(struct PANormalTree* NormalTree, struct PATree* Tree);
 
           struct PANormalTree* PANormalTreeCopy(struct PANormalTree* from, struct PANormalTree* to);
           int PANormalTreeDelete(struct PANormalTree* PA);
-          int PANormalTreeFinish(void* PA);
+          int PANormalTreeFinish(Memory);
 # 6 "src/PA/NormalTree.c" 2
 # 1 "./include/PA/Tree.h" 1
 
@@ -2072,7 +2073,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          void* PATreeCreate(size_t size);
+          Memory PATreeCreate(size_t size);
           struct PATree* PATreeCopy(struct PATree* from, struct PATree* to);
 
           struct PATree* PATreeBegin(struct PATree*, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source);
@@ -2082,14 +2083,14 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           int PATreeDelete(struct PATree*);
-          int PATreeFinish(void*);
+          int PATreeFinish(Memory);
 # 7 "src/PA/NormalTree.c" 2
 
 
 
 
 
-          void* PANormalTreeCreate(size_t size)
+          Memory PANormalTreeCreate(size_t size)
 {
     struct PANormalTree* normalTree;
 # 23 "src/PA/NormalTree.c"
@@ -2135,7 +2136,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     return returnCode;
 }
-          int PANormalTreeFinish(void* Tree)
+          int PANormalTreeFinish(Memory Tree)
 {
     int returnCode;
     free(Tree);

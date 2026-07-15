@@ -1472,12 +1472,13 @@ typedef char* PANumber;
 typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
+typedef void* Memory;
 
 
 
 
 struct ArrayListObject;
-# 52 "./include/types.h"
+# 53 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -1526,7 +1527,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 110 "./include/types.h"
+# 111 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -1572,7 +1573,7 @@ struct PrototypeClient;
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 170 "./include/types.h"
+# 171 "./include/types.h"
 struct Input {
  ;
 };
@@ -1683,7 +1684,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 288 "./include/types.h"
+# 289 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2052,7 +2053,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          void* PAInputCreate(size_t size);
+          Memory PAInputCreate(size_t size);
 
           struct PAInput* PAInputBegin(struct PAInput* PA, struct PACount* N, struct PACount* M, struct PAElement* Source, struct PASeries* Series);
 
@@ -2062,7 +2063,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           int PAInputDelete(struct PAInput*);
-          int PAInputFinish(void* PA);
+          int PAInputFinish(Memory);
 # 9 "src/PA/Input.c" 2
 # 1 "./include/PA/Count.h" 1
 
@@ -2079,13 +2080,13 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          void* PACountCreate(size_t size);
+          Memory PACountCreate(size_t size);
           struct PACount* PACountBegin(struct PACount*, long*);
           struct PACount* PACountCopy(struct PACount* from, struct PACount* to);
 
 
 
-          int PACountFinish(void*);
+          int PACountFinish(Memory);
 
 
           int PACountDelete(struct PACount* PA);
@@ -2104,11 +2105,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 10 "./include/PA/Element.h" 2
 
 
-          void* PAElementCreate(size_t size);
+          Memory PAElementCreate(size_t size);
           struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus Status);
           struct PAElement* PAElementCopy(struct PAElement*, struct PAElement*);
           int PAElementDelete(struct PAElement*);
-          int PAElementFinish(void*);
+          int PAElementFinish(Memory);
           void PAElementVisit(struct PAElement*);
           PABool PAElementIsVisited(struct PAElement*);
           void PAElementReset(struct PAElement*);
@@ -2118,7 +2119,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          void* PAInputCreate(size_t size)
+          Memory PAInputCreate(size_t size)
 {
 
  void* input;
@@ -2176,7 +2177,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
  return returnCode;
 }
 
-          int PAInputFinish(void* PA) {
+          int PAInputFinish(Memory PA) {
 
 
 

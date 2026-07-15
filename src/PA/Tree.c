@@ -180,7 +180,7 @@ DllExport int PATreeDelete(struct PATree* PA)
     return returnCode;
     // return 0;
 }
-DllExport int PATreeFinish(void* PA)
+DllExport int PATreeFinish(Memory PA)
 {
     int returnCode;
     // free(N);

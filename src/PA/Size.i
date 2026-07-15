@@ -1466,12 +1466,13 @@ typedef char* PANumber;
 typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
+typedef void* Memory;
 
 
 
 
 struct ArrayListObject;
-# 52 "./include/types.h"
+# 53 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -1520,7 +1521,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 110 "./include/types.h"
+# 111 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -1566,7 +1567,7 @@ struct PrototypeClient;
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 170 "./include/types.h"
+# 171 "./include/types.h"
 struct Input {
  ;
 };
@@ -1677,7 +1678,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 288 "./include/types.h"
+# 289 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2050,17 +2051,17 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          void* PASizeConstruct(size_t size);
+          Memory PASizeConstruct(size_t size);
 
           int PASizeDelete(struct PASize* PA);
-          int PASizeFinish(void* PA);
+          int PASizeFinish(Memory);
           struct PASize* PASizeBegin(struct PASize*, size_t* digits, size_t num_digits);
 # 5 "src/PA/Size.c" 2
 
 
 
 
-          void* PASizeConstruct(size_t size){
+          Memory PASizeConstruct(size_t size){
     void* sizeStruct;
     sizeStruct = malloc (size);
     return sizeStruct;
@@ -2093,7 +2094,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     __builtin___memset_chk(PA, 0, sizeof(struct PASize), __builtin_object_size (PA, 0));
     return returnCode;
 }
-          int PASizeFinish(void* PA)
+          int PASizeFinish(Memory PA)
 {
     int returnCode;
     returnCode = ((int)0);

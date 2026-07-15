@@ -91,7 +91,7 @@ DllExport int PALinkDelete(struct PALink* PA){
     // struct PALink link;
     // return link;
 }
-DllExport int PALinkFinish(void* Pair)
+DllExport int PALinkFinish(Memory Pair)
 {
     // PA.p = PAPairPerformRuin(PA.p);    
     // struct PALink Empty;

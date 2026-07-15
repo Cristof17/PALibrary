@@ -1459,12 +1459,13 @@ typedef char* PANumber;
 typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
+typedef void* Memory;
 
 
 
 
 struct ArrayListObject;
-# 52 "./include/types.h"
+# 53 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -1513,7 +1514,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 110 "./include/types.h"
+# 111 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -1559,7 +1560,7 @@ struct PrototypeClient;
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 170 "./include/types.h"
+# 171 "./include/types.h"
 struct Input {
  ;
 };
@@ -1670,7 +1671,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 288 "./include/types.h"
+# 289 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;

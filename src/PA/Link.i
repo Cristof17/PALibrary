@@ -1472,12 +1472,13 @@ typedef char* PANumber;
 typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
+typedef void* Memory;
 
 
 
 
 struct ArrayListObject;
-# 52 "./include/types.h"
+# 53 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -1526,7 +1527,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 110 "./include/types.h"
+# 111 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -1572,7 +1573,7 @@ struct PrototypeClient;
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 170 "./include/types.h"
+# 171 "./include/types.h"
 struct Input {
  ;
 };
@@ -1683,7 +1684,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 288 "./include/types.h"
+# 289 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2051,12 +2052,12 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 10 "./include/PA/Link.h" 2
 
 
-          void* PALinkCreate(size_t size);
+          Memory PALinkCreate(size_t size);
           struct PALink* PALinkBegin(struct PALink*, struct PAPair*);
           struct PALink* PALinkCopy(struct PALink*, struct PALink*);
 
 
-          int PALinkFinish(void*);
+          int PALinkFinish(Memory);
           int PALinkDelete(struct PALink*);
 # 9 "src/PA/Link.c" 2
 # 1 "./include/PA/Pair.h" 1
@@ -2073,14 +2074,14 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 10 "./include/PA/Pair.h" 2
 
 
-          void* PAPairCreate(size_t size);
+          Memory PAPairCreate(size_t size);
           struct PAPair* PAPairBegin(struct PAPair*, struct PAElement*, struct PAElement*);
           struct PAPair* PAPAPairCopy(struct PAPair* from, struct PAPair* to);
 
 
 
           int PAPairDelete(struct PAPair*);
-          int PAPairFinish(void*);
+          int PAPairFinish(Memory);
 # 10 "src/PA/Link.c" 2
 
 
@@ -2088,7 +2089,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          void* PALinkCreate(size_t size)
+          Memory PALinkCreate(size_t size)
 {
 
     void* link;
@@ -2140,7 +2141,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 }
-          int PALinkFinish(void* Pair)
+          int PALinkFinish(Memory Pair)
 {
 
 

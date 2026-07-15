@@ -140,7 +140,7 @@ DllExport int PAElementDelete(struct PAElement* PA)
     // return 0;
 }
 // DllExport PAResult PAElementFinish(struct PAElement* PA)
-DllExport int PAElementFinish(void* PA)
+DllExport int PAElementFinish(Memory PA)
 {
     // free(PA);
     // PA.index = PADataPerformRuin(PA.index);

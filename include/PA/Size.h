@@ -15,7 +15,7 @@
 DllExport Memory PASizeConstruct(size_t size);
 // // void PASize(PA_INT);
 DllExport int PASizeDelete(struct PASize* PA);
-DllExport int PASizeFinish(void* PA);
+DllExport int PASizeFinish(Memory);
 DllExport struct PASize* PASizeBegin(struct PASize*, size_t* digits, size_t num_digits);
 // struct PASize PASizeArrange(struct PASize);
 // struct PASize PASizePutValue(struct PASize, PA_INT);

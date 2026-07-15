@@ -16,7 +16,7 @@ DllExport struct PAData* PADataBegin(struct PAData* Data);
 DllExport struct PAData* PADataCopy(struct PAData* from, struct PAData* to);
 // DllExport struct PAData PADataPerformCopy(struct PAData);
 // DllExport struct PAData PADataPerformPutResource(struct PAData, PAResource);
-DllExport int PADataFinish(void*);
+DllExport int PADataFinish(Memory);
 DllExport int PADataDelete(struct PAData*);
 //typedef struct PAData Data;
 #endif

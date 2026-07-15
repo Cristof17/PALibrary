@@ -151,7 +151,7 @@ DllExport int PAPairDelete(struct PAPair* PA)
     //
     return returnCode;
 }
-DllExport int PAPairFinish(void* PA)
+DllExport int PAPairFinish(Memory PA)
 {
     // int returnCode1;
     // int returnCode2;

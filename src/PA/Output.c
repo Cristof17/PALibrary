@@ -114,7 +114,7 @@ DllExport int PAOutputDelete(struct PAOutput* PA)
     // return output;
     return returnCode;
 }
-DllExport int PAOutputFinish(void* PA)
+DllExport int PAOutputFinish(Memory PA)
 {
     int returnCode;
     // returnCode = PA->

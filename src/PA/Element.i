@@ -1470,12 +1470,13 @@ typedef char* PANumber;
 typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
+typedef void* Memory;
 
 
 
 
 struct ArrayListObject;
-# 52 "./include/types.h"
+# 53 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -1524,7 +1525,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 110 "./include/types.h"
+# 111 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -1570,7 +1571,7 @@ struct PrototypeClient;
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 170 "./include/types.h"
+# 171 "./include/types.h"
 struct Input {
  ;
 };
@@ -1681,7 +1682,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 288 "./include/types.h"
+# 289 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2049,11 +2050,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 10 "./include/PA/Element.h" 2
 
 
-          void* PAElementCreate(size_t size);
+          Memory PAElementCreate(size_t size);
           struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus Status);
           struct PAElement* PAElementCopy(struct PAElement*, struct PAElement*);
           int PAElementDelete(struct PAElement*);
-          int PAElementFinish(void*);
+          int PAElementFinish(Memory);
           void PAElementVisit(struct PAElement*);
           PABool PAElementIsVisited(struct PAElement*);
           void PAElementReset(struct PAElement*);
@@ -2074,12 +2075,12 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          void* PADataCreate(size_t size);
+          Memory PADataCreate(size_t size);
           struct PAData* PADataBegin(struct PAData* Data);
           struct PAData* PADataCopy(struct PAData* from, struct PAData* to);
 
 
-          int PADataFinish(void*);
+          int PADataFinish(Memory);
           int PADataDelete(struct PAData*);
 # 8 "src/PA/Element.c" 2
 # 1 "./include/PA/Status.h" 1
@@ -2096,7 +2097,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 10 "./include/PA/Status.h" 2
 # 9 "src/PA/Element.c" 2
 # 18 "src/PA/Element.c"
-          void* PAElementCreate(size_t size)
+          Memory PAElementCreate(size_t size)
 {
     void* element;
     element = malloc(size);
@@ -2165,7 +2166,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 }
 
-          int PAElementFinish(void* PA)
+          int PAElementFinish(Memory PA)
 {
 # 160 "src/PA/Element.c"
     int returnCode;

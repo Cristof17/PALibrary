@@ -17,7 +17,7 @@ DllExport struct PAOutput* PAOutputBegin(struct PAOutput*);
 // DllExport struct PA(struct PAOutput* from, struct PAOutput* to);
 DllExport struct PAOutput* PAOutputCopy(struct PAOutput* from, struct PAOutput* to);
 DllExport int PAOutputDelete(struct PAOutput*);
-DllExport int PAOutputFinish(void*);
+DllExport int PAOutputFinish(Memory);
 DllExport void PAOutputPrint(PAResult Result);
 //typedef struct BFSOutput BFSOutput;
 // struct PAOutput PAOutputPerformInit(struct BFSRecord);

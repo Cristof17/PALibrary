@@ -1465,12 +1465,13 @@ typedef char* PANumber;
 typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
+typedef void* Memory;
 
 
 
 
 struct ArrayListObject;
-# 52 "./include/types.h"
+# 53 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -1519,7 +1520,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 110 "./include/types.h"
+# 111 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -1565,7 +1566,7 @@ struct PrototypeClient;
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 170 "./include/types.h"
+# 171 "./include/types.h"
 struct Input {
  ;
 };
@@ -1676,7 +1677,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 288 "./include/types.h"
+# 289 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -1847,13 +1848,13 @@ struct Facade {
 
 
 
-          void* PACountCreate(size_t size);
+          Memory PACountCreate(size_t size);
           struct PACount* PACountBegin(struct PACount*, long*);
           struct PACount* PACountCopy(struct PACount* from, struct PACount* to);
 
 
 
-          int PACountFinish(void*);
+          int PACountFinish(Memory);
 
 
           int PACountDelete(struct PACount* PA);
@@ -2349,11 +2350,11 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 508 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
 # 62 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 2 3 4
 # 8 "./include/PA/Number.h" 2
- void* PANumberCreate(size_t size);
+ Memory PANumberCreate(size_t size);
           struct PANumber* PANumberBegin(struct PANumber* Number, unsigned char Value);
           struct PANumber* PANumberCopy(struct PANumber* from, struct PANumber* to);
           int PANumberDelete(struct PANumber*);
-          int PANumberFinish(void*);
+          int PANumberFinish(Memory);
           void PANumberPrint(struct PANumber*);
 # 4 "test/test_pointers.c" 2
 
@@ -2379,11 +2380,11 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
 
-          void* PASeriesCreate(size_t size);
+          Memory PASeriesCreate(size_t size);
           struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct PAList* Adj[]);
           struct PASeries* PASeriesCopy(struct PASeries*, struct PASeries*);
           int PASeriesDelete(struct PASeries*);
-          int PASeriesFinish(void*);
+          int PASeriesFinish(Memory);
 
 
           void PASeriesPrint(struct PASeries*);
@@ -2404,7 +2405,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
 
-          void* PAListCreate(size_t size);
+          Memory PAListCreate(size_t size);
 
 
           struct PAList* PAListBegin(struct PAList* list, struct PACount* N, struct ArrayList* adj);
@@ -2413,7 +2414,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
           struct PAList* PAListCopy(struct PAList*, struct PAList*);
           int PAListDelete(struct PAList*);
-          int PAListFinish(void* PA);
+          int PAListFinish(Memory);
 
 void PAListPrint(struct PAList* List);
 # 8 "test/test_pointers.c" 2
@@ -2433,7 +2434,7 @@ void PAListPrint(struct PAList* List);
 
 
 
-          void* PATreeCreate(size_t size);
+          Memory PATreeCreate(size_t size);
           struct PATree* PATreeCopy(struct PATree* from, struct PATree* to);
 
           struct PATree* PATreeBegin(struct PATree*, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source);
@@ -2443,7 +2444,7 @@ void PAListPrint(struct PAList* List);
 
 
           int PATreeDelete(struct PATree*);
-          int PATreeFinish(void*);
+          int PATreeFinish(Memory);
 # 9 "test/test_pointers.c" 2
 # 1 "./include/PA/Element.h" 1
 
@@ -2459,11 +2460,11 @@ void PAListPrint(struct PAList* List);
 # 10 "./include/PA/Element.h" 2
 
 
-          void* PAElementCreate(size_t size);
+          Memory PAElementCreate(size_t size);
           struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus Status);
           struct PAElement* PAElementCopy(struct PAElement*, struct PAElement*);
           int PAElementDelete(struct PAElement*);
-          int PAElementFinish(void*);
+          int PAElementFinish(Memory);
           void PAElementVisit(struct PAElement*);
           PABool PAElementIsVisited(struct PAElement*);
           void PAElementReset(struct PAElement*);
