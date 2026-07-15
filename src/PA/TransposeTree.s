@@ -69,22 +69,22 @@ _PATransposeTreeCopy:                   ; @PATransposeTreeCopy
 	.cfi_offset w29, -16
 	stur	x0, [x29, #-8]
 	stur	x1, [x29, #-16]
-	mov	x0, #8                          ; =0x8
-	str	x0, [sp, #8]                    ; 8-byte Folded Spill
+	str	x2, [sp, #24]
+	ldr	x0, [sp, #24]
 	bl	_malloc
-	ldr	x2, [sp, #8]                    ; 8-byte Folded Reload
-	str	x0, [sp, #24]
-	ldr	x0, [sp, #24]
+	str	x0, [sp, #16]
+	ldr	x0, [sp, #16]
 	ldur	x1, [x29, #-8]
+	ldr	x2, [sp, #24]
 	mov	x3, #-1                         ; =0xffffffffffffffff
-	str	x3, [sp, #16]                   ; 8-byte Folded Spill
+	str	x3, [sp, #8]                    ; 8-byte Folded Spill
 	bl	___memcpy_chk
-	ldr	x2, [sp, #8]                    ; 8-byte Folded Reload
-	ldr	x3, [sp, #16]                   ; 8-byte Folded Reload
+	ldr	x3, [sp, #8]                    ; 8-byte Folded Reload
 	ldur	x0, [x29, #-16]
-	ldr	x1, [sp, #24]
+	ldr	x1, [sp, #16]
+	ldr	x2, [sp, #24]
 	bl	___memcpy_chk
-	ldr	x0, [sp, #24]
+	ldr	x0, [sp, #16]
 	bl	_free
 	ldur	x0, [x29, #-16]
 	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload

@@ -52,15 +52,15 @@ DllExport struct PALink* PALinkBegin(struct PALink* Link, struct PAPair* pair)
     return aux;
     // return temp;
 }
-DllExport struct PALink* PALinkCopy(struct PALink* from, struct PALink* to)
+DllExport Object PALinkCopy(Object from, Object to, size_t size)
 {
     // struct PALink temp;
-    struct PALink* aux;
+    Memory aux;
     // aux = (struct PAList*) malloc (sizeof(struct PAList));
     // aux = (struct PAList*) malloc (sizeof(struct PALink&));
-    aux = (struct PALink*) malloc (sizeof(struct PALink));
-    memcpy(aux,from,sizeof(struct PALink));
-    memcpy(to,aux,sizeof(struct PALink));
+    aux =  malloc (size);
+    memcpy(aux,from,size);
+    memcpy(to,aux,size);
     // aux = PALinkCreate();
     // aux->p = from->p;
     // to->p = aux->p;

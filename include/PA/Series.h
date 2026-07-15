@@ -19,7 +19,7 @@
 // struct PAList PAListPutElement(struct PAList, struct PAElement);
 DllExport Memory PASeriesCreate(size_t size);
 DllExport struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct PAList* Adj[]);
-DllExport struct PASeries* PASeriesCopy(struct PASeries*, struct PASeries*);
+DllExport Object PASeriesCopy(Object, Object, size_t);
 DllExport int PASeriesDelete(struct PASeries*);
 DllExport int PASeriesFinish(Memory);
 // PAResult PASeriesPerformCopy();

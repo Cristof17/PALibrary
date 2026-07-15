@@ -1468,12 +1468,13 @@ typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
 typedef void* Memory;
+typedef void* Object;
 
 
 
 
 struct ArrayListObject;
-# 53 "./include/types.h"
+# 54 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -1522,7 +1523,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 111 "./include/types.h"
+# 112 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -1568,7 +1569,7 @@ struct PrototypeClient;
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 171 "./include/types.h"
+# 172 "./include/types.h"
 struct Input {
  ;
 };
@@ -1679,7 +1680,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 289 "./include/types.h"
+# 290 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2051,7 +2052,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory PADataCreate(size_t size);
           struct PAData* PADataBegin(struct PAData* Data);
-          struct PAData* PADataCopy(struct PAData* from, struct PAData* to);
+          Object PADataCopy(Object from, Object to, size_t);
 
 
           int PADataFinish(Memory);
@@ -2093,15 +2094,15 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 }
-          struct PAData* PADataCopy(struct PAData* from, struct PAData* to)
+          Object PADataCopy(Object from, Object to, size_t size)
 {
 
-    struct PAData *aux;
+    Memory aux;
 
-    aux = (struct PAData*) malloc (sizeof (struct PAData));
+    aux = malloc(size);
 
-    __builtin___memcpy_chk (aux, from,sizeof(struct PAData), __builtin_object_size (aux, 0));
-    __builtin___memcpy_chk (to, aux,sizeof(struct PAData), __builtin_object_size (to, 0));
+    __builtin___memcpy_chk (aux, from,size, __builtin_object_size (aux, 0));
+    __builtin___memcpy_chk (to, aux,size, __builtin_object_size (to, 0));
 
 
 

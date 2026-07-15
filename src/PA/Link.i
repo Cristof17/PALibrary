@@ -1473,12 +1473,13 @@ typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
 typedef void* Memory;
+typedef void* Object;
 
 
 
 
 struct ArrayListObject;
-# 53 "./include/types.h"
+# 54 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -1527,7 +1528,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 111 "./include/types.h"
+# 112 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -1573,7 +1574,7 @@ struct PrototypeClient;
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 171 "./include/types.h"
+# 172 "./include/types.h"
 struct Input {
  ;
 };
@@ -1684,7 +1685,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 289 "./include/types.h"
+# 290 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2054,7 +2055,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory PALinkCreate(size_t size);
           struct PALink* PALinkBegin(struct PALink*, struct PAPair*);
-          struct PALink* PALinkCopy(struct PALink*, struct PALink*);
+          Object PALinkCopy(Object, Object, size_t);
 
 
           int PALinkFinish(Memory);
@@ -2076,7 +2077,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory PAPairCreate(size_t size);
           struct PAPair* PAPairBegin(struct PAPair*, struct PAElement*, struct PAElement*);
-          struct PAPair* PAPAPairCopy(struct PAPair* from, struct PAPair* to);
+          Object PAPAPairCopy(Object, Object, size_t);
 
 
 
@@ -2110,15 +2111,15 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     return aux;
 
 }
-          struct PALink* PALinkCopy(struct PALink* from, struct PALink* to)
+          Object PALinkCopy(Object from, Object to, size_t size)
 {
 
-    struct PALink* aux;
+    Memory aux;
 
 
-    aux = (struct PALink*) malloc (sizeof(struct PALink));
-    __builtin___memcpy_chk (aux, from,sizeof(struct PALink), __builtin_object_size (aux, 0));
-    __builtin___memcpy_chk (to, aux,sizeof(struct PALink), __builtin_object_size (to, 0));
+    aux = malloc (size);
+    __builtin___memcpy_chk (aux, from,size, __builtin_object_size (aux, 0));
+    __builtin___memcpy_chk (to, aux,size, __builtin_object_size (to, 0));
 
 
 

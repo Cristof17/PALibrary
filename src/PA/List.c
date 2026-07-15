@@ -48,13 +48,13 @@ DllExport Memory PAListCreate(size_t size)
     // list.adj = PASeriesPerformConstruct();
     // return list;
 }
-DllExport struct PAList* PAListCopy(struct PAList* from, struct PAList* to)
+DllExport Object PAListCopy(Object from, Object to, size_t size)
 {
-    struct PAList* aux;
+    Memory aux;
     // aux = PAListCreate();
-    aux = (struct PAList*) malloc (sizeof(struct PAList));
-    memcpy(aux,from,sizeof(struct PAList));
-    memcpy(to,aux,sizeof(struct PAList));
+    aux = malloc (size);
+    memcpy(aux,from,size);
+    memcpy(to,aux,size);
     // temp.n = PACountPerformCopy(from.n,temp.n);
     // struct PACount x;
     // struct PACount y;

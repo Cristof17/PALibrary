@@ -84,13 +84,13 @@ DllExport void PAElementReset(struct PAElement* Element)
     // Element.status.visited.value.val = FALSE;
     return;
 }
-DllExport struct PAElement* PAElementCopy(struct PAElement* from, struct PAElement* to)
+DllExport Object PAElementCopy(Object from, Object to, size_t size)
 {
-    struct PAElement* aux;
-    aux = (struct PAElement*) malloc (sizeof(struct PAElement));
-    memcpy(aux,from,sizeof(struct PAElement));
+    Memory aux;
+    aux = (Memory) malloc (size);
+    memcpy(aux,from,size);
+    memcpy(to,aux,size);
     // memcpy*
-    memcpy(to,aux,sizeof(struct PAElement));
     // aux = PAElementCreate();
     // aux->index = from->index;
     // aux->status = from->status;

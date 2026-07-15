@@ -1471,12 +1471,13 @@ typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
 typedef void* Memory;
+typedef void* Object;
 
 
 
 
 struct ArrayListObject;
-# 53 "./include/types.h"
+# 54 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -1525,7 +1526,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 111 "./include/types.h"
+# 112 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -1571,7 +1572,7 @@ struct PrototypeClient;
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 171 "./include/types.h"
+# 172 "./include/types.h"
 struct Input {
  ;
 };
@@ -1682,7 +1683,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 289 "./include/types.h"
+# 290 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2055,7 +2056,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           Memory PAOutputCreate(size_t size);
           struct PAOutput* PAOutputBegin(struct PAOutput*);
 
-          struct PAOutput* PAOutputCopy(struct PAOutput* from, struct PAOutput* to);
+          Object PAOutputCopy(Object from, Object to,size_t);
           int PAOutputDelete(struct PAOutput*);
           int PAOutputFinish(Memory);
           void PAOutputPrint(PAResult Result);
@@ -2105,14 +2106,14 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     return Output;
 }
-          struct PAOutput* PAOutputCopy(struct PAOutput* from, struct PAOutput* to)
+          Object PAOutputCopy(Object from, Object to, size_t size)
 {
- struct PAOutput* aux;
+ Memory aux;
 
 
-    aux = (struct PAOutput*) malloc (sizeof(struct PAOutput));
-    __builtin___memcpy_chk (aux, from,sizeof(struct PAOutput), __builtin_object_size (aux, 0));
-    __builtin___memcpy_chk (to, aux, sizeof(struct PAOutput), __builtin_object_size (to, 0));
+    aux = malloc (size);
+    __builtin___memcpy_chk (aux, from,size, __builtin_object_size (aux, 0));
+    __builtin___memcpy_chk (to, aux,size, __builtin_object_size (to, 0));
 
 
     free(aux);

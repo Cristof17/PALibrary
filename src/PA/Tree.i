@@ -1469,12 +1469,13 @@ typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
 typedef void* Memory;
+typedef void* Object;
 
 
 
 
 struct ArrayListObject;
-# 53 "./include/types.h"
+# 54 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -1523,7 +1524,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 111 "./include/types.h"
+# 112 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -1569,7 +1570,7 @@ struct PrototypeClient;
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 171 "./include/types.h"
+# 172 "./include/types.h"
 struct Input {
  ;
 };
@@ -1680,7 +1681,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 289 "./include/types.h"
+# 290 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2050,7 +2051,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           Memory PATreeCreate(size_t size);
-          struct PATree* PATreeCopy(struct PATree* from, struct PATree* to);
+          Object PATreeCopy(Object, Object, size_t);
 
           struct PATree* PATreeBegin(struct PATree*, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source);
 
@@ -2078,7 +2079,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory PACountCreate(size_t size);
           struct PACount* PACountBegin(struct PACount*, long*);
-          struct PACount* PACountCopy(struct PACount* from, struct PACount* to);
+          Object PACountCopy(Object, Object, size_t);
 
 
 
@@ -2103,7 +2104,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory PAElementCreate(size_t size);
           struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus Status);
-          struct PAElement* PAElementCopy(struct PAElement*, struct PAElement*);
+          Object PAElementCopy(Object, Object, size_t);
           int PAElementDelete(struct PAElement*);
           int PAElementFinish(Memory);
           void PAElementVisit(struct PAElement*);
@@ -2133,7 +2134,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          struct PAList* PAListCopy(struct PAList*, struct PAList*);
+          Object PAListCopy(Object, Object, size_t);
           int PAListDelete(struct PAList*);
           int PAListFinish(Memory);
 
@@ -2164,14 +2165,14 @@ void PAListPrint(struct PAList* List);
     return tree;
 }
 # 134 "src/PA/Tree.c"
-          struct PATree* PATreeCopy(struct PATree* from, struct PATree* to)
+          Object PATreeCopy(Object from, Object to, size_t size)
 {
-    struct PATree* aux;
-    aux = (struct PATree*) malloc (sizeof(struct PATree));
-    aux->n = from->n;
-    aux->m = from->m;
-    to->n = aux->n;
-    to->m = aux->m;
+    Memory aux;
+    aux = malloc (size);
+
+
+
+
     free(aux);
 
 

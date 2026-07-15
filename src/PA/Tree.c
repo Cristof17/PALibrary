@@ -131,14 +131,14 @@ DllExport struct PATree* PATreeBegin(struct PATree* tree, struct PACount* N, str
     // tree = PATreePerformInit(Tree);
     // return tree;
 // }
-DllExport struct PATree* PATreeCopy(struct PATree* from, struct PATree* to)
+DllExport Object PATreeCopy(Object from, Object to, size_t size)
 {
-    struct PATree* aux;
-    aux = (struct PATree*) malloc (sizeof(struct PATree));
-    aux->n = from->n;
-    aux->m = from->m;
-    to->n = aux->n;
-    to->m = aux->m;
+    Memory aux;
+    aux = malloc (size);
+    // aux->n = from->n;
+    // aux->m = from->m;
+    // to->n = aux->n;
+    // to->m = aux->m;
     free(aux);
     // return to/
     // return t.

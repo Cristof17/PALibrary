@@ -1465,12 +1465,13 @@ typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
 typedef void* Memory;
+typedef void* Object;
 
 
 
 
 struct ArrayListObject;
-# 53 "./include/types.h"
+# 54 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -1519,7 +1520,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 111 "./include/types.h"
+# 112 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -1565,7 +1566,7 @@ struct PrototypeClient;
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 171 "./include/types.h"
+# 172 "./include/types.h"
 struct Input {
  ;
 };
@@ -1676,7 +1677,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 289 "./include/types.h"
+# 290 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2328,7 +2329,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 8 "./include/PA/Number.h" 2
  Memory PANumberCreate(size_t size);
           struct PANumber* PANumberBegin(struct PANumber* Number, unsigned char Value);
-          struct PANumber* PANumberCopy(struct PANumber* from, struct PANumber* to);
+          Object PANumberCopy(Object, Object, size_t);
           int PANumberDelete(struct PANumber*);
           int PANumberFinish(Memory);
           void PANumberPrint(struct PANumber*);

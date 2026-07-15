@@ -13,7 +13,7 @@
 DllExport Memory PANormalTreeCreate(size_t size);
 DllExport struct PANormalTree* PANormalTreeBegin(struct PANormalTree* NormalTree, struct PATree* Tree);
 // DllExport void PANormalTreeCopy(struct PANormalTree* NormalTree, struct PANormalTree* Tree);
-DllExport struct PANormalTree* PANormalTreeCopy(struct PANormalTree* from, struct PANormalTree* to);
+DllExport Object PANormalTreeCopy(Object, Object, size_t);
 DllExport int PANormalTreeDelete(struct PANormalTree* PA);
 DllExport int PANormalTreeFinish(Memory);
 // DllExport struct PANormalTree PANormalTreePerformConstruct(struct PATree tree);

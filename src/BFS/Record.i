@@ -1461,12 +1461,13 @@ typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
 typedef void* Memory;
+typedef void* Object;
 
 
 
 
 struct ArrayListObject;
-# 53 "./include/types.h"
+# 54 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -1515,7 +1516,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 111 "./include/types.h"
+# 112 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -1561,7 +1562,7 @@ struct PrototypeClient;
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 171 "./include/types.h"
+# 172 "./include/types.h"
 struct Input {
  ;
 };
@@ -1672,7 +1673,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 289 "./include/types.h"
+# 290 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2059,7 +2060,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          struct PAList* PAListCopy(struct PAList*, struct PAList*);
+          Object PAListCopy(Object, Object, size_t);
           int PAListDelete(struct PAList*);
           int PAListFinish(Memory);
 
@@ -2082,7 +2083,7 @@ void PAListPrint(struct PAList* List);
 
           Memory PACountCreate(size_t size);
           struct PACount* PACountBegin(struct PACount*, long*);
-          struct PACount* PACountCopy(struct PACount* from, struct PACount* to);
+          Object PACountCopy(Object, Object, size_t);
 
 
 

@@ -77,15 +77,15 @@ DllExport struct PAPair* PAPairBegin(struct PAPair* Pair, struct PAElement* Valu
     // struct PAPair pair;
     // return result;
 }
-DllExport struct PAPair* PAPairCopy(struct PAPair* from, struct PAPair* to)
+DllExport Object PAPairCopy(Object from, Object to, size_t size)
 {
     // struct PAPair temp;
     // sutr
-    struct PAPair* aux;
+    Memory aux;
     // aux = (struct PAPair*).
-    aux = (struct PAPair*) malloc (sizeof(struct PAPair));
-    memcpy(aux,from,sizeof(struct PAPair));
-    memcpy(to,aux,sizeof(struct PAPair));
+    aux = malloc (size);
+    memcpy(aux,from,size);
+    memcpy(to,aux,size);
     // struct PAElement node;
     // struct PAElement neigh;
     // aux->Node = from->Node;

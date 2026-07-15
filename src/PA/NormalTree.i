@@ -1470,12 +1470,13 @@ typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
 typedef void* Memory;
+typedef void* Object;
 
 
 
 
 struct ArrayListObject;
-# 53 "./include/types.h"
+# 54 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -1524,7 +1525,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 111 "./include/types.h"
+# 112 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -1570,7 +1571,7 @@ struct PrototypeClient;
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 171 "./include/types.h"
+# 172 "./include/types.h"
 struct Input {
  ;
 };
@@ -1681,7 +1682,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 289 "./include/types.h"
+# 290 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2053,7 +2054,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           Memory PANormalTreeCreate(size_t size);
           struct PANormalTree* PANormalTreeBegin(struct PANormalTree* NormalTree, struct PATree* Tree);
 
-          struct PANormalTree* PANormalTreeCopy(struct PANormalTree* from, struct PANormalTree* to);
+          Object PANormalTreeCopy(Object, Object, size_t);
           int PANormalTreeDelete(struct PANormalTree* PA);
           int PANormalTreeFinish(Memory);
 # 6 "src/PA/NormalTree.c" 2
@@ -2074,7 +2075,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           Memory PATreeCreate(size_t size);
-          struct PATree* PATreeCopy(struct PATree* from, struct PATree* to);
+          Object PATreeCopy(Object, Object, size_t);
 
           struct PATree* PATreeBegin(struct PATree*, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source);
 
@@ -2109,13 +2110,13 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     return NormalTree;
 # 49 "src/PA/NormalTree.c"
 }
-          struct PANormalTree* PANormalTreeCopy(struct PANormalTree* from, struct PANormalTree* to)
+          Object PANormalTreeCopy(Object from, Object to, size_t size)
 {
-    struct PANormalTree* aux;
-    aux = (struct PANormalTree*) malloc (sizeof(struct PANormalTree));
+    Memory aux;
+    aux = malloc (size);
 
-    aux->tree = from->tree;
-    to->tree = aux->tree;
+
+
 
 
     free(aux);

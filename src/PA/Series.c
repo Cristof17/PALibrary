@@ -51,14 +51,14 @@ DllExport Memory PASeriesCreate(size_t size)
     // return series;
     return series;
 }
-DllExport struct PASeries* PASeriesCopy(struct PASeries* from, struct PASeries* to)
+DllExport Object PASeriesCopy(Object from, Object to, size_t size)
 {
     // struct PACount x;
     // struct PACount y;
-    struct PASeries* aux;
-    aux = (struct PASeries*) malloc (sizeof(struct PASeries));
-    memcpy(aux,from,sizeof(struct PASeries));
-    memcpy(to,aux,sizeof(struct PASeries));
+    Memory aux;
+    aux = malloc (size);
+    memcpy(aux,from,size);
+    memcpy(to,aux,size);
     // aux->adj = from->adj;
     // aux->m = from->m;
     // to->adj = aux->adj;

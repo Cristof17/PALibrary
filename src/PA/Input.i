@@ -1473,12 +1473,13 @@ typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
 typedef void* Memory;
+typedef void* Object;
 
 
 
 
 struct ArrayListObject;
-# 53 "./include/types.h"
+# 54 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -1527,7 +1528,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 111 "./include/types.h"
+# 112 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -1573,7 +1574,7 @@ struct PrototypeClient;
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 171 "./include/types.h"
+# 172 "./include/types.h"
 struct Input {
  ;
 };
@@ -1684,7 +1685,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 289 "./include/types.h"
+# 290 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2058,7 +2059,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           struct PAInput* PAInputBegin(struct PAInput* PA, struct PACount* N, struct PACount* M, struct PAElement* Source, struct PASeries* Series);
 
 
-          struct PAInput* PAInputCopy(struct PAInput* from, struct PAInput* to);
+          Object PAInputCopy(Object,Object, size_t);
 
 
 
@@ -2082,7 +2083,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory PACountCreate(size_t size);
           struct PACount* PACountBegin(struct PACount*, long*);
-          struct PACount* PACountCopy(struct PACount* from, struct PACount* to);
+          Object PACountCopy(Object, Object, size_t);
 
 
 
@@ -2107,7 +2108,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory PAElementCreate(size_t size);
           struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus Status);
-          struct PAElement* PAElementCopy(struct PAElement*, struct PAElement*);
+          Object PAElementCopy(Object, Object, size_t);
           int PAElementDelete(struct PAElement*);
           int PAElementFinish(Memory);
           void PAElementVisit(struct PAElement*);
@@ -2134,13 +2135,13 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
  return input;
 # 46 "src/PA/Input.c"
 }
-          struct PAInput* PAInputCopy(struct PAInput* from, struct PAInput* to)
+          Object PAInputCopy(Object from, Object to, size_t size)
 {
 
- struct PAInput* aux;
- aux = (struct PAInput*) malloc (sizeof (struct PAInput));
- __builtin___memcpy_chk (from, aux,sizeof(struct PAInput), __builtin_object_size (from, 0));
- __builtin___memcpy_chk (aux, to,sizeof(struct PAInput), __builtin_object_size (aux, 0));
+ Memory aux;
+ aux = malloc (size);
+ __builtin___memcpy_chk (from, aux,size, __builtin_object_size (from, 0));
+ __builtin___memcpy_chk (aux, to,size, __builtin_object_size (aux, 0));
 # 65 "src/PA/Input.c"
  free(aux);
  return to;

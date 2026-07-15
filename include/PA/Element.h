@@ -11,7 +11,7 @@
 // struct PAElement;
 DllExport Memory PAElementCreate(size_t size);
 DllExport struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus Status);
-DllExport struct PAElement* PAElementCopy(struct PAElement*, struct PAElement*);
+DllExport Object PAElementCopy(Object, Object, size_t);
 DllExport int PAElementDelete(struct PAElement*);
 DllExport int PAElementFinish(Memory);
 DllExport void PAElementVisit(struct PAElement*);

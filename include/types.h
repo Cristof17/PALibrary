@@ -36,6 +36,7 @@ typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
 typedef void* Memory;
+typedef void* Object;
 //#define PAInt int
 // typedef int PAResource;
 // typedef int ArrayListSize;

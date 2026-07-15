@@ -44,13 +44,13 @@ DllExport Memory PAInputCreate(size_t size)
 	// return result;
 	// return temp;
 }
-DllExport struct PAInput* PAInputCopy(struct PAInput* from, struct PAInput* to)
+DllExport Object PAInputCopy(Object from, Object to, size_t size)
 {
 	// struct PAInput* copy;
-	struct PAInput* aux;
-	aux = (struct PAInput*) malloc (sizeof (struct PAInput));
-	memcpy(from,aux,sizeof(struct PAInput));
-	memcpy(aux,to,sizeof(struct PAInput));
+	Memory aux;
+	aux = malloc (size);
+	memcpy(from,aux,size);
+	memcpy(aux,to,size);
 	// aux = (struct PAInput*) malloc (sizeof(struct PAInput));
 	// inputPointer->n = PACountPerformConstruct();
 	// inputPointer->m = PACountPerformConstruct();

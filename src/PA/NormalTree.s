@@ -65,18 +65,11 @@ _PANormalTreeCopy:                      ; @PANormalTreeCopy
 	.cfi_offset w29, -16
 	stur	x0, [x29, #-8]
 	str	x1, [sp, #16]
-	mov	x0, #8                          ; =0x8
-	bl	_malloc
-	str	x0, [sp, #8]
-	ldur	x8, [x29, #-8]
-	ldr	x8, [x8]
-	ldr	x9, [sp, #8]
-	str	x8, [x9]
-	ldr	x8, [sp, #8]
-	ldr	x8, [x8]
-	ldr	x9, [sp, #16]
-	str	x8, [x9]
+	str	x2, [sp, #8]
 	ldr	x0, [sp, #8]
+	bl	_malloc
+	str	x0, [sp]
+	ldr	x0, [sp]
 	bl	_free
 	ldr	x0, [sp, #16]
 	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload

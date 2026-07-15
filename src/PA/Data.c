@@ -71,15 +71,15 @@ DllExport struct PAData* PADataBegin(struct PAData* Data)
     // struct PAData data;
     // data.resource = Data.resource;
 }
-DllExport struct PAData* PADataCopy(struct PAData* from, struct PAData* to)
+DllExport Object PADataCopy(Object from, Object to, size_t size)
 {
     // struct PAData temp;
-    struct PAData *aux;
+    Memory aux;
     // aux = (struct PAData) malloc (su)
-    aux = (struct PAData*) malloc (sizeof (struct PAData));
+    aux = malloc(size);
     // aux = PADataCreate();
-    memcpy(aux,from,sizeof(struct PAData));
-    memcpy(to,aux,sizeof(struct PAData));
+    memcpy(aux,from,size);
+    memcpy(to,aux,size);
     // aux->Resource = from->Resource;
     // to->Resource = aux->Resource;
     // aux->Resource = NULL;

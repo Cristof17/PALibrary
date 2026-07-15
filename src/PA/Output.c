@@ -60,14 +60,14 @@ DllExport struct PAOutput* PAOutputBegin(struct PAOutput* Output)
     // Output->result = temp.result;
     return Output;
 }
-DllExport struct PAOutput* PAOutputCopy(struct PAOutput* from, struct PAOutput* to)
+DllExport Object PAOutputCopy(Object from, Object to, size_t size)
 {
-	struct PAOutput* aux;
+	Memory aux;
     // aux = PAOutputCreate();
     // aux = (struct )
-    aux = (struct PAOutput*) malloc (sizeof(struct PAOutput));
-    memcpy(aux,from,sizeof(struct PAOutput));
-    memcpy(to,aux, sizeof(struct PAOutput));
+    aux = malloc (size);
+    memcpy(aux,from,size);
+    memcpy(to,aux,size);
     // aux->result = from->result;
     // to->result = aux->result;
     free(aux);

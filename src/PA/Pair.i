@@ -1471,12 +1471,13 @@ typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
 typedef void* Memory;
+typedef void* Object;
 
 
 
 
 struct ArrayListObject;
-# 53 "./include/types.h"
+# 54 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -1525,7 +1526,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 111 "./include/types.h"
+# 112 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -1571,7 +1572,7 @@ struct PrototypeClient;
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 171 "./include/types.h"
+# 172 "./include/types.h"
 struct Input {
  ;
 };
@@ -1682,7 +1683,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 289 "./include/types.h"
+# 290 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2052,7 +2053,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory PAPairCreate(size_t size);
           struct PAPair* PAPairBegin(struct PAPair*, struct PAElement*, struct PAElement*);
-          struct PAPair* PAPAPairCopy(struct PAPair* from, struct PAPair* to);
+          Object PAPAPairCopy(Object, Object, size_t);
 
 
 
@@ -2075,7 +2076,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory PAElementCreate(size_t size);
           struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus Status);
-          struct PAElement* PAElementCopy(struct PAElement*, struct PAElement*);
+          Object PAElementCopy(Object, Object, size_t);
           int PAElementDelete(struct PAElement*);
           int PAElementFinish(Memory);
           void PAElementVisit(struct PAElement*);
@@ -2116,15 +2117,15 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     return Pair;
 # 79 "src/PA/Pair.c"
 }
-          struct PAPair* PAPairCopy(struct PAPair* from, struct PAPair* to)
+          Object PAPairCopy(Object from, Object to, size_t size)
 {
 
 
-    struct PAPair* aux;
+    Memory aux;
 
-    aux = (struct PAPair*) malloc (sizeof(struct PAPair));
-    __builtin___memcpy_chk (aux, from,sizeof(struct PAPair), __builtin_object_size (aux, 0));
-    __builtin___memcpy_chk (to, aux,sizeof(struct PAPair), __builtin_object_size (to, 0));
+    aux = malloc (size);
+    __builtin___memcpy_chk (aux, from,size, __builtin_object_size (aux, 0));
+    __builtin___memcpy_chk (to, aux,size, __builtin_object_size (to, 0));
 
 
 

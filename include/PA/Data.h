@@ -13,7 +13,7 @@
 // struct PAData;
 DllExport Memory PADataCreate(size_t size);
 DllExport struct PAData* PADataBegin(struct PAData* Data);
-DllExport struct PAData* PADataCopy(struct PAData* from, struct PAData* to);
+DllExport Object PADataCopy(Object from, Object to, size_t);
 // DllExport struct PAData PADataPerformCopy(struct PAData);
 // DllExport struct PAData PADataPerformPutResource(struct PAData, PAResource);
 DllExport int PADataFinish(Memory);

@@ -1472,12 +1472,13 @@ typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
 typedef void* Memory;
+typedef void* Object;
 
 
 
 
 struct ArrayListObject;
-# 53 "./include/types.h"
+# 54 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -1526,7 +1527,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 111 "./include/types.h"
+# 112 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -1572,7 +1573,7 @@ struct PrototypeClient;
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 171 "./include/types.h"
+# 172 "./include/types.h"
 struct Input {
  ;
 };
@@ -1683,7 +1684,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 289 "./include/types.h"
+# 290 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2060,7 +2061,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          struct PAList* PAListCopy(struct PAList*, struct PAList*);
+          Object PAListCopy(Object, Object, size_t);
           int PAListDelete(struct PAList*);
           int PAListFinish(Memory);
 
@@ -2083,7 +2084,7 @@ void PAListPrint(struct PAList* List);
 
           Memory PACountCreate(size_t size);
           struct PACount* PACountBegin(struct PACount*, long*);
-          struct PACount* PACountCopy(struct PACount* from, struct PACount* to);
+          Object PACountCopy(Object, Object, size_t);
 
 
 
@@ -2103,7 +2104,7 @@ void PAListPrint(struct PAList* List);
 
           Memory PASeriesCreate(size_t size);
           struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct PAList* Adj[]);
-          struct PASeries* PASeriesCopy(struct PASeries*, struct PASeries*);
+          Object PASeriesCopy(Object, Object, size_t);
           int PASeriesDelete(struct PASeries*);
           int PASeriesFinish(Memory);
 
@@ -2119,13 +2120,13 @@ void PAListPrint(struct PAList* List);
     return listPointer;
 # 50 "src/PA/List.c"
 }
-          struct PAList* PAListCopy(struct PAList* from, struct PAList* to)
+          Object PAListCopy(Object from, Object to, size_t size)
 {
-    struct PAList* aux;
+    Memory aux;
 
-    aux = (struct PAList*) malloc (sizeof(struct PAList));
-    __builtin___memcpy_chk (aux, from,sizeof(struct PAList), __builtin_object_size (aux, 0));
-    __builtin___memcpy_chk (to, aux,sizeof(struct PAList), __builtin_object_size (to, 0));
+    aux = malloc (size);
+    __builtin___memcpy_chk (aux, from,size, __builtin_object_size (aux, 0));
+    __builtin___memcpy_chk (to, aux,size, __builtin_object_size (to, 0));
 # 69 "src/PA/List.c"
     free(aux);
     return to;
