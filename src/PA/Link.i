@@ -2051,12 +2051,12 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 10 "./include/PA/Link.h" 2
 
 
-          struct PALink* PALinkCreate(struct PAPair* p);
+          void* PALinkCreate(size_t size);
           struct PALink* PALinkBegin(struct PALink*, struct PAPair*);
           struct PALink* PALinkCopy(struct PALink*, struct PALink*);
 
 
-          int PALinkFinish(struct PAPair*);
+          int PALinkFinish(void*);
           int PALinkDelete(struct PALink*);
 # 9 "src/PA/Link.c" 2
 # 1 "./include/PA/Pair.h" 1
@@ -2088,12 +2088,12 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          struct PALink* PALinkCreate(struct PAPair* p)
+          void* PALinkCreate(size_t size)
 {
 
-    struct PALink* link;
-    link = (struct PALink*) malloc (sizeof(struct PALink));
-    link->p = p;
+    void* link;
+    link = malloc (size);
+
     return link;
 # 32 "src/PA/Link.c"
 }
@@ -2140,7 +2140,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 }
-          int PALinkFinish(struct PAPair* Pair)
+          int PALinkFinish(void* Pair)
 {
 
 

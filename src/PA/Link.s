@@ -12,12 +12,9 @@ _PALinkCreate:                          ; @PALinkCreate
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
 	str	x0, [sp, #8]
-	mov	x0, #8                          ; =0x8
+	ldr	x0, [sp, #8]
 	bl	_malloc
 	str	x0, [sp]
-	ldr	x8, [sp, #8]
-	ldr	x9, [sp]
-	str	x8, [x9]
 	ldr	x0, [sp]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32

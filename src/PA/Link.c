@@ -13,12 +13,12 @@
 #endif
 
 // DllExport struct PALink* PALinkCreate(struct )
-DllExport struct PALink* PALinkCreate(struct PAPair* p)
+DllExport void* PALinkCreate(size_t size)
 {
     // struct PALink link;
-    struct PALink* link;
-    link = (struct PALink*) malloc (sizeof(struct PALink));
-    link->p = p;
+    void* link;
+    link = malloc (size);
+    // link->p = p;
     return link;
     // link.p = PAPairPerformConstruct();
     // Link.p = PAPairPerformConstruct();
@@ -91,7 +91,7 @@ DllExport int PALinkDelete(struct PALink* PA){
     // struct PALink link;
     // return link;
 }
-DllExport int PALinkFinish(struct PAPair* Pair)
+DllExport int PALinkFinish(void* Pair)
 {
     // PA.p = PAPairPerformRuin(PA.p);    
     // struct PALink Empty;
