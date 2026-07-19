@@ -17,19 +17,19 @@ typedef int ArrayListObject;
 #else
 typedef char* PANumber;
 // struct PANumber;
-#ifdef Aarch64
-#define PAInt long
-#else
-#ifdef armv6
-#define PAInt long
-#else
-#ifdef arm64
-#define PAInt long
-#else
-#define PAInt int
-#endif
-#endif
-#endif
+// // #ifdef Aarch64
+// // #define PAInt long
+// // #else
+// // #ifdef armv6
+// // #define PAInt long
+// // #else
+// // #ifdef arm64
+// // #define PAInt long
+// // #else
+// // #define PAInt int
+// // #endif
+// #endif
+// #endif
 // endif
 // typedef int PAInt;
 typedef int PAResult;
@@ -37,6 +37,10 @@ typedef int PABool;
 typedef PABool PAStatus;
 typedef void* Memory;
 typedef void* Object;
+typedef int Offset;
+typedef char PAInt;
+// typedef PACountValue PAInt;
+// typede
 //#define PAInt int
 // typedef int PAResource;
 // typedef int ArrayListSize;

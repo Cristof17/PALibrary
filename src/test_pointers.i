@@ -1467,12 +1467,16 @@ typedef int PABool;
 typedef PABool PAStatus;
 typedef void* Memory;
 typedef void* Object;
+typedef int Offset;
+typedef char PAInt;
+
+
 
 
 
 
 struct ArrayListObject;
-# 54 "./include/types.h"
+# 58 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -1521,7 +1525,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 112 "./include/types.h"
+# 116 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -1567,7 +1571,7 @@ struct PrototypeClient;
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 172 "./include/types.h"
+# 176 "./include/types.h"
 struct Input {
  ;
 };
@@ -1622,11 +1626,11 @@ struct PAElement {
 
 };
 struct PAFeature {
- long* kind;
+ PAInt* kind;
 };
 struct PACount {
 
- long* number;
+ PAInt* number;
 };
 
 
@@ -1678,7 +1682,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 290 "./include/types.h"
+# 294 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -1697,7 +1701,7 @@ struct PAOutput {
 
 
 struct PAValue {
- long value;
+ PAInt value;
 };
 struct PADestination {
     struct PAElement element;
@@ -1806,7 +1810,7 @@ struct ConcreteBuilder {
  struct Builder builder;
 };
 struct IteratorConcreteIterator {
- long position;
+ PAInt position;
 };
 struct IteratorConcreteAggregate {
  struct IteratorConcreteIterator iterator;
@@ -1850,15 +1854,10 @@ struct Facade {
 
 
           Memory PACountCreate(size_t size);
-          struct PACount* PACountBegin(struct PACount*, long*);
           Object PACountCopy(Object, Object, size_t);
-
-
-
-          int PACountFinish(Memory);
-
-
+          struct PACount* PACountBeginValue(struct PACount*, PAInt* value, struct PASize size);
           int PACountDelete(struct PACount* PA);
+          int PACountFinish(Memory);
 # 2 "test/test_pointers.c" 2
 # 1 "./include/PA/Resource.h" 1
 

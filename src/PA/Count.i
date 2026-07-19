@@ -1471,12 +1471,16 @@ typedef int PABool;
 typedef PABool PAStatus;
 typedef void* Memory;
 typedef void* Object;
+typedef int Offset;
+typedef char PAInt;
+
+
 
 
 
 
 struct ArrayListObject;
-# 54 "./include/types.h"
+# 58 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -1525,7 +1529,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 112 "./include/types.h"
+# 116 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -1571,7 +1575,7 @@ struct PrototypeClient;
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 172 "./include/types.h"
+# 176 "./include/types.h"
 struct Input {
  ;
 };
@@ -1626,11 +1630,11 @@ struct PAElement {
 
 };
 struct PAFeature {
- long* kind;
+ PAInt* kind;
 };
 struct PACount {
 
- long* number;
+ PAInt* number;
 };
 
 
@@ -1682,7 +1686,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 290 "./include/types.h"
+# 294 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -1701,7 +1705,7 @@ struct PAOutput {
 
 
 struct PAValue {
- long value;
+ PAInt value;
 };
 struct PADestination {
     struct PAElement element;
@@ -1810,7 +1814,7 @@ struct ConcreteBuilder {
  struct Builder builder;
 };
 struct IteratorConcreteIterator {
- long position;
+ PAInt position;
 };
 struct IteratorConcreteAggregate {
  struct IteratorConcreteIterator iterator;
@@ -1854,15 +1858,10 @@ struct Facade {
 
 
           Memory PACountCreate(size_t size);
-          struct PACount* PACountBegin(struct PACount*, long*);
           Object PACountCopy(Object, Object, size_t);
-
-
-
-          int PACountFinish(Memory);
-
-
+          struct PACount* PACountBeginValue(struct PACount*, PAInt* value, struct PASize size);
           int PACountDelete(struct PACount* PA);
+          int PACountFinish(Memory);
 # 6 "src/PA/Count.c" 2
 # 1 "./include/PA/Number.h" 1
 
@@ -2368,16 +2367,17 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 37 "src/PA/Count.c"
     return count;
 }
-          struct PACount* PACountBegin(struct PACount* count, long* Count)
+          struct PACount* PACountBeginValue(struct PACount* count, PAInt* Count,struct PASize size)
 {
-    long* aux;
-    aux = (long*) malloc (sizeof(long));
-    __builtin___memcpy_chk (aux, Count,sizeof(long), __builtin_object_size (aux, 0));
-    __builtin___memcpy_chk (count->number, aux,sizeof(long), __builtin_object_size (count->number, 0));
-    free(aux);
+    Memory aux;
+    aux = malloc (size.value[0]);
+    __builtin___memcpy_chk (aux, Count,size.value[0], __builtin_object_size (aux, 0));
+    __builtin___memcpy_chk (count->number, aux,size.value[0], __builtin_object_size (count->number, 0));
 
+
+    free(aux);
+# 71 "src/PA/Count.c"
     return count;
-# 69 "src/PA/Count.c"
 }
           Object PACountCopy(Object from, Object to, size_t size)
 {
@@ -2389,7 +2389,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
     free(aux);
     return to;
-# 89 "src/PA/Count.c"
+# 92 "src/PA/Count.c"
 }
           int PACountDelete(struct PACount* PA)
 {
@@ -2407,7 +2407,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 }
           int PACountFinish(Memory PA)
 {
-# 131 "src/PA/Count.c"
+# 134 "src/PA/Count.c"
     int returnCode;
 
     free(PA);
