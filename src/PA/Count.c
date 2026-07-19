@@ -40,8 +40,10 @@ DllExport struct PACount* PACountBeginValue(struct PACount* count, PAInt* Count,
 {
     Memory aux;
     aux = malloc (size.value[0]);
-    memcpy(aux,Count,size.value[0]);
-    memcpy(count->number,aux,size.value[0]);
+    Memory to = (Memory) count->number;
+    Memory from = (Memory) Count;
+    memcpy(aux,from,size.value[0]);
+    memcpy(to,aux,size.value[0]);
     // memcpy()
     // memcpy(count->number,aux,sizeof(PAInt));
     free(aux);
