@@ -450,25 +450,30 @@ lib_arraylist= libarraylist.a
 lib_pa= libpa.a
 
 output_dir= $(bindir) 
+output_pa= $(output_dir)/$(lib_pa)
 output_bfs= $(output_dir)/$(lib_bfs)
 output_arraylist= $(output_dir)/$(lib_arraylist)
-output_pa= $(output_dir)/$(lib_pa)
+output_algorithm= $(output_dir)/$(lib_algorithm)
 
 assemble_pa: $(assemblies_pa) $(assemblies_test_pa)
 assemble_bfs: $(assemblies_bfs) $(assemblies_test_bfs)
 assemble_arraylist: $(assemblies_arraylist) $(assemblies_test_arraylist)
+assemble_algorithm: $(assemblies_algorithm) $(assemblies_test_algorithm)
 
 compile_pa: $(objects_pa) $(objects_test_pa)
 compile_bfs: $(objects_bfs) $(objects_test_bfs)
 compile_arraylist: $(objects_arraylist) $(objects_test_arraylist)
+compile_algorithm: $(objects_algorithm) $(objects_test_algorithm)
 
 preprocess_pa: $(sources_pa) $(sources_test_pa)
 preprocess_bfs: $(sources_bfs) $(sources_test_bfs)
 preprocess_arraylist: $(sources_arraylist) $(sources_test_arraylist)
+preprocess_algorithm: $(sources_algorithm) $(sources_test_algorithm)
 
 link_pa: $(output_pa) $(link_test_pa)
 link_bfs: $(output_bfs) $(link_test_bfs)
 link_arraylist: $(output_arraylist) $(link_test_arraylist)
+link_algorithm: $(output_algorithm) $(link_test_algorithm)
 
 run_pa: $(test_pa)
 
