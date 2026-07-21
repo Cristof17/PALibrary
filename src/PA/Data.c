@@ -43,7 +43,7 @@ DllExport Memory PADataCreate(size_t size)
     // return data;
     return data;
 }
-DllExport struct PAData* PADataBegin(struct PAData* Data)
+DllExport PAData PADataBegin(PAData Data)
 {
     // struct PAData temp;
     // struct PAData* dataPointer;
@@ -111,7 +111,7 @@ DllExport Object PADataCopy(Object from, Object to, size_t size)
     // Data.Resource = Resource;
     // return Data;
 // }
-DllExport int PADataDelete(struct PAData* PA)
+DllExport int PADataDelete(PAData PA)
 {
     int returnCode;
     // bzero(PA,sizeof(struct PA));

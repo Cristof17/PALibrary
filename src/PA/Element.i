@@ -2081,12 +2081,12 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           Memory PADataCreate(size_t size);
-          struct PAData* PADataBegin(struct PAData* Data);
+          PAData PADataBegin(PAData Data);
           Object PADataCopy(Object from, Object to, size_t);
 
 
           int PADataFinish(Memory);
-          int PADataDelete(struct PAData*);
+          int PADataDelete(PAData);
 # 8 "src/PA/Element.c" 2
 # 1 "./include/PA/Status.h" 1
 

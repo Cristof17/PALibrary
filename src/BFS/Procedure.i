@@ -2168,14 +2168,14 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory PAInputCreate(size_t size);
 
-          struct PAInput* PAInputBegin(struct PAInput* PA, struct PACount* N, struct PACount* M, struct PAElement* Source, struct PASeries* Series);
+          PAInput PAInputBegin(PAInput, PACount, PACount, PAElement, PASeries);
 
 
           Object PAInputCopy(Object,Object, size_t);
 
 
 
-          int PAInputDelete(struct PAInput*);
+          int PAInputDelete(PAInput);
           int PAInputFinish(Memory);
 # 13 "src/BFS/Procedure.c" 2
 # 26 "src/BFS/Procedure.c"

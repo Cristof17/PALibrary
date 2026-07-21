@@ -72,7 +72,7 @@ DllExport Object PAInputCopy(Object from, Object to, size_t size)
 // //	copy.source=Input.source;
 // 	return copy;DllExport void
 }
-DllExport struct PAInput* PAInputBegin(struct PAInput* Input, struct PACount* N, struct PACount* M, struct PAElement* Source, struct PASeries* Adj)
+DllExport PAInput PAInputBegin(PAInput Input, PACount N, PACount M, PAElement Source, PASeries Adj)
 {
 	// struct PAInput temp;
 	struct PAInput* aux;
@@ -107,7 +107,7 @@ DllExport struct PAInput* PAInputBegin(struct PAInput* Input, struct PACount* N,
 	return aux;
 	// return inputPointer;
 }
-DllExport int PAInputDelete(struct PAInput* PA)
+DllExport int PAInputDelete(PAInput PA)
 {
 	int returnCode;
 	bzero(PA,sizeof(struct PAInput));

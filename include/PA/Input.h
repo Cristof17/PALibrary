@@ -12,14 +12,14 @@
 // struct PAInput;
 DllExport Memory PAInputCreate(size_t size);
 // DllExport struct PAInput PAInputPerformCopy(struct PAInput);
-DllExport struct PAInput* PAInputBegin(struct PAInput* PA, struct PACount* N, struct PACount* M, struct PAElement* Source, struct PASeries* Series);
+DllExport PAInput PAInputBegin(PAInput, PACount, PACount, PAElement, PASeries);
 // DllExport struct s PAInputCopy(struct PAInput* from, struct PAInput* to);
 // DllExport struct stricPAInputCopy(struct PAInput* from, struct PAInput* to);
 DllExport Object PAInputCopy(Object,Object, size_t);
 // vpo BFSInputRuin();
 // struct PAInput PAInputPerformConstruct(struct PACount, struct PACount, struct PAList, struct PAElement)l
 // struct 
-DllExport int PAInputDelete(struct PAInput*);
+DllExport int PAInputDelete(PAInput);
 DllExport int PAInputFinish(Memory);
 // void BFSInputRuin();
 // struct BFSInput BFSInputArrange(struct BFSInput);
