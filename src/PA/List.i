@@ -1645,11 +1645,11 @@ typedef struct PASeries {
 
  struct PAList** adj;
 }* PASeries;
-struct PAList {
+typedef struct PAList {
  struct PACount* m;
  struct ArrayList* neigh;
 
-};
+}* PAList;
 struct FlyweightFlyweightClient {
 
 
@@ -2133,7 +2133,7 @@ void PAListPrint(struct PAList* List);
 }
 
 
-          struct PAList* PAListBegin(struct PAList* List, struct PACount* M, struct ArrayList* adj)
+          PAList PAListBegin(PAList List, struct PACount* M, struct ArrayList* adj)
 {
 
     struct PAList* listPointer;

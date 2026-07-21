@@ -77,7 +77,7 @@ DllExport Object PALinkCopy(Object from, Object to, size_t size)
 //    link.p = Link.p;
     // return link;
 }
-DllExport int PALinkDelete(struct PALink* PA){
+DllExport int PALinkDelete(PALink PA){
     // PAResult result;
     int returnCode;
     returnCode = PARESULT_SUCCESS;

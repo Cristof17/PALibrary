@@ -240,11 +240,11 @@ typedef struct PASeries {
 	// struct PANumber adj[0];
 	struct PAList** adj;
 }* PASeries;
-struct PAList {
+typedef struct PAList {
 	struct PACount* m;
 	struct ArrayList* neigh;
 	// struct PANod Nod;
-};
+}* PAList;
 struct FlyweightFlyweightClient {
 	// struct PASeries series;
 	//PAInt todo;

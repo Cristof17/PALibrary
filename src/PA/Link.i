@@ -1646,11 +1646,11 @@ typedef struct PASeries {
 
  struct PAList** adj;
 }* PASeries;
-struct PAList {
+typedef struct PAList {
  struct PACount* m;
  struct ArrayList* neigh;
 
-};
+}* PAList;
 struct FlyweightFlyweightClient {
 
 
@@ -2132,7 +2132,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     return to;
 # 79 "src/PA/Link.c"
 }
-          int PALinkDelete(struct PALink* PA){
+          int PALinkDelete(PALink PA){
 
     int returnCode;
     returnCode = ((int)0);

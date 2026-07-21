@@ -1641,11 +1641,11 @@ typedef struct PASeries {
 
  struct PAList** adj;
 }* PASeries;
-struct PAList {
+typedef struct PAList {
  struct PACount* m;
  struct ArrayList* neigh;
 
-};
+}* PAList;
 struct FlyweightFlyweightClient {
 
 

@@ -1646,11 +1646,11 @@ typedef struct PASeries {
 
  struct PAList** adj;
 }* PASeries;
-struct PAList {
+typedef struct PAList {
  struct PACount* m;
  struct ArrayList* neigh;
 
-};
+}* PAList;
 struct FlyweightFlyweightClient {
 
 
@@ -2152,7 +2152,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 }
-          struct PAInput* PAInputBegin(struct PAInput* Input, struct PACount* N, struct PACount* M, struct PAElement* Source, struct PASeries* Adj)
+          PAInput PAInputBegin(PAInput Input, PACount N, PACount M, PAElement Source, PASeries Adj)
 {
 
  struct PAInput* aux;
@@ -2165,7 +2165,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
  return aux;
 
 }
-          int PAInputDelete(struct PAInput* PA)
+          int PAInputDelete(PAInput PA)
 {
  int returnCode;
  __builtin___memset_chk(PA, 0, sizeof(struct PAInput), __builtin_object_size (PA, 0));

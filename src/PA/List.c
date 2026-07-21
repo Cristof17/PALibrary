@@ -108,7 +108,7 @@ DllExport Object PAListCopy(Object from, Object to, size_t size)
 }
 
 // DllExport struct PAList* PAListBegin(struct PAList* List, struct PACount* M, struct PASeries* adj)
-DllExport struct PAList* PAListBegin(struct PAList* List, struct PACount* M, struct ArrayList* adj)
+DllExport PAList PAListBegin(PAList List, struct PACount* M, struct ArrayList* adj)
 {
     // struct PAList temp;
     struct PAList* listPointer;
