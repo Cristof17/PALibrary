@@ -36,7 +36,7 @@ DllExport Memory PACountCreate(size_t size)
     // countPointer->number = PANumberCreate();
     return count;
 }
-DllExport PACount PACountBeginValue(PACount count, PAInt* Count,PASize size)
+DllExport PACount PACountBegin(PACount count, PAInt* Count,PASize size)
 {
     Memory aux;
     aux = malloc (size->value[0]);
