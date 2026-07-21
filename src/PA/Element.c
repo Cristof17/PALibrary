@@ -34,11 +34,11 @@ DllExport Memory PAElementCreate(size_t size)
   //  return element;
   return element;
 }
-DllExport struct PAElement* PAElementBegin(struct PAElement* element,struct PAData* index, struct PAElement* next, struct PAStatus status)
+DllExport PAElement PAElementBegin(PAElement element,PAData index, PAElement next, PAStatus status)
 {
     // struct PAElement temp;
 
-    struct PAElement* aux;
+    PAElement aux;
     aux =(struct PAElement*) malloc (sizeof(struct PAElement));
     memcpy(aux->index,index,sizeof(struct PAData));
     memcpy(aux->next,next,sizeof(struct PAElement));

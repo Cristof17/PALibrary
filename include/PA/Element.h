@@ -10,13 +10,13 @@
 
 // struct PAElement;
 DllExport Memory PAElementCreate(size_t size);
-DllExport struct PAElement* PAElementBegin(struct PAElement*,struct PAData* index, struct PAElement* next, struct PAStatus Status);
+DllExport PAElement PAElementBegin(PAElement,PAData, PAElement, PAStatus);
 DllExport Object PAElementCopy(Object, Object, size_t);
-DllExport int PAElementDelete(struct PAElement*);
+DllExport int PAElementDelete(PAElement);
 DllExport int PAElementFinish(Memory);
-DllExport void PAElementVisit(struct PAElement*);
-DllExport PABool PAElementIsVisited(struct PAElement*);
-DllExport void PAElementReset(struct PAElement*);
+DllExport void PAElementVisit(PAElement);
+DllExport PABool PAElementIsVisited(PAElement);
+DllExport void PAElementReset(PAElement);
 // DllExport HRESULT PAElementPerformCopy();
 // DllExport HRESULT PAElementPerformPutStatus(struct PAStatus);
 // DllExport HRESULT PAElementPerformPutData(struct PAData);

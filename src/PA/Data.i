@@ -1589,11 +1589,11 @@ struct ArrayListPosition {
 struct ArrayListObject {
  int element;
 };
-struct PASize {
+typedef struct PASize {
 
  size_t* value;
  size_t digits;
-};
+}* PASize;
 struct ArrayList {
 
  int* array;
@@ -1602,23 +1602,23 @@ struct ArrayList {
 
 };
 
-struct PAResource {
+typedef struct PAResource {
 
 
 
  PANumber value;
  struct PASize size;
 
-};
-struct PAStatus {
+}* PAResource;
 
- PABool Visited;
-};
-struct PAData {
+
+
+
+typedef struct PAData {
  struct PAResource* Resource;
 
-};
-struct PAElement {
+}* PAData;
+typedef struct PAElement {
 
  struct PAElement* next;
  struct PAData* index;
@@ -1626,21 +1626,21 @@ struct PAElement {
  PAStatus status;
 
 
-};
-struct PAFeature {
+}* PAElement;
+typedef struct PAFeature {
  PAInt* kind;
-};
-struct PACount {
+}* PAFeature;
+typedef struct PACount {
 
  PAInt* number;
-};
+}* PACount;
 
 
-struct PASeries {
+typedef struct PASeries {
  struct PACount* m;
 
  struct PAList** adj;
-};
+}* PASeries;
 struct PAList {
  struct PACount* m;
  struct ArrayList* neigh;
@@ -1667,12 +1667,12 @@ struct FlyweightUnsharedConcreteFlyweight {
  struct PASeries intrinsicState;
 
 };
-struct PATree {
+typedef struct PATree {
  struct PACount* n;
  struct PACount* m;
  struct PAElement* source;
  struct PAList* adj;
-};
+}* PATree;
 struct BridgeAbstraction {
  struct PAElement elements[2];
 };
@@ -1685,37 +1685,37 @@ struct BridgeConcreteImplementorA {
 struct BridgeConcreteImplementorB {
 };
 # 294 "./include/types.h"
-struct PAInput {
+typedef struct PAInput {
  struct PACount* n;
  struct PACount* m;
  struct PAElement* source;
  struct PAList* adj;
-};
+}* PAInput;
 struct BFSRecord {
-struct PACount n;
+ struct PACount n;
  struct PAList d;
 };
-struct PAOutput {
+typedef struct PAOutput {
  struct BFSRecord* result;
-};
+}* PAOutput;
 
 
 
 
-struct PAValue {
+typedef struct PAValue {
  PAInt value;
-};
-struct PADestination {
+}* PAValue;
+typedef struct PADestination {
     struct PAElement element;
-};
-struct PAPair {
+}* PADestination;
+typedef struct PAPair {
  struct PAElement* Node;
  struct PAElement* Neigh;
 
-};
-struct PAArrow {
+}* PAPair;
+typedef struct PAArrow {
  struct PAPair p;
-};
+}* PAArrow;
 struct BFSInput {
  struct PACount n;
  struct PACount m;
@@ -1732,17 +1732,17 @@ struct Output {
 
 
 
-struct PALink {
+typedef struct PALink {
  struct PAPair* p;
 
-};
+}* PALink;
 
 
 
-struct PANormalTree {
+typedef struct PANormalTree {
  struct PATree* tree;
 
-};
+}* PANormalTree;
 struct PATransposeTree {
  struct PATree* tree;
 
