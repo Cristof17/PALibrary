@@ -2333,7 +2333,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 8 "./include/PA/Number.h" 2
  Memory PANumberCreate(size_t size);
           struct PANumber* PANumberBegin(struct PANumber* Number, unsigned char Value);
-          Object PANumberCopy(Object, Object, size_t);
+          static Object PANumberCopy(Object, Object, size_t);
           int PANumberDelete(struct PANumber*);
           int PANumberFinish(Memory);
           void PANumberPrint(struct PANumber*);

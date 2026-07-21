@@ -2058,8 +2058,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           Memory PALinkCreate(size_t size);
-          struct PALink* PALinkBegin(PALink, PAPair);
-          Object PALinkCopy(Object, Object, size_t);
+          PALink PALinkBegin(PALink, PAPair);
+          static Object PALinkCopy(Object, Object, size_t);
 
 
           int PALinkFinish(Memory);
@@ -2081,7 +2081,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory PAPairCreate(size_t size);
           PAPair PAPairBegin(PAPair, PAElement, PAElement);
-          Object PAPAPairCopy(Object, Object, size_t);
+          static Object PAPAPairCopy(Object, Object, size_t);
 
 
 
@@ -2115,7 +2115,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     return aux;
 
 }
-          Object PALinkCopy(Object from, Object to, size_t size)
+          static Object PALinkCopy(Object from, Object to, size_t size)
 {
 
     Memory aux;

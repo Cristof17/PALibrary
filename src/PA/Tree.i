@@ -2055,7 +2055,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           Memory PATreeCreate(size_t size);
-          Object PATreeCopy(Object, Object, size_t);
+          static Object PATreeCopy(Object, Object, size_t);
 
           PATree PATreeBegin(PATree, PACount N, PACount M, PASeries adj, PAElement source);
 
@@ -2082,8 +2082,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           Memory PACountCreate(size_t size);
-          Object PACountCopy(Object, Object, size_t);
-          PACount PACountBeginValue(PACount, PAInt* value, PASize size);
+          static Object PACountCopy(Object, Object, size_t);
+          PACount PACountBegin(PACount, PAInt* value, PASize size);
           int PACountDelete(PACount PA);
           int PACountFinish(Memory);
 # 5 "src/PA/Tree.c" 2
@@ -2103,7 +2103,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory PAElementCreate(size_t size);
           PAElement PAElementBegin(PAElement,PAData, PAElement, PAStatus);
-          Object PAElementCopy(Object, Object, size_t);
+          static Object PAElementCopy(Object, Object, size_t);
           int PAElementDelete(PAElement);
           int PAElementFinish(Memory);
           void PAElementVisit(PAElement);
@@ -2133,7 +2133,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          Object PAListCopy(Object, Object, size_t);
+          static Object PAListCopy(Object, Object, size_t);
           int PAListDelete(PAList);
           int PAListFinish(Memory);
 
@@ -2164,7 +2164,7 @@ void PAListPrint(struct PAList* List);
     return tree;
 }
 # 134 "src/PA/Tree.c"
-          Object PATreeCopy(Object from, Object to, size_t size)
+          static Object PATreeCopy(Object from, Object to, size_t size)
 {
     Memory aux;
     aux = malloc (size);

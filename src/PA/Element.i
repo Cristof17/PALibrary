@@ -2057,7 +2057,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory PAElementCreate(size_t size);
           PAElement PAElementBegin(PAElement,PAData, PAElement, PAStatus);
-          Object PAElementCopy(Object, Object, size_t);
+          static Object PAElementCopy(Object, Object, size_t);
           int PAElementDelete(PAElement);
           int PAElementFinish(Memory);
           void PAElementVisit(PAElement);
@@ -2082,7 +2082,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory PADataCreate(size_t size);
           PAData PADataBegin(PAData Data);
-          Object PADataCopy(Object from, Object to, size_t);
+          static Object PADataCopy(Object from, Object to, size_t);
 
 
           int PADataFinish(Memory);
@@ -2141,7 +2141,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     return;
 }
-          Object PAElementCopy(Object from, Object to, size_t size)
+          static Object PAElementCopy(Object from, Object to, size_t size)
 {
     Memory aux;
     aux = (Memory) malloc (size);

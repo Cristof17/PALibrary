@@ -2099,7 +2099,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           Memory PATreeCreate(size_t size);
-          Object PATreeCopy(Object, Object, size_t);
+          static Object PATreeCopy(Object, Object, size_t);
 
           PATree PATreeBegin(PATree, PACount N, PACount M, PASeries adj, PAElement source);
 
@@ -2126,7 +2126,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory PAElementCreate(size_t size);
           PAElement PAElementBegin(PAElement,PAData, PAElement, PAStatus);
-          Object PAElementCopy(Object, Object, size_t);
+          static Object PAElementCopy(Object, Object, size_t);
           int PAElementDelete(PAElement);
           int PAElementFinish(Memory);
           void PAElementVisit(PAElement);
@@ -2171,7 +2171,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           PAInput PAInputBegin(PAInput, PACount, PACount, PAElement, PASeries);
 
 
-          Object PAInputCopy(Object,Object, size_t);
+          static Object PAInputCopy(Object,Object, size_t);
 
 
 

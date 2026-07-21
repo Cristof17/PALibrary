@@ -2057,7 +2057,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory PAPairCreate(size_t size);
           PAPair PAPairBegin(PAPair, PAElement, PAElement);
-          Object PAPAPairCopy(Object, Object, size_t);
+          static Object PAPAPairCopy(Object, Object, size_t);
 
 
 
@@ -2080,7 +2080,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory PAElementCreate(size_t size);
           PAElement PAElementBegin(PAElement,PAData, PAElement, PAStatus);
-          Object PAElementCopy(Object, Object, size_t);
+          static Object PAElementCopy(Object, Object, size_t);
           int PAElementDelete(PAElement);
           int PAElementFinish(Memory);
           void PAElementVisit(PAElement);
@@ -2121,7 +2121,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     return Pair;
 # 79 "src/PA/Pair.c"
 }
-          Object PAPairCopy(Object from, Object to, size_t size)
+          static Object PAPairCopy(Object from, Object to, size_t size)
 {
 
 

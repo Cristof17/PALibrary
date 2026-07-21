@@ -84,7 +84,7 @@ DllExport void PAElementReset(struct PAElement* Element)
     // Element.status.visited.value.val = FALSE;
     return;
 }
-DllExport Object PAElementCopy(Object from, Object to, size_t size)
+DllExport static Object PAElementCopy(Object from, Object to, size_t size)
 {
     Memory aux;
     aux = (Memory) malloc (size);

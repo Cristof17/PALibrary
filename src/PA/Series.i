@@ -2055,7 +2055,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory PASeriesCreate(size_t size);
           PASeries PASeriesBegin(PASeries, PACount M, PAList Adj[]);
-          Object PASeriesCopy(Object, Object, size_t);
+          static Object PASeriesCopy(Object, Object, size_t);
           int PASeriesDelete(PASeries);
           int PASeriesFinish(Memory);
 
@@ -2078,8 +2078,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           Memory PACountCreate(size_t size);
-          Object PACountCopy(Object, Object, size_t);
-          PACount PACountBeginValue(PACount, PAInt* value, PASize size);
+          static Object PACountCopy(Object, Object, size_t);
+          PACount PACountBegin(PACount, PAInt* value, PASize size);
           int PACountDelete(PACount PA);
           int PACountFinish(Memory);
 # 9 "src/PA/Series.c" 2
@@ -2099,7 +2099,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory PAElementCreate(size_t size);
           PAElement PAElementBegin(PAElement,PAData, PAElement, PAStatus);
-          Object PAElementCopy(Object, Object, size_t);
+          static Object PAElementCopy(Object, Object, size_t);
           int PAElementDelete(PAElement);
           int PAElementFinish(Memory);
           void PAElementVisit(PAElement);
@@ -2114,7 +2114,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 52 "src/PA/Series.c"
     return series;
 }
-          Object PASeriesCopy(Object from, Object to, size_t size)
+          static Object PASeriesCopy(Object from, Object to, size_t size)
 {
 
 
@@ -2161,7 +2161,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 }
 # 115 "src/PA/Series.c"
-          struct PASeries* PASeriesBegin(PASeries series, PACount M, PAList Adj[])
+          PASeries PASeriesBegin(PASeries series, PACount M, PAList Adj[])
     {
         struct PASeries* aux;
 
@@ -2174,7 +2174,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
         free(aux);
         return aux;
     }
-              int PASeriesDelete(struct PASeries* PA)
+              int PASeriesDelete(PASeries PA)
     {
         int returnCode;
         returnCode = ((int)0);

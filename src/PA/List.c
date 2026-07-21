@@ -48,7 +48,7 @@ DllExport Memory PAListCreate(size_t size)
     // list.adj = PASeriesPerformConstruct();
     // return list;
 }
-DllExport Object PAListCopy(Object from, Object to, size_t size)
+DllExport static Object PAListCopy(Object from, Object to, size_t size)
 {
     Memory aux;
     // aux = PAListCreate();

@@ -2060,7 +2060,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           Memory PAOutputCreate(size_t size);
           PAOutput PAOutputBegin(PAOutput);
 
-          Object PAOutputCopy(Object from, Object to,size_t);
+          static Object PAOutputCopy(Object from, Object to,size_t);
           int PAOutputDelete(PAOutput);
           int PAOutputFinish(Memory);
           void PAOutputPrint(PAResult Result);
@@ -2097,7 +2097,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     return output;
 
 }
-          struct PAOutput* PAOutputBegin(struct PAOutput* Output)
+          PAOutput PAOutputBegin(PAOutput Output)
 {
 
 
@@ -2110,7 +2110,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     return Output;
 }
-          Object PAOutputCopy(Object from, Object to, size_t size)
+          static Object PAOutputCopy(Object from, Object to, size_t size)
 {
  Memory aux;
 

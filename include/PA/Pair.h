@@ -11,7 +11,7 @@
 // struct PAPair;
 DllExport Memory PAPairCreate(size_t size);
 DllExport PAPair PAPairBegin(PAPair, PAElement, PAElement);
-DllExport Object PAPAPairCopy(Object, Object, size_t);
+DllExport static Object PAPAPairCopy(Object, Object, size_t);
 // DllExport HRESULT PAPairPerformCopy(struct PAPair);
 // DllExport HRESULT PAPairPerformPutNode(struct PAPair);
 // DllExport HRESULT PAPairPerformPutNeigh(struct PAPair);

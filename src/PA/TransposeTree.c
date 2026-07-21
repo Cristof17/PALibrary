@@ -53,7 +53,7 @@ DllExport PATransposeTree PATransposeTreeBegin(PATransposeTree TransposeTree, PA
     return TransposeTree;
     // return TransposeTree;
 }
-DllExport Object PATransposeTreeCopy(Object from, Object to, size_t size)
+DllExport static Object PATransposeTreeCopy(Object from, Object to, size_t size)
 {
     // struct PATransposeTree* copy;
     Memory aux;

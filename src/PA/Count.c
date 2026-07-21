@@ -72,7 +72,7 @@ DllExport PACount PACountBegin(PACount count, PAInt* Count,PASize size)
     // return÷÷ Count;
     return count;
 }
-DllExport Object PACountCopy(Object from, Object to, size_t size)
+DllExport static Object PACountCopy(Object from, Object to, size_t size)
 {
     Memory aux;
     aux = (Memory) malloc(size);

@@ -51,7 +51,7 @@ DllExport Memory PASeriesCreate(size_t size)
     // return series;
     return series;
 }
-DllExport Object PASeriesCopy(Object from, Object to, size_t size)
+DllExport static Object PASeriesCopy(Object from, Object to, size_t size)
 {
     // struct PACount x;
     // struct PACount y;
@@ -112,7 +112,7 @@ DllExport Object PASeriesCopy(Object from, Object to, size_t size)
 // }
 // }
 // DllExport struct PASeries* PASeriesBegin(struct PASeries* series, struct PACCoun)
-DllExport struct PASeries* PASeriesBegin(PASeries series, PACount M, PAList Adj[])
+DllExport PASeries PASeriesBegin(PASeries series, PACount M, PAList Adj[])
     {
         struct PASeries* aux;
 
@@ -159,7 +159,7 @@ DllExport struct PASeries* PASeriesBegin(PASeries series, PACount M, PAList Adj[
         free(aux);
         return aux;
     }
-    DllExport int PASeriesDelete(struct PASeries* PA)
+    DllExport int PASeriesDelete(PASeries PA)
     {
         int returnCode;
         returnCode = PARESULT_SUCCESS;

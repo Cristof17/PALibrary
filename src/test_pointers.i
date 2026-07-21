@@ -1854,8 +1854,8 @@ struct Facade {
 
 
           Memory PACountCreate(size_t size);
-          Object PACountCopy(Object, Object, size_t);
-          PACount PACountBeginValue(PACount, PAInt* value, PASize size);
+          static Object PACountCopy(Object, Object, size_t);
+          PACount PACountBegin(PACount, PAInt* value, PASize size);
           int PACountDelete(PACount PA);
           int PACountFinish(Memory);
 # 2 "test/test_pointers.c" 2
@@ -2352,7 +2352,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 8 "./include/PA/Number.h" 2
  Memory PANumberCreate(size_t size);
           struct PANumber* PANumberBegin(struct PANumber* Number, unsigned char Value);
-          Object PANumberCopy(Object, Object, size_t);
+          static Object PANumberCopy(Object, Object, size_t);
           int PANumberDelete(struct PANumber*);
           int PANumberFinish(Memory);
           void PANumberPrint(struct PANumber*);
@@ -2382,7 +2382,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
           Memory PASeriesCreate(size_t size);
           PASeries PASeriesBegin(PASeries, PACount M, PAList Adj[]);
-          Object PASeriesCopy(Object, Object, size_t);
+          static Object PASeriesCopy(Object, Object, size_t);
           int PASeriesDelete(PASeries);
           int PASeriesFinish(Memory);
 
@@ -2412,7 +2412,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
 
-          Object PAListCopy(Object, Object, size_t);
+          static Object PAListCopy(Object, Object, size_t);
           int PAListDelete(PAList);
           int PAListFinish(Memory);
 
@@ -2435,7 +2435,7 @@ void PAListPrint(struct PAList* List);
 
 
           Memory PATreeCreate(size_t size);
-          Object PATreeCopy(Object, Object, size_t);
+          static Object PATreeCopy(Object, Object, size_t);
 
           PATree PATreeBegin(PATree, PACount N, PACount M, PASeries adj, PAElement source);
 
@@ -2462,7 +2462,7 @@ void PAListPrint(struct PAList* List);
 
           Memory PAElementCreate(size_t size);
           PAElement PAElementBegin(PAElement,PAData, PAElement, PAStatus);
-          Object PAElementCopy(Object, Object, size_t);
+          static Object PAElementCopy(Object, Object, size_t);
           int PAElementDelete(PAElement);
           int PAElementFinish(Memory);
           void PAElementVisit(PAElement);

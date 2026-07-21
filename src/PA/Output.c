@@ -47,7 +47,7 @@ DllExport Memory PAOutputCreate(size_t size)
     return output;
     // struct BFSRecord Record = BFSRecordConstruct()
 }
-DllExport struct PAOutput* PAOutputBegin(struct PAOutput* Output)
+DllExport PAOutput PAOutputBegin(PAOutput Output)
 {
     // Output->result = Value;
     // return Output;
@@ -60,7 +60,7 @@ DllExport struct PAOutput* PAOutputBegin(struct PAOutput* Output)
     // Output->result = temp.result;
     return Output;
 }
-DllExport Object PAOutputCopy(Object from, Object to, size_t size)
+DllExport static Object PAOutputCopy(Object from, Object to, size_t size)
 {
 	Memory aux;
     // aux = PAOutputCreate();

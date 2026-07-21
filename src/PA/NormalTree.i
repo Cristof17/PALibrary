@@ -2058,7 +2058,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           Memory PANormalTreeCreate(size_t size);
           PANormalTree PANormalTreeBegin(PANormalTree NormalTree, PATree Tree);
 
-          Object PANormalTreeCopy(Object, Object, size_t);
+          static Object PANormalTreeCopy(Object, Object, size_t);
           int PANormalTreeDelete(PANormalTree PA);
           int PANormalTreeFinish(Memory);
 # 6 "src/PA/NormalTree.c" 2
@@ -2079,7 +2079,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           Memory PATreeCreate(size_t size);
-          Object PATreeCopy(Object, Object, size_t);
+          static Object PATreeCopy(Object, Object, size_t);
 
           PATree PATreeBegin(PATree, PACount N, PACount M, PASeries adj, PAElement source);
 
@@ -2106,7 +2106,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 }
-          struct PANormalTree* PANormalTreeBegin(struct PANormalTree* NormalTree, struct PATree* Value)
+          PANormalTree PANormalTreeBegin(PANormalTree NormalTree, PATree Value)
 {
     struct PANormalTree* aux;
     __builtin___memcpy_chk (aux->tree, Value,sizeof(struct PATree), __builtin_object_size (aux->tree, 0));
@@ -2114,7 +2114,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     return NormalTree;
 # 49 "src/PA/NormalTree.c"
 }
-          Object PANormalTreeCopy(Object from, Object to, size_t size)
+          static Object PANormalTreeCopy(Object from, Object to, size_t size)
 {
     Memory aux;
     aux = malloc (size);

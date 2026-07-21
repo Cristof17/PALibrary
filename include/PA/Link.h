@@ -10,8 +10,8 @@
 
 // struct PALink;
 DllExport Memory PALinkCreate(size_t size);
-DllExport struct PALink* PALinkBegin(PALink, PAPair);
-DllExport Object PALinkCopy(Object, Object, size_t);
+DllExport PALink PALinkBegin(PALink, PAPair);
+DllExport static Object PALinkCopy(Object, Object, size_t);
 // DllExport struct PALink PALinkPerformCopy(struct PALink);
 // DllExport struct PALink PALinkPerformPutPair(struct PALink,struct PAPair);
 DllExport int PALinkFinish(Memory);

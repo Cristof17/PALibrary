@@ -21,9 +21,9 @@ _PACountCreate:                         ; @PACountCreate
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PACountBeginValue              ; -- Begin function PACountBeginValue
+	.globl	_PACountBegin                   ; -- Begin function PACountBegin
 	.p2align	2
-_PACountBeginValue:                     ; @PACountBeginValue
+_PACountBegin:                          ; @PACountBegin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #80
@@ -65,31 +65,6 @@ _PACountBeginValue:                     ; @PACountBeginValue
 	ldur	x0, [x29, #-8]
 	ldp	x29, x30, [sp, #64]             ; 16-byte Folded Reload
 	add	sp, sp, #80
-	ret
-	.cfi_endproc
-                                        ; -- End function
-	.globl	_PACountCopy                    ; -- Begin function PACountCopy
-	.p2align	2
-_PACountCopy:                           ; @PACountCopy
-	.cfi_startproc
-; %bb.0:
-	sub	sp, sp, #48
-	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
-	add	x29, sp, #32
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	stur	x0, [x29, #-8]
-	str	x1, [sp, #16]
-	str	x2, [sp, #8]
-	ldr	x0, [sp, #8]
-	bl	_malloc
-	str	x0, [sp]
-	ldr	x0, [sp]
-	bl	_free
-	ldr	x0, [sp, #16]
-	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
-	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function

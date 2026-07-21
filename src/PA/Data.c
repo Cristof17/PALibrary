@@ -71,7 +71,7 @@ DllExport PAData PADataBegin(PAData Data)
     // struct PAData data;
     // data.resource = Data.resource;
 }
-DllExport Object PADataCopy(Object from, Object to, size_t size)
+DllExport static Object PADataCopy(Object from, Object to, size_t size)
 {
     // struct PAData temp;
     Memory aux;

@@ -2063,7 +2063,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           PAInput PAInputBegin(PAInput, PACount, PACount, PAElement, PASeries);
 
 
-          Object PAInputCopy(Object,Object, size_t);
+          static Object PAInputCopy(Object,Object, size_t);
 
 
 
@@ -2086,8 +2086,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           Memory PACountCreate(size_t size);
-          Object PACountCopy(Object, Object, size_t);
-          PACount PACountBeginValue(PACount, PAInt* value, PASize size);
+          static Object PACountCopy(Object, Object, size_t);
+          PACount PACountBegin(PACount, PAInt* value, PASize size);
           int PACountDelete(PACount PA);
           int PACountFinish(Memory);
 # 10 "src/PA/Input.c" 2
@@ -2107,7 +2107,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory PAElementCreate(size_t size);
           PAElement PAElementBegin(PAElement,PAData, PAElement, PAStatus);
-          Object PAElementCopy(Object, Object, size_t);
+          static Object PAElementCopy(Object, Object, size_t);
           int PAElementDelete(PAElement);
           int PAElementFinish(Memory);
           void PAElementVisit(PAElement);
@@ -2134,7 +2134,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
  return input;
 # 46 "src/PA/Input.c"
 }
-          Object PAInputCopy(Object from, Object to, size_t size)
+          static Object PAInputCopy(Object from, Object to, size_t size)
 {
 
  Memory aux;

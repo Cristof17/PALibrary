@@ -2056,7 +2056,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory PADataCreate(size_t size);
           PAData PADataBegin(PAData Data);
-          Object PADataCopy(Object from, Object to, size_t);
+          static Object PADataCopy(Object from, Object to, size_t);
 
 
           int PADataFinish(Memory);
@@ -2098,7 +2098,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 }
-          Object PADataCopy(Object from, Object to, size_t size)
+          static Object PADataCopy(Object from, Object to, size_t size)
 {
 
     Memory aux;

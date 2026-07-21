@@ -1858,8 +1858,8 @@ struct Facade {
 
 
           Memory PACountCreate(size_t size);
-          Object PACountCopy(Object, Object, size_t);
-          PACount PACountBeginValue(PACount, PAInt* value, PASize size);
+          static Object PACountCopy(Object, Object, size_t);
+          PACount PACountBegin(PACount, PAInt* value, PASize size);
           int PACountDelete(PACount PA);
           int PACountFinish(Memory);
 # 6 "src/PA/Count.c" 2
@@ -2347,7 +2347,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 8 "./include/PA/Number.h" 2
  Memory PANumberCreate(size_t size);
           struct PANumber* PANumberBegin(struct PANumber* Number, unsigned char Value);
-          Object PANumberCopy(Object, Object, size_t);
+          static Object PANumberCopy(Object, Object, size_t);
           int PANumberDelete(struct PANumber*);
           int PANumberFinish(Memory);
           void PANumberPrint(struct PANumber*);
@@ -2367,7 +2367,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 37 "src/PA/Count.c"
     return count;
 }
-          PACount PACountBeginValue(PACount count, PAInt* Count,PASize size)
+          PACount PACountBegin(PACount count, PAInt* Count,PASize size)
 {
     Memory aux;
     aux = malloc (size->value[0]);
@@ -2381,7 +2381,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 73 "src/PA/Count.c"
     return count;
 }
-          Object PACountCopy(Object from, Object to, size_t size)
+          static Object PACountCopy(Object from, Object to, size_t size)
 {
     Memory aux;
     aux = (Memory) malloc(size);

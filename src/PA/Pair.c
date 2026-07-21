@@ -77,7 +77,7 @@ DllExport struct PAPair* PAPairBegin(struct PAPair* Pair, struct PAElement* Valu
     // struct PAPair pair;
     // return result;
 }
-DllExport Object PAPairCopy(Object from, Object to, size_t size)
+DllExport static Object PAPairCopy(Object from, Object to, size_t size)
 {
     // struct PAPair temp;
     // sutr

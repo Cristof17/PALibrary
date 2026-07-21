@@ -2060,7 +2060,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory PATransposeTreeCreate(size_t size);
           PATransposeTree PATransposeTreeBegin(PATransposeTree, PATree);
-          Object PATransposeTreeCopy(Object, Object, size_t);
+          static Object PATransposeTreeCopy(Object, Object, size_t);
 
           int PATransposeTreeDelete(PATransposeTree);
           int PATransposeTreeFinish(Memory);
@@ -2082,7 +2082,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           Memory PATreeCreate(size_t size);
-          Object PATreeCopy(Object, Object, size_t);
+          static Object PATreeCopy(Object, Object, size_t);
 
           PATree PATreeBegin(PATree, PACount N, PACount M, PASeries adj, PAElement source);
 
@@ -2125,7 +2125,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     return TransposeTree;
 
 }
-          Object PATransposeTreeCopy(Object from, Object to, size_t size)
+          static Object PATransposeTreeCopy(Object from, Object to, size_t size)
 {
 
     Memory aux;
