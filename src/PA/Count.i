@@ -1594,15 +1594,15 @@ struct ArrayListObject {
 typedef struct PASize {
 
  size_t* value;
- size_t digits;
+ size_t* digits;
 }* PASize;
-struct ArrayList {
+typedef struct ArrayList {
 
  int* array;
  struct ArrayListPosition place;
  struct ArrayListSize size;
 
-};
+}* ArrayList;
 
 typedef struct PAResource {
 
@@ -1745,10 +1745,10 @@ typedef struct PANormalTree {
  struct PATree* tree;
 
 }* PANormalTree;
-struct PATransposeTree {
+typedef struct PATransposeTree {
  struct PATree* tree;
 
-};
+}* PATransposeTree;
 struct FactoryProduct1 {
  struct PANormalTree tree;
 };
@@ -1859,8 +1859,8 @@ struct Facade {
 
           Memory PACountCreate(size_t size);
           Object PACountCopy(Object, Object, size_t);
-          struct PACount* PACountBeginValue(struct PACount*, PAInt* value, struct PASize size);
-          int PACountDelete(struct PACount* PA);
+          PACount PACountBeginValue(PACount, PAInt* value, PASize size);
+          int PACountDelete(PACount PA);
           int PACountFinish(Memory);
 # 6 "src/PA/Count.c" 2
 # 1 "./include/PA/Number.h" 1
@@ -2367,14 +2367,14 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 37 "src/PA/Count.c"
     return count;
 }
-          struct PACount* PACountBeginValue(struct PACount* count, PAInt* Count,struct PASize size)
+          PACount PACountBeginValue(PACount count, PAInt* Count,PASize size)
 {
     Memory aux;
-    aux = malloc (size.value[0]);
+    aux = malloc (size->value[0]);
     Memory to = (Memory) count->number;
     Memory from = (Memory) Count;
-    __builtin___memcpy_chk (aux, from,size.value[0], __builtin_object_size (aux, 0));
-    __builtin___memcpy_chk (to, aux,size.value[0], __builtin_object_size (to, 0));
+    __builtin___memcpy_chk (aux, from,size->value[0], __builtin_object_size (aux, 0));
+    __builtin___memcpy_chk (to, aux,size->value[0], __builtin_object_size (to, 0));
 
 
     free(aux);
@@ -2393,7 +2393,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
     return to;
 # 94 "src/PA/Count.c"
 }
-          int PACountDelete(struct PACount* PA)
+          int PACountDelete(PACount PA)
 {
     int returnCode;
 

@@ -13,8 +13,8 @@
 //typedef struct PACount Count;
 DllExport Memory PACountCreate(size_t size);
 DllExport Object PACountCopy(Object, Object, size_t);
-DllExport struct PACount* PACountBeginValue(struct PACount*, PAInt* value, struct PASize size);
-DllExport int PACountDelete(struct PACount* PA);
+DllExport PACount PACountBeginValue(PACount, PAInt* value, PASize size);
+DllExport int PACountDelete(PACount PA);
 DllExport int PACountFinish(Memory);
 // DllExport struct PACount PACountPerformCopy(struct PACount);
 // void PASize(PA_INT);

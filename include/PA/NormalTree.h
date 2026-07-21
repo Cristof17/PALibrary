@@ -11,10 +11,10 @@
 #include <string.h>
 // struct NormalTree;
 DllExport Memory PANormalTreeCreate(size_t size);
-DllExport struct PANormalTree* PANormalTreeBegin(struct PANormalTree* NormalTree, struct PATree* Tree);
+DllExport PANormalTree PANormalTreeBegin(PANormalTree NormalTree, PATree Tree);
 // DllExport void PANormalTreeCopy(struct PANormalTree* NormalTree, struct PANormalTree* Tree);
 DllExport Object PANormalTreeCopy(Object, Object, size_t);
-DllExport int PANormalTreeDelete(struct PANormalTree* PA);
+DllExport int PANormalTreeDelete(PANormalTree PA);
 DllExport int PANormalTreeFinish(Memory);
 // DllExport struct PANormalTree PANormalTreePerformConstruct(struct PATree tree);
 // DllExport struct PANormalTree* PAGrafNormalBuildPart();

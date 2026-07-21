@@ -36,14 +36,14 @@ DllExport Memory PACountCreate(size_t size)
     // countPointer->number = PANumberCreate();
     return count;
 }
-DllExport struct PACount* PACountBeginValue(struct PACount* count, PAInt* Count,struct PASize size)
+DllExport PACount PACountBeginValue(PACount count, PAInt* Count,PASize size)
 {
     Memory aux;
-    aux = malloc (size.value[0]);
+    aux = malloc (size->value[0]);
     Memory to = (Memory) count->number;
     Memory from = (Memory) Count;
-    memcpy(aux,from,size.value[0]);
-    memcpy(to,aux,size.value[0]);
+    memcpy(aux,from,size->value[0]);
+    memcpy(to,aux,size->value[0]);
     // memcpy()
     // memcpy(count->number,aux,sizeof(PAInt));
     free(aux);
@@ -92,7 +92,7 @@ DllExport Object PACountCopy(Object from, Object to, size_t size)
     // to.number = temp.number;
     // return to;
 }
-DllExport int PACountDelete(struct PACount* PA)
+DllExport int PACountDelete(PACount PA)
 {
     int returnCode;
     // PA->number = NULL;

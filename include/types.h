@@ -191,15 +191,15 @@ struct ArrayListObject {
 typedef struct PASize {
 	// size_t valie;
 	size_t* value;
-	size_t digits;
+	size_t* digits;
 }* PASize;
-struct ArrayList {
+typedef struct ArrayList {
 	// struct Position position;
 	int* array;
 	struct ArrayListPosition place;
 	struct ArrayListSize size;
 	// ArrayListPosition
-};
+}* ArrayList;
 
 typedef struct PAResource {
 	// struct
@@ -349,10 +349,10 @@ typedef struct PANormalTree {
 	struct PATree* tree;
 	//struct PAList adj;
 }* PANormalTree;
-struct PATransposeTree {
+typedef struct PATransposeTree {
 	struct PATree* tree;
 	//struct PAList adj_trans;
-};
+}* PATransposeTree;
 struct FactoryProduct1 {
 	struct PANormalTree tree;
 };

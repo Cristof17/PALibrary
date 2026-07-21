@@ -1592,15 +1592,15 @@ struct ArrayListObject {
 typedef struct PASize {
 
  size_t* value;
- size_t digits;
+ size_t* digits;
 }* PASize;
-struct ArrayList {
+typedef struct ArrayList {
 
  int* array;
  struct ArrayListPosition place;
  struct ArrayListSize size;
 
-};
+}* ArrayList;
 
 typedef struct PAResource {
 
@@ -1743,10 +1743,10 @@ typedef struct PANormalTree {
  struct PATree* tree;
 
 }* PANormalTree;
-struct PATransposeTree {
+typedef struct PATransposeTree {
  struct PATree* tree;
 
-};
+}* PATransposeTree;
 struct FactoryProduct1 {
  struct PANormalTree tree;
 };
@@ -2054,13 +2054,13 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           Memory PASeriesCreate(size_t size);
-          struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct PAList* Adj[]);
+          PASeries PASeriesBegin(PASeries, PACount M, PAList Adj[]);
           Object PASeriesCopy(Object, Object, size_t);
-          int PASeriesDelete(struct PASeries*);
+          int PASeriesDelete(PASeries);
           int PASeriesFinish(Memory);
 
 
-          void PASeriesPrint(struct PASeries*);
+          void PASeriesPrint(PASeries);
 # 8 "src/PA/Series.c" 2
 # 1 "./include/PA/Count.h" 1
 
@@ -2079,8 +2079,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory PACountCreate(size_t size);
           Object PACountCopy(Object, Object, size_t);
-          struct PACount* PACountBeginValue(struct PACount*, PAInt* value, struct PASize size);
-          int PACountDelete(struct PACount* PA);
+          PACount PACountBeginValue(PACount, PAInt* value, PASize size);
+          int PACountDelete(PACount PA);
           int PACountFinish(Memory);
 # 9 "src/PA/Series.c" 2
 # 1 "./include/PA/Element.h" 1
@@ -2161,7 +2161,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 }
 # 115 "src/PA/Series.c"
-          struct PASeries* PASeriesBegin(struct PASeries* series, struct PACount* M, struct PAList* Adj[])
+          struct PASeries* PASeriesBegin(PASeries series, PACount M, PAList Adj[])
     {
         struct PASeries* aux;
 

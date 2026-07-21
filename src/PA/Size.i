@@ -1591,15 +1591,15 @@ struct ArrayListObject {
 typedef struct PASize {
 
  size_t* value;
- size_t digits;
+ size_t* digits;
 }* PASize;
-struct ArrayList {
+typedef struct ArrayList {
 
  int* array;
  struct ArrayListPosition place;
  struct ArrayListSize size;
 
-};
+}* ArrayList;
 
 typedef struct PAResource {
 
@@ -1742,10 +1742,10 @@ typedef struct PANormalTree {
  struct PATree* tree;
 
 }* PANormalTree;
-struct PATransposeTree {
+typedef struct PATransposeTree {
  struct PATree* tree;
 
-};
+}* PATransposeTree;
 struct FactoryProduct1 {
  struct PANormalTree tree;
 };
@@ -2058,9 +2058,9 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory PASizeConstruct(size_t size);
 
-          int PASizeDelete(struct PASize* PA);
+          int PASizeDelete(PASize PA);
           int PASizeFinish(Memory);
-          struct PASize* PASizeBegin(struct PASize*, size_t* digits, size_t num_digits);
+          struct PASize* PASizeBegin(PASize, size_t* digits, size_t num_digits);
 # 5 "src/PA/Size.c" 2
 
 
@@ -2071,7 +2071,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     sizeStruct = malloc (size);
     return sizeStruct;
 }
-          struct PASize* PASizeBegin(struct PASize* Size, size_t* value, size_t digits)
+          PASize PASizeBegin(PASize Size, size_t* value, size_t digits)
 {
     struct PASize* aux;
     aux = (struct PASize*) malloc (sizeof(struct PASize));

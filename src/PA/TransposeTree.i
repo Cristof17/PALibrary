@@ -1597,15 +1597,15 @@ struct ArrayListObject {
 typedef struct PASize {
 
  size_t* value;
- size_t digits;
+ size_t* digits;
 }* PASize;
-struct ArrayList {
+typedef struct ArrayList {
 
  int* array;
  struct ArrayListPosition place;
  struct ArrayListSize size;
 
-};
+}* ArrayList;
 
 typedef struct PAResource {
 
@@ -1748,10 +1748,10 @@ typedef struct PANormalTree {
  struct PATree* tree;
 
 }* PANormalTree;
-struct PATransposeTree {
+typedef struct PATransposeTree {
  struct PATree* tree;
 
-};
+}* PATransposeTree;
 struct FactoryProduct1 {
  struct PANormalTree tree;
 };
@@ -2059,10 +2059,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           Memory PATransposeTreeCreate(size_t size);
-          struct PATransposeTree* PATransposeTreeBegin(struct PATransposeTree*, struct PATree*);
+          PATransposeTree PATransposeTreeBegin(PATransposeTree, PATree);
           Object PATransposeTreeCopy(Object, Object, size_t);
 
-          int PATransposeTreeDelete(struct PATransposeTree*);
+          int PATransposeTreeDelete(PATransposeTree);
           int PATransposeTreeFinish(Memory);
 # 9 "src/PA/TransposeTree.c" 2
 # 1 "./include/PA/Tree.h" 1
@@ -2084,13 +2084,13 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           Memory PATreeCreate(size_t size);
           Object PATreeCopy(Object, Object, size_t);
 
-          struct PATree* PATreeBegin(struct PATree*, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source);
+          PATree PATreeBegin(PATree, PACount N, PACount M, PASeries adj, PAElement source);
 
 
 
 
 
-          int PATreeDelete(struct PATree*);
+          int PATreeDelete(PATree);
           int PATreeFinish(Memory);
 # 10 "src/PA/TransposeTree.c" 2
 
@@ -2113,7 +2113,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 }
 
-          struct PATransposeTree* PATransposeTreeBegin(struct PATransposeTree* TransposeTree, struct PATree* Value)
+          PATransposeTree PATransposeTreeBegin(PATransposeTree TransposeTree, PATree Value)
 {
     struct PATransposeTree* aux;
 
@@ -2139,7 +2139,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 76 "src/PA/TransposeTree.c"
 }
 # 86 "src/PA/TransposeTree.c"
-          int PATransposeTreeDelete(struct PATransposeTree* PA)
+          int PATransposeTreeDelete(PATransposeTree PA)
 {
 
 

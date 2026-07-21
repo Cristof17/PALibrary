@@ -32,35 +32,37 @@ _PACountBeginValue:                     ; @PACountBeginValue
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	stur	x2, [x29, #-16]
-	stur	x3, [x29, #-8]
-	stur	x0, [x29, #-24]
-	str	x1, [sp, #32]
-	ldur	x8, [x29, #-16]
-	ldr	x0, [x8]
-	bl	_malloc
-	str	x0, [sp, #24]
+	stur	x0, [x29, #-8]
+	stur	x1, [x29, #-16]
+	stur	x2, [x29, #-24]
 	ldur	x8, [x29, #-24]
 	ldr	x8, [x8]
-	str	x8, [sp, #16]
-	ldr	x8, [sp, #32]
-	str	x8, [sp, #8]
-	ldr	x0, [sp, #24]
-	ldr	x1, [sp, #8]
+	ldr	x0, [x8]
+	bl	_malloc
+	str	x0, [sp, #32]
+	ldur	x8, [x29, #-8]
+	ldr	x8, [x8]
+	str	x8, [sp, #24]
 	ldur	x8, [x29, #-16]
+	str	x8, [sp, #16]
+	ldr	x0, [sp, #32]
+	ldr	x1, [sp, #16]
+	ldur	x8, [x29, #-24]
+	ldr	x8, [x8]
 	ldr	x2, [x8]
 	mov	x3, #-1                         ; =0xffffffffffffffff
-	str	x3, [sp]                        ; 8-byte Folded Spill
+	str	x3, [sp, #8]                    ; 8-byte Folded Spill
 	bl	___memcpy_chk
-	ldr	x3, [sp]                        ; 8-byte Folded Reload
-	ldr	x0, [sp, #16]
-	ldr	x1, [sp, #24]
-	ldur	x8, [x29, #-16]
+	ldr	x3, [sp, #8]                    ; 8-byte Folded Reload
+	ldr	x0, [sp, #24]
+	ldr	x1, [sp, #32]
+	ldur	x8, [x29, #-24]
+	ldr	x8, [x8]
 	ldr	x2, [x8]
 	bl	___memcpy_chk
-	ldr	x0, [sp, #24]
+	ldr	x0, [sp, #32]
 	bl	_free
-	ldur	x0, [x29, #-24]
+	ldur	x0, [x29, #-8]
 	ldp	x29, x30, [sp, #64]             ; 16-byte Folded Reload
 	add	sp, sp, #80
 	ret

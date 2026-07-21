@@ -1590,15 +1590,15 @@ struct ArrayListObject {
 typedef struct PASize {
 
  size_t* value;
- size_t digits;
+ size_t* digits;
 }* PASize;
-struct ArrayList {
+typedef struct ArrayList {
 
  int* array;
  struct ArrayListPosition place;
  struct ArrayListSize size;
 
-};
+}* ArrayList;
 
 typedef struct PAResource {
 
@@ -1741,10 +1741,10 @@ typedef struct PANormalTree {
  struct PATree* tree;
 
 }* PANormalTree;
-struct PATransposeTree {
+typedef struct PATransposeTree {
  struct PATree* tree;
 
-};
+}* PATransposeTree;
 struct FactoryProduct1 {
  struct PANormalTree tree;
 };
@@ -1855,8 +1855,8 @@ struct Facade {
 
           Memory PACountCreate(size_t size);
           Object PACountCopy(Object, Object, size_t);
-          struct PACount* PACountBeginValue(struct PACount*, PAInt* value, struct PASize size);
-          int PACountDelete(struct PACount* PA);
+          PACount PACountBeginValue(PACount, PAInt* value, PASize size);
+          int PACountDelete(PACount PA);
           int PACountFinish(Memory);
 # 2 "test/test_pointers.c" 2
 # 1 "./include/PA/Resource.h" 1
@@ -2381,13 +2381,13 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
           Memory PASeriesCreate(size_t size);
-          struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct PAList* Adj[]);
+          PASeries PASeriesBegin(PASeries, PACount M, PAList Adj[]);
           Object PASeriesCopy(Object, Object, size_t);
-          int PASeriesDelete(struct PASeries*);
+          int PASeriesDelete(PASeries);
           int PASeriesFinish(Memory);
 
 
-          void PASeriesPrint(struct PASeries*);
+          void PASeriesPrint(PASeries);
 # 7 "test/test_pointers.c" 2
 # 1 "./include/PA/List.h" 1
 
@@ -2408,12 +2408,12 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
           Memory PAListCreate(size_t size);
 
 
-          struct PAList* PAListBegin(struct PAList* list, struct PACount* N, struct ArrayList* adj);
+          PAList PAListBegin(PAList list, PACount N, ArrayList adj);
 
 
 
           Object PAListCopy(Object, Object, size_t);
-          int PAListDelete(struct PAList*);
+          int PAListDelete(PAList);
           int PAListFinish(Memory);
 
 void PAListPrint(struct PAList* List);
@@ -2437,13 +2437,13 @@ void PAListPrint(struct PAList* List);
           Memory PATreeCreate(size_t size);
           Object PATreeCopy(Object, Object, size_t);
 
-          struct PATree* PATreeBegin(struct PATree*, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source);
+          PATree PATreeBegin(PATree, PACount N, PACount M, PASeries adj, PAElement source);
 
 
 
 
 
-          int PATreeDelete(struct PATree*);
+          int PATreeDelete(PATree);
           int PATreeFinish(Memory);
 # 9 "test/test_pointers.c" 2
 # 1 "./include/PA/Element.h" 1

@@ -1585,15 +1585,15 @@ struct ArrayListObject {
 typedef struct PASize {
 
  size_t* value;
- size_t digits;
+ size_t* digits;
 }* PASize;
-struct ArrayList {
+typedef struct ArrayList {
 
  int* array;
  struct ArrayListPosition place;
  struct ArrayListSize size;
 
-};
+}* ArrayList;
 
 typedef struct PAResource {
 
@@ -1736,10 +1736,10 @@ typedef struct PANormalTree {
  struct PATree* tree;
 
 }* PANormalTree;
-struct PATransposeTree {
+typedef struct PATransposeTree {
  struct PATree* tree;
 
-};
+}* PATransposeTree;
 struct FactoryProduct1 {
  struct PANormalTree tree;
 };
@@ -2101,13 +2101,13 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           Memory PATreeCreate(size_t size);
           Object PATreeCopy(Object, Object, size_t);
 
-          struct PATree* PATreeBegin(struct PATree*, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source);
+          PATree PATreeBegin(PATree, PACount N, PACount M, PASeries adj, PAElement source);
 
 
 
 
 
-          int PATreeDelete(struct PATree*);
+          int PATreeDelete(PATree);
           int PATreeFinish(Memory);
 # 9 "src/BFS/Procedure.c" 2
 # 1 "./include/PA/Element.h" 1

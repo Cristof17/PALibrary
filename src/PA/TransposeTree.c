@@ -27,7 +27,7 @@ DllExport Memory PATransposeTreeCreate(size_t size)
     // return transposeTreePointer;
 }
 
-DllExport struct PATransposeTree* PATransposeTreeBegin(struct PATransposeTree* TransposeTree, struct PATree* Value)
+DllExport PATransposeTree PATransposeTreeBegin(PATransposeTree TransposeTree, PATree Value)
 {
     struct PATransposeTree* aux;
     // aux = (struct PATransposeTree*) malloc (soz)
@@ -83,7 +83,7 @@ DllExport Object PATransposeTreeCopy(Object from, Object to, size_t size)
 //     // struct PATransposeTree tree;
 //     return PA;
 // }
-DllExport int PATransposeTreeDelete(struct PATransposeTree* PA)
+DllExport int PATransposeTreeDelete(PATransposeTree PA)
 {
     // int retutrn
     // int returncode;

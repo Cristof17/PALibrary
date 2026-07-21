@@ -1596,15 +1596,15 @@ struct ArrayListObject {
 typedef struct PASize {
 
  size_t* value;
- size_t digits;
+ size_t* digits;
 }* PASize;
-struct ArrayList {
+typedef struct ArrayList {
 
  int* array;
  struct ArrayListPosition place;
  struct ArrayListSize size;
 
-};
+}* ArrayList;
 
 typedef struct PAResource {
 
@@ -1747,10 +1747,10 @@ typedef struct PANormalTree {
  struct PATree* tree;
 
 }* PANormalTree;
-struct PATransposeTree {
+typedef struct PATransposeTree {
  struct PATree* tree;
 
-};
+}* PATransposeTree;
 struct FactoryProduct1 {
  struct PANormalTree tree;
 };
@@ -2061,12 +2061,12 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           Memory PAListCreate(size_t size);
 
 
-          struct PAList* PAListBegin(struct PAList* list, struct PACount* N, struct ArrayList* adj);
+          PAList PAListBegin(PAList list, PACount N, ArrayList adj);
 
 
 
           Object PAListCopy(Object, Object, size_t);
-          int PAListDelete(struct PAList*);
+          int PAListDelete(PAList);
           int PAListFinish(Memory);
 
 void PAListPrint(struct PAList* List);
@@ -2088,8 +2088,8 @@ void PAListPrint(struct PAList* List);
 
           Memory PACountCreate(size_t size);
           Object PACountCopy(Object, Object, size_t);
-          struct PACount* PACountBeginValue(struct PACount*, PAInt* value, struct PASize size);
-          int PACountDelete(struct PACount* PA);
+          PACount PACountBeginValue(PACount, PAInt* value, PASize size);
+          int PACountDelete(PACount PA);
           int PACountFinish(Memory);
 # 9 "src/PA/List.c" 2
 # 1 "./include/PA/Series.h" 1
@@ -2102,13 +2102,13 @@ void PAListPrint(struct PAList* List);
 
 
           Memory PASeriesCreate(size_t size);
-          struct PASeries* PASeriesBegin(struct PASeries*, struct PACount* M, struct PAList* Adj[]);
+          PASeries PASeriesBegin(PASeries, PACount M, PAList Adj[]);
           Object PASeriesCopy(Object, Object, size_t);
-          int PASeriesDelete(struct PASeries*);
+          int PASeriesDelete(PASeries);
           int PASeriesFinish(Memory);
 
 
-          void PASeriesPrint(struct PASeries*);
+          void PASeriesPrint(PASeries);
 # 10 "src/PA/List.c" 2
 # 19 "src/PA/List.c"
           Memory PAListCreate(size_t size)

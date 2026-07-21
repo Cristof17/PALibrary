@@ -1597,15 +1597,15 @@ struct ArrayListObject {
 typedef struct PASize {
 
  size_t* value;
- size_t digits;
+ size_t* digits;
 }* PASize;
-struct ArrayList {
+typedef struct ArrayList {
 
  int* array;
  struct ArrayListPosition place;
  struct ArrayListSize size;
 
-};
+}* ArrayList;
 
 typedef struct PAResource {
 
@@ -1748,10 +1748,10 @@ typedef struct PANormalTree {
  struct PATree* tree;
 
 }* PANormalTree;
-struct PATransposeTree {
+typedef struct PATransposeTree {
  struct PATree* tree;
 
-};
+}* PATransposeTree;
 struct FactoryProduct1 {
  struct PANormalTree tree;
 };
@@ -2058,12 +2058,12 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           Memory PALinkCreate(size_t size);
-          struct PALink* PALinkBegin(struct PALink*, struct PAPair*);
+          struct PALink* PALinkBegin(PALink, PAPair);
           Object PALinkCopy(Object, Object, size_t);
 
 
           int PALinkFinish(Memory);
-          int PALinkDelete(struct PALink*);
+          int PALinkDelete(PALink);
 # 9 "src/PA/Link.c" 2
 # 1 "./include/PA/Pair.h" 1
 
@@ -2080,12 +2080,12 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           Memory PAPairCreate(size_t size);
-          struct PAPair* PAPairBegin(struct PAPair*, struct PAElement*, struct PAElement*);
+          PAPair PAPairBegin(PAPair, PAElement, PAElement);
           Object PAPAPairCopy(Object, Object, size_t);
 
 
 
-          int PAPairDelete(struct PAPair*);
+          int PAPairDelete(PAPair);
           int PAPairFinish(Memory);
 # 10 "src/PA/Link.c" 2
 

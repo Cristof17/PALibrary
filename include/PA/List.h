@@ -14,12 +14,12 @@
 DllExport Memory PAListCreate(size_t size);
 // DllExport struct PAList* PAListBegin(struct PAList* list, struct PACount M);
 // DllExport struct PAList* PAListBegin(struct PAList* list, struct PACount* N, struct PASeries* adj);
-DllExport struct PAList* PAListBegin(struct PAList* list, struct PACount* N, struct ArrayList* adj);
+DllExport PAList PAListBegin(PAList list, PACount N, ArrayList adj);
 // DllExport struct PAList PAListPerformCopy(struct PAList);
 // DllExport PAResult PAListPerformPutCount(struct PAList, struct PACount);
 // DllExport PAResult PAListPerformPutList(struct PAList);
 DllExport Object PAListCopy(Object, Object, size_t);
-DllExport int PAListDelete(struct PAList*);
+DllExport int PAListDelete(PAList);
 DllExport int PAListFinish(Memory);
 // DllExport void PAListDispose(void);
 void PAListPrint(struct PAList* List);

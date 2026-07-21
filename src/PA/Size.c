@@ -11,7 +11,7 @@ DllExport Memory PASizeConstruct(size_t size){
     sizeStruct = malloc (size);
     return sizeStruct;
 }
-DllExport struct PASize* PASizeBegin(struct PASize* Size, size_t* value, size_t digits)
+DllExport PASize PASizeBegin(PASize Size, size_t* value, size_t digits)
 {
     struct PASize* aux;
     aux = (struct PASize*) malloc (sizeof(struct PASize));

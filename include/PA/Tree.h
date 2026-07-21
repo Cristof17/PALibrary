@@ -14,13 +14,13 @@
 DllExport Memory PATreeCreate(size_t size);
 DllExport Object PATreeCopy(Object, Object, size_t);
 // DllExport struct PACount PATreeSize();
-DllExport struct PATree* PATreeBegin(struct PATree*, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source);
+DllExport PATree PATreeBegin(PATree, PACount N, PACount M, PASeries adj, PAElement source);
 // DllExport HRESULT PATreePerformCopy();
 // DllExport HRESULT PATreePerformPutCount(struct PACount, struct PACount);
 // struct PATree PATreePutList(struct PATree, struct PAList);
 // DllExport HRESULT PATreePerformPutElement();
 // DllExport HRESULT PATreePerformPutSeries();
-DllExport int PATreeDelete(struct PATree*);
+DllExport int PATreeDelete(PATree);
 DllExport int PATreeFinish(Memory);
 //typedef struct PATree Tree;
 #endif

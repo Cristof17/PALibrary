@@ -77,7 +77,7 @@ DllExport Memory PATreeCreate(size_t size)
     return tree;
     // return temp;
 }
-DllExport struct PATree* PATreeBegin(struct PATree* tree, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source)
+DllExport PATree PATreeBegin(PATree tree, PACount N, PACount M, PASeries adj, PAElement source)
 {
     // struct PATree tree;/
     struct PATree* aux;
@@ -161,7 +161,7 @@ DllExport Object PATreeCopy(Object from, Object to, size_t size)
     // return to;
     // return temp;
 }
-DllExport int PATreeDelete(struct PATree* PA)
+DllExport int PATreeDelete(PATree PA)
 {
     int returnCode;
     struct PATree tree;

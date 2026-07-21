@@ -1593,15 +1593,15 @@ struct ArrayListObject {
 typedef struct PASize {
 
  size_t* value;
- size_t digits;
+ size_t* digits;
 }* PASize;
-struct ArrayList {
+typedef struct ArrayList {
 
  int* array;
  struct ArrayListPosition place;
  struct ArrayListSize size;
 
-};
+}* ArrayList;
 
 typedef struct PAResource {
 
@@ -1744,10 +1744,10 @@ typedef struct PANormalTree {
  struct PATree* tree;
 
 }* PANormalTree;
-struct PATransposeTree {
+typedef struct PATransposeTree {
  struct PATree* tree;
 
-};
+}* PATransposeTree;
 struct FactoryProduct1 {
  struct PANormalTree tree;
 };
@@ -2057,13 +2057,13 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           Memory PATreeCreate(size_t size);
           Object PATreeCopy(Object, Object, size_t);
 
-          struct PATree* PATreeBegin(struct PATree*, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source);
+          PATree PATreeBegin(PATree, PACount N, PACount M, PASeries adj, PAElement source);
 
 
 
 
 
-          int PATreeDelete(struct PATree*);
+          int PATreeDelete(PATree);
           int PATreeFinish(Memory);
 # 4 "src/PA/Tree.c" 2
 # 1 "./include/PA/Count.h" 1
@@ -2083,8 +2083,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory PACountCreate(size_t size);
           Object PACountCopy(Object, Object, size_t);
-          struct PACount* PACountBeginValue(struct PACount*, PAInt* value, struct PASize size);
-          int PACountDelete(struct PACount* PA);
+          PACount PACountBeginValue(PACount, PAInt* value, PASize size);
+          int PACountDelete(PACount PA);
           int PACountFinish(Memory);
 # 5 "src/PA/Tree.c" 2
 # 1 "./include/PA/Element.h" 1
@@ -2129,12 +2129,12 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           Memory PAListCreate(size_t size);
 
 
-          struct PAList* PAListBegin(struct PAList* list, struct PACount* N, struct ArrayList* adj);
+          PAList PAListBegin(PAList list, PACount N, ArrayList adj);
 
 
 
           Object PAListCopy(Object, Object, size_t);
-          int PAListDelete(struct PAList*);
+          int PAListDelete(PAList);
           int PAListFinish(Memory);
 
 void PAListPrint(struct PAList* List);
@@ -2149,7 +2149,7 @@ void PAListPrint(struct PAList* List);
     return tree;
 
 }
-          struct PATree* PATreeBegin(struct PATree* tree, struct PACount* N, struct PACount* M, struct PASeries* adj, struct PAElement* source)
+          PATree PATreeBegin(PATree tree, PACount N, PACount M, PASeries adj, PAElement source)
 {
 
     struct PATree* aux;
@@ -2178,7 +2178,7 @@ void PAListPrint(struct PAList* List);
     return to;
 # 163 "src/PA/Tree.c"
 }
-          int PATreeDelete(struct PATree* PA)
+          int PATreeDelete(PATree PA)
 {
     int returnCode;
     struct PATree tree;

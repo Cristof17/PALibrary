@@ -1595,15 +1595,15 @@ struct ArrayListObject {
 typedef struct PASize {
 
  size_t* value;
- size_t digits;
+ size_t* digits;
 }* PASize;
-struct ArrayList {
+typedef struct ArrayList {
 
  int* array;
  struct ArrayListPosition place;
  struct ArrayListSize size;
 
-};
+}* ArrayList;
 
 typedef struct PAResource {
 
@@ -1746,10 +1746,10 @@ typedef struct PANormalTree {
  struct PATree* tree;
 
 }* PANormalTree;
-struct PATransposeTree {
+typedef struct PATransposeTree {
  struct PATree* tree;
 
-};
+}* PATransposeTree;
 struct FactoryProduct1 {
  struct PANormalTree tree;
 };
@@ -2058,10 +2058,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           Memory PAOutputCreate(size_t size);
-          struct PAOutput* PAOutputBegin(struct PAOutput*);
+          PAOutput PAOutputBegin(PAOutput);
 
           Object PAOutputCopy(Object from, Object to,size_t);
-          int PAOutputDelete(struct PAOutput*);
+          int PAOutputDelete(PAOutput);
           int PAOutputFinish(Memory);
           void PAOutputPrint(PAResult Result);
 # 6 "src/PA/Output.c" 2
