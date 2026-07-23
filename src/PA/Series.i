@@ -2050,19 +2050,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 17 "./include/PA/Series.h" 2
-
-
-
-          Memory PASeriesCreate(size_t size);
-          PASeries PASeriesBegin(PASeries, PACount M, PAList Adj[]);
-          static Object PASeriesCopy(Object, Object, size_t);
-          int PASeriesDelete(PASeries);
-          int PASeriesFinish(Memory);
-
-
-          void PASeriesPrint(PASeries);
-# 8 "src/PA/Series.c" 2
-# 1 "./include/PA/Count.h" 1
+# 1 "./include/memory.h" 1
 
 
 
@@ -2071,17 +2059,29 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Count.h" 2
+# 9 "./include/memory.h" 2
 
 
 
 
 
-          Memory PACountCreate(size_t size);
-          static Object PACountCopy(Object, Object, size_t);
-          PACount PACountBegin(PACount, PAInt* value, PASize size);
-          int PACountDelete(PACount PA);
-          int PACountFinish(Memory);
+
+          Memory MemoryCreate(size_t size);
+          int MemoryFinish(Memory);
+# 18 "./include/PA/Series.h" 2
+
+
+
+
+
+          static Object PASeriesCopy(Object, Object, size_t);
+          int PASeriesDelete(PASeries);
+
+
+
+          void PASeriesPrint(PASeries);
+# 8 "src/PA/Series.c" 2
+# 1 "./include/PA/Count.h" 1
 # 9 "src/PA/Series.c" 2
 # 1 "./include/PA/Element.h" 1
 
@@ -2097,23 +2097,17 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 10 "./include/PA/Element.h" 2
 
 
-          Memory PAElementCreate(size_t size);
+
+
           PAElement PAElementBegin(PAElement,PAData, PAElement, PAStatus);
           static Object PAElementCopy(Object, Object, size_t);
           int PAElementDelete(PAElement);
-          int PAElementFinish(Memory);
+
           void PAElementVisit(PAElement);
           PABool PAElementIsVisited(PAElement);
           void PAElementReset(PAElement);
 # 10 "src/PA/Series.c" 2
-# 21 "src/PA/Series.c"
-          Memory PASeriesCreate(size_t size)
-{
-    Memory series;
-    series = malloc (size);
-# 52 "src/PA/Series.c"
-    return series;
-}
+# 54 "src/PA/Series.c"
           static Object PASeriesCopy(Object from, Object to, size_t size)
 {
 
@@ -2181,19 +2175,6 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
         __builtin___memset_chk(PA, 0, sizeof(struct PASeries), __builtin_object_size (PA, 0));
 # 183 "src/PA/Series.c"
         return returnCode;
-    }
-# 194 "src/PA/Series.c"
-              int PASeriesFinish(Memory PA)
-    {
-
-        int returnCode;
-
-
-        free(PA);
-        returnCode = ((int)0);
-# 221 "src/PA/Series.c"
-        return returnCode;
-
     }
 # 279 "src/PA/Series.c"
 void PASeriesPrint(struct PASeries* Series)

@@ -13,19 +13,19 @@
 #include <PA\Tree.h>
 
 #endif
-DllExport Memory PATransposeTreeCreate(size_t size)
-{
-    Memory transposeTree;
-    // struct PATransposeTree* transposeTreePointer;
-    transposeTree = malloc(size);
-    // transposeTreePointer->tree = PATreePerformConstruct();
-    // transposeTree.tree = (transposeTreePointer->tree);
-    // transposeTreePointer = PATransposeTreeBegin(transposeTreePointer,transposeTree.tree);
-    return transposeTree;
-    // return transposeTree;
-    // transposeTree.tree = PATreePerformConstruct();
-    // return transposeTreePointer;
-}
+// DllExport Memory PATransposeTreeCreate(size_t size)
+// {
+//     Memory transposeTree;
+//     // struct PATransposeTree* transposeTreePointer;
+//     transposeTree = malloc(size);
+//     // transposeTreePointer->tree = PATreePerformConstruct();
+//     // transposeTree.tree = (transposeTreePointer->tree);
+//     // transposeTreePointer = PATransposeTreeBegin(transposeTreePointer,transposeTree.tree);
+//     return transposeTree;
+//     // return transposeTree;
+//     // transposeTree.tree = PATreePerformConstruct();
+//     // return transposeTreePointer;
+// }
 
 DllExport PATransposeTree PATransposeTreeBegin(PATransposeTree TransposeTree, PATree Value)
 {
@@ -98,16 +98,16 @@ DllExport int PATransposeTreeDelete(PATransposeTree PA)
     // return rc;
     // return returnCode;
 }
-DllExport int PATransposeTreeFinish(void* PA)
-{
-    int returnCode;
-    free(PA);
-    returnCode = PARESULT_SUCCESS;
-    // PA.tree = PATreePerformRuin(PA.tree);
-    // returnCode = PATreeDelete(&PA->tree);
-    // return PA;
-    return returnCode;
-}
+// DllExport int PATransposeTreeFinish(void* PA)
+// {
+//     int returnCode;
+//     free(PA);
+//     returnCode = PARESULT_SUCCESS;
+//     // PA.tree = PATreePerformRuin(PA.tree);
+//     // returnCode = PATreeDelete(&PA->tree);
+//     // return PA;
+//     return returnCode;
+// }
 
 // struct PATransposeTree PATransposeTreeRuin(struct PATree Tree)
 // {

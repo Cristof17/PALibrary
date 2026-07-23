@@ -13,23 +13,23 @@
 #endif
 
 // DllExport struct PALink* PALinkCreate(struct )
-DllExport Memory PALinkCreate(size_t size)
-{
-    // struct PALink link;
-    Memory link;
-    link = malloc (size);
-    // link->p = p;
-    return link;
-    // link.p = PAPairPerformConstruct();
-    // Link.p = PAPairPerformConstruct();
-    // link = PALinkPerformInit(link,link.p);
-    // return link;
-    // struct PALink link;
-    // return link;÷
-    // link.p = P;÷
-    // return link;
-    // return linkPointer;
-}
+// DllExport Memory PALinkCreate(size_t size)
+// {
+//     // struct PALink link;
+//     Memory link;
+//     link = malloc (size);
+//     // link->p = p;
+//     return link;
+//     // link.p = PAPairPerformConstruct();
+//     // Link.p = PAPairPerformConstruct();
+//     // link = PALinkPerformInit(link,link.p);
+//     // return link;
+//     // struct PALink link;
+//     // return link;÷
+//     // link.p = P;÷
+//     // return link;
+//     // return linkPointer;
+// }
 DllExport struct PALink* PALinkBegin(struct PALink* Link, struct PAPair* pair)
 {
     // struct PALink temp;
@@ -91,19 +91,19 @@ DllExport int PALinkDelete(PALink PA){
     // struct PALink link;
     // return link;
 }
-DllExport int PALinkFinish(Memory Pair)
-{
-    // PA.p = PAPairPerformRuin(PA.p);    
-    // struct PALink Empty;
-    // return Empty;
-    // return 0;
-    // PAResult result;
-    // return result;
-    int returnCode;
-    free(Pair);
-    returnCode = PARESULT_SUCCESS;
-    return returnCode;
-}
+// DllExport int PALinkFinish(Memory Pair)
+// {
+//     // PA.p = PAPairPerformRuin(PA.p);    
+//     // struct PALink Empty;
+//     // return Empty;
+//     // return 0;
+//     // PAResult result;
+//     // return result;
+//     int returnCode;
+//     free(Pair);
+//     returnCode = PARESULT_SUCCESS;
+//     return returnCode;
+// }
 
 // struct PALink PALinkPerformPutPair(struct PALink Link,struct PAPair P)
 // {

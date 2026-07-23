@@ -18,39 +18,39 @@
 *  Created on: 16 nov. 2025
 *      Author: AdministratorUser
 */
-DllExport Memory PASeriesCreate(size_t size) 
-{
-    Memory series;
-    series = malloc (size);
-    // seriesPointer->m = m;
-    // seriesPointer->adj = adj;
-    // seriesPointer->adj = &(adj[0]);
-    // seriesPointer->m = PACountCreate();
-    // series.m = PACountPerformConstruct();
-    // struct PANumber x;
-    // struct PANumber y;
-    // x.val = FIRST;
-    // y.val = series.m.number.val;
-    // while (x.val < y.val)
-    // {
-        // series.adj[x.val] = PAElementPerformInit(series.adj[x.val], series.adj[x.val].index, series.adj[x.val].status);
-        // x.val++;
-    // }
-    // series.m = sPACountPerformConstruct();
+// DllExport Memory PASeriesCreate(size_t size) 
+// {
+//     Memory series;
+//     series = malloc (size);
+//     // seriesPointer->m = m;
+//     // seriesPointer->adj = adj;
+//     // seriesPointer->adj = &(adj[0]);
+//     // seriesPointer->m = PACountCreate();
+//     // series.m = PACountPerformConstruct();
+//     // struct PANumber x;
+//     // struct PANumber y;
+//     // x.val = FIRST;
+//     // y.val = series.m.number.val;
+//     // while (x.val < y.val)
+//     // {
+//         // series.adj[x.val] = PAElementPerformInit(series.adj[x.val], series.adj[x.val].index, series.adj[x.val].status);
+//         // x.val++;
+//     // }
+//     // series.m = sPACountPerformConstruct();
 
-    // struct PANumber iterator;
+//     // struct PANumber iterator;
 
-    // struct PANumber j;
+//     // struct PANumber j;
 
-    // j.val = SIZE;
-    // iterator.val = 1;
-    // while (iterator.val < j.val)
-    // {
-    //     series.adj[iterator.val] = PAElementPerformConstruct();
-    // } 
-    // return series;
-    return series;
-}
+//     // j.val = SIZE;
+//     // iterator.val = 1;
+//     // while (iterator.val < j.val)
+//     // {
+//     //     series.adj[iterator.val] = PAElementPerformConstruct();
+//     // } 
+//     // return series;
+//     return series;
+// }
 DllExport static Object PASeriesCopy(Object from, Object to, size_t size)
 {
     // struct PACount x;
@@ -191,37 +191,37 @@ DllExport PASeries PASeriesBegin(PASeries series, PACount M, PAList Adj[])
         // copy = PAListPerformInit(List);
         //return copy;
     // }
-    DllExport int PASeriesFinish(Memory PA)
-    {
-        // st
-        int returnCode;
-        // free(Count);
-        // free(List);
-        free(PA);
-        returnCode = PARESULT_SUCCESS;
-        // returnCode = PACountFinish(PA->m);
-        // free(PA);
-        // struct PACount x;
-        // struct PACount y;
-        // x.number.val = PA.m.number.val;
-        // y.number.val = FIRST;
-        // while (y.number.val <= x.number.val)
-        // {
-            // PA.adj[y.number.val] = PAElementPerformRuin(PA.adj[y.number.val]);
-            // y.number.val++;
-        // }
-        // struct PASeries Empty;
-        // struct PACount 
-        // struct PASeries Empty;
-        // struct PACount m;
-        // return Empty;
-        //PAResult result;
-        //return result;
-        // return 0;
-        return returnCode;
-        // return PA;
-    }
-    // struct PAList PAListPutElement(struct PAList List, struct PAElement Element) {
+    // DllExport int PASeriesFinish(Memory PA)
+    // {
+    //     // st
+    //     int returnCode;
+    //     // free(Count);
+    //     // free(List);
+    //     free(PA);
+    //     returnCode = PARESULT_SUCCESS;
+    //     // returnCode = PACountFinish(PA->m);
+    //     // free(PA);
+    //     // struct PACount x;
+    //     // struct PACount y;
+    //     // x.number.val = PA.m.number.val;
+    //     // y.number.val = FIRST;
+    //     // while (y.number.val <= x.number.val)
+    //     // {
+    //         // PA.adj[y.number.val] = PAElementPerformRuin(PA.adj[y.number.val]);
+    //         // y.number.val++;
+    //     // }
+    //     // struct PASeries Empty;
+    //     // struct PACount 
+    //     // struct PASeries Empty;
+    //     // struct PACount m;
+    //     // return Empty;
+    //     //PAResult result;
+    //     //return result;
+    //     // return 0;
+    //     return returnCode;
+    //     // return PA;
+    // }
+    // // struct PAList PAListPutElement(struct PAList List, struct PAElement Element) {
         //     // struct PAList list;
 //     // List.
 //     return list;

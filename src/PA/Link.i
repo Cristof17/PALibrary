@@ -2055,14 +2055,33 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 10 "./include/PA/Link.h" 2
+# 1 "./include/memory.h" 1
 
 
-          Memory PALinkCreate(size_t size);
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/memory.h" 2
+
+
+
+
+
+
+          Memory MemoryCreate(size_t size);
+          int MemoryFinish(Memory);
+# 11 "./include/PA/Link.h" 2
+
+
+
           PALink PALinkBegin(PALink, PAPair);
           static Object PALinkCopy(Object, Object, size_t);
 
 
-          int PALinkFinish(Memory);
+
           int PALinkDelete(PALink);
 # 9 "src/PA/Link.c" 2
 # 1 "./include/PA/Pair.h" 1
@@ -2079,30 +2098,16 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 10 "./include/PA/Pair.h" 2
 
 
-          Memory PAPairCreate(size_t size);
+
+
           PAPair PAPairBegin(PAPair, PAElement, PAElement);
           static Object PAPAPairCopy(Object, Object, size_t);
 
 
 
           int PAPairDelete(PAPair);
-          int PAPairFinish(Memory);
 # 10 "src/PA/Link.c" 2
-
-
-
-
-
-
-          Memory PALinkCreate(size_t size)
-{
-
-    Memory link;
-    link = malloc (size);
-
-    return link;
-# 32 "src/PA/Link.c"
-}
+# 33 "src/PA/Link.c"
           struct PALink* PALinkBegin(struct PALink* Link, struct PAPair* pair)
 {
 
@@ -2145,17 +2150,4 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-}
-          int PALinkFinish(Memory Pair)
-{
-
-
-
-
-
-
-    int returnCode;
-    free(Pair);
-    returnCode = ((int)0);
-    return returnCode;
 }

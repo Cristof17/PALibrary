@@ -2054,13 +2054,31 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 12 "./include/PA/NormalTree.h" 2
+# 1 "./include/memory.h" 1
 
-          Memory PANormalTreeCreate(size_t size);
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/memory.h" 2
+
+
+
+
+
+
+          Memory MemoryCreate(size_t size);
+          int MemoryFinish(Memory);
+# 13 "./include/PA/NormalTree.h" 2
+
+
           PANormalTree PANormalTreeBegin(PANormalTree NormalTree, PATree Tree);
 
           static Object PANormalTreeCopy(Object, Object, size_t);
           int PANormalTreeDelete(PANormalTree PA);
-          int PANormalTreeFinish(Memory);
 # 6 "src/PA/NormalTree.c" 2
 # 1 "./include/PA/Tree.h" 1
 
@@ -2078,7 +2096,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          Memory PATreeCreate(size_t size);
+
+
           static Object PATreeCopy(Object, Object, size_t);
 
           PATree PATreeBegin(PATree, PACount N, PACount M, PASeries adj, PAElement source);
@@ -2088,24 +2107,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           int PATreeDelete(PATree);
-          int PATreeFinish(Memory);
 # 7 "src/PA/NormalTree.c" 2
-
-
-
-
-
-          Memory PANormalTreeCreate(size_t size)
-{
-    Memory normalTree;
-# 23 "src/PA/NormalTree.c"
-    normalTree = malloc (size);
-
-    return normalTree;
-
-
-
-}
+# 30 "src/PA/NormalTree.c"
           PANormalTree PANormalTreeBegin(PANormalTree NormalTree, PATree Value)
 {
     struct PANormalTree* aux;
@@ -2140,14 +2143,4 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
     return returnCode;
-}
-          int PANormalTreeFinish(Memory Tree)
-{
-    int returnCode;
-    free(Tree);
-
-    return returnCode;
-
-
-
 }

@@ -1852,16 +1852,17 @@ struct Facade {
 # 8 "./include/PA/Count.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 9 "./include/PA/Count.h" 2
+# 1 "./include/memory.h" 1
+# 10 "./include/PA/Count.h" 2
 
 
 
 
 
-          Memory PACountCreate(size_t size);
+
           static Object PACountCopy(Object, Object, size_t);
           PACount PACountBegin(PACount, PAInt* value, PASize size);
           int PACountDelete(PACount PA);
-          int PACountFinish(Memory);
 # 6 "src/PA/Count.c" 2
 # 1 "./include/PA/Number.h" 1
 
@@ -2345,28 +2346,17 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 508 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
 # 62 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 2 3 4
 # 8 "./include/PA/Number.h" 2
- Memory PANumberCreate(size_t size);
+# 1 "./include/memory.h" 1
+# 9 "./include/PA/Number.h" 2
+
+
           struct PANumber* PANumberBegin(struct PANumber* Number, unsigned char Value);
           static Object PANumberCopy(Object, Object, size_t);
           int PANumberDelete(struct PANumber*);
-          int PANumberFinish(Memory);
+
           void PANumberPrint(struct PANumber*);
 # 7 "src/PA/Count.c" 2
-
-
-
-
-
-
-
-          Memory PACountCreate(size_t size)
-{
-
-    Memory count;
-    count = malloc(size);
-# 37 "src/PA/Count.c"
-    return count;
-}
+# 39 "src/PA/Count.c"
           PACount PACountBegin(PACount count, PAInt* Count,PASize size)
 {
     Memory aux;
@@ -2407,19 +2397,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
     return returnCode;
 }
-          int PACountFinish(Memory PA)
-{
-# 136 "src/PA/Count.c"
-    int returnCode;
-
-    free(PA);
-    returnCode = ((int)0);
-
-
-    return returnCode;
-
-}
-
+# 146 "src/PA/Count.c"
 PAResult PACountPrint(struct PACount* Count)
 {
     PAResult result;

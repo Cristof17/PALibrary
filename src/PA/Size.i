@@ -2049,17 +2049,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 8 "./include/PA/Size.h" 2
-
-
-
-
-
-
-
-          Memory PASizeConstruct(size_t size);
-
+# 1 "./include/memory.h" 1
+# 9 "./include/PA/Size.h" 2
+# 18 "./include/PA/Size.h"
           int PASizeDelete(PASize PA);
-          int PASizeFinish(Memory);
+
           struct PASize* PASizeBegin(PASize, size_t* digits, size_t num_digits);
 # 5 "src/PA/Size.c" 2
 
@@ -2097,12 +2091,5 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     int returnCode = ((int)0);
     __builtin___memset_chk(PA->value, 0, sizeof(size_t), __builtin_object_size (PA->value, 0));
     __builtin___memset_chk(PA, 0, sizeof(struct PASize), __builtin_object_size (PA, 0));
-    return returnCode;
-}
-          int PASizeFinish(Memory PA)
-{
-    int returnCode;
-    returnCode = ((int)0);
-    free(PA);
     return returnCode;
 }

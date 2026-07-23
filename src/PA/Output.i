@@ -2053,16 +2053,35 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 11 "./include/PA/Output.h" 2
+# 1 "./include/memory.h" 1
 
 
 
 
-          Memory PAOutputCreate(size_t size);
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/memory.h" 2
+
+
+
+
+
+
+          Memory MemoryCreate(size_t size);
+          int MemoryFinish(Memory);
+# 12 "./include/PA/Output.h" 2
+
+
+
+
+
           PAOutput PAOutputBegin(PAOutput);
 
           static Object PAOutputCopy(Object from, Object to,size_t);
           int PAOutputDelete(PAOutput);
-          int PAOutputFinish(Memory);
+
           void PAOutputPrint(PAResult Result);
 # 6 "src/PA/Output.c" 2
 # 1 "./include/BFS/Record.h" 1
@@ -2081,22 +2100,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           int BFSRecordFinish(struct BFSRecord*);
           void BFSRecordPrint(struct BFSRecord*);
 # 7 "src/PA/Output.c" 2
-# 35 "src/PA/Output.c"
-          Memory PAOutputCreate(size_t size)
-{
-
-    Memory output;
-
-
-    output = malloc (size);
-
-
-
-
-
-    return output;
-
-}
+# 50 "src/PA/Output.c"
           PAOutput PAOutputBegin(PAOutput Output)
 {
 
@@ -2139,24 +2143,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     return returnCode;
 }
-          int PAOutputFinish(Memory PA)
-{
-    int returnCode;
-
-
-    free(PA);
-    returnCode = ((int)0);
-
-
-    return returnCode;
-
-
-
-
-
-
-
-}
+# 135 "src/PA/Output.c"
           void PAOutputPrint(PAResult Result)
 {
 

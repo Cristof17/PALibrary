@@ -16,38 +16,38 @@
 #endif
 
 // struct PAList PAListConstruct(struct PAElement Element) {
-DllExport Memory PAListCreate(size_t size)
-{
-    Memory listPointer;
-    listPointer = malloc (size);
-    // listPointer->m = m;
-    // listPointer->neigh = edges;
-    // listPointer->neigh = 
-    // struct PACount n = PACountPerformConstruct();
-    // struct PACount x;
-    // list->n = PACountPerformConstruct();
-    // list.m = PACountPerformConstruct();
-    // struct PANumber y;
-    // y.val = FIRST;
-    // while (y.val < list.n.number.val)
-    // {
-        // list.neigh[y.val] = PASeriesPerformInit(list.neigh[y.val],list.neigh[y.val].m, list.neigh[y.val].adj);
-        // y.val++;
-    // }
-    // return list;
-    // struct PAList* listPointer;
-    // listPointer->n = PACountCreate();
-    return listPointer;
-    // struct PASeries neigh[] = list.neigh;
-    // x.number.val = FIRST;
-    // while (x.number.val < n.number.val)
-    // {
-    //     // neigh[x.number.val] = PASeriesPerformConstruct()
-    // }
-    // list.n = PACountPerformConstruct();
-    // list.adj = PASeriesPerformConstruct();
-    // return list;
-}
+// DllExport Memory PAListCreate(size_t size)
+// {
+//     Memory listPointer;
+//     listPointer = malloc (size);
+//     // listPointer->m = m;
+//     // listPointer->neigh = edges;
+//     // listPointer->neigh = 
+//     // struct PACount n = PACountPerformConstruct();
+//     // struct PACount x;
+//     // list->n = PACountPerformConstruct();
+//     // list.m = PACountPerformConstruct();
+//     // struct PANumber y;
+//     // y.val = FIRST;
+//     // while (y.val < list.n.number.val)
+//     // {
+//         // list.neigh[y.val] = PASeriesPerformInit(list.neigh[y.val],list.neigh[y.val].m, list.neigh[y.val].adj);
+//         // y.val++;
+//     // }
+//     // return list;
+//     // struct PAList* listPointer;
+//     // listPointer->n = PACountCreate();
+//     return listPointer;
+//     // struct PASeries neigh[] = list.neigh;
+//     // x.number.val = FIRST;
+//     // while (x.number.val < n.number.val)
+//     // {
+//     //     // neigh[x.number.val] = PASeriesPerformConstruct()
+//     // }
+//     // list.n = PACountPerformConstruct();
+//     // list.adj = PASeriesPerformConstruct();
+//     // return list;
+// }
 DllExport static Object PAListCopy(Object from, Object to, size_t size)
 {
     Memory aux;
@@ -210,43 +210,43 @@ DllExport int PAListDelete(struct PAList* PA)
     // PAResult result;
     // return result;
 }
-DllExport int PAListFinish(Memory PA)
-{
-    int returnCode;
-    // returnCode = PACountFinish(PA->n);
-    // free(Count);
-    // free(Edges);
-    free(PA);
-    returnCode = PARESULT_SUCCESS;
-    // free(PA);
-    return returnCode;
-    // struct PAList List;
-    // struct PACount x;
-    // struct PACount y;
-    // int returnCode1;
-    // int returnCode2;
-    // int returnCode;
-    // int returnC
-    // returnCode1 = PACountFinish(&(PA->n));
-    // returnCode2 =(struct PASeries*) PAListPerformRuin(PA->neigh);
-    // returnCode = returnCode1 & returnCode2;
-    // return returnCode;
-    // x.number.val = FIRST;
-    // y.number.val = PA.n.number.val;
-    // while (x.number.val < y.number.val)
-    {
-        // PA.adj[x.number.val]
-        // PA.neigh[x.number.val] = PASeriesPerformRuin(PA.neigh[x.number.val]);
-        // x.number.val ++;
-    }
-    returnCode = PARESULT_SUCCESS;
-    return returnCode;
-    // PA.n = PACountPerformRuin(PA.n);
-    // return PA;
-    // return 0;
-    // PAResult result;
-    // return result;
-}
+// DllExport int PAListFinish(Memory PA)
+// {
+//     int returnCode;
+//     // returnCode = PACountFinish(PA->n);
+//     // free(Count);
+//     // free(Edges);
+//     free(PA);
+//     returnCode = PARESULT_SUCCESS;
+//     // free(PA);
+//     return returnCode;
+//     // struct PAList List;
+//     // struct PACount x;
+//     // struct PACount y;
+//     // int returnCode1;
+//     // int returnCode2;
+//     // int returnCode;
+//     // int returnC
+//     // returnCode1 = PACountFinish(&(PA->n));
+//     // returnCode2 =(struct PASeries*) PAListPerformRuin(PA->neigh);
+//     // returnCode = returnCode1 & returnCode2;
+//     // return returnCode;
+//     // x.number.val = FIRST;
+//     // y.number.val = PA.n.number.val;
+//     // while (x.number.val < y.number.val)
+//     {
+//         // PA.adj[x.number.val]
+//         // PA.neigh[x.number.val] = PASeriesPerformRuin(PA.neigh[x.number.val]);
+//         // x.number.val ++;
+//     }
+//     returnCode = PARESULT_SUCCESS;
+//     return returnCode;
+//     // PA.n = PACountPerformRuin(PA.n);
+//     // return PA;
+//     // return 0;
+//     // PAResult result;
+//     // return result;
+// }
 void Dispose() 
 {
 

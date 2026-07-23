@@ -9,6 +9,7 @@
 // #incoude 
 // #include <strig
 #include <string.h>
+#include <memory.h>
 // struct NormalTree;
 // DllExport Memory PANormalTreeCreate(size_t size);
 DllExport PANormalTree PANormalTreeBegin(PANormalTree NormalTree, PATree Tree);

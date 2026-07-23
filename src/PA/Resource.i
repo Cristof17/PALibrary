@@ -1848,6 +1848,25 @@ struct Facade {
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 7 "./include/PA/Resource.h" 2
+# 1 "./include/memory.h" 1
+
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/memory.h" 2
+
+
+
+
+
+
+          Memory MemoryCreate(size_t size);
+          int MemoryFinish(Memory);
+# 8 "./include/PA/Resource.h" 2
 # 4 "src/PA/Resource.c" 2
 # 1 "./include/PA/Number.h" 1
 
@@ -2331,11 +2350,13 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 508 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
 # 62 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 2 3 4
 # 8 "./include/PA/Number.h" 2
- Memory PANumberCreate(size_t size);
+
+
+
           struct PANumber* PANumberBegin(struct PANumber* Number, unsigned char Value);
           static Object PANumberCopy(Object, Object, size_t);
           int PANumberDelete(struct PANumber*);
-          int PANumberFinish(Memory);
+
           void PANumberPrint(struct PANumber*);
 # 5 "src/PA/Resource.c" 2
 

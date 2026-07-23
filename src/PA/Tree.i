@@ -2051,10 +2051,29 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 11 "./include/PA/Tree.h" 2
+# 1 "./include/memory.h" 1
 
 
 
-          Memory PATreeCreate(size_t size);
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/memory.h" 2
+
+
+
+
+
+
+          Memory MemoryCreate(size_t size);
+          int MemoryFinish(Memory);
+# 12 "./include/PA/Tree.h" 2
+
+
+
+
           static Object PATreeCopy(Object, Object, size_t);
 
           PATree PATreeBegin(PATree, PACount N, PACount M, PASeries adj, PAElement source);
@@ -2064,28 +2083,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           int PATreeDelete(PATree);
-          int PATreeFinish(Memory);
 # 4 "src/PA/Tree.c" 2
 # 1 "./include/PA/Count.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Count.h" 2
-
-
-
-
-
-          Memory PACountCreate(size_t size);
-          static Object PACountCopy(Object, Object, size_t);
-          PACount PACountBegin(PACount, PAInt* value, PASize size);
-          int PACountDelete(PACount PA);
-          int PACountFinish(Memory);
 # 5 "src/PA/Tree.c" 2
 # 1 "./include/PA/Element.h" 1
 
@@ -2101,11 +2100,12 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 10 "./include/PA/Element.h" 2
 
 
-          Memory PAElementCreate(size_t size);
+
+
           PAElement PAElementBegin(PAElement,PAData, PAElement, PAStatus);
           static Object PAElementCopy(Object, Object, size_t);
           int PAElementDelete(PAElement);
-          int PAElementFinish(Memory);
+
           void PAElementVisit(PAElement);
           PABool PAElementIsVisited(PAElement);
           void PAElementReset(PAElement);
@@ -2126,7 +2126,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          Memory PAListCreate(size_t size);
+
+
 
 
           PAList PAListBegin(PAList list, PACount N, ArrayList adj);
@@ -2135,20 +2136,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           static Object PAListCopy(Object, Object, size_t);
           int PAListDelete(PAList);
-          int PAListFinish(Memory);
+
 
 void PAListPrint(struct PAList* List);
 # 7 "src/PA/Tree.c" 2
-# 19 "src/PA/Tree.c"
-          Memory PATreeCreate(size_t size)
-{
-
-    Memory tree;
-    tree = malloc (size);
-# 77 "src/PA/Tree.c"
-    return tree;
-
-}
+# 80 "src/PA/Tree.c"
           PATree PATreeBegin(PATree tree, PACount N, PACount M, PASeries adj, PAElement source)
 {
 
@@ -2196,16 +2188,4 @@ void PAListPrint(struct PAList* List);
 
     return returnCode;
 
-}
-          int PATreeFinish(Memory PA)
-{
-    int returnCode;
-
-
-
-
-    free(PA);
-    returnCode = ((int)0);
-# 243 "src/PA/Tree.c"
-    return returnCode;
 }

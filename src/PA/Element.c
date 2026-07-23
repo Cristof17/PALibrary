@@ -15,25 +15,25 @@
 // #include <types.h>
 // #include "//"
 // #include "../include/PAIndex.h"
-DllExport Memory PAElementCreate(size_t size)
-{
-    Memory element;
-    element = malloc(size);
-    // temp->index = index;
-    // temp->status = status;
-    // temp->next = next;
-    // temp.index = PADataPerformConstruct();
-    // temp.status = PAStatusPerformConstruct();
-    // temp = PAElementPerformInit(temp,temp.index,temp.status);
-    // result.index = PADataPerformConstruct();
-    // result.status = PAStatusPerformConstruct();
-    // return temp;
-    // PAResult result;
-    // return result;
- //   struct PAElement element;
-  //  return element;
-  return element;
-}
+// DllExport Memory PAElementCreate(size_t size)
+// {
+//     Memory element;
+//     element = malloc(size);
+//     // temp->index = index;
+//     // temp->status = status;
+//     // temp->next = next;
+//     // temp.index = PADataPerformConstruct();
+//     // temp.status = PAStatusPerformConstruct();
+//     // temp = PAElementPerformInit(temp,temp.index,temp.status);
+//     // result.index = PADataPerformConstruct();
+//     // result.status = PAStatusPerformConstruct();
+//     // return temp;
+//     // PAResult result;
+//     // return result;
+//  //   struct PAElement element;
+//   //  return element;
+//   return element;
+// }
 DllExport PAElement PAElementBegin(PAElement element,PAData index, PAElement next, PAStatus status)
 {
     // struct PAElement temp;
@@ -140,34 +140,34 @@ DllExport int PAElementDelete(struct PAElement* PA)
     // return 0;
 }
 // DllExport PAResult PAElementFinish(struct PAElement* PA)
-DllExport int PAElementFinish(Memory PA)
-{
-    // free(PA);
-    // PA.index = PADataPerformRuin(PA.index);
-    // PA.status = PAStatusPerformRuin(PA.status);
-    // Element.padding[0] = NULL;
-    // Element.padding[1] = NULL;
-    // Element.padding[2] = NULL;
-    // Element.padding[3] = NULL;
-    // PADataPerformRuin(Data);
-    // PAElementPerformRuin(Next.index, Next.Status);
-    // PAStatusPerformRuin(Status);
-    // PAResourcePerformRuin()
-    // struct PAElement Element;
-    // Element.index = PADataPerformRuin(PA.index);
-    // Element.status = PAStatusPerformRuin(PA.status);
-    // int returnCode;
-    int returnCode;
-    // free(Data);
-    free(PA);
-    // free(Element);
-    // free(Status);
-    returnCode = PARESULT_SUCCESS;
-    return returnCode;
-    // return PA;
-    // PAResult result;
-    // return result;
-}
+// DllExport int PAElementFinish(Memory PA)
+// {
+//     // free(PA);
+//     // PA.index = PADataPerformRuin(PA.index);
+//     // PA.status = PAStatusPerformRuin(PA.status);
+//     // Element.padding[0] = NULL;
+//     // Element.padding[1] = NULL;
+//     // Element.padding[2] = NULL;
+//     // Element.padding[3] = NULL;
+//     // PADataPerformRuin(Data);
+//     // PAElementPerformRuin(Next.index, Next.Status);
+//     // PAStatusPerformRuin(Status);
+//     // PAResourcePerformRuin()
+//     // struct PAElement Element;
+//     // Element.index = PADataPerformRuin(PA.index);
+//     // Element.status = PAStatusPerformRuin(PA.status);
+//     // int returnCode;
+//     int returnCode;
+//     // free(Data);
+//     free(PA);
+//     // free(Element);
+//     // free(Status);
+//     returnCode = PARESULT_SUCCESS;
+//     return returnCode;
+//     // return PA;
+//     // PAResult result;
+//     // return result;
+// }
 // PAResult PAElementPerformPutStatus(struct PAStatus Status)
 // {
 	// PAResult result;

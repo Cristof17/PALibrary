@@ -1848,16 +1848,17 @@ struct Facade {
 # 8 "./include/PA/Count.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 9 "./include/PA/Count.h" 2
+# 1 "./include/memory.h" 1
+# 10 "./include/PA/Count.h" 2
 
 
 
 
 
-          Memory PACountCreate(size_t size);
+
           static Object PACountCopy(Object, Object, size_t);
           PACount PACountBegin(PACount, PAInt* value, PASize size);
           int PACountDelete(PACount PA);
-          int PACountFinish(Memory);
 # 2 "test/test_pointers.c" 2
 # 1 "./include/PA/Resource.h" 1
 
@@ -1867,6 +1868,8 @@ struct Facade {
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 7 "./include/PA/Resource.h" 2
+# 1 "./include/memory.h" 1
+# 8 "./include/PA/Resource.h" 2
 # 3 "test/test_pointers.c" 2
 # 1 "./include/PA/Number.h" 1
 
@@ -2350,11 +2353,14 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 508 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
 # 62 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 2 3 4
 # 8 "./include/PA/Number.h" 2
- Memory PANumberCreate(size_t size);
+# 1 "./include/memory.h" 1
+# 9 "./include/PA/Number.h" 2
+
+
           struct PANumber* PANumberBegin(struct PANumber* Number, unsigned char Value);
           static Object PANumberCopy(Object, Object, size_t);
           int PANumberDelete(struct PANumber*);
-          int PANumberFinish(Memory);
+
           void PANumberPrint(struct PANumber*);
 # 4 "test/test_pointers.c" 2
 
@@ -2370,6 +2376,8 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 9 "./include/PA/Status.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 10 "./include/PA/Status.h" 2
+# 1 "./include/memory.h" 1
+# 11 "./include/PA/Status.h" 2
 # 6 "test/test_pointers.c" 2
 # 1 "./include/PA/Series.h" 1
 # 15 "./include/PA/Series.h"
@@ -2377,14 +2385,16 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 16 "./include/PA/Series.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 17 "./include/PA/Series.h" 2
+# 1 "./include/memory.h" 1
+# 18 "./include/PA/Series.h" 2
 
 
 
-          Memory PASeriesCreate(size_t size);
-          PASeries PASeriesBegin(PASeries, PACount M, PAList Adj[]);
+
+
           static Object PASeriesCopy(Object, Object, size_t);
           int PASeriesDelete(PASeries);
-          int PASeriesFinish(Memory);
+
 
 
           void PASeriesPrint(PASeries);
@@ -2401,11 +2411,13 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 9 "./include/PA/List.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 10 "./include/PA/List.h" 2
+# 1 "./include/memory.h" 1
+# 11 "./include/PA/List.h" 2
 
 
 
 
-          Memory PAListCreate(size_t size);
+
 
 
           PAList PAListBegin(PAList list, PACount N, ArrayList adj);
@@ -2414,7 +2426,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
           static Object PAListCopy(Object, Object, size_t);
           int PAListDelete(PAList);
-          int PAListFinish(Memory);
+
 
 void PAListPrint(struct PAList* List);
 # 8 "test/test_pointers.c" 2
@@ -2431,10 +2443,12 @@ void PAListPrint(struct PAList* List);
 # 10 "./include/PA/Tree.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 11 "./include/PA/Tree.h" 2
+# 1 "./include/memory.h" 1
+# 12 "./include/PA/Tree.h" 2
 
 
 
-          Memory PATreeCreate(size_t size);
+
           static Object PATreeCopy(Object, Object, size_t);
 
           PATree PATreeBegin(PATree, PACount N, PACount M, PASeries adj, PAElement source);
@@ -2444,7 +2458,6 @@ void PAListPrint(struct PAList* List);
 
 
           int PATreeDelete(PATree);
-          int PATreeFinish(Memory);
 # 9 "test/test_pointers.c" 2
 # 1 "./include/PA/Element.h" 1
 
@@ -2458,13 +2471,15 @@ void PAListPrint(struct PAList* List);
 # 9 "./include/PA/Element.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 10 "./include/PA/Element.h" 2
+# 1 "./include/memory.h" 1
+# 11 "./include/PA/Element.h" 2
 
 
-          Memory PAElementCreate(size_t size);
+
           PAElement PAElementBegin(PAElement,PAData, PAElement, PAStatus);
           static Object PAElementCopy(Object, Object, size_t);
           int PAElementDelete(PAElement);
-          int PAElementFinish(Memory);
+
           void PAElementVisit(PAElement);
           PABool PAElementIsVisited(PAElement);
           void PAElementReset(PAElement);

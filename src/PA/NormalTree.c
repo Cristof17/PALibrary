@@ -9,24 +9,24 @@
 #include <PA\Tree.h>
 #endif
 
-DllExport Memory PANormalTreeCreate(size_t size)
-{
-    Memory normalTree;
-    // struct PANormalTree* normalTree;
-    // struct PANormaltT/
-    // struct PANormat
-    // struct PANormalTreePointer& normalTree;
-    // struct PANormat
-    // struct PAnor
-    // struct NA
-    // nro
-    normalTree = malloc (size);
-    // register
-    return normalTree;
-    // normalTree.tree = PATreePerformConstruct();
-    // normalTree.tree = PATreePerformConstruct();
-    // return normalTree;
-}
+// DllExport Memory PANormalTreeCreate(size_t size)
+// {
+//     Memory normalTree;
+//     // struct PANormalTree* normalTree;
+//     // struct PANormaltT/
+//     // struct PANormat
+//     // struct PANormalTreePointer& normalTree;
+//     // struct PANormat
+//     // struct PAnor
+//     // struct NA
+//     // nro
+//     normalTree = malloc (size);
+//     // register
+//     return normalTree;
+//     // normalTree.tree = PATreePerformConstruct();
+//     // normalTree.tree = PATreePerformConstruct();
+//     // return normalTree;
+// }
 DllExport PANormalTree PANormalTreeBegin(PANormalTree NormalTree, PATree Value)
 {
     struct PANormalTree* aux;
@@ -81,16 +81,16 @@ DllExport int PANormalTreeDelete(struct PANormalTree* PA)
     // return PA;
     return returnCode;
 }
-DllExport int PANormalTreeFinish(Memory Tree)
-{
-    int returnCode;
-    free(Tree);
-    // returnCode = PATreeFinish(&PA->tree);
-    return returnCode;
-    // struct PANormalTree Empty;
-    // PA.tree = PATreePerformRuin(PA.tree);
-    // return PA;
-}
+// DllExport int PANormalTreeFinish(Memory Tree)
+// {
+//     int returnCode;
+//     free(Tree);
+//     // returnCode = PATreeFinish(&PA->tree);
+//     return returnCode;
+//     // struct PANormalTree Empty;
+//     // PA.tree = PATreePerformRuin(PA.tree);
+//     // return PA;
+// }
 
 // DllExport struct PANormalTree* PAGrafNormalBuildPart()
 // {

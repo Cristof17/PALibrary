@@ -2053,13 +2053,32 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 10 "./include/PA/Element.h" 2
+# 1 "./include/memory.h" 1
 
 
-          Memory PAElementCreate(size_t size);
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/memory.h" 2
+
+
+
+
+
+
+          Memory MemoryCreate(size_t size);
+          int MemoryFinish(Memory);
+# 11 "./include/PA/Element.h" 2
+
+
+
           PAElement PAElementBegin(PAElement,PAData, PAElement, PAStatus);
           static Object PAElementCopy(Object, Object, size_t);
           int PAElementDelete(PAElement);
-          int PAElementFinish(Memory);
+
           void PAElementVisit(PAElement);
           PABool PAElementIsVisited(PAElement);
           void PAElementReset(PAElement);
@@ -2080,13 +2099,13 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          Memory PADataCreate(size_t size);
+
+
           PAData PADataBegin(PAData Data);
           static Object PADataCopy(Object from, Object to, size_t);
 
 
           int PADataFinish(Memory);
-          int PADataDelete(PAData);
 # 8 "src/PA/Element.c" 2
 # 1 "./include/PA/Status.h" 1
 
@@ -2101,14 +2120,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 10 "./include/PA/Status.h" 2
 # 9 "src/PA/Element.c" 2
-# 18 "src/PA/Element.c"
-          Memory PAElementCreate(size_t size)
-{
-    Memory element;
-    element = malloc(size);
-# 35 "src/PA/Element.c"
-  return element;
-}
+# 37 "src/PA/Element.c"
           PAElement PAElementBegin(PAElement element,PAData index, PAElement next, PAStatus status)
 {
 
@@ -2161,20 +2173,5 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     __builtin___memset_chk(PA, 0, sizeof(struct PAElement), __builtin_object_size (PA, 0));
 # 139 "src/PA/Element.c"
     return returnCode;
-
-}
-
-          int PAElementFinish(Memory PA)
-{
-# 160 "src/PA/Element.c"
-    int returnCode;
-
-    free(PA);
-
-
-    returnCode = ((int)0);
-    return returnCode;
-
-
 
 }

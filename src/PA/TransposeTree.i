@@ -2055,15 +2055,32 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 10 "./include/PA/TransposeTree.h" 2
+# 1 "./include/memory.h" 1
 
 
 
-          Memory PATransposeTreeCreate(size_t size);
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/memory.h" 2
+
+
+
+
+
+
+          Memory MemoryCreate(size_t size);
+          int MemoryFinish(Memory);
+# 11 "./include/PA/TransposeTree.h" 2
+
+
+
           PATransposeTree PATransposeTreeBegin(PATransposeTree, PATree);
           static Object PATransposeTreeCopy(Object, Object, size_t);
 
           int PATransposeTreeDelete(PATransposeTree);
-          int PATransposeTreeFinish(Memory);
 # 9 "src/PA/TransposeTree.c" 2
 # 1 "./include/PA/Tree.h" 1
 
@@ -2081,7 +2098,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          Memory PATreeCreate(size_t size);
+
+
           static Object PATreeCopy(Object, Object, size_t);
 
           PATree PATreeBegin(PATree, PACount N, PACount M, PASeries adj, PAElement source);
@@ -2091,28 +2109,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           int PATreeDelete(PATree);
-          int PATreeFinish(Memory);
 # 10 "src/PA/TransposeTree.c" 2
-
-
-
-
-
-
-          Memory PATransposeTreeCreate(size_t size)
-{
-    Memory transposeTree;
-
-    transposeTree = malloc(size);
-
-
-
-    return transposeTree;
-
-
-
-}
-
+# 30 "src/PA/TransposeTree.c"
           PATransposeTree PATransposeTreeBegin(PATransposeTree TransposeTree, PATree Value)
 {
     struct PATransposeTree* aux;
@@ -2153,14 +2151,4 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-}
-          int PATransposeTreeFinish(void* PA)
-{
-    int returnCode;
-    free(PA);
-    returnCode = ((int)0);
-
-
-
-    return returnCode;
 }

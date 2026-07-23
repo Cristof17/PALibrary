@@ -32,21 +32,21 @@
 // {
 //     PAOutputPerformPrint(output);
 // }
-DllExport Memory PAOutputCreate(size_t size)
-{
-    // struct PAOutput* result;
-    Memory output;
-    // struct PAOutput Output;
-    // struct PAOutput* outputPointer;
-    output = malloc (size);
-    // result->result = Result;
-    // outputPointer->result = BFSRecordCreate();
-    // outputPointer-
-    // return outputPointer;
-    // return Output;
-    return output;
-    // struct BFSRecord Record = BFSRecordConstruct()
-}
+// DllExport Memory PAOutputCreate(size_t size)
+// {
+//     // struct PAOutput* result;
+//     Memory output;
+//     // struct PAOutput Output;
+//     // struct PAOutput* outputPointer;
+//     output = malloc (size);
+//     // result->result = Result;
+//     // outputPointer->result = BFSRecordCreate();
+//     // outputPointer-
+//     // return outputPointer;
+//     // return Output;
+//     return output;
+//     // struct BFSRecord Record = BFSRecordConstruct()
+// }
 DllExport PAOutput PAOutputBegin(PAOutput Output)
 {
     // Output->result = Value;
@@ -114,24 +114,24 @@ DllExport int PAOutputDelete(struct PAOutput* PA)
     // return output;
     return returnCode;
 }
-DllExport int PAOutputFinish(Memory PA)
-{
-    int returnCode;
-    // returnCode = PA->
-    // free(Record);
-    free(PA);
-    returnCode = PARESULT_SUCCESS;
-    // returnCode = BFSRecordFinish(PA->result);
-    // return PARESULT_SUCCESS;
-    return returnCode;
-    // PA.result = BFSRecordPerformRuin
-    // struct PAOutput Output;
-    // return Output;
-    // struct PAOutput Empty;
-    // return Empty;
-    // return 0;
-    // return PA;
-}
+// DllExport int PAOutputFinish(Memory PA)
+// {
+//     int returnCode;
+//     // returnCode = PA->
+//     // free(Record);
+//     free(PA);
+//     returnCode = PARESULT_SUCCESS;
+//     // returnCode = BFSRecordFinish(PA->result);
+//     // return PARESULT_SUCCESS;
+//     return returnCode;
+//     // PA.result = BFSRecordPerformRuin
+//     // struct PAOutput Output;
+//     // return Output;
+//     // struct PAOutput Empty;
+//     // return Empty;
+//     // return 0;
+//     // return PA;
+// }
 DllExport void PAOutputPrint(PAResult Result)
 {
 

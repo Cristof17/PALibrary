@@ -10,27 +10,27 @@
 #include <PA\Element.h>
 #endif
 
-DllExport Memory PAPairCreate(size_t size)
-{
-    // struct PAPair pair;
-    Memory pair;
-    pair = malloc(size);
-    // struct PAPair* pairPointer;
-    // pairPointer->Node = PAElementPerformConstruct();
-    // pairPointer->Neigh = PAElementPerformConstruct();
-    // pair = *pairPointer;
-    // pairPointer = PAPairBegin(pairPointer,pair.Node, pair.Neigh);
-    // pair.Node = PAElementPerformCopy(from)
-    // return pairPointer;
-    // return pair;
-    return pair;
-	// PAResult result;
-	// return result;
-    //struct PAPair pair;
-    // pair.node = Node;
-    // pair.neigh = N÷÷eigh;
-    //return pair;
-}
+// DllExport Memory PAPairCreate(size_t size)
+// {
+//     // struct PAPair pair;
+//     Memory pair;
+//     pair = malloc(size);
+//     // struct PAPair* pairPointer;
+//     // pairPointer->Node = PAElementPerformConstruct();
+//     // pairPointer->Neigh = PAElementPerformConstruct();
+//     // pair = *pairPointer;
+//     // pairPointer = PAPairBegin(pairPointer,pair.Node, pair.Neigh);
+//     // pair.Node = PAElementPerformCopy(from)
+//     // return pairPointer;
+//     // return pair;
+//     return pair;
+// 	// PAResult result;
+// 	// return result;
+//     //struct PAPair pair;
+//     // pair.node = Node;
+//     // pair.neigh = N÷÷eigh;
+//     //return pair;
+// }
 // struct PAPair PAPairRuin(struct PAPair Pair) {
 DllExport struct PAPair* PAPairBegin(struct PAPair* Pair, struct PAElement* Value, struct PAElement* Value2)
 {
@@ -151,21 +151,21 @@ DllExport int PAPairDelete(struct PAPair* PA)
     //
     return returnCode;
 }
-DllExport int PAPairFinish(Memory PA)
-{
-    // int returnCode1;
-    // int returnCode2;
-    int returnCode;
-    free(PA);
-    returnCode = PARESULT_SUCCESS;
-    // returnCode1 = PAElementFinish(&PA->Node);
-    // returnCode2 = PAElementFinish(&PA->Neigh);
-    // returnCode = returnCode1 & returnCode2;
-    return returnCode;
-    // struct PAPair Empty;
-    // return Empty;
-    // return 0;
-	// PAResult result;
-	// return result;
-}
+// DllExport int PAPairFinish(Memory PA)
+// {
+//     // int returnCode1;
+//     // int returnCode2;
+//     int returnCode;
+//     free(PA);
+//     returnCode = PARESULT_SUCCESS;
+//     // returnCode1 = PAElementFinish(&PA->Node);
+//     // returnCode2 = PAElementFinish(&PA->Neigh);
+//     // returnCode = returnCode1 & returnCode2;
+//     return returnCode;
+//     // struct PAPair Empty;
+//     // return Empty;
+//     // return 0;
+// 	// PAResult result;
+// 	// return result;
+// }
 

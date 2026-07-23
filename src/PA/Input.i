@@ -2055,10 +2055,29 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 10 "./include/PA/Input.h" 2
+# 1 "./include/memory.h" 1
 
 
 
-          Memory PAInputCreate(size_t size);
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/memory.h" 2
+
+
+
+
+
+
+          Memory MemoryCreate(size_t size);
+          int MemoryFinish(Memory);
+# 11 "./include/PA/Input.h" 2
+
+
+
+
 
           PAInput PAInputBegin(PAInput, PACount, PACount, PAElement, PASeries);
 
@@ -2068,28 +2087,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           int PAInputDelete(PAInput);
-          int PAInputFinish(Memory);
 # 9 "src/PA/Input.c" 2
 # 1 "./include/PA/Count.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Count.h" 2
-
-
-
-
-
-          Memory PACountCreate(size_t size);
-          static Object PACountCopy(Object, Object, size_t);
-          PACount PACountBegin(PACount, PAInt* value, PASize size);
-          int PACountDelete(PACount PA);
-          int PACountFinish(Memory);
 # 10 "src/PA/Input.c" 2
 # 1 "./include/PA/Element.h" 1
 
@@ -2105,35 +2104,17 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 10 "./include/PA/Element.h" 2
 
 
-          Memory PAElementCreate(size_t size);
+
+
           PAElement PAElementBegin(PAElement,PAData, PAElement, PAStatus);
           static Object PAElementCopy(Object, Object, size_t);
           int PAElementDelete(PAElement);
-          int PAElementFinish(Memory);
+
           void PAElementVisit(PAElement);
           PABool PAElementIsVisited(PAElement);
           void PAElementReset(PAElement);
 # 11 "src/PA/Input.c" 2
-
-
-
-
-
-          Memory PAInputCreate(size_t size)
-{
-
- Memory input;
- input = malloc(size);
-
-
-
-
-
-
-
- return input;
-# 46 "src/PA/Input.c"
-}
+# 47 "src/PA/Input.c"
           static Object PAInputCopy(Object from, Object to, size_t size)
 {
 
@@ -2174,24 +2155,5 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
  returnCode = ((int)0);
 # 126 "src/PA/Input.c"
- return returnCode;
-}
-
-          int PAInputFinish(Memory PA) {
-
-
-
-
-
- int returnCode;
-
-
-
-
- free(PA);
- returnCode = ((int)0);
-
-
-
  return returnCode;
 }

@@ -10,39 +10,39 @@
 //struct PAData {
 //
 //}
-DllExport Memory PADataCreate(size_t size)
-{
-    // struct PAData data;
-    // struct PAData* data;
-    Memory data;
-    data = malloc (size);
-    // data->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
-    // data->Resource->value = (PANumber) malloc (sizeof(PANumber));//todo replace with conert to size_t
-    // struct PAResource* aux;
-    // aux = (struct PAResource*) malloc (sizeof(struct PAResource));
-    // memcpy(aux->value,Resource,sizeof(PAInt));
-    // memcpy(data->Resource,aux,sizeof(struct PAResource));
-    // free(aux);
-    // dataPointer->Resource->size.valie = sizeof(PAInt);
-    // dataPointer->Resource->size.value = ;
-    // dataPointer->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
-    // dataPointer->Resource->value = ((PANumber) *Resource);
-    // dataPointer->Resource->value = (struct PANumber*) malloc (sizeof(struct PANumber));
+// DllExport Memory PADataCreate(size_t size)
+// {
+//     // struct PAData data;
+//     // struct PAData* data;
+//     Memory data;
+//     data = malloc (size);
+//     // data->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
+//     // data->Resource->value = (PANumber) malloc (sizeof(PANumber));//todo replace with conert to size_t
+//     // struct PAResource* aux;
+//     // aux = (struct PAResource*) malloc (sizeof(struct PAResource));
+//     // memcpy(aux->value,Resource,sizeof(PAInt));
+//     // memcpy(data->Resource,aux,sizeof(struct PAResource));
+//     // free(aux);
+//     // dataPointer->Resource->size.valie = sizeof(PAInt);
+//     // dataPointer->Resource->size.value = ;
+//     // dataPointer->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
+//     // dataPointer->Resource->value = ((PANumber) *Resource);
+//     // dataPointer->Resource->value = (struct PANumber*) malloc (sizeof(struct PANumber));
 
-    // dataPointer->Resource->value
-    // dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
-    // struct PAResource resource;
-    // data.Resource = PAResourcePerformConstruct();
-    // dataPointer = PADataBegin(dataPointer, data.Resource);
-    // data.Resource = resource;
-    //  = data;
-    // Data.Resource = PAResourcePerformInit(Data.Resource, )
-    // PADataPerformInit(Data,)
-    // Data.Resource = PAResourcePerformConstruct(); 
-    // return dataPointer;
-    // return data;
-    return data;
-}
+//     // dataPointer->Resource->value
+//     // dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
+//     // struct PAResource resource;
+//     // data.Resource = PAResourcePerformConstruct();
+//     // dataPointer = PADataBegin(dataPointer, data.Resource);
+//     // data.Resource = resource;
+//     //  = data;
+//     // Data.Resource = PAResourcePerformInit(Data.Resource, )
+//     // PADataPerformInit(Data,)
+//     // Data.Resource = PAResourcePerformConstruct(); 
+//     // return dataPointer;
+//     // return data;
+//     return data;
+// }
 DllExport PAData PADataBegin(PAData Data)
 {
     // struct PAData temp;
@@ -127,22 +127,22 @@ DllExport int PADataDelete(PAData PA)
     // PAResult result = (PAInt) PARESULT_SUCCESS;
     // return PA;
 }
-DllExport int PADataFinish(Memory PA) 
-{
-    // PAInt Empty = NULL;
-    // Resource = Empty;
-    // return Resource;
-    // g
-    int returnCode;
-    // free(PA->Resource->value);
-    // free(PA->Resource);
-    free(PA);
-    returnCode = PARESULT_SUCCESS;
-    // free(PA);
-    // free(PA->value);
-    return returnCode;
-    // return PARESULT_SUCCESS;
-    // return Data;
-    // PAResult result = (PAInt) PARESULT_SUCCESS;
-    // return PARESULT_SUCCESS;
-}
+// DllExport int PADataFinish(Memory PA) 
+// {
+//     // PAInt Empty = NULL;
+//     // Resource = Empty;
+//     // return Resource;
+//     // g
+//     int returnCode;
+//     // free(PA->Resource->value);
+//     // free(PA->Resource);
+//     free(PA);
+//     returnCode = PARESULT_SUCCESS;
+//     // free(PA);
+//     // free(PA->value);
+//     return returnCode;
+//     // return PARESULT_SUCCESS;
+//     // return Data;
+//     // PAResult result = (PAInt) PARESULT_SUCCESS;
+//     // return PARESULT_SUCCESS;
+// }

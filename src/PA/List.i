@@ -2054,24 +2054,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 10 "./include/PA/List.h" 2
-
-
-
-
-          Memory PAListCreate(size_t size);
-
-
-          PAList PAListBegin(PAList list, PACount N, ArrayList adj);
-
-
-
-          static Object PAListCopy(Object, Object, size_t);
-          int PAListDelete(PAList);
-          int PAListFinish(Memory);
-
-void PAListPrint(struct PAList* List);
-# 8 "src/PA/List.c" 2
-# 1 "./include/PA/Count.h" 1
+# 1 "./include/memory.h" 1
 
 
 
@@ -2080,17 +2063,34 @@ void PAListPrint(struct PAList* List);
 
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Count.h" 2
+# 9 "./include/memory.h" 2
 
 
 
 
 
-          Memory PACountCreate(size_t size);
-          static Object PACountCopy(Object, Object, size_t);
-          PACount PACountBegin(PACount, PAInt* value, PASize size);
-          int PACountDelete(PACount PA);
-          int PACountFinish(Memory);
+
+          Memory MemoryCreate(size_t size);
+          int MemoryFinish(Memory);
+# 11 "./include/PA/List.h" 2
+
+
+
+
+
+
+
+          PAList PAListBegin(PAList list, PACount N, ArrayList adj);
+
+
+
+          static Object PAListCopy(Object, Object, size_t);
+          int PAListDelete(PAList);
+
+
+void PAListPrint(struct PAList* List);
+# 8 "src/PA/List.c" 2
+# 1 "./include/PA/Count.h" 1
 # 9 "src/PA/List.c" 2
 # 1 "./include/PA/Series.h" 1
 # 15 "./include/PA/Series.h"
@@ -2101,24 +2101,17 @@ void PAListPrint(struct PAList* List);
 
 
 
-          Memory PASeriesCreate(size_t size);
-          PASeries PASeriesBegin(PASeries, PACount M, PAList Adj[]);
+
+
+
           static Object PASeriesCopy(Object, Object, size_t);
           int PASeriesDelete(PASeries);
-          int PASeriesFinish(Memory);
+
 
 
           void PASeriesPrint(PASeries);
 # 10 "src/PA/List.c" 2
-# 19 "src/PA/List.c"
-          Memory PAListCreate(size_t size)
-{
-    Memory listPointer;
-    listPointer = malloc (size);
-# 40 "src/PA/List.c"
-    return listPointer;
-# 50 "src/PA/List.c"
-}
+# 51 "src/PA/List.c"
           static Object PAListCopy(Object from, Object to, size_t size)
 {
     Memory aux;
@@ -2155,30 +2148,7 @@ void PAListPrint(struct PAList* List);
 
 
 }
-          int PAListFinish(Memory PA)
-{
-    int returnCode;
-
-
-
-    free(PA);
-    returnCode = ((int)0);
-
-    return returnCode;
-# 237 "src/PA/List.c"
-    {
-
-
-
-    }
-    returnCode = ((int)0);
-    return returnCode;
-
-
-
-
-
-}
+# 250 "src/PA/List.c"
 void Dispose()
 {
 

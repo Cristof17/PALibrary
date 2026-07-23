@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include <memory.h>
+
 // DllExport Memory PANumberCreate(size_t size);
 DllExport struct PANumber* PANumberBegin(struct PANumber* Number, unsigned char Value);
 DllExport static Object PANumberCopy(Object, Object, size_t);

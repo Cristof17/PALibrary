@@ -7,7 +7,7 @@
 #include <types.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <memory.h>
 // struct GrafTranspus;
 // typedef struct GrafTranspus GrafTranspus;
 // DllExport Memory PATransposeTreeCreate(size_t size);

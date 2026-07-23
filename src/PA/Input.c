@@ -13,37 +13,37 @@
 #include <PA\Count.h>
 #include <PA\Element.h>
 #endif
-DllExport Memory PAInputCreate(size_t size)
-{
-	// struct PAInput temp;
-	Memory input;
-	input = malloc(size);
-	// inputPointer->n = (struct PACount*) malloc (sizeof(struct PACount));
-// inputPointer->m = (struct PACount*) malloc (sizeof(struct PACount*));
-	// inputPointer->source = (struct PACount*) malloc (sizeof(struct PACount));
-	// inputPointer->source = (struct PAElement*) malloc (sizeof(struct PAElement));
-	// inputPointer->n = n;
-	// inputPointer->m = m;
-	// inputPointer->source = element;
-	return input;
-	// struct PACount n;
-	// struct PACount m;
-	// struct PAList list;
-	// struct PAElement element;
-	// inputPointer->n = PACountPerformConstruct();
-	// inputPointer->m = PACountPerformConstruct();
-	// inputPointer->source = PAElementPerformConstruct();
-	// n = inputPointer->n;
-	// m = inputPointer->m;
-	// element = inputPointer->source;
+// DllExport Memory PAInputCreate(size_t size)
+// {
+// 	// struct PAInput temp;
+// 	Memory input;
+// 	input = malloc(size);
+// 	// inputPointer->n = (struct PACount*) malloc (sizeof(struct PACount));
+// // inputPointer->m = (struct PACount*) malloc (sizeof(struct PACount*));
+// 	// inputPointer->source = (struct PACount*) malloc (sizeof(struct PACount));
+// 	// inputPointer->source = (struct PAElement*) malloc (sizeof(struct PAElement));
+// 	// inputPointer->n = n;
+// 	// inputPointer->m = m;
+// 	// inputPointer->source = element;
+// 	return input;
+// 	// struct PACount n;
+// 	// struct PACount m;
+// 	// struct PAList list;
+// 	// struct PAElement element;
+// 	// inputPointer->n = PACountPerformConstruct();
+// 	// inputPointer->m = PACountPerformConstruct();
+// 	// inputPointer->source = PAElementPerformConstruct();
+// 	// n = inputPointer->n;
+// 	// m = inputPointer->m;
+// 	// element = inputPointer->source;
 
-	// list = inputPointer.
-	// inputPointer = PAInputBegin(inputPointer,n,m,element);
-	// return inputPointer;
-	// PAResult result ;
-	// return result;
-	// return temp;
-}
+// 	// list = inputPointer.
+// 	// inputPointer = PAInputBegin(inputPointer,n,m,element);
+// 	// return inputPointer;
+// 	// PAResult result ;
+// 	// return result;
+// 	// return temp;
+// }
 DllExport static Object PAInputCopy(Object from, Object to, size_t size)
 {
 	// struct PAInput* copy;
@@ -126,22 +126,22 @@ DllExport int PAInputDelete(PAInput PA)
 	return returnCode;
 }
 // DllExport PAResult PAInputFinish(struct PACount* N, struct PACount*) {
-DllExport int PAInputFinish(Memory PA) {
-	// PAResult result;
-	// struct PAInput Empty;
-	// PACountFinish(&PA->n);
-	// PACountFinish(&PA->m);
-	// PAElementFinish(&PA->source);
-	int returnCode;
-	// free(PA);
-	// free(N);
-	// free(M);
-	// free(Source);
-	free(PA);
-	returnCode = PARESULT_SUCCESS;
-	// return PA;
-	// return Empty;
-	// return result;
-	return returnCode;
-}
+// DllExport int PAInputFinish(Memory PA) {
+// 	// PAResult result;
+// 	// struct PAInput Empty;
+// 	// PACountFinish(&PA->n);
+// 	// PACountFinish(&PA->m);
+// 	// PAElementFinish(&PA->source);
+// 	int returnCode;
+// 	// free(PA);
+// 	// free(N);
+// 	// free(M);
+// 	// free(Source);
+// 	free(PA);
+// 	returnCode = PARESULT_SUCCESS;
+// 	// return PA;
+// 	// return Empty;
+// 	// return result;
+// 	return returnCode;
+// }
 

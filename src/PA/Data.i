@@ -2051,16 +2051,34 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 11 "./include/PA/Data.h" 2
+# 1 "./include/memory.h" 1
 
 
 
-          Memory PADataCreate(size_t size);
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/memory.h" 2
+
+
+
+
+
+
+          Memory MemoryCreate(size_t size);
+          int MemoryFinish(Memory);
+# 12 "./include/PA/Data.h" 2
+
+
+
+
           PAData PADataBegin(PAData Data);
           static Object PADataCopy(Object from, Object to, size_t);
 
 
           int PADataFinish(Memory);
-          int PADataDelete(PAData);
 # 4 "src/PA/Data.c" 2
 # 1 "./include/PA/Resource.h" 1
 
@@ -2071,23 +2089,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 7 "./include/PA/Resource.h" 2
 # 5 "src/PA/Data.c" 2
-
-
-
-
-
-
-
-
-          Memory PADataCreate(size_t size)
-{
-
-
-    Memory data;
-    data = malloc (size);
-# 44 "src/PA/Data.c"
-    return data;
-}
+# 46 "src/PA/Data.c"
           PAData PADataBegin(PAData Data)
 {
 # 67 "src/PA/Data.c"
@@ -2126,25 +2128,6 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     return ((int)0);
 
 
-
-
-
-
-}
-          int PADataFinish(Memory PA)
-{
-
-
-
-
-    int returnCode;
-
-
-    free(PA);
-    returnCode = ((int)0);
-
-
-    return returnCode;
 
 
 

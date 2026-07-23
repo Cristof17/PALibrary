@@ -39,10 +39,10 @@ DllExport int PASizeDelete(struct PASize* PA)
     bzero(PA,sizeof(struct PASize));
     return returnCode;
 }
-DllExport int PASizeFinish(Memory PA)
-{
-    int returnCode;
-    returnCode = PARESULT_SUCCESS;
-    free(PA);
-    return returnCode;
-}
+// DllExport int PASizeFinish(Memory PA)
+// {
+//     int returnCode;
+//     returnCode = PARESULT_SUCCESS;
+//     free(PA);
+//     return returnCode;
+// }
