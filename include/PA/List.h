@@ -11,7 +11,7 @@
 // struct PAList;
 //typedef struct PAList List;
 // DllExport struct PAElement GetHead();
-DllExport Memory PAListCreate(size_t size);
+// DllExport Memory PAListCreate(size_t size);
 // DllExport struct PAList* PAListBegin(struct PAList* list, struct PACount M);
 // DllExport struct PAList* PAListBegin(struct PAList* list, struct PACount* N, struct PASeries* adj);
 DllExport PAList PAListBegin(PAList list, PACount N, ArrayList adj);
@@ -20,7 +20,7 @@ DllExport PAList PAListBegin(PAList list, PACount N, ArrayList adj);
 // DllExport PAResult PAListPerformPutList(struct PAList);
 DllExport static Object PAListCopy(Object, Object, size_t);
 DllExport int PAListDelete(PAList);
-DllExport int PAListFinish(Memory);
+// DllExport int PAListFinish(Memory);
 // DllExport void PAListDispose(void);
 void PAListPrint(struct PAList* List);
 

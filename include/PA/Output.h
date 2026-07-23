@@ -12,12 +12,12 @@
 // struct BFSOutput;
 // struct PAData PADataPerformConstruct(PAInt Resource);
 // strut BFSOutputRuin();
-DllExport Memory PAOutputCreate(size_t size);
+// DllExport Memory PAOutputCreate(size_t size);
 DllExport PAOutput PAOutputBegin(PAOutput);
 // DllExport struct PA(struct PAOutput* from, struct PAOutput* to);
 DllExport static Object PAOutputCopy(Object from, Object to,size_t);
 DllExport int PAOutputDelete(PAOutput);
-DllExport int PAOutputFinish(Memory);
+// DllExport int PAOutputFinish(Memory);
 DllExport void PAOutputPrint(PAResult Result);
 //typedef struct BFSOutput BFSOutput;
 // struct PAOutput PAOutputPerformInit(struct BFSRecord);

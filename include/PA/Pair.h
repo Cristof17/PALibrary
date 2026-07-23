@@ -9,13 +9,13 @@
 #include <string.h>
 
 // struct PAPair;
-DllExport Memory PAPairCreate(size_t size);
+// DllExport Memory PAPairCreate(size_t size);
 DllExport PAPair PAPairBegin(PAPair, PAElement, PAElement);
 DllExport static Object PAPAPairCopy(Object, Object, size_t);
 // DllExport HRESULT PAPairPerformCopy(struct PAPair);
 // DllExport HRESULT PAPairPerformPutNode(struct PAPair);
 // DllExport HRESULT PAPairPerformPutNeigh(struct PAPair);
 DllExport int PAPairDelete(PAPair);
-DllExport int PAPairFinish(Memory);
+// DllExport int PAPairFinish(Memory);
 //typedef struct PAPair Pair;
 #endif

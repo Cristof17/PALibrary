@@ -5,10 +5,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-DllExport Memory PANumberCreate(size_t size);
+// DllExport Memory PANumberCreate(size_t size);
 DllExport struct PANumber* PANumberBegin(struct PANumber* Number, unsigned char Value);
 DllExport static Object PANumberCopy(Object, Object, size_t);
 DllExport int PANumberDelete(struct PANumber*);
-DllExport int PANumberFinish(Memory);
+// DllExport int PANumberFinish(Memory);
 DllExport void PANumberPrint(struct PANumber*);
 #endif

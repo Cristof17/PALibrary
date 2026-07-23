@@ -9,11 +9,11 @@
 #include <string.h>
 
 // struct PAElement;
-DllExport Memory PAElementCreate(size_t size);
+// DllExport Memory PAElementCreate(size_t size);
 DllExport PAElement PAElementBegin(PAElement,PAData, PAElement, PAStatus);
 DllExport static Object PAElementCopy(Object, Object, size_t);
 DllExport int PAElementDelete(PAElement);
-DllExport int PAElementFinish(Memory);
+// DllExport int PAElementFinish(Memory);
 DllExport void PAElementVisit(PAElement);
 DllExport PABool PAElementIsVisited(PAElement);
 DllExport void PAElementReset(PAElement);
