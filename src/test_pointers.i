@@ -2420,7 +2420,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
 
-          PAList PAListPerformConstruct(PAList list, PACount N, ArrayList adj);
+          Memory PAListPerformConstruct(size_t);
 
 
 

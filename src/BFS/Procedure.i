@@ -2118,19 +2118,15 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-<<<<<<< HEAD
+          static Object PATreePerformCopy(Object, Object, size_t);
 
-=======
->>>>>>> refs/remotes/origin/pointers
-          static Object PATreeCopy(Object, Object, size_t);
-
-          PATree PATreeBegin(PATree, PACount N, PACount M, PASeries adj, PAElement source);
+          PATree PATreePerformBegin(PATree, PACount N, PACount M, PASeries adj, PAElement source);
 
 
 
 
 
-          int PATreeDelete(PATree);
+          int PATreePerformDelete(PATree);
 # 9 "src/BFS/Procedure.c" 2
 # 1 "./include/PA/Element.h" 1
 
@@ -2147,13 +2143,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> refs/remotes/origin/pointers
-          PAElement PAElementBegin(PAElement,PAData, PAElement, PAStatus);
-          static Object PAElementCopy(Object, Object, size_t);
-          int PAElementDelete(PAElement);
+          PAElement PAElementPerformConstruct(PAElement,PAData, PAElement, PAStatus);
+          static Object PAElementPerformCopy(Object, Object, size_t);
+          int PAElementPerformDelete(PAElement);
 
           void PAElementVisit(PAElement);
           PABool PAElementIsVisited(PAElement);
@@ -2193,19 +2186,16 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> refs/remotes/origin/pointers
-
-          PAInput PAInputBegin(PAInput, PACount, PACount, PAElement, PASeries);
 
 
-          static Object PAInputCopy(Object,Object, size_t);
+          Memory PAInputPerformConstruct(size_t);
+
+
+          static Object PAInputPerformCopy(Object,Object, size_t);
 
 
 
-          int PAInputDelete(PAInput);
+          int PAInputPerformDelete(PAInput);
 # 13 "src/BFS/Procedure.c" 2
 # 26 "src/BFS/Procedure.c"
 PAResult BFS()

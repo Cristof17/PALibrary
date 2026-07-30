@@ -49,8 +49,8 @@ DllExport Memory PASeriesPerformConstruct(size_t size)
 //     //     series.adj[iterator.val] = PAElementPerformConstruct();
 //     // } 
 //     // return series;
-//     return series;
-// }
+    return series;
+}
 DllExport static Object PASeriesCopy(Object from, Object to, size_t size)
 {
     // struct PACount x;

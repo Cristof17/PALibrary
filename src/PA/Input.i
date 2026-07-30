@@ -2079,7 +2079,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAInput PAInputPerformConstruct(PAInput, PACount, PACount, PAElement, PASeries);
+          Memory PAInputPerformConstruct(size_t);
 
 
           static Object PAInputPerformCopy(Object,Object, size_t);

@@ -2077,7 +2077,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAOutput PAOutputPerformConstruct(PAOutput);
+          Memory PAOutputPerformConstruct(size_t);
 
           static Object PAOutputPerformCopy(Object from, Object to,size_t);
           int PAOutputPerformDelete(PAOutput);

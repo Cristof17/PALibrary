@@ -189,6 +189,8 @@ DllExport int PATreePerformRuin(Memory PA)
     // free(Source);
     free(PA);
     returnCode = PARESULT_SUCCESS;
+    return returnCode;
+}
     // int returnCode2;
     // int returnCode3;
     // returnCode = PACountFinish(PA->n);

@@ -2154,7 +2154,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAList PAListPerformConstruct(PAList list, PACount N, ArrayList adj);
+          Memory PAListPerformConstruct(size_t);
 
 
 

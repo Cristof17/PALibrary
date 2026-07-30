@@ -2053,28 +2053,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 10 "./include/PA/List.h" 2
-<<<<<<< HEAD
-
-
-
-
-
-
-
-          PAList PAListBegin(PAList list, PACount N, ArrayList adj);
-
-
-
-          static Object PAListCopy(Object, Object, size_t);
-          int PAListDelete(PAList);
-
-
-void PAListPrint(struct PAList* List);
-# 7 "src/BFS/Record.c" 2
-# 1 "./include/PA/Count.h" 1
-=======
 # 1 "./include/memory.h" 1
->>>>>>> refs/remotes/origin/pointers
 
 
 
@@ -2090,11 +2069,6 @@ void PAListPrint(struct PAList* List);
 
 
 
-<<<<<<< HEAD
-          static Object PACountCopy(Object, Object, size_t);
-          PACount PACountBegin(PACount, PAInt* value, PASize size);
-          int PACountDelete(PACount PA);
-=======
           Memory MemoryCreate(size_t size);
           int MemoryFinish(Memory);
 # 11 "./include/PA/List.h" 2
@@ -2105,18 +2079,17 @@ void PAListPrint(struct PAList* List);
 
 
 
-          PAList PAListBegin(PAList list, PACount N, ArrayList adj);
+          Memory PAListPerformConstruct(size_t);
 
 
 
-          static Object PAListCopy(Object, Object, size_t);
-          int PAListDelete(PAList);
+          static Object PAListPerformCopy(Object, Object, size_t);
+          int PAListPerformDelete(PAList);
 
 
 void PAListPrint(struct PAList* List);
 # 7 "src/BFS/Record.c" 2
 # 1 "./include/PA/Count.h" 1
->>>>>>> refs/remotes/origin/pointers
 # 8 "src/BFS/Record.c" 2
 # 1 "./include/PA/Result.h" 1
 # 9 "src/BFS/Record.c" 2

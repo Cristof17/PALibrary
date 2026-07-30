@@ -2130,7 +2130,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAList PAListPerformConstruct(PAList list, PACount N, ArrayList adj);
+          Memory PAListPerformConstruct(size_t);
 
 
 
@@ -2207,3 +2207,5 @@ void PAListPrint(struct PAList* List);
 
     free(PA);
     returnCode = ((int)0);
+    return returnCode;
+}

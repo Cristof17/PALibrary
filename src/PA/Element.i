@@ -2128,7 +2128,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 35 "src/PA/Element.c"
   return element;
 }
-          PAElement PAElementPerformCopy(PAElement element,PAData index, PAElement next, PAStatus status)
+          PAElement PAElementPerformInit(PAElement element,PAData index, PAElement next, PAStatus status)
 {
 
 

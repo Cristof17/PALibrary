@@ -34,7 +34,7 @@ DllExport Memory PAElementPerformCreate(size_t size)
   //  return element;
   return element;
 }
-DllExport PAElement PAElementPerformCopy(PAElement element,PAData index, PAElement next, PAStatus status)
+DllExport PAElement PAElementPerformInit(PAElement element,PAData index, PAElement next, PAStatus status)
 {
     // struct PAElement temp;
 

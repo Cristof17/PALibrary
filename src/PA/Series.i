@@ -2112,7 +2112,9 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 {
     Memory series;
     series = malloc (size);
-# 54 "src/PA/Series.c"
+# 52 "src/PA/Series.c"
+    return series;
+}
           static Object PASeriesCopy(Object from, Object to, size_t size)
 {
 
