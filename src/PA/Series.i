@@ -2053,11 +2053,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          Memory PASeriesCreate(size_t size);
-          PASeries PASeriesBegin(PASeries, PACount M, PAList Adj[]);
+
+
           static Object PASeriesCopy(Object, Object, size_t);
           int PASeriesDelete(PASeries);
-          int PASeriesFinish(Memory);
+
 
 
           void PASeriesPrint(PASeries);
@@ -2077,11 +2077,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          Memory PACountCreate(size_t size);
+
           static Object PACountCopy(Object, Object, size_t);
           PACount PACountBegin(PACount, PAInt* value, PASize size);
           int PACountDelete(PACount PA);
-          int PACountFinish(Memory);
 # 9 "src/PA/Series.c" 2
 # 1 "./include/PA/Element.h" 1
 
@@ -2097,11 +2096,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 10 "./include/PA/Element.h" 2
 
 
-          Memory PAElementCreate(size_t size);
+
           PAElement PAElementBegin(PAElement,PAData, PAElement, PAStatus);
           static Object PAElementCopy(Object, Object, size_t);
           int PAElementDelete(PAElement);
-          int PAElementFinish(Memory);
+
           void PAElementVisit(PAElement);
           PABool PAElementIsVisited(PAElement);
           void PAElementReset(PAElement);

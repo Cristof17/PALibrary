@@ -18,7 +18,7 @@
 *  Created on: 16 nov. 2025
 *      Author: AdministratorUser
 */
-DllExport Memory PASeriesCreate(size_t size) 
+DllExport Memory PASeriesPerformConstruct(size_t size) 
 {
     Memory series;
     series = malloc (size);
@@ -112,7 +112,7 @@ DllExport static Object PASeriesCopy(Object from, Object to, size_t size)
 // }
 // }
 // DllExport struct PASeries* PASeriesBegin(struct PASeries* series, struct PACCoun)
-DllExport PASeries PASeriesBegin(PASeries series, PACount M, PAList Adj[])
+DllExport PASeries PASeriesPerformInit(PASeries series, PACount M, PAList Adj[])
     {
         struct PASeries* aux;
 
@@ -159,7 +159,7 @@ DllExport PASeries PASeriesBegin(PASeries series, PACount M, PAList Adj[])
         free(aux);
         return aux;
     }
-    DllExport int PASeriesDelete(PASeries PA)
+    DllExport int PASeriesPerformDelete(PASeries PA)
     {
         int returnCode;
         returnCode = PARESULT_SUCCESS;
@@ -191,7 +191,7 @@ DllExport PASeries PASeriesBegin(PASeries series, PACount M, PAList Adj[])
         // copy = PAListPerformInit(List);
         //return copy;
     // }
-    DllExport int PASeriesFinish(Memory PA)
+    DllExport int PASeriesPerformRuin(Memory PA)
     {
         // st
         int returnCode;

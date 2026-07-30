@@ -2058,7 +2058,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          Memory PAListCreate(size_t size);
+
 
 
           PAList PAListBegin(PAList list, PACount N, ArrayList adj);
@@ -2067,7 +2067,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           static Object PAListCopy(Object, Object, size_t);
           int PAListDelete(PAList);
-          int PAListFinish(Memory);
+
 
 void PAListPrint(struct PAList* List);
 # 8 "src/PA/List.c" 2
@@ -2086,11 +2086,10 @@ void PAListPrint(struct PAList* List);
 
 
 
-          Memory PACountCreate(size_t size);
+
           static Object PACountCopy(Object, Object, size_t);
           PACount PACountBegin(PACount, PAInt* value, PASize size);
           int PACountDelete(PACount PA);
-          int PACountFinish(Memory);
 # 9 "src/PA/List.c" 2
 # 1 "./include/PA/Series.h" 1
 # 15 "./include/PA/Series.h"
@@ -2101,11 +2100,11 @@ void PAListPrint(struct PAList* List);
 
 
 
-          Memory PASeriesCreate(size_t size);
-          PASeries PASeriesBegin(PASeries, PACount M, PAList Adj[]);
+
+
           static Object PASeriesCopy(Object, Object, size_t);
           int PASeriesDelete(PASeries);
-          int PASeriesFinish(Memory);
+
 
 
           void PASeriesPrint(PASeries);

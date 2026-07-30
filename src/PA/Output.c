@@ -32,7 +32,7 @@
 // {
 //     PAOutputPerformPrint(output);
 // }
-DllExport Memory PAOutputCreate(size_t size)
+DllExport Memory PAOutputPerformConstruct(size_t size)
 {
     // struct PAOutput* result;
     Memory output;
@@ -47,7 +47,7 @@ DllExport Memory PAOutputCreate(size_t size)
     return output;
     // struct BFSRecord Record = BFSRecordConstruct()
 }
-DllExport PAOutput PAOutputBegin(PAOutput Output)
+DllExport PAOutput PAOutputPerformInit(PAOutput Output)
 {
     // Output->result = Value;
     // return Output;
@@ -60,7 +60,7 @@ DllExport PAOutput PAOutputBegin(PAOutput Output)
     // Output->result = temp.result;
     return Output;
 }
-DllExport static Object PAOutputCopy(Object from, Object to, size_t size)
+DllExport static Object PAOutputPerformCopy(Object from, Object to, size_t size)
 {
 	Memory aux;
     // aux = PAOutputCreate();
@@ -100,7 +100,7 @@ DllExport static Object PAOutputCopy(Object from, Object to, size_t size)
     // return to
 }
 
-DllExport int PAOutputDelete(struct PAOutput* PA)
+DllExport int PAOutputPerformDelete(struct PAOutput* PA)
 {
     int returnCode;
     // bzero(PA,sizeof(struct PAAOu))
@@ -114,7 +114,7 @@ DllExport int PAOutputDelete(struct PAOutput* PA)
     // return output;
     return returnCode;
 }
-DllExport int PAOutputFinish(Memory PA)
+DllExport int PAOutputPerformRuin(Memory PA)
 {
     int returnCode;
     // returnCode = PA->

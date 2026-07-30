@@ -6,12 +6,12 @@
 #include <PA\Size.h>
 #endif
 
-DllExport Memory PASizeConstruct(size_t size){
+DllExport Memory PASizePerformConstruct(size_t size){
     Memory sizeStruct;
     sizeStruct = malloc (size);
     return sizeStruct;
 }
-DllExport PASize PASizeBegin(PASize Size, size_t* value, size_t digits)
+DllExport PASize PASizePerformInit(PASize Size, size_t* value, size_t digits)
 {
     struct PASize* aux;
     aux = (struct PASize*) malloc (sizeof(struct PASize));
@@ -32,14 +32,14 @@ DllExport PASize PASizeBegin(PASize Size, size_t* value, size_t digits)
     return Size;
 }
 // // void PASize(PA_INT);
-DllExport int PASizeDelete(struct PASize* PA)
+DllExport int PASizePerformDelete(struct PASize* PA)
 {
     int returnCode = PARESULT_SUCCESS;
     bzero(PA->value,sizeof(size_t));
     bzero(PA,sizeof(struct PASize));
     return returnCode;
 }
-DllExport int PASizeFinish(Memory PA)
+DllExport int PASizePerformRuin(Memory PA)
 {
     int returnCode;
     returnCode = PARESULT_SUCCESS;

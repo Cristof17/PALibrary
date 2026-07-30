@@ -11,7 +11,7 @@
 
 #endif
 
-DllExport Memory PACountCreate(size_t size)
+DllExport Memory PACountPerformConstruct(size_t size)
 {
     // struct PACount zies;
     Memory count;
@@ -36,7 +36,7 @@ DllExport Memory PACountCreate(size_t size)
     // countPointer->number = PANumberCreate();
     return count;
 }
-DllExport PACount PACountBegin(PACount count, PAInt* Count,PASize size)
+DllExport PACount PACountPerformInit(PACount count, PAInt* Count,PASize size)
 {
     Memory aux;
     aux = malloc (size->value[0]);
@@ -72,7 +72,7 @@ DllExport PACount PACountBegin(PACount count, PAInt* Count,PASize size)
     // return÷÷ Count;
     return count;
 }
-DllExport static Object PACountCopy(Object from, Object to, size_t size)
+DllExport static Object PACountPerformCopy(Object from, Object to, size_t size)
 {
     Memory aux;
     aux = (Memory) malloc(size);
@@ -106,7 +106,7 @@ DllExport int PACountDelete(PACount PA)
     // return result;
     return returnCode;
 }
-DllExport int PACountFinish(Memory PA)
+DllExport int PACountPerformRuin(Memory PA)
 {
     //get the value at address pointed by stack pointer
     //that corresponsds to parameter PA

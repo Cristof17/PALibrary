@@ -2055,12 +2055,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 12 "./include/PA/NormalTree.h" 2
 
-          Memory PANormalTreeCreate(size_t size);
+
           PANormalTree PANormalTreeBegin(PANormalTree NormalTree, PATree Tree);
 
           static Object PANormalTreeCopy(Object, Object, size_t);
           int PANormalTreeDelete(PANormalTree PA);
-          int PANormalTreeFinish(Memory);
 # 6 "src/PA/NormalTree.c" 2
 # 1 "./include/PA/Tree.h" 1
 
@@ -2078,7 +2077,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          Memory PATreeCreate(size_t size);
+
           static Object PATreeCopy(Object, Object, size_t);
 
           PATree PATreeBegin(PATree, PACount N, PACount M, PASeries adj, PAElement source);
@@ -2088,7 +2087,6 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           int PATreeDelete(PATree);
-          int PATreeFinish(Memory);
 # 7 "src/PA/NormalTree.c" 2
 
 

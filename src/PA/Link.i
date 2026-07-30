@@ -2057,12 +2057,12 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 10 "./include/PA/Link.h" 2
 
 
-          Memory PALinkCreate(size_t size);
+
           PALink PALinkBegin(PALink, PAPair);
           static Object PALinkCopy(Object, Object, size_t);
 
 
-          int PALinkFinish(Memory);
+
           int PALinkDelete(PALink);
 # 9 "src/PA/Link.c" 2
 # 1 "./include/PA/Pair.h" 1
@@ -2079,14 +2079,13 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 10 "./include/PA/Pair.h" 2
 
 
-          Memory PAPairCreate(size_t size);
+
           PAPair PAPairBegin(PAPair, PAElement, PAElement);
           static Object PAPAPairCopy(Object, Object, size_t);
 
 
 
           int PAPairDelete(PAPair);
-          int PAPairFinish(Memory);
 # 10 "src/PA/Link.c" 2
 
 

@@ -10,7 +10,7 @@
 //struct PAData {
 //
 //}
-DllExport Memory PADataCreate(size_t size)
+DllExport Memory PADataPerformConstruct(size_t size)
 {
     // struct PAData data;
     // struct PAData* data;
@@ -43,7 +43,7 @@ DllExport Memory PADataCreate(size_t size)
     // return data;
     return data;
 }
-DllExport PAData PADataBegin(PAData Data)
+DllExport PAData PADataPerformInit(PAData Data)
 {
     // struct PAData temp;
     // struct PAData* dataPointer;
@@ -71,7 +71,7 @@ DllExport PAData PADataBegin(PAData Data)
     // struct PAData data;
     // data.resource = Data.resource;
 }
-DllExport static Object PADataCopy(Object from, Object to, size_t size)
+DllExport static Object PADataPerformCopy(Object from, Object to, size_t size)
 {
     // struct PAData temp;
     Memory aux;
@@ -111,7 +111,7 @@ DllExport static Object PADataCopy(Object from, Object to, size_t size)
     // Data.Resource = Resource;
     // return Data;
 // }
-DllExport int PADataDelete(PAData PA)
+DllExport int PADataPerformDelete(PAData PA)
 {
     int returnCode;
     // bzero(PA,sizeof(struct PA));
@@ -127,7 +127,7 @@ DllExport int PADataDelete(PAData PA)
     // PAResult result = (PAInt) PARESULT_SUCCESS;
     // return PA;
 }
-DllExport int PADataFinish(Memory PA) 
+DllExport int PADataPerformFinish(Memory PA) 
 {
     // PAInt Empty = NULL;
     // Resource = Empty;

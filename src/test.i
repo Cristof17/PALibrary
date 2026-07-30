@@ -2052,7 +2052,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          Memory PATreeCreate(size_t size);
+
           static Object PATreeCopy(Object, Object, size_t);
 
           PATree PATreeBegin(PATree, PACount N, PACount M, PASeries adj, PAElement source);
@@ -2062,7 +2062,6 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           int PATreeDelete(PATree);
-          int PATreeFinish(Memory);
 # 2 "test/test.c" 2
 # 1 "./include/PA/Count.h" 1
 
@@ -2079,11 +2078,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          Memory PACountCreate(size_t size);
+
           static Object PACountCopy(Object, Object, size_t);
           PACount PACountBegin(PACount, PAInt* value, PASize size);
           int PACountDelete(PACount PA);
-          int PACountFinish(Memory);
 # 3 "test/test.c" 2
 
 # 1 "./include/PA/Element.h" 1
@@ -2100,11 +2098,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 10 "./include/PA/Element.h" 2
 
 
-          Memory PAElementCreate(size_t size);
+
           PAElement PAElementBegin(PAElement,PAData, PAElement, PAStatus);
           static Object PAElementCopy(Object, Object, size_t);
           int PAElementDelete(PAElement);
-          int PAElementFinish(Memory);
+
           void PAElementVisit(PAElement);
           PABool PAElementIsVisited(PAElement);
           void PAElementReset(PAElement);
@@ -2125,13 +2123,12 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          Memory PADataCreate(size_t size);
+
           PAData PADataBegin(PAData Data);
           static Object PADataCopy(Object from, Object to, size_t);
 
 
           int PADataFinish(Memory);
-          int PADataDelete(PAData);
 # 6 "test/test.c" 2
 
 # 1 "./include/PA/List.h" 1
@@ -2150,7 +2147,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          Memory PAListCreate(size_t size);
+
 
 
           PAList PAListBegin(PAList list, PACount N, ArrayList adj);
@@ -2159,7 +2156,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           static Object PAListCopy(Object, Object, size_t);
           int PAListDelete(PAList);
-          int PAListFinish(Memory);
+
 
 void PAListPrint(struct PAList* List);
 # 8 "test/test.c" 2
@@ -2456,11 +2453,11 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 508 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
 # 62 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 2 3 4
 # 8 "./include/PA/Number.h" 2
- Memory PANumberCreate(size_t size);
+
           struct PANumber* PANumberBegin(struct PANumber* Number, unsigned char Value);
           static Object PANumberCopy(Object, Object, size_t);
           int PANumberDelete(struct PANumber*);
-          int PANumberFinish(Memory);
+
           void PANumberPrint(struct PANumber*);
 # 10 "test/test.c" 2
 # 1 "./include/PA/Series.h" 1
@@ -2472,11 +2469,11 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
 
-          Memory PASeriesCreate(size_t size);
-          PASeries PASeriesBegin(PASeries, PACount M, PAList Adj[]);
+
+
           static Object PASeriesCopy(Object, Object, size_t);
           int PASeriesDelete(PASeries);
-          int PASeriesFinish(Memory);
+
 
 
           void PASeriesPrint(PASeries);
@@ -2509,12 +2506,11 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
 
-          Memory PATransposeTreeCreate(size_t size);
+
           PATransposeTree PATransposeTreeBegin(PATransposeTree, PATree);
           static Object PATransposeTreeCopy(Object, Object, size_t);
 
           int PATransposeTreeDelete(PATransposeTree);
-          int PATransposeTreeFinish(Memory);
 # 13 "test/test.c" 2
 # 1 "./conf.h" 1
 # 14 "test/test.c" 2

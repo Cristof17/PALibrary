@@ -2055,14 +2055,13 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 10 "./include/PA/Pair.h" 2
 
 
-          Memory PAPairCreate(size_t size);
+
           PAPair PAPairBegin(PAPair, PAElement, PAElement);
           static Object PAPAPairCopy(Object, Object, size_t);
 
 
 
           int PAPairDelete(PAPair);
-          int PAPairFinish(Memory);
 # 7 "src/PA/Pair.c" 2
 # 1 "./include/PA/Element.h" 1
 
@@ -2078,11 +2077,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 10 "./include/PA/Element.h" 2
 
 
-          Memory PAElementCreate(size_t size);
+
           PAElement PAElementBegin(PAElement,PAData, PAElement, PAStatus);
           static Object PAElementCopy(Object, Object, size_t);
           int PAElementDelete(PAElement);
-          int PAElementFinish(Memory);
+
           void PAElementVisit(PAElement);
           PABool PAElementIsVisited(PAElement);
           void PAElementReset(PAElement);

@@ -7,14 +7,15 @@
 #include <types.h>
 #include <stdlib.h>
 #include <string.h>
+#include <memory.h>
 
 // struct GrafTranspus;
 // typedef struct GrafTranspus GrafTranspus;
 // DllExport Memory PATransposeTreeCreate(size_t size);
-DllExport PATransposeTree PATransposeTreeBegin(PATransposeTree, PATree);
-DllExport static Object PATransposeTreeCopy(Object, Object, size_t);
+DllExport PATransposeTree PATransposeTreePerformBegin(PATransposeTree, PATree);
+DllExport static Object PATransposeTreePerformCopy(Object, Object, size_t);
 // DllExport struct PATransposeTree PATransposeTreeBuildPart();
-DllExport int PATransposeTreeDelete(PATransposeTree);
+DllExport int PATransposeTreePerformDelete(PATransposeTree);
 // DllExport int PATransposeTreeFinish(Memory);
 // DllExport struct PATransposeTree PATransposeTreeBuildPart();
 // DllExport PAResult PATransposeTreeGetResult();

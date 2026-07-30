@@ -2058,7 +2058,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          Memory PAInputCreate(size_t size);
+
 
           PAInput PAInputBegin(PAInput, PACount, PACount, PAElement, PASeries);
 
@@ -2068,7 +2068,6 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           int PAInputDelete(PAInput);
-          int PAInputFinish(Memory);
 # 9 "src/PA/Input.c" 2
 # 1 "./include/PA/Count.h" 1
 
@@ -2085,11 +2084,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          Memory PACountCreate(size_t size);
+
           static Object PACountCopy(Object, Object, size_t);
           PACount PACountBegin(PACount, PAInt* value, PASize size);
           int PACountDelete(PACount PA);
-          int PACountFinish(Memory);
 # 10 "src/PA/Input.c" 2
 # 1 "./include/PA/Element.h" 1
 
@@ -2105,11 +2103,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 10 "./include/PA/Element.h" 2
 
 
-          Memory PAElementCreate(size_t size);
+
           PAElement PAElementBegin(PAElement,PAData, PAElement, PAStatus);
           static Object PAElementCopy(Object, Object, size_t);
           int PAElementDelete(PAElement);
-          int PAElementFinish(Memory);
+
           void PAElementVisit(PAElement);
           PABool PAElementIsVisited(PAElement);
           void PAElementReset(PAElement);

@@ -15,7 +15,7 @@
 // #include <types.h>
 // #include "//"
 // #include "../include/PAIndex.h"
-DllExport Memory PAElementCreate(size_t size)
+DllExport Memory PAElementPerformCreate(size_t size)
 {
     Memory element;
     element = malloc(size);
@@ -34,7 +34,7 @@ DllExport Memory PAElementCreate(size_t size)
   //  return element;
   return element;
 }
-DllExport PAElement PAElementBegin(PAElement element,PAData index, PAElement next, PAStatus status)
+DllExport PAElement PAElementPerformCopy(PAElement element,PAData index, PAElement next, PAStatus status)
 {
     // struct PAElement temp;
 
@@ -84,7 +84,7 @@ DllExport void PAElementReset(struct PAElement* Element)
     // Element.status.visited.value.val = FALSE;
     return;
 }
-DllExport static Object PAElementCopy(Object from, Object to, size_t size)
+DllExport static Object PAElementPerformCopy(Object from, Object to, size_t size)
 {
     Memory aux;
     aux = (Memory) malloc (size);
@@ -123,7 +123,7 @@ DllExport static Object PAElementCopy(Object from, Object to, size_t size)
 //	copy.type=Element.type;
 	//return ;
 // }
-DllExport int PAElementDelete(struct PAElement* PA)
+DllExport int PAElementPerformDelete(struct PAElement* PA)
 {
     int returnCode;
     returnCode = PARESULT_SUCCESS;
@@ -140,7 +140,7 @@ DllExport int PAElementDelete(struct PAElement* PA)
     // return 0;
 }
 // DllExport PAResult PAElementFinish(struct PAElement* PA)
-DllExport int PAElementFinish(Memory PA)
+DllExport int PAElementPerformFinish(Memory PA)
 {
     // free(PA);
     // PA.index = PADataPerformRuin(PA.index);

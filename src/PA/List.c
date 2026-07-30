@@ -16,7 +16,7 @@
 #endif
 
 // struct PAList PAListConstruct(struct PAElement Element) {
-DllExport Memory PAListCreate(size_t size)
+DllExport Memory PAListPerformConstruct(size_t size)
 {
     Memory listPointer;
     listPointer = malloc (size);
@@ -48,7 +48,7 @@ DllExport Memory PAListCreate(size_t size)
     // list.adj = PASeriesPerformConstruct();
     // return list;
 }
-DllExport static Object PAListCopy(Object from, Object to, size_t size)
+DllExport static Object PAListPerformCopy(Object from, Object to, size_t size)
 {
     Memory aux;
     // aux = PAListCreate();
@@ -108,7 +108,7 @@ DllExport static Object PAListCopy(Object from, Object to, size_t size)
 }
 
 // DllExport struct PAList* PAListBegin(struct PAList* List, struct PACount* M, struct PASeries* adj)
-DllExport PAList PAListBegin(PAList List, struct PACount* M, struct ArrayList* adj)
+DllExport PAList PAListPerformInit(PAList List, struct PACount* M, struct ArrayList* adj)
 {
     // struct PAList temp;
     struct PAList* listPointer;
@@ -181,7 +181,7 @@ DllExport PAList PAListBegin(PAList List, struct PACount* M, struct ArrayList* a
     // struct PAResult result;
     // return result;
 // }
-DllExport int PAListDelete(struct PAList* PA)
+DllExport int PAListPerformDelete(struct PAList* PA)
 {
     int returnCode;
     returnCode = PARESULT_SUCCESS;
@@ -210,7 +210,7 @@ DllExport int PAListDelete(struct PAList* PA)
     // PAResult result;
     // return result;
 }
-DllExport int PAListFinish(Memory PA)
+DllExport int PAListPerformFinish(Memory PA)
 {
     int returnCode;
     // returnCode = PACountFinish(PA->n);

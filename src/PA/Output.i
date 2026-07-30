@@ -2057,12 +2057,12 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          Memory PAOutputCreate(size_t size);
+
           PAOutput PAOutputBegin(PAOutput);
 
           static Object PAOutputCopy(Object from, Object to,size_t);
           int PAOutputDelete(PAOutput);
-          int PAOutputFinish(Memory);
+
           void PAOutputPrint(PAResult Result);
 # 6 "src/PA/Output.c" 2
 # 1 "./include/BFS/Record.h" 1

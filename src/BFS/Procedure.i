@@ -2098,7 +2098,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          Memory PATreeCreate(size_t size);
+
           static Object PATreeCopy(Object, Object, size_t);
 
           PATree PATreeBegin(PATree, PACount N, PACount M, PASeries adj, PAElement source);
@@ -2108,7 +2108,6 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           int PATreeDelete(PATree);
-          int PATreeFinish(Memory);
 # 9 "src/BFS/Procedure.c" 2
 # 1 "./include/PA/Element.h" 1
 
@@ -2124,11 +2123,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 10 "./include/PA/Element.h" 2
 
 
-          Memory PAElementCreate(size_t size);
+
           PAElement PAElementBegin(PAElement,PAData, PAElement, PAStatus);
           static Object PAElementCopy(Object, Object, size_t);
           int PAElementDelete(PAElement);
-          int PAElementFinish(Memory);
+
           void PAElementVisit(PAElement);
           PABool PAElementIsVisited(PAElement);
           void PAElementReset(PAElement);
@@ -2166,7 +2165,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          Memory PAInputCreate(size_t size);
+
 
           PAInput PAInputBegin(PAInput, PACount, PACount, PAElement, PASeries);
 
@@ -2176,7 +2175,6 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           int PAInputDelete(PAInput);
-          int PAInputFinish(Memory);
 # 13 "src/BFS/Procedure.c" 2
 # 26 "src/BFS/Procedure.c"
 PAResult BFS()

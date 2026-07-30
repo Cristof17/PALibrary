@@ -9,7 +9,7 @@
 #include <PA\Tree.h>
 #endif
 
-DllExport Memory PANormalTreeCreate(size_t size)
+DllExport Memory PANormalTreePerformConstruct(size_t size)
 {
     Memory normalTree;
     // struct PANormalTree* normalTree;
@@ -27,7 +27,7 @@ DllExport Memory PANormalTreeCreate(size_t size)
     // normalTree.tree = PATreePerformConstruct();
     // return normalTree;
 }
-DllExport PANormalTree PANormalTreeBegin(PANormalTree NormalTree, PATree Value)
+DllExport PANormalTree PANormalTreePerformInit(PANormalTree NormalTree, PATree Value)
 {
     struct PANormalTree* aux;
     memcpy(aux->tree,Value,sizeof(struct PATree));
@@ -47,7 +47,7 @@ DllExport PANormalTree PANormalTreeBegin(PANormalTree NormalTree, PATree Value)
     // return normalTreePointer;  
     // return temp;
 }
-DllExport static Object PANormalTreeCopy(Object from, Object to, size_t size)
+DllExport static Object PANormalTreePerformCopy(Object from, Object to, size_t size)
 {
     Memory aux;
     aux = malloc (size);
@@ -67,7 +67,7 @@ DllExport static Object PANormalTreeCopy(Object from, Object to, size_t size)
 // //    copy.adj = Tree.adj;
 //     return copy;
 }
-DllExport int PANormalTreeDelete(struct PANormalTree* PA)
+DllExport int PANormalTreePerformDelete(struct PANormalTree* PA)
 {
     int returnCode;
     // PA->tree = NULL;
@@ -81,7 +81,7 @@ DllExport int PANormalTreeDelete(struct PANormalTree* PA)
     // return PA;
     return returnCode;
 }
-DllExport int PANormalTreeFinish(Memory Tree)
+DllExport int PANormalTreePerformRuin(Memory Tree)
 {
     int returnCode;
     free(Tree);

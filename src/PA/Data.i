@@ -2054,13 +2054,12 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          Memory PADataCreate(size_t size);
+
           PAData PADataBegin(PAData Data);
           static Object PADataCopy(Object from, Object to, size_t);
 
 
           int PADataFinish(Memory);
-          int PADataDelete(PAData);
 # 4 "src/PA/Data.c" 2
 # 1 "./include/PA/Resource.h" 1
 

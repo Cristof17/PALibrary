@@ -10,7 +10,7 @@
 #include <PA\Element.h>
 #endif
 
-DllExport Memory PAPairCreate(size_t size)
+DllExport Memory PAPairPerformConstruct(size_t size)
 {
     // struct PAPair pair;
     Memory pair;
@@ -32,7 +32,7 @@ DllExport Memory PAPairCreate(size_t size)
     //return pair;
 }
 // struct PAPair PAPairRuin(struct PAPair Pair) {
-DllExport struct PAPair* PAPairBegin(struct PAPair* Pair, struct PAElement* Value, struct PAElement* Value2)
+DllExport struct PAPair* PAPairPerformInit(struct PAPair* Pair, struct PAElement* Value, struct PAElement* Value2)
 {
         // struct PAPair* pairPointer;
         
@@ -77,7 +77,7 @@ DllExport struct PAPair* PAPairBegin(struct PAPair* Pair, struct PAElement* Valu
     // struct PAPair pair;
     // return result;
 }
-DllExport static Object PAPairCopy(Object from, Object to, size_t size)
+DllExport static Object PAPairPerformCopy(Object from, Object to, size_t size)
 {
     // struct PAPair temp;
     // sutr
@@ -132,7 +132,7 @@ DllExport static Object PAPairCopy(Object from, Object to, size_t size)
     //return Pair;
     // return pair;
 // }
-DllExport int PAPairDelete(struct PAPair* PA)
+DllExport int PAPairPerformDelete(struct PAPair* PA)
 {
     // int returnCode1;
     // int returnCode2;
@@ -151,7 +151,7 @@ DllExport int PAPairDelete(struct PAPair* PA)
     //
     return returnCode;
 }
-DllExport int PAPairFinish(Memory PA)
+DllExport int PAPairPerformRuin(Memory PA)
 {
     // int returnCode1;
     // int returnCode2;

@@ -13,7 +13,7 @@
 #include <PA\Count.h>
 #include <PA\Element.h>
 #endif
-DllExport Memory PAInputCreate(size_t size)
+DllExport Memory PAInputPerformConstruct(size_t size)
 {
 	// struct PAInput temp;
 	Memory input;
@@ -44,7 +44,7 @@ DllExport Memory PAInputCreate(size_t size)
 	// return result;
 	// return temp;
 }
-DllExport static Object PAInputCopy(Object from, Object to, size_t size)
+DllExport static Object PAInputPerformCopy(Object from, Object to, size_t size)
 {
 	// struct PAInput* copy;
 	Memory aux;
@@ -72,7 +72,7 @@ DllExport static Object PAInputCopy(Object from, Object to, size_t size)
 // //	copy.source=Input.source;
 // 	return copy;DllExport void
 }
-DllExport PAInput PAInputBegin(PAInput Input, PACount N, PACount M, PAElement Source, PASeries Adj)
+DllExport PAInput PAInputPerformInit(PAInput Input, PACount N, PACount M, PAElement Source, PASeries Adj)
 {
 	// struct PAInput temp;
 	struct PAInput* aux;
@@ -107,7 +107,7 @@ DllExport PAInput PAInputBegin(PAInput Input, PACount N, PACount M, PAElement So
 	return aux;
 	// return inputPointer;
 }
-DllExport int PAInputDelete(PAInput PA)
+DllExport int PAInputPerformDelete(PAInput PA)
 {
 	int returnCode;
 	bzero(PA,sizeof(struct PAInput));
@@ -126,7 +126,7 @@ DllExport int PAInputDelete(PAInput PA)
 	return returnCode;
 }
 // DllExport PAResult PAInputFinish(struct PACount* N, struct PACount*) {
-DllExport int PAInputFinish(Memory PA) {
+DllExport int PAInputPerformRuin(Memory PA) {
 	// PAResult result;
 	// struct PAInput Empty;
 	// PACountFinish(&PA->n);

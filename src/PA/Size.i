@@ -2049,17 +2049,9 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 8 "./include/PA/Size.h" 2
-
-
-
-
-
-
-
-          Memory PASizeConstruct(size_t size);
-
+# 17 "./include/PA/Size.h"
           int PASizeDelete(PASize PA);
-          int PASizeFinish(Memory);
+
           struct PASize* PASizeBegin(PASize, size_t* digits, size_t num_digits);
 # 5 "src/PA/Size.c" 2
 

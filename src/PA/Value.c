@@ -11,7 +11,7 @@
 // {
 //     struct PAValue value;
 //     return value;
-// }
+// } 
 // PAResult PAValuePerformRuin(struct PAValue Value)
 // {
 //     PAResult result;

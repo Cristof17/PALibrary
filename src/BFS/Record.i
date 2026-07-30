@@ -2057,7 +2057,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          Memory PAListCreate(size_t size);
+
 
 
           PAList PAListBegin(PAList list, PACount N, ArrayList adj);
@@ -2066,7 +2066,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           static Object PAListCopy(Object, Object, size_t);
           int PAListDelete(PAList);
-          int PAListFinish(Memory);
+
 
 void PAListPrint(struct PAList* List);
 # 7 "src/BFS/Record.c" 2
@@ -2085,11 +2085,10 @@ void PAListPrint(struct PAList* List);
 
 
 
-          Memory PACountCreate(size_t size);
+
           static Object PACountCopy(Object, Object, size_t);
           PACount PACountBegin(PACount, PAInt* value, PASize size);
           int PACountDelete(PACount PA);
-          int PACountFinish(Memory);
 # 8 "src/BFS/Record.c" 2
 # 1 "./include/PA/Result.h" 1
 # 9 "src/BFS/Record.c" 2

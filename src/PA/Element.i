@@ -2055,11 +2055,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 10 "./include/PA/Element.h" 2
 
 
-          Memory PAElementCreate(size_t size);
+
           PAElement PAElementBegin(PAElement,PAData, PAElement, PAStatus);
           static Object PAElementCopy(Object, Object, size_t);
           int PAElementDelete(PAElement);
-          int PAElementFinish(Memory);
+
           void PAElementVisit(PAElement);
           PABool PAElementIsVisited(PAElement);
           void PAElementReset(PAElement);
@@ -2080,13 +2080,12 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          Memory PADataCreate(size_t size);
+
           PAData PADataBegin(PAData Data);
           static Object PADataCopy(Object from, Object to, size_t);
 
 
           int PADataFinish(Memory);
-          int PADataDelete(PAData);
 # 8 "src/PA/Element.c" 2
 # 1 "./include/PA/Status.h" 1
 

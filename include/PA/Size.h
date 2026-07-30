@@ -14,9 +14,9 @@
 // void PASizePrint(struct PASize);
 // DllExport Memory PASizeConstruct(size_t size);
 // // void PASize(PA_INT);
-DllExport int PASizeDelete(PASize PA);
+DllExport int PASizePerformDelete(PASize PA);
 // DllExport int PASizeFinish(Memory);
-DllExport struct PASize* PASizeBegin(PASize, size_t* digits, size_t num_digits);
+DllExport struct PASize* PASizePerformBegin(PASize, size_t* digits, size_t num_digits);
 // struct PASize PASizeArrange(struct PASize);
 // struct PASize PASizePutValue(struct PASize, PA_INT);
 #endif

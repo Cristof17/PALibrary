@@ -13,7 +13,7 @@
 #endif
 
 // DllExport struct PALink* PALinkCreate(struct )
-DllExport Memory PALinkCreate(size_t size)
+DllExport Memory PALinkPerformConstruct(size_t size)
 {
     // struct PALink link;
     Memory link;
@@ -30,7 +30,7 @@ DllExport Memory PALinkCreate(size_t size)
     // return link;
     // return linkPointer;
 }
-DllExport struct PALink* PALinkBegin(struct PALink* Link, struct PAPair* pair)
+DllExport struct PALink* PALinkPerformInit(struct PALink* Link, struct PAPair* pair)
 {
     // struct PALink temp;
     struct PALink* aux;
@@ -52,7 +52,7 @@ DllExport struct PALink* PALinkBegin(struct PALink* Link, struct PAPair* pair)
     return aux;
     // return temp;
 }
-DllExport static Object PALinkCopy(Object from, Object to, size_t size)
+DllExport static Object PALinkPerformCopy(Object from, Object to, size_t size)
 {
     // struct PALink temp;
     Memory aux;
@@ -77,7 +77,7 @@ DllExport static Object PALinkCopy(Object from, Object to, size_t size)
 //    link.p = Link.p;
     // return link;
 }
-DllExport int PALinkDelete(PALink PA){
+DllExport int PALinkPerformDelete(PALink PA){
     // PAResult result;
     int returnCode;
     returnCode = PARESULT_SUCCESS;
@@ -91,7 +91,7 @@ DllExport int PALinkDelete(PALink PA){
     // struct PALink link;
     // return link;
 }
-DllExport int PALinkFinish(Memory Pair)
+DllExport int PALinkPerformRuin(Memory Pair)
 {
     // PA.p = PAPairPerformRuin(PA.p);    
     // struct PALink Empty;
