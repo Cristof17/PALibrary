@@ -8,6 +8,7 @@
 #include <types.h>
 #include <stdlib.h>
 #include <string.h>
+#include <memory.h>
 
 // struct PATree;
 // struct PATree PATreeConstruct(struct OPAResult);

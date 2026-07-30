@@ -38,19 +38,19 @@ DllExport Memory PASeriesPerformConstruct(size_t size)
     // }
     // series.m = sPACountPerformConstruct();
 
-    // struct PANumber iterator;
+//     // struct PANumber iterator;
 
-    // struct PANumber j;
+//     // struct PANumber j;
 
-    // j.val = SIZE;
-    // iterator.val = 1;
-    // while (iterator.val < j.val)
-    // {
-    //     series.adj[iterator.val] = PAElementPerformConstruct();
-    // } 
-    // return series;
-    return series;
-}
+//     // j.val = SIZE;
+//     // iterator.val = 1;
+//     // while (iterator.val < j.val)
+//     // {
+//     //     series.adj[iterator.val] = PAElementPerformConstruct();
+//     // } 
+//     // return series;
+//     return series;
+// }
 DllExport static Object PASeriesCopy(Object from, Object to, size_t size)
 {
     // struct PACount x;

@@ -2095,10 +2095,33 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 11 "./include/PA/Tree.h" 2
+# 1 "./include/memory.h" 1
 
 
 
 
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/memory.h" 2
+
+
+
+
+
+
+          Memory MemoryCreate(size_t size);
+          int MemoryFinish(Memory);
+# 12 "./include/PA/Tree.h" 2
+
+
+
+
+<<<<<<< HEAD
+
+=======
+>>>>>>> refs/remotes/origin/pointers
           static Object PATreeCopy(Object, Object, size_t);
 
           PATree PATreeBegin(PATree, PACount N, PACount M, PASeries adj, PAElement source);
@@ -2124,6 +2147,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> refs/remotes/origin/pointers
           PAElement PAElementBegin(PAElement,PAData, PAElement, PAStatus);
           static Object PAElementCopy(Object, Object, size_t);
           int PAElementDelete(PAElement);
@@ -2166,6 +2193,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> refs/remotes/origin/pointers
 
           PAInput PAInputBegin(PAInput, PACount, PACount, PAElement, PASeries);
 

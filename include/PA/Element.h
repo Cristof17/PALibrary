@@ -7,6 +7,7 @@
 #include <types.h>
 #include <stdlib.h>
 #include <string.h>
+#include <memory.h>
 
 // struct PAElement;
 // DllExport Memory PAElementCreate(size_t size);
