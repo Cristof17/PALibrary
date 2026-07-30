@@ -1,25 +1,24 @@
-# 1 "src/PA/Input.c"
+# 1 "src/PA/List.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/PA/Input.c" 2
+# 1 "src/PA/List.c" 2
 
 
 
 
 
 
-
-# 1 "./include/PA/Input.h" 1
+# 1 "./include/PA/List.h" 1
 
 
 
 
 
 # 1 "./include/defs.h" 1
-# 7 "./include/PA/Input.h" 2
+# 7 "./include/PA/List.h" 2
 # 1 "./include/types.h" 1
 
 
@@ -1852,9 +1851,9 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 8 "./include/PA/Input.h" 2
+# 8 "./include/PA/List.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Input.h" 2
+# 9 "./include/PA/List.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 1 3 4
@@ -2054,7 +2053,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 2 3 4
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
-# 10 "./include/PA/Input.h" 2
+# 10 "./include/PA/List.h" 2
 # 1 "./include/memory.h" 1
 
 
@@ -2073,125 +2072,120 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory MemoryCreate(size_t size);
           int MemoryFinish(Memory);
-# 11 "./include/PA/Input.h" 2
+# 11 "./include/PA/List.h" 2
 
 
 
 
 
-          PAInput PAInputPerformConstruct(PAInput, PACount, PACount, PAElement, PASeries);
 
 
-          static Object PAInputPerformCopy(Object,Object, size_t);
+          PAList PAListPerformConstruct(PAList list, PACount N, ArrayList adj);
 
 
 
-          int PAInputPerformDelete(PAInput);
-# 9 "src/PA/Input.c" 2
+          static Object PAListPerformCopy(Object, Object, size_t);
+          int PAListPerformDelete(PAList);
+
+
+void PAListPrint(struct PAList* List);
+# 8 "src/PA/List.c" 2
 # 1 "./include/PA/Count.h" 1
-# 10 "src/PA/Input.c" 2
-# 1 "./include/PA/Element.h" 1
-
-
-
-
-
-
-
+# 9 "src/PA/List.c" 2
+# 1 "./include/PA/Series.h" 1
+# 15 "./include/PA/Series.h"
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Element.h" 2
+# 16 "./include/PA/Series.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
-# 10 "./include/PA/Element.h" 2
-
-
-
-
-          PAElement PAElementPerformConstruct(PAElement,PAData, PAElement, PAStatus);
-          static Object PAElementPerformCopy(Object, Object, size_t);
-          int PAElementPerformDelete(PAElement);
-
-          void PAElementVisit(PAElement);
-          PABool PAElementIsVisited(PAElement);
-          void PAElementReset(PAElement);
-# 11 "src/PA/Input.c" 2
+# 17 "./include/PA/Series.h" 2
 
 
 
 
 
-          Memory PAInputPerformConstruct(size_t size)
+
+          static Object PASeriesPerformCopy(Object, Object, size_t);
+          int PASeriesPerformDelete(PASeries);
+
+
+
+          void PASeriesPrint(PASeries);
+# 10 "src/PA/List.c" 2
+# 19 "src/PA/List.c"
+          Memory PAListPerformConstruct(size_t size)
 {
-
- Memory input;
- input = malloc(size);
-
-
-
-
-
-
-
- return input;
-# 46 "src/PA/Input.c"
+    Memory listPointer;
+    listPointer = malloc (size);
+# 40 "src/PA/List.c"
+    return listPointer;
+# 50 "src/PA/List.c"
 }
-          static Object PAInputPerformCopy(Object from, Object to, size_t size)
+          static Object PAListPerformCopy(Object from, Object to, size_t size)
 {
+    Memory aux;
 
- Memory aux;
- aux = malloc (size);
- __builtin___memcpy_chk (from, aux,size, __builtin_object_size (from, 0));
- __builtin___memcpy_chk (aux, to,size, __builtin_object_size (aux, 0));
-# 65 "src/PA/Input.c"
- free(aux);
- return to;
-
-
-
-
-
-
-
-}
-          PAInput PAInputPerformInit(PAInput Input, PACount N, PACount M, PAElement Source, PASeries Adj)
-{
-
- struct PAInput* aux;
- aux = Input;
-
- __builtin___memcpy_chk (aux->n, N,sizeof(struct PACount), __builtin_object_size (aux->n, 0));
- __builtin___memcpy_chk (aux->m, M,sizeof(struct PACount), __builtin_object_size (aux->m, 0));
- __builtin___memcpy_chk (aux->source, Source,sizeof(struct PAElement), __builtin_object_size (aux->source, 0));
-# 107 "src/PA/Input.c"
- return aux;
-
-}
-          int PAInputPerformDelete(PAInput PA)
-{
- int returnCode;
- __builtin___memset_chk(PA, 0, sizeof(struct PAInput), __builtin_object_size (PA, 0));
-
-
-
- returnCode = ((int)0);
-# 126 "src/PA/Input.c"
- return returnCode;
+    aux = malloc (size);
+    __builtin___memcpy_chk (aux, from,size, __builtin_object_size (aux, 0));
+    __builtin___memcpy_chk (to, aux,size, __builtin_object_size (to, 0));
+# 69 "src/PA/List.c"
+    free(aux);
+    return to;
+# 108 "src/PA/List.c"
 }
 
-          int PAInputPerformRuin(Memory PA) {
+
+          PAList PAListPerformInit(PAList List, struct PACount* M, struct ArrayList* adj)
+{
+
+    struct PAList* listPointer;
+
+    __builtin___memcpy_chk (List->m, M,sizeof(struct PACount), __builtin_object_size (List->m, 0));
+    __builtin___memcpy_chk (List->neigh, adj,sizeof(struct ArrayList), __builtin_object_size (List->neigh, 0));
+# 151 "src/PA/List.c"
+    return listPointer;
+}
+# 184 "src/PA/List.c"
+          int PAListPerformDelete(struct PAList* PA)
+{
+    int returnCode;
+    returnCode = ((int)0);
+    __builtin___memset_chk(PA, 0, sizeof(struct PAList), __builtin_object_size (PA, 0));
+# 208 "src/PA/List.c"
+    return returnCode;
+
+
+
+}
+          int PAListPerformFinish(Memory PA)
+{
+    int returnCode;
+
+
+
+    free(PA);
+    returnCode = ((int)0);
+
+    return returnCode;
+# 237 "src/PA/List.c"
+    {
+
+
+
+    }
+    returnCode = ((int)0);
+    return returnCode;
 
 
 
 
 
- int returnCode;
+}
+void Dispose()
+{
 
+}
+# 270 "src/PA/List.c"
+void PAListPrint(struct PAList* List)
+{
 
-
-
- free(PA);
- returnCode = ((int)0);
-
-
-
- return returnCode;
 }

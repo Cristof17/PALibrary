@@ -1,25 +1,23 @@
-# 1 "src/PA/Input.c"
+# 1 "src/PA/Pair.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/PA/Input.c" 2
+# 1 "src/PA/Pair.c" 2
 
 
 
 
 
-
-
-# 1 "./include/PA/Input.h" 1
+# 1 "./include/PA/Pair.h" 1
 
 
 
 
 
 # 1 "./include/defs.h" 1
-# 7 "./include/PA/Input.h" 2
+# 7 "./include/PA/Pair.h" 2
 # 1 "./include/types.h" 1
 
 
@@ -1852,9 +1850,9 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 8 "./include/PA/Input.h" 2
+# 8 "./include/PA/Pair.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Input.h" 2
+# 9 "./include/PA/Pair.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 1 3 4
@@ -2054,7 +2052,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 2 3 4
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
-# 10 "./include/PA/Input.h" 2
+# 10 "./include/PA/Pair.h" 2
 # 1 "./include/memory.h" 1
 
 
@@ -2073,23 +2071,17 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory MemoryCreate(size_t size);
           int MemoryFinish(Memory);
-# 11 "./include/PA/Input.h" 2
+# 11 "./include/PA/Pair.h" 2
 
 
 
-
-
-          PAInput PAInputPerformConstruct(PAInput, PACount, PACount, PAElement, PASeries);
-
-
-          static Object PAInputPerformCopy(Object,Object, size_t);
+          PAPair PAPairPerformInit(PAPair, PAElement, PAElement);
+          static Object PAPairPerformCopy(Object, Object, size_t);
 
 
 
-          int PAInputPerformDelete(PAInput);
-# 9 "src/PA/Input.c" 2
-# 1 "./include/PA/Count.h" 1
-# 10 "src/PA/Input.c" 2
+          int PAPairPerformDelete(PAPair);
+# 7 "src/PA/Pair.c" 2
 # 1 "./include/PA/Element.h" 1
 
 
@@ -2113,38 +2105,19 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           void PAElementVisit(PAElement);
           PABool PAElementIsVisited(PAElement);
           void PAElementReset(PAElement);
-# 11 "src/PA/Input.c" 2
+# 8 "src/PA/Pair.c" 2
 
 
 
 
 
-          Memory PAInputPerformConstruct(size_t size)
+          Memory PAPairPerformConstruct(size_t size)
 {
 
- Memory input;
- input = malloc(size);
-
-
-
-
-
-
-
- return input;
-# 46 "src/PA/Input.c"
-}
-          static Object PAInputPerformCopy(Object from, Object to, size_t size)
-{
-
- Memory aux;
- aux = malloc (size);
- __builtin___memcpy_chk (from, aux,size, __builtin_object_size (from, 0));
- __builtin___memcpy_chk (aux, to,size, __builtin_object_size (aux, 0));
-# 65 "src/PA/Input.c"
- free(aux);
- return to;
-
+    Memory pair;
+    pair = malloc(size);
+# 26 "src/PA/Pair.c"
+    return pair;
 
 
 
@@ -2152,46 +2125,67 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 }
-          PAInput PAInputPerformInit(PAInput Input, PACount N, PACount M, PAElement Source, PASeries Adj)
+
+          struct PAPair* PAPairPerformInit(struct PAPair* Pair, struct PAElement* Value, struct PAElement* Value2)
 {
 
- struct PAInput* aux;
- aux = Input;
 
- __builtin___memcpy_chk (aux->n, N,sizeof(struct PACount), __builtin_object_size (aux->n, 0));
- __builtin___memcpy_chk (aux->m, M,sizeof(struct PACount), __builtin_object_size (aux->m, 0));
- __builtin___memcpy_chk (aux->source, Source,sizeof(struct PAElement), __builtin_object_size (aux->source, 0));
-# 107 "src/PA/Input.c"
- return aux;
+    struct PAPair* aux;
+    aux = (struct PAPair*) malloc (sizeof(struct PAPair));
 
+    __builtin___memcpy_chk (aux->Node, Value,sizeof(struct PAElement), __builtin_object_size (aux->Node, 0));
+    __builtin___memcpy_chk (aux->Node, Value2,sizeof(struct PAElement), __builtin_object_size (aux->Node, 0));
+    __builtin___memcpy_chk (Pair, aux,sizeof(struct PAPair), __builtin_object_size (Pair, 0));
+# 66 "src/PA/Pair.c"
+    return Pair;
+# 79 "src/PA/Pair.c"
 }
-          int PAInputPerformDelete(PAInput PA)
+          static Object PAPairPerformCopy(Object from, Object to, size_t size)
 {
- int returnCode;
- __builtin___memset_chk(PA, 0, sizeof(struct PAInput), __builtin_object_size (PA, 0));
+
+
+    Memory aux;
+
+    aux = malloc (size);
+    __builtin___memcpy_chk (aux, from,size, __builtin_object_size (aux, 0));
+    __builtin___memcpy_chk (to, aux,size, __builtin_object_size (to, 0));
 
 
 
- returnCode = ((int)0);
-# 126 "src/PA/Input.c"
- return returnCode;
+
+
+
+    free(aux);
+    return to;
+# 106 "src/PA/Pair.c"
 }
-
-          int PAInputPerformRuin(Memory PA) {
-
-
-
+# 135 "src/PA/Pair.c"
+          int PAPairPerformDelete(struct PAPair* PA)
+{
 
 
- int returnCode;
+    int returnCode;
+    __builtin___memset_chk(PA, 0, sizeof(struct PAPair), __builtin_object_size (PA, 0));
+
+
+    returnCode = ((int)0);
+# 152 "src/PA/Pair.c"
+    return returnCode;
+}
+          int PAPairPerformRuin(Memory PA)
+{
+
+
+    int returnCode;
+    free(PA);
+    returnCode = ((int)0);
+
+
+
+    return returnCode;
 
 
 
 
- free(PA);
- returnCode = ((int)0);
 
-
-
- return returnCode;
 }

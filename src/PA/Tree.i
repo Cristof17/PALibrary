@@ -1,25 +1,21 @@
-# 1 "src/PA/Input.c"
+# 1 "src/PA/Tree.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/PA/Input.c" 2
+# 1 "src/PA/Tree.c" 2
 
 
+# 1 "./include/PA/Tree.h" 1
 
-
-
-
-
-# 1 "./include/PA/Input.h" 1
 
 
 
 
 
 # 1 "./include/defs.h" 1
-# 7 "./include/PA/Input.h" 2
+# 8 "./include/PA/Tree.h" 2
 # 1 "./include/types.h" 1
 
 
@@ -1852,9 +1848,9 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 8 "./include/PA/Input.h" 2
+# 9 "./include/PA/Tree.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Input.h" 2
+# 10 "./include/PA/Tree.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 1 3 4
@@ -2054,7 +2050,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 2 3 4
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
-# 10 "./include/PA/Input.h" 2
+# 11 "./include/PA/Tree.h" 2
 # 1 "./include/memory.h" 1
 
 
@@ -2073,23 +2069,23 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           Memory MemoryCreate(size_t size);
           int MemoryFinish(Memory);
-# 11 "./include/PA/Input.h" 2
+# 12 "./include/PA/Tree.h" 2
+
+
+
+
+          static Object PATreePerformCopy(Object, Object, size_t);
+
+          PATree PATreePerformBegin(PATree, PACount N, PACount M, PASeries adj, PAElement source);
 
 
 
 
 
-          PAInput PAInputPerformConstruct(PAInput, PACount, PACount, PAElement, PASeries);
-
-
-          static Object PAInputPerformCopy(Object,Object, size_t);
-
-
-
-          int PAInputPerformDelete(PAInput);
-# 9 "src/PA/Input.c" 2
+          int PATreePerformDelete(PATree);
+# 4 "src/PA/Tree.c" 2
 # 1 "./include/PA/Count.h" 1
-# 10 "src/PA/Input.c" 2
+# 5 "src/PA/Tree.c" 2
 # 1 "./include/PA/Element.h" 1
 
 
@@ -2113,85 +2109,101 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           void PAElementVisit(PAElement);
           PABool PAElementIsVisited(PAElement);
           void PAElementReset(PAElement);
-# 11 "src/PA/Input.c" 2
+# 6 "src/PA/Tree.c" 2
+# 1 "./include/PA/List.h" 1
 
 
 
 
 
-          Memory PAInputPerformConstruct(size_t size)
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/PA/List.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 10 "./include/PA/List.h" 2
+
+
+
+
+
+
+
+
+          PAList PAListPerformConstruct(PAList list, PACount N, ArrayList adj);
+
+
+
+          static Object PAListPerformCopy(Object, Object, size_t);
+          int PAListPerformDelete(PAList);
+
+
+void PAListPrint(struct PAList* List);
+# 7 "src/PA/Tree.c" 2
+# 19 "src/PA/Tree.c"
+          Memory PATreePerformConstruct(size_t size)
 {
 
- Memory input;
- input = malloc(size);
+    Memory tree;
+    tree = malloc (size);
+# 77 "src/PA/Tree.c"
+    return tree;
 
-
-
-
-
-
-
- return input;
-# 46 "src/PA/Input.c"
 }
-          static Object PAInputPerformCopy(Object from, Object to, size_t size)
+          PATree PATreePerformInit(PATree tree, PACount N, PACount M, PASeries adj, PAElement source)
 {
 
- Memory aux;
- aux = malloc (size);
- __builtin___memcpy_chk (from, aux,size, __builtin_object_size (from, 0));
- __builtin___memcpy_chk (aux, to,size, __builtin_object_size (aux, 0));
-# 65 "src/PA/Input.c"
- free(aux);
- return to;
+    struct PATree* aux;
+    aux = (struct PATree*) malloc (sizeof(struct PATree));
 
-
-
-
-
-
-
+    __builtin___memcpy_chk (aux->n, N,sizeof(struct PACount), __builtin_object_size (aux->n, 0));
+    __builtin___memcpy_chk (aux->m, M,sizeof(struct PACount), __builtin_object_size (aux->m, 0));
+    __builtin___memcpy_chk (aux->adj, adj,sizeof(struct PASeries), __builtin_object_size (aux->adj, 0));
+    __builtin___memcpy_chk (aux->source, source,sizeof(struct PAElement), __builtin_object_size (aux->source, 0));
+    __builtin___memcpy_chk (tree, aux,sizeof(struct PATree), __builtin_object_size (tree, 0));
+# 123 "src/PA/Tree.c"
+    return tree;
 }
-          PAInput PAInputPerformInit(PAInput Input, PACount N, PACount M, PAElement Source, PASeries Adj)
+# 134 "src/PA/Tree.c"
+          static Object PATreePerformCopy(Object from, Object to, size_t size)
 {
+    Memory aux;
+    aux = malloc (size);
 
- struct PAInput* aux;
- aux = Input;
 
- __builtin___memcpy_chk (aux->n, N,sizeof(struct PACount), __builtin_object_size (aux->n, 0));
- __builtin___memcpy_chk (aux->m, M,sizeof(struct PACount), __builtin_object_size (aux->m, 0));
- __builtin___memcpy_chk (aux->source, Source,sizeof(struct PAElement), __builtin_object_size (aux->source, 0));
-# 107 "src/PA/Input.c"
- return aux;
 
+
+    free(aux);
+
+
+    return to;
+# 163 "src/PA/Tree.c"
 }
-          int PAInputPerformDelete(PAInput PA)
+          int PATreePerformDelete(PATree PA)
 {
- int returnCode;
- __builtin___memset_chk(PA, 0, sizeof(struct PAInput), __builtin_object_size (PA, 0));
+    int returnCode;
+    struct PATree tree;
 
 
 
- returnCode = ((int)0);
-# 126 "src/PA/Input.c"
- return returnCode;
+
+    __builtin___memset_chk(PA, 0, sizeof(struct PATree), __builtin_object_size (PA, 0));
+    returnCode = ((int)0);
+
+
+
+
+
+
+    return returnCode;
+
 }
-
-          int PAInputPerformRuin(Memory PA) {
-
-
-
-
-
- int returnCode;
+          int PATreePerformRuin(Memory PA)
+{
+    int returnCode;
 
 
 
 
- free(PA);
- returnCode = ((int)0);
-
-
-
- return returnCode;
-}
+    free(PA);
+    returnCode = ((int)0);

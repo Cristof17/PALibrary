@@ -1,25 +1,19 @@
-# 1 "src/PA/Input.c"
+# 1 "src/PA/Size.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/PA/Input.c" 2
+# 1 "src/PA/Size.c" 2
 
 
 
-
-
-
-
-# 1 "./include/PA/Input.h" 1
-
-
+# 1 "./include/PA/Size.h" 1
 
 
 
 # 1 "./include/defs.h" 1
-# 7 "./include/PA/Input.h" 2
+# 5 "./include/PA/Size.h" 2
 # 1 "./include/types.h" 1
 
 
@@ -1852,9 +1846,9 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 8 "./include/PA/Input.h" 2
+# 6 "./include/PA/Size.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Input.h" 2
+# 7 "./include/PA/Size.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 1 3 4
@@ -2054,144 +2048,55 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 2 3 4
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
-# 10 "./include/PA/Input.h" 2
+# 8 "./include/PA/Size.h" 2
 # 1 "./include/memory.h" 1
+# 9 "./include/PA/Size.h" 2
+# 18 "./include/PA/Size.h"
+          int PASizePerformDelete(PASize PA);
+
+          struct PASize* PASizePerformBegin(PASize, size_t* digits, size_t num_digits);
+# 5 "src/PA/Size.c" 2
 
 
 
 
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/memory.h" 2
-
-
-
-
-
-
-          Memory MemoryCreate(size_t size);
-          int MemoryFinish(Memory);
-# 11 "./include/PA/Input.h" 2
-
-
-
-
-
-          PAInput PAInputPerformConstruct(PAInput, PACount, PACount, PAElement, PASeries);
-
-
-          static Object PAInputPerformCopy(Object,Object, size_t);
-
-
-
-          int PAInputPerformDelete(PAInput);
-# 9 "src/PA/Input.c" 2
-# 1 "./include/PA/Count.h" 1
-# 10 "src/PA/Input.c" 2
-# 1 "./include/PA/Element.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Element.h" 2
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
-# 10 "./include/PA/Element.h" 2
-
-
-
-
-          PAElement PAElementPerformConstruct(PAElement,PAData, PAElement, PAStatus);
-          static Object PAElementPerformCopy(Object, Object, size_t);
-          int PAElementPerformDelete(PAElement);
-
-          void PAElementVisit(PAElement);
-          PABool PAElementIsVisited(PAElement);
-          void PAElementReset(PAElement);
-# 11 "src/PA/Input.c" 2
-
-
-
-
-
-          Memory PAInputPerformConstruct(size_t size)
-{
-
- Memory input;
- input = malloc(size);
-
-
-
-
-
-
-
- return input;
-# 46 "src/PA/Input.c"
+          Memory PASizePerformConstruct(size_t size){
+    Memory sizeStruct;
+    sizeStruct = malloc (size);
+    return sizeStruct;
 }
-          static Object PAInputPerformCopy(Object from, Object to, size_t size)
+          PASize PASizePerformInit(PASize Size, size_t* value, size_t digits)
 {
-
- Memory aux;
- aux = malloc (size);
- __builtin___memcpy_chk (from, aux,size, __builtin_object_size (from, 0));
- __builtin___memcpy_chk (aux, to,size, __builtin_object_size (aux, 0));
-# 65 "src/PA/Input.c"
- free(aux);
- return to;
+    struct PASize* aux;
+    aux = (struct PASize*) malloc (sizeof(struct PASize));
+    aux->value = (size_t*) malloc (sizeof(size_t)*digits);
 
 
-
+    __builtin___memcpy_chk (aux, Size,sizeof(struct PASize), __builtin_object_size (aux, 0));
+    __builtin___memcpy_chk (aux->value, value,digits, __builtin_object_size (aux->value, 0));
+    __builtin___memcpy_chk (aux, Size,sizeof(struct PASize), __builtin_object_size (aux, 0));
+    __builtin___memcpy_chk (Size->value, aux->value,digits, __builtin_object_size (Size->value, 0));
 
 
 
 
-}
-          PAInput PAInputPerformInit(PAInput Input, PACount N, PACount M, PAElement Source, PASeries Adj)
-{
 
- struct PAInput* aux;
- aux = Input;
-
- __builtin___memcpy_chk (aux->n, N,sizeof(struct PACount), __builtin_object_size (aux->n, 0));
- __builtin___memcpy_chk (aux->m, M,sizeof(struct PACount), __builtin_object_size (aux->m, 0));
- __builtin___memcpy_chk (aux->source, Source,sizeof(struct PAElement), __builtin_object_size (aux->source, 0));
-# 107 "src/PA/Input.c"
- return aux;
-
-}
-          int PAInputPerformDelete(PAInput PA)
-{
- int returnCode;
- __builtin___memset_chk(PA, 0, sizeof(struct PAInput), __builtin_object_size (PA, 0));
-
-
-
- returnCode = ((int)0);
-# 126 "src/PA/Input.c"
- return returnCode;
+    free(aux->value);
+    free(aux);
+    return Size;
 }
 
-          int PAInputPerformRuin(Memory PA) {
-
-
-
-
-
- int returnCode;
-
-
-
-
- free(PA);
- returnCode = ((int)0);
-
-
-
- return returnCode;
+          int PASizePerformDelete(struct PASize* PA)
+{
+    int returnCode = ((int)0);
+    __builtin___memset_chk(PA->value, 0, sizeof(size_t), __builtin_object_size (PA->value, 0));
+    __builtin___memset_chk(PA, 0, sizeof(struct PASize), __builtin_object_size (PA, 0));
+    return returnCode;
+}
+          int PASizePerformRuin(Memory PA)
+{
+    int returnCode;
+    returnCode = ((int)0);
+    free(PA);
+    return returnCode;
 }

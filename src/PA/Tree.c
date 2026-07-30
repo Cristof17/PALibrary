@@ -16,7 +16,6 @@
     // struct PACount size;
     // return size;
 // }
-<<<<<<< HEAD
 DllExport Memory PATreePerformConstruct(size_t size)
 {
     // struct PATree* temp;
@@ -79,70 +78,6 @@ DllExport Memory PATreePerformConstruct(size_t size)
     // return temp;
 }
 DllExport PATree PATreePerformInit(PATree tree, PACount N, PACount M, PASeries adj, PAElement source)
-=======
-// DllExport Memory PATreeCreate(size_t size)
-// {
-//     // struct PATree* temp;
-//     Memory tree;
-//     tree = malloc (size);
-//     // treePointer->n = n;
-//     // treePointer->m = m;
-//     // treePointer->adj = adj;
-//     // treePointer->source = source;
-//     // treePointer->n = PACountCreate();
-//     // treePointer->m = PACountCreate();
-//     // treePointer->source = PAElementCreate();
-//     // temp->n = PACountPerformConstruct();
-//     // temp->m = PACountPerformConstruct();
-//     // temp->adj = PAListPerformConstruct();
-//     // temp.adj = PAListPerformConstruct();
-//     // temp->source = PAElementPerformConstruct();
-//     // temp = PATreePerformInit(temp,temp.n,temp.m,temp.adj,temp.source);
-//     // return temp;
-//     // return treePointer;
-//     // struct PACount n;
-//     // struct PACount m;
-//     // struct PAList adj;
-//     // struct PAElement element;
-//     // n = PACountPerformConstruct();
-//     // m = PACountPerformConstruct();
-//     // adj = PAListPerformConstruct();
-//     // element = PAElementPerformConstruct();
-//     // temp.n = PACountPerformCopy(n,temp.n);
-//     // temp.m = PACountPerformCopy(m,temp.m);
-//     // temp.adj = PAListPerformCopy(adj,temp.adj);
-//     // temp.source = PAElementPerformCopy(element,temp.source);
-
-
-//     // Tree.n = Value;
-//     // Tree.m = Value2;
-//     // Tree.adj = Value3;
-//     // Tree.source = Value4;
-//     // struct PATree tree;
-//     // struct PACount countN = PACountPerformConstruct();
-//     // struct PACount countM = PACountPerformConstruct();
-//     // struct PAElement element = PAElementPerformConstruct();
-//     // struct PAList list = PAListPerformConstruct();
-//     // tree = PATreePerformInit(tree,countN,countM,list,element);
-//     // // tree.n = PACountPerformConstruct();
-//     // // tree.m = PACountPerformConstruct();
-//     // // tree.source = PAElementPerformConstruct();
-//     // // tree.adj = PAListPerformConstruct();
-//     // return tree;
-//     // PAResult result;
-//     // return result;
-//     // struct PATree tree;
-//     // tree = PATreePerformConstruct();
-//     // tree.n = N;
-//     // tree.m = M;
-//     // tree.adj = Adj;
-//     // tree.source = Source;
-//     // return tree;
-//     return tree;
-//     // return temp;
-// }
-DllExport PATree PATreeBegin(PATree tree, PACount N, PACount M, PASeries adj, PAElement source)
->>>>>>> refs/remotes/origin/pointers
 {
     // struct PATree tree;/
     struct PATree* aux;
@@ -245,7 +180,6 @@ DllExport int PATreePerformDelete(PATree PA)
     return returnCode;
     // return 0;
 }
-<<<<<<< HEAD
 DllExport int PATreePerformRuin(Memory PA)
 {
     int returnCode;
@@ -281,43 +215,6 @@ DllExport int PATreePerformRuin(Memory PA)
     // returnCode3 = PAListFinish(&PA->adj);
     // returnCode4 = PAElementFinish(&PA->source);
     // rc4 = PAListPerform
-=======
-// DllExport int PATreeFinish(Memory PA)
-// {
-//     int returnCode;
-//     // free(N);
-//     // free(M);
-//     // free(List);
-//     // free(Source);
-//     free(PA);
-//     returnCode = PARESULT_SUCCESS;
-//     // int returnCode2;
-//     // int returnCode3;
-//     // returnCode = PACountFinish(PA->n);
-//     // returnCode2 = PACountFinish(PA->m);
-//     // returnCode3 = PAElementFinish(PA->source);
-//     // if (returnCode == PARESULT_SUCCESS)
-//         // if (returnCode2 == PARESULT_SUCCESS)
-//         // ) && returnCode2)
-//             // if (returnCode3 == PARESULT_SUCCESS)
-//                 // returnCode = PARESULT_SUCCESS;
-//             // else
-//                 // returnCode = PARESULT_FAIL;
-//         // else
-//             // returnCode = PARESULT_FAIL;
-//     // else
-//         // returnCode = PARESULT_FAIL;
-//     // int returnCode1 = PARESULT_FAIL;
-//     // int returnCode2 = PARESULT_FAIL;
-//     // int returnCode3 = PARESULT_FAIL;
-//     // int returnCode4 = PARESULT_FAIL;
-//     // int returnCode = PARESULT_FAIL;
-//     // returnCode1 = PACountFinish(&PA->n);
-//     // returnCode2 = PACountFinish(&PA->m);
-//     // returnCode3 = PAListFinish(&PA->adj);
-//     // returnCode4 = PAElementFinish(&PA->source);
-//     // rc4 = PAListPerform
->>>>>>> refs/remotes/origin/pointers
 
 //     // returnCode = returnCode1 & returnCode2 & returnCode3 & returnCode4;
 //     // return returnCode;
