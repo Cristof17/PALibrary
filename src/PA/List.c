@@ -213,7 +213,7 @@ DllExport int PAListPerformDelete(struct PAList* PA)
     // PAResult result;
     // return result;
 }
-DllExport int PAListPerformFinish(PAMemory PA)
+DllExport int PAListPerformRuin(PAMemory PA)
 {
     int returnCode;
     // returnCode = PACountFinish(PA->n);

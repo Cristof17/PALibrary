@@ -143,7 +143,7 @@ DllExport int PAElementPerformDelete(struct PAElement* PA)
     // return 0;
 }
 // DllExport PAResult PAElementFinish(struct PAElement* PA)
-DllExport int PAElementPerformFinish(PAMemory PA)
+DllExport int PAElementPerformRuin(PAMemory PA)
 {
     int returnCode;
     returnCode = PAMemoryPerformFinish(PA);

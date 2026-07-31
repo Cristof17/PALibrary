@@ -129,7 +129,7 @@ DllExport int PADataPerformDelete(PAData PA)
     // PAResult result = (PAInt) PARESULT_SUCCESS;
     // return PA;
 }
-DllExport int PADataPerformFinish(PAMemory PA) 
+DllExport int PADataPerformRuin(PAMemory PA) 
 {
     // PAInt Empty = NULL;
     // Resource = Empty;
