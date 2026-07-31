@@ -271,7 +271,8 @@ objects_pa= Input.o \
 	PA/PALine.o \
 	PA/PAShape.o \
 	PA/PATextView.o \
-	PA/Size.o
+	PA/Size.o \
+	PA/Memory.o
 # 	src/PA/Data.i \
 
 sources_arraylist= ArrayList/ArrayList.i \
@@ -302,7 +303,8 @@ sources_pa= Input.i \
 	PA/PALine.i \
 	PA/PAShape.i \
 	PA/PATextView.i \
-	PA/Size.i
+	PA/Size.i \
+	PA/Memory.i
 # sources_arraylist= src/Input.i
 
 designs_arraylist= ArrayList/ArrayList.c \
@@ -334,7 +336,8 @@ designs_pa=$(srcdir)/Input.c \
 	$(srcdir)/PA/PALine.c \
 	$(srcdir)/PA/PAShape.c \
 	$(srcdir)/PA/PATextView.c \
-	$(srcdir)/PA/Size.c
+	$(srcdir)/PA/Size.c \
+	$(srcdir)/PA/Memory.c
 
 assemblies_arraylist= ArrayList/ArrayListPosition.s \
  	ArrayList/ArrayList.s
@@ -364,7 +367,8 @@ assemblies_pa= Input.s \
 	PA/PALine.s \
 	PA/PAShape.s \
 	PA/PATextView.s \
-	PA/Size.s
+	PA/Size.s \
+	PA/Memory.s
 
 sources_test_pa= test.i test_pointers.i
 sources_test_bfs= 
@@ -641,6 +645,8 @@ Output.i : $(srcdir)/Output.c $(includedir)/defs.h $(includedir)/Output.h
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 PA/Data.i : $(srcdir)/PA/Data.c $(includedir)/PA/Data.h
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
+PA/Memory.i : $(srcdir)/PA/Memory.c $(includedir)/PA/Memory.h $(includedir)/types.h
+	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 # src/PA/Destination.i : src/PA/Destination.c include/types.h include/PA/Destination.h
 # 	-$(CPP) $(CPPFLAGS) -E $< > $@
 PA/Tree.i : $(srcdir)/PA/Tree.c $(includedir)/PA/Tree.h $(includedir)/types.h
@@ -653,7 +659,7 @@ PA/Link.i : $(srcdir)/PA/Link.c $(includedir)/defs.h $(includedir)/types.h $(inc
 # 	-$(CPP) $(CPPFLAGS) -E $< > $@
 PA/Element.i : $(srcdir)/PA/Element.c $(includedir)/defs.h $(includedir)/PA/Element.h $(includedir)/types.h
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/Count.i : $(srcdir)/PA/Count.c $(includedir)/types.h $(includedir)/PA/Count.h
+PA/Count.i : $(srcdir)/PA/Count.c $(includedir)/types.h $(includedir)/PA/Count.h $(includedir)/PA/Memory.h
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 PA/Pair.i : $(srcdir)/PA/Pair.c $(includedir)/types.h $(includedir)/PA/Pair.h
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
@@ -703,6 +709,8 @@ PA/Output.s: PA/Output.i
 BFS/Record.s: BFS/Record.i
 	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 Output.s: Output.i
+	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+Memory.s: Memory.i
 	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 # src/PA/Destination.s : src/PA/Destination.i
 # 	-$(CC) -S $< -o $@
@@ -756,7 +764,8 @@ ArrayList/ArrayListPosition.s: ArrayList/ArrayListPosition.i
 	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 PA/Size.s: PA/Size.i
 	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
-
+PA/Memory.s: PA/Memory.i
+	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 test.i: test/test.c
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 test.s: test.i
@@ -1138,6 +1147,17 @@ ifeq ($(host-type),AArch64)
 endif
 
 PA/TransposeTree.o: PA/TransposeTree.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+
+PA/Memory.o: PA/Memory.s
 ifeq ($(host-type),arm64)
 	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif

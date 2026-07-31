@@ -13,7 +13,7 @@ _PACountPerformConstruct:               ; @PACountPerformConstruct
 	.cfi_offset w29, -16
 	str	x0, [sp, #8]
 	ldr	x0, [sp, #8]
-	bl	_malloc
+	bl	_PAMemoryPerformCreate
 	str	x0, [sp]
 	ldr	x0, [sp]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload

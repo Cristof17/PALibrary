@@ -1459,7 +1459,7 @@ typedef char* PANumber;
 typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
-typedef void* Memory;
+typedef void* PAMemory;
 typedef void* Object;
 typedef int Offset;
 typedef char PAInt;

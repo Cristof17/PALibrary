@@ -15,9 +15,9 @@
 // #include <types.h>
 // #include "//"
 // #include "../include/PAIndex.h"
-DllExport Memory PAElementPerformCreate(size_t size)
+DllExport PAMemory PAElementPerformCreate(size_t size)
 {
-    Memory element;
+    PAMemory element;
     element = malloc(size);
     // temp->index = index;
     // temp->status = status;
@@ -86,8 +86,8 @@ DllExport void PAElementReset(struct PAElement* Element)
 }
 DllExport static Object PAElementPerformCopy(Object from, Object to, size_t size)
 {
-    Memory aux;
-    aux = (Memory) malloc (size);
+    PAMemory aux;
+    aux = (PAMemory) malloc (size);
     memcpy(aux,from,size);
     memcpy(to,aux,size);
     // memcpy*
@@ -140,7 +140,7 @@ DllExport int PAElementPerformDelete(struct PAElement* PA)
     // return 0;
 }
 // DllExport PAResult PAElementFinish(struct PAElement* PA)
-DllExport int PAElementPerformFinish(Memory PA)
+DllExport int PAElementPerformFinish(PAMemory PA)
 {
     // free(PA);
     // PA.index = PADataPerformRuin(PA.index);

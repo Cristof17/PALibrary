@@ -18,9 +18,9 @@
 *  Created on: 16 nov. 2025
 *      Author: AdministratorUser
 */
-DllExport Memory PASeriesPerformConstruct(size_t size) 
+DllExport PAMemory PASeriesPerformConstruct(size_t size) 
 {
-    Memory series;
+    PAMemory series;
     series = malloc (size);
     // seriesPointer->m = m;
     // seriesPointer->adj = adj;
@@ -55,7 +55,7 @@ DllExport static Object PASeriesCopy(Object from, Object to, size_t size)
 {
     // struct PACount x;
     // struct PACount y;
-    Memory aux;
+    PAMemory aux;
     aux = malloc (size);
     memcpy(aux,from,size);
     memcpy(to,aux,size);
@@ -191,7 +191,7 @@ DllExport PASeries PASeriesPerformInit(PASeries series, PACount M, PAList Adj[])
         // copy = PAListPerformInit(List);
         //return copy;
     // }
-    DllExport int PASeriesPerformRuin(Memory PA)
+    DllExport int PASeriesPerformRuin(PAMemory PA)
     {
         // st
         int returnCode;

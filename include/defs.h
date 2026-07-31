@@ -7,7 +7,7 @@
 #define PARESULT_FAIL ((int)1)
 #define TRUE 1
 #define FALSE 0
-#define NULL 0
+// #define NULL 0
 #define NULL_CHAR '5'
 #ifndef _WIN95
 // typedef 

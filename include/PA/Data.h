@@ -17,7 +17,7 @@ DllExport PAData PACountPerformCreate(PAData Data);
 DllExport static Object PADataPerformCopy(Object from, Object to, size_t);
 // DllExport struct PAData PADataPerformCopy(struct PAData);
 // DllExport struct PAData PADataPerformPutResource(struct PAData, PAResource);
-DllExport int PADataPerformRuin(Memory);
+DllExport int PADataPerformRuin(PAMemory);
 // DllExport int PADataDelete(PAData);
 //typedef struct PAData Data;
 #endif

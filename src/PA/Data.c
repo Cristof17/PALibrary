@@ -10,11 +10,11 @@
 //struct PAData {
 //
 //}
-DllExport Memory PADataPerformConstruct(size_t size)
+DllExport PAMemory PADataPerformConstruct(size_t size)
 {
     // struct PAData data;
     // struct PAData* data;
-    Memory data;
+    PAMemory data;
     data = malloc (size);
     // data->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
     // data->Resource->value = (PANumber) malloc (sizeof(PANumber));//todo replace with conert to size_t
@@ -74,7 +74,7 @@ DllExport PAData PADataPerformInit(PAData Data)
 DllExport static Object PADataPerformCopy(Object from, Object to, size_t size)
 {
     // struct PAData temp;
-    Memory aux;
+    PAMemory aux;
     // aux = (struct PAData) malloc (su)
     aux = malloc(size);
     // aux = PADataCreate();
@@ -127,7 +127,7 @@ DllExport int PADataPerformDelete(PAData PA)
     // PAResult result = (PAInt) PARESULT_SUCCESS;
     // return PA;
 }
-DllExport int PADataPerformFinish(Memory PA) 
+DllExport int PADataPerformFinish(PAMemory PA) 
 {
     // PAInt Empty = NULL;
     // Resource = Empty;

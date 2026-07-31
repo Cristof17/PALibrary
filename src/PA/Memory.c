@@ -2,16 +2,18 @@
 // #include <stdlib.h>
 // #include <types.h>
 #ifndef _WIN95
-#include <Memory.h>
+#include <memory.h>
+#include <defs.h>
+#include <types.h>
 // #include <PA/Number.h>
 #elif defined _WIN95
 
 #endif
 
-DllExport Memory MemoryCreate(size_t size)
+DllExport PAMemory PAMemoryPerformCreate(size_t size)
 {
     // struct PACount zies;
-    Memory count;
+    PAMemory count;
     count = malloc(size);
     // count->number = (PAInt*) malloc (sizeof(PAInt));
     //  struct PACount* aux;
@@ -33,7 +35,7 @@ DllExport Memory MemoryCreate(size_t size)
     // countPointer->number = PANumberCreate();
     return count;
 }
-DllExport int MemoryFinish(Memory PA)
+DllExport int PAMemoryPerformFinish(PAMemory PA)
 {
     //get the value at address pointed by stack pointer
     //that corresponsds to parameter PA

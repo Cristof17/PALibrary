@@ -10,10 +10,10 @@
 #include <PA\Element.h>
 #endif
 
-DllExport Memory PAPairPerformConstruct(size_t size)
+DllExport PAMemory PAPairPerformConstruct(size_t size)
 {
     // struct PAPair pair;
-    Memory pair;
+    PAMemory pair;
     pair = malloc(size);
     // struct PAPair* pairPointer;
     // pairPointer->Node = PAElementPerformConstruct();
@@ -81,7 +81,7 @@ DllExport static Object PAPairPerformCopy(Object from, Object to, size_t size)
 {
     // struct PAPair temp;
     // sutr
-    Memory aux;
+    PAMemory aux;
     // aux = (struct PAPair*).
     aux = malloc (size);
     memcpy(aux,from,size);
@@ -151,7 +151,7 @@ DllExport int PAPairPerformDelete(struct PAPair* PA)
     //
     return returnCode;
 }
-DllExport int PAPairPerformRuin(Memory PA)
+DllExport int PAPairPerformRuin(PAMemory PA)
 {
     // int returnCode1;
     // int returnCode2;

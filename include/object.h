@@ -10,7 +10,7 @@
 // struct PATree;
 // struct PATree PATreeConstruct(struct OPAResult);
 // DllExport Memory PATreeCreate(size_t size);
-DllExport static Object ObjectCopy(Object, Object, size_t);
+DllExport static Object ObjectPerformCopy(Object, Object, size_t);
 // DllExport struct PACount PATreeSize();
 // DllExport PATree PATreeBegin(PATree, PACount N, PACount M, PASeries adj, PAElement source);
 // DllExport HRESULT PATreePerformCopy();

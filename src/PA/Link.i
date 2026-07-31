@@ -1472,7 +1472,7 @@ typedef char* PANumber;
 typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
-typedef void* Memory;
+typedef void* PAMemory;
 typedef void* Object;
 typedef int Offset;
 typedef char PAInt;
@@ -2055,24 +2055,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 10 "./include/PA/Link.h" 2
-# 1 "./include/memory.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/memory.h" 2
-
-
-
-
-
-
-          Memory MemoryCreate(size_t size);
-          int MemoryFinish(Memory);
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
+# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
 # 11 "./include/PA/Link.h" 2
 
 
@@ -2096,7 +2082,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 9 "./include/PA/Pair.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 10 "./include/PA/Pair.h" 2
-
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
+# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
+# 11 "./include/PA/Pair.h" 2
 
 
 
@@ -2113,10 +2103,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          Memory PALinkPerformConstruct(size_t size)
+          PAMemory PALinkPerformConstruct(size_t size)
 {
 
-    Memory link;
+    PAMemory link;
     link = malloc (size);
 
     return link;
@@ -2137,7 +2127,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           static Object PALinkPerformCopy(Object from, Object to, size_t size)
 {
 
-    Memory aux;
+    PAMemory aux;
 
 
     aux = malloc (size);
@@ -2165,7 +2155,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 }
-          int PALinkPerformRuin(Memory Pair)
+          int PALinkPerformRuin(PAMemory Pair)
 {
 
 

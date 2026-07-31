@@ -1470,7 +1470,7 @@ typedef char* PANumber;
 typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
-typedef void* Memory;
+typedef void* PAMemory;
 typedef void* Object;
 typedef int Offset;
 typedef char PAInt;
@@ -2053,24 +2053,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 10 "./include/PA/Element.h" 2
-# 1 "./include/memory.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/memory.h" 2
-
-
-
-
-
-
-          Memory MemoryCreate(size_t size);
-          int MemoryFinish(Memory);
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
+# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
 # 11 "./include/PA/Element.h" 2
 
 
@@ -2096,7 +2082,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 10 "./include/PA/Data.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 11 "./include/PA/Data.h" 2
-
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
+# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
+# 12 "./include/PA/Data.h" 2
 
 
 
@@ -2105,7 +2095,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           static Object PADataPerformCopy(Object from, Object to, size_t);
 
 
-          int PADataPerformRuin(Memory);
+          int PADataPerformRuin(PAMemory);
 # 8 "src/PA/Element.c" 2
 # 1 "./include/PA/Status.h" 1
 
@@ -2119,11 +2109,16 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 9 "./include/PA/Status.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 10 "./include/PA/Status.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
+# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
+# 11 "./include/PA/Status.h" 2
 # 9 "src/PA/Element.c" 2
 # 18 "src/PA/Element.c"
-          Memory PAElementPerformCreate(size_t size)
+          PAMemory PAElementPerformCreate(size_t size)
 {
-    Memory element;
+    PAMemory element;
     element = malloc(size);
 # 35 "src/PA/Element.c"
   return element;
@@ -2162,8 +2157,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 }
           static Object PAElementPerformCopy(Object from, Object to, size_t size)
 {
-    Memory aux;
-    aux = (Memory) malloc (size);
+    PAMemory aux;
+    aux = (PAMemory) malloc (size);
     __builtin___memcpy_chk (aux, from,size, __builtin_object_size (aux, 0));
     __builtin___memcpy_chk (to, aux,size, __builtin_object_size (to, 0));
 # 101 "src/PA/Element.c"
@@ -2183,7 +2178,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 }
 
-          int PAElementPerformFinish(Memory PA)
+          int PAElementPerformFinish(PAMemory PA)
 {
 # 160 "src/PA/Element.c"
     int returnCode;

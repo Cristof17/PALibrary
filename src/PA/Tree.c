@@ -16,10 +16,10 @@
     // struct PACount size;
     // return size;
 // }
-DllExport Memory PATreePerformConstruct(size_t size)
+DllExport PAMemory PATreePerformConstruct(size_t size)
 {
     // struct PATree* temp;
-    Memory tree;
+    PAMemory tree;
     tree = malloc (size);
     // treePointer->n = n;
     // treePointer->m = m;
@@ -133,7 +133,7 @@ DllExport PATree PATreePerformInit(PATree tree, PACount N, PACount M, PASeries a
 // }
 DllExport static Object PATreePerformCopy(Object from, Object to, size_t size)
 {
-    Memory aux;
+    PAMemory aux;
     aux = malloc (size);
     // aux->n = from->n;
     // aux->m = from->m;
@@ -180,7 +180,7 @@ DllExport int PATreePerformDelete(PATree PA)
     return returnCode;
     // return 0;
 }
-DllExport int PATreePerformRuin(Memory PA)
+DllExport int PATreePerformRuin(PAMemory PA)
 {
     int returnCode;
     // free(N);

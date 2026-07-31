@@ -9,9 +9,9 @@
 #include <PA\Tree.h>
 #endif
 
-DllExport Memory PANormalTreePerformConstruct(size_t size)
+DllExport PAMemory PANormalTreePerformConstruct(size_t size)
 {
-    Memory normalTree;
+    PAMemory normalTree;
     // struct PANormalTree* normalTree;
     // struct PANormaltT/
     // struct PANormat
@@ -49,7 +49,7 @@ DllExport PANormalTree PANormalTreePerformInit(PANormalTree NormalTree, PATree V
 }
 DllExport static Object PANormalTreePerformCopy(Object from, Object to, size_t size)
 {
-    Memory aux;
+    PAMemory aux;
     aux = malloc (size);
     // aux = PANormalTreeCreate();
     // aux->tree = from->tree;
@@ -81,7 +81,7 @@ DllExport int PANormalTreePerformDelete(struct PANormalTree* PA)
     // return PA;
     return returnCode;
 }
-DllExport int PANormalTreePerformRuin(Memory Tree)
+DllExport int PANormalTreePerformRuin(PAMemory Tree)
 {
     int returnCode;
     free(Tree);

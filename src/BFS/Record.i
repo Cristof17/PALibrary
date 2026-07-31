@@ -1460,7 +1460,7 @@ typedef char* PANumber;
 typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
-typedef void* Memory;
+typedef void* PAMemory;
 typedef void* Object;
 typedef int Offset;
 typedef char PAInt;
@@ -2053,7 +2053,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 10 "./include/PA/List.h" 2
-# 1 "./include/memory.h" 1
+# 1 "./include/PA/Memory.h" 1
 
 
 
@@ -2062,15 +2062,15 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/memory.h" 2
+# 9 "./include/PA/Memory.h" 2
 
 
 
 
 
 
-          Memory MemoryCreate(size_t size);
-          int MemoryFinish(Memory);
+          PAMemory PAMemoryPerformCreate(size_t size);
+          int PAMemoryPerformFinish(PAMemory);
 # 11 "./include/PA/List.h" 2
 
 
@@ -2079,7 +2079,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          Memory PAListPerformConstruct(size_t);
+          PAMemory PAListPerformConstruct(size_t);
 
 
 
@@ -2090,6 +2090,25 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 void PAListPrint(struct PAList* List);
 # 7 "src/BFS/Record.c" 2
 # 1 "./include/PA/Count.h" 1
+
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/PA/Count.h" 2
+
+
+
+
+
+
+
+          static Object PACountPerformCopy(Object, Object, size_t);
+          PACount PACountPerformInit(PACount, PAInt* value, PASize size);
+          int PACountPerformDelete(PACount PA);
 # 8 "src/BFS/Record.c" 2
 # 1 "./include/PA/Result.h" 1
 # 9 "src/BFS/Record.c" 2

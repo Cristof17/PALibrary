@@ -1469,7 +1469,7 @@ typedef char* PANumber;
 typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
-typedef void* Memory;
+typedef void* PAMemory;
 typedef void* Object;
 typedef int Offset;
 typedef char PAInt;
@@ -1852,7 +1852,24 @@ struct Facade {
 # 8 "./include/PA/Count.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 9 "./include/PA/Count.h" 2
-# 1 "./include/memory.h" 1
+# 1 "./include/PA/Memory.h" 1
+
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/PA/Memory.h" 2
+
+
+
+
+
+
+          PAMemory PAMemoryPerformCreate(size_t size);
+          int PAMemoryPerformFinish(PAMemory);
 # 10 "./include/PA/Count.h" 2
 
 
@@ -2346,7 +2363,10 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 508 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
 # 62 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 2 3 4
 # 8 "./include/PA/Number.h" 2
-# 1 "./include/memory.h" 1
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
+# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
 # 9 "./include/PA/Number.h" 2
 
 
@@ -2363,20 +2383,20 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
 
-          Memory PACountPerformConstruct(size_t size)
+          PACount PACountPerformConstruct(size_t size)
 {
 
-    Memory count;
-    count = malloc(size);
+    PAMemory count;
+    count = PAMemoryPerformCreate(size);
 # 37 "src/PA/Count.c"
     return count;
 }
           PACount PACountPerformInit(PACount count, PAInt* Count,PASize size)
 {
-    Memory aux;
+    PAMemory aux;
     aux = malloc (size->value[0]);
-    Memory to = (Memory) count->number;
-    Memory from = (Memory) Count;
+    PAMemory to = (PAMemory) count->number;
+    PAMemory from = (PAMemory) Count;
     __builtin___memcpy_chk (aux, from,size->value[0], __builtin_object_size (aux, 0));
     __builtin___memcpy_chk (to, aux,size->value[0], __builtin_object_size (to, 0));
 
@@ -2387,8 +2407,8 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 }
           static Object PACountPerformCopy(Object from, Object to, size_t size)
 {
-    Memory aux;
-    aux = (Memory) malloc(size);
+    PAMemory aux;
+    aux = (PAMemory) malloc(size);
 
 
 
@@ -2411,7 +2431,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
     return returnCode;
 }
-          int PACountPerformRuin(Memory PA)
+          int PACountPerformRuin(PAMemory PA)
 {
 # 136 "src/PA/Count.c"
     int returnCode;

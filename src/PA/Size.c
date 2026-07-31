@@ -6,8 +6,8 @@
 #include <PA\Size.h>
 #endif
 
-DllExport Memory PASizePerformConstruct(size_t size){
-    Memory sizeStruct;
+DllExport PAMemory PASizePerformConstruct(size_t size){
+    PAMemory sizeStruct;
     sizeStruct = malloc (size);
     return sizeStruct;
 }
@@ -39,7 +39,7 @@ DllExport int PASizePerformDelete(struct PASize* PA)
     bzero(PA,sizeof(struct PASize));
     return returnCode;
 }
-DllExport int PASizePerformRuin(Memory PA)
+DllExport int PASizePerformRuin(PAMemory PA)
 {
     int returnCode;
     returnCode = PARESULT_SUCCESS;

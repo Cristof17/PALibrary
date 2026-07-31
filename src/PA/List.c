@@ -16,9 +16,9 @@
 #endif
 
 // struct PAList PAListConstruct(struct PAElement Element) {
-DllExport Memory PAListPerformConstruct(size_t size)
+DllExport PAMemory PAListPerformConstruct(size_t size)
 {
-    Memory listPointer;
+    PAMemory listPointer;
     listPointer = malloc (size);
     // listPointer->m = m;
     // listPointer->neigh = edges;
@@ -50,7 +50,7 @@ DllExport Memory PAListPerformConstruct(size_t size)
 }
 DllExport static Object PAListPerformCopy(Object from, Object to, size_t size)
 {
-    Memory aux;
+    PAMemory aux;
     // aux = PAListCreate();
     aux = malloc (size);
     memcpy(aux,from,size);
@@ -210,7 +210,7 @@ DllExport int PAListPerformDelete(struct PAList* PA)
     // PAResult result;
     // return result;
 }
-DllExport int PAListPerformFinish(Memory PA)
+DllExport int PAListPerformFinish(PAMemory PA)
 {
     int returnCode;
     // returnCode = PACountFinish(PA->n);

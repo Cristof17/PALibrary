@@ -1471,7 +1471,7 @@ typedef char* PANumber;
 typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
-typedef void* Memory;
+typedef void* PAMemory;
 typedef void* Object;
 typedef int Offset;
 typedef char PAInt;
@@ -2054,7 +2054,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 10 "./include/PA/List.h" 2
-# 1 "./include/memory.h" 1
+# 1 "./include/PA/Memory.h" 1
 
 
 
@@ -2063,15 +2063,15 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/memory.h" 2
+# 9 "./include/PA/Memory.h" 2
 
 
 
 
 
 
-          Memory MemoryCreate(size_t size);
-          int MemoryFinish(Memory);
+          PAMemory PAMemoryPerformCreate(size_t size);
+          int PAMemoryPerformFinish(PAMemory);
 # 11 "./include/PA/List.h" 2
 
 
@@ -2080,7 +2080,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          Memory PAListPerformConstruct(size_t);
+          PAMemory PAListPerformConstruct(size_t);
 
 
 
@@ -2091,6 +2091,25 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 void PAListPrint(struct PAList* List);
 # 8 "src/PA/List.c" 2
 # 1 "./include/PA/Count.h" 1
+
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/PA/Count.h" 2
+
+
+
+
+
+
+
+          static Object PACountPerformCopy(Object, Object, size_t);
+          PACount PACountPerformInit(PACount, PAInt* value, PASize size);
+          int PACountPerformDelete(PACount PA);
 # 9 "src/PA/List.c" 2
 # 1 "./include/PA/Series.h" 1
 # 15 "./include/PA/Series.h"
@@ -2098,7 +2117,11 @@ void PAListPrint(struct PAList* List);
 # 16 "./include/PA/Series.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 17 "./include/PA/Series.h" 2
-
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
+# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
+# 18 "./include/PA/Series.h" 2
 
 
 
@@ -2112,9 +2135,9 @@ void PAListPrint(struct PAList* List);
           void PASeriesPrint(PASeries);
 # 10 "src/PA/List.c" 2
 # 19 "src/PA/List.c"
-          Memory PAListPerformConstruct(size_t size)
+          PAMemory PAListPerformConstruct(size_t size)
 {
-    Memory listPointer;
+    PAMemory listPointer;
     listPointer = malloc (size);
 # 40 "src/PA/List.c"
     return listPointer;
@@ -2122,7 +2145,7 @@ void PAListPrint(struct PAList* List);
 }
           static Object PAListPerformCopy(Object from, Object to, size_t size)
 {
-    Memory aux;
+    PAMemory aux;
 
     aux = malloc (size);
     __builtin___memcpy_chk (aux, from,size, __builtin_object_size (aux, 0));
@@ -2156,7 +2179,7 @@ void PAListPrint(struct PAList* List);
 
 
 }
-          int PAListPerformFinish(Memory PA)
+          int PAListPerformFinish(PAMemory PA)
 {
     int returnCode;
 

@@ -32,10 +32,10 @@
 // {
 //     PAOutputPerformPrint(output);
 // }
-DllExport Memory PAOutputPerformConstruct(size_t size)
+DllExport PAMemory PAOutputPerformConstruct(size_t size)
 {
     // struct PAOutput* result;
-    Memory output;
+    PAMemory output;
     // struct PAOutput Output;
     // struct PAOutput* outputPointer;
     output = malloc (size);
@@ -62,7 +62,7 @@ DllExport PAOutput PAOutputPerformInit(PAOutput Output)
 }
 DllExport static Object PAOutputPerformCopy(Object from, Object to, size_t size)
 {
-	Memory aux;
+	PAMemory aux;
     // aux = PAOutputCreate();
     // aux = (struct )
     aux = malloc (size);
@@ -114,7 +114,7 @@ DllExport int PAOutputPerformDelete(struct PAOutput* PA)
     // return output;
     return returnCode;
 }
-DllExport int PAOutputPerformRuin(Memory PA)
+DllExport int PAOutputPerformRuin(PAMemory PA)
 {
     int returnCode;
     // returnCode = PA->

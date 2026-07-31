@@ -13,7 +13,7 @@
 // struct PAInput;
 // DllExport Memory PAInputCreate(size_t size);
 // DllExport struct PAInput PAInputPerformCopy(struct PAInput);
-DllExport Memory PAInputPerformConstruct(size_t);
+DllExport PAMemory PAInputPerformConstruct(size_t);
 // DllExport struct s PAInputCopy(struct PAInput* from, struct PAInput* to);
 // DllExport struct stricPAInputCopy(struct PAInput* from, struct PAInput* to);
 DllExport static Object PAInputPerformCopy(Object,Object, size_t);

@@ -13,9 +13,9 @@
 #include <PA\Tree.h>
 
 #endif
-DllExport Memory PATransposeTreePerformConstruct(size_t size)
+DllExport PAMemory PATransposeTreePerformConstruct(size_t size)
 {
-    Memory transposeTree;
+    PAMemory transposeTree;
     // struct PATransposeTree* transposeTreePointer;
     transposeTree = malloc(size);
     // transposeTreePointer->tree = PATreePerformConstruct();
@@ -56,7 +56,7 @@ DllExport PATransposeTree PATransposeTreePerformInit(PATransposeTree TransposeTr
 DllExport static Object PATransposeTreePerformCopy(Object from, Object to, size_t size)
 {
     // struct PATransposeTree* copy;
-    Memory aux;
+    PAMemory aux;
     aux = malloc (size);
     memcpy(aux,from,size);
     memcpy(to,aux,size);

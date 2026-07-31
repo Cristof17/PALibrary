@@ -1464,7 +1464,7 @@ typedef char* PANumber;
 typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
-typedef void* Memory;
+typedef void* PAMemory;
 typedef void* Object;
 typedef int Offset;
 typedef char PAInt;
@@ -1848,33 +1848,8 @@ struct Facade {
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 7 "./include/PA/Resource.h" 2
-# 1 "./include/memory.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/memory.h" 2
-
-
-
-
-
-
-          Memory MemoryCreate(size_t size);
-          int MemoryFinish(Memory);
-# 8 "./include/PA/Resource.h" 2
-# 4 "src/PA/Resource.c" 2
-# 1 "./include/PA/Number.h" 1
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 6 "./include/PA/Number.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
+# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 1 3 4
@@ -2074,6 +2049,17 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 2 3 4
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
+# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
+# 8 "./include/PA/Resource.h" 2
+# 4 "src/PA/Resource.c" 2
+# 1 "./include/PA/Number.h" 1
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 6 "./include/PA/Number.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 7 "./include/PA/Number.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 1 3 4
 # 61 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 3 4
@@ -2350,7 +2336,11 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 508 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
 # 62 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 2 3 4
 # 8 "./include/PA/Number.h" 2
-
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
+# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
+# 9 "./include/PA/Number.h" 2
 
 
           struct PANumber* PANumberPerformConstruct(struct PANumber* Number, unsigned char Value);

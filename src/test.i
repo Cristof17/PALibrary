@@ -1466,7 +1466,7 @@ typedef char* PANumber;
 typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
-typedef void* Memory;
+typedef void* PAMemory;
 typedef void* Object;
 typedef int Offset;
 typedef char PAInt;
@@ -2049,24 +2049,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 11 "./include/PA/Tree.h" 2
-# 1 "./include/memory.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/memory.h" 2
-
-
-
-
-
-
-          Memory MemoryCreate(size_t size);
-          int MemoryFinish(Memory);
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
+# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
 # 12 "./include/PA/Tree.h" 2
 
 
@@ -2083,6 +2069,43 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           int PATreePerformDelete(PATree);
 # 2 "test/test.c" 2
 # 1 "./include/PA/Count.h" 1
+
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/PA/Count.h" 2
+# 1 "./include/PA/Memory.h" 1
+
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/PA/Memory.h" 2
+
+
+
+
+
+
+          PAMemory PAMemoryPerformCreate(size_t size);
+          int PAMemoryPerformFinish(PAMemory);
+# 10 "./include/PA/Count.h" 2
+
+
+
+
+
+
+          static Object PACountPerformCopy(Object, Object, size_t);
+          PACount PACountPerformInit(PACount, PAInt* value, PASize size);
+          int PACountPerformDelete(PACount PA);
 # 3 "test/test.c" 2
 
 # 1 "./include/PA/Element.h" 1
@@ -2097,7 +2120,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 9 "./include/PA/Element.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 10 "./include/PA/Element.h" 2
-
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
+# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
+# 11 "./include/PA/Element.h" 2
 
 
 
@@ -2122,7 +2149,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 10 "./include/PA/Data.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 11 "./include/PA/Data.h" 2
-
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
+# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
+# 12 "./include/PA/Data.h" 2
 
 
 
@@ -2131,7 +2162,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           static Object PADataPerformCopy(Object from, Object to, size_t);
 
 
-          int PADataPerformRuin(Memory);
+          int PADataPerformRuin(PAMemory);
 # 6 "test/test.c" 2
 
 # 1 "./include/PA/List.h" 1
@@ -2154,7 +2185,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          Memory PAListPerformConstruct(size_t);
+          PAMemory PAListPerformConstruct(size_t);
 
 
 
@@ -2172,6 +2203,11 @@ void PAListPrint(struct PAList* List);
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 7 "./include/PA/Resource.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
+# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
+# 8 "./include/PA/Resource.h" 2
 # 9 "test/test.c" 2
 # 1 "./include/PA/Number.h" 1
 
@@ -2457,7 +2493,11 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 508 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
 # 62 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 2 3 4
 # 8 "./include/PA/Number.h" 2
-
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
+# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
+# 9 "./include/PA/Number.h" 2
 
 
           struct PANumber* PANumberPerformConstruct(struct PANumber* Number, unsigned char Value);
@@ -2472,7 +2512,11 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 16 "./include/PA/Series.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 17 "./include/PA/Series.h" 2
-
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
+# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
+# 18 "./include/PA/Series.h" 2
 
 
 
@@ -2497,6 +2541,11 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 9 "./include/PA/Status.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 10 "./include/PA/Status.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
+# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
+# 11 "./include/PA/Status.h" 2
 # 12 "test/test.c" 2
 # 1 "./include/PA/TransposeTree.h" 1
 
@@ -2510,7 +2559,11 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 9 "./include/PA/TransposeTree.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 10 "./include/PA/TransposeTree.h" 2
-
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
+# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
+# 11 "./include/PA/TransposeTree.h" 2
 
 
 
