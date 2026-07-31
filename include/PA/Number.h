@@ -8,6 +8,7 @@
 #include <memory.h>
 
 // DllExport Memory PANumberCreate(size_t size);
+DllExport size_t PANumberSize(PANumber);
 DllExport struct PANumber* PANumberPerformConstruct(struct PANumber* Number, unsigned char Value);
 DllExport static PAObject PANumberPerformCopy(PAObject, PAObject, size_t);
 DllExport int PANumberPerformDelete(struct PANumber*);

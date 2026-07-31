@@ -103,6 +103,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
+struct PAInt;
 // struct ConcreteIterator;
 // struct Iterator;
 // struct PAList;
@@ -233,6 +234,11 @@ typedef struct PACount {
 	// PADDING_1_BYTE(0);
 	PAInt* number;
 }* PACount;
+
+typedef struct PAInt {
+	char* value;
+	size_t size;
+}* PAInt;
 // };
 
 typedef struct PASeries {

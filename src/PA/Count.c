@@ -12,12 +12,27 @@
 #include <PA\Memory.h>
 
 #endif
-
-DllExport PACount PACountPerformConstruct(size_t size)
+DllExport PAMemory PACountAllocate()
 {
-    // struct PACount zies;
+    size_t size; 
     PAMemory count;
-    count = PAMemoryPerformConstruct(size);
+    size = PACountSize();
+    count = PAMemoryConstruct(size);
+    return count;
+}
+DllExport PACount PACountConstruct(PACount n, PAInt value)
+{
+    n->number = malloc(sizeof(PAInt));
+    PAInt aux;
+    aux = n->number;
+    *(n->number) = value;
+    *n->number = value;
+    return n;
+    // struct PACount 
+    //zies;
+    
+    PAMemory count;
+    count = PACountPerformAlloc();
     // count->number = (PAInt*) malloc (sizeof(PAInt));
     //  struct PACount* aux;
     // aux = (struct PACount*) malloc (sizeof(struct PACount));
@@ -38,9 +53,16 @@ DllExport PACount PACountPerformConstruct(size_t size)
     // countPointer->number = PANumberCreate();
     return count;
 }
-DllExport PACount PACountPerformInit(PACount count, PAInt* value,PASize size)
+DllExport PAObject PACountInitialise(PACount init, PACount this,PASize size)
 {
-    PAMemory aux;
+    size_t size = PACountSize();
+    PAMemory aux = PAMemoryPerforConstruct(size);
+    init = PAObjectPerformCopy(init,aux,size);
+    this = PAobjectPerformCopy(this,init,size);
+    return aux;
+    // PAMemory aux = PAMemoryPerformConstruct(sizeof(struct PACount))
+    // PAObject aux =
+    // PAMemory aux; ß 
     // aux = PAMemoryPerformConstruct(sizeof(PAInt));
     // aux = PAObjectPerformCopy(count,aux,size->value[0]);
     // count->number = PAObjectPerformCopy((PAObject)aux,count->number,size->value[0]);
@@ -75,7 +97,7 @@ DllExport PACount PACountPerformInit(PACount count, PAInt* value,PASize size)
     // struct PACount count;
     // count.number = Number;
     // return÷÷ Count;
-    return count;
+    // return coun:wt;
 }
 // DllExport static PAObject PACountPerformCopy(PAObject from, PAObject to, size_t size)
 // {
@@ -155,6 +177,13 @@ PAResult PACountPrint(struct PACount* Count)
 {
     PAResult result;
     return result;
+}
+
+size_t PACountSize()
+{
+    size_t size;
+    size = sizeof(PAInt);
+    return size;
 }
 
 // DllExport struct PACount PACountPerformCopy(struct PACount from, struct PACount to)

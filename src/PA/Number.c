@@ -11,7 +11,7 @@
 //     numberPointer->val = value;
 //     // numberPointer->val = (unsigned char*) malloc(sizeof(unsigned char));
 //     // number = PANumberPerformInit(number,NULL_CHAR);
-//     // unsigned char random;
+//     // unsigned car random;
 //     // number.val =  random;
 //     // return numberPointer;
 //     // return number;
