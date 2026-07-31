@@ -45,7 +45,7 @@ srcdir=
 #musl=@musl@
 #crt=@crt@
 #output=@output@
-libs= ./lib/libpa.a ./lib/libarraylist.a ./lib/lib_algorithm.a
+libs= ./lib/libpa.a ./lib/libarraylist.a lib/libbfs.a ./lib/lib_algorithm.a
 output=libpa.a
 program_test_pa= test.out
 program_test_pointers_pa= test_pointers.out
@@ -516,18 +516,18 @@ build: $(subdirs)
 #
 $(lib_pa): $(objects_pa)
 	src/mkinstalldirs $(bindir) $(datadir) lib $(infodir) $(mandir)
-	$(AR) -v -s -q lib/$(lib_pa) $(foreach object,$^,lib/$(object))  
-	$(AR) -v -t -s lib/$(lib_pa)
+	$(AR) -v -s -q ./lib/$@ $(foreach object,$^,lib/$(object))  
+	$(AR) -v -t -s ./lib/$@
 
 $(lib_bfs): $(objects_bfs)
 	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
-	$(AR) -v -s -q lib/$(lib_bfs) $(foreach object,$^,lib/$(object))  
-	$(AR) -v -t -s lib/$(lib_bfs)
+	$(AR) -v -s -q ./lib/$@ $(foreach object,$^,lib/$(object))  
+	$(AR) -v -t -s ./lib/$@
 
 $(lib_arraylist): $(objects_arraylist)
 	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
-	$(AR) -v -s -q lib/$(lib_arraylist) $(foreach object,$^,lib/$(object))  
-	$(AR) -v -t -s lib/$(lib_arraylist)
+	$(AR) -v -s -q ./lib/$@ $(foreach object,$^,lib/$(object))  
+	$(AR) -v -t -s ./lib/$@
 #	$(AR) -d -b Input.o $(libdir)/$(output)
 
 #libpa.a: $(objects_pa)
@@ -1463,6 +1463,7 @@ clean:
 # 	rm $(foreach assembly,$(assemblies_arraylist),$(srcdir)/$(assembly))
 	rm $(foreach object,$(objects_pa),$(libdir)/$(object))
 	rm $(foreach object,$(objects_test_pa),$(libdir)/$(object))
+	rm $(foreach lib,$(libs)/,$(lib))
 # 	rm $(foreach object,$(objects_bfs),$(libdir)/$(object))
 # 	rm $(foreach object,$(objects_arraylist),$(libdir)/$(object))
 # 	rm $(bindir)/test
