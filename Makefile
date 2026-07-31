@@ -548,19 +548,37 @@ srcdir=$(prefix)/src
 #CFLAGS+=-I$(abspath $(includedir)/ArrayList)
 #CFLAGS+=-I$(abspath $(includedir)/Adapter)
 CPPFLAGS=
+CFLAGS= -g
+ASFLAGS= -g
 ifeq ($(host-type),arm64)
 CPPFLAGS=-Darm64
+ASFLAGS=-arch $(host-type) -g
 else
+CFLAGS=-march=x86_64
 endif
 ifeq ($(host-type),Aarch64)
 CPPFLAGS=-DAarch64
+ASFLAGS=-march=armv8.3-a -g
 else
+CFLAGS=-march=x86_64
 endif
 ifeq ($(host-type),armv6)
 CPPFLAGS=-Darmv6
+ASFLAGS= -g
 else
+CFLAGS=-march=x86_64
 endif
 CPPFLAGS+=-I$(prefix)/include -I$(prefix)
+
+ifeq ($(host-type),arm64)
+
+endif
+ifeq ($(host-type),x86_64)
+
+endif
+ifeq ($(host-type),AArch64)
+
+endif
 #libdir=$(prefix)/obj
 #datadir=dat
 #infodir=info
@@ -806,16 +824,8 @@ test_pointers.out: test_pointers.o $(objects) $(lib_pa) $(lib_bfs) $(lib_arrayli
 
 #$(CC) -lc $(foreach dependency,$^,$(libdir)/$(dependency)) -o $(bindir)/$@
 
-ASFLAGS=
-ifeq ($(host-type),arm64)
-ASFLAGS=-arch $(host-type)
-endif
-ifeq ($(host-type),x86_64)
-CFLAGS=-march=x86_64
-endif
-ifeq ($(host-type),AArch64)
-ASFLAGS=-march=armv8.3-a
-endif
+# ASFLAGS=
+
 
 main.o : main.s
 ifeq ($(host-type),arm64)
