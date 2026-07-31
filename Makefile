@@ -150,7 +150,7 @@ mostlyclean:
 # 	-rm $(assemblies_pa)
 # 	-rm $(sources_pa)
 #
-maintainer-clean:
+maintainer-clean: $(objects_pa) $(objects_bfs) $(objects_arraylist) $(assemblies_pa) $(assemblies_bfs) $(assemblies_arraylist) $(sources_pa) $(sources_bfs) $(sources_arraylist) $(sources_test_pa) $(assemblies_test_pa) $(sources_test_arraylist) $(objects_test_pa) $(program_test_pa) $(program_test_pointers_pa) $(lib_arraylist) $(lib_pa) $(lib_bfs) $(output).tar.gz
 	@echo 'This command is intended for maintainers to use; it'
 	@echo 'deletes files that may need special tools to rebuild.'
 	-rm -v $(foreach object,$(objects_pa),$(libdir)/$(object))
@@ -172,10 +172,10 @@ maintainer-clean:
 	-rm -v $(foreach test,$(program_test_pointers_pa),$(bindir)/$(test))
 	-rm -v $(foreach lib,$(output),$(libdir)/$(lib).a)
 	-rm -v $(output).tar.gz 
-	-rm -r -v $(foreach lib,$(libs),$(output)-$(version)/$(lib))
-	rm -r -v $(output)-$(version)/ArrayList
-	rm -r -v $(output)-$(version)/BFS
-	rm -r -v $(output)-$(version)/PA
+	#-rm -r -v $(foreach lib,$(libs),$(output)-$(version)/$(lib))
+	#rm -r -v $(output)-$(version)/ArrayList
+	#rm -r -v $(output)-$(version)/BFS
+	#rm -r -v $(output)-$(version)/PA
 #	-rmdir -v $(output)-$(version)/BFS
 #	-rmdir -v $(output)-$(version)/PA
 #	-rm -r -v $(output)-$(version)
@@ -226,21 +226,24 @@ installcheck:
 print:
 	git status
 	ar -T -t $(libdir)/libpa.a
-shar:
-dist: lib/ lib/PA lib/BFS lib/ArrayList $(objects_pa) $(objects_bfs) $(objects_arraylist) $(libs)
-	mkdir $(output)-$(version)
-	mkdir $(output)-$(version)/PA
-	mkdir $(output)-$(version)/BFS
-	mkdir $(output)-$(version)/ArrayList
+share:
+dist: lib/ lib/PA lib/BFS lib/ArrayList $(objects_pa) $(objects_bfs) $(objects_arraylist) $(libs) $(output).tar.gz
+	#tar cvf libpa.tar.gz $(libdir)/libpa.a
+
+check: $(program_test_pa) $(program_test_pointers_pa)
+	@echo "Testing"
+	./bin/$(program_test_pointers_pa)
+
+$(output).tar.gz:
+	mkdir -v $(output)-$(version)
+	mkdir -v $(output)-$(version)/PA
+	mkdir -v $(output)-$(version)/BFS
+	mkdir -v $(output)-$(version)/ArrayList
 	cp -r -v lib/PA/ $(output)-$(version)/PA
 	cp -r -v lib/BFS/ $(output)-$(version)/BFS
 	cp -r -v lib/ArrayList/ $(output)-$(version)/ArrayList
 	cp -r -v $(foreach lib,$(libs),./lib/$(lib)) $(output)-$(version)
 	tar --gzip --create --verbose --file $(output).tar.gz $(output-version) $(output)-$(version)/$(dir $(obj))
-	tar cvf libpa.tar.gz $(libdir)/libpa.a
-check: $(program_test_pa) $(program_test_pointers_pa)
-	@echo "Testing"
-	./bin/$(program_test_pointers_pa)
 
 test:
 ifeq ($(host-type), arm64)
@@ -421,7 +424,7 @@ objects_test_arraylist=
 # 	src/PA/Arrow.i
 # 	src/PA/Feature.i
 
-distclean:
+distclean: dist
 	-rm $(foreach source,$(sources_pa),$(srcdir)/$(source))
 	-rm $(foreach source,$(sources_test_pa),$(srcdir)/$(source))
 # 	rm $(foreach source,$(sources_bfs),$(srcdir)/$(source))
