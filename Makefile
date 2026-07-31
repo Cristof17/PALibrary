@@ -151,32 +151,32 @@ mostlyclean:
 # 	-rm $(sources_pa)
 #
 maintainer-clean:
-	rm -v $(foreach object,$(objects_pa),$(libdir)/$(object))
-	rm -v $(foreach object,$(objects_bfs),$(libdir)/$(object))
-	rm -v $(foreach object,$(objects_arraylist),$(libdir)/$(object))
-	rm -v $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
-	rm -v $(foreach assembly,$(assemblies_bfs),$(srcdir)/$(assembly))
-	rm -v $(foreach assembly,$(assemblies_arraylist),$(srcdir)/$(assembly))
-	rm -v $(foreach source,$(sources_pa),$(srcdir)/$(source))
-	rm -v $(foreach source,$(sources_bfs),$(srcdir)/$(source))
-	rm -v $(foreach source,$(sources_arraylist),$(srcdir)/$(source))
-	rm -v $(libdir)/$(lib_pa)
-	rm -v $(libdir)/$(lib_arraylist)
-	rm -v $(libdir)/$(lib_bfs)
-	rm -v $(foreach test,$(sources_test_pa),$(srcdir)/$(test))
-	rm -v $(foreach test,$(assemblies_test_pa),$(srcdir)/$(test))
-	rm -v $(foreach test,$(objects_test_pa),$(libdir)/$(test))
-	rm -v $(foreach test,$(program_test_pa),$(bindir)/$(test))
-	rm -v $(foreach test,$(program_test_pointers_pa),$(bindir)/$(test))
-	rm -v $(foreach lib,$(output),$(libdir)/$(lib).a)
-	rm -v $(output).tar.gz 
-	rm -r -v $(foreach lib,$(libs),$(output)-$(version)/$(lib))
-	rm -r -v $(output)-$(version)/ArrayList
-	rm -r -v $(output)-$(version)/BFS
-	rm -r -v $(output)-$(version)/PA
-	rmdir -v $(output)-$(version)/BFS
-	rmdir -v $(output)-$(version)/PA
-	rm -v $(output)-$(version)
+	-rm -v $(foreach object,$(objects_pa),$(libdir)/$(object))
+	-rm -v $(foreach object,$(objects_bfs),$(libdir)/$(object))
+	-rm -v $(foreach object,$(objects_arraylist),$(libdir)/$(object))
+	-rm -v $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
+	-rm -v $(foreach assembly,$(assemblies_bfs),$(srcdir)/$(assembly))
+	-rm -v $(foreach assembly,$(assemblies_arraylist),$(srcdir)/$(assembly))
+	-rm -v $(foreach source,$(sources_pa),$(srcdir)/$(source))
+	-rm -v $(foreach source,$(sources_bfs),$(srcdir)/$(source))
+	-rm -v $(foreach source,$(sources_arraylist),$(srcdir)/$(source))
+	-rm -v $(libdir)/$(lib_pa)
+	-rm -v $(libdir)/$(lib_arraylist)
+	-rm -v $(libdir)/$(lib_bfs)
+	-rm -v $(foreach test,$(sources_test_pa),$(srcdir)/$(test))
+	-rm -v $(foreach test,$(assemblies_test_pa),$(srcdir)/$(test))
+	-rm -v $(foreach test,$(objects_test_pa),$(libdir)/$(test))
+	-rm -v $(foreach test,$(program_test_pa),$(bindir)/$(test))
+	-rm -v $(foreach test,$(program_test_pointers_pa),$(bindir)/$(test))
+	-rm -v $(foreach lib,$(output),$(libdir)/$(lib).a)
+	-rm -v $(output).tar.gz 
+	-rm -r -v $(foreach lib,$(libs),$(output)-$(version)/$(lib))
+	-rm -r -v $(output)-$(version)/ArrayList
+	-rm -r -v $(output)-$(version)/BFS
+	-rm -r -v $(output)-$(version)/PA
+	-rmdir -v $(output)-$(version)/BFS
+	-rmdir -v $(output)-$(version)/PA
+	-rm -r -v $(output)-$(version)
 # 	-rm $(libdir)/libpa.a
 # 	-rm $(sources_pa)
 # 	-rm $(sources_bfs)
