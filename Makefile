@@ -151,6 +151,8 @@ mostlyclean:
 # 	-rm $(sources_pa)
 #
 maintainer-clean:
+	@echo 'This command is intended for maintainers to use; it'
+	@echo 'deletes files that may need special tools to rebuild.'
 	-rm -v $(foreach object,$(objects_pa),$(libdir)/$(object))
 	-rm -v $(foreach object,$(objects_bfs),$(libdir)/$(object))
 	-rm -v $(foreach object,$(objects_arraylist),$(libdir)/$(object))
@@ -160,9 +162,9 @@ maintainer-clean:
 	-rm -v $(foreach source,$(sources_pa),$(srcdir)/$(source))
 	-rm -v $(foreach source,$(sources_bfs),$(srcdir)/$(source))
 	-rm -v $(foreach source,$(sources_arraylist),$(srcdir)/$(source))
-	-rm -v $(libdir)/$(lib_pa)
-	-rm -v $(libdir)/$(lib_arraylist)
-	-rm -v $(libdir)/$(lib_bfs)
+	#-rm -v $(libdir)/$(lib_pa)
+	#-rm -v $(libdir)/$(lib_arraylist)
+	#-rm -v $(libdir)/$(lib_bfs)
 	-rm -v $(foreach test,$(sources_test_pa),$(srcdir)/$(test))
 	-rm -v $(foreach test,$(assemblies_test_pa),$(srcdir)/$(test))
 	-rm -v $(foreach test,$(objects_test_pa),$(libdir)/$(test))
@@ -171,12 +173,12 @@ maintainer-clean:
 	-rm -v $(foreach lib,$(output),$(libdir)/$(lib).a)
 	-rm -v $(output).tar.gz 
 	-rm -r -v $(foreach lib,$(libs),$(output)-$(version)/$(lib))
-	-rm -r -v $(output)-$(version)/ArrayList
-	-rm -r -v $(output)-$(version)/BFS
-	-rm -r -v $(output)-$(version)/PA
-	-rmdir -v $(output)-$(version)/BFS
-	-rmdir -v $(output)-$(version)/PA
-	-rm -r -v $(output)-$(version)
+	rm -r -v $(output)-$(version)/ArrayList
+	rm -r -v $(output)-$(version)/BFS
+	rm -r -v $(output)-$(version)/PA
+#	-rmdir -v $(output)-$(version)/BFS
+#	-rmdir -v $(output)-$(version)/PA
+#	-rm -r -v $(output)-$(version)
 # 	-rm $(libdir)/libpa.a
 # 	-rm $(sources_pa)
 # 	-rm $(sources_bfs)
@@ -225,7 +227,7 @@ print:
 	git status
 	ar -T -t $(libdir)/libpa.a
 shar:
-dist: $(objects_pa) $(objects_bfs) $(objects_arraylist) $(libs)
+dist: lib/ lib/PA lib/BFS lib/ArrayList $(objects_pa) $(objects_bfs) $(objects_arraylist) $(libs)
 	mkdir $(output)-$(version)
 	mkdir $(output)-$(version)/PA
 	mkdir $(output)-$(version)/BFS
@@ -236,15 +238,17 @@ dist: $(objects_pa) $(objects_bfs) $(objects_arraylist) $(libs)
 	cp -r -v $(foreach lib,$(libs),./lib/$(lib)) $(output)-$(version)
 	tar --gzip --create --verbose --file $(output).tar.gz $(output-version) $(output)-$(version)/$(dir $(obj))
 	tar cvf libpa.tar.gz $(libdir)/libpa.a
-check:
+check: $(program_test_pa) $(program_test_pointers_pa)
+	@echo "Testing"
+	./bin/$(program_test_pointers_pa)
+
 test:
 ifeq ($(host-type), arm64)
 	file ./lib/libpa.a
 endif
 
 test_pa_arm64: 
-	./bin/$(program_test_pa)
-#ifeq ($(host-type),arm64)
+	#ifeq ($(host-type),arm64)
 ##	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 #endif
 #ifeq ($(host-type),x86_64)
@@ -513,8 +517,6 @@ link_algorithm: $(output_algorithm) $(link_test_algorithm)
 
 run_pa: $(test_pa)
 
-link_test_pa: $(objects_test_pa) $(output_pa)
-	@echo "Testing"
 #${MAKE} $(designs_pa) 
 #${MAKE} $(sources_pa)
 #${MAKE} $(objects_pa)
