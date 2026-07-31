@@ -2,15 +2,23 @@
 #ifndef INCLUDE_OBJECT_H
 #define INCLUDE_OBJECT_H	1
 
-// #include "../defs.h"
-// #include "../types.h"
 #include <defs.h>
 #include <types.h>
+#include <stdlib.h>
+#include <string.h>
+
+#ifndef _WIN95
+#include <PA\Object.h>
+#elif defined _WIN95
+#include <PA/Object.h>
+#endif
+// #include "../defs.h"
+// #include "../types.h"
 
 // struct PATree;
 // struct PATree PATreeConstruct(struct OPAResult);
 // DllExport Memory PATreeCreate(size_t size);
-DllExport static PAObject PAObjectPerformCopy(PAObject, PAObject, size_t);
+DllExport PAObject PAObjectPerformCopy(PAObject, PAObject, size_t);
 // DllExport struct PACount PATreeSize();
 // DllExport PATree PATreeBegin(PATree, PACount N, PACount M, PASeries adj, PAElement source);
 // DllExport HRESULT PATreePerformCopy();
