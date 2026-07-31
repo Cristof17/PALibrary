@@ -410,19 +410,27 @@ objects_test_arraylist=
 # 	src/PA/Feature.i
 
 distclean:
-	rm $(foreach source,$(sources_pa),$(srcdir)/$(source))
-	rm $(foreach source,$(sources_test_pa),$(srcdir)/$(source))
+	-rm $(foreach source,$(sources_pa),$(srcdir)/$(source))
+	-rm $(foreach source,$(sources_test_pa),$(srcdir)/$(source))
 # 	rm $(foreach source,$(sources_bfs),$(srcdir)/$(source))
 # 	rm $(foreach source,$(sources_arraylist),$(srcdir)/$(source))
-	rm $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
-	rm $(foreach assembly,$(assemblies_test_pa),$(srcdir)/$(assembly))
+	-rm $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
+	-rm $(foreach assembly,$(assemblies_test_pa),$(srcdir)/$(assembly))
 # 	rm $(foreach assembly,$(assemblies_bfs),$(srcdir)/$(assembly))
 # 	rm $(foreach assembly,$(assemblies_arraylist),$(srcdir)/$(assembly))
-	rm $(foreach object,$(objects_pa),$(libdir)/$(object))
-	rm $(foreach object,$(objects_test_pa),$(libdir)/$(object))
+	-rm $(foreach object,$(objects_pa),$(libdir)/$(object))
+	-rm $(foreach object,$(objects_test_pa),$(libdir)/$(object))
 # 	rm $(foreach object,$(objects_bfs),$(libdir)/$(object))
 # 	rm $(foreach object,$(objects_arraylist),$(libdir)/$(object))
-	rm $(foreach program,$(program_test_pointers_pa),$(bindir)/$(program))
+	-rm $(foreach program,$(program_test_pointers_pa),$(bindir)/$(program))
+	-rm $(output).tar.gz
+	-rm -r $(foreach obj,$(objects_pa),$(output)-$(version)/$(obj))
+	-rm -r $(foreach obj,$(objects_bfs),$(output)-$(version)/$(obj))
+	-rm -r $(foreach obj,$(objects_arraylist),$(output)-$(version)/$(obj))
+	-rmdir $(output)-$(version)/PA
+	-rmdir $(output)-$(version)/BFS
+	-rmdir $(output)-$(version)/ArrayList
+	-rmdir $(output)-$(version)
 
 objdirs= $(libdir)/ \
 	$(libdir)/BFS/ \
