@@ -201,6 +201,9 @@ install: $(subdirs)
 	$(srcdir)/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
 	-cp -v $(foreach lib,$(libs),$(lib)) $(libdir)
 	ls -l $(foreach lib,$(libs),$(lib))
+
+install-strip:
+	strip $(foreach lib,$(libs),$(lib))
 # 	mkdir $(subdirs)
 #	cp out/libpa.a $(libdir)
 #	cp -r obj/*.o $(libdir)
