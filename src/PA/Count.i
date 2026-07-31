@@ -2392,13 +2392,9 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 39 "src/PA/Count.c"
     return count;
 }
-          PACount PACountPerformInit(PACount count, PAInt* Count,PASize size)
+          PACount PACountPerformInit(PACount count, PAInt* value,PASize size)
 {
     PAMemory aux;
-    aux = PAMemoryPerformConstruct(sizeof(struct PACount));
-    aux = PAObjectPerformCopy(Count,aux,size->value[0]);
-    count->number = PAObjectPerformCopy(aux,count->number,size->value[0]);
-    int returnCode = PAMemoryPerformRuin(aux);
 # 78 "src/PA/Count.c"
     return count;
 }

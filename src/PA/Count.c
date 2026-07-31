@@ -41,10 +41,10 @@ DllExport PACount PACountPerformConstruct(size_t size)
 DllExport PACount PACountPerformInit(PACount count, PAInt* value,PASize size)
 {
     PAMemory aux;
-    aux = PAMemoryPerformConstruct(sizeof(PAInt));
-    aux = PAObjectPerformCopy(count,aux,size->value[0]);
-    count->number = PAObjectPerformCopy((PAObject)aux,count->number,size->value[0]);
-    int returnCode = PAMemoryPerformRuin(aux);
+    // aux = PAMemoryPerformConstruct(sizeof(PAInt));
+    // aux = PAObjectPerformCopy(count,aux,size->value[0]);
+    // count->number = PAObjectPerformCopy((PAObject)aux,count->number,size->value[0]);
+    // int returnCode = PAMemoryPerformRuin(aux);
     // to = PAObjectCo 
     // PAMemory to = (PAMemory) count->number;
     // PAMemory from = (PAMemory) Count;
