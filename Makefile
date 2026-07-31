@@ -199,7 +199,7 @@ clobber:
 
 install: $(subdirs)
 	$(srcdir)/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
-	$(foreach lib,$(libs),cp -v $(lib) $(libdir))
+	cp -v $(foreach lib,$(libs),$(lib)) $(libdir)
 # 	mkdir $(subdirs)
 #	cp out/libpa.a $(libdir)
 #	cp -r obj/*.o $(libdir)
