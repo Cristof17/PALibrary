@@ -1592,8 +1592,8 @@ struct ArrayListObject {
 };
 typedef struct PASize {
 
- size_t* value;
- size_t* digits;
+ char* value;
+ char* digits;
 }* PASize;
 typedef struct ArrayList {
 
@@ -2089,16 +2089,33 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
+          size_t PASizeSize(size_t field_size)
+{
+ return field_1_size + field_2_size;
+}
 
-          PAMemory PASizePerformConstruct(size_t size){
-    PAMemory sizeStruct;
-    sizeStruct = PAMemoryPerformConstruct(sizeof(struct PASize));
+          PAMemory PASizePerformAlloc(size_t size)
+{
+    PAMemory address;
+    size_t totalSize;
+    totalSize = PASizeSize(size);
+    address = malloc (totalSize);
+    return address;
+}
+
+          PASize PASizePerformConstruct(int value) {
+
+
+
+    PAMemory size;
+    size = PASizePerformAlloc(sizeof(size_t));
+    size = PASizePerformInit(value);
 
     return sizeStruct;
 }
-          PASize PASizePerformInit(PASize Size, size_t* value, size_t digits)
+          PASize PASizePerformInit(PASize Size, int value)
 {
-    struct PASize* aux;
+    PASize aux;
     aux = (struct PASize*) malloc (sizeof(struct PASize));
     aux->value = (size_t*) malloc (sizeof(size_t)*digits);
 

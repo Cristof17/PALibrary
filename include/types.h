@@ -192,8 +192,8 @@ struct ArrayListObject {
 };
 typedef struct PASize {
 	// size_t valie;
-	size_t* value;
-	size_t* digits;
+	char* value;
+	char* digits;
 }* PASize;
 typedef struct ArrayList {
 	// struct Position position;

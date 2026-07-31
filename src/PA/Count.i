@@ -1595,8 +1595,8 @@ struct ArrayListObject {
 };
 typedef struct PASize {
 
- size_t* value;
- size_t* digits;
+ char* value;
+ char* digits;
 }* PASize;
 typedef struct ArrayList {
 
@@ -2478,9 +2478,9 @@ PAResult PACountPrint(struct PACount* Count)
     return result;
 }
 
-size_t PACountSize()
+PASize PACountSize()
 {
-    size_t size;
+    PASize size;
     size = sizeof(PAInt);
     return size;
 }
