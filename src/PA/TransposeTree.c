@@ -7,10 +7,12 @@
 #ifndef _WIN95
 #include <PA/TransposeTree.h>
 #include <PA/Tree.h>
+#include <PA/Memory.h>
 // #include <defs.h>
 #elif defined _WIN95
 #include <PA\TransposeTree.h>
 #include <PA\Tree.h>
+#include <PA\Memory.h>
 
 #endif
 DllExport PAMemory PATransposeTreePerformConstruct(size_t size)

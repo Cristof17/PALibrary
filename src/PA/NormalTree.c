@@ -4,9 +4,11 @@
 #ifndef _WIN95
 #include <PA/NormalTree.h>
 #include <PA/Tree.h>
+#include <PA/Memory.h>
 #elif defined _WIN95
 #include <PA\NormalTree.h>
 #include <PA\Tree.h>
+#include <PA\Memory.h>
 #endif
 
 DllExport PAMemory PANormalTreePerformConstruct(size_t size)

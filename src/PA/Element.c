@@ -6,10 +6,12 @@
 #include <PA/Element.h>
 #include <PA/Data.h>
 #include <PA/Status.h>
+#include <PA/Memory.h>
 #elif defined _WIN95
 #include <PA\Element.h>
 #include <PA\Data.h>
 #include <PA\Status.h>
+#include <PA\Memory.h>
 #endif
 
 // #include <types.h>

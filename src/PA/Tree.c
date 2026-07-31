@@ -4,11 +4,13 @@
 #include <PA/Count.h>
 #include <PA/Element.h>
 #include <PA/List.h>
+#include <PA/Memory.h>
 #elif defined _WIN95
 #include <PA\Tree.h>
 #include <PA\Count.h>
 #include <PA\Element.h>
 #include <PA\List.h>
+#include <PA\Memory.h>
 #endif
 // #include <types.h>
 // DllExport struct PACount PATreeSize()

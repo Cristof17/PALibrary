@@ -4,9 +4,11 @@
 #ifndef _WIN95
 #include <PA/Output.h>
 #include <BFS/Record.h>
+#include <PA/Memory.h>
 #elif defined _WIN95
 #include <PA\Output.h>
 #include <BFS\Record.h>
+#include <PA\Memory.h>
 #endif
 
 // #include <defs.h>

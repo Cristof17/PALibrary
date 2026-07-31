@@ -5,9 +5,11 @@
 #ifndef _WIN95
 #include <PA/Pair.h>
 #include <PA/Element.h>
+#include <PA/Memory.h>
 #elif defined _WIN95
 #include <PA\Pair.h>
 #include <PA\Element.h>
+#include <PA\Memory.h>
 #endif
 
 DllExport PAMemory PAPairPerformConstruct(size_t size)

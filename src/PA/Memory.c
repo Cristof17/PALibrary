@@ -2,7 +2,7 @@
 // #include <stdlib.h>
 // #include <types.h>
 #ifndef _WIN95
-#include <memory.h>
+#include <PA/Memory.h>
 #include <defs.h>
 #include <types.h>
 // #include <PA/Number.h>

@@ -7,11 +7,13 @@
 #include <PA/List.h>
 #include <PA/Count.h>
 #include <PA/Series.h>
+#include <PA/Memory.h>
 // #include <ArrayList/ArrayList.h>
 #elif defined _WIN95
 #include <PA\List.h>
 #include <PA\Count.h>
 #include <PA\Series.h>
+#include <PA\Memory.h>
 // #include <ArrayList/ArrayList.h>
 #endif
 

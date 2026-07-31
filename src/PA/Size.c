@@ -2,8 +2,10 @@
 #ifndef _WIN95
 // #define
 #include <PA/Size.h>
+#include <PA/Memory.h>
 #elif defined _WIN95
 #include <PA\Size.h>
+#include <PA\Memory.h>
 #endif
 
 DllExport PAMemory PASizePerformConstruct(size_t size){

@@ -2,9 +2,11 @@
 #ifndef _WIN95
 #include <PA/Data.h>
 #include <PA/Resource.h>
+#include <PA/Memory.h>
 #elif defined _WIN95
 #include <PA\Data.h>
 #include <PA\Resource.h>
+#include <PA\Memory.h>
 #endif
 //typedef struct PAData PAData;
 //struct PAData {

@@ -7,9 +7,11 @@
 #ifndef _WIN95
 #include <PA/Link.h>
 #include <PA/Pair.h>
+#include <PA/Memory.h>
 #elif defined _WIN95
 #include <PA\Link.h>
 #include <PA\Pair.h>
+#include <PA\Memory.h>
 #endif
 
 // DllExport struct PALink* PALinkCreate(struct )

@@ -5,9 +5,11 @@
 #ifndef _WIN95
 #include <PA/Status.h>
 #include <PA/Resource.h>
+#include <PA/Memory.h>
 #elif defined _WIN95
 #include <PA\Status.h>
 #include <PA\Resource.h>
+#include <PA\Memory.h>
 #endif
 // DllExport void PAStatusCause(PABool visited)
 // {

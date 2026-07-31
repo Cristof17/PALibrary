@@ -8,10 +8,12 @@
 #include <PA/Input.h>
 #include <PA/Count.h>
 #include <PA/Element.h>
+#include <PA/Memory.h>
 #elif defined _WIN95
 #include <PA\Input.h>
 #include <PA\Count.h>
 #include <PA\Element.h>
+#include <PA\Memory.h>
 #endif
 DllExport PAMemory PAInputPerformConstruct(size_t size)
 {
