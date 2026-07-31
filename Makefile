@@ -48,7 +48,7 @@ srcdir=
 output=libpa.a
 program_test_pa= test.out
 program_test_pointers_pa= test_pointers.out
-all: preprocess assemble compile $(program_test_pa) $(program_test_pointers_pa)
+all: preprocess assemble compile $(program_test_pa) $(program_test_pointers_pa) $(lib_pa)
 # preprocess: $(sources)
 preprocess: preprocess_pa 
 #preprocess_bfs preprocess_arraylist

@@ -1,10 +1,17 @@
-# 1 "src/BFS/Record.c"
+# 1 "src/PA/Data.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/BFS/Record.c" 2
+# 1 "src/PA/Data.c" 2
+
+
+# 1 "./include/PA/Data.h" 1
+
+
+
+
 
 
 # 1 "./include/types.h" 1
@@ -1840,19 +1847,10 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 4 "src/BFS/Record.c" 2
-
-
-# 1 "./include/PA/List.h" 1
-
-
-
-
-
-
+# 8 "./include/PA/Data.h" 2
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/List.h" 2
+# 10 "./include/PA/Data.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 1 3 4
@@ -2052,81 +2050,36 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 2 3 4
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
-# 10 "./include/PA/List.h" 2
-# 1 "./include/PA/Memory.h" 1
+# 11 "./include/PA/Data.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
+# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
+# 12 "./include/PA/Data.h" 2
 
 
 
 
+          PAData PACountPerformCreate(PAData Data);
+          static Object PADataPerformCopy(Object from, Object to, size_t);
 
 
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Memory.h" 2
-
-
-
-
-
-
-          PAMemory PAMemoryPerformCreate(size_t size);
-          int PAMemoryPerformFinish(PAMemory);
-# 11 "./include/PA/List.h" 2
-
-
-
-
-
-
-
-          PAMemory PAListPerformConstruct(size_t);
-
-
-
-          static Object PAListPerformCopy(Object, Object, size_t);
-          int PAListPerformDelete(PAList);
-
-
-void PAListPrint(struct PAList* List);
-# 7 "src/BFS/Record.c" 2
-# 1 "./include/PA/Count.h" 1
-
-
+          int PADataPerformRuin(PAMemory);
+# 4 "src/PA/Data.c" 2
+# 1 "./include/PA/Resource.h" 1
 
 
 
 
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Count.h" 2
-
-
-
-
-
-
-          static Object PACountPerformCopy(Object, Object, size_t);
-          PACount PACountPerformInit(PACount, PAInt* value, PASize size);
-          int PACountPerformDelete(PACount PA);
-# 8 "src/BFS/Record.c" 2
-# 1 "./include/PA/Result.h" 1
-# 9 "src/BFS/Record.c" 2
-# 1 "./include/BFS/Record.h" 1
-
-
-
-
-
-
-
-          struct BFSRecord* BFSRecordCreate();
-          struct BFSRecord* BFSRecordBegin(struct BFSRecord*, struct PAList* d, struct PACount* n);
-          struct BFSRecord* BFSRecordCopy(struct BFSRecord* from, struct BFSRecord* to);
-
-          struct BFSRecord BFSRecordDelete(struct BFSRecord*);
-          int BFSRecordFinish(struct BFSRecord*);
-          void BFSRecordPrint(struct BFSRecord*);
-# 10 "src/BFS/Record.c" 2
+# 7 "./include/PA/Resource.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
+# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
+# 8 "./include/PA/Resource.h" 2
+# 5 "src/PA/Data.c" 2
 
 
 
@@ -2135,35 +2088,74 @@ void PAListPrint(struct PAList* List);
 
 
 
-          struct BFSRecord* BFSRecordCreate()
+          PAMemory PADataPerformConstruct(size_t size)
 {
-    struct BFSRecord* recordPointer;
-    recordPointer = (struct BFSRecord*) malloc (sizeof(struct BFSRecord));
-    return recordPointer;
+
+
+    PAMemory data;
+    data = malloc (size);
+# 44 "src/PA/Data.c"
+    return data;
 }
+          PAData PADataPerformInit(PAData Data)
+{
+# 67 "src/PA/Data.c"
+    return Data;
 
-          int BFSRecordFinish(struct BFSRecord* PA)
-{
-    free(PA);
-    return ((int)0);
-}
-          struct BFSRecord BFSRecordDelete(struct BFSRecord* PA)
-{
-    struct BFSRecord record;
-    return record;
-}
-          void BFSRecordPrint(struct BFSRecord* PA)
-{
+
+
+
 
 }
-          struct BFSRecord* BFSRecordBegin(struct BFSRecord* Record, struct PAList* d, struct PACount* n)
+          static Object PADataPerformCopy(Object from, Object to, size_t size)
 {
-    struct BFSRecord* record;
-    return record;
-}
-          struct BFSRecord* BFSRecordCopy(struct BFSRecord* from, struct BFSRecord* to)
-{
-    struct BFSRecord* record;
 
+    PAMemory aux;
+
+    aux = malloc(size);
+
+    __builtin___memcpy_chk (aux, from,size, __builtin_object_size (aux, 0));
+    __builtin___memcpy_chk (to, aux,size, __builtin_object_size (to, 0));
+
+
+
+    free(aux);
     return to;
+# 96 "src/PA/Data.c"
+}
+# 114 "src/PA/Data.c"
+          int PADataPerformDelete(PAData PA)
+{
+    int returnCode;
+
+    __builtin___memset_chk(PA->Resource->value, 0, sizeof(PAInt), __builtin_object_size (PA->Resource->value, 0));
+    __builtin___memset_chk(PA->Resource, 0, sizeof(struct PAResource), __builtin_object_size (PA->Resource, 0));
+    __builtin___memset_chk(PA, 0, sizeof(struct PAData), __builtin_object_size (PA, 0));
+
+    return ((int)0);
+
+
+
+
+
+
+}
+          int PADataPerformFinish(PAMemory PA)
+{
+
+
+
+
+    int returnCode;
+
+
+    free(PA);
+    returnCode = ((int)0);
+
+
+    return returnCode;
+
+
+
+
 }

@@ -1,20 +1,26 @@
-# 1 "src/BFS/Procedure.c"
+# 1 "src/PA/Size.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/BFS/Procedure.c" 2
+# 1 "src/PA/Size.c" 2
 
 
+
+# 1 "./include/PA/Size.h" 1
+
+
+
+# 1 "./include/defs.h" 1
+# 5 "./include/PA/Size.h" 2
 # 1 "./include/types.h" 1
 
 
 
 
 
-# 1 "./include/defs.h" 1
-# 7 "./include/types.h" 2
+
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 1 3 4
@@ -1840,61 +1846,9 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 4 "src/BFS/Procedure.c" 2
-# 1 "./include/Algorithm.h" 1
-
-
-
-
-
-
-
-
+# 6 "./include/PA/Size.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 10 "./include/Algorithm.h" 2
-# 1 "./include/Input.h" 1
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 8 "./include/Input.h" 2
-
-
-
-
-
-          struct Input* InputCreate();
-          struct Input InputCopy(struct Input*, struct Input*);
-          struct Input InputDelete(struct Input*);
-          int InputFinish(struct Input*);
-
-          void InputDispose();
-# 11 "./include/Algorithm.h" 2
-
-
-          struct Algorithm* AlgorithmCreate();
-          int AlgorithmFinish(struct Algorithm*);
-          struct Algorithm AlgorithmDelete(struct Algorithm*);
-          struct Algorithm AlgorithmCopy(struct Algorithm* from, struct Algorithm* to);
-          struct Output AlgorithmPerformRun(struct Input);
-# 5 "src/BFS/Procedure.c" 2
-
-
-
-# 1 "./include/PA/Tree.h" 1
-
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 10 "./include/PA/Tree.h" 2
+# 7 "./include/PA/Size.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 1 3 4
@@ -2094,136 +2048,58 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 2 3 4
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
-# 11 "./include/PA/Tree.h" 2
+# 8 "./include/PA/Size.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
 # 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
-# 12 "./include/PA/Tree.h" 2
+# 9 "./include/PA/Size.h" 2
+# 18 "./include/PA/Size.h"
+          int PASizePerformDelete(PASize PA);
+
+          struct PASize* PASizePerformBegin(PASize, size_t* digits, size_t num_digits);
+# 5 "src/PA/Size.c" 2
 
 
 
 
-          static Object PATreePerformCopy(Object, Object, size_t);
-
-          PATree PATreePerformBegin(PATree, PACount N, PACount M, PASeries adj, PAElement source);
-
-
-
-
-
-          int PATreePerformDelete(PATree);
-# 9 "src/BFS/Procedure.c" 2
-# 1 "./include/PA/Element.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Element.h" 2
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
-# 10 "./include/PA/Element.h" 2
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
-# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
-# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
-# 11 "./include/PA/Element.h" 2
-
-
-
-          PAElement PAElementPerformConstruct(PAElement,PAData, PAElement, PAStatus);
-          static Object PAElementPerformCopy(Object, Object, size_t);
-          int PAElementPerformDelete(PAElement);
-
-          void PAElementVisit(PAElement);
-          PABool PAElementIsVisited(PAElement);
-          void PAElementReset(PAElement);
-# 10 "src/BFS/Procedure.c" 2
-# 1 "./include/BFS/Procedure.h" 1
-
-
-
-
-
-
-
-          PAResult BFS();
-          struct BFSProcedure BFSProcedureConstruct(struct PAInput);
-          struct BFSProcedure BFSProcedurePutInput(struct BFSProcedure, struct PAInput);
-
-
-
-          PAResult BFSProcedureRuin();
-          PAResult BFSProcedureSubroutine();
-# 11 "src/BFS/Procedure.c" 2
-
-# 1 "./include/PA/Input.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Input.h" 2
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
-# 10 "./include/PA/Input.h" 2
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
-# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
-# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
-# 11 "./include/PA/Input.h" 2
-
-
-
-
-
-          PAMemory PAInputPerformConstruct(size_t);
-
-
-          static Object PAInputPerformCopy(Object,Object, size_t);
-
-
-
-          int PAInputPerformDelete(PAInput);
-# 13 "src/BFS/Procedure.c" 2
-# 26 "src/BFS/Procedure.c"
-PAResult BFS()
-{
-    PAResult result;
-    return result;
-
-
+          PAMemory PASizePerformConstruct(size_t size){
+    PAMemory sizeStruct;
+    sizeStruct = malloc (size);
+    return sizeStruct;
 }
-struct BFSProcedure BFSProcedureConstruct(struct PAInput Input)
-
+          PASize PASizePerformInit(PASize Size, size_t* value, size_t digits)
 {
-    struct BFSProcedure procedure;
-    return procedure;
+    struct PASize* aux;
+    aux = (struct PASize*) malloc (sizeof(struct PASize));
+    aux->value = (size_t*) malloc (sizeof(size_t)*digits);
+
+
+    __builtin___memcpy_chk (aux, Size,sizeof(struct PASize), __builtin_object_size (aux, 0));
+    __builtin___memcpy_chk (aux->value, value,digits, __builtin_object_size (aux->value, 0));
+    __builtin___memcpy_chk (aux, Size,sizeof(struct PASize), __builtin_object_size (aux, 0));
+    __builtin___memcpy_chk (Size->value, aux->value,digits, __builtin_object_size (Size->value, 0));
+
+
+
+
+
+    free(aux->value);
+    free(aux);
+    return Size;
 }
 
-struct BFSProcedure BFSProcedurePutTree(struct BFSProcedure Procedure, struct PATree Tree)
+          int PASizePerformDelete(struct PASize* PA)
 {
-    struct BFSProcedure procedure;
-    return procedure;
+    int returnCode = ((int)0);
+    __builtin___memset_chk(PA->value, 0, sizeof(size_t), __builtin_object_size (PA->value, 0));
+    __builtin___memset_chk(PA, 0, sizeof(struct PASize), __builtin_object_size (PA, 0));
+    return returnCode;
 }
-struct BFSProcedure BFSProcedurePutInput(struct BFSProcedure Procedure, struct PAInput Input)
+          int PASizePerformRuin(PAMemory PA)
 {
-    struct BFSProcedure procedure;
-    return procedure;
-}
-
-PAResult BFSProcedureRuin()
-{
-    PAResult result;
-    return result;
-}
-PAResult BFSProcedureSubroutine()
-{
-    PAResult result;
-    return result;
+    int returnCode;
+    returnCode = ((int)0);
+    free(PA);
+    return returnCode;
 }
