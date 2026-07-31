@@ -211,7 +211,6 @@ clobber:
 install: $(subdirs)
 	$(srcdir)/mkinstalldirs $(DESTDIR)/$(bindir) $(DESTDIR)/$(datadir) $(DESTDIR)/$(libdir) $(DESTDIR)/$(infodir) $(DESTDIR)/$(mandir)
 	-cp -v $(foreach lib,$(libs),./lib/$(lib)) $(libdir)
-	ls -l $(foreach lib,$(libs),$(libdir)/$(lib))
 
 install-strip:
 	strip $(foreach lib,$(libs),$(libdir)/$(lib))
@@ -221,6 +220,7 @@ install-strip:
 #
 installcheck:
 	ls $(foreach subdir,$(subdirs),$(subdir))
+	ls $(foreach lib,$(libs),$(libdir)/$(lib))
 #	ls $(libdir) | grep libpa.a
 #	ls $(libdir) | grep $(objects)/PA
 print:
