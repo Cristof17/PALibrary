@@ -221,10 +221,11 @@ tar: $(objects_pa) $(objects_arraylist) $(objects_bfs) $(libs)
 	mkdir $(output)-$(version)/PA
 	mkdir $(output)-$(version)/BFS
 	mkdir $(output)-$(version)/ArrayList
-	cp -r -v $(foreach obj,$(objects_pa),lib/$(obj)) $(output)-$(version)/PA
-	cp -r -v $(foreach obj,$(objects_arraylist),lib/$(obj)) $(output)-$(version)/ArrayList
-	cp -r -v $(foreach obj,$(objects_bfs),lib/$(obj)) $(output)-$(version)/BFS
-	tar --gzip --create --verbose --file $(output).tar.gz $(output-version) $(output)-$(version)
+	cp -r -v lib/PA/ $(output)-$(version)/PA
+	cp -r -v lib/BFS/ $(output)-$(version)/BFS
+	cp -r -v lib/ArrayList/ $(output)-$(version)/ArrayList
+	cp -r -v $(foreach lib,$(libs),./lib/$(lib)) $(output)-$(version)
+	tar --gzip --create --verbose --file $(output).tar.gz $(output-version) $(output)-$(version)/$(dir $(obj))
 shar:
 dist:
 	tar cvf libpa.tar.gz $(libdir)/libpa.a
@@ -427,6 +428,7 @@ distclean:
 	-rm -r $(foreach obj,$(objects_pa),$(output)-$(version)/$(obj))
 	-rm -r $(foreach obj,$(objects_bfs),$(output)-$(version)/$(obj))
 	-rm -r $(foreach obj,$(objects_arraylist),$(output)-$(version)/$(obj))
+	-rm -r $(foreach lib,$(libs),$(output)-$(version)/$(lib))
 	-rmdir $(output)-$(version)/PA
 	-rmdir $(output)-$(version)/BFS
 	-rmdir $(output)-$(version)/ArrayList
