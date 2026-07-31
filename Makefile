@@ -199,7 +199,7 @@ realclean:
 clobber:
 
 install: $(subdirs)
-	$(srcdir)/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
+	$(srcdir)/mkinstalldirs $(DESTDIR)/$(bindir) $(DESTDIR)/$(datadir) $(DESTDIR)/$(libdir) $(DESTDIR)/$(infodir) $(DESTDIR)/$(mandir)
 	-cp -v $(foreach lib,$(libs),./lib/$(lib)) $(libdir)
 	ls -l $(foreach lib,$(libs),$(libdir)/$(lib))
 
