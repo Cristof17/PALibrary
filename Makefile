@@ -45,7 +45,7 @@ srcdir=
 #musl=@musl@
 #crt=@crt@
 #output=@output@
-libs= ./lib/libpa.a ./lib/libarraylist.a lib/libbfs.a ./lib/lib_algorithm.a
+libs= ./lib/libpa.a ./lib/libarraylist.a ./lib/libbfs.a ./lib/lib_algorithm.a
 output=libpa.a
 program_test_pa= test.out
 program_test_pointers_pa= test_pointers.out
@@ -199,7 +199,8 @@ clobber:
 
 install: $(subdirs)
 	$(srcdir)/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
-	cp -v $(foreach lib,$(libs),$(lib)) $(libdir)
+	-cp -v $(foreach lib,$(libs),$(lib)) $(libdir)
+	ls -l $(foreach lib,$(libs),$(lib))
 # 	mkdir $(subdirs)
 #	cp out/libpa.a $(libdir)
 #	cp -r obj/*.o $(libdir)
