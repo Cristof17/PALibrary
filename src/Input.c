@@ -2,17 +2,22 @@
 
 #include <Input.h>
 #ifndef _WIN95
+#include <PA/Memory.h>
 #include <ArrayList/ArrayList.h>
 #include <PA/Result.h>
 #elif defined _WIN95
+#include <PA\Memory.h>
 #include <PA\Result.h>
 #include <ArrayList\ArrayList.h>
 #endif
 #include <types.h>
+#include <defs.h>
+// #endif
 // #include <ty[].h>
 //#include <types.h>
 DllExport struct Input* InputCreate()
 {
+
     // struct Input input;
     struct Input* input;
     input = (struct Input*) malloc (sizeof(struct Input));
