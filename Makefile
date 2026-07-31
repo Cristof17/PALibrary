@@ -45,7 +45,7 @@ srcdir=
 #musl=@musl@
 #crt=@crt@
 #output=@output@
-libs= ./lib/libpa.a ./lib/libarraylist.a ./lib/libbfs.a ./lib/lib_algorithm.a
+libs= libpa.a libarraylist.a libbfs.a libalgorithm.a
 output=libpa.a
 program_test_pa= test.out
 program_test_pointers_pa= test_pointers.out
@@ -199,11 +199,11 @@ clobber:
 
 install: $(subdirs)
 	$(srcdir)/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
-	-cp -v $(foreach lib,$(libs),$(lib)) $(libdir)
-	ls -l $(foreach lib,$(libs),$(lib))
+	-cp -v $(foreach lib,$(libs),./lib/$(lib)) $(libdir)
+	ls -l $(foreach lib,$(libs),$(libdir)/$(lib))
 
 install-strip:
-	strip $(foreach lib,$(libs),$(lib))
+	strip $(foreach lib,$(libs),$(libdir)/$(lib))
 # 	mkdir $(subdirs)
 #	cp out/libpa.a $(libdir)
 #	cp -r obj/*.o $(libdir)
@@ -1315,8 +1315,10 @@ installdirs: mkinstalldirs
 
 mkinstalldirs: $(srcdir)/mkinstalldirs
 
-#uninstall:
-#	cp . .
+uninstall:
+# 	cp . .
+# 	mv
+	rm -v $(foreach lib,$(libs),$(lib))
 
 #distclean:
 #	rm asm/*
@@ -1467,7 +1469,7 @@ clean:
 # 	rm $(foreach assembly,$(assemblies_arraylist),$(srcdir)/$(assembly))
 	rm $(foreach object,$(objects_pa),$(libdir)/$(object))
 	rm $(foreach object,$(objects_test_pa),$(libdir)/$(object))
-	rm $(foreach lib,$(libs)/,$(lib))
+	rm $(foreach lib,$(libs)/,./lib/$(lib))
 # 	rm $(foreach object,$(objects_bfs),$(libdir)/$(object))
 # 	rm $(foreach object,$(objects_arraylist),$(libdir)/$(object))
 # 	rm $(bindir)/test
