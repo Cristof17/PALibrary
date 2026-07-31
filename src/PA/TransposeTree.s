@@ -13,7 +13,7 @@ _PATransposeTreePerformConstruct:       ; @PATransposeTreePerformConstruct
 	.cfi_offset w29, -16
 	str	x0, [sp, #8]
 	mov	x0, #8                          ; =0x8
-	bl	_PAMemoryPerformCreate
+	bl	_PAMemoryPerformConstruct
 	str	x0, [sp]
 	ldr	x0, [sp]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
@@ -93,7 +93,7 @@ _PATransposeTreePerformRuin:            ; @PATransposeTreePerformRuin
 	.cfi_offset w29, -16
 	str	x0, [sp, #8]
 	ldr	x0, [sp, #8]
-	bl	_PAMemoryPerformFinish
+	bl	_PAMemoryPerformRuin
 	ldr	w0, [sp, #4]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32

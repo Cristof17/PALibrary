@@ -2112,8 +2112,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAMemory PAMemoryPerformCreate(size_t size);
-          int PAMemoryPerformFinish(PAMemory);
+          PAMemory PAMemoryPerformConstruct(size_t size);
+          int PAMemoryPerformRuin(PAMemory);
 # 9 "src/PA/Pair.c" 2
 
 
@@ -2125,7 +2125,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 {
 
     PAMemory pair;
-    pair = PAMemoryPerformCreate(sizeof(struct PAPair));
+    pair = PAMemoryPerformConstruct(sizeof(struct PAPair));
 # 29 "src/PA/Pair.c"
     return pair;
 
@@ -2187,7 +2187,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
     int returnCode;
-    returnCode = PAMemoryPerformFinish(PA);
+    returnCode = PAMemoryPerformRuin(PA);
 
 
 

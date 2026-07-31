@@ -2138,8 +2138,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAMemory PAMemoryPerformCreate(size_t size);
-          int PAMemoryPerformFinish(PAMemory);
+          PAMemory PAMemoryPerformConstruct(size_t size);
+          int PAMemoryPerformRuin(PAMemory);
 # 12 "src/PA/Input.c" 2
 
 
@@ -2151,7 +2151,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 {
 
  PAMemory input;
- input = PAMemoryPerformCreate(sizeof(struct PAInput));
+ input = PAMemoryPerformConstruct(sizeof(struct PAInput));
 # 31 "src/PA/Input.c"
  return input;
 # 49 "src/PA/Input.c"
@@ -2206,7 +2206,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
  int returnCode;
- returnCode = PAMemoryPerformFinish(PA);
+ returnCode = PAMemoryPerformRuin(PA);
 # 149 "src/PA/Input.c"
  return returnCode;
 }

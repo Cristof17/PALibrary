@@ -13,7 +13,7 @@ _PATreePerformConstruct:                ; @PATreePerformConstruct
 	.cfi_offset w29, -16
 	str	x0, [sp, #8]
 	mov	x0, #32                         ; =0x20
-	bl	_PAMemoryPerformCreate
+	bl	_PAMemoryPerformConstruct
 	str	x0, [sp]
 	ldr	x0, [sp]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
@@ -115,7 +115,7 @@ _PATreePerformRuin:                     ; @PATreePerformRuin
 	.cfi_offset w29, -16
 	str	x0, [sp, #8]
 	ldr	x0, [sp, #8]
-	bl	_PAMemoryPerformFinish
+	bl	_PAMemoryPerformRuin
 	str	w0, [sp, #4]
 	ldr	w0, [sp, #4]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload

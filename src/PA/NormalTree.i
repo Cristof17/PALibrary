@@ -2114,8 +2114,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAMemory PAMemoryPerformCreate(size_t size);
-          int PAMemoryPerformFinish(PAMemory);
+          PAMemory PAMemoryPerformConstruct(size_t size);
+          int PAMemoryPerformRuin(PAMemory);
 # 8 "src/PA/NormalTree.c" 2
 
 
@@ -2127,7 +2127,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 {
     PAMemory normalTree;
 # 25 "src/PA/NormalTree.c"
-    normalTree = PAMemoryPerformCreate(sizeof(struct PANormalTree));
+    normalTree = PAMemoryPerformConstruct(sizeof(struct PANormalTree));
 
 
     return normalTree;
@@ -2173,7 +2173,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           int PANormalTreePerformRuin(PAMemory PA)
 {
     int returnCode;
-    returnCode = PAMemoryPerformFinish(PA);
+    returnCode = PAMemoryPerformRuin(PA);
 
 
     return returnCode;

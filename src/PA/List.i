@@ -2070,8 +2070,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAMemory PAMemoryPerformCreate(size_t size);
-          int PAMemoryPerformFinish(PAMemory);
+          PAMemory PAMemoryPerformConstruct(size_t size);
+          int PAMemoryPerformRuin(PAMemory);
 # 11 "./include/PA/List.h" 2
 
 
@@ -2137,7 +2137,7 @@ void PAListPrint(struct PAList* List);
           PAMemory PAListPerformConstruct(size_t size)
 {
     PAMemory listPointer;
-    listPointer = PAMemoryPerformCreate(sizeof(struct PAList));
+    listPointer = PAMemoryPerformConstruct(sizeof(struct PAList));
 # 43 "src/PA/List.c"
     return listPointer;
 # 53 "src/PA/List.c"
@@ -2184,7 +2184,7 @@ void PAListPrint(struct PAList* List);
 
 
 
-    returnCode = PAMemoryPerformFinish(PA);
+    returnCode = PAMemoryPerformRuin(PA);
 
 
 

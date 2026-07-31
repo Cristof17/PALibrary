@@ -2146,8 +2146,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAMemory PAMemoryPerformCreate(size_t size);
-          int PAMemoryPerformFinish(PAMemory);
+          PAMemory PAMemoryPerformConstruct(size_t size);
+          int PAMemoryPerformRuin(PAMemory);
 # 11 "./include/PA/List.h" 2
 
 
@@ -2171,7 +2171,7 @@ void PAListPrint(struct PAList* List);
 {
 
     PAMemory tree;
-    tree = PAMemoryPerformCreate(sizeof(struct PATree));
+    tree = PAMemoryPerformConstruct(sizeof(struct PATree));
 # 80 "src/PA/Tree.c"
     return tree;
 
@@ -2227,7 +2227,7 @@ void PAListPrint(struct PAList* List);
           int PATreePerformRuin(PAMemory PA)
 {
     int returnCode;
-    returnCode = PAMemoryPerformFinish(PA);
+    returnCode = PAMemoryPerformRuin(PA);
 
 
 

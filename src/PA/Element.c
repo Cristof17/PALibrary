@@ -20,7 +20,7 @@
 DllExport PAMemory PAElementPerformCreate(size_t size)
 {
     PAMemory element;
-    element = PAMemoryPerformCreate(sizeof(struct PAElement));
+    element = PAMemoryPerformConstruct(sizeof(struct PAElement));
     // element = malloc(size);
     // temp->index = index;
     // temp->status = status;
@@ -146,7 +146,7 @@ DllExport int PAElementPerformDelete(struct PAElement* PA)
 DllExport int PAElementPerformRuin(PAMemory PA)
 {
     int returnCode;
-    returnCode = PAMemoryPerformFinish(PA);
+    returnCode = PAMemoryPerformRuin(PA);
     // free(PA);
     // PA.index = PADataPerformRuin(PA.index);
     // PA.status = PAStatusPerformRuin(PA.status);

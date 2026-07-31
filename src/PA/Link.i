@@ -2113,8 +2113,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAMemory PAMemoryPerformCreate(size_t size);
-          int PAMemoryPerformFinish(PAMemory);
+          PAMemory PAMemoryPerformConstruct(size_t size);
+          int PAMemoryPerformRuin(PAMemory);
 # 11 "src/PA/Link.c" 2
 
 
@@ -2127,7 +2127,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 {
 
     PAMemory link;
-    PAMemoryPerformCreate(sizeof(struct PALink));
+    PAMemoryPerformConstruct(sizeof(struct PALink));
 
 
     return link;
@@ -2179,7 +2179,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           int PALinkPerformRuin(PAMemory PA)
 {
     int returnCode;
-    PAMemoryPerformFinish(PA);
+    PAMemoryPerformRuin(PA);
 # 109 "src/PA/Link.c"
     return returnCode;
 }

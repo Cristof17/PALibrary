@@ -10,11 +10,12 @@
 
 #endif
 
-DllExport PAMemory PAMemoryPerformCreate(size_t size)
+DllExport PAMemory PAMemoryPerformConstruct(size_t size)
 {
+    void* address = malloc (size);
     // struct PACount zies;
-    PAMemory count;
-    count = PAMemoryPerformCreate(sizeof(PAMemory));
+    // PAMemory count;
+    // count = PAMemoryPerformConstruct(sizeof(PAMemory));
     // count = malloc(size);
     // count->number = (PAInt*) malloc (sizeof(PAInt));
     //  struct PACount* aux;
@@ -34,9 +35,10 @@ DllExport PAMemory PAMemoryPerformCreate(size_t size)
     // return countPointer;
     // return zies;
     // countPointer->number = PANumberCreate();
-    return count;
+    // return count;
+    return address;
 }
-DllExport int PAMemoryPerformFinish(PAMemory PA)
+DllExport int PAMemoryPerformRuin(PAMemory PA)
 {
     //get the value at address pointed by stack pointer
     //that corresponsds to parameter PA
@@ -64,7 +66,7 @@ DllExport int PAMemoryPerformFinish(PAMemory PA)
     // return PARESULT_SUCCESS;
     // return Empty;
     int returnCode;
-    PAMemoryPerformFinish(PA);
+    free(PA);
     // free(PA->number);
     // free(PA);
     // returnCode = PARESULT_SUCCESS;

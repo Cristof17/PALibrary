@@ -2373,8 +2373,8 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
 
-          PAMemory PAMemoryPerformCreate(size_t size);
-          int PAMemoryPerformFinish(PAMemory);
+          PAMemory PAMemoryPerformConstruct(size_t size);
+          int PAMemoryPerformRuin(PAMemory);
 # 8 "src/PA/Count.c" 2
 
 
@@ -2388,7 +2388,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 {
 
     PAMemory count;
-    count = PAMemoryPerformCreate(size);
+    count = PAMemoryPerformConstruct(size);
 # 39 "src/PA/Count.c"
     return count;
 }
@@ -2435,7 +2435,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
           int PACountPerformRuin(PAMemory PA)
 {
 
-    PAMemoryPerformFinish(PA);
+    PAMemoryPerformRuin(PA);
 # 140 "src/PA/Count.c"
     int returnCode;
 

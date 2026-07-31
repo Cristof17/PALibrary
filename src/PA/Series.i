@@ -2131,14 +2131,14 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAMemory PAMemoryPerformCreate(size_t size);
-          int PAMemoryPerformFinish(PAMemory);
+          PAMemory PAMemoryPerformConstruct(size_t size);
+          int PAMemoryPerformRuin(PAMemory);
 # 11 "src/PA/Series.c" 2
 # 23 "src/PA/Series.c"
           PAMemory PASeriesPerformConstruct(size_t size)
 {
     PAMemory series;
-    series = PAMemoryPerformCreate(sizeof(struct PASeries));
+    series = PAMemoryPerformConstruct(sizeof(struct PASeries));
 # 55 "src/PA/Series.c"
     return series;
 }
@@ -2215,7 +2215,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     {
 
         int returnCode;
-        returnCode = PAMemoryPerformFinish(PA);
+        returnCode = PAMemoryPerformRuin(PA);
 # 225 "src/PA/Series.c"
         return returnCode;
 

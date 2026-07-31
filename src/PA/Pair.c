@@ -16,7 +16,7 @@ DllExport PAMemory PAPairPerformConstruct(size_t size)
 {
     // struct PAPair pair;
     PAMemory pair;
-    pair = PAMemoryPerformCreate(sizeof(struct PAPair));
+    pair = PAMemoryPerformConstruct(sizeof(struct PAPair));
     // pair = malloc(size);
     // struct PAPair* pairPointer;
     // pairPointer->Node = PAElementPerformConstruct();
@@ -159,7 +159,7 @@ DllExport int PAPairPerformRuin(PAMemory PA)
     // int returnCode1;
     // int returnCode2;
     int returnCode;
-    returnCode = PAMemoryPerformFinish(PA);
+    returnCode = PAMemoryPerformRuin(PA);
     // free(PA);
     // returnCode = PARESULT_SUCCESS;
     // returnCode1 = PAElementFinish(&PA->Node);

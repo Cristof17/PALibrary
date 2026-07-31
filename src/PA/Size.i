@@ -2075,8 +2075,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAMemory PAMemoryPerformCreate(size_t size);
-          int PAMemoryPerformFinish(PAMemory);
+          PAMemory PAMemoryPerformConstruct(size_t size);
+          int PAMemoryPerformRuin(PAMemory);
 # 6 "src/PA/Size.c" 2
 
 
@@ -2085,7 +2085,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           PAMemory PASizePerformConstruct(size_t size){
     PAMemory sizeStruct;
-    sizeStruct = PAMemoryPerformCreate(sizeof(struct PASize));
+    sizeStruct = PAMemoryPerformConstruct(sizeof(struct PASize));
 
     return sizeStruct;
 }
@@ -2121,7 +2121,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 {
     int returnCode;
 
-    PAMemoryPerformFinish(PA);
+    PAMemoryPerformRuin(PA);
 
     return returnCode;
 }

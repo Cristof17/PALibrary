@@ -2117,8 +2117,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAMemory PAMemoryPerformCreate(size_t size);
-          int PAMemoryPerformFinish(PAMemory);
+          PAMemory PAMemoryPerformConstruct(size_t size);
+          int PAMemoryPerformRuin(PAMemory);
 # 11 "src/PA/TransposeTree.c" 2
 
 
@@ -2130,7 +2130,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           PAMemory PATransposeTreePerformConstruct(size_t size)
 {
     PAMemory transposeTree;
-    transposeTree = PAMemoryPerformCreate(sizeof(struct PATransposeTree));
+    transposeTree = PAMemoryPerformConstruct(sizeof(struct PATransposeTree));
 
 
 
@@ -2186,7 +2186,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           int PATransposeTreePerformRuin(void* PA)
 {
     int returnCode;
-    PAMemoryPerformFinish(PA);
+    PAMemoryPerformRuin(PA);
 
 
 

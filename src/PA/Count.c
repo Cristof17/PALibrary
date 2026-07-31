@@ -17,7 +17,7 @@ DllExport PACount PACountPerformConstruct(size_t size)
 {
     // struct PACount zies;
     PAMemory count;
-    count = PAMemoryPerformCreate(size);
+    count = PAMemoryPerformConstruct(size);
     // count->number = (PAInt*) malloc (sizeof(PAInt));
     //  struct PACount* aux;
     // aux = (struct PACount*) malloc (sizeof(struct PACount));
@@ -111,7 +111,7 @@ DllExport int PACountDelete(PACount PA)
 DllExport int PACountPerformRuin(PAMemory PA)
 {
     // int result
-    PAMemoryPerformFinish(PA);
+    PAMemoryPerformRuin(PA);
     //get the value at address pointed by stack pointer
     //that corresponsds to parameter PA
     //check each bit
