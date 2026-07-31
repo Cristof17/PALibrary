@@ -18,8 +18,9 @@
 DllExport PAMemory PATransposeTreePerformConstruct(size_t size)
 {
     PAMemory transposeTree;
+    transposeTree = PAMemoryPerformCreate(sizeof(struct PATransposeTree));
     // struct PATransposeTree* transposeTreePointer;
-    transposeTree = malloc(size);
+    // transposeTree = malloc(size);
     // transposeTreePointer->tree = PATreePerformConstruct();
     // transposeTree.tree = (transposeTreePointer->tree);
     // transposeTreePointer = PATransposeTreeBegin(transposeTreePointer,transposeTree.tree);
@@ -103,8 +104,9 @@ DllExport int PATransposeTreePerformDelete(PATransposeTree PA)
 DllExport int PATransposeTreePerformRuin(void* PA)
 {
     int returnCode;
-    free(PA);
-    returnCode = PARESULT_SUCCESS;
+    PAMemoryPerformFinish(PA);
+    // free(PA);
+    // returnCode = PARESULT_SUCCESS;
     // PA.tree = PATreePerformRuin(PA.tree);
     // returnCode = PATreeDelete(&PA->tree);
     // return PA;

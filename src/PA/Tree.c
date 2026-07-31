@@ -22,7 +22,8 @@ DllExport PAMemory PATreePerformConstruct(size_t size)
 {
     // struct PATree* temp;
     PAMemory tree;
-    tree = malloc (size);
+    tree = PAMemoryPerformCreate(sizeof(struct PATree));
+    // tree = malloc (size);
     // treePointer->n = n;
     // treePointer->m = m;
     // treePointer->adj = adj;
@@ -185,12 +186,13 @@ DllExport int PATreePerformDelete(PATree PA)
 DllExport int PATreePerformRuin(PAMemory PA)
 {
     int returnCode;
+    returnCode = PAMemoryPerformFinish(PA);
     // free(N);
     // free(M);
     // free(List);
     // free(Source);
-    free(PA);
-    returnCode = PARESULT_SUCCESS;
+    // free(PA);
+    // returnCode = PARESULT_SUCCESS;
     return returnCode;
 }
     // int returnCode2;

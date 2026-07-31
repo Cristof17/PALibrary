@@ -10,7 +10,8 @@
 
 DllExport PAMemory PASizePerformConstruct(size_t size){
     PAMemory sizeStruct;
-    sizeStruct = malloc (size);
+    sizeStruct = PAMemoryPerformCreate(sizeof(struct PASize));
+    // sizeStruct = malloc (size);
     return sizeStruct;
 }
 DllExport PASize PASizePerformInit(PASize Size, size_t* value, size_t digits)
@@ -44,7 +45,8 @@ DllExport int PASizePerformDelete(struct PASize* PA)
 DllExport int PASizePerformRuin(PAMemory PA)
 {
     int returnCode;
-    returnCode = PARESULT_SUCCESS;
-    free(PA);
+    // returnCode = PARESULT_SUCCESS;
+    PAMemoryPerformFinish(PA);
+    // free(PA);
     return returnCode;
 }

@@ -38,9 +38,10 @@ DllExport PAMemory PAOutputPerformConstruct(size_t size)
 {
     // struct PAOutput* result;
     PAMemory output;
+    output = PAMemoryPerformCreate(sizeof(struct PAOutput));
     // struct PAOutput Output;
     // struct PAOutput* outputPointer;
-    output = malloc (size);
+    // output = malloc (size);
     // result->result = Result;
     // outputPointer->result = BFSRecordCreate();
     // outputPointer-
@@ -119,10 +120,11 @@ DllExport int PAOutputPerformDelete(struct PAOutput* PA)
 DllExport int PAOutputPerformRuin(PAMemory PA)
 {
     int returnCode;
+    returnCode = PAMemoryPerformFinish(PA);
     // returnCode = PA->
     // free(Record);
-    free(PA);
-    returnCode = PARESULT_SUCCESS;
+    // free(PA);
+    // returnCode = PARESULT_SUCCESS;
     // returnCode = BFSRecordFinish(PA->result);
     // return PARESULT_SUCCESS;
     return returnCode;

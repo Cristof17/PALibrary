@@ -23,7 +23,8 @@
 DllExport PAMemory PASeriesPerformConstruct(size_t size) 
 {
     PAMemory series;
-    series = malloc (size);
+    series = PAMemoryPerformCreate(sizeof(struct PASeries));
+    // series = malloc (size);
     // seriesPointer->m = m;
     // seriesPointer->adj = adj;
     // seriesPointer->adj = &(adj[0]);
@@ -197,10 +198,11 @@ DllExport PASeries PASeriesPerformInit(PASeries series, PACount M, PAList Adj[])
     {
         // st
         int returnCode;
+        returnCode = PAMemoryPerformFinish(PA);
         // free(Count);
         // free(List);
-        free(PA);
-        returnCode = PARESULT_SUCCESS;
+        // free(PA);
+        // returnCode = PARESULT_SUCCESS;
         // returnCode = PACountFinish(PA->m);
         // free(PA);
         // struct PACount x;

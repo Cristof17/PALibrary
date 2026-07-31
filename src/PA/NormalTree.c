@@ -22,7 +22,8 @@ DllExport PAMemory PANormalTreePerformConstruct(size_t size)
     // struct PAnor
     // struct NA
     // nro
-    normalTree = malloc (size);
+    normalTree = PAMemoryPerformCreate(sizeof(struct PANormalTree));
+    // normalTree = malloc (size);
     // register
     return normalTree;
     // normalTree.tree = PATreePerformConstruct();
@@ -83,10 +84,11 @@ DllExport int PANormalTreePerformDelete(struct PANormalTree* PA)
     // return PA;
     return returnCode;
 }
-DllExport int PANormalTreePerformRuin(PAMemory Tree)
+DllExport int PANormalTreePerformRuin(PAMemory PA)
 {
     int returnCode;
-    free(Tree);
+    returnCode = PAMemoryPerformFinish(PA);
+    // free(Tree);
     // returnCode = PATreeFinish(&PA->tree);
     return returnCode;
     // struct PANormalTree Empty;
