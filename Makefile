@@ -46,7 +46,8 @@ srcdir=
 #crt=@crt@
 #output=@output@
 libs= libpa.a libarraylist.a libbfs.a libalgorithm.a
-output=libpa.a
+output=pa
+version=1.0
 program_test_pa= test.out
 program_test_pointers_pa= test_pointers.out
 all: preprocess assemble compile $(program_test_pa) $(program_test_pointers_pa) $(lib_pa)
@@ -167,7 +168,7 @@ maintainer-clean:
 	rm $(foreach test,$(objects_test_pa),$(libdir)/$(test))
 	rm $(foreach test,$(program_test_pa),$(bindir)/$(test))
 	rm $(foreach test,$(program_test_pointers_pa),$(bindir)/$(test))
-	rm $(foreach lib,$(output),$(libdir)/$(lib))
+	rm $(foreach lib,$(output),$(libdir)/$(lib).a)
 # 	-rm $(libdir)/libpa.a
 # 	-rm $(sources_pa)
 # 	-rm $(sources_bfs)
@@ -215,9 +216,15 @@ installcheck:
 print:
 	git status
 	ar -T -t $(libdir)/libpa.a
-tar: $(objects) $(libs)
+tar: $(objects_pa) $(objects_arraylist) $(objects_bfs) $(libs)
 	mkdir $(output)-$(version)
-	tar cvf $(output).tar.gz obj/PA/
+	mkdir $(output)-$(version)/PA
+	mkdir $(output)-$(version)/BFS
+	mkdir $(output)-$(version)/ArrayList
+	cp -r -v $(foreach obj,$(objects_pa),lib/$(obj)) $(output)-$(version)/PA
+	cp -r -v $(foreach obj,$(objects_arraylist),lib/$(obj)) $(output)-$(version)/ArrayList
+	cp -r -v $(foreach obj,$(objects_bfs),lib/$(obj)) $(output)-$(version)/BFS
+	tar --gzip --create --verbose --file $(output).tar.gz $(output-version) $(output)-$(version)
 shar:
 dist:
 	tar cvf libpa.tar.gz $(libdir)/libpa.a
@@ -255,6 +262,7 @@ objects_bfs= BFS/Procedure.o \
 
 # objects_arraylist= obj/Input.o
 #
+
 objects_pa= Input.o \
 	Algorithm.o \
 	Output.o \
@@ -384,7 +392,6 @@ sources_test_arraylist=
 assemblies_test_pa= test.s test_pointers.s
 assemblies_test_bfs=
 assemblies_test_arraylist =
-# objects_
 # as
 objects_test_pa= test.o test_pointers.o
 objects_test_bfs=
@@ -392,7 +399,6 @@ objects_test_arraylist=
 # 	src/PA/Destination.s
 # 	src/PA/Arrow.s
 # 	src/PA/Feature.s
-
 
 # 	src/PA/Destination.c
 # 	src/PA/Arrow.c
@@ -1467,21 +1473,24 @@ clean:
 # 	-rm $(srcdir)/test.i
 # 	-rm $(srcdir)/test.s
 # 	-rm $(bindir)/test
-	-rm $(foreach source,$(sources_pa),$(srcdir)/$(source))
-	-rm $(foreach test,$(sources_test_pa),$(srcdir)/$(test))
+	-rm -v $(foreach source,$(sources_pa),$(srcdir)/$(source))
+	-rm -v $(foreach test,$(sources_test_pa),$(srcdir)/$(test))
 # 	rm $(foreach source,$(sources_bfs),$(srcdir)/$(source))
 # 	rm $(foreach source,$(sources_arraylist),$(srcdir)/$(source))
 # 	rm $(foreach assembly,$(assemblies_pa),$(libdir)/$(assembly))
 # 	rm $(foreach assembly,$(assemblies_bfs),$(libdir)/$(assembly))
 # 	rm $(foreach assembly,$(assemblies_arraylist),$(libdir)/$(assembly))
 # 	rm $(foreach assembly,$(assemblies_pa),$(srcdir)/ass)
-	-rm $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
-	-rm $(foreach test,$(assemblies_test_pa),$(srcdir)/$(test))
+	-rm -v $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
+	-rm -v $(foreach test,$(assemblies_test_pa),$(srcdir)/$(test))
 # 	rm $(foreach assembly,$(assemblies_bfs),$(srcdir)/$(assebmbly))
 # 	rm $(foreach assembly,$(assemblies_arraylist),$(srcdir)/$(assembly))
-	-rm $(foreach object,$(objects_pa),$(libdir)/$(object))
-	-rm $(foreach object,$(objects_test_pa),$(libdir)/$(object))
-	-rm $(foreach lib,$(libs)/,./lib/$(lib))
+	-rm -v $(foreach object,$(objects_pa),$(libdir)/$(object))
+	-rm -v $(foreach object,$(objects_test_pa),$(libdir)/$(object))
+	-rm -v $(foreach lib,$(libs)/,./lib/$(lib))
+	-rm -v $(output)-$(version)/*
+	-rm -r -v $(output)-$(version)
+	-rm -r -v $(output).tar.gz
 # 	rm $(foreach object,$(objects_bfs),$(libdir)/$(object))
 # 	rm $(foreach object,$(objects_arraylist),$(libdir)/$(object))
 # 	rm $(bindir)/test
