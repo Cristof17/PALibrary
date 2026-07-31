@@ -50,7 +50,8 @@ _PADataPerformDelete:                   ; @PADataPerformDelete
 	ldr	x0, [x8]
 	mov	w1, #0                          ; =0x0
 	str	w1, [sp, #16]                   ; 4-byte Folded Spill
-	mov	x2, #1                          ; =0x1
+	mov	x2, #8                          ; =0x8
+	str	x2, [sp]                        ; 8-byte Folded Spill
 	mov	x3, #-1                         ; =0xffffffffffffffff
 	str	x3, [sp, #8]                    ; 8-byte Folded Spill
 	bl	___memset_chk
@@ -60,10 +61,10 @@ _PADataPerformDelete:                   ; @PADataPerformDelete
 	ldr	x0, [x8]
 	mov	x2, #24                         ; =0x18
 	bl	___memset_chk
+	ldr	x2, [sp]                        ; 8-byte Folded Reload
 	ldr	x3, [sp, #8]                    ; 8-byte Folded Reload
 	ldr	w1, [sp, #16]                   ; 4-byte Folded Reload
 	ldur	x0, [x29, #-8]
-	mov	x2, #8                          ; =0x8
 	bl	___memset_chk
 	ldr	w0, [sp, #16]                   ; 4-byte Folded Reload
 	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload

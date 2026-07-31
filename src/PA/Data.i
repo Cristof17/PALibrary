@@ -1470,7 +1470,8 @@ typedef PABool PAStatus;
 typedef void* PAMemory;
 typedef void* PAObject;
 typedef int Offset;
-typedef char PAInt;
+typedef void* Object;
+
 
 
 
@@ -1478,7 +1479,7 @@ typedef char PAInt;
 
 
 struct ArrayListObject;
-# 58 "./include/types.h"
+# 59 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -1528,7 +1529,7 @@ struct PASeries;
 struct PATree;
 struct PALink;
 struct PAInt;
-# 117 "./include/types.h"
+# 118 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -1574,7 +1575,7 @@ struct PrototypeClient;
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 177 "./include/types.h"
+# 178 "./include/types.h"
 struct Input {
  ;
 };
@@ -1628,18 +1629,18 @@ typedef struct PAElement {
 
 
 }* PAElement;
-typedef struct PAFeature {
- PAInt* kind;
-}* PAFeature;
-typedef struct PACount {
-
- PAInt* number;
-}* PACount;
-
 typedef struct PAInt {
  char* value;
  size_t size;
 }* PAInt;
+typedef struct PAFeature {
+ PAInt kind;
+}* PAFeature;
+typedef struct PACount {
+
+ PAInt number;
+}* PACount;
+
 
 
 typedef struct PASeries {
@@ -1690,7 +1691,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 300 "./include/types.h"
+# 301 "./include/types.h"
 typedef struct PAInput {
  struct PACount* n;
  struct PACount* m;

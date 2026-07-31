@@ -38,6 +38,7 @@ typedef PABool PAStatus;
 typedef void* PAMemory;
 typedef void* PAObject;
 typedef int Offset;
+typedef void* Object;
 //typedef char PAInt;
 // typedef PACountValue PAInt;
 // typede
@@ -227,6 +228,10 @@ typedef struct PAElement {
 	// struct PAFeature type;
 	// PADDING_1_BYTE(0);
 }* PAElement;
+typedef struct PAInt {
+	char* value;
+	size_t size;
+}* PAInt;
 typedef struct PAFeature {
 	PAInt kind;
 }* PAFeature;
@@ -235,10 +240,6 @@ typedef struct PACount {
 	PAInt number;
 }* PACount;
 
-typedef struct PAInt {
-	char* value;
-	size_t size;
-}* PAInt;
 // };
 
 typedef struct PASeries {

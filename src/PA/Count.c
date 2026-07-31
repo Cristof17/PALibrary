@@ -57,8 +57,8 @@ DllExport PAObject PACountInitialise(PACount init, PACount this,PASize size)
 {
     size_t size = PACountSize();
     PAMemory aux = PAMemoryPerforConstruct(size);
-    init = PAObjectPerformCopy(init,aux,size);
-    this = PAobjectPerformCopy(this,init,size);
+    init = (Object) PAObjectPerformCopy(init,aux,size);
+    this = (Object) PAObjectPerformCopy(this,init,size);
     return aux;
     // PAMemory aux = PAMemoryPerformConstruct(sizeof(struct PACount))
     // PAObject aux =
