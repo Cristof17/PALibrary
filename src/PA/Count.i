@@ -1529,7 +1529,8 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 116 "./include/types.h"
+struct PAInt;
+# 117 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -1575,7 +1576,7 @@ struct PrototypeClient;
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 176 "./include/types.h"
+# 177 "./include/types.h"
 struct Input {
  ;
 };
@@ -1637,6 +1638,11 @@ typedef struct PACount {
  PAInt* number;
 }* PACount;
 
+typedef struct PAInt {
+ char* value;
+ size_t size;
+}* PAInt;
+
 
 typedef struct PASeries {
  struct PACount* m;
@@ -1686,7 +1692,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 294 "./include/types.h"
+# 300 "./include/types.h"
 typedef struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -1858,6 +1864,8 @@ struct Facade {
 
 
 
+          static size_t PAMemorySize(PACount);
+          static PAMemory PACountPerformAllocate();
           static PAObject PACountPerformCopy(PAObject, PAObject, size_t);
           PACount PACountPerformInit(PACount, PAInt* value, PASize size);
           int PACountPerformDelete(PACount PA);
@@ -2351,6 +2359,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 9 "./include/PA/Number.h" 2
 
 
+          size_t PANumberSize(PANumber);
           struct PANumber* PANumberPerformConstruct(struct PANumber* Number, unsigned char Value);
           static PAObject PANumberPerformCopy(PAObject, PAObject, size_t);
           int PANumberPerformDelete(struct PANumber*);
@@ -2383,22 +2392,40 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
 
-
-          PACount PACountPerformConstruct(size_t size)
+          PAMemory PACountAllocate()
 {
+    size_t size;
+    PAMemory count;
+    size = PACountSize();
+    count = PAMemoryConstruct(size);
+    return count;
+}
+          PACount PACountConstruct(PACount n, PAInt value)
+{
+    n->number = malloc(sizeof(PAInt));
+    PAInt aux;
+    aux = n->number;
+    *(n->number) = value;
+    *n->number = value;
+    return n;
+
+
 
     PAMemory count;
-    count = PAMemoryPerformConstruct(size);
-# 39 "src/PA/Count.c"
+    count = PACountPerformAlloc();
+# 54 "src/PA/Count.c"
     return count;
 }
-          PACount PACountPerformInit(PACount count, PAInt* value,PASize size)
+          PAObject PACountInitialise(PACount init, PACount this,PASize size)
 {
-    PAMemory aux;
-# 78 "src/PA/Count.c"
-    return count;
+    size_t size = PACountSize();
+    PAMemory aux = PAMemoryPerforConstruct(size);
+    init = PAObjectPerformCopy(init,aux,size);
+    this = PAobjectPerformCopy(this,init,size);
+    return aux;
+# 101 "src/PA/Count.c"
 }
-# 100 "src/PA/Count.c"
+# 122 "src/PA/Count.c"
           int PACountDelete(PACount PA)
 {
     int returnCode;
@@ -2418,7 +2445,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
     int resultCode;
     resultCode = PAMemoryPerformRuin(PA);
-# 150 "src/PA/Count.c"
+# 172 "src/PA/Count.c"
     return resultCode;
 
 }
@@ -2427,4 +2454,11 @@ PAResult PACountPrint(struct PACount* Count)
 {
     PAResult result;
     return result;
+}
+
+size_t PACountSize()
+{
+    size_t size;
+    size = sizeof(PAInt);
+    return size;
 }

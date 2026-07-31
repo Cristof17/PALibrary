@@ -1524,7 +1524,8 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 116 "./include/types.h"
+struct PAInt;
+# 117 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -1570,7 +1571,7 @@ struct PrototypeClient;
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 176 "./include/types.h"
+# 177 "./include/types.h"
 struct Input {
  ;
 };
@@ -1632,6 +1633,11 @@ typedef struct PACount {
  PAInt* number;
 }* PACount;
 
+typedef struct PAInt {
+ char* value;
+ size_t size;
+}* PAInt;
+
 
 typedef struct PASeries {
  struct PACount* m;
@@ -1681,7 +1687,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 294 "./include/types.h"
+# 300 "./include/types.h"
 typedef struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2343,6 +2349,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 9 "./include/PA/Number.h" 2
 
 
+          size_t PANumberSize(PANumber);
           struct PANumber* PANumberPerformConstruct(struct PANumber* Number, unsigned char Value);
           static PAObject PANumberPerformCopy(PAObject, PAObject, size_t);
           int PANumberPerformDelete(struct PANumber*);

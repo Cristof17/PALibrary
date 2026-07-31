@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #ifdef _WIN95
 //#define short HALF_PTR;
-typedef PAInt int32_t;
+//typedef PAInt int32_t;
 typedef int PAInt;
 typedef int PANumber;
 typedef PABool BOOL;
@@ -38,7 +38,7 @@ typedef PABool PAStatus;
 typedef void* PAMemory;
 typedef void* PAObject;
 typedef int Offset;
-typedef char PAInt;
+//typedef char PAInt;
 // typedef PACountValue PAInt;
 // typede
 //#define PAInt int
@@ -228,11 +228,11 @@ typedef struct PAElement {
 	// PADDING_1_BYTE(0);
 }* PAElement;
 typedef struct PAFeature {
-	PAInt* kind;
+	PAInt kind;
 }* PAFeature;
 typedef struct PACount {
 	// PADDING_1_BYTE(0);
-	PAInt* number;
+	PAInt number;
 }* PACount;
 
 typedef struct PAInt {
