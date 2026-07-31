@@ -216,7 +216,8 @@ installcheck:
 print:
 	git status
 	ar -T -t $(libdir)/libpa.a
-tar: $(objects_pa) $(objects_arraylist) $(objects_bfs) $(libs)
+shar:
+dist: $(objects_pa) $(objects_bfs) $(objects_arraylist) $(libs)
 	mkdir $(output)-$(version)
 	mkdir $(output)-$(version)/PA
 	mkdir $(output)-$(version)/BFS
@@ -226,8 +227,6 @@ tar: $(objects_pa) $(objects_arraylist) $(objects_bfs) $(libs)
 	cp -r -v lib/ArrayList/ $(output)-$(version)/ArrayList
 	cp -r -v $(foreach lib,$(libs),./lib/$(lib)) $(output)-$(version)
 	tar --gzip --create --verbose --file $(output).tar.gz $(output-version) $(output)-$(version)/$(dir $(obj))
-shar:
-dist:
 	tar cvf libpa.tar.gz $(libdir)/libpa.a
 check:
 test:
