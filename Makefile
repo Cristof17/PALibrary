@@ -45,7 +45,7 @@ srcdir=
 #musl=@musl@
 #crt=@crt@
 #output=@output@
-libs= libpa.a libarraylist.a lib_algorithm.a
+libs= ./lib/libpa.a ./lib/libarraylist.a ./lib/lib_algorithm.a
 output=libpa.a
 program_test_pa= test.out
 program_test_pointers_pa= test_pointers.out
@@ -455,10 +455,10 @@ lib_arraylist= libarraylist.a
 lib_pa= libpa.a
 
 output_dir= $(bindir) 
-output_pa= $(output_dir)/$(lib_pa)
-output_bfs= $(output_dir)/$(lib_bfs)
-output_arraylist= $(output_dir)/$(lib_arraylist)
-output_algorithm= $(output_dir)/$(lib_algorithm)
+output_pa= ./lib/$(lib_pa)
+output_bfs= ./lib/$(lib_bfs)
+output_arraylist= ./lib/$(lib_arraylist)
+output_algorithm= ./lib/$(lib_algorithm)
 
 assemble_pa: $(assemblies_pa) $(assemblies_test_pa)
 assemble_bfs: $(assemblies_bfs) $(assemblies_test_bfs)
@@ -648,72 +648,72 @@ endif
 #src/Prototype/ConcretePrototype1.c: include/Prototype/ConcretePrototype1.h
 #src/Prototype/ConcretePrototype2.c: include/Prototype/ConcretePrototype2.h
 
-Input.i : $(srcdir)/Input.c $(includedir)/ArrayList/ArrayList.h $(includedir)/PA/Result.h $(includedir)/Input.h $(includedir)/types.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-Algorithm.i : $(srcdir)/Algorithm.c $(includedir)/PA/Result.h $(includedir)/Algorithm.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-BFS/Procedure.i : $(srcdir)/BFS/Procedure.c $(includedir)/types.h $(includedir)/Algorithm.h $(includedir)/PA/Tree.h $(includedir)/PA/Element.h $(includedir)/BFS/Procedure.h $(includedir)/PA/Input.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/Input.i : $(srcdir)/PA/Input.c $(includedir)/Input.h $(includedir)/ArrayList/ArrayList.h $(includedir)/PA/Result.h $(includedir)/types.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/Output.i : $(srcdir)/PA/Output.c $(includedir)/defs.h $(includedir)/Output.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-BFS/Record.i : $(srcdir)/BFS/Record.c $(includedir)/types.h $(includedir)/PA/List.h $(includedir)/PA/Count.h $(includedir)/PA/Result.h $(includedir)/BFS/Record.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-Output.i : $(srcdir)/Output.c $(includedir)/defs.h $(includedir)/Output.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/Data.i : $(srcdir)/PA/Data.c $(includedir)/PA/Data.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/Memory.i : $(srcdir)/PA/Memory.c $(includedir)/PA/Memory.h $(includedir)/types.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
+Input.i : src/Input.c include/ArrayList/ArrayList.h include/PA/Result.h include/Input.h include/types.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+Algorithm.i : src/Algorithm.c include/PA/Result.h include/Algorithm.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+BFS/Procedure.i : src/BFS/Procedure.c include/types.h include/Algorithm.h include/PA/Tree.h include/PA/Element.h include/BFS/Procedure.h include/PA/Input.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/Input.i : src/PA/Input.c include/Input.h include/ArrayList/ArrayList.h include/PA/Result.h include/types.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/Output.i : src/PA/Output.c include/defs.h include/Output.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+BFS/Record.i : src/BFS/Record.c include/types.h include/PA/List.h include/PA/Count.h include/PA/Result.h include/BFS/Record.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+Output.i : src/Output.c include/defs.h include/Output.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/Data.i : src/PA/Data.c include/PA/Data.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/Memory.i : src/PA/Memory.c include/PA/Memory.h include/types.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
 # src/PA/Destination.i : src/PA/Destination.c include/types.h include/PA/Destination.h
 # 	-$(CPP) $(CPPFLAGS) -E $< > $@
-PA/Tree.i : $(srcdir)/PA/Tree.c $(includedir)/PA/Tree.h $(includedir)/types.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/List.i : $(srcdir)/PA/List.c $(includedir)/types.h $(includedir)/PA/List.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/Link.i : $(srcdir)/PA/Link.c $(includedir)/defs.h $(includedir)/types.h $(includedir)/PA/Link.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
+PA/Tree.i : src/PA/Tree.c include/PA/Tree.h include/types.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/List.i : src/PA/List.c include/types.h include/PA/List.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/Link.i : src/PA/Link.c include/defs.h include/types.h include/PA/Link.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
 # src/PA/Arrow.i : src/PA/Arrow.c include/defs.h include/PA/Arrow.h include/types.h
 # 	-$(CPP) $(CPPFLAGS) -E $< > $@
-PA/Element.i : $(srcdir)/PA/Element.c $(includedir)/defs.h $(includedir)/PA/Element.h $(includedir)/types.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/Count.i : $(srcdir)/PA/Count.c $(includedir)/types.h $(includedir)/PA/Count.h $(includedir)/PA/Memory.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/Pair.i : $(srcdir)/PA/Pair.c $(includedir)/types.h $(includedir)/PA/Pair.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/Result.i : $(srcdir)/PA/Result.c $(includedir)/PA/Result.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/Series.i : $(srcdir)/PA/Series.c $(includedir)/defs.h $(includedir)/types.h $(includedir)/PA/Series.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/Status.i : $(srcdir)/PA/Status.c $(includedir)/defs.h $(includedir)/PA/Status.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
+PA/Element.i : src/PA/Element.c include/defs.h include/PA/Element.h include/types.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/Count.i : src/PA/Count.c include/types.h include/PA/Count.h include/PA/Memory.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/Pair.i : src/PA/Pair.c include/types.h include/PA/Pair.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/Result.i : src/PA/Result.c include/PA/Result.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/Series.i : src/PA/Series.c include/defs.h include/types.h include/PA/Series.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/Status.i : src/PA/Status.c include/defs.h include/PA/Status.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
 # src/PA/Feature.i : src/PA/Feature.c include/PA/Feature.h include/types.h
 # 	-$(CPP) $(CPPFLAGS) -E $< > $@
-PA/Value.i : $(srcdir)/PA/Value.c $(includedir)/types.h $(includedir)/PA/Value.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/Resource.i : $(srcdir)/PA/Resource.c $(includedir)/PA/Resource.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@	
-PA/NormalTree.i : $(srcdir)/PA/NormalTree.c $(includedir)/types.h $(includedir)/PA/NormalTree.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/Number.i : $(srcdir)/PA/Number.c $(includedir)/PA/Number.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/TransposeTree.i : $(srcdir)/PA/TransposeTree.c $(includedir)/types.h $(includedir)/PA/TransposeTree.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/PADrawingEditor.i : $(srcdir)/PA/PADrawingEditor.c $(includedir)/PA/PADrawingEditor.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/PALine.i : $(srcdir)/PA/PALine.c $(includedir)/PA/PALine.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/PAShape.i : $(srcdir)/PA/PAShape.c $(includedir)/PA/PAShape.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/PATextView.i : $(srcdir)/PA/PATextView.c $(includedir)/PA/PATextView.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-ArrayList/ArrayList.i: $(srcdir)/ArrayList/ArrayList.c $(includedir)/defs.h $(includedir)/types.h $(includedir)/ArrayList/ArrayList.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-ArrayList/ArrayListPosition.i : $(srcdir)/ArrayList/ArrayListPosition.c $(includedir)/ArrayList/ArrayList.h $(includedir)/defs.h $(includedir)/types.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/Size.i : $(srcdir)/PA/Size.c $(includedir)/defs.h $(includedir)/PA/Size.h $(includedir)/types.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
+PA/Value.i : src/PA/Value.c include/types.h include/PA/Value.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/Resource.i : src/PA/Resource.c include/PA/Resource.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@	
+PA/NormalTree.i : src/PA/NormalTree.c include/types.h include/PA/NormalTree.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/Number.i : src/PA/Number.c include/PA/Number.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/TransposeTree.i : src/PA/TransposeTree.c include/types.h include/PA/TransposeTree.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/PADrawingEditor.i : src/PA/PADrawingEditor.c include/PA/PADrawingEditor.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/PALine.i : src/PA/PALine.c include/PA/PALine.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/PAShape.i : src/PA/PAShape.c include/PA/PAShape.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/PATextView.i : src/PA/PATextView.c include/PA/PATextView.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+ArrayList/ArrayList.i: src/ArrayList/ArrayList.c include/defs.h include/types.h include/ArrayList/ArrayList.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+ArrayList/ArrayListPosition.i : src/ArrayList/ArrayListPosition.c include/ArrayList/ArrayList.h include/defs.h include/types.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/Size.i : src/PA/Size.c include/defs.h include/PA/Size.h include/types.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
 
 Input.s: Input.i
 	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
