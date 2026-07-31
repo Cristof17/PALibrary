@@ -38,17 +38,20 @@ DllExport PACount PACountPerformConstruct(size_t size)
     // countPointer->number = PANumberCreate();
     return count;
 }
-DllExport PACount PACountPerformInit(PACount count, PAInt* Count,PASize size)
+DllExport PACount PACountPerformInit(PACount count, PAInt* value,PASize size)
 {
     PAMemory aux;
-    aux = PAMemoryPerformConstruct(sizeof(struct PACount));
-    PAMemory to = (PAMemory) count->number;
-    PAMemory from = (PAMemory) Count;
-    memcpy(aux,from,size->value[0]);
-    memcpy(to,aux,size->value[0]);
+    aux = PAMemoryPerformConstruct(sizeof(PAInt));
+    aux = PAObjectPerformCopy(count,aux,size->value[0]);
+    count->number = PAObjectPerformCopy((PAObject)aux,count->number,size->value[0]);
+    int returnCode = PAMemoryPerformRuin(aux);
+    // to = PAObjectCo 
+    // PAMemory to = (PAMemory) count->number;
+    // PAMemory from = (PAMemory) Count;
+    // memcpy(aux,from,size->value[0]);
+    // memcpy(to,aux,size->value[0]);
     // memcpy()
     // memcpy(count->number,aux,sizeof(PAInt));
-    PAMemoryPerformRuin(aux);
     // return Count;
     // return count;
     // return aux;
@@ -74,26 +77,26 @@ DllExport PACount PACountPerformInit(PACount count, PAInt* Count,PASize size)
     // return÷÷ Count;
     return count;
 }
-DllExport static PAObject PACountPerformCopy(PAObject from, PAObject to, size_t size)
-{
-    PAMemory aux;
-    aux = (PAMemory) malloc(size);
-    // aux = PACountCreate();
-    // aux->number = from->number;
-    // to->number = aux->number;
-    // aux->number = NULL;
-    free(aux);
-    return to;
-    // PACountDelete(aux);
-    // PACountFinish(aux);
-    // aux->number = from->number;
-    // to->number = aux->number;
-    // struct PACount temp;
-    // return temp;
-    // temp.number = PANumberPerformCopy(from.number,to.number);
-    // to.number = temp.number;
-    // return to;
-}
+// DllExport static PAObject PACountPerformCopy(PAObject from, PAObject to, size_t size)
+// {
+//     PAMemory aux;
+//     aux = (PAMemory) malloc(size);
+//     // aux = PACountCreate();
+//     // aux->number = from->number;
+//     // to->number = aux->number;
+//     // aux->number = NULL;
+//     free(aux);
+//     return to;
+//     // PACountDelete(aux);
+//     // PACountFinish(aux);
+//     // aux->number = from->number;
+//     // to->number = aux->number;
+//     // struct PACount temp;
+//     // return temp;
+//     // temp.number = PANumberPerformCopy(from.number,to.number);
+//     // to.number = temp.number;
+//     // return to;
+// }
 DllExport int PACountDelete(PACount PA)
 {
     int returnCode;

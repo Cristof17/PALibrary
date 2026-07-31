@@ -2396,28 +2396,13 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 {
     PAMemory aux;
     aux = PAMemoryPerformConstruct(sizeof(struct PACount));
-    PAMemory to = (PAMemory) count->number;
-    PAMemory from = (PAMemory) Count;
-    __builtin___memcpy_chk (aux, from,size->value[0], __builtin_object_size (aux, 0));
-    __builtin___memcpy_chk (to, aux,size->value[0], __builtin_object_size (to, 0));
-
-
-    PAMemoryPerformRuin(aux);
-# 75 "src/PA/Count.c"
+    aux = PAObjectPerformCopy(Count,aux,size->value[0]);
+    count->number = PAObjectPerformCopy(aux,count->number,size->value[0]);
+    int returnCode = PAMemoryPerformRuin(aux);
+# 78 "src/PA/Count.c"
     return count;
 }
-          static PAObject PACountPerformCopy(PAObject from, PAObject to, size_t size)
-{
-    PAMemory aux;
-    aux = (PAMemory) malloc(size);
-
-
-
-
-    free(aux);
-    return to;
-# 96 "src/PA/Count.c"
-}
+# 100 "src/PA/Count.c"
           int PACountDelete(PACount PA)
 {
     int returnCode;
@@ -2437,7 +2422,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
     int resultCode;
     resultCode = PAMemoryPerformRuin(PA);
-# 147 "src/PA/Count.c"
+# 150 "src/PA/Count.c"
     return resultCode;
 
 }
