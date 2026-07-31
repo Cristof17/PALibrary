@@ -134,7 +134,7 @@ link: link_pa link_bfs link_arraylist
 #	$(LD) $(foreach object,$^,$(libdir)/$(object)) $(prefix)/musl-$(musl)/obj/crt/$(crt) -lc -static -o $(libdir)/$(output) 
 #pa arraylist bfs
 
-mostlyclean:
+mostlyclean: $(objects_pa) $(objects_arraylist) $(objects_bfs)
 	-rm -v $(foreach object,$(objects_pa),$(libdir)/$(object))
 	-rm -v $(foreach object,$(objects_arraylist),$(libdir)/$(object))
 	-rm -v $(foreach object,$(objects_bfs),$(libdir)/$(object))
