@@ -714,141 +714,140 @@ ArrayList/ArrayListPosition.i : src/ArrayList/ArrayListPosition.c include/ArrayL
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
 PA/Size.i : src/PA/Size.c include/defs.h include/PA/Size.h include/types.h
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
+test_pointers.i: test/test_pointers.c
+	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 
 Input.s: Input.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 Algorithm.s: Algorithm.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 BFS/Procedure.s: BFS/Procedure.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/Input.s: PA/Input.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/Output.s: PA/Output.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 BFS/Record.s: BFS/Record.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 Output.s: Output.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 Memory.s: Memory.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 # src/PA/Destination.s : src/PA/Destination.i
 # 	-$(CC) -S $< -o $@
 #asm/PA/Data.s: src/PA/Data.c
 #	$(CC) $(CFLAGS) -S $< -o $@
 PA/Tree.s: PA/Tree.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/Data.s: PA/Data.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/List.s: PA/List.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/Link.s: PA/Link.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 # src/PA/Arrow.s: src/PA/Arrow.i
 # 	-$(CC) -S $< -o $@
 PA/Element.s: PA/Element.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/Count.s: PA/Count.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/Pair.s: PA/Pair.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/Result.s: PA/Result.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/Series.s: PA/Series.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 # src/PA/Feature.s: src/PA/Feature.i
 # 	-$(CC) -S $< -o $@
 PA/Value.s: PA/Value.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/Resource.s: PA/Resource.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/NormalTree.s: PA/NormalTree.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/Number.s: PA/Number.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/TransposeTree.s: PA/TransposeTree.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/Status.s: PA/Status.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/PADrawingEditor.s: PA/PADrawingEditor.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/PALine.s: PA/PALine.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/PAShape.s: PA/PAShape.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/PATextView.s: PA/PATextView.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 ArrayList/ArrayList.s: ArrayList/ArrayList.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 ArrayList/ArrayListPosition.s: ArrayList/ArrayListPosition.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/Size.s: PA/Size.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/Memory.s: PA/Memory.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 test.i: test/test.c
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 test.s: test.i
 	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
-
-test_pointers.i: test/test_pointers.c
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 test_pointers.s: test_pointers.i
 	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 
 test.o: test.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 test_pointers.o: test_pointers.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 test.out: $(objects) test.o $(lib_pa) $(lib_bfs) $(lib_arraylist)
-	$(CC) $(libdir)/$< $(foreach object,$(objects_pa),$(libdir)/$(object)) $(libdir)/$(lib_pa) $(libdir)/$(lib_bfs) $(libdir)/$(lib_arraylist) -o $(bindir)/$(program_test_pa)
+	$(CC) lib/$< $(foreach object,$(objects_pa),lib/$(object)) lib/$(lib_pa) lib/$(lib_bfs) lib/$(lib_arraylist) -o $(bindir)/$(program_test_pa)
 
 test_pointers.out: test_pointers.o $(objects) $(lib_pa) $(lib_bfs) $(lib_arraylist)
-	$(CC) $(libdir)/$< $(foreach object,$(objects_pa),$(libdir)/$(object)) $(libdir)/$(lib_pa) $(libdir)/$(lib_bfs) $(libdir)/$(lib_arraylist) -o $(bindir)/$(program_test_pointers_pa)
+	$(CC) lib/$< $(foreach object,$(objects_pa),lib/$(object)) lib/$(lib_pa) lib/$(lib_bfs) lib/$(lib_arraylist) -o $(bindir)/$(program_test_pointers_pa)
 
-#$(CC) -lc $(foreach dependency,$^,$(libdir)/$(dependency)) -o $(bindir)/$@
+#$(CC) -lc $(foreach dependency,$^,lib/$(dependency)) -o $(bindir)/$@
 
 # ASFLAGS=
 
 
 main.o : main.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 Input.o: Input.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
  
@@ -857,13 +856,13 @@ endif
 #	$(AS) $(ASFLAGS) $< -o $@
 Algorithm.o: Algorithm.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
@@ -871,130 +870,130 @@ endif
 
 BFS/Procedure.o: BFS/Procedure.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 # ifeq
 
 PA/Input.o: PA/Input.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 
 PA/Output.o: PA/Output.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 
 BFS/Record.o: BFS/Record.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 
 Output.o: Output.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 
 PA/Value.o: PA/Value.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 
 PA/Data.o: PA/Data.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 
 PA/Tree.o: PA/Tree.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 
 PA/List.o: PA/List.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 
 PA/Link.o: PA/Link.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
@@ -1013,88 +1012,88 @@ endif
 
 PA/Size.o: PA/Size.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 PA/Element.o: PA/Element.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 
 PA/Count.o: PA/Count.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 
 PA/Pair.o: PA/Pair.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	-$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 
 PA/Result.o: PA/Result.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 
 PA/Series.o: PA/Series.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 PA/Status.o: PA/Status.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
@@ -1126,127 +1125,127 @@ endif
 
 PA/Resource.o: PA/Resource.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 PA/NormalTree.o: PA/NormalTree.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 PA/Number.o: PA/Number.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 PA/TransposeTree.o: PA/TransposeTree.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 PA/Memory.o: PA/Memory.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 PA/PADrawingEditor.o: PA/PADrawingEditor.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 PA/PALine.o: PA/PALine.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 
 PA/PAShape.o: PA/PAShape.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 
 PA/PATextView.o: PA/PATextView.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 ArrayList/ArrayList.o: ArrayList/ArrayList.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 ArrayList/ArrayListPosition.o : ArrayList/ArrayListPosition.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
