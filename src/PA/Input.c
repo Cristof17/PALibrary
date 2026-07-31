@@ -47,7 +47,7 @@ DllExport PAMemory PAInputPerformConstruct(size_t size)
 	// return result;
 	// return temp;
 }
-DllExport static Object PAInputPerformCopy(Object from, Object to, size_t size)
+DllExport static PAObject PAInputPerformCopy(PAObject from, PAObject to, size_t size)
 {
 	// struct PAInput* copy;
 	PAMemory aux;

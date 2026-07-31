@@ -14,7 +14,7 @@
 // DllExport Memory PANormalTreeCreate(size_t size);
 DllExport PANormalTree PANormalTreePerformCreate(PANormalTree NormalTree, PATree Tree);
 // DllExport void PANormalTreeCopy(struct PANormalTree* NormalTree, struct PANormalTree* Tree);
-DllExport static Object PANormalTreePerformCopy(Object, Object, size_t);
+DllExport static PAObject PANormalTreePerformCopy(PAObject, PAObject, size_t);
 DllExport int PANormalTreePerformDelete(PANormalTree PA);
 // DllExport int PANormalTreeFinish(Memory);
 // DllExport struct PANormalTree PANormalTreePerformConstruct(struct PATree tree);

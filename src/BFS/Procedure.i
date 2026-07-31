@@ -1461,7 +1461,7 @@ typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
 typedef void* PAMemory;
-typedef void* Object;
+typedef void* PAObject;
 typedef int Offset;
 typedef char PAInt;
 
@@ -2104,7 +2104,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          static Object PATreePerformCopy(Object, Object, size_t);
+          static PAObject PATreePerformCopy(PAObject, PAObject, size_t);
 
           PATree PATreePerformBegin(PATree, PACount N, PACount M, PASeries adj, PAElement source);
 
@@ -2135,7 +2135,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           PAElement PAElementPerformConstruct(PAElement,PAData, PAElement, PAStatus);
-          static Object PAElementPerformCopy(Object, Object, size_t);
+          static PAObject PAElementPerformCopy(PAObject, PAObject, size_t);
           int PAElementPerformDelete(PAElement);
 
           void PAElementVisit(PAElement);
@@ -2185,7 +2185,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           PAMemory PAInputPerformConstruct(size_t);
 
 
-          static Object PAInputPerformCopy(Object,Object, size_t);
+          static PAObject PAInputPerformCopy(PAObject,PAObject, size_t);
 
 
 

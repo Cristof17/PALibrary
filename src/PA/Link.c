@@ -55,7 +55,7 @@ DllExport struct PALink* PALinkPerformInit(struct PALink* Link, struct PAPair* p
     return aux;
     // return temp;
 }
-DllExport static Object PALinkPerformCopy(Object from, Object to, size_t size)
+DllExport static PAObject PALinkPerformCopy(PAObject from, PAObject to, size_t size)
 {
     // struct PALink temp;
     PAMemory aux;

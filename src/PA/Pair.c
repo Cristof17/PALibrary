@@ -80,7 +80,7 @@ DllExport struct PAPair* PAPairPerformInit(struct PAPair* Pair, struct PAElement
     // struct PAPair pair;
     // return result;
 }
-DllExport static Object PAPairPerformCopy(Object from, Object to, size_t size)
+DllExport static PAObject PAPairPerformCopy(PAObject from, PAObject to, size_t size)
 {
     // struct PAPair temp;
     // sutr

@@ -41,14 +41,14 @@ DllExport PACount PACountPerformConstruct(size_t size)
 DllExport PACount PACountPerformInit(PACount count, PAInt* Count,PASize size)
 {
     PAMemory aux;
-    aux = malloc (size->value[0]);
+    aux = PAMemoryPerformConstruct(sizeof(struct PACount));
     PAMemory to = (PAMemory) count->number;
     PAMemory from = (PAMemory) Count;
     memcpy(aux,from,size->value[0]);
     memcpy(to,aux,size->value[0]);
     // memcpy()
     // memcpy(count->number,aux,sizeof(PAInt));
-    free(aux);
+    PAMemoryPerformRuin(aux);
     // return Count;
     // return count;
     // return aux;
@@ -74,7 +74,7 @@ DllExport PACount PACountPerformInit(PACount count, PAInt* Count,PASize size)
     // return÷÷ Count;
     return count;
 }
-DllExport static Object PACountPerformCopy(Object from, Object to, size_t size)
+DllExport static PAObject PACountPerformCopy(PAObject from, PAObject to, size_t size)
 {
     PAMemory aux;
     aux = (PAMemory) malloc(size);
@@ -111,7 +111,8 @@ DllExport int PACountDelete(PACount PA)
 DllExport int PACountPerformRuin(PAMemory PA)
 {
     // int result
-    PAMemoryPerformRuin(PA);
+    int resultCode;
+    resultCode = PAMemoryPerformRuin(PA);
     //get the value at address pointed by stack pointer
     //that corresponsds to parameter PA
     //check each bit
@@ -137,13 +138,13 @@ DllExport int PACountPerformRuin(PAMemory PA)
     // return result;
     // return PARESULT_SUCCESS;
     // return Empty;
-    int returnCode;
+    // int returnCode;
     // free(PA->number);
-    free(PA);
-    returnCode = PARESULT_SUCCESS;
+    // free(PA);
+    // returnCode = PARESULT_SUCCESS;
     // returnCode = PANumberFinish(PA->number);
     // free(PA);
-    return returnCode;
+    return resultCode;
     // return PA;    /
 }
 

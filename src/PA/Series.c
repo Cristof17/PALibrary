@@ -54,7 +54,7 @@ DllExport PAMemory PASeriesPerformConstruct(size_t size)
 //     // return series;
     return series;
 }
-DllExport static Object PASeriesCopy(Object from, Object to, size_t size)
+DllExport static PAObject PASeriesCopy(PAObject from, PAObject to, size_t size)
 {
     // struct PACount x;
     // struct PACount y;

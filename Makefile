@@ -303,7 +303,8 @@ objects_pa= Input.o \
 	PA/PAShape.o \
 	PA/PATextView.o \
 	PA/Size.o \
-	PA/Memory.o
+	PA/Memory.o \
+	PA/Object.o
 # 	src/PA/Data.i \
 
 sources_arraylist= ArrayList/ArrayList.i \
@@ -335,7 +336,8 @@ sources_pa= Input.i \
 	PA/PAShape.i \
 	PA/PATextView.i \
 	PA/Size.i \
-	PA/Memory.i
+	PA/Memory.i \
+	PA/Object.i
 # sources_arraylist= src/Input.i
 
 designs_arraylist= ArrayList/ArrayList.c \
@@ -368,7 +370,8 @@ designs_pa=Input.c \
 	PA/PAShape.c \
 	PA/PATextView.c \
 	PA/Size.c \
-	PA/Memory.c
+	PA/Memory.c \
+	PA/Object.c
 
 assemblies_arraylist= ArrayList/ArrayListPosition.s \
  	ArrayList/ArrayList.s
@@ -399,7 +402,8 @@ assemblies_pa= Input.s \
 	PA/PAShape.s \
 	PA/PATextView.s \
 	PA/Size.s \
-	PA/Memory.s
+	PA/Memory.s \
+	PA/Object.s
 
 sources_test_pa= test.i test_pointers.i
 sources_test_bfs= 
@@ -710,6 +714,8 @@ PA/Data.i : src/PA/Data.c include/PA/Data.h
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
 PA/Memory.i : src/PA/Memory.c include/PA/Memory.h include/types.h
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/Object.i : src/PA/Object.c include/defs.h include/types.h
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
 # src/PA/Destination.i : src/PA/Destination.c include/types.h include/PA/Destination.h
 # 	-$(CPP) $(CPPFLAGS) -E $< > $@
 PA/Tree.i : src/PA/Tree.c include/PA/Tree.h include/types.h
@@ -830,6 +836,8 @@ ArrayList/ArrayListPosition.s: ArrayList/ArrayListPosition.i
 PA/Size.s: PA/Size.i
 	$(CC) -S src/$< -o src/$@
 PA/Memory.s: PA/Memory.i
+	$(CC) -S src/$< -o src/$@
+PA/Object.s: PA/Object.i
 	$(CC) -S src/$< -o src/$@
 test.i: test/test.c
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
@@ -1212,6 +1220,17 @@ ifeq ($(host-type),AArch64)
 endif
 
 PA/Memory.o: PA/Memory.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+PA/Object.o: PA/Object.s
 ifeq ($(host-type),arm64)
 	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif

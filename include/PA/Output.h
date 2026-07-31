@@ -16,7 +16,7 @@
 // DllExport Memory PAOutputCreate(size_t size);
 DllExport PAMemory PAOutputPerformConstruct(size_t);
 // DllExport struct PA(struct PAOutput*ß from, struct PAOutput* to);
-DllExport static Object PAOutputPerformCopy(Object from, Object to,size_t);
+DllExport static PAObject PAOutputPerformCopy(PAObject from, PAObject to,size_t);
 DllExport int PAOutputPerformDelete(PAOutput);
 // DllExport int PAOutputFinish(Memory);
 DllExport void PAOutputPrint(PAResult Result);

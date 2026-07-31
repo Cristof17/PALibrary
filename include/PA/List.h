@@ -19,7 +19,7 @@ DllExport PAMemory PAListPerformConstruct(size_t);
 // DllExport struct PAList PAListPerformCopy(struct PAList);
 // DllExport PAResult PAListPerformPutCount(struct PAList, struct PACount);
 // DllExport PAResult PAListPerformPutList(struct PAList);
-DllExport static Object PAListPerformCopy(Object, Object, size_t);
+DllExport static PAObject PAListPerformCopy(PAObject, PAObject, size_t);
 DllExport int PAListPerformDelete(PAList);
 // DllExport int PAListFinish(Memory);
 // DllExport void PAListDispose(void);

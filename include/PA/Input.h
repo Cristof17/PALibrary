@@ -16,7 +16,7 @@
 DllExport PAMemory PAInputPerformConstruct(size_t);
 // DllExport struct s PAInputCopy(struct PAInput* from, struct PAInput* to);
 // DllExport struct stricPAInputCopy(struct PAInput* from, struct PAInput* to);
-DllExport static Object PAInputPerformCopy(Object,Object, size_t);
+DllExport static PAObject PAInputPerformCopy(PAObject,PAObject, size_t);
 // vpo BFSInputRuin();
 // struct PAInput PAInputPerformConstruct(struct PACount, struct PACount, struct PAList, struct PAElement)l
 // struct 

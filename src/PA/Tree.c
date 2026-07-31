@@ -134,7 +134,7 @@ DllExport PATree PATreePerformInit(PATree tree, PACount N, PACount M, PASeries a
     // tree = PATreePerformInit(Tree);
     // return tree;
 // }
-DllExport static Object PATreePerformCopy(Object from, Object to, size_t size)
+DllExport static PAObject PATreePerformCopy(PAObject from, PAObject to, size_t size)
 {
     PAMemory aux;
     aux = malloc (size);

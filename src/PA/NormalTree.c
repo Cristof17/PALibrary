@@ -50,7 +50,7 @@ DllExport PANormalTree PANormalTreePerformInit(PANormalTree NormalTree, PATree V
     // return normalTreePointer;  
     // return temp;
 }
-DllExport static Object PANormalTreePerformCopy(Object from, Object to, size_t size)
+DllExport static PAObject PANormalTreePerformCopy(PAObject from, PAObject to, size_t size)
 {
     PAMemory aux;
     aux = malloc (size);

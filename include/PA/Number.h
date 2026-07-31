@@ -9,7 +9,7 @@
 
 // DllExport Memory PANumberCreate(size_t size);
 DllExport struct PANumber* PANumberPerformConstruct(struct PANumber* Number, unsigned char Value);
-DllExport static Object PANumberPerformCopy(Object, Object, size_t);
+DllExport static PAObject PANumberPerformCopy(PAObject, PAObject, size_t);
 DllExport int PANumberPerformDelete(struct PANumber*);
 // DllExport int PANumberFinish(Memory);
 DllExport void PANumberPrint(struct PANumber*);

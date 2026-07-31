@@ -63,7 +63,7 @@ DllExport PAOutput PAOutputPerformInit(PAOutput Output)
     // Output->result = temp.result;
     return Output;
 }
-DllExport static Object PAOutputPerformCopy(Object from, Object to, size_t size)
+DllExport static PAObject PAOutputPerformCopy(PAObject from, PAObject to, size_t size)
 {
 	PAMemory aux;
     // aux = PAOutputCreate();

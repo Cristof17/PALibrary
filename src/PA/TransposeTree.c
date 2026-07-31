@@ -56,7 +56,7 @@ DllExport PATransposeTree PATransposeTreePerformInit(PATransposeTree TransposeTr
     return TransposeTree;
     // return TransposeTree;
 }
-DllExport static Object PATransposeTreePerformCopy(Object from, Object to, size_t size)
+DllExport static PAObject PATransposeTreePerformCopy(PAObject from, PAObject to, size_t size)
 {
     // struct PATransposeTree* copy;
     PAMemory aux;

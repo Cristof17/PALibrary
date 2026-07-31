@@ -1460,7 +1460,7 @@ typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
 typedef void* PAMemory;
-typedef void* Object;
+typedef void* PAObject;
 typedef int Offset;
 typedef char PAInt;
 

@@ -1461,7 +1461,7 @@ typedef int PAResult;
 typedef int PABool;
 typedef PABool PAStatus;
 typedef void* PAMemory;
-typedef void* Object;
+typedef void* PAObject;
 typedef int Offset;
 typedef char PAInt;
 
@@ -2083,7 +2083,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          static Object PAListPerformCopy(Object, Object, size_t);
+          static PAObject PAListPerformCopy(PAObject, PAObject, size_t);
           int PAListPerformDelete(PAList);
 
 
@@ -2105,7 +2105,7 @@ void PAListPrint(struct PAList* List);
 
 
 
-          static Object PACountPerformCopy(Object, Object, size_t);
+          static PAObject PACountPerformCopy(PAObject, PAObject, size_t);
           PACount PACountPerformInit(PACount, PAInt* value, PASize size);
           int PACountPerformDelete(PACount PA);
 # 8 "src/BFS/Record.c" 2
