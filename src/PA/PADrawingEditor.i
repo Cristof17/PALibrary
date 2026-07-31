@@ -1,3 +1,0 @@
-
-
-src/PA/PADrawingEditor.c

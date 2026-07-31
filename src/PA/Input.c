@@ -19,7 +19,8 @@ DllExport PAMemory PAInputPerformConstruct(size_t size)
 {
 	// struct PAInput temp;
 	PAMemory input;
-	input = malloc(size);
+	input = PAMemoryPerformCreate(sizeof(struct PAInput));
+	// input = malloc(size);
 	// inputPointer->n = (struct PACount*) malloc (sizeof(struct PACount));
 // inputPointer->m = (struct PACount*) malloc (sizeof(struct PACount*));
 	// inputPointer->source = (struct PACount*) malloc (sizeof(struct PACount));
@@ -135,12 +136,13 @@ DllExport int PAInputPerformRuin(PAMemory PA) {
 	// PACountFinish(&PA->m);
 	// PAElementFinish(&PA->source);
 	int returnCode;
+	returnCode = PAMemoryPerformFinish(PA);
 	// free(PA);
 	// free(N);
 	// free(M);
 	// free(Source);
-	free(PA);
-	returnCode = PARESULT_SUCCESS;
+	// free(PA);
+	// returnCode = PARESULT_SUCCESS;
 	// return PA;
 	// return Empty;
 	// return result;

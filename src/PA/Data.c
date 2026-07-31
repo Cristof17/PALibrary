@@ -12,12 +12,12 @@
 //struct PAData {
 //
 //}
-DllExport PAMemory PADataPerformConstruct(size_t size)
+DllExport PAMemory PADataPerformConstruct()
 {
     // struct PAData data;
     // struct PAData* data;
     PAMemory data;
-    data = malloc (size);
+    data = PAMemoryPerformCreate(sizeof(struct PAData));
     // data->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
     // data->Resource->value = (PANumber) malloc (sizeof(PANumber));//todo replace with conert to size_t
     // struct PAResource* aux;
@@ -136,10 +136,11 @@ DllExport int PADataPerformFinish(PAMemory PA)
     // return Resource;
     // g
     int returnCode;
+    returnCode = PAMemoryPerformFinish(PA);
     // free(PA->Resource->value);
     // free(PA->Resource);
-    free(PA);
-    returnCode = PARESULT_SUCCESS;
+    // free(PA);
+    // returnCode = PARESULT_SUCCESS;
     // free(PA);
     // free(PA->value);
     return returnCode;

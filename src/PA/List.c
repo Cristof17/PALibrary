@@ -21,7 +21,8 @@
 DllExport PAMemory PAListPerformConstruct(size_t size)
 {
     PAMemory listPointer;
-    listPointer = malloc (size);
+    listPointer = PAMemoryPerformCreate(sizeof(struct PAList));
+    // listPointer = malloc (size);
     // listPointer->m = m;
     // listPointer->neigh = edges;
     // listPointer->neigh = 
@@ -218,8 +219,9 @@ DllExport int PAListPerformFinish(PAMemory PA)
     // returnCode = PACountFinish(PA->n);
     // free(Count);
     // free(Edges);
-    free(PA);
-    returnCode = PARESULT_SUCCESS;
+    returnCode = PAMemoryPerformFinish(PA);
+    // free(PA);
+    // returnCode = PARESULT_SUCCESS;
     // free(PA);
     return returnCode;
     // struct PAList List;

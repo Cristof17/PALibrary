@@ -14,7 +14,8 @@ DllExport PAMemory PAMemoryPerformCreate(size_t size)
 {
     // struct PACount zies;
     PAMemory count;
-    count = malloc(size);
+    count = PAMemoryPerformCreate(sizeof(PAMemory));
+    // count = malloc(size);
     // count->number = (PAInt*) malloc (sizeof(PAInt));
     //  struct PACount* aux;
     // aux = (struct PACount*) malloc (sizeof(struct PACount));
@@ -63,9 +64,10 @@ DllExport int PAMemoryPerformFinish(PAMemory PA)
     // return PARESULT_SUCCESS;
     // return Empty;
     int returnCode;
+    PAMemoryPerformFinish(PA);
     // free(PA->number);
-    free(PA);
-    returnCode = PARESULT_SUCCESS;
+    // free(PA);
+    // returnCode = PARESULT_SUCCESS;
     // returnCode = PANumberFinish(PA->number);
     // free(PA);
     return returnCode;

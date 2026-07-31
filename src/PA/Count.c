@@ -110,6 +110,8 @@ DllExport int PACountDelete(PACount PA)
 }
 DllExport int PACountPerformRuin(PAMemory PA)
 {
+    // int result
+    PAMemoryPerformFinish(PA);
     //get the value at address pointed by stack pointer
     //that corresponsds to parameter PA
     //check each bit

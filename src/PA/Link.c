@@ -19,7 +19,8 @@ DllExport PAMemory PALinkPerformConstruct(size_t size)
 {
     // struct PALink link;
     PAMemory link;
-    link = malloc (size);
+    PAMemoryPerformCreate(sizeof(struct PALink));
+    // link = malloc (size);
     // link->p = p;
     return link;
     // link.p = PAPairPerformConstruct();
@@ -93,17 +94,18 @@ DllExport int PALinkPerformDelete(PALink PA){
     // struct PALink link;
     // return link;
 }
-DllExport int PALinkPerformRuin(PAMemory Pair)
+DllExport int PALinkPerformRuin(PAMemory PA)
 {
+    int returnCode;
+    PAMemoryPerformFinish(PA);
     // PA.p = PAPairPerformRuin(PA.p);    
     // struct PALink Empty;
     // return Empty;
     // return 0;
     // PAResult result;
     // return result;
-    int returnCode;
-    free(Pair);
-    returnCode = PARESULT_SUCCESS;
+    // free(Pair);
+    // returnCode = PARESULT_SUCCESS;
     return returnCode;
 }
 
