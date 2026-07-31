@@ -1861,7 +1861,7 @@ struct Facade {
 
 
 
-          static size_t PAMemorySize(PACount);
+          static size_t PACountSize();
           static PAMemory PACountPerformAllocate();
           static PAObject PACountPerformCopy(PAObject, PAObject, size_t);
           PACount PACountPerformInit(PACount, PAInt* value, PASize size);

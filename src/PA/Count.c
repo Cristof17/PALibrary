@@ -5,11 +5,13 @@
 #include <PA/Count.h>
 #include <PA/Number.h>
 #include <PA/Memory.h>
+#include <PA/Object.h>
 // #include <PA/Number.h>
 #elif defined _WIN95
 #include <PA\Count.h>
 #include <PA\Number.h>
 #include <PA\Memory.h>
+#include <PA\Object.h>
 
 #endif
 DllExport PAMemory PACountAllocate()
@@ -55,10 +57,10 @@ DllExport PACount PACountConstruct(PACount n, PAInt value)
 }
 DllExport PAObject PACountInitialise(PACount init, PACount this,PASize size)
 {
-    size_t size = PACountSize();
+    PASize size = PACountSize();
     PAMemory aux = PAMemoryPerforConstruct(size);
-    init = (Object) PAObjectPerformCopy(init,aux,size);
-    this = (Object) PAObjectPerformCopy(this,init,size);
+    init = (PAObject) PAObjectPerformCopy(init,aux,size);
+    this = (PAObject) PAObjectPerformCopy(this,init,size);
     return aux;
     // PAMemory aux = PAMemoryPerformConstruct(sizeof(struct PACount))
     // PAObject aux =
@@ -179,9 +181,9 @@ PAResult PACountPrint(struct PACount* Count)
     return result;
 }
 
-size_t PACountSize()
+PASize PACountSize()
 {
-    size_t size;
+    PASize size;
     size = sizeof(PAInt);
     return size;
 }

@@ -7,11 +7,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#ifndef _WIN95
-#include <PA\Object.h>
-#elif defined _WIN95
-#include <PA/Object.h>
-#endif
 // #include "../defs.h"
 // #include "../types.h"
 

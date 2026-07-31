@@ -6,8 +6,8 @@
 // #include <PA/List.h>
 #include <PA/Object.h>
 #elif defined _WIN95
-#include <PA\Object.h>
 // #include <PA\Tree.h>
+#include <PA\Object.h>
 // #include <PA\Count.h>
 // #include <PA\Element.h>
 // #include <PA\List.h>
@@ -137,6 +137,13 @@
 //     // tree = PATreePerformInit(Tree);
 //     // return tree;
 // // }
+DllExport PAObject PAObjectPerformCopy(PAObject from,PAObject to,PASize size) {
+	PAMemory aux;
+	aux = PAMemoryPerformConstruct(size->value[0]);
+	memcpy(aux,from,size->value[0]);
+	memcpy(from,to,size->value[0]);
+	return aux;
+}
 // DllExport static Object PATreeCopy(Object from, Object to, size_t size)
 // {
 //     Memory aux;

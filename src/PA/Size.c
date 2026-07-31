@@ -7,16 +7,33 @@
 #include <PA\Size.h>
 #include <PA\Memory.h>
 #endif
+DllExport size_t PASizeSize(size_t field_size)
+{
+	return field_1_size + field_2_size;
+}
 
-DllExport PAMemory PASizePerformConstruct(size_t size){
-    PAMemory sizeStruct;
-    sizeStruct = PAMemoryPerformConstruct(sizeof(struct PASize));
+DllExport PAMemory PASizePerformAlloc(size_t size)
+{
+    PAMemory address;
+    size_t totalSize;
+    totalSize = PASizeSize(size);
+    address = malloc (totalSize);//value size and digits_size 
+    return address;
+}
+
+DllExport PASize PASizePerformConstruct(int value) {
+	//do some decimal conversion to char array 102 \
+	//will we first digit 1 second digit 0 third digit \
+	//2 and total size of 3. usr char as standard in c
+    PAMemory size;
+    size = PASizePerformAlloc(sizeof(size_t));
+    size = PASizePerformInit(value);
     // sizeStruct = malloc (size);
     return sizeStruct;
 }
-DllExport PASize PASizePerformInit(PASize Size, size_t* value, size_t digits)
+DllExport PASize PASizePerformInit(PASize Size, int value)
 {
-    struct PASize* aux;
+    PASize aux;
     aux = (struct PASize*) malloc (sizeof(struct PASize));
     aux->value = (size_t*) malloc (sizeof(size_t)*digits);
     // aux->value = ;
