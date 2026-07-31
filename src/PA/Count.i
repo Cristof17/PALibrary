@@ -1852,25 +1852,6 @@ struct Facade {
 # 8 "./include/PA/Count.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 9 "./include/PA/Count.h" 2
-# 1 "./include/PA/Memory.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Memory.h" 2
-
-
-
-
-
-
-          PAMemory PAMemoryPerformCreate(size_t size);
-          int PAMemoryPerformFinish(PAMemory);
-# 10 "./include/PA/Count.h" 2
 
 
 
@@ -2376,6 +2357,26 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
           void PANumberPrint(struct PANumber*);
 # 7 "src/PA/Count.c" 2
+# 1 "./include/PA/Memory.h" 1
+
+
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 9 "./include/PA/Memory.h" 2
+
+
+
+
+
+
+          PAMemory PAMemoryPerformCreate(size_t size);
+          int PAMemoryPerformFinish(PAMemory);
+# 8 "src/PA/Count.c" 2
+
 
 
 
@@ -2388,7 +2389,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
     PAMemory count;
     count = PAMemoryPerformCreate(size);
-# 37 "src/PA/Count.c"
+# 39 "src/PA/Count.c"
     return count;
 }
           PACount PACountPerformInit(PACount count, PAInt* Count,PASize size)
@@ -2402,7 +2403,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
     free(aux);
-# 73 "src/PA/Count.c"
+# 75 "src/PA/Count.c"
     return count;
 }
           static Object PACountPerformCopy(Object from, Object to, size_t size)
@@ -2415,7 +2416,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
     free(aux);
     return to;
-# 94 "src/PA/Count.c"
+# 96 "src/PA/Count.c"
 }
           int PACountDelete(PACount PA)
 {
@@ -2433,7 +2434,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 }
           int PACountPerformRuin(PAMemory PA)
 {
-# 136 "src/PA/Count.c"
+# 138 "src/PA/Count.c"
     int returnCode;
 
     free(PA);

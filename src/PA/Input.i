@@ -2084,25 +2084,6 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 9 "./include/PA/Count.h" 2
-# 1 "./include/PA/Memory.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Memory.h" 2
-
-
-
-
-
-
-          PAMemory PAMemoryPerformCreate(size_t size);
-          int PAMemoryPerformFinish(PAMemory);
-# 10 "./include/PA/Count.h" 2
 
 
 
