@@ -2197,7 +2197,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 }
 
-          int PAElementPerformFinish(PAMemory PA)
+          int PAElementPerformRuin(PAMemory PA)
 {
     int returnCode;
     returnCode = PAMemoryPerformFinish(PA);

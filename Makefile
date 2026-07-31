@@ -215,8 +215,9 @@ installcheck:
 print:
 	git status
 	ar -T -t $(libdir)/libpa.a
-tar:
-	tar cvf palibrary.tar $(srcdir)/PA/
+tar: $(objects) $(libs)
+	mkdir $(output)-$(version)
+	tar cvf $(output).tar.gz obj/PA/
 shar:
 dist:
 	tar cvf libpa.tar.gz $(libdir)/libpa.a
@@ -243,6 +244,8 @@ endif
 #	-$(CC) -S test.i -o test.s
 #	-$(AS) test.s -o test.o
 
+objects_algorithm= Input.o \
+	Output.o
 
 objects_arraylist= ArrayList/ArrayList.o \
 	ArrayList/ArrayListPosition.o
@@ -457,6 +460,7 @@ endif
 lib_bfs= libbfs.a
 lib_arraylist= libarraylist.a
 lib_pa= libpa.a
+lib_algorithm= libalgorithm.a
 
 output_dir= $(bindir) 
 output_pa= ./lib/$(lib_pa)
@@ -518,6 +522,14 @@ build: $(subdirs)
 # 	@echo "Build"
 # 	@echo "$<"
 #
+$(lib_algorithm): $(objects_algorithm)
+	src/mkinstalldirs $(bindir) $(datadir) lib $(infodir) $(mandir)
+	$(AR) -v -s -q ./lib/$@ $(foreach object,$^,lib/$(object))  
+	$(AR) -v -t -s ./lib/$@
+$(lib_arraylist): $(objects_arraylist)
+	src/mkinstalldirs $(bindir) $(datadir) lib $(infodir) $(mandir)
+	$(AR) -v -s -q ./lib/$@ $(foreach object,$^,lib/$(object))  
+	$(AR) -v -t -s ./lib/$@
 $(lib_pa): $(objects_pa)
 	src/mkinstalldirs $(bindir) $(datadir) lib $(infodir) $(mandir)
 	$(AR) -v -s -q ./lib/$@ $(foreach object,$^,lib/$(object))  

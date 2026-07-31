@@ -78,9 +78,9 @@ _PAListPerformDelete:                   ; @PAListPerformDelete
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAListPerformFinish            ; -- Begin function PAListPerformFinish
+	.globl	_PAListPerformRuin              ; -- Begin function PAListPerformRuin
 	.p2align	2
-_PAListPerformFinish:                   ; @PAListPerformFinish
+_PAListPerformRuin:                     ; @PAListPerformRuin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32

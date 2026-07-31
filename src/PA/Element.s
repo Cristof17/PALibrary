@@ -135,9 +135,9 @@ _PAElementPerformDelete:                ; @PAElementPerformDelete
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAElementPerformFinish         ; -- Begin function PAElementPerformFinish
+	.globl	_PAElementPerformRuin           ; -- Begin function PAElementPerformRuin
 	.p2align	2
-_PAElementPerformFinish:                ; @PAElementPerformFinish
+_PAElementPerformRuin:                  ; @PAElementPerformRuin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32

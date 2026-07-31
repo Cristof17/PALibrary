@@ -71,9 +71,9 @@ _PADataPerformDelete:                   ; @PADataPerformDelete
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PADataPerformFinish            ; -- Begin function PADataPerformFinish
+	.globl	_PADataPerformRuin              ; -- Begin function PADataPerformRuin
 	.p2align	2
-_PADataPerformFinish:                   ; @PADataPerformFinish
+_PADataPerformRuin:                     ; @PADataPerformRuin
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32

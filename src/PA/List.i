@@ -2178,7 +2178,7 @@ void PAListPrint(struct PAList* List);
 
 
 }
-          int PAListPerformFinish(PAMemory PA)
+          int PAListPerformRuin(PAMemory PA)
 {
     int returnCode;
 
