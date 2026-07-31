@@ -45,6 +45,7 @@ srcdir=
 #musl=@musl@
 #crt=@crt@
 #output=@output@
+libs= libpa.a libarraylist.a lib_algorithm.a
 output=libpa.a
 program_test_pa= test.out
 program_test_pointers_pa= test_pointers.out
@@ -198,7 +199,7 @@ clobber:
 
 install: $(subdirs)
 	$(srcdir)/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
-
+	$(foreach lib,$(libs),cp -v $(lib) $(libdir))
 # 	mkdir $(subdirs)
 #	cp out/libpa.a $(libdir)
 #	cp -r obj/*.o $(libdir)
@@ -1652,4 +1653,4 @@ run:
 # 	$(AS) -c asm/arraylist/$^ -o obj/arraylist/$@
 
 #.PHONY: all install installdirs installcheck uinstall run distclean clean
-.PHONY: all test
+.PHONY: all test install
