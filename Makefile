@@ -246,7 +246,7 @@ $(output).tar.gz:
 	cp -r -v lib/ArrayList/ $(output)-$(version)/ArrayList
 	cp -r -v $(foreach lib,$(libs),./lib/$(lib)) $(output)-$(version)
 	tar --gzip --create --verbose --file $(output).tar.gz $(output-version) $(output)-$(version)/$(dir $(obj))
-
+$(objects_pa): include/types.h include/defs.h
 test:
 ifeq ($(host-type), arm64)
 	file ./lib/libpa.a
