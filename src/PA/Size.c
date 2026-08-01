@@ -41,11 +41,11 @@ DllExport size_t convertToStandard(PASize size)
             else
             {
                 standardSize *= 10;
-                standardSize += atoi(digits+i);
+                standardSize += atoi(size->digits);
             }
         }
         standardSize *= 10;
-        standardSize += atoi(digits+i);
+        standardSize += atoi(size->digits);
     }
     return standardSize;
 }
@@ -62,8 +62,8 @@ DllExport PASize PASizePerformConstruct(int value) {
 	//will we first digit 1 second digit 0 third digit \
 	//2 and total size of 3. usr char as standard in c
     PAMemory size;
-    size = PASizePerformAlloc(sizeof(size_t));
-    size = PASizePerformInit(value);
+    size = PASizePerformAllocate(sizeof(size_t));
+    size = PASizePerformInitialise(value);
     // sizeStruct = malloc (size);
     return size;
 }

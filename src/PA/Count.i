@@ -1872,6 +1872,8 @@ struct Facade {
           PACount PACountPerformInit(PACount, PAInt* value, PASize size);
           int PACountPerformDelete(PACount PA);
 # 6 "src/PA/Count.c" 2
+# 1 "./include/PA/Size.h" 1
+# 7 "src/PA/Count.c" 2
 # 1 "./include/PA/Number.h" 1
 
 
@@ -2367,7 +2369,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
           int PANumberPerformDelete(PANumber);
 
           void PANumberPrint(PANumber);
-# 7 "src/PA/Count.c" 2
+# 8 "src/PA/Count.c" 2
 # 1 "./include/PA/Memory.h" 1
 
 
@@ -2386,7 +2388,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
           PAMemory PAMemoryPerformConstruct(PASize size);
           int PAMemoryPerformRuin(PAMemory);
-# 8 "src/PA/Count.c" 2
+# 9 "src/PA/Count.c" 2
 # 1 "./include/PA/Object.h" 1
 
 
@@ -2406,8 +2408,6 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
           PAObject PAObjectPerformCopy(PAObject, PAObject, PASize size);
-# 9 "src/PA/Count.c" 2
-# 1 "./include/PA/Size.h" 1
 # 10 "src/PA/Count.c" 2
 
 
@@ -2483,11 +2483,11 @@ PAResult PACountPrint(struct PACount* Count)
     PAResult result;
     return result;
 }
-          PASize PASizePerformInitialise(PASize Size, int value);
+
 PASize PACountSize()
 {
     PASize sizeCount;
-    sizeCount = PASizePerformConstruct((int)sizeof(int));
+    sizeCount = PASizePerformConstruct((int)(sizeof(int)));
 
 
 

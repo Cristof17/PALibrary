@@ -2057,9 +2057,9 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 8 "./include/PA/Size.h" 2
 # 21 "./include/PA/Size.h"
-          PAMemory PASizePerformAllocate();
-          PASize PASizePerformInitialise();
-          extern PASize PASizePerformConstruct(int value);
+          PAMemory PASizePerformAllocate(size_t);
+          PASize PASizePerformInitialise(PASize);
+          PASize PASizePerformConstruct(int value);
           size_t PASizePerformConvertToStandard(PASize);
           int PASizePerformDelete(PASize PA);
 
@@ -2122,11 +2122,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
             else
             {
                 standardSize *= 10;
-                standardSize += atoi(digits+i);
+                standardSize += atoi(size->digits);
             }
         }
         standardSize *= 10;
-        standardSize += atoi(digits+i);
+        standardSize += atoi(size->digits);
     }
     return standardSize;
 }
@@ -2143,8 +2143,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
     PAMemory size;
-    size = PASizePerformAlloc(sizeof(size_t));
-    size = PASizePerformInit(value);
+    size = PASizePerformAllocate(sizeof(size_t));
+    size = PASizePerformInitialise(value);
 
     return size;
 }

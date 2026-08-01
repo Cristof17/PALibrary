@@ -3,10 +3,10 @@
 // #include <types.h>
 #ifndef _WIN95
 #include <PA/Count.h>
+#include <PA/Size.h>
 #include <PA/Number.h>
 #include <PA/Memory.h>
 #include <PA/Object.h>
-#include <PA/Size.h>
 // #include <PA/Number.h>
 #elif defined _WIN95
 #include <PA\Count.h>
@@ -188,7 +188,7 @@ PAResult PACountPrint(struct PACount* Count)
 PASize PACountSize()
 {
     PASize sizeCount;
-    sizeCount = PASizePerformConstruct((int)sizeof(int));
+    sizeCount = PASizePerformConstruct((int)(sizeof(int)));
     // size_t size = sizeof(PAInt);
     // sizeCount = PASizePerformInitialise(sizeCount,(int)size);//second parameter should be char*
     
