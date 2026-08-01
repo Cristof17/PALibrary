@@ -2154,24 +2154,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PASize PASizePerformInitialise(PASize Size, int value)
+          PASize PASizePerformInitialise(PASize Size)
 {
     PASize aux;
-    aux = (struct PASize*) malloc (sizeof(struct PASize));
-    aux->digits = malloc (sizeof(char));
-    aux->value = malloc (sizeof(value));
-    aux->value = __builtin___memcpy_chk (aux.value, value,sizeof(value), __builtin_object_size (aux.value, 0));
-
-    char* endptr = malloc (sizeof(char));
-    char aux[20];
-    __builtin___memcpy_chk (aux, sizeCount->value,20, __builtin_object_size (aux, 0));
-    __builtin___memcpy_chk (aux, Size,sizeof(struct PASize), __builtin_object_size (aux, 0));
-    __builtin___memcpy_chk (aux->value, value,digits, __builtin_object_size (aux->value, 0));
-    __builtin___memcpy_chk (aux, Size,sizeof(struct PASize), __builtin_object_size (aux, 0));
-    __builtin___memcpy_chk (Size->value, aux->value,digits, __builtin_object_size (Size->value, 0));
-# 104 "src/PA/Size.c"
-    free(aux->value);
-    free(aux);
+# 106 "src/PA/Size.c"
     return Size;
 }
 

@@ -50,6 +50,7 @@ output=pa
 version=1.0
 program_test_pa= test.out
 program_test_pointers_pa= test_pointers.out
+visual_code_run_target=a.out
 all: preprocess assemble compile $(program_test_pa) $(program_test_pointers_pa) $(lib_pa)
 # preprocess: $(sources)
 preprocess: preprocess_pa 
@@ -232,6 +233,7 @@ dist: lib/ lib/PA lib/BFS lib/ArrayList $(objects_pa) $(objects_bfs) $(objects_a
 
 check: $(program_test_pa) $(program_test_pointers_pa)
 	@echo "Testing"
+	mv ./bin/$(program_test_pointers_pa) ./a.out
 	./bin/$(program_test_pointers_pa)
 
 $(output).tar.gz:
@@ -339,6 +341,9 @@ sources_pa= Input.i \
 	PA/Memory.i \
 	PA/Object.i
 # sources_arraylist= src/Input.i
+
+$(visual_code_run_target): $(lib_pa)
+	$(CC) -lpa -Lobj $< -o $@
 
 designs_arraylist= ArrayList/ArrayList.c \
 	ArrayList/ArrayListPosition.c
