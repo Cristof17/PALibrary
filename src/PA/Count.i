@@ -2480,13 +2480,13 @@ PAResult PACountPrint(struct PACount* Count)
 
 PASize PACountSize()
 {
-    PASize size;
+    PASize sizeCount;
     size_t size = sizeof(PAInt);
     char aux[20];
 
 
-    __builtin___memcpy_chk (aux, size->value,20, __builtin_object_size (aux, 0));
+    __builtin___memcpy_chk (aux, sizeCount->value,20, __builtin_object_size (aux, 0));
 
 
-    return size;
+    return sizeCount;
 }
