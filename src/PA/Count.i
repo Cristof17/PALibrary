@@ -1866,10 +1866,10 @@ struct Facade {
 
 
           PASize PACountSize();
-          PACount PACountPerformConstruct(int size);
+          PACount PACountPerformConstruct(int value);
           static PAMemory PACountPerformAllocate();
           static PAObject PACountPerformCopy(PAObject, PAObject, size_t);
-          PACount PACountPerformInit(PACount, PAInt* value, PASize size);
+          PACount PACountPerformInitialise(PACount count);
           int PACountPerformDelete(PACount PA);
 # 6 "src/PA/Count.c" 2
 # 1 "./include/PA/Size.h" 1
@@ -2427,20 +2427,24 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
     count = PAMemoryPerformConstruct(size);
     return count;
 }
-          PACount PACountConstruct(PACount n, PAInt value)
+          PACount PACountPerformConstruct(int value)
 {
-    n->number = malloc(sizeof(PAInt));
-    PAInt aux;
-    aux = n->number;
-
-
-    return n;
-
-
-
     PAMemory count;
-    count = PACountPerformAllocate();
-# 59 "src/PA/Count.c"
+    PASize size;
+    size = PACountSize();
+    count = PACountPerformAllocate(size);
+    PACount countObject = PACountPerformInitialise(value);
+    return countObject;
+# 44 "src/PA/Count.c"
+}
+PAMemory PACountPerformAllocate(PASize size)
+{
+    size_t size;
+    PAMemory count;
+    count = malloc (size);
+    return count;
+}
+# 70 "src/PA/Count.c"
     return count;
 }
           PAObject PACountInitialise(PACount init, PACount this)
@@ -2451,9 +2455,9 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
     this = (PAObject) PAObjectPerformCopy(this,init,size);
 
     return aux;
-# 107 "src/PA/Count.c"
+# 118 "src/PA/Count.c"
 }
-# 128 "src/PA/Count.c"
+# 139 "src/PA/Count.c"
           int PACountDelete(PACount PA)
 {
     int returnCode;
@@ -2473,7 +2477,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
     int resultCode;
     resultCode = PAMemoryPerformRuin(PA);
-# 178 "src/PA/Count.c"
+# 189 "src/PA/Count.c"
     return resultCode;
 
 }
@@ -2487,7 +2491,7 @@ PAResult PACountPrint(struct PACount* Count)
 PASize PACountSize()
 {
     PASize sizeCount;
-    sizeCount = PASizePerformConstruct((int)(sizeof(int)));
+
 
 
 

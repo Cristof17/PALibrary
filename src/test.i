@@ -2092,10 +2092,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           PASize PACountSize();
-          PACount PACountPerformConstruct(int size);
+          PACount PACountPerformConstruct(int value);
           static PAMemory PACountPerformAllocate();
           static PAObject PACountPerformCopy(PAObject, PAObject, size_t);
-          PACount PACountPerformInit(PACount, PAInt* value, PASize size);
+          PACount PACountPerformInitialise(PACount count);
           int PACountPerformDelete(PACount PA);
 # 3 "test/test.c" 2
 

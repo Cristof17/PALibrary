@@ -2114,10 +2114,10 @@ void PAListPrint(struct PAList* List);
 
 
           PASize PACountSize();
-          PACount PACountPerformConstruct(int size);
+          PACount PACountPerformConstruct(int value);
           static PAMemory PACountPerformAllocate();
           static PAObject PACountPerformCopy(PAObject, PAObject, size_t);
-          PACount PACountPerformInit(PACount, PAInt* value, PASize size);
+          PACount PACountPerformInitialise(PACount count);
           int PACountPerformDelete(PACount PA);
 # 9 "src/PA/List.c" 2
 # 1 "./include/PA/Series.h" 1

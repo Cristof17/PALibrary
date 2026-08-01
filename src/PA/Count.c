@@ -25,19 +25,30 @@ DllExport PAMemory PACountAllocate()
     count = PAMemoryPerformConstruct(size);
     return count;
 }
-DllExport PACount PACountConstruct(PACount n, PAInt value)
+DllExport PACount PACountPerformConstruct(int value)
 {
-    n->number = malloc(sizeof(PAInt));
-    PAInt aux;
-    aux = n->number;
+    PAMemory count;
+    PASize size;
+    size = PACountSize();
+    count = PACountPerformAllocate(size);
+    PACount countObject = PACountPerformInitialise(value);
+    return countObject;
+    // n->number = malloc(sizeof(PAInt));
+    // PAInt aux;
+    // aux = n->number;
     // *(n->number)->value = value;
     // *n->number = value;
-    return n;
+    // return ns;
     // struct PACount 
     //zies;
-    
+}
+PAMemory PACountPerformAllocate(PASize size)
+{
+    size_t size;
     PAMemory count;
-    count = PACountPerformAllocate();
+    count = malloc (size);
+    return count;
+}
     // count->number = (PAInt*) malloc (sizeof(PAInt));
     //  struct PACount* aux;
     // aux = (struct PACount*) malloc (sizeof(struct PACount));
@@ -188,7 +199,7 @@ PAResult PACountPrint(struct PACount* Count)
 PASize PACountSize()
 {
     PASize sizeCount;
-    sizeCount = PASizePerformConstruct((int)(sizeof(int)));
+    // sizeCount = PASizePerformConstruct((int)(sizeof(int)));
     // size_t size = sizeof(PAInt);
     // sizeCount = PASizePerformInitialise(sizeCount,(int)size);//second parameter should be char*
     

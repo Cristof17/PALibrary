@@ -804,7 +804,7 @@ PA/Link.s: PA/Link.i
 # 	-$(CC) -S $< -o $@
 PA/Element.s: PA/Element.i
 	$(CC) -S src/$< -o src/$@
-PA/Count.s: PA/Count.i
+PA/Count.s: PA/Count.i PA/Size.i
 	$(CC) -S src/$< -o src/$@
 PA/Pair.s: PA/Pair.i
 	$(CC) -S src/$< -o src/$@
