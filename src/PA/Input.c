@@ -15,11 +15,12 @@
 #include <PA\Element.h>
 #include <PA\Memory.h>
 #endif
-DllExport PAMemory PAInputPerformConstruct(size_t size)
+DllExport PAInput PAInputPerformConstruct()
 {
+	PAInput returnValue;
 	// struct PAInput temp;
-	PAMemory input;
-	input = PAMemoryPerformConstruct(sizeof(struct PAInput));
+	// PAMemory input;
+	// input = PAMemoryPerformConstruct(sizeof(struct PAInput));
 	// input = malloc(size);
 	// inputPointer->n = (struct PACount*) malloc (sizeof(struct PACount));
 // inputPointer->m = (struct PACount*) malloc (sizeof(struct PACount*));
@@ -28,7 +29,7 @@ DllExport PAMemory PAInputPerformConstruct(size_t size)
 	// inputPointer->n = n;
 	// inputPointer->m = m;
 	// inputPointer->source = element;
-	return input;
+	// return input;
 	// struct PACount n;
 	// struct PACount m;
 	// struct PAList list;
@@ -46,6 +47,7 @@ DllExport PAMemory PAInputPerformConstruct(size_t size)
 	// PAResult result ;
 	// return result;
 	// return temp;
+	return returnValue;
 }
 DllExport static PAObject PAInputPerformCopy(PAObject from, PAObject to, size_t size)
 {

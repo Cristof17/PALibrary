@@ -2119,7 +2119,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAElement PAElementPerformConstruct(PAElement,PAData, PAElement, PAStatus);
+          PAElement PAElementPerformConstruct(PAData, PAElement, PAStatus);
           static PAObject PAElementPerformCopy(PAObject, PAObject, size_t);
           int PAElementPerformDelete(PAElement);
 
@@ -2165,7 +2165,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAMemory PAListPerformConstruct(size_t);
+          PAList PAListPerformConstruct();
 
 
 
@@ -2176,12 +2176,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 void PAListPrint(struct PAList* List);
 # 7 "src/PA/Tree.c" 2
 # 21 "src/PA/Tree.c"
-          PAMemory PATreePerformConstruct(size_t size)
+          PATree PATreePerformConstruct()
 {
 
-    PAMemory tree;
-    tree = PAMemoryPerformConstruct(sizeof(struct PATree));
-# 80 "src/PA/Tree.c"
+    PATree tree;
+# 81 "src/PA/Tree.c"
     return tree;
 
 }
@@ -2196,10 +2195,10 @@ void PAListPrint(struct PAList* List);
     __builtin___memcpy_chk (aux->adj, adj,sizeof(struct PASeries), __builtin_object_size (aux->adj, 0));
     __builtin___memcpy_chk (aux->source, source,sizeof(struct PAElement), __builtin_object_size (aux->source, 0));
     __builtin___memcpy_chk (tree, aux,sizeof(struct PATree), __builtin_object_size (tree, 0));
-# 126 "src/PA/Tree.c"
+# 127 "src/PA/Tree.c"
     return tree;
 }
-# 137 "src/PA/Tree.c"
+# 138 "src/PA/Tree.c"
           static PAObject PATreePerformCopy(PAObject from, PAObject to, size_t size)
 {
     PAMemory aux;
@@ -2212,7 +2211,7 @@ void PAListPrint(struct PAList* List);
 
 
     return to;
-# 166 "src/PA/Tree.c"
+# 167 "src/PA/Tree.c"
 }
           int PATreePerformDelete(PATree PA)
 {

@@ -2371,7 +2371,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
           size_t PANumberSize(PANumber);
-          struct PANumber* PANumberPerformConstruct(struct PANumber* Number, unsigned char Value);
+          PANumber PANumberPerformConstruct(unsigned char Value);
           static PAObject PANumberPerformCopy(PAObject, PAObject, size_t);
           int PANumberPerformDelete(struct PANumber*);
 
@@ -2457,7 +2457,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
 
-          PAMemory PAListPerformConstruct(size_t);
+          PAList PAListPerformConstruct();
 
 
 
@@ -2519,7 +2519,7 @@ void PAListPrint(struct PAList* List);
 
 
 
-          PAElement PAElementPerformConstruct(PAElement,PAData, PAElement, PAStatus);
+          PAElement PAElementPerformConstruct(PAData, PAElement, PAStatus);
           static PAObject PAElementPerformCopy(PAObject, PAObject, size_t);
           int PAElementPerformDelete(PAElement);
 

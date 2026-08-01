@@ -5,18 +5,11 @@
 _PALinkPerformConstruct:                ; @PALinkPerformConstruct
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
-	add	x29, sp, #16
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
 	str	x0, [sp, #8]
-	mov	x0, #8                          ; =0x8
-	bl	_PAMemoryPerformConstruct
 	ldr	x0, [sp]
-	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
-	add	sp, sp, #32
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function

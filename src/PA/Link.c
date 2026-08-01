@@ -15,11 +15,12 @@
 #endif
 
 // DllExport struct PALink* PALinkCreate(struct )
-DllExport PAMemory PALinkPerformConstruct(size_t size)
+DllExport PALink PALinkPerformConstruct(PAPair p)
 {
+    PALink link;
     // struct PALink link;
-    PAMemory link;
-    PAMemoryPerformConstruct(sizeof(struct PALink));
+    // PAMemory link;
+    // PAMemoryPerformConstruct(sizeof(struct PALink));
     // link = malloc (size);
     // link->p = p;
     return link;

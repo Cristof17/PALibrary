@@ -13,7 +13,7 @@
 // #include <defs.h>
 // struct PAData;
 // DllExport Memory PADataCreate(size_t size);
-DllExport PAData PACountPerformCreate(PAData Data);
+DllExport PAData PACountPerformConstruct();
 DllExport static PAObject PADataPerformCopy(PAObject from, PAObject to, size_t);
 // DllExport struct PAData PADataPerformCopy(struct PAData);
 // DllExport struct PAData PADataPerformPutResource(struct PAData, PAResource);

@@ -17,10 +17,11 @@
 // #include <types.h>
 // #include "//"
 // #include "../include/PAIndex.h"
-DllExport PAMemory PAElementPerformCreate(size_t size)
+DllExport PAElement PAElementPerformCreate(PAData, PAElement, PAStatus)
 {
-    PAMemory element;
-    element = PAMemoryPerformConstruct(sizeof(struct PAElement));
+    PAElement element;
+    // PAMemory element;
+    // element = PAMemoryPerformConstruct();
     // element = malloc(size);
     // temp->index = index;
     // temp->status = status;

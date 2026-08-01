@@ -2067,7 +2067,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAData PACountPerformCreate(PAData Data);
+          PAData PACountPerformConstruct();
           static PAObject PADataPerformCopy(PAObject from, PAObject to, size_t);
 
 
@@ -2107,18 +2107,17 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           int PAMemoryPerformRuin(PAMemory);
 # 6 "src/PA/Data.c" 2
 # 15 "src/PA/Data.c"
-          PAMemory PADataPerformConstruct()
+          PAData PADataPerformConstruct()
 {
 
 
-    PAMemory data;
-    data = PAMemoryPerformConstruct(sizeof(struct PAData));
-# 46 "src/PA/Data.c"
+    PAData data;
+# 47 "src/PA/Data.c"
     return data;
 }
           PAData PADataPerformInit(PAData Data)
 {
-# 69 "src/PA/Data.c"
+# 70 "src/PA/Data.c"
     return Data;
 
 
@@ -2140,9 +2139,9 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     free(aux);
     return to;
-# 98 "src/PA/Data.c"
+# 99 "src/PA/Data.c"
 }
-# 116 "src/PA/Data.c"
+# 117 "src/PA/Data.c"
           int PADataPerformDelete(PAData PA)
 {
     int returnCode;

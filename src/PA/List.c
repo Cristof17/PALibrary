@@ -18,10 +18,11 @@
 #endif
 
 // struct PAList PAListConstruct(struct PAElement Element) {
-DllExport PAMemory PAListPerformConstruct(size_t size)
+DllExport PAList PAListPerformConstruct()
 {
-    PAMemory listPointer;
-    listPointer = PAMemoryPerformConstruct(sizeof(struct PAList));
+    PAList list;
+    // PAMemory listPointer;
+    // listPointer = PAMemoryPerformConstruct(sizeof(struct PAList));
     // listPointer = malloc (size);
     // listPointer->m = m;
     // listPointer->neigh = edges;
@@ -40,7 +41,8 @@ DllExport PAMemory PAListPerformConstruct(size_t size)
     // return list;
     // struct PAList* listPointer;
     // listPointer->n = PACountCreate();
-    return listPointer;
+    // return listPointer;
+    return list;
     // struct PASeries neigh[] = list.neigh;
     // x.number.val = FIRST;
     // while (x.number.val < n.number.val)

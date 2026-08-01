@@ -2072,7 +2072,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAMemory PAInputPerformConstruct(size_t);
+          PAInput PAInputPerformConstruct();
 
 
           static PAObject PAInputPerformCopy(PAObject,PAObject, size_t);
@@ -2123,7 +2123,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAElement PAElementPerformConstruct(PAElement,PAData, PAElement, PAStatus);
+          PAElement PAElementPerformConstruct(PAData, PAElement, PAStatus);
           static PAObject PAElementPerformCopy(PAObject, PAObject, size_t);
           int PAElementPerformDelete(PAElement);
 
@@ -2156,14 +2156,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAMemory PAInputPerformConstruct(size_t size)
+          PAInput PAInputPerformConstruct()
 {
-
- PAMemory input;
- input = PAMemoryPerformConstruct(sizeof(struct PAInput));
-# 31 "src/PA/Input.c"
- return input;
-# 49 "src/PA/Input.c"
+ PAInput returnValue;
+# 50 "src/PA/Input.c"
+ return returnValue;
 }
           static PAObject PAInputPerformCopy(PAObject from, PAObject to, size_t size)
 {
@@ -2172,7 +2169,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
  aux = malloc (size);
  __builtin___memcpy_chk (from, aux,size, __builtin_object_size (from, 0));
  __builtin___memcpy_chk (aux, to,size, __builtin_object_size (aux, 0));
-# 68 "src/PA/Input.c"
+# 70 "src/PA/Input.c"
  free(aux);
  return to;
 
@@ -2192,7 +2189,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
  __builtin___memcpy_chk (aux->n, N,sizeof(struct PACount), __builtin_object_size (aux->n, 0));
  __builtin___memcpy_chk (aux->m, M,sizeof(struct PACount), __builtin_object_size (aux->m, 0));
  __builtin___memcpy_chk (aux->source, Source,sizeof(struct PAElement), __builtin_object_size (aux->source, 0));
-# 110 "src/PA/Input.c"
+# 112 "src/PA/Input.c"
  return aux;
 
 }
@@ -2204,7 +2201,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
  returnCode = ((int)0);
-# 129 "src/PA/Input.c"
+# 131 "src/PA/Input.c"
  return returnCode;
 }
 
@@ -2216,6 +2213,6 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
  int returnCode;
  returnCode = PAMemoryPerformRuin(PA);
-# 149 "src/PA/Input.c"
+# 151 "src/PA/Input.c"
  return returnCode;
 }

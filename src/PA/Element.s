@@ -6,17 +6,11 @@ _PAElementPerformCreate:                ; @PAElementPerformCreate
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32
-	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
-	add	x29, sp, #16
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	str	x0, [sp, #8]
-	mov	x0, #24                         ; =0x18
-	bl	_PAMemoryPerformConstruct
-	str	x0, [sp]
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #24]
+	str	x1, [sp, #16]
+	str	w2, [sp, #12]
 	ldr	x0, [sp]
-	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
 	ret
 	.cfi_endproc

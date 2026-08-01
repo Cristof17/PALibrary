@@ -34,11 +34,12 @@
 // {
 //     PAOutputPerformPrint(output);
 // }
-DllExport PAMemory PAOutputPerformConstruct(size_t size)
+DllExport PAOutput PAOutputPerformConstruct()
 {
+    PAOutput output;
     // struct PAOutput* result;
-    PAMemory output;
-    output = PAMemoryPerformConstruct(sizeof(struct PAOutput));
+    // PAMemory output;
+    // output = PAMemoryPerformConstruct(sizeof(struct PAOutput));
     // struct PAOutput Output;
     // struct PAOutput* outputPointer;
     // output = malloc (size);

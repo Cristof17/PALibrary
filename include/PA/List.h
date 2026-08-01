@@ -15,7 +15,7 @@
 // DllExport Memory PAListCreate(size_t size);
 // DllExport struct PAList* PAListBegin(struct PAList* list, struct PACount M);
 // DllExport struct PAList* PAListBegin(struct PAList* list, struct PACount* N, struct PASeries* adj);
-DllExport PAMemory PAListPerformConstruct(size_t);
+DllExport PAList PAListPerformConstruct();
 // DllExport struct PAList PAListPerformCopy(struct PAList);
 // DllExport PAResult PAListPerformPutCount(struct PAList, struct PACount);
 // DllExport PAResult PAListPerformPutList(struct PAList);

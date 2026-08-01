@@ -2087,7 +2087,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAMemory PAListPerformConstruct(size_t);
+          PAList PAListPerformConstruct();
 
 
 
@@ -2143,13 +2143,12 @@ void PAListPrint(struct PAList* List);
           void PASeriesPrint(PASeries);
 # 10 "src/PA/List.c" 2
 # 21 "src/PA/List.c"
-          PAMemory PAListPerformConstruct(size_t size)
+          PAList PAListPerformConstruct()
 {
-    PAMemory listPointer;
-    listPointer = PAMemoryPerformConstruct(sizeof(struct PAList));
-# 43 "src/PA/List.c"
-    return listPointer;
-# 53 "src/PA/List.c"
+    PAList list;
+# 45 "src/PA/List.c"
+    return list;
+# 55 "src/PA/List.c"
 }
           static PAObject PAListPerformCopy(PAObject from, PAObject to, size_t size)
 {
@@ -2158,10 +2157,10 @@ void PAListPrint(struct PAList* List);
     aux = malloc (size);
     __builtin___memcpy_chk (aux, from,size, __builtin_object_size (aux, 0));
     __builtin___memcpy_chk (to, aux,size, __builtin_object_size (to, 0));
-# 72 "src/PA/List.c"
+# 74 "src/PA/List.c"
     free(aux);
     return to;
-# 111 "src/PA/List.c"
+# 113 "src/PA/List.c"
 }
 
 
@@ -2172,16 +2171,16 @@ void PAListPrint(struct PAList* List);
 
     __builtin___memcpy_chk (List->m, M,sizeof(struct PACount), __builtin_object_size (List->m, 0));
     __builtin___memcpy_chk (List->neigh, adj,sizeof(struct ArrayList), __builtin_object_size (List->neigh, 0));
-# 154 "src/PA/List.c"
+# 156 "src/PA/List.c"
     return listPointer;
 }
-# 187 "src/PA/List.c"
+# 189 "src/PA/List.c"
           int PAListPerformDelete(struct PAList* PA)
 {
     int returnCode;
     returnCode = ((int)0);
     __builtin___memset_chk(PA, 0, sizeof(struct PAList), __builtin_object_size (PA, 0));
-# 211 "src/PA/List.c"
+# 213 "src/PA/List.c"
     return returnCode;
 
 
@@ -2198,7 +2197,7 @@ void PAListPrint(struct PAList* List);
 
 
     return returnCode;
-# 241 "src/PA/List.c"
+# 243 "src/PA/List.c"
     {
 
 
@@ -2216,7 +2215,7 @@ void Dispose()
 {
 
 }
-# 274 "src/PA/List.c"
+# 276 "src/PA/List.c"
 void PAListPrint(struct PAList* List)
 {
 

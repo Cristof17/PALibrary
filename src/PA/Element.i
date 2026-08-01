@@ -2068,7 +2068,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAElement PAElementPerformConstruct(PAElement,PAData, PAElement, PAStatus);
+          PAElement PAElementPerformConstruct(PAData, PAElement, PAStatus);
           static PAObject PAElementPerformCopy(PAObject, PAObject, size_t);
           int PAElementPerformDelete(PAElement);
 
@@ -2098,7 +2098,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAData PACountPerformCreate(PAData Data);
+          PAData PACountPerformConstruct();
           static PAObject PADataPerformCopy(PAObject from, PAObject to, size_t);
 
 
@@ -2142,11 +2142,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           int PAMemoryPerformRuin(PAMemory);
 # 10 "src/PA/Element.c" 2
 # 20 "src/PA/Element.c"
-          PAMemory PAElementPerformCreate(size_t size)
+          PAElement PAElementPerformCreate(PAData, PAElement, PAStatus)
 {
-    PAMemory element;
-    element = PAMemoryPerformConstruct(sizeof(struct PAElement));
-# 38 "src/PA/Element.c"
+    PAElement element;
+# 39 "src/PA/Element.c"
   return element;
 }
           PAElement PAElementPerformInit(PAElement element,PAData index, PAElement next, PAStatus status)
@@ -2159,7 +2158,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     __builtin___memcpy_chk (aux->next, next,sizeof(struct PAElement), __builtin_object_size (aux->next, 0));
     __builtin___memcpy_chk (&aux->status, &status,sizeof(PAStatus), __builtin_object_size (&aux->status, 0));
     __builtin___memcpy_chk (element, aux,sizeof(struct PAElement), __builtin_object_size (element, 0));
-# 69 "src/PA/Element.c"
+# 70 "src/PA/Element.c"
     free(aux);
     return element;
 
@@ -2187,19 +2186,19 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     aux = (PAMemory) malloc (size);
     __builtin___memcpy_chk (aux, from,size, __builtin_object_size (aux, 0));
     __builtin___memcpy_chk (to, aux,size, __builtin_object_size (to, 0));
-# 104 "src/PA/Element.c"
+# 105 "src/PA/Element.c"
     free(aux);
 
     return to;
-# 116 "src/PA/Element.c"
+# 117 "src/PA/Element.c"
 }
-# 129 "src/PA/Element.c"
+# 130 "src/PA/Element.c"
           int PAElementPerformDelete(struct PAElement* PA)
 {
     int returnCode;
     returnCode = ((int)0);
     __builtin___memset_chk(PA, 0, sizeof(struct PAElement), __builtin_object_size (PA, 0));
-# 142 "src/PA/Element.c"
+# 143 "src/PA/Element.c"
     return returnCode;
 
 }
@@ -2208,7 +2207,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 {
     int returnCode;
     returnCode = PAMemoryPerformRuin(PA);
-# 171 "src/PA/Element.c"
+# 172 "src/PA/Element.c"
     return returnCode;
 
 

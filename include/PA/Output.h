@@ -14,7 +14,7 @@
 // struct PAData PADataPerformConstruct(PAInt Resource);
 // strut BFSOutputRuin();
 // DllExport Memory PAOutputCreate(size_t size);
-DllExport PAMemory PAOutputPerformConstruct(size_t);
+DllExport PAOutput PAOutputPerformConstruct();
 // DllExport struct PA(struct PAOutput*ß from, struct PAOutput* to);
 DllExport static PAObject PAOutputPerformCopy(PAObject from, PAObject to,size_t);
 DllExport int PAOutputPerformDelete(PAOutput);

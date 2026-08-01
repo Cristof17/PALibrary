@@ -2351,7 +2351,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
           size_t PANumberSize(PANumber);
-          struct PANumber* PANumberPerformConstruct(struct PANumber* Number, unsigned char Value);
+          PANumber PANumberPerformConstruct(unsigned char Value);
           static PAObject PANumberPerformCopy(PAObject, PAObject, size_t);
           int PANumberPerformDelete(struct PANumber*);
 

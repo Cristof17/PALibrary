@@ -18,11 +18,12 @@
     // struct PACount size;
     // return size;
 // }
-DllExport PAMemory PATreePerformConstruct(size_t size)
+DllExport PATree PATreePerformConstruct()
 {
     // struct PATree* temp;
-    PAMemory tree;
-    tree = PAMemoryPerformConstruct(sizeof(struct PATree));
+    PATree tree;
+    // PAMemory tree;
+    // tree = PAMemoryPerformConstruct(sizeof(struct PATree));
     // tree = malloc (size);
     // treePointer->n = n;
     // treePointer->m = m;

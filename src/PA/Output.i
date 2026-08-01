@@ -2070,7 +2070,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAMemory PAOutputPerformConstruct(size_t);
+          PAOutput PAOutputPerformConstruct();
 
           static PAObject PAOutputPerformCopy(PAObject from, PAObject to,size_t);
           int PAOutputPerformDelete(PAOutput);
@@ -2113,12 +2113,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           int PAMemoryPerformRuin(PAMemory);
 # 8 "src/PA/Output.c" 2
 # 37 "src/PA/Output.c"
-          PAMemory PAOutputPerformConstruct(size_t size)
+          PAOutput PAOutputPerformConstruct()
 {
-
-    PAMemory output;
-    output = PAMemoryPerformConstruct(sizeof(struct PAOutput));
-# 50 "src/PA/Output.c"
+    PAOutput output;
+# 51 "src/PA/Output.c"
     return output;
 
 }
@@ -2147,7 +2145,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     free(aux);
     return to;
-# 104 "src/PA/Output.c"
+# 105 "src/PA/Output.c"
 }
 
           int PAOutputPerformDelete(struct PAOutput* PA)
