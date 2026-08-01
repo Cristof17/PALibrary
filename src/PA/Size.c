@@ -73,21 +73,21 @@ DllExport PASize PASizePerformConstruct(int value) {
 //     struct PAMemory memory = PASizePerformAlloc();
 //     struct PASize* returnValue = PASizePerformInitialise(size,(int) value)
 // }
-DllExport PASize PASizePerformInitialise(PASize Size, int value)
+DllExport PASize PASizePerformInitialise(PASize Size)
 {
     PASize aux;
-    aux = (struct PASize*) malloc (sizeof(struct PASize));
-    aux->digits = malloc (sizeof(char));
-    aux->value = malloc (sizeof(value));
-    aux->value = memcpy(aux.value,value,sizeof(value));
-    // aux->value = (size_t*) malloc (sizeof(size_t));
-    char* endptr = malloc (sizeof(char));
-    char aux[20];
-    memcpy(aux,sizeCount->value,20);
-    memcpy(aux,Size,sizeof(struct PASize));
-    memcpy(aux->value,value,digits);
-    memcpy(aux,Size,sizeof(struct PASize));
-    memcpy(Size->value,aux->value,digits);
+    // aux = (struct PASize*) malloc (sizeof(struct PASize));
+    // aux->digits = malloc (sizeof(char));
+    // aux->value = malloc (sizeof(value));
+    // aux->value = memcpy(aux.value,value,sizeof(value));
+    // // aux->value = (size_t*) malloc (sizeof(size_t));
+    // char* endptr = malloc (sizeof(char));
+    // char aux[20];
+    // memcpy(aux,sizeCount->value,20);
+    // memcpy(aux,Size,sizeof(struct PASize));
+    // memcpy(aux->value,value,digits);
+    // memcpy(aux,Size,sizeof(struct PASize));
+    // memcpy(Size->value,aux->value,digits);
 
 
 
@@ -101,8 +101,8 @@ DllExport PASize PASizePerformInitialise(PASize Size, int value)
     // memcpy(aux,S)
     // memcpy(Size,auto)
     // __MEMORY_SCOPE_DEVICE
-    free(aux->value);
-    free(aux);
+    // free(aux->value);
+    // free(aux);
     return Size;
 }
 
