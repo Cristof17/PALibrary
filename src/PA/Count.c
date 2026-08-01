@@ -14,7 +14,6 @@
 #include <PA\Memory.h>
 #include <PA\Object.h>
 #include <PA\Size.h>
-
 #endif
 DllExport PAMemory PACountAllocate()
 {
