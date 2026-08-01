@@ -184,7 +184,13 @@ PAResult PACountPrint(struct PACount* Count)
 PASize PACountSize()
 {
     PASize size;
-    size = sizeof(PAInt);
+    size_t size = sizeof(PAInt);
+    char aux[20];
+    // sprintf(aux,"%ld",size->digits)
+    // sprintf(aux,"%ld",size->value[]);
+    memcpy(aux,size->value,20);
+    // size->digits = 0;
+    // size->value = sizeof(PAInt)
     return size;
 }
 
