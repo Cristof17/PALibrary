@@ -12,11 +12,11 @@
 #include <PA\Memory.h>
 #endif
 
-DllExport PAMemory PAPairPerformConstruct(size_t size)
+DllExport PAPair PAPairPerformConstruct(PAElement node ,PAElement neigh)
 {
     // struct PAPair pair;
     PAMemory pair;
-    pair = PAMemoryPerformConstruct(sizeof(struct PAPair));
+    // pair = PAMemoryPerformConstruct(sizeof(struct PAPair));
     // pair = malloc(size);
     // struct PAPair* pairPointer;
     // pairPointer->Node = PAElementPerformConstruct();

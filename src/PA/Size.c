@@ -3,21 +3,29 @@
 // #define
 #include <PA/Size.h>
 #include <PA/Memory.h>
+#include <PA/Object.h>
 #elif defined _WIN95
 #include <PA\Size.h>
 #include <PA\Memory.h>
+#include <PA\Object.h>
 #endif
-DllExport size_t PASizeSize(size_t field_size)
+DllExport struct PASize PASizeSize()
 {
-	return field_size + field_size;
+    struct PASize size;
+    size.size = sizeof(struct PASize);
+    return size;
+    // size = PASizePerformAlloc(sizeof(size_t) + sizeof(size_t));
+    // sprintf(size->value,"%ld",(sizeof(size_t)) + sizeof(size_t));
+    // sprintf(size->digits,"%ld",2);
+	// return size;
 }
 
 DllExport PAMemory PASizePerformAlloc(size_t size)
 {
     PAMemory address;
-    size_t totalSize;
-    totalSize = PASizeSize(size);
-    address = malloc (totalSize);//value size and digits_size 
+    struct PASize totalSize;
+    totalSize = PASizeSize();
+    address = PAMemoryPerformConstruct(&totalSize);//value size and digits_size this will generate BUG, if structure is size, use the size_field 
     return address;
 }
 
@@ -57,13 +65,17 @@ DllExport size_t PASizePerformConvertToStandard(PASize size)
     // int digits = *size->digits;
 }
 
-DllExport PASize PASizePerformConstruct(int value) {
+DllExport struct PASize PASizePerformConstruct(int value) {
 	//do some decimal conversion to char array 102 \
 	//will we first digit 1 second digit 0 third digit \
 	//2 and total size of 3. usr char as standard in c
-    PAMemory size;
-    size = PASizePerformAllocate(sizeof(size_t));
-    size = PASizePerformInitialise(value);
+    // PAMemory size;
+    // size = PASizePerformAllocate(sizeof(size_t)+sizeof(size_t));
+    struct PASize size = PASizeSize();
+
+    PASize aux = (PASize) aux;
+    // PAObjectPerformCopy()
+    // size = PASizePerformInitialise(value);
     // sizeStruct = malloc (size);
     return size;
 }

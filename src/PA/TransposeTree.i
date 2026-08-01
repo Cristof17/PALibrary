@@ -1598,6 +1598,7 @@ struct ArrayListObject {
 };
 typedef struct PASize {
 
+ size_t size;
  char* value;
  char* digits;
 }* PASize;
@@ -1696,7 +1697,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 301 "./include/types.h"
+# 302 "./include/types.h"
 typedef struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2070,7 +2071,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-
+          PATransposeTree PATransposeTreePerformConstruct(PATree tree);
           PATransposeTree PATransposeTreePerformBegin(PATransposeTree, PATree);
           static PAObject PATransposeTreePerformCopy(PAObject, PAObject, size_t);
 
@@ -2134,16 +2135,17 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAMemory PATransposeTreePerformConstruct(size_t size)
+          PATransposeTree PATransposeTreePerformConstruct(PATree rtree)
 {
-    PAMemory transposeTree;
-    transposeTree = PAMemoryPerformConstruct(sizeof(struct PATransposeTree));
+    PATransposeTree treeTranspose;
 
 
 
 
 
-    return transposeTree;
+
+
+    return treeTranspose;
 
 
 
@@ -2157,7 +2159,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     aux = (struct PATransposeTree*) malloc (sizeof(struct PATransposeTree));
     __builtin___memcpy_chk (aux->tree, Value,sizeof(struct PATree), __builtin_object_size (aux->tree, 0));
     __builtin___memcpy_chk (aux, TransposeTree,sizeof(struct PATransposeTree), __builtin_object_size (aux, 0));
-# 56 "src/PA/TransposeTree.c"
+# 57 "src/PA/TransposeTree.c"
     return TransposeTree;
 
 }
@@ -2172,9 +2174,9 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     free(aux);
     return to;
-# 79 "src/PA/TransposeTree.c"
+# 80 "src/PA/TransposeTree.c"
 }
-# 89 "src/PA/TransposeTree.c"
+# 90 "src/PA/TransposeTree.c"
           int PATransposeTreePerformDelete(PATransposeTree PA)
 {
 

@@ -1595,6 +1595,7 @@ struct ArrayListObject {
 };
 typedef struct PASize {
 
+ size_t size;
  char* value;
  char* digits;
 }* PASize;
@@ -1693,7 +1694,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 301 "./include/types.h"
+# 302 "./include/types.h"
 typedef struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2068,7 +2069,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 13 "./include/PA/NormalTree.h" 2
 
 
-          PANormalTree PANormalTreePerformCreate(PANormalTree NormalTree, PATree Tree);
+          PANormalTree PANormalTreePerformConstruct(PATree Tree);
 
           static PAObject PANormalTreePerformCopy(PAObject, PAObject, size_t);
           int PANormalTreePerformDelete(PANormalTree PA);
@@ -2130,14 +2131,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAMemory PANormalTreePerformConstruct(size_t size)
+          PANormalTree PANormalTreePerformConstruct(PATree tree)
 {
-    PAMemory normalTree;
-# 25 "src/PA/NormalTree.c"
-    normalTree = PAMemoryPerformConstruct(sizeof(struct PANormalTree));
-
-
-    return normalTree;
+    PANormalTree normal;
+# 30 "src/PA/NormalTree.c"
+    return normal;
 
 
 
@@ -2148,7 +2146,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     __builtin___memcpy_chk (aux->tree, Value,sizeof(struct PATree), __builtin_object_size (aux->tree, 0));
     __builtin___memcpy_chk (NormalTree, aux, sizeof(struct PANormalTree), __builtin_object_size (NormalTree, 0));
     return NormalTree;
-# 52 "src/PA/NormalTree.c"
+# 54 "src/PA/NormalTree.c"
 }
           static PAObject PANormalTreePerformCopy(PAObject from, PAObject to, size_t size)
 {
@@ -2161,7 +2159,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     free(aux);
     return to;
-# 72 "src/PA/NormalTree.c"
+# 74 "src/PA/NormalTree.c"
 }
           int PANormalTreePerformDelete(struct PANormalTree* PA)
 {

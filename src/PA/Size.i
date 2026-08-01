@@ -1592,6 +1592,7 @@ struct ArrayListObject {
 };
 typedef struct PASize {
 
+ size_t size;
  char* value;
  char* digits;
 }* PASize;
@@ -1690,7 +1691,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 301 "./include/types.h"
+# 302 "./include/types.h"
 typedef struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2059,9 +2060,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 21 "./include/PA/Size.h"
           PAMemory PASizePerformAllocate(size_t);
           PASize PASizePerformInitialise(PASize);
-          PASize PASizePerformConstruct(int value);
+          struct PASize PASizePerformConstruct(int value);
           size_t PASizePerformConvertToStandard(PASize);
           int PASizePerformDelete(PASize PA);
+          struct PASize PASizeSize();
 
           struct PASize* PASizePerformBegin(PASize, size_t* digits, size_t num_digits);
 # 5 "src/PA/Size.c" 2
@@ -2084,21 +2086,48 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           PAMemory PAMemoryPerformConstruct(PASize size);
           int PAMemoryPerformRuin(PAMemory);
 # 6 "src/PA/Size.c" 2
+# 1 "./include/PA/Object.h" 1
 
 
 
 
-          size_t PASizeSize(size_t field_size)
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 8 "./include/PA/Object.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 9 "./include/PA/Object.h" 2
+
+
+
+
+
+
+
+          PAObject PAObjectPerformCopy(PAObject, PAObject, PASize size);
+# 7 "src/PA/Size.c" 2
+
+
+
+
+
+          struct PASize PASizeSize()
 {
- return field_size + field_size;
+    struct PASize size;
+    size.size = sizeof(struct PASize);
+    return size;
+
+
+
+
 }
 
           PAMemory PASizePerformAlloc(size_t size)
 {
     PAMemory address;
-    size_t totalSize;
-    totalSize = PASizeSize(size);
-    address = malloc (totalSize);
+    struct PASize totalSize;
+    totalSize = PASizeSize();
+    address = PAMemoryPerformConstruct(&totalSize);
     return address;
 }
 
@@ -2138,13 +2167,17 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 }
 
-          PASize PASizePerformConstruct(int value) {
+          struct PASize PASizePerformConstruct(int value) {
 
 
 
-    PAMemory size;
-    size = PASizePerformAllocate(sizeof(size_t));
-    size = PASizePerformInitialise(value);
+
+
+    struct PASize size = PASizeSize();
+
+    PASize aux = (PASize) aux;
+
+
 
     return size;
 }
@@ -2157,7 +2190,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           PASize PASizePerformInitialise(PASize Size)
 {
     PASize aux;
-# 106 "src/PA/Size.c"
+# 118 "src/PA/Size.c"
     return Size;
 }
 

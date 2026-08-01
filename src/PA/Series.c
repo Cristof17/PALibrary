@@ -20,10 +20,11 @@
 *  Created on: 16 nov. 2025
 *      Author: AdministratorUser
 */
-DllExport PAMemory PASeriesPerformConstruct(size_t size) 
+DllExport PASeries PASeriesPerformConstruct() 
 {
-    PAMemory series;
-    series = PAMemoryPerformConstruct(sizeof(struct PASeries));
+    PASeries series;
+//    PAMemory series;
+ //   series = PAMemoryPerformConstruct(sizeof(struct PASeries));
     // series = malloc (size);
     // seriesPointer->m = m;
     // seriesPointer->adj = adj;

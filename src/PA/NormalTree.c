@@ -11,9 +11,10 @@
 #include <PA\Memory.h>
 #endif
 
-DllExport PAMemory PANormalTreePerformConstruct(size_t size)
+DllExport PANormalTree PANormalTreePerformConstruct(PATree tree)
 {
-    PAMemory normalTree;
+    PANormalTree normal;
+    // PAMemory normalTree;
     // struct PANormalTree* normalTree;
     // struct PANormaltT/
     // struct PANormat
@@ -22,10 +23,11 @@ DllExport PAMemory PANormalTreePerformConstruct(size_t size)
     // struct PAnor
     // struct NA
     // nro
-    normalTree = PAMemoryPerformConstruct(sizeof(struct PANormalTree));
+    // normalTree = PAMemoryPerformConstruct(sizeof(struct PANormalTree));
     // normalTree = malloc (size);
     // register
-    return normalTree;
+    // return normalTree;
+    return normal;
     // normalTree.tree = PATreePerformConstruct();
     // normalTree.tree = PATreePerformConstruct();
     // return normalTree;

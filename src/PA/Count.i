@@ -1597,6 +1597,7 @@ struct ArrayListObject {
 };
 typedef struct PASize {
 
+ size_t size;
  char* value;
  char* digits;
 }* PASize;
@@ -1695,7 +1696,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 301 "./include/types.h"
+# 302 "./include/types.h"
 typedef struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -1868,7 +1869,7 @@ struct Facade {
 
 
           PASize PACountSize();
-          PACount PACountPerformConstruct(PACount,int value);
+          PACount PACountPerformConstruct(int value);
           static PAMemory PACountPerformAllocate();
           static PAObject PACountPerformCopy(PAObject, PAObject, size_t);
           PACount PACountPerformInitialise(PACount,PACount);
@@ -2085,9 +2086,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 21 "./include/PA/Size.h"
           PAMemory PASizePerformAllocate(size_t);
           PASize PASizePerformInitialise(PASize);
-          PASize PASizePerformConstruct(int value);
+          struct PASize PASizePerformConstruct(int value);
           size_t PASizePerformConvertToStandard(PASize);
           int PASizePerformDelete(PASize PA);
+          struct PASize PASizeSize();
 
           struct PASize* PASizePerformBegin(PASize, size_t* digits, size_t num_digits);
 # 7 "src/PA/Count.c" 2
@@ -2444,7 +2446,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
     size_t standardSize = PASizePerformConvertToStandard(size);
 
 
-    count = PAMemoryPerformConstruct(standardSize);
+    count = PAMemoryPerformConstruct(size);
     return count;
 }
 
@@ -2462,13 +2464,13 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
     return aux;
 }
 
-          PACount PACountPerformConstruct(PACount count, int value)
+          PACount PACountPerformConstruct(int value)
 {
     PASize size;
     size = PACountSize();
 
     PAMemory count;
-    count = PACountPerformAllocate(size);
+    count = PACountPerformAllocate();
 
 
     PACount other;

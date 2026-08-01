@@ -1595,6 +1595,7 @@ struct ArrayListObject {
 };
 typedef struct PASize {
 
+ size_t size;
  char* value;
  char* digits;
 }* PASize;
@@ -1693,7 +1694,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 301 "./include/types.h"
+# 302 "./include/types.h"
 typedef struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2079,9 +2080,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 21 "./include/PA/Size.h"
           PAMemory PASizePerformAllocate(size_t);
           PASize PASizePerformInitialise(PASize);
-          PASize PASizePerformConstruct(int value);
+          struct PASize PASizePerformConstruct(int value);
           size_t PASizePerformConvertToStandard(PASize);
           int PASizePerformDelete(PASize PA);
+          struct PASize PASizeSize();
 
           struct PASize* PASizePerformBegin(PASize, size_t* digits, size_t num_digits);
 # 7 "src/PA/Memory.c" 2
@@ -2095,7 +2097,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           PAMemory PAMemoryPerformConstruct(PASize size)
 {
     size_t _size = PASizePerformConvertToStandard(size);
-    void* address = malloc (size);
+    void* address = malloc (_size);
 # 41 "src/PA/Memory.c"
     return address;
 }

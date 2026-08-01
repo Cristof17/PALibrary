@@ -12,7 +12,7 @@
 #include <memory.h>
 // struct NormalTree;
 // DllExport Memory PANormalTreeCreate(size_t size);
-DllExport PANormalTree PANormalTreePerformCreate(PANormalTree NormalTree, PATree Tree);
+DllExport PANormalTree PANormalTreePerformConstruct(PATree Tree);
 // DllExport void PANormalTreeCopy(struct PANormalTree* NormalTree, struct PANormalTree* Tree);
 DllExport static PAObject PANormalTreePerformCopy(PAObject, PAObject, size_t);
 DllExport int PANormalTreePerformDelete(PANormalTree PA);

@@ -15,16 +15,17 @@
 #include <PA\Memory.h>
 
 #endif
-DllExport PAMemory PATransposeTreePerformConstruct(size_t size)
+DllExport PATransposeTree PATransposeTreePerformConstruct(PATree rtree)
 {
-    PAMemory transposeTree;
-    transposeTree = PAMemoryPerformConstruct(sizeof(struct PATransposeTree));
+    PATransposeTree treeTranspose;
+    // PAMemory transposeTre÷÷e;
+    // transposeTree = PAMemoryPerformConstruct(sizeof(struct PATransposeTree));
     // struct PATransposeTree* transposeTreePointer;
     // transposeTree = malloc(size);
     // transposeTreePointer->tree = PATreePerformConstruct();
     // transposeTree.tree = (transposeTreePointer->tree);
     // transposeTreePointer = PATransposeTreeBegin(transposeTreePointer,transposeTree.tree);
-    return transposeTree;
+    return treeTranspose;
     // return transposeTree;
     // transposeTree.tree = PATreePerformConstruct();
     // return transposeTreePointer;

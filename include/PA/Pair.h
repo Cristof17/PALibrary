@@ -10,7 +10,7 @@
 #include <memory.h>
 
 // struct PAPair;
-// DllExport Memory PAPairCreate(size_t size);
+DllExport PAPair PAPairConstruct(PAElement, PAElement);
 DllExport PAPair PAPairPerformInit(PAPair, PAElement, PAElement);
 DllExport static PAObject PAPairPerformCopy(PAObject, PAObject, size_t);
 // DllExport HRESULT PAPairPerformCopy(struct PAPair);

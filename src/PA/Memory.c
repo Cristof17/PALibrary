@@ -14,7 +14,7 @@
 DllExport PAMemory PAMemoryPerformConstruct(PASize size)
 {
     size_t _size = PASizePerformConvertToStandard(size);
-    void* address = malloc (size);
+    void* address = malloc (_size);
     // struct PACount zies;
     // PAMemory count;
     // count = PAMemoryPerformConstruct(sizeof(PAMemory));

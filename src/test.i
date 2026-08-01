@@ -1592,6 +1592,7 @@ struct ArrayListObject {
 };
 typedef struct PASize {
 
+ size_t size;
  char* value;
  char* digits;
 }* PASize;
@@ -1690,7 +1691,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 301 "./include/types.h"
+# 302 "./include/types.h"
 typedef struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2086,7 +2087,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           PASize PACountSize();
-          PACount PACountPerformConstruct(PACount,int value);
+          PACount PACountPerformConstruct(int value);
           static PAMemory PACountPerformAllocate();
           static PAObject PACountPerformCopy(PAObject, PAObject, size_t);
           PACount PACountPerformInitialise(PACount,PACount);
@@ -2143,7 +2144,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAData PACountPerformConstruct();
+          PAData PADataPerformConstruct();
           static PAObject PADataPerformCopy(PAObject from, PAObject to, size_t);
 
 
@@ -2524,7 +2525,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
 
-
+          PASeries PASeriesConstruct();
 
           static PAObject PASeriesPerformCopy(PAObject, PAObject, size_t);
           int PASeriesPerformDelete(PASeries);
@@ -2571,7 +2572,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
 
-
+          PATransposeTree PATransposeTreePerformConstruct(PATree tree);
           PATransposeTree PATransposeTreePerformBegin(PATransposeTree, PATree);
           static PAObject PATransposeTreePerformCopy(PAObject, PAObject, size_t);
 

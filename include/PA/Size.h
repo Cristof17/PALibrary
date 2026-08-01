@@ -20,9 +20,10 @@
 // DllExport PA
 DllExport PAMemory PASizePerformAllocate(size_t);
 DllExport PASize PASizePerformInitialise(PASize);
-DllExport PASize PASizePerformConstruct(int value);
+DllExport struct PASize PASizePerformConstruct(int value);
 DllExport size_t PASizePerformConvertToStandard(PASize);
 DllExport int PASizePerformDelete(PASize PA);
+DllExport struct PASize PASizeSize();
 // DllExport int PASizeFinish(Memory);
 DllExport struct PASize* PASizePerformBegin(PASize, size_t* digits, size_t num_digits);
 // struct PASize PASizeArrange(struct PASize);

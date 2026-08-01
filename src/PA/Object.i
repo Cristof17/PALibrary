@@ -1596,6 +1596,7 @@ struct ArrayListObject {
 };
 typedef struct PASize {
 
+ size_t size;
  char* value;
  char* digits;
 }* PASize;
@@ -1694,7 +1695,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 301 "./include/types.h"
+# 302 "./include/types.h"
 typedef struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2069,11 +2070,33 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           PAObject PAObjectPerformCopy(PAObject, PAObject, PASize size);
 # 8 "src/PA/Object.c" 2
-# 140 "src/PA/Object.c"
+# 1 "./include/PA/Size.h" 1
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 7 "./include/PA/Size.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 8 "./include/PA/Size.h" 2
+# 21 "./include/PA/Size.h"
+          PAMemory PASizePerformAllocate(size_t);
+          PASize PASizePerformInitialise(PASize);
+          struct PASize PASizePerformConstruct(int value);
+          size_t PASizePerformConvertToStandard(PASize);
+          int PASizePerformDelete(PASize PA);
+          struct PASize PASizeSize();
+
+          struct PASize* PASizePerformBegin(PASize, size_t* digits, size_t num_digits);
+# 9 "src/PA/Object.c" 2
+# 142 "src/PA/Object.c"
           PAObject PAObjectPerformCopy(PAObject from,PAObject to,PASize size) {
  PAMemory aux;
- aux = PAMemoryPerformConstruct(size->value[0]);
- __builtin___memcpy_chk (aux, from,size->value[0], __builtin_object_size (aux, 0));
- __builtin___memcpy_chk (from, to,size->value[0], __builtin_object_size (from, 0));
+ size_t standardSize = PASizePerformConvertToStandard(size);
+ aux = malloc (standardSize);
+
+ __builtin___memcpy_chk (aux, from,standardSize, __builtin_object_size (aux, 0));
+ __builtin___memcpy_chk (from, to,standardSize, __builtin_object_size (from, 0));
  return aux;
 }

@@ -1593,6 +1593,7 @@ struct ArrayListObject {
 };
 typedef struct PASize {
 
+ size_t size;
  char* value;
  char* digits;
 }* PASize;
@@ -1691,7 +1692,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 301 "./include/types.h"
+# 302 "./include/types.h"
 typedef struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -2065,7 +2066,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-
+          PASeries PASeriesConstruct();
 
           static PAObject PASeriesPerformCopy(PAObject, PAObject, size_t);
           int PASeriesPerformDelete(PASeries);
@@ -2085,7 +2086,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           PASize PACountSize();
-          PACount PACountPerformConstruct(PACount,int value);
+          PACount PACountPerformConstruct(int value);
           static PAMemory PACountPerformAllocate();
           static PAObject PACountPerformCopy(PAObject, PAObject, size_t);
           PACount PACountPerformInitialise(PACount,PACount);
@@ -2139,11 +2140,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           int PAMemoryPerformRuin(PAMemory);
 # 11 "src/PA/Series.c" 2
 # 23 "src/PA/Series.c"
-          PAMemory PASeriesPerformConstruct(size_t size)
+          PASeries PASeriesPerformConstruct()
 {
-    PAMemory series;
-    series = PAMemoryPerformConstruct(sizeof(struct PASeries));
-# 55 "src/PA/Series.c"
+    PASeries series;
+# 56 "src/PA/Series.c"
     return series;
 }
           static PAObject PASeriesCopy(PAObject from, PAObject to, size_t size)
@@ -2192,7 +2192,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 }
-# 118 "src/PA/Series.c"
+# 119 "src/PA/Series.c"
           PASeries PASeriesPerformInit(PASeries series, PACount M, PAList Adj[])
     {
         struct PASeries* aux;
@@ -2202,7 +2202,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
         __builtin___memcpy_chk (aux->m, M, sizeof(struct PACount), __builtin_object_size (aux->m, 0));
         __builtin___memcpy_chk (aux->adj, Adj,sizeof(struct PAElement*), __builtin_object_size (aux->adj, 0));
         __builtin___memcpy_chk (series, aux,sizeof(struct PASeries), __builtin_object_size (series, 0));
-# 162 "src/PA/Series.c"
+# 163 "src/PA/Series.c"
         free(aux);
         return aux;
     }
@@ -2211,20 +2211,20 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
         int returnCode;
         returnCode = ((int)0);
         __builtin___memset_chk(PA, 0, sizeof(struct PASeries), __builtin_object_size (PA, 0));
-# 186 "src/PA/Series.c"
+# 187 "src/PA/Series.c"
         return returnCode;
     }
-# 197 "src/PA/Series.c"
+# 198 "src/PA/Series.c"
               int PASeriesPerformRuin(PAMemory PA)
     {
 
         int returnCode;
         returnCode = PAMemoryPerformRuin(PA);
-# 225 "src/PA/Series.c"
+# 226 "src/PA/Series.c"
         return returnCode;
 
     }
-# 283 "src/PA/Series.c"
+# 284 "src/PA/Series.c"
 void PASeriesPrint(struct PASeries* Series)
 {
 

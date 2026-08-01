@@ -5,9 +5,11 @@
 // #include <PA/Element.h>
 // #include <PA/List.h>
 #include <PA/Object.h>
+#include <PA/Size.h>
 #elif defined _WIN95
 // #include <PA\Tree.h>
 #include <PA\Object.h>
+#include <PA\Size.h>
 // #include <PA\Count.h>
 // #include <PA\Element.h>
 // #include <PA\List.h>
@@ -139,9 +141,11 @@
 // // }
 DllExport PAObject PAObjectPerformCopy(PAObject from,PAObject to,PASize size) {
 	PAMemory aux;
-	aux = PAMemoryPerformConstruct(size->value[0]);
-	memcpy(aux,from,size->value[0]);
-	memcpy(from,to,size->value[0]);
+	size_t standardSize = PASizePerformConvertToStandard(size);
+	aux = malloc (standardSize);
+	// aux = PAMemoryPerformConstruct(size);
+	memcpy(aux,from,standardSize);
+	memcpy(from,to,standardSize);
 	return aux;
 }
 // DllExport static Object PATreeCopy(Object from, Object to, size_t size)

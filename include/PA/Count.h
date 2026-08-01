@@ -15,7 +15,7 @@
 //typedef struct PACount Count;
 // DllExport Memory PACountCreate(size_t size);
 DllExport PASize PACountSize();
-DllExport PACount PACountPerformConstruct(PACount,int value);
+DllExport PACount PACountPerformConstruct(int value);
 DllExport static PAMemory PACountPerformAllocate();
 DllExport static PAObject PACountPerformCopy(PAObject, PAObject, size_t);
 DllExport PACount PACountPerformInitialise(PACount,PACount);

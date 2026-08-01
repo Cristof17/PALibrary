@@ -51,7 +51,7 @@ _PADataPerformDelete:                   ; @PADataPerformDelete
 	ldr	w1, [sp, #16]                   ; 4-byte Folded Reload
 	ldur	x8, [x29, #-8]
 	ldr	x0, [x8]
-	mov	x2, #24                         ; =0x18
+	mov	x2, #32                         ; =0x20
 	bl	___memset_chk
 	ldr	x2, [sp]                        ; 8-byte Folded Reload
 	ldr	x3, [sp, #8]                    ; 8-byte Folded Reload
