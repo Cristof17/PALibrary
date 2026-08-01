@@ -2353,8 +2353,8 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
           size_t PANumberSize(PANumber);
           PANumber PANumberPerformConstruct(unsigned char Value);
           static PAObject PANumberPerformCopy(PAObject, PAObject, size_t);
-          int PANumberPerformDelete(struct PANumber*);
+          int PANumberPerformDelete(PANumber);
 
-          void PANumberPrint(struct PANumber*);
+          void PANumberPrint(PANumber);
 # 5 "src/PA/Resource.c" 2
 

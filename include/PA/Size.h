@@ -20,7 +20,7 @@
 // DllExport PA
 DllExport PAMemory PASizePerformAllocate();
 DllExport PASize PASizePerformInitialise();
-DllExport PASize PASizePerformConstruct(size_t value);
+DllExport PASize PASizePerformConstruct(int value);
 DllExport size_t PASizePerformConvertToStandard(PASize);
 DllExport int PASizePerformDelete(PASize PA);
 // DllExport int PASizeFinish(Memory);

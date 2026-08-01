@@ -2511,9 +2511,9 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
           size_t PANumberSize(PANumber);
           PANumber PANumberPerformConstruct(unsigned char Value);
           static PAObject PANumberPerformCopy(PAObject, PAObject, size_t);
-          int PANumberPerformDelete(struct PANumber*);
+          int PANumberPerformDelete(PANumber);
 
-          void PANumberPrint(struct PANumber*);
+          void PANumberPrint(PANumber);
 # 10 "test/test.c" 2
 # 1 "./include/PA/Series.h" 1
 # 15 "./include/PA/Series.h"

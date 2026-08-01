@@ -2142,7 +2142,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           int PAMemoryPerformRuin(PAMemory);
 # 10 "src/PA/Element.c" 2
 # 20 "src/PA/Element.c"
-          PAElement PAElementPerformCreate(PAData, PAElement, PAStatus)
+          PAElement PAElementPerformCreate(PAData data, PAElement next, PAStatus status)
 {
     PAElement element;
 # 39 "src/PA/Element.c"

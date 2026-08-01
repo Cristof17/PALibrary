@@ -17,7 +17,7 @@
 // #include <types.h>
 // #include "//"
 // #include "../include/PAIndex.h"
-DllExport PAElement PAElementPerformCreate(PAData, PAElement, PAStatus)
+DllExport PAElement PAElementPerformCreate(PAData data, PAElement next, PAStatus status)
 {
     PAElement element;
     // PAMemory element;

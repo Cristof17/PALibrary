@@ -11,7 +11,7 @@
 DllExport size_t PANumberSize(PANumber);
 DllExport PANumber PANumberPerformConstruct(unsigned char Value);
 DllExport static PAObject PANumberPerformCopy(PAObject, PAObject, size_t);
-DllExport int PANumberPerformDelete(struct PANumber*);
+DllExport int PANumberPerformDelete(PANumber);
 // DllExport int PANumberFinish(Memory);
-DllExport void PANumberPrint(struct PANumber*);
+DllExport void PANumberPrint(PANumber);
 #endif

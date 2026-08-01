@@ -2059,7 +2059,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 21 "./include/PA/Size.h"
           PAMemory PASizePerformAllocate();
           PASize PASizePerformInitialise();
-          PASize PASizePerformConstruct(size_t value);
+          PASize PASizePerformConstruct(int value);
           size_t PASizePerformConvertToStandard(PASize);
           int PASizePerformDelete(PASize PA);
 
