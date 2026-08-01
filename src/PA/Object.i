@@ -2067,7 +2067,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAObject PAObjectPerformCopy(PAObject, PAObject, size_t);
+          PAObject PAObjectPerformCopy(PAObject, PAObject, PASize size);
 # 8 "src/PA/Object.c" 2
 # 140 "src/PA/Object.c"
           PAObject PAObjectPerformCopy(PAObject from,PAObject to,PASize size) {

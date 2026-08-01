@@ -2056,7 +2056,10 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 8 "./include/PA/Size.h" 2
-# 20 "./include/PA/Size.h"
+# 21 "./include/PA/Size.h"
+          PAMemory PASizePerformAllocate();
+          PASize PASizePerformInitialise();
+          PASize PASizePerformConstruct(size_t value);
           int PASizePerformDelete(PASize PA);
 
           struct PASize* PASizePerformBegin(PASize, size_t* digits, size_t num_digits);
@@ -2086,7 +2089,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           size_t PASizeSize(size_t field_size)
 {
- return field_1_size + field_2_size;
+ return field_size + field_size;
 }
 
           PAMemory PASizePerformAlloc(size_t size)
@@ -2106,27 +2109,51 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     size = PASizePerformAlloc(sizeof(size_t));
     size = PASizePerformInit(value);
 
-    return sizeStruct;
+    return size;
 }
-          PASize PASizePerformInit(PASize Size, int value)
+
+
+
+
+
+
+          PASize PASizePerformInitialise(PASize Size, int value)
 {
     PASize aux;
     aux = (struct PASize*) malloc (sizeof(struct PASize));
-    aux->value = (size_t*) malloc (sizeof(size_t)*digits);
+    aux->digits = malloc (sizeof(char));
+    aux->value = malloc (sizeof(value));
+    aux->value = __builtin___memcpy_chk (aux.value, value,sizeof(value), __builtin_object_size (aux.value, 0));
 
-
+    char* endptr = malloc (sizeof(char));
+    char aux[20];
+    __builtin___memcpy_chk (aux, sizeCount->value,20, __builtin_object_size (aux, 0));
     __builtin___memcpy_chk (aux, Size,sizeof(struct PASize), __builtin_object_size (aux, 0));
     __builtin___memcpy_chk (aux->value, value,digits, __builtin_object_size (aux->value, 0));
     __builtin___memcpy_chk (aux, Size,sizeof(struct PASize), __builtin_object_size (aux, 0));
     __builtin___memcpy_chk (Size->value, aux->value,digits, __builtin_object_size (Size->value, 0));
-
-
-
-
-
+# 68 "src/PA/Size.c"
     free(aux->value);
     free(aux);
     return Size;
+}
+
+int digits (int value)
+{
+    int returnValue;
+    int remainder;
+    while (returnValue != 0)
+    {
+        remainder = returnValue % 10;
+        returnValue = value / 10;
+        if (remainder == 0) {
+            returnValue++;
+        }
+        else
+            break;
+    }
+
+    return returnValue;
 }
 
           int PASizePerformDelete(struct PASize* PA)
