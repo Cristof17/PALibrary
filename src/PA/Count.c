@@ -15,23 +15,84 @@
 #include <PA\Object.h>
 #include <PA\Size.h>
 #endif
-DllExport PAMemory PACountAllocate()
+DllExport PAMemory PACountPerformAllocate()
 {
     PASize size; 
     PAMemory count;
     size = PACountSize();
+    size_t standardSize = PASizePerformConvertToStandard(size);
     // count = PAMemoryPerformConstruct(sizeof());
     // DllExport PASizePerformConstruct(struct PASize, size_t value);
-    count = PAMemoryPerformConstruct(size);
+    count = PAMemoryPerformConstruct(standardSize);
     return count;
 }
-DllExport PACount PACountPerformConstruct(int value)
+
+DllExport PACount PACountPerformInitialise(PACount init, PACount this)
 {
-    PAMemory count;
+    PASize size = PACountSize();
+
+    PAMemory aux;
+    aux = PAMemoryPerformConstruct(size);
+
+    aux = PAObjectPerformCopy(init,aux,size);
+    
+    init = PAObjectPerformCopy(this,init,size);
+
+    return aux;
+}
+
+DllExport PACount PACountPerformConstruct(PACount count, int value)
+{
     PASize size;
     size = PACountSize();
+
+    PAMemory count;
     count = PACountPerformAllocate(size);
-    PACount countObject = PACountPerformInitialise(value);
+    
+
+    PACount other;
+    other = PAMemoryPerformConstruct(size);
+
+    PASize otherSize;
+    otherSize = PASizePerformAllocate(sizeof(int));
+
+    other = PAObjectPerformCopy(other,&value,size);
+    
+    PACount countObject = PACountPerformInitialise(count, other);
+    // PAMemory aux;
+    // aux = PAMemoryPerformConstruct(size);
+
+    // PAObject box;
+    // box = PAObjectPerformCopy(count,aux,size);
+
+    // count = PAObjectPerformCopy(other,count,size);
+
+    // PACount other;
+    // other = PAMemoryPerformConstruct(size);
+    // other = PAObjectPerformCopy(other,&value,sizeof(value));
+    
+    // PAMemory aux;
+    // aux = PAMemoryPerformConstruct(size);
+
+    // PAObject box;
+    // box = PAObjectPerformCopy(count,aux,size);
+
+    // count = PAObjectPerformCopy(other,count,size);
+
+    // // PACount countObject = PACountPerformInitialise(value);
+    // PACount other;
+    // other = PAMemoryPerformConstruct(size);
+    // other = PAObjectPerformCopy(other,&value,sizeof(value));
+    
+    // PAMemory aux;
+    // aux = PAMemoryPerformConstruct(size);
+
+    // PAObject box;
+    // box = PAObjectPerformCopy(count,aux,size);
+
+    // count = PAObjectPerformCopy(other,count,size);
+
+    // // PACount countObject = PACountPerformInitialise(value);
     return countObject;
     // n->number = malloc(sizeof(PAInt));
     // PAInt aux;
@@ -42,13 +103,13 @@ DllExport PACount PACountPerformConstruct(int value)
     // struct PACount 
     //zies;
 }
-PAMemory PACountPerformAllocate(PASize size)
-{
-    size_t size;
-    PAMemory count;
-    count = malloc (size);
-    return count;
-}
+// PAMemory PACountPerformAllocate(PASize size)
+// {
+//     size_t size;
+//     PAMemory count;
+//     count = malloc (size);
+//     return count;
+// }
     // count->number = (PAInt*) malloc (sizeof(PAInt));
     //  struct PACount* aux;
     // aux = (struct PACount*) malloc (sizeof(struct PACount));
@@ -67,8 +128,8 @@ PAMemory PACountPerformAllocate(PASize size)
     // return countPointer;
     // return zies;
     // countPointer->number = PANumberCreate();
-    return count;
-}
+    // return count;
+// }
 DllExport PAObject PACountInitialise(PACount init, PACount this)
 {
     PASize size = PACountSize();

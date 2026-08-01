@@ -15,8 +15,10 @@
 
 
 
+
+
 # 1 "./include/defs.h" 1
-# 7 "./include/PA/Count.h" 2
+# 9 "./include/PA/Count.h" 2
 # 1 "./include/types.h" 1
 
 
@@ -1856,9 +1858,9 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 8 "./include/PA/Count.h" 2
+# 10 "./include/PA/Count.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Count.h" 2
+# 11 "./include/PA/Count.h" 2
 
 
 
@@ -1866,21 +1868,20 @@ struct Facade {
 
 
           PASize PACountSize();
-          PACount PACountPerformConstruct(int value);
+          PACount PACountPerformConstruct(PACount,int value);
           static PAMemory PACountPerformAllocate();
           static PAObject PACountPerformCopy(PAObject, PAObject, size_t);
-          PACount PACountPerformInitialise(PACount count);
+          PACount PACountPerformInitialise(PACount,PACount);
           int PACountPerformDelete(PACount PA);
 # 6 "src/PA/Count.c" 2
 # 1 "./include/PA/Size.h" 1
-# 7 "src/PA/Count.c" 2
-# 1 "./include/PA/Number.h" 1
+
 
 
 
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 6 "./include/PA/Number.h" 2
+# 7 "./include/PA/Size.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 1 3 4
@@ -2080,6 +2081,24 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h" 2 3 4
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
+# 8 "./include/PA/Size.h" 2
+# 21 "./include/PA/Size.h"
+          PAMemory PASizePerformAllocate(size_t);
+          PASize PASizePerformInitialise(PASize);
+          PASize PASizePerformConstruct(int value);
+          size_t PASizePerformConvertToStandard(PASize);
+          int PASizePerformDelete(PASize PA);
+
+          struct PASize* PASizePerformBegin(PASize, size_t* digits, size_t num_digits);
+# 7 "src/PA/Count.c" 2
+# 1 "./include/PA/Number.h" 1
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 6 "./include/PA/Number.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 7 "./include/PA/Number.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 1 3 4
 # 61 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 3 4
@@ -2417,36 +2436,55 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
 
-          PAMemory PACountAllocate()
+          PAMemory PACountPerformAllocate()
 {
     PASize size;
     PAMemory count;
     size = PACountSize();
+    size_t standardSize = PASizePerformConvertToStandard(size);
 
 
-    count = PAMemoryPerformConstruct(size);
+    count = PAMemoryPerformConstruct(standardSize);
     return count;
 }
-          PACount PACountPerformConstruct(int value)
+
+          PACount PACountPerformInitialise(PACount init, PACount this)
 {
-    PAMemory count;
+    PASize size = PACountSize();
+
+    PAMemory aux;
+    aux = PAMemoryPerformConstruct(size);
+
+    aux = PAObjectPerformCopy(init,aux,size);
+
+    init = PAObjectPerformCopy(this,init,size);
+
+    return aux;
+}
+
+          PACount PACountPerformConstruct(PACount count, int value)
+{
     PASize size;
     size = PACountSize();
+
+    PAMemory count;
     count = PACountPerformAllocate(size);
-    PACount countObject = PACountPerformInitialise(value);
+
+
+    PACount other;
+    other = PAMemoryPerformConstruct(size);
+
+    PASize otherSize;
+    otherSize = PASizePerformAllocate(sizeof(int));
+
+    other = PAObjectPerformCopy(other,&value,size);
+
+    PACount countObject = PACountPerformInitialise(count, other);
+# 96 "src/PA/Count.c"
     return countObject;
-# 44 "src/PA/Count.c"
+# 105 "src/PA/Count.c"
 }
-PAMemory PACountPerformAllocate(PASize size)
-{
-    size_t size;
-    PAMemory count;
-    count = malloc (size);
-    return count;
-}
-# 70 "src/PA/Count.c"
-    return count;
-}
+# 133 "src/PA/Count.c"
           PAObject PACountInitialise(PACount init, PACount this)
 {
     PASize size = PACountSize();
@@ -2455,9 +2493,9 @@ PAMemory PACountPerformAllocate(PASize size)
     this = (PAObject) PAObjectPerformCopy(this,init,size);
 
     return aux;
-# 118 "src/PA/Count.c"
+# 179 "src/PA/Count.c"
 }
-# 139 "src/PA/Count.c"
+# 200 "src/PA/Count.c"
           int PACountDelete(PACount PA)
 {
     int returnCode;
@@ -2477,7 +2515,7 @@ PAMemory PACountPerformAllocate(PASize size)
 
     int resultCode;
     resultCode = PAMemoryPerformRuin(PA);
-# 189 "src/PA/Count.c"
+# 250 "src/PA/Count.c"
     return resultCode;
 
 }

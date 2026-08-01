@@ -1,6 +1,8 @@
 //@Author Cristofor Rotsching
-#ifndef INCLUDE_PA_SIZE_H_
-#define INCLUDE_PA_SIZE_H_	1
+// #ifndef INCLUDE_PA_SIZE_H_
+#ifndef INCLUDE_PA_COUNT_H
+// #define INCLUDE_PA_SIZE_H_	1
+#define INCLUDE_PA_COUNT_H  1
 
 // #include "../defs.h"
 #include <defs.h>
@@ -13,10 +15,10 @@
 //typedef struct PACount Count;
 // DllExport Memory PACountCreate(size_t size);
 DllExport PASize PACountSize();
-DllExport PACount PACountPerformConstruct(int value);
+DllExport PACount PACountPerformConstruct(PACount,int value);
 DllExport static PAMemory PACountPerformAllocate();
 DllExport static PAObject PACountPerformCopy(PAObject, PAObject, size_t);
-DllExport PACount PACountPerformInitialise(PACount count);
+DllExport PACount PACountPerformInitialise(PACount,PACount);
 DllExport int PACountPerformDelete(PACount PA);
 // DllExport int PACountFinish(Memory);
 // DllExport struct PACount PACountPerformCopy(struct PACount);

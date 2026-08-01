@@ -3,6 +3,7 @@
 // #include <types.h>
 #ifndef _WIN95
 #include <PA/Memory.h>
+#include <PA/Size.h>
 #include <defs.h>
 #include <types.h>
 // #include <PA/Number.h>
@@ -12,7 +13,7 @@
 
 DllExport PAMemory PAMemoryPerformConstruct(PASize size)
 {
-    size_t _size; 
+    size_t _size = PASizePerformConvertToStandard(size);
     void* address = malloc (size);
     // struct PACount zies;
     // PAMemory count;

@@ -11,8 +11,10 @@
 
 
 
+
+
 # 1 "./include/defs.h" 1
-# 7 "./include/PA/Count.h" 2
+# 9 "./include/PA/Count.h" 2
 # 1 "./include/types.h" 1
 
 
@@ -1852,9 +1854,9 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 8 "./include/PA/Count.h" 2
+# 10 "./include/PA/Count.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Count.h" 2
+# 11 "./include/PA/Count.h" 2
 
 
 
@@ -1862,10 +1864,10 @@ struct Facade {
 
 
           PASize PACountSize();
-          PACount PACountPerformConstruct(int value);
+          PACount PACountPerformConstruct(PACount,int value);
           static PAMemory PACountPerformAllocate();
           static PAObject PACountPerformCopy(PAObject, PAObject, size_t);
-          PACount PACountPerformInitialise(PACount count);
+          PACount PACountPerformInitialise(PACount,PACount);
           int PACountPerformDelete(PACount PA);
 # 2 "test/test_pointers.c" 2
 # 1 "./include/PA/Resource.h" 1
