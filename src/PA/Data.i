@@ -2103,7 +2103,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAMemory PAMemoryPerformConstruct(size_t size);
+          PAMemory PAMemoryPerformConstruct(PASize size);
           int PAMemoryPerformRuin(PAMemory);
 # 6 "src/PA/Data.c" 2
 # 15 "src/PA/Data.c"

@@ -1874,7 +1874,7 @@ struct Facade {
 
 
 
-          PAMemory PAMemoryPerformConstruct(size_t size);
+          PAMemory PAMemoryPerformConstruct(PASize size);
           int PAMemoryPerformRuin(PAMemory);
 # 6 "src/PA/Value.c" 2
 

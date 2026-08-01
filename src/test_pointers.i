@@ -2447,7 +2447,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
 
-          PAMemory PAMemoryPerformConstruct(size_t size);
+          PAMemory PAMemoryPerformConstruct(PASize size);
           int PAMemoryPerformRuin(PAMemory);
 # 11 "./include/PA/List.h" 2
 

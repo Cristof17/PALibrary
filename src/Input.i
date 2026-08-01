@@ -1885,7 +1885,7 @@ struct Facade {
 
 
 
-          PAMemory PAMemoryPerformConstruct(size_t size);
+          PAMemory PAMemoryPerformConstruct(PASize size);
           int PAMemoryPerformRuin(PAMemory);
 # 6 "src/Input.c" 2
 # 1 "./include/ArrayList/ArrayList.h" 1

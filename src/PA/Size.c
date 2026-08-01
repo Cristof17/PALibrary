@@ -21,6 +21,42 @@ DllExport PAMemory PASizePerformAlloc(size_t size)
     return address;
 }
 
+DllExport size_t convertToStandard(PASize size)
+{
+    size_t standardSize;
+    int digits = *size->digits;
+    int i = 0;
+    while (i < digits)
+    {
+        if (i == 0)
+        {
+            if (size->value[i] == '-')
+            {
+                if (standardSize > 0)
+                    standardSize *= -1; //make it negative
+                else
+                    standardSize *= 1; //do not make it negative
+                    continue;
+            }
+            else
+            {
+                standardSize *= 10;
+                standardSize += atoi(digits+i);
+            }
+        }
+        standardSize *= 10;
+        standardSize += atoi(digits+i);
+    }
+    return standardSize;
+}
+DllExport size_t PASizePerformConvertToStandard(PASize size)
+{
+    size_t value;
+    value = convertToStandard(size);
+    return value;
+    // int digits = *size->digits;
+}
+
 DllExport PASize PASizePerformConstruct(int value) {
 	//do some decimal conversion to char array 102 \
 	//will we first digit 1 second digit 0 third digit \

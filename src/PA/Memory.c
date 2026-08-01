@@ -10,8 +10,9 @@
 
 #endif
 
-DllExport PAMemory PAMemoryPerformConstruct(size_t size)
+DllExport PAMemory PAMemoryPerformConstruct(PASize size)
 {
+    size_t _size; 
     void* address = malloc (size);
     // struct PACount zies;
     // PAMemory count;

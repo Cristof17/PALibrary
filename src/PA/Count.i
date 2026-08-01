@@ -2383,7 +2383,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
 
-          PAMemory PAMemoryPerformConstruct(size_t size);
+          PAMemory PAMemoryPerformConstruct(PASize size);
           int PAMemoryPerformRuin(PAMemory);
 # 8 "src/PA/Count.c" 2
 # 1 "./include/PA/Object.h" 1

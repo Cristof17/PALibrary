@@ -1865,7 +1865,7 @@ struct Facade {
 
 
 
-          PAMemory PAMemoryPerformConstruct(size_t size);
+          PAMemory PAMemoryPerformConstruct(PASize size);
           int PAMemoryPerformRuin(PAMemory);
 # 6 "src/PA/Memory.c" 2
 
@@ -1875,15 +1875,16 @@ struct Facade {
 
 
 
-          PAMemory PAMemoryPerformConstruct(size_t size)
+          PAMemory PAMemoryPerformConstruct(PASize size)
 {
+    size_t _size;
     void* address = malloc (size);
-# 39 "src/PA/Memory.c"
+# 40 "src/PA/Memory.c"
     return address;
 }
           int PAMemoryPerformRuin(PAMemory PA)
 {
-# 68 "src/PA/Memory.c"
+# 69 "src/PA/Memory.c"
     int returnCode;
     free(PA);
 

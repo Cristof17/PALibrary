@@ -2060,6 +2060,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           PAMemory PASizePerformAllocate();
           PASize PASizePerformInitialise();
           PASize PASizePerformConstruct(size_t value);
+          size_t PASizePerformConvertToStandard(PASize);
           int PASizePerformDelete(PASize PA);
 
           struct PASize* PASizePerformBegin(PASize, size_t* digits, size_t num_digits);
@@ -2080,7 +2081,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PAMemory PAMemoryPerformConstruct(size_t size);
+          PAMemory PAMemoryPerformConstruct(PASize size);
           int PAMemoryPerformRuin(PAMemory);
 # 6 "src/PA/Size.c" 2
 
@@ -2099,6 +2100,42 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     totalSize = PASizeSize(size);
     address = malloc (totalSize);
     return address;
+}
+
+          size_t convertToStandard(PASize size)
+{
+    size_t standardSize;
+    int digits = *size->digits;
+    int i = 0;
+    while (i < digits)
+    {
+        if (i == 0)
+        {
+            if (size->value[i] == '-')
+            {
+                if (standardSize > 0)
+                    standardSize *= -1;
+                else
+                    standardSize *= 1;
+                    continue;
+            }
+            else
+            {
+                standardSize *= 10;
+                standardSize += atoi(digits+i);
+            }
+        }
+        standardSize *= 10;
+        standardSize += atoi(digits+i);
+    }
+    return standardSize;
+}
+          size_t PASizePerformConvertToStandard(PASize size)
+{
+    size_t value;
+    value = convertToStandard(size);
+    return value;
+
 }
 
           PASize PASizePerformConstruct(int value) {
@@ -2132,7 +2169,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     __builtin___memcpy_chk (aux->value, value,digits, __builtin_object_size (aux->value, 0));
     __builtin___memcpy_chk (aux, Size,sizeof(struct PASize), __builtin_object_size (aux, 0));
     __builtin___memcpy_chk (Size->value, aux->value,digits, __builtin_object_size (Size->value, 0));
-# 68 "src/PA/Size.c"
+# 104 "src/PA/Size.c"
     free(aux->value);
     free(aux);
     return Size;
