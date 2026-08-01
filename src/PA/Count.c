@@ -184,7 +184,7 @@ PAResult PACountPrint(struct PACount* Count)
     PAResult result;
     return result;
 }
-DllExport PASize PASizePerformInitialise(PASize Size, int value);
+// DllExport PASize PASizePerformInitialise(PASize Size, int value);
 PASize PACountSize()
 {
     PASize sizeCount;

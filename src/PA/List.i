@@ -2113,7 +2113,8 @@ void PAListPrint(struct PAList* List);
 
 
 
-          static PASize PACountSize();
+          PASize PACountSize();
+          PACount PACountPerformConstruct(int size);
           static PAMemory PACountPerformAllocate();
           static PAObject PACountPerformCopy(PAObject, PAObject, size_t);
           PACount PACountPerformInit(PACount, PAInt* value, PASize size);
