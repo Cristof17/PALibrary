@@ -8,6 +8,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <memory.h>
+#ifndef _WIN95
+#include <PA/Size.h>
+#elif defined _WIN95
+#include <PA\Size.h>
+#endif
 // #include <typee
 
 // struct PAInput;
@@ -21,6 +26,7 @@ DllExport static PAObject PAInputPerformCopy(PAObject,PAObject, size_t);
 // struct PAInput PAInputPerformConstruct(struct PACount, struct PACount, struct PAList, struct PAElement)l
 // struct 
 DllExport int PAInputPerformDelete(PAInput);
+DllExport struct PASize PAInputSize();
 // DllExport int PAInputFinish(Memory);
 // void BFSInputRuin();
 // struct BFSInput BFSInputArrange(struct BFSInput);

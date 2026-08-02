@@ -151,3 +151,13 @@ DllExport int PAInputPerformRuin(PAMemory PA) {
 	return returnCode;
 }
 
+DllExport struct PASize PAInputSize()
+{
+	size_t standardSize = sizeof(struct PASize);
+
+	struct PASize size;
+	size = PASizePerformConstruct(standardSize);
+
+	return size;
+}
+
