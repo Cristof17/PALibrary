@@ -208,4 +208,12 @@ DllExport int PAElementPerformRuin(PAMemory PA)
     // return element;
   //  return Element;
 // }
+DllExport struct PASize PAElementSize()
+{
+    size_t standardSize = sizeof(struct PAElement);
 
+    struct PASize size;
+
+    size = PASizePerformConstruct(standardSize);
+    return size;
+}

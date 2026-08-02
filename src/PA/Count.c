@@ -17,9 +17,8 @@
 #endif
 DllExport PAMemory PACountPerformAllocate()
 {
-    PASize size; 
+    PASize size = PACountSize();
     PAMemory count;
-    size = PACountSize();
     // size_t standardSize = PASizePerformConvertToStandard(size);
     // count = PAMemoryPerformConstruct(sizeof());
     // DllExport PASizePerformConstruct(struct PASize, size_t value);
