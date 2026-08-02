@@ -9,13 +9,14 @@
 // #incoude 
 // #include <strig
 #include <string.h>
-#include <memory.h>
+// #include <memory.h>
 // struct NormalTree;
 // DllExport Memory PANormalTreeCreate(size_t size);
 DllExport PANormalTree PANormalTreePerformConstruct(PATree Tree);
 // DllExport void PANormalTreeCopy(struct PANormalTree* NormalTree, struct PANormalTree* Tree);
 DllExport static PAObject PANormalTreePerformCopy(PAObject, PAObject, size_t);
 DllExport int PANormalTreePerformDelete(PANormalTree PA);
+DllExport struct PASize PANormalTreeSize();
 // DllExport int PANormalTreeFinish(Memory);
 // DllExport struct PANormalTree PANormalTreePerformConstruct(struct PATree tree);
 // DllExport struct PANormalTree* PAGrafNormalBuildPart();
