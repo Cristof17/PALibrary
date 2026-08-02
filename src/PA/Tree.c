@@ -295,3 +295,13 @@ DllExport int PATreePerformRuin(PAMemory PA)
 //     struct PATransposeTree tree;
 //     return tree;
 // }
+DllExport struct PASize PATreeSize()
+{
+    size_t standardSize;
+
+    standardSize = sizeof(struct PATree);
+
+    struct PASize size = PASizePerformConstruct(standardSize);
+
+    return size;
+}

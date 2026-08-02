@@ -22,6 +22,7 @@ DllExport PATree PATreePerformBegin(PATree, PACount N, PACount M, PASeries adj, 
 // DllExport HRESULT PATreePerformPutElement();
 // DllExport HRESULT PATreePerformPutSeries();
 DllExport int PATreePerformDelete(PATree);
+DllExport struct PASize PATreeSize();
 // DllExport int PATreeFinish(Memory);
 //typedef struct PATree Tree;
 #endif
