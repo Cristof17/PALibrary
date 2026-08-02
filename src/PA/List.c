@@ -277,3 +277,12 @@ void PAListPrint(struct PAList* List)
 {
 
 }
+
+DllExport struct PASize PAListSize()
+{
+    size_t standardSize = sizeof(struct PAList);
+
+    struct PASize size = PASizePerformConstruct(standardSize);
+
+    return size;
+}

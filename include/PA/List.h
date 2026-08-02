@@ -7,7 +7,13 @@
 #include <types.h>
 #include <stdlib.h>
 #include <string.h>
+#ifndef _WIN95
 #include <PA/Memory.h>
+#include <PA/Size.h>
+#elif defined _WIN95
+#include <PA\Memory.h>
+#include <PA\Size.h>
+#endif
 
 // struct PAList;
 //typedef struct PAList List;
@@ -21,6 +27,7 @@ DllExport PAList PAListPerformConstruct();
 // DllExport PAResult PAListPerformPutList(struct PAList);
 DllExport static PAObject PAListPerformCopy(PAObject, PAObject, size_t);
 DllExport int PAListPerformDelete(PAList);
+DllExport struct PASize PAListSize();
 // DllExport int PAListFinish(Memory);
 // DllExport void PAListDispose(void);
 void PAListPrint(struct PAList* List);
