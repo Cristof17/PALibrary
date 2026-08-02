@@ -2066,8 +2066,34 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 12 "./include/PA/Data.h" 2
 
 
+# 1 "./include/PA/Size.h" 1
 
 
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 7 "./include/PA/Size.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 8 "./include/PA/Size.h" 2
+# 21 "./include/PA/Size.h"
+          PAMemory PASizePerformAllocate(size_t);
+          PASize PASizePerformInitialise(PASize);
+          struct PASize PASizePerformConstruct(int value);
+          size_t PASizePerformConvertToStandard(PASize);
+          int PASizePerformDelete(PASize PA);
+          struct PASize PASizeSize();
+
+          struct PASize* PASizePerformBegin(PASize, size_t* digits, size_t num_digits);
+# 15 "./include/PA/Data.h" 2
+
+
+
+
+
+
+
+          struct PASize PADataSize();
           PAData PADataPerformConstruct();
           static PAObject PADataPerformCopy(PAObject from, PAObject to, size_t);
 
@@ -2107,18 +2133,26 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           PAMemory PAMemoryPerformConstruct(PASize size);
           int PAMemoryPerformRuin(PAMemory);
 # 6 "src/PA/Data.c" 2
-# 15 "src/PA/Data.c"
+# 17 "src/PA/Data.c"
           PAData PADataPerformConstruct()
 {
 
 
     PAData data;
-# 47 "src/PA/Data.c"
+# 49 "src/PA/Data.c"
     return data;
+}
+          struct PASize PADataSize()
+{
+    size_t standardSize = sizeof(struct PAData);
+
+    struct PASize size = PASizePerformConstruct(standardSize);
+
+    return size;
 }
           PAData PADataPerformInit(PAData Data)
 {
-# 70 "src/PA/Data.c"
+# 80 "src/PA/Data.c"
     return Data;
 
 
@@ -2140,9 +2174,9 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     free(aux);
     return to;
-# 99 "src/PA/Data.c"
+# 109 "src/PA/Data.c"
 }
-# 117 "src/PA/Data.c"
+# 127 "src/PA/Data.c"
           int PADataPerformDelete(PAData PA)
 {
     int returnCode;

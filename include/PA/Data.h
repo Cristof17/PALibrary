@@ -10,9 +10,16 @@
 #include <string.h>
 #include <memory.h>
 
+#ifndef _WIN95
+#include <PA/Size.h>
+#elif defined _WIN95
+#include <PA\Size.h>
+#endif
+
 // #include <defs.h>
 // struct PAData;
 // DllExport Memory PADataCreate(size_t size);
+DllExport struct PASize PADataSize();
 DllExport PAData PADataPerformConstruct();
 DllExport static PAObject PADataPerformCopy(PAObject from, PAObject to, size_t);
 // DllExport struct PAData PADataPerformCopy(struct PAData);

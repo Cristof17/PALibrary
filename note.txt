@@ -160,3 +160,22 @@ PAInt PAIntPerformInititalise(int,value,size)
 	int = memcpy(value,int,4);
 	return aux;	
 }
+
+------------------------
+PADataSize()		|
+------------------------
+|
+|
+------------------------------
+standardSize = sizeof(PAData)|
+------------------------------
+|
+|
+---------------------------------------------
+size = PASizePerformConstruct(standardSize) |
+---------------------------------------------
+|
+|
+------------------------------
+size			      |
+------------------------------

@@ -3,10 +3,12 @@
 #include <PA/Data.h>
 #include <PA/Resource.h>
 #include <PA/Memory.h>
+#include <PA/Size.h>
 #elif defined _WIN95
 #include <PA\Data.h>
 #include <PA\Resource.h>
 #include <PA\Memory.h>
+#include <PA\Size.h>
 #endif
 //typedef struct PAData PAData;
 //struct PAData {
@@ -45,6 +47,14 @@ DllExport PAData PADataPerformConstruct()
     // return dataPointer;
     // return data;
     return data;
+}
+DllExport struct PASize PADataSize()
+{
+    size_t standardSize = sizeof(struct PAData);
+
+    struct PASize size = PASizePerformConstruct(standardSize);
+
+    return size;
 }
 DllExport PAData PADataPerformInit(PAData Data)
 {

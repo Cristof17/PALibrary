@@ -2443,7 +2443,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
     PASize size;
     PAMemory count;
     size = PACountSize();
-    size_t standardSize = PASizePerformConvertToStandard(size);
+
 
 
     count = PAMemoryPerformConstruct(size);

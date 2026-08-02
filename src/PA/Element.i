@@ -2097,8 +2097,34 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 12 "./include/PA/Data.h" 2
 
 
+# 1 "./include/PA/Size.h" 1
 
 
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 7 "./include/PA/Size.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 8 "./include/PA/Size.h" 2
+# 21 "./include/PA/Size.h"
+          PAMemory PASizePerformAllocate(size_t);
+          PASize PASizePerformInitialise(PASize);
+          struct PASize PASizePerformConstruct(int value);
+          size_t PASizePerformConvertToStandard(PASize);
+          int PASizePerformDelete(PASize PA);
+          struct PASize PASizeSize();
+
+          struct PASize* PASizePerformBegin(PASize, size_t* digits, size_t num_digits);
+# 15 "./include/PA/Data.h" 2
+
+
+
+
+
+
+
+          struct PASize PADataSize();
           PAData PADataPerformConstruct();
           static PAObject PADataPerformCopy(PAObject from, PAObject to, size_t);
 
