@@ -2174,7 +2174,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           void PAElementVisit(PAElement);
           PABool PAElementIsVisited(PAElement);
           void PAElementReset(PAElement);
-          struct PASize PADataSize();
+          struct PASize PAElementSize();
 # 10 "src/BFS/Procedure.c" 2
 # 1 "./include/BFS/Procedure.h" 1
 
@@ -2211,11 +2211,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
 # 11 "./include/PA/Input.h" 2
-
-
-
-
-
+# 21 "./include/PA/Input.h"
           PAInput PAInputPerformConstruct();
 
 
@@ -2224,6 +2220,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           int PAInputPerformDelete(PAInput);
+          struct PASize PAInputSize();
 # 13 "src/BFS/Procedure.c" 2
 # 26 "src/BFS/Procedure.c"
 PAResult BFS()

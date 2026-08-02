@@ -2069,6 +2069,30 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
 # 11 "./include/PA/Input.h" 2
 
+# 1 "./include/PA/Size.h" 1
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 7 "./include/PA/Size.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 8 "./include/PA/Size.h" 2
+# 21 "./include/PA/Size.h"
+          PAMemory PASizePerformAllocate(size_t);
+          PASize PASizePerformInitialise(PASize);
+          struct PASize PASizePerformConstruct(int value);
+          size_t PASizePerformConvertToStandard(PASize);
+          int PASizePerformDelete(PASize PA);
+          struct PASize PASizeSize();
+
+          struct PASize* PASizePerformBegin(PASize, size_t* digits, size_t num_digits);
+# 13 "./include/PA/Input.h" 2
+
+
+
+
 
 
 
@@ -2081,6 +2105,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           int PAInputPerformDelete(PAInput);
+          struct PASize PAInputSize();
 # 9 "src/PA/Input.c" 2
 # 1 "./include/PA/Count.h" 1
 # 10 "./include/PA/Count.h"
@@ -2116,34 +2141,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
 # 11 "./include/PA/Element.h" 2
-
-
-# 1 "./include/PA/Size.h" 1
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 7 "./include/PA/Size.h" 2
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
-# 8 "./include/PA/Size.h" 2
-# 21 "./include/PA/Size.h"
-          PAMemory PASizePerformAllocate(size_t);
-          PASize PASizePerformInitialise(PASize);
-          struct PASize PASizePerformConstruct(int value);
-          size_t PASizePerformConvertToStandard(PASize);
-          int PASizePerformDelete(PASize PA);
-          struct PASize PASizeSize();
-
-          struct PASize* PASizePerformBegin(PASize, size_t* digits, size_t num_digits);
-# 14 "./include/PA/Element.h" 2
-
-
-
-
-
-
+# 20 "./include/PA/Element.h"
           PAElement PAElementPerformConstruct(PAData, PAElement, PAStatus);
           static PAObject PAElementPerformCopy(PAObject, PAObject, size_t);
           int PAElementPerformDelete(PAElement);
@@ -2151,7 +2149,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           void PAElementVisit(PAElement);
           PABool PAElementIsVisited(PAElement);
           void PAElementReset(PAElement);
-          struct PASize PADataSize();
+          struct PASize PAElementSize();
 # 11 "src/PA/Input.c" 2
 # 1 "./include/PA/Memory.h" 1
 
@@ -2237,4 +2235,14 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
  returnCode = PAMemoryPerformRuin(PA);
 # 151 "src/PA/Input.c"
  return returnCode;
+}
+
+          struct PASize PAInputSize()
+{
+ size_t standardSize = sizeof(struct PASize);
+
+ struct PASize size;
+ size = PASizePerformConstruct(standardSize);
+
+ return size;
 }

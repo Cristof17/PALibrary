@@ -2440,9 +2440,8 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
           PAMemory PACountPerformAllocate()
 {
-    PASize size;
+    PASize size = PACountSize();
     PAMemory count;
-    size = PACountSize();
 
 
 
@@ -2483,11 +2482,11 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
     other = PAObjectPerformCopy(other,&value,size);
 
     PACount countObject = PACountPerformInitialise(count, other);
-# 97 "src/PA/Count.c"
+# 96 "src/PA/Count.c"
     return countObject;
-# 106 "src/PA/Count.c"
+# 105 "src/PA/Count.c"
 }
-# 134 "src/PA/Count.c"
+# 133 "src/PA/Count.c"
           PAObject PACountInitialise(PACount init, PACount this)
 {
     PASize size = PACountSize();
@@ -2496,9 +2495,9 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
     this = (PAObject) PAObjectPerformCopy(this,init,size);
 
     return aux;
-# 180 "src/PA/Count.c"
+# 179 "src/PA/Count.c"
 }
-# 201 "src/PA/Count.c"
+# 200 "src/PA/Count.c"
           int PACountDelete(PACount PA)
 {
     int returnCode;
@@ -2518,7 +2517,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
     int resultCode;
     resultCode = PAMemoryPerformRuin(PA);
-# 251 "src/PA/Count.c"
+# 250 "src/PA/Count.c"
     return resultCode;
 
 }

@@ -2555,7 +2555,7 @@ void PAListPrint(struct PAList* List);
           void PAElementVisit(PAElement);
           PABool PAElementIsVisited(PAElement);
           void PAElementReset(PAElement);
-          struct PASize PADataSize();
+          struct PASize PAElementSize();
 # 10 "test/test_pointers.c" 2
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 1 3 4

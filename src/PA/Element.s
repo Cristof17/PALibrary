@@ -150,4 +150,32 @@ _PAElementPerformRuin:                  ; @PAElementPerformRuin
 	ret
 	.cfi_endproc
                                         ; -- End function
+	.globl	_PAElementSize                  ; -- Begin function PAElementSize
+	.p2align	2
+_PAElementSize:                         ; @PAElementSize
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #64
+	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
+	add	x29, sp, #48
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	str	x8, [sp, #8]                    ; 8-byte Folded Spill
+	mov	x8, #24                         ; =0x18
+	stur	x8, [x29, #-8]
+	ldur	x8, [x29, #-8]
+	mov	x0, x8
+	add	x8, sp, #16
+	bl	_PASizePerformConstruct
+	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload
+	ldr	q0, [sp, #16]
+	str	q0, [x9]
+	ldr	x8, [sp, #32]
+	str	x8, [x9, #16]
+	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
+	add	sp, sp, #64
+	ret
+	.cfi_endproc
+                                        ; -- End function
 .subsections_via_symbols

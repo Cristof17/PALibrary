@@ -2124,6 +2124,27 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           PAMemory PAMemoryPerformConstruct(PASize size);
           int PAMemoryPerformRuin(PAMemory);
 # 11 "src/PA/Link.c" 2
+# 1 "./include/PA/Size.h" 1
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 7 "./include/PA/Size.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 8 "./include/PA/Size.h" 2
+# 21 "./include/PA/Size.h"
+          PAMemory PASizePerformAllocate(size_t);
+          PASize PASizePerformInitialise(PASize);
+          struct PASize PASizePerformConstruct(int value);
+          size_t PASizePerformConvertToStandard(PASize);
+          int PASizePerformDelete(PASize PA);
+          struct PASize PASizeSize();
+
+          struct PASize* PASizePerformBegin(PASize, size_t* digits, size_t num_digits);
+# 12 "src/PA/Link.c" 2
+
 
 
 
@@ -2140,7 +2161,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
     return link;
-# 36 "src/PA/Link.c"
+# 38 "src/PA/Link.c"
 }
           struct PALink* PALinkPerformInit(struct PALink* Link, struct PAPair* pair)
 {
@@ -2150,7 +2171,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     __builtin___memcpy_chk (aux->p, pair,sizeof(struct PAPair), __builtin_object_size (aux->p, 0));
     __builtin___memcpy_chk (Link, aux,sizeof(struct PAPair), __builtin_object_size (Link, 0));
-# 56 "src/PA/Link.c"
+# 58 "src/PA/Link.c"
     return aux;
 
 }
@@ -2169,7 +2190,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     free(aux);
     return to;
-# 83 "src/PA/Link.c"
+# 85 "src/PA/Link.c"
 }
           int PALinkPerformDelete(PALink PA){
 
@@ -2189,6 +2210,17 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 {
     int returnCode;
     PAMemoryPerformRuin(PA);
-# 110 "src/PA/Link.c"
+# 112 "src/PA/Link.c"
     return returnCode;
+}
+
+
+          struct PASize PALinkSize()
+{
+    size_t standardSize = sizeof(struct PALink);
+
+    struct PASize size;
+    size = PASizePerformConstruct(standardSize);
+
+    return size;
 }

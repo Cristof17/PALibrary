@@ -2144,7 +2144,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           void PAElementVisit(PAElement);
           PABool PAElementIsVisited(PAElement);
           void PAElementReset(PAElement);
-          struct PASize PADataSize();
+          struct PASize PAElementSize();
 # 10 "src/PA/Series.c" 2
 # 1 "./include/PA/Memory.h" 1
 

@@ -8,10 +8,12 @@
 #include <PA/Link.h>
 #include <PA/Pair.h>
 #include <PA/Memory.h>
+#include <PA/Size.h>
 #elif defined _WIN95
 #include <PA\Link.h>
 #include <PA\Pair.h>
 #include <PA\Memory.h>
+#include <PA\Size.h>
 #endif
 
 // DllExport struct PALink* PALinkCreate(struct )
@@ -108,6 +110,17 @@ DllExport int PALinkPerformRuin(PAMemory PA)
     // free(Pair);
     // returnCode = PARESULT_SUCCESS;
     return returnCode;
+}
+
+// DllExport PA
+DllExport struct PASize PALinkSize()
+{
+    size_t standardSize = sizeof(struct PALink);
+
+    struct PASize size;
+    size = PASizePerformConstruct(standardSize);
+
+    return size;
 }
 
 // struct PALink PALinkPerformPutPair(struct PALink Link,struct PAPair P)
