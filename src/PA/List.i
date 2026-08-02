@@ -2153,6 +2153,7 @@ void PAListPrint(struct PAList* List);
 
 
           void PASeriesPrint(PASeries);
+          struct PASize PASeriesSize();
 # 10 "src/PA/List.c" 2
 # 21 "src/PA/List.c"
           PAList PAListPerformConstruct()

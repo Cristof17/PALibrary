@@ -2141,11 +2141,6 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 9 "./include/PA/Status.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 10 "./include/PA/Status.h" 2
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
-# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
-# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
-# 11 "./include/PA/Status.h" 2
 # 9 "src/PA/Element.c" 2
 # 1 "./include/PA/Memory.h" 1
 

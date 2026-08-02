@@ -2074,6 +2074,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           void PASeriesPrint(PASeries);
+          struct PASize PASeriesSize();
 # 8 "src/PA/Series.c" 2
 # 1 "./include/PA/Count.h" 1
 # 10 "./include/PA/Count.h"
@@ -2254,4 +2255,13 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 void PASeriesPrint(struct PASeries* Series)
 {
 
+}
+# 311 "src/PA/Series.c"
+          struct PASize PASeriesSize()
+{
+    size_t standardSize = sizeof(struct PASeries);
+
+    struct PASize size = PASizePerformConstruct(standardSize);
+
+    return size;
 }

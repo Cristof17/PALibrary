@@ -2554,6 +2554,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
           void PASeriesPrint(PASeries);
+          struct PASize PASeriesSize();
 # 11 "test/test.c" 2
 # 1 "./include/PA/Status.h" 1
 
@@ -2567,11 +2568,6 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 9 "./include/PA/Status.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 10 "./include/PA/Status.h" 2
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
-# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
-# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
-# 11 "./include/PA/Status.h" 2
 # 12 "test/test.c" 2
 # 1 "./include/PA/TransposeTree.h" 1
 
@@ -2585,11 +2581,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 9 "./include/PA/TransposeTree.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 10 "./include/PA/TransposeTree.h" 2
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
-# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
-# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
-# 11 "./include/PA/TransposeTree.h" 2
+
 
 
 
@@ -2598,6 +2590,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
           static PAObject PATransposeTreePerformCopy(PAObject, PAObject, size_t);
 
           int PATransposeTreePerformDelete(PATransposeTree);
+          struct PASize PATransposeTreeSize();
 # 13 "test/test.c" 2
 # 1 "./conf.h" 1
 # 14 "test/test.c" 2

@@ -2071,6 +2071,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           PAPair PAPairConstruct(PAElement, PAElement);
           PAPair PAPairPerformInit(PAPair, PAElement, PAElement);
           static PAObject PAPairPerformCopy(PAObject, PAObject, size_t);
+          struct PASize PAPairSize();
 
 
 
@@ -2232,4 +2233,14 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
+}
+
+          struct PASize PAPairSize()
+{
+    size_t standardSize = sizeof(struct PASize);
+
+    struct PASize size = PASizePerformConstruct(standardSize);
+
+
+    return size;
 }

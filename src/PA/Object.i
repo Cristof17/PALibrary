@@ -2104,7 +2104,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 308 "src/PA/Object.c"
           struct PASize PAObjectSize()
 {
- size_t standardSize = sizeof(struct PAObject);
+ size_t standardSize = sizeof(PAObject);
 
  struct PASize size = PASizePerformConstruct(standardSize);
 

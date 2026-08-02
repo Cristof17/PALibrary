@@ -2395,11 +2395,6 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 9 "./include/PA/Status.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 10 "./include/PA/Status.h" 2
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
-# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
-# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
-# 11 "./include/PA/Status.h" 2
 # 6 "test/test_pointers.c" 2
 # 1 "./include/PA/Series.h" 1
 # 15 "./include/PA/Series.h"
@@ -2423,6 +2418,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
           void PASeriesPrint(PASeries);
+          struct PASize PASeriesSize();
 # 7 "test/test_pointers.c" 2
 # 1 "./include/PA/List.h" 1
 

@@ -2063,11 +2063,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 10 "./include/PA/TransposeTree.h" 2
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
-# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
-# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
-# 11 "./include/PA/TransposeTree.h" 2
+
 
 
 
@@ -2076,6 +2072,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           static PAObject PATransposeTreePerformCopy(PAObject, PAObject, size_t);
 
           int PATransposeTreePerformDelete(PATransposeTree);
+          struct PASize PATransposeTreeSize();
 # 9 "src/PA/TransposeTree.c" 2
 # 1 "./include/PA/Tree.h" 1
 
@@ -2128,6 +2125,26 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           PAMemory PAMemoryPerformConstruct(PASize size);
           int PAMemoryPerformRuin(PAMemory);
 # 11 "src/PA/TransposeTree.c" 2
+# 1 "./include/PA/Size.h" 1
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 7 "./include/PA/Size.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 8 "./include/PA/Size.h" 2
+# 21 "./include/PA/Size.h"
+          PAMemory PASizePerformAllocate(size_t);
+          PASize PASizePerformInitialise(PASize);
+          struct PASize PASizePerformConstruct(int value);
+          size_t PASizePerformConvertToStandard(PASize);
+          int PASizePerformDelete(PASize PA);
+          struct PASize PASizeSize();
+
+          struct PASize* PASizePerformBegin(PASize, size_t* digits, size_t num_digits);
+# 12 "src/PA/TransposeTree.c" 2
 
 
 
@@ -2159,7 +2176,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     aux = (struct PATransposeTree*) malloc (sizeof(struct PATransposeTree));
     __builtin___memcpy_chk (aux->tree, Value,sizeof(struct PATree), __builtin_object_size (aux->tree, 0));
     __builtin___memcpy_chk (aux, TransposeTree,sizeof(struct PATransposeTree), __builtin_object_size (aux, 0));
-# 57 "src/PA/TransposeTree.c"
+# 58 "src/PA/TransposeTree.c"
     return TransposeTree;
 
 }
@@ -2174,9 +2191,9 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     free(aux);
     return to;
-# 80 "src/PA/TransposeTree.c"
+# 81 "src/PA/TransposeTree.c"
 }
-# 90 "src/PA/TransposeTree.c"
+# 91 "src/PA/TransposeTree.c"
           int PATransposeTreePerformDelete(PATransposeTree PA)
 {
 
@@ -2202,4 +2219,13 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
     return returnCode;
+}
+# 142 "src/PA/TransposeTree.c"
+          struct PASize PATransposeTreeSize()
+{
+    size_t standardSize = sizeof(struct PATransposeTree);
+
+    struct PASize size = PASizePerformConstruct(standardSize);
+
+    return size;
 }

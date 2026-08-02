@@ -26,6 +26,7 @@ DllExport int PASeriesPerformDelete(PASeries);
 // PAResult PASeriesPerformCopy();
 // DllExport struct PAResource* PASeriesGet(struct PAData* Data);
 DllExport void PASeriesPrint(PASeries);
+DllExport struct PASize PASeriesSize();
 // DllExport HRESULT PASerisPerformPutCount(struct PACount);
 // DllExport HRESULT PASeriesPerformPutArrayList(struct ArrayList);
 // DllExport HRESULT PASeriesAddElement(struct PAElement);

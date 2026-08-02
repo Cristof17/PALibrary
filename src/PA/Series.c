@@ -308,3 +308,11 @@ void PASeriesPrint(struct PASeries* Series)
     // return result;
     // return 0;
 // }
+DllExport struct PASize PASeriesSize()
+{
+    size_t standardSize = sizeof(struct PASeries);
+
+    struct PASize size = PASizePerformConstruct(standardSize);
+
+    return size;
+}

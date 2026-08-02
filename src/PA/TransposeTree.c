@@ -8,12 +8,13 @@
 #include <PA/TransposeTree.h>
 #include <PA/Tree.h>
 #include <PA/Memory.h>
+#include <PA/Size.h>
 // #include <defs.h>
 #elif defined _WIN95
 #include <PA\TransposeTree.h>
 #include <PA\Tree.h>
 #include <PA\Memory.h>
-
+#include <PA\Size.h>
 #endif
 DllExport PATransposeTree PATransposeTreePerformConstruct(PATree rtree)
 {
@@ -138,3 +139,11 @@ DllExport int PATransposeTreePerformRuin(void* PA)
 //     return result;
 // }
 
+DllExport struct PASize PATransposeTreeSize()
+{
+    size_t standardSize = sizeof(struct PATransposeTree);
+
+    struct PASize size = PASizePerformConstruct(standardSize);
+
+    return size;
+}

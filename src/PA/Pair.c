@@ -173,3 +173,12 @@ DllExport int PAPairPerformRuin(PAMemory PA)
 	// return result;
 }
 
+DllExport struct PASize PAPairSize()
+{
+    size_t standardSize = sizeof(struct PASize);
+
+    struct PASize size = PASizePerformConstruct(standardSize);
+
+    // return standardSize;
+    return size;
+}

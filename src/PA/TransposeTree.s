@@ -92,4 +92,25 @@ _PATransposeTreePerformRuin:            ; @PATransposeTreePerformRuin
 	ret
 	.cfi_endproc
                                         ; -- End function
+	.globl	_PATransposeTreeSize            ; -- Begin function PATransposeTreeSize
+	.p2align	2
+_PATransposeTreeSize:                   ; @PATransposeTreeSize
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #32
+	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
+	add	x29, sp, #16
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	mov	x9, #8                          ; =0x8
+	str	x9, [sp, #8]
+	ldr	x9, [sp, #8]
+	mov	x0, x9
+	bl	_PASizePerformConstruct
+	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
+	add	sp, sp, #32
+	ret
+	.cfi_endproc
+                                        ; -- End function
 .subsections_via_symbols
