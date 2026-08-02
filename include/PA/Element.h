@@ -9,6 +9,12 @@
 #include <string.h>
 #include <memory.h>
 
+#ifndef _WIN95
+#include <PA/Size.h>
+#elif defined _WIN95
+#include <PA\Size.h>
+#endif
+
 // struct PAElement;
 // DllExport Memory PAElementCreate(size_t size);
 DllExport PAElement PAElementPerformConstruct(PAData, PAElement, PAStatus);
@@ -18,6 +24,7 @@ DllExport int PAElementPerformDelete(PAElement);
 DllExport void PAElementVisit(PAElement);
 DllExport PABool PAElementIsVisited(PAElement);
 DllExport void PAElementReset(PAElement);
+DllExport PASize PADataSize();
 // DllExport HRESULT PAElementPerformCopy();
 // DllExport HRESULT PAElementPerformPutStatus(struct PAStatus);
 // DllExport HRESULT PAElementPerformPutData(struct PAData);
