@@ -265,7 +265,7 @@ PASize PACountSize()
     char sizeValue = '4';
     int digits = 1;
     PASize size;
-    size = PASizePerformAllocate();
+    size = PASizePerformAllocate(sizeof(PASize));
 
     sprintf(size->value,"%c",sizeValue);
     sprintf(size->digits,"%d",digits);

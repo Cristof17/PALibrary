@@ -170,10 +170,50 @@ _PACountPrint:                          ; @PACountPrint
 _PACountSize:                           ; @PACountSize
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	ldr	x0, [sp, #8]
-	add	sp, sp, #16
+	sub	sp, sp, #64
+	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
+	add	x29, sp, #48
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	mov	w8, #52                         ; =0x34
+	sturb	w8, [x29, #-9]
+	mov	w8, #1                          ; =0x1
+	stur	w8, [x29, #-16]
+	mov	x0, #8                          ; =0x8
+	bl	_PASizePerformAllocate
+	str	x0, [sp, #24]
+	ldr	x8, [sp, #24]
+	ldr	x0, [x8, #8]
+	ldursb	w10, [x29, #-9]
+	mov	x9, sp
+                                        ; implicit-def: $x8
+	mov	x8, x10
+	str	x8, [x9]
+	mov	w1, #0                          ; =0x0
+	str	w1, [sp, #12]                   ; 4-byte Folded Spill
+	mov	x2, #-1                         ; =0xffffffffffffffff
+	str	x2, [sp, #16]                   ; 8-byte Folded Spill
+	adrp	x3, l_.str@PAGE
+	add	x3, x3, l_.str@PAGEOFF
+	bl	___sprintf_chk
+	ldr	w1, [sp, #12]                   ; 4-byte Folded Reload
+	ldr	x2, [sp, #16]                   ; 8-byte Folded Reload
+	ldr	x8, [sp, #24]
+	ldr	x0, [x8, #16]
+	ldur	w8, [x29, #-16]
+                                        ; kill: def $x8 killed $w8
+	mov	x9, sp
+	str	x8, [x9]
+	adrp	x3, l_.str.1@PAGE
+	add	x3, x3, l_.str.1@PAGEOFF
+	bl	___sprintf_chk
+	ldr	x9, [sp, #24]
+	mov	x8, #4                          ; =0x4
+	str	x8, [x9]
+	ldur	x0, [x29, #-8]
+	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
+	add	sp, sp, #64
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -201,4 +241,11 @@ _PACountPerformAllocate:                ; @PACountPerformAllocate
 	ret
 	.cfi_endproc
                                         ; -- End function
+	.section	__TEXT,__cstring,cstring_literals
+l_.str:                                 ; @.str
+	.asciz	"%c"
+
+l_.str.1:                               ; @.str.1
+	.asciz	"%d"
+
 .subsections_via_symbols
