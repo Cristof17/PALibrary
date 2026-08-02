@@ -20,7 +20,7 @@ DllExport struct PASize PASizeSize()
 	// return size;
 }
 
-DllExport PAMemory PASizePerformAlloc(size_t size)
+DllExport PAMemory PASizePerformAllocate(size_t size)
 {
     PAMemory address;
     struct PASize totalSize;

@@ -2122,7 +2122,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 }
 
-          PAMemory PASizePerformAlloc(size_t size)
+          PAMemory PASizePerformAllocate(size_t size)
 {
     PAMemory address;
     struct PASize totalSize;

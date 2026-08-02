@@ -11,9 +11,9 @@ _PASizeSize:                            ; @PASizeSize
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PASizePerformAlloc             ; -- Begin function PASizePerformAlloc
+	.globl	_PASizePerformAllocate          ; -- Begin function PASizePerformAllocate
 	.p2align	2
-_PASizePerformAlloc:                    ; @PASizePerformAlloc
+_PASizePerformAllocate:                 ; @PASizePerformAllocate
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #96
