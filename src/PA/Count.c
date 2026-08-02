@@ -29,7 +29,8 @@ DllExport PAMemory PACountPerformAllocate()
 
 DllExport PACount PACountPerformInitialise(PACount init, PACount this)
 {
-    PASize size = PACountSize();
+    PASize size;
+    size = PACountSize();
 
     PAMemory aux;
     aux = PAMemoryPerformConstruct(size);
@@ -260,6 +261,15 @@ PAResult PACountPrint(struct PACount* Count)
 PASize PACountSize()
 {
     PASize sizeCount;
+
+    char sizeValue = '4';
+    int digits = 1;
+    PASize size;
+    size = PASizePerformAllocate();
+
+    sprintf(size->value,"%c",sizeValue);
+    sprintf(size->digits,"%d",digits);
+    size->size = 4;
     // sizeCount = PASizePerformConstruct((int)(sizeof(int)));
     // size_t size = sizeof(PAInt);
     // sizeCount = PASizePerformInitialise(sizeCount,(int)size);//second parameter should be char*
