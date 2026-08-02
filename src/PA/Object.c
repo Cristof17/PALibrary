@@ -305,3 +305,11 @@ DllExport PAObject PAObjectPerformCopy(PAObject from,PAObject to,PASize size) {
 // //     struct PATransposeTree tree;
 // //     return tree;
 // // }
+DllExport struct PASize PAObjectSize()
+{
+	size_t standardSize = sizeof(struct PAObject);
+
+	struct PASize size = PASizePerformConstruct(standardSize);
+
+	return size;
+}

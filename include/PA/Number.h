@@ -14,4 +14,5 @@ DllExport static PAObject PANumberPerformCopy(PAObject, PAObject, size_t);
 DllExport int PANumberPerformDelete(PANumber);
 // DllExport int PANumberFinish(Memory);
 DllExport void PANumberPrint(PANumber);
+DllExport struct PASize PANumberSize();
 #endif
