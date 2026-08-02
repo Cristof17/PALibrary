@@ -2062,17 +2062,14 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 12 "./include/PA/NormalTree.h" 2
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
-# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
-# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
-# 13 "./include/PA/NormalTree.h" 2
+
 
 
           PANormalTree PANormalTreePerformConstruct(PATree Tree);
 
           static PAObject PANormalTreePerformCopy(PAObject, PAObject, size_t);
           int PANormalTreePerformDelete(PANormalTree PA);
+          struct PASize PANormalTreeSize();
 # 6 "src/PA/NormalTree.c" 2
 # 1 "./include/PA/Tree.h" 1
 
@@ -2125,6 +2122,27 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           PAMemory PAMemoryPerformConstruct(PASize size);
           int PAMemoryPerformRuin(PAMemory);
 # 8 "src/PA/NormalTree.c" 2
+# 1 "./include/PA/Size.h" 1
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 7 "./include/PA/Size.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 8 "./include/PA/Size.h" 2
+# 21 "./include/PA/Size.h"
+          PAMemory PASizePerformAllocate(size_t);
+          PASize PASizePerformInitialise(PASize);
+          struct PASize PASizePerformConstruct(int value);
+          size_t PASizePerformConvertToStandard(PASize);
+          int PASizePerformDelete(PASize PA);
+          struct PASize PASizeSize();
+
+          struct PASize* PASizePerformBegin(PASize, size_t* digits, size_t num_digits);
+# 9 "src/PA/NormalTree.c" 2
+
 
 
 
@@ -2134,7 +2152,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           PANormalTree PANormalTreePerformConstruct(PATree tree)
 {
     PANormalTree normal;
-# 30 "src/PA/NormalTree.c"
+# 32 "src/PA/NormalTree.c"
     return normal;
 
 
@@ -2146,7 +2164,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     __builtin___memcpy_chk (aux->tree, Value,sizeof(struct PATree), __builtin_object_size (aux->tree, 0));
     __builtin___memcpy_chk (NormalTree, aux, sizeof(struct PANormalTree), __builtin_object_size (NormalTree, 0));
     return NormalTree;
-# 54 "src/PA/NormalTree.c"
+# 56 "src/PA/NormalTree.c"
 }
           static PAObject PANormalTreePerformCopy(PAObject from, PAObject to, size_t size)
 {
@@ -2159,7 +2177,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     free(aux);
     return to;
-# 74 "src/PA/NormalTree.c"
+# 76 "src/PA/NormalTree.c"
 }
           int PANormalTreePerformDelete(struct PANormalTree* PA)
 {
@@ -2185,4 +2203,13 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
+}
+# 117 "src/PA/NormalTree.c"
+          struct PASize PANormalTreeSize()
+{
+    size_t standardSize = sizeof(struct PANormalTree);
+
+    struct PASize size = PASizePerformConstruct(standardSize);
+
+    return size;
 }

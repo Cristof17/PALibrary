@@ -2384,12 +2384,13 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 9 "./include/PA/Number.h" 2
 
 
-          size_t PANumberSize(PANumber);
+
           PANumber PANumberPerformConstruct(unsigned char Value);
           static PAObject PANumberPerformCopy(PAObject, PAObject, size_t);
           int PANumberPerformDelete(PANumber);
 
           void PANumberPrint(PANumber);
+          struct PASize PANumberSize();
 # 8 "src/PA/Count.c" 2
 # 1 "./include/PA/Memory.h" 1
 
@@ -2429,6 +2430,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
 
           PAObject PAObjectPerformCopy(PAObject, PAObject, PASize size);
+          struct PASize PAObjectSize();
 # 10 "src/PA/Count.c" 2
 
 

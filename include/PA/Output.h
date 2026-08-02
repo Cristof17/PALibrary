@@ -8,7 +8,7 @@
 #include <types.h>
 #include <stdlib.h>
 #include <string.h>
-#include <memory.h>
+// #include <memory.h>
 
 // struct BFSOutput;
 // struct PAData PADataPerformConstruct(PAInt Resource);
@@ -20,6 +20,8 @@ DllExport static PAObject PAOutputPerformCopy(PAObject from, PAObject to,size_t)
 DllExport int PAOutputPerformDelete(PAOutput);
 // DllExport int PAOutputFinish(Memory);
 DllExport void PAOutputPrint(PAResult Result);
+// DllExport struct PASize Oa
+DllExport struct PASize PAOutputSize();
 //typedef struct BFSOutput BFSOutput;
 // struct PAOutput PAOutputPerformInit(struct BFSRecord);
 // DllExport int PADataPerformRuin(struct BFSRecord record);

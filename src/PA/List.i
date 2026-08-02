@@ -2062,6 +2062,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 10 "./include/PA/List.h" 2
+
 # 1 "./include/PA/Memory.h" 1
 
 
@@ -2080,20 +2081,35 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           PAMemory PAMemoryPerformConstruct(PASize size);
           int PAMemoryPerformRuin(PAMemory);
-# 11 "./include/PA/List.h" 2
+# 12 "./include/PA/List.h" 2
+# 1 "./include/PA/Size.h" 1
 
 
 
 
 
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 7 "./include/PA/Size.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 8 "./include/PA/Size.h" 2
+# 21 "./include/PA/Size.h"
+          PAMemory PASizePerformAllocate(size_t);
+          PASize PASizePerformInitialise(PASize);
+          struct PASize PASizePerformConstruct(int value);
+          size_t PASizePerformConvertToStandard(PASize);
+          int PASizePerformDelete(PASize PA);
+          struct PASize PASizeSize();
 
-
+          struct PASize* PASizePerformBegin(PASize, size_t* digits, size_t num_digits);
+# 13 "./include/PA/List.h" 2
+# 24 "./include/PA/List.h"
           PAList PAListPerformConstruct();
 
 
 
           static PAObject PAListPerformCopy(PAObject, PAObject, size_t);
           int PAListPerformDelete(PAList);
+          struct PASize PAListSize();
 
 
 void PAListPrint(struct PAList* List);
@@ -2215,4 +2231,13 @@ void Dispose()
 void PAListPrint(struct PAList* List)
 {
 
+}
+
+          struct PASize PAListSize()
+{
+    size_t standardSize = sizeof(struct PAList);
+
+    struct PASize size = PASizePerformConstruct(standardSize);
+
+    return size;
 }

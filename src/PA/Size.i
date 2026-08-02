@@ -2105,6 +2105,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           PAObject PAObjectPerformCopy(PAObject, PAObject, PASize size);
+          struct PASize PAObjectSize();
 # 7 "src/PA/Size.c" 2
 
 

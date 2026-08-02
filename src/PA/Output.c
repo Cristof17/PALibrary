@@ -5,10 +5,12 @@
 #include <PA/Output.h>
 #include <BFS/Record.h>
 #include <PA/Memory.h>
+#include <PA/Size.h>
 #elif defined _WIN95
 #include <PA\Output.h>
 #include <BFS\Record.h>
 #include <PA\Memory.h>
+#include <PA\Size.h>
 #endif
 
 // #include <defs.h>
@@ -147,3 +149,11 @@ DllExport void PAOutputPrint(PAResult Result)
 // DllExport int PAOutputPerformRuin(struct BFSRecord Result);
 // DllExport int PAOutputPerformDelete(struct Output Out);
 // DllExport void PAOutputPerformPrint(PAResult);
+DllExport struct PASize PAOutputSize()
+{
+    size_t standardSize = sizeof(struct PAOutput);
+
+    struct PASize size = PASizePerformConstruct(standardSize);
+
+    return size;
+}

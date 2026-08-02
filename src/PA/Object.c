@@ -307,7 +307,7 @@ DllExport PAObject PAObjectPerformCopy(PAObject from,PAObject to,PASize size) {
 // // }
 DllExport struct PASize PAObjectSize()
 {
-	size_t standardSize = sizeof(struct PAObject);
+	size_t standardSize = sizeof(PAObject);
 
 	struct PASize size = PASizePerformConstruct(standardSize);
 

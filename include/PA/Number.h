@@ -8,7 +8,7 @@
 #include <memory.h>
 
 // DllExport Memory PANumberCreate(size_t size);
-DllExport size_t PANumberSize(PANumber);
+// DllExport size_t PANumberSize(PANumber);
 DllExport PANumber PANumberPerformConstruct(unsigned char Value);
 DllExport static PAObject PANumberPerformCopy(PAObject, PAObject, size_t);
 DllExport int PANumberPerformDelete(PANumber);

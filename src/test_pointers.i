@@ -2374,12 +2374,13 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 9 "./include/PA/Number.h" 2
 
 
-          size_t PANumberSize(PANumber);
+
           PANumber PANumberPerformConstruct(unsigned char Value);
           static PAObject PANumberPerformCopy(PAObject, PAObject, size_t);
           int PANumberPerformDelete(PANumber);
 
           void PANumberPrint(PANumber);
+          struct PASize PANumberSize();
 # 4 "test/test_pointers.c" 2
 
 # 1 "./include/PA/Status.h" 1
@@ -2435,6 +2436,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 # 9 "./include/PA/List.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 10 "./include/PA/List.h" 2
+
 # 1 "./include/PA/Memory.h" 1
 
 
@@ -2453,20 +2455,35 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
 
           PAMemory PAMemoryPerformConstruct(PASize size);
           int PAMemoryPerformRuin(PAMemory);
-# 11 "./include/PA/List.h" 2
+# 12 "./include/PA/List.h" 2
+# 1 "./include/PA/Size.h" 1
 
 
 
 
 
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 7 "./include/PA/Size.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 8 "./include/PA/Size.h" 2
+# 21 "./include/PA/Size.h"
+          PAMemory PASizePerformAllocate(size_t);
+          PASize PASizePerformInitialise(PASize);
+          struct PASize PASizePerformConstruct(int value);
+          size_t PASizePerformConvertToStandard(PASize);
+          int PASizePerformDelete(PASize PA);
+          struct PASize PASizeSize();
 
-
+          struct PASize* PASizePerformBegin(PASize, size_t* digits, size_t num_digits);
+# 13 "./include/PA/List.h" 2
+# 24 "./include/PA/List.h"
           PAList PAListPerformConstruct();
 
 
 
           static PAObject PAListPerformCopy(PAObject, PAObject, size_t);
           int PAListPerformDelete(PAList);
+          struct PASize PAListSize();
 
 
 void PAListPrint(struct PAList* List);
@@ -2520,34 +2537,7 @@ void PAListPrint(struct PAList* List);
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
 # 11 "./include/PA/Element.h" 2
-
-
-# 1 "./include/PA/Size.h" 1
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 7 "./include/PA/Size.h" 2
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
-# 8 "./include/PA/Size.h" 2
-# 21 "./include/PA/Size.h"
-          PAMemory PASizePerformAllocate(size_t);
-          PASize PASizePerformInitialise(PASize);
-          struct PASize PASizePerformConstruct(int value);
-          size_t PASizePerformConvertToStandard(PASize);
-          int PASizePerformDelete(PASize PA);
-          struct PASize PASizeSize();
-
-          struct PASize* PASizePerformBegin(PASize, size_t* digits, size_t num_digits);
-# 14 "./include/PA/Element.h" 2
-
-
-
-
-
-
+# 20 "./include/PA/Element.h"
           PAElement PAElementPerformConstruct(PAData, PAElement, PAStatus);
           static PAObject PAElementPerformCopy(PAObject, PAObject, size_t);
           int PAElementPerformDelete(PAElement);

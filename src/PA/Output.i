@@ -2061,11 +2061,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h" 2 3 4
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 2 3 4
 # 11 "./include/PA/Output.h" 2
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
-# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
-# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
-# 12 "./include/PA/Output.h" 2
+
 
 
 
@@ -2077,6 +2073,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           int PAOutputPerformDelete(PAOutput);
 
           void PAOutputPrint(PAResult Result);
+
+          struct PASize PAOutputSize();
 # 6 "src/PA/Output.c" 2
 # 1 "./include/BFS/Record.h" 1
 
@@ -2113,11 +2111,31 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           PAMemory PAMemoryPerformConstruct(PASize size);
           int PAMemoryPerformRuin(PAMemory);
 # 8 "src/PA/Output.c" 2
-# 37 "src/PA/Output.c"
+# 1 "./include/PA/Size.h" 1
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 7 "./include/PA/Size.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 8 "./include/PA/Size.h" 2
+# 21 "./include/PA/Size.h"
+          PAMemory PASizePerformAllocate(size_t);
+          PASize PASizePerformInitialise(PASize);
+          struct PASize PASizePerformConstruct(int value);
+          size_t PASizePerformConvertToStandard(PASize);
+          int PASizePerformDelete(PASize PA);
+          struct PASize PASizeSize();
+
+          struct PASize* PASizePerformBegin(PASize, size_t* digits, size_t num_digits);
+# 9 "src/PA/Output.c" 2
+# 39 "src/PA/Output.c"
           PAOutput PAOutputPerformConstruct()
 {
     PAOutput output;
-# 51 "src/PA/Output.c"
+# 53 "src/PA/Output.c"
     return output;
 
 }
@@ -2146,7 +2164,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     free(aux);
     return to;
-# 105 "src/PA/Output.c"
+# 107 "src/PA/Output.c"
 }
 
           int PAOutputPerformDelete(struct PAOutput* PA)
@@ -2185,4 +2203,18 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           void PAOutputPrint(PAResult Result)
 {
 
+}
+
+
+
+
+
+
+          struct PASize PAOutputSize()
+{
+    size_t standardSize = sizeof(struct PAOutput);
+
+    struct PASize size = PASizePerformConstruct(standardSize);
+
+    return size;
 }

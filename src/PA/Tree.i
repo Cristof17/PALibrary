@@ -2161,6 +2161,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 9 "./include/PA/List.h" 2
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
 # 10 "./include/PA/List.h" 2
+
 # 1 "./include/PA/Memory.h" 1
 
 
@@ -2179,20 +2180,15 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           PAMemory PAMemoryPerformConstruct(PASize size);
           int PAMemoryPerformRuin(PAMemory);
-# 11 "./include/PA/List.h" 2
-
-
-
-
-
-
-
+# 12 "./include/PA/List.h" 2
+# 24 "./include/PA/List.h"
           PAList PAListPerformConstruct();
 
 
 
           static PAObject PAListPerformCopy(PAObject, PAObject, size_t);
           int PAListPerformDelete(PAList);
+          struct PASize PAListSize();
 
 
 void PAListPrint(struct PAList* List);

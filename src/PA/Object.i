@@ -2069,6 +2069,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           PAObject PAObjectPerformCopy(PAObject, PAObject, PASize size);
+          struct PASize PAObjectSize();
 # 8 "src/PA/Object.c" 2
 # 1 "./include/PA/Size.h" 1
 
@@ -2099,4 +2100,13 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
  __builtin___memcpy_chk (aux, from,standardSize, __builtin_object_size (aux, 0));
  __builtin___memcpy_chk (from, to,standardSize, __builtin_object_size (from, 0));
  return aux;
+}
+# 308 "src/PA/Object.c"
+          struct PASize PAObjectSize()
+{
+ size_t standardSize = sizeof(struct PAObject);
+
+ struct PASize size = PASizePerformConstruct(standardSize);
+
+ return size;
 }
