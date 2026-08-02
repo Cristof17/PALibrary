@@ -24,7 +24,7 @@ DllExport int PAElementPerformDelete(PAElement);
 DllExport void PAElementVisit(PAElement);
 DllExport PABool PAElementIsVisited(PAElement);
 DllExport void PAElementReset(PAElement);
-DllExport PASize PADataSize();
+DllExport struct PASize PADataSize();
 // DllExport HRESULT PAElementPerformCopy();
 // DllExport HRESULT PAElementPerformPutStatus(struct PAStatus);
 // DllExport HRESULT PAElementPerformPutData(struct PAData);

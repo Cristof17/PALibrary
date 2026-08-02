@@ -2068,35 +2068,6 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 11 "./include/PA/Element.h" 2
 
 
-
-          PAElement PAElementPerformConstruct(PAData, PAElement, PAStatus);
-          static PAObject PAElementPerformCopy(PAObject, PAObject, size_t);
-          int PAElementPerformDelete(PAElement);
-
-          void PAElementVisit(PAElement);
-          PABool PAElementIsVisited(PAElement);
-          void PAElementReset(PAElement);
-# 7 "src/PA/Element.c" 2
-# 1 "./include/PA/Data.h" 1
-
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 10 "./include/PA/Data.h" 2
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
-# 11 "./include/PA/Data.h" 2
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
-# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
-# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
-# 12 "./include/PA/Data.h" 2
-
-
 # 1 "./include/PA/Size.h" 1
 
 
@@ -2116,7 +2087,23 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           struct PASize PASizeSize();
 
           struct PASize* PASizePerformBegin(PASize, size_t* digits, size_t num_digits);
-# 15 "./include/PA/Data.h" 2
+# 14 "./include/PA/Element.h" 2
+
+
+
+
+
+
+          PAElement PAElementPerformConstruct(PAData, PAElement, PAStatus);
+          static PAObject PAElementPerformCopy(PAObject, PAObject, size_t);
+          int PAElementPerformDelete(PAElement);
+
+          void PAElementVisit(PAElement);
+          PABool PAElementIsVisited(PAElement);
+          void PAElementReset(PAElement);
+          struct PASize PADataSize();
+# 7 "src/PA/Element.c" 2
+# 1 "./include/PA/Data.h" 1
 
 
 
@@ -2124,6 +2111,17 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 10 "./include/PA/Data.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 11 "./include/PA/Data.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 1 3 4
+# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
+# 12 "./include/PA/Data.h" 2
+# 22 "./include/PA/Data.h"
           struct PASize PADataSize();
           PAData PADataPerformConstruct();
           static PAObject PADataPerformCopy(PAObject from, PAObject to, size_t);

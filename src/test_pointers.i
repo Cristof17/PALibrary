@@ -2522,6 +2522,31 @@ void PAListPrint(struct PAList* List);
 # 11 "./include/PA/Element.h" 2
 
 
+# 1 "./include/PA/Size.h" 1
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+# 7 "./include/PA/Size.h" 2
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h" 1 3 4
+# 8 "./include/PA/Size.h" 2
+# 21 "./include/PA/Size.h"
+          PAMemory PASizePerformAllocate(size_t);
+          PASize PASizePerformInitialise(PASize);
+          struct PASize PASizePerformConstruct(int value);
+          size_t PASizePerformConvertToStandard(PASize);
+          int PASizePerformDelete(PASize PA);
+          struct PASize PASizeSize();
+
+          struct PASize* PASizePerformBegin(PASize, size_t* digits, size_t num_digits);
+# 14 "./include/PA/Element.h" 2
+
+
+
+
+
 
           PAElement PAElementPerformConstruct(PAData, PAElement, PAStatus);
           static PAObject PAElementPerformCopy(PAObject, PAObject, size_t);
@@ -2530,6 +2555,7 @@ void PAListPrint(struct PAList* List);
           void PAElementVisit(PAElement);
           PABool PAElementIsVisited(PAElement);
           void PAElementReset(PAElement);
+          struct PASize PADataSize();
 # 10 "test/test_pointers.c" 2
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 1 3 4
