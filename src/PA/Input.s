@@ -115,8 +115,7 @@ _PAInputSize:                           ; @PAInputSize
 	str	x8, [sp, #8]                    ; 8-byte Folded Spill
 	mov	x8, #24                         ; =0x18
 	stur	x8, [x29, #-8]
-	ldur	x8, [x29, #-8]
-	mov	x0, x8
+	ldur	x0, [x29, #-8]
 	add	x8, sp, #16
 	bl	_PASizePerformConstruct
 	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload

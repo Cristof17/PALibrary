@@ -123,8 +123,7 @@ _PAListSize:                            ; @PAListSize
 	.cfi_offset w29, -16
 	mov	x9, #16                         ; =0x10
 	str	x9, [sp, #8]
-	ldr	x9, [sp, #8]
-	mov	x0, x9
+	ldr	x0, [sp, #8]
 	bl	_PASizePerformConstruct
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32

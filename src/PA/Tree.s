@@ -127,8 +127,7 @@ _PATreeSize:                            ; @PATreeSize
 	.cfi_offset w29, -16
 	mov	x9, #32                         ; =0x20
 	str	x9, [sp, #8]
-	ldr	x9, [sp, #8]
-	mov	x0, x9
+	ldr	x0, [sp, #8]
 	bl	_PASizePerformConstruct
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32

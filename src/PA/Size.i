@@ -2060,7 +2060,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 21 "./include/PA/Size.h"
           PAMemory PASizePerformAllocate(size_t);
           PASize PASizePerformInitialise(PASize);
-          struct PASize PASizePerformConstruct(int value);
+          struct PASize PASizePerformConstruct(size_t standardSize);
           size_t PASizePerformConvertToStandard(PASize);
           int PASizePerformDelete(PASize PA);
           struct PASize PASizeSize();
@@ -2168,20 +2168,21 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 }
 
-          struct PASize PASizePerformConstruct(int value) {
+          struct PASize PASizePerformConstruct(size_t size) {
 
 
 
 
 
-    struct PASize size = PASizeSize();
 
-    PASize aux = (PASize) aux;
-
+    struct PASize aux ;
 
 
-    return size;
+
+
+    return aux;
 }
+
 
 
 
@@ -2191,7 +2192,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           PASize PASizePerformInitialise(PASize Size)
 {
     PASize aux;
-# 118 "src/PA/Size.c"
+# 119 "src/PA/Size.c"
     return Size;
 }
 

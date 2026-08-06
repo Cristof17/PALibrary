@@ -72,12 +72,12 @@ DllExport struct PASize PASizePerformConstruct(size_t size) {
     // PAMemory size;
     // size = PASizePerformAllocate(sizeof(size_t)+sizeof(size_t));
     // struct PASize size = PASizeSize();
-
-    PASize aux = (PASize) aux;
+    struct PASize aux ;
+    //= (PASize) aux;
     // PAObjectPerformCopy()
     // size = PASizePerformInitialise(value);
     // sizeStruct = malloc (size);
-    return size;
+    return aux;
 }
 // DllExport PASize* PASizePerformConstruct(PASize size, size_t value)
 // {
