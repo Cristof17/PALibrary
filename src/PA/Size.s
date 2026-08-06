@@ -43,85 +43,86 @@ _PASizePerformAllocate:                 ; @PASizePerformAllocate
 _convertToStandard:                     ; @convertToStandard
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #48
-	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
-	add	x29, sp, #32
+	sub	sp, sp, #64
+	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
+	add	x29, sp, #48
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	stur	x0, [x29, #-8]
-	ldur	x8, [x29, #-8]
-	ldr	x8, [x8, #16]
-	ldrsb	w8, [x8]
-	str	w8, [sp, #12]
-	str	wzr, [sp, #8]
+	str	x0, [sp, #8]                    ; 8-byte Folded Spill
+	mov	x8, x0
+	stur	x8, [x29, #-8]
+	ldr	x8, [x0, #16]
+	str	x8, [sp, #24]
+	str	wzr, [sp, #20]
 	b	LBB2_1
 LBB2_1:                                 ; =>This Inner Loop Header: Depth=1
-	ldr	w8, [sp, #8]
-	ldr	w9, [sp, #12]
+	ldr	w8, [sp, #20]
+	ldr	x9, [sp, #24]
+	ldrsb	w9, [x9]
 	subs	w8, w8, w9
 	b.ge	LBB2_11
 	b	LBB2_2
 LBB2_2:                                 ;   in Loop: Header=BB2_1 Depth=1
-	ldr	w8, [sp, #8]
+	ldr	w8, [sp, #20]
 	cbnz	w8, LBB2_10
 	b	LBB2_3
 LBB2_3:                                 ;   in Loop: Header=BB2_1 Depth=1
-	ldur	x8, [x29, #-8]
+	ldr	x8, [sp, #8]                    ; 8-byte Folded Reload
 	ldr	x8, [x8, #8]
-	ldrsw	x9, [sp, #8]
+	ldrsw	x9, [sp, #20]
 	ldrsb	w8, [x8, x9]
 	subs	w8, w8, #45
 	b.ne	LBB2_8
 	b	LBB2_4
 LBB2_4:                                 ;   in Loop: Header=BB2_1 Depth=1
-	ldr	x8, [sp, #16]
+	ldur	x8, [x29, #-16]
 	subs	x8, x8, #0
 	b.ls	LBB2_6
 	b	LBB2_5
 LBB2_5:                                 ;   in Loop: Header=BB2_1 Depth=1
-	ldr	x9, [sp, #16]
+	ldur	x9, [x29, #-16]
 	mov	x8, #0                          ; =0x0
 	subs	x8, x8, x9
-	str	x8, [sp, #16]
+	stur	x8, [x29, #-16]
 	b	LBB2_7
 LBB2_6:                                 ;   in Loop: Header=BB2_1 Depth=1
-	ldr	x8, [sp, #16]
+	ldur	x8, [x29, #-16]
 	lsr	x8, x8, #0
-	str	x8, [sp, #16]
+	stur	x8, [x29, #-16]
 	b	LBB2_7
 LBB2_7:                                 ;   in Loop: Header=BB2_1 Depth=1
 	b	LBB2_1
 LBB2_8:                                 ;   in Loop: Header=BB2_1 Depth=1
-	ldr	x8, [sp, #16]
-	mov	x9, #10                         ; =0xa
-	mul	x8, x8, x9
-	str	x8, [sp, #16]
-	ldur	x8, [x29, #-8]
+	ldr	x8, [sp, #8]                    ; 8-byte Folded Reload
+	ldur	x9, [x29, #-16]
+	mov	x10, #10                        ; =0xa
+	mul	x9, x9, x10
+	stur	x9, [x29, #-16]
 	ldr	x0, [x8, #16]
 	bl	_atoi
-	ldr	x8, [sp, #16]
+	ldur	x8, [x29, #-16]
 	add	x8, x8, w0, sxtw
-	str	x8, [sp, #16]
+	stur	x8, [x29, #-16]
 	b	LBB2_9
 LBB2_9:                                 ;   in Loop: Header=BB2_1 Depth=1
 	b	LBB2_10
 LBB2_10:                                ;   in Loop: Header=BB2_1 Depth=1
-	ldr	x8, [sp, #16]
-	mov	x9, #10                         ; =0xa
-	mul	x8, x8, x9
-	str	x8, [sp, #16]
-	ldur	x8, [x29, #-8]
+	ldr	x8, [sp, #8]                    ; 8-byte Folded Reload
+	ldur	x9, [x29, #-16]
+	mov	x10, #10                        ; =0xa
+	mul	x9, x9, x10
+	stur	x9, [x29, #-16]
 	ldr	x0, [x8, #16]
 	bl	_atoi
-	ldr	x8, [sp, #16]
+	ldur	x8, [x29, #-16]
 	add	x8, x8, w0, sxtw
-	str	x8, [sp, #16]
+	stur	x8, [x29, #-16]
 	b	LBB2_1
 LBB2_11:
-	ldr	x0, [sp, #16]
-	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
-	add	sp, sp, #48
+	ldur	x0, [x29, #-16]
+	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
+	add	sp, sp, #64
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -130,19 +131,24 @@ LBB2_11:
 _PASizePerformConvertToStandard:        ; @PASizePerformConvertToStandard
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
-	add	x29, sp, #16
+	sub	sp, sp, #64
+	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
+	add	x29, sp, #48
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	str	x0, [sp, #8]
-	ldr	x0, [sp, #8]
+	stur	x0, [x29, #-8]
+	ldur	x8, [x29, #-8]
+	ldr	q0, [x8]
+	mov	x0, sp
+	str	q0, [sp]
+	ldr	x8, [x8, #16]
+	str	x8, [sp, #16]
 	bl	_convertToStandard
-	str	x0, [sp]
-	ldr	x0, [sp]
-	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
-	add	sp, sp, #32
+	stur	x0, [x29, #-16]
+	ldur	x0, [x29, #-16]
+	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
+	add	sp, sp, #64
 	ret
 	.cfi_endproc
                                         ; -- End function

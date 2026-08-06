@@ -2132,16 +2132,16 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     return address;
 }
 
-          size_t convertToStandard(PASize size)
+          size_t convertToStandard(struct PASize size)
 {
     size_t standardSize;
-    int digits = *size->digits;
+    char* digits = size.digits;
     int i = 0;
-    while (i < digits)
+    while (i < *digits)
     {
         if (i == 0)
         {
-            if (size->value[i] == '-')
+            if (size.value[i] == '-')
             {
                 if (standardSize > 0)
                     standardSize *= -1;
@@ -2152,18 +2152,18 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
             else
             {
                 standardSize *= 10;
-                standardSize += atoi(size->digits);
+                standardSize += atoi(size.digits);
             }
         }
         standardSize *= 10;
-        standardSize += atoi(size->digits);
+        standardSize += atoi(size.digits);
     }
     return standardSize;
 }
           size_t PASizePerformConvertToStandard(PASize size)
 {
     size_t value;
-    value = convertToStandard(size);
+    value = convertToStandard(*size);
     return value;
 
 }

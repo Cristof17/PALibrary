@@ -29,16 +29,16 @@ DllExport PAMemory PASizePerformAllocate(size_t size)
     return address;
 }
 
-DllExport size_t convertToStandard(PASize size)
+DllExport size_t convertToStandard(struct PASize size)
 {
     size_t standardSize;
-    int digits = *size->digits;
+    char* digits = size.digits;
     int i = 0;
-    while (i < digits)
+    while (i < *digits)
     {
         if (i == 0)
         {
-            if (size->value[i] == '-')
+            if (size.value[i] == '-')
             {
                 if (standardSize > 0)
                     standardSize *= -1; //make it negative
@@ -49,18 +49,18 @@ DllExport size_t convertToStandard(PASize size)
             else
             {
                 standardSize *= 10;
-                standardSize += atoi(size->digits);
+                standardSize += atoi(size.digits);
             }
         }
         standardSize *= 10;
-        standardSize += atoi(size->digits);
+        standardSize += atoi(size.digits);
     }
     return standardSize;
 }
 DllExport size_t PASizePerformConvertToStandard(PASize size)
 {
     size_t value;
-    value = convertToStandard(size);
+    value = convertToStandard(*size);
     return value;
     // int digits = *size->digits;
 }
