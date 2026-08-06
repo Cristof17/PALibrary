@@ -65,13 +65,13 @@ DllExport size_t PASizePerformConvertToStandard(PASize size)
     // int digits = *size->digits;
 }
 
-DllExport struct PASize PASizePerformConstruct(int value) {
+DllExport struct PASize PASizePerformConstruct(size_t size) {
 	//do some decimal conversion to char array 102 \
 	//will we first digit 1 second digit 0 third digit \
 	//2 and total size of 3. usr char as standard in c
     // PAMemory size;
     // size = PASizePerformAllocate(sizeof(size_t)+sizeof(size_t));
-    struct PASize size = PASizeSize();
+    // struct PASize size = PASizeSize();
 
     PASize aux = (PASize) aux;
     // PAObjectPerformCopy()
@@ -85,6 +85,7 @@ DllExport struct PASize PASizePerformConstruct(int value) {
 //     struct PAMemory memory = PASizePerformAlloc();
 //     struct PASize* returnValue = PASizePerformInitialise(size,(int) value)
 // }
+
 DllExport PASize PASizePerformInitialise(PASize Size)
 {
     PASize aux;
