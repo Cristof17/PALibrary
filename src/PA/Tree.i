@@ -2077,6 +2077,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           int PATreePerformDelete(PATree);
+          struct PASize PATreeSize();
 # 4 "src/PA/Tree.c" 2
 # 1 "./include/PA/Count.h" 1
 # 10 "./include/PA/Count.h"
@@ -2261,4 +2262,15 @@ void PAListPrint(struct PAList* List);
 
 
     return returnCode;
+}
+# 298 "src/PA/Tree.c"
+          struct PASize PATreeSize()
+{
+    size_t standardSize;
+
+    standardSize = sizeof(struct PATree);
+
+    struct PASize size = PASizePerformConstruct(standardSize);
+
+    return size;
 }

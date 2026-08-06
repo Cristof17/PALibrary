@@ -34,6 +34,14 @@ DllExport PANormalTree PANormalTreePerformConstruct(PATree tree)
     // normalTree.tree = PATreePerformConstruct();
     // return normalTree;
 }
+DllExport PAMemory PANormalTreePerformAllocate()
+{
+    PASize size;
+    size = PASizePerformAllocate(sizeof(struct PANormalTree));
+    PAMemory memory;
+    memory = PAMemoryPerformConstruct(size);
+    return memory;
+}
 DllExport PANormalTree PANormalTreePerformInit(PANormalTree NormalTree, PATree Value)
 {
     struct PANormalTree* aux;

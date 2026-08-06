@@ -2075,6 +2075,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           int PATreePerformDelete(PATree);
+          struct PASize PATreeSize();
 # 2 "test/test.c" 2
 # 1 "./include/PA/Count.h" 1
 # 10 "./include/PA/Count.h"

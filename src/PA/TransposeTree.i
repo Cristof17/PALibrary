@@ -2105,6 +2105,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
           int PATreePerformDelete(PATree);
+          struct PASize PATreeSize();
 # 10 "src/PA/TransposeTree.c" 2
 # 1 "./include/PA/Memory.h" 1
 

@@ -2515,6 +2515,7 @@ void PAListPrint(struct PAList* List);
 
 
           int PATreePerformDelete(PATree);
+          struct PASize PATreeSize();
 # 9 "test/test_pointers.c" 2
 # 1 "./include/PA/Element.h" 1
 
