@@ -36,6 +36,27 @@ DllExport PALink PALinkPerformConstruct(PAPair p)
     // return link;
     // return linkPointer;
 }
+DllExport PAMemory PALinkPerformAllocate()
+{
+    PAMemory memory;
+    // PASize size;
+    // size = PASizePerformConstruct(sizeof(struct PALink));
+
+    // PAMemory memory;
+    // memory = PAMemoryPerformAllocate(PASizePerformConvertToStandard(size));
+    // return size;
+    return memory;
+    // return memory;
+}
+DllExport struct PASize PALinkSize()
+{
+    size_t standardSize;
+    standardSize = sizeof(struct PALink);
+    struct PASize size;
+    size = PASizePerformConstruct(standardSize);
+
+    return size;
+}
 DllExport struct PALink* PALinkPerformInit(struct PALink* Link, struct PAPair* pair)
 {
     // struct PALink temp;
@@ -113,15 +134,16 @@ DllExport int PALinkPerformRuin(PAMemory PA)
 }
 
 // DllExport PA
-DllExport struct PASize PALinkSize()
-{
-    size_t standardSize = sizeof(struct PALink);
+// DllExport struct PASize 
+// ()
+// {
+//     size_t standardSize = sizeof(struct PALink);
 
-    struct PASize size;
-    size = PASizePerformConstruct(standardSize);
+//     struct PASize size;
+//     size = PASizePerformConstruct(standardSize);
 
-    return size;
-}
+//     return size;
+// }
 
 // struct PALink PALinkPerformPutPair(struct PALink Link,struct PAPair P)
 // {

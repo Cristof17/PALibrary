@@ -10,7 +10,8 @@
 #include <memory.h>
 
 // struct PALink;
-// DllExport Memory PALinkCreate(size_t size);
+DllExport PAMemory PALinkPerformAllocate();
+DllExport struct PASize PALinkSize();
 DllExport PALink PALinkPerformConstruct(PAPair);
 DllExport static PAObject PALinkPerformCopy(PAObject, PAObject, size_t);
 // DllExport struct PALink PALinkPerformCopy(struct PALink);

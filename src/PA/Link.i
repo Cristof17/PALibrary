@@ -2070,7 +2070,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 11 "./include/PA/Link.h" 2
 
 
-
+          PAMemory PALinkPerformAllocate();
+          struct PASize PALinkSize();
           PALink PALinkPerformConstruct(PAPair);
           static PAObject PALinkPerformCopy(PAObject, PAObject, size_t);
 
@@ -2164,6 +2165,27 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     return link;
 # 38 "src/PA/Link.c"
 }
+          PAMemory PALinkPerformAllocate()
+{
+    PAMemory memory;
+
+
+
+
+
+
+    return memory;
+
+}
+          struct PASize PALinkSize()
+{
+    size_t standardSize;
+    standardSize = sizeof(struct PALink);
+    struct PASize size;
+    size = PASizePerformConstruct(standardSize);
+
+    return size;
+}
           struct PALink* PALinkPerformInit(struct PALink* Link, struct PAPair* pair)
 {
 
@@ -2172,7 +2194,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     __builtin___memcpy_chk (aux->p, pair,sizeof(struct PAPair), __builtin_object_size (aux->p, 0));
     __builtin___memcpy_chk (Link, aux,sizeof(struct PAPair), __builtin_object_size (Link, 0));
-# 58 "src/PA/Link.c"
+# 79 "src/PA/Link.c"
     return aux;
 
 }
@@ -2191,7 +2213,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     free(aux);
     return to;
-# 85 "src/PA/Link.c"
+# 106 "src/PA/Link.c"
 }
           int PALinkPerformDelete(PALink PA){
 
@@ -2211,17 +2233,6 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 {
     int returnCode;
     PAMemoryPerformRuin(PA);
-# 112 "src/PA/Link.c"
+# 133 "src/PA/Link.c"
     return returnCode;
-}
-
-
-          struct PASize PALinkSize()
-{
-    size_t standardSize = sizeof(struct PALink);
-
-    struct PASize size;
-    size = PASizePerformConstruct(standardSize);
-
-    return size;
 }
