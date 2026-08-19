@@ -9,6 +9,11 @@
 #include <PA\Memory.h>
 #include <PA\Object.h>
 #endif
+DllExport PASize PASizePerformConvertStandardSize(size_t size)
+{
+    PASize size2;
+    return size2;
+}
 DllExport struct PASize PASizeSize()
 {
     struct PASize size;

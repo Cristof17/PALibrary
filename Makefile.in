@@ -50,6 +50,7 @@ output=pa
 version=1.0
 program_test_pa= test.out
 program_test_pointers_pa= test_pointers.out
+visual_code_run_target=a.out
 all: preprocess assemble compile $(program_test_pa) $(program_test_pointers_pa) $(lib_pa)
 # preprocess: $(sources)
 preprocess: preprocess_pa 
@@ -232,6 +233,7 @@ dist: lib/ lib/PA lib/BFS lib/ArrayList $(objects_pa) $(objects_bfs) $(objects_a
 
 check: $(program_test_pa) $(program_test_pointers_pa)
 	@echo "Testing"
+	mv ./bin/$(program_test_pointers_pa) ./a.out
 	./bin/$(program_test_pointers_pa)
 
 $(output).tar.gz:
@@ -244,7 +246,7 @@ $(output).tar.gz:
 	cp -r -v lib/ArrayList/ $(output)-$(version)/ArrayList
 	cp -r -v $(foreach lib,$(libs),./lib/$(lib)) $(output)-$(version)
 	tar --gzip --create --verbose --file $(output).tar.gz $(output-version) $(output)-$(version)/$(dir $(obj))
-
+$(objects_pa): include/types.h include/defs.h
 test:
 ifeq ($(host-type), arm64)
 	file ./lib/libpa.a
@@ -339,6 +341,9 @@ sources_pa= Input.i \
 	PA/Memory.i \
 	PA/Object.i
 # sources_arraylist= src/Input.i
+
+$(visual_code_run_target): $(lib_pa)
+	$(CC) -lpa -Lobj $< -o $@
 
 designs_arraylist= ArrayList/ArrayList.c \
 	ArrayList/ArrayListPosition.c
@@ -696,73 +701,73 @@ endif
 #src/Prototype/ConcretePrototype1.c: include/Prototype/ConcretePrototype1.h
 #src/Prototype/ConcretePrototype2.c: include/Prototype/ConcretePrototype2.h
 
-Input.i : src/Input.c include/ArrayList/ArrayList.h include/PA/Result.h include/Input.h include/types.h
+Input.i : src/Input.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
-Algorithm.i : src/Algorithm.c include/PA/Result.h include/Algorithm.h
+Algorithm.i : src/Algorithm.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
-BFS/Procedure.i : src/BFS/Procedure.c include/types.h include/Algorithm.h include/PA/Tree.h include/PA/Element.h include/BFS/Procedure.h include/PA/Input.h
+BFS/Procedure.i : src/BFS/Procedure.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
-PA/Input.i : src/PA/Input.c include/Input.h include/ArrayList/ArrayList.h include/PA/Result.h include/types.h
+PA/Input.i : src/PA/Input.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
-PA/Output.i : src/PA/Output.c include/defs.h include/Output.h
+PA/Output.i : src/PA/Output.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
-BFS/Record.i : src/BFS/Record.c include/types.h include/PA/List.h include/PA/Count.h include/PA/Result.h include/BFS/Record.h
+BFS/Record.i : src/BFS/Record.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
-Output.i : src/Output.c include/defs.h include/Output.h
+Output.i : src/Output.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
-PA/Data.i : src/PA/Data.c include/PA/Data.h
+PA/Data.i : src/PA/Data.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
-PA/Memory.i : src/PA/Memory.c include/PA/Memory.h include/types.h
+PA/Memory.i : src/PA/Memory.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
-PA/Object.i : src/PA/Object.c include/defs.h include/types.h
+PA/Object.i : src/PA/Object.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
 # src/PA/Destination.i : src/PA/Destination.c include/types.h include/PA/Destination.h
 # 	-$(CPP) $(CPPFLAGS) -E $< > $@
-PA/Tree.i : src/PA/Tree.c include/PA/Tree.h include/types.h
+PA/Tree.i : src/PA/Tree.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
-PA/List.i : src/PA/List.c include/types.h include/PA/List.h
+PA/List.i : src/PA/List.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
-PA/Link.i : src/PA/Link.c include/defs.h include/types.h include/PA/Link.h
+PA/Link.i : src/PA/Link.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
 # src/PA/Arrow.i : src/PA/Arrow.c include/defs.h include/PA/Arrow.h include/types.h
 # 	-$(CPP) $(CPPFLAGS) -E $< > $@
-PA/Element.i : src/PA/Element.c include/defs.h include/PA/Element.h include/types.h
+PA/Element.i : src/PA/Element.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
-PA/Count.i : src/PA/Count.c include/types.h include/PA/Count.h include/PA/Memory.h
+PA/Count.i : src/PA/Count.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
-PA/Pair.i : src/PA/Pair.c include/types.h include/PA/Pair.h
+PA/Pair.i : src/PA/Pair.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
-PA/Result.i : src/PA/Result.c include/PA/Result.h
+PA/Result.i : src/PA/Result.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
-PA/Series.i : src/PA/Series.c include/defs.h include/types.h include/PA/Series.h
+PA/Series.i : src/PA/Series.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
-PA/Status.i : src/PA/Status.c include/defs.h include/PA/Status.h
+PA/Status.i : src/PA/Status.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
 # src/PA/Feature.i : src/PA/Feature.c include/PA/Feature.h include/types.h
 # 	-$(CPP) $(CPPFLAGS) -E $< > $@
-PA/Value.i : src/PA/Value.c include/types.h include/PA/Value.h
+PA/Value.i : src/PA/Value.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
-PA/Resource.i : src/PA/Resource.c include/PA/Resource.h
+PA/Resource.i : src/PA/Resource.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@	
-PA/NormalTree.i : src/PA/NormalTree.c include/types.h include/PA/NormalTree.h
+PA/NormalTree.i : src/PA/NormalTree.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
-PA/Number.i : src/PA/Number.c include/PA/Number.h
+PA/Number.i : src/PA/Number.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
-PA/TransposeTree.i : src/PA/TransposeTree.c include/types.h include/PA/TransposeTree.h
+PA/TransposeTree.i : src/PA/TransposeTree.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
-PA/PADrawingEditor.i : src/PA/PADrawingEditor.c include/PA/PADrawingEditor.h
+PA/PADrawingEditor.i : src/PA/PADrawingEditor.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
-PA/PALine.i : src/PA/PALine.c include/PA/PALine.h
+PA/PALine.i : src/PA/PALine.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
-PA/PAShape.i : src/PA/PAShape.c include/PA/PAShape.h
+PA/PAShape.i : src/PA/PAShape.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
-PA/PATextView.i : src/PA/PATextView.c include/PA/PATextView.h
+PA/PATextView.i : src/PA/PATextView.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
-ArrayList/ArrayList.i: src/ArrayList/ArrayList.c include/defs.h include/types.h include/ArrayList/ArrayList.h
+ArrayList/ArrayList.i: src/ArrayList/ArrayList.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
-ArrayList/ArrayListPosition.i : src/ArrayList/ArrayListPosition.c include/ArrayList/ArrayList.h include/defs.h include/types.h
+ArrayList/ArrayListPosition.i : src/ArrayList/ArrayListPosition.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
-PA/Size.i : src/PA/Size.c include/defs.h include/PA/Size.h include/types.h
+PA/Size.i : src/PA/Size.c
 	$(CPP) $(CPPFLAGS) -E $< > src/$@
 test_pointers.i: test/test_pointers.c
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
@@ -799,7 +804,7 @@ PA/Link.s: PA/Link.i
 # 	-$(CC) -S $< -o $@
 PA/Element.s: PA/Element.i
 	$(CC) -S src/$< -o src/$@
-PA/Count.s: PA/Count.i
+PA/Count.s: PA/Count.i PA/Size.i
 	$(CC) -S src/$< -o src/$@
 PA/Pair.s: PA/Pair.i
 	$(CC) -S src/$< -o src/$@

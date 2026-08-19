@@ -1,5 +1,18 @@
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 15, 0	sdk_version 26, 2
+	.globl	_PASizePerformConvertStandardSize ; -- Begin function PASizePerformConvertStandardSize
+	.p2align	2
+_PASizePerformConvertStandardSize:      ; @PASizePerformConvertStandardSize
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	str	x0, [sp, #8]
+	ldr	x0, [sp]
+	add	sp, sp, #16
+	ret
+	.cfi_endproc
+                                        ; -- End function
 	.globl	_PASizeSize                     ; -- Begin function PASizeSize
 	.p2align	2
 _PASizeSize:                            ; @PASizeSize
@@ -55,45 +68,45 @@ _convertToStandard:                     ; @convertToStandard
 	ldr	x8, [x0, #16]
 	str	x8, [sp, #24]
 	str	wzr, [sp, #20]
-	b	LBB2_1
-LBB2_1:                                 ; =>This Inner Loop Header: Depth=1
+	b	LBB3_1
+LBB3_1:                                 ; =>This Inner Loop Header: Depth=1
 	ldr	w8, [sp, #20]
 	ldr	x9, [sp, #24]
 	ldrsb	w9, [x9]
 	subs	w8, w8, w9
-	b.ge	LBB2_11
-	b	LBB2_2
-LBB2_2:                                 ;   in Loop: Header=BB2_1 Depth=1
+	b.ge	LBB3_11
+	b	LBB3_2
+LBB3_2:                                 ;   in Loop: Header=BB3_1 Depth=1
 	ldr	w8, [sp, #20]
-	cbnz	w8, LBB2_10
-	b	LBB2_3
-LBB2_3:                                 ;   in Loop: Header=BB2_1 Depth=1
+	cbnz	w8, LBB3_10
+	b	LBB3_3
+LBB3_3:                                 ;   in Loop: Header=BB3_1 Depth=1
 	ldr	x8, [sp, #8]                    ; 8-byte Folded Reload
 	ldr	x8, [x8, #8]
 	ldrsw	x9, [sp, #20]
 	ldrsb	w8, [x8, x9]
 	subs	w8, w8, #45
-	b.ne	LBB2_8
-	b	LBB2_4
-LBB2_4:                                 ;   in Loop: Header=BB2_1 Depth=1
+	b.ne	LBB3_8
+	b	LBB3_4
+LBB3_4:                                 ;   in Loop: Header=BB3_1 Depth=1
 	ldur	x8, [x29, #-16]
 	subs	x8, x8, #0
-	b.ls	LBB2_6
-	b	LBB2_5
-LBB2_5:                                 ;   in Loop: Header=BB2_1 Depth=1
+	b.ls	LBB3_6
+	b	LBB3_5
+LBB3_5:                                 ;   in Loop: Header=BB3_1 Depth=1
 	ldur	x9, [x29, #-16]
 	mov	x8, #0                          ; =0x0
 	subs	x8, x8, x9
 	stur	x8, [x29, #-16]
-	b	LBB2_7
-LBB2_6:                                 ;   in Loop: Header=BB2_1 Depth=1
+	b	LBB3_7
+LBB3_6:                                 ;   in Loop: Header=BB3_1 Depth=1
 	ldur	x8, [x29, #-16]
 	lsr	x8, x8, #0
 	stur	x8, [x29, #-16]
-	b	LBB2_7
-LBB2_7:                                 ;   in Loop: Header=BB2_1 Depth=1
-	b	LBB2_1
-LBB2_8:                                 ;   in Loop: Header=BB2_1 Depth=1
+	b	LBB3_7
+LBB3_7:                                 ;   in Loop: Header=BB3_1 Depth=1
+	b	LBB3_1
+LBB3_8:                                 ;   in Loop: Header=BB3_1 Depth=1
 	ldr	x8, [sp, #8]                    ; 8-byte Folded Reload
 	ldur	x9, [x29, #-16]
 	mov	x10, #10                        ; =0xa
@@ -104,10 +117,10 @@ LBB2_8:                                 ;   in Loop: Header=BB2_1 Depth=1
 	ldur	x8, [x29, #-16]
 	add	x8, x8, w0, sxtw
 	stur	x8, [x29, #-16]
-	b	LBB2_9
-LBB2_9:                                 ;   in Loop: Header=BB2_1 Depth=1
-	b	LBB2_10
-LBB2_10:                                ;   in Loop: Header=BB2_1 Depth=1
+	b	LBB3_9
+LBB3_9:                                 ;   in Loop: Header=BB3_1 Depth=1
+	b	LBB3_10
+LBB3_10:                                ;   in Loop: Header=BB3_1 Depth=1
 	ldr	x8, [sp, #8]                    ; 8-byte Folded Reload
 	ldur	x9, [x29, #-16]
 	mov	x10, #10                        ; =0xa
@@ -118,8 +131,8 @@ LBB2_10:                                ;   in Loop: Header=BB2_1 Depth=1
 	ldur	x8, [x29, #-16]
 	add	x8, x8, w0, sxtw
 	stur	x8, [x29, #-16]
-	b	LBB2_1
-LBB2_11:
+	b	LBB3_1
+LBB3_11:
 	ldur	x0, [x29, #-16]
 	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
 	add	sp, sp, #64
@@ -185,12 +198,12 @@ _digits:                                ; @digits
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	str	w0, [sp, #12]
-	b	LBB6_1
-LBB6_1:                                 ; =>This Inner Loop Header: Depth=1
+	b	LBB7_1
+LBB7_1:                                 ; =>This Inner Loop Header: Depth=1
 	ldr	w8, [sp, #8]
-	cbz	w8, LBB6_6
-	b	LBB6_2
-LBB6_2:                                 ;   in Loop: Header=BB6_1 Depth=1
+	cbz	w8, LBB7_6
+	b	LBB7_2
+LBB7_2:                                 ;   in Loop: Header=BB7_1 Depth=1
 	ldr	w8, [sp, #8]
 	mov	w9, #10                         ; =0xa
 	sdiv	w10, w8, w9
@@ -201,18 +214,18 @@ LBB6_2:                                 ;   in Loop: Header=BB6_1 Depth=1
 	sdiv	w8, w8, w9
 	str	w8, [sp, #8]
 	ldr	w8, [sp, #4]
-	cbnz	w8, LBB6_4
-	b	LBB6_3
-LBB6_3:                                 ;   in Loop: Header=BB6_1 Depth=1
+	cbnz	w8, LBB7_4
+	b	LBB7_3
+LBB7_3:                                 ;   in Loop: Header=BB7_1 Depth=1
 	ldr	w8, [sp, #8]
 	add	w8, w8, #1
 	str	w8, [sp, #8]
-	b	LBB6_5
-LBB6_4:
-	b	LBB6_6
-LBB6_5:                                 ;   in Loop: Header=BB6_1 Depth=1
-	b	LBB6_1
-LBB6_6:
+	b	LBB7_5
+LBB7_4:
+	b	LBB7_6
+LBB7_5:                                 ;   in Loop: Header=BB7_1 Depth=1
+	b	LBB7_1
+LBB7_6:
 	ldr	w0, [sp, #8]
 	add	sp, sp, #16
 	ret

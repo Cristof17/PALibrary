@@ -2467,6 +2467,7 @@ extern int __vsprintf_chk (char * restrict , int, size_t,
           PASize PASizePerformInitialise(PASize);
           struct PASize PASizePerformConstruct(size_t standardSize);
           size_t PASizePerformConvertToStandard(PASize);
+          PASize PASizePerformConvertStandardSize(size_t size);
           int PASizePerformDelete(PASize PA);
           struct PASize PASizeSize();
 

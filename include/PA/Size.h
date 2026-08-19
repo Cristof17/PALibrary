@@ -22,6 +22,7 @@ DllExport PAMemory PASizePerformAllocate(size_t);
 DllExport PASize PASizePerformInitialise(PASize);
 DllExport struct PASize PASizePerformConstruct(size_t standardSize);
 DllExport size_t PASizePerformConvertToStandard(PASize);
+DllExport PASize PASizePerformConvertStandardSize(size_t size);
 DllExport int PASizePerformDelete(PASize PA);
 DllExport struct PASize PASizeSize();
 // DllExport int PASizeFinish(Memory);
