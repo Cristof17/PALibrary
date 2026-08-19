@@ -12,6 +12,21 @@
 DllExport PASize PASizePerformConvertStandardSize(size_t size)
 {
     PASize size2;
+    size_t size;
+    size_t digits;
+    int rest;
+    int remainder;
+    remainder = size/10;
+    rest = size % 10;
+    // while (rest)
+    while (remainder != 0)
+    {
+        size2->value[digits] = remainder;
+        size2->digits++;
+        size = rest;
+        // size2.digits++;
+    }
+    // PAMemory memory = PAMemoryPerformConstruct()
     return size2;
 }
 DllExport struct PASize PASizeSize()
