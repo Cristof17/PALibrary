@@ -255,3 +255,28 @@ break|            | continue |----
 -------------
             |
             |
+	--------------------------------------
+	size = PASizePerformConstruct(digits)
+	--------------------------------------
+	    |
+            |
+	-----------------------------------------------
+	size.digits = malloc(digits)
+	-----------------------------------------------
+	    |
+	    |
+	-----------------------------------------------
+	size.value = PAMemoryPerformConstruct(size)
+	-----------------------------------------------
+	    |
+	    |
+	//use copy of size
+	//remainder = size/10;
+	//rest = size % 10;
+	//while (remainder < 0)
+       	//digit_index = 0;
+	//value[digit_index] = rest;
+	//size = remainder
+	//remainder = size /10;
+	//rest = size % 10;
+	//endof while
