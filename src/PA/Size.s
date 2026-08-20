@@ -1,15 +1,122 @@
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 15, 0	sdk_version 26, 2
-	.globl	_PASizePerformConvertStandardSize ; -- Begin function PASizePerformConvertStandardSize
+	.globl	_PASizePerformConstruct         ; -- Begin function PASizePerformConstruct
 	.p2align	2
-_PASizePerformConvertStandardSize:      ; @PASizePerformConvertStandardSize
+_PASizePerformConstruct:                ; @PASizePerformConstruct
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	str	x0, [sp, #8]
-	ldr	x0, [sp]
-	add	sp, sp, #16
+	sub	sp, sp, #96
+	stp	x29, x30, [sp, #80]             ; 16-byte Folded Spill
+	add	x29, sp, #80
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	str	x8, [sp, #16]                   ; 8-byte Folded Spill
+	stur	x0, [x29, #-8]
+	stur	wzr, [x29, #-12]
+	mov	x0, #24                         ; =0x18
+	bl	_malloc
+	stur	x0, [x29, #-24]
+	ldur	x8, [x29, #-8]
+	str	x8, [sp, #40]
+	strb	wzr, [sp, #39]
+	str	wzr, [sp, #32]
+	ldur	x8, [x29, #-8]
+	str	x8, [sp, #24]
+	ldr	x8, [sp, #24]
+                                        ; kill: def $w8 killed $w8 killed $x8
+	mov	w9, #10                         ; =0xa
+	sdiv	w9, w8, w9
+                                        ; implicit-def: $x8
+	mov	x8, x9
+	sxtw	x8, w8
+	str	x8, [sp, #40]
+	b	LBB0_1
+LBB0_1:                                 ; =>This Inner Loop Header: Depth=1
+	ldr	x8, [sp, #24]
+	subs	x8, x8, #0
+	b.ls	LBB0_3
+	b	LBB0_2
+LBB0_2:                                 ;   in Loop: Header=BB0_1 Depth=1
+	ldur	w8, [x29, #-12]
+	add	w8, w8, #1
+	stur	w8, [x29, #-12]
+	ldr	x8, [sp, #40]
+	str	x8, [sp, #24]
+	ldr	x8, [sp, #24]
+                                        ; kill: def $w8 killed $w8 killed $x8
+	mov	w9, #10                         ; =0xa
+	sdiv	w9, w8, w9
+                                        ; implicit-def: $x8
+	mov	x8, x9
+	sxtw	x8, w8
+	str	x8, [sp, #40]
+	b	LBB0_1
+LBB0_3:
+	ldursw	x8, [x29, #-12]
+	ldur	x9, [x29, #-24]
+	str	x8, [x9]
+	ldursw	x0, [x29, #-12]
+	bl	_malloc
+	ldur	x8, [x29, #-24]
+	str	x0, [x8, #8]
+	ldur	x8, [x29, #-8]
+	str	x8, [sp, #24]
+	b	LBB0_4
+LBB0_4:                                 ; =>This Inner Loop Header: Depth=1
+	ldr	x8, [sp, #24]
+	subs	x8, x8, #0
+	b.ls	LBB0_6
+	b	LBB0_5
+LBB0_5:                                 ;   in Loop: Header=BB0_4 Depth=1
+	ldr	x8, [sp, #24]
+                                        ; kill: def $w8 killed $w8 killed $x8
+	mov	w9, #10                         ; =0xa
+	sdiv	w8, w8, w9
+	str	w8, [sp, #32]
+	ldr	w8, [sp, #32]
+	ldur	x10, [x29, #-24]
+	ldr	x10, [x10, #8]
+	ldrsb	x11, [sp, #39]
+	strb	w8, [x10, x11]
+	ldrb	w8, [sp, #39]
+	add	w8, w8, #1
+	strb	w8, [sp, #39]
+	ldr	x8, [sp, #24]
+                                        ; kill: def $w8 killed $w8 killed $x8
+	sdiv	w9, w8, w9
+                                        ; implicit-def: $x8
+	mov	x8, x9
+	sxtw	x8, w8
+	str	x8, [sp, #40]
+	ldr	x8, [sp, #40]
+	str	x8, [sp, #24]
+	b	LBB0_4
+LBB0_6:
+	mov	x0, #4                          ; =0x4
+	bl	_malloc
+	ldur	x8, [x29, #-24]
+	str	x0, [x8, #16]
+	ldur	x8, [x29, #-24]
+	ldr	x0, [x8, #16]
+	ldur	x8, [x29, #-8]
+	mov	x9, sp
+	str	x8, [x9]
+	mov	w1, #0                          ; =0x0
+	mov	x2, #-1                         ; =0xffffffffffffffff
+	adrp	x3, l_.str@PAGE
+	add	x3, x3, l_.str@PAGEOFF
+	bl	___sprintf_chk
+	ldr	x9, [sp, #16]                   ; 8-byte Folded Reload
+	ldur	x8, [x29, #-24]
+	stur	x8, [x29, #-32]
+	ldur	x8, [x29, #-32]
+	ldr	q0, [x8]
+	str	q0, [x9]
+	ldr	x8, [x8, #16]
+	str	x8, [x9, #16]
+	ldp	x29, x30, [sp, #80]             ; 16-byte Folded Reload
+	add	sp, sp, #96
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -165,18 +272,6 @@ _PASizePerformConvertToStandard:        ; @PASizePerformConvertToStandard
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PASizePerformConstruct         ; -- Begin function PASizePerformConstruct
-	.p2align	2
-_PASizePerformConstruct:                ; @PASizePerformConstruct
-	.cfi_startproc
-; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	str	x0, [sp, #8]
-	add	sp, sp, #16
-	ret
-	.cfi_endproc
-                                        ; -- End function
 	.globl	_PASizePerformInitialise        ; -- Begin function PASizePerformInitialise
 	.p2align	2
 _PASizePerformInitialise:               ; @PASizePerformInitialise
@@ -198,12 +293,12 @@ _digits:                                ; @digits
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	str	w0, [sp, #12]
-	b	LBB7_1
-LBB7_1:                                 ; =>This Inner Loop Header: Depth=1
+	b	LBB6_1
+LBB6_1:                                 ; =>This Inner Loop Header: Depth=1
 	ldr	w8, [sp, #8]
-	cbz	w8, LBB7_6
-	b	LBB7_2
-LBB7_2:                                 ;   in Loop: Header=BB7_1 Depth=1
+	cbz	w8, LBB6_6
+	b	LBB6_2
+LBB6_2:                                 ;   in Loop: Header=BB6_1 Depth=1
 	ldr	w8, [sp, #8]
 	mov	w9, #10                         ; =0xa
 	sdiv	w10, w8, w9
@@ -214,18 +309,18 @@ LBB7_2:                                 ;   in Loop: Header=BB7_1 Depth=1
 	sdiv	w8, w8, w9
 	str	w8, [sp, #8]
 	ldr	w8, [sp, #4]
-	cbnz	w8, LBB7_4
-	b	LBB7_3
-LBB7_3:                                 ;   in Loop: Header=BB7_1 Depth=1
+	cbnz	w8, LBB6_4
+	b	LBB6_3
+LBB6_3:                                 ;   in Loop: Header=BB6_1 Depth=1
 	ldr	w8, [sp, #8]
 	add	w8, w8, #1
 	str	w8, [sp, #8]
-	b	LBB7_5
-LBB7_4:
-	b	LBB7_6
-LBB7_5:                                 ;   in Loop: Header=BB7_1 Depth=1
-	b	LBB7_1
-LBB7_6:
+	b	LBB6_5
+LBB6_4:
+	b	LBB6_6
+LBB6_5:                                 ;   in Loop: Header=BB6_1 Depth=1
+	b	LBB6_1
+LBB6_6:
 	ldr	w0, [sp, #8]
 	add	sp, sp, #16
 	ret
@@ -283,4 +378,8 @@ _PASizePerformRuin:                     ; @PASizePerformRuin
 	ret
 	.cfi_endproc
                                         ; -- End function
+	.section	__TEXT,__cstring,cstring_literals
+l_.str:                                 ; @.str
+	.asciz	"%zu"
+
 .subsections_via_symbols

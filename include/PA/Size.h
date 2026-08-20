@@ -5,6 +5,7 @@
 #include <types.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 #ifndef _WIN95
 #elif defined _WIN95
 #endif
