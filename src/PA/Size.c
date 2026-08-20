@@ -13,7 +13,7 @@ DllExport struct PASize PASizePerformConstruct(size_t size)
 {
     int digits = 0;
     PAMemory memory = malloc(sizeof(struct PASize));
-    PASize returnValue;
+    PASize returnValuePointer;
     size_t remainder = size;
     char digit = '\0';
     int rest = 0;
@@ -38,8 +38,8 @@ DllExport struct PASize PASizePerformConstruct(size_t size)
     }
     ((PASize)memory)->digits = malloc (sizeof(size));
     sprintf(((PASize)memory)->digits,"%ul",size);
-    returnValue = (PASize) memory;
-    return *returnValue;
+    returnValuePointer = (PASize) memory;
+    return *returnValuePointer;
 }
     // struct PASize size2;
     // PAMemory memory;
