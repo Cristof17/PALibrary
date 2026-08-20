@@ -200,8 +200,13 @@ ConvertStandardSize(size)		 |
 |
 |
 ------------------------------------------
-newSize = PASizePerformConstruct()	 |
+| size = {sizeof(struct PASize),NULL,NULL)|
 ------------------------------------------
+|
+|
+--------------------------------------------
+| newSize = PAMemoryPerformConstruct(size) |
+--------------------------------------------
 |
 |
 ------------------------

@@ -9,41 +9,71 @@
 #include <PA\Memory.h>
 #include <PA\Object.h>
 #endif
-DllExport struct PASize PASizePerformConvertStandardSize(size_t size)
+DllExport struct PASize PASizePerformConstruct(size_t size)
 {
-    struct PASize size2;
-    PAMemory memory;
-    // ßmemory = PAMemoryPerformConstruct()
-    size_t size;
-    size_t digits;
-    int rest;
-    int remainder;
-    remainder = size/10;
-    // size2.digits = malloc(sizeof(char));
-    rest = size % 10;
-    // while (rest)
-    while (remainder != 0)
+    int digits = 0;
+    PAMemory memory = malloc(sizeof(struct PASize));
+    PASize returnValue;
+    size_t remainder = size;
+    char digit = '\0';
+    int rest = 0;
+    size_t copy = size;
+    remainder = (int)copy /(int) 10;
+    while (copy > 0)
     {
-        size2.size++;
-        // size = rest;
-        size = remainder;
-        remainder = size/10;
-        rest = size % 10;
-        // size2.digits++;
+        digits++;
+        copy = remainder;
+        remainder = (int)copy/(int)10;
     }
+    ((PASize)memory)->size = digits;
+    ((PASize)memory)->value = malloc(digits);
+    copy = size;
+    while (copy > 0)
+    {
+        rest = (int)copy / (int)10;
+        ((PASize)memory)->value[digit] = rest;
+        digit++;
+        remainder = (int) copy / (int) 10;
+        copy = remainder;
+    }
+    ((PASize)memory)->digits = malloc (sizeof(size));
+    sprintf(((PASize)memory)->digits,"%ul",size);
+    returnValue = (PASize) memory;
+    return *returnValue;
+}
+    // struct PASize size2;
+    // PAMemory memory;
+    // // ßmemory = PAMemoryPerformConstruct()
+    // size_t size;
+    // size_t digits;
+    // int rest;
+    // int remainder;
+    // remainder = size/10;
+    // // size2.digits = malloc(sizeof(char));
+    // rest = size % 10;
+    // // while (rest)
     // while (remainder != 0)
     // {
-    //     size2->value[digits] = remainder;
-    //     size2->digits++;
+    //     size2.size++;
     //     // size = rest;
     //     size = remainder;
     //     remainder = size/10;
     //     rest = size % 10;
     //     // size2.digits++;
     // }
-    // PAMemory memory = PAMemoryPerformConstruct()
-    return size2;
-}
+    // // while (remainder != 0)
+    // // {
+    // //     size2->value[digits] = remainder;
+    // //     size2->digits++;
+    // //     // size = rest;
+    // //     size = remainder;
+    // //     remainder = size/10;
+    // //     rest = size % 10;
+    // //     // size2.digits++;
+    // // }
+    // // PAMemory memory = PAMemoryPerformConstruct()
+    // return size2;
+// }
 DllExport struct PASize PASizeSize()
 {
     struct PASize size;
