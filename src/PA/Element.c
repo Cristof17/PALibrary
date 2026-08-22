@@ -1,7 +1,6 @@
 //@Author Cristofor Rotsching
 
 #include <defs.h>
-
 #ifndef _WIN95
 #include <PA/Element.h>
 #include <PA/Data.h>

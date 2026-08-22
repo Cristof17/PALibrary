@@ -120,8 +120,7 @@ assemble_test_pa: preprocess_test_pa
 #	#-mkdir $(dir $<)
 	@echo "Building"
 link: link_pa link_bfs link_arraylist
-
-#	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
+	src/mkinstalldirs $(libdir) $(libdir)/PA
 #	$(LD) $(foreach object,$^,$(libdir)/$(object)) $(prefix)/musl-$(musl)/obj/crt/$(crt) -lc -static -o $(libdir)/$(output) 
 #pa arraylist bfs
 
@@ -168,8 +167,11 @@ maintainer-clean:
 realclean:
 clobber:
 
-install: $(subdirs)
+install:
 	$(srcdir)/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
+	$(srcdir)/mkinstalldirs $(libdir)/PA
+	$(srcdir)/mkinstalldirs $(libdir)/BFS
+	$(srcdir)/mkinstalldirs $(libdir)/ArrayList
 
 # 	mkdir $(subdirs)
 #	cp out/libpa.a $(libdir)
@@ -1527,4 +1529,4 @@ run:
 # 	$(AS) -c asm/arraylist/$^ -o obj/arraylist/$@
 
 #.PHONY: all install installdirs installcheck uinstall run distclean clean
-.PHONY: all test
+.PHONY: all install installcheck test
