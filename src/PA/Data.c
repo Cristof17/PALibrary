@@ -44,6 +44,26 @@ DllExport struct PAData PADataPerformCopy(struct PAData from, struct PAData to)
     to.Resource = temp.Resource;
     return to;
 }
+DllExport PAResult PADataOperatorLess(struct PAData,struct PAData)
+{
+    PAResult result;
+    return result;
+}
+DllExport PAResult PADataOperatorEqual(struct PAData,struct PAData)
+{
+    PAResult result;
+    return result;
+}
+DllExport PAResult PADataOperatorGreater(struct PAData,struct PAData)
+{
+    PAResult result;
+    return result;
+}
+DllExport PAResult PADataOperatorNotEqual(struct PAData,struct PAData)
+{
+    PAResult result;
+    return result;
+}
 // struct PAData PADataPerformCopy(struct PAData Data)
 // {
     // struct PAData copy;

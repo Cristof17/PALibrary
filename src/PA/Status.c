@@ -42,6 +42,16 @@ DllExport struct PAStatus PAStatusPerformRuin(struct PAStatus PA)
     // return Empty;
     return PA;
 }
+DllExport PAResult PAStatusOperatorNotEqual(struct PAStatus one,struct PAStatus other)
+{
+    PAResult result;
+    return result;
+}
+DllExport PAResult PAStatusOperatorEqual(struct PAStatus one,struct PAStatus other)
+{
+    PAResult result;
+    return result;
+}
 // struct PAStatus PAStatusPerformCopy(struct PAStatus Status)
 // {
 //     struct PAStatus status;
