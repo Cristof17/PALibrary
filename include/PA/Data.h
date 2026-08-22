@@ -15,5 +15,9 @@ DllExport struct PAData PADataPerformInit(struct PAData, struct PAResource);
 DllExport struct PAData PADataPerformRuin(struct PAData);
 DllExport struct PAData PADataPerformDelete(struct PAData);
 DllExport struct PAData PADataPerformCopy(struct PAData from, struct PAData to);
+DllExport PAResult PADataOperatorLess(struct PAData,struct PAData);
+DllExport PAResult PADataOperatorEqual(struct PAData,struct PAData);
+DllExport PAResult PADataOperatorGreater(struct PAData,struct PAData);
+DllExport PAResult PADataOperatorNotEqual(struct PAData,struct PAData);
 //typedef struct PAData Data;
 #endif

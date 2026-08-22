@@ -7,4 +7,8 @@ DllExport struct PANumber PANumberPerformInit(struct PANumber Number, unsigned c
 DllExport struct PANumber PANumberPerformDelete(struct PANumber);
 DllExport struct PANumber PANumberPerformRuin(struct PANumber);
 DllExport struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to);
+DllExport PAResult PANumberOperatorEqual(struct PANumber one, struct PANumber other);
+DllExport PAResult PANumberOperatorNotEqual(struct PANumber one, struct PANumber other);
+DllExport PAResult PANumberOperatorLess(struct PANumber one, struct PANumber other);
+DllExport PAResult PANumberOperatorGreater(struct PANumber one, struct PANumber other);
 #endif

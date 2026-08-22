@@ -12,6 +12,8 @@ DllExport struct PANormalTree PANormalTreePerformRuin(struct PANormalTree);
 DllExport struct PANormalTree PANormalTreePerformDelete(struct PANormalTree);
 // DllExport struct PANormalTree PANormalTreePerformConstruct(struct PATree tree);
 DllExport struct PANormalTree PAGrafNormalBuildPart();
+DllExport PAResult PANormalTreeOperatorEqual(struct PANormalTree one, struct PANormalTree other);
+DllExport PAResult PANormalTreeOperatorNotEqual(struct PANormalTree one, struct PANormalTree other);
 // typedef struct GrafNormal PAGrafNormal;
 DllExport HRESULT PAGrafNormalGetResult();
 #endif

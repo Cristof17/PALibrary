@@ -20,4 +20,9 @@ DllExport struct PACount PACountPerformRuin(struct PACount);
 // DllExport struct PACount PACountPerformPutValue(struct PACount, PAInt);
 // struct 
 DllExport struct PACount PACountPerformDelete(struct PACount PA);
+DllExport PAResult PACountOperatorLess(struct PACount,struct PACount);
+DllExport PAResult PACountOperatorEqual(struct PACount,struct PACount);
+DllExport PAResult PACountOperatorGreater(struct PACount,struct PACount);
+DllExport PAResult PACountOperatorNotEqual(struct PACount,struct PACount);
+
 #endif

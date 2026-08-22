@@ -11,6 +11,8 @@ DllExport struct PAStatus PAStatusPerformDelete(struct PAStatus);
 DllExport struct PAStatus PAStatusPerformConstruct();
 DllExport struct PAStatus PAStatusPerformRuin(struct PAStatus);
 DllExport struct PAStatus PAStatusPerformCopy(struct PAStatus, struct PAStatus);
+DllExport PAResult PAStatusOperatorNotEqual(struct PAStatus one,struct PAStatus other);
+DllExport PAResult PAStatusOperatorEqual(struct PAStatus one,struct PAStatus other);
 // struct PAStatus/*.*/;
 // DllExport struct PAStatus PAStatusPerformConstruct(PAInt Visited);
 // DllExport struct PAStatus PAStatusPerformCopy(struct PAStatus);

@@ -15,6 +15,8 @@ DllExport struct PAInput PAInputPerformInit(struct PAInput PAInput, struct PACou
 // struct 
 DllExport struct PAInput PAInputPerformRuin(struct PAInput);
 DllExport struct PAInput PAInputPerformDelete(struct PAInput i);
+DllExport PAResult PAInputOperatorEqual(struct PAInput one, struct PAInput other);
+DllExport PAResult PAInputOperatorNotEqual(struct PAInput one, struct PAInput other);
 // void BFSInputRuin();
 // struct BFSInput BFSInputArrange(struct BFSInput);
 //typedef struct BFSInput Input;

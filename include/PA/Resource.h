@@ -8,4 +8,6 @@ DllExport struct PAResource PAResourcePerformConstruct();
 DllExport struct PAResource PAResourcePerformRuin(struct PAResource);
 DllExport struct PAResource PAResourcePerformDelete(struct PAResource);
 DllExport struct PAResource PAResourcePerformCopy(struct PAResource, struct PAResource);
+DllExport PAResult PAResourceOperatorEqual(struct PAResource one,struct PAResource other);
+DllExport PAResult PAResourceOperatorNotEqual(struct PAResource one,struct PAResource other);
 #endif

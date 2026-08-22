@@ -16,8 +16,11 @@ DllExport struct PAList PAListPerformInit(struct PAList,struct PACount, struct P
 DllExport struct PAList PAListPerformRuin(struct PAList);
 DllExport struct PAList PAListPerformDelete(struct PAList);
 DllExport struct PAList PAListPerformCopy(struct PAList, struct PAList);
+DllExport PAResult PAListOperatorEqual(struct PAList one, struct PAList other);
+DllExport PAResult PAListOperatorNotEqual(struct PAList one, struct PAList other);
 // DllExport void PAListDispose(void);
 void PAListPerformPrint(struct PAList List);
+
 
 // struct PAResult PAList(struct PAElement Head);
 // struct PAResult PAListPrint(struct PAList);

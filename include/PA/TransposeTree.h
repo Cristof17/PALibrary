@@ -13,6 +13,8 @@ DllExport struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTr
 // DllExport struct PATransposeTree PATransposeTreeBuildPart();
 DllExport struct PATransposeTree PATransposeTreeRuin(struct PATransposeTree);
 DllExport struct PATransposeTree PATransposeTreeDelete(struct PATransposeTree);
+DllExport PAResult PATransposeTreeOperatorEqual(struct PATransposeTree one,struct PATransposeTree other);
+DllExport PAResult PATransposeTreeOperatorNotEqual(struct PATransposeTree one,struct PATransposeTree other);
 // DllExport struct PATransposeTree PATransposeTreeBuildPart();
 DllExport PAResult PATransposeTreeGetResult();
 DllExport HRESULT PATransposeTreeGetResult();

@@ -20,6 +20,10 @@ DllExport struct PAElement PAElementPerformInit(struct PAElement,struct PAData,s
 DllExport struct PAElement PAElementPerformRuin(struct PAElement);
 DllExport struct PAElement PAElementPerformDelete(struct PAElement);
 DllExport struct PAElement PAElementPerformCopy(struct PAElement, struct PAElement);
+DllExport PAResult PAElementOperatorLess(struct PAElement one, struct PAElement other);
+DllExport PAResult PAElementOperatorEqual(struct PAElement one,struct PAElement other);
+DllExport PAResult PAElementOperatorGreater(struct PAElement one, struct PAElement other);
+DllExport PAResult PAElementOperatorNotEqual(struct PAElement one, struct PAElement other);
 // struct PANod;
 //typedef struct PAElement Element;
 #endif

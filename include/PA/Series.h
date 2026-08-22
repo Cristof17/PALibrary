@@ -21,6 +21,8 @@ DllExport struct PASeries PASeriesPerformCopy(struct PASeries, struct PASeries);
 // PAResult PASeriesPerformCopy();
 DllExport struct PASeries PASeriesPerformRuin(struct PASeries);
 DllExport struct PAResource PASeriesGet(struct PAData Data);
+DllExport PAResult PASeriesOperatorEqual(struct PASeries one,struct PASeries other);
+DllExport PAResult PASeriesOperatorNotEqual(struct PASeries one,struct PASeries other);
 DllExport void PASeriesPerformPrint(struct PASeries Series);
 // DllExport HRESULT PASerisPerformPutCount(struct PACount);
 // DllExport HRESULT PASeriesPerformPutArrayList(struct ArrayList);

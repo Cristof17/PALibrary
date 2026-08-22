@@ -14,6 +14,8 @@ DllExport struct PAOutput PAOutputPerformConstruct();
 DllExport struct PAOutput PAOutputPerformInit(struct PAOutput, struct BFSRecord);
 DllExport struct PAOutput PAOutputPerformDelete(struct PAOutput);
 DllExport struct PAOutput PAOutputPerformRuin(struct PAOutput);
+DllExport PAResult PAOutputOperatorEqual(struct PAOutput on, struct PAOutput other);
+DllExport PAResult PAOutputOperatorNotEqual(struct PAOutput one,struct PAOutput other);
 DllExport void PAOutputPerformPrint(PAResult Result);
 //typedef struct BFSOutput BFSOutput;
 // struct PAOutput PAOutputPerformInit(struct BFSRecord);

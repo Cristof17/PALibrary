@@ -20,5 +20,7 @@ DllExport struct PATree PATreePerformInit(struct PATree, struct PACount, struct 
 // DllExport HRESULT PATreePerformPutSeries();
 DllExport struct PATree PATreePerformRuin(struct PATree);
 DllExport struct PATree PATreePerformDelete(struct PATree);
+DllExport PAResult PATreeOperatorEqual(struct PATree one, struct PATree other);
+DllExport PAResult PATreeOperatorNotEqual(struct PATree one, struct PATree other);
 //typedef struct PATree Tree;
 #endif

@@ -14,5 +14,7 @@ DllExport struct PAPair PAPairPerformCopy(struct PAPair from, struct PAPair to);
 // DllExport HRESULT PAPairPerformPutNeigh(struct PAPair);
 DllExport struct PAPair PAPairPerformRuin(struct PAPair);
 DllExport struct PAPair PAPairPerformDelete(struct PAPair);
+DllExport PAResult PAPairOperatorEqual(struct PAPair other,struct PAPair one);
+DllExport PAResult PAPairOperatorNotEqual(struct PAPair one,struct PAPair other);
 //typedef struct PAPair Pair;
 #endif
