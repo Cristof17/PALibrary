@@ -126,4 +126,36 @@ _PAStatusPerformRuin:                   ; @PAStatusPerformRuin
 	ret
 	.cfi_endproc
                                         ; -- End function
+	.globl	_PAStatusOperatorNotEqual       ; -- Begin function PAStatusOperatorNotEqual
+	.p2align	2
+_PAStatusOperatorNotEqual:              ; @PAStatusOperatorNotEqual
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	mov	x8, x0
+	strb	w8, [sp, #15]
+	mov	x8, x1
+	strb	w8, [sp, #14]
+	ldr	w0, [sp, #8]
+	add	sp, sp, #16
+	ret
+	.cfi_endproc
+                                        ; -- End function
+	.globl	_PAStatusOperatorEqual          ; -- Begin function PAStatusOperatorEqual
+	.p2align	2
+_PAStatusOperatorEqual:                 ; @PAStatusOperatorEqual
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	mov	x8, x0
+	strb	w8, [sp, #15]
+	mov	x8, x1
+	strb	w8, [sp, #14]
+	ldr	w0, [sp, #8]
+	add	sp, sp, #16
+	ret
+	.cfi_endproc
+                                        ; -- End function
 .subsections_via_symbols

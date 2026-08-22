@@ -138,4 +138,68 @@ _PACountPerformCopy:                    ; @PACountPerformCopy
 	ret
 	.cfi_endproc
                                         ; -- End function
+	.globl	_PAElementOperatorLess          ; -- Begin function PAElementOperatorLess
+	.p2align	2
+_PAElementOperatorLess:                 ; @PAElementOperatorLess
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	mov	x8, x0
+	strh	w8, [sp, #14]
+	mov	x8, x1
+	strh	w8, [sp, #12]
+	ldr	w0, [sp, #8]
+	add	sp, sp, #16
+	ret
+	.cfi_endproc
+                                        ; -- End function
+	.globl	_PAElementOperatorEqual         ; -- Begin function PAElementOperatorEqual
+	.p2align	2
+_PAElementOperatorEqual:                ; @PAElementOperatorEqual
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	mov	x8, x0
+	strh	w8, [sp, #14]
+	mov	x8, x1
+	strh	w8, [sp, #12]
+	ldr	w0, [sp, #8]
+	add	sp, sp, #16
+	ret
+	.cfi_endproc
+                                        ; -- End function
+	.globl	_PAElementOperatorGreater       ; -- Begin function PAElementOperatorGreater
+	.p2align	2
+_PAElementOperatorGreater:              ; @PAElementOperatorGreater
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	mov	x8, x0
+	strh	w8, [sp, #14]
+	mov	x8, x1
+	strh	w8, [sp, #12]
+	ldr	w0, [sp, #8]
+	add	sp, sp, #16
+	ret
+	.cfi_endproc
+                                        ; -- End function
+	.globl	_PAElementOperatorNotEqual      ; -- Begin function PAElementOperatorNotEqual
+	.p2align	2
+_PAElementOperatorNotEqual:             ; @PAElementOperatorNotEqual
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	mov	x8, x0
+	strh	w8, [sp, #14]
+	mov	x8, x1
+	strh	w8, [sp, #12]
+	ldr	w0, [sp, #8]
+	add	sp, sp, #16
+	ret
+	.cfi_endproc
+                                        ; -- End function
 .subsections_via_symbols

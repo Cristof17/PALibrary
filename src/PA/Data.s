@@ -95,6 +95,70 @@ _PADataPerformCopy:                     ; @PADataPerformCopy
 	ret
 	.cfi_endproc
                                         ; -- End function
+	.globl	_PADataOperatorLess             ; -- Begin function PADataOperatorLess
+	.p2align	2
+_PADataOperatorLess:                    ; @PADataOperatorLess
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	mov	x8, x0
+	strb	w8, [sp, #15]
+	mov	x8, x1
+	strb	w8, [sp, #14]
+	ldr	w0, [sp, #8]
+	add	sp, sp, #16
+	ret
+	.cfi_endproc
+                                        ; -- End function
+	.globl	_PADataOperatorEqual            ; -- Begin function PADataOperatorEqual
+	.p2align	2
+_PADataOperatorEqual:                   ; @PADataOperatorEqual
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	mov	x8, x0
+	strb	w8, [sp, #15]
+	mov	x8, x1
+	strb	w8, [sp, #14]
+	ldr	w0, [sp, #8]
+	add	sp, sp, #16
+	ret
+	.cfi_endproc
+                                        ; -- End function
+	.globl	_PADataOperatorGreater          ; -- Begin function PADataOperatorGreater
+	.p2align	2
+_PADataOperatorGreater:                 ; @PADataOperatorGreater
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	mov	x8, x0
+	strb	w8, [sp, #15]
+	mov	x8, x1
+	strb	w8, [sp, #14]
+	ldr	w0, [sp, #8]
+	add	sp, sp, #16
+	ret
+	.cfi_endproc
+                                        ; -- End function
+	.globl	_PADataOperatorNotEqual         ; -- Begin function PADataOperatorNotEqual
+	.p2align	2
+_PADataOperatorNotEqual:                ; @PADataOperatorNotEqual
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	mov	x8, x0
+	strb	w8, [sp, #15]
+	mov	x8, x1
+	strb	w8, [sp, #14]
+	ldr	w0, [sp, #8]
+	add	sp, sp, #16
+	ret
+	.cfi_endproc
+                                        ; -- End function
 	.globl	_PADataPerformRuin              ; -- Begin function PADataPerformRuin
 	.p2align	2
 _PADataPerformRuin:                     ; @PADataPerformRuin
