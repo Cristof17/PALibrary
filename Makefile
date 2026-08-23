@@ -586,6 +586,25 @@ PA/TransposeTree.h: include/defs.h
 PA/Tree.h: include/defs.h include/types.h
 PA/Value.h: include/defs.h
 
+PA/Count.c: $(includedir)/Count.h $(includedir)/Number.h $(includedir)/types.h
+PA/Data.c: $(includedir)/Data.h $(includedir)/Resource.h
+PA/Element.c: $(includedir)/defs.h $(includedir)/PA/Element.h $(includedir)/PA/Status.h
+PA/Input.c: $(includedir)/types.h $(includedir)/PA/Input.h $(includedir)/PA/Count.h $(includedir)/PA/Element.h
+PA/Link.c: $(includedir)/defs.h $(includedir)/types.h $(includedir)/PA/Link.h $(includedir)/PA/Pair.h
+PA/List.c: $(includedir)/types.h $(includedir)/PA/List.h $(includedir)/PA/Count.h $(includedir)/PA/Series.h
+PA/NormalTree.c: $(includedir)/types.h $(includedir)/PA/NormalTree.h $(includedir)/PA/Tree.h
+PA/Number.c: $(includedir)/PA/Number.h
+PA/Output.c: $(includedir)/PA/Output.h $(includedir)/BFS/Record.h
+PA/Pair.c: $(includedir)/types.h $(includedir)/PA/Pair.h $(includedir)/PA/Element.h
+PA/Resource.c: $(includedir)/PA/Resource.h $(includedir)/PA/Element.h $(includedir)/PA/Number.h
+PA/Result.c: $(includedir)/PA/Result.h
+PA/Series.c: $(includedir)/defs.h $(includedir)/types.h $(includedir)/PA/Series.h $(includedir)/PA/Count.h $(includedir)/PA/Element.h
+PA/Status.c: $(includedir)/defs.h $(includedir)/PA/Status.h $(includedir)/PA/Resource.h
+PA/TransposeTree.h: $(includedir)/types.h $(includedir)/PA/TransposeTree.h $(includedir)/PA/Tree.h
+PA/Tree.c: $(includedir)/PA/Tree.h $(includedir)/PA/Count.h $(includedir)/PA/Element.h $(includedir)/PA/List.h
+PA/Value.c: $(includedir)/types.h $(includedir)/PA/Value.h
+
+
 Input.i : $(srcdir)/Input.c $(includedir)/ArrayList/ArrayList.h $(includedir)/PA/Result.h $(includedir)/Input.h $(includedir)/types.h
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 Algorithm.i : $(srcdir)/Algorithm.c $(includedir)/PA/Result.h $(includedir)/Algorithm.h
@@ -614,7 +633,7 @@ PA/Link.i : $(srcdir)/PA/Link.c $(includedir)/defs.h $(includedir)/types.h $(inc
 # 	-$(CPP) $(CPPFLAGS) -E $< > $@
 PA/Element.i : $(srcdir)/PA/Element.c $(includedir)/defs.h $(includedir)/PA/Element.h $(includedir)/types.h
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/Count.i : $(srcdir)/PA/Count.c $(includedir)/types.h $(includedir)/PA/Count.h
+PA/Count.i : $(srcdir)/PA/Count.c $(includedir)/types.h $(includedir)/PA/Count.h $(includedir)/PA/Number.h  
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 PA/Pair.i : $(srcdir)/PA/Pair.c $(includedir)/types.h $(includedir)/PA/Pair.h
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
