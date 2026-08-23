@@ -226,7 +226,6 @@ objects_bfs= BFS/Procedure.o \
 #
 objects_pa= Input.o \
 	Algorithm.o \
-	Output.o \
 	PA/Input.o \
 	PA/Output.o \
 	PA/Resource.o \
@@ -332,7 +331,6 @@ assemblies_bfs= BFS/Procedure.s \
 	BFS/Record.s
 assemblies_pa= PA/Input.s \
 	PA/Output.s \
-	Output.s \
 	PA/Tree.s \
 	PA/Data.s \
 	PA/List.s \
