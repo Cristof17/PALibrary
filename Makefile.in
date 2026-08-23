@@ -45,8 +45,13 @@ srcdir=
 #musl=@musl@
 #crt=@crt@
 #output=@output@
-output=libpa.a
-all: preprocess assemble compile test.out test
+libs= libpa.a libarraylist.a libbfs.a libalgorithm.a
+output=pa
+version=1.0
+program_test_pa= test.out
+program_test_pointers_pa= test_pointers.out
+visual_code_run_target=a.out
+all: preprocess assemble compile $(program_test_pa) $(program_test_pointers_pa) $(lib_pa)
 # preprocess: $(sources)
 preprocess: preprocess_pa 
 #preprocess_bfs preprocess_arraylist
@@ -55,10 +60,15 @@ compile: compile_pa
 assemble: assemble_pa 
 
 preprocess_test_pa: $(sources_test_pa)
+preprocess_test_pointers_pa: $(sources_test_pointers_pa)
 
-compile_test_pa: assemble_test_pa
+compile_test_pa: assemble_test_pa assemble_test_pointers_pa
+compile_test_pointers_pa: assemble_test_pointers_pa
 
-assemble_test_pa: preprocess_test_pa 
+assemble_test_pa: preprocess_test_pa preprocess_test_pointers_pa
+assemble_test_pointers_pa: preprocess_test_pointers_pa
+
+#test: compile_test_pa compile_test_pointers_pa
 
 #assemble_bfs assemble_arraylist
 #	${MAKE} obj/Input.o
@@ -120,24 +130,56 @@ assemble_test_pa: preprocess_test_pa
 #	#-mkdir $(dir $<)
 	@echo "Building"
 link: link_pa link_bfs link_arraylist
-	src/mkinstalldirs $(libdir) $(libdir)/PA
+
+#	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
 #	$(LD) $(foreach object,$^,$(libdir)/$(object)) $(prefix)/musl-$(musl)/obj/crt/$(crt) -lc -static -o $(libdir)/$(output) 
 #pa arraylist bfs
 
-mostlyclean:
-	rm $(foreach object,$(objects_pa),$(libdir)/$(object))
-	rm $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
-	rm $(foreach source,$(sources_pa),$(srcdir)/$(source))
-	rm $(foreach test,$(sources_test_pa),$(srcdir)/$(test))
+mostlyclean: $(objects_pa) $(objects_arraylist) $(objects_bfs)
+	-rm -v $(foreach object,$(objects_pa),$(libdir)/$(object))
+	-rm -v $(foreach object,$(objects_arraylist),$(libdir)/$(object))
+	-rm -v $(foreach object,$(objects_bfs),$(libdir)/$(object))
+	-rm -v $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
+	-rm -v $(foreach assembly,$(assemblies_arraylist),$(srcdir)/$(assembly))
+	-rm -v $(foreach assembly,$(assemblies_bfs),$(srcdir)/$(assembly))
+	-rm -v $(foreach source,$(sources_pa),$(srcdir)/$(source))
+	-rm -v $(foreach source,$(sources_arraylist),$(srcdir)/$(source))
+	-rm -v $(foreach source,$(sources_bfs),$(srcdir)/$(source))
+	-rm -v $(foreach test,$(sources_test_pa),$(srcdir)/$(test))
+#	rm -v $(foreach binary,$(output_pa),$(bindir)/$(binary))
 # 	-rm $(objects_pa)
 # 	-rm $(assemblies_pa)
 # 	-rm $(sources_pa)
 #
-maintainer-clean:
-	rm $(foreach object,$(objects_pa),$(libdir)/$(object))
-	rm $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
-	rm $(foreach source,$(sources_pa),$(srcdir)/$(source))
-	rm $(foreach test,$(sources_test_pa),$(srcdir)/$(test))
+maintainer-clean: $(objects_pa) $(objects_bfs) $(objects_arraylist) $(assemblies_pa) $(assemblies_bfs) $(assemblies_arraylist) $(sources_pa) $(sources_bfs) $(sources_arraylist) $(sources_test_pa) $(assemblies_test_pa) $(sources_test_arraylist) $(objects_test_pa) $(program_test_pa) $(program_test_pointers_pa) $(lib_arraylist) $(lib_pa) $(lib_bfs) $(output).tar.gz
+	@echo 'This command is intended for maintainers to use; it'
+	@echo 'deletes files that may need special tools to rebuild.'
+	-rm -v $(foreach object,$(objects_pa),$(libdir)/$(object))
+	-rm -v $(foreach object,$(objects_bfs),$(libdir)/$(object))
+	-rm -v $(foreach object,$(objects_arraylist),$(libdir)/$(object))
+	-rm -v $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
+	-rm -v $(foreach assembly,$(assemblies_bfs),$(srcdir)/$(assembly))
+	-rm -v $(foreach assembly,$(assemblies_arraylist),$(srcdir)/$(assembly))
+	-rm -v $(foreach source,$(sources_pa),$(srcdir)/$(source))
+	-rm -v $(foreach source,$(sources_bfs),$(srcdir)/$(source))
+	-rm -v $(foreach source,$(sources_arraylist),$(srcdir)/$(source))
+	#-rm -v $(libdir)/$(lib_pa)
+	#-rm -v $(libdir)/$(lib_arraylist)
+	#-rm -v $(libdir)/$(lib_bfs)
+	-rm -v $(foreach test,$(sources_test_pa),$(srcdir)/$(test))
+	-rm -v $(foreach test,$(assemblies_test_pa),$(srcdir)/$(test))
+	-rm -v $(foreach test,$(objects_test_pa),$(libdir)/$(test))
+	-rm -v $(foreach test,$(program_test_pa),$(bindir)/$(test))
+	-rm -v $(foreach test,$(program_test_pointers_pa),$(bindir)/$(test))
+	-rm -v $(foreach lib,$(output),$(libdir)/$(lib).a)
+	-rm -v $(output).tar.gz 
+	#-rm -r -v $(foreach lib,$(libs),$(output)-$(version)/$(lib))
+	#rm -r -v $(output)-$(version)/ArrayList
+	#rm -r -v $(output)-$(version)/BFS
+	#rm -r -v $(output)-$(version)/PA
+#	-rmdir -v $(output)-$(version)/BFS
+#	-rmdir -v $(output)-$(version)/PA
+#	-rm -r -v $(output)-$(version)
 # 	-rm $(libdir)/libpa.a
 # 	-rm $(sources_pa)
 # 	-rm $(sources_bfs)
@@ -167,37 +209,51 @@ maintainer-clean:
 realclean:
 clobber:
 
-install:
-	$(srcdir)/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
-	$(srcdir)/mkinstalldirs $(libdir)/PA
-	$(srcdir)/mkinstalldirs $(libdir)/BFS
-	$(srcdir)/mkinstalldirs $(libdir)/ArrayList
+install: $(subdirs)
+	$(srcdir)/mkinstalldirs $(DESTDIR)/$(bindir) $(DESTDIR)/$(datadir) $(DESTDIR)/$(libdir) $(DESTDIR)/$(infodir) $(DESTDIR)/$(mandir)
+	-cp -v $(foreach lib,$(libs),./lib/$(lib)) $(libdir)
 
+install-strip:
+	strip $(foreach lib,$(libs),$(libdir)/$(lib))
 # 	mkdir $(subdirs)
 #	cp out/libpa.a $(libdir)
 #	cp -r obj/*.o $(libdir)
 #
 installcheck:
 	ls $(foreach subdir,$(subdirs),$(subdir))
+	ls $(foreach lib,$(libs),$(libdir)/$(lib))
 #	ls $(libdir) | grep libpa.a
 #	ls $(libdir) | grep $(objects)/PA
 print:
 	git status
 	ar -T -t $(libdir)/libpa.a
-tar:
-	tar cvf palibrary.tar $(srcdir)/PA/
-shar:
-dist:
-	tar cvf libpa.tar.gz $(libdir)/libpa.a
-check:
+share:
+dist: lib/ lib/PA lib/BFS lib/ArrayList $(objects_pa) $(objects_bfs) $(objects_arraylist) $(libs) $(output).tar.gz
+	#tar cvf libpa.tar.gz $(libdir)/libpa.a
+
+check: $(program_test_pa) $(program_test_pointers_pa)
+	@echo "Testing"
+	mv ./bin/$(program_test_pointers_pa) ./a.out
+	./bin/$(program_test_pointers_pa)
+
+$(output).tar.gz:
+	mkdir -v $(output)-$(version)
+	mkdir -v $(output)-$(version)/PA
+	mkdir -v $(output)-$(version)/BFS
+	mkdir -v $(output)-$(version)/ArrayList
+	cp -r -v lib/PA/ $(output)-$(version)/PA
+	cp -r -v lib/BFS/ $(output)-$(version)/BFS
+	cp -r -v lib/ArrayList/ $(output)-$(version)/ArrayList
+	cp -r -v $(foreach lib,$(libs),./lib/$(lib)) $(output)-$(version)
+	tar --gzip --create --verbose --file $(output).tar.gz $(output-version) $(output)-$(version)/$(dir $(obj))
+$(objects_pa): include/types.h include/defs.h
 test:
 ifeq ($(host-type), arm64)
-	file $(bindir)/libpa.a
+	file ./lib/libpa.a
 endif
 
 test_pa_arm64: 
-	./$(bindir)/$(program_test_pa)
-#ifeq ($(host-type),arm64)
+	#ifeq ($(host-type),arm64)
 ##	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 #endif
 #ifeq ($(host-type),x86_64)
@@ -212,6 +268,8 @@ endif
 #	-$(CC) -S test.i -o test.s
 #	-$(AS) test.s -o test.o
 
+objects_algorithm= Input.o \
+	Output.o
 
 objects_arraylist= ArrayList/ArrayList.o \
 	ArrayList/ArrayListPosition.o
@@ -221,6 +279,7 @@ objects_bfs= BFS/Procedure.o \
 
 # objects_arraylist= obj/Input.o
 #
+
 objects_pa= Input.o \
 	Algorithm.o \
 	Output.o \
@@ -244,7 +303,10 @@ objects_pa= Input.o \
 	PA/PADrawingEditor.o \
 	PA/PALine.o \
 	PA/PAShape.o \
-	PA/PATextView.o
+	PA/PATextView.o \
+	PA/Size.o \
+	PA/Memory.o \
+	PA/Object.o
 # 	src/PA/Data.i \
 
 sources_arraylist= ArrayList/ArrayList.i \
@@ -274,38 +336,47 @@ sources_pa= Input.i \
 	PA/PADrawingEditor.i \
 	PA/PALine.i \
 	PA/PAShape.i \
-	PA/PATextView.i
+	PA/PATextView.i \
+	PA/Size.i \
+	PA/Memory.i \
+	PA/Object.i
 # sources_arraylist= src/Input.i
+
+$(visual_code_run_target): $(lib_pa)
+	$(CC) -lpa -Lobj $< -o $@
 
 designs_arraylist= ArrayList/ArrayList.c \
 	ArrayList/ArrayListPosition.c
 designs_bfs= src/BFS/Procedure.c \
 	BFS/Record.c
 # sources_= src/Input.i
-designs_pa=$(srcdir)/Input.c \
-	$(srcdir)/Algorithm.c \
-	$(srcdir)/PA/Input.c \
-	$(srcdir)/PA/Output.c \
-	$(srcdir)/Output.c \
-	$(srcdir)/PA/Data.c \
-	$(srcdir)/PA/Tree.c \
-	$(srcdir)/PA/Data.c \
-	$(srcdir)/PA/List.c \
-	$(srcdir)/PA/Link.c \
-	$(srcdir)/PA/Element.c \
-	$(srcdir)/PA/Count.c \
-	$(srcdir)/PA/Pair.c \
-	$(srcdir)/PA/Result.c \
-	$(srcdir)/PA/Series.c \
-	$(srcdir)/PA/Status.c \
-	$(srcdir)/PA/Value.c \
-	$(srcdir)/PA/Resource.c \
-	$(srcdir)/PA/NormalTree.c \
-	$(srcdir)/PA/Number.c \
-	$(srcdir)/PA/TransposeTree.c \
-	$(srcdir)/PA/PALine.c \
-	$(srcdir)/PA/PAShape.c \
-	$(srcdir)/PA/PATextView.c
+designs_pa=Input.c \
+	Algorithm.c \
+	PA/Input.c \
+	PA/Output.c \
+	Output.c \
+	PA/Data.c \
+	PA/Tree.c \
+	PA/Data.c \
+	PA/List.c \
+	PA/Link.c \
+	PA/Element.c \
+	PA/Count.c \
+	PA/Pair.c \
+	PA/Result.c \
+	PA/Series.c \
+	PA/Status.c \
+	PA/Value.c \
+	PA/Resource.c \
+	PA/NormalTree.c \
+	PA/Number.c \
+	PA/TransposeTree.c \
+	PA/PALine.c \
+	PA/PAShape.c \
+	PA/PATextView.c \
+	PA/Size.c \
+	PA/Memory.c \
+	PA/Object.c
 
 assemblies_arraylist= ArrayList/ArrayListPosition.s \
  	ArrayList/ArrayList.s
@@ -334,23 +405,24 @@ assemblies_pa= Input.s \
 	PA/PADrawingEditor.s \
 	PA/PALine.s \
 	PA/PAShape.s \
-	PA/PATextView.s
+	PA/PATextView.s \
+	PA/Size.s \
+	PA/Memory.s \
+	PA/Object.s
 
-sources_test_pa= test.i
+sources_test_pa= test.i test_pointers.i
 sources_test_bfs= 
 sources_test_arraylist=
-assemblies_test_pa= test.s
+assemblies_test_pa= test.s test_pointers.s
 assemblies_test_bfs=
 assemblies_test_arraylist =
-# objects_
 # as
-objects_test_pa= test.o
+objects_test_pa= test.o test_pointers.o
 objects_test_bfs=
 objects_test_arraylist= 
 # 	src/PA/Destination.s
 # 	src/PA/Arrow.s
 # 	src/PA/Feature.s
-
 
 # 	src/PA/Destination.c
 # 	src/PA/Arrow.c
@@ -360,22 +432,30 @@ objects_test_arraylist=
 # 	src/PA/Destination.i
 # 	src/PA/Arrow.i
 # 	src/PA/Feature.i
-program_test_pa= test.out
 
-distclean:
-	rm $(foreach source,$(sources_pa),$(srcdir)/$(source))
-	rm $(foreach source,$(sources_test_pa),$(srcdir)/$(source))
+distclean: dist
+	-rm $(foreach source,$(sources_pa),$(srcdir)/$(source))
+	-rm $(foreach source,$(sources_test_pa),$(srcdir)/$(source))
 # 	rm $(foreach source,$(sources_bfs),$(srcdir)/$(source))
 # 	rm $(foreach source,$(sources_arraylist),$(srcdir)/$(source))
-	rm $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
-	rm $(foreach assembly,$(assemblies_test_pa),$(srcdir)/$(assembly))
+	-rm $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
+	-rm $(foreach assembly,$(assemblies_test_pa),$(srcdir)/$(assembly))
 # 	rm $(foreach assembly,$(assemblies_bfs),$(srcdir)/$(assembly))
 # 	rm $(foreach assembly,$(assemblies_arraylist),$(srcdir)/$(assembly))
-	rm $(foreach object,$(objects_pa),$(libdir)/$(object))
-	rm $(foreach object,$(objects_test_pa),$(libdir)/$(object))
+	-rm $(foreach object,$(objects_pa),$(libdir)/$(object))
+	-rm $(foreach object,$(objects_test_pa),$(libdir)/$(object))
 # 	rm $(foreach object,$(objects_bfs),$(libdir)/$(object))
 # 	rm $(foreach object,$(objects_arraylist),$(libdir)/$(object))
-	rm $(foreach program,$(program_test_pa),$(bindir)/$(program))
+	-rm $(foreach program,$(program_test_pointers_pa),$(bindir)/$(program))
+	-rm $(output).tar.gz
+	-rm -r $(foreach obj,$(objects_pa),$(output)-$(version)/$(obj))
+	-rm -r $(foreach obj,$(objects_bfs),$(output)-$(version)/$(obj))
+	-rm -r $(foreach obj,$(objects_arraylist),$(output)-$(version)/$(obj))
+	-rm -r $(foreach lib,$(libs),$(output)-$(version)/$(lib))
+	-rmdir $(output)-$(version)/PA
+	-rmdir $(output)-$(version)/BFS
+	-rmdir $(output)-$(version)/ArrayList
+	-rmdir $(output)-$(version)
 
 objdirs= $(libdir)/ \
 	$(libdir)/BFS/ \
@@ -419,32 +499,36 @@ endif
 lib_bfs= libbfs.a
 lib_arraylist= libarraylist.a
 lib_pa= libpa.a
+lib_algorithm= libalgorithm.a
 
-output_dir= out
-output_bfs= $(output_dir)/$(lib_bfs)
-output_arraylist= $(output_dir)/$(lib_arraylist)
-output_pa= $(output_dir)/$(lib_pa)
+output_dir= $(bindir) 
+output_pa= ./lib/$(lib_pa)
+output_bfs= ./lib/$(lib_bfs)
+output_arraylist= ./lib/$(lib_arraylist)
+output_algorithm= ./lib/$(lib_algorithm)
 
 assemble_pa: $(assemblies_pa) $(assemblies_test_pa)
 assemble_bfs: $(assemblies_bfs) $(assemblies_test_bfs)
 assemble_arraylist: $(assemblies_arraylist) $(assemblies_test_arraylist)
+assemble_algorithm: $(assemblies_algorithm) $(assemblies_test_algorithm)
 
 compile_pa: $(objects_pa) $(objects_test_pa)
 compile_bfs: $(objects_bfs) $(objects_test_bfs)
 compile_arraylist: $(objects_arraylist) $(objects_test_arraylist)
+compile_algorithm: $(objects_algorithm) $(objects_test_algorithm)
 
 preprocess_pa: $(sources_pa) $(sources_test_pa)
 preprocess_bfs: $(sources_bfs) $(sources_test_bfs)
 preprocess_arraylist: $(sources_arraylist) $(sources_test_arraylist)
+preprocess_algorithm: $(sources_algorithm) $(sources_test_algorithm)
 
 link_pa: $(output_pa) $(link_test_pa)
 link_bfs: $(output_bfs) $(link_test_bfs)
 link_arraylist: $(output_arraylist) $(link_test_arraylist)
+link_algorithm: $(output_algorithm) $(link_test_algorithm)
 
 run_pa: $(test_pa)
 
-link_test_pa: $(objects_test_pa) $(output_pa)
-	@echo "Testing"
 #${MAKE} $(designs_pa) 
 #${MAKE} $(sources_pa)
 #${MAKE} $(objects_pa)
@@ -475,10 +559,28 @@ build: $(subdirs)
 # 	@echo "Build"
 # 	@echo "$<"
 #
-libpa.a: $(objects_pa)
+$(lib_algorithm): $(objects_algorithm)
+	src/mkinstalldirs $(bindir) $(datadir) lib $(infodir) $(mandir)
+	$(AR) -v -s -q ./lib/$@ $(foreach object,$^,lib/$(object))  
+	$(AR) -v -t -s ./lib/$@
+$(lib_arraylist): $(objects_arraylist)
+	src/mkinstalldirs $(bindir) $(datadir) lib $(infodir) $(mandir)
+	$(AR) -v -s -q ./lib/$@ $(foreach object,$^,lib/$(object))  
+	$(AR) -v -t -s ./lib/$@
+$(lib_pa): $(objects_pa)
+	src/mkinstalldirs $(bindir) $(datadir) lib $(infodir) $(mandir)
+	$(AR) -v -s -q ./lib/$@ $(foreach object,$^,lib/$(object))  
+	$(AR) -v -t -s ./lib/$@
+
+$(lib_bfs): $(objects_bfs)
 	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
-	$(AR) -v -s -q $(libdir)/$(output) $(foreach object,$^,$(libdir)/$(object))  
-	$(AR) -v -t -s $(libdir)/$(output)
+	$(AR) -v -s -q ./lib/$@ $(foreach object,$^,lib/$(object))  
+	$(AR) -v -t -s ./lib/$@
+
+$(lib_arraylist): $(objects_arraylist)
+	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
+	$(AR) -v -s -q ./lib/$@ $(foreach object,$^,lib/$(object))  
+	$(AR) -v -t -s ./lib/$@
 #	$(AR) -d -b Input.o $(libdir)/$(output)
 
 #libpa.a: $(objects_pa)
@@ -500,7 +602,37 @@ srcdir=$(prefix)/src
 #CFLAGS+=-I$(abspath $(includedir)/ArrayList)
 #CFLAGS+=-I$(abspath $(includedir)/Adapter)
 CPPFLAGS=
+CFLAGS= -g
+ASFLAGS= -g
+ifeq ($(host-type),arm64)
+CPPFLAGS=-Darm64
+ASFLAGS=-arch $(host-type) -g
+else
+CFLAGS=-march=x86_64
+endif
+ifeq ($(host-type),Aarch64)
+CPPFLAGS=-DAarch64
+ASFLAGS=-march=armv8.3-a -g
+else
+CFLAGS=-march=x86_64
+endif
+ifeq ($(host-type),armv6)
+CPPFLAGS=-Darmv6
+ASFLAGS= -g
+else
+CFLAGS=-march=x86_64
+endif
 CPPFLAGS+=-I$(prefix)/include -I$(prefix)
+
+ifeq ($(host-type),arm64)
+
+endif
+ifeq ($(host-type),x86_64)
+
+endif
+ifeq ($(host-type),AArch64)
+
+endif
 #libdir=$(prefix)/obj
 #datadir=dat
 #infodir=info
@@ -569,186 +701,210 @@ CPPFLAGS+=-I$(prefix)/include -I$(prefix)
 #src/Prototype/ConcretePrototype1.c: include/Prototype/ConcretePrototype1.h
 #src/Prototype/ConcretePrototype2.c: include/Prototype/ConcretePrototype2.h
 
-Input.i : $(srcdir)/Input.c $(includedir)/ArrayList/ArrayList.h $(includedir)/PA/Result.h $(includedir)/Input.h $(includedir)/types.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-Algorithm.i : $(srcdir)/Algorithm.c $(includedir)/PA/Result.h $(includedir)/Algorithm.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-BFS/Procedure.i : $(srcdir)/BFS/Procedure.c $(includedir)/types.h $(includedir)/Algorithm.h $(includedir)/PA/Tree.h $(includedir)/PA/Element.h $(includedir)/BFS/Procedure.h $(includedir)/PA/Input.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/Input.i : $(srcdir)/PA/Input.c $(includedir)/Input.h $(includedir)/ArrayList/ArrayList.h $(includedir)/PA/Result.h $(includedir)/types.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/Output.i : $(srcdir)/PA/Output.c $(includedir)/defs.h $(includedir)/Output.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-BFS/Record.i : $(srcdir)/BFS/Record.c $(includedir)/types.h $(includedir)/PA/List.h $(includedir)/PA/Count.h $(includedir)/PA/Result.h $(includedir)/BFS/Record.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-Output.i : $(srcdir)/Output.c $(includedir)/defs.h $(includedir)/Output.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/Data.i : $(srcdir)/PA/Data.c $(includedir)/PA/Data.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
+Input.i : src/Input.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+Algorithm.i : src/Algorithm.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+BFS/Procedure.i : src/BFS/Procedure.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/Input.i : src/PA/Input.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/Output.i : src/PA/Output.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+BFS/Record.i : src/BFS/Record.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+Output.i : src/Output.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/Data.i : src/PA/Data.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/Memory.i : src/PA/Memory.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/Object.i : src/PA/Object.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
 # src/PA/Destination.i : src/PA/Destination.c include/types.h include/PA/Destination.h
 # 	-$(CPP) $(CPPFLAGS) -E $< > $@
-PA/Tree.i : $(srcdir)/PA/Tree.c $(includedir)/PA/Tree.h $(includedir)/types.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/List.i : $(srcdir)/PA/List.c $(includedir)/types.h $(includedir)/PA/List.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/Link.i : $(srcdir)/PA/Link.c $(includedir)/defs.h $(includedir)/types.h $(includedir)/PA/Link.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
+PA/Tree.i : src/PA/Tree.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/List.i : src/PA/List.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/Link.i : src/PA/Link.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
 # src/PA/Arrow.i : src/PA/Arrow.c include/defs.h include/PA/Arrow.h include/types.h
 # 	-$(CPP) $(CPPFLAGS) -E $< > $@
-PA/Element.i : $(srcdir)/PA/Element.c $(includedir)/defs.h $(includedir)/PA/Element.h $(includedir)/types.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/Count.i : $(srcdir)/PA/Count.c $(includedir)/types.h $(includedir)/PA/Count.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/Pair.i : $(srcdir)/PA/Pair.c $(includedir)/types.h $(includedir)/PA/Pair.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/Result.i : $(srcdir)/PA/Result.c $(includedir)/PA/Result.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/Series.i : $(srcdir)/PA/Series.c $(includedir)/defs.h $(includedir)/types.h $(includedir)/PA/Series.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/Status.i : $(srcdir)/PA/Status.c $(includedir)/defs.h $(includedir)/PA/Status.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
+PA/Element.i : src/PA/Element.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/Count.i : src/PA/Count.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/Pair.i : src/PA/Pair.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/Result.i : src/PA/Result.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/Series.i : src/PA/Series.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/Status.i : src/PA/Status.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
 # src/PA/Feature.i : src/PA/Feature.c include/PA/Feature.h include/types.h
 # 	-$(CPP) $(CPPFLAGS) -E $< > $@
-PA/Value.i : $(srcdir)/PA/Value.c $(includedir)/types.h $(includedir)/PA/Value.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/Resource.i : $(srcdir)/PA/Resource.c $(includedir)/PA/Resource.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@	
-PA/NormalTree.i : $(srcdir)/PA/NormalTree.c $(includedir)/types.h $(includedir)/PA/NormalTree.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/Number.i : $(srcdir)/PA/Number.c $(includedir)/PA/Number.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/TransposeTree.i : $(srcdir)/PA/TransposeTree.c $(includedir)/types.h $(includedir)/PA/TransposeTree.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/PADrawingEditor.i : $(srcdir)/PA/PADrawingEditor.c $(includedir)/PA/PADrawingEditor.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/PALine.i : $(srcdir)/PA/PALine.c $(includedir)/PA/PALine.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/PAShape.i : $(srcdir)/PA/PAShape.c $(includedir)/PA/PAShape.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-PA/PATextView.i : $(srcdir)/PA/PATextView.c $(includedir)/PA/PATextView.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-ArrayList/ArrayList.i: $(srcdir)/ArrayList/ArrayList.c $(includedir)/defs.h $(includedir)/types.h $(includedir)/ArrayList/ArrayList.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-ArrayList/ArrayListPosition.i : $(srcdir)/ArrayList/ArrayListPosition.c $(includedir)/ArrayList/ArrayList.h $(includedir)/defs.h $(includedir)/types.h
+PA/Value.i : src/PA/Value.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/Resource.i : src/PA/Resource.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@	
+PA/NormalTree.i : src/PA/NormalTree.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/Number.i : src/PA/Number.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/TransposeTree.i : src/PA/TransposeTree.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/PADrawingEditor.i : src/PA/PADrawingEditor.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/PALine.i : src/PA/PALine.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/PAShape.i : src/PA/PAShape.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/PATextView.i : src/PA/PATextView.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+ArrayList/ArrayList.i: src/ArrayList/ArrayList.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+ArrayList/ArrayListPosition.i : src/ArrayList/ArrayListPosition.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+PA/Size.i : src/PA/Size.c
+	$(CPP) $(CPPFLAGS) -E $< > src/$@
+test_pointers.i: test/test_pointers.c
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 
 Input.s: Input.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 Algorithm.s: Algorithm.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 BFS/Procedure.s: BFS/Procedure.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/Input.s: PA/Input.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/Output.s: PA/Output.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 BFS/Record.s: BFS/Record.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 Output.s: Output.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
+Memory.s: Memory.i
+	$(CC) -S src/$< -o src/$@
 # src/PA/Destination.s : src/PA/Destination.i
 # 	-$(CC) -S $< -o $@
 #asm/PA/Data.s: src/PA/Data.c
 #	$(CC) $(CFLAGS) -S $< -o $@
 PA/Tree.s: PA/Tree.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/Data.s: PA/Data.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/List.s: PA/List.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/Link.s: PA/Link.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 # src/PA/Arrow.s: src/PA/Arrow.i
 # 	-$(CC) -S $< -o $@
 PA/Element.s: PA/Element.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
-PA/Count.s: PA/Count.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
+PA/Count.s: PA/Count.i PA/Size.i
+	$(CC) -S src/$< -o src/$@
 PA/Pair.s: PA/Pair.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/Result.s: PA/Result.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/Series.s: PA/Series.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 # src/PA/Feature.s: src/PA/Feature.i
 # 	-$(CC) -S $< -o $@
 PA/Value.s: PA/Value.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/Resource.s: PA/Resource.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/NormalTree.s: PA/NormalTree.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/Number.s: PA/Number.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/TransposeTree.s: PA/TransposeTree.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/Status.s: PA/Status.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/PADrawingEditor.s: PA/PADrawingEditor.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/PALine.s: PA/PALine.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/PAShape.s: PA/PAShape.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 PA/PATextView.s: PA/PATextView.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 ArrayList/ArrayList.s: ArrayList/ArrayList.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+	$(CC) -S src/$< -o src/$@
 ArrayList/ArrayListPosition.s: ArrayList/ArrayListPosition.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
-
+	$(CC) -S src/$< -o src/$@
+PA/Size.s: PA/Size.i
+	$(CC) -S src/$< -o src/$@
+PA/Memory.s: PA/Memory.i
+	$(CC) -S src/$< -o src/$@
+PA/Object.s: PA/Object.i
+	$(CC) -S src/$< -o src/$@
 test.i: test/test.c
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 test.s: test.i
 	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+test_pointers.s: test_pointers.i
+	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 
 test.o: test.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
-test.out: $(objects) test.o test.out libpa.a
-	$(CC) $(libdir)/test.o $(foreach object,$(objects_pa),$(libdir)/$(object)) -o $(bindir)/$(program_test_pa)
-#$(CC) -lc $(foreach dependency,$^,$(libdir)/$(dependency)) -o $(bindir)/$@
-
-ASFLAGS=
+test_pointers.o: test_pointers.s
 ifeq ($(host-type),arm64)
-ASFLAGS=-arch $(host-type)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-CFLAGS=-march=x86_64
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-ASFLAGS=-march=armv8.3-a
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
+
+test.out: $(objects) test.o $(lib_pa) $(lib_bfs) $(lib_arraylist)
+	$(CC) lib/$< $(foreach object,$(objects_pa),lib/$(object)) lib/$(lib_pa) lib/$(lib_bfs) lib/$(lib_arraylist) -o $(bindir)/$(program_test_pa)
+
+test_pointers.out: test_pointers.o $(objects) $(lib_pa) $(lib_bfs) $(lib_arraylist)
+	$(CC) lib/$< $(foreach object,$(objects_pa),lib/$(object)) lib/$(lib_pa) lib/$(lib_bfs) lib/$(lib_arraylist) -o $(bindir)/$(program_test_pointers_pa)
+
+#$(CC) -lc $(foreach dependency,$^,lib/$(dependency)) -o $(bindir)/$@
+
+# ASFLAGS=
+
 
 main.o : main.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 Input.o: Input.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
  
@@ -757,13 +913,13 @@ endif
 #	$(AS) $(ASFLAGS) $< -o $@
 Algorithm.o: Algorithm.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
@@ -771,130 +927,130 @@ endif
 
 BFS/Procedure.o: BFS/Procedure.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
-
+# ifeq
 
 PA/Input.o: PA/Input.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 
 PA/Output.o: PA/Output.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 
 BFS/Record.o: BFS/Record.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 
 Output.o: Output.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 
 PA/Value.o: PA/Value.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 
 PA/Data.o: PA/Data.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 
 PA/Tree.o: PA/Tree.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 
 PA/List.o: PA/List.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 
 PA/Link.o: PA/Link.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
@@ -911,80 +1067,90 @@ endif
 # endif
 
 
+PA/Size.o: PA/Size.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
 
 PA/Element.o: PA/Element.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 
 PA/Count.o: PA/Count.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 
 PA/Pair.o: PA/Pair.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	-$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	-$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 
 PA/Result.o: PA/Result.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 
 PA/Series.o: PA/Series.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 PA/Status.o: PA/Status.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
@@ -1016,120 +1182,138 @@ endif
 
 PA/Resource.o: PA/Resource.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 PA/NormalTree.o: PA/NormalTree.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 PA/Number.o: PA/Number.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 PA/TransposeTree.o: PA/TransposeTree.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+PA/Memory.o: PA/Memory.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+PA/Object.o: PA/Object.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 PA/PADrawingEditor.o: PA/PADrawingEditor.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 PA/PALine.o: PA/PALine.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 
 PA/PAShape.o: PA/PAShape.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
 
 PA/PATextView.o: PA/PATextView.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
-
-
 
 ArrayList/ArrayList.o: ArrayList/ArrayList.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
-
-
 
 ArrayList/ArrayListPosition.o : ArrayList/ArrayListPosition.s
 ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
 endif
 ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 
@@ -1195,8 +1379,10 @@ installdirs: mkinstalldirs
 
 mkinstalldirs: $(srcdir)/mkinstalldirs
 
-#uninstall:
-#	cp . .
+uninstall:
+# 	cp . .
+# 	mv
+	rm -v $(foreach lib,$(libs),$(lib))
 
 #distclean:
 #	rm asm/*
@@ -1210,18 +1396,25 @@ mkinstalldirs: $(srcdir)/mkinstalldirs
 
 #installcheck:
 #	echo "installcheck"
-$(output_dir)/$(lib_pa):
-ifeq ($(host-type),arm64)
-	$(AR) -r $@ $(objects_pa)
-endif
-$(output_dir)/$(lib_bfs):
-ifeq ($(host-type),arm64)
-	$(AR) -r $@ $(objects_bfs)
-endif
-$(output_dir)/$(lib_arraylist):
-ifeq ($(host-type),arm64)
-	$(AR) -r $@ $(objects_arraylist)
-endif
+#
+#$(output_dir)/$(lib_pa): $(objects_pa)
+#ifeq ($(host-type),arm64)
+#	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
+#	$(AR) -v -s -q $(libdir)/$(output) $(foreach object,$^,$(libdir)/$(object))  
+#	$(AR) -v -t -s $(libdir)/$(output)
+#endif
+#$(output_dir)/$(lib_bfs): $(objects_bfs)
+#ifeq ($(host-type),arm64)
+#	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
+#	$(AR) -v -s -q $(libdir)/$(output) $(foreach object,$^,$(libdir)/$(object))  
+#	#$(AR) -r $@ $(objects_bfs)
+#endif
+#$(output_dir)/$(lib_arraylist): $(objects_arraylist)
+#ifeq ($(host-type),arm64)
+#	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
+#	$(AR) -v -s -q $(libdir)/$(output) $(foreach object,$^,$(libdir)/$(object))  
+##	$(AR) -r $@ $(objects_arraylist)
+#endif
 clean:
 #	${MAKE} ARCH=${host-type} build
 # # 	-rm libpa.a
@@ -1326,20 +1519,24 @@ clean:
 # 	-rm $(srcdir)/test.i
 # 	-rm $(srcdir)/test.s
 # 	-rm $(bindir)/test
-	rm $(foreach source,$(sources_pa),$(srcdir)/$(source))
-	rm $(foreach test,$(sources_test_pa),$(srcdir)/$(test))
+	-rm -v $(foreach source,$(sources_pa),$(srcdir)/$(source))
+	-rm -v $(foreach test,$(sources_test_pa),$(srcdir)/$(test))
 # 	rm $(foreach source,$(sources_bfs),$(srcdir)/$(source))
 # 	rm $(foreach source,$(sources_arraylist),$(srcdir)/$(source))
 # 	rm $(foreach assembly,$(assemblies_pa),$(libdir)/$(assembly))
 # 	rm $(foreach assembly,$(assemblies_bfs),$(libdir)/$(assembly))
 # 	rm $(foreach assembly,$(assemblies_arraylist),$(libdir)/$(assembly))
 # 	rm $(foreach assembly,$(assemblies_pa),$(srcdir)/ass)
-	rm $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
-	rm $(foreach test,$(assemblies_test_pa),$(srcdir)/$(test))
+	-rm -v $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
+	-rm -v $(foreach test,$(assemblies_test_pa),$(srcdir)/$(test))
 # 	rm $(foreach assembly,$(assemblies_bfs),$(srcdir)/$(assebmbly))
 # 	rm $(foreach assembly,$(assemblies_arraylist),$(srcdir)/$(assembly))
-	rm $(foreach object,$(objects_pa),$(libdir)/$(object))
-	rm $(foreach object,$(objects_test_pa),$(libdir)/$(object))
+	-rm -v $(foreach object,$(objects_pa),$(libdir)/$(object))
+	-rm -v $(foreach object,$(objects_test_pa),$(libdir)/$(object))
+	-rm -v $(foreach lib,$(libs)/,./lib/$(lib))
+	-rm -v $(output)-$(version)/*
+	-rm -r -v $(output)-$(version)
+	-rm -r -v $(output).tar.gz
 # 	rm $(foreach object,$(objects_bfs),$(libdir)/$(object))
 # 	rm $(foreach object,$(objects_arraylist),$(libdir)/$(object))
 # 	rm $(bindir)/test
@@ -1529,4 +1726,4 @@ run:
 # 	$(AS) -c asm/arraylist/$^ -o obj/arraylist/$@
 
 #.PHONY: all install installdirs installcheck uinstall run distclean clean
-.PHONY: all install installcheck test
+.PHONY: all test install
