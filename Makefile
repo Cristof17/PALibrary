@@ -569,6 +569,23 @@ CPPFLAGS+=-I$(prefix)/include -I$(prefix)
 #src/Prototype/ConcretePrototype1.c: include/Prototype/ConcretePrototype1.h
 #src/Prototype/ConcretePrototype2.c: include/Prototype/ConcretePrototype2.h
 
+PA/Count.h: include/defs.h include/types.h include/PA/Count.h
+PA/Data.h: include/defs.h include/types.h include/PA/Data.h
+PA/Element.h: include/defs.h include/types.h include/PA/Element.h
+PA/Input.h: include/defs.h
+PA/Link.h: include/defs.h
+PA/List.h: include/defs.h include/types.h
+PA/NormalTree.h: include/defs.h
+PA/Number.h: include/defs.h include/types.h
+PA/Output.h: include/defs.h include/types.h
+PA/Pair.h: include/defs.h
+PA/Resource.h: include/types.h include/defs.h
+PA/Series.h: include/defs.h
+PA/Status.h: include/defs.h include/types.h
+PA/TransposeTree.h: include/defs.h
+PA/Tree.h: include/defs.h include/types.h
+PA/Value.h: include/defs.h
+
 Input.i : $(srcdir)/Input.c $(includedir)/ArrayList/ArrayList.h $(includedir)/PA/Result.h $(includedir)/Input.h $(includedir)/types.h
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 Algorithm.i : $(srcdir)/Algorithm.c $(includedir)/PA/Result.h $(includedir)/Algorithm.h
