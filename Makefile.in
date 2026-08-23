@@ -356,14 +356,17 @@ assemblies_pa= PA/Input.s \
 	PA/Destination.s \
 	PA/Feature.s
 
+sources_test_algorithm= test.i
 sources_test_pa= test.i
 sources_test_bfs= 
 sources_test_arraylist=
+asemblies_test_algorithm= test.s
 assemblies_test_pa= test.s
 assemblies_test_bfs=
 assemblies_test_arraylist =
 # objects_
 # as
+objects_test_algorithm= test.o
 objects_test_pa= test.o
 objects_test_bfs=
 objects_test_arraylist= 
