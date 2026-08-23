@@ -575,24 +575,24 @@ types.h: $(includedir)/types.h
 PA/Count.h: defs.h types.h $(includedir)/PA/Count.h
 PA/Data.h: defs.h types.h $(includedir)/PA/Data.h
 PA/Element.h: defs.h types.h $(includedir)/PA/Element.h
-PA/Input.h: defs.h
-PA/Link.h: defs.h
-PA/List.h: defs.h types.h
-PA/NormalTree.h: defs.h
-PA/Number.h: defs.h types.h
-PA/Output.h: defs.h types.h
-PA/Pair.h: defs.h
-PA/Result.h: $(includedir)/PA/Result.h
-PA/Resource.h: types.h defs.h
-PA/Series.h: defs.h
-PA/Status.h: defs.h types.h
-PA/TransposeTree.h: defs.h
-PA/Tree.h: defs.h types.h
-PA/Value.h: defs.h
-PA/PADrawingEditor.h: $(includedir)/PA/PADrawingEditor.h
-PA/PALine.h: $(includedir)/PA/PALine.h
-PA/PAShape.h: $(includedir)/PA/PAShape.h
-PA/PATextView.h: $(includedir)/PA/PATextView.h
+PA/Input.h: defs.h $(includedir)/PA/Input.h
+PA/Link.h: defs.h $(includedir)/PA/Link.h
+PA/List.h: defs.h types.h $(includedir)/PA/List.h
+PA/NormalTree.h: defs.h $(includedir)/PA/NormalTree.h
+PA/Number.h: defs.h types.h $(includedir)/PA/Number.h
+PA/Output.h: defs.h types.h $(includedir)/PA/Output.h
+PA/Pair.h: defs.h $(includedir)/PA/Pair.h
+PA/Result.h: $(includedir)/PA/Result.h $(includedir)/PA/Result.h
+PA/Resource.h: types.h defs.h $(includedir)/PA/Resource.h
+PA/Series.h: defs.h $(includedir)/PA/Series.h
+PA/Status.h: defs.h types.h $(includedir)/PA/Status.h
+PA/TransposeTree.h: defs.h $(includedir)/PA/TransposeTree.h
+PA/Tree.h: defs.h types.h $(includedir)/PA/Tree.h
+PA/Value.h: defs.h $(includedir)/PA/Value.h
+PA/PADrawingEditor.h: $(includedir)/PA/PADrawingEditor.h $(includedir)/PA/PADrawingEditor.h
+PA/PALine.h: $(includedir)/PA/PALine.h $(includedir)/PA/PALine.h
+PA/PAShape.h: $(includedir)/PA/PAShape.h $(includedir)/PA/PAShape.h
+PA/PATextView.h: $(includedir)/PA/PATextView.h $(includedir)/PA/PATextView.h
 
 PA/Count.c: PA/Count.h PA/Number.h types.h
 PA/Data.c: PA/Data.h PA/Resource.h
