@@ -1,10 +1,10 @@
-# 1 "src/PA/Output.c"
+# 1 "./src/PA/Output.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/PA/Output.c" 2
+# 1 "./src/PA/Output.c" 2
 
 
 
@@ -388,7 +388,7 @@ struct Facade {
           PAResult PAOutputOperatorEqual(struct PAOutput on, struct PAOutput other);
           PAResult PAOutputOperatorNotEqual(struct PAOutput one,struct PAOutput other);
           void PAOutputPerformPrint(PAResult Result);
-# 6 "src/PA/Output.c" 2
+# 6 "./src/PA/Output.c" 2
 # 1 "./include/BFS/Record.h" 1
 
 
@@ -405,8 +405,8 @@ struct Facade {
           struct BFSRecord BFSRecordCopy(struct BFSRecord);
           struct BFSRecord BFSRecordPutList(struct BFSRecord, struct PAList);
           struct BFSRecord BFSRecordPutCount(struct BFSRecord, struct PACount);
-# 7 "src/PA/Output.c" 2
-# 60 "src/PA/Output.c"
+# 7 "./src/PA/Output.c" 2
+# 60 "./src/PA/Output.c"
           struct PAOutput PAOutputPerformConstruct()
 {
     struct PAOutput Output;

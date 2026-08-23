@@ -1,14 +1,14 @@
-# 1 "src/PA/Status.c"
+# 1 "./src/PA/Status.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/PA/Status.c" 2
+# 1 "./src/PA/Status.c" 2
 
 
 # 1 "./include/defs.h" 1
-# 4 "src/PA/Status.c" 2
+# 4 "./src/PA/Status.c" 2
 
 
 # 1 "./include/PA/Status.h" 1
@@ -385,7 +385,7 @@ struct Facade {
           struct PAStatus PAStatusPerformCopy(struct PAStatus, struct PAStatus);
           PAResult PAStatusOperatorNotEqual(struct PAStatus one,struct PAStatus other);
           PAResult PAStatusOperatorEqual(struct PAStatus one,struct PAStatus other);
-# 7 "src/PA/Status.c" 2
+# 7 "./src/PA/Status.c" 2
 # 1 "./include/PA/Resource.h" 1
 
 
@@ -399,7 +399,7 @@ struct Facade {
           struct PAResource PAResourcePerformCopy(struct PAResource, struct PAResource);
           PAResult PAResourceOperatorEqual(struct PAResource one,struct PAResource other);
           PAResult PAResourceOperatorNotEqual(struct PAResource one,struct PAResource other);
-# 8 "src/PA/Status.c" 2
+# 8 "./src/PA/Status.c" 2
 
 
 

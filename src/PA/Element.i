@@ -1,14 +1,14 @@
-# 1 "src/PA/Element.c"
+# 1 "./src/PA/Element.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/PA/Element.c" 2
+# 1 "./src/PA/Element.c" 2
 
 
 # 1 "./include/defs.h" 1
-# 4 "src/PA/Element.c" 2
+# 4 "./src/PA/Element.c" 2
 
 # 1 "./include/PA/Element.h" 1
 
@@ -395,7 +395,7 @@ struct Facade {
           PAResult PAElementOperatorEqual(struct PAElement one,struct PAElement other);
           PAResult PAElementOperatorGreater(struct PAElement one, struct PAElement other);
           PAResult PAElementOperatorNotEqual(struct PAElement one, struct PAElement other);
-# 6 "src/PA/Element.c" 2
+# 6 "./src/PA/Element.c" 2
 # 1 "./include/PA/Data.h" 1
 # 11 "./include/PA/Data.h"
           struct PAData PADataPerformConstruct();
@@ -409,7 +409,7 @@ struct Facade {
           PAResult PADataOperatorEqual(struct PAData,struct PAData);
           PAResult PADataOperatorGreater(struct PAData,struct PAData);
           PAResult PADataOperatorNotEqual(struct PAData,struct PAData);
-# 7 "src/PA/Element.c" 2
+# 7 "./src/PA/Element.c" 2
 # 1 "./include/PA/Status.h" 1
 
 
@@ -426,8 +426,8 @@ struct Facade {
           struct PAStatus PAStatusPerformCopy(struct PAStatus, struct PAStatus);
           PAResult PAStatusOperatorNotEqual(struct PAStatus one,struct PAStatus other);
           PAResult PAStatusOperatorEqual(struct PAStatus one,struct PAStatus other);
-# 8 "src/PA/Element.c" 2
-# 18 "src/PA/Element.c"
+# 8 "./src/PA/Element.c" 2
+# 18 "./src/PA/Element.c"
 struct PAElement PAElementPerformConstruct()
 {
     struct PAElement temp;
@@ -446,7 +446,7 @@ struct PAElement PAElementPerformConstruct()
 {
     Element.index = Value;
     Element.status = Value2;
-# 45 "src/PA/Element.c"
+# 45 "./src/PA/Element.c"
     return Element;
 }
           void PAElementVisit(struct PAElement Element)
@@ -472,17 +472,17 @@ struct PAElement PAElementPerformConstruct()
     to.status = temp.status;
     return to;
 }
-# 82 "src/PA/Element.c"
+# 82 "./src/PA/Element.c"
           struct PAElement PAElementPerformRuin(struct PAElement PA)
 {
     PA.index = PADataPerformRuin(PA.index);
     PA.status = PAStatusPerformRuin(PA.status);
-# 97 "src/PA/Element.c"
+# 97 "./src/PA/Element.c"
     return PA;
 
 
 }
-# 135 "src/PA/Element.c"
+# 135 "./src/PA/Element.c"
           struct PAElement PAElementPerformDelete(struct PAElement PA)
 {
 

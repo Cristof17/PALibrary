@@ -1,10 +1,10 @@
-# 1 "src/PA/NormalTree.c"
+# 1 "./src/PA/NormalTree.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/PA/NormalTree.c" 2
+# 1 "./src/PA/NormalTree.c" 2
 
 
 # 1 "./include/types.h" 1
@@ -372,7 +372,7 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 4 "src/PA/NormalTree.c" 2
+# 4 "./src/PA/NormalTree.c" 2
 
 # 1 "./include/PA/NormalTree.h" 1
 
@@ -393,7 +393,7 @@ struct Facade {
           PAResult PANormalTreeOperatorNotEqual(struct PANormalTree one, struct PANormalTree other);
 
           PAResult PAGrafNormalGetResult();
-# 6 "src/PA/NormalTree.c" 2
+# 6 "./src/PA/NormalTree.c" 2
 # 1 "./include/PA/Tree.h" 1
 # 12 "./include/PA/Tree.h"
           struct PATree PATreePerformConstruct();
@@ -409,7 +409,7 @@ struct Facade {
           struct PATree PATreePerformDelete(struct PATree);
           PAResult PATreeOperatorEqual(struct PATree one, struct PATree other);
           PAResult PATreeOperatorNotEqual(struct PATree one, struct PATree other);
-# 7 "src/PA/NormalTree.c" 2
+# 7 "./src/PA/NormalTree.c" 2
 
 
 
@@ -432,7 +432,7 @@ struct Facade {
 
     return NormalTree;
 }
-# 38 "src/PA/NormalTree.c"
+# 38 "./src/PA/NormalTree.c"
           struct PANormalTree PANormalTreePerformRuin(struct PANormalTree PA)
 {
     struct PANormalTree Empty;

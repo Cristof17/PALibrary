@@ -1,10 +1,10 @@
-# 1 "src/PA/Resource.c"
+# 1 "./src/PA/Resource.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/PA/Resource.c" 2
+# 1 "./src/PA/Resource.c" 2
 
 
 # 1 "./include/PA/Resource.h" 1
@@ -385,7 +385,7 @@ struct Facade {
           struct PAResource PAResourcePerformCopy(struct PAResource, struct PAResource);
           PAResult PAResourceOperatorEqual(struct PAResource one,struct PAResource other);
           PAResult PAResourceOperatorNotEqual(struct PAResource one,struct PAResource other);
-# 4 "src/PA/Resource.c" 2
+# 4 "./src/PA/Resource.c" 2
 # 1 "./include/PA/Number.h" 1
 
 
@@ -400,7 +400,7 @@ struct Facade {
           PAResult PANumberOperatorNotEqual(struct PANumber one, struct PANumber other);
           PAResult PANumberOperatorLess(struct PANumber one, struct PANumber other);
           PAResult PANumberOperatorGreater(struct PANumber one, struct PANumber other);
-# 5 "src/PA/Resource.c" 2
+# 5 "./src/PA/Resource.c" 2
 
 
 

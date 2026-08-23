@@ -1,10 +1,10 @@
-# 1 "src/PA/Input.c"
+# 1 "./src/PA/Input.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/PA/Input.c" 2
+# 1 "./src/PA/Input.c" 2
 
 
 
@@ -373,7 +373,7 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 5 "src/PA/Input.c" 2
+# 5 "./src/PA/Input.c" 2
 
 
 
@@ -389,7 +389,7 @@ struct Facade {
           struct PAInput PAInputPerformDelete(struct PAInput i);
           PAResult PAInputOperatorEqual(struct PAInput one, struct PAInput other);
           PAResult PAInputOperatorNotEqual(struct PAInput one, struct PAInput other);
-# 9 "src/PA/Input.c" 2
+# 9 "./src/PA/Input.c" 2
 # 1 "./include/PA/Count.h" 1
 # 13 "./include/PA/Count.h"
           struct PACount PACountPerformConstruct();
@@ -406,7 +406,7 @@ struct Facade {
           PAResult PACountOperatorEqual(struct PACount,struct PACount);
           PAResult PACountOperatorGreater(struct PACount,struct PACount);
           PAResult PACountOperatorNotEqual(struct PACount,struct PACount);
-# 10 "src/PA/Input.c" 2
+# 10 "./src/PA/Input.c" 2
 # 1 "./include/PA/Element.h" 1
 # 10 "./include/PA/Element.h"
           void PAElementVisit(struct PAElement);
@@ -426,7 +426,7 @@ struct Facade {
           PAResult PAElementOperatorEqual(struct PAElement one,struct PAElement other);
           PAResult PAElementOperatorGreater(struct PAElement one, struct PAElement other);
           PAResult PAElementOperatorNotEqual(struct PAElement one, struct PAElement other);
-# 11 "src/PA/Input.c" 2
+# 11 "./src/PA/Input.c" 2
 
 
 
@@ -444,7 +444,7 @@ struct Facade {
 
 
 }
-# 39 "src/PA/Input.c"
+# 39 "./src/PA/Input.c"
           struct PAInput PAInputPerformInit(struct PAInput Input, struct PACount Value, struct PACount Value2, struct PAElement Value3)
 {
  struct PAInput temp;
@@ -452,7 +452,7 @@ struct Facade {
  temp.m = PACountPerformConstruct();
  temp.source = PAElementPerformConstruct();
  Input = temp;
-# 61 "src/PA/Input.c"
+# 61 "./src/PA/Input.c"
  return Input;
 }
           struct PAInput PAInputPerformRuin(struct PAInput PA) {

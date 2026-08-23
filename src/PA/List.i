@@ -1,10 +1,10 @@
-# 1 "src/PA/List.c"
+# 1 "./src/PA/List.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/PA/List.c" 2
+# 1 "./src/PA/List.c" 2
 
 
 
@@ -373,7 +373,7 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 5 "src/PA/List.c" 2
+# 5 "./src/PA/List.c" 2
 
 
 # 1 "./include/PA/List.h" 1
@@ -390,7 +390,7 @@ struct Facade {
           PAResult PAListOperatorNotEqual(struct PAList one, struct PAList other);
 
 void PAListPerformPrint(struct PAList List);
-# 8 "src/PA/List.c" 2
+# 8 "./src/PA/List.c" 2
 # 1 "./include/PA/Count.h" 1
 # 13 "./include/PA/Count.h"
           struct PACount PACountPerformConstruct();
@@ -407,7 +407,7 @@ void PAListPerformPrint(struct PAList List);
           PAResult PACountOperatorEqual(struct PACount,struct PACount);
           PAResult PACountOperatorGreater(struct PACount,struct PACount);
           PAResult PACountOperatorNotEqual(struct PACount,struct PACount);
-# 9 "src/PA/List.c" 2
+# 9 "./src/PA/List.c" 2
 # 1 "./include/PA/Series.h" 1
 # 17 "./include/PA/Series.h"
           struct PASeries PASeriesPerformConstruct();
@@ -420,8 +420,8 @@ void PAListPerformPrint(struct PAList List);
           PAResult PASeriesOperatorEqual(struct PASeries one,struct PASeries other);
           PAResult PASeriesOperatorNotEqual(struct PASeries one,struct PASeries other);
           void PASeriesPerformPrint(struct PASeries Series);
-# 10 "src/PA/List.c" 2
-# 19 "src/PA/List.c"
+# 10 "./src/PA/List.c" 2
+# 19 "./src/PA/List.c"
           struct PAList PAListPerformConstruct()
 {
     struct PAList list;
@@ -437,7 +437,7 @@ void PAListPerformPrint(struct PAList List);
 
 
     return list;
-# 43 "src/PA/List.c"
+# 43 "./src/PA/List.c"
 }
           struct PAList PAListPerformCopy(struct PAList from, struct PAList to)
 {
@@ -506,7 +506,7 @@ void PAListPerformPrint(struct PAList List);
 
     return List;
 }
-# 142 "src/PA/List.c"
+# 142 "./src/PA/List.c"
           struct PAList PAListPerformRuin(struct PAList PA)
 {
 
@@ -530,7 +530,7 @@ void Dispose()
 {
 
 }
-# 180 "src/PA/List.c"
+# 180 "./src/PA/List.c"
           struct PAList PAListPerformDelete(struct PAList PA)
 {
     struct PACount n = PA.n;

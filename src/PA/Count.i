@@ -1,10 +1,10 @@
-# 1 "src/PA/Count.c"
+# 1 "./src/PA/Count.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/PA/Count.c" 2
+# 1 "./src/PA/Count.c" 2
 
 
 # 1 "./include/types.h" 1
@@ -372,7 +372,7 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 4 "src/PA/Count.c" 2
+# 4 "./src/PA/Count.c" 2
 
 
 # 1 "./include/PA/Count.h" 1
@@ -391,7 +391,7 @@ struct Facade {
           PAResult PACountOperatorEqual(struct PACount,struct PACount);
           PAResult PACountOperatorGreater(struct PACount,struct PACount);
           PAResult PACountOperatorNotEqual(struct PACount,struct PACount);
-# 7 "src/PA/Count.c" 2
+# 7 "./src/PA/Count.c" 2
 # 1 "./include/PA/Number.h" 1
 
 
@@ -406,7 +406,7 @@ struct Facade {
           PAResult PANumberOperatorNotEqual(struct PANumber one, struct PANumber other);
           PAResult PANumberOperatorLess(struct PANumber one, struct PANumber other);
           PAResult PANumberOperatorGreater(struct PANumber one, struct PANumber other);
-# 8 "src/PA/Count.c" 2
+# 8 "./src/PA/Count.c" 2
 
 
 
@@ -444,7 +444,7 @@ struct Facade {
 }
           struct PACount PACountPerformRuin(struct PACount PA)
 {
-# 70 "src/PA/Count.c"
+# 70 "./src/PA/Count.c"
     return PA;
 }
           struct PACount PACountPerformDelete(struct PACount PA)

@@ -1,10 +1,10 @@
-# 1 "src/PA/Tree.c"
+# 1 "./src/PA/Tree.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/PA/Tree.c" 2
+# 1 "./src/PA/Tree.c" 2
 
 
 # 1 "./include/PA/Tree.h" 1
@@ -391,7 +391,7 @@ struct Facade {
           struct PATree PATreePerformDelete(struct PATree);
           PAResult PATreeOperatorEqual(struct PATree one, struct PATree other);
           PAResult PATreeOperatorNotEqual(struct PATree one, struct PATree other);
-# 4 "src/PA/Tree.c" 2
+# 4 "./src/PA/Tree.c" 2
 # 1 "./include/PA/Count.h" 1
 # 13 "./include/PA/Count.h"
           struct PACount PACountPerformConstruct();
@@ -408,7 +408,7 @@ struct Facade {
           PAResult PACountOperatorEqual(struct PACount,struct PACount);
           PAResult PACountOperatorGreater(struct PACount,struct PACount);
           PAResult PACountOperatorNotEqual(struct PACount,struct PACount);
-# 5 "src/PA/Tree.c" 2
+# 5 "./src/PA/Tree.c" 2
 # 1 "./include/PA/Element.h" 1
 # 10 "./include/PA/Element.h"
           void PAElementVisit(struct PAElement);
@@ -428,7 +428,7 @@ struct Facade {
           PAResult PAElementOperatorEqual(struct PAElement one,struct PAElement other);
           PAResult PAElementOperatorGreater(struct PAElement one, struct PAElement other);
           PAResult PAElementOperatorNotEqual(struct PAElement one, struct PAElement other);
-# 6 "src/PA/Tree.c" 2
+# 6 "./src/PA/Tree.c" 2
 # 1 "./include/PA/List.h" 1
 # 11 "./include/PA/List.h"
           struct PAList PAListPerformConstruct();
@@ -443,8 +443,8 @@ struct Facade {
           PAResult PAListOperatorNotEqual(struct PAList one, struct PAList other);
 
 void PAListPerformPrint(struct PAList List);
-# 7 "src/PA/Tree.c" 2
-# 19 "src/PA/Tree.c"
+# 7 "./src/PA/Tree.c" 2
+# 19 "./src/PA/Tree.c"
           struct PATree PATreePerformConstruct()
 {
     struct PATree temp;
@@ -454,7 +454,7 @@ void PAListPerformPrint(struct PAList List);
     temp.source = PAElementPerformConstruct();
 
     return temp;
-# 66 "src/PA/Tree.c"
+# 66 "./src/PA/Tree.c"
     return temp;
 }
           struct PATree PATreePerformInit(struct PATree Tree, struct PACount Value, struct PACount Value2, struct PAList Value3, struct PAElement Value4)
@@ -474,7 +474,7 @@ void PAListPerformPrint(struct PAList List);
 
     return Tree;
 }
-# 94 "src/PA/Tree.c"
+# 94 "./src/PA/Tree.c"
           struct PATree PATreePerformCopy(struct PATree from, struct PATree to)
 {
     struct PATree temp;
@@ -495,10 +495,10 @@ void PAListPerformPrint(struct PAList List);
     PA.m = PACountPerformRuin(PA.m);
     PA.source = PAElementPerformRuin(PA.source);
     PA.adj = PAListPerformRuin(PA.adj);
-# 131 "src/PA/Tree.c"
+# 131 "./src/PA/Tree.c"
     return PA;
 }
-# 173 "src/PA/Tree.c"
+# 173 "./src/PA/Tree.c"
           struct PATree PATreePerformDelete(struct PATree Tree)
 {
 

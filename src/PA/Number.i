@@ -1,10 +1,10 @@
-# 1 "src/PA/Number.c"
+# 1 "./src/PA/Number.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/PA/Number.c" 2
+# 1 "./src/PA/Number.c" 2
 
 # 1 "./include/PA/Number.h" 1
 
@@ -385,7 +385,7 @@ struct Facade {
           PAResult PANumberOperatorNotEqual(struct PANumber one, struct PANumber other);
           PAResult PANumberOperatorLess(struct PANumber one, struct PANumber other);
           PAResult PANumberOperatorGreater(struct PANumber one, struct PANumber other);
-# 3 "src/PA/Number.c" 2
+# 3 "./src/PA/Number.c" 2
 
 
 

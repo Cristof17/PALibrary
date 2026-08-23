@@ -1,15 +1,15 @@
-# 1 "src/PA/Link.c"
+# 1 "./src/PA/Link.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/PA/Link.c" 2
+# 1 "./src/PA/Link.c" 2
 
 
 
 # 1 "./include/defs.h" 1
-# 5 "src/PA/Link.c" 2
+# 5 "./src/PA/Link.c" 2
 # 1 "./include/types.h" 1
 # 18 "./include/types.h"
 struct PANumber;
@@ -368,7 +368,7 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 6 "src/PA/Link.c" 2
+# 6 "./src/PA/Link.c" 2
 
 
 # 1 "./include/PA/Link.h" 1
@@ -388,7 +388,7 @@ struct Facade {
           struct PALink PALinkPerformDelete(struct PALink);
           PAResult PALinkOperatorEqual(struct PALink one, struct PALink other);
           PAResult PALinkOperatorNotEqual(struct PALink one, struct PALink other);
-# 9 "src/PA/Link.c" 2
+# 9 "./src/PA/Link.c" 2
 # 1 "./include/PA/Pair.h" 1
 
 
@@ -408,7 +408,7 @@ struct Facade {
           struct PAPair PAPairPerformDelete(struct PAPair);
           PAResult PAPairOperatorEqual(struct PAPair other,struct PAPair one);
           PAResult PAPairOperatorNotEqual(struct PAPair one,struct PAPair other);
-# 10 "src/PA/Link.c" 2
+# 10 "./src/PA/Link.c" 2
 
 
 

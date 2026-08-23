@@ -1,14 +1,14 @@
-# 1 "src/PA/Series.c"
+# 1 "./src/PA/Series.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/PA/Series.c" 2
+# 1 "./src/PA/Series.c" 2
 
 
 # 1 "./include/defs.h" 1
-# 4 "src/PA/Series.c" 2
+# 4 "./src/PA/Series.c" 2
 # 1 "./include/types.h" 1
 # 18 "./include/types.h"
 struct PANumber;
@@ -367,7 +367,7 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 5 "src/PA/Series.c" 2
+# 5 "./src/PA/Series.c" 2
 
 
 # 1 "./include/PA/Series.h" 1
@@ -382,7 +382,7 @@ struct Facade {
           PAResult PASeriesOperatorEqual(struct PASeries one,struct PASeries other);
           PAResult PASeriesOperatorNotEqual(struct PASeries one,struct PASeries other);
           void PASeriesPerformPrint(struct PASeries Series);
-# 8 "src/PA/Series.c" 2
+# 8 "./src/PA/Series.c" 2
 # 1 "./include/PA/Count.h" 1
 # 13 "./include/PA/Count.h"
           struct PACount PACountPerformConstruct();
@@ -399,7 +399,7 @@ struct Facade {
           PAResult PACountOperatorEqual(struct PACount,struct PACount);
           PAResult PACountOperatorGreater(struct PACount,struct PACount);
           PAResult PACountOperatorNotEqual(struct PACount,struct PACount);
-# 9 "src/PA/Series.c" 2
+# 9 "./src/PA/Series.c" 2
 # 1 "./include/PA/Element.h" 1
 # 10 "./include/PA/Element.h"
           void PAElementVisit(struct PAElement);
@@ -419,8 +419,8 @@ struct Facade {
           PAResult PAElementOperatorEqual(struct PAElement one,struct PAElement other);
           PAResult PAElementOperatorGreater(struct PAElement one, struct PAElement other);
           PAResult PAElementOperatorNotEqual(struct PAElement one, struct PAElement other);
-# 10 "src/PA/Series.c" 2
-# 21 "src/PA/Series.c"
+# 10 "./src/PA/Series.c" 2
+# 21 "./src/PA/Series.c"
           struct PASeries PASeriesPerformConstruct()
 {
     struct PASeries series;
@@ -434,7 +434,7 @@ struct Facade {
         series.adj[x.val] = PAElementPerformInit(series.adj[x.val], series.adj[x.val].index, series.adj[x.val].status);
         x.val++;
     }
-# 46 "src/PA/Series.c"
+# 46 "./src/PA/Series.c"
     return series;
 }
           struct PASeries PASeriesPerformCopy(struct PASeries from, struct PASeries to)
@@ -474,11 +474,11 @@ struct Facade {
 
     return to;
 }
-# 99 "src/PA/Series.c"
+# 99 "./src/PA/Series.c"
           struct PASeries PASeriesPerformInit(struct PASeries Series,
     struct PACount Value, struct PAElement Value2[])
     {
-# 113 "src/PA/Series.c"
+# 113 "./src/PA/Series.c"
         struct PASeries series;
         series.m = Value;
         struct PANumber x;
@@ -508,7 +508,7 @@ struct Facade {
         return PA;
 
     }
-# 151 "src/PA/Series.c"
+# 151 "./src/PA/Series.c"
               struct PASeries PASeriesPerformRuin(struct PASeries PA)
     {
         struct PACount x;
@@ -520,16 +520,16 @@ struct Facade {
             PA.adj[y.number.val] = PAElementPerformRuin(PA.adj[y.number.val]);
             y.number.val++;
         }
-# 170 "src/PA/Series.c"
+# 170 "./src/PA/Series.c"
         return PA;
     }
-# 206 "src/PA/Series.c"
+# 206 "./src/PA/Series.c"
 struct PAResource PASeriesGet(struct PAData Data)
 {
     struct PAResource resource;
     return resource;
 }
-# 227 "src/PA/Series.c"
+# 227 "./src/PA/Series.c"
 void PASeriesPerformPrint(struct PASeries Series)
 {
 
