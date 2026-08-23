@@ -314,13 +314,14 @@ designs_pa= PA/Input.c \
 	PA/PAShape.c \
 	PA/PATextView.c
 
+assemblies_algorithm= Algorithm.s \
+	Input.s \
+	Output.s
 assemblies_arraylist= ArrayList/ArrayListPosition.s \
  	ArrayList/ArrayList.s
 assemblies_bfs= BFS/Procedure.s \
 	BFS/Record.s
-assemblies_pa= Input.s \
-	Algorithm.s \
-	PA/Input.s \
+assemblies_pa= PA/Input.s \
 	PA/Output.s \
 	Output.s \
 	PA/Tree.s \
