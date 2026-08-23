@@ -607,9 +607,9 @@ CPPFLAGS+=-I$(prefix)/include -I$(prefix)
 defs.h: $(includedir)/defs.h
 types.h: $(includedir)/types.h
 
-Input.h:
-Output.h:
-Algorithm.h:
+Input.h: $(includedir)/Input.h
+Output.h: $(includedir)/Output.h
+Algorithm.h: $(includedir)/Algorithm.h
 
 ArrayList/ArrayList.h: $(includedir)/ArrayList/ArrayList.h
 ArrayList/ArrayListPosition.h: $(includedir)/ArrayList/ArrayListPosition.h
