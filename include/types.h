@@ -22,7 +22,7 @@ typedef int PAInt;
 typedef int PABool;
 typedef int PAResult;
 typedef int ArrayListSize;
-typedef int ArrayListObject;
+// typedef int ArrayListObject;
 // typedef int ArrayListPosition;
 #endif
 // struct Client;
@@ -162,7 +162,7 @@ struct ArrayListPosition {
 struct ArrayList {
 	// struct Position position;
 	struct ArrayListPosition place;
-	ArrayListObject objects[SIZE];
+	int objects[SIZE];
 };
 struct PAResource {
 	// struct

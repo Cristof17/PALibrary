@@ -294,6 +294,7 @@ designs_algorithm= Algorithm.c \
 
 designs_arraylist= ArrayList/ArrayList.c \
 	ArrayList/ArrayListPosition.c
+	
 designs_bfs= src/BFS/Procedure.c \
 	BFS/Record.c
 # sources_= src/Input.i
@@ -325,10 +326,13 @@ designs_pa= PA/Input.c \
 assemblies_algorithm= Algorithm.s \
 	Input.s \
 	Output.s
+
 assemblies_arraylist= ArrayList/ArrayListPosition.s \
  	ArrayList/ArrayList.s
+
 assemblies_bfs= BFS/Procedure.s \
 	BFS/Record.s
+
 assemblies_pa= PA/Input.s \
 	PA/Output.s \
 	PA/Tree.s \
