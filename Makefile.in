@@ -1330,6 +1330,10 @@ mkinstalldirs: $(srcdir)/mkinstalldirs
 
 #installcheck:
 #	echo "installcheck"
+$(output_dir)/$(lib_algorithm):
+ifeq ($(host-type),arm64)
+	$(AR) -r $@ $(objects_algoritm)
+endif
 $(output_dir)/$(lib_pa):
 ifeq ($(host-type),arm64)
 	$(AR) -r $@ $(objects_pa)
