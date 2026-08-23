@@ -613,6 +613,9 @@ PA/PADrawingEditor.h: $(includedir)/PA/PADrawingEditor.h $(includedir)/PA/PADraw
 PA/PALine.h: $(includedir)/PA/PALine.h $(includedir)/PA/PALine.h
 PA/PAShape.h: $(includedir)/PA/PAShape.h $(includedir)/PA/PAShape.h
 PA/PATextView.h: $(includedir)/PA/PATextView.h $(includedir)/PA/PATextView.h
+PA/Arrow.h: $(includedir)/PA/Arrow.h $(includedir)/PA/Arrow.h
+PA/Destination.h: $(includedir)/PA/Destination.h
+PA/Feature.h: $(includedir)/PA/Feature.h $(includedir)/PA/Feature.h
 
 PA/Count.c: PA/Count.h PA/Number.h types.h $(srcdir)/PA/Count.c
 PA/Data.c: PA/Data.h PA/Resource.h $(srcdir)/PA/Data.c
@@ -635,9 +638,9 @@ PA/PADrawingEditor.c: PA/PADrawingEditor.h $(srcdir)/PA/PADrawingEditor.c
 PA/PALine.c: PA/PALine.h $(srcdir)/PA/PALine.c $(srcdir)/PA/PALine.c
 PA/PAShape.c: PA/PAShape.h $(srcdir)/PA/PAShape.c
 PA/PATextView.c: PA/PATextView.h $(srcdir)/PA/PATextView.c
-PA/Arrow.c: $(srcdir)/PA/Arrow.c
-PA/Destination.c: $(srcdir)/PA/Destination.c
-PA/Feature.c: $(srcdir)/PA/Feature.c
+PA/Arrow.c: $(srcdir)/PA/Arrow.c PA/Arrow.h
+PA/Destination.c: $(srcdir)/PA/Destination.c PA/Destination.h
+PA/Feature.c: $(srcdir)/PA/Feature.c PA/Feature.h
 
 Input.i : $(srcdir)/Input.c $(includedir)/ArrayList/ArrayList.h $(includedir)/PA/Result.h $(includedir)/Input.h $(includedir)/types.h
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
