@@ -607,6 +607,15 @@ CPPFLAGS+=-I$(prefix)/include -I$(prefix)
 defs.h: $(includedir)/defs.h
 types.h: $(includedir)/types.h
 
+Input.h:
+Output.h:
+Algorithm.h:
+
+ArrayList/ArrayList.h: $(includedir)/ArrayList/ArrayList.h
+ArrayList/ArrayListPosition.h: $(includedir)/ArrayList/ArrayListPosition.h
+BFS/Procedure.h: $(includedir)/BFS/Procedure.h
+BFS/Record.h: $(includedir)/BFS/Record.h
+
 PA/Count.h: defs.h types.h $(includedir)/PA/Count.h
 PA/Data.h: defs.h types.h $(includedir)/PA/Data.h
 PA/Element.h: defs.h types.h $(includedir)/PA/Element.h
@@ -631,6 +640,16 @@ PA/PATextView.h: $(includedir)/PA/PATextView.h $(includedir)/PA/PATextView.h
 PA/Arrow.h: $(includedir)/PA/Arrow.h $(includedir)/PA/Arrow.h
 PA/Destination.h: $(includedir)/PA/Destination.h
 PA/Feature.h: $(includedir)/PA/Feature.h $(includedir)/PA/Feature.h
+
+Input.c: Input.h $(srcdir)/Input.c
+Output.c: Output.h $(srcdir)/Output.c
+Algorithm.c: Algorithm.h $(srcdir)/Algorithm.c
+
+ArrayList/ArrayList.c: ArrayList/ArrayList.h $(srcdir)/ArrayList/ArrayList.c
+ArrayList/ArrayListPosition.c: ArrayList/ArrayListPosition.h $(srcdir)/ArrayList/ArrayListPosition.c
+
+BFS/Procedure.c: BFS/Procedure.h $(srcdir)/BFS/Procedure.c
+BFS/Record.c: BFS/Record.h $(srcdir)/BFS/Record.c
 
 PA/Count.c: PA/Count.h PA/Number.h types.h $(srcdir)/PA/Count.c
 PA/Data.c: PA/Data.h PA/Resource.h $(srcdir)/PA/Data.c
