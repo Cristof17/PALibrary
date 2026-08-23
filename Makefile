@@ -283,9 +283,9 @@ sources_pa= Input.i \
 	PA/PALine.i \
 	PA/PAShape.i \
 	PA/PATextView.i \
-	PA/Arrow.s \
-	PA/Destination.s \
-	PA/Feature.s
+	PA/Arrow.i \
+	PA/Destination.i \
+	PA/Feature.i
 # sources_arraylist= src/Input.i
 
 designs_algorithm= Algorithm.c \
