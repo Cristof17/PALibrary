@@ -284,28 +284,28 @@ designs_bfs= src/BFS/Procedure.c \
 # sources_= src/Input.i
 designs_pa=$(srcdir)/Input.c \
 	$(srcdir)/Algorithm.c \
-	$(srcdir)/PA/Input.c \
-	$(srcdir)/PA/Output.c \
 	$(srcdir)/Output.c \
-	$(srcdir)/PA/Data.c \
-	$(srcdir)/PA/Tree.c \
-	$(srcdir)/PA/Data.c \
-	$(srcdir)/PA/List.c \
-	$(srcdir)/PA/Link.c \
-	$(srcdir)/PA/Element.c \
-	$(srcdir)/PA/Count.c \
-	$(srcdir)/PA/Pair.c \
-	$(srcdir)/PA/Result.c \
-	$(srcdir)/PA/Series.c \
-	$(srcdir)/PA/Status.c \
-	$(srcdir)/PA/Value.c \
-	$(srcdir)/PA/Resource.c \
-	$(srcdir)/PA/NormalTree.c \
-	$(srcdir)/PA/Number.c \
-	$(srcdir)/PA/TransposeTree.c \
-	$(srcdir)/PA/PALine.c \
-	$(srcdir)/PA/PAShape.c \
-	$(srcdir)/PA/PATextView.c
+	PA/Input.c \
+	PA/Output.c \
+	PA/Data.c \
+	PA/Tree.c \
+	PA/Data.c \
+	PA/List.c \
+	PA/Link.c \
+	PA/Element.c \
+	PA/Count.c \
+	PA/Pair.c \
+	PA/Result.c \
+	PA/Series.c \
+	PA/Status.c \
+	PA/Value.c \
+	PA/Resource.c \
+	PA/NormalTree.c \
+	PA/Number.c \
+	PA/TransposeTree.c \
+	PA/PALine.c \
+	PA/PAShape.c \
+	PA/PATextView.c
 
 assemblies_arraylist= ArrayList/ArrayListPosition.s \
  	ArrayList/ArrayList.s
