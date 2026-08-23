@@ -594,27 +594,27 @@ PA/PALine.h: $(includedir)/PA/PALine.h $(includedir)/PA/PALine.h
 PA/PAShape.h: $(includedir)/PA/PAShape.h $(includedir)/PA/PAShape.h
 PA/PATextView.h: $(includedir)/PA/PATextView.h $(includedir)/PA/PATextView.h
 
-PA/Count.c: PA/Count.h PA/Number.h types.h
-PA/Data.c: PA/Data.h PA/Resource.h
-PA/Element.c: defs.h PA/Element.h PA/Status.h
-PA/Input.c: types.h PA/Input.h PA/Count.h PA/Element.h
-PA/Link.c: defs.h types.h PA/Link.h PA/Pair.h
-PA/List.c: types.h PA/List.h PA/Count.h PA/Series.h
-PA/NormalTree.c: types.h PA/NormalTree.h PA/Tree.h
-PA/Number.c: PA/Number.h
-PA/Output.c: PA/Output.h $(includedir)/BFS/Record.h
-PA/Pair.c: types.h PA/Pair.h PA/Element.h
-PA/Resource.c: PA/Resource.h PA/Element.h PA/Number.h
-PA/Result.c: PA/Result.h
-PA/Series.c: defs.h types.h PA/Series.h PA/Count.h PA/Element.h
-PA/Status.c: defs.h PA/Status.h PA/Resource.h
-PA/TransposeTree.c: types.h PA/TransposeTree.h PA/Tree.h
-PA/Tree.c: PA/Tree.h PA/Count.h PA/Element.h PA/List.h
-PA/Value.c: types.h PA/Value.h
-PA/PADrawingEditor.c: PA/PADrawingEditor.h
-PA/PALine.c: PA/PALine.h
-PA/PAShape.c: PA/PAShape.c
-PA/PATextView.c: PA/PATextView.h
+PA/Count.c: PA/Count.h PA/Number.h types.h $(srcdir)/PA/Count.c
+PA/Data.c: PA/Data.h PA/Resource.h $(srcdir)/PA/Data.c
+PA/Element.c: defs.h PA/Element.h PA/Status.h $(srcdir)/PA/Element.c
+PA/Input.c: types.h PA/Input.h PA/Count.h PA/Element.h $(srcdir)/PA/Input.c
+PA/Link.c: defs.h types.h PA/Link.h PA/Pair.h $(srcdir)/PA/Link.c
+PA/List.c: types.h PA/List.h PA/Count.h PA/Series.h $(srcdir)/PA/List.c
+PA/NormalTree.c: types.h PA/NormalTree.h PA/Tree.h $(srcdir)/PA/NormalTree.c
+PA/Number.c: PA/Number.h $(srcdir)/PA/Number.c
+PA/Output.c: PA/Output.h $(includedir)/BFS/Record.h $(srcdir)/PA/Output.c
+PA/Pair.c: types.h PA/Pair.h PA/Element.h $(srcdir)/PA/Pair.c
+PA/Resource.c: PA/Resource.h PA/Element.h PA/Number.h $(srcdir)/PA/Resource.c
+PA/Result.c: PA/Result.h $(srcdir)/PA/Result.c
+PA/Series.c: defs.h types.h PA/Series.h PA/Count.h PA/Element.h $(srcdir)/PA/Series.c
+PA/Status.c: defs.h PA/Status.h PA/Resource.h $(srcdir)/PA/Status.c
+PA/TransposeTree.c: types.h PA/TransposeTree.h PA/Tree.h $(srcdir)/PA/TransposeTree.c
+PA/Tree.c: PA/Tree.h PA/Count.h PA/Element.h PA/List.h $(srcdir)/PA/Tree.c
+PA/Value.c: types.h PA/Value.h $(srcdir)/PA/Value.c
+PA/PADrawingEditor.c: PA/PADrawingEditor.h $(srcdir)/PA/PADrawingEditor.c
+PA/PALine.c: PA/PALine.h $(srcdir)/PA/PALine.c $(srcdir)/PA/PALine.c
+PA/PAShape.c: PA/PAShape.c $(srcdir)/PA/PAShape.c
+PA/PATextView.c: PA/PATextView.h $(srcdir)/PA/PATextView.c
 
 Input.i : $(srcdir)/Input.c $(includedir)/ArrayList/ArrayList.h $(includedir)/PA/Result.h $(includedir)/Input.h $(includedir)/types.h
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
