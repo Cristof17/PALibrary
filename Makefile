@@ -247,7 +247,10 @@ objects_pa= Input.o \
 	PA/PADrawingEditor.o \
 	PA/PALine.o \
 	PA/PAShape.o \
-	PA/PATextView.o
+	PA/PATextView.o \
+	PA/Arrow.o \
+	PA/Destination.o \
+	PA/Feature.o
 # 	src/PA/Data.i \
 
 sources_algorithm= Algorithm.i \
@@ -280,7 +283,10 @@ sources_pa= Input.i \
 	PA/PADrawingEditor.i \
 	PA/PALine.i \
 	PA/PAShape.i \
-	PA/PATextView.i
+	PA/PATextView.i \
+	PA/Arrow.s \
+	PA/Destination.s \
+	PA/Feature.s
 # sources_arraylist= src/Input.i
 
 designs_algorithm= Algorithm.c \
@@ -312,6 +318,9 @@ designs_pa= PA/Input.c \
 	PA/TransposeTree.c \
 	PA/PALine.c \
 	PA/PAShape.c \
+	PA/Arrow.c \
+	PA/Destination.c \
+	PA/Feature.c \
 	PA/PATextView.c
 
 assemblies_algorithm= Algorithm.s \
@@ -342,7 +351,10 @@ assemblies_pa= PA/Input.s \
 	PA/PADrawingEditor.s \
 	PA/PALine.s \
 	PA/PAShape.s \
-	PA/PATextView.s
+	PA/PATextView.s \
+	PA/Arrow.s \
+	PA/Destination.s \
+	PA/Feature.s
 
 sources_test_pa= test.i
 sources_test_bfs= 
@@ -621,8 +633,11 @@ PA/Tree.c: PA/Tree.h PA/Count.h PA/Element.h PA/List.h $(srcdir)/PA/Tree.c
 PA/Value.c: types.h PA/Value.h $(srcdir)/PA/Value.c
 PA/PADrawingEditor.c: PA/PADrawingEditor.h $(srcdir)/PA/PADrawingEditor.c
 PA/PALine.c: PA/PALine.h $(srcdir)/PA/PALine.c $(srcdir)/PA/PALine.c
-PA/PAShape.c: PA/PAShape.c $(srcdir)/PA/PAShape.c
+PA/PAShape.c: PA/PAShape.h $(srcdir)/PA/PAShape.c
 PA/PATextView.c: PA/PATextView.h $(srcdir)/PA/PATextView.c
+PA/Arrow.c: $(srcdir)/PA/Arrow.c
+PA/Destination.c: $(srcdir)/PA/Destination.c
+PA/Feature.c: $(srcdir)/PA/Feature.c
 
 Input.i : $(srcdir)/Input.c $(includedir)/ArrayList/ArrayList.h $(includedir)/PA/Result.h $(includedir)/Input.h $(includedir)/types.h
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
@@ -685,6 +700,12 @@ PA/PAShape.i : PA/PAShape.c
 	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
 PA/PATextView.i : PA/PATextView.c 
 	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+PA/Arrow.i : PA/Arrow.c
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+PA/Destination.i : PA/Destination.c
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+PA/Feature.i : PA/Feature.c
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
 ArrayList/ArrayList.i: $(srcdir)/ArrayList/ArrayList.c $(includedir)/defs.h $(includedir)/types.h $(includedir)/ArrayList/ArrayList.h
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 ArrayList/ArrayListPosition.i : $(srcdir)/ArrayList/ArrayListPosition.c $(includedir)/ArrayList/ArrayList.h $(includedir)/defs.h $(includedir)/types.h
@@ -696,10 +717,6 @@ Algorithm.s: Algorithm.i
 	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 BFS/Procedure.s: BFS/Procedure.i
 	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
-PA/Input.s: PA/Input.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
-PA/Output.s: PA/Output.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 BFS/Record.s: BFS/Record.i
 	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 Output.s: Output.i
@@ -708,6 +725,10 @@ Output.s: Output.i
 # 	-$(CC) -S $< -o $@
 #asm/PA/Data.s: src/PA/Data.c
 #	$(CC) $(CFLAGS) -S $< -o $@
+PA/Input.s: PA/Input.i
+	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+PA/Output.s: PA/Output.i
+	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 PA/Tree.s: PA/Tree.i
 	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 PA/Data.s: PA/Data.i
@@ -750,6 +771,13 @@ PA/PAShape.s: PA/PAShape.i
 	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 PA/PATextView.s: PA/PATextView.i
 	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+PA/Feature.s: PA/Feature.i
+	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+PA/Arrow.s: PA/Arrow.i
+	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+PA/Destination.s: PA/Destination.i
+	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+
 ArrayList/ArrayList.s: ArrayList/ArrayList.i
 	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 ArrayList/ArrayListPosition.s: ArrayList/ArrayListPosition.i
@@ -840,29 +868,6 @@ endif
 
 
 
-PA/Input.o: PA/Input.s
-ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
-endif
-ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
-endif
-ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
-endif
-
-
-
-PA/Output.o: PA/Output.s
-ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
-endif
-ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
-endif
-ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
-endif
 
 
 
@@ -891,6 +896,29 @@ ifeq ($(host-type),AArch64)
 endif
 
 
+PA/Input.o: PA/Input.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+
+
+
+PA/Output.o: PA/Output.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
 
 PA/Value.o: PA/Value.s
 ifeq ($(host-type),arm64)
@@ -1164,7 +1192,38 @@ ifeq ($(host-type),AArch64)
 	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
 endif
 
+PA/Arrow.o: PA/Arrow.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
 
+PA/Feature.o: PA/Feature.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+
+PA/Destination.o: PA/Destination.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
 
 ArrayList/ArrayList.o: ArrayList/ArrayList.s
 ifeq ($(host-type),arm64)
