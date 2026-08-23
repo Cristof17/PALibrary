@@ -657,17 +657,18 @@ PA/Arrow.c: $(srcdir)/PA/Arrow.c PA/Arrow.h
 PA/Destination.c: $(srcdir)/PA/Destination.c PA/Destination.h
 PA/Feature.c: $(srcdir)/PA/Feature.c PA/Feature.h
 
-Input.i : $(srcdir)/Input.c $(includedir)/ArrayList/ArrayList.h $(includedir)/PA/Result.h $(includedir)/Input.h $(includedir)/types.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-Algorithm.i : $(srcdir)/Algorithm.c $(includedir)/PA/Result.h $(includedir)/Algorithm.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
+Input.i : Input.c ArrayList/ArrayList.h PA/Result.h Input.h types.h
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+Algorithm.i : Algorithm.c PA/Result.h Algorithm.h
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+Output.i : Output.c defs.h Output.h
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+
 BFS/Procedure.i : $(srcdir)/BFS/Procedure.c $(includedir)/types.h $(includedir)/Algorithm.h $(includedir)/PA/Tree.h $(includedir)/PA/Element.h $(includedir)/BFS/Procedure.h $(includedir)/PA/Input.h
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 BFS/Record.i : BFS/Record.c $(includedir)/types.h $(includedir)/PA/List.h $(includedir)/PA/Count.h $(includedir)/PA/Result.h $(includedir)/BFS/Record.h
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 BFS/Record.i : $(srcdir)/BFS/Record.c $(includedir)/types.h $(includedir)/PA/List.h $(includedir)/PA/Count.h $(includedir)/PA/Result.h $(includedir)/BFS/Record.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-Output.i : $(srcdir)/Output.c $(includedir)/defs.h $(includedir)/Output.h
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 
 PA/Input.i : PA/Input.c
