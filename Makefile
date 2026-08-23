@@ -212,6 +212,9 @@ endif
 #	-$(CC) -S test.i -o test.s
 #	-$(AS) test.s -o test.o
 
+objects_algorithm= Algorithm.o \
+	Input.o \
+	Output.o
 
 objects_arraylist= ArrayList/ArrayList.o \
 	ArrayList/ArrayListPosition.o
@@ -247,6 +250,9 @@ objects_pa= Input.o \
 	PA/PATextView.o
 # 	src/PA/Data.i \
 
+sources_algorithm= Algorithm.i \
+	Input.i \
+	Output.i
 sources_arraylist= ArrayList/ArrayList.i \
 	ArrayList/ArrayListPosition.i
 sources_bfs= BFS/Procedure.i \
@@ -277,15 +283,16 @@ sources_pa= Input.i \
 	PA/PATextView.i
 # sources_arraylist= src/Input.i
 
+designs_algorithm= Algorithm.c \
+	Input.c \
+	Output.c
+
 designs_arraylist= ArrayList/ArrayList.c \
 	ArrayList/ArrayListPosition.c
 designs_bfs= src/BFS/Procedure.c \
 	BFS/Record.c
 # sources_= src/Input.i
-designs_pa=$(srcdir)/Input.c \
-	$(srcdir)/Algorithm.c \
-	$(srcdir)/Output.c \
-	PA/Input.c \
+designs_pa= PA/Input.c \
 	PA/Output.c \
 	PA/Data.c \
 	PA/Tree.c \
