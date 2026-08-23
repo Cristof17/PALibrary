@@ -1,14 +1,14 @@
-# 1 "src/Output.c"
+# 1 "./src/Output.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/Output.c" 2
+# 1 "./src/Output.c" 2
 
 
 # 1 "./include/defs.h" 1
-# 4 "src/Output.c" 2
+# 4 "./src/Output.c" 2
 # 1 "./include/Output.h" 1
 
 
@@ -383,8 +383,8 @@ struct Facade {
           struct Output OutputPerformRuin(struct Output);
 
           void OutputPerformPrint(PAResult);
-# 5 "src/Output.c" 2
-# 14 "src/Output.c"
+# 5 "./src/Output.c" 2
+# 14 "./src/Output.c"
           struct Output OutputPerformConstruct()
 {
     struct Output output;

@@ -1,10 +1,10 @@
-# 1 "src/Input.c"
+# 1 "./src/Input.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/Input.c" 2
+# 1 "./src/Input.c" 2
 
 
 # 1 "./include/Input.h" 1
@@ -385,7 +385,7 @@ struct Facade {
           struct Input InputPerformRuin(struct Input);
           void InputRuin();
           void InputDispose();
-# 4 "src/Input.c" 2
+# 4 "./src/Input.c" 2
 
 # 1 "./include/ArrayList/ArrayList.h" 1
 # 12 "./include/ArrayList/ArrayList.h"
@@ -409,9 +409,9 @@ struct Facade {
           ArrayListObject ArrayListPerformGetLast(struct ArrayList);
           ArrayListObject ArrayListPerformPutFirst(struct ArrayList, ArrayListObject);
           ArrayListObject ArrayListPerformPutLast(struct ArrayList, ArrayListObject);
-# 6 "src/Input.c" 2
+# 6 "./src/Input.c" 2
 # 1 "./include/PA/Result.h" 1
-# 7 "src/Input.c" 2
+# 7 "./src/Input.c" 2
 
 
 
