@@ -15,15 +15,7 @@
 # 1 "./include/defs.h" 1
 # 6 "./include/Input.h" 2
 # 1 "./include/types.h" 1
-# 18 "./include/types.h"
-struct PANumber;
-typedef int PAInt;
-
-
-typedef int PABool;
-typedef int PAResult;
-typedef int ArrayListSize;
-# 35 "./include/types.h"
+# 54 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -72,7 +64,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 93 "./include/types.h"
+# 112 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -109,16 +101,16 @@ struct BridgeConcreteImplementorB;
 struct BridgeImplementor;
 struct PrototypePrototype;
 struct PrototypeClient;
-struct PANumber {
 
 
- unsigned char val;
 
-};
+
+
+
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 150 "./include/types.h"
+# 169 "./include/types.h"
 struct Output {
 
 };
@@ -140,7 +132,7 @@ struct PAResource {
 
 
 
- struct PANumber value;
+ PANumber value;
 
 };
 struct PAStatus {
@@ -159,7 +151,7 @@ struct PAElement {
 
 };
 struct PAFeature {
- PAInt kind;
+ int kind;
 };
 struct PACount {
 
@@ -215,7 +207,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 254 "./include/types.h"
+# 273 "./include/types.h"
 struct PAInput {
  struct PACount n;
  struct PACount m;
@@ -233,7 +225,7 @@ struct PAOutput {
 
 
 struct PAValue {
- PAInt value;
+ int value;
 };
 struct PADestination {
     struct PAElement element;
@@ -255,7 +247,7 @@ struct BFSInput {
 struct BFSOutput {
  struct BFSRecord result;
 };
-# 301 "./include/types.h"
+# 320 "./include/types.h"
 struct PALink {
  struct PAPair p;
 
@@ -296,7 +288,7 @@ struct FactoryCreator
  struct PATransposeTree transposeTree;
 };
 struct FlyWeight {
- PAInt todo;
+ int todo;
 };
 struct Adaptee {
  struct ArrayList list;
@@ -336,7 +328,7 @@ struct ConcreteBuilder {
  struct Builder builder;
 };
 struct IteratorConcreteIterator {
- PAInt position;
+ int position;
 };
 struct IteratorConcreteAggregate {
  struct IteratorConcreteIterator iterator;
@@ -387,27 +379,27 @@ struct Facade {
 # 4 "./src/Input.c" 2
 
 # 1 "./include/ArrayList/ArrayList.h" 1
-# 12 "./include/ArrayList/ArrayList.h"
-          int ArrayListGet(struct ArrayListPosition);
-          ArrayListSize ArrayListPerformSize();
-          void ArrayListPut(struct ArrayListPosition, int);
-          struct ArrayList ArrayListPerformConstruct(int Data[], struct ArrayListPosition);
-          PAResult ArrayListPerformInit(struct ArrayList);
-          struct ArrayList ArrayListPerformCopy(struct ArrayList);
-          PAResult ArrayListPerformCopyTo(struct ArrayList Dest, struct PAList source, struct PAElement);
-
-          PAResult ArrayListPerformRuin(struct ArrayListPosition, int[]);
-          PAResult ArrayListPerformDelete(struct ArrayList);
 
 
 
 
 
 
-          int ArrayListPerformGetFirst(struct ArrayList);
-          int ArrayListPerformGetLast(struct ArrayList);
-          int ArrayListPerformPutFirst(struct ArrayList, int);
-          int ArrayListPerformPutLast(struct ArrayList, int);
+
+          struct ArrayList ArrayListPerformConstruct(struct ArrayList Array, ArrayListValue Data[], ArrayListCount Count);
+          struct ArrayList ArrayListPerformInit(struct ArrayList Array, ArrayListValue Data, ArrayListCount Count);
+          ArrayListValue ArrayListMoveComponentsLeft(struct ArrayList Array);
+          ArrayListValue ArrayListMoveComponentsRight(struct ArrayList Array);
+          ArrayListValue ArrayListPerformGetFirst(struct ArrayList Array);
+          ArrayListValue ArrayListPerformGetLast(struct ArrayList Array);
+          ArrayListValue ArrayListPerformPutFirst(struct ArrayList Array, ArrayListValue Data);
+          ArrayListValue ArrayListPerformPutLast(struct ArrayList Array, ArrayListValue Data);
+          ArrayListValue ArrayListRemoveFirst(struct ArrayList Array);
+          ArrayListValue ArrayListRemoveLast(struct ArrayList Array);
+          struct ArrayList ArrayListPerformCopy(struct ArrayList From, struct ArrayList To);
+          int ArrayListPerformSize(struct ArrayList Array);
+          int ArrayListPerformRuin(struct ArrayList PA);
+          int ArrayListPerformDelete(struct ArrayList PA);
 # 6 "./src/Input.c" 2
 # 1 "./include/PA/Result.h" 1
 # 7 "./src/Input.c" 2

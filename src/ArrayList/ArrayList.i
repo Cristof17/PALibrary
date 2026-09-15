@@ -1,83 +1,38 @@
-# 1 "src/ArrayList/ArrayList.c"
+# 1 "./src/ArrayList/ArrayList.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
-# 418 "<built-in>" 3
+# 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/ArrayList/ArrayList.c" 2
-# 1 "include/defs.h" 1
-# 11 "include/defs.h"
-typedef int PAInt;
-
-typedef int PAResource;
-typedef int PABool;
-typedef int PAResult;
+# 1 "./src/ArrayList/ArrayList.c" 2
+# 1 "./include/defs.h" 1
+# 2 "./src/ArrayList/ArrayList.c" 2
+# 1 "./include/types.h" 1
+# 13 "./include/types.h"
+typedef long ArrayListSize;
 
 
 
 
 
-typedef int ArrayListSize;
-typedef int ArrayListObject;
-typedef int ArrayListPosition;
-# 2 "src/ArrayList/ArrayList.c" 2
-# 1 "include/types.h" 1
-# 13 "include/types.h"
-typedef int PAInt;
-
-typedef int PAResource;
-typedef int PABool;
-typedef int PAResult;
-typedef int ArrayListSize;
-typedef int ArrayListObject;
-typedef int ArrayListPosition;
+typedef long ArrayListObject;
 
 
-struct PADestination;
-struct PAArrow;
 
 
-struct PAData;
-
-struct NormalTree;
-struct Adaptee;
+typedef long ArrayListPosition;
+typedef long ArrayListOffset;
 
 
 
 
 
-struct PACount;
-struct PANormalTree;
-struct PATransposeTree;
+typedef long ArrayListCount;
 
 
 
 
-
-
-struct PAInput;
-struct PAOutput;
-
-struct PAData;
-struct PAValue;
-struct List;
-struct PAList;
-struct PAStatus;
-struct PAFeature;
-
-
-
-
-struct PAElement;
-struct PADestination;
-struct PAPair;
-struct PAArrow;
-struct BFSInput;
-struct BFSRecord;
-struct BFSOutput;
-struct PASeries;
-struct PATree;
-struct PALink;
+typedef long ArrayListValue;
 
 
 
@@ -85,337 +40,85 @@ struct PALink;
 
 
 
-struct AdapterTarget;
-struct AdapterClient;
-struct Adapter;
-
-
-struct Adaptee;
-
-struct Adapter;
-struct IteratorClient;
-struct Target;
-struct Builder;
-struct Director;
-struct NormalTree;
-struct Product ;
-struct TransposeTree;
-struct Aggregate;
-struct BuilderClient ;
-struct ConcreteAggregate;
-struct ConcreteIterator;
-struct Iterator ;
-struct BFSProcedure;
-struct Input;
-struct Algorithm;
-struct Output;
-struct FlyweightClient;
-struct FlyweightFlyweightFactory;
-struct FlyweightConcreteFlyweight;
-struct FlyweightUnsharedConcreteFlyweight;
-struct FlyweightFlyweight;
-struct BridgeAbstraction;
-struct BridgeClient;
-struct BridgeConcreteImplementorA;
-struct BridgeConcreteImplementorB;
-struct BridgeImplementor;
-# 122 "include/types.h"
+#pragma pack(show)
 struct ArrayListPosition {
- ArrayListPosition position;
+    ArrayListPosition position;
 };
+#pragma pack(show)
 struct ArrayList {
 
- struct ArrayListPosition place;
- ArrayListObject objects[((int)4096)];
-};
-struct PAStatus {
- PAInt visited;
-};
-struct PAData {
-    PAResource resource;
-};
-struct PAFeature {
- PAInt kind;
-};
-struct PACount {
- PAInt number;
-};
-struct PASeries {
- struct PACount m;
- struct ArrayList adj;
-};
-struct PAList {
- struct PACount n;
- struct PASeries adj[((int)4096)];
+    ArrayListObject elements[4];
+    ArrayListPosition place;
 
-};
-struct PAElement {
-
- struct PAData index;
-
- struct PAStatus status;
- struct PAFeature type;
-};
-struct FlyweightFlyweightClient {
- struct PASeries series;
-
-};
-struct FlyweightFlyweight {
- struct PAElement allState;
-
-};
-struct FlyweightFlyweightFactory {
- struct FlyweightFlyweight flyweight;
-
-};
-struct FlyweightConcreteFlyweight {
- struct PAList list;
-
-};
-struct FlyweightUnsharedConcreteFlyweight {
- struct PASeries intrinsicState;
-
-};
-struct PATree {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
- struct PAList adj;
-};
-struct BridgeAbstraction {
- struct PAElement elements[((int)4096)];
-};
-struct BridgeClient{
- struct PATree tree;
-};
-struct BridgeConcreteImplementorA {
- struct ArrayList list;
-};
-struct BridgeConcreteImplementorB {
-};
-# 208 "include/types.h"
-struct PAInput {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
-};
-struct BFSRecord {
-struct PACount n;
- struct PAList d;
-};
-struct PAOutput {
- struct BFSRecord result;
-};
-
-
-
-
-struct PAValue {
- PAInt value;
-};
-struct PADestination {
-    struct PAElement element;
-};
-struct PAPair {
- struct PAElement node;
- struct PAElement neigh;
-};
-struct PAArrow {
- struct PAPair p;
-};
-struct BFSInput {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
-};
-struct BFSOutput {
- struct BFSRecord result;
-};
-# 253 "include/types.h"
-struct PALink {
- struct PAPair p;
-};
-
-
-
-struct PANormalTree {
- struct PATree tree;
-
-};
-struct PATransposeTree {
- struct PATree tree;
-
-};
-struct FactoryProduct1 {
- struct PANormalTree tree;
-};
-struct FactoryProduct2 {
- struct PATransposeTree trans;
-};
-
-struct FactoryConcreteProduct
-{
- struct PANormalTree tree;
-};
-struct FactoryConcreteCreator {
-
- struct PANormalTree tree;
-};
-struct FactoryConcreteCreator2 {
-
- struct PATransposeTree tree;
-};
-struct FactoryCreator
-{
- struct PANormalTree normalTree;
- struct PATransposeTree transposeTree;
-};
-struct FlyWeight {
- PAInt todo;
-};
-struct Adaptee {
- struct ArrayList list;
-};
-struct Adapter {
- struct Adaptee adaptee;
-
-};
-struct IteratorClient {
- struct PATree tree;
-};
-struct AdapterTarget {
- struct PAList list;
-
-};
-struct AdapterClient {
- struct AdapterTarget target;
-};
-struct BuilderProduct {
- struct PATree tree;
-};
-struct Builder {
-
-
- struct BuilderProduct Product;
-};
-struct Director {
- struct Builder builder;
-};
-struct Iterator {
- struct PAList series;
-};
-struct Aggregate {
- struct Iterator iterator;
-};
-struct ConcreteBuilder {
- struct Builder builder;
-};
-struct ConcreteIterator {
- PAInt position;
-};
-struct ConcreteAggregate {
- struct ConcreteIterator iterator;
-};
-
-
-struct BFSProcedure {
-
- struct BFSInput input;
- struct PAList adj;
+    ArrayListCount count;
 
 
 };
-# 3 "src/ArrayList/ArrayList.c" 2
+# 3 "./src/ArrayList/ArrayList.c" 2
 
 
-
-
-# 1 "include/ArrayList/ArrayList.h" 1
-# 10 "include/ArrayList/ArrayList.h"
-ArrayListObject ArrayListGet(ArrayListPosition);
-ArrayListSize ArrayListPerformSize();
-void ArrayListPut(ArrayListPosition, ArrayListObject);
-struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], struct ArrayListPosition);
-PAResult ArrayListPerformInit();
-PAResult ArrayListPerformCopy();
-
- PAResult ArrayListPerformRuin();
- PAResult ArrayListPerformDelete();
+# 1 "./include/ArrayList/ArrayList.h" 1
 
 
 
 
 
 
-ArrayListObject ArrayListPerformGetFirst(struct ArrayList);
-ArrayListObject ArrayListPerformGetLast(struct ArrayList);
-ArrayListObject ArrayListPerformPutFirst(struct ArrayList, ArrayListObject);
-ArrayListObject ArrayListPerformPutLast(struct ArrayList, ArrayListObject);
-# 8 "src/ArrayList/ArrayList.c" 2
-# 36 "src/ArrayList/ArrayList.c"
-PAResult ArrayListPerformCopy()
-{
-# 46 "src/ArrayList/ArrayList.c"
- PAResult result;
- return result;
-}
-# 60 "src/ArrayList/ArrayList.c"
-ArrayListSize ArrayListPerformSize()
-{
- ArrayListSize first;
- return first;
-# 75 "src/ArrayList/ArrayList.c"
-}
-ArrayListObject ArrayListPerformGetFirst(struct ArrayList List)
-{
- ArrayListObject first;
- first = List.objects[((int)1)];
- return first;
-}
-ArrayListObject ArrayListPerformGetLast(struct ArrayList List)
-{
 
- ArrayListObject last;
- struct ArrayListPosition place;
- place = List.place;
- last = List.objects[((place.position))];
- return last;
-}
-ArrayListObject ArrayListPerformPutFirst(struct ArrayList List, ArrayListObject Object)
-{
-# 105 "src/ArrayList/ArrayList.c"
- return Object;
-}
-
-ArrayListObject ArrayListPerformPutLast(struct ArrayList List, ArrayListObject Object)
-{
-
- return Object;
-}
-PAResult ArrayListPerformAdapt(struct ArrayList List)
-{
- PAResult result = { ((int)0) };
- return result;
-}
-PAResult ArrayListPerformMove(struct ArrayList List)
-{
- PAResult result = { ((int)0) };
- return result;
-# 137 "src/ArrayList/ArrayList.c"
-}
-
-
-
-
-struct ArrayList ArrayListPerformConstruct(ArrayListObject Data[], struct ArrayListPosition M)
+          struct ArrayList ArrayListPerformConstruct(struct ArrayList Array, ArrayListValue Data[], ArrayListCount Count);
+          struct ArrayList ArrayListPerformInit(struct ArrayList Array, ArrayListValue Data, ArrayListCount Count);
+          ArrayListValue ArrayListMoveComponentsLeft(struct ArrayList Array);
+          ArrayListValue ArrayListMoveComponentsRight(struct ArrayList Array);
+          ArrayListValue ArrayListPerformGetFirst(struct ArrayList Array);
+          ArrayListValue ArrayListPerformGetLast(struct ArrayList Array);
+          ArrayListValue ArrayListPerformPutFirst(struct ArrayList Array, ArrayListValue Data);
+          ArrayListValue ArrayListPerformPutLast(struct ArrayList Array, ArrayListValue Data);
+          ArrayListValue ArrayListRemoveFirst(struct ArrayList Array);
+          ArrayListValue ArrayListRemoveLast(struct ArrayList Array);
+          struct ArrayList ArrayListPerformCopy(struct ArrayList From, struct ArrayList To);
+          ArrayListSize ArrayListPerformSize(struct ArrayList Array);
+          int ArrayListPerformRuin(struct ArrayList PA);
+          int ArrayListPerformDelete(struct ArrayList PA);
+# 6 "./src/ArrayList/ArrayList.c" 2
+# 17 "./src/ArrayList/ArrayList.c"
+          struct ArrayList ArrayListPerformCopy(struct ArrayList From, struct ArrayList To)
 {
  struct ArrayList list;
  return list;
 }
-PAResult ArrayListPerformInit()
+          ArrayListValue ArrayListPerformGetFirst(struct ArrayList Array)
 {
- PAResult result;
- return result;
+ ArrayListValue first;
+ first = Array.elements[(1)];
+ return first;
+}
+          ArrayListValue ArrayListPerformGetLast(struct ArrayList Array)
+{
+ ArrayListValue last;
+ last = Array.elements[Array.count];
+ return last;
+}
+          ArrayListValue ArrayListPerformPutFirst(struct ArrayList Array, ArrayListValue Data)
+{
+ ArrayListValue last;
+ last = Array.count;
+ ArrayListMoveComponentsRight(Array);
+ Array.elements[(1)] = Data;
+
+ ArrayListValue first;
+ first = Array.elements[(1)];
+ Array.count++;
+ return first;
+}
+          ArrayListValue ArrayListRemoveFirst(struct ArrayList Array)
+{
+ ArrayListValue first;
+ Array.elements[(1)] = 0;
+ ArrayListMoveComponentsLeft(Array);
+ Array.count--;
+ first = Array.elements[(1)];
+ return first;
+
 
 
 
@@ -423,23 +126,123 @@ PAResult ArrayListPerformInit()
 
 
 }
-# 169 "src/ArrayList/ArrayList.c"
-ArrayListObject ArrayListGet(ArrayListPosition Position)
+          ArrayListValue ArrayListRemoveLast(struct ArrayList Array)
+{
+ ArrayListValue last;
+ Array.elements[Array.count] = 0;
+ Array.count--;
+ last = Array.elements[Array.count];
+ return last;
+}
+          ArrayListValue ArrayListMoveComponentsLeft(struct ArrayList Array)
+{
+ ArrayListPosition i = (1);
+ ArrayListValue aux;
+ while (i <= Array.count)
+ {
+  aux = Array.elements[i + 1];
+  Array.elements[i] = aux;
+  i++;
+ }
+ return Array.elements[(1)];
+}
+          ArrayListValue ArrayListMoveComponentsRight(struct ArrayList Array)
+{
+ ArrayListPosition i = Array.count;
+ ArrayListValue aux;
+ while (i >= (1))
+ {
+  aux = Array.elements[i];
+  Array.elements[i + 1] = aux;
+  i--;
+ }
+ return Array.elements[(1)];
+}
+          ArrayListValue ArrayListPerformPutLast(struct ArrayList Array, ArrayListValue Data)
+{
+
+ return Data;
+}
+          struct ArrayList ArrayListPerformConstruct(struct ArrayList Array, ArrayListValue Data[], ArrayListCount Count)
+{
+ ArrayListPosition i = (1);
+ ArrayListValue aux;
+ Array.count = Count;
+ while (i <= Count)
+ {
+  aux = Data[i-1];
+  Array.elements[i] = aux;
+  i++;
+ }
+ return Array;
+}
+          struct ArrayList ArrayListPerformInit(struct ArrayList Array, ArrayListValue Data, ArrayListCount Count)
+{
+ ArrayListPosition i;
+ ArrayListPosition j;
+ ArrayListValue aux;
+
+
+
+ i = (1);
+
+
+
+
+
+
+ aux = Data;
+
+
+ while (i <= Count)
+ {
+  Array.elements[i] = aux;
+
+
+
+
+
+
+  j = i + 1;
+  i = j;
+
+
+
+ }
+ return Array;
+}
+ArrayListObject ArrayListGet(struct ArrayListPosition Position)
 {
  ArrayListObject object;
  return object;
 }
-void ArrayListPut(ArrayListPosition Position, ArrayListObject ListObject)
+# 164 "./src/ArrayList/ArrayList.c"
+void ArrayListPut(struct ArrayListPosition Position, ArrayListObject ListObject)
 {
 
 }
-PAResult ArrayListPerformRuin()
+          int ArrayListPerformRuin(struct ArrayList PA)
 {
- PAResult result = { ((int)0) } ;
+ int result;
+ ArrayListPosition i = (1);
+ while (i <= PA.count)
+ {
+  PA.elements[i] = 0;
+  i++;
+ }
+ PA.count = 0;
+ result = ((int)0);
  return result;
 }
-PAResult ArrayListPerformDelete()
+          int ArrayListPerformDelete(struct ArrayList PA)
 {
- PAResult result = { ((int)0) };
+ int result;
+ ArrayListPosition i = (1);
+ while (i <= PA.count)
+ {
+  PA.elements[i] = 0;
+  i++;
+ }
+ result = ((int)0);
  return result;
 }

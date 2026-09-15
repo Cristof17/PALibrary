@@ -7,7 +7,7 @@
 #ifdef _WIN95
 //#define short HALF_PTR;
 #ifndef _64BIT
-#define PANumber int
+// #define PANumber int
 #define PAInt int
 #define PABool int
 #define PAResult int
@@ -22,7 +22,7 @@
 #else
 // typedef int PANumber;
 #ifndef _64BIT
-#define PANumber int
+// #define PANumber int
 #define PAInt int
 #define PABool int
 #define PAResult int
@@ -187,7 +187,7 @@ struct PAResource {
 	// struct
 	// PA_INt
 	// PAInt value;
-	struct PANumber value;
+	PANumber value;
 	// PADDING_1_BYTE(0);
 };
 struct PAStatus {

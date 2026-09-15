@@ -1,3 +1,480 @@
+# 1 "./src/PA/Count.c"
+# 1 "<built-in>" 1
+# 1 "<built-in>" 3
+# 466 "<built-in>" 3
+# 1 "<command line>" 1
+# 1 "<built-in>" 2
+# 1 "./src/PA/Count.c" 2
 
 
-./src/PA/Count.c
+# 1 "./include/types.h" 1
+
+
+
+
+
+# 1 "./include/defs.h" 1
+# 7 "./include/types.h" 2
+# 54 "./include/types.h"
+struct Adapter;
+struct PADestination;
+struct PAArrow;
+
+
+
+
+struct PAData;
+
+struct NormalTree;
+struct Adaptee;
+
+
+
+
+struct PAResource;
+struct PACount;
+struct PANormalTree;
+struct PATransposeTree;
+
+
+
+
+
+
+struct PAInput;
+struct PAOutput;
+
+struct PAData;
+struct PAValue;
+struct List;
+struct PAList;
+struct PAStatus;
+
+
+
+
+
+struct PAElement;
+struct PADestination;
+struct PAPair;
+struct PAArrow;
+struct BFSInput;
+struct BFSRecord;
+struct BFSOutput;
+struct PASeries;
+struct PATree;
+struct PALink;
+# 112 "./include/types.h"
+struct AdapterTarget;
+struct AdapterClient;
+struct Adapter;
+
+
+struct Adaptee;
+
+struct Adapter;
+struct IteratorClient;
+struct Target;
+struct Builder;
+struct Director;
+struct NormalTree;
+struct Product ;
+struct TransposeTree;
+struct IteratorAggregate;
+struct IteratorConcreteAggregate;
+struct IteratorConcreteIterator;
+struct IteratorIterator ;
+struct BuilderClient ;
+struct BFSProcedure;
+struct Input;
+struct Algorithm;
+struct Output;
+struct FlyweightClient;
+struct FlyweightFlyweightFactory;
+struct FlyweightConcreteFlyweight;
+struct FlyweightUnsharedConcreteFlyweight;
+struct FlyweightFlyweight;
+struct BridgeAbstraction;
+struct BridgeClient;
+struct BridgeConcreteImplementorA;
+struct BridgeConcreteImplementorB;
+struct BridgeImplementor;
+struct PrototypePrototype;
+struct PrototypeClient;
+
+
+
+
+
+
+struct PrototypeConcretePrototype1;
+struct PrototypeConcretePrototype2;
+struct Facade;
+# 169 "./include/types.h"
+struct Output {
+
+};
+struct Input {
+ ;
+};
+
+
+
+struct ArrayListPosition {
+ int position;
+};
+struct ArrayList {
+
+ struct ArrayListPosition place;
+ int objects[2];
+};
+struct PAResource {
+
+
+
+ PANumber value;
+
+};
+struct PAStatus {
+ struct PAResource visited;
+};
+struct PAData {
+ struct PAResource Resource;
+
+};
+struct PAElement {
+
+ struct PAData index;
+
+ struct PAStatus status;
+
+
+};
+struct PAFeature {
+ int kind;
+};
+struct PACount {
+
+ struct PANumber number;
+};
+
+
+struct PASeries {
+ struct PACount m;
+
+ struct PAElement adj[2];
+};
+struct PAList {
+ struct PACount n;
+ struct PASeries neigh[2];
+
+};
+struct FlyweightFlyweightClient {
+
+
+ struct PASeries series;
+};
+struct FlyweightFlyweight {
+ struct PAElement allState;
+
+};
+struct FlyweightFlyweightFactory {
+ struct FlyweightFlyweight flyweight;
+
+};
+struct FlyweightConcreteFlyweight {
+ struct PAList list;
+
+};
+struct FlyweightUnsharedConcreteFlyweight {
+ struct PASeries intrinsicState;
+
+};
+struct PATree {
+ struct PACount n;
+ struct PACount m;
+ struct PAElement source;
+ struct PAList adj;
+};
+struct BridgeAbstraction {
+ struct PAElement elements[2];
+};
+struct BridgeClient{
+ struct PATree tree;
+};
+struct BridgeConcreteImplementorA {
+ struct ArrayList list;
+};
+struct BridgeConcreteImplementorB {
+};
+# 273 "./include/types.h"
+struct PAInput {
+ struct PACount n;
+ struct PACount m;
+ struct PAElement source;
+};
+struct BFSRecord {
+struct PACount n;
+ struct PAList d;
+};
+struct PAOutput {
+ struct BFSRecord result;
+};
+
+
+
+
+struct PAValue {
+ int value;
+};
+struct PADestination {
+    struct PAElement element;
+};
+struct PAPair {
+ struct
+ PAElement Node;
+ struct PAElement Neigh;
+ unsigned char padding[2];
+};
+struct PAArrow {
+ struct PAPair p;
+};
+struct BFSInput {
+ struct PACount n;
+ struct PACount m;
+ struct PAElement source;
+};
+struct BFSOutput {
+ struct BFSRecord result;
+};
+# 320 "./include/types.h"
+struct PALink {
+ struct PAPair p;
+
+};
+
+
+
+struct PANormalTree {
+ struct PATree tree;
+
+};
+struct PATransposeTree {
+ struct PATree tree;
+
+};
+struct FactoryProduct1 {
+ struct PANormalTree tree;
+};
+struct FactoryProduct2 {
+ struct PATransposeTree trans;
+};
+
+struct FactoryConcreteProduct
+{
+ struct PANormalTree tree;
+};
+struct FactoryConcreteCreator {
+
+ struct PANormalTree tree;
+};
+struct FactoryConcreteCreator2 {
+
+ struct PATransposeTree tree;
+};
+struct FactoryCreator
+{
+ struct PANormalTree normalTree;
+ struct PATransposeTree transposeTree;
+};
+struct FlyWeight {
+ int todo;
+};
+struct Adaptee {
+ struct ArrayList list;
+};
+struct Adapter {
+ struct Adaptee adaptee;
+
+};
+struct IteratorClient {
+ struct PATree tree;
+};
+struct AdapterTarget {
+ struct PAList list;
+
+};
+struct AdapterClient {
+ struct AdapterTarget target;
+};
+struct BuilderProduct {
+ struct PATree tree;
+};
+struct Builder {
+
+
+ struct BuilderProduct Product;
+};
+struct Director {
+ struct Builder builder;
+};
+struct IteratorIterator {
+ struct PAList series;
+};
+struct IteratorAggregate {
+ struct IteratorIterator iterator;
+};
+struct ConcreteBuilder {
+ struct Builder builder;
+};
+struct IteratorConcreteIterator {
+ int position;
+};
+struct IteratorConcreteAggregate {
+ struct IteratorConcreteIterator iterator;
+};
+
+
+struct PrototypePrototype {
+ struct PASeries adj;
+};
+struct PrototypeClient {
+ struct PrototypePrototype prototype;
+};
+struct PrototypeConcretePrototype1 {
+ struct PASeries adj;
+};
+struct PrototypeConcretePrototype2 {
+ struct PASeries adj_trans;
+};
+struct BFSProcedure {
+
+ struct BFSInput input;
+ struct PAList adj;
+
+
+};
+struct Facade {
+ struct PASeries series;
+ struct PACount size;
+ struct PAList list;
+ struct PAElement element;
+ struct PALink link;
+ struct PAData data;
+ struct FactoryCreator factory;
+};
+# 4 "./src/PA/Count.c" 2
+
+
+# 1 "./include/PA/Count.h" 1
+# 13 "./include/PA/Count.h"
+          struct PACount PACountPerformConstruct();
+          struct PACount PACountPerformInit(struct PACount Count, struct PANumber Number);
+          struct PACount PACountPerformCopy(struct PACount from, struct PACount to);
+
+
+
+          struct PACount PACountPerformRuin(struct PACount);
+
+
+          struct PACount PACountPerformDelete(struct PACount PA);
+          int PACountOperatorLess(struct PACount,struct PACount);
+          int PACountOperatorEqual(struct PACount,struct PACount);
+          int PACountOperatorGreater(struct PACount,struct PACount);
+          int PACountOperatorNotEqual(struct PACount,struct PACount);
+# 7 "./src/PA/Count.c" 2
+# 1 "./include/PA/Number.h" 1
+
+
+
+
+          struct PANumber PANumberPerformConstruct();
+          struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char Value);
+          struct PANumber PANumberPerformDelete(struct PANumber);
+          struct PANumber PANumberPerformRuin(struct PANumber);
+          struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to);
+          int PANumberOperatorEqual(struct PANumber one, struct PANumber other);
+          int PANumberOperatorNotEqual(struct PANumber one, struct PANumber other);
+          int PANumberOperatorLess(struct PANumber one, struct PANumber other);
+          int PANumberOperatorGreater(struct PANumber one, struct PANumber other);
+# 8 "./src/PA/Count.c" 2
+
+
+
+
+
+
+
+          struct PACount PACountPerformConstruct()
+{
+    struct PACount zies;
+
+    zies.number = PANumberPerformConstruct();
+    zies = PACountPerformInit(zies,zies.number);
+
+
+    return zies;
+}
+          struct PACount PACountPerformInit(struct PACount Count, struct PANumber Value)
+{
+
+    struct PACount temp;
+
+
+    temp.number = PANumberPerformConstruct();
+
+    Count = temp;
+
+    return Count;
+
+
+
+
+
+
+}
+          struct PACount PACountPerformRuin(struct PACount PA)
+{
+# 70 "./src/PA/Count.c"
+    return PA;
+}
+          struct PACount PACountPerformDelete(struct PACount PA)
+{
+    PA.number.val = 0;
+    return PA;
+
+
+
+}
+int PACountPerformPrint(struct PACount Count)
+{
+    int result;
+    return result;
+}
+          struct PACount PACountPerformCopy(struct PACount from, struct PACount to)
+{
+    struct PACount temp;
+    temp.number = PANumberPerformCopy(from.number,to.number);
+    to.number = temp.number;
+    return to;
+}
+          int PAElementOperatorLess(struct PAElement one, struct PAElement other)
+{
+    int result;
+    return result;
+}
+          int PAElementOperatorEqual(struct PAElement one,struct PAElement other)
+{
+    int result;
+    return result;
+}
+          int PAElementOperatorGreater(struct PAElement one, struct PAElement other)
+{
+    int result;
+    return result;
+}
+          int PAElementOperatorNotEqual(struct PAElement one, struct PAElement other)
+{
+    int result;
+    return result;
+}

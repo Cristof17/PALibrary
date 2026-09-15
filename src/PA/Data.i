@@ -1,3 +1,480 @@
+# 1 "./src/PA/Data.c"
+# 1 "<built-in>" 1
+# 1 "<built-in>" 3
+# 466 "<built-in>" 3
+# 1 "<command line>" 1
+# 1 "<built-in>" 2
+# 1 "./src/PA/Data.c" 2
 
 
-./src/PA/Data.c
+# 1 "./include/PA/Data.h" 1
+
+
+
+
+
+
+# 1 "./include/types.h" 1
+
+
+
+
+
+# 1 "./include/defs.h" 1
+# 7 "./include/types.h" 2
+# 54 "./include/types.h"
+struct Adapter;
+struct PADestination;
+struct PAArrow;
+
+
+
+
+struct PAData;
+
+struct NormalTree;
+struct Adaptee;
+
+
+
+
+struct PAResource;
+struct PACount;
+struct PANormalTree;
+struct PATransposeTree;
+
+
+
+
+
+
+struct PAInput;
+struct PAOutput;
+
+struct PAData;
+struct PAValue;
+struct List;
+struct PAList;
+struct PAStatus;
+
+
+
+
+
+struct PAElement;
+struct PADestination;
+struct PAPair;
+struct PAArrow;
+struct BFSInput;
+struct BFSRecord;
+struct BFSOutput;
+struct PASeries;
+struct PATree;
+struct PALink;
+# 112 "./include/types.h"
+struct AdapterTarget;
+struct AdapterClient;
+struct Adapter;
+
+
+struct Adaptee;
+
+struct Adapter;
+struct IteratorClient;
+struct Target;
+struct Builder;
+struct Director;
+struct NormalTree;
+struct Product ;
+struct TransposeTree;
+struct IteratorAggregate;
+struct IteratorConcreteAggregate;
+struct IteratorConcreteIterator;
+struct IteratorIterator ;
+struct BuilderClient ;
+struct BFSProcedure;
+struct Input;
+struct Algorithm;
+struct Output;
+struct FlyweightClient;
+struct FlyweightFlyweightFactory;
+struct FlyweightConcreteFlyweight;
+struct FlyweightUnsharedConcreteFlyweight;
+struct FlyweightFlyweight;
+struct BridgeAbstraction;
+struct BridgeClient;
+struct BridgeConcreteImplementorA;
+struct BridgeConcreteImplementorB;
+struct BridgeImplementor;
+struct PrototypePrototype;
+struct PrototypeClient;
+
+
+
+
+
+
+struct PrototypeConcretePrototype1;
+struct PrototypeConcretePrototype2;
+struct Facade;
+# 169 "./include/types.h"
+struct Output {
+
+};
+struct Input {
+ ;
+};
+
+
+
+struct ArrayListPosition {
+ int position;
+};
+struct ArrayList {
+
+ struct ArrayListPosition place;
+ int objects[2];
+};
+struct PAResource {
+
+
+
+ PANumber value;
+
+};
+struct PAStatus {
+ struct PAResource visited;
+};
+struct PAData {
+ struct PAResource Resource;
+
+};
+struct PAElement {
+
+ struct PAData index;
+
+ struct PAStatus status;
+
+
+};
+struct PAFeature {
+ int kind;
+};
+struct PACount {
+
+ struct PANumber number;
+};
+
+
+struct PASeries {
+ struct PACount m;
+
+ struct PAElement adj[2];
+};
+struct PAList {
+ struct PACount n;
+ struct PASeries neigh[2];
+
+};
+struct FlyweightFlyweightClient {
+
+
+ struct PASeries series;
+};
+struct FlyweightFlyweight {
+ struct PAElement allState;
+
+};
+struct FlyweightFlyweightFactory {
+ struct FlyweightFlyweight flyweight;
+
+};
+struct FlyweightConcreteFlyweight {
+ struct PAList list;
+
+};
+struct FlyweightUnsharedConcreteFlyweight {
+ struct PASeries intrinsicState;
+
+};
+struct PATree {
+ struct PACount n;
+ struct PACount m;
+ struct PAElement source;
+ struct PAList adj;
+};
+struct BridgeAbstraction {
+ struct PAElement elements[2];
+};
+struct BridgeClient{
+ struct PATree tree;
+};
+struct BridgeConcreteImplementorA {
+ struct ArrayList list;
+};
+struct BridgeConcreteImplementorB {
+};
+# 273 "./include/types.h"
+struct PAInput {
+ struct PACount n;
+ struct PACount m;
+ struct PAElement source;
+};
+struct BFSRecord {
+struct PACount n;
+ struct PAList d;
+};
+struct PAOutput {
+ struct BFSRecord result;
+};
+
+
+
+
+struct PAValue {
+ int value;
+};
+struct PADestination {
+    struct PAElement element;
+};
+struct PAPair {
+ struct
+ PAElement Node;
+ struct PAElement Neigh;
+ unsigned char padding[2];
+};
+struct PAArrow {
+ struct PAPair p;
+};
+struct BFSInput {
+ struct PACount n;
+ struct PACount m;
+ struct PAElement source;
+};
+struct BFSOutput {
+ struct BFSRecord result;
+};
+# 320 "./include/types.h"
+struct PALink {
+ struct PAPair p;
+
+};
+
+
+
+struct PANormalTree {
+ struct PATree tree;
+
+};
+struct PATransposeTree {
+ struct PATree tree;
+
+};
+struct FactoryProduct1 {
+ struct PANormalTree tree;
+};
+struct FactoryProduct2 {
+ struct PATransposeTree trans;
+};
+
+struct FactoryConcreteProduct
+{
+ struct PANormalTree tree;
+};
+struct FactoryConcreteCreator {
+
+ struct PANormalTree tree;
+};
+struct FactoryConcreteCreator2 {
+
+ struct PATransposeTree tree;
+};
+struct FactoryCreator
+{
+ struct PANormalTree normalTree;
+ struct PATransposeTree transposeTree;
+};
+struct FlyWeight {
+ int todo;
+};
+struct Adaptee {
+ struct ArrayList list;
+};
+struct Adapter {
+ struct Adaptee adaptee;
+
+};
+struct IteratorClient {
+ struct PATree tree;
+};
+struct AdapterTarget {
+ struct PAList list;
+
+};
+struct AdapterClient {
+ struct AdapterTarget target;
+};
+struct BuilderProduct {
+ struct PATree tree;
+};
+struct Builder {
+
+
+ struct BuilderProduct Product;
+};
+struct Director {
+ struct Builder builder;
+};
+struct IteratorIterator {
+ struct PAList series;
+};
+struct IteratorAggregate {
+ struct IteratorIterator iterator;
+};
+struct ConcreteBuilder {
+ struct Builder builder;
+};
+struct IteratorConcreteIterator {
+ int position;
+};
+struct IteratorConcreteAggregate {
+ struct IteratorConcreteIterator iterator;
+};
+
+
+struct PrototypePrototype {
+ struct PASeries adj;
+};
+struct PrototypeClient {
+ struct PrototypePrototype prototype;
+};
+struct PrototypeConcretePrototype1 {
+ struct PASeries adj;
+};
+struct PrototypeConcretePrototype2 {
+ struct PASeries adj_trans;
+};
+struct BFSProcedure {
+
+ struct BFSInput input;
+ struct PAList adj;
+
+
+};
+struct Facade {
+ struct PASeries series;
+ struct PACount size;
+ struct PAList list;
+ struct PAElement element;
+ struct PALink link;
+ struct PAData data;
+ struct FactoryCreator factory;
+};
+# 8 "./include/PA/Data.h" 2
+
+
+
+          struct PAData PADataPerformConstruct();
+          struct PAData PADataPerformInit(struct PAData, struct PAResource);
+
+
+          struct PAData PADataPerformRuin(struct PAData);
+          struct PAData PADataPerformDelete(struct PAData);
+          struct PAData PADataPerformCopy(struct PAData from, struct PAData to);
+          int PADataOperatorLess(struct PAData,struct PAData);
+          int PADataOperatorEqual(struct PAData,struct PAData);
+          int PADataOperatorGreater(struct PAData,struct PAData);
+          int PADataOperatorNotEqual(struct PAData,struct PAData);
+# 4 "./src/PA/Data.c" 2
+# 1 "./include/PA/Resource.h" 1
+
+
+
+
+
+          struct PAResource PAResourcePerformInit(struct PAResource, struct PANumber);
+          struct PAResource PAResourcePerformConstruct();
+          struct PAResource PAResourcePerformRuin(struct PAResource);
+          struct PAResource PAResourcePerformDelete(struct PAResource);
+          struct PAResource PAResourcePerformCopy(struct PAResource, struct PAResource);
+          int PAResourceOperatorEqual(struct PAResource one,struct PAResource other);
+          int PAResourceOperatorNotEqual(struct PAResource one,struct PAResource other);
+# 5 "./src/PA/Data.c" 2
+
+
+
+
+
+
+
+
+          struct PAData PADataPerformConstruct()
+{
+    struct PAData data;
+
+    data.Resource = PAResourcePerformConstruct();
+    data = PADataPerformInit(data, data.Resource);
+
+
+
+
+
+    return data;
+}
+          struct PAData PADataPerformInit(struct PAData Data, struct PAResource Value)
+{
+    struct PAData temp;
+    temp.Resource = PAResourcePerformConstruct();
+    Data = temp;
+    Data.Resource.value.val = Value.value.val;
+    Data.Resource.value = Value.value;
+
+    return Data;
+
+
+
+
+}
+          struct PAData PADataPerformCopy(struct PAData from, struct PAData to)
+{
+    struct PAData temp;
+    temp.Resource = PAResourcePerformCopy(from.Resource, temp.Resource);
+    to.Resource = temp.Resource;
+    return to;
+}
+          int PADataOperatorLess(struct PAData one, struct PAData other)
+{
+    int result;
+    return result;
+}
+          int PADataOperatorEqual(struct PAData one, struct PAData other)
+{
+    int result;
+    return result;
+}
+          int PADataOperatorGreater(struct PAData one, struct PAData other)
+{
+    int result;
+    return result;
+}
+          int PADataOperatorNotEqual(struct PAData one, struct PAData other)
+{
+    int result;
+    return result;
+}
+# 84 "./src/PA/Data.c"
+          struct PAData PADataPerformRuin(struct PAData Data)
+{
+
+
+
+    return Data;
+
+
+}
+          struct PAData PADataPerformDelete(struct PAData PA)
+{
+    return PA;
+
+
+}
