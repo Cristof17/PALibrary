@@ -17,37 +17,39 @@
 
 # 1 "./include/defs.h" 1
 # 7 "./include/types.h" 2
-# 17 "./include/types.h"
-typedef int ArrayListSize;
 
 
 
 
 
-typedef int ArrayListObject;
+
+
+
+typedef long ArrayListSize;
 
 
 
 
 
+typedef long ArrayListObject;
+
+
+
+
+typedef long ArrayListPosition;
 typedef long ArrayListOffset;
-typedef int ArrayListPosition;
-
-
-
-
-typedef int ArrayListCount;
-
-
-
-
-typedef int ArrayListValue;
 
 
 
 
 
+typedef long ArrayListCount;
 
+
+
+
+typedef long ArrayListValue;
+# 47 "./include/types.h"
 struct ArrayListPosition {
     ArrayListPosition position;
 };
@@ -152,7 +154,7 @@ struct PrototypeClient;
 struct PANumber {
 
 
- int val;
+ long long val;
 
 };
 struct PrototypeConcretePrototype1;
@@ -189,7 +191,7 @@ struct PAElement {
 
 };
 struct PAFeature {
- int kind;
+ long long kind;
 };
 struct PACount {
 
@@ -263,7 +265,7 @@ struct PAOutput {
 
 
 struct PAValue {
- int value;
+ long long value;
 };
 struct PADestination {
     struct PAElement element;
@@ -326,7 +328,7 @@ struct FactoryCreator
  struct PATransposeTree transposeTree;
 };
 struct FlyWeight {
- int todo;
+ long long todo;
 };
 struct Adaptee {
  struct ArrayList list;
@@ -366,7 +368,7 @@ struct ConcreteBuilder {
  struct Builder builder;
 };
 struct IteratorConcreteIterator {
- int position;
+ long long position;
 };
 struct IteratorConcreteAggregate {
  struct IteratorConcreteIterator iterator;

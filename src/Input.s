@@ -13,15 +13,14 @@ _InputPerformConstruct:                 ; @InputPerformConstruct
 _InputPerformInit:                      ; @InputPerformInit
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
-	mov	x8, x0
-	str	w8, [sp, #24]
-	mov	x8, x1
-	str	w8, [sp, #20]
-	stur	x3, [sp, #12]
+	sub	sp, sp, #48
+	.cfi_def_cfa_offset 48
+	str	x0, [sp, #32]
+	str	x1, [sp, #24]
+	str	x3, [sp, #8]
+	str	x4, [sp, #16]
 	str	x2, [sp]
-	add	sp, sp, #32
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function

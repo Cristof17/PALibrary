@@ -5,39 +5,42 @@
 _PALinkPerformConstruct:                ; @PALinkPerformConstruct
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #128
-	stp	x29, x30, [sp, #112]            ; 16-byte Folded Spill
-	add	x29, sp, #112
+	sub	sp, sp, #224
+	stp	x29, x30, [sp, #208]            ; 16-byte Folded Spill
+	add	x29, sp, #208
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	str	x8, [sp, #8]                    ; 8-byte Folded Spill
-	sub	x8, x29, #20
-	bl	_PAPairPerformConstruct
-	ldr	x8, [sp, #8]                    ; 8-byte Folded Reload
-	ldur	q0, [x29, #-20]
-	str	q0, [x8]
-	ldur	w9, [x29, #-4]
-	str	w9, [x8, #16]
-	ldr	q0, [x8]
-	add	x0, sp, #48
-	str	q0, [sp, #48]
-	ldr	w9, [x8, #16]
-	str	w9, [sp, #64]
-	ldr	q0, [x8]
-	add	x1, sp, #16
-	str	q0, [sp, #16]
-	ldr	w8, [x8, #16]
-	str	w8, [sp, #32]
+	str	x8, [sp, #24]                   ; 8-byte Folded Spill
 	sub	x8, x29, #40
+	str	x8, [sp]                        ; 8-byte Folded Spill
+	bl	_PAPairPerformConstruct
+	ldr	x1, [sp]                        ; 8-byte Folded Reload
+	ldr	x0, [sp, #24]                   ; 8-byte Folded Reload
+	mov	x2, #40                         ; =0x28
+	str	x2, [sp, #40]                   ; 8-byte Folded Spill
+	bl	_memcpy
+	ldr	x1, [sp, #24]                   ; 8-byte Folded Reload
+	ldr	x2, [sp, #40]                   ; 8-byte Folded Reload
+	add	x0, sp, #88
+	str	x0, [sp, #8]                    ; 8-byte Folded Spill
+	bl	_memcpy
+	ldr	x1, [sp, #24]                   ; 8-byte Folded Reload
+	ldr	x2, [sp, #40]                   ; 8-byte Folded Reload
+	add	x0, sp, #48
+	str	x0, [sp, #16]                   ; 8-byte Folded Spill
+	bl	_memcpy
+	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
+	ldr	x1, [sp, #16]                   ; 8-byte Folded Reload
+	sub	x8, x29, #80
+	str	x8, [sp, #32]                   ; 8-byte Folded Spill
 	bl	_PALinkPerformInit
-	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload
-	ldur	q0, [x29, #-40]
-	str	q0, [x9]
-	ldur	w8, [x29, #-24]
-	str	w8, [x9, #16]
-	ldp	x29, x30, [sp, #112]            ; 16-byte Folded Reload
-	add	sp, sp, #128
+	ldr	x0, [sp, #24]                   ; 8-byte Folded Reload
+	ldr	x1, [sp, #32]                   ; 8-byte Folded Reload
+	ldr	x2, [sp, #40]                   ; 8-byte Folded Reload
+	bl	_memcpy
+	ldp	x29, x30, [sp, #208]            ; 16-byte Folded Reload
+	add	sp, sp, #224
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -46,34 +49,35 @@ _PALinkPerformConstruct:                ; @PALinkPerformConstruct
 _PALinkPerformInit:                     ; @PALinkPerformInit
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #112
-	stp	x29, x30, [sp, #96]             ; 16-byte Folded Spill
-	add	x29, sp, #96
+	sub	sp, sp, #160
+	stp	x29, x30, [sp, #144]            ; 16-byte Folded Spill
+	add	x29, sp, #144
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	str	x8, [sp, #16]                   ; 8-byte Folded Spill
-	str	x0, [sp, #8]                    ; 8-byte Folded Spill
+	str	x8, [sp, #24]                   ; 8-byte Folded Spill
+	str	x0, [sp, #32]                   ; 8-byte Folded Spill
 	stur	x0, [x29, #-8]
 	stur	x1, [x29, #-16]
-	add	x8, sp, #28
+	add	x8, sp, #48
+	str	x8, [sp, #8]                    ; 8-byte Folded Spill
 	bl	_PAPairPerformConstruct
-	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
-	ldr	x9, [sp, #16]                   ; 8-byte Folded Reload
-	ldur	q0, [sp, #28]
-	str	q0, [sp, #48]
-	ldr	w8, [sp, #44]
-	str	w8, [sp, #64]
-	ldr	q0, [sp, #48]
-	str	q0, [x0]
-	ldr	w8, [sp, #64]
-	str	w8, [x0, #16]
-	ldr	q0, [x0]
-	str	q0, [x9]
-	ldr	w8, [x0, #16]
-	str	w8, [x9, #16]
-	ldp	x29, x30, [sp, #96]             ; 16-byte Folded Reload
-	add	sp, sp, #112
+	ldr	x1, [sp, #8]                    ; 8-byte Folded Reload
+	sub	x0, x29, #56
+	str	x0, [sp, #16]                   ; 8-byte Folded Spill
+	mov	x2, #40                         ; =0x28
+	str	x2, [sp, #40]                   ; 8-byte Folded Spill
+	bl	_memcpy
+	ldr	x0, [sp, #32]                   ; 8-byte Folded Reload
+	ldr	x1, [sp, #16]                   ; 8-byte Folded Reload
+	ldr	x2, [sp, #40]                   ; 8-byte Folded Reload
+	bl	_memcpy
+	ldr	x0, [sp, #24]                   ; 8-byte Folded Reload
+	ldr	x1, [sp, #32]                   ; 8-byte Folded Reload
+	ldr	x2, [sp, #40]                   ; 8-byte Folded Reload
+	bl	_memcpy
+	ldp	x29, x30, [sp, #144]            ; 16-byte Folded Reload
+	add	sp, sp, #160
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -82,36 +86,36 @@ _PALinkPerformInit:                     ; @PALinkPerformInit
 _PALinkPerformRuin:                     ; @PALinkPerformRuin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #80
-	stp	x29, x30, [sp, #64]             ; 16-byte Folded Spill
-	add	x29, sp, #64
+	sub	sp, sp, #144
+	stp	x29, x30, [sp, #128]            ; 16-byte Folded Spill
+	add	x29, sp, #128
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	str	x8, [sp, #8]                    ; 8-byte Folded Spill
-	mov	x8, x0
-	str	x8, [sp]                        ; 8-byte Folded Spill
-	mov	x0, x8
+	str	x8, [sp, #16]                   ; 8-byte Folded Spill
+	mov	x1, x0
+	str	x1, [sp, #24]                   ; 8-byte Folded Spill
+	mov	x0, x1
 	stur	x0, [x29, #-8]
-	ldr	q0, [x8]
-	add	x0, sp, #16
-	str	q0, [sp, #16]
-	ldr	w8, [x8, #16]
-	str	w8, [sp, #32]
-	sub	x8, x29, #28
-	bl	_PAPairPerformRuin
+	add	x0, sp, #40
+	str	x0, [sp]                        ; 8-byte Folded Spill
+	mov	x2, #40                         ; =0x28
+	str	x2, [sp, #32]                   ; 8-byte Folded Spill
+	bl	_memcpy
 	ldr	x0, [sp]                        ; 8-byte Folded Reload
-	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload
-	ldur	q0, [x29, #-28]
-	str	q0, [x0]
-	ldur	w8, [x29, #-12]
-	str	w8, [x0, #16]
-	ldr	q0, [x0]
-	str	q0, [x9]
-	ldr	w8, [x0, #16]
-	str	w8, [x9, #16]
-	ldp	x29, x30, [sp, #64]             ; 16-byte Folded Reload
-	add	sp, sp, #80
+	sub	x8, x29, #48
+	str	x8, [sp, #8]                    ; 8-byte Folded Spill
+	bl	_PAPairPerformRuin
+	ldr	x1, [sp, #8]                    ; 8-byte Folded Reload
+	ldr	x0, [sp, #24]                   ; 8-byte Folded Reload
+	ldr	x2, [sp, #32]                   ; 8-byte Folded Reload
+	bl	_memcpy
+	ldr	x0, [sp, #16]                   ; 8-byte Folded Reload
+	ldr	x1, [sp, #24]                   ; 8-byte Folded Reload
+	ldr	x2, [sp, #32]                   ; 8-byte Folded Reload
+	bl	_memcpy
+	ldp	x29, x30, [sp, #128]            ; 16-byte Folded Reload
+	add	sp, sp, #144
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -120,38 +124,41 @@ _PALinkPerformRuin:                     ; @PALinkPerformRuin
 _PALinkPerformCopy:                     ; @PALinkPerformCopy
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #128
-	stp	x29, x30, [sp, #112]            ; 16-byte Folded Spill
-	add	x29, sp, #112
+	sub	sp, sp, #208
+	stp	x29, x30, [sp, #192]            ; 16-byte Folded Spill
+	add	x29, sp, #192
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	str	x8, [sp, #8]                    ; 8-byte Folded Spill
-	mov	x9, x0
+	str	x8, [sp, #32]                   ; 8-byte Folded Spill
+	str	x0, [sp]                        ; 8-byte Folded Spill
 	mov	x8, x1
-	mov	x0, x9
+	ldr	x1, [sp]                        ; 8-byte Folded Reload
+	str	x8, [sp, #8]                    ; 8-byte Folded Spill
+	mov	x0, x1
 	stur	x0, [x29, #-8]
-	mov	x1, x8
-	stur	x1, [x29, #-16]
-	ldr	q0, [x9]
-	add	x0, sp, #48
-	str	q0, [sp, #48]
-	ldr	w9, [x9, #16]
-	str	w9, [sp, #64]
-	ldr	q0, [x8]
-	add	x1, sp, #16
-	str	q0, [sp, #16]
-	ldr	w8, [x8, #16]
-	str	w8, [sp, #32]
-	sub	x8, x29, #36
+	stur	x8, [x29, #-16]
+	add	x0, sp, #96
+	str	x0, [sp, #16]                   ; 8-byte Folded Spill
+	mov	x2, #40                         ; =0x28
+	str	x2, [sp, #48]                   ; 8-byte Folded Spill
+	bl	_memcpy
+	ldr	x1, [sp, #8]                    ; 8-byte Folded Reload
+	ldr	x2, [sp, #48]                   ; 8-byte Folded Reload
+	add	x0, sp, #56
+	str	x0, [sp, #24]                   ; 8-byte Folded Spill
+	bl	_memcpy
+	ldr	x0, [sp, #16]                   ; 8-byte Folded Reload
+	ldr	x1, [sp, #24]                   ; 8-byte Folded Reload
+	sub	x8, x29, #56
+	str	x8, [sp, #40]                   ; 8-byte Folded Spill
 	bl	_PAPairPerformCopy
-	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload
-	ldur	q0, [x29, #-36]
-	str	q0, [x9]
-	ldur	w8, [x29, #-20]
-	str	w8, [x9, #16]
-	ldp	x29, x30, [sp, #112]            ; 16-byte Folded Reload
-	add	sp, sp, #128
+	ldr	x0, [sp, #32]                   ; 8-byte Folded Reload
+	ldr	x1, [sp, #40]                   ; 8-byte Folded Reload
+	ldr	x2, [sp, #48]                   ; 8-byte Folded Reload
+	bl	_memcpy
+	ldp	x29, x30, [sp, #192]            ; 16-byte Folded Reload
+	add	sp, sp, #208
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -160,36 +167,36 @@ _PALinkPerformCopy:                     ; @PALinkPerformCopy
 _PALinkPerformDelete:                   ; @PALinkPerformDelete
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #80
-	stp	x29, x30, [sp, #64]             ; 16-byte Folded Spill
-	add	x29, sp, #64
+	sub	sp, sp, #144
+	stp	x29, x30, [sp, #128]            ; 16-byte Folded Spill
+	add	x29, sp, #128
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	str	x8, [sp, #8]                    ; 8-byte Folded Spill
-	mov	x8, x0
-	str	x8, [sp]                        ; 8-byte Folded Spill
-	mov	x0, x8
+	str	x8, [sp, #16]                   ; 8-byte Folded Spill
+	mov	x1, x0
+	str	x1, [sp, #24]                   ; 8-byte Folded Spill
+	mov	x0, x1
 	stur	x0, [x29, #-8]
-	ldr	q0, [x8]
-	add	x0, sp, #16
-	str	q0, [sp, #16]
-	ldr	w8, [x8, #16]
-	str	w8, [sp, #32]
-	sub	x8, x29, #28
-	bl	_PAPairPerformDelete
+	add	x0, sp, #40
+	str	x0, [sp]                        ; 8-byte Folded Spill
+	mov	x2, #40                         ; =0x28
+	str	x2, [sp, #32]                   ; 8-byte Folded Spill
+	bl	_memcpy
 	ldr	x0, [sp]                        ; 8-byte Folded Reload
-	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload
-	ldur	q0, [x29, #-28]
-	str	q0, [x0]
-	ldur	w8, [x29, #-12]
-	str	w8, [x0, #16]
-	ldr	q0, [x0]
-	str	q0, [x9]
-	ldr	w8, [x0, #16]
-	str	w8, [x9, #16]
-	ldp	x29, x30, [sp, #64]             ; 16-byte Folded Reload
-	add	sp, sp, #80
+	sub	x8, x29, #48
+	str	x8, [sp, #8]                    ; 8-byte Folded Spill
+	bl	_PAPairPerformDelete
+	ldr	x1, [sp, #8]                    ; 8-byte Folded Reload
+	ldr	x0, [sp, #24]                   ; 8-byte Folded Reload
+	ldr	x2, [sp, #32]                   ; 8-byte Folded Reload
+	bl	_memcpy
+	ldr	x0, [sp, #16]                   ; 8-byte Folded Reload
+	ldr	x1, [sp, #24]                   ; 8-byte Folded Reload
+	ldr	x2, [sp, #32]                   ; 8-byte Folded Reload
+	bl	_memcpy
+	ldp	x29, x30, [sp, #128]            ; 16-byte Folded Reload
+	add	sp, sp, #144
 	ret
 	.cfi_endproc
                                         ; -- End function

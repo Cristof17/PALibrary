@@ -82,7 +82,7 @@ struct ArrayList {
 #define PAResult int
 #define ArrayListSize int
 #else
-#define PANumber long long
+// #define PANumber long long
 #define PAInt long long
 #define PABool int
 #define PAResult int
