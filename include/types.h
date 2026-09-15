@@ -6,25 +6,44 @@
 #include <defs.h>
 #ifdef _WIN95
 //#define short HALF_PTR;
-typedef PAInt int32_t;
-typedef int PAInt;
-typedef int PANumber;
-typedef PABool BOOL;
-typedef int PAResult;
-typedef int ArrayListSize;
-typedef int ArrayListObject;
+#ifndef _64BIT
+#define PANumber int
+#define PAInt int
+#define PABool int
+#define PAResult int
+#define ArrayListSize int
+#else
+#define PANumber long long
+#define PAInt long long
+#define PABool int
+#define PAResult int
+#define ArrayListSize long long
+#endif //64BIT	
 #else
 // typedef int PANumber;
-struct PANumber;
-typedef int PAInt;
+#ifndef _64BIT
+#define PANumber int
+#define PAInt int
+#define PABool int
+#define PAResult int
+#define ArrayListSize int
+#else
+#define PANumber long long
+#define PAInt long long
+#define PABool int
+#define PAResult int
+#define ArrayListSize long long
+#endif //#64BIT
+// struct PANumber;
+// typedef int PAInt;
 //#define PAInt int
 // typedef int PAResource;
-typedef int PABool;
-typedef int PAResult;
-typedef int ArrayListSize;
+// typedef int PABool;
+// typedef int PAResult;
+// typedef int ArrayListSize;
 // typedef int ArrayListObject;
 // typedef int ArrayListPosition;
-#endif
+#endif //WIN95
 // struct Client;
 //struct Client;
 // struct Builder;
@@ -126,12 +145,12 @@ struct BridgeConcreteImplementorB;
 struct BridgeImplementor;
 struct PrototypePrototype;
 struct PrototypeClient;
-struct PANumber {
-	//  val;
-	// long long val;
-	unsigned char val;
-	// PADDING_1_BYTE(0);
-};
+// struct PANumber {
+// 	//  val;
+// 	// long long val;
+// 	unsigned char val;
+// 	// PADDING_1_BYTE(0);
+// };
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
