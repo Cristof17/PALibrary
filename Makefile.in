@@ -534,6 +534,15 @@ srcdir=$(prefix)/src
 #CFLAGS+=-I$(abspath $(includedir)/Adapter)
 CPPFLAGS=
 CPPFLAGS+=-I$(prefix)/include -I$(prefix)
+ifeq ($(host-type),arm64)
+CPPFLAGS+=-D_64BIT
+endif
+ifeq ($(host-type),Aarch64)
+CPPFLAGS+=-D_64BIT
+endif
+ifeq ($(host-type),x86_64)
+CPPFLAGS+=-D_64BIT
+endif
 #libdir=$(prefix)/obj
 #datadir=dat
 #infodir=info
