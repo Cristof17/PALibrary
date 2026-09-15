@@ -47,11 +47,11 @@ typedef int ArrayListValue;
 
 
 
-#pragma pack(show)
+
 struct ArrayListPosition {
     ArrayListPosition position;
 };
-#pragma pack(show)
+
 struct ArrayList {
 
     ArrayListObject elements[2];
