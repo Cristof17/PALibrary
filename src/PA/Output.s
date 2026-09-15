@@ -25,7 +25,7 @@ _PAOutputPerformInit:                   ; @PAOutputPerformInit
 	stur	x8, [x29, #-8]
 	mov	x8, x1
 	stur	x8, [x29, #-16]
-	mov	x2, #48                         ; =0x30
+	mov	x2, #152                        ; =0x98
 	str	x2, [sp, #24]                   ; 8-byte Folded Spill
 	bl	_memcpy
 	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
@@ -53,7 +53,7 @@ _PAOutputPerformDelete:                 ; @PAOutputPerformDelete
 	ldr	x0, [sp]                        ; 8-byte Folded Reload
 	mov	x8, x1
 	str	x8, [sp, #8]
-	mov	x2, #48                         ; =0x30
+	mov	x2, #152                        ; =0x98
 	bl	_memcpy
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
@@ -76,7 +76,7 @@ _PAOutputPerformRuin:                   ; @PAOutputPerformRuin
 	ldr	x0, [sp]                        ; 8-byte Folded Reload
 	mov	x8, x1
 	str	x8, [sp, #8]
-	mov	x2, #48                         ; =0x30
+	mov	x2, #152                        ; =0x98
 	bl	_memcpy
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32

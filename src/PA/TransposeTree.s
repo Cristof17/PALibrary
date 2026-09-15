@@ -5,27 +5,27 @@
 _PATransposeTreePerformConstruct:       ; @PATransposeTreePerformConstruct
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #320
-	stp	x28, x27, [sp, #288]            ; 16-byte Folded Spill
-	stp	x29, x30, [sp, #304]            ; 16-byte Folded Spill
-	add	x29, sp, #304
+	stp	x28, x27, [sp, #-32]!           ; 16-byte Folded Spill
+	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
+	add	x29, sp, #16
+	sub	sp, sp, #704
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
 	.cfi_offset w27, -24
 	.cfi_offset w28, -32
 	str	x8, [sp, #24]                   ; 8-byte Folded Spill
-	sub	x8, x29, #76
+	sub	x8, x29, #180
 	str	x8, [sp]                        ; 8-byte Folded Spill
 	bl	_PATreePerformConstruct
 	ldr	x1, [sp]                        ; 8-byte Folded Reload
 	ldr	x0, [sp, #24]                   ; 8-byte Folded Reload
-	mov	x2, #60                         ; =0x3c
+	mov	x2, #164                        ; =0xa4
 	str	x2, [sp, #40]                   ; 8-byte Folded Spill
 	bl	_memcpy
 	ldr	x1, [sp, #24]                   ; 8-byte Folded Reload
 	ldr	x2, [sp, #40]                   ; 8-byte Folded Reload
-	add	x0, sp, #108
+	add	x0, sp, #212
 	str	x0, [sp, #8]                    ; 8-byte Folded Spill
 	bl	_memcpy
 	ldr	x1, [sp, #24]                   ; 8-byte Folded Reload
@@ -35,16 +35,16 @@ _PATransposeTreePerformConstruct:       ; @PATransposeTreePerformConstruct
 	bl	_memcpy
 	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
 	ldr	x1, [sp, #16]                   ; 8-byte Folded Reload
-	sub	x8, x29, #136
+	add	x8, sp, #376
 	str	x8, [sp, #32]                   ; 8-byte Folded Spill
 	bl	_PATransposeTreePerformInit
 	ldr	x0, [sp, #24]                   ; 8-byte Folded Reload
 	ldr	x1, [sp, #32]                   ; 8-byte Folded Reload
 	ldr	x2, [sp, #40]                   ; 8-byte Folded Reload
 	bl	_memcpy
-	ldp	x29, x30, [sp, #304]            ; 16-byte Folded Reload
-	ldp	x28, x27, [sp, #288]            ; 16-byte Folded Reload
-	add	sp, sp, #320
+	add	sp, sp, #704
+	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
+	ldp	x28, x27, [sp], #32             ; 16-byte Folded Reload
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -53,28 +53,31 @@ _PATransposeTreePerformConstruct:       ; @PATransposeTreePerformConstruct
 _PATransposeTreePerformInit:            ; @PATransposeTreePerformInit
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #192
-	stp	x29, x30, [sp, #176]            ; 16-byte Folded Spill
-	add	x29, sp, #176
+	sub	sp, sp, #416
+	stp	x28, x27, [sp, #384]            ; 16-byte Folded Spill
+	stp	x29, x30, [sp, #400]            ; 16-byte Folded Spill
+	add	x29, sp, #400
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
+	.cfi_offset w27, -24
+	.cfi_offset w28, -32
 	str	x8, [sp, #16]                   ; 8-byte Folded Spill
 	str	x0, [sp, #24]                   ; 8-byte Folded Spill
 	str	x1, [sp, #8]                    ; 8-byte Folded Spill
-	stur	x0, [x29, #-8]
-	stur	x1, [x29, #-16]
+	stur	x0, [x29, #-24]
+	stur	x1, [x29, #-32]
 	add	x8, sp, #40
 	str	x8, [sp]                        ; 8-byte Folded Spill
 	bl	_PATreePerformConstruct
 	ldr	x1, [sp]                        ; 8-byte Folded Reload
 	ldr	x0, [sp, #24]                   ; 8-byte Folded Reload
-	mov	x2, #60                         ; =0x3c
+	mov	x2, #164                        ; =0xa4
 	str	x2, [sp, #32]                   ; 8-byte Folded Spill
 	bl	_memcpy
 	ldr	x0, [sp, #24]                   ; 8-byte Folded Reload
 	ldr	x2, [sp, #32]                   ; 8-byte Folded Reload
-	sub	x1, x29, #76
+	sub	x1, x29, #196
 	bl	_memcpy
 	ldr	x0, [sp, #24]                   ; 8-byte Folded Reload
 	ldr	x1, [sp, #8]                    ; 8-byte Folded Reload
@@ -84,8 +87,9 @@ _PATransposeTreePerformInit:            ; @PATransposeTreePerformInit
 	ldr	x1, [sp, #24]                   ; 8-byte Folded Reload
 	ldr	x2, [sp, #32]                   ; 8-byte Folded Reload
 	bl	_memcpy
-	ldp	x29, x30, [sp, #176]            ; 16-byte Folded Reload
-	add	sp, sp, #192
+	ldp	x29, x30, [sp, #400]            ; 16-byte Folded Reload
+	ldp	x28, x27, [sp, #384]            ; 16-byte Folded Reload
+	add	sp, sp, #416
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -118,24 +122,27 @@ _PATransposeTreeRuin:                   ; @PATransposeTreeRuin
 _PATransposeTreePerformRuin:            ; @PATransposeTreePerformRuin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #192
-	stp	x29, x30, [sp, #176]            ; 16-byte Folded Spill
-	add	x29, sp, #176
+	sub	sp, sp, #416
+	stp	x28, x27, [sp, #384]            ; 16-byte Folded Spill
+	stp	x29, x30, [sp, #400]            ; 16-byte Folded Spill
+	add	x29, sp, #400
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
+	.cfi_offset w27, -24
+	.cfi_offset w28, -32
 	str	x8, [sp, #24]                   ; 8-byte Folded Spill
 	mov	x1, x0
 	str	x1, [sp, #32]                   ; 8-byte Folded Spill
 	mov	x0, x1
-	stur	x0, [x29, #-8]
+	stur	x0, [x29, #-24]
 	add	x0, sp, #48
 	str	x0, [sp, #8]                    ; 8-byte Folded Spill
-	mov	x2, #60                         ; =0x3c
+	mov	x2, #164                        ; =0xa4
 	str	x2, [sp, #40]                   ; 8-byte Folded Spill
 	bl	_memcpy
 	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
-	sub	x8, x29, #68
+	sub	x8, x29, #188
 	str	x8, [sp, #16]                   ; 8-byte Folded Spill
 	bl	_PATreePerformRuin
 	ldr	x1, [sp, #16]                   ; 8-byte Folded Reload
@@ -146,8 +153,9 @@ _PATransposeTreePerformRuin:            ; @PATransposeTreePerformRuin
 	ldr	x1, [sp, #32]                   ; 8-byte Folded Reload
 	ldr	x2, [sp, #40]                   ; 8-byte Folded Reload
 	bl	_memcpy
-	ldp	x29, x30, [sp, #176]            ; 16-byte Folded Reload
-	add	sp, sp, #192
+	ldp	x29, x30, [sp, #400]            ; 16-byte Folded Reload
+	ldp	x28, x27, [sp, #384]            ; 16-byte Folded Reload
+	add	sp, sp, #416
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -167,7 +175,7 @@ _PATransposeTreeDelete:                 ; @PATransposeTreeDelete
 	ldr	x0, [sp]                        ; 8-byte Folded Reload
 	mov	x8, x1
 	str	x8, [sp, #8]
-	mov	x2, #60                         ; =0x3c
+	mov	x2, #164                        ; =0xa4
 	bl	_memcpy
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32

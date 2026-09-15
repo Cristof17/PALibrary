@@ -55,7 +55,7 @@ struct ArrayListPosition {
 
 struct ArrayList {
 
-    ArrayListObject elements[2];
+    ArrayListObject elements[4];
     ArrayListPosition place;
 
     ArrayListCount count;
@@ -201,11 +201,11 @@ struct PACount {
 struct PASeries {
  struct PACount m;
 
- struct PAElement adj[2];
+ struct PAElement adj[4];
 };
 struct PAList {
  struct PACount n;
- struct PASeries neigh[2];
+ struct PASeries neigh[4];
 
 };
 struct FlyweightFlyweightClient {
@@ -236,7 +236,7 @@ struct PATree {
  struct PAList adj;
 };
 struct BridgeAbstraction {
- struct PAElement elements[2];
+ struct PAElement elements[4];
 };
 struct BridgeClient{
  struct PATree tree;
