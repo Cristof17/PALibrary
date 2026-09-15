@@ -5,53 +5,39 @@
 _PAPairPerformConstruct:                ; @PAPairPerformConstruct
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #80
-	stp	x29, x30, [sp, #64]             ; 16-byte Folded Spill
-	add	x29, sp, #64
+	sub	sp, sp, #96
+	stp	x29, x30, [sp, #80]             ; 16-byte Folded Spill
+	add	x29, sp, #80
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
+	str	x8, [sp, #8]                    ; 8-byte Folded Spill
 	bl	_PAElementPerformConstruct
-	sturh	w0, [x29, #-10]
-	ldurh	w8, [x29, #-10]
-	sturh	w8, [x29, #-8]
+	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload
+	stur	x0, [x29, #-8]
+	ldur	x8, [x29, #-8]
+	str	x8, [x9]
 	bl	_PAElementPerformConstruct
-	sturh	w0, [x29, #-12]
-	ldurh	w8, [x29, #-12]
-	sturh	w8, [x29, #-6]
-	ldur	w8, [x29, #-8]
-	str	w8, [sp, #32]
-	ldurh	w8, [x29, #-4]
-	strh	w8, [sp, #36]
-	ldr	x0, [sp, #32]
-	ldurh	w8, [x29, #-8]
-	strh	w8, [sp, #24]
-	ldr	x1, [sp, #24]
-	ldurh	w8, [x29, #-6]
-	strh	w8, [sp, #16]
-	ldr	x2, [sp, #16]
+	ldr	x8, [sp, #8]                    ; 8-byte Folded Reload
+	stur	x0, [x29, #-16]
+	ldur	x9, [x29, #-16]
+	str	x9, [x8, #8]
+	ldr	q0, [x8]
+	add	x0, sp, #16
+	str	q0, [sp, #16]
+	ldr	w9, [x8, #16]
+	str	w9, [sp, #32]
+	ldr	x1, [x8]
+	ldr	x2, [x8, #8]
+	sub	x8, x29, #36
 	bl	_PAPairPerformInit
-	lsr	x8, x0, #32
-	mov	x9, x0
-	stur	w9, [x29, #-18]
-                                        ; kill: def $w8 killed $w8 killed $x8
-	sturh	w8, [x29, #-14]
-	ldur	w8, [x29, #-18]
-	stur	w8, [x29, #-8]
-	ldurh	w8, [x29, #-14]
-	sturh	w8, [x29, #-4]
-	ldur	w8, [x29, #-8]
-	str	w8, [sp, #8]
-	ldurh	w8, [x29, #-4]
-	strh	w8, [sp, #12]
-	ldr	w8, [sp, #8]
-                                        ; kill: def $x8 killed $w8
-	ldrh	w10, [sp, #12]
-                                        ; implicit-def: $x9
-	mov	x9, x10
-	orr	x0, x8, x9, lsl #32
-	ldp	x29, x30, [sp, #64]             ; 16-byte Folded Reload
-	add	sp, sp, #80
+	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload
+	ldur	q0, [x29, #-36]
+	str	q0, [x9]
+	ldur	w8, [x29, #-20]
+	str	w8, [x9, #16]
+	ldp	x29, x30, [sp, #80]             ; 16-byte Folded Reload
+	add	sp, sp, #96
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -60,49 +46,38 @@ _PAPairPerformConstruct:                ; @PAPairPerformConstruct
 _PAPairPerformInit:                     ; @PAPairPerformInit
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #64
-	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
-	add	x29, sp, #48
+	sub	sp, sp, #96
+	stp	x29, x30, [sp, #80]             ; 16-byte Folded Spill
+	add	x29, sp, #80
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	lsr	x8, x0, #32
-	mov	x9, x0
-	stur	w9, [x29, #-16]
-                                        ; kill: def $w8 killed $w8 killed $x8
-	sturh	w8, [x29, #-12]
-	mov	x8, x1
-	sturh	w8, [x29, #-18]
-	mov	x8, x2
-	sturh	w8, [x29, #-20]
+	str	x8, [sp]                        ; 8-byte Folded Spill
+	str	x0, [sp, #8]                    ; 8-byte Folded Spill
+	stur	x1, [x29, #-8]
+	stur	x2, [x29, #-16]
+	stur	x0, [x29, #-24]
 	bl	_PAElementPerformConstruct
-	strh	w0, [sp, #20]
-	ldrh	w8, [sp, #20]
-	strh	w8, [sp, #22]
+	str	x0, [sp, #24]
+	ldr	x8, [sp, #24]
+	str	x8, [sp, #32]
 	bl	_PAElementPerformConstruct
-	strh	w0, [sp, #18]
-	ldrh	w8, [sp, #18]
-	strh	w8, [sp, #24]
-	ldur	w8, [sp, #22]
-	stur	w8, [x29, #-16]
-	ldrh	w8, [sp, #26]
-	sturh	w8, [x29, #-12]
-	ldur	w8, [x29, #-16]
-	stur	w8, [x29, #-8]
-	ldurh	w8, [x29, #-12]
-	sturh	w8, [x29, #-4]
-	ldur	w8, [x29, #-8]
-	str	w8, [sp, #8]
-	ldurh	w8, [x29, #-4]
-	strh	w8, [sp, #12]
-	ldr	w8, [sp, #8]
-                                        ; kill: def $x8 killed $w8
-	ldrh	w10, [sp, #12]
-                                        ; implicit-def: $x9
-	mov	x9, x10
-	orr	x0, x8, x9, lsl #32
-	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
-	add	sp, sp, #64
+	ldr	x9, [sp]                        ; 8-byte Folded Reload
+	mov	x8, x0
+	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
+	str	x8, [sp, #16]
+	ldr	x8, [sp, #16]
+	str	x8, [sp, #40]
+	ldr	q0, [sp, #32]
+	str	q0, [x0]
+	ldr	w8, [sp, #48]
+	str	w8, [x0, #16]
+	ldr	q0, [x0]
+	str	q0, [x9]
+	ldr	w8, [x0, #16]
+	str	w8, [x9, #16]
+	ldp	x29, x30, [sp, #80]             ; 16-byte Folded Reload
+	add	sp, sp, #96
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -111,46 +86,30 @@ _PAPairPerformInit:                     ; @PAPairPerformInit
 _PAPairPerformCopy:                     ; @PAPairPerformCopy
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #64
-	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
-	add	x29, sp, #48
+	sub	sp, sp, #80
+	stp	x29, x30, [sp, #64]             ; 16-byte Folded Spill
+	add	x29, sp, #64
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	lsr	x8, x0, #32
-	mov	x9, x0
-	stur	w9, [x29, #-12]
-                                        ; kill: def $w8 killed $w8 killed $x8
-	sturh	w8, [x29, #-8]
-	lsr	x8, x1, #32
-	mov	x9, x1
-	stur	w9, [x29, #-18]
-                                        ; kill: def $w8 killed $w8 killed $x8
-	sturh	w8, [x29, #-14]
+	str	x8, [sp, #8]                    ; 8-byte Folded Spill
+	stur	x0, [x29, #-8]
+	stur	x1, [x29, #-16]
 	bl	_PAElementPerformConstruct
-	strh	w0, [sp, #24]
-	ldrh	w8, [sp, #24]
-	sturh	w8, [x29, #-20]
+	str	x0, [sp, #24]
+	ldr	x8, [sp, #24]
+	stur	x8, [x29, #-24]
 	bl	_PAElementPerformConstruct
-	strh	w0, [sp, #22]
-	ldrh	w8, [sp, #22]
-	sturh	w8, [x29, #-22]
-	ldurh	w8, [x29, #-20]
-	sturh	w8, [x29, #-6]
-	ldurh	w8, [x29, #-22]
-	sturh	w8, [x29, #-4]
-	ldur	w8, [x29, #-6]
-	str	w8, [sp, #8]
-	ldurh	w8, [x29, #-2]
-	strh	w8, [sp, #12]
-	ldr	w8, [sp, #8]
-                                        ; kill: def $x8 killed $w8
-	ldrh	w10, [sp, #12]
-                                        ; implicit-def: $x9
-	mov	x9, x10
-	orr	x0, x8, x9, lsl #32
-	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
-	add	sp, sp, #64
+	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload
+	str	x0, [sp, #16]
+	ldr	x8, [sp, #16]
+	str	x8, [sp, #32]
+	ldur	x8, [x29, #-24]
+	str	x8, [x9]
+	ldr	x8, [sp, #32]
+	str	x8, [x9, #8]
+	ldp	x29, x30, [sp, #64]             ; 16-byte Folded Reload
+	add	sp, sp, #80
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -165,39 +124,29 @@ _PAPairPerformRuin:                     ; @PAPairPerformRuin
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	lsr	x8, x0, #32
-	mov	x9, x0
-	stur	w9, [x29, #-14]
-                                        ; kill: def $w8 killed $w8 killed $x8
-	sturh	w8, [x29, #-10]
-	ldurh	w8, [x29, #-14]
-	strh	w8, [sp, #24]
-	ldr	x0, [sp, #24]
+	str	x8, [sp, #8]                    ; 8-byte Folded Spill
+	str	x0, [sp, #16]                   ; 8-byte Folded Spill
+	mov	x8, x0
+	stur	x8, [x29, #-8]
+	ldr	x0, [x0]
 	bl	_PAElementPerformRuin
-	sturh	w0, [x29, #-16]
-	ldurh	w8, [x29, #-16]
-	sturh	w8, [x29, #-14]
-	ldurh	w8, [x29, #-12]
-	strh	w8, [sp, #8]
-	ldr	x0, [sp, #8]
+	mov	x8, x0
+	ldr	x0, [sp, #16]                   ; 8-byte Folded Reload
+	stur	x8, [x29, #-16]
+	ldur	x8, [x29, #-16]
+	str	x8, [x0]
+	ldr	x0, [x0, #8]
 	bl	_PAElementPerformRuin
-	strh	w0, [sp, #22]
-	ldrh	w8, [sp, #22]
-	sturh	w8, [x29, #-12]
-	ldur	w8, [x29, #-14]
-	stur	w8, [x29, #-8]
-	ldurh	w8, [x29, #-10]
-	sturh	w8, [x29, #-4]
-	ldur	w8, [x29, #-8]
-	str	w8, [sp]
-	ldurh	w8, [x29, #-4]
-	strh	w8, [sp, #4]
-	ldr	w8, [sp]
-                                        ; kill: def $x8 killed $w8
-	ldrh	w10, [sp, #4]
-                                        ; implicit-def: $x9
-	mov	x9, x10
-	orr	x0, x8, x9, lsl #32
+	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload
+	mov	x8, x0
+	ldr	x0, [sp, #16]                   ; 8-byte Folded Reload
+	str	x8, [sp, #24]
+	ldr	x8, [sp, #24]
+	str	x8, [x0, #8]
+	ldr	q0, [x0]
+	str	q0, [x9]
+	ldr	w8, [x0, #16]
+	str	w8, [x9, #16]
 	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
 	add	sp, sp, #64
 	ret
@@ -214,39 +163,29 @@ _PAPairPerformDelete:                   ; @PAPairPerformDelete
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	lsr	x8, x0, #32
-	mov	x9, x0
-	stur	w9, [x29, #-14]
-                                        ; kill: def $w8 killed $w8 killed $x8
-	sturh	w8, [x29, #-10]
-	ldurh	w8, [x29, #-14]
-	strh	w8, [sp, #24]
-	ldr	x0, [sp, #24]
+	str	x8, [sp, #8]                    ; 8-byte Folded Spill
+	str	x0, [sp, #16]                   ; 8-byte Folded Spill
+	mov	x8, x0
+	stur	x8, [x29, #-8]
+	ldr	x0, [x0]
 	bl	_PAElementPerformDelete
-	sturh	w0, [x29, #-16]
-	ldurh	w8, [x29, #-16]
-	sturh	w8, [x29, #-14]
-	ldurh	w8, [x29, #-12]
-	strh	w8, [sp, #8]
-	ldr	x0, [sp, #8]
+	mov	x8, x0
+	ldr	x0, [sp, #16]                   ; 8-byte Folded Reload
+	stur	x8, [x29, #-16]
+	ldur	x8, [x29, #-16]
+	str	x8, [x0]
+	ldr	x0, [x0, #8]
 	bl	_PAElementPerformDelete
-	strh	w0, [sp, #22]
-	ldrh	w8, [sp, #22]
-	sturh	w8, [x29, #-12]
-	ldur	w8, [x29, #-14]
-	stur	w8, [x29, #-8]
-	ldurh	w8, [x29, #-10]
-	sturh	w8, [x29, #-4]
-	ldur	w8, [x29, #-8]
-	str	w8, [sp]
-	ldurh	w8, [x29, #-4]
-	strh	w8, [sp, #4]
-	ldr	w8, [sp]
-                                        ; kill: def $x8 killed $w8
-	ldrh	w10, [sp, #4]
-                                        ; implicit-def: $x9
-	mov	x9, x10
-	orr	x0, x8, x9, lsl #32
+	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload
+	mov	x8, x0
+	ldr	x0, [sp, #16]                   ; 8-byte Folded Reload
+	str	x8, [sp, #24]
+	ldr	x8, [sp, #24]
+	str	x8, [x0, #8]
+	ldr	q0, [x0]
+	str	q0, [x9]
+	ldr	w8, [x0, #16]
+	str	w8, [x9, #16]
 	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
 	add	sp, sp, #64
 	ret

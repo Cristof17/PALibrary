@@ -19,7 +19,53 @@
 
 
 # 1 "./include/types.h" 1
-# 54 "./include/types.h"
+# 17 "./include/types.h"
+typedef int ArrayListSize;
+
+
+
+
+
+typedef int ArrayListObject;
+
+
+
+
+
+typedef long ArrayListOffset;
+typedef int ArrayListPosition;
+
+
+
+
+typedef int ArrayListCount;
+
+
+
+
+typedef int ArrayListValue;
+
+
+
+
+
+#pragma pack(show)
+struct ArrayListPosition {
+    ArrayListPosition position;
+};
+#pragma pack(show)
+struct ArrayList {
+
+    ArrayListObject elements[2];
+    ArrayListPosition place;
+
+    ArrayListCount count;
+
+
+};
+# 91 "./include/types.h"
+struct PANumber;
+# 108 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -68,7 +114,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 112 "./include/types.h"
+# 166 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -105,38 +151,28 @@ struct BridgeConcreteImplementorB;
 struct BridgeImplementor;
 struct PrototypePrototype;
 struct PrototypeClient;
+struct PANumber {
 
 
+ int val;
 
-
-
-
+};
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 169 "./include/types.h"
+# 223 "./include/types.h"
 struct Output {
 
 };
 struct Input {
  ;
 };
-
-
-
-struct ArrayListPosition {
- int position;
-};
-struct ArrayList {
-
- struct ArrayListPosition place;
- int objects[2];
-};
+# 240 "./include/types.h"
 struct PAResource {
 
 
 
- PANumber value;
+ struct PANumber value;
 
 };
 struct PAStatus {
@@ -211,7 +247,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 273 "./include/types.h"
+# 327 "./include/types.h"
 struct PAInput {
  struct PACount n;
  struct PACount m;
@@ -251,7 +287,7 @@ struct BFSInput {
 struct BFSOutput {
  struct BFSRecord result;
 };
-# 320 "./include/types.h"
+# 374 "./include/types.h"
 struct PALink {
  struct PAPair p;
 

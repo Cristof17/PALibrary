@@ -5,34 +5,32 @@
 _PAElementPerformConstruct:             ; @PAElementPerformConstruct
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
-	add	x29, sp, #16
+	sub	sp, sp, #48
+	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
+	add	x29, sp, #32
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
 	bl	_PADataPerformConstruct
-	sturb	w0, [x29, #-3]
-	ldurb	w8, [x29, #-3]
-	sturb	w8, [x29, #-2]
+	stur	w0, [x29, #-12]
+	ldur	w8, [x29, #-12]
+	stur	w8, [x29, #-8]
 	bl	_PAStatusPerformConstruct
-	sturb	w0, [x29, #-4]
-	ldurb	w8, [x29, #-4]
-	sturb	w8, [x29, #-1]
-	ldurh	w8, [x29, #-2]
-	strh	w8, [sp]
-	ldr	x0, [sp]
-	ldurb	w8, [x29, #-2]
+	str	w0, [sp, #16]
+	ldr	w8, [sp, #16]
+	stur	w8, [x29, #-4]
+	ldur	x0, [x29, #-8]
+	ldur	w8, [x29, #-8]
 	mov	x1, x8
-	ldurb	w8, [x29, #-1]
+	ldur	w8, [x29, #-4]
 	mov	x2, x8
 	bl	_PAElementPerformInit
-	sturh	w0, [x29, #-6]
-	ldurh	w8, [x29, #-6]
-	sturh	w8, [x29, #-2]
-	ldurh	w0, [x29, #-2]
-	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
-	add	sp, sp, #32
+	str	x0, [sp, #8]
+	ldr	x8, [sp, #8]
+	stur	x8, [x29, #-8]
+	ldur	x0, [x29, #-8]
+	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -41,22 +39,21 @@ _PAElementPerformConstruct:             ; @PAElementPerformConstruct
 _PAElementPerformInit:                  ; @PAElementPerformInit
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	strh	w8, [sp, #12]
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #16]
 	mov	x8, x1
-	strb	w8, [sp, #11]
+	str	w8, [sp, #12]
 	mov	x8, x2
-	strb	w8, [sp, #10]
-	ldrb	w8, [sp, #11]
-	strb	w8, [sp, #12]
-	ldrb	w8, [sp, #10]
-	strb	w8, [sp, #13]
-	ldrh	w8, [sp, #12]
-	strh	w8, [sp, #14]
-	ldrh	w0, [sp, #14]
-	add	sp, sp, #16
+	str	w8, [sp, #8]
+	ldr	w8, [sp, #12]
+	str	w8, [sp, #16]
+	ldr	w8, [sp, #8]
+	str	w8, [sp, #20]
+	ldr	x8, [sp, #16]
+	str	x8, [sp, #24]
+	ldr	x0, [sp, #24]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -67,10 +64,9 @@ _PAElementVisit:                        ; @PAElementVisit
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	strh	w8, [sp, #14]
+	str	x0, [sp, #8]
 	mov	w8, #1                          ; =0x1
-	strb	w8, [sp, #15]
+	str	w8, [sp, #12]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -82,9 +78,8 @@ _PAElementIsVisited:                    ; @PAElementIsVisited
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	strh	w8, [sp, #14]
-	ldrb	w0, [sp, #15]
+	str	x0, [sp, #8]
+	ldr	w0, [sp, #12]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -96,9 +91,8 @@ _PAElementReset:                        ; @PAElementReset
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	strh	w8, [sp, #14]
-	strb	wzr, [sp, #15]
+	str	x0, [sp, #8]
+	str	wzr, [sp, #12]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -108,41 +102,39 @@ _PAElementReset:                        ; @PAElementReset
 _PAElementPerformCopy:                  ; @PAElementPerformCopy
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
-	add	x29, sp, #16
+	sub	sp, sp, #64
+	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
+	add	x29, sp, #48
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	mov	x8, x0
-	sturh	w8, [x29, #-4]
-	mov	x8, x1
-	sturh	w8, [x29, #-6]
-	ldurb	w8, [x29, #-4]
+	stur	x0, [x29, #-16]
+	str	x1, [sp, #24]
+	ldur	w8, [x29, #-16]
 	mov	x0, x8
-	ldurb	w8, [x29, #-6]
+	ldr	w8, [sp, #24]
 	mov	x1, x8
 	bl	_PADataPerformCopy
-	strb	w0, [sp, #7]
-	ldrb	w8, [sp, #7]
-	strb	w8, [sp, #8]
-	ldurb	w8, [x29, #-3]
+	str	w0, [sp, #12]
+	ldr	w8, [sp, #12]
+	str	w8, [sp, #16]
+	ldur	w8, [x29, #-12]
 	mov	x0, x8
-	ldurb	w8, [x29, #-5]
+	ldr	w8, [sp, #28]
 	mov	x1, x8
 	bl	_PAStatusPerformCopy
-	strb	w0, [sp, #6]
-	ldrb	w8, [sp, #6]
-	strb	w8, [sp, #9]
-	ldrb	w8, [sp, #8]
-	sturb	w8, [x29, #-6]
-	ldrb	w8, [sp, #9]
-	sturb	w8, [x29, #-5]
-	ldurh	w8, [x29, #-6]
-	sturh	w8, [x29, #-2]
-	ldurh	w0, [x29, #-2]
-	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
-	add	sp, sp, #32
+	str	w0, [sp, #8]
+	ldr	w8, [sp, #8]
+	str	w8, [sp, #20]
+	ldr	w8, [sp, #16]
+	str	w8, [sp, #24]
+	ldr	w8, [sp, #20]
+	str	w8, [sp, #28]
+	ldr	x8, [sp, #24]
+	stur	x8, [x29, #-8]
+	ldur	x0, [x29, #-8]
+	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
+	add	sp, sp, #64
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -151,31 +143,30 @@ _PAElementPerformCopy:                  ; @PAElementPerformCopy
 _PAElementPerformRuin:                  ; @PAElementPerformRuin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
-	add	x29, sp, #16
+	sub	sp, sp, #48
+	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
+	add	x29, sp, #32
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	mov	x8, x0
-	sturh	w8, [x29, #-4]
-	ldurb	w8, [x29, #-4]
+	str	x0, [sp, #16]
+	ldr	w8, [sp, #16]
 	mov	x0, x8
 	bl	_PADataPerformRuin
-	sturb	w0, [x29, #-5]
-	ldurb	w8, [x29, #-5]
-	sturb	w8, [x29, #-4]
-	ldurb	w8, [x29, #-3]
+	str	w0, [sp, #12]
+	ldr	w8, [sp, #12]
+	str	w8, [sp, #16]
+	ldr	w8, [sp, #20]
 	mov	x0, x8
 	bl	_PAStatusPerformRuin
-	sturb	w0, [x29, #-6]
-	ldurb	w8, [x29, #-6]
-	sturb	w8, [x29, #-3]
-	ldurh	w8, [x29, #-4]
-	sturh	w8, [x29, #-2]
-	ldurh	w0, [x29, #-2]
-	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
-	add	sp, sp, #32
+	str	w0, [sp, #8]
+	ldr	w8, [sp, #8]
+	str	w8, [sp, #20]
+	ldr	x8, [sp, #16]
+	stur	x8, [x29, #-8]
+	ldur	x0, [x29, #-8]
+	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -186,11 +177,10 @@ _PAElementPerformDelete:                ; @PAElementPerformDelete
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	strh	w8, [sp, #12]
-	ldrh	w8, [sp, #12]
-	strh	w8, [sp, #14]
-	ldrh	w0, [sp, #14]
+	str	x0, [sp]
+	ldr	x8, [sp]
+	str	x8, [sp, #8]
+	ldr	x0, [sp, #8]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc

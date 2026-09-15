@@ -4,6 +4,60 @@
 #define INCLUDE_TYPES_H_	1
 
 #include <defs.h>
+
+#ifdef _WIN95
+typedef int ArrayListSize;
+typedef int ArrayListObject;
+#else
+#endif
+
+#ifdef _64BIT
+typedef long ArrayListSize;
+#else
+typedef int ArrayListSize;
+#endif 
+// typedef int ArrayListSize;
+#ifdef _64BIT
+typedef long ArrayListObject;
+#else
+typedef int ArrayListObject;
+#endif
+#ifdef _64BIT
+typedef long ArrayListPosition;
+typedef long ArrayListOffset;
+#else
+typedef long ArrayListOffset;
+typedef int ArrayListPosition;
+#endif
+#ifdef _64BIT
+typedef long ArrayListCount;
+#else
+typedef int ArrayListCount;
+#endif
+#ifdef _64BIT
+typedef long ArrayListValue;
+#else
+typedef int ArrayListValue;
+#endif
+//#
+// #pragma pack(push, 8)
+// #pragma pack(push, 8)
+
+#pragma pack(show)
+struct ArrayListPosition {
+    ArrayListPosition position;
+};
+#pragma pack(show)
+struct ArrayList {
+    // struct Position position;
+    ArrayListObject elements[SIZE];
+    ArrayListPosition place;
+    // #pragma pack(8)
+    ArrayListCount count;
+    // #pragma pack(8)
+    // long count;
+};
+
 #ifdef _WIN95
 //#define short HALF_PTR;
 #ifndef _64BIT
@@ -13,7 +67,7 @@
 #define PAResult int
 #define ArrayListSize int
 #else
-#define PANumber long long
+// #define PANumber long long
 #define PAInt long long
 #define PABool int
 #define PAResult int
@@ -34,7 +88,7 @@
 #define PAResult int
 #define ArrayListSize long long
 #endif //#64BIT
-// struct PANumber;
+struct PANumber;
 // typedef int PAInt;
 //#define PAInt int
 // typedef int PAResource;
@@ -145,12 +199,12 @@ struct BridgeConcreteImplementorB;
 struct BridgeImplementor;
 struct PrototypePrototype;
 struct PrototypeClient;
-// struct PANumber {
-// 	//  val;
-// 	// long long val;
-// 	unsigned char val;
-// 	// PADDING_1_BYTE(0);
-// };
+struct PANumber {
+	//  val;
+	// long long val;
+	PAInt val;
+	// PADDING_1_BYTE(0);
+};
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
@@ -175,19 +229,19 @@ struct Input {
 	// struct Algorithm {
 			// struct Input input;
 		// };
-struct ArrayListPosition {
-	int position;
-};
-struct ArrayList {
-	// struct Position position;
-	struct ArrayListPosition place;
-	int objects[SIZE];
-};
+// struct ArrayListPosition {
+// 	int position;
+// };
+// struct ArrayList {
+// 	// struct Position position;
+// 	struct ArrayListPosition place;
+// 	int objects[SIZE];
+// };
 struct PAResource {
 	// struct
 	// PA_INt
 	// PAInt value;
-	PANumber value;
+	struct PANumber value;
 	// PADDING_1_BYTE(0);
 };
 struct PAStatus {

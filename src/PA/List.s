@@ -5,44 +5,20 @@
 _PAListPerformConstruct:                ; @PAListPerformConstruct
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #80
-	stp	x29, x30, [sp, #64]             ; 16-byte Folded Spill
-	add	x29, sp, #64
+	sub	sp, sp, #32
+	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
+	add	x29, sp, #16
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	adrp	x8, ___stack_chk_guard@GOTPAGE
-	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
-	ldr	x8, [x8]
-	stur	x8, [x29, #-8]
+	str	x8, [sp]                        ; 8-byte Folded Spill
 	bl	_PACountPerformConstruct
-	strb	w0, [sp, #28]
-	ldrb	w9, [sp, #28]
-	add	x8, sp, #29
-	strb	w9, [sp, #29]
-	ldur	x10, [sp, #29]
-	sub	x9, x29, #24
-	stur	x10, [x29, #-24]
-	ldur	w8, [x8, #7]
-	stur	w8, [x9, #7]
-	ldur	x8, [x29, #-24]
-	str	x8, [sp, #8]                    ; 8-byte Folded Spill
-	ldur	x8, [x29, #-16]
-	str	x8, [sp, #16]                   ; 8-byte Folded Spill
-	ldur	x9, [x29, #-8]
-	adrp	x8, ___stack_chk_guard@GOTPAGE
-	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
-	ldr	x8, [x8]
-	subs	x8, x8, x9
-	b.eq	LBB0_2
-	b	LBB0_1
-LBB0_1:
-	bl	___stack_chk_fail
-LBB0_2:
-	ldr	x1, [sp, #16]                   ; 8-byte Folded Reload
-	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
-	ldp	x29, x30, [sp, #64]             ; 16-byte Folded Reload
-	add	sp, sp, #80
+	ldr	x9, [sp]                        ; 8-byte Folded Reload
+	stur	w0, [x29, #-4]
+	ldur	w8, [x29, #-4]
+	str	w8, [x9]
+	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -51,234 +27,183 @@ LBB0_2:
 _PAListPerformCopy:                     ; @PAListPerformCopy
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #320
-	stp	x28, x27, [sp, #288]            ; 16-byte Folded Spill
-	stp	x29, x30, [sp, #304]            ; 16-byte Folded Spill
-	add	x29, sp, #304
+	stp	x28, x27, [sp, #-32]!           ; 16-byte Folded Spill
+	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
+	add	x29, sp, #16
+	sub	sp, sp, #496
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
 	.cfi_offset w27, -24
 	.cfi_offset w28, -32
-	sub	x9, x29, #104
-	str	x9, [sp, #48]                   ; 8-byte Folded Spill
-	adrp	x8, ___stack_chk_guard@GOTPAGE
-	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
-	ldr	x8, [x8]
-	stur	x8, [x29, #-24]
-	sub	x8, x29, #40
-	str	x0, [x9, #64]
-	str	x1, [x9, #72]
-	ldr	x11, [x9, #64]
-	sub	x10, x29, #104
-	str	x11, [x9]
-	ldur	w8, [x8, #7]
-	stur	w8, [x10, #7]
-	sub	x8, x29, #56
-	str	x2, [x9, #48]
-	str	x3, [x9, #56]
-	ldr	x10, [x9, #48]
-	sub	x9, x29, #120
-	stur	x10, [x29, #-120]
-	ldur	w8, [x8, #7]
-	stur	w8, [x9, #7]
-	ldurb	w8, [x29, #-104]
+	add	x9, sp, #240
+	str	x9, [sp, #24]                   ; 8-byte Folded Spill
+	mov	x2, x8
+	ldr	x8, [sp, #24]                   ; 8-byte Folded Reload
+	str	x2, [sp, #32]                   ; 8-byte Folded Spill
+	str	x0, [sp, #40]                   ; 8-byte Folded Spill
+	str	x1, [sp, #48]                   ; 8-byte Folded Spill
+	mov	x9, x0
+	str	x9, [x8, #248]
+	str	x1, [x8, #240]
+	ldr	w8, [x0]
 	mov	x0, x8
-	ldurb	w8, [x29, #-131]
+	ldur	w8, [x29, #-76]
 	mov	x1, x8
 	bl	_PACountPerformCopy
-	sturb	w0, [x29, #-132]
-	ldurb	w8, [x29, #-132]
-	sturb	w8, [x29, #-131]
+	ldr	x1, [sp, #48]                   ; 8-byte Folded Reload
+	stur	w0, [x29, #-80]
+	ldur	w8, [x29, #-80]
+	stur	w8, [x29, #-76]
 	mov	w8, #1                          ; =0x1
-	sturb	w8, [x29, #-133]
-	ldurb	w8, [x29, #-131]
-	sturb	w8, [x29, #-134]
-	ldurb	w8, [x29, #-131]
-	ldurb	w9, [x29, #-120]
+	stur	w8, [x29, #-84]
+	ldur	w8, [x29, #-76]
+	stur	w8, [x29, #-88]
+	ldur	w8, [x29, #-76]
+	ldr	w9, [x1]
 	subs	w8, w8, w9
 	b.le	LBB1_2
 	b	LBB1_1
 LBB1_1:
-	ldurb	w8, [x29, #-120]
-	sturb	w8, [x29, #-134]
+	ldr	x8, [sp, #48]                   ; 8-byte Folded Reload
+	ldr	w8, [x8]
+	stur	w8, [x29, #-88]
 	b	LBB1_5
 LBB1_2:
-	ldurb	w8, [x29, #-131]
-	ldurb	w9, [x29, #-120]
+	ldr	x9, [sp, #48]                   ; 8-byte Folded Reload
+	ldur	w8, [x29, #-76]
+	ldr	w9, [x9]
 	subs	w8, w8, w9
 	b.ge	LBB1_4
 	b	LBB1_3
 LBB1_3:
-	ldurb	w8, [x29, #-131]
-	sturb	w8, [x29, #-134]
+	ldur	w8, [x29, #-76]
+	stur	w8, [x29, #-88]
 	b	LBB1_4
 LBB1_4:
 	b	LBB1_5
 LBB1_5:
 	b	LBB1_6
 LBB1_6:                                 ; =>This Inner Loop Header: Depth=1
-	ldurb	w8, [x29, #-133]
-	ldurb	w9, [x29, #-134]
+	ldur	w8, [x29, #-84]
+	ldur	w9, [x29, #-88]
 	subs	w8, w8, w9
 	b.gt	LBB1_8
 	b	LBB1_7
 LBB1_7:                                 ;   in Loop: Header=BB1_6 Depth=1
-	sub	x8, x29, #104
-	add	x8, x8, #1
-	ldurb	w9, [x29, #-133]
-                                        ; kill: def $x9 killed $w9
-	mov	x10, #5                         ; =0x5
-	str	x10, [sp, #40]                  ; 8-byte Folded Spill
-	mul	x9, x9, x10
-	add	x8, x8, x9
-	ldr	w9, [x8]
-	str	w9, [sp, #152]
-	ldrb	w8, [x8, #4]
-	strb	w8, [sp, #156]
-	ldr	x0, [sp, #152]
-	ldur	w8, [x29, #-139]
-	str	w8, [sp, #144]
-	ldurb	w8, [x29, #-135]
-	strb	w8, [sp, #148]
-	ldr	x1, [sp, #144]
+	ldr	x8, [sp, #24]                   ; 8-byte Folded Reload
+	ldr	x9, [sp, #40]                   ; 8-byte Folded Reload
+	add	x9, x9, #4
+	ldursw	x10, [x29, #-84]
+	mov	x11, #20                        ; =0x14
+	str	x11, [sp, #16]                  ; 8-byte Folded Spill
+	mul	x10, x10, x11
+	add	x9, x9, x10
+	ldr	q0, [x9]
+	sub	x0, x29, #160
+	str	q0, [x8, #112]
+	ldr	w9, [x9, #16]
+	stur	w9, [x29, #-144]
+	ldur	q0, [x8, #164]
+	sub	x1, x29, #192
+	str	q0, [x8, #80]
+	ldur	w8, [x29, #-92]
+	stur	w8, [x29, #-176]
+	sub	x8, x29, #128
 	bl	_PASeriesPerformCopy
-	ldr	x10, [sp, #40]                  ; 8-byte Folded Reload
-	lsr	x8, x0, #32
-	mov	x9, x0
-	stur	w9, [sp, #139]
-                                        ; kill: def $w8 killed $w8 killed $x8
-	strb	w8, [sp, #143]
-	sub	x8, x29, #131
-	add	x8, x8, #1
-	ldurb	w9, [x29, #-133]
-                                        ; kill: def $x9 killed $w9
-	mul	x9, x9, x10
-	add	x8, x8, x9
-	ldur	w9, [x29, #-139]
-	str	w9, [sp, #128]
-	ldurb	w9, [x29, #-135]
-	strb	w9, [sp, #132]
-	ldr	x0, [sp, #128]
-	ldr	w9, [x8]
-	str	w9, [sp, #120]
-	ldrb	w8, [x8, #4]
-	strb	w8, [sp, #124]
-	ldr	x1, [sp, #120]
+	ldr	x11, [sp, #16]                  ; 8-byte Folded Reload
+	ldr	x9, [sp, #24]                   ; 8-byte Folded Reload
+	sub	x8, x29, #76
+	add	x8, x8, #4
+	ldursw	x10, [x29, #-84]
+	mul	x10, x10, x11
+	add	x8, x8, x10
+	ldur	q0, [x9, #164]
+	sub	x0, x29, #240
+	str	q0, [x9, #32]
+	ldur	w10, [x29, #-92]
+	stur	w10, [x29, #-224]
+	ldr	q0, [x8]
+	add	x1, sp, #240
+	str	q0, [x9]
+	ldr	w8, [x8, #16]
+	str	w8, [sp, #256]
+	sub	x8, x29, #212
 	bl	_PASeriesPerformCopy
-	lsr	x8, x0, #32
-	mov	x9, x0
-	stur	w9, [sp, #115]
-                                        ; kill: def $w8 killed $w8 killed $x8
-	strb	w8, [sp, #119]
-	ldurb	w8, [x29, #-133]
+	ldur	w8, [x29, #-84]
 	add	w8, w8, #1
-	sturb	w8, [x29, #-133]
+	stur	w8, [x29, #-84]
 	b	LBB1_6
 LBB1_8:
 	mov	w8, #1                          ; =0x1
-	sturb	w8, [x29, #-133]
+	stur	w8, [x29, #-84]
 	b	LBB1_9
 LBB1_9:                                 ; =>This Inner Loop Header: Depth=1
-	ldurb	w8, [x29, #-133]
-	ldurb	w9, [x29, #-134]
+	ldur	w8, [x29, #-84]
+	ldur	w9, [x29, #-88]
 	subs	w8, w8, w9
 	b.ge	LBB1_11
 	b	LBB1_10
 LBB1_10:                                ;   in Loop: Header=BB1_9 Depth=1
-	sub	x8, x29, #131
-	add	x8, x8, #1
-	ldurb	w9, [x29, #-133]
-                                        ; kill: def $x9 killed $w9
-	mov	x10, #5                         ; =0x5
-	str	x10, [sp, #32]                  ; 8-byte Folded Spill
+	sub	x8, x29, #76
+	add	x8, x8, #4
+	ldursw	x9, [x29, #-84]
+	mov	x10, #20                        ; =0x14
+	str	x10, [sp, #8]                   ; 8-byte Folded Spill
 	mul	x9, x9, x10
 	add	x8, x8, x9
-	ldr	w9, [x8]
-	str	w9, [sp, #96]
-	ldrb	w8, [x8, #4]
-	strb	w8, [sp, #100]
-	ldr	x0, [sp, #96]
-	ldur	w8, [sp, #110]
-	str	w8, [sp, #88]
-	ldrb	w8, [sp, #114]
-	strb	w8, [sp, #92]
-	ldr	x1, [sp, #88]
+	ldr	q0, [x8]
+	add	x0, sp, #176
+	str	q0, [sp, #176]
+	ldr	w8, [x8, #16]
+	str	w8, [sp, #192]
+	ldur	q0, [sp, #220]
+	add	x1, sp, #144
+	str	q0, [sp, #144]
+	ldr	w8, [sp, #236]
+	str	w8, [sp, #160]
+	add	x8, sp, #200
 	bl	_PASeriesPerformCopy
-	ldr	x10, [sp, #32]                  ; 8-byte Folded Reload
-	lsr	x8, x0, #32
-	mov	x9, x0
-	stur	w9, [sp, #83]
-                                        ; kill: def $w8 killed $w8 killed $x8
-	strb	w8, [sp, #87]
-	sub	x8, x29, #120
-	add	x8, x8, #1
-	ldurb	w9, [x29, #-133]
-                                        ; kill: def $x9 killed $w9
+	ldr	x8, [sp, #48]                   ; 8-byte Folded Reload
+	ldr	x10, [sp, #8]                   ; 8-byte Folded Reload
+	add	x8, x8, #4
+	ldursw	x9, [x29, #-84]
 	mul	x9, x9, x10
 	add	x8, x8, x9
-	ldur	w9, [sp, #110]
-	str	w9, [sp, #72]
-	ldrb	w9, [sp, #114]
-	strb	w9, [sp, #76]
-	ldr	x0, [sp, #72]
-	ldr	w9, [x8]
-	str	w9, [sp, #64]
-	ldrb	w8, [x8, #4]
-	strb	w8, [sp, #68]
-	ldr	x1, [sp, #64]
+	ldur	q0, [sp, #220]
+	add	x0, sp, #96
+	str	q0, [sp, #96]
+	ldr	w9, [sp, #236]
+	str	w9, [sp, #112]
+	ldr	q0, [x8]
+	add	x1, sp, #64
+	str	q0, [sp, #64]
+	ldr	w8, [x8, #16]
+	str	w8, [sp, #80]
+	add	x8, sp, #124
 	bl	_PASeriesPerformCopy
-	lsr	x8, x0, #32
-	mov	x9, x0
-	stur	w9, [sp, #59]
-                                        ; kill: def $w8 killed $w8 killed $x8
-	strb	w8, [sp, #63]
-	ldurb	w8, [x29, #-133]
+	ldur	w8, [x29, #-84]
 	add	w8, w8, #1
-	sturb	w8, [x29, #-133]
+	stur	w8, [x29, #-84]
 	b	LBB1_9
 LBB1_11:
-	ldurb	w8, [x29, #-131]
-	mov	x0, x8
-	sub	x8, x29, #120
-	str	x8, [sp, #8]                    ; 8-byte Folded Spill
-	ldurb	w8, [x29, #-120]
+	ldr	x8, [sp, #48]                   ; 8-byte Folded Reload
+	ldur	w9, [x29, #-76]
+	mov	x0, x9
+	ldr	w8, [x8]
 	mov	x1, x8
 	bl	_PACountPerformCopy
-	ldr	x10, [sp, #8]                   ; 8-byte Folded Reload
-	ldr	x8, [sp, #48]                   ; 8-byte Folded Reload
-	strb	w0, [sp, #58]
-	ldrb	w9, [sp, #58]
-	sturb	w9, [x29, #-120]
-	ldur	x11, [x29, #-120]
-	sub	x9, x29, #88
-	str	x11, [x8, #16]
-	ldur	w10, [x10, #7]
-	stur	w10, [x9, #7]
-	ldr	x11, [x8, #16]
-	sub	x10, x29, #72
-	str	x11, [x8, #32]
-	ldur	w9, [x9, #7]
-	stur	w9, [x10, #7]
-	ldr	x9, [x8, #32]
-	str	x9, [sp, #16]                   ; 8-byte Folded Spill
-	ldr	x8, [x8, #40]
-	str	x8, [sp, #24]                   ; 8-byte Folded Spill
-	ldur	x9, [x29, #-24]
-	adrp	x8, ___stack_chk_guard@GOTPAGE
-	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
-	ldr	x8, [x8]
-	subs	x8, x8, x9
-	b.eq	LBB1_13
-	b	LBB1_12
-LBB1_12:
-	bl	___stack_chk_fail
-LBB1_13:
-	ldr	x1, [sp, #24]                   ; 8-byte Folded Reload
-	ldr	x0, [sp, #16]                   ; 8-byte Folded Reload
-	ldp	x29, x30, [sp, #304]            ; 16-byte Folded Reload
-	ldp	x28, x27, [sp, #288]            ; 16-byte Folded Reload
-	add	sp, sp, #320
+	ldr	x1, [sp, #48]                   ; 8-byte Folded Reload
+	mov	x8, x0
+	ldr	x0, [sp, #32]                   ; 8-byte Folded Reload
+	str	w8, [sp, #60]
+	ldr	w8, [sp, #60]
+	str	w8, [x1]
+	mov	x2, #44                         ; =0x2c
+	bl	_memcpy
+	add	sp, sp, #496
+	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
+	ldp	x28, x27, [sp], #32             ; 16-byte Folded Reload
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -287,112 +212,72 @@ LBB1_13:
 _PAListPerformInit:                     ; @PAListPerformInit
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #160
-	stp	x29, x30, [sp, #144]            ; 16-byte Folded Spill
-	add	x29, sp, #144
+	sub	sp, sp, #192
+	stp	x29, x30, [sp, #176]            ; 16-byte Folded Spill
+	add	x29, sp, #176
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	adrp	x8, ___stack_chk_guard@GOTPAGE
-	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
-	ldr	x8, [x8]
-	stur	x8, [x29, #-8]
-	sub	x8, x29, #24
-	stur	x0, [x29, #-24]
-	stur	x1, [x29, #-16]
-	ldur	x10, [x29, #-24]
-	add	x9, sp, #72
-	str	x10, [sp, #72]
-	ldur	w8, [x8, #7]
-	stur	w8, [x9, #7]
-	mov	x8, x2
-	strb	w8, [sp, #71]
-	str	x3, [sp, #56]
-	ldrb	w8, [sp, #71]
-	strb	w8, [sp, #45]
+	str	x8, [sp]                        ; 8-byte Folded Spill
+	str	x0, [sp, #8]                    ; 8-byte Folded Spill
+	mov	x8, x1
+	stur	w8, [x29, #-4]
+	stur	x0, [x29, #-16]
+	stur	x2, [x29, #-24]
+	ldur	w8, [x29, #-4]
+	stur	w8, [x29, #-68]
 	mov	w8, #1                          ; =0x1
-	strb	w8, [sp, #44]
-	ldr	x8, [sp, #56]
-	ldrb	w9, [sp, #44]
-                                        ; kill: def $x9 killed $w9
-	mov	x10, #5                         ; =0x5
+	stur	w8, [x29, #-72]
+	ldur	x8, [x29, #-24]
+	ldursw	x9, [x29, #-72]
+	mov	x10, #20                        ; =0x14
 	mul	x9, x9, x10
-	add	x8, x8, x9
-	ldrb	w8, [x8]
-	strb	w8, [sp, #43]
+	ldr	w8, [x8, x9]
+	stur	w8, [x29, #-76]
 	b	LBB2_1
 LBB2_1:                                 ; =>This Inner Loop Header: Depth=1
-	ldrb	w8, [sp, #44]
-	ldrb	w9, [sp, #43]
+	ldur	w8, [x29, #-72]
+	ldur	w9, [x29, #-76]
 	subs	w8, w8, w9
 	b.gt	LBB2_3
 	b	LBB2_2
 LBB2_2:                                 ;   in Loop: Header=BB2_1 Depth=1
-	add	x8, sp, #72
-	add	x8, x8, #1
-	ldrb	w9, [sp, #44]
-                                        ; kill: def $x9 killed $w9
-	mov	x11, #5                         ; =0x5
+	ldr	x8, [sp, #8]                    ; 8-byte Folded Reload
+	add	x8, x8, #4
+	ldursw	x9, [x29, #-72]
+	mov	x11, #20                        ; =0x14
 	mul	x9, x9, x11
 	add	x9, x8, x9
-	add	x8, sp, #45
-	add	x8, x8, #1
-	ldrb	w10, [sp, #44]
-                                        ; kill: def $x10 killed $w10
+	sub	x8, x29, #68
+	add	x8, x8, #4
+	ldursw	x10, [x29, #-72]
 	mul	x10, x10, x11
 	add	x8, x8, x10
-	ldr	w10, [x9]
-	str	w10, [sp, #32]
-	ldrb	w9, [x9, #4]
-	strb	w9, [sp, #36]
-	ldr	x0, [sp, #32]
-	ldr	w9, [x8]
-	str	w9, [sp, #24]
-	ldrb	w8, [x8, #4]
-	strb	w8, [sp, #28]
-	ldr	x1, [sp, #24]
+	ldr	q0, [x9]
+	add	x0, sp, #48
+	str	q0, [sp, #48]
+	ldr	w9, [x9, #16]
+	str	w9, [sp, #64]
+	ldr	q0, [x8]
+	add	x1, sp, #16
+	str	q0, [sp, #16]
+	ldr	w8, [x8, #16]
+	str	w8, [sp, #32]
+	add	x8, sp, #80
 	bl	_PASeriesPerformCopy
-	lsr	x8, x0, #32
-	mov	x9, x0
-	stur	w9, [sp, #19]
-                                        ; kill: def $w8 killed $w8 killed $x8
-	strb	w8, [sp, #23]
-	ldrb	w8, [sp, #44]
+	ldur	w8, [x29, #-72]
 	add	w8, w8, #1
-	strb	w8, [sp, #44]
+	stur	w8, [x29, #-72]
 	b	LBB2_1
 LBB2_3:
-	ldrb	w8, [sp, #45]
-	add	x9, sp, #72
-	strb	w8, [sp, #72]
-	ldr	x10, [sp, #72]
-	sub	x8, x29, #56
-	stur	x10, [x29, #-56]
-	ldur	w9, [x9, #7]
-	stur	w9, [x8, #7]
-	ldur	x10, [x29, #-56]
-	sub	x9, x29, #40
-	stur	x10, [x29, #-40]
-	ldur	w8, [x8, #7]
-	stur	w8, [x9, #7]
-	ldur	x8, [x29, #-40]
-	str	x8, [sp]                        ; 8-byte Folded Spill
-	ldur	x8, [x29, #-32]
-	str	x8, [sp, #8]                    ; 8-byte Folded Spill
-	ldur	x9, [x29, #-8]
-	adrp	x8, ___stack_chk_guard@GOTPAGE
-	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
-	ldr	x8, [x8]
-	subs	x8, x8, x9
-	b.eq	LBB2_5
-	b	LBB2_4
-LBB2_4:
-	bl	___stack_chk_fail
-LBB2_5:
 	ldr	x1, [sp, #8]                    ; 8-byte Folded Reload
 	ldr	x0, [sp]                        ; 8-byte Folded Reload
-	ldp	x29, x30, [sp, #144]            ; 16-byte Folded Reload
-	add	sp, sp, #160
+	ldur	w8, [x29, #-68]
+	str	w8, [x1]
+	mov	x2, #44                         ; =0x2c
+	bl	_memcpy
+	ldp	x29, x30, [sp, #176]            ; 16-byte Folded Reload
+	add	sp, sp, #192
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -401,107 +286,70 @@ LBB2_5:
 _PAListPerformRuin:                     ; @PAListPerformRuin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #144
-	stp	x29, x30, [sp, #128]            ; 16-byte Folded Spill
-	add	x29, sp, #128
+	sub	sp, sp, #112
+	stp	x29, x30, [sp, #96]             ; 16-byte Folded Spill
+	add	x29, sp, #96
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	adrp	x8, ___stack_chk_guard@GOTPAGE
-	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
-	ldr	x8, [x8]
+	str	x8, [sp, #8]                    ; 8-byte Folded Spill
+	str	x0, [sp, #16]                   ; 8-byte Folded Spill
+	mov	x8, x0
 	stur	x8, [x29, #-8]
-	sub	x8, x29, #24
-	stur	x0, [x29, #-24]
-	stur	x1, [x29, #-16]
-	ldur	x10, [x29, #-24]
-	add	x9, sp, #56
-	str	x10, [sp, #56]
-	ldur	w8, [x8, #7]
-	stur	w8, [x9, #7]
 	mov	w8, #1                          ; =0x1
-	strb	w8, [sp, #55]
-	ldrb	w8, [sp, #56]
-	strb	w8, [sp, #54]
+	stur	w8, [x29, #-12]
+	ldr	w8, [x0]
+	stur	w8, [x29, #-16]
 	b	LBB3_1
 LBB3_1:                                 ; =>This Inner Loop Header: Depth=1
-	ldrb	w8, [sp, #55]
-	ldrb	w9, [sp, #54]
+	ldur	w8, [x29, #-12]
+	ldur	w9, [x29, #-16]
 	subs	w8, w8, w9
 	b.ge	LBB3_3
 	b	LBB3_2
 LBB3_2:                                 ;   in Loop: Header=BB3_1 Depth=1
-	add	x8, sp, #56
-	add	x9, x8, #1
-	ldrb	w10, [sp, #55]
-	mov	x11, x10
-	mov	x10, #5                         ; =0x5
+	ldr	x8, [sp, #16]                   ; 8-byte Folded Reload
+	add	x9, x8, #4
+	ldursw	x11, [x29, #-12]
+	mov	x10, #20                        ; =0x14
 	mul	x11, x11, x10
 	add	x9, x9, x11
-	str	x9, [sp, #24]                   ; 8-byte Folded Spill
-	add	x8, x8, #1
-	ldrb	w9, [sp, #55]
-                                        ; kill: def $x9 killed $w9
+	str	x9, [sp]                        ; 8-byte Folded Spill
+	add	x8, x8, #4
+	ldursw	x9, [x29, #-12]
 	mul	x9, x9, x10
 	add	x8, x8, x9
-	ldr	w9, [x8]
-	str	w9, [sp, #40]
-	ldrb	w8, [x8, #4]
-	strb	w8, [sp, #44]
-	ldr	x0, [sp, #40]
+	ldr	q0, [x8]
+	add	x0, sp, #32
+	str	q0, [sp, #32]
+	ldr	w8, [x8, #16]
+	str	w8, [sp, #48]
+	sub	x8, x29, #36
 	bl	_PASeriesPerformRuin
-	ldr	x9, [sp, #24]                   ; 8-byte Folded Reload
-	lsr	x8, x0, #32
-	mov	x10, x0
-	stur	w10, [sp, #49]
-                                        ; kill: def $w8 killed $w8 killed $x8
-	strb	w8, [sp, #53]
-	ldur	w8, [sp, #49]
-	str	w8, [x9]
-	ldrb	w8, [sp, #53]
-	strb	w8, [x9, #4]
-	ldrb	w8, [sp, #55]
+	ldr	x9, [sp]                        ; 8-byte Folded Reload
+	ldur	q0, [x29, #-36]
+	str	q0, [x9]
+	ldur	w8, [x29, #-20]
+	str	w8, [x9, #16]
+	ldur	w8, [x29, #-12]
 	add	w8, w8, #1
-	strb	w8, [sp, #55]
+	stur	w8, [x29, #-12]
 	b	LBB3_1
 LBB3_3:
-	add	x8, sp, #56
-	str	x8, [sp]                        ; 8-byte Folded Spill
-	ldrb	w8, [sp, #56]
+	ldr	x8, [sp, #16]                   ; 8-byte Folded Reload
+	ldr	w8, [x8]
 	mov	x0, x8
 	bl	_PACountPerformRuin
-	ldr	x9, [sp]                        ; 8-byte Folded Reload
-	strb	w0, [sp, #39]
-	ldrb	w8, [sp, #39]
-	strb	w8, [sp, #56]
-	ldr	x10, [sp, #56]
-	sub	x8, x29, #56
-	stur	x10, [x29, #-56]
-	ldur	w9, [x9, #7]
-	stur	w9, [x8, #7]
-	ldur	x10, [x29, #-56]
-	sub	x9, x29, #40
-	stur	x10, [x29, #-40]
-	ldur	w8, [x8, #7]
-	stur	w8, [x9, #7]
-	ldur	x8, [x29, #-40]
-	str	x8, [sp, #8]                    ; 8-byte Folded Spill
-	ldur	x8, [x29, #-32]
-	str	x8, [sp, #16]                   ; 8-byte Folded Spill
-	ldur	x9, [x29, #-8]
-	adrp	x8, ___stack_chk_guard@GOTPAGE
-	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
-	ldr	x8, [x8]
-	subs	x8, x8, x9
-	b.eq	LBB3_5
-	b	LBB3_4
-LBB3_4:
-	bl	___stack_chk_fail
-LBB3_5:
 	ldr	x1, [sp, #16]                   ; 8-byte Folded Reload
+	mov	x8, x0
 	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
-	ldp	x29, x30, [sp, #128]            ; 16-byte Folded Reload
-	add	sp, sp, #144
+	str	w8, [sp, #28]
+	ldr	w8, [sp, #28]
+	str	w8, [x1]
+	mov	x2, #44                         ; =0x2c
+	bl	_memcpy
+	ldp	x29, x30, [sp, #96]             ; 16-byte Folded Reload
+	add	sp, sp, #112
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -518,107 +366,70 @@ _Dispose:                               ; @Dispose
 _PAListPerformDelete:                   ; @PAListPerformDelete
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #144
-	stp	x29, x30, [sp, #128]            ; 16-byte Folded Spill
-	add	x29, sp, #128
+	sub	sp, sp, #112
+	stp	x29, x30, [sp, #96]             ; 16-byte Folded Spill
+	add	x29, sp, #96
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	adrp	x8, ___stack_chk_guard@GOTPAGE
-	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
-	ldr	x8, [x8]
+	str	x8, [sp, #16]                   ; 8-byte Folded Spill
+	str	x0, [sp, #24]                   ; 8-byte Folded Spill
+	mov	x8, x0
 	stur	x8, [x29, #-8]
-	sub	x8, x29, #24
-	stur	x0, [x29, #-24]
-	stur	x1, [x29, #-16]
-	ldur	x10, [x29, #-24]
-	add	x9, sp, #56
-	str	x10, [sp, #56]
-	ldur	w8, [x8, #7]
-	stur	w8, [x9, #7]
-	ldrb	w8, [sp, #56]
-	strb	w8, [sp, #55]
-	ldrb	w8, [sp, #56]
+	ldr	w8, [x0]
+	stur	w8, [x29, #-12]
+	ldr	w8, [x0]
 	mov	x0, x8
 	bl	_PACountPerformDelete
-	strb	w0, [sp, #54]
-	ldrb	w8, [sp, #54]
-	strb	w8, [sp, #55]
-	ldrb	w8, [sp, #55]
-	strb	w8, [sp, #52]
+	stur	w0, [x29, #-16]
+	ldur	w8, [x29, #-16]
+	stur	w8, [x29, #-12]
+	ldur	w8, [x29, #-12]
+	stur	w8, [x29, #-24]
 	mov	w8, #1                          ; =0x1
-	strb	w8, [sp, #53]
+	stur	w8, [x29, #-20]
 	b	LBB5_1
 LBB5_1:                                 ; =>This Inner Loop Header: Depth=1
-	ldrb	w8, [sp, #53]
-	ldrb	w9, [sp, #52]
+	ldur	w8, [x29, #-20]
+	ldur	w9, [x29, #-24]
 	subs	w8, w8, w9
 	b.ge	LBB5_3
 	b	LBB5_2
 LBB5_2:                                 ;   in Loop: Header=BB5_1 Depth=1
-	add	x8, sp, #56
-	add	x9, x8, #1
-	ldrb	w10, [sp, #53]
-	mov	x11, x10
-	mov	x10, #5                         ; =0x5
+	ldr	x8, [sp, #24]                   ; 8-byte Folded Reload
+	add	x9, x8, #4
+	ldursw	x11, [x29, #-20]
+	mov	x10, #20                        ; =0x14
 	mul	x11, x11, x10
 	add	x9, x9, x11
-	str	x9, [sp, #24]                   ; 8-byte Folded Spill
-	add	x8, x8, #1
-	ldrb	w9, [sp, #53]
-                                        ; kill: def $x9 killed $w9
+	str	x9, [sp, #8]                    ; 8-byte Folded Spill
+	add	x8, x8, #4
+	ldursw	x9, [x29, #-20]
 	mul	x9, x9, x10
 	add	x8, x8, x9
-	ldr	w9, [x8]
-	str	w9, [sp, #32]
-	ldrb	w8, [x8, #4]
-	strb	w8, [sp, #36]
-	ldr	x0, [sp, #32]
+	ldr	q0, [x8]
+	add	x0, sp, #32
+	str	q0, [sp, #32]
+	ldr	w8, [x8, #16]
+	str	w8, [sp, #48]
+	sub	x8, x29, #44
 	bl	_PASeriesPerformDelete
-	ldr	x9, [sp, #24]                   ; 8-byte Folded Reload
-	lsr	x8, x0, #32
-	mov	x10, x0
-	stur	w10, [sp, #47]
-                                        ; kill: def $w8 killed $w8 killed $x8
-	strb	w8, [sp, #51]
-	ldur	w8, [sp, #47]
-	str	w8, [x9]
-	ldrb	w8, [sp, #51]
-	strb	w8, [x9, #4]
-	ldrb	w8, [sp, #53]
+	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload
+	ldur	q0, [x29, #-44]
+	str	q0, [x9]
+	ldur	w8, [x29, #-28]
+	str	w8, [x9, #16]
+	ldur	w8, [x29, #-20]
 	add	w8, w8, #1
-	strb	w8, [sp, #53]
+	stur	w8, [x29, #-20]
 	b	LBB5_1
 LBB5_3:
-	add	x9, sp, #56
-	ldr	x10, [sp, #56]
-	sub	x8, x29, #56
-	stur	x10, [x29, #-56]
-	ldur	w9, [x9, #7]
-	stur	w9, [x8, #7]
-	ldur	x10, [x29, #-56]
-	sub	x9, x29, #40
-	stur	x10, [x29, #-40]
-	ldur	w8, [x8, #7]
-	stur	w8, [x9, #7]
-	ldur	x8, [x29, #-40]
-	str	x8, [sp, #8]                    ; 8-byte Folded Spill
-	ldur	x8, [x29, #-32]
-	str	x8, [sp, #16]                   ; 8-byte Folded Spill
-	ldur	x9, [x29, #-8]
-	adrp	x8, ___stack_chk_guard@GOTPAGE
-	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
-	ldr	x8, [x8]
-	subs	x8, x8, x9
-	b.eq	LBB5_5
-	b	LBB5_4
-LBB5_4:
-	bl	___stack_chk_fail
-LBB5_5:
-	ldr	x1, [sp, #16]                   ; 8-byte Folded Reload
-	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
-	ldp	x29, x30, [sp, #128]            ; 16-byte Folded Reload
-	add	sp, sp, #144
+	ldr	x1, [sp, #24]                   ; 8-byte Folded Reload
+	ldr	x0, [sp, #16]                   ; 8-byte Folded Reload
+	mov	x2, #44                         ; =0x2c
+	bl	_memcpy
+	ldp	x29, x30, [sp, #96]             ; 16-byte Folded Reload
+	add	sp, sp, #112
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -627,36 +438,10 @@ LBB5_5:
 _PAListPerformPrint:                    ; @PAListPerformPrint
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #64
-	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
-	add	x29, sp, #48
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	adrp	x8, ___stack_chk_guard@GOTPAGE
-	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
-	ldr	x8, [x8]
-	stur	x8, [x29, #-8]
-	add	x8, sp, #24
-	str	x0, [sp, #24]
-	str	x1, [sp, #32]
-	ldr	x10, [sp, #24]
-	add	x9, sp, #8
-	str	x10, [sp, #8]
-	ldur	w8, [x8, #7]
-	stur	w8, [x9, #7]
-	ldur	x9, [x29, #-8]
-	adrp	x8, ___stack_chk_guard@GOTPAGE
-	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
-	ldr	x8, [x8]
-	subs	x8, x8, x9
-	b.eq	LBB6_2
-	b	LBB6_1
-LBB6_1:
-	bl	___stack_chk_fail
-LBB6_2:
-	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
-	add	sp, sp, #64
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	str	x0, [sp, #8]
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function

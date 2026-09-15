@@ -12,18 +12,18 @@ _PAStatusPerformConstruct:              ; @PAStatusPerformConstruct
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
 	bl	_PAResourcePerformConstruct
-	sturb	w0, [x29, #-2]
-	ldurb	w8, [x29, #-2]
-	sturb	w8, [x29, #-1]
-	ldurb	w8, [x29, #-1]
+	str	w0, [sp, #8]
+	ldr	w8, [sp, #8]
+	stur	w8, [x29, #-4]
+	ldur	w8, [x29, #-4]
 	mov	x0, x8
-	ldurb	w8, [x29, #-1]
+	ldur	w8, [x29, #-4]
 	mov	x1, x8
 	bl	_PAStatusPerformInit
-	sturb	w0, [x29, #-3]
-	ldurb	w8, [x29, #-3]
-	sturb	w8, [x29, #-1]
-	ldurb	w0, [x29, #-1]
+	str	w0, [sp, #4]
+	ldr	w8, [sp, #4]
+	stur	w8, [x29, #-4]
+	ldur	w0, [x29, #-4]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
 	ret
@@ -37,14 +37,14 @@ _PAStatusPerformInit:                   ; @PAStatusPerformInit
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	mov	x8, x0
-	strb	w8, [sp, #14]
+	str	w8, [sp, #8]
 	mov	x8, x1
-	strb	w8, [sp, #13]
-	ldrb	w8, [sp, #13]
-	strb	w8, [sp, #14]
-	ldrb	w8, [sp, #14]
-	strb	w8, [sp, #15]
-	ldrb	w0, [sp, #15]
+	str	w8, [sp, #4]
+	ldr	w8, [sp, #4]
+	str	w8, [sp, #8]
+	ldr	w8, [sp, #8]
+	str	w8, [sp, #12]
+	ldr	w0, [sp, #12]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -54,31 +54,31 @@ _PAStatusPerformInit:                   ; @PAStatusPerformInit
 _PAStatusPerformCopy:                   ; @PAStatusPerformCopy
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
-	add	x29, sp, #16
+	sub	sp, sp, #48
+	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
+	add	x29, sp, #32
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
 	mov	x8, x0
-	sturb	w8, [x29, #-2]
+	stur	w8, [x29, #-8]
 	mov	x8, x1
-	sturb	w8, [x29, #-3]
-	ldurb	w8, [x29, #-2]
+	stur	w8, [x29, #-12]
+	ldur	w8, [x29, #-8]
 	mov	x0, x8
-	ldurb	w8, [x29, #-3]
+	ldur	w8, [x29, #-12]
 	mov	x1, x8
 	bl	_PAResourcePerformCopy
-	sturb	w0, [x29, #-5]
-	ldurb	w8, [x29, #-5]
-	sturb	w8, [x29, #-4]
-	ldurb	w8, [x29, #-4]
-	sturb	w8, [x29, #-3]
-	ldurb	w8, [x29, #-3]
-	sturb	w8, [x29, #-1]
-	ldurb	w0, [x29, #-1]
-	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
-	add	sp, sp, #32
+	str	w0, [sp, #12]
+	ldr	w8, [sp, #12]
+	str	w8, [sp, #16]
+	ldr	w8, [sp, #16]
+	stur	w8, [x29, #-12]
+	ldur	w8, [x29, #-12]
+	stur	w8, [x29, #-4]
+	ldur	w0, [x29, #-4]
+	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -90,11 +90,11 @@ _PAStatusPerformDelete:                 ; @PAStatusPerformDelete
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	mov	x8, x0
-	strb	w8, [sp, #14]
-	strb	wzr, [sp, #14]
-	ldrb	w8, [sp, #14]
-	strb	w8, [sp, #15]
-	ldrb	w0, [sp, #15]
+	str	w8, [sp, #8]
+	str	wzr, [sp, #8]
+	ldr	w8, [sp, #8]
+	str	w8, [sp, #12]
+	ldr	w0, [sp, #12]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -111,16 +111,16 @@ _PAStatusPerformRuin:                   ; @PAStatusPerformRuin
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
 	mov	x8, x0
-	sturb	w8, [x29, #-2]
-	ldurb	w8, [x29, #-2]
+	str	w8, [sp, #8]
+	ldr	w8, [sp, #8]
 	mov	x0, x8
 	bl	_PAResourcePerformRuin
-	sturb	w0, [x29, #-3]
-	ldurb	w8, [x29, #-3]
-	sturb	w8, [x29, #-2]
-	ldurb	w8, [x29, #-2]
-	sturb	w8, [x29, #-1]
-	ldurb	w0, [x29, #-1]
+	str	w0, [sp, #4]
+	ldr	w8, [sp, #4]
+	str	w8, [sp, #8]
+	ldr	w8, [sp, #8]
+	stur	w8, [x29, #-4]
+	ldur	w0, [x29, #-4]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
 	ret
@@ -134,10 +134,10 @@ _PAStatusOperatorNotEqual:              ; @PAStatusOperatorNotEqual
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	mov	x8, x0
-	strb	w8, [sp, #15]
+	str	w8, [sp, #12]
 	mov	x8, x1
-	strb	w8, [sp, #14]
-	ldr	w0, [sp, #8]
+	str	w8, [sp, #8]
+	ldr	w0, [sp, #4]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -150,10 +150,10 @@ _PAStatusOperatorEqual:                 ; @PAStatusOperatorEqual
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	mov	x8, x0
-	strb	w8, [sp, #15]
+	str	w8, [sp, #12]
 	mov	x8, x1
-	strb	w8, [sp, #14]
-	ldr	w0, [sp, #8]
+	str	w8, [sp, #8]
+	ldr	w0, [sp, #4]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc

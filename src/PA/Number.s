@@ -7,7 +7,7 @@ _PANumberPerformConstruct:              ; @PANumberPerformConstruct
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	ldrb	w0, [sp, #15]
+	ldr	w0, [sp, #12]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -20,15 +20,15 @@ _PANumberPerformInit:                   ; @PANumberPerformInit
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	mov	x8, x0
-	strb	w8, [sp, #14]
-	strb	w1, [sp, #13]
-	ldrb	w8, [sp, #13]
-	strb	w8, [sp, #12]
-	ldrb	w8, [sp, #12]
-	strb	w8, [sp, #14]
-	ldrb	w8, [sp, #14]
-	strb	w8, [sp, #15]
-	ldrb	w0, [sp, #15]
+	str	w8, [sp, #8]
+	strb	w1, [sp, #7]
+	ldrb	w8, [sp, #7]
+	str	w8, [sp]
+	ldr	w8, [sp]
+	str	w8, [sp, #8]
+	ldr	w8, [sp, #8]
+	str	w8, [sp, #12]
+	ldr	w0, [sp, #12]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -41,12 +41,12 @@ _PANumberPerformDelete:                 ; @PANumberPerformDelete
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	mov	x8, x0
-	strb	w8, [sp, #14]
+	str	w8, [sp, #8]
 	mov	w8, #48                         ; =0x30
-	strb	w8, [sp, #14]
-	ldrb	w8, [sp, #14]
-	strb	w8, [sp, #15]
-	ldrb	w0, [sp, #15]
+	str	w8, [sp, #8]
+	ldr	w8, [sp, #8]
+	str	w8, [sp, #12]
+	ldr	w0, [sp, #12]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -59,10 +59,10 @@ _PANumberPerformRuin:                   ; @PANumberPerformRuin
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	mov	x8, x0
-	strb	w8, [sp, #14]
-	ldrb	w8, [sp, #14]
-	strb	w8, [sp, #15]
-	ldrb	w0, [sp, #15]
+	str	w8, [sp, #8]
+	ldr	w8, [sp, #8]
+	str	w8, [sp, #12]
+	ldr	w0, [sp, #12]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -75,16 +75,16 @@ _PANumberPerformCopy:                   ; @PANumberPerformCopy
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	mov	x8, x0
-	strb	w8, [sp, #14]
+	str	w8, [sp, #8]
 	mov	x8, x1
-	strb	w8, [sp, #13]
-	ldrb	w8, [sp, #14]
-	strb	w8, [sp, #12]
-	ldrb	w8, [sp, #12]
-	strb	w8, [sp, #13]
-	ldrb	w8, [sp, #13]
-	strb	w8, [sp, #15]
-	ldrb	w0, [sp, #15]
+	str	w8, [sp, #4]
+	ldr	w8, [sp, #8]
+	strb	w8, [sp, #3]
+	ldrsb	w8, [sp, #3]
+	str	w8, [sp, #4]
+	ldr	w8, [sp, #4]
+	str	w8, [sp, #12]
+	ldr	w0, [sp, #12]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
