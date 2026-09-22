@@ -81,8 +81,12 @@ DllExport struct PAElement PAElementPerformCopy(struct PAElement from, struct PA
 // }
 DllExport struct PAElement PAElementPerformRuin(struct PAElement PA)
 {
-    PA.index = PADataPerformRuin(PA.index);
-    PA.status = PAStatusPerformRuin(PA.status);
+    struct PAElement temp;
+    temp.index = PADataPerformRuin(PA.index);
+    temp.status = PAStatusPerformRuin(PA.status);
+    PA = temp;
+    // PA.index = PADataPerformRuin(PA.index);
+    // PA.status = PAStatusPerformRuin(PA.status);
     // Element.padding[0] = NULL;
     // Element.padding[1] = NULL;
     // Element.padding[2] = NULL;

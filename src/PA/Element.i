@@ -512,3 +512,27 @@ struct PAElement PAElementPerformConstruct()
     return PA;
 
 }
+          int PAElementOperatorLess(struct PAElement one, struct PAElement other)
+{
+    int result;
+    result = PADataOperatorLess(one.index,other.index);
+    return result;
+}
+          int PAElementOperatorEqual(struct PAElement one,struct PAElement other)
+{
+    int result;
+    result = PADataOperatorEqual(one.index,other.index);
+    return result;
+}
+          int PAElementOperatorGreater(struct PAElement one, struct PAElement other)
+{
+    int result;
+    result = PADataOperatorGreater(one.index,other.index);
+    return result;
+}
+          int PAElementOperatorNotEqual(struct PAElement one, struct PAElement other)
+{
+    int result;
+    result = PADataOperatorNotEqual(one.index,other.index);
+    return result;
+}

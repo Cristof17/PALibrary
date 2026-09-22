@@ -485,24 +485,28 @@ struct Facade {
           int PADataOperatorLess(struct PAData one, struct PAData other)
 {
     int result;
+    result = PAResourceOperatorLess(one.Resource, other.Resource);
     return result;
 }
           int PADataOperatorEqual(struct PAData one, struct PAData other)
 {
     int result;
+    result = PAResourceOperatorEqual(one.Resource, other.Resource);
     return result;
 }
           int PADataOperatorGreater(struct PAData one, struct PAData other)
 {
     int result;
+    result = PAResourceOperatorGreater(one.Resource, other.Resource);
     return result;
 }
           int PADataOperatorNotEqual(struct PAData one, struct PAData other)
 {
     int result;
+    result = PAResourceOperatorNotEqual(one.Resource, other.Resource);
     return result;
 }
-# 84 "./src/PA/Data.c"
+# 88 "./src/PA/Data.c"
           struct PAData PADataPerformRuin(struct PAData Data)
 {
 
@@ -514,6 +518,7 @@ struct Facade {
 }
           struct PAData PADataPerformDelete(struct PAData PA)
 {
+    PAResourcePerformDelete(PA.Resource);
     return PA;
 
 

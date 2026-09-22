@@ -191,4 +191,104 @@ _PAElementPerformDelete:                ; @PAElementPerformDelete
 	ret
 	.cfi_endproc
                                         ; -- End function
+	.globl	_PAElementOperatorLess          ; -- Begin function PAElementOperatorLess
+	.p2align	2
+_PAElementOperatorLess:                 ; @PAElementOperatorLess
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #64
+	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
+	add	x29, sp, #48
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	stur	x0, [x29, #-16]
+	stur	x1, [x29, #-8]
+	str	x2, [sp, #16]
+	str	x3, [sp, #24]
+	ldur	x0, [x29, #-16]
+	ldr	x1, [sp, #16]
+	bl	_PADataOperatorLess
+	str	w0, [sp, #12]
+	ldr	w0, [sp, #12]
+	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
+	add	sp, sp, #64
+	ret
+	.cfi_endproc
+                                        ; -- End function
+	.globl	_PAElementOperatorEqual         ; -- Begin function PAElementOperatorEqual
+	.p2align	2
+_PAElementOperatorEqual:                ; @PAElementOperatorEqual
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #64
+	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
+	add	x29, sp, #48
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	stur	x0, [x29, #-16]
+	stur	x1, [x29, #-8]
+	str	x2, [sp, #16]
+	str	x3, [sp, #24]
+	ldur	x0, [x29, #-16]
+	ldr	x1, [sp, #16]
+	bl	_PADataOperatorEqual
+	str	w0, [sp, #12]
+	ldr	w0, [sp, #12]
+	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
+	add	sp, sp, #64
+	ret
+	.cfi_endproc
+                                        ; -- End function
+	.globl	_PAElementOperatorGreater       ; -- Begin function PAElementOperatorGreater
+	.p2align	2
+_PAElementOperatorGreater:              ; @PAElementOperatorGreater
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #64
+	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
+	add	x29, sp, #48
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	stur	x0, [x29, #-16]
+	stur	x1, [x29, #-8]
+	str	x2, [sp, #16]
+	str	x3, [sp, #24]
+	ldur	x0, [x29, #-16]
+	ldr	x1, [sp, #16]
+	bl	_PADataOperatorGreater
+	str	w0, [sp, #12]
+	ldr	w0, [sp, #12]
+	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
+	add	sp, sp, #64
+	ret
+	.cfi_endproc
+                                        ; -- End function
+	.globl	_PAElementOperatorNotEqual      ; -- Begin function PAElementOperatorNotEqual
+	.p2align	2
+_PAElementOperatorNotEqual:             ; @PAElementOperatorNotEqual
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #64
+	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
+	add	x29, sp, #48
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	stur	x0, [x29, #-16]
+	stur	x1, [x29, #-8]
+	str	x2, [sp, #16]
+	str	x3, [sp, #24]
+	ldur	x0, [x29, #-16]
+	ldr	x1, [sp, #16]
+	bl	_PADataOperatorNotEqual
+	str	w0, [sp, #12]
+	ldr	w0, [sp, #12]
+	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
+	add	sp, sp, #64
+	ret
+	.cfi_endproc
+                                        ; -- End function
 .subsections_via_symbols

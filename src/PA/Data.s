@@ -92,12 +92,21 @@ _PADataPerformCopy:                     ; @PADataPerformCopy
 _PADataOperatorLess:                    ; @PADataOperatorLess
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
-	str	x0, [sp, #24]
+	sub	sp, sp, #48
+	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
+	add	x29, sp, #32
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	stur	x0, [x29, #-8]
 	str	x1, [sp, #16]
+	ldur	x0, [x29, #-8]
+	ldr	x1, [sp, #16]
+	bl	_PAResourceOperatorLess
+	str	w0, [sp, #12]
 	ldr	w0, [sp, #12]
-	add	sp, sp, #32
+	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -106,12 +115,21 @@ _PADataOperatorLess:                    ; @PADataOperatorLess
 _PADataOperatorEqual:                   ; @PADataOperatorEqual
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
-	str	x0, [sp, #24]
+	sub	sp, sp, #48
+	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
+	add	x29, sp, #32
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	stur	x0, [x29, #-8]
 	str	x1, [sp, #16]
+	ldur	x0, [x29, #-8]
+	ldr	x1, [sp, #16]
+	bl	_PAResourceOperatorEqual
+	str	w0, [sp, #12]
 	ldr	w0, [sp, #12]
-	add	sp, sp, #32
+	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -120,12 +138,21 @@ _PADataOperatorEqual:                   ; @PADataOperatorEqual
 _PADataOperatorGreater:                 ; @PADataOperatorGreater
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
-	str	x0, [sp, #24]
+	sub	sp, sp, #48
+	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
+	add	x29, sp, #32
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	stur	x0, [x29, #-8]
 	str	x1, [sp, #16]
+	ldur	x0, [x29, #-8]
+	ldr	x1, [sp, #16]
+	bl	_PAResourceOperatorGreater
+	str	w0, [sp, #12]
 	ldr	w0, [sp, #12]
-	add	sp, sp, #32
+	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -134,12 +161,21 @@ _PADataOperatorGreater:                 ; @PADataOperatorGreater
 _PADataOperatorNotEqual:                ; @PADataOperatorNotEqual
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
-	str	x0, [sp, #24]
+	sub	sp, sp, #48
+	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
+	add	x29, sp, #32
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	stur	x0, [x29, #-8]
 	str	x1, [sp, #16]
+	ldur	x0, [x29, #-8]
+	ldr	x1, [sp, #16]
+	bl	_PAResourceOperatorNotEqual
+	str	w0, [sp, #12]
 	ldr	w0, [sp, #12]
-	add	sp, sp, #32
+	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -163,13 +199,21 @@ _PADataPerformRuin:                     ; @PADataPerformRuin
 _PADataPerformDelete:                   ; @PADataPerformDelete
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	str	x0, [sp]
-	ldr	x8, [sp]
-	str	x8, [sp, #8]
-	ldr	x0, [sp, #8]
-	add	sp, sp, #16
+	sub	sp, sp, #48
+	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
+	add	x29, sp, #32
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	str	x0, [sp, #16]
+	ldr	x0, [sp, #16]
+	bl	_PAResourcePerformDelete
+	str	x0, [sp, #8]
+	ldr	x8, [sp, #16]
+	stur	x8, [x29, #-8]
+	ldur	x0, [x29, #-8]
+	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function
