@@ -96,6 +96,7 @@ DllExport struct PAData PADataPerformRuin(struct PAData Data)
 }
 DllExport struct PAData PADataPerformDelete(struct PAData PA)
 {
+    PAResourcePerformDelete(PA.Resource);
     return PA;
     // PAResult result = (PAInt) PARESULT_SUCCESS;
     // return PA;

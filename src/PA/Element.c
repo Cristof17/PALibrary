@@ -139,3 +139,27 @@ DllExport struct PAElement PAElementPerformDelete(struct PAElement PA)
     return PA;
     // return 0;
 }
+DllExport PAResult PAElementOperatorLess(struct PAElement one, struct PAElement other)
+{
+    PAResult result;
+    result = PADataOperatorLess(one.index,other.index);
+    return result;
+}
+DllExport PAResult PAElementOperatorEqual(struct PAElement one,struct PAElement other)
+{
+    PAResult result;
+    result = PADataOperatorEqual(one.index,other.index);
+    return result;
+}
+DllExport PAResult PAElementOperatorGreater(struct PAElement one, struct PAElement other)
+{
+    PAResult result;
+    result = PADataOperatorGreater(one.index,other.index);
+    return result;
+}
+DllExport PAResult PAElementOperatorNotEqual(struct PAElement one, struct PAElement other)
+{
+    PAResult result;
+    result = PADataOperatorNotEqual(one.index,other.index);
+    return result;
+}
