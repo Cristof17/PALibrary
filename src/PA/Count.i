@@ -501,20 +501,24 @@ struct Facade {
           int PACountOperatorLess(struct PACount one, struct PACount other)
 {
     int result;
+    result = PANumberOperatorLess(one.number,other.number);
     return result;
 }
           int PACountOperatorEqual(struct PACount one,struct PACount other)
 {
     int result;
+    result = PANumberOperatorEqual(one.number,other.number);
     return result;
 }
           int PACountOperatorGreater(struct PACount one, struct PACount other)
 {
     int result;
+    result = PANumberOperatorGreater(one.number,other.number);
     return result;
 }
           int PACountOperatorNotEqual(struct PACount one, struct PACount other)
 {
     int result;
+    result = PANumberOperatorNotEqual(one.number,other.number);
     return result;
 }
