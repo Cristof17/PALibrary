@@ -498,22 +498,22 @@ struct Facade {
     to.number = temp.number;
     return to;
 }
-          int PAElementOperatorLess(struct PAElement one, struct PAElement other)
+          int PACountOperatorLess(struct PACount one, struct PACount other)
 {
     int result;
     return result;
 }
-          int PAElementOperatorEqual(struct PAElement one,struct PAElement other)
+          int PACountOperatorEqual(struct PACount one,struct PACount other)
 {
     int result;
     return result;
 }
-          int PAElementOperatorGreater(struct PAElement one, struct PAElement other)
+          int PACountOperatorGreater(struct PACount one, struct PACount other)
 {
     int result;
     return result;
 }
-          int PAElementOperatorNotEqual(struct PAElement one, struct PAElement other)
+          int PACountOperatorNotEqual(struct PACount one, struct PACount other)
 {
     int result;
     return result;

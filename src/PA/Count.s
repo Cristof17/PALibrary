@@ -135,67 +135,59 @@ _PACountPerformCopy:                    ; @PACountPerformCopy
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAElementOperatorLess          ; -- Begin function PAElementOperatorLess
+	.globl	_PACountOperatorLess            ; -- Begin function PACountOperatorLess
 	.p2align	2
-_PAElementOperatorLess:                 ; @PAElementOperatorLess
+_PACountOperatorLess:                   ; @PACountOperatorLess
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #48
-	.cfi_def_cfa_offset 48
-	str	x0, [sp, #32]
-	str	x1, [sp, #40]
-	str	x2, [sp, #16]
-	str	x3, [sp, #24]
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #24]
+	str	x1, [sp, #16]
 	ldr	w0, [sp, #12]
-	add	sp, sp, #48
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAElementOperatorEqual         ; -- Begin function PAElementOperatorEqual
+	.globl	_PACountOperatorEqual           ; -- Begin function PACountOperatorEqual
 	.p2align	2
-_PAElementOperatorEqual:                ; @PAElementOperatorEqual
+_PACountOperatorEqual:                  ; @PACountOperatorEqual
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #48
-	.cfi_def_cfa_offset 48
-	str	x0, [sp, #32]
-	str	x1, [sp, #40]
-	str	x2, [sp, #16]
-	str	x3, [sp, #24]
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #24]
+	str	x1, [sp, #16]
 	ldr	w0, [sp, #12]
-	add	sp, sp, #48
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAElementOperatorGreater       ; -- Begin function PAElementOperatorGreater
+	.globl	_PACountOperatorGreater         ; -- Begin function PACountOperatorGreater
 	.p2align	2
-_PAElementOperatorGreater:              ; @PAElementOperatorGreater
+_PACountOperatorGreater:                ; @PACountOperatorGreater
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #48
-	.cfi_def_cfa_offset 48
-	str	x0, [sp, #32]
-	str	x1, [sp, #40]
-	str	x2, [sp, #16]
-	str	x3, [sp, #24]
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #24]
+	str	x1, [sp, #16]
 	ldr	w0, [sp, #12]
-	add	sp, sp, #48
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAElementOperatorNotEqual      ; -- Begin function PAElementOperatorNotEqual
+	.globl	_PACountOperatorNotEqual        ; -- Begin function PACountOperatorNotEqual
 	.p2align	2
-_PAElementOperatorNotEqual:             ; @PAElementOperatorNotEqual
+_PACountOperatorNotEqual:               ; @PACountOperatorNotEqual
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #48
-	.cfi_def_cfa_offset 48
-	str	x0, [sp, #32]
-	str	x1, [sp, #40]
-	str	x2, [sp, #16]
-	str	x3, [sp, #24]
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #24]
+	str	x1, [sp, #16]
 	ldr	w0, [sp, #12]
-	add	sp, sp, #48
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
