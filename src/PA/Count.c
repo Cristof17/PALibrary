@@ -44,6 +44,8 @@ DllExport struct PACount PACountPerformInit(struct PACount Count, struct PANumbe
 }
 DllExport struct PACount PACountPerformRuin(struct PACount PA)
 {
+    // PANumberPerformRuin(PA.number);
+    // return PA;
     //get the value at address pointed by stack pointer
     //that corresponsds to parameter PA
     //check each bit
@@ -69,7 +71,8 @@ DllExport struct PACount PACountPerformRuin(struct PACount PA)
     // return result;
     // return PARESULT_SUCCESS;
     // return Empty;
-    return PA;    
+    // return PA;    
+    return PA;
 }
 DllExport struct PACount PACountPerformDelete(struct PACount PA)
 {

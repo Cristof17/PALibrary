@@ -475,7 +475,7 @@ struct Facade {
 }
           struct PACount PACountPerformRuin(struct PACount PA)
 {
-# 72 "./src/PA/Count.c"
+# 75 "./src/PA/Count.c"
     return PA;
 }
           struct PACount PACountPerformDelete(struct PACount PA)
