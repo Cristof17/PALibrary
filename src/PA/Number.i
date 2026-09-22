@@ -463,3 +463,55 @@ struct Facade {
 
     return to;
 }
+          int PANumberOperatorEqual(struct PANumber one, struct PANumber other)
+{
+    int result;
+    if (one.val == other.val)
+    {
+        result = ((int)0);
+    }
+    else
+    {
+        result = ((int)1);
+    }
+    return result;
+}
+          int PANumberOperatorNotEqual(struct PANumber one, struct PANumber other)
+{
+    int result;
+    if (one.val != other.val)
+    {
+        result = ((int)0);
+    }
+    else
+    {
+        result = ((int)1);
+    }
+    return result;
+}
+          int PANumberOperatorLess(struct PANumber one, struct PANumber other)
+{
+    int result;
+    if (one.val < other.val)
+    {
+        result = ((int)0);
+    }
+    else
+    {
+        result = ((int)1);
+    }
+    return result;
+}
+          int PANumberOperatorGreater(struct PANumber one, struct PANumber other)
+{
+    int result;
+    if (one.val > other.val)
+    {
+        result = ((int)0);
+    }
+    else
+    {
+        result = ((int)1);
+    }
+    return result;
+}

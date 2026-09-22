@@ -419,6 +419,8 @@ struct Facade {
           struct PAResource PAResourcePerformRuin(struct PAResource);
           struct PAResource PAResourcePerformDelete(struct PAResource);
           struct PAResource PAResourcePerformCopy(struct PAResource, struct PAResource);
+          int PAResourceOperatorLess(struct PAResource one,struct PAResource other);
+          int PAResourceOperatorGreater(struct PAResource one,struct PAResource other);
           int PAResourceOperatorEqual(struct PAResource one,struct PAResource other);
           int PAResourceOperatorNotEqual(struct PAResource one,struct PAResource other);
 # 8 "./src/PA/Status.c" 2
@@ -448,8 +450,10 @@ struct Facade {
 }
           struct PAStatus PAStatusPerformDelete(struct PAStatus PA)
 {
-    PA.visited.value.val = 0;
+    PAResourcePerformDelete(PA.visited);
     return PA;
+
+
 }
           struct PAStatus PAStatusPerformRuin(struct PAStatus PA)
 {
@@ -462,10 +466,12 @@ struct Facade {
           int PAStatusOperatorNotEqual(struct PAStatus one,struct PAStatus other)
 {
     int result;
+    result = PAResourceOperatorNotEqual(one.visited,other.visited);
     return result;
 }
           int PAStatusOperatorEqual(struct PAStatus one,struct PAStatus other)
 {
     int result;
+    result = PAResourceOperatorEqual(one.visited,other.visited);
     return result;
 }

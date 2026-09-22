@@ -491,6 +491,8 @@ void PAListPerformPrint(struct PAList List);
           struct PAResource PAResourcePerformRuin(struct PAResource);
           struct PAResource PAResourcePerformDelete(struct PAResource);
           struct PAResource PAResourcePerformCopy(struct PAResource, struct PAResource);
+          int PAResourceOperatorLess(struct PAResource one,struct PAResource other);
+          int PAResourceOperatorGreater(struct PAResource one,struct PAResource other);
           int PAResourceOperatorEqual(struct PAResource one,struct PAResource other);
           int PAResourceOperatorNotEqual(struct PAResource one,struct PAResource other);
 # 9 "test/test.c" 2

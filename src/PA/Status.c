@@ -31,8 +31,10 @@ DllExport struct PAStatus PAStatusPerformCopy(struct PAStatus from, struct PASta
 }
 DllExport struct PAStatus PAStatusPerformDelete(struct PAStatus PA)
 {
-    PA.visited.value.val = FALSE;
+    PAResourcePerformDelete(PA.visited);
     return PA;
+    // PA.visited.value.val = FALSE;
+    // return PA;
 }
 DllExport struct PAStatus PAStatusPerformRuin(struct PAStatus PA)
 {
@@ -45,11 +47,13 @@ DllExport struct PAStatus PAStatusPerformRuin(struct PAStatus PA)
 DllExport PAResult PAStatusOperatorNotEqual(struct PAStatus one,struct PAStatus other)
 {
     PAResult result;
+    result = PAResourceOperatorNotEqual(one.visited,other.visited);
     return result;
 }
 DllExport PAResult PAStatusOperatorEqual(struct PAStatus one,struct PAStatus other)
 {
     PAResult result;
+    result = PAResourceOperatorEqual(one.visited,other.visited);
     return result;
 }
 // struct PAStatus PAStatusPerformCopy(struct PAStatus Status)

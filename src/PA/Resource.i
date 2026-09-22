@@ -412,6 +412,8 @@ struct Facade {
           struct PAResource PAResourcePerformRuin(struct PAResource);
           struct PAResource PAResourcePerformDelete(struct PAResource);
           struct PAResource PAResourcePerformCopy(struct PAResource, struct PAResource);
+          int PAResourceOperatorLess(struct PAResource one,struct PAResource other);
+          int PAResourceOperatorGreater(struct PAResource one,struct PAResource other);
           int PAResourceOperatorEqual(struct PAResource one,struct PAResource other);
           int PAResourceOperatorNotEqual(struct PAResource one,struct PAResource other);
 # 4 "./src/PA/Resource.c" 2
@@ -469,4 +471,28 @@ struct Facade {
           struct PAResource PAResourcePerformDelete(struct PAResource Resource)
 {
     return Resource;
+}
+          int PAResourceOperatorLess(struct PAResource one,struct PAResource other)
+{
+    int result;
+    result = PANumberOperatorLess(one.value,other.value);
+    return result;
+}
+          int PAResourceOperatorGreater(struct PAResource one,struct PAResource other)
+{
+    int result;
+    result = PANumberOperatorGreater(one.value,other.value);
+    return result;
+}
+          int PAResourceOperatorEqual(struct PAResource one,struct PAResource other)
+{
+    int result;
+    result = PANumberOperatorEqual(one.value,other.value);
+    return result;
+}
+          int PAResourceOperatorNotEqual(struct PAResource one,struct PAResource other)
+{
+    int result;
+    result = PANumberOperatorNotEqual(one.value,other.value);
+    return result;
 }

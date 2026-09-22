@@ -48,3 +48,55 @@ DllExport struct PANumber PANumberPerformCopy(struct PANumber from, struct PANum
     // return temp;
     return to;
 }
+DllExport PAResult PANumberOperatorEqual(struct PANumber one, struct PANumber other)
+{
+    PAResult result;
+    if (one.val == other.val)
+    {
+        result = PARESULT_SUCCESS;
+    }
+    else
+    {
+        result = PARESULT_FAIL;
+    }
+    return result;
+}
+DllExport PAResult PANumberOperatorNotEqual(struct PANumber one, struct PANumber other)
+{
+    PAResult result;
+    if (one.val != other.val)
+    {
+        result = PARESULT_SUCCESS;
+    }
+    else
+    {
+        result = PARESULT_FAIL;
+    }
+    return result;
+}
+DllExport PAResult PANumberOperatorLess(struct PANumber one, struct PANumber other)
+{
+    PAResult result;
+    if (one.val < other.val)
+    {
+        result = PARESULT_SUCCESS;
+    }
+    else
+    {
+        result = PARESULT_FAIL;
+    }
+    return result;
+}
+DllExport PAResult PANumberOperatorGreater(struct PANumber one, struct PANumber other)
+{
+    PAResult result;
+    if (one.val > other.val)
+    {
+        result = PARESULT_SUCCESS;
+    }
+    else
+    {
+        result = PARESULT_FAIL;
+    }
+    return result;
+}

@@ -42,3 +42,27 @@ DllExport struct PAResource PAResourcePerformDelete(struct PAResource Resource)
 {
     return Resource;
 }
+DllExport PAResult PAResourceOperatorLess(struct PAResource one,struct PAResource other)
+{
+    PAResult result;
+    result = PANumberOperatorLess(one.value,other.value);
+    return result;
+}
+DllExport PAResult PAResourceOperatorGreater(struct PAResource one,struct PAResource other)
+{
+    PAResult result;
+    result = PANumberOperatorGreater(one.value,other.value);
+    return result;
+}
+DllExport PAResult PAResourceOperatorEqual(struct PAResource one,struct PAResource other)
+{
+    PAResult result;
+    result = PANumberOperatorEqual(one.value,other.value);
+    return result;
+}
+DllExport PAResult PAResourceOperatorNotEqual(struct PAResource one,struct PAResource other)
+{
+    PAResult result;
+    result = PANumberOperatorNotEqual(one.value,other.value);
+    return result;
+}

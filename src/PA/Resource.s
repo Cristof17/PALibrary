@@ -123,4 +123,96 @@ _PAResourcePerformDelete:               ; @PAResourcePerformDelete
 	ret
 	.cfi_endproc
                                         ; -- End function
+	.globl	_PAResourceOperatorLess         ; -- Begin function PAResourceOperatorLess
+	.p2align	2
+_PAResourceOperatorLess:                ; @PAResourceOperatorLess
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #48
+	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
+	add	x29, sp, #32
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	stur	x0, [x29, #-8]
+	str	x1, [sp, #16]
+	ldur	x0, [x29, #-8]
+	ldr	x1, [sp, #16]
+	bl	_PANumberOperatorLess
+	str	w0, [sp, #12]
+	ldr	w0, [sp, #12]
+	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
+	add	sp, sp, #48
+	ret
+	.cfi_endproc
+                                        ; -- End function
+	.globl	_PAResourceOperatorGreater      ; -- Begin function PAResourceOperatorGreater
+	.p2align	2
+_PAResourceOperatorGreater:             ; @PAResourceOperatorGreater
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #48
+	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
+	add	x29, sp, #32
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	stur	x0, [x29, #-8]
+	str	x1, [sp, #16]
+	ldur	x0, [x29, #-8]
+	ldr	x1, [sp, #16]
+	bl	_PANumberOperatorGreater
+	str	w0, [sp, #12]
+	ldr	w0, [sp, #12]
+	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
+	add	sp, sp, #48
+	ret
+	.cfi_endproc
+                                        ; -- End function
+	.globl	_PAResourceOperatorEqual        ; -- Begin function PAResourceOperatorEqual
+	.p2align	2
+_PAResourceOperatorEqual:               ; @PAResourceOperatorEqual
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #48
+	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
+	add	x29, sp, #32
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	stur	x0, [x29, #-8]
+	str	x1, [sp, #16]
+	ldur	x0, [x29, #-8]
+	ldr	x1, [sp, #16]
+	bl	_PANumberOperatorEqual
+	str	w0, [sp, #12]
+	ldr	w0, [sp, #12]
+	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
+	add	sp, sp, #48
+	ret
+	.cfi_endproc
+                                        ; -- End function
+	.globl	_PAResourceOperatorNotEqual     ; -- Begin function PAResourceOperatorNotEqual
+	.p2align	2
+_PAResourceOperatorNotEqual:            ; @PAResourceOperatorNotEqual
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #48
+	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
+	add	x29, sp, #32
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	stur	x0, [x29, #-8]
+	str	x1, [sp, #16]
+	ldur	x0, [x29, #-8]
+	ldr	x1, [sp, #16]
+	bl	_PANumberOperatorNotEqual
+	str	w0, [sp, #12]
+	ldr	w0, [sp, #12]
+	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
+	add	sp, sp, #48
+	ret
+	.cfi_endproc
+                                        ; -- End function
 .subsections_via_symbols
