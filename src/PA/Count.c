@@ -29,8 +29,10 @@ DllExport struct PACount PACountPerformInit(struct PACount Count, struct PANumbe
     // struct PANumber value;
     // value = PANumberPerformConstruct();
     temp.number = PANumberPerformConstruct();
+    temp.number = PANumberPerformInit(temp.number,Value.val);
+    Count.number = temp.number;
     //Value.val;
-    Count = temp;
+    // Count = temp;
     //temp.number = value;
     return Count;
     // temp = Count.number;
@@ -77,7 +79,7 @@ DllExport struct PACount PACountPerformDelete(struct PACount PA)
     // PAResult result;
     // return result;
 }
-PAResult PACountPerformPrint(struct PACount Count)
+DllExport PAResult PACountPerformPrint(struct PACount Count)
 {
     PAResult result;
     return result;

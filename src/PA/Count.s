@@ -44,6 +44,14 @@ _PACountPerformInit:                    ; @PACountPerformInit
 	str	x0, [sp, #8]
 	ldr	x8, [sp, #8]
 	str	x8, [sp, #16]
+	ldr	x8, [sp, #24]
+	ldr	x0, [sp, #16]
+                                        ; kill: def $w8 killed $w8 killed $x8
+	and	w1, w8, #0xff
+	bl	_PANumberPerformInit
+	str	x0, [sp]
+	ldr	x8, [sp]
+	str	x8, [sp, #16]
 	ldr	x8, [sp, #16]
 	stur	x8, [x29, #-16]
 	ldur	x8, [x29, #-16]

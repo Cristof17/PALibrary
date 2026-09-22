@@ -460,8 +460,10 @@ struct Facade {
 
 
     temp.number = PANumberPerformConstruct();
+    temp.number = PANumberPerformInit(temp.number,Value.val);
+    Count.number = temp.number;
 
-    Count = temp;
+
 
     return Count;
 
@@ -473,7 +475,7 @@ struct Facade {
 }
           struct PACount PACountPerformRuin(struct PACount PA)
 {
-# 70 "./src/PA/Count.c"
+# 72 "./src/PA/Count.c"
     return PA;
 }
           struct PACount PACountPerformDelete(struct PACount PA)
@@ -484,7 +486,7 @@ struct Facade {
 
 
 }
-int PACountPerformPrint(struct PACount Count)
+          int PACountPerformPrint(struct PACount Count)
 {
     int result;
     return result;
