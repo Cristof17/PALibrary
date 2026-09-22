@@ -40,21 +40,32 @@ _PAElementPerformConstruct:             ; @PAElementPerformConstruct
 _PAElementPerformInit:                  ; @PAElementPerformInit
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #48
-	.cfi_def_cfa_offset 48
-	str	x0, [sp, #16]
-	str	x1, [sp, #24]
-	str	x2, [sp, #8]
-	str	x3, [sp]
+	sub	sp, sp, #96
+	stp	x29, x30, [sp, #80]             ; 16-byte Folded Spill
+	add	x29, sp, #80
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	stur	x0, [x29, #-32]
+	stur	x1, [x29, #-24]
+	str	x2, [sp, #40]
+	str	x3, [sp, #32]
+	bl	_PADataPerformConstruct
+	str	x0, [sp, #8]
 	ldr	x8, [sp, #8]
 	str	x8, [sp, #16]
+	bl	_PAStatusPerformConstruct
+	str	x0, [sp]
 	ldr	x8, [sp]
 	str	x8, [sp, #24]
 	ldr	q0, [sp, #16]
-	str	q0, [sp, #32]
-	ldr	x0, [sp, #32]
-	ldr	x1, [sp, #40]
-	add	sp, sp, #48
+	stur	q0, [x29, #-32]
+	ldur	q0, [x29, #-32]
+	stur	q0, [x29, #-16]
+	ldur	x0, [x29, #-16]
+	ldur	x1, [x29, #-8]
+	ldp	x29, x30, [sp, #80]             ; 16-byte Folded Reload
+	add	sp, sp, #96
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -147,30 +158,32 @@ _PAElementPerformCopy:                  ; @PAElementPerformCopy
 _PAElementPerformRuin:                  ; @PAElementPerformRuin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #64
-	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
-	add	x29, sp, #48
+	sub	sp, sp, #80
+	stp	x29, x30, [sp, #64]             ; 16-byte Folded Spill
+	add	x29, sp, #64
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	str	x0, [sp, #16]
-	str	x1, [sp, #24]
-	ldr	x0, [sp, #16]
+	str	x0, [sp, #32]
+	str	x1, [sp, #40]
+	ldr	x0, [sp, #32]
 	bl	_PADataPerformRuin
 	str	x0, [sp, #8]
 	ldr	x8, [sp, #8]
 	str	x8, [sp, #16]
-	ldr	x0, [sp, #24]
+	ldr	x0, [sp, #40]
 	bl	_PAStatusPerformRuin
 	str	x0, [sp]
 	ldr	x8, [sp]
 	str	x8, [sp, #24]
 	ldr	q0, [sp, #16]
+	str	q0, [sp, #32]
+	ldr	q0, [sp, #32]
 	stur	q0, [x29, #-16]
 	ldur	x0, [x29, #-16]
 	ldur	x1, [x29, #-8]
-	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
-	add	sp, sp, #64
+	ldp	x29, x30, [sp, #64]             ; 16-byte Folded Reload
+	add	sp, sp, #80
 	ret
 	.cfi_endproc
                                         ; -- End function

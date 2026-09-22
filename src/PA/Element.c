@@ -15,7 +15,7 @@
 #include <types.h>
 // #include "//"
 // #include "../include/PAIndex.h"
-struct PAElement PAElementPerformConstruct()
+DllExport struct PAElement PAElementPerformConstruct()
 {
     struct PAElement temp;
     temp.index = PADataPerformConstruct();
@@ -35,7 +35,6 @@ DllExport struct PAElement PAElementPerformInit(struct PAElement Element, struct
     temp.index = PADataPerformConstruct();
     temp.status = PAStatusPerformConstruct();
     Element = temp;
-
     // Element.index = Value;
     // Element.status = Value2;
     //struct PAElement element;

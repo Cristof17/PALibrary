@@ -466,9 +466,11 @@ struct PAElement PAElementPerformConstruct()
 }
           struct PAElement PAElementPerformInit(struct PAElement Element, struct PAData Value, struct PAStatus Value2)
 {
-    Element.index = Value;
-    Element.status = Value2;
-# 45 "./src/PA/Element.c"
+    struct PAElement temp;
+    temp.index = PADataPerformConstruct();
+    temp.status = PAStatusPerformConstruct();
+    Element = temp;
+# 49 "./src/PA/Element.c"
     return Element;
 }
           void PAElementVisit(struct PAElement Element)
@@ -494,17 +496,19 @@ struct PAElement PAElementPerformConstruct()
     to.status = temp.status;
     return to;
 }
-# 82 "./src/PA/Element.c"
+# 86 "./src/PA/Element.c"
           struct PAElement PAElementPerformRuin(struct PAElement PA)
 {
-    PA.index = PADataPerformRuin(PA.index);
-    PA.status = PAStatusPerformRuin(PA.status);
-# 97 "./src/PA/Element.c"
+    struct PAElement temp;
+    temp.index = PADataPerformRuin(PA.index);
+    temp.status = PAStatusPerformRuin(PA.status);
+    PA = temp;
+# 105 "./src/PA/Element.c"
     return PA;
 
 
 }
-# 135 "./src/PA/Element.c"
+# 143 "./src/PA/Element.c"
           struct PAElement PAElementPerformDelete(struct PAElement PA)
 {
 
