@@ -97,21 +97,25 @@ DllExport struct PACount PACountPerformCopy(struct PACount from, struct PACount 
 DllExport PAResult PACountOperatorLess(struct PACount one, struct PACount other)
 {
     PAResult result;
+    result = PANumberOperatorLess(one.number,other.number);
     return result;
 }
 DllExport PAResult PACountOperatorEqual(struct PACount one,struct PACount other)
 {
     PAResult result;
+    result = PANumberOperatorEqual(one.number,other.number);
     return result;
 }
 DllExport PAResult PACountOperatorGreater(struct PACount one, struct PACount other)
 {
     PAResult result;
+    result = PANumberOperatorGreater(one.number,other.number);
     return result;
 }
 DllExport PAResult PACountOperatorNotEqual(struct PACount one, struct PACount other)
 {
     PAResult result;
+    result = PANumberOperatorNotEqual(one.number,other.number);
     return result;
 }
 // DllExport struct PACount PACountPerformCopy(struct PACount from, struct PACount to)
