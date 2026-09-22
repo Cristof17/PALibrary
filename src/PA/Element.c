@@ -31,8 +31,13 @@ struct PAElement PAElementPerformConstruct()
 }
 DllExport struct PAElement PAElementPerformInit(struct PAElement Element, struct PAData Value, struct PAStatus Value2)
 {
-    Element.index = Value;
-    Element.status = Value2;
+    struct PAElement temp;
+    temp.index = PADataPerformConstruct();
+    temp.status = PAStatusPerformConstruct();
+    Element = temp;
+
+    // Element.index = Value;
+    // Element.status = Value2;
     //struct PAElement element;
     // element. = Element.Index;
     //element.status = Element.status;
