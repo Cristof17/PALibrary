@@ -52,7 +52,7 @@ DllExport struct PAPair PAPairPerformInit(struct PAPair Pair, struct PAElement V
     // struct PAPair pair;
     // return result;
 }
-struct PAPair PAPairPerformCopy(struct PAPair from, struct PAPair to)
+DllExport struct PAPair PAPairPerformCopy(struct PAPair from, struct PAPair to)
 {
     struct PAPair temp;
     struct PAElement node;

@@ -224,7 +224,7 @@ struct PAResource PASeriesGet(struct PAData Data)
 //     struct PAList list;
 //     return list;
 // }
-void PASeriesPerformPrint(struct PASeries Series)
+DllExport void PASeriesPerformPrint(struct PASeries Series)
 {
 
 }

@@ -44,7 +44,7 @@ DllExport struct PALink PALinkPerformRuin(struct PALink PA)
     // return result;
     return PA;
 }
-struct PALink PALinkPerformCopy(struct PALink from, struct PALink to)
+DllExport struct PALink PALinkPerformCopy(struct PALink from, struct PALink to)
 {
     struct PALink temp;
     temp.p = PAPairPerformCopy(from.p, to.p);
