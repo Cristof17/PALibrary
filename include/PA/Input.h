@@ -3,6 +3,7 @@
 #define INCLUDE_BFSINPUT_H_	1
 
 #include <defs.h>
+#include <types.h>
 
 DllExport struct PAInput PAInputPerformConstruct();
 
