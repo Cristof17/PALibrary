@@ -400,11 +400,11 @@ struct Facade {
 };
 # 8 "./include/PA/Status.h" 2
 
-          struct PAStatus PAStatusPerformInit(struct PAStatus, struct PAResource);
-          struct PAStatus PAStatusPerformDelete(struct PAStatus);
+          struct PAStatus PAStatusPerformInit(struct PAStatus PA, struct PAResource Resource);
+          struct PAStatus PAStatusPerformDelete(struct PAStatus PA);
           struct PAStatus PAStatusPerformConstruct();
-          struct PAStatus PAStatusPerformRuin(struct PAStatus);
-          struct PAStatus PAStatusPerformCopy(struct PAStatus, struct PAStatus);
+          struct PAStatus PAStatusPerformRuin(struct PAStatus PA);
+          struct PAStatus PAStatusPerformCopy(struct PAStatus from, struct PAStatus to);
           int PAStatusOperatorNotEqual(struct PAStatus one,struct PAStatus other);
           int PAStatusOperatorEqual(struct PAStatus one,struct PAStatus other);
 # 7 "./src/PA/Status.c" 2
@@ -414,11 +414,11 @@ struct Facade {
 
 
 
-          struct PAResource PAResourcePerformInit(struct PAResource, struct PANumber);
+          struct PAResource PAResourcePerformInit(struct PAResource PA, struct PANumber Number);
           struct PAResource PAResourcePerformConstruct();
-          struct PAResource PAResourcePerformRuin(struct PAResource);
-          struct PAResource PAResourcePerformDelete(struct PAResource);
-          struct PAResource PAResourcePerformCopy(struct PAResource, struct PAResource);
+          struct PAResource PAResourcePerformRuin(struct PAResource PA);
+          struct PAResource PAResourcePerformDelete(struct PAResource PA);
+          struct PAResource PAResourcePerformCopy(struct PAResource from, struct PAResource to);
           int PAResourceOperatorLess(struct PAResource one,struct PAResource other);
           int PAResourceOperatorGreater(struct PAResource one,struct PAResource other);
           int PAResourceOperatorEqual(struct PAResource one,struct PAResource other);

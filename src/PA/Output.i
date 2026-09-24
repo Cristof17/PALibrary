@@ -404,10 +404,10 @@ struct Facade {
 
 
           struct PAOutput PAOutputPerformConstruct();
-          struct PAOutput PAOutputPerformInit(struct PAOutput, struct BFSRecord);
-          struct PAOutput PAOutputPerformDelete(struct PAOutput);
-          struct PAOutput PAOutputPerformRuin(struct PAOutput);
-          int PAOutputOperatorEqual(struct PAOutput on, struct PAOutput other);
+          struct PAOutput PAOutputPerformInit(struct PAOutput PA, struct BFSRecord Value);
+          struct PAOutput PAOutputPerformDelete(struct PAOutput PA);
+          struct PAOutput PAOutputPerformRuin(struct PAOutput PA);
+          int PAOutputOperatorEqual(struct PAOutput one, struct PAOutput other);
           int PAOutputOperatorNotEqual(struct PAOutput one,struct PAOutput other);
           void PAOutputPerformPrint(int Result);
 # 6 "./src/PA/Output.c" 2

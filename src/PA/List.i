@@ -412,9 +412,9 @@ struct Facade {
 
 
 
-          struct PAList PAListPerformRuin(struct PAList);
-          struct PAList PAListPerformDelete(struct PAList);
-          struct PAList PAListPerformCopy(struct PAList, struct PAList);
+          struct PAList PAListPerformRuin(struct PAList PA);
+          struct PAList PAListPerformDelete(struct PAList PA);
+          struct PAList PAListPerformCopy(struct PAList from, struct PAList to);
           int PAListOperatorEqual(struct PAList one, struct PAList other);
           int PAListOperatorNotEqual(struct PAList one, struct PAList other);
 
@@ -428,23 +428,23 @@ void PAListPerformPrint(struct PAList List);
 
 
 
-          struct PACount PACountPerformRuin(struct PACount);
+          struct PACount PACountPerformRuin(struct PACount PA);
 
 
           struct PACount PACountPerformDelete(struct PACount PA);
-          int PACountOperatorLess(struct PACount,struct PACount);
-          int PACountOperatorEqual(struct PACount,struct PACount);
-          int PACountOperatorGreater(struct PACount,struct PACount);
-          int PACountOperatorNotEqual(struct PACount,struct PACount);
+          int PACountOperatorLess(struct PACount one,struct PACount other);
+          int PACountOperatorEqual(struct PACount one,struct PACount other);
+          int PACountOperatorGreater(struct PACount one,struct PACount other);
+          int PACountOperatorNotEqual(struct PACount one,struct PACount other);
 # 9 "./src/PA/List.c" 2
 # 1 "./include/PA/Series.h" 1
 # 17 "./include/PA/Series.h"
           struct PASeries PASeriesPerformConstruct();
-          struct PASeries PASeriesPerformInit(struct PASeries, struct PACount, struct PAElement[]);
-          struct PASeries PASeriesPerformDelete(struct PASeries);
-          struct PASeries PASeriesPerformCopy(struct PASeries, struct PASeries);
+          struct PASeries PASeriesPerformInit(struct PASeries PA, struct PACount Count, struct PAElement Elements[]);
+          struct PASeries PASeriesPerformDelete(struct PASeries PA);
+          struct PASeries PASeriesPerformCopy(struct PASeries from, struct PASeries to);
 
-          struct PASeries PASeriesPerformRuin(struct PASeries);
+          struct PASeries PASeriesPerformRuin(struct PASeries PA);
           struct PAResource PASeriesGet(struct PAData Data);
           int PASeriesOperatorEqual(struct PASeries one,struct PASeries other);
           int PASeriesOperatorNotEqual(struct PASeries one,struct PASeries other);

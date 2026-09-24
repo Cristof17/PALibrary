@@ -426,19 +426,19 @@ struct Facade {
 # 7 "./src/PA/Pair.c" 2
 # 1 "./include/PA/Element.h" 1
 # 10 "./include/PA/Element.h"
-          void PAElementVisit(struct PAElement);
-          int PAElementIsVisited(struct PAElement);
-          void PAElementReset(struct PAElement);
+          void PAElementVisit(struct PAElement Element);
+          int PAElementIsVisited(struct PAElement Element);
+          void PAElementReset(struct PAElement Element);
           struct PAElement PAElementPerformConstruct();
 
-          struct PAElement PAElementPerformInit(struct PAElement,struct PAData,struct PAStatus);
+          struct PAElement PAElementPerformInit(struct PAElement PA,struct PAData Data,struct PAStatus Status);
 
 
 
 
-          struct PAElement PAElementPerformRuin(struct PAElement);
-          struct PAElement PAElementPerformDelete(struct PAElement);
-          struct PAElement PAElementPerformCopy(struct PAElement, struct PAElement);
+          struct PAElement PAElementPerformRuin(struct PAElement PA);
+          struct PAElement PAElementPerformDelete(struct PAElement PA);
+          struct PAElement PAElementPerformCopy(struct PAElement from, struct PAElement to);
           int PAElementOperatorLess(struct PAElement one, struct PAElement other);
           int PAElementOperatorEqual(struct PAElement one,struct PAElement other);
           int PAElementOperatorGreater(struct PAElement one, struct PAElement other);

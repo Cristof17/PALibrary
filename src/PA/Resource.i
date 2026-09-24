@@ -407,11 +407,11 @@ struct Facade {
 };
 # 5 "./include/PA/Resource.h" 2
 
-          struct PAResource PAResourcePerformInit(struct PAResource, struct PANumber);
+          struct PAResource PAResourcePerformInit(struct PAResource PA, struct PANumber Number);
           struct PAResource PAResourcePerformConstruct();
-          struct PAResource PAResourcePerformRuin(struct PAResource);
-          struct PAResource PAResourcePerformDelete(struct PAResource);
-          struct PAResource PAResourcePerformCopy(struct PAResource, struct PAResource);
+          struct PAResource PAResourcePerformRuin(struct PAResource PA);
+          struct PAResource PAResourcePerformDelete(struct PAResource PA);
+          struct PAResource PAResourcePerformCopy(struct PAResource from, struct PAResource to);
           int PAResourceOperatorLess(struct PAResource one,struct PAResource other);
           int PAResourceOperatorGreater(struct PAResource one,struct PAResource other);
           int PAResourceOperatorEqual(struct PAResource one,struct PAResource other);
@@ -424,8 +424,8 @@ struct Facade {
 
           struct PANumber PANumberPerformConstruct();
           struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char Value);
-          struct PANumber PANumberPerformDelete(struct PANumber);
-          struct PANumber PANumberPerformRuin(struct PANumber);
+          struct PANumber PANumberPerformDelete(struct PANumber PA);
+          struct PANumber PANumberPerformRuin(struct PANumber PA);
           struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to);
           int PANumberOperatorEqual(struct PANumber one, struct PANumber other);
           int PANumberOperatorNotEqual(struct PANumber one, struct PANumber other);

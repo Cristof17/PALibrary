@@ -412,14 +412,14 @@ struct Facade {
 
 
 
-          struct PACount PACountPerformRuin(struct PACount);
+          struct PACount PACountPerformRuin(struct PACount PA);
 
 
           struct PACount PACountPerformDelete(struct PACount PA);
-          int PACountOperatorLess(struct PACount,struct PACount);
-          int PACountOperatorEqual(struct PACount,struct PACount);
-          int PACountOperatorGreater(struct PACount,struct PACount);
-          int PACountOperatorNotEqual(struct PACount,struct PACount);
+          int PACountOperatorLess(struct PACount one,struct PACount other);
+          int PACountOperatorEqual(struct PACount one,struct PACount other);
+          int PACountOperatorGreater(struct PACount one,struct PACount other);
+          int PACountOperatorNotEqual(struct PACount one,struct PACount other);
 # 7 "./src/PA/Count.c" 2
 # 1 "./include/PA/Number.h" 1
 
@@ -428,8 +428,8 @@ struct Facade {
 
           struct PANumber PANumberPerformConstruct();
           struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char Value);
-          struct PANumber PANumberPerformDelete(struct PANumber);
-          struct PANumber PANumberPerformRuin(struct PANumber);
+          struct PANumber PANumberPerformDelete(struct PANumber PA);
+          struct PANumber PANumberPerformRuin(struct PANumber PA);
           struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to);
           int PANumberOperatorEqual(struct PANumber one, struct PANumber other);
           int PANumberOperatorNotEqual(struct PANumber one, struct PANumber other);

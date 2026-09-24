@@ -395,11 +395,11 @@ struct Facade {
 # 1 "./include/PA/Series.h" 1
 # 17 "./include/PA/Series.h"
           struct PASeries PASeriesPerformConstruct();
-          struct PASeries PASeriesPerformInit(struct PASeries, struct PACount, struct PAElement[]);
-          struct PASeries PASeriesPerformDelete(struct PASeries);
-          struct PASeries PASeriesPerformCopy(struct PASeries, struct PASeries);
+          struct PASeries PASeriesPerformInit(struct PASeries PA, struct PACount Count, struct PAElement Elements[]);
+          struct PASeries PASeriesPerformDelete(struct PASeries PA);
+          struct PASeries PASeriesPerformCopy(struct PASeries from, struct PASeries to);
 
-          struct PASeries PASeriesPerformRuin(struct PASeries);
+          struct PASeries PASeriesPerformRuin(struct PASeries PA);
           struct PAResource PASeriesGet(struct PAData Data);
           int PASeriesOperatorEqual(struct PASeries one,struct PASeries other);
           int PASeriesOperatorNotEqual(struct PASeries one,struct PASeries other);
@@ -413,30 +413,30 @@ struct Facade {
 
 
 
-          struct PACount PACountPerformRuin(struct PACount);
+          struct PACount PACountPerformRuin(struct PACount PA);
 
 
           struct PACount PACountPerformDelete(struct PACount PA);
-          int PACountOperatorLess(struct PACount,struct PACount);
-          int PACountOperatorEqual(struct PACount,struct PACount);
-          int PACountOperatorGreater(struct PACount,struct PACount);
-          int PACountOperatorNotEqual(struct PACount,struct PACount);
+          int PACountOperatorLess(struct PACount one,struct PACount other);
+          int PACountOperatorEqual(struct PACount one,struct PACount other);
+          int PACountOperatorGreater(struct PACount one,struct PACount other);
+          int PACountOperatorNotEqual(struct PACount one,struct PACount other);
 # 9 "./src/PA/Series.c" 2
 # 1 "./include/PA/Element.h" 1
 # 10 "./include/PA/Element.h"
-          void PAElementVisit(struct PAElement);
-          int PAElementIsVisited(struct PAElement);
-          void PAElementReset(struct PAElement);
+          void PAElementVisit(struct PAElement Element);
+          int PAElementIsVisited(struct PAElement Element);
+          void PAElementReset(struct PAElement Element);
           struct PAElement PAElementPerformConstruct();
 
-          struct PAElement PAElementPerformInit(struct PAElement,struct PAData,struct PAStatus);
+          struct PAElement PAElementPerformInit(struct PAElement PA,struct PAData Data,struct PAStatus Status);
 
 
 
 
-          struct PAElement PAElementPerformRuin(struct PAElement);
-          struct PAElement PAElementPerformDelete(struct PAElement);
-          struct PAElement PAElementPerformCopy(struct PAElement, struct PAElement);
+          struct PAElement PAElementPerformRuin(struct PAElement PA);
+          struct PAElement PAElementPerformDelete(struct PAElement PA);
+          struct PAElement PAElementPerformCopy(struct PAElement from, struct PAElement to);
           int PAElementOperatorLess(struct PAElement one, struct PAElement other);
           int PAElementOperatorEqual(struct PAElement one,struct PAElement other);
           int PAElementOperatorGreater(struct PAElement one, struct PAElement other);

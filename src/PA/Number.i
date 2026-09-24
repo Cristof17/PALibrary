@@ -407,8 +407,8 @@ struct Facade {
 
           struct PANumber PANumberPerformConstruct();
           struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char Value);
-          struct PANumber PANumberPerformDelete(struct PANumber);
-          struct PANumber PANumberPerformRuin(struct PANumber);
+          struct PANumber PANumberPerformDelete(struct PANumber PA);
+          struct PANumber PANumberPerformRuin(struct PANumber PA);
           struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to);
           int PANumberOperatorEqual(struct PANumber one, struct PANumber other);
           int PANumberOperatorNotEqual(struct PANumber one, struct PANumber other);

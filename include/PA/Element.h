@@ -7,13 +7,13 @@
 #include <types.h>
 
 // struct PAElement;
-DllExport void PAElementVisit(struct PAElement Element);
-DllExport PABool PAElementIsVisited(struct PAElement Element);
-DllExport void PAElementReset(struct PAElement Element);
 DllExport struct PAElement PAElementPerformConstruct();
 // DllExport HRESULT PAElementPerformCopy();
 DllExport struct PAElement PAElementPerformInit(struct PAElement PA,struct PAData Data,struct PAStatus Status);
 // DllExport HRESULT PAElementPerformPutStatus(struct PAStatus);
+DllExport void PAElementVisit(struct PAElement Element);
+DllExport PABool PAElementIsVisited(struct PAElement Element);
+DllExport void PAElementReset(struct PAElement Element);
 // DllExport HRESULT PAElementPerformPutData(struct PAData);
 // DllExport HRESULT PAElementPerformPutDestination(struct PADestination);
 // DllExport HRESULT PAElementPerformPutFeature(struct PAFeature);

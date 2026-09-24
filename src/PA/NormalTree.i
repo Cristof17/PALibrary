@@ -412,10 +412,10 @@ struct Facade {
 
 
           struct PANormalTree PANormalTreePerformConstruct();
-          struct PANormalTree PANormalTreePerformInit(struct PANormalTree, struct PATree);
-          struct PANormalTree PANormalTreePerformCopy(struct PANormalTree);
-          struct PANormalTree PANormalTreePerformRuin(struct PANormalTree);
-          struct PANormalTree PANormalTreePerformDelete(struct PANormalTree);
+          struct PANormalTree PANormalTreePerformInit(struct PANormalTree PA, struct PATree Tree );
+          struct PANormalTree PANormalTreePerformCopy(struct PANormalTree from, struct PANormalTree to);
+          struct PANormalTree PANormalTreePerformRuin(struct PANormalTree PA);
+          struct PANormalTree PANormalTreePerformDelete(struct PANormalTree PA);
 
           struct PANormalTree PAGrafNormalBuildPart();
           int PANormalTreeOperatorEqual(struct PANormalTree one, struct PANormalTree other);
@@ -428,14 +428,14 @@ struct Facade {
           struct PATree PATreePerformConstruct();
           struct PATree PATreePerformCopy(struct PATree from, struct PATree to);
 
-          struct PATree PATreePerformInit(struct PATree, struct PACount, struct PACount, struct PAList, struct PAElement);
+          struct PATree PATreePerformInit(struct PATree PA, struct PACount Count1, struct PACount Count2, struct PAList List, struct PAElement Element);
 
 
 
 
 
-          struct PATree PATreePerformRuin(struct PATree);
-          struct PATree PATreePerformDelete(struct PATree);
+          struct PATree PATreePerformRuin(struct PATree PA);
+          struct PATree PATreePerformDelete(struct PATree PA);
           int PATreeOperatorEqual(struct PATree one, struct PATree other);
           int PATreeOperatorNotEqual(struct PATree one, struct PATree other);
 # 7 "./src/PA/NormalTree.c" 2

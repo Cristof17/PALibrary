@@ -419,10 +419,10 @@ struct Facade {
           struct PAData PADataPerformRuin(struct PAData);
           struct PAData PADataPerformDelete(struct PAData);
           struct PAData PADataPerformCopy(struct PAData from, struct PAData to);
-          int PADataOperatorLess(struct PAData,struct PAData);
-          int PADataOperatorEqual(struct PAData,struct PAData);
-          int PADataOperatorGreater(struct PAData,struct PAData);
-          int PADataOperatorNotEqual(struct PAData,struct PAData);
+          int PADataOperatorLess(struct PAData one,struct PAData other);
+          int PADataOperatorEqual(struct PAData one,struct PAData other);
+          int PADataOperatorGreater(struct PAData one,struct PAData other);
+          int PADataOperatorNotEqual(struct PAData one,struct PAData other);
 # 4 "./src/PA/Data.c" 2
 # 1 "./include/PA/Resource.h" 1
 
@@ -430,11 +430,11 @@ struct Facade {
 
 
 
-          struct PAResource PAResourcePerformInit(struct PAResource, struct PANumber);
+          struct PAResource PAResourcePerformInit(struct PAResource PA, struct PANumber Number);
           struct PAResource PAResourcePerformConstruct();
-          struct PAResource PAResourcePerformRuin(struct PAResource);
-          struct PAResource PAResourcePerformDelete(struct PAResource);
-          struct PAResource PAResourcePerformCopy(struct PAResource, struct PAResource);
+          struct PAResource PAResourcePerformRuin(struct PAResource PA);
+          struct PAResource PAResourcePerformDelete(struct PAResource PA);
+          struct PAResource PAResourcePerformCopy(struct PAResource from, struct PAResource to);
           int PAResourceOperatorLess(struct PAResource one,struct PAResource other);
           int PAResourceOperatorGreater(struct PAResource one,struct PAResource other);
           int PAResourceOperatorEqual(struct PAResource one,struct PAResource other);

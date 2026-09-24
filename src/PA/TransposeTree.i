@@ -412,8 +412,8 @@ struct Facade {
           struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree, struct PATree);
           struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree);
 
-          struct PATransposeTree PATransposeTreeRuin(struct PATransposeTree);
-          struct PATransposeTree PATransposeTreeDelete(struct PATransposeTree);
+          struct PATransposeTree PATransposeTreeRuin(struct PATransposeTree PA);
+          struct PATransposeTree PATransposeTreeDelete(struct PATransposeTree PA);
           int PATransposeTreeOperatorEqual(struct PATransposeTree one,struct PATransposeTree other);
           int PATransposeTreeOperatorNotEqual(struct PATransposeTree one,struct PATransposeTree other);
 
@@ -425,14 +425,14 @@ struct Facade {
           struct PATree PATreePerformConstruct();
           struct PATree PATreePerformCopy(struct PATree from, struct PATree to);
 
-          struct PATree PATreePerformInit(struct PATree, struct PACount, struct PACount, struct PAList, struct PAElement);
+          struct PATree PATreePerformInit(struct PATree PA, struct PACount Count1, struct PACount Count2, struct PAList List, struct PAElement Element);
 
 
 
 
 
-          struct PATree PATreePerformRuin(struct PATree);
-          struct PATree PATreePerformDelete(struct PATree);
+          struct PATree PATreePerformRuin(struct PATree PA);
+          struct PATree PATreePerformDelete(struct PATree PA);
           int PATreeOperatorEqual(struct PATree one, struct PATree other);
           int PATreeOperatorNotEqual(struct PATree one, struct PATree other);
 # 10 "./src/PA/TransposeTree.c" 2

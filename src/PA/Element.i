@@ -400,19 +400,19 @@ struct Facade {
 # 8 "./include/PA/Element.h" 2
 
 
-          void PAElementVisit(struct PAElement);
-          int PAElementIsVisited(struct PAElement);
-          void PAElementReset(struct PAElement);
+          void PAElementVisit(struct PAElement Element);
+          int PAElementIsVisited(struct PAElement Element);
+          void PAElementReset(struct PAElement Element);
           struct PAElement PAElementPerformConstruct();
 
-          struct PAElement PAElementPerformInit(struct PAElement,struct PAData,struct PAStatus);
+          struct PAElement PAElementPerformInit(struct PAElement PA,struct PAData Data,struct PAStatus Status);
 
 
 
 
-          struct PAElement PAElementPerformRuin(struct PAElement);
-          struct PAElement PAElementPerformDelete(struct PAElement);
-          struct PAElement PAElementPerformCopy(struct PAElement, struct PAElement);
+          struct PAElement PAElementPerformRuin(struct PAElement PA);
+          struct PAElement PAElementPerformDelete(struct PAElement PA);
+          struct PAElement PAElementPerformCopy(struct PAElement from, struct PAElement to);
           int PAElementOperatorLess(struct PAElement one, struct PAElement other);
           int PAElementOperatorEqual(struct PAElement one,struct PAElement other);
           int PAElementOperatorGreater(struct PAElement one, struct PAElement other);
@@ -427,10 +427,10 @@ struct Facade {
           struct PAData PADataPerformRuin(struct PAData);
           struct PAData PADataPerformDelete(struct PAData);
           struct PAData PADataPerformCopy(struct PAData from, struct PAData to);
-          int PADataOperatorLess(struct PAData,struct PAData);
-          int PADataOperatorEqual(struct PAData,struct PAData);
-          int PADataOperatorGreater(struct PAData,struct PAData);
-          int PADataOperatorNotEqual(struct PAData,struct PAData);
+          int PADataOperatorLess(struct PAData one,struct PAData other);
+          int PADataOperatorEqual(struct PAData one,struct PAData other);
+          int PADataOperatorGreater(struct PAData one,struct PAData other);
+          int PADataOperatorNotEqual(struct PAData one,struct PAData other);
 # 7 "./src/PA/Element.c" 2
 # 1 "./include/PA/Status.h" 1
 
@@ -441,11 +441,11 @@ struct Facade {
 
 
 
-          struct PAStatus PAStatusPerformInit(struct PAStatus, struct PAResource);
-          struct PAStatus PAStatusPerformDelete(struct PAStatus);
+          struct PAStatus PAStatusPerformInit(struct PAStatus PA, struct PAResource Resource);
+          struct PAStatus PAStatusPerformDelete(struct PAStatus PA);
           struct PAStatus PAStatusPerformConstruct();
-          struct PAStatus PAStatusPerformRuin(struct PAStatus);
-          struct PAStatus PAStatusPerformCopy(struct PAStatus, struct PAStatus);
+          struct PAStatus PAStatusPerformRuin(struct PAStatus PA);
+          struct PAStatus PAStatusPerformCopy(struct PAStatus from, struct PAStatus to);
           int PAStatusOperatorNotEqual(struct PAStatus one,struct PAStatus other);
           int PAStatusOperatorEqual(struct PAStatus one,struct PAStatus other);
 # 8 "./src/PA/Element.c" 2

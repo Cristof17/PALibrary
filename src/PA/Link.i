@@ -402,12 +402,12 @@ struct Facade {
 
 
           struct PALink PALinkPerformConstruct();
-          struct PALink PALinkPerformCopy(struct PALink, struct PALink);
+          struct PALink PALinkPerformCopy(struct PALink from, struct PALink to);
 
-          struct PALink PALinkPerformInit(struct PALink, struct PAPair);
+          struct PALink PALinkPerformInit(struct PALink PA, struct PAPair Pair);
 
-          struct PALink PALinkPerformRuin(struct PALink);
-          struct PALink PALinkPerformDelete(struct PALink);
+          struct PALink PALinkPerformRuin(struct PALink PA);
+          struct PALink PALinkPerformDelete(struct PALink PA);
           int PALinkOperatorEqual(struct PALink one, struct PALink other);
           int PALinkOperatorNotEqual(struct PALink one, struct PALink other);
 # 9 "./src/PA/Link.c" 2
