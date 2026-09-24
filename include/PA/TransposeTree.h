@@ -5,8 +5,8 @@
 #include <defs.h>
 
 DllExport struct PATransposeTree PATransposeTreePerformConstruct();
-DllExport struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree, struct PATree);
-DllExport struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree);
+DllExport struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree PA, struct PATree Tree);
+DllExport struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree from, struct PATransposeTree to);
 DllExport struct PATransposeTree PATransposeTreeRuin(struct PATransposeTree PA);
 DllExport struct PATransposeTree PATransposeTreeDelete(struct PATransposeTree PA);
 DllExport PAResult PATransposeTreeOperatorEqual(struct PATransposeTree one, struct PATransposeTree other);
