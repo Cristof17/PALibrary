@@ -407,12 +407,16 @@ struct Facade {
 
 
 # 1 "./include/PA/Input.h" 1
-# 10 "./include/PA/Input.h"
+
+
+
+
+
+
+
           struct PAInput PAInputPerformConstruct();
 
-          struct PAInput PAInputPerformInit(struct PAInput PA, struct PACount Count1, struct PACount Count2, struct PAElement Element);
-
-
+          struct PAInput PAInputPerformInit(struct PAInput PA, struct PACount N, struct PACount M, struct PAElement Source);
 
           struct PAInput PAInputPerformRuin(struct PAInput PA);
           struct PAInput PAInputPerformDelete(struct PAInput PA);
@@ -438,13 +442,13 @@ struct Facade {
 # 10 "./src/PA/Input.c" 2
 # 1 "./include/PA/Element.h" 1
 # 10 "./include/PA/Element.h"
-          void PAElementVisit(struct PAElement Element);
-          int PAElementIsVisited(struct PAElement Element);
-          void PAElementReset(struct PAElement Element);
           struct PAElement PAElementPerformConstruct();
 
           struct PAElement PAElementPerformInit(struct PAElement PA,struct PAData Data,struct PAStatus Status);
 
+          void PAElementVisit(struct PAElement Element);
+          int PAElementIsVisited(struct PAElement Element);
+          void PAElementReset(struct PAElement Element);
 
 
 

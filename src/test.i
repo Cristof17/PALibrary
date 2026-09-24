@@ -432,13 +432,13 @@ struct Facade {
 
 # 1 "./include/PA/Element.h" 1
 # 10 "./include/PA/Element.h"
-          void PAElementVisit(struct PAElement Element);
-          int PAElementIsVisited(struct PAElement Element);
-          void PAElementReset(struct PAElement Element);
           struct PAElement PAElementPerformConstruct();
 
           struct PAElement PAElementPerformInit(struct PAElement PA,struct PAData Data,struct PAStatus Status);
 
+          void PAElementVisit(struct PAElement Element);
+          int PAElementIsVisited(struct PAElement Element);
+          void PAElementReset(struct PAElement Element);
 
 
 
@@ -453,11 +453,11 @@ struct Facade {
 # 1 "./include/PA/Data.h" 1
 # 11 "./include/PA/Data.h"
           struct PAData PADataPerformConstruct();
-          struct PAData PADataPerformInit(struct PAData, struct PAResource);
+          struct PAData PADataPerformInit(struct PAData PA, struct PAResource Resource);
 
 
-          struct PAData PADataPerformRuin(struct PAData);
-          struct PAData PADataPerformDelete(struct PAData);
+          struct PAData PADataPerformRuin(struct PAData PA);
+          struct PAData PADataPerformDelete(struct PAData PA);
           struct PAData PADataPerformCopy(struct PAData from, struct PAData to);
           int PADataOperatorLess(struct PAData one,struct PAData other);
           int PADataOperatorEqual(struct PAData one,struct PAData other);

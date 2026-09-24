@@ -413,11 +413,11 @@ struct Facade {
 
 
           struct PAData PADataPerformConstruct();
-          struct PAData PADataPerformInit(struct PAData, struct PAResource);
+          struct PAData PADataPerformInit(struct PAData PA, struct PAResource Resource);
 
 
-          struct PAData PADataPerformRuin(struct PAData);
-          struct PAData PADataPerformDelete(struct PAData);
+          struct PAData PADataPerformRuin(struct PAData PA);
+          struct PAData PADataPerformDelete(struct PAData PA);
           struct PAData PADataPerformCopy(struct PAData from, struct PAData to);
           int PADataOperatorLess(struct PAData one,struct PAData other);
           int PADataOperatorEqual(struct PAData one,struct PAData other);

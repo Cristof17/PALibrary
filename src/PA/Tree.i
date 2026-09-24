@@ -433,13 +433,13 @@ struct Facade {
 # 5 "./src/PA/Tree.c" 2
 # 1 "./include/PA/Element.h" 1
 # 10 "./include/PA/Element.h"
-          void PAElementVisit(struct PAElement Element);
-          int PAElementIsVisited(struct PAElement Element);
-          void PAElementReset(struct PAElement Element);
           struct PAElement PAElementPerformConstruct();
 
           struct PAElement PAElementPerformInit(struct PAElement PA,struct PAData Data,struct PAStatus Status);
 
+          void PAElementVisit(struct PAElement Element);
+          int PAElementIsVisited(struct PAElement Element);
+          void PAElementReset(struct PAElement Element);
 
 
 
