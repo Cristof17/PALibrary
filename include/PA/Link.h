@@ -2,7 +2,6 @@
 #ifndef INCLUDE_PA_LINK_H_
 #define INCLUDE_PA_LINK_H_	1
 
-// #include "../defs.h"
 #include <defs.h>
 DllExport struct PALink PALinkPerformConstruct();
 DllExport struct PALink PALinkPerformCopy(struct PALink from, struct PALink to);

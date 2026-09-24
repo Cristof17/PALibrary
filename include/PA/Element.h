@@ -2,7 +2,6 @@
 #ifndef INCLUDE_PA_ELEMENT_H_
 #define INCLUDE_PA_ELEMENT_H_	1
 
-// #include "../types.h"
 #include <defs.h>
 #include <types.h>
 
