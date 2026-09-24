@@ -6,10 +6,10 @@
 #include <defs.h>
 // struct NormalTree;
 DllExport struct PANormalTree PANormalTreePerformConstruct();
-DllExport struct PANormalTree PANormalTreePerformInit(struct PANormalTree, struct PATree);
-DllExport struct PANormalTree PANormalTreePerformCopy(struct PANormalTree);
-DllExport struct PANormalTree PANormalTreePerformRuin(struct PANormalTree);
-DllExport struct PANormalTree PANormalTreePerformDelete(struct PANormalTree);
+DllExport struct PANormalTree PANormalTreePerformInit(struct PANormalTree PA, struct PATree Tree );
+DllExport struct PANormalTree PANormalTreePerformCopy(struct PANormalTree from, struct PANormalTree to);
+DllExport struct PANormalTree PANormalTreePerformRuin(struct PANormalTree PA);
+DllExport struct PANormalTree PANormalTreePerformDelete(struct PANormalTree PA);
 // DllExport struct PANormalTree PANormalTreePerformConstruct(struct PATree tree);
 DllExport struct PANormalTree PAGrafNormalBuildPart();
 DllExport PAResult PANormalTreeOperatorEqual(struct PANormalTree one, struct PANormalTree other);

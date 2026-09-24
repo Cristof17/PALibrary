@@ -11,10 +11,10 @@
 // struct PAData PADataPerformCopy(struct PAData Data);
 // strut BFSOutputRuin();
 DllExport struct PAOutput PAOutputPerformConstruct();
-DllExport struct PAOutput PAOutputPerformInit(struct PAOutput, struct BFSRecord);
-DllExport struct PAOutput PAOutputPerformDelete(struct PAOutput);
-DllExport struct PAOutput PAOutputPerformRuin(struct PAOutput);
-DllExport PAResult PAOutputOperatorEqual(struct PAOutput on, struct PAOutput other);
+DllExport struct PAOutput PAOutputPerformInit(struct PAOutput PA, struct BFSRecord Value);
+DllExport struct PAOutput PAOutputPerformDelete(struct PAOutput PA);
+DllExport struct PAOutput PAOutputPerformRuin(struct PAOutput PA);
+DllExport PAResult PAOutputOperatorEqual(struct PAOutput one, struct PAOutput other);
 DllExport PAResult PAOutputOperatorNotEqual(struct PAOutput one,struct PAOutput other);
 DllExport void PAOutputPerformPrint(PAResult Result);
 //typedef struct BFSOutput BFSOutput;

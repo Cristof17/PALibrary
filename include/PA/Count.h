@@ -16,13 +16,13 @@ DllExport struct PACount PACountPerformCopy(struct PACount from, struct PACount 
 // DllExport struct PACount PACountPerformCopy(struct PACount);
 // void PASize(PA_INT);
 // DllExport HRESULT PACountPerformPrint(struct PACount);
-DllExport struct PACount PACountPerformRuin(struct PACount);
+DllExport struct PACount PACountPerformRuin(struct PACount PA);
 // DllExport struct PACount PACountPerformPutValue(struct PACount, PAInt);
 // struct 
 DllExport struct PACount PACountPerformDelete(struct PACount PA);
-DllExport PAResult PACountOperatorLess(struct PACount,struct PACount);
-DllExport PAResult PACountOperatorEqual(struct PACount,struct PACount);
-DllExport PAResult PACountOperatorGreater(struct PACount,struct PACount);
-DllExport PAResult PACountOperatorNotEqual(struct PACount,struct PACount);
+DllExport PAResult PACountOperatorLess(struct PACount one,struct PACount other);
+DllExport PAResult PACountOperatorEqual(struct PACount one,struct PACount other);
+DllExport PAResult PACountOperatorGreater(struct PACount one,struct PACount other);
+DllExport PAResult PACountOperatorNotEqual(struct PACount one,struct PACount other);
 
 #endif

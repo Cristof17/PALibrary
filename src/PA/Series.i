@@ -552,7 +552,7 @@ struct PAResource PASeriesGet(struct PAData Data)
     return resource;
 }
 # 227 "./src/PA/Series.c"
-void PASeriesPerformPrint(struct PASeries Series)
+          void PASeriesPerformPrint(struct PASeries Series)
 {
 
 }

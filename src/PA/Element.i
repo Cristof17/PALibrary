@@ -450,7 +450,7 @@ struct Facade {
           int PAStatusOperatorEqual(struct PAStatus one,struct PAStatus other);
 # 8 "./src/PA/Element.c" 2
 # 18 "./src/PA/Element.c"
-struct PAElement PAElementPerformConstruct()
+          struct PAElement PAElementPerformConstruct()
 {
     struct PAElement temp;
     temp.index = PADataPerformConstruct();

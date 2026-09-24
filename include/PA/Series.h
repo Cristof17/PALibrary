@@ -15,11 +15,11 @@
 // struct PASeries;
 // struct PAList PAListPutElement(struct PAList, struct PAElement);
 DllExport struct PASeries PASeriesPerformConstruct();
-DllExport struct PASeries PASeriesPerformInit(struct PASeries, struct PACount, struct PAElement[]);
-DllExport struct PASeries PASeriesPerformDelete(struct PASeries);
-DllExport struct PASeries PASeriesPerformCopy(struct PASeries, struct PASeries);
+DllExport struct PASeries PASeriesPerformInit(struct PASeries  PA, struct PACount Count, struct PAElement Elements[]);
+DllExport struct PASeries PASeriesPerformDelete(struct PASeries PA);
+DllExport struct PASeries PASeriesPerformCopy(struct PASeries from, struct PASeries to);
 // PAResult PASeriesPerformCopy();
-DllExport struct PASeries PASeriesPerformRuin(struct PASeries);
+DllExport struct PASeries PASeriesPerformRuin(struct PASeries PA);
 DllExport struct PAResource PASeriesGet(struct PAData Data);
 DllExport PAResult PASeriesOperatorEqual(struct PASeries one,struct PASeries other);
 DllExport PAResult PASeriesOperatorNotEqual(struct PASeries one,struct PASeries other);

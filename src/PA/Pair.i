@@ -480,7 +480,7 @@ struct Facade {
     return Pair;
 # 54 "./src/PA/Pair.c"
 }
-struct PAPair PAPairPerformCopy(struct PAPair from, struct PAPair to)
+          struct PAPair PAPairPerformCopy(struct PAPair from, struct PAPair to)
 {
     struct PAPair temp;
     struct PAElement node;
