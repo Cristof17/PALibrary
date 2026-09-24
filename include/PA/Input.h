@@ -9,7 +9,7 @@
 // struct PAInput;
 DllExport struct PAInput PAInputPerformConstruct();
 // DllExport struct PAInput PAInputPerformCopy(struct PAInput);
-DllExport struct PAInput PAInputPerformInit(struct PAInput PA, struct PACount Count1, struct PACount Count2, struct PAElement Element);
+DllExport struct PAInput PAInputPerformInit(struct PAInput PA, struct PACount N, struct PACount M, struct PAElement Source);
 // vpo BFSInputRuin();
 // struct PAInput PAInputPerformConstruct(struct PACount, struct PACount, struct PAList, struct PAElement)l
 // struct 
