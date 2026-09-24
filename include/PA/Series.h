@@ -17,7 +17,7 @@ DllExport struct PASeries PASeriesPerformDelete(struct PASeries PA);
 DllExport struct PASeries PASeriesPerformCopy(struct PASeries from, struct PASeries to);
 DllExport struct PASeries PASeriesPerformRuin(struct PASeries PA);
 DllExport struct PAResource PASeriesGet(struct PAData Data);
-DllExport PAResult PASeriesOperatorEqual(struct PASeries one,struct PASeries other);
-DllExport PAResult PASeriesOperatorNotEqual(struct PASeries one,struct PASeries other);
+DllExport PAResult PASeriesOperatorEqual(struct PASeries one, struct PASeries other);
+DllExport PAResult PASeriesOperatorNotEqual(struct PASeries one, struct PASeries other);
 DllExport void PASeriesPerformPrint(struct PASeries Series);
 #endif /* INCLUDE_PASIR_H_ */

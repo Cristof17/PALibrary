@@ -8,8 +8,8 @@ DllExport struct PAData PADataPerformInit(struct PAData PA, struct PAResource Re
 DllExport struct PAData PADataPerformRuin(struct PAData PA);
 DllExport struct PAData PADataPerformDelete(struct PAData PA);
 DllExport struct PAData PADataPerformCopy(struct PAData from, struct PAData to);
-DllExport PAResult PADataOperatorLess(struct PAData one,struct PAData other);
-DllExport PAResult PADataOperatorEqual(struct PAData one,struct PAData other);
-DllExport PAResult PADataOperatorGreater(struct PAData one,struct PAData other);
-DllExport PAResult PADataOperatorNotEqual(struct PAData one,struct PAData other);
+DllExport PAResult PADataOperatorLess(struct PAData one, struct PAData other);
+DllExport PAResult PADataOperatorEqual(struct PAData one, struct PAData other);
+DllExport PAResult PADataOperatorGreater(struct PAData one, struct PAData other);
+DllExport PAResult PADataOperatorNotEqual(struct PAData one, struct PAData other);
 #endif

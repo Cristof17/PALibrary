@@ -5,7 +5,7 @@
 #include <defs.h>
 #include <types.h>
 DllExport struct PAList PAListPerformConstruct();
-DllExport struct PAList PAListPerformInit(struct PAList PA,struct PACount N, struct PASeries adj[]);
+DllExport struct PAList PAListPerformInit(struct PAList PA, struct PACount N, struct PASeries adj[]);
 DllExport struct PAList PAListPerformRuin(struct PAList PA);
 DllExport struct PAList PAListPerformDelete(struct PAList PA);
 DllExport struct PAList PAListPerformCopy(struct PAList from, struct PAList to);
