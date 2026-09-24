@@ -9,11 +9,11 @@
 // #include <defs.h>
 // struct PAData;
 DllExport struct PAData PADataPerformConstruct();
-DllExport struct PAData PADataPerformInit(struct PAData, struct PAResource);
+DllExport struct PAData PADataPerformInit(struct PAData PA, struct PAResource);
 // DllExport struct PAData PADataPerformCopy(struct PAData);
 // DllExport struct PAData PADataPerformPutResource(struct PAData, PAResource);
-DllExport struct PAData PADataPerformRuin(struct PAData);
-DllExport struct PAData PADataPerformDelete(struct PAData);
+DllExport struct PAData PADataPerformRuin(struct PAData PA);
+DllExport struct PAData PADataPerformDelete(struct PAData PA);
 DllExport struct PAData PADataPerformCopy(struct PAData from, struct PAData to);
 DllExport PAResult PADataOperatorLess(struct PAData one,struct PAData other);
 DllExport PAResult PADataOperatorEqual(struct PAData one,struct PAData other);
