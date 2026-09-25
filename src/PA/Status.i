@@ -450,15 +450,10 @@ struct Facade {
 {
     PAResourcePerformDelete(PA.visited);
     return PA;
-
-
 }
           struct PAStatus PAStatusPerformRuin(struct PAStatus PA)
 {
-
-
     PA.visited = PAResourcePerformRuin(PA.visited);
-
     return PA;
 }
           int PAStatusOperatorNotEqual(struct PAStatus one,struct PAStatus other)

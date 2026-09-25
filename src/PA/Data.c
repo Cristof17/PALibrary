@@ -6,21 +6,12 @@
 #include <PA\Data.h>
 #include <PA\Resource.h>
 #endif
-//typedef struct PAData PAData;
-//struct PAData {
-//
-//}
+
 DllExport struct PAData PADataPerformConstruct()
 {
     struct PAData data;
-    // struct PAResource resource;
     data.Resource = PAResourcePerformConstruct();
     data = PADataPerformInit(data, data.Resource);
-    // data.Resource = resource;
-    //  = data;
-    // Data.Resource = PAResourcePerformInit(Data.Resource, )
-    // PADataPerformInit(Data,)
-    // Data.Resource = PAResourcePerformConstruct(); 
     return data;
 }
 DllExport struct PAData PADataPerformInit(struct PAData Data, struct PAResource Value)
@@ -32,10 +23,6 @@ DllExport struct PAData PADataPerformInit(struct PAData Data, struct PAResource 
     Data.Resource.value = Value.value;
 
     return Data;
-    // struct PAData data;
-    // data.Resource = Data.Resource;
-    // struct PAData data;
-    // data.resource = Data.resource;
 }
 DllExport struct PAData PADataPerformCopy(struct PAData from, struct PAData to)
 {
@@ -68,36 +55,12 @@ DllExport PAResult PADataOperatorNotEqual(struct PAData one, struct PAData other
     result = PAResourceOperatorNotEqual(one.Resource, other.Resource);
     return result;
 }
-// struct PAData PADataPerformCopy(struct PAData Data)
-// {
-    // struct PAData copy;
-    // struct PAResource resource = Data.Resource;
-    // copy.Resource = resource;
-//    copy=PADataPerformConstruct(Data.resource);
-//    copy=PADataPerformInit(Data);
-    // return copy;
-    //    copy.resource = Data.resource;
-    // return copy;
-// }
-// struct PAData PADataPerformPutResource(struct PAData Data, struct PAResource Resource)
-// {
-    // struct PAData data;
-    // Data.Resource = Resource;
-    // return Data;
-// }
 DllExport struct PAData PADataPerformRuin(struct PAData Data) 
 {
-    // PAInt Empty = NULL;
-    // Resource = Empty;
-    // return Resource;
     return Data;
-    // PAResult result = (PAInt) PARESULT_SUCCESS;
-    // return PARESULT_SUCCESS;
 }
 DllExport struct PAData PADataPerformDelete(struct PAData PA)
 {
     PAResourcePerformDelete(PA.Resource);
     return PA;
-    // PAResult result = (PAInt) PARESULT_SUCCESS;
-    // return PA;
 }

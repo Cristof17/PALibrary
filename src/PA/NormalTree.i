@@ -443,7 +443,6 @@ struct Facade {
           struct PANormalTree PANormalTreePerformConstruct()
 {
     struct PANormalTree normalTree;
-
     normalTree.tree = PATreePerformConstruct();
     return normalTree;
 }
@@ -452,12 +451,8 @@ struct Facade {
     struct PANormalTree normalTree;
     normalTree.tree = PATreePerformConstruct();
     NormalTree = normalTree;
-
-
-
     return NormalTree;
 }
-# 38 "./src/PA/NormalTree.c"
           struct PANormalTree PANormalTreePerformRuin(struct PANormalTree PA)
 {
     struct PANormalTree Empty;
@@ -476,8 +471,6 @@ struct Facade {
 }
 int PAGrafNormalGetResult()
 {
-
-
     int result;
     return result;
 }

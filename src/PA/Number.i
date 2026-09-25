@@ -421,9 +421,6 @@ struct Facade {
           struct PANumber PANumberPerformConstruct()
 {
     struct PANumber number;
-
-
-
     return number;
 }
           struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char Value)
@@ -431,36 +428,21 @@ struct Facade {
     struct PANumber temp;
     temp.val = Value;
     Number = temp;
-
-
-
     return Number;
 }
           struct PANumber PANumberPerformDelete(struct PANumber PA)
 {
     PA.val = '0';
-
     return PA;
 }
           struct PANumber PANumberPerformRuin(struct PANumber PA)
 {
-
     return PA;
-
-
-
 }
           struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to)
 {
-
     char num = from.val;
     to.val = num;
-
-
-
-
-
-
     return to;
 }
           int PANumberOperatorEqual(struct PANumber one, struct PANumber other)

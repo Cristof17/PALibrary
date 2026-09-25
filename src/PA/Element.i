@@ -442,20 +442,21 @@ struct Facade {
           int PAStatusOperatorNotEqual(struct PAStatus one, struct PAStatus other);
           int PAStatusOperatorEqual(struct PAStatus one, struct PAStatus other);
 # 8 "./src/PA/Element.c" 2
-# 18 "./src/PA/Element.c"
+
+
+
+
+
+
+
+
           struct PAElement PAElementPerformConstruct()
 {
     struct PAElement temp;
     temp.index = PADataPerformConstruct();
     temp.status = PAStatusPerformConstruct();
     temp = PAElementPerformInit(temp,temp.index,temp.status);
-
-
     return temp;
-
-
-
-
 }
           struct PAElement PAElementPerformInit(struct PAElement Element, struct PAData Value, struct PAStatus Value2)
 {
@@ -463,7 +464,6 @@ struct Facade {
     temp.index = PADataPerformConstruct();
     temp.status = PAStatusPerformConstruct();
     Element = temp;
-# 49 "./src/PA/Element.c"
     return Element;
 }
           void PAElementVisit(struct PAElement Element)
@@ -489,25 +489,19 @@ struct Facade {
     to.status = temp.status;
     return to;
 }
-# 86 "./src/PA/Element.c"
+
           struct PAElement PAElementPerformRuin(struct PAElement PA)
 {
     struct PAElement temp;
     temp.index = PADataPerformRuin(PA.index);
     temp.status = PAStatusPerformRuin(PA.status);
     PA = temp;
-# 105 "./src/PA/Element.c"
     return PA;
-
-
 }
-# 143 "./src/PA/Element.c"
+
           struct PAElement PAElementPerformDelete(struct PAElement PA)
 {
-
-
     return PA;
-
 }
           int PAElementOperatorLess(struct PAElement one, struct PAElement other)
 {
@@ -522,8 +516,6 @@ struct Facade {
         result = ((int)1);
     }
     return result;
-
-
 }
           int PAElementOperatorEqual(struct PAElement one,struct PAElement other)
 {
@@ -545,7 +537,6 @@ struct Facade {
     {
         result = ((int)1);
     }
-
     return result;
 }
           int PAElementOperatorGreater(struct PAElement one, struct PAElement other)
@@ -561,9 +552,6 @@ struct Facade {
         result = ((int)0);
     }
     return result;
-
-
-
 }
           int PAElementOperatorNotEqual(struct PAElement one, struct PAElement other)
 {
@@ -586,6 +574,4 @@ struct Facade {
         result = ((int)0);
     }
     return result;
-
-
 }

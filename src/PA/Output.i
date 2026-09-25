@@ -422,12 +422,15 @@ struct Facade {
           struct BFSRecord BFSRecordPutList(struct BFSRecord, struct PAList);
           struct BFSRecord BFSRecordPutCount(struct BFSRecord, struct PACount);
 # 7 "./src/PA/Output.c" 2
-# 60 "./src/PA/Output.c"
+
+
+
+
+
           struct PAOutput PAOutputPerformConstruct()
 {
     struct PAOutput Output;
     return Output;
-
 }
           struct PAOutput PAOutputPerformInit(struct PAOutput Output, struct BFSRecord Value)
 {
@@ -436,18 +439,10 @@ struct Facade {
 }
           struct PAOutput PAOutputPerformDelete(struct PAOutput Output)
 {
-
     return Output;
 }
           struct PAOutput PAOutputPerformRuin(struct PAOutput PA)
 {
-
-
-
-
-
-
-
     return PA;
 }
           void PAOutputPerformPrint(int Result)

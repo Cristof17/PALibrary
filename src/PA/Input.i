@@ -470,10 +470,7 @@ struct Facade {
  input.source = PAElementPerformConstruct();
  input = PAInputPerformInit(input,input.n,input.m,input.source);
  return input;
-
-
 }
-# 39 "./src/PA/Input.c"
           struct PAInput PAInputPerformInit(struct PAInput Input, struct PACount Value, struct PACount Value2, struct PAElement Value3)
 {
  struct PAInput temp;
@@ -481,24 +478,15 @@ struct Facade {
  temp.m = PACountPerformConstruct();
  temp.source = PAElementPerformConstruct();
  Input = temp;
-# 61 "./src/PA/Input.c"
  return Input;
 }
           struct PAInput PAInputPerformRuin(struct PAInput PA) {
-
-
  PA.n = PACountPerformRuin(PA.n);
  PA.m = PACountPerformRuin(PA.m);
  PA.source = PAElementPerformRuin(PA.source);
  return PA;
-
-
 }
           struct PAInput PAInputPerformDelete(struct PAInput Input)
 {
  return Input;
-
-
-
-
 }

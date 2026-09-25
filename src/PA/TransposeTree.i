@@ -444,13 +444,11 @@ struct Facade {
 
 
 
-
           struct PATransposeTree PATransposeTreePerformConstruct()
 {
     struct PATransposeTree transposeTree;
     transposeTree.tree = PATreePerformConstruct();
     transposeTree = PATransposeTreePerformInit(transposeTree,transposeTree.tree);
-
     return transposeTree;
 }
 
@@ -460,24 +458,13 @@ struct Facade {
     TransposeTree.tree = PATreePerformConstruct();
     TransposeTree = tree;
     TransposeTree.tree = Value;
-
-
-
-
     return TransposeTree;
 }
           struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree from, struct PATransposeTree to)
 {
     struct PATransposeTree copy;
-
-
-
     return copy;
 }
-
-
-
-
           struct PATransposeTree PATransposeTreeRuin(struct PATransposeTree PA)
 {
     struct PATransposeTree tree;
@@ -492,7 +479,6 @@ struct Facade {
 {
     return Tree;
 }
-# 73 "./src/PA/TransposeTree.c"
           int PATransposeTreeGetResult()
 {
     int result;

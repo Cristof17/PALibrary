@@ -452,29 +452,15 @@ struct Facade {
     pair.Node = PAElementPerformConstruct();
     pair.Neigh = PAElementPerformConstruct();
     pair = PAPairPerformInit(pair,pair.Node, pair.Neigh);
-
-
     return pair;
-
-
-
-
-
-
 }
-
           struct PAPair PAPairPerformInit(struct PAPair Pair, struct PAElement Value, struct PAElement Value2)
 {
     struct PAPair temp;
     temp.Node = PAElementPerformConstruct();
     temp.Neigh = PAElementPerformConstruct();
-
     Pair = temp;
-
-
-
     return Pair;
-# 54 "./src/PA/Pair.c"
 }
           struct PAPair PAPairPerformCopy(struct PAPair from, struct PAPair to)
 {
@@ -486,27 +472,17 @@ struct Facade {
     temp.Node = node;
     temp.Neigh = neigh;
     return temp;
-
-
     return temp;
 }
-# 97 "./src/PA/Pair.c"
           struct PAPair PAPairPerformRuin(struct PAPair PA)
 {
     PA.Node = PAElementPerformRuin(PA.Node);
     PA.Neigh = PAElementPerformRuin(PA.Neigh);
     return PA;
-
-
-
-
-
 }
           struct PAPair PAPairPerformDelete(struct PAPair PA)
 {
     PA.Node = PAElementPerformDelete(PA.Node);
     PA.Neigh = PAElementPerformDelete(PA.Neigh);
     return PA;
-
-
 }

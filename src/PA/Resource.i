@@ -440,9 +440,7 @@ struct Facade {
           struct PAResource PAResourcePerformConstruct()
 {
     struct PAResource resource;
-
     resource.value = PANumberPerformConstruct();
-
     resource = PAResourcePerformInit(resource,resource.value);
     return resource;
 }
@@ -450,7 +448,6 @@ struct Facade {
 {
     struct PAResource resource;
     resource.value = PANumberPerformConstruct();
-
     Resource = resource;
     return Resource;
 }
@@ -464,8 +461,6 @@ struct Facade {
           struct PAResource PAResourcePerformRuin(struct PAResource PA)
 {
     PA.value = PANumberPerformRuin(PA.value);
-
-
     return PA;
 }
           struct PAResource PAResourcePerformDelete(struct PAResource Resource)

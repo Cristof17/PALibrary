@@ -437,49 +437,29 @@ struct Facade {
 
 
 
-
           struct PACount PACountPerformConstruct()
 {
     struct PACount zies;
-
     zies.number = PANumberPerformConstruct();
     zies = PACountPerformInit(zies,zies.number);
-
-
     return zies;
 }
           struct PACount PACountPerformInit(struct PACount Count, struct PANumber Value)
 {
-
     struct PACount temp;
-
-
     temp.number = PANumberPerformConstruct();
     temp.number = PANumberPerformInit(temp.number,Value.val);
     Count.number = temp.number;
-
-
-
     return Count;
-
-
-
-
-
-
 }
           struct PACount PACountPerformRuin(struct PACount PA)
 {
-# 75 "./src/PA/Count.c"
     return PA;
 }
           struct PACount PACountPerformDelete(struct PACount PA)
 {
     PA.number.val = 0;
     return PA;
-
-
-
 }
           int PACountPerformPrint(struct PACount Count)
 {

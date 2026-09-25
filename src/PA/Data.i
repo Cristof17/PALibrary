@@ -438,20 +438,11 @@ struct Facade {
 
 
 
-
-
-
           struct PAData PADataPerformConstruct()
 {
     struct PAData data;
-
     data.Resource = PAResourcePerformConstruct();
     data = PADataPerformInit(data, data.Resource);
-
-
-
-
-
     return data;
 }
           struct PAData PADataPerformInit(struct PAData Data, struct PAResource Value)
@@ -463,10 +454,6 @@ struct Facade {
     Data.Resource.value = Value.value;
 
     return Data;
-
-
-
-
 }
           struct PAData PADataPerformCopy(struct PAData from, struct PAData to)
 {
@@ -499,20 +486,12 @@ struct Facade {
     result = PAResourceOperatorNotEqual(one.Resource, other.Resource);
     return result;
 }
-# 88 "./src/PA/Data.c"
           struct PAData PADataPerformRuin(struct PAData Data)
 {
-
-
-
     return Data;
-
-
 }
           struct PAData PADataPerformDelete(struct PAData PA)
 {
     PAResourcePerformDelete(PA.Resource);
     return PA;
-
-
 }

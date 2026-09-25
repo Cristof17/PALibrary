@@ -5,7 +5,6 @@
 #ifndef _WIN95
 #include <PA/Count.h>
 #include <PA/Number.h>
-// #include <PA/Number.h>
 #elif defined _WIN95
 #include <PA\Count.h>
 #include <PA\Number.h>
@@ -15,72 +14,26 @@
 DllExport struct PACount PACountPerformConstruct()
 {
     struct PACount zies;
-    // struct PANumber number;
     zies.number = PANumberPerformConstruct();
     zies = PACountPerformInit(zies,zies.number);
-    // zies.number = PANumberPerformConstruct();
-    // size.number = Value;
     return zies;
 }
 DllExport struct PACount PACountPerformInit(struct PACount Count, struct PANumber Value)
 {
-    // struct PACount temp;
     struct PACount temp;
-    // struct PANumber value;
-    // value = PANumberPerformConstruct();
     temp.number = PANumberPerformConstruct();
     temp.number = PANumberPerformInit(temp.number,Value.val);
     Count.number = temp.number;
-    //Value.val;
-    // Count = temp;
-    //temp.number = value;
     return Count;
-    // temp = Count.number;
-    // temp.val = Value;
-    // Count.number.val = Value.val;
-    // struct PACount count;
-    // count.number = Number;
-    // return÷÷ Count;
 }
 DllExport struct PACount PACountPerformRuin(struct PACount PA)
-{
-    // PANumberPerformRuin(PA.number);
-    // return PA;
-    //get the value at address pointed by stack pointer
-    //that corresponsds to parameter PA
-    //check each bit
-    //if is a one, place 0's
-    //if is a zero, leave it just like that
-    //return success
-    // struct PACount Empty;
-    // Empty.padding[0] = NULL;
-    // Empty.padding[1] = NULL;
-    // Empty.padding[2] = NULL;
-    // Empty.padding[3] = NULL;
-    // Empty.number.val = NULL;
-    // struct PACount Empty;
-    // Empty.number = PANumberPerformRuin(PA.number);
-    // PA.number = Empty.number;
-    // PA.padding[0] = Empty.padding[0];
-    // PA.padding[1] = Empty.padding[1];
-    // PA.padding[2] = Empty.padding[2];
-    // PA.padding[3] = Empty.padding[3];
-    // PA = {0, {0}};
-    // PA.number = 0;
-    // PAResult result;
-    // return result;
-    // return PARESULT_SUCCESS;
-    // return Empty;
-    // return PA;    
+{  
     return PA;
 }
 DllExport struct PACount PACountPerformDelete(struct PACount PA)
 {
     PA.number.val = 0;
     return PA;
-    // return PARESULT_SUCCESS;
-    // PAResult result;
-    // return result;
 }
 DllExport PAResult PACountPerformPrint(struct PACount Count)
 {
@@ -118,33 +71,3 @@ DllExport PAResult PACountOperatorNotEqual(struct PACount one, struct PACount ot
     result = PANumberOperatorNotEqual(one.number,other.number);
     return result;
 }
-// DllExport struct PACount PACountPerformCopy(struct PACount from, struct PACount to)
-// {
-	// struct PACount copy;
-    // to.number = from.number;
-	// copy=PACountPerformConstruct(Count.number);
-	// copy=PACountPerformInit(Count);
-	// return to;
-// }
-// void PASize(PA_INT);
-// struct PACount PACountPerformPutValue(struct PACount Count, struct PANumber Value)
-// {
-	// Count.number = Value;
-	// return Count;
-// }
-// struct PAData PADataPerformPutResource(struct PAData, struct PAResource Resource)
-// {
-//     // struct PASize size;
-//     Count.number = Number;
-//     // return size;
-//     return Count;
-// }
-// struct PAResult PADataPerformRuin(struct PAData)
-// {
-
-// }
-// struct PAResult PADataPerformDelete(struct PAData)
-// {
-//     struct PAResult result;
-//     return result;
-// }

@@ -13,21 +13,13 @@
 
 
 #include <types.h>
-// #include "//"
-// #include "../include/PAIndex.h"
 DllExport struct PAElement PAElementPerformConstruct()
 {
     struct PAElement temp;
     temp.index = PADataPerformConstruct();
     temp.status = PAStatusPerformConstruct();
     temp = PAElementPerformInit(temp,temp.index,temp.status);
-    // result.index = PADataPerformConstruct();
-    // result.status = PAStatusPerformConstruct();
     return temp;
-    // PAResult result;
-    // return result;
- //   struct PAElement element;
-  //  return element;
 }
 DllExport struct PAElement PAElementPerformInit(struct PAElement Element, struct PAData Value, struct PAStatus Value2)
 {
@@ -35,17 +27,6 @@ DllExport struct PAElement PAElementPerformInit(struct PAElement Element, struct
     temp.index = PADataPerformConstruct();
     temp.status = PAStatusPerformConstruct();
     Element = temp;
-    // Element.index = Value;
-    // Element.status = Value2;
-    //struct PAElement element;
-    // element. = Element.Index;
-    //element.status = Element.status;
-    //element.type = Element.type;
-    //element.index = Element.index;
-    //return element;
-    // PAResult result;
-    // return result;
-    // struct PAElement element;
     return Element;
 }
 DllExport void PAElementVisit(struct PAElement Element)
@@ -71,81 +52,19 @@ DllExport struct PAElement PAElementPerformCopy(struct PAElement from, struct PA
     to.status = temp.status;
     return to;
 }   
-// PAResult PAElementPerformCopy()
-// {
-	// PAResult result;
-	// return result;
-	//struct PAElement copy;
-	// copy=PAElementPerformConstruct(Element.index, Element.type, Element.status);
-	// copy=PAElementPerformInit(Element);
-//	copy.index=Element.index;
-//	copy.status=Element.status;
-//	copy.type=Element.type;
-	//return ;
-// }
+
 DllExport struct PAElement PAElementPerformRuin(struct PAElement PA)
 {
     struct PAElement temp;
     temp.index = PADataPerformRuin(PA.index);
     temp.status = PAStatusPerformRuin(PA.status);
     PA = temp;
-    // PA.index = PADataPerformRuin(PA.index);
-    // PA.status = PAStatusPerformRuin(PA.status);
-    // Element.padding[0] = NULL;
-    // Element.padding[1] = NULL;
-    // Element.padding[2] = NULL;
-    // Element.padding[3] = NULL;
-    // PADataPerformRuin(Data);
-    // PAElementPerformRuin(Next.index, Next.Status);
-    // PAStatusPerformRuin(Status);
-    // PAResourcePerformRuin()
-    // struct PAElement Element;
-    // Element.index = PADataPerformRuin(PA.index);
-    // Element.status = PAStatusPerformRuin(PA.status);
     return PA; 
-    // PAResult result;
-    // return result;
 }
-// PAResult PAElementPerformPutStatus(struct PAStatus Status)
-// {
-	// PAResult result;
-	// return result;
-    // struct PAElement element;
-    //Element.status = Status;
-    //return Element;
-// }
-// PAResult PAElementPerformPutData(struct PAData Index)
-// {
-	// PAResult result;
-	// return result;
-//    struct PAElement element;
-//    Element.index = Index;
-//    return element;
-// }
-//struct PAElement PAElementPerformPutDestination(struct PAElement Element, struct PADestination Destination)
-//{
-//	Element.
-//}
-// struct PAElement PAElementPutDestination(struct PAElement Element, struct PADestination Destination) {
-//     // struct PAElement element;
-//     Element.
-//     return element;
-// }
-// PAResult PAElementPerformPutFeature(struct PAFeature Feature)
-// {
-	// PAResult result;
-	// return result;
-    // struct PAElement element;
- //   Element.type = Feature;
-    // return element;
-  //  return Element;
-// }
+
 DllExport struct PAElement PAElementPerformDelete(struct PAElement PA)
 {
-    // PAResult result;
-    // return result;
     return PA;
-    // return 0;
 }
 DllExport PAResult PAElementOperatorLess(struct PAElement one, struct PAElement other)
 {
@@ -160,8 +79,6 @@ DllExport PAResult PAElementOperatorLess(struct PAElement one, struct PAElement 
         result = PARESULT_GREATER_THAN;
     }
     return result;
-    // result = PADataOperatorLess(one.index,other.index);
-    // return result;
 }
 DllExport PAResult PAElementOperatorEqual(struct PAElement one,struct PAElement other)
 {
@@ -183,7 +100,6 @@ DllExport PAResult PAElementOperatorEqual(struct PAElement one,struct PAElement 
     {
         result = PARESULT_NOT_EQUAL;
     }
-    // result = PADataOperatorEqual(one.index,other.index);
     return result;
 }
 DllExport PAResult PAElementOperatorGreater(struct PAElement one, struct PAElement other)
@@ -199,9 +115,6 @@ DllExport PAResult PAElementOperatorGreater(struct PAElement one, struct PAEleme
         result = PARESULT_LESS_THAN;
     }
     return result;
-    // result = PADataOperatorGreater(one.index,other.index);
-
-    // return result;
 }
 DllExport PAResult PAElementOperatorNotEqual(struct PAElement one, struct PAElement other)
 {
@@ -224,6 +137,4 @@ DllExport PAResult PAElementOperatorNotEqual(struct PAElement one, struct PAElem
         result = PARESULT_EQUAL;
     }
     return result;
-    // result = PADataOperatorNotEqual(one.index,other.index);
-    // return result;
 }
