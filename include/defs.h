@@ -46,6 +46,10 @@ typedef uint32_t ListPosition;
 #define PADataDefault { {} , {} }
 #define PARESULT_SUCCESS ((int)0)
 #define PARESULT_FAIL ((int)1)
+#define PARESULT_EQUAL ((int)0)
+#define PARESULT_NOT_EQUAL ((int)1)
+#define PARESULT_LESS_THAN ((int)0)
+#define PARESULT_GREATER_THAN ((int)1)
 #define TRUE 1
 #define FALSE 0
 #define NULL 0

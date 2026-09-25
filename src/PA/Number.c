@@ -53,11 +53,11 @@ DllExport PAResult PANumberOperatorEqual(struct PANumber one, struct PANumber ot
     PAResult result;
     if (one.val == other.val)
     {
-        result = PARESULT_SUCCESS;
+        result = PARESULT_EQUAL;
     }
     else
     {
-        result = PARESULT_FAIL;
+        result = PARESULT_NOT_EQUAL;
     }
     return result;
 }
@@ -66,11 +66,11 @@ DllExport PAResult PANumberOperatorNotEqual(struct PANumber one, struct PANumber
     PAResult result;
     if (one.val != other.val)
     {
-        result = PARESULT_SUCCESS;
+        result = PARESULT_NOT_EQUAL;
     }
     else
     {
-        result = PARESULT_FAIL;
+        result = PARESULT_EQUAL;
     }
     return result;
 }
@@ -79,11 +79,11 @@ DllExport PAResult PANumberOperatorLess(struct PANumber one, struct PANumber oth
     PAResult result;
     if (one.val < other.val)
     {
-        result = PARESULT_SUCCESS;
+        result = PARESULT_LESS_THAN ;
     }
     else
     {
-        result = PARESULT_FAIL;
+        result = PARESULT_GREATER_THAN;
     }
     return result;
 }
@@ -92,11 +92,11 @@ DllExport PAResult PANumberOperatorGreater(struct PANumber one, struct PANumber 
     PAResult result;
     if (one.val > other.val)
     {
-        result = PARESULT_SUCCESS;
+        result = PARESULT_GREATER_THAN;
     }
     else
     {
-        result = PARESULT_FAIL;
+        result = PARESULT_LESS_THAN;
     }
     return result;
 }
