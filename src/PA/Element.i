@@ -512,8 +512,18 @@ struct Facade {
           int PAElementOperatorLess(struct PAElement one, struct PAElement other)
 {
     int result;
-    result = PADataOperatorLess(one.index,other.index);
+    result = ((int)1);
+    if (PADataOperatorLess(one.index,other.index))
+    {
+        result = ((int)0);
+    }
+    else
+    {
+        result = ((int)1);
+    }
     return result;
+
+
 }
           int PAElementOperatorEqual(struct PAElement one,struct PAElement other)
 {
@@ -541,8 +551,19 @@ struct Facade {
           int PAElementOperatorGreater(struct PAElement one, struct PAElement other)
 {
     int result;
-    result = PADataOperatorGreater(one.index,other.index);
+    result = ((int)0);
+    if (PADataOperatorGreater(one.index,other.index))
+    {
+        result = ((int)1);
+    }
+    else
+    {
+        result = ((int)0);
+    }
     return result;
+
+
+
 }
           int PAElementOperatorNotEqual(struct PAElement one, struct PAElement other)
 {

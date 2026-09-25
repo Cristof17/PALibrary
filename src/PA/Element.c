@@ -150,8 +150,18 @@ DllExport struct PAElement PAElementPerformDelete(struct PAElement PA)
 DllExport PAResult PAElementOperatorLess(struct PAElement one, struct PAElement other)
 {
     PAResult result;
-    result = PADataOperatorLess(one.index,other.index);
+    result = PARESULT_GREATER_THAN;
+    if (PADataOperatorLess(one.index,other.index))
+    {
+        result = PARESULT_LESS_THAN;
+    }
+    else
+    {
+        result = PARESULT_GREATER_THAN;
+    }
     return result;
+    // result = PADataOperatorLess(one.index,other.index);
+    // return result;
 }
 DllExport PAResult PAElementOperatorEqual(struct PAElement one,struct PAElement other)
 {
@@ -179,8 +189,19 @@ DllExport PAResult PAElementOperatorEqual(struct PAElement one,struct PAElement 
 DllExport PAResult PAElementOperatorGreater(struct PAElement one, struct PAElement other)
 {
     PAResult result;
-    result = PADataOperatorGreater(one.index,other.index);
+    result = PARESULT_LESS_THAN;
+    if (PADataOperatorGreater(one.index,other.index))
+    {
+        result = PARESULT_GREATER_THAN;
+    }
+    else
+    {
+        result = PARESULT_LESS_THAN;
+    }
     return result;
+    // result = PADataOperatorGreater(one.index,other.index);
+
+    // return result;
 }
 DllExport PAResult PAElementOperatorNotEqual(struct PAElement one, struct PAElement other)
 {

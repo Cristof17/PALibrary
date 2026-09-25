@@ -219,10 +219,21 @@ _PAElementOperatorLess:                 ; @PAElementOperatorLess
 	stur	x1, [x29, #-8]
 	str	x2, [sp, #16]
 	str	x3, [sp, #24]
+	mov	w8, #1                          ; =0x1
+	str	w8, [sp, #12]
 	ldur	x0, [x29, #-16]
 	ldr	x1, [sp, #16]
 	bl	_PADataOperatorLess
-	str	w0, [sp, #12]
+	cbz	w0, LBB8_2
+	b	LBB8_1
+LBB8_1:
+	str	wzr, [sp, #12]
+	b	LBB8_3
+LBB8_2:
+	mov	w8, #1                          ; =0x1
+	str	w8, [sp, #12]
+	b	LBB8_3
+LBB8_3:
 	ldr	w0, [sp, #12]
 	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
 	add	sp, sp, #64
@@ -293,10 +304,20 @@ _PAElementOperatorGreater:              ; @PAElementOperatorGreater
 	stur	x1, [x29, #-8]
 	str	x2, [sp, #16]
 	str	x3, [sp, #24]
+	str	wzr, [sp, #12]
 	ldur	x0, [x29, #-16]
 	ldr	x1, [sp, #16]
 	bl	_PADataOperatorGreater
-	str	w0, [sp, #12]
+	cbz	w0, LBB10_2
+	b	LBB10_1
+LBB10_1:
+	mov	w8, #1                          ; =0x1
+	str	w8, [sp, #12]
+	b	LBB10_3
+LBB10_2:
+	str	wzr, [sp, #12]
+	b	LBB10_3
+LBB10_3:
 	ldr	w0, [sp, #12]
 	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
 	add	sp, sp, #64
