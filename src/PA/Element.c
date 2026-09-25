@@ -156,7 +156,24 @@ DllExport PAResult PAElementOperatorLess(struct PAElement one, struct PAElement 
 DllExport PAResult PAElementOperatorEqual(struct PAElement one,struct PAElement other)
 {
     PAResult result;
-    result = PADataOperatorEqual(one.index,other.index);
+    result = PARESULT_NOT_EQUAL;
+    if (PADataOperatorEqual(one.index,other.index) == PARESULT_EQUAL)
+    {
+        result = PARESULT_EQUAL;
+    }
+    else
+    {
+        result = PARESULT_NOT_EQUAL;
+    }
+    if (PAStatusOperatorEqual(one.status,other.status) == PARESULT_EQUAL)
+    {
+        result = PARESULT_EQUAL;
+    }
+    else
+    {
+        result = PARESULT_NOT_EQUAL;
+    }
+    // result = PADataOperatorEqual(one.index,other.index);
     return result;
 }
 DllExport PAResult PAElementOperatorGreater(struct PAElement one, struct PAElement other)
