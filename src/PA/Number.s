@@ -128,11 +128,11 @@ _PANumberOperatorNotEqual:              ; @PANumberOperatorNotEqual
 	b.eq	LBB6_2
 	b	LBB6_1
 LBB6_1:
-	str	wzr, [sp, #12]
-	b	LBB6_3
-LBB6_2:
 	mov	w8, #1                          ; =0x1
 	str	w8, [sp, #12]
+	b	LBB6_3
+LBB6_2:
+	str	wzr, [sp, #12]
 	b	LBB6_3
 LBB6_3:
 	ldr	w0, [sp, #12]
@@ -182,11 +182,11 @@ _PANumberOperatorGreater:               ; @PANumberOperatorGreater
 	b.le	LBB8_2
 	b	LBB8_1
 LBB8_1:
-	str	wzr, [sp, #12]
-	b	LBB8_3
-LBB8_2:
 	mov	w8, #1                          ; =0x1
 	str	w8, [sp, #12]
+	b	LBB8_3
+LBB8_2:
+	str	wzr, [sp, #12]
 	b	LBB8_3
 LBB8_3:
 	ldr	w0, [sp, #12]

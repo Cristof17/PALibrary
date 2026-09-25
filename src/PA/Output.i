@@ -14,10 +14,8 @@
 
 
 
-
-
 # 1 "./include/defs.h" 1
-# 8 "./include/PA/Output.h" 2
+# 6 "./include/PA/Output.h" 2
 # 1 "./include/types.h" 1
 # 15 "./include/types.h"
 typedef long ArrayListSize;
@@ -398,17 +396,13 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 9 "./include/PA/Output.h" 2
-
-
-
-
-          struct PAOutput PAOutputPerformConstruct();
+# 7 "./include/PA/Output.h" 2
+ struct PAOutput PAOutputPerformConstruct();
           struct PAOutput PAOutputPerformInit(struct PAOutput PA, struct BFSRecord Value);
           struct PAOutput PAOutputPerformDelete(struct PAOutput PA);
           struct PAOutput PAOutputPerformRuin(struct PAOutput PA);
           int PAOutputOperatorEqual(struct PAOutput one, struct PAOutput other);
-          int PAOutputOperatorNotEqual(struct PAOutput one,struct PAOutput other);
+          int PAOutputOperatorNotEqual(struct PAOutput one, struct PAOutput other);
           void PAOutputPerformPrint(int Result);
 # 6 "./src/PA/Output.c" 2
 # 1 "./include/BFS/Record.h" 1

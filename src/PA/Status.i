@@ -17,7 +17,6 @@
 
 
 
-
 # 1 "./include/types.h" 1
 # 15 "./include/types.h"
 typedef long ArrayListSize;
@@ -398,15 +397,14 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 8 "./include/PA/Status.h" 2
-
-          struct PAStatus PAStatusPerformInit(struct PAStatus PA, struct PAResource Resource);
+# 7 "./include/PA/Status.h" 2
+ struct PAStatus PAStatusPerformInit(struct PAStatus PA, struct PAResource Resource);
           struct PAStatus PAStatusPerformDelete(struct PAStatus PA);
           struct PAStatus PAStatusPerformConstruct();
           struct PAStatus PAStatusPerformRuin(struct PAStatus PA);
           struct PAStatus PAStatusPerformCopy(struct PAStatus from, struct PAStatus to);
-          int PAStatusOperatorNotEqual(struct PAStatus one,struct PAStatus other);
-          int PAStatusOperatorEqual(struct PAStatus one,struct PAStatus other);
+          int PAStatusOperatorNotEqual(struct PAStatus one, struct PAStatus other);
+          int PAStatusOperatorEqual(struct PAStatus one, struct PAStatus other);
 # 7 "./src/PA/Status.c" 2
 # 1 "./include/PA/Resource.h" 1
 
@@ -419,10 +417,10 @@ struct Facade {
           struct PAResource PAResourcePerformRuin(struct PAResource PA);
           struct PAResource PAResourcePerformDelete(struct PAResource PA);
           struct PAResource PAResourcePerformCopy(struct PAResource from, struct PAResource to);
-          int PAResourceOperatorLess(struct PAResource one,struct PAResource other);
-          int PAResourceOperatorGreater(struct PAResource one,struct PAResource other);
-          int PAResourceOperatorEqual(struct PAResource one,struct PAResource other);
-          int PAResourceOperatorNotEqual(struct PAResource one,struct PAResource other);
+          int PAResourceOperatorLess(struct PAResource one, struct PAResource other);
+          int PAResourceOperatorGreater(struct PAResource one, struct PAResource other);
+          int PAResourceOperatorEqual(struct PAResource one, struct PAResource other);
+          int PAResourceOperatorNotEqual(struct PAResource one, struct PAResource other);
 # 8 "./src/PA/Status.c" 2
 
 

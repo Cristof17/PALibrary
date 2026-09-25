@@ -12,10 +12,8 @@
 
 
 
-
-
 # 1 "./include/defs.h" 1
-# 8 "./include/PA/Tree.h" 2
+# 6 "./include/PA/Tree.h" 2
 # 1 "./include/types.h" 1
 # 15 "./include/types.h"
 typedef long ArrayListSize;
@@ -396,74 +394,63 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 9 "./include/PA/Tree.h" 2
-
-
+# 7 "./include/PA/Tree.h" 2
 
           struct PATree PATreePerformConstruct();
           struct PATree PATreePerformCopy(struct PATree from, struct PATree to);
-
-          struct PATree PATreePerformInit(struct PATree PA, struct PACount Count1, struct PACount Count2, struct PAList List, struct PAElement Element);
-
-
-
-
-
+          struct PATree PATreePerformInit(struct PATree PA, struct PACount N, struct PACount M, struct PAList Adj, struct PAElement Source);
           struct PATree PATreePerformRuin(struct PATree PA);
           struct PATree PATreePerformDelete(struct PATree PA);
           int PATreeOperatorEqual(struct PATree one, struct PATree other);
           int PATreeOperatorNotEqual(struct PATree one, struct PATree other);
 # 4 "./src/PA/Tree.c" 2
 # 1 "./include/PA/Count.h" 1
-# 13 "./include/PA/Count.h"
+# 10 "./include/PA/Count.h"
           struct PACount PACountPerformConstruct();
           struct PACount PACountPerformInit(struct PACount Count, struct PANumber Number);
           struct PACount PACountPerformCopy(struct PACount from, struct PACount to);
-
-
-
           struct PACount PACountPerformRuin(struct PACount PA);
-
-
           struct PACount PACountPerformDelete(struct PACount PA);
-          int PACountOperatorLess(struct PACount one,struct PACount other);
-          int PACountOperatorEqual(struct PACount one,struct PACount other);
-          int PACountOperatorGreater(struct PACount one,struct PACount other);
-          int PACountOperatorNotEqual(struct PACount one,struct PACount other);
+          int PACountOperatorLess(struct PACount one, struct PACount other);
+          int PACountOperatorEqual(struct PACount one, struct PACount other);
+          int PACountOperatorGreater(struct PACount one, struct PACount other);
+          int PACountOperatorNotEqual(struct PACount one, struct PACount other);
 # 5 "./src/PA/Tree.c" 2
 # 1 "./include/PA/Element.h" 1
-# 10 "./include/PA/Element.h"
+
+
+
+
+
+
+
           struct PAElement PAElementPerformConstruct();
-
-          struct PAElement PAElementPerformInit(struct PAElement PA,struct PAData Data,struct PAStatus Status);
-
+          struct PAElement PAElementPerformInit(struct PAElement PA, struct PAData Data, struct PAStatus Status);
           void PAElementVisit(struct PAElement Element);
           int PAElementIsVisited(struct PAElement Element);
           void PAElementReset(struct PAElement Element);
-
-
-
           struct PAElement PAElementPerformRuin(struct PAElement PA);
           struct PAElement PAElementPerformDelete(struct PAElement PA);
           struct PAElement PAElementPerformCopy(struct PAElement from, struct PAElement to);
           int PAElementOperatorLess(struct PAElement one, struct PAElement other);
-          int PAElementOperatorEqual(struct PAElement one,struct PAElement other);
+          int PAElementOperatorEqual(struct PAElement one, struct PAElement other);
           int PAElementOperatorGreater(struct PAElement one, struct PAElement other);
           int PAElementOperatorNotEqual(struct PAElement one, struct PAElement other);
 # 6 "./src/PA/Tree.c" 2
 # 1 "./include/PA/List.h" 1
-# 11 "./include/PA/List.h"
+
+
+
+
+
+
           struct PAList PAListPerformConstruct();
-          struct PAList PAListPerformInit(struct PAList,struct PACount, struct PASeries[]);
-
-
-
+          struct PAList PAListPerformInit(struct PAList PA, struct PACount N, struct PASeries adj[]);
           struct PAList PAListPerformRuin(struct PAList PA);
           struct PAList PAListPerformDelete(struct PAList PA);
           struct PAList PAListPerformCopy(struct PAList from, struct PAList to);
           int PAListOperatorEqual(struct PAList one, struct PAList other);
           int PAListOperatorNotEqual(struct PAList one, struct PAList other);
-
 void PAListPerformPrint(struct PAList List);
 # 7 "./src/PA/Tree.c" 2
 # 19 "./src/PA/Tree.c"

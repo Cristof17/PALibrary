@@ -411,36 +411,32 @@ struct Facade {
 
 
 
-
-
           struct PAPair PAPairPerformConstruct();
-          struct PAPair PAPairPerformInit(struct PAPair, struct PAElement, struct PAElement);
+          struct PAPair PAPairPerformInit(struct PAPair PA, struct PAElement Element1, struct PAElement Element2);
           struct PAPair PAPairPerformCopy(struct PAPair from, struct PAPair to);
-
-
-
-          struct PAPair PAPairPerformRuin(struct PAPair);
-          struct PAPair PAPairPerformDelete(struct PAPair);
-          int PAPairOperatorEqual(struct PAPair other,struct PAPair one);
-          int PAPairOperatorNotEqual(struct PAPair one,struct PAPair other);
+          struct PAPair PAPairPerformRuin(struct PAPair PA);
+          struct PAPair PAPairPerformDelete(struct PAPair PA);
+          int PAPairOperatorEqual(struct PAPair one, struct PAPair other);
+          int PAPairOperatorNotEqual(struct PAPair one, struct PAPair other);
 # 7 "./src/PA/Pair.c" 2
 # 1 "./include/PA/Element.h" 1
-# 10 "./include/PA/Element.h"
+
+
+
+
+
+
+
           struct PAElement PAElementPerformConstruct();
-
-          struct PAElement PAElementPerformInit(struct PAElement PA,struct PAData Data,struct PAStatus Status);
-
+          struct PAElement PAElementPerformInit(struct PAElement PA, struct PAData Data, struct PAStatus Status);
           void PAElementVisit(struct PAElement Element);
           int PAElementIsVisited(struct PAElement Element);
           void PAElementReset(struct PAElement Element);
-
-
-
           struct PAElement PAElementPerformRuin(struct PAElement PA);
           struct PAElement PAElementPerformDelete(struct PAElement PA);
           struct PAElement PAElementPerformCopy(struct PAElement from, struct PAElement to);
           int PAElementOperatorLess(struct PAElement one, struct PAElement other);
-          int PAElementOperatorEqual(struct PAElement one,struct PAElement other);
+          int PAElementOperatorEqual(struct PAElement one, struct PAElement other);
           int PAElementOperatorGreater(struct PAElement one, struct PAElement other);
           int PAElementOperatorNotEqual(struct PAElement one, struct PAElement other);
 # 8 "./src/PA/Pair.c" 2

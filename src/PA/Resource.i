@@ -412,10 +412,10 @@ struct Facade {
           struct PAResource PAResourcePerformRuin(struct PAResource PA);
           struct PAResource PAResourcePerformDelete(struct PAResource PA);
           struct PAResource PAResourcePerformCopy(struct PAResource from, struct PAResource to);
-          int PAResourceOperatorLess(struct PAResource one,struct PAResource other);
-          int PAResourceOperatorGreater(struct PAResource one,struct PAResource other);
-          int PAResourceOperatorEqual(struct PAResource one,struct PAResource other);
-          int PAResourceOperatorNotEqual(struct PAResource one,struct PAResource other);
+          int PAResourceOperatorLess(struct PAResource one, struct PAResource other);
+          int PAResourceOperatorGreater(struct PAResource one, struct PAResource other);
+          int PAResourceOperatorEqual(struct PAResource one, struct PAResource other);
+          int PAResourceOperatorNotEqual(struct PAResource one, struct PAResource other);
 # 4 "./src/PA/Resource.c" 2
 # 1 "./include/PA/Number.h" 1
 

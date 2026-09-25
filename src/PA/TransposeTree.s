@@ -101,6 +101,7 @@ _PATransposeTreePerformCopy:            ; @PATransposeTreePerformCopy
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	str	x0, [sp, #8]
+	str	x1, [sp]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc

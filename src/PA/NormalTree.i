@@ -409,31 +409,27 @@ struct Facade {
 
 
 
-
-
           struct PANormalTree PANormalTreePerformConstruct();
           struct PANormalTree PANormalTreePerformInit(struct PANormalTree PA, struct PATree Tree );
           struct PANormalTree PANormalTreePerformCopy(struct PANormalTree from, struct PANormalTree to);
           struct PANormalTree PANormalTreePerformRuin(struct PANormalTree PA);
           struct PANormalTree PANormalTreePerformDelete(struct PANormalTree PA);
-
           struct PANormalTree PAGrafNormalBuildPart();
           int PANormalTreeOperatorEqual(struct PANormalTree one, struct PANormalTree other);
           int PANormalTreeOperatorNotEqual(struct PANormalTree one, struct PANormalTree other);
-
           int PAGrafNormalGetResult();
 # 6 "./src/PA/NormalTree.c" 2
 # 1 "./include/PA/Tree.h" 1
-# 12 "./include/PA/Tree.h"
+
+
+
+
+
+
+
           struct PATree PATreePerformConstruct();
           struct PATree PATreePerformCopy(struct PATree from, struct PATree to);
-
-          struct PATree PATreePerformInit(struct PATree PA, struct PACount Count1, struct PACount Count2, struct PAList List, struct PAElement Element);
-
-
-
-
-
+          struct PATree PATreePerformInit(struct PATree PA, struct PACount N, struct PACount M, struct PAList Adj, struct PAElement Source);
           struct PATree PATreePerformRuin(struct PATree PA);
           struct PATree PATreePerformDelete(struct PATree PA);
           int PATreeOperatorEqual(struct PATree one, struct PATree other);

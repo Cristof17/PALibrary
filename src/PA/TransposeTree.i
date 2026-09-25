@@ -407,30 +407,33 @@ struct Facade {
 
 
 # 1 "./include/PA/TransposeTree.h" 1
-# 10 "./include/PA/TransposeTree.h"
-          struct PATransposeTree PATransposeTreePerformConstruct();
-          struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree, struct PATree);
-          struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree);
 
+
+
+
+
+
+          struct PATransposeTree PATransposeTreePerformConstruct();
+          struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree PA, struct PATree Tree);
+          struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree from, struct PATransposeTree to);
           struct PATransposeTree PATransposeTreeRuin(struct PATransposeTree PA);
           struct PATransposeTree PATransposeTreeDelete(struct PATransposeTree PA);
-          int PATransposeTreeOperatorEqual(struct PATransposeTree one,struct PATransposeTree other);
-          int PATransposeTreeOperatorNotEqual(struct PATransposeTree one,struct PATransposeTree other);
-
+          int PATransposeTreeOperatorEqual(struct PATransposeTree one, struct PATransposeTree other);
+          int PATransposeTreeOperatorNotEqual(struct PATransposeTree one, struct PATransposeTree other);
           int PATransposeTreeGetResult();
           int PATransposeTreeGetResult();
 # 9 "./src/PA/TransposeTree.c" 2
 # 1 "./include/PA/Tree.h" 1
-# 12 "./include/PA/Tree.h"
+
+
+
+
+
+
+
           struct PATree PATreePerformConstruct();
           struct PATree PATreePerformCopy(struct PATree from, struct PATree to);
-
-          struct PATree PATreePerformInit(struct PATree PA, struct PACount Count1, struct PACount Count2, struct PAList List, struct PAElement Element);
-
-
-
-
-
+          struct PATree PATreePerformInit(struct PATree PA, struct PACount N, struct PACount M, struct PAList Adj, struct PAElement Source);
           struct PATree PATreePerformRuin(struct PATree PA);
           struct PATree PATreePerformDelete(struct PATree PA);
           int PATreeOperatorEqual(struct PATree one, struct PATree other);
@@ -463,7 +466,7 @@ struct Facade {
 
     return TransposeTree;
 }
-          struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree TransposeTree)
+          struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree from, struct PATransposeTree to)
 {
     struct PATransposeTree copy;
 

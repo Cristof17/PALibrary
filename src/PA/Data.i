@@ -11,9 +11,6 @@
 
 
 
-
-
-
 # 1 "./include/types.h" 1
 
 
@@ -408,21 +405,17 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 8 "./include/PA/Data.h" 2
-
-
+# 5 "./include/PA/Data.h" 2
 
           struct PAData PADataPerformConstruct();
           struct PAData PADataPerformInit(struct PAData PA, struct PAResource Resource);
-
-
           struct PAData PADataPerformRuin(struct PAData PA);
           struct PAData PADataPerformDelete(struct PAData PA);
           struct PAData PADataPerformCopy(struct PAData from, struct PAData to);
-          int PADataOperatorLess(struct PAData one,struct PAData other);
-          int PADataOperatorEqual(struct PAData one,struct PAData other);
-          int PADataOperatorGreater(struct PAData one,struct PAData other);
-          int PADataOperatorNotEqual(struct PAData one,struct PAData other);
+          int PADataOperatorLess(struct PAData one, struct PAData other);
+          int PADataOperatorEqual(struct PAData one, struct PAData other);
+          int PADataOperatorGreater(struct PAData one, struct PAData other);
+          int PADataOperatorNotEqual(struct PAData one, struct PAData other);
 # 4 "./src/PA/Data.c" 2
 # 1 "./include/PA/Resource.h" 1
 
@@ -435,10 +428,10 @@ struct Facade {
           struct PAResource PAResourcePerformRuin(struct PAResource PA);
           struct PAResource PAResourcePerformDelete(struct PAResource PA);
           struct PAResource PAResourcePerformCopy(struct PAResource from, struct PAResource to);
-          int PAResourceOperatorLess(struct PAResource one,struct PAResource other);
-          int PAResourceOperatorGreater(struct PAResource one,struct PAResource other);
-          int PAResourceOperatorEqual(struct PAResource one,struct PAResource other);
-          int PAResourceOperatorNotEqual(struct PAResource one,struct PAResource other);
+          int PAResourceOperatorLess(struct PAResource one, struct PAResource other);
+          int PAResourceOperatorGreater(struct PAResource one, struct PAResource other);
+          int PAResourceOperatorEqual(struct PAResource one, struct PAResource other);
+          int PAResourceOperatorNotEqual(struct PAResource one, struct PAResource other);
 # 5 "./src/PA/Data.c" 2
 
 

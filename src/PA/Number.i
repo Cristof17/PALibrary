@@ -481,11 +481,11 @@ struct Facade {
     int result;
     if (one.val != other.val)
     {
-        result = ((int)0);
+        result = ((int)1);
     }
     else
     {
-        result = ((int)1);
+        result = ((int)0);
     }
     return result;
 }
@@ -494,7 +494,7 @@ struct Facade {
     int result;
     if (one.val < other.val)
     {
-        result = ((int)0);
+        result = ((int)0) ;
     }
     else
     {
@@ -507,11 +507,11 @@ struct Facade {
     int result;
     if (one.val > other.val)
     {
-        result = ((int)0);
+        result = ((int)1);
     }
     else
     {
-        result = ((int)1);
+        result = ((int)0);
     }
     return result;
 }

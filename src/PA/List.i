@@ -406,48 +406,43 @@ struct Facade {
 
 
 # 1 "./include/PA/List.h" 1
-# 11 "./include/PA/List.h"
+
+
+
+
+
+
           struct PAList PAListPerformConstruct();
-          struct PAList PAListPerformInit(struct PAList,struct PACount, struct PASeries[]);
-
-
-
+          struct PAList PAListPerformInit(struct PAList PA, struct PACount N, struct PASeries adj[]);
           struct PAList PAListPerformRuin(struct PAList PA);
           struct PAList PAListPerformDelete(struct PAList PA);
           struct PAList PAListPerformCopy(struct PAList from, struct PAList to);
           int PAListOperatorEqual(struct PAList one, struct PAList other);
           int PAListOperatorNotEqual(struct PAList one, struct PAList other);
-
 void PAListPerformPrint(struct PAList List);
 # 8 "./src/PA/List.c" 2
 # 1 "./include/PA/Count.h" 1
-# 13 "./include/PA/Count.h"
+# 10 "./include/PA/Count.h"
           struct PACount PACountPerformConstruct();
           struct PACount PACountPerformInit(struct PACount Count, struct PANumber Number);
           struct PACount PACountPerformCopy(struct PACount from, struct PACount to);
-
-
-
           struct PACount PACountPerformRuin(struct PACount PA);
-
-
           struct PACount PACountPerformDelete(struct PACount PA);
-          int PACountOperatorLess(struct PACount one,struct PACount other);
-          int PACountOperatorEqual(struct PACount one,struct PACount other);
-          int PACountOperatorGreater(struct PACount one,struct PACount other);
-          int PACountOperatorNotEqual(struct PACount one,struct PACount other);
+          int PACountOperatorLess(struct PACount one, struct PACount other);
+          int PACountOperatorEqual(struct PACount one, struct PACount other);
+          int PACountOperatorGreater(struct PACount one, struct PACount other);
+          int PACountOperatorNotEqual(struct PACount one, struct PACount other);
 # 9 "./src/PA/List.c" 2
 # 1 "./include/PA/Series.h" 1
-# 17 "./include/PA/Series.h"
+# 14 "./include/PA/Series.h"
           struct PASeries PASeriesPerformConstruct();
-          struct PASeries PASeriesPerformInit(struct PASeries PA, struct PACount Count, struct PAElement Elements[]);
+          struct PASeries PASeriesPerformInit(struct PASeries PA, struct PACount Count, struct PAElement adj[]);
           struct PASeries PASeriesPerformDelete(struct PASeries PA);
           struct PASeries PASeriesPerformCopy(struct PASeries from, struct PASeries to);
-
           struct PASeries PASeriesPerformRuin(struct PASeries PA);
           struct PAResource PASeriesGet(struct PAData Data);
-          int PASeriesOperatorEqual(struct PASeries one,struct PASeries other);
-          int PASeriesOperatorNotEqual(struct PASeries one,struct PASeries other);
+          int PASeriesOperatorEqual(struct PASeries one, struct PASeries other);
+          int PASeriesOperatorNotEqual(struct PASeries one, struct PASeries other);
           void PASeriesPerformPrint(struct PASeries Series);
 # 10 "./src/PA/List.c" 2
 # 19 "./src/PA/List.c"

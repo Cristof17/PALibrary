@@ -244,10 +244,34 @@ _PAElementOperatorEqual:                ; @PAElementOperatorEqual
 	stur	x1, [x29, #-8]
 	str	x2, [sp, #16]
 	str	x3, [sp, #24]
+	mov	w8, #1                          ; =0x1
+	str	w8, [sp, #12]
 	ldur	x0, [x29, #-16]
 	ldr	x1, [sp, #16]
 	bl	_PADataOperatorEqual
-	str	w0, [sp, #12]
+	cbnz	w0, LBB9_2
+	b	LBB9_1
+LBB9_1:
+	str	wzr, [sp, #12]
+	b	LBB9_3
+LBB9_2:
+	mov	w8, #1                          ; =0x1
+	str	w8, [sp, #12]
+	b	LBB9_3
+LBB9_3:
+	ldur	x0, [x29, #-8]
+	ldr	x1, [sp, #24]
+	bl	_PAStatusOperatorEqual
+	cbnz	w0, LBB9_5
+	b	LBB9_4
+LBB9_4:
+	str	wzr, [sp, #12]
+	b	LBB9_6
+LBB9_5:
+	mov	w8, #1                          ; =0x1
+	str	w8, [sp, #12]
+	b	LBB9_6
+LBB9_6:
 	ldr	w0, [sp, #12]
 	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
 	add	sp, sp, #64
@@ -294,10 +318,34 @@ _PAElementOperatorNotEqual:             ; @PAElementOperatorNotEqual
 	stur	x1, [x29, #-8]
 	str	x2, [sp, #16]
 	str	x3, [sp, #24]
+	mov	w8, #1                          ; =0x1
+	str	w8, [sp, #12]
 	ldur	x0, [x29, #-16]
 	ldr	x1, [sp, #16]
 	bl	_PADataOperatorNotEqual
-	str	w0, [sp, #12]
+	cbz	w0, LBB11_2
+	b	LBB11_1
+LBB11_1:
+	mov	w8, #1                          ; =0x1
+	str	w8, [sp, #12]
+	b	LBB11_3
+LBB11_2:
+	str	wzr, [sp, #12]
+	b	LBB11_3
+LBB11_3:
+	ldur	x0, [x29, #-8]
+	ldr	x1, [sp, #24]
+	bl	_PAStatusOperatorNotEqual
+	cbz	w0, LBB11_5
+	b	LBB11_4
+LBB11_4:
+	mov	w8, #1                          ; =0x1
+	str	w8, [sp, #12]
+	b	LBB11_6
+LBB11_5:
+	str	wzr, [sp, #12]
+	b	LBB11_6
+LBB11_6:
 	ldr	w0, [sp, #12]
 	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
 	add	sp, sp, #64

@@ -34,7 +34,7 @@ DllExport struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTr
     // struct PATransposeTree tree;
     return TransposeTree;
 }
-DllExport struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree TransposeTree)
+DllExport struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree from, struct PATransposeTree to)
 {
     struct PATransposeTree copy;
     // copy = PATransposeTreePerformConstruct(TransposeTree.adj_trans);

@@ -399,13 +399,9 @@ struct Facade {
 
 
 
-
-
           struct PALink PALinkPerformConstruct();
           struct PALink PALinkPerformCopy(struct PALink from, struct PALink to);
-
           struct PALink PALinkPerformInit(struct PALink PA, struct PAPair Pair);
-
           struct PALink PALinkPerformRuin(struct PALink PA);
           struct PALink PALinkPerformDelete(struct PALink PA);
           int PALinkOperatorEqual(struct PALink one, struct PALink other);
@@ -418,18 +414,13 @@ struct Facade {
 
 
 
-
-
           struct PAPair PAPairPerformConstruct();
-          struct PAPair PAPairPerformInit(struct PAPair, struct PAElement, struct PAElement);
+          struct PAPair PAPairPerformInit(struct PAPair PA, struct PAElement Element1, struct PAElement Element2);
           struct PAPair PAPairPerformCopy(struct PAPair from, struct PAPair to);
-
-
-
-          struct PAPair PAPairPerformRuin(struct PAPair);
-          struct PAPair PAPairPerformDelete(struct PAPair);
-          int PAPairOperatorEqual(struct PAPair other,struct PAPair one);
-          int PAPairOperatorNotEqual(struct PAPair one,struct PAPair other);
+          struct PAPair PAPairPerformRuin(struct PAPair PA);
+          struct PAPair PAPairPerformDelete(struct PAPair PA);
+          int PAPairOperatorEqual(struct PAPair one, struct PAPair other);
+          int PAPairOperatorNotEqual(struct PAPair one, struct PAPair other);
 # 10 "./src/PA/Link.c" 2
 
 

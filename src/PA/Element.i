@@ -16,7 +16,6 @@
 
 
 
-
 # 1 "./include/types.h" 1
 # 15 "./include/types.h"
 typedef long ArrayListSize;
@@ -397,44 +396,38 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 8 "./include/PA/Element.h" 2
-
+# 7 "./include/PA/Element.h" 2
 
           struct PAElement PAElementPerformConstruct();
-
-          struct PAElement PAElementPerformInit(struct PAElement PA,struct PAData Data,struct PAStatus Status);
-
+          struct PAElement PAElementPerformInit(struct PAElement PA, struct PAData Data, struct PAStatus Status);
           void PAElementVisit(struct PAElement Element);
           int PAElementIsVisited(struct PAElement Element);
           void PAElementReset(struct PAElement Element);
-
-
-
           struct PAElement PAElementPerformRuin(struct PAElement PA);
           struct PAElement PAElementPerformDelete(struct PAElement PA);
           struct PAElement PAElementPerformCopy(struct PAElement from, struct PAElement to);
           int PAElementOperatorLess(struct PAElement one, struct PAElement other);
-          int PAElementOperatorEqual(struct PAElement one,struct PAElement other);
+          int PAElementOperatorEqual(struct PAElement one, struct PAElement other);
           int PAElementOperatorGreater(struct PAElement one, struct PAElement other);
           int PAElementOperatorNotEqual(struct PAElement one, struct PAElement other);
 # 6 "./src/PA/Element.c" 2
 # 1 "./include/PA/Data.h" 1
-# 11 "./include/PA/Data.h"
+
+
+
+
+
           struct PAData PADataPerformConstruct();
           struct PAData PADataPerformInit(struct PAData PA, struct PAResource Resource);
-
-
           struct PAData PADataPerformRuin(struct PAData PA);
           struct PAData PADataPerformDelete(struct PAData PA);
           struct PAData PADataPerformCopy(struct PAData from, struct PAData to);
-          int PADataOperatorLess(struct PAData one,struct PAData other);
-          int PADataOperatorEqual(struct PAData one,struct PAData other);
-          int PADataOperatorGreater(struct PAData one,struct PAData other);
-          int PADataOperatorNotEqual(struct PAData one,struct PAData other);
+          int PADataOperatorLess(struct PAData one, struct PAData other);
+          int PADataOperatorEqual(struct PAData one, struct PAData other);
+          int PADataOperatorGreater(struct PAData one, struct PAData other);
+          int PADataOperatorNotEqual(struct PAData one, struct PAData other);
 # 7 "./src/PA/Element.c" 2
 # 1 "./include/PA/Status.h" 1
-
-
 
 
 
@@ -446,8 +439,8 @@ struct Facade {
           struct PAStatus PAStatusPerformConstruct();
           struct PAStatus PAStatusPerformRuin(struct PAStatus PA);
           struct PAStatus PAStatusPerformCopy(struct PAStatus from, struct PAStatus to);
-          int PAStatusOperatorNotEqual(struct PAStatus one,struct PAStatus other);
-          int PAStatusOperatorEqual(struct PAStatus one,struct PAStatus other);
+          int PAStatusOperatorNotEqual(struct PAStatus one, struct PAStatus other);
+          int PAStatusOperatorEqual(struct PAStatus one, struct PAStatus other);
 # 8 "./src/PA/Element.c" 2
 # 18 "./src/PA/Element.c"
           struct PAElement PAElementPerformConstruct()
@@ -525,7 +518,24 @@ struct Facade {
           int PAElementOperatorEqual(struct PAElement one,struct PAElement other)
 {
     int result;
-    result = PADataOperatorEqual(one.index,other.index);
+    result = ((int)1);
+    if (PADataOperatorEqual(one.index,other.index) == ((int)0))
+    {
+        result = ((int)0);
+    }
+    else
+    {
+        result = ((int)1);
+    }
+    if (PAStatusOperatorEqual(one.status,other.status) == ((int)0))
+    {
+        result = ((int)0);
+    }
+    else
+    {
+        result = ((int)1);
+    }
+
     return result;
 }
           int PAElementOperatorGreater(struct PAElement one, struct PAElement other)
@@ -537,6 +547,24 @@ struct Facade {
           int PAElementOperatorNotEqual(struct PAElement one, struct PAElement other)
 {
     int result;
-    result = PADataOperatorNotEqual(one.index,other.index);
+    result = ((int)1);
+    if (PADataOperatorNotEqual(one.index,other.index))
+    {
+        result = ((int)1);
+    }
+    else
+    {
+        result = ((int)0);
+    }
+    if (PAStatusOperatorNotEqual(one.status,other.status))
+    {
+        result = ((int)1);
+    }
+    else
+    {
+        result = ((int)0);
+    }
     return result;
+
+
 }
