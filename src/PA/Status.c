@@ -13,41 +13,47 @@
 DllExport struct PAStatus PAStatusPerformConstruct()
 {
     struct PAStatus status;
-    status.visited = PAResourcePerformConstruct();
-    status = PAStatusPerformInit(status,status.visited);
     return status;
 }
-DllExport struct PAStatus PAStatusPerformInit(struct PAStatus Status, struct PAResource Value)
+DllExport struct PAStatus PAStatusPerformInit(struct PAStatus Status, PAValue Value)
 {
-    Status.visited = Value;
+    struct PAStatus temp;
+    temp = Status;
+    temp.visited = Value;;
+    Status = temp;
     return Status;
 }
 DllExport struct PAStatus PAStatusPerformCopy(struct PAStatus from, struct PAStatus to)
 {
     struct PAStatus temp;
-    temp.visited = PAResourcePerformCopy(from.visited, to.visited);
-    to.visited = temp.visited;
+    temp = from;
+    to = temp;
     return to;
 }
 DllExport struct PAStatus PAStatusPerformDelete(struct PAStatus PA)
 {
-    PAResourcePerformDelete(PA.visited);
+    struct PAStatus temp;;
+    temp.visited = NULL;
+    PA = temp;
     return PA;
 }
 DllExport struct PAStatus PAStatusPerformRuin(struct PAStatus PA)
 {
-    PA.visited = PAResourcePerformRuin(PA.visited);
+    struct PAStatus temp;
+    temp = PA;
+    temp.visited = NULL;
+    PA = temp;
     return PA;
 }
 DllExport PAResult PAStatusOperatorNotEqual(struct PAStatus one,struct PAStatus other)
 {
     PAResult result;
-    result = PAResourceOperatorNotEqual(one.visited,other.visited);
+    result = (one.visited != other.visited) ? PARESULT_NOT_EQUAL : PARESULT_EQUAL;
     return result;
 }
 DllExport PAResult PAStatusOperatorEqual(struct PAStatus one,struct PAStatus other)
 {
     PAResult result;
-    result = PAResourceOperatorEqual(one.visited,other.visited);
+    result = (one.visited == other.visited) ? PARESULT_EQUAL : PARESULT_NOT_EQUAL;
     return result;
 }

@@ -614,96 +614,96 @@ Lloh1:
                                         ; -- End function
 	.section	__TEXT,__cstring,cstring_literals
 l_.str:                                 ; @.str
-	.asciz	"Number copy source = %lld, destination = %lld\n"
+	.asciz	"Number copy source = %ld, destination = %ld\n"
 
 l_.str.1:                               ; @.str.1
-	.asciz	"Element copy source = %lld, destination = %lld\n"
+	.asciz	"Element copy source = %ld, destination = %ld\n"
 
 l_.str.2:                               ; @.str.2
-	.asciz	"Count1 = %lld, count2 = %lld\n"
+	.asciz	"Count1 = %ld, count2 = %ld\n"
 
 l_.str.3:                               ; @.str.3
-	.asciz	"copy padata %lld from %lld\n"
+	.asciz	"copy padata %ld from %ld\n"
 
 l_.str.4:                               ; @.str.4
-	.asciz	"copy from status %lld %lld\n"
+	.asciz	"copy from status %ld %ld\n"
 
 l_.str.5:                               ; @.str.5
-	.asciz	"resource copy %lld, %lld\n"
+	.asciz	"resource copy %ld, %ld\n"
 
 l_.str.6:                               ; @.str.6
-	.asciz	"tree.ls.n to, %lld tree.ls.n. from %lld\n"
+	.asciz	"tree.ls.n to, %ld tree.ls.n. from %ld\n"
 
 l_.str.7:                               ; @.str.7
-	.asciz	"Tree1 %lld %lld\n"
+	.asciz	"Tree1 %ld %ld\n"
 
 l_.str.8:                               ; @.str.8
-	.asciz	"tree1.list.n %lld, tree2.list.n %lld\n"
+	.asciz	"tree1.list.n %ld, tree2.list.n %ld\n"
 
 l_.str.9:                               ; @.str.9
-	.asciz	"series1.size %lld series2.size %lld\n"
+	.asciz	"series1.size %ld series2.size %ld\n"
 
 l_.str.10:                              ; @.str.10
-	.asciz	"First list %lld` second list %lld,\n"
+	.asciz	"First list %ld` second list %ld,\n"
 
 l_.str.11:                              ; @.str.11
-	.asciz	"forst number %lld %lld \n|"
+	.asciz	"forst number %ld %ld \n|"
 
 l_.str.12:                              ; @.str.12
-	.asciz	"status123 = %lld status456 = %lld\n"
+	.asciz	"status123 = %ld status456 = %ld\n"
 
 l_.str.13:                              ; @.str.13
-	.asciz	"resource123 = %lld resource124 = %lld\n|,re"
+	.asciz	"resource123 = %ld resource124 = %ld\n|,re"
 
 l_.str.14:                              ; @.str.14
-	.asciz	"resource1234 %lld %lld \n"
+	.asciz	"resource1234 %ld %ld \n"
 
 l_.str.15:                              ; @.str.15
-	.asciz	"testing PANumber %lld\n()"
+	.asciz	"testing PANumber %ld\n()"
 
 l_.str.16:                              ; @.str.16
-	.asciz	"testing Resource %lld\n"
+	.asciz	"testing Resource %ld\n"
 
 l_.str.17:                              ; @.str.17
-	.asciz	"testing tree %lld\n"
+	.asciz	"testing tree %ld\n"
 
 l_.str.18:                              ; @.str.18
-	.asciz	"testing series number:%lld\n"
+	.asciz	"testing series number:%ld\n"
 
 l_.str.19:                              ; @.str.19
-	.asciz	"Element resource test%lld\n"
+	.asciz	"Element resource test%ld\n"
 
 l_.str.20:                              ; @.str.20
-	.asciz	"pastatus perform construct %lld\n"
+	.asciz	"pastatus perform construct %ld\n"
 
 l_.str.21:                              ; @.str.21
-	.asciz	"Series construct series %lld\n"
+	.asciz	"Series construct series %ld\n"
 
 l_.str.22:                              ; @.str.22
-	.asciz	"List construct count%lld\n"
+	.asciz	"List construct count%ld\n"
 
 l_.str.23:                              ; @.str.23
-	.asciz	"list1 %lld list1Copy %lld \n"
+	.asciz	"list1 %ld list1Copy %ld \n"
 
 l_.str.24:                              ; @.str.24
-	.asciz	"list1 randomElemente %lld list1CopyRandomElement %lld\n"
+	.asciz	"list1 randomElemente %ld list1CopyRandomElement %ld\n"
 
 l_.str.25:                              ; @.str.25
-	.asciz	"data2=%lld, from %lld\n"
+	.asciz	"data2=%ld, from %ld\n"
 
 l_.str.26:                              ; @.str.26
-	.asciz	"copy test for series %lld copy is %lld\n"
+	.asciz	"copy test for series %ld copy is %ld\n"
 
 l_.str.27:                              ; @.str.27
-	.asciz	"element1.index = %lld, element2.index = %lld\n"
+	.asciz	"element1.index = %ld, element2.index = %ld\n"
 
 l_.str.28:                              ; @.str.28
-	.asciz	"resource1.number.val = %lld, resource2.number.val=%lld\n"
+	.asciz	"resource1.number.val = %ld, resource2.number.val=%ld\n"
 
 l_.str.29:                              ; @.str.29
-	.asciz	"count1 = %lld, count2 = %lld\n"
+	.asciz	"count1 = %ld, count2 = %ld\n"
 
 l_.str.30:                              ; @.str.30
-	.asciz	"list.n = %lld"
+	.asciz	"list.n = %ld"
 
 .subsections_via_symbols

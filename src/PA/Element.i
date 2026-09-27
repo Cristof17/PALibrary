@@ -56,9 +56,9 @@ struct ArrayList {
 
 
 };
-# 91 "./include/types.h"
+# 89 "./include/types.h"
 struct PANumber;
-# 108 "./include/types.h"
+# 106 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -88,7 +88,7 @@ struct PAInput;
 struct PAOutput;
 
 struct PAData;
-struct PAValue;
+
 struct List;
 struct PAList;
 struct PAStatus;
@@ -107,7 +107,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 166 "./include/types.h"
+# 164 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -147,20 +147,20 @@ struct PrototypeClient;
 struct PANumber {
 
 
- long long val;
+ long val;
 
 };
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 223 "./include/types.h"
+# 221 "./include/types.h"
 struct Output {
 
 };
 struct Input {
  ;
 };
-# 240 "./include/types.h"
+# 238 "./include/types.h"
 struct PAResource {
 
 
@@ -169,23 +169,26 @@ struct PAResource {
 
 };
 struct PAStatus {
- struct PAResource visited;
+ long visited;
 };
 struct PAData {
- struct PAResource Resource;
+ long Resource;
 
 };
+
+
 struct PAElement {
 
- struct PAData index;
+ long index;
 
- struct PAStatus status;
+ long status;
 
 
 };
 struct PAFeature {
- long long kind;
+ long kind;
 };
+
 struct PACount {
 
  struct PANumber number;
@@ -240,7 +243,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 327 "./include/types.h"
+# 328 "./include/types.h"
 struct PAInput {
  struct PACount n;
  struct PACount m;
@@ -257,9 +260,9 @@ struct PAOutput {
 
 
 
-struct PAValue {
- long long value;
-};
+
+
+
 struct PADestination {
     struct PAElement element;
 };
@@ -280,7 +283,7 @@ struct BFSInput {
 struct BFSOutput {
  struct BFSRecord result;
 };
-# 374 "./include/types.h"
+# 375 "./include/types.h"
 struct PALink {
  struct PAPair p;
 
@@ -321,7 +324,7 @@ struct FactoryCreator
  struct PATransposeTree transposeTree;
 };
 struct FlyWeight {
- long long todo;
+ long todo;
 };
 struct Adaptee {
  struct ArrayList list;
@@ -361,7 +364,7 @@ struct ConcreteBuilder {
  struct Builder builder;
 };
 struct IteratorConcreteIterator {
- long long position;
+ long position;
 };
 struct IteratorConcreteAggregate {
  struct IteratorConcreteIterator iterator;
@@ -399,7 +402,7 @@ struct Facade {
 # 7 "./include/PA/Element.h" 2
 
           struct PAElement PAElementPerformConstruct();
-          struct PAElement PAElementPerformInit(struct PAElement PA, struct PAData Data, struct PAStatus Status);
+          struct PAElement PAElementPerformInit(struct PAElement PA, long Data, long Status);
           void PAElementVisit(struct PAElement Element);
           int PAElementIsVisited(struct PAElement Element);
           void PAElementReset(struct PAElement Element);
@@ -418,7 +421,7 @@ struct Facade {
 
 
           struct PAData PADataPerformConstruct();
-          struct PAData PADataPerformInit(struct PAData PA, struct PAResource Resource);
+          struct PAData PADataPerformInit(struct PAData PA, long Resource);
           struct PAData PADataPerformRuin(struct PAData PA);
           struct PAData PADataPerformDelete(struct PAData PA);
           struct PAData PADataPerformCopy(struct PAData from, struct PAData to);
@@ -434,7 +437,7 @@ struct Facade {
 
 
 
-          struct PAStatus PAStatusPerformInit(struct PAStatus PA, struct PAResource Resource);
+          struct PAStatus PAStatusPerformInit(struct PAStatus PA, long Resource);
           struct PAStatus PAStatusPerformDelete(struct PAStatus PA);
           struct PAStatus PAStatusPerformConstruct();
           struct PAStatus PAStatusPerformRuin(struct PAStatus PA);
@@ -453,48 +456,44 @@ struct Facade {
           struct PAElement PAElementPerformConstruct()
 {
     struct PAElement temp;
-    temp.index = PADataPerformConstruct();
-    temp.status = PAStatusPerformConstruct();
-    temp = PAElementPerformInit(temp,temp.index,temp.status);
     return temp;
 }
-          struct PAElement PAElementPerformInit(struct PAElement Element, struct PAData Value, struct PAStatus Value2)
+          struct PAElement PAElementPerformInit(struct PAElement Element, long Value, long Value2)
 {
     struct PAElement temp;
-    temp.index = PADataPerformConstruct();
-    temp.status = PAStatusPerformConstruct();
+    temp = Element;
+    temp.index = Value;
+    temp.status = Value2;
     Element = temp;
     return Element;
 }
           void PAElementVisit(struct PAElement Element)
 {
-    Element.status.visited.value.val = 1;
+    Element.status = 1;
     return;
 }
           int PAElementIsVisited(struct PAElement Element)
 {
-    return Element.status.visited.value.val;
+    return Element.status;
 }
           void PAElementReset(struct PAElement Element)
 {
-    Element.status.visited.value.val = 0;
+    Element.status = 0;
     return;
 }
           struct PAElement PAElementPerformCopy(struct PAElement from, struct PAElement to)
 {
     struct PAElement temp;
-    temp.index = PADataPerformCopy(from.index, to.index);
-    temp.status = PAStatusPerformCopy(from.status,to.status);
-    to.index = temp.index;
-    to.status = temp.status;
+    temp = from;
+    to = temp;
     return to;
 }
 
           struct PAElement PAElementPerformRuin(struct PAElement PA)
 {
     struct PAElement temp;
-    temp.index = PADataPerformRuin(PA.index);
-    temp.status = PAStatusPerformRuin(PA.status);
+    temp.index = 0;
+    temp.status = 0;
     PA = temp;
     return PA;
 }
@@ -506,72 +505,24 @@ struct Facade {
           int PAElementOperatorLess(struct PAElement one, struct PAElement other)
 {
     int result;
-    result = ((int)1);
-    if (PADataOperatorLess(one.index,other.index))
-    {
-        result = ((int)0);
-    }
-    else
-    {
-        result = ((int)1);
-    }
+    result = one.index < other.index ? ((int)0) : ((int)1);
     return result;
 }
           int PAElementOperatorEqual(struct PAElement one,struct PAElement other)
 {
     int result;
-    result = ((int)1);
-    if (PADataOperatorEqual(one.index,other.index) == ((int)0))
-    {
-        result = ((int)0);
-    }
-    else
-    {
-        result = ((int)1);
-    }
-    if (PAStatusOperatorEqual(one.status,other.status) == ((int)0))
-    {
-        result = ((int)0);
-    }
-    else
-    {
-        result = ((int)1);
-    }
+    result = (one.index == other.index) ? ((int)0) : ((int)1);
     return result;
 }
           int PAElementOperatorGreater(struct PAElement one, struct PAElement other)
 {
     int result;
-    result = ((int)0);
-    if (PADataOperatorGreater(one.index,other.index))
-    {
-        result = ((int)1);
-    }
-    else
-    {
-        result = ((int)0);
-    }
+    result = (one.index > other.index) ? ((int)1) : ((int)0);
     return result;
 }
           int PAElementOperatorNotEqual(struct PAElement one, struct PAElement other)
 {
     int result;
-    result = ((int)1);
-    if (PADataOperatorNotEqual(one.index,other.index))
-    {
-        result = ((int)1);
-    }
-    else
-    {
-        result = ((int)0);
-    }
-    if (PAStatusOperatorNotEqual(one.status,other.status))
-    {
-        result = ((int)1);
-    }
-    else
-    {
-        result = ((int)0);
-    }
+    result = (one.index != other.index) ? ((int)1) : ((int)0);
     return result;
 }

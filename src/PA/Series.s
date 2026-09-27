@@ -29,24 +29,24 @@ LBB0_1:                                 ; =>This Inner Loop Header: Depth=1
 	b.ge	LBB0_3
 	b	LBB0_2
 LBB0_2:                                 ;   in Loop: Header=BB0_1 Depth=1
-	ldr	x8, [sp, #16]                   ; 8-byte Folded Reload
-	add	x9, x8, #8
-	str	x9, [sp, #8]                    ; 8-byte Folded Spill
-	ldur	x9, [x29, #-16]
-	str	x9, [sp]                        ; 8-byte Folded Spill
-	add	x9, x8, #8
+	ldr	x9, [sp, #16]                   ; 8-byte Folded Reload
+	add	x8, x9, #8
+	str	x8, [sp, #8]                    ; 8-byte Folded Spill
+	ldur	x8, [x29, #-16]
+	str	x8, [sp]                        ; 8-byte Folded Spill
+	add	x8, x9, #8
 	ldur	x10, [x29, #-16]
-	add	x11, x9, x10, lsl #4
-	add	x9, x8, #8
+	add	x8, x8, x10, lsl #4
+	add	x10, x9, #8
+	ldur	x11, [x29, #-16]
+	lsl	x11, x11, #4
+	ldr	x2, [x10, x11]
+	add	x9, x9, #8
 	ldur	x10, [x29, #-16]
-	lsl	x10, x10, #4
-	add	x8, x8, #8
-	ldur	x12, [x29, #-16]
-	add	x8, x8, x12, lsl #4
-	ldr	x0, [x11]
-	ldr	x1, [x11, #8]
-	ldr	x2, [x9, x10]
-	ldr	x3, [x8, #8]
+	add	x9, x9, x10, lsl #4
+	ldr	x3, [x9, #8]
+	ldr	x0, [x8]
+	ldr	x1, [x8, #8]
 	bl	_PAElementPerformInit
 	ldr	x9, [sp]                        ; 8-byte Folded Reload
 	ldr	x8, [sp, #8]                    ; 8-byte Folded Reload
@@ -246,24 +246,24 @@ LBB2_1:                                 ; =>This Inner Loop Header: Depth=1
 	b.gt	LBB2_3
 	b	LBB2_2
 LBB2_2:                                 ;   in Loop: Header=BB2_1 Depth=1
-	ldr	x8, [sp, #16]                   ; 8-byte Folded Reload
-	add	x9, x8, #8
-	str	x9, [sp, #8]                    ; 8-byte Folded Spill
-	ldur	x9, [x29, #-32]
-	str	x9, [sp]                        ; 8-byte Folded Spill
-	add	x9, x8, #8
+	ldr	x9, [sp, #16]                   ; 8-byte Folded Reload
+	add	x8, x9, #8
+	str	x8, [sp, #8]                    ; 8-byte Folded Spill
+	ldur	x8, [x29, #-32]
+	str	x8, [sp]                        ; 8-byte Folded Spill
+	add	x8, x9, #8
 	ldur	x10, [x29, #-32]
-	add	x11, x9, x10, lsl #4
-	add	x9, x8, #8
+	add	x8, x8, x10, lsl #4
+	add	x10, x9, #8
+	ldur	x11, [x29, #-32]
+	lsl	x11, x11, #4
+	ldr	x2, [x10, x11]
+	add	x9, x9, #8
 	ldur	x10, [x29, #-32]
-	lsl	x10, x10, #4
-	add	x8, x8, #8
-	ldur	x12, [x29, #-32]
-	add	x8, x8, x12, lsl #4
-	ldr	x0, [x11]
-	ldr	x1, [x11, #8]
-	ldr	x2, [x9, x10]
-	ldr	x3, [x8, #8]
+	add	x9, x9, x10, lsl #4
+	ldr	x3, [x9, #8]
+	ldr	x0, [x8]
+	ldr	x1, [x8, #8]
 	bl	_PAElementPerformInit
 	ldr	x9, [sp]                        ; 8-byte Folded Reload
 	ldr	x8, [sp, #8]                    ; 8-byte Folded Reload

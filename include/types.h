@@ -62,13 +62,11 @@ struct ArrayList {
 //#define short HALF_PTR;
 #ifndef _64BIT
 // #define PANumber int
-#define PAInt int
 #define PABool int
 #define PAResult int
 #define ArrayListSize int
 #else
 // #define PANumber long long
-#define PAInt long long
 #define PABool int
 #define PAResult int
 #define ArrayListSize long long
@@ -77,13 +75,13 @@ struct ArrayList {
 // typedef int PANumber;
 #ifndef _64BIT
 // #define PANumber int
-#define PAInt int
+#define PAValue int
 #define PABool int
 #define PAResult int
 #define ArrayListSize int
 #else
 // #define PANumber long long
-#define PAInt long long
+#define PAValue long
 #define PABool int
 #define PAResult int
 #define ArrayListSize long long
@@ -134,7 +132,7 @@ struct PAInput;
 struct PAOutput;
 // struct PAResource;
 struct PAData;
-struct PAValue;
+// struct PAValue;
 struct List;
 struct PAList;
 struct PAStatus;
@@ -202,7 +200,7 @@ struct PrototypeClient;
 struct PANumber {
 	//  val;
 	// long long val;
-	PAInt val;
+	PAValue val;
 	// PADDING_1_BYTE(0);
 };
 struct PrototypeConcretePrototype1;
@@ -245,23 +243,26 @@ struct PAResource {
 	// PADDING_1_BYTE(0);
 };
 struct PAStatus {
-	struct PAResource visited;
+	PAValue visited;
 };
 struct PAData {
-	struct PAResource Resource;
+	PAValue Resource;
 	// PADDING_1_BYTE(0);
 };
+// #pragma pack(push, 8)
+// #pragma pack(pop)
 struct PAElement { 
 	//	struct PAData data;
-	struct PAData index;
+	PAValue index;
 	// struct PADestination Next;
-	struct PAStatus status;
+	PAValue status;
 	// struct PAFeature type;
 	// PADDING_1_BYTE(0);
 };
 struct PAFeature {
-	PAInt kind;
+	PAValue kind;
 };
+
 struct PACount {
 	// PADDING_1_BYTE(0);
 	struct PANumber number;
@@ -340,9 +341,9 @@ struct PAOutput {
 // //    int Value;
 // 	INT Value;
 // };
-struct PAValue {
-	PAInt value;
-};
+// struct PAValue {
+// 	PAValue value;
+// };
 struct PADestination {
     struct PAElement element;
 };
@@ -411,7 +412,7 @@ struct FactoryCreator
 	struct PATransposeTree transposeTree;
 };
 struct FlyWeight {
-	PAInt todo;
+	PAValue todo;
 };
 struct Adaptee {
 	struct ArrayList list;
@@ -451,7 +452,7 @@ struct ConcreteBuilder {
 	struct Builder builder;
 };
 struct IteratorConcreteIterator  {
-	PAInt position;
+	PAValue position;
 };
 struct IteratorConcreteAggregate {
 	struct IteratorConcreteIterator iterator;

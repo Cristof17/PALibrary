@@ -4,7 +4,7 @@
 #include <types.h>
 #include <defs.h>
 DllExport struct PAData PADataPerformConstruct();
-DllExport struct PAData PADataPerformInit(struct PAData PA, struct PAResource Resource);
+DllExport struct PAData PADataPerformInit(struct PAData PA, PAValue Resource);
 DllExport struct PAData PADataPerformRuin(struct PAData PA);
 DllExport struct PAData PADataPerformDelete(struct PAData PA);
 DllExport struct PAData PADataPerformCopy(struct PAData from, struct PAData to);

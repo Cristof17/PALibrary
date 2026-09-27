@@ -10,49 +10,49 @@
 DllExport struct PAData PADataPerformConstruct()
 {
     struct PAData data;
-    data.Resource = PAResourcePerformConstruct();
-    data = PADataPerformInit(data, data.Resource);
     return data;
 }
-DllExport struct PAData PADataPerformInit(struct PAData Data, struct PAResource Value)
+DllExport struct PAData PADataPerformInit(struct PAData Data, PAValue Value)
 {
     struct PAData temp;
-    temp.Resource = PAResourcePerformConstruct();
+    // temp = PAResourcePerformConstruct();
+    temp = Data;
+    temp.Resource = Value;
     Data = temp;
-    Data.Resource.value.val = Value.value.val;
-    Data.Resource.value = Value.value;
 
     return Data;
 }
 DllExport struct PAData PADataPerformCopy(struct PAData from, struct PAData to)
 {
     struct PAData temp;
-    temp.Resource = PAResourcePerformCopy(from.Resource, temp.Resource);
-    to.Resource = temp.Resource;
+    temp = from;
+    to = temp;
+    // temp.Resource = PAResourcePerformCopy(from.Resource, temp.Resource);
+    // to.Resource = temp.Resource;
     return to;
 }
 DllExport PAResult PADataOperatorLess(struct PAData one, struct PAData other)
 {
     PAResult result;
-    result = PAResourceOperatorLess(one.Resource, other.Resource);
+    result = one.Resource < other.Resource ? PARESULT_LESS_THAN : PARESULT_GREATER_THAN;
     return result;
 }
 DllExport PAResult PADataOperatorEqual(struct PAData one, struct PAData other)
 {
     PAResult result;
-    result = PAResourceOperatorEqual(one.Resource, other.Resource);
+    result = one.Resource == other.Resource ? PARESULT_EQUAL : PARESULT_NOT_EQUAL;
     return result;
 }
 DllExport PAResult PADataOperatorGreater(struct PAData one, struct PAData other)
 {
     PAResult result;
-    result = PAResourceOperatorGreater(one.Resource, other.Resource);
+    result = one.Resource > other.Resource ? PARESULT_GREATER_THAN : PARESULT_LESS_THAN;
     return result;
 }
 DllExport PAResult PADataOperatorNotEqual(struct PAData one, struct PAData other)
 {
     PAResult result;
-    result = PAResourceOperatorNotEqual(one.Resource, other.Resource);
+    result = one.Resource != other.Resource ? PARESULT_NOT_EQUAL : PARESULT_EQUAL;
     return result;
 }
 DllExport struct PAData PADataPerformRuin(struct PAData Data) 
@@ -61,6 +61,6 @@ DllExport struct PAData PADataPerformRuin(struct PAData Data)
 }
 DllExport struct PAData PADataPerformDelete(struct PAData PA)
 {
-    PAResourcePerformDelete(PA.Resource);
+    PA.Resource = NULL;
     return PA;
 }

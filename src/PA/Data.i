@@ -65,9 +65,9 @@ struct ArrayList {
 
 
 };
-# 91 "./include/types.h"
+# 89 "./include/types.h"
 struct PANumber;
-# 108 "./include/types.h"
+# 106 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -97,7 +97,7 @@ struct PAInput;
 struct PAOutput;
 
 struct PAData;
-struct PAValue;
+
 struct List;
 struct PAList;
 struct PAStatus;
@@ -116,7 +116,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 166 "./include/types.h"
+# 164 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -156,20 +156,20 @@ struct PrototypeClient;
 struct PANumber {
 
 
- long long val;
+ long val;
 
 };
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 223 "./include/types.h"
+# 221 "./include/types.h"
 struct Output {
 
 };
 struct Input {
  ;
 };
-# 240 "./include/types.h"
+# 238 "./include/types.h"
 struct PAResource {
 
 
@@ -178,23 +178,26 @@ struct PAResource {
 
 };
 struct PAStatus {
- struct PAResource visited;
+ long visited;
 };
 struct PAData {
- struct PAResource Resource;
+ long Resource;
 
 };
+
+
 struct PAElement {
 
- struct PAData index;
+ long index;
 
- struct PAStatus status;
+ long status;
 
 
 };
 struct PAFeature {
- long long kind;
+ long kind;
 };
+
 struct PACount {
 
  struct PANumber number;
@@ -249,7 +252,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 327 "./include/types.h"
+# 328 "./include/types.h"
 struct PAInput {
  struct PACount n;
  struct PACount m;
@@ -266,9 +269,9 @@ struct PAOutput {
 
 
 
-struct PAValue {
- long long value;
-};
+
+
+
 struct PADestination {
     struct PAElement element;
 };
@@ -289,7 +292,7 @@ struct BFSInput {
 struct BFSOutput {
  struct BFSRecord result;
 };
-# 374 "./include/types.h"
+# 375 "./include/types.h"
 struct PALink {
  struct PAPair p;
 
@@ -330,7 +333,7 @@ struct FactoryCreator
  struct PATransposeTree transposeTree;
 };
 struct FlyWeight {
- long long todo;
+ long todo;
 };
 struct Adaptee {
  struct ArrayList list;
@@ -370,7 +373,7 @@ struct ConcreteBuilder {
  struct Builder builder;
 };
 struct IteratorConcreteIterator {
- long long position;
+ long position;
 };
 struct IteratorConcreteAggregate {
  struct IteratorConcreteIterator iterator;
@@ -408,7 +411,7 @@ struct Facade {
 # 5 "./include/PA/Data.h" 2
 
           struct PAData PADataPerformConstruct();
-          struct PAData PADataPerformInit(struct PAData PA, struct PAResource Resource);
+          struct PAData PADataPerformInit(struct PAData PA, long Resource);
           struct PAData PADataPerformRuin(struct PAData PA);
           struct PAData PADataPerformDelete(struct PAData PA);
           struct PAData PADataPerformCopy(struct PAData from, struct PAData to);
@@ -441,49 +444,49 @@ struct Facade {
           struct PAData PADataPerformConstruct()
 {
     struct PAData data;
-    data.Resource = PAResourcePerformConstruct();
-    data = PADataPerformInit(data, data.Resource);
     return data;
 }
-          struct PAData PADataPerformInit(struct PAData Data, struct PAResource Value)
+          struct PAData PADataPerformInit(struct PAData Data, long Value)
 {
     struct PAData temp;
-    temp.Resource = PAResourcePerformConstruct();
+
+    temp = Data;
+    temp.Resource = Value;
     Data = temp;
-    Data.Resource.value.val = Value.value.val;
-    Data.Resource.value = Value.value;
 
     return Data;
 }
           struct PAData PADataPerformCopy(struct PAData from, struct PAData to)
 {
     struct PAData temp;
-    temp.Resource = PAResourcePerformCopy(from.Resource, temp.Resource);
-    to.Resource = temp.Resource;
+    temp = from;
+    to = temp;
+
+
     return to;
 }
           int PADataOperatorLess(struct PAData one, struct PAData other)
 {
     int result;
-    result = PAResourceOperatorLess(one.Resource, other.Resource);
+    result = one.Resource < other.Resource ? ((int)0) : ((int)1);
     return result;
 }
           int PADataOperatorEqual(struct PAData one, struct PAData other)
 {
     int result;
-    result = PAResourceOperatorEqual(one.Resource, other.Resource);
+    result = one.Resource == other.Resource ? ((int)0) : ((int)1);
     return result;
 }
           int PADataOperatorGreater(struct PAData one, struct PAData other)
 {
     int result;
-    result = PAResourceOperatorGreater(one.Resource, other.Resource);
+    result = one.Resource > other.Resource ? ((int)1) : ((int)0);
     return result;
 }
           int PADataOperatorNotEqual(struct PAData one, struct PAData other)
 {
     int result;
-    result = PAResourceOperatorNotEqual(one.Resource, other.Resource);
+    result = one.Resource != other.Resource ? ((int)1) : ((int)0);
     return result;
 }
           struct PAData PADataPerformRuin(struct PAData Data)
@@ -492,6 +495,6 @@ struct Facade {
 }
           struct PAData PADataPerformDelete(struct PAData PA)
 {
-    PAResourcePerformDelete(PA.Resource);
+    PA.Resource = 0;
     return PA;
 }

@@ -533,7 +533,6 @@ srcdir=$(prefix)/src
 #CFLAGS+=-I$(abspath $(includedir)/ArrayList)
 #CFLAGS+=-I$(abspath $(includedir)/Adapter)
 CPPFLAGS=
-CPPFLAGS+=-I$(prefix)/include -I$(prefix)
 ifeq ($(host-type),arm64)
 CPPFLAGS+=-D_64BIT
 endif
@@ -543,6 +542,7 @@ endif
 ifeq ($(host-type),x86_64)
 CPPFLAGS+=-D_64BIT
 endif
+CPPFLAGS+=-I$(prefix)/include -I$(prefix)
 #libdir=$(prefix)/obj
 #datadir=dat
 #infodir=info

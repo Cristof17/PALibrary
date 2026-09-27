@@ -56,9 +56,9 @@ struct ArrayList {
 
 
 };
-# 91 "./include/types.h"
+# 89 "./include/types.h"
 struct PANumber;
-# 108 "./include/types.h"
+# 106 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -88,7 +88,7 @@ struct PAInput;
 struct PAOutput;
 
 struct PAData;
-struct PAValue;
+
 struct List;
 struct PAList;
 struct PAStatus;
@@ -107,7 +107,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 166 "./include/types.h"
+# 164 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -147,20 +147,20 @@ struct PrototypeClient;
 struct PANumber {
 
 
- long long val;
+ long val;
 
 };
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 223 "./include/types.h"
+# 221 "./include/types.h"
 struct Output {
 
 };
 struct Input {
  ;
 };
-# 240 "./include/types.h"
+# 238 "./include/types.h"
 struct PAResource {
 
 
@@ -169,23 +169,26 @@ struct PAResource {
 
 };
 struct PAStatus {
- struct PAResource visited;
+ long visited;
 };
 struct PAData {
- struct PAResource Resource;
+ long Resource;
 
 };
+
+
 struct PAElement {
 
- struct PAData index;
+ long index;
 
- struct PAStatus status;
+ long status;
 
 
 };
 struct PAFeature {
- long long kind;
+ long kind;
 };
+
 struct PACount {
 
  struct PANumber number;
@@ -240,7 +243,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 327 "./include/types.h"
+# 328 "./include/types.h"
 struct PAInput {
  struct PACount n;
  struct PACount m;
@@ -257,9 +260,9 @@ struct PAOutput {
 
 
 
-struct PAValue {
- long long value;
-};
+
+
+
 struct PADestination {
     struct PAElement element;
 };
@@ -280,7 +283,7 @@ struct BFSInput {
 struct BFSOutput {
  struct BFSRecord result;
 };
-# 374 "./include/types.h"
+# 375 "./include/types.h"
 struct PALink {
  struct PAPair p;
 
@@ -321,7 +324,7 @@ struct FactoryCreator
  struct PATransposeTree transposeTree;
 };
 struct FlyWeight {
- long long todo;
+ long todo;
 };
 struct Adaptee {
  struct ArrayList list;
@@ -361,7 +364,7 @@ struct ConcreteBuilder {
  struct Builder builder;
 };
 struct IteratorConcreteIterator {
- long long position;
+ long position;
 };
 struct IteratorConcreteAggregate {
  struct IteratorConcreteIterator iterator;
