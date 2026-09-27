@@ -16,47 +16,46 @@
 DllExport struct PAList PAListPerformConstruct()
 {
     struct PAList list;
-    list.n = PACountPerformConstruct();
-    struct PANumber y;
+    list.n = NULL;
     return list;
 }
 DllExport struct PAList PAListPerformCopy(struct PAList from, struct PAList to)
 {
     struct PAList temp;
-    temp.n = PACountPerformCopy(from.n,temp.n);
-    struct PACount x;
-    struct PACount y;
-    x.number = FIRST;
-    y.number = x.number;
-    if (temp.n.number > to.n.number)
+    temp = from;
+    PAValue x;
+    PAValue y;
+    x = FIRST;
+    y = x;
+    if (temp.n > to.n)
     {
-        y.number = to.n.number;
+        y = to.n;
     }
-    else if (temp.n.number < to.n.number)
+    else if (temp.n < to.n)
     {
-        y.number = temp.n.number;
+        y = temp.n;
     }
-    while (x.number <= y.number)
+    while (x <= y)
     {
         struct PASeries aux;
-        PASeriesPerformCopy(from.neigh[x.number], aux);
-        PASeriesPerformCopy(aux, temp.neigh[x.number]);
-        x.number++;
+        PASeriesPerformCopy(from.neigh[x], aux);
+        PASeriesPerformCopy(aux, temp.neigh[x]);
+        x++;
     }
 
-    x.number = FIRST;
-    while (x.number < y.number)
+    x = FIRST;
+    while (x < y)
     {
         struct PASeries aux;
-        PASeriesPerformCopy(temp.neigh[x.number],aux);
-        PASeriesPerformCopy(aux, to.neigh[x.number]);
-        x.number++;
+        PASeriesPerformCopy(temp.neigh[x],aux);
+        PASeriesPerformCopy(aux, to.neigh[x]);
+        x++;
     }
-    to.n = PACountPerformCopy(temp.n, to.n);
+    to.n = temp.n;
     return to;
 }
 
-DllExport struct PAList PAListPerformInit(struct PAList List, struct PACount Value, struct PASeries Value2[])
+DllExport struct PAList PAListPerformInit(struct PAList List, PAValue Value, struct PASeries Value2[])
 {
     struct PAList list;
     list.n = Value;
@@ -75,16 +74,15 @@ DllExport struct PAList PAListPerformInit(struct PAList List, struct PACount Val
 }
 DllExport struct PAList PAListPerformRuin(struct PAList PA)
 {
-    struct PACount x;
-    struct PACount y;
-    x.number = FIRST;
-    y.number = PA.n.number;
-    while (x.number < y.number)
+    PAValue x;
+    PAValue y;
+    x = FIRST;
+    y = PA.n;
+    while (x < y)
     {
-        PA.neigh[x.number] = PASeriesPerformRuin(PA.neigh[x.number]);
-        x.number ++;
+        PA.neigh[x] = PASeriesPerformRuin(PA.neigh[x]);
+        x ++;
     }
-    PA.n = PACountPerformRuin(PA.n);
     return PA;
 }
 void Dispose() 
@@ -94,11 +92,10 @@ void Dispose()
 
 DllExport struct PAList PAListPerformDelete(struct PAList PA)
 {
-    struct PACount n = PA.n;
-    n = PACountPerformDelete(PA.n);
+    PAValue n = PA.n;
     PAValue x;
     PAValue y;
-    y = n.number;
+    y = n;
     x = FIRST;
     while (x < y)
     {

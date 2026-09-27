@@ -207,7 +207,7 @@ struct PASeries {
  struct PAElement adj[4];
 };
 struct PAList {
- struct PACount n;
+ PAValue n;
  struct PASeries neigh[4];
 
 };

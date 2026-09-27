@@ -85,7 +85,7 @@ int main()
 #ifndef _64BIT
 	printf("tree.ls.n to, %d tree.ls.n. from %d\n", tree2.adj.n.number.val,tree1.adj.n.number.val);
 #else
-	printf("tree.ls.n to, %ld tree.ls.n. from %ld\n", tree2.adj.n.number,tree1.adj.n.number);	
+	printf("tree.ls.n to, %ld tree.ls.n. from %ld\n", tree2.adj.n,tree1.adj.n);	
 #endif
 
 
@@ -101,7 +101,7 @@ int main()
 #else
 	printf("Tree1 %ld %ld\n", tree1.m.number, tree2.m.number);
 	printf("Tree1 %ld %ld\n", tree1.n.number, tree2.n.number);
-	printf("tree1.list.n %ld, tree2.list.n %ld\n", tree1.adj.n.number, tree2.adj.n.number);
+	printf("tree1.list.n %ld, tree2.list.n %ld\n", tree1.adj.n, tree2.adj.n);
 #endif
 	// struct PASeries series1;
 	// struct PASeries series2;
@@ -122,12 +122,12 @@ int main()
 	struct PAList list2345;
 	// printf(:"")
 	// p
-	list12334.n.number = 30;
+	list12334.n = 30;
 	list2345 = PAListPerformCopy(list12334, list2345);
 #ifndef _64BIT
 	printf("First list %d` second list %d,\n",list12334.n.number.val, list2345.n.number.val);
 #else
-	printf("First list %ld` second list %ld,\n",list12334.n.number, list2345.n.number);
+	printf("First list %ld` second list %ld,\n",list12334.n, list2345.n);
 #endif
 
 	// struct j
@@ -228,10 +228,10 @@ int main()
 	list = PAListPerformConstruct();
 	#ifndef _64BIT
 	printf("Series construct series %d\n", series.m.number.val);
-	printf("List construct count%d\n", list.n.number.val);
+printf("List construct count%d\n", list.n.number.val);
 #else
 	printf("Series construct series %ld\n", series.m.number);
-	printf("List construct count% ld\n", list.n.number);
+	printf("List construct count% ld\n", list.n);
 #endif
 
 	struct PAList list1;
@@ -241,7 +241,7 @@ int main()
 #ifndef _64BIT
 	printf("list1 %d list1Copy %d \n",list1.n.number.val, list1Copy.n.number.val);
 #else
-	printf("list1 %ld list1Copy %ld \n",list1.n.number, list1Copy.n.number);
+	printf("list1 %ld list1Copy %ld \n",list1.n, list1Copy.n);
 #endif
 #ifndef	_64BIT
 	printf("list1 randomElemente %d list1CopyRandomElement %d\n",list1.neigh->adj->index.Resource.value.val,list1Copy.neigh->adj->index.Resource.value.val);
@@ -321,14 +321,14 @@ int main()
 #else
 	printf("count1 = %ld, count2 = %ld\n",count1.number, count2.number);
 #endif
-	list.n.number = 2;
+	list.n = 2;
 	// PAListPerformInit(list,list.n,list.neigh);
 #ifndef _64BIT
 	printf("count1 = %d, count2 = %d\n",count1.number.val,count2.number.val);
 	printf("list.n = %d",list.n.number.val);
 #else
 	printf("count1 = %ld, count2 = %ld\n",count1.number,count2.number);
-	printf("list.n = %ld",list.n.number);
+	printf("list.n = %ld",list.n);
 #endif
 
 	// PASeriesPerformInit(series, series.m, series.adj);

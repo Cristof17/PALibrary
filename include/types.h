@@ -277,7 +277,7 @@ struct PASeries {
 	struct PAElement adj[SIZE];
 };
 struct PAList {
-	struct PACount n;
+	PAValue n;
 	struct PASeries neigh[SIZE];
 	// struct PANod Nod;
 };

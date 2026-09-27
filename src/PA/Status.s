@@ -21,10 +21,6 @@ _PAStatusPerformInit:                   ; @PAStatusPerformInit
 	.cfi_def_cfa_offset 32
 	str	x0, [sp, #16]
 	str	x1, [sp, #8]
-	ldr	x8, [sp, #16]
-	str	x8, [sp]
-	ldr	x8, [sp, #8]
-	str	x8, [sp]
 	ldr	x8, [sp]
 	str	x8, [sp, #16]
 	ldr	x8, [sp, #16]

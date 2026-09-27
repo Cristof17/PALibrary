@@ -205,7 +205,7 @@ struct PASeries {
  struct PAElement adj[4];
 };
 struct PAList {
- struct PACount n;
+ PAValue n;
  struct PASeries neigh[4];
 
 };
@@ -472,7 +472,7 @@ struct Facade {
 
 
           struct PAList PAListPerformConstruct();
-          struct PAList PAListPerformInit(struct PAList PA, struct PACount N, struct PASeries adj[]);
+          struct PAList PAListPerformInit(struct PAList PA, PAValue N, struct PASeries adj[]);
           struct PAList PAListPerformRuin(struct PAList PA);
           struct PAList PAListPerformDelete(struct PAList PA);
           struct PAList PAListPerformCopy(struct PAList from, struct PAList to);
@@ -1190,7 +1190,7 @@ int main()
 
 
 
- printf("tree.ls.n to, %ld tree.ls.n. from %ld\n", tree2.adj.n.number,tree1.adj.n.number);
+ printf("tree.ls.n to, %ld tree.ls.n. from %ld\n", tree2.adj.n,tree1.adj.n);
 
 
 
@@ -1206,7 +1206,7 @@ int main()
 
  printf("Tree1 %ld %ld\n", tree1.m.number, tree2.m.number);
  printf("Tree1 %ld %ld\n", tree1.n.number, tree2.n.number);
- printf("tree1.list.n %ld, tree2.list.n %ld\n", tree1.adj.n.number, tree2.adj.n.number);
+ printf("tree1.list.n %ld, tree2.list.n %ld\n", tree1.adj.n, tree2.adj.n);
 
 
 
@@ -1227,12 +1227,12 @@ int main()
  struct PAList list2345;
 
 
- list12334.n.number = 30;
+ list12334.n = 30;
  list2345 = PAListPerformCopy(list12334, list2345);
 
 
 
- printf("First list %ld` second list %ld,\n",list12334.n.number, list2345.n.number);
+ printf("First list %ld` second list %ld,\n",list12334.n, list2345.n);
 
 
 
@@ -1336,7 +1336,7 @@ int main()
 
 
  printf("Series construct series %ld\n", series.m.number);
- printf("List construct count% ld\n", list.n.number);
+ printf("List construct count% ld\n", list.n);
 
 
  struct PAList list1;
@@ -1346,7 +1346,7 @@ int main()
 
 
 
- printf("list1 %ld list1Copy %ld \n",list1.n.number, list1Copy.n.number);
+ printf("list1 %ld list1Copy %ld \n",list1.n, list1Copy.n);
 
 
 
@@ -1414,14 +1414,14 @@ int main()
 
  printf("count1 = %ld, count2 = %ld\n",count1.number, count2.number);
 
- list.n.number = 2;
+ list.n = 2;
 
 
 
 
 
  printf("count1 = %ld, count2 = %ld\n",count1.number,count2.number);
- printf("list.n = %ld",list.n.number);
+ printf("list.n = %ld",list.n);
 
 
 

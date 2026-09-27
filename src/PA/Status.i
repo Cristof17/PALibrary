@@ -210,7 +210,7 @@ struct PASeries {
  struct PAElement adj[4];
 };
 struct PAList {
- struct PACount n;
+ PAValue n;
  struct PASeries neigh[4];
 
 };
@@ -446,8 +446,8 @@ struct Facade {
           struct PAStatus PAStatusPerformInit(struct PAStatus Status, PAValue Value)
 {
     struct PAStatus temp;
-    temp = Status;
-    temp.visited = Value;;
+
+
     Status = temp;
     return Status;
 }

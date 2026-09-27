@@ -207,7 +207,7 @@ struct PASeries {
  struct PAElement adj[4];
 };
 struct PAList {
- struct PACount n;
+ PAValue n;
  struct PASeries neigh[4];
 
 };
@@ -456,7 +456,7 @@ struct Facade {
 
 
           struct PAList PAListPerformConstruct();
-          struct PAList PAListPerformInit(struct PAList PA, struct PACount N, struct PASeries adj[]);
+          struct PAList PAListPerformInit(struct PAList PA, PAValue N, struct PASeries adj[]);
           struct PAList PAListPerformRuin(struct PAList PA);
           struct PAList PAListPerformDelete(struct PAList PA);
           struct PAList PAListPerformCopy(struct PAList from, struct PAList to);
