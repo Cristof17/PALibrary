@@ -7,8 +7,7 @@ _PAElementPerformConstruct:             ; @PAElementPerformConstruct
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	ldr	x0, [sp]
-	ldr	x1, [sp, #8]
+	ldr	x0, [sp, #8]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -18,25 +17,23 @@ _PAElementPerformConstruct:             ; @PAElementPerformConstruct
 _PAElementPerformInit:                  ; @PAElementPerformInit
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #64
-	.cfi_def_cfa_offset 64
-	str	x0, [sp, #32]
-	str	x1, [sp, #40]
-	str	x2, [sp, #24]
-	str	x3, [sp, #16]
-	ldr	q0, [sp, #32]
-	str	q0, [sp]
-	ldr	x8, [sp, #24]
-	str	x8, [sp]
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #16]
+	str	w1, [sp, #12]
+	str	w2, [sp, #8]
 	ldr	x8, [sp, #16]
-	str	x8, [sp, #8]
-	ldr	q0, [sp]
-	str	q0, [sp, #32]
-	ldr	q0, [sp, #32]
-	str	q0, [sp, #48]
-	ldr	x0, [sp, #48]
-	ldr	x1, [sp, #56]
-	add	sp, sp, #64
+	str	x8, [sp]
+	ldr	w8, [sp, #12]
+	str	w8, [sp]
+	ldr	w8, [sp, #8]
+	str	w8, [sp, #4]
+	ldr	x8, [sp]
+	str	x8, [sp, #16]
+	ldr	x8, [sp, #16]
+	str	x8, [sp, #24]
+	ldr	x0, [sp, #24]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -47,10 +44,9 @@ _PAElementVisit:                        ; @PAElementVisit
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	str	x0, [sp]
-	str	x1, [sp, #8]
-	mov	x8, #1                          ; =0x1
-	str	x8, [sp, #8]
+	str	x0, [sp, #8]
+	mov	w8, #1                          ; =0x1
+	str	w8, [sp, #12]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -62,10 +58,8 @@ _PAElementIsVisited:                    ; @PAElementIsVisited
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	str	x0, [sp]
-	str	x1, [sp, #8]
-	ldr	x8, [sp, #8]
-	mov	x0, x8
+	str	x0, [sp, #8]
+	ldr	w0, [sp, #12]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -77,9 +71,8 @@ _PAElementReset:                        ; @PAElementReset
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	str	x0, [sp]
-	str	x1, [sp, #8]
-	str	xzr, [sp, #8]
+	str	x0, [sp, #8]
+	str	wzr, [sp, #12]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -89,21 +82,18 @@ _PAElementReset:                        ; @PAElementReset
 _PAElementPerformCopy:                  ; @PAElementPerformCopy
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #64
-	.cfi_def_cfa_offset 64
-	str	x0, [sp, #32]
-	str	x1, [sp, #40]
-	str	x2, [sp, #16]
-	str	x3, [sp, #24]
-	ldr	q0, [sp, #32]
-	str	q0, [sp]
-	ldr	q0, [sp]
-	str	q0, [sp, #16]
-	ldr	q0, [sp, #16]
-	str	q0, [sp, #48]
-	ldr	x0, [sp, #48]
-	ldr	x1, [sp, #56]
-	add	sp, sp, #64
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #16]
+	str	x1, [sp, #8]
+	ldr	x8, [sp, #16]
+	str	x8, [sp]
+	ldr	x8, [sp]
+	str	x8, [sp, #8]
+	ldr	x8, [sp, #8]
+	str	x8, [sp, #24]
+	ldr	x0, [sp, #24]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -112,19 +102,17 @@ _PAElementPerformCopy:                  ; @PAElementPerformCopy
 _PAElementPerformRuin:                  ; @PAElementPerformRuin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #48
-	.cfi_def_cfa_offset 48
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
 	str	x0, [sp, #16]
-	str	x1, [sp, #24]
-	str	xzr, [sp]
-	str	xzr, [sp, #8]
-	ldr	q0, [sp]
-	str	q0, [sp, #16]
-	ldr	q0, [sp, #16]
-	str	q0, [sp, #32]
-	ldr	x0, [sp, #32]
-	ldr	x1, [sp, #40]
-	add	sp, sp, #48
+	str	wzr, [sp, #8]
+	str	wzr, [sp, #12]
+	ldr	x8, [sp, #8]
+	str	x8, [sp, #16]
+	ldr	x8, [sp, #16]
+	str	x8, [sp, #24]
+	ldr	x0, [sp, #24]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -133,15 +121,13 @@ _PAElementPerformRuin:                  ; @PAElementPerformRuin
 _PAElementPerformDelete:                ; @PAElementPerformDelete
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
 	str	x0, [sp]
-	str	x1, [sp, #8]
-	ldr	q0, [sp]
-	str	q0, [sp, #16]
-	ldr	x0, [sp, #16]
-	ldr	x1, [sp, #24]
-	add	sp, sp, #32
+	ldr	x8, [sp]
+	str	x8, [sp, #8]
+	ldr	x0, [sp, #8]
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -150,19 +136,17 @@ _PAElementPerformDelete:                ; @PAElementPerformDelete
 _PAElementOperatorLess:                 ; @PAElementOperatorLess
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #48
-	.cfi_def_cfa_offset 48
-	str	x0, [sp, #32]
-	str	x1, [sp, #40]
-	str	x2, [sp, #16]
-	str	x3, [sp, #24]
-	ldr	x8, [sp, #32]
-	ldr	x9, [sp, #16]
-	subs	x8, x8, x9
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #24]
+	str	x1, [sp, #16]
+	ldr	w8, [sp, #24]
+	ldr	w9, [sp, #16]
+	subs	w8, w8, w9
 	cset	w8, ge
 	str	w8, [sp, #12]
 	ldr	w0, [sp, #12]
-	add	sp, sp, #48
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -171,19 +155,17 @@ _PAElementOperatorLess:                 ; @PAElementOperatorLess
 _PAElementOperatorEqual:                ; @PAElementOperatorEqual
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #48
-	.cfi_def_cfa_offset 48
-	str	x0, [sp, #32]
-	str	x1, [sp, #40]
-	str	x2, [sp, #16]
-	str	x3, [sp, #24]
-	ldr	x8, [sp, #32]
-	ldr	x9, [sp, #16]
-	subs	x8, x8, x9
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #24]
+	str	x1, [sp, #16]
+	ldr	w8, [sp, #24]
+	ldr	w9, [sp, #16]
+	subs	w8, w8, w9
 	cset	w8, ne
 	str	w8, [sp, #12]
 	ldr	w0, [sp, #12]
-	add	sp, sp, #48
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -192,20 +174,18 @@ _PAElementOperatorEqual:                ; @PAElementOperatorEqual
 _PAElementOperatorGreater:              ; @PAElementOperatorGreater
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #48
-	.cfi_def_cfa_offset 48
-	str	x0, [sp, #32]
-	str	x1, [sp, #40]
-	str	x2, [sp, #16]
-	str	x3, [sp, #24]
-	ldr	x9, [sp, #32]
-	ldr	x10, [sp, #16]
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #24]
+	str	x1, [sp, #16]
+	ldr	w9, [sp, #24]
+	ldr	w10, [sp, #16]
 	mov	w8, #0                          ; =0x0
-	subs	x9, x9, x10
+	subs	w9, w9, w10
 	csinc	w8, w8, wzr, le
 	str	w8, [sp, #12]
 	ldr	w0, [sp, #12]
-	add	sp, sp, #48
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -214,20 +194,18 @@ _PAElementOperatorGreater:              ; @PAElementOperatorGreater
 _PAElementOperatorNotEqual:             ; @PAElementOperatorNotEqual
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #48
-	.cfi_def_cfa_offset 48
-	str	x0, [sp, #32]
-	str	x1, [sp, #40]
-	str	x2, [sp, #16]
-	str	x3, [sp, #24]
-	ldr	x9, [sp, #32]
-	ldr	x10, [sp, #16]
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #24]
+	str	x1, [sp, #16]
+	ldr	w9, [sp, #24]
+	ldr	w10, [sp, #16]
 	mov	w8, #0                          ; =0x0
-	subs	x9, x9, x10
+	subs	w9, w9, w10
 	csinc	w8, w8, wzr, eq
 	str	w8, [sp, #12]
 	ldr	w0, [sp, #12]
-	add	sp, sp, #48
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function

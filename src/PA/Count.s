@@ -5,25 +5,10 @@
 _PACountPerformConstruct:               ; @PACountPerformConstruct
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #48
-	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
-	add	x29, sp, #32
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	bl	_PANumberPerformConstruct
-	str	x0, [sp, #16]
-	ldr	x8, [sp, #16]
-	stur	x8, [x29, #-8]
-	ldur	x0, [x29, #-8]
-	ldur	x1, [x29, #-8]
-	bl	_PACountPerformInit
-	str	x0, [sp, #8]
-	ldr	x8, [sp, #8]
-	stur	x8, [x29, #-8]
-	ldur	x0, [x29, #-8]
-	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
-	add	sp, sp, #48
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	ldr	x0, [sp, #8]
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -32,33 +17,18 @@ _PACountPerformConstruct:               ; @PACountPerformConstruct
 _PACountPerformInit:                    ; @PACountPerformInit
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #64
-	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
-	add	x29, sp, #48
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	stur	x0, [x29, #-16]
-	str	x1, [sp, #24]
-	bl	_PANumberPerformConstruct
-	str	x0, [sp, #8]
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #16]
+	str	x1, [sp, #8]
 	ldr	x8, [sp, #8]
-	str	x8, [sp, #16]
-	ldr	x8, [sp, #24]
-	ldr	x0, [sp, #16]
-                                        ; kill: def $w8 killed $w8 killed $x8
-	and	w1, w8, #0xff
-	bl	_PANumberPerformInit
-	str	x0, [sp]
+	str	x8, [sp]
 	ldr	x8, [sp]
 	str	x8, [sp, #16]
 	ldr	x8, [sp, #16]
-	stur	x8, [x29, #-16]
-	ldur	x8, [x29, #-16]
-	stur	x8, [x29, #-8]
-	ldur	x0, [x29, #-8]
-	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
-	add	sp, sp, #64
+	str	x8, [sp, #24]
+	ldr	x0, [sp, #24]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -111,27 +81,18 @@ _PACountPerformPrint:                   ; @PACountPerformPrint
 _PACountPerformCopy:                    ; @PACountPerformCopy
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #64
-	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
-	add	x29, sp, #48
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	stur	x0, [x29, #-16]
-	str	x1, [sp, #24]
-	ldur	x0, [x29, #-16]
-	ldr	x1, [sp, #24]
-	bl	_PANumberPerformCopy
-	str	x0, [sp, #8]
-	ldr	x8, [sp, #8]
-	str	x8, [sp, #16]
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #16]
+	str	x1, [sp, #8]
 	ldr	x8, [sp, #16]
+	str	x8, [sp]
+	ldr	x8, [sp]
+	str	x8, [sp, #8]
+	ldr	x8, [sp, #8]
 	str	x8, [sp, #24]
-	ldr	x8, [sp, #24]
-	stur	x8, [x29, #-8]
-	ldur	x0, [x29, #-8]
-	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
-	add	sp, sp, #64
+	ldr	x0, [sp, #24]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -140,21 +101,17 @@ _PACountPerformCopy:                    ; @PACountPerformCopy
 _PACountOperatorLess:                   ; @PACountOperatorLess
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #48
-	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
-	add	x29, sp, #32
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	stur	x0, [x29, #-8]
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #24]
 	str	x1, [sp, #16]
-	ldur	x0, [x29, #-8]
-	ldr	x1, [sp, #16]
-	bl	_PANumberOperatorLess
-	str	w0, [sp, #12]
+	ldr	x8, [sp, #24]
+	ldr	x9, [sp, #16]
+	subs	x8, x8, x9
+	cset	w8, ge
+	str	w8, [sp, #12]
 	ldr	w0, [sp, #12]
-	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
-	add	sp, sp, #48
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -163,21 +120,17 @@ _PACountOperatorLess:                   ; @PACountOperatorLess
 _PACountOperatorEqual:                  ; @PACountOperatorEqual
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #48
-	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
-	add	x29, sp, #32
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	stur	x0, [x29, #-8]
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #24]
 	str	x1, [sp, #16]
-	ldur	x0, [x29, #-8]
-	ldr	x1, [sp, #16]
-	bl	_PANumberOperatorEqual
-	str	w0, [sp, #12]
+	ldr	x8, [sp, #24]
+	ldr	x9, [sp, #16]
+	subs	x8, x8, x9
+	cset	w8, ne
+	str	w8, [sp, #12]
 	ldr	w0, [sp, #12]
-	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
-	add	sp, sp, #48
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -186,21 +139,18 @@ _PACountOperatorEqual:                  ; @PACountOperatorEqual
 _PACountOperatorGreater:                ; @PACountOperatorGreater
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #48
-	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
-	add	x29, sp, #32
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	stur	x0, [x29, #-8]
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #24]
 	str	x1, [sp, #16]
-	ldur	x0, [x29, #-8]
-	ldr	x1, [sp, #16]
-	bl	_PANumberOperatorGreater
-	str	w0, [sp, #12]
+	ldr	x9, [sp, #24]
+	ldr	x10, [sp, #16]
+	mov	w8, #0                          ; =0x0
+	subs	x9, x9, x10
+	csinc	w8, w8, wzr, le
+	str	w8, [sp, #12]
 	ldr	w0, [sp, #12]
-	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
-	add	sp, sp, #48
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -209,21 +159,18 @@ _PACountOperatorGreater:                ; @PACountOperatorGreater
 _PACountOperatorNotEqual:               ; @PACountOperatorNotEqual
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #48
-	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
-	add	x29, sp, #32
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	stur	x0, [x29, #-8]
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #24]
 	str	x1, [sp, #16]
-	ldur	x0, [x29, #-8]
-	ldr	x1, [sp, #16]
-	bl	_PANumberOperatorNotEqual
-	str	w0, [sp, #12]
+	ldr	x9, [sp, #24]
+	ldr	x10, [sp, #16]
+	mov	w8, #0                          ; =0x0
+	subs	x9, x9, x10
+	csinc	w8, w8, wzr, eq
+	str	w8, [sp, #12]
 	ldr	w0, [sp, #12]
-	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
-	add	sp, sp, #48
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function

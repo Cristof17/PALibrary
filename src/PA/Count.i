@@ -61,9 +61,17 @@ struct ArrayList {
 
 
 };
-# 89 "./include/types.h"
+# 83 "./include/types.h"
+typedef int PAData ;
+typedef int PAStatus;
+typedef long PAValue;
+
+
+
+
+
 struct PANumber;
-# 106 "./include/types.h"
+# 108 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -112,7 +120,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 164 "./include/types.h"
+# 166 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -152,20 +160,20 @@ struct PrototypeClient;
 struct PANumber {
 
 
- long val;
+ PAValue val;
 
 };
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 221 "./include/types.h"
+# 223 "./include/types.h"
 struct Output {
 
 };
 struct Input {
  ;
 };
-# 238 "./include/types.h"
+# 240 "./include/types.h"
 struct PAResource {
 
 
@@ -174,29 +182,29 @@ struct PAResource {
 
 };
 struct PAStatus {
- long visited;
+ PAValue visited;
 };
 struct PAData {
- long Resource;
+ PAValue Resource;
 
 };
 
 
 struct PAElement {
 
- long index;
+ PAData index;
 
- long status;
+ PAStatus status;
 
 
 };
 struct PAFeature {
- long kind;
+ PAValue kind;
 };
 
 struct PACount {
 
- struct PANumber number;
+ PAValue number;
 };
 
 
@@ -248,7 +256,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 328 "./include/types.h"
+# 330 "./include/types.h"
 struct PAInput {
  struct PACount n;
  struct PACount m;
@@ -288,7 +296,7 @@ struct BFSInput {
 struct BFSOutput {
  struct BFSRecord result;
 };
-# 375 "./include/types.h"
+# 377 "./include/types.h"
 struct PALink {
  struct PAPair p;
 
@@ -329,7 +337,7 @@ struct FactoryCreator
  struct PATransposeTree transposeTree;
 };
 struct FlyWeight {
- long todo;
+ PAValue todo;
 };
 struct Adaptee {
  struct ArrayList list;
@@ -369,7 +377,7 @@ struct ConcreteBuilder {
  struct Builder builder;
 };
 struct IteratorConcreteIterator {
- long position;
+ PAValue position;
 };
 struct IteratorConcreteAggregate {
  struct IteratorConcreteIterator iterator;
@@ -410,7 +418,7 @@ struct Facade {
 # 1 "./include/PA/Count.h" 1
 # 10 "./include/PA/Count.h"
           struct PACount PACountPerformConstruct();
-          struct PACount PACountPerformInit(struct PACount Count, struct PANumber Number);
+          struct PACount PACountPerformInit(struct PACount Count, PAValue Number);
           struct PACount PACountPerformCopy(struct PACount from, struct PACount to);
           struct PACount PACountPerformRuin(struct PACount PA);
           struct PACount PACountPerformDelete(struct PACount PA);
@@ -425,7 +433,7 @@ struct Facade {
 
 
           struct PANumber PANumberPerformConstruct();
-          struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char Value);
+          struct PANumber PANumberPerformInit(struct PANumber Number, PAValue Value);
           struct PANumber PANumberPerformDelete(struct PANumber PA);
           struct PANumber PANumberPerformRuin(struct PANumber PA);
           struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to);
@@ -443,16 +451,13 @@ struct Facade {
           struct PACount PACountPerformConstruct()
 {
     struct PACount zies;
-    zies.number = PANumberPerformConstruct();
-    zies = PACountPerformInit(zies,zies.number);
     return zies;
 }
-          struct PACount PACountPerformInit(struct PACount Count, struct PANumber Value)
+          struct PACount PACountPerformInit(struct PACount Count, PAValue Value)
 {
     struct PACount temp;
-    temp.number = PANumberPerformConstruct();
-    temp.number = PANumberPerformInit(temp.number,Value.val);
-    Count.number = temp.number;
+    temp.number = Value;
+    Count = temp;
     return Count;
 }
           struct PACount PACountPerformRuin(struct PACount PA)
@@ -461,7 +466,7 @@ struct Facade {
 }
           struct PACount PACountPerformDelete(struct PACount PA)
 {
-    PA.number.val = 0;
+    PA.number = 0;
     return PA;
 }
           int PACountPerformPrint(struct PACount Count)
@@ -472,31 +477,31 @@ struct Facade {
           struct PACount PACountPerformCopy(struct PACount from, struct PACount to)
 {
     struct PACount temp;
-    temp.number = PANumberPerformCopy(from.number,to.number);
-    to.number = temp.number;
+    temp = from;
+    to = temp;
     return to;
 }
           int PACountOperatorLess(struct PACount one, struct PACount other)
 {
     int result;
-    result = PANumberOperatorLess(one.number,other.number);
+    result = (one.number < other.number) ? ((int)0) : ((int)1);
     return result;
 }
           int PACountOperatorEqual(struct PACount one,struct PACount other)
 {
     int result;
-    result = PANumberOperatorEqual(one.number,other.number);
+    result = (one.number == other.number) ? ((int)0) : ((int)1);
     return result;
 }
           int PACountOperatorGreater(struct PACount one, struct PACount other)
 {
     int result;
-    result = PANumberOperatorGreater(one.number,other.number);
+    result = (one.number > other.number) ? ((int)1) : ((int)0);
     return result;
 }
           int PACountOperatorNotEqual(struct PACount one, struct PACount other)
 {
     int result;
-    result = PANumberOperatorNotEqual(one.number,other.number);
+    result = (one.number != other.number) ? ((int)1) : ((int)0);
     return result;
 }

@@ -62,9 +62,17 @@ struct ArrayList {
 
 
 };
-# 89 "./include/types.h"
+# 83 "./include/types.h"
+typedef int PAData ;
+typedef int PAStatus;
+typedef long PAValue;
+
+
+
+
+
 struct PANumber;
-# 106 "./include/types.h"
+# 108 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -113,7 +121,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 164 "./include/types.h"
+# 166 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -153,20 +161,20 @@ struct PrototypeClient;
 struct PANumber {
 
 
- long val;
+ PAValue val;
 
 };
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 221 "./include/types.h"
+# 223 "./include/types.h"
 struct Output {
 
 };
 struct Input {
  ;
 };
-# 238 "./include/types.h"
+# 240 "./include/types.h"
 struct PAResource {
 
 
@@ -175,29 +183,29 @@ struct PAResource {
 
 };
 struct PAStatus {
- long visited;
+ PAValue visited;
 };
 struct PAData {
- long Resource;
+ PAValue Resource;
 
 };
 
 
 struct PAElement {
 
- long index;
+ PAData index;
 
- long status;
+ PAStatus status;
 
 
 };
 struct PAFeature {
- long kind;
+ PAValue kind;
 };
 
 struct PACount {
 
- struct PANumber number;
+ PAValue number;
 };
 
 
@@ -249,7 +257,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 328 "./include/types.h"
+# 330 "./include/types.h"
 struct PAInput {
  struct PACount n;
  struct PACount m;
@@ -289,7 +297,7 @@ struct BFSInput {
 struct BFSOutput {
  struct BFSRecord result;
 };
-# 375 "./include/types.h"
+# 377 "./include/types.h"
 struct PALink {
  struct PAPair p;
 
@@ -330,7 +338,7 @@ struct FactoryCreator
  struct PATransposeTree transposeTree;
 };
 struct FlyWeight {
- long todo;
+ PAValue todo;
 };
 struct Adaptee {
  struct ArrayList list;
@@ -370,7 +378,7 @@ struct ConcreteBuilder {
  struct Builder builder;
 };
 struct IteratorConcreteIterator {
- long position;
+ PAValue position;
 };
 struct IteratorConcreteAggregate {
  struct IteratorConcreteIterator iterator;
@@ -427,7 +435,7 @@ void PAListPerformPrint(struct PAList List);
 # 1 "./include/PA/Count.h" 1
 # 10 "./include/PA/Count.h"
           struct PACount PACountPerformConstruct();
-          struct PACount PACountPerformInit(struct PACount Count, struct PANumber Number);
+          struct PACount PACountPerformInit(struct PACount Count, PAValue Number);
           struct PACount PACountPerformCopy(struct PACount from, struct PACount to);
           struct PACount PACountPerformRuin(struct PACount PA);
           struct PACount PACountPerformDelete(struct PACount PA);
@@ -467,31 +475,31 @@ void PAListPerformPrint(struct PAList List);
     temp.n = PACountPerformCopy(from.n,temp.n);
     struct PACount x;
     struct PACount y;
-    x.number.val = (1);
-    y.number.val = temp.n.number.val;
-    if (temp.n.number.val > to.n.number.val)
+    x.number = (1);
+    y.number = x.number;
+    if (temp.n.number > to.n.number)
     {
-        y.number.val = to.n.number.val;
+        y.number = to.n.number;
     }
-    else if (temp.n.number.val < to.n.number.val)
+    else if (temp.n.number < to.n.number)
     {
-        y.number.val = temp.n.number.val;
+        y.number = temp.n.number;
     }
-    while (x.number.val <= y.number.val)
+    while (x.number <= y.number)
     {
         struct PASeries aux;
-        PASeriesPerformCopy(from.neigh[x.number.val], aux);
-        PASeriesPerformCopy(aux, temp.neigh[x.number.val]);
-        x.number.val++;
+        PASeriesPerformCopy(from.neigh[x.number], aux);
+        PASeriesPerformCopy(aux, temp.neigh[x.number]);
+        x.number++;
     }
 
-    x.number.val = (1);
-    while (x.number.val < y.number.val)
+    x.number = (1);
+    while (x.number < y.number)
     {
         struct PASeries aux;
-        PASeriesPerformCopy(temp.neigh[x.number.val],aux);
-        PASeriesPerformCopy(aux, to.neigh[x.number.val]);
-        x.number.val++;
+        PASeriesPerformCopy(temp.neigh[x.number],aux);
+        PASeriesPerformCopy(aux, to.neigh[x.number]);
+        x.number++;
     }
     to.n = PACountPerformCopy(temp.n, to.n);
     return to;
@@ -501,15 +509,15 @@ void PAListPerformPrint(struct PAList List);
 {
     struct PAList list;
     list.n = Value;
-    struct PANumber x;
-    struct PANumber y;
-    x.val = (1);
-    y.val = Value2[x.val].m.number.val;
+    PAValue x;
+    PAValue y;
+    x = (1);
+    y = Value2[x].m.number;
 
-    while (x.val <= y.val)
+    while (x <= y)
     {
-        PASeriesPerformCopy(List.neigh[x.val],list.neigh[x.val]);
-        x.val++;
+        PASeriesPerformCopy(List.neigh[x],list.neigh[x]);
+        x++;
     }
     List.n = list.n;
     return List;
@@ -518,12 +526,12 @@ void PAListPerformPrint(struct PAList List);
 {
     struct PACount x;
     struct PACount y;
-    x.number.val = (1);
-    y.number.val = PA.n.number.val;
-    while (x.number.val < y.number.val)
+    x.number = (1);
+    y.number = PA.n.number;
+    while (x.number < y.number)
     {
-        PA.neigh[x.number.val] = PASeriesPerformRuin(PA.neigh[x.number.val]);
-        x.number.val ++;
+        PA.neigh[x.number] = PASeriesPerformRuin(PA.neigh[x.number]);
+        x.number ++;
     }
     PA.n = PACountPerformRuin(PA.n);
     return PA;
@@ -537,14 +545,14 @@ void Dispose()
 {
     struct PACount n = PA.n;
     n = PACountPerformDelete(PA.n);
-    struct PANumber x;
-    struct PANumber y;
+    PAValue x;
+    PAValue y;
     y = n.number;
-    x.val = (1);
-    while (x.val < y.val)
+    x = (1);
+    while (x < y)
     {
-        PA.neigh[x.val] = PASeriesPerformDelete(PA.neigh[x.val]);
-        x.val++;
+        PA.neigh[x] = PASeriesPerformDelete(PA.neigh[x]);
+        x++;
     }
     return PA;
 }

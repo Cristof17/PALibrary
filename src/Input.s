@@ -17,9 +17,8 @@ _InputPerformInit:                      ; @InputPerformInit
 	.cfi_def_cfa_offset 48
 	str	x0, [sp, #32]
 	str	x1, [sp, #24]
-	str	x3, [sp, #8]
-	str	x4, [sp, #16]
-	str	x2, [sp]
+	str	x3, [sp, #16]
+	str	x2, [sp, #8]
 	add	sp, sp, #48
 	ret
 	.cfi_endproc

@@ -14,16 +14,13 @@
 DllExport struct PACount PACountPerformConstruct()
 {
     struct PACount zies;
-    zies.number = PANumberPerformConstruct();
-    zies = PACountPerformInit(zies,zies.number);
     return zies;
 }
-DllExport struct PACount PACountPerformInit(struct PACount Count, struct PANumber Value)
+DllExport struct PACount PACountPerformInit(struct PACount Count, PAValue Value)
 {
     struct PACount temp;
-    temp.number = PANumberPerformConstruct();
-    temp.number = PANumberPerformInit(temp.number,Value.val);
-    Count.number = temp.number;
+    temp.number = Value;
+    Count = temp;
     return Count;
 }
 DllExport struct PACount PACountPerformRuin(struct PACount PA)
@@ -32,7 +29,7 @@ DllExport struct PACount PACountPerformRuin(struct PACount PA)
 }
 DllExport struct PACount PACountPerformDelete(struct PACount PA)
 {
-    PA.number.val = 0;
+    PA.number = NULL;
     return PA;
 }
 DllExport PAResult PACountPerformPrint(struct PACount Count)
@@ -43,31 +40,31 @@ DllExport PAResult PACountPerformPrint(struct PACount Count)
 DllExport struct PACount PACountPerformCopy(struct PACount from, struct PACount to)
 {
     struct PACount temp;
-    temp.number = PANumberPerformCopy(from.number,to.number);
-    to.number = temp.number;
+    temp = from;
+    to = temp;
     return to;
 }
 DllExport PAResult PACountOperatorLess(struct PACount one, struct PACount other)
 {
     PAResult result;
-    result = PANumberOperatorLess(one.number,other.number);
+    result = (one.number < other.number) ? PARESULT_LESS_THAN : PARESULT_GREATER_THAN;
     return result;
 }
 DllExport PAResult PACountOperatorEqual(struct PACount one,struct PACount other)
 {
     PAResult result;
-    result = PANumberOperatorEqual(one.number,other.number);
+    result = (one.number == other.number) ? PARESULT_EQUAL : PARESULT_NOT_EQUAL;
     return result;
 }
 DllExport PAResult PACountOperatorGreater(struct PACount one, struct PACount other)
 {
     PAResult result;
-    result = PANumberOperatorGreater(one.number,other.number);
+    result = (one.number > other.number) ? PARESULT_GREATER_THAN : PARESULT_LESS_THAN;
     return result;
 }
 DllExport PAResult PACountOperatorNotEqual(struct PACount one, struct PACount other)
 {
     PAResult result;
-    result = PANumberOperatorNotEqual(one.number,other.number);
+    result = (one.number != other.number) ? PARESULT_NOT_EQUAL : PARESULT_EQUAL;
     return result;
 }

@@ -18,7 +18,7 @@ DllExport struct PAElement PAElementPerformConstruct()
     struct PAElement temp;
     return temp;
 }
-DllExport struct PAElement PAElementPerformInit(struct PAElement Element, PAValue Value, PAValue Value2)
+DllExport struct PAElement PAElementPerformInit(struct PAElement Element, PAData Value, PAStatus Value2)
 {
     struct PAElement temp;
     temp = Element;

@@ -8,7 +8,7 @@ DllExport struct PANumber PANumberPerformConstruct()
     struct PANumber number;
     return number;
 }
-DllExport struct PANumber PANumberPerformInit(struct PANumber Number, unsigned char Value)
+DllExport struct PANumber PANumberPerformInit(struct PANumber Number, PAValue Value)
 {
     struct PANumber temp;
     temp.val = Value;
@@ -17,7 +17,7 @@ DllExport struct PANumber PANumberPerformInit(struct PANumber Number, unsigned c
 }
 DllExport struct PANumber PANumberPerformDelete(struct PANumber PA)
 {
-    PA.val = '0';
+    PA.val = 0;
     return PA;
 }
 DllExport struct PANumber PANumberPerformRuin(struct PANumber PA)
@@ -26,7 +26,7 @@ DllExport struct PANumber PANumberPerformRuin(struct PANumber PA)
 }
 DllExport struct PANumber PANumberPerformCopy(struct PANumber from, struct PANumber to)
 {
-    char num = from.val;
+    PAValue num = from.val;
     to.val = num;  
     return to;
 }

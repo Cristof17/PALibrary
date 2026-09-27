@@ -25,7 +25,7 @@ DllExport struct PASeries PASeriesPerformConstruct()
     struct PANumber x;
     struct PANumber y;
     x.val = FIRST;
-    y.val = series.m.number.val;
+    y.val = series.m.number;
     while (x.val < y.val)
     {
         series.adj[x.val] = PAElementPerformInit(series.adj[x.val], series.adj[x.val].index, series.adj[x.val].status);
@@ -40,30 +40,30 @@ DllExport struct PASeries PASeriesPerformCopy(struct PASeries from, struct PASer
     struct PASeries temp;
     temp = PASeriesPerformConstruct();
     temp.m = PACountPerformCopy(from.m, temp.m);
-    x.number.val = temp.m.number.val;
-    if (temp.m.number.val < to.m.number.val)
+    x.number = temp.m.number;
+    if (temp.m.number < to.m.number)
     {
-        x.number.val = temp.m.number.val;
+        x.number = temp.m.number;
     }
-    else if (temp.m.number.val > to.m.number.val)
+    else if (temp.m.number > to.m.number)
     {
-        x.number.val = to.m.number.val;
+        x.number= to.m.number;
     }
-    y.number.val = FIRST;
-    while (y.number.val <= x.number.val)
+    y.number = FIRST;
+    while (y.number <= x.number)
     {
         struct PAElement aux;
-        PAElementPerformCopy(from.adj[y.number.val],aux);
-        PAElementPerformCopy(aux,temp.adj[y.number.val]);
-        y.number.val++;
+        PAElementPerformCopy(from.adj[y.number],aux);
+        PAElementPerformCopy(aux,temp.adj[y.number]);
+        y.number++;
     }
-    y.number.val = FIRST;
-    while (y.number.val <= x.number.val)
+    y.number = FIRST;
+    while (y.number <= x.number)
     {
         struct PAElement aux;
-        PAElementPerformCopy(temp.adj[y.number.val],aux);
-        PAElementPerformCopy(aux, to.adj[y.number.val]);
-        y.number.val++;
+        PAElementPerformCopy(temp.adj[y.number],aux);
+        PAElementPerformCopy(aux, to.adj[y.number]);
+        y.number++;
     }
     to.m = PACountPerformCopy(temp.m, to.m);
     return to;
@@ -76,7 +76,7 @@ DllExport struct PASeries PASeriesPerformInit(struct PASeries Series,
         struct PANumber x;
         struct PANumber y;
         x.val = FIRST;
-        y.val = Value.number.val;
+        y.val = Value.number;
         while (x.val <= y.val)
         {
             series.adj[x.val] = PAElementPerformInit(series.adj[x.val],series.adj[x.val].index, series.adj[x.val].status);
@@ -88,7 +88,7 @@ DllExport struct PASeries PASeriesPerformInit(struct PASeries Series,
     {
         struct PANumber x;
         struct PANumber y;
-        x.val = PA.m.number.val;
+        x.val = PA.m.number;
         y.val = FIRST;
         while (y.val <= x.val)
         {
@@ -102,12 +102,12 @@ DllExport struct PASeries PASeriesPerformInit(struct PASeries Series,
     {
         struct PACount x;
         struct PACount y;
-        x.number.val = PA.m.number.val;
-        y.number.val = FIRST;
-        while (y.number.val <= x.number.val)
+        x.number = PA.m.number;
+        y.number = FIRST;
+        while (y.number <= x.number)
         {
-            PA.adj[y.number.val] = PAElementPerformRuin(PA.adj[y.number.val]);
-            y.number.val++;
+            PA.adj[y.number] = PAElementPerformRuin(PA.adj[y.number]);
+            y.number++;
         }
         return PA;
     }

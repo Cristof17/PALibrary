@@ -20,9 +20,8 @@ _PANumberPerformInit:                   ; @PANumberPerformInit
 	sub	sp, sp, #32
 	.cfi_def_cfa_offset 32
 	str	x0, [sp, #16]
-	strb	w1, [sp, #15]
-	ldrb	w8, [sp, #15]
-                                        ; kill: def $x8 killed $w8
+	str	x1, [sp, #8]
+	ldr	x8, [sp, #8]
 	str	x8, [sp]
 	ldr	x8, [sp]
 	str	x8, [sp, #16]
@@ -41,8 +40,7 @@ _PANumberPerformDelete:                 ; @PANumberPerformDelete
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	str	x0, [sp]
-	mov	x8, #48                         ; =0x30
-	str	x8, [sp]
+	str	xzr, [sp]
 	ldr	x8, [sp]
 	str	x8, [sp, #8]
 	ldr	x0, [sp, #8]
@@ -75,9 +73,8 @@ _PANumberPerformCopy:                   ; @PANumberPerformCopy
 	str	x0, [sp, #16]
 	str	x1, [sp, #8]
 	ldr	x8, [sp, #16]
-                                        ; kill: def $w8 killed $w8 killed $x8
-	strb	w8, [sp, #7]
-	ldrsb	x8, [sp, #7]
+	str	x8, [sp]
+	ldr	x8, [sp]
 	str	x8, [sp, #8]
 	ldr	x8, [sp, #8]
 	str	x8, [sp, #24]

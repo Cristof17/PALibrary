@@ -62,9 +62,17 @@ struct ArrayList {
 
 
 };
-# 89 "./include/types.h"
+# 83 "./include/types.h"
+typedef int PAData ;
+typedef int PAStatus;
+typedef long PAValue;
+
+
+
+
+
 struct PANumber;
-# 106 "./include/types.h"
+# 108 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -113,7 +121,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 164 "./include/types.h"
+# 166 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -153,20 +161,20 @@ struct PrototypeClient;
 struct PANumber {
 
 
- long val;
+ PAValue val;
 
 };
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 221 "./include/types.h"
+# 223 "./include/types.h"
 struct Output {
 
 };
 struct Input {
  ;
 };
-# 238 "./include/types.h"
+# 240 "./include/types.h"
 struct PAResource {
 
 
@@ -175,29 +183,29 @@ struct PAResource {
 
 };
 struct PAStatus {
- long visited;
+ PAValue visited;
 };
 struct PAData {
- long Resource;
+ PAValue Resource;
 
 };
 
 
 struct PAElement {
 
- long index;
+ PAData index;
 
- long status;
+ PAStatus status;
 
 
 };
 struct PAFeature {
- long kind;
+ PAValue kind;
 };
 
 struct PACount {
 
- struct PANumber number;
+ PAValue number;
 };
 
 
@@ -249,7 +257,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 328 "./include/types.h"
+# 330 "./include/types.h"
 struct PAInput {
  struct PACount n;
  struct PACount m;
@@ -289,7 +297,7 @@ struct BFSInput {
 struct BFSOutput {
  struct BFSRecord result;
 };
-# 375 "./include/types.h"
+# 377 "./include/types.h"
 struct PALink {
  struct PAPair p;
 
@@ -330,7 +338,7 @@ struct FactoryCreator
  struct PATransposeTree transposeTree;
 };
 struct FlyWeight {
- long todo;
+ PAValue todo;
 };
 struct Adaptee {
  struct ArrayList list;
@@ -370,7 +378,7 @@ struct ConcreteBuilder {
  struct Builder builder;
 };
 struct IteratorConcreteIterator {
- long position;
+ PAValue position;
 };
 struct IteratorConcreteAggregate {
  struct IteratorConcreteIterator iterator;
@@ -431,7 +439,7 @@ struct Facade {
 
 
           struct PAElement PAElementPerformConstruct();
-          struct PAElement PAElementPerformInit(struct PAElement PA, long Data, long Status);
+          struct PAElement PAElementPerformInit(struct PAElement PA, PAData Data, PAStatus Status);
           void PAElementVisit(struct PAElement Element);
           int PAElementIsVisited(struct PAElement Element);
           void PAElementReset(struct PAElement Element);

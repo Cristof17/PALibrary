@@ -6,7 +6,7 @@
 #include <types.h>
 
 DllExport struct PAElement PAElementPerformConstruct();
-DllExport struct PAElement PAElementPerformInit(struct PAElement PA, PAValue Data, PAValue Status);
+DllExport struct PAElement PAElementPerformInit(struct PAElement PA, PAData Data, PAStatus Status);
 DllExport void PAElementVisit(struct PAElement Element);
 DllExport PABool PAElementIsVisited(struct PAElement Element);
 DllExport void PAElementReset(struct PAElement Element);

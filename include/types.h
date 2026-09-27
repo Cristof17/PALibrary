@@ -75,15 +75,17 @@ struct ArrayList {
 // typedef int PANumber;
 #ifndef _64BIT
 // #define PANumber int
-#define PAValue int
 #define PABool int
 #define PAResult int
 #define ArrayListSize int
 #else
 // #define PANumber long long
-#define PAValue long
+typedef int PAData ;
+typedef int PAStatus;
+typedef long PAValue;
 #define PABool int
 #define PAResult int
+// @define 
 #define ArrayListSize long long
 #endif //#64BIT
 struct PANumber;
@@ -253,9 +255,9 @@ struct PAData {
 // #pragma pack(pop)
 struct PAElement { 
 	//	struct PAData data;
-	PAValue index;
+	PAData index;
 	// struct PADestination Next;
-	PAValue status;
+	PAStatus status;
 	// struct PAFeature type;
 	// PADDING_1_BYTE(0);
 };
@@ -265,7 +267,7 @@ struct PAFeature {
 
 struct PACount {
 	// PADDING_1_BYTE(0);
-	struct PANumber number;
+	PAValue number;
 };
 // };
 
