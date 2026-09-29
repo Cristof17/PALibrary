@@ -382,11 +382,11 @@ struct PALink {
 	// 	PA_INT code;
 	// };
 struct PANormalTree {
-	struct PATree tree;
+	struct PATree adj;
 	//struct PAList adj;
 };
 struct PATransposeTree {
-	struct PATree tree;
+	struct PATree adj_trans;
 	//struct PAList adj_trans;
 };
 struct FactoryProduct1 {
