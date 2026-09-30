@@ -4,13 +4,10 @@
 #ifndef _WIN95
 #include <PA/NormalTree.h>
 #include <PA/Tree.h>
-#include <PA/Memory.h>
-#include <PA/Size.h>
 #elif defined _WIN95
 #include <PA\NormalTree.h>
 #include <PA\Tree.h>
-#include <PA\Memory.h>
-#include <PA\Size.h>
+
 #endif
 
 DllExport PANormalTree PANormalTreePerformConstruct(PATree tree)
@@ -63,11 +60,3 @@ DllExport int PANormalTreePerformRuin(PAMemory PA)
 //     PAResult result;
 //     return result;
 // }
-DllExport struct PASize PANormalTreeSize()
-{
-    size_t standardSize = sizeof(struct PANormalTree);
-
-    struct PASize size = PASizePerformConstruct(standardSize);
-
-    return size;
-}
