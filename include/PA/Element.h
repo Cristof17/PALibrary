@@ -9,9 +9,7 @@
 #include <memory.h>
 
 #ifndef _WIN95
-#include <PA/Size.h>
 #elif defined _WIN95
-#include <PA\Size.h>
 #endif
 
 DllExport struct PAElement PAElementPerformConstruct();

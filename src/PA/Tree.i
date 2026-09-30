@@ -2093,9 +2093,6 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 10 "./include/PA/Element.h" 2
 
 
-# 1 "./include/PA/Size.h" 1
-# 13 "./include/PA/Element.h" 2
-
 
 
 

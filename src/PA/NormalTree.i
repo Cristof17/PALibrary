@@ -2101,8 +2101,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           PAMemory PAMemoryPerformConstruct(PASize size);
           int PAMemoryPerformRuin(PAMemory);
 # 8 "./src/PA/NormalTree.c" 2
-# 1 "./include/PA/Size.h" 1
-# 9 "./src/PA/NormalTree.c" 2
+
 
 
 

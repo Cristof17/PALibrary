@@ -441,8 +441,6 @@ struct Facade {
           PAResult PACountOperatorGreater(struct PACount one, struct PACount other);
           PAResult PACountOperatorNotEqual(struct PACount one, struct PACount other);
 # 6 "./src/PA/Count.c" 2
-# 1 "./include/PA/Size.h" 1
-# 7 "./src/PA/Count.c" 2
 # 1 "./include/PA/Number.h" 1
 
 
@@ -457,9 +455,7 @@ struct Facade {
           PAResult PANumberOperatorNotEqual(struct PANumber one, struct PANumber other);
           PAResult PANumberOperatorLess(struct PANumber one, struct PANumber other);
           PAResult PANumberOperatorGreater(struct PANumber one, struct PANumber other);
-# 8 "./src/PA/Count.c" 2
-
-
+# 7 "./src/PA/Count.c" 2
 
 
 

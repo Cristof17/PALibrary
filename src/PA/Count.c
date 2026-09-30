@@ -3,14 +3,11 @@
 // #include <types.h>
 #ifndef _WIN95
 #include <PA/Count.h>
-#include <PA/Size.h>
 #include <PA/Number.h>
 #elif defined _WIN95
 #include <PA\Count.h>
 #include <PA\Number.h>
-#include <PA\Memory.h>
-#include <PA\Object.h>
-#include <PA\Size.h>
+
 #endif
 DllExport PAMemory PACountPerformAllocate()
 {

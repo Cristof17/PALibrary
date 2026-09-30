@@ -3,12 +3,10 @@
 #include <PA/Data.h>
 #include <PA/Resource.h>
 #include <PA/Memory.h>
-#include <PA/Size.h>
 #elif defined _WIN95
 #include <PA\Data.h>
 #include <PA\Resource.h>
 #include <PA\Memory.h>
-#include <PA\Size.h>
 #endif
 
 DllExport struct PAData PADataPerformConstruct()

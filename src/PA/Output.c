@@ -5,12 +5,10 @@
 #include <PA/Output.h>
 #include <BFS/Record.h>
 #include <PA/Memory.h>
-#include <PA/Size.h>
 #elif defined _WIN95
 #include <PA\Output.h>
 #include <BFS\Record.h>
 #include <PA\Memory.h>
-#include <PA\Size.h>
 #endif
 
 DllExport struct PAOutput PAOutputPerformConstruct()

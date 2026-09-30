@@ -1906,9 +1906,6 @@ extern char * suboptarg;
           PAMemory PAMemoryPerformConstruct(PASize size);
           int PAMemoryPerformRuin(PAMemory);
 # 6 "./src/PA/Data.c" 2
-# 1 "./include/PA/Size.h" 1
-# 7 "./src/PA/Data.c" 2
-
 
 
 
@@ -1938,7 +1935,7 @@ extern char * suboptarg;
 
 
     return to;
-# 45 "./src/PA/Data.c"
+# 43 "./src/PA/Data.c"
 }
           PAResult PADataOperatorLess(struct PAData one, struct PAData other)
 {

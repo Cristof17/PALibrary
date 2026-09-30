@@ -1892,9 +1892,6 @@ extern char * suboptarg;
           PAMemory PAMemoryPerformConstruct(PASize size);
           int PAMemoryPerformRuin(PAMemory);
 # 8 "./src/PA/Output.c" 2
-# 1 "./include/PA/Size.h" 1
-# 9 "./src/PA/Output.c" 2
-
 
 
 
