@@ -7,9 +7,7 @@
 #ifndef _WIN95
 #include <PA/TransposeTree.h>
 #include <PA/Tree.h>
-#include <PA/Memory.h>
-#include <PA/Size.h>
-// #include <defs.h>
+
 #elif defined _WIN95
 #include <PA\TransposeTree.h>
 #include <PA\Tree.h>
@@ -18,77 +16,27 @@
 #endif
 DllExport PATransposeTree PATransposeTreePerformConstruct(PATree rtree)
 {
-    PATransposeTree treeTranspose;
-    // PAMemory transposeTre÷÷e;
-    // transposeTree = PAMemoryPerformConstruct(sizeof(struct PATransposeTree));
-    // struct PATransposeTree* transposeTreePointer;
-    // transposeTree = malloc(size);
-    // transposeTreePointer->tree = PATreePerformConstruct();
-    // transposeTree.tree = (transposeTreePointer->tree);
-    // transposeTreePointer = PATransposeTreeBegin(transposeTreePointer,transposeTree.tree);
-    return treeTranspose;
-    // return transposeTree;
-    // transposeTree.tree = PATreePerformConstruct();
-    // return transposeTreePointer;
+    struct PATransposeTree transposeTree;
+    transposeTree.tree = PATreePerformConstruct();
+    transposeTree = PATransposeTreePerformInit(transposeTree,transposeTree.tree);
+    return transposeTree;
 }
 
 DllExport PATransposeTree PATransposeTreePerformInit(PATransposeTree TransposeTree, PATree Value)
 {
-    struct PATransposeTree* aux;
-    // aux = (struct PATransposeTree*) malloc (soz)
-    // aux = (struct PATransposeTree*) malloc (sizeof*s)
-    aux = (struct PATransposeTree*) malloc (sizeof(struct PATransposeTree));
-    memcpy(aux->tree,Value,sizeof(struct PATree));
-    memcpy(aux,TransposeTree,sizeof(struct PATransposeTree));
-    // struct PATransposeTree* transposeTreePointer;
-    // temp.tree = &Value;
-    // TransposeTree->tree = Value;
-    // temp = *TransposeTree;
-    // TransposeTree->tree = temp.tree;
-    // struct PATree* treePointer;
-    // treePointer = &(TransposeTree->tree);
-    // treePointer = PATreeCreate();
-    // transposeTree.tree = *treePointer;
-    // transposeTree.tree = Value;
-    // struct PATransposeTree transposeTree;
-    // transposeTree = PATransposeTreePerformConstruct(TransposeTree.adj_trans);
-    // transposeTree.adj_trans = Adj_trans;
-    // struct PATransposeTree tree;
-    // return temp;
+    struct PATransposeTree tree;
+    TransposeTree.tree = PATreePerformConstruct();
+    TransposeTree = tree;
+    TransposeTree.tree = Value;
     return TransposeTree;
     // return TransposeTree;
 }
-DllExport static PAObject PATransposeTreePerformCopy(PAObject from, PAObject to, size_t size)
+DllExport struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree from, struct PATransposeTree to)
 {
-    // struct PATransposeTree* copy;
-    PAMemory aux;
-    aux = malloc (size);
-    memcpy(aux,from,size);
-    memcpy(to,aux,size);
-    // aux->tree = from->tree;
-    // to->tree = aux->tree;
-    free(aux);
-    return to;
-    // temp.
-    // To->tree = temp->tree;
-    // temp = *from;
-    // To->tree = temp.tree;
-    // copy = PATransposeTreePerformConstruct(TransposeTree.adj_trans);
-    // copy = PATransposeTreePerformInit(TransposeTree);
-    // return tree;
-    // return To;
-    // return temp;
+    struct PATransposeTree copy;
+    return copy;
 }
-// DllExport struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree Tree )
-// {
-//     return Tree;
-// }
-// DllExport struct PATransposeTree* PATransposeTreeRuin(struct PATransposeTree* PA)
-// {
-//     // struct PATransposeTree tree;
-//     return PA;
-// }
-DllExport int PATransposeTreePerformDelete(PATransposeTree PA)
+DllExport struct PATransposeTree PATransposeTreeRuin(struct PATransposeTree PA)
 {
     // int retutrn
     // int returncode;
@@ -114,30 +62,11 @@ DllExport int PATransposeTreePerformRuin(void* PA)
     // return PA;
     return returnCode;
 }
-
-// struct PATransposeTree PATransposeTreeRuin(struct PATree Tree)
-// {
-    // struct PATransposeTree tree;
-    // return tree;
-// }
-// DllExport struct PATransposeTree PATransposeTreeBuildPart()
-// {
-    // struct PATransposeTree tree;
-    // return tree;
-// }
-// DllExport PAResult PATransposeTreeGetResult()
-// {
-//     PAResult result;
-//     return result;
-// }
-// struct PATransposeTree PAGrafTranspusBuildPart() {
-//     struct PATransposeTree tree;
-//     return tree;
-// }
-// struct PAResult PAGrafTranspusGetResult() {
-//     struct PAResult result;
-//     return result;
-// }
+DllExport PAResult PATransposeTreeGetResult()
+{
+    PAResult result;
+    return result;
+}
 
 DllExport struct PASize PATransposeTreeSize()
 {

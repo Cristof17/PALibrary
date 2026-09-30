@@ -15,86 +15,27 @@
 
 DllExport PANormalTree PANormalTreePerformConstruct(PATree tree)
 {
-    PANormalTree normal;
-    // PAMemory normalTree;
-    // struct PANormalTree* normalTree;
-    // struct PANormaltT/
-    // struct PANormat
-    // struct PANormalTreePointer& normalTree;
-    // struct PANormat
-    // struct PAnor
-    // struct NA
-    // nro
-    // normalTree = PAMemoryPerformConstruct(sizeof(struct PANormalTree));
-    // normalTree = malloc (size);
-    // register
-    // return normalTree;
-    return normal;
-    // normalTree.tree = PATreePerformConstruct();
-    // normalTree.tree = PATreePerformConstruct();
-    // return normalTree;
+    struct PANormalTree normalTree;
+    normalTree.tree = PATreePerformConstruct();
+    return normalTree;
 }
 DllExport PAMemory PANormalTreePerformAllocate()
 {
-    PASize size;
-    size = PASizePerformAllocate(sizeof(struct PANormalTree));
-    PAMemory memory;
-    memory = PAMemoryPerformConstruct(size);
-    return memory;
+    struct PANormalTree normalTree;
+    normalTree.tree = PATreePerformConstruct();
+    NormalTree = normalTree;
+    return NormalTree;  
 }
-DllExport PANormalTree PANormalTreePerformInit(PANormalTree NormalTree, PATree Value)
+DllExport struct PANormalTree PANormalTreePerformRuin(struct PANormalTree PA)
 {
-    struct PANormalTree* aux;
-    memcpy(aux->tree,Value,sizeof(struct PATree));
-    memcpy(NormalTree, aux, sizeof(struct PANormalTree));
-    return NormalTree;
-    // struct PANormalTree *normalTreePointer;
-    // NormalTree->tree = Value;
-    // temp = *NormalTree;
-    // temp.tree = &Value;
-    // NormalTree->tree = temp.tree;
-
-    // normalTree.tree = PATreePerformConstruct();
-    // NormalTree = normalTree;
-    // NormalTree.tree = Value; 
-    // struct PANormalTree normalTree;
-    // normalTree.adj = Adj;
-    // return normalTreePointer;  
-    // return temp;
-}
-DllExport static PAObject PANormalTreePerformCopy(PAObject from, PAObject to, size_t size)
-{
-    PAMemory aux;
-    aux = malloc (size);
-    // aux = PANormalTreeCreate();
-    // aux->tree = from->tree;
-    // to->tree = aux->tree;
-    // aux/.
-    // aux->tree = NULL;
-    free(aux);
-    return to;
-    // PANormalTreeDelete(aux);
-    // PANormalTreeDelete(aux);
-//     // struct PANormalTree
-//     struct PANormalTree copy;
-//     // copy = PANormalTreePerformConstruct(NormalTree.adj);
-//     // copy = PANormalTreePerformInit(NormalTree);
-// //    copy.adj = Tree.adj;
-//     return copy;
+    struct PANormalTree Empty;
+    PA.tree = PATreePerformRuin(PA.tree);
+    return PA;
 }
 DllExport int PANormalTreePerformDelete(struct PANormalTree* PA)
 {
-    int returnCode;
-    // PA->tree = NULL;
-    bzero(PA,sizeof(struct PANormalTree));
-    returnCode = PARESULT_SUCCESS;
-    // returnCode = PATreeDelete(&PA->tree);
-    // return returnCode;
-    // struct PANormalTree tree;
-    // return tree;
-    // PA.tree = PATreePerformDelete(PA.tree);
-    // return PA;
-    return returnCode;
+    PAResult result;
+    return result;
 }
 DllExport int PANormalTreePerformRuin(PAMemory PA)
 {

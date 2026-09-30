@@ -2,9 +2,54 @@
 #define INCLUDE_DEFS_H_ 1
 // #include <types.h>
 
+#ifndef _64BIT
+#define BASE(array) ((int*) &(array[0]))
+#define OFFSET(i,type) ((int) (i * sizeof(type)))
+#else
+#define BASE(array) ((long*) &(array[0]))
+#define OFFSET(i,type) ((long) (i * sizeof(type)))
+#endif
+#define PADataDefault { {} , {} }
+#define HRESULT_SUCCESS ((int)0)
+#define HRESULT_FAIL ((int)1)
+#define TRUE 1
+#define FALSE 0
+#ifndef NULL
+#define NULL 0
+#endif
+#define NULL_CHAR '5'
+#ifndef _WIN95
+// typedef 
+#define DllExport
+#define HRESULT int
+
+#elif defined _WIN95
+typedef uint32_t ListObject;
+typedef uint32_t ListPosition;
+#define DllExport   __declspec( dllexport )
+#define HRESULT int
+#endif
+#ifndef _WIN95
+// typedef void* Objects;
+#elif defined _WIN95
+// typedef IUnknown* Objects;
+#endif
+// typedef int PAInt;
+#define BLK_SIZE ((int)4096)
+#define SIZE 4
+#define FIRST (1)
+#define LAST(N) (N)
+#define PADDING_1_BYTE(NUM) unsigned char padding[NUM] 
+
+
+
 #define PADataDefault { {} , {} }
 #define PARESULT_SUCCESS ((int)0)
 #define PARESULT_FAIL ((int)1)
+#define PARESULT_EQUAL ((int)0)
+#define PARESULT_NOT_EQUAL ((int)1)
+#define PARESULT_LESS_THAN ((int)0)
+#define PARESULT_GREATER_THAN ((int)1)
 #define TRUE 1
 #define FALSE 0
 // #define NULL 0
@@ -12,7 +57,7 @@
 #ifndef _WIN95
 // typedef 
 #define DllExport
-#define HRESULT PAResult
+// #define HRESULT PAResult
 #elif defined _WIN95
 typedef uint32_t ListObject;
 typedef uint32_t ListPosition;
@@ -26,7 +71,7 @@ typedef uint32_t ListPosition;
 #endif
 // typedef int PAInt;
 #define BLK_SIZE ((int)4096)
-#define SIZE 2
+// #define SIZE 2
 #define FIRST (1)
 #define LAST(N) (N)
 #define PADDING_1_BYTE(NUM) unsigned char padding[NUM] 

@@ -4,51 +4,100 @@
 #define INCLUDE_TYPES_H_	1
 
 #include <defs.h>
-#include <stdlib.h>
+
 #ifdef _WIN95
-//#define short HALF_PTR;
-//typedef PAInt int32_t;
-typedef int PAInt;
-typedef int PANumber;
-typedef PABool BOOL;
-typedef int PAResult;
 typedef int ArrayListSize;
 typedef int ArrayListObject;
 #else
-typedef char* PANumber;
-// struct PANumber;
-// // #ifdef Aarch64
-// // #define PAInt long
-// // #else
-// // #ifdef armv6
-// // #define PAInt long
-// // #else
-// // #ifdef arm64
-// // #define PAInt long
-// // #else
-// // #define PAInt int
-// // #endif
-// #endif
-// #endif
-// endif
+#endif
+
+#ifdef _64BIT
+typedef long ArrayListSize;
+#else
+typedef int ArrayListSize;
+#endif 
+// typedef int ArrayListSize;
+#ifdef _64BIT
+typedef long ArrayListObject;
+#else
+typedef int ArrayListObject;
+#endif
+#ifdef _64BIT
+typedef long ArrayListPosition;
+typedef long ArrayListOffset;
+#else
+typedef long ArrayListOffset;
+typedef int ArrayListPosition;
+#endif
+#ifdef _64BIT
+typedef long ArrayListCount;
+#else
+typedef int ArrayListCount;
+#endif
+#ifdef _64BIT
+typedef long ArrayListValue;
+#else
+typedef int ArrayListValue;
+#endif
+//#
+// #pragma pack(push, 8)
+// #pragma pack(push, 8)
+
+// #pragma pack(show)
+struct ArrayListPosition {
+    ArrayListPosition position;
+};
+// #pragma pack(show)
+struct ArrayList {
+    // struct Position position;
+    ArrayListObject elements[SIZE];
+    ArrayListPosition place;
+    // #pragma pack(8)
+    ArrayListCount count;
+    // #pragma pack(8)
+    // long count;
+};
+
+#ifdef _WIN95
+//#define short HALF_PTR;
+#ifndef _64BIT
+// #define PANumber int
+#define PABool int
+#define PAResult int
+#define ArrayListSize int
+#else
+// #define PANumber long long
+#define PABool int
+#define PAResult int
+#define ArrayListSize long long
+#endif //64BIT	
+#else
+// typedef int PANumber;
+#ifndef _64BIT
+// #define PANumber int
+#define PABool int
+#define PAResult int
+#define ArrayListSize int
+#else
+// #define PANumber long long
+typedef int PAData ;
+typedef int PAStatus;
+typedef long PAValue;
+#define PABool int
+#define PAResult int
+// @define 
+#define ArrayListSize long long
+#endif //#64BIT
+struct PANumber;
 // typedef int PAInt;
-typedef int PAResult;
-typedef int PABool;
-typedef PABool PAStatus;
-typedef void* PAMemory;
-typedef void* PAObject;
-typedef int Offset;
-typedef void* Object;
-//typedef char PAInt;
-// typedef PACountValue PAInt;
-// typede
 //#define PAInt int
 // typedef int PAResource;
+// typedef int PABool;
+// typedef int PAResult;
 // typedef int ArrayListSize;
 // typedef int ArrayListObject;
-struct ArrayListObject;
 // typedef int ArrayListPosition;
-#endif
+#endif //WIN95
 // struct Client;
 //struct Client;
 // struct Builder;
@@ -85,7 +134,7 @@ struct PAInput;
 struct PAOutput;
 // struct PAResource;
 struct PAData;
-struct PAValue;
+// struct PAValue;
 struct List;
 struct PAList;
 // struct PAStatus;
@@ -151,12 +200,21 @@ struct BridgeConcreteImplementorB;
 struct BridgeImplementor;
 struct PrototypePrototype;
 struct PrototypeClient;
+<<<<<<< HEAD
 // struct PANumber {
 // 	//  val;
 // 	// long long val;
 // 	unsigned char val;
 // 	// PADDING_1_BYTE(0);
 // };
+=======
+struct PANumber {
+	//  val;
+	// long long val;
+	PAValue val;
+	// PADDING_1_BYTE(0);
+};
+>>>>>>> 653a9d82ce64dd998a0101f60daf2dc255f625e6
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
@@ -178,79 +236,61 @@ struct Facade;
 struct Input {
 	;
 };
-struct Algorithm {
-	struct Input input;
-};
-struct ArrayListSize {
-	int* n;
-};
-struct ArrayListPosition {
-	int* position;
-};
-struct ArrayListObject {
-	int element;
-};
-typedef struct PASize {
-	// size_t valie;
-	size_t size;
-	char* value;
-	char* digits;
-}* PASize;
-typedef struct ArrayList {
-	// struct Position position;
-	int* array;
-	struct ArrayListPosition place;
-	struct ArrayListSize size;
-	// ArrayListPosition
-}* ArrayList;
-
-typedef struct PAResource {
+	// struct Algorithm {
+			// struct Input input;
+		// };
+// struct ArrayListPosition {
+// 	int position;
+// };
+// struct ArrayList {
+// 	// struct Position position;
+// 	struct ArrayListPosition place;
+// 	int objects[SIZE];
+// };
+struct PAResource {
 	// struct
 	// PA_INt
 	// PAInt value;
 	PANumber value;
 	struct PASize size;
 	// PADDING_1_BYTE(0);
-}* PAResource;
-// typedef struct PAStatus {
-// 	// struct PAResource* visited;
-// 	PABool Visited;
-// }* PAStatus;
-typedef struct PAData {
-	struct PAResource* Resource;
+};
+struct PAStatus {
+	PAValue visited;
+};
+struct PAData {
+	PAValue Resource;
 	// PADDING_1_BYTE(0);
-}* PAData;
-typedef struct PAElement { 
+};
+// #pragma pack(push, 8)
+// #pragma pack(pop)
+struct PAElement { 
 	//	struct PAData data;
-	struct PAElement* next;
-	struct PAData* index;
+	PAData index;
 	// struct PADestination Next;
 	PAStatus status;
 	// struct PAFeature type;
 	// PADDING_1_BYTE(0);
-}* PAElement;
-typedef struct PAInt {
-	char* value;
-	size_t size;
-}* PAInt;
-typedef struct PAFeature {
-	PAInt kind;
-}* PAFeature;
-typedef struct PACount {
-	// PADDING_1_BYTE(0);
-	PAInt number;
-}* PACount;
+};
+struct PAFeature {
+	PAValue kind;
+};
 
+struct PACount {
+	// PADDING_1_BYTE(0);
+	PAValue number;
+};
 // };
 
 typedef struct PASeries {
 	struct PACount* m;
 	// struct PANumber adj[0];
-	struct PAList** adj;
-}* PASeries;
-typedef struct PAList {
-	struct PACount* m;
-	struct ArrayList* neigh;
+
+	struct PAElement adj[SIZE];
+};
+struct PAList {
+	PAValue n;
+	struct PASeries neigh[SIZE];
 	// struct PANod Nod;
 }* PAList;
 struct FlyweightFlyweightClient {
@@ -316,10 +356,10 @@ typedef struct PAOutput {
 // //    int Value;
 // 	INT Value;
 // };
-typedef struct PAValue {
-	PAInt value;
-}* PAValue;
-typedef struct PADestination {
+// struct PAValue {
+// 	PAValue value;
+// };
+struct PADestination {
     struct PAElement element;
 }* PADestination;
 typedef struct PAPair {
@@ -353,12 +393,12 @@ typedef struct PALink {
 // struct PAResult {
 	// 	PA_INT code;
 	// };
-typedef struct PANormalTree {
-	struct PATree* tree;
+struct PANormalTree {
+	struct PATree adj;
 	//struct PAList adj;
-}* PANormalTree;
-typedef struct PATransposeTree {
-	struct PATree* tree;
+};
+struct PATransposeTree {
+	struct PATree adj_trans;
 	//struct PAList adj_trans;
 }* PATransposeTree;
 struct FactoryProduct1 {
@@ -386,7 +426,7 @@ struct FactoryCreator
 	struct PATransposeTree transposeTree;
 };
 struct FlyWeight {
-	// PAInt todo;
+	PAValue todo;
 };
 struct Adaptee {
 	struct ArrayList list;
@@ -426,7 +466,7 @@ struct ConcreteBuilder {
 	struct Builder builder;
 };
 struct IteratorConcreteIterator  {
-	PAInt position;
+	PAValue position;
 };
 struct IteratorConcreteAggregate {
 	struct IteratorConcreteIterator iterator;

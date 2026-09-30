@@ -2,7 +2,6 @@
 #ifndef INCLUDE_PA_ELEMENT_H_
 #define INCLUDE_PA_ELEMENT_H_	1
 
-// #include "../types.h"
 #include <defs.h>
 #include <types.h>
 #include <stdlib.h>
@@ -15,21 +14,16 @@
 #include <PA\Size.h>
 #endif
 
-// struct PAElement;
-// DllExport Memory PAElementCreate(size_t size);
-DllExport PAElement PAElementPerformConstruct(PAData, PAElement, PAStatus);
-DllExport static PAObject PAElementPerformCopy(PAObject, PAObject, size_t);
-DllExport int PAElementPerformDelete(PAElement);
-// DllExport int PAElementFinish(Memory);
-DllExport void PAElementVisit(PAElement);
-DllExport PABool PAElementIsVisited(PAElement);
-DllExport void PAElementReset(PAElement);
-DllExport struct PASize PAElementSize();
-// DllExport HRESULT PAElementPerformCopy();
-// DllExport HRESULT PAElementPerformPutStatus(struct PAStatus);
-// DllExport HRESULT PAElementPerformPutData(struct PAData);
-// DllExport HRESULT PAElementPerformPutDestination(struct PADestination);
-// DllExport HRESULT PAElementPerformPutFeature(struct PAFeature);
-// struct PANod;
-//typedef struct PAElement Element;
+DllExport struct PAElement PAElementPerformConstruct();
+DllExport struct PAElement PAElementPerformInit(struct PAElement PA, PAData Data, PAStatus Status);
+DllExport void PAElementVisit(struct PAElement Element);
+DllExport PABool PAElementIsVisited(struct PAElement Element);
+DllExport void PAElementReset(struct PAElement Element);
+DllExport struct PAElement PAElementPerformRuin(struct PAElement PA);
+DllExport struct PAElement PAElementPerformDelete(struct PAElement PA);
+DllExport struct PAElement PAElementPerformCopy(struct PAElement from, struct PAElement to);
+DllExport PAResult PAElementOperatorLess(struct PAElement one, struct PAElement other);
+DllExport PAResult PAElementOperatorEqual(struct PAElement one, struct PAElement other);
+DllExport PAResult PAElementOperatorGreater(struct PAElement one, struct PAElement other);
+DllExport PAResult PAElementOperatorNotEqual(struct PAElement one, struct PAElement other);
 #endif

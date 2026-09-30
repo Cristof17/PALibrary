@@ -5,6 +5,7 @@
 _ArrayListPositionPerformConstruct:     ; @ArrayListPositionPerformConstruct
 	.cfi_startproc
 ; %bb.0:
+<<<<<<< HEAD
 	sub	sp, sp, #32
 	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
 	add	x29, sp, #16
@@ -17,6 +18,16 @@ _ArrayListPositionPerformConstruct:     ; @ArrayListPositionPerformConstruct
 	ldr	x0, [sp, #8]
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
+=======
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	str	x0, [sp]
+	adrp	x8, l___const.ArrayListPositionPerformConstruct.position@PAGE
+	ldr	x8, [x8, l___const.ArrayListPositionPerformConstruct.position@PAGEOFF]
+	str	x8, [sp, #8]
+	ldr	x0, [sp, #8]
+	add	sp, sp, #16
+>>>>>>> 653a9d82ce64dd998a0101f60daf2dc255f625e6
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -31,6 +42,7 @@ _ArrayListPositionPerformInit:          ; @ArrayListPositionPerformInit
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
+<<<<<<< HEAD
 	stur	x0, [x29, #-8]
 	str	x1, [sp, #16]
 	ldur	x0, [x29, #-8]
@@ -39,6 +51,14 @@ _ArrayListPositionPerformInit:          ; @ArrayListPositionPerformInit
 	mov	x2, #8                          ; =0x8
 	mov	x3, #-1                         ; =0xffffffffffffffff
 	bl	___memset_chk
+=======
+	str	x0, [sp, #16]
+	ldr	x0, [sp, #16]
+	bl	_ArrayListPositionPerformConstruct
+	str	x0, [sp, #8]
+	ldr	x8, [sp, #8]
+	stur	x8, [x29, #-8]
+>>>>>>> 653a9d82ce64dd998a0101f60daf2dc255f625e6
 	ldur	x0, [x29, #-8]
 	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
 	add	sp, sp, #48
@@ -56,6 +76,7 @@ _ArrayListPositionPerformCopy:          ; @ArrayListPositionPerformCopy
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
+<<<<<<< HEAD
 	stur	x0, [x29, #-8]
 	str	x1, [sp, #16]
 	ldur	x8, [x29, #-8]
@@ -67,6 +88,20 @@ _ArrayListPositionPerformCopy:          ; @ArrayListPositionPerformCopy
 	mov	x3, #-1                         ; =0xffffffffffffffff
 	bl	___memcpy_chk
 	ldr	x0, [sp, #16]
+=======
+	str	x0, [sp, #16]
+	ldr	x0, [sp, #16]
+	bl	_ArrayListPositionPerformConstruct
+	str	x0, [sp, #8]
+	ldr	x8, [sp, #8]
+	stur	x8, [x29, #-8]
+	ldr	x0, [sp, #16]
+	bl	_ArrayListPositionPerformInit
+	str	x0, [sp]
+	ldr	x8, [sp]
+	stur	x8, [x29, #-8]
+	ldur	x0, [x29, #-8]
+>>>>>>> 653a9d82ce64dd998a0101f60daf2dc255f625e6
 	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
 	add	sp, sp, #48
 	ret
@@ -77,6 +112,7 @@ _ArrayListPositionPerformCopy:          ; @ArrayListPositionPerformCopy
 _ArrayListPositionPerformDelete:        ; @ArrayListPositionPerformDelete
 	.cfi_startproc
 ; %bb.0:
+<<<<<<< HEAD
 	sub	sp, sp, #32
 	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
 	add	x29, sp, #16
@@ -88,6 +124,14 @@ _ArrayListPositionPerformDelete:        ; @ArrayListPositionPerformDelete
 	bl	_free
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
+=======
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	str	x0, [sp, #8]
+	str	wzr, [sp, #4]
+	ldr	w0, [sp, #4]
+	add	sp, sp, #16
+>>>>>>> 653a9d82ce64dd998a0101f60daf2dc255f625e6
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -96,6 +140,7 @@ _ArrayListPositionPerformDelete:        ; @ArrayListPositionPerformDelete
 _ArrayListPositionPerformRuin:          ; @ArrayListPositionPerformRuin
 	.cfi_startproc
 ; %bb.0:
+<<<<<<< HEAD
 	sub	sp, sp, #32
 	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
 	add	x29, sp, #16
@@ -110,4 +155,20 @@ _ArrayListPositionPerformRuin:          ; @ArrayListPositionPerformRuin
 	ret
 	.cfi_endproc
                                         ; -- End function
+=======
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	str	x0, [sp, #8]
+	str	wzr, [sp, #4]
+	ldr	w0, [sp, #4]
+	add	sp, sp, #16
+	ret
+	.cfi_endproc
+                                        ; -- End function
+	.section	__TEXT,__literal8,8byte_literals
+	.p2align	3, 0x0                          ; @__const.ArrayListPositionPerformConstruct.position
+l___const.ArrayListPositionPerformConstruct.position:
+	.quad	1                               ; 0x1
+
+>>>>>>> 653a9d82ce64dd998a0101f60daf2dc255f625e6
 .subsections_via_symbols

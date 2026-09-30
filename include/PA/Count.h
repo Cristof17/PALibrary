@@ -7,23 +7,15 @@
 // #include "../defs.h"
 #include <defs.h>
 #include <types.h>
-#include <stdlib.h>
-// #include <defs.h>
 
 
-// struct PACount;
-//typedef struct PACount Count;
-// DllExport Memory PACountCreate(size_t size);
-DllExport PASize PACountSize();
-DllExport PACount PACountPerformConstruct(int value);
-DllExport static PAMemory PACountPerformAllocate();
-DllExport static PAObject PACountPerformCopy(PAObject, PAObject, size_t);
-DllExport PACount PACountPerformInitialise(PACount,PACount);
-DllExport int PACountPerformDelete(PACount PA);
-// DllExport int PACountFinish(Memory);
-// DllExport struct PACount PACountPerformCopy(struct PACount);
-// void PASize(PA_INT);
-// DllExport HRESULT PACountPerformPrint(struct PACount);
-// DllExport struct PACount PACountPerformPutValue(struct PACount, PAInt);
-// struct 
+DllExport struct PACount PACountPerformConstruct();
+DllExport struct PACount PACountPerformInit(struct PACount Count, PAValue Number);
+DllExport struct PACount PACountPerformCopy(struct PACount from, struct PACount to);
+DllExport struct PACount PACountPerformRuin(struct PACount PA);
+DllExport struct PACount PACountPerformDelete(struct PACount PA);
+DllExport PAResult PACountOperatorLess(struct PACount one, struct PACount other);
+DllExport PAResult PACountOperatorEqual(struct PACount one, struct PACount other);
+DllExport PAResult PACountOperatorGreater(struct PACount one, struct PACount other);
+DllExport PAResult PACountOperatorNotEqual(struct PACount one, struct PACount other);
 #endif

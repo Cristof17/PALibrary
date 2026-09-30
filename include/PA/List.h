@@ -2,41 +2,14 @@
 #ifndef INCLUDE_PA_LIST_H_
 #define INCLUDE_PA_LIST_H_	1
 
-// #include "../defs.h"
 #include <defs.h>
 #include <types.h>
-#include <stdlib.h>
-#include <string.h>
-#ifndef _WIN95
-#include <PA/Memory.h>
-#include <PA/Size.h>
-#elif defined _WIN95
-#include <PA\Memory.h>
-#include <PA\Size.h>
-#endif
-
-// struct PAList;
-//typedef struct PAList List;
-// DllExport struct PAElement GetHead();
-// DllExport Memory PAListCreate(size_t size);
-// DllExport struct PAList* PAListBegin(struct PAList* list, struct PACount M);
-// DllExport struct PAList* PAListBegin(struct PAList* list, struct PACount* N, struct PASeries* adj);
-DllExport PAList PAListPerformConstruct();
-// DllExport struct PAList PAListPerformCopy(struct PAList);
-// DllExport PAResult PAListPerformPutCount(struct PAList, struct PACount);
-// DllExport PAResult PAListPerformPutList(struct PAList);
-DllExport static PAObject PAListPerformCopy(PAObject, PAObject, size_t);
-DllExport int PAListPerformDelete(PAList);
-DllExport struct PASize PAListSize();
-// DllExport int PAListFinish(Memory);
-// DllExport void PAListDispose(void);
-void PAListPrint(struct PAList* List);
-
-// struct PAResult PAList(struct PAElement Head);
-// struct PAResult PAListPrint(struct PAList);
-//struct PAList PAListInit(struct PAList);
-//s
-//struct PAElement PAListGet(INT);
-// struct PAElement PAListArrange(struct PAList);
-//toArrayList();
+DllExport struct PAList PAListPerformConstruct();
+DllExport struct PAList PAListPerformInit(struct PAList PA, PAValue N, struct PASeries adj[]);
+DllExport struct PAList PAListPerformRuin(struct PAList PA);
+DllExport struct PAList PAListPerformDelete(struct PAList PA);
+DllExport struct PAList PAListPerformCopy(struct PAList from, struct PAList to);
+DllExport PAResult PAListOperatorEqual(struct PAList one, struct PAList other);
+DllExport PAResult PAListOperatorNotEqual(struct PAList one, struct PAList other);
+void PAListPerformPrint(struct PAList List);
 #endif

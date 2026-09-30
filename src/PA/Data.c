@@ -10,93 +10,29 @@
 #include <PA\Memory.h>
 #include <PA\Size.h>
 #endif
-//typedef struct PAData PAData;
-//struct PAData {
-//
-//}
-DllExport PAData PADataPerformConstruct()
-{
-    // struct PAData data;
-    // struct PAData* data;
-    PAData data;
-    // PAMemory data;
-    // data = PAMemoryPerformConstruct();
-    // data->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
-    // data->Resource->value = (PANumber) malloc (sizeof(PANumber));//todo replace with conert to size_t
-    // struct PAResource* aux;
-    // aux = (struct PAResource*) malloc (sizeof(struct PAResource));
-    // memcpy(aux->value,Resource,sizeof(PAInt));
-    // memcpy(data->Resource,aux,sizeof(struct PAResource));
-    // free(aux);
-    // dataPointer->Resource->size.valie = sizeof(PAInt);
-    // dataPointer->Resource->size.value = ;
-    // dataPointer->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
-    // dataPointer->Resource->value = ((PANumber) *Resource);
-    // dataPointer->Resource->value = (struct PANumber*) malloc (sizeof(struct PANumber));
 
-    // dataPointer->Resource->value
-    // dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
-    // struct PAResource resource;
-    // data.Resource = PAResourcePerformConstruct();
-    // dataPointer = PADataBegin(dataPointer, data.Resource);
-    // data.Resource = resource;
-    //  = data;
-    // Data.Resource = PAResourcePerformInit(Data.Resource, )
-    // PADataPerformInit(Data,)
-    // Data.Resource = PAResourcePerformConstruct(); 
-    // return dataPointer;
-    // return data;
+DllExport struct PAData PADataPerformConstruct()
+{
+    struct PAData data;
     return data;
 }
-DllExport struct PASize PADataSize()
+DllExport struct PAData PADataPerformInit(struct PAData Data, PAValue Value)
 {
-    size_t standardSize = sizeof(struct PAData);
-
-    struct PASize size = PASizePerformConstruct(standardSize);
-
-    return size;
-}
-DllExport PAData PADataPerformInit(PAData Data)
-{
-    // struct PAData temp;
-    // struct PAData* dataPointer;
-    // struct 
-    // struct PAResource* aux;
-    
-    // memcpy(aux,)
-    // *aux = resource;
-    // dataPointer = (struct PAData*) malloc (sizeof(struct PAData));
-    // dataPointer->Resource = (struct PAResource*) malloc (sizeof(struct PAResource));
-    // dataPointer->Resource->value = (char*) malloc (sizeof(PAInt));
-    // dataPointer->Resource = Data->Resource;
-    // temp.Resource = &Value;
-    // Data->Resource = temp.Resource;
-    // temp.Resource = PAResourcePerformConstruct();
-    // Data = temp;
-    // Data.Resource.value.val = Value.value.val;
-    // Data.Resource.value = Value.value;
-    // return temp;
+    struct PAData temp;
+    // temp = PAResourcePerformConstruct();
+    temp = Data;
+    temp.Resource = Value;
+    Data = temp;
 
     return Data;
-    // return dataPointer;
-    // struct PAData data;
-    // data.Resource = Data.Resource;
-    // struct PAData data;
-    // data.resource = Data.resource;
 }
 DllExport static PAObject PADataPerformCopy(PAObject from, PAObject to, size_t size)
 {
-    // struct PAData temp;
-    PAMemory aux;
-    // aux = (struct PAData) malloc (su)
-    aux = malloc(size);
-    // aux = PADataCreate();
-    memcpy(aux,from,size);
-    memcpy(to,aux,size);
-    // aux->Resource = from->Resource;
-    // to->Resource = aux->Resource;
-    // aux->Resource = NULL;
-    free(aux);
+    struct PAData temp;
+    temp = from;
+    to = temp;
+    // temp.Resource = PAResourcePerformCopy(from.Resource, temp.Resource);
+    // to.Resource = temp.Resource;
     return to;
     // PADataDelete(aux);
     // PADataFinish(aux);
@@ -107,56 +43,36 @@ DllExport static PAObject PADataPerformCopy(PAObject from, PAObject to, size_t s
     // return dataPointer;
     // return temp;
 }
-// struct PAData PADataPerformCopy(struct PAData Data)
-// {
-    // struct PAData copy;
-    // struct PAResource resource = Data.Resource;
-    // copy.Resource = resource;
-//    copy=PADataPerformConstruct(Data.resource);
-//    copy=PADataPerformInit(Data);
-    // return copy;
-    //    copy.resource = Data.resource;
-    // return copy;
-// }
-// struct PAData PADataPerformPutResource(struct PAData Data, struct PAResource Resource)
-// {
-    // struct PAData data;
-    // Data.Resource = Resource;
-    // return Data;
-// }
-DllExport int PADataPerformDelete(PAData PA)
+DllExport PAResult PADataOperatorLess(struct PAData one, struct PAData other)
 {
-    int returnCode;
-    // bzero(PA,sizeof(struct PA));
-    bzero(PA->Resource->value,sizeof(PAInt));
-    bzero(PA->Resource,sizeof(struct PAResource));
-    bzero(PA,sizeof(struct PAData));
-    // PA->Resource = NULL;
-    return PARESULT_SUCCESS;
-    // struct PAData temp;
-    // return temp;
-    // return PARESULT_SUCCESS;
-    // return PA;
-    // PAResult result = (PAInt) PARESULT_SUCCESS;
-    // return PA;
+    PAResult result;
+    result = one.Resource < other.Resource ? PARESULT_LESS_THAN : PARESULT_GREATER_THAN;
+    return result;
 }
-DllExport int PADataPerformRuin(PAMemory PA) 
+DllExport PAResult PADataOperatorEqual(struct PAData one, struct PAData other)
 {
-    // PAInt Empty = NULL;
-    // Resource = Empty;
-    // return Resource;
-    // g
-    int returnCode;
-    returnCode = PAMemoryPerformRuin(PA);
-    // free(PA->Resource->value);
-    // free(PA->Resource);
-    // free(PA);
-    // returnCode = PARESULT_SUCCESS;
-    // free(PA);
-    // free(PA->value);
-    return returnCode;
-    // return PARESULT_SUCCESS;
-    // return Data;
-    // PAResult result = (PAInt) PARESULT_SUCCESS;
-    // return PARESULT_SUCCESS;
+    PAResult result;
+    result = one.Resource == other.Resource ? PARESULT_EQUAL : PARESULT_NOT_EQUAL;
+    return result;
+}
+DllExport PAResult PADataOperatorGreater(struct PAData one, struct PAData other)
+{
+    PAResult result;
+    result = one.Resource > other.Resource ? PARESULT_GREATER_THAN : PARESULT_LESS_THAN;
+    return result;
+}
+DllExport PAResult PADataOperatorNotEqual(struct PAData one, struct PAData other)
+{
+    PAResult result;
+    result = one.Resource != other.Resource ? PARESULT_NOT_EQUAL : PARESULT_EQUAL;
+    return result;
+}
+DllExport struct PAData PADataPerformRuin(struct PAData Data) 
+{
+    return Data;
+}
+DllExport struct PAData PADataPerformDelete(struct PAData PA)
+{
+    PA.Resource = NULL;
+    return PA;
 }
