@@ -2074,13 +2074,6 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           PAResult PAElementOperatorNotEqual(struct PAElement one, struct PAElement other);
 # 10 "./src/PA/Series.c" 2
 # 1 "./include/PA/Memory.h" 1
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 7 "./include/PA/Memory.h" 2
 # 11 "./src/PA/Series.c" 2
 # 23 "./src/PA/Series.c"
           struct PASeries PASeriesPerformConstruct()
