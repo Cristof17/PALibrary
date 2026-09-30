@@ -83,6 +83,7 @@ typedef int ArrayListSize;
 typedef int PANumber;
 typedef int PAData;
 typedef int PAStatus;
+typedef int PAResult;
 #else
 // #define PANumber long long
 typedef int PAData ;
@@ -93,6 +94,7 @@ typedef int PAResult;
 typedef lone PANumber;
 typedef long PAData;
 typedef long PAStatus;
+typedef long PAResult;
 // @define 
 typedef long long ArrayListSize;
 #endif //#64BIT
