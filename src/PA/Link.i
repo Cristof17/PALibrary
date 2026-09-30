@@ -411,7 +411,7 @@ struct Facade {
 };
 # 7 "./include/PA/Link.h" 2
 
-          struct PALink PALinkPerformConstruct();
+          struct PALink PALinkPerformConstruct(struct PAPair pair);
           struct PALink PALinkPerformCopy(struct PALink from, struct PALink to);
           struct PALink PALinkPerformInit(struct PALink PA, struct PAPair Pair);
           struct PALink PALinkPerformRuin(struct PALink PA);
@@ -2081,32 +2081,15 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PALink PALinkPerformConstruct(PAPair p)
+          struct PALink PALinkPerformConstruct(struct PAPair p)
 {
     struct PALink link;
-    link.p = PAPairPerformConstruct();
-    link = PALinkPerformInit(link,link.p);
     return link;
-}
-          PAMemory PALinkPerformAllocate()
-{
-    struct PALink link;
-    link.p = PAPairPerformConstruct();
-    Link = link;
-    return Link;
-}
-          static PAObject PALinkPerformCopy(PAObject from, PAObject to, size_t size)
-{
-    PA.p = PAPairPerformRuin(PA.p);
-    return PA;
 }
           struct PALink PALinkPerformCopy(struct PALink from, struct PALink to)
 {
-    struct PALink temp;
-    temp.p = PAPairPerformCopy(from.p, to.p);
-    return temp;
+    return from;
 }
           struct PALink PALinkPerformDelete(struct PALink PA){
-    PA.p = PAPairPerformDelete(PA.p);
     return PA;
 }

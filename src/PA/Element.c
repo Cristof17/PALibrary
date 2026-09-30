@@ -31,7 +31,7 @@ DllExport void PAElementReset(struct PAElement Element)
     Element.status = FALSE;
     return;
 }
-DllExport static struct PAElement PAElementPerformCopy(PAElement from, PAElement to)
+DllExport static struct PAElement PAElementPerformCopy(struct PAElement from, struct PAElement to)
 {
     struct PAElement temp;
     temp = from;

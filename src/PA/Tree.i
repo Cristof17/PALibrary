@@ -2114,6 +2114,7 @@ void PAListPerformPrint(struct PAList List);
 {
     PAResult result;
     result = ((int)0);
+    return result;
 }
           struct PATransposeTree PATransposeTreeBuildPart()
 {

@@ -15,32 +15,15 @@
 #endif
 
 // DllExport struct PALink* PALinkCreate(struct )
-DllExport PALink PALinkPerformConstruct(PAPair p)
+DllExport struct PALink PALinkPerformConstruct(struct PAPair p)
 {
     struct PALink link;
-    link.p = PAPairPerformConstruct();
-    link = PALinkPerformInit(link,link.p);
     return link;
 }
-DllExport PAMemory PALinkPerformAllocate()
-{
-    struct PALink link;
-    link.p = PAPairPerformConstruct();
-    Link = link;
-    return Link;
-}
-DllExport static PAObject PALinkPerformCopy(PAObject from, PAObject to, size_t size)
-{
-    PA.p = PAPairPerformRuin(PA.p);    
-    return PA;
-}
 DllExport struct PALink PALinkPerformCopy(struct PALink from, struct PALink to)
-{
-    struct PALink temp;
-    temp.p = PAPairPerformCopy(from.p, to.p);
-    return temp;
+{  
+    return from;
 }
 DllExport struct PALink PALinkPerformDelete(struct PALink PA){
-    PA.p = PAPairPerformDelete(PA.p);
     return PA;
 }

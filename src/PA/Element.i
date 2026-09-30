@@ -429,7 +429,7 @@ struct Facade {
     Element.status = 0;
     return;
 }
-          static struct PAElement PAElementPerformCopy(PAElement from, PAElement to)
+          static struct PAElement PAElementPerformCopy(struct PAElement from, struct PAElement to)
 {
     struct PAElement temp;
     temp = from;

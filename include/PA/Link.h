@@ -5,7 +5,7 @@
 #include <defs.h>
 #include <types.h>
 
-DllExport struct PALink PALinkPerformConstruct();
+DllExport struct PALink PALinkPerformConstruct(struct PAPair pair);
 DllExport struct PALink PALinkPerformCopy(struct PALink from, struct PALink to);
 DllExport struct PALink PALinkPerformInit(struct PALink PA, struct PAPair Pair);
 DllExport struct PALink PALinkPerformRuin(struct PALink PA);

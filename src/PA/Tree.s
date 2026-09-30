@@ -53,12 +53,12 @@ _PATreePerformCopy:                     ; @PATreePerformCopy
 _PATreePerformDelete:                   ; @PATreePerformDelete
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
-	str	x0, [sp, #16]
-	str	xzr, [sp, #8]
-	ldr	x0, [sp, #24]
-	add	sp, sp, #32
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	str	x0, [sp, #8]
+	str	xzr, [sp]
+	ldr	x0, [sp]
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function

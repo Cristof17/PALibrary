@@ -31,6 +31,7 @@ DllExport PAResult PATreePerformDelete(struct PATree PA)
 {
     PAResult result;
     result = PARESULT_SUCCESS;
+    return result;
 }
 DllExport struct PATransposeTree PATransposeTreeBuildPart()
 {
