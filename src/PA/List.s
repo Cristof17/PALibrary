@@ -211,12 +211,6 @@ _PAListPerformInit:                     ; @PAListPerformInit
 	str	x8, [sp, #288]
 	mov	x8, #1                          ; =0x1
 	str	x8, [sp, #280]
-	ldur	x8, [x29, #-40]
-	ldr	x9, [sp, #280]
-	mov	x10, #72                        ; =0x48
-	mul	x9, x9, x10
-	ldr	x8, [x8, x9]
-	str	x8, [sp, #272]
 	b	LBB2_1
 LBB2_1:                                 ; =>This Inner Loop Header: Depth=1
 	ldr	x8, [sp, #280]

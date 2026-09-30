@@ -71,7 +71,6 @@ typedef int PAValue;
 typedef int PABool;
 typedef int PAResult;
 typedef int ArrayListSize;
-typedef int PANumber;
 typedef int PAData;
 typedef int PAStatus;
 typedef int PAResult;
@@ -79,7 +78,6 @@ typedef int PAResult;
 // #define PANumber long long
 typedef long PAValue;
 typedef long PABool;
-typedef long PANumber;
 typedef long PAData;
 typedef long PAStatus;
 typedef long PAResult;
@@ -246,7 +244,7 @@ struct PAResource {
 	// struct
 	// PA_INt
 	// PAInt value;
-	PANumber value;
+	struct PANumber value;
 	struct PASize size;
 	// PADDING_1_BYTE(0);
 };

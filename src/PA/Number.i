@@ -57,10 +57,9 @@ struct ArrayList {
 
 
 };
-# 80 "./include/types.h"
+# 79 "./include/types.h"
 typedef long PAValue;
 typedef long PABool;
-typedef long PANumber;
 typedef long PAData;
 typedef long PAStatus;
 typedef long PAResult;
@@ -70,7 +69,7 @@ typedef long long ArrayListSize;
 
 
 struct PANumber;
-# 108 "./include/types.h"
+# 106 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -119,7 +118,7 @@ struct PASeries;
 struct PATree;
 struct PALink;
 struct PAInt;
-# 166 "./include/types.h"
+# 164 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -165,11 +164,11 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 226 "./include/types.h"
+# 224 "./include/types.h"
 struct Input {
  ;
 };
-# 240 "./include/types.h"
+# 238 "./include/types.h"
 struct PASize {
  int digits;
  int value;
@@ -179,7 +178,7 @@ struct PAResource {
 
 
 
- PANumber value;
+ struct PANumber value;
  struct PASize size;
 
 };
@@ -257,7 +256,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 335 "./include/types.h"
+# 333 "./include/types.h"
 struct PAInput {
  struct PACount* n;
  struct PACount* m;
