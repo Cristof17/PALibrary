@@ -3,6 +3,8 @@
 #define INCLUDE_PA_LINK_H_	1
 
 #include <defs.h>
+#include <types.h>
+
 DllExport struct PALink PALinkPerformConstruct();
 DllExport struct PALink PALinkPerformCopy(struct PALink from, struct PALink to);
 DllExport struct PALink PALinkPerformInit(struct PALink PA, struct PAPair Pair);

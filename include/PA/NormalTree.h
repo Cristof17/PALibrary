@@ -3,6 +3,7 @@
 #define PAGRAFNORMAL_H_	1
 
 #include <defs.h>
+#include <types.h>
 DllExport struct PANormalTree PANormalTreePerformConstruct();
 DllExport struct PANormalTree PANormalTreePerformInit(struct PANormalTree PA, struct PATree Tree );
 DllExport struct PANormalTree PANormalTreePerformCopy(struct PANormalTree from, struct PANormalTree to);
