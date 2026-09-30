@@ -24,7 +24,7 @@ DllExport struct PAData PADataPerformInit(struct PAData Data, PAValue Value)
 
     return Data;
 }
-DllExport static PAObject PADataPerformCopy(PAObject from, PAObject to, size_t size)
+DllExport static struct PAData PADataPerformCopy(struct PAData from, struct PAData to)
 {
     struct PAData temp;
     temp = from;
