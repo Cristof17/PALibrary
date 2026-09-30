@@ -1,22 +1,10 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.build_version macos, 15, 0	sdk_version 26, 2
+	.build_version macos, 15, 0	sdk_version 15, 5
 	.globl	_BFSRecordCreate                ; -- Begin function BFSRecordCreate
 	.p2align	2
 _BFSRecordCreate:                       ; @BFSRecordCreate
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
-	add	x29, sp, #16
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	mov	x0, #24                         ; =0x18
-	bl	_malloc
-	str	x0, [sp, #8]
-	ldr	x0, [sp, #8]
-	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
-	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -25,18 +13,11 @@ _BFSRecordCreate:                       ; @BFSRecordCreate
 _BFSRecordFinish:                       ; @BFSRecordFinish
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
-	add	x29, sp, #16
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
 	str	x0, [sp, #8]
-	ldr	x0, [sp, #8]
-	bl	_free
 	mov	w0, #0                          ; =0x0
-	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
-	add	sp, sp, #32
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -71,10 +52,9 @@ _BFSRecordBegin:                        ; @BFSRecordBegin
 ; %bb.0:
 	sub	sp, sp, #32
 	.cfi_def_cfa_offset 32
-	str	x0, [sp, #24]
-	str	x1, [sp, #16]
-	str	x2, [sp, #8]
-	ldr	x0, [sp]
+	str	x2, [sp, #24]
+	str	x0, [sp, #16]
+	str	x1, [sp, #8]
 	add	sp, sp, #32
 	ret
 	.cfi_endproc
@@ -84,13 +64,28 @@ _BFSRecordBegin:                        ; @BFSRecordBegin
 _BFSRecordCopy:                         ; @BFSRecordCopy
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
-	str	x0, [sp, #24]
-	str	x1, [sp, #16]
-	ldr	x0, [sp, #16]
-	add	sp, sp, #32
+	sub	sp, sp, #368
+	stp	x28, x27, [sp, #336]            ; 16-byte Folded Spill
+	stp	x29, x30, [sp, #352]            ; 16-byte Folded Spill
+	add	x29, sp, #352
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	.cfi_offset w27, -24
+	.cfi_offset w28, -32
+	str	x8, [sp, #8]                    ; 8-byte Folded Spill
+	mov	x8, x0
+	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
+	stur	x8, [x29, #-24]
+	mov	x8, x1
+	stur	x8, [x29, #-32]
+	mov	x2, #304                        ; =0x130
+	bl	_memcpy
+	ldp	x29, x30, [sp, #352]            ; 16-byte Folded Reload
+	ldp	x28, x27, [sp, #336]            ; 16-byte Folded Reload
+	add	sp, sp, #368
 	ret
 	.cfi_endproc
                                         ; -- End function
+	.comm	_PAList,8,3                     ; @PAList
 .subsections_via_symbols

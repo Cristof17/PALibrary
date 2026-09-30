@@ -425,13 +425,13 @@ struct Facade {
 
 
 
-          struct BFSRecord* BFSRecordCreate();
-          struct BFSRecord* BFSRecordBegin(struct BFSRecord*, struct PAList* d, struct PACount* n);
-          struct BFSRecord* BFSRecordCopy(struct BFSRecord* from, struct BFSRecord* to);
+          struct BFSRecord BFSRecordCreate();
+          struct BFSRecord BFSRecordBegin(struct BFSRecord, struct PAList d, struct PACount n);
+          struct BFSRecord BFSRecordCopy(struct BFSRecord from, struct BFSRecord to);
 
-          struct BFSRecord BFSRecordDelete(struct BFSRecord*);
-          int BFSRecordFinish(struct BFSRecord*);
-          void BFSRecordPrint(struct BFSRecord*);
+          struct BFSRecord BFSRecordDelete(struct BFSRecord);
+          int BFSRecordFinish(struct BFSRecord);
+          void BFSRecordPrint(struct BFSRecord);
 # 7 "./src/PA/Output.c" 2
 
 

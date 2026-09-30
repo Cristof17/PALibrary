@@ -409,6 +409,13 @@ struct Facade {
  struct FactoryCreator factory;
 };
 # 9 "./include/Algorithm.h" 2
+# 1 "./include/Input.h" 1
+
+
+
+
+
+
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 1 3 4
@@ -1833,15 +1840,6 @@ unsigned long long
 
 extern char * suboptarg;
 # 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 2 3 4
-# 10 "./include/Algorithm.h" 2
-# 1 "./include/Input.h" 1
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 8 "./include/Input.h" 2
 
 
@@ -1854,11 +1852,11 @@ extern char * suboptarg;
           int InputFinish(struct Input*);
 
           void InputDispose();
-# 11 "./include/Algorithm.h" 2
+# 10 "./include/Algorithm.h" 2
 
 
           struct Algorithm AlgorithmCreate();
-          int AlgorithmFinish(struct Algorithm);
+          struct Algorithm AlgorithmFinish(struct Algorithm);
           struct Algorithm AlgorithmDelete(struct Algorithm);
           struct Algorithm AlgorithmCopy(struct Algorithm from, struct Algorithm to);
           struct Output AlgorithmPerformRun(struct Input);
@@ -1869,7 +1867,7 @@ extern char * suboptarg;
     struct Algorithm algorithm;
     return algorithm;
 }
-          int AlgorithmFinish(struct Algorithm PA)
+          struct Algorithm AlgorithmFinish(struct Algorithm PA)
 {
     return PA;
 

@@ -15,7 +15,7 @@ DllExport struct Algorithm AlgorithmCreate()
     struct Algorithm algorithm;
     return algorithm;
 }
-DllExport int AlgorithmFinish(struct Algorithm PA)
+DllExport struct Algorithm AlgorithmFinish(struct Algorithm PA)
 {
     return PA;
 
