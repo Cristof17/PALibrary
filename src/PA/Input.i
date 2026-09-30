@@ -11,16 +11,22 @@
 
 
 
+# 1 "./include/types.h" 1
 
-# 1 "./include/PA/Input.h" 1
 
 
 
 
 # 1 "./include/defs.h" 1
-# 6 "./include/PA/Input.h" 2
-# 1 "./include/types.h" 1
-# 15 "./include/types.h"
+# 7 "./include/types.h" 2
+
+
+
+
+
+
+
+
 typedef long ArrayListSize;
 
 
@@ -59,19 +65,23 @@ struct ArrayList {
 
 
 };
-# 85 "./include/types.h"
+# 89 "./include/types.h"
 typedef int PAData ;
 typedef int PAStatus;
 typedef long PAValue;
 typedef int PABool;
 typedef int PAResult;
+typedef lone PANumber;
+typedef long PAData;
+typedef long PAStatus;
+typedef long PAResult;
 
 typedef long long ArrayListSize;
 
 
 
 struct PANumber;
-# 112 "./include/types.h"
+# 120 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -121,7 +131,7 @@ struct PASeries;
 struct PATree;
 struct PALink;
 struct PAInt;
-# 171 "./include/types.h"
+# 179 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -167,11 +177,16 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 231 "./include/types.h"
+# 239 "./include/types.h"
 struct Input {
  ;
 };
-# 245 "./include/types.h"
+# 253 "./include/types.h"
+struct PASize {
+ int digits;
+ int value;
+ int size;
+};
 struct PAResource {
 
 
@@ -256,7 +271,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 337 "./include/types.h"
+# 350 "./include/types.h"
 typedef struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -419,7 +434,16 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 7 "./include/PA/Input.h" 2
+# 8 "./src/PA/Input.c" 2
+
+
+# 1 "./include/PA/Input.h" 1
+
+
+
+
+
+
 
           struct PAInput PAInputPerformConstruct();
 
@@ -429,7 +453,7 @@ struct Facade {
           struct PAInput PAInputPerformDelete(struct PAInput PA);
           PAResult PAInputOperatorEqual(struct PAInput one, struct PAInput other);
           PAResult PAInputOperatorNotEqual(struct PAInput one, struct PAInput other);
-# 9 "./src/PA/Input.c" 2
+# 11 "./src/PA/Input.c" 2
 # 1 "./include/PA/Count.h" 1
 # 12 "./include/PA/Count.h"
           struct PACount PACountPerformConstruct();
@@ -441,7 +465,7 @@ struct Facade {
           PAResult PACountOperatorEqual(struct PACount one, struct PACount other);
           PAResult PACountOperatorGreater(struct PACount one, struct PACount other);
           PAResult PACountOperatorNotEqual(struct PACount one, struct PACount other);
-# 10 "./src/PA/Input.c" 2
+# 12 "./src/PA/Input.c" 2
 # 1 "./include/PA/Element.h" 1
 
 
@@ -2099,7 +2123,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           PAResult PAElementOperatorEqual(struct PAElement one, struct PAElement other);
           PAResult PAElementOperatorGreater(struct PAElement one, struct PAElement other);
           PAResult PAElementOperatorNotEqual(struct PAElement one, struct PAElement other);
-# 11 "./src/PA/Input.c" 2
+# 13 "./src/PA/Input.c" 2
 # 1 "./include/PA/Memory.h" 1
 
 
@@ -2118,35 +2142,25 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           PAMemory PAMemoryPerformConstruct(PASize size);
           int PAMemoryPerformRuin(PAMemory);
-# 12 "./src/PA/Input.c" 2
+# 14 "./src/PA/Input.c" 2
 
 
 
 
 
 
-          PAInput PAInputPerformConstruct()
+          struct PAInput PAInputPerformConstruct()
 {
  struct PAInput input;
- input.n = PACountPerformConstruct();
- input.m = PACountPerformConstruct();
- input.source = PAElementPerformConstruct();
- input = PAInputPerformInit(input,input.n,input.m,input.source);
  return input;
 }
           struct PAInput PAInputPerformInit(struct PAInput Input, struct PACount Value, struct PACount Value2, struct PAElement Value3)
 {
  struct PAInput temp;
- temp.n = PACountPerformConstruct();
- temp.m = PACountPerformConstruct();
- temp.source = PAElementPerformConstruct();
  Input = temp;
  return Input;
 }
           struct PAInput PAInputPerformRuin(struct PAInput PA) {
- PA.n = PACountPerformRuin(PA.n);
- PA.m = PACountPerformRuin(PA.m);
- PA.source = PAElementPerformRuin(PA.source);
  return PA;
 }
           struct PAInput PAInputPerformDelete(struct PAInput Input)
@@ -2154,7 +2168,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
  return Input;
 }
 
-          int PAInputPerformRuin(PAMemory PA) {
+          int PAInputPerformRuin(struct PAInput PA) {
 
 
 
@@ -2162,16 +2176,12 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
  int returnCode;
  returnCode = PAMemoryPerformRuin(PA);
-# 64 "./src/PA/Input.c"
+# 56 "./src/PA/Input.c"
  return returnCode;
 }
 
           struct PASize PAInputSize()
 {
- size_t standardSize = sizeof(struct PASize);
-
  struct PASize size;
- size = PASizePerformConstruct(standardSize);
-
  return size;
 }

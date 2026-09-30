@@ -16,22 +16,6 @@
 
 # 1 "./include/defs.h" 1
 # 6 "./include/PA/NormalTree.h" 2
- struct PANormalTree PANormalTreePerformConstruct();
-          struct PANormalTree PANormalTreePerformInit(struct PANormalTree PA, struct PATree Tree );
-          struct PANormalTree PANormalTreePerformCopy(struct PANormalTree from, struct PANormalTree to);
-          struct PANormalTree PANormalTreePerformRuin(struct PANormalTree PA);
-          struct PANormalTree PANormalTreePerformDelete(struct PANormalTree PA);
-          struct PANormalTree PAGrafNormalBuildPart();
-          PAResult PANormalTreeOperatorEqual(struct PANormalTree one, struct PANormalTree other);
-          PAResult PANormalTreeOperatorNotEqual(struct PANormalTree one, struct PANormalTree other);
-          int PAGrafNormalGetResult();
-# 6 "./src/PA/NormalTree.c" 2
-# 1 "./include/PA/Tree.h" 1
-
-
-
-
-
 # 1 "./include/types.h" 1
 # 15 "./include/types.h"
 typedef long ArrayListSize;
@@ -72,19 +56,23 @@ struct ArrayList {
 
 
 };
-# 85 "./include/types.h"
+# 89 "./include/types.h"
 typedef int PAData ;
 typedef int PAStatus;
 typedef long PAValue;
 typedef int PABool;
 typedef int PAResult;
+typedef lone PANumber;
+typedef long PAData;
+typedef long PAStatus;
+typedef long PAResult;
 
 typedef long long ArrayListSize;
 
 
 
 struct PANumber;
-# 112 "./include/types.h"
+# 120 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -134,7 +122,7 @@ struct PASeries;
 struct PATree;
 struct PALink;
 struct PAInt;
-# 171 "./include/types.h"
+# 179 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -180,11 +168,16 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 231 "./include/types.h"
+# 239 "./include/types.h"
 struct Input {
  ;
 };
-# 245 "./include/types.h"
+# 253 "./include/types.h"
+struct PASize {
+ int digits;
+ int value;
+ int size;
+};
 struct PAResource {
 
 
@@ -269,7 +262,7 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 337 "./include/types.h"
+# 350 "./include/types.h"
 typedef struct PAInput {
  struct PACount* n;
  struct PACount* m;
@@ -432,7 +425,24 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 7 "./include/PA/Tree.h" 2
+# 7 "./include/PA/NormalTree.h" 2
+ struct PANormalTree PANormalTreePerformConstruct();
+          struct PANormalTree PANormalTreePerformInit(struct PANormalTree PA, struct PATree Tree );
+          struct PANormalTree PANormalTreePerformCopy(struct PANormalTree from, struct PANormalTree to);
+          struct PANormalTree PANormalTreePerformRuin(struct PANormalTree PA);
+          struct PANormalTree PANormalTreePerformDelete(struct PANormalTree PA);
+          struct PANormalTree PAGrafNormalBuildPart();
+          PAResult PANormalTreeOperatorEqual(struct PANormalTree one, struct PANormalTree other);
+          PAResult PANormalTreeOperatorNotEqual(struct PANormalTree one, struct PANormalTree other);
+          int PAGrafNormalGetResult();
+# 6 "./src/PA/NormalTree.c" 2
+# 1 "./include/PA/Tree.h" 1
+
+
+
+
+
+
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 1 3 4
