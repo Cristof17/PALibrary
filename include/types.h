@@ -80,6 +80,9 @@ typedef int PAValue;
 typedef int PABool;
 typedef int PAResult;
 typedef int ArrayListSize;
+typedef int PANumber;
+typedef int PAData;
+typedef int PAStatus;
 #else
 // #define PANumber long long
 typedef int PAData ;
@@ -87,6 +90,9 @@ typedef int PAStatus;
 typedef long PAValue;
 typedef int PABool;
 typedef int PAResult;
+typedef lone PANumber;
+typedef long PAData;
+typedef long PAStatus;
 // @define 
 typedef long long ArrayListSize;
 #endif //#64BIT
@@ -242,6 +248,11 @@ struct Input {
 // 	struct ArrayListPosition place;
 // 	int objects[SIZE];
 // };
+struct PASize {
+	int digits;
+	int value;
+	int size;
+};
 struct PAResource {
 	// struct
 	// PA_INt
