@@ -10,29 +10,24 @@
 // #include <PA\Result.h>
 #endif
 
-DllExport struct Algorithm* AlgorithmCreate()
+DllExport struct Algorithm AlgorithmCreate()
 {
-    struct Algorithm* algorithmPointer;
-    algorithmPointer = (struct Algorithm*) malloc (sizeof(struct Algorithm*));
-    // algorithmPointer->input = InputCreate();
-    return algorithmPointer;
+    struct Algorithm algorithm;
+    return algorithm;
 }
-DllExport int AlgorithmFinish(struct Algorithm* PA)
+DllExport int AlgorithmFinish(struct Algorithm PA)
 {
-    int returnCode;
-    returnCode = PARESULT_SUCCESS;
-    return returnCode;
+    return PA;
+
 }
-DllExport struct Algorithm AlgorithmDelete(struct Algorithm* PA)
-{
-    struct Algorithm temp;
-    return temp;
+DllExport struct Algorithm AlgorithmDelete(struct Algorithm PA)
+{  
+    return PA;
 }
-DllExport struct Algorithm AlgorithmCopy(struct Algorithm* from, struct Algorithm* to)
-{
-    struct Algorithm temp;
+DllExport struct Algorithm AlgorithmCopy(struct Algorithm from, struct Algorithm to)
+{ 
     // return *to;
-    return temp;
+    return to;
 }
 // #include "Input.h"
 //struct Output run(struct Input input) {

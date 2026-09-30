@@ -160,6 +160,9 @@ struct Facade;
 struct Input {
  ;
 };
+struct Algorithm {
+ struct Input input;
+};
 # 238 "./include/types.h"
 struct PASize {
  int digits;
@@ -2038,9 +2041,9 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           struct PASeries PASeriesPerformConstruct();
           struct PASeries PASeriesPerformInit(struct PASeries PA, struct PACount Count, struct PAElement adj[]);
-          struct PASeries PASeriesPerformDelete(struct PASeries PA);
+          PAResult PASeriesPerformDelete(struct PASeries PA);
           struct PASeries PASeriesPerformCopy(struct PASeries from, struct PASeries to);
-          struct PASeries PASeriesPerformRuin(struct PASeries PA);
+          PAResult PASeriesPerformRuin(struct PASeries PA);
           struct PAResource PASeriesGet(struct PAData Data);
           PAResult PASeriesOperatorEqual(struct PASeries one, struct PASeries other);
           PAResult PASeriesOperatorNotEqual(struct PASeries one, struct PASeries other);
@@ -2097,9 +2100,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
         return result;
     }
 
-              struct PASeries PASeriesPerformRuin(struct PASeries PA)
+              PAResult PASeriesPerformRuin(struct PASeries PA)
     {
-        return PA;
+        PAResult result;
+        result = ((int)0);
+        return result;
     }
 
 

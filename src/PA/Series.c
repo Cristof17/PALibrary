@@ -41,9 +41,11 @@ DllExport struct PASeries PASeriesPerformInit(struct PASeries Series,
         return result;
     }
 
-    DllExport struct PASeries PASeriesPerformRuin(struct PASeries PA)
+    DllExport PAResult PASeriesPerformRuin(struct PASeries PA)
     {
-        return PA;
+        PAResult result;
+        result = PARESULT_SUCCESS;
+        return result;
     }
 
 DllExport

@@ -870,7 +870,7 @@ PA/Link.s: PA/Link.i
 # 	-$(CC) -S $< -o $@
 PA/Element.s: PA/Element.i
 	$(CC) -S src/$< -o src/$@
-PA/Count.s: PA/Count.i PA/Size.i
+PA/Count.s: PA/Count.i
 	$(CC) -S src/$< -o src/$@
 PA/Pair.s: PA/Pair.i
 	$(CC) -S src/$< -o src/$@
@@ -909,8 +909,6 @@ PA/Destination.s: PA/Destination.i
 ArrayList/ArrayList.s: ArrayList/ArrayList.i
 	$(CC) -S src/$< -o src/$@
 ArrayList/ArrayListPosition.s: ArrayList/ArrayListPosition.i
-	$(CC) -S src/$< -o src/$@
-PA/Size.s: PA/Size.i
 	$(CC) -S src/$< -o src/$@
 PA/Memory.s: PA/Memory.i
 	$(CC) -S src/$< -o src/$@
@@ -1135,17 +1133,6 @@ endif
 # 	-$(AS) $(ASFLAGS) $< -o $@
 # endif
 
-
-PA/Size.o: PA/Size.s
-ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) src/$< -o lib/$@
-endif
-ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) src/$< -o lib/$@
-endif
-ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) src/$< -o lib/$@
-endif
 
 PA/Element.o: PA/Element.s
 ifeq ($(host-type),arm64)

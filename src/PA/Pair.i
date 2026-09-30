@@ -162,6 +162,9 @@ struct Facade;
 struct Input {
  ;
 };
+struct Algorithm {
+ struct Input input;
+};
 # 238 "./include/types.h"
 struct PASize {
  int digits;
@@ -2038,7 +2041,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/memory.h" 2 3 4
 # 10 "./include/PA/Pair.h" 2
 
-          struct PAPair PAPairPerformConstruct();
+          struct PAPair PAPairPerformConstruct(struct PAElement, struct PAElement);
           struct PAPair PAPairPerformInit(struct PAPair PA, struct PAElement Element1, struct PAElement Element2);
           struct PAPair PAPairPerformCopy(struct PAPair from, struct PAPair to);
           struct PAPair PAPairPerformRuin(struct PAPair PA);

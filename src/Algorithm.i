@@ -161,6 +161,9 @@ struct Facade;
 struct Input {
  ;
 };
+struct Algorithm {
+ struct Input input;
+};
 # 238 "./include/types.h"
 struct PASize {
  int digits;
@@ -1854,34 +1857,29 @@ extern char * suboptarg;
 # 11 "./include/Algorithm.h" 2
 
 
-          struct Algorithm* AlgorithmCreate();
-          int AlgorithmFinish(struct Algorithm*);
-          struct Algorithm AlgorithmDelete(struct Algorithm*);
-          struct Algorithm AlgorithmCopy(struct Algorithm* from, struct Algorithm* to);
+          struct Algorithm AlgorithmCreate();
+          int AlgorithmFinish(struct Algorithm);
+          struct Algorithm AlgorithmDelete(struct Algorithm);
+          struct Algorithm AlgorithmCopy(struct Algorithm from, struct Algorithm to);
           struct Output AlgorithmPerformRun(struct Input);
 # 4 "./src/Algorithm.c" 2
 # 13 "./src/Algorithm.c"
-          struct Algorithm* AlgorithmCreate()
+          struct Algorithm AlgorithmCreate()
 {
-    struct Algorithm* algorithmPointer;
-    algorithmPointer = (struct Algorithm*) malloc (sizeof(struct Algorithm*));
+    struct Algorithm algorithm;
+    return algorithm;
+}
+          int AlgorithmFinish(struct Algorithm PA)
+{
+    return PA;
 
-    return algorithmPointer;
 }
-          int AlgorithmFinish(struct Algorithm* PA)
+          struct Algorithm AlgorithmDelete(struct Algorithm PA)
 {
-    int returnCode;
-    returnCode = ((int)0);
-    return returnCode;
+    return PA;
 }
-          struct Algorithm AlgorithmDelete(struct Algorithm* PA)
+          struct Algorithm AlgorithmCopy(struct Algorithm from, struct Algorithm to)
 {
-    struct Algorithm temp;
-    return temp;
-}
-          struct Algorithm AlgorithmCopy(struct Algorithm* from, struct Algorithm* to)
-{
-    struct Algorithm temp;
 
-    return temp;
+    return to;
 }

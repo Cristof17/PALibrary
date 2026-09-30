@@ -164,6 +164,9 @@ struct Facade;
 struct Input {
  ;
 };
+struct Algorithm {
+ struct Input input;
+};
 # 238 "./include/types.h"
 struct PASize {
  int digits;
@@ -2036,14 +2039,13 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 9 "./include/PA/TransposeTree.h" 2
 
 
-          struct PATransposeTree PATransposeTreePerformConstruct();
+          struct PATransposeTree PATransposeTreePerformConstruct(struct PATree tree);
           struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree PA, struct PATree Tree);
           struct PATransposeTree PATransposeTreePerformCopy(struct PATransposeTree from, struct PATransposeTree to);
-          struct PATransposeTree PATransposeTreeRuin(struct PATransposeTree PA);
-          struct PATransposeTree PATransposeTreeDelete(struct PATransposeTree PA);
+          PAResult PATransposeTreeRuin(struct PATransposeTree PA);
+          PAResult PATransposeTreeDelete(struct PATransposeTree PA);
           PAResult PATransposeTreeOperatorEqual(struct PATransposeTree one, struct PATransposeTree other);
           PAResult PATransposeTreeOperatorNotEqual(struct PATransposeTree one, struct PATransposeTree other);
-          PAResult PATransposeTreeGetResult();
           int PATransposeTreeGetResult();
 # 9 "./src/PA/TransposeTree.c" 2
 # 1 "./include/PA/Tree.h" 1
@@ -2078,13 +2080,13 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          struct PATransposeTree PATransposeTreePerformConstruct(PATree rtree)
+          struct PATransposeTree PATransposeTreePerformConstruct(struct PATree rtree)
 {
     struct PATransposeTree transposeTree;
     return transposeTree;
 }
 
-          struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree TransposeTree, PATree Value)
+          struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree TransposeTree, struct PATree Value)
 {
     struct PATransposeTree tree;
     return TransposeTree;
@@ -2095,7 +2097,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     struct PATransposeTree copy;
     return copy;
 }
-          struct PATransposeTree PATransposeTreeRuin(struct PATransposeTree PA)
+          PAResult PATransposeTreeRuin(struct PATransposeTree PA)
 {
 
 
@@ -2104,9 +2106,9 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-    return PA;
 
 
+    return returnCode;
 
 }
           PAResult PATransposeTreePerformRuin(struct PATransposeTree PA)
@@ -2119,7 +2121,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
     return returnCode;
 }
-          PAResult PATransposeTreeGetResult()
+          int PATransposeTreeGetResult()
 {
     PAResult result;
     return result;

@@ -161,6 +161,9 @@ struct Facade;
 struct Input {
  ;
 };
+struct Algorithm {
+ struct Input input;
+};
 # 238 "./include/types.h"
 struct PASize {
  int digits;
@@ -406,11 +409,11 @@ struct Facade {
  struct FactoryCreator factory;
 };
 # 7 "./include/PA/NormalTree.h" 2
- struct PANormalTree PANormalTreePerformConstruct();
+ struct PANormalTree PANormalTreePerformConstruct(struct PATree tree);
           struct PANormalTree PANormalTreePerformInit(struct PANormalTree PA, struct PATree Tree );
           struct PANormalTree PANormalTreePerformCopy(struct PANormalTree from, struct PANormalTree to);
-          struct PANormalTree PANormalTreePerformRuin(struct PANormalTree PA);
-          struct PANormalTree PANormalTreePerformDelete(struct PANormalTree PA);
+          PAResult PANormalTreePerformRuin(struct PANormalTree PA);
+          PAResult PANormalTreePerformDelete(struct PANormalTree PA);
           struct PANormalTree PAGrafNormalBuildPart();
           PAResult PANormalTreeOperatorEqual(struct PANormalTree one, struct PANormalTree other);
           PAResult PANormalTreeOperatorNotEqual(struct PANormalTree one, struct PANormalTree other);
@@ -2073,12 +2076,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     struct PANormalTree normalTree;
     return normalTree;
 }
-          struct PANormalTree PANormalTreePerformRuin(struct PANormalTree PA)
-{
-    struct PANormalTree Empty;
-    return PA;
-}
-          PAResult PANormalTreePerformDelete(struct PANormalTree* PA)
+          PAResult PANormalTreePerformDelete(struct PANormalTree PA)
 {
     PAResult result;
     result = ((int)0);

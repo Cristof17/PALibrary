@@ -77,11 +77,6 @@ DllExport struct PAList PAListPerformRuin(struct PAList PA)
     PAValue y;
     x = FIRST;
     y = PA.n;
-    while (x < y)
-    {
-        PA.neigh[x] = PASeriesPerformRuin(PA.neigh[x]);
-        x ++;
-    }
     return PA;
 }
 void Dispose() 
@@ -96,11 +91,6 @@ DllExport struct PAList PAListPerformDelete(struct PAList PA)
     PAValue y;
     y = n;
     x = FIRST;
-    while (x < y)
-    {
-        PA.neigh[x] = PASeriesPerformDelete(PA.neigh[x]);
-        x++;
-    }
     return PA;
 }
 void PAListPerformPrint(struct PAList List)

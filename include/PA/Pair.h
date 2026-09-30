@@ -8,7 +8,7 @@
 #include <string.h>
 #include <memory.h>
 
-DllExport struct PAPair PAPairPerformConstruct();
+DllExport struct PAPair PAPairPerformConstruct(struct PAElement, struct PAElement);
 DllExport struct PAPair PAPairPerformInit(struct PAPair PA, struct PAElement Element1, struct PAElement Element2);
 DllExport struct PAPair PAPairPerformCopy(struct PAPair from, struct PAPair to);
 DllExport struct PAPair PAPairPerformRuin(struct PAPair PA);

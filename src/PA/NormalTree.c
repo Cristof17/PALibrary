@@ -15,12 +15,7 @@ DllExport struct PANormalTree PANormalTreePerformConstruct(struct PATree tree)
     struct PANormalTree normalTree;
     return normalTree;
 }
-DllExport struct PANormalTree PANormalTreePerformRuin(struct PANormalTree PA)
-{
-    struct PANormalTree Empty;
-    return PA;
-}
-DllExport PAResult PANormalTreePerformDelete(struct PANormalTree* PA)
+DllExport PAResult PANormalTreePerformDelete(struct PANormalTree PA)
 {
     PAResult result;
     result = PARESULT_SUCCESS;
