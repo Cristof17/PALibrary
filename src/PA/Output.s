@@ -13,27 +13,25 @@ _PAOutputPerformConstruct:              ; @PAOutputPerformConstruct
 _PAOutputPerformInit:                   ; @PAOutputPerformInit
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #64
-	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
-	add	x29, sp, #48
+	sub	sp, sp, #48
+	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
+	add	x29, sp, #32
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	str	x8, [sp, #8]                    ; 8-byte Folded Spill
-	str	x0, [sp, #16]                   ; 8-byte Folded Spill
-	mov	x8, x0
-	stur	x8, [x29, #-8]
+	str	x8, [sp]                        ; 8-byte Folded Spill
+	mov	x2, x0
+	ldr	x0, [sp]                        ; 8-byte Folded Reload
+	str	x2, [sp, #8]                    ; 8-byte Folded Spill
 	mov	x8, x1
-	stur	x8, [x29, #-16]
+	ldr	x1, [sp, #8]                    ; 8-byte Folded Reload
+	mov	x9, x1
+	stur	x9, [x29, #-8]
+	str	x8, [sp, #16]
 	mov	x2, #304                        ; =0x130
-	str	x2, [sp, #24]                   ; 8-byte Folded Spill
 	bl	_memcpy
-	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
-	ldr	x1, [sp, #16]                   ; 8-byte Folded Reload
-	ldr	x2, [sp, #24]                   ; 8-byte Folded Reload
-	bl	_memcpy
-	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
-	add	sp, sp, #64
+	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function

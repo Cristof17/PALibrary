@@ -4,11 +4,9 @@
 #ifndef _WIN95
 #include <PA/Output.h>
 #include <BFS/Record.h>
-#include <PA/Memory.h>
 #elif defined _WIN95
 #include <PA\Output.h>
 #include <BFS\Record.h>
-#include <PA\Memory.h>
 #endif
 
 DllExport struct PAOutput PAOutputPerformConstruct()
@@ -18,7 +16,6 @@ DllExport struct PAOutput PAOutputPerformConstruct()
 }
 DllExport struct PAOutput PAOutputPerformInit(struct PAOutput Output, struct BFSRecord Value)
 {
-    Output.result = Value;
     return Output;
 }
 DllExport PAResult PAOutputPerformDelete(struct PAOutput Output)

@@ -20,128 +20,29 @@
 *  Created on: 16 nov. 2025
 *      Author: AdministratorUser
 */
-DllExport PASeries PASeriesPerformConstruct() 
+DllExport struct PASeries PASeriesPerformConstruct() 
 {
     struct PASeries series;
-    series.m = PACountPerformConstruct();
-    struct PANumber x;
-    struct PANumber y;
-    x.val = FIRST;
-    y.val = series.m.number;
-    while (x.val < y.val)
-    {
-        series.adj[x.val] = PAElementPerformInit(series.adj[x.val], series.adj[x.val].index, series.adj[x.val].status);
-        x.val++;
-    }
     return series;
 }
-DllExport static PAObject PASeriesCopy(PAObject from, PAObject to, size_t size)
+DllExport struct PASeries PASeriesCopy(struct PASeries from, struct PASeries to)
 {
-    struct PACount x;
-    struct PACount y;
-    struct PASeries temp;
-    temp = PASeriesPerformConstruct();
-    temp.m = PACountPerformCopy(from.m, temp.m);
-    x.number = temp.m.number;
-    if (temp.m.number < to.m.number)
-    {
-        x.number = temp.m.number;
-    }
-    else if (temp.m.number > to.m.number)
-    {
-        x.number= to.m.number;
-    }
-    y.number = FIRST;
-    while (y.number <= x.number)
-    {
-        struct PAElement aux;
-        PAElementPerformCopy(from.adj[y.number],aux);
-        PAElementPerformCopy(aux,temp.adj[y.number]);
-        y.number++;
-    }
-    y.number = FIRST;
-    while (y.number <= x.number)
-    {
-        struct PAElement aux;
-        PAElementPerformCopy(temp.adj[y.number],aux);
-        PAElementPerformCopy(aux, to.adj[y.number]);
-        y.number++;
-    }
-    to.m = PACountPerformCopy(temp.m, to.m);
     return to;
-    // temp = PASeriesPerformConstruct();
-    // x = PANumber
-    // temp.m = PACountPerformCopy(from.m, temp.m);
-    // x.number.val = temp.m.number.val;
-    // if (temp.m.number.val < to.m.number.val)
-    {
-        // x.number.val = temp.m.number.val;
-    }
-    // else if (temp.m.number.val > to.m.number.val)
-    {
-        // x.number.val = to.m.number.val;
-    }
-    // y.number.val = FIRST;
-    // while (y.number.val <= x.number.val)
-    {
-        // struct PAElement aux;
-        // PAElementPerformCopy(from.adj[y.number.val],aux);
-        // PAElementPerformCopy(aux,temp.adj[y.number.val]);
-        // y.number.val++;
-    }
-    // y.number.val = FIRST;
-    // while (y.number.val <= x.number.val)
-    {
-        // struct PAElement aux;
-        // PAElementPerformCopy(temp.adj[y.number.val],aux);
-        // PAElementPerformCopy(aux, to.adj[y.number.val]);
-        // y.number.val++;
-    }
-    // to.m = PACountPerformCopy(temp.m, to.m);
-    // return temp;
-    // return to;
 }
 DllExport struct PASeries PASeriesPerformInit(struct PASeries Series,
     struct PACount Value, struct PAElement Value2[])
+{
+    return Series;
+}
+    DllExport PAResult PASeriesPerformDelete(struct PASeries PA)
     {
-        struct PASeries series;
-        series.m = Value;
-        struct PANumber x;
-        struct PANumber y;
-        x.val = FIRST;
-        y.val = Value.number;
-        while (x.val <= y.val)
-        {
-            series.adj[x.val] = PAElementPerformInit(series.adj[x.val],series.adj[x.val].index, series.adj[x.val].status);
-            x.val++;
-        }
-        return series;
-    }
-    DllExport int PASeriesPerformDelete(PASeries PA)
-    {
-        struct PANumber x;
-        struct PANumber y;
-        x.val = PA.m.number;
-        y.val = FIRST;
-        while (y.val <= x.val)
-        {
-            PA.adj[y.val] = PAElementPerformDelete(PA.adj[y.val]);
-            y.val++;
-        }
-        return PA;
+        PAResult result;
+        result = PARESULT_SUCCESS;
+        return result;
     }
 
     DllExport struct PASeries PASeriesPerformRuin(struct PASeries PA)
     {
-        struct PACount x;
-        struct PACount y;
-        x.number = PA.m.number;
-        y.number = FIRST;
-        while (y.number <= x.number)
-        {
-            PA.adj[y.number] = PAElementPerformRuin(PA.adj[y.number]);
-            y.number++;
-        }
         return PA;
     }
 

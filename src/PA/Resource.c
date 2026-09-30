@@ -10,27 +10,22 @@
 DllExport struct PAResource PAResourcePerformConstruct()
 {
     struct PAResource resource;
-    resource.value = PANumberPerformConstruct();
-    resource = PAResourcePerformInit(resource,resource.value);
     return resource;
 }
 DllExport struct PAResource PAResourcePerformInit(struct PAResource Resource, struct PANumber Value)
 {
     struct PAResource resource;
-    resource.value = PANumberPerformConstruct();
     Resource = resource;
     return Resource;
 }
 DllExport struct PAResource PAResourcePerformCopy(struct PAResource from, struct PAResource to)
 {
     struct PAResource temp;
-    temp.value = PANumberPerformCopy(from.value, temp.value);
     to.value = temp.value;
     return to;
 }
 DllExport struct PAResource PAResourcePerformRuin(struct PAResource PA)
 {
-    PA.value = PANumberPerformRuin(PA.value);
     return PA;
 }
 DllExport struct PAResource PAResourcePerformDelete(struct PAResource Resource)

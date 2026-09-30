@@ -2079,20 +2079,15 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PATransposeTree PATransposeTreePerformConstruct(PATree rtree)
+          struct PATransposeTree PATransposeTreePerformConstruct(PATree rtree)
 {
     struct PATransposeTree transposeTree;
-    transposeTree.tree = PATreePerformConstruct();
-    transposeTree = PATransposeTreePerformInit(transposeTree,transposeTree.tree);
     return transposeTree;
 }
 
-          PATransposeTree PATransposeTreePerformInit(PATransposeTree TransposeTree, PATree Value)
+          struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree TransposeTree, PATree Value)
 {
     struct PATransposeTree tree;
-    TransposeTree.tree = PATreePerformConstruct();
-    TransposeTree = tree;
-    TransposeTree.tree = Value;
     return TransposeTree;
 
 }
@@ -2108,18 +2103,16 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     int returnCode;
     returnCode = ((int)0);
 
-    __builtin___memset_chk (PA, 0, sizeof(struct PATransposeTree), __builtin_object_size (PA, 0));
 
 
-    return returnCode;
+    return PA;
 
 
 
 }
-          int PATransposeTreePerformRuin(void* PA)
+          PAResult PATransposeTreePerformRuin(struct PATransposeTree PA)
 {
     int returnCode;
-    PAMemoryPerformRuin(PA);
 
 
 
@@ -2131,13 +2124,4 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 {
     PAResult result;
     return result;
-}
-
-          struct PASize PATransposeTreeSize()
-{
-    size_t standardSize = sizeof(struct PATransposeTree);
-
-    struct PASize size = PASizePerformConstruct(standardSize);
-
-    return size;
 }

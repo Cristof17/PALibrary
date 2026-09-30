@@ -2084,128 +2084,29 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 7 "./include/PA/Memory.h" 2
 # 11 "./src/PA/Series.c" 2
 # 23 "./src/PA/Series.c"
-          PASeries PASeriesPerformConstruct()
+          struct PASeries PASeriesPerformConstruct()
 {
     struct PASeries series;
-    series.m = PACountPerformConstruct();
-    struct PANumber x;
-    struct PANumber y;
-    x.val = (1);
-    y.val = series.m.number;
-    while (x.val < y.val)
-    {
-        series.adj[x.val] = PAElementPerformInit(series.adj[x.val], series.adj[x.val].index, series.adj[x.val].status);
-        x.val++;
-    }
     return series;
 }
-          static PAObject PASeriesCopy(PAObject from, PAObject to, size_t size)
+          struct PASeries PASeriesCopy(struct PASeries from, struct PASeries to)
 {
-    struct PACount x;
-    struct PACount y;
-    struct PASeries temp;
-    temp = PASeriesPerformConstruct();
-    temp.m = PACountPerformCopy(from.m, temp.m);
-    x.number = temp.m.number;
-    if (temp.m.number < to.m.number)
-    {
-        x.number = temp.m.number;
-    }
-    else if (temp.m.number > to.m.number)
-    {
-        x.number= to.m.number;
-    }
-    y.number = (1);
-    while (y.number <= x.number)
-    {
-        struct PAElement aux;
-        PAElementPerformCopy(from.adj[y.number],aux);
-        PAElementPerformCopy(aux,temp.adj[y.number]);
-        y.number++;
-    }
-    y.number = (1);
-    while (y.number <= x.number)
-    {
-        struct PAElement aux;
-        PAElementPerformCopy(temp.adj[y.number],aux);
-        PAElementPerformCopy(aux, to.adj[y.number]);
-        y.number++;
-    }
-    to.m = PACountPerformCopy(temp.m, to.m);
     return to;
-
-
-
-
-
-    {
-
-    }
-
-    {
-
-    }
-
-
-    {
-
-
-
-
-    }
-
-
-    {
-
-
-
-
-    }
-
-
-
 }
           struct PASeries PASeriesPerformInit(struct PASeries Series,
     struct PACount Value, struct PAElement Value2[])
+{
+    return Series;
+}
+              PAResult PASeriesPerformDelete(struct PASeries PA)
     {
-        struct PASeries series;
-        series.m = Value;
-        struct PANumber x;
-        struct PANumber y;
-        x.val = (1);
-        y.val = Value.number;
-        while (x.val <= y.val)
-        {
-            series.adj[x.val] = PAElementPerformInit(series.adj[x.val],series.adj[x.val].index, series.adj[x.val].status);
-            x.val++;
-        }
-        return series;
-    }
-              int PASeriesPerformDelete(PASeries PA)
-    {
-        struct PANumber x;
-        struct PANumber y;
-        x.val = PA.m.number;
-        y.val = (1);
-        while (y.val <= x.val)
-        {
-            PA.adj[y.val] = PAElementPerformDelete(PA.adj[y.val]);
-            y.val++;
-        }
-        return PA;
+        PAResult result;
+        result = ((int)0);
+        return result;
     }
 
               struct PASeries PASeriesPerformRuin(struct PASeries PA)
     {
-        struct PACount x;
-        struct PACount y;
-        x.number = PA.m.number;
-        y.number = (1);
-        while (y.number <= x.number)
-        {
-            PA.adj[y.number] = PAElementPerformRuin(PA.adj[y.number]);
-            y.number++;
-        }
         return PA;
     }
 

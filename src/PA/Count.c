@@ -9,11 +9,6 @@
 #include <PA\Number.h>
 
 #endif
-DllExport PAMemory PACountPerformAllocate()
-{
-    struct PACount zies;
-    return zies;
-}
 DllExport struct PACount PACountPerformInit(struct PACount Count, PAValue Value)
 {
     struct PACount temp;
@@ -36,13 +31,6 @@ DllExport PAResult PACountPerformPrint(struct PACount Count)
     return result;
 }
 // DllExport PASize PASizePerformInitialise(PASize Size, int value);
-PASize PACountSize()
-{
-    struct PACount temp;
-    temp = from;
-    to = temp;
-    return to;
-}
 DllExport PAResult PACountOperatorLess(struct PACount one, struct PACount other)
 {
     PAResult result;

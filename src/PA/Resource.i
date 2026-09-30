@@ -450,27 +450,22 @@ struct Facade {
           struct PAResource PAResourcePerformConstruct()
 {
     struct PAResource resource;
-    resource.value = PANumberPerformConstruct();
-    resource = PAResourcePerformInit(resource,resource.value);
     return resource;
 }
-          struct PAResource PAResourcePerformInit(struct PAResource Resource, struct PANumber Value)
+          struct PAResource PAResourcePerformInit(struct PAResource Resource, PANumber Value)
 {
     struct PAResource resource;
-    resource.value = PANumberPerformConstruct();
     Resource = resource;
     return Resource;
 }
           struct PAResource PAResourcePerformCopy(struct PAResource from, struct PAResource to)
 {
     struct PAResource temp;
-    temp.value = PANumberPerformCopy(from.value, temp.value);
     to.value = temp.value;
     return to;
 }
           struct PAResource PAResourcePerformRuin(struct PAResource PA)
 {
-    PA.value = PANumberPerformRuin(PA.value);
     return PA;
 }
           struct PAResource PAResourcePerformDelete(struct PAResource Resource)

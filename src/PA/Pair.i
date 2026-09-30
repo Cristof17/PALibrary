@@ -2062,60 +2062,29 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           PAResult PAElementOperatorGreater(struct PAElement one, struct PAElement other);
           PAResult PAElementOperatorNotEqual(struct PAElement one, struct PAElement other);
 # 8 "./src/PA/Pair.c" 2
-# 1 "./include/PA/Memory.h" 1
 
 
 
 
 
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 7 "./include/PA/Memory.h" 2
-# 9 "./src/PA/Pair.c" 2
-
-
-
-
-
-
-          PAPair PAPairPerformConstruct(PAElement node ,PAElement neigh)
+          struct PAPair PAPairPerformConstruct(struct PAElement node ,struct PAElement neigh)
 {
     struct PAPair pair;
-
-    pair.Node = PAElementPerformConstruct();
-    pair.Neigh = PAElementPerformConstruct();
-    pair = PAPairPerformInit(pair,pair.Node, pair.Neigh);
     return pair;
 }
           struct PAPair PAPairPerformInit(struct PAPair Pair, struct PAElement Value, struct PAElement Value2)
 {
     struct PAPair temp;
-    temp.Node = PAElementPerformConstruct();
-    temp.Neigh = PAElementPerformConstruct();
     Pair = temp;
     return Pair;
 }
           struct PAPair PAPairPerformCopy(struct PAPair from, struct PAPair to)
 {
     struct PAPair temp;
-    struct PAElement node;
-    struct PAElement neigh;
-    node = PAElementPerformConstruct();
-    neigh = PAElementPerformConstruct();
-    temp.Node = node;
-    temp.Neigh = neigh;
     return temp;
     return temp;
 }
           struct PAPair PAPairPerformRuin(struct PAPair PA)
 {
-    PA.Node = PAElementPerformRuin(PA.Node);
-    PA.Neigh = PAElementPerformRuin(PA.Neigh);
-    return PA;
-}
-
-          struct PASize PAPairSize()
-{
-    PA.Node = PAElementPerformDelete(PA.Node);
-    PA.Neigh = PAElementPerformDelete(PA.Neigh);
     return PA;
 }

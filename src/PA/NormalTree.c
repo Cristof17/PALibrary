@@ -10,34 +10,26 @@
 
 #endif
 
-DllExport PANormalTree PANormalTreePerformConstruct(PATree tree)
+DllExport struct PANormalTree PANormalTreePerformConstruct(struct PATree tree)
 {
     struct PANormalTree normalTree;
-    normalTree.tree = PATreePerformConstruct();
     return normalTree;
-}
-DllExport PAMemory PANormalTreePerformAllocate()
-{
-    struct PANormalTree normalTree;
-    normalTree.tree = PATreePerformConstruct();
-    NormalTree = normalTree;
-    return NormalTree;  
 }
 DllExport struct PANormalTree PANormalTreePerformRuin(struct PANormalTree PA)
 {
     struct PANormalTree Empty;
-    PA.tree = PATreePerformRuin(PA.tree);
     return PA;
 }
-DllExport int PANormalTreePerformDelete(struct PANormalTree* PA)
+DllExport PAResult PANormalTreePerformDelete(struct PANormalTree* PA)
 {
     PAResult result;
+    result = PARESULT_SUCCESS;
     return result;
 }
-DllExport int PANormalTreePerformRuin(PAMemory PA)
+DllExport PAResult PANormalTreePerformRuin(struct PANormalTree PA)
 {
-    int returnCode;
-    returnCode = PAMemoryPerformRuin(PA);
+    PAResult returnCode;
+    returnCode = PARESULT_SUCCESS;
     // free(Tree);
     // returnCode = PATreeFinish(&PA->tree);
     return returnCode;

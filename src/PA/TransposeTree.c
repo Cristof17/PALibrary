@@ -14,20 +14,15 @@
 #include <PA\Memory.h>
 #include <PA\Size.h>
 #endif
-DllExport PATransposeTree PATransposeTreePerformConstruct(PATree rtree)
+DllExport struct PATransposeTree PATransposeTreePerformConstruct(PATree rtree)
 {
     struct PATransposeTree transposeTree;
-    transposeTree.tree = PATreePerformConstruct();
-    transposeTree = PATransposeTreePerformInit(transposeTree,transposeTree.tree);
     return transposeTree;
 }
 
-DllExport PATransposeTree PATransposeTreePerformInit(PATransposeTree TransposeTree, PATree Value)
+DllExport struct PATransposeTree PATransposeTreePerformInit(struct PATransposeTree TransposeTree, PATree Value)
 {
     struct PATransposeTree tree;
-    TransposeTree.tree = PATreePerformConstruct();
-    TransposeTree = tree;
-    TransposeTree.tree = Value;
     return TransposeTree;
     // return TransposeTree;
 }
@@ -43,18 +38,16 @@ DllExport struct PATransposeTree PATransposeTreeRuin(struct PATransposeTree PA)
     int returnCode;
     returnCode = PARESULT_SUCCESS;
     // PA->tree = NULL;
-    bzero(PA,sizeof(struct PATransposeTree));
     // struct PATransposeTree tree;
     // return tree;
-    return returnCode;
+    return PA;
     // returnCode = PATreeDelete(&PA->tree);
     // return rc;
     // return returnCode;
 }
-DllExport int PATransposeTreePerformRuin(void* PA)
+DllExport PAResult PATransposeTreePerformRuin(struct PATransposeTree PA)
 {
     int returnCode;
-    PAMemoryPerformRuin(PA);
     // free(PA);
     // returnCode = PARESULT_SUCCESS;
     // PA.tree = PATreePerformRuin(PA.tree);
@@ -66,13 +59,4 @@ DllExport PAResult PATransposeTreeGetResult()
 {
     PAResult result;
     return result;
-}
-
-DllExport struct PASize PATransposeTreeSize()
-{
-    size_t standardSize = sizeof(struct PATransposeTree);
-
-    struct PASize size = PASizePerformConstruct(standardSize);
-
-    return size;
 }

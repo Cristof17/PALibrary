@@ -2069,34 +2069,26 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-          PANormalTree PANormalTreePerformConstruct(PATree tree)
+          struct PANormalTree PANormalTreePerformConstruct(struct PATree tree)
 {
     struct PANormalTree normalTree;
-    normalTree.tree = PATreePerformConstruct();
     return normalTree;
-}
-          PAMemory PANormalTreePerformAllocate()
-{
-    struct PANormalTree normalTree;
-    normalTree.tree = PATreePerformConstruct();
-    NormalTree = normalTree;
-    return NormalTree;
 }
           struct PANormalTree PANormalTreePerformRuin(struct PANormalTree PA)
 {
     struct PANormalTree Empty;
-    PA.tree = PATreePerformRuin(PA.tree);
     return PA;
 }
-          int PANormalTreePerformDelete(struct PANormalTree* PA)
+          PAResult PANormalTreePerformDelete(struct PANormalTree* PA)
 {
     PAResult result;
+    result = ((int)0);
     return result;
 }
-          int PANormalTreePerformRuin(PAMemory PA)
+          PAResult PANormalTreePerformRuin(struct PANormalTree PA)
 {
-    int returnCode;
-    returnCode = PAMemoryPerformRuin(PA);
+    PAResult returnCode;
+    returnCode = ((int)0);
 
 
     return returnCode;

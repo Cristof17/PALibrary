@@ -62,7 +62,6 @@ DllExport struct PAList PAListPerformInit(struct PAList List, PAValue Value, str
     PAValue x;
     PAValue y;
     x = FIRST;
-    y = Value2[x].m.number;
 
     while (x <= y)
     {
