@@ -73,21 +73,25 @@ struct ArrayList {
 #endif //64BIT	
 #else
 // typedef int PANumber;
+
 #ifndef _64BIT
 // #define PANumber int
-#define PABool int
-#define PAResult int
-#define ArrayListSize int
+typedef int PAValue;
+typedef int PABool;
+typedef int PAResult;
+typedef int ArrayListSize;
 #else
 // #define PANumber long long
 typedef int PAData ;
 typedef int PAStatus;
 typedef long PAValue;
-#define PABool int
-#define PAResult int
+typedef int PABool;
+typedef int PAResult;
 // @define 
-#define ArrayListSize long long
+typedef long long ArrayListSize;
 #endif //#64BIT
+
+
 struct PANumber;
 // typedef int PAInt;
 //#define PAInt int
@@ -200,21 +204,12 @@ struct BridgeConcreteImplementorB;
 struct BridgeImplementor;
 struct PrototypePrototype;
 struct PrototypeClient;
-<<<<<<< HEAD
-// struct PANumber {
-// 	//  val;
-// 	// long long val;
-// 	unsigned char val;
-// 	// PADDING_1_BYTE(0);
-// };
-=======
 struct PANumber {
 	//  val;
 	// long long val;
 	PAValue val;
 	// PADDING_1_BYTE(0);
 };
->>>>>>> 653a9d82ce64dd998a0101f60daf2dc255f625e6
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
