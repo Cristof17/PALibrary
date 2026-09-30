@@ -1,8 +1,8 @@
 //@Author Cristofor Rotsching
 
 #include <defs.h>
-
 #include <types.h>
+
 DllExport struct PAElement PAElementPerformConstruct()
 {
     struct PAElement temp;
@@ -17,21 +17,21 @@ DllExport struct PAElement PAElementPerformInit(struct PAElement Element, PAData
     Element = temp;
     return Element;
 }
-DllExport void PAElementCauseVisit(struct PAElement* Element)
+DllExport void PAElementCauseVisit(struct PAElement Element)
 {
     Element.status = TRUE;
     return;
 }
-DllExport PABool PAElementIsVisited(struct PAElement* Element)
+DllExport PABool PAElementIsVisited(struct PAElement Element)
 {
     return Element.status;
 }
-DllExport void PAElementReset(struct PAElement* Element)
+DllExport void PAElementReset(struct PAElement Element)
 {
     Element.status = FALSE;
     return;
 }
-DllExport static PAObject PAElementPerformCopy(PAObject from, PAObject to, size_t size)
+DllExport static struct PAElement PAElementPerformCopy(PAElement from, PAElement to)
 {
     struct PAElement temp;
     temp = from;

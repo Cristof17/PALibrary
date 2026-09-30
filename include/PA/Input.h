@@ -9,8 +9,8 @@ DllExport struct PAInput PAInputPerformConstruct();
 
 DllExport struct PAInput PAInputPerformInit(struct PAInput PA, struct PACount N, struct PACount M, struct PAElement Source);
 
-DllExport struct PAInput PAInputPerformRuin(struct PAInput PA);
-DllExport struct PAInput PAInputPerformDelete(struct PAInput PA);
+DllExport PAResult PAInputPerformRuin(struct PAInput PA);
+DllExport PAResult PAInputPerformDelete(struct PAInput PA);
 DllExport PAResult PAInputOperatorEqual(struct PAInput one, struct PAInput other);
 DllExport PAResult PAInputOperatorNotEqual(struct PAInput one, struct PAInput other);
 #endif

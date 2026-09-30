@@ -17,13 +17,7 @@
 # 1 "./include/defs.h" 1
 # 6 "./include/PA/NormalTree.h" 2
 # 1 "./include/types.h" 1
-# 15 "./include/types.h"
-typedef long ArrayListSize;
-
-
-
-
-
+# 14 "./include/types.h"
 typedef long ArrayListObject;
 
 
@@ -42,7 +36,7 @@ typedef long ArrayListCount;
 
 
 typedef long ArrayListValue;
-# 47 "./include/types.h"
+# 40 "./include/types.h"
 struct ArrayListPosition {
     ArrayListPosition position;
 };
@@ -56,13 +50,10 @@ struct ArrayList {
 
 
 };
-# 89 "./include/types.h"
-typedef int PAData ;
-typedef int PAStatus;
+# 80 "./include/types.h"
 typedef long PAValue;
-typedef int PABool;
-typedef int PAResult;
-typedef lone PANumber;
+typedef long PABool;
+typedef long PANumber;
 typedef long PAData;
 typedef long PAStatus;
 typedef long PAResult;
@@ -72,7 +63,7 @@ typedef long long ArrayListSize;
 
 
 struct PANumber;
-# 120 "./include/types.h"
+# 108 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -109,7 +100,6 @@ struct PAList;
 
 
 
-struct PAStatus ;
 
 struct PAElement;
 struct PADestination;
@@ -122,7 +112,7 @@ struct PASeries;
 struct PATree;
 struct PALink;
 struct PAInt;
-# 179 "./include/types.h"
+# 166 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -168,11 +158,11 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 239 "./include/types.h"
+# 226 "./include/types.h"
 struct Input {
  ;
 };
-# 253 "./include/types.h"
+# 240 "./include/types.h"
 struct PASize {
  int digits;
  int value;
@@ -213,10 +203,8 @@ struct PACount {
 };
 
 
-typedef struct PASeries {
- struct PACount* m;
-
-
+struct PASeries {
+ struct PACount m;
  struct PAElement adj[4];
 };
 struct PAList {
@@ -262,38 +250,31 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 350 "./include/types.h"
-typedef struct PAInput {
+# 335 "./include/types.h"
+struct PAInput {
  struct PACount* n;
  struct PACount* m;
  struct PAElement* source;
  struct PAList* adj;
-}* PAInput;
+};
 struct BFSRecord {
  struct PACount n;
  struct PAList d;
 };
-typedef struct PAOutput {
- struct BFSRecord* result;
-}* PAOutput;
-
-
-
-
-
-
-
+struct PAOutput {
+ struct BFSRecord result;
+};
 struct PADestination {
     struct PAElement element;
-}* PADestination;
-typedef struct PAPair {
- struct PAElement* Node;
- struct PAElement* Neigh;
+};
+struct PAPair {
+ struct PAElement Node;
+ struct PAElement Neigh;
 
-}* PAPair;
-typedef struct PAArrow {
+};
+struct PAArrow {
  struct PAPair p;
-}* PAArrow;
+};
 struct BFSInput {
  struct PACount n;
  struct PACount m;
@@ -310,10 +291,10 @@ struct Output {
 
 
 
-typedef struct PALink {
- struct PAPair* p;
+struct PALink {
+ struct PAPair p;
 
-}* PALink;
+};
 
 
 
@@ -324,7 +305,7 @@ struct PANormalTree {
 struct PATransposeTree {
  struct PATree adj_trans;
 
-}* PATransposeTree;
+};
 struct FactoryProduct1 {
  struct PANormalTree tree;
 };
@@ -2077,32 +2058,11 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           struct PATree PATreePerformConstruct();
           struct PATree PATreePerformCopy(struct PATree from, struct PATree to);
           struct PATree PATreePerformInit(struct PATree PA, struct PACount N, struct PACount M, struct PAList Adj, struct PAElement Source);
-          struct PATree PATreePerformRuin(struct PATree PA);
-          struct PATree PATreePerformDelete(struct PATree PA);
+          PAResult PATreePerformRuin(struct PATree PA);
+          PAResult PATreePerformDelete(struct PATree PA);
           PAResult PATreeOperatorEqual(struct PATree one, struct PATree other);
           PAResult PATreeOperatorNotEqual(struct PATree one, struct PATree other);
 # 7 "./src/PA/NormalTree.c" 2
-# 1 "./include/PA/Memory.h" 1
-
-
-
-
-
-
-
-# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
-# 9 "./include/PA/Memory.h" 2
-
-
-
-
-
-
-          PAMemory PAMemoryPerformConstruct(PASize size);
-          int PAMemoryPerformRuin(PAMemory);
-# 8 "./src/PA/NormalTree.c" 2
-
-
 
 
 
@@ -2143,13 +2103,4 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
 
 
-}
-# 66 "./src/PA/NormalTree.c"
-          struct PASize PANormalTreeSize()
-{
-    size_t standardSize = sizeof(struct PANormalTree);
-
-    struct PASize size = PASizePerformConstruct(standardSize);
-
-    return size;
 }

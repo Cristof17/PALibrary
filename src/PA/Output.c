@@ -21,13 +21,15 @@ DllExport struct PAOutput PAOutputPerformInit(struct PAOutput Output, struct BFS
     Output.result = Value;
     return Output;
 }
-DllExport struct PAOutput PAOutputPerformDelete(struct PAOutput Output)
+DllExport PAResult PAOutputPerformDelete(struct PAOutput Output)
 {
-    return Output;
+    PAResult result;
+    return result;
 }
-DllExport int PAOutputPerformRuin(PAMemory PA)
+DllExport PAResult PAOutputPerformRuin(struct PAOutput PA)
 {
-    return PA;
+    PAResult result = PARESULT_SUCCESS;
+    return result;
 }
 DllExport void PAOutputPrint(PAResult Result)
 {
