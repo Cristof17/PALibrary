@@ -19,7 +19,7 @@ DllExport struct PAList PAListPerformConstruct()
     list.n = NULL;
     return list;
 }
-DllExport static PAObject PAListPerformCopy(PAObject from, PAObject to, size_t size)
+DllExport struct PAList PAListPerformCopy(struct PAList from, struct PAList to)
 {
     struct PAList temp;
     temp = from;
@@ -107,13 +107,4 @@ DllExport struct PAList PAListPerformDelete(struct PAList PA)
 void PAListPerformPrint(struct PAList List)
 {
 
-}
-
-DllExport struct PASize PAListSize()
-{
-    size_t standardSize = sizeof(struct PAList);
-
-    struct PASize size = PASizePerformConstruct(standardSize);
-
-    return size;
 }

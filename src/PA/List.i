@@ -2085,7 +2085,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     list.n = 0;
     return list;
 }
-          static PAObject PAListPerformCopy(PAObject from, PAObject to, size_t size)
+          struct PAList PAListPerformCopy(struct PAList from, struct PAList to)
 {
     struct PAList temp;
     temp = from;
@@ -2173,13 +2173,4 @@ void Dispose()
 void PAListPerformPrint(struct PAList List)
 {
 
-}
-
-          struct PASize PAListSize()
-{
-    size_t standardSize = sizeof(struct PAList);
-
-    struct PASize size = PASizePerformConstruct(standardSize);
-
-    return size;
 }
