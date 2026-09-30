@@ -1897,7 +1897,7 @@ extern char * suboptarg;
 
     return Data;
 }
-          static struct PAData PADataPerformCopy(struct PAData from, struct PAData to)
+          struct PAData PADataPerformCopy(struct PAData from, struct PAData to)
 {
     struct PAData temp;
     temp = from;
