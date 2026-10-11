@@ -1,5 +1,5 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.build_version macos, 15, 0	sdk_version 15, 5
+	.build_version macos, 14, 0	sdk_version 14, 4
 	.globl	_PASeriesPerformConstruct       ; -- Begin function PASeriesPerformConstruct
 	.p2align	2
 _PASeriesPerformConstruct:              ; @PASeriesPerformConstruct
@@ -14,6 +14,7 @@ _PASeriesCopy:                          ; @PASeriesCopy
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #48
+	.cfi_def_cfa_offset 48
 	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
 	add	x29, sp, #32
 	.cfi_def_cfa w29, 16
@@ -25,7 +26,7 @@ _PASeriesCopy:                          ; @PASeriesCopy
 	stur	x8, [x29, #-8]
 	mov	x8, x1
 	str	x8, [sp, #16]
-	mov	x2, #72                         ; =0x48
+	mov	x2, #72
 	bl	_memcpy
 	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
 	add	sp, sp, #48
@@ -38,6 +39,7 @@ _PASeriesPerformInit:                   ; @PASeriesPerformInit
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #64
+	.cfi_def_cfa_offset 64
 	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
 	add	x29, sp, #48
 	.cfi_def_cfa w29, 16
@@ -53,7 +55,7 @@ _PASeriesPerformInit:                   ; @PASeriesPerformInit
 	mov	x8, x1
 	stur	x8, [x29, #-16]
 	str	x2, [sp, #24]
-	mov	x2, #72                         ; =0x48
+	mov	x2, #72
 	bl	_memcpy
 	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
 	add	sp, sp, #64

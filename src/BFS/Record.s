@@ -1,5 +1,5 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.build_version macos, 15, 0	sdk_version 15, 5
+	.build_version macos, 14, 0	sdk_version 14, 4
 	.globl	_BFSRecordCreate                ; -- Begin function BFSRecordCreate
 	.p2align	2
 _BFSRecordCreate:                       ; @BFSRecordCreate
@@ -16,7 +16,7 @@ _BFSRecordFinish:                       ; @BFSRecordFinish
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	str	x0, [sp, #8]
-	mov	w0, #0                          ; =0x0
+	mov	w0, #0
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -65,6 +65,7 @@ _BFSRecordCopy:                         ; @BFSRecordCopy
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #368
+	.cfi_def_cfa_offset 368
 	stp	x28, x27, [sp, #336]            ; 16-byte Folded Spill
 	stp	x29, x30, [sp, #352]            ; 16-byte Folded Spill
 	add	x29, sp, #352
@@ -79,7 +80,7 @@ _BFSRecordCopy:                         ; @BFSRecordCopy
 	stur	x8, [x29, #-24]
 	mov	x8, x1
 	stur	x8, [x29, #-32]
-	mov	x2, #304                        ; =0x130
+	mov	x2, #304
 	bl	_memcpy
 	ldp	x29, x30, [sp, #352]            ; 16-byte Folded Reload
 	ldp	x28, x27, [sp, #336]            ; 16-byte Folded Reload

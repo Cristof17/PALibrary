@@ -591,10 +591,9 @@ $(lib_pa): $(objects_pa)
 	$(AR) -v -t -s ./lib/$@
 
 $(lib_bfs): $(objects_bfs)
-	src/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
-	$(AR) -v -s -q $(libdir)/$(output) $(foreach object,$^,$(libdir)/$(object))  
-	$(AR) -v -t -s $(libdir)/$(output)
-#	$(AR) -d -b Input.o $(libdir)/$(output)
+	src/mkinstalldirs $(bindir) $(datadir) lib $(infodir) $(mandir)
+	$(AR) -v -s -q ./lib/$@ $(foreach object,$^,lib/$(object))  
+	$(AR) -v -t -s ./lib/$@
 
 #libpa.a: $(objects_pa)
 #	$(LD) $(foreach object,$^,$(libdir)/$(object)) /lib/crt0.o -static -o $(libdir)/$@
