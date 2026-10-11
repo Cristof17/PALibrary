@@ -273,8 +273,7 @@ objects_algorithm= Algorithm.o \
 	Input.o \
 	Output.o
 
-objects_arraylist= ArrayList/ArrayList.o \
-	ArrayList/ArrayListPosition.o
+objects_arraylist= ArrayList/ArrayList.o
 
 objects_bfs= BFS/Procedure.o \
 	BFS/Record.o
@@ -313,8 +312,8 @@ objects_pa= Input.o \
 sources_algorithm= Algorithm.i \
 	Input.i \
 	Output.i
-sources_arraylist= ArrayList/ArrayList.i \
-	ArrayList/ArrayListPosition.i
+sources_arraylist= ArrayList/ArrayList.i
+
 sources_bfs= BFS/Procedure.i \
 	BFS/Record.i
 sources_pa= Input.i \
@@ -350,8 +349,8 @@ designs_algorithm= Algorithm.c \
 	Input.c \
 	Output.c
 
-designs_arraylist= ArrayList/ArrayList.c \
-	ArrayList/ArrayListPosition.c
+designs_arraylist= ArrayList/ArrayList.c
+
 designs_bfs= src/BFS/Procedure.c \
 	BFS/Record.c
 # sources_= src/Input.i
@@ -383,8 +382,7 @@ designs_pa= PA/Input.c \
 assemblies_algorithm= Algorithm.s \
 	Input.s \
 	Output.s
-assemblies_arraylist= ArrayList/ArrayListPosition.s \
- 	ArrayList/ArrayList.s
+assemblies_arraylist= ArrayList/ArrayList.s
 assemblies_bfs= BFS/Procedure.s \
 	BFS/Record.s
 assemblies_pa= PA/Input.s \
@@ -677,7 +675,6 @@ CPPFLAGS+=-I$(prefix)/include -I$(prefix)
 #src/PA/PAShape.c: include/PA/PAShape.h include/defs.h
 #src/PA/PATextView.c:  include/PA/PATextView.h include/defs.h
 #src/ArrayList/ArrayList.c: include/ArrayList/ArrayList.h include/defs.h
-#src/ArrayList/ArrayListPosition.c:  include/ArrayList/ArrayListPosition.h include/defs.h include/types.h
 #src/Iterator/Client.c: include/Iterator/Client.h include/defs.h
 #src/Iterator/ConcreteIterator.c: include/Iterator/ConcreteIterator.h include/defs.h
 #src/Iterator/Iterator.c: include/Iterator/Iterator.h include/defs.h
@@ -700,7 +697,6 @@ Output.h: $(includedir)/Output.h
 Algorithm.h: $(includedir)/Algorithm.h
 
 ArrayList/ArrayList.h: $(includedir)/ArrayList/ArrayList.h
-ArrayList/ArrayListPosition.h: $(includedir)/ArrayList/ArrayListPosition.h
 BFS/Procedure.h: $(includedir)/BFS/Procedure.h
 BFS/Record.h: $(includedir)/BFS/Record.h
 
@@ -734,7 +730,6 @@ Output.c: Output.h $(srcdir)/Output.c
 Algorithm.c: Algorithm.h $(srcdir)/Algorithm.c
 
 ArrayList/ArrayList.c: ArrayList/ArrayList.h $(srcdir)/ArrayList/ArrayList.c
-ArrayList/ArrayListPosition.c: ArrayList/ArrayListPosition.h $(srcdir)/ArrayList/ArrayListPosition.c
 
 BFS/Procedure.c: BFS/Procedure.h $(srcdir)/BFS/Procedure.c
 BFS/Record.c: BFS/Record.h $(srcdir)/BFS/Record.c
@@ -834,8 +829,6 @@ PA/Feature.i : PA/Feature.c
 	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
 ArrayList/ArrayList.i: $(srcdir)/ArrayList/ArrayList.c $(includedir)/defs.h $(includedir)/types.h $(includedir)/ArrayList/ArrayList.h
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-ArrayList/ArrayListPosition.i : $(srcdir)/ArrayList/ArrayListPosition.c $(includedir)/ArrayList/ArrayList.h $(includedir)/defs.h $(includedir)/types.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 
 Input.s: Input.i
 	$(CC) -S src/$< -o src/$@
@@ -906,8 +899,6 @@ PA/Arrow.s: PA/Arrow.i
 PA/Destination.s: PA/Destination.i
 	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 ArrayList/ArrayList.s: ArrayList/ArrayList.i
-	$(CC) -S src/$< -o src/$@
-ArrayList/ArrayListPosition.s: ArrayList/ArrayListPosition.i
 	$(CC) -S src/$< -o src/$@
 PA/Memory.s: PA/Memory.i
 	$(CC) -S src/$< -o src/$@
@@ -1392,20 +1383,6 @@ endif
 ifeq ($(host-type),AArch64)
 	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
-
-ArrayList/ArrayListPosition.o : ArrayList/ArrayListPosition.s
-ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) src/$< -o lib/$@
-endif
-ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) src/$< -o lib/$@
-endif
-ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) src/$< -o lib/$@
-endif
-
-
-
 
 #src/Input.c: 
 #src/Algorithm.c: 
