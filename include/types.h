@@ -283,7 +283,7 @@ struct PAList {
 	PAValue n;
 	struct PASeries neigh[SIZE];
 	// struct PANod Nod;
-}* PAList;
+} PAList;
 struct FlyweightFlyweightClient {
 	// struct PASeries series;
 	//PAInt todo;
