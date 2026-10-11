@@ -76,5 +76,5 @@ _BFSProcedureSubroutine:                ; @BFSProcedureSubroutine
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.comm	_PAList,8,3                     ; @PAList
+	.comm	_PAList,296,3                   ; @PAList
 .subsections_via_symbols

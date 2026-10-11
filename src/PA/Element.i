@@ -206,7 +206,7 @@ struct PAList {
  PAValue n;
  struct PASeries neigh[4];
 
-}* PAList;
+} PAList;
 struct FlyweightFlyweightClient {
 
 
