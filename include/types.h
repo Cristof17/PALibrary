@@ -347,8 +347,8 @@ struct PADestination {
     struct PAElement element;
 };
 struct PAPair {
-	struct PAElement Node;
-	struct PAElement Neigh;
+	struct PAElement node;
+	struct PAElement neigh;
 	// PADDING_1_BYTE(2);
 };
 struct PAArrow {
@@ -435,7 +435,7 @@ struct BuilderProduct {
 struct Builder {
 	// struct NormalTree NormalTree;
 	// struct TransposeTree
-	struct BuilderProduct Product;
+	struct BuilderProduct product;
 };
 struct Director {
 	struct Builder builder;
