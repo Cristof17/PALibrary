@@ -184,7 +184,7 @@ struct PAStatus {
  PAValue visited;
 };
 struct PAData {
- PAValue Resource;
+ PAValue resource;
 
 };
 
@@ -360,7 +360,7 @@ struct BuilderProduct {
 struct Builder {
 
 
- struct BuilderProduct Product;
+ struct BuilderProduct product;
 };
 struct Director {
  struct Builder builder;

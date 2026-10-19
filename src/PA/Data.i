@@ -190,7 +190,7 @@ struct PAStatus {
  PAValue visited;
 };
 struct PAData {
- PAValue Resource;
+ PAValue resource;
 
 };
 
@@ -366,7 +366,7 @@ struct BuilderProduct {
 struct Builder {
 
 
- struct BuilderProduct Product;
+ struct BuilderProduct product;
 };
 struct Director {
  struct Builder builder;
@@ -464,7 +464,7 @@ struct Facade {
     struct PAData temp;
 
     temp = Data;
-    temp.Resource = Value;
+    temp.resource = Value;
     Data = temp;
 
     return Data;
@@ -482,25 +482,25 @@ struct Facade {
           PAResult PADataOperatorLess(struct PAData one, struct PAData other)
 {
     PAResult result;
-    result = one.Resource < other.Resource ? ((int)0) : ((int)1);
+    result = one.resource < other.resource ? ((int)0) : ((int)1);
     return result;
 }
           PAResult PADataOperatorEqual(struct PAData one, struct PAData other)
 {
     PAResult result;
-    result = one.Resource == other.Resource ? ((int)0) : ((int)1);
+    result = one.resource == other.resource ? ((int)0) : ((int)1);
     return result;
 }
           PAResult PADataOperatorGreater(struct PAData one, struct PAData other)
 {
     PAResult result;
-    result = one.Resource > other.Resource ? ((int)1) : ((int)0);
+    result = one.resource > other.resource ? ((int)1) : ((int)0);
     return result;
 }
           PAResult PADataOperatorNotEqual(struct PAData one, struct PAData other)
 {
     PAResult result;
-    result = one.Resource != other.Resource ? ((int)1) : ((int)0);
+    result = one.resource != other.resource ? ((int)1) : ((int)0);
     return result;
 }
           struct PAData PADataPerformRuin(struct PAData Data)
@@ -509,6 +509,6 @@ struct Facade {
 }
           struct PAData PADataPerformDelete(struct PAData PA)
 {
-    PA.Resource = 0;
+    PA.resource = 0;
     return PA;
 }

@@ -252,7 +252,7 @@ struct PAStatus {
 	PAValue visited;
 };
 struct PAData {
-	PAValue Resource;
+	PAValue resource;
 	// PADDING_1_BYTE(0);
 };
 // #pragma pack(push, 8)

@@ -19,7 +19,7 @@ DllExport struct PAData PADataPerformInit(struct PAData Data, PAValue Value)
     struct PAData temp;
     // temp = PAResourcePerformConstruct();
     temp = Data;
-    temp.Resource = Value;
+    temp.resource = Value;
     Data = temp;
 
     return Data;
@@ -44,25 +44,25 @@ DllExport struct PAData PADataPerformCopy(struct PAData from, struct PAData to)
 DllExport PAResult PADataOperatorLess(struct PAData one, struct PAData other)
 {
     PAResult result;
-    result = one.Resource < other.Resource ? PARESULT_LESS_THAN : PARESULT_GREATER_THAN;
+    result = one.resource < other.resource ? PARESULT_LESS_THAN : PARESULT_GREATER_THAN;
     return result;
 }
 DllExport PAResult PADataOperatorEqual(struct PAData one, struct PAData other)
 {
     PAResult result;
-    result = one.Resource == other.Resource ? PARESULT_EQUAL : PARESULT_NOT_EQUAL;
+    result = one.resource == other.resource ? PARESULT_EQUAL : PARESULT_NOT_EQUAL;
     return result;
 }
 DllExport PAResult PADataOperatorGreater(struct PAData one, struct PAData other)
 {
     PAResult result;
-    result = one.Resource > other.Resource ? PARESULT_GREATER_THAN : PARESULT_LESS_THAN;
+    result = one.resource > other.resource ? PARESULT_GREATER_THAN : PARESULT_LESS_THAN;
     return result;
 }
 DllExport PAResult PADataOperatorNotEqual(struct PAData one, struct PAData other)
 {
     PAResult result;
-    result = one.Resource != other.Resource ? PARESULT_NOT_EQUAL : PARESULT_EQUAL;
+    result = one.resource != other.resource ? PARESULT_NOT_EQUAL : PARESULT_EQUAL;
     return result;
 }
 DllExport struct PAData PADataPerformRuin(struct PAData Data) 
@@ -71,6 +71,6 @@ DllExport struct PAData PADataPerformRuin(struct PAData Data)
 }
 DllExport struct PAData PADataPerformDelete(struct PAData PA)
 {
-    PA.Resource = NULL;
+    PA.resource = NULL;
     return PA;
 }
