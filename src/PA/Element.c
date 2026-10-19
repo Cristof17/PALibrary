@@ -1,18 +1,8 @@
 //@Author Cristofor Rotsching
 
 #include <defs.h>
-#ifndef _WIN95
-#include <PA/Element.h>
-#include <PA/Data.h>
-#include <PA/Status.h>
-#elif defined _WIN95
-#include <PA\Element.h>
-#include <PA\Data.h>
-#include <PA\Status.h>
-#endif
-
-
 #include <types.h>
+
 DllExport struct PAElement PAElementPerformConstruct()
 {
     struct PAElement temp;
@@ -27,7 +17,7 @@ DllExport struct PAElement PAElementPerformInit(struct PAElement Element, PAData
     Element = temp;
     return Element;
 }
-DllExport void PAElementVisit(struct PAElement Element)
+DllExport void PAElementCauseVisit(struct PAElement Element)
 {
     Element.status = TRUE;
     return;
@@ -41,13 +31,22 @@ DllExport void PAElementReset(struct PAElement Element)
     Element.status = FALSE;
     return;
 }
-DllExport struct PAElement PAElementPerformCopy(struct PAElement from, struct PAElement to)
+DllExport static struct PAElement PAElementPerformCopy(struct PAElement from, struct PAElement to)
 {
     struct PAElement temp;
     temp = from;
     to = temp;
     return to;
-}   
+    // PAElementDelete(aux);
+    // PAElementFinish(aux);
+    // struct PAElement temp;
+    // temp.index = PADataPerformCopy(from.index, to.index);
+    // temp.status = PAStatusPerformCopy(from.status,to.status);
+    // to.index = temp.index;
+    // to.status = temp.status;
+    // return to;
+    // return temp;
+} 
 
 DllExport struct PAElement PAElementPerformRuin(struct PAElement PA)
 {

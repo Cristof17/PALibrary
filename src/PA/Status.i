@@ -1,14 +1,13 @@
 # 1 "./src/PA/Status.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
-# 466 "<built-in>" 3
+# 418 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
 # 1 "./src/PA/Status.c" 2
 
 
-# 1 "./include/defs.h" 1
-# 4 "./src/PA/Status.c" 2
+
 
 
 # 1 "./include/PA/Status.h" 1
@@ -16,15 +15,10 @@
 
 
 
-
+# 1 "./include/defs.h" 1
+# 6 "./include/PA/Status.h" 2
 # 1 "./include/types.h" 1
-# 15 "./include/types.h"
-typedef long ArrayListSize;
-
-
-
-
-
+# 14 "./include/types.h"
 typedef long ArrayListObject;
 
 
@@ -43,7 +37,7 @@ typedef long ArrayListCount;
 
 
 typedef long ArrayListValue;
-# 47 "./include/types.h"
+# 40 "./include/types.h"
 struct ArrayListPosition {
     ArrayListPosition position;
 };
@@ -57,17 +51,19 @@ struct ArrayList {
 
 
 };
-# 83 "./include/types.h"
-typedef int PAData ;
-typedef int PAStatus;
+# 79 "./include/types.h"
 typedef long PAValue;
+typedef long PABool;
+typedef long PAData;
+typedef long PAStatus;
+typedef long PAResult;
 
-
+typedef long long ArrayListSize;
 
 
 
 struct PANumber;
-# 108 "./include/types.h"
+# 106 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -77,7 +73,7 @@ struct PAArrow;
 
 struct PAData;
 
-struct NormalTree;
+struct PANormalTree;
 struct Adaptee;
 
 
@@ -92,7 +88,7 @@ struct PATransposeTree;
 
 
 
-
+struct PASize;
 struct PAInput;
 struct PAOutput;
 
@@ -100,7 +96,6 @@ struct PAData;
 
 struct List;
 struct PAList;
-struct PAStatus;
 
 
 
@@ -116,7 +111,8 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 166 "./include/types.h"
+struct PAInt;
+# 164 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -162,19 +158,25 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 223 "./include/types.h"
-struct Output {
-
-};
+# 224 "./include/types.h"
 struct Input {
  ;
 };
-# 240 "./include/types.h"
+struct Algorithm {
+ struct Input input;
+};
+# 238 "./include/types.h"
+struct PASize {
+ int digits;
+ int value;
+ int size;
+};
 struct PAResource {
 
 
 
  struct PANumber value;
+ struct PASize size;
 
 };
 struct PAStatus {
@@ -206,14 +208,13 @@ struct PACount {
 
 struct PASeries {
  struct PACount m;
-
  struct PAElement adj[4];
 };
 struct PAList {
  PAValue n;
  struct PASeries neigh[4];
 
-};
+} PAList;
 struct FlyweightFlyweightClient {
 
 
@@ -235,12 +236,12 @@ struct FlyweightUnsharedConcreteFlyweight {
  struct PASeries intrinsicState;
 
 };
-struct PATree {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
- struct PAList adj;
-};
+typedef struct PATree {
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
+ struct PAList* adj;
+}* PATree;
 struct BridgeAbstraction {
  struct PAElement elements[4];
 };
@@ -252,34 +253,27 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 330 "./include/types.h"
+# 333 "./include/types.h"
 struct PAInput {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
+ struct PAList* adj;
 };
 struct BFSRecord {
-struct PACount n;
+ struct PACount n;
  struct PAList d;
 };
 struct PAOutput {
  struct BFSRecord result;
 };
-
-
-
-
-
-
-
 struct PADestination {
     struct PAElement element;
 };
 struct PAPair {
- struct
- PAElement Node;
+ struct PAElement Node;
  struct PAElement Neigh;
- unsigned char padding[2];
+
 };
 struct PAArrow {
  struct PAPair p;
@@ -292,7 +286,14 @@ struct BFSInput {
 struct BFSOutput {
  struct BFSRecord result;
 };
-# 377 "./include/types.h"
+struct Output {
+
+
+ };
+
+
+
+
 struct PALink {
  struct PAPair p;
 
@@ -301,11 +302,11 @@ struct PALink {
 
 
 struct PANormalTree {
- struct PATree tree;
+ struct PATree adj;
 
 };
 struct PATransposeTree {
- struct PATree tree;
+ struct PATree adj_trans;
 
 };
 struct FactoryProduct1 {
@@ -414,10 +415,11 @@ struct Facade {
           struct PAStatus PAStatusPerformConstruct();
           struct PAStatus PAStatusPerformRuin(struct PAStatus PA);
           struct PAStatus PAStatusPerformCopy(struct PAStatus from, struct PAStatus to);
-          int PAStatusOperatorNotEqual(struct PAStatus one, struct PAStatus other);
-          int PAStatusOperatorEqual(struct PAStatus one, struct PAStatus other);
+          PAResult PAStatusOperatorNotEqual(struct PAStatus one, struct PAStatus other);
+          PAResult PAStatusOperatorEqual(struct PAStatus one, struct PAStatus other);
 # 7 "./src/PA/Status.c" 2
 # 1 "./include/PA/Resource.h" 1
+
 
 
 
@@ -428,11 +430,14 @@ struct Facade {
           struct PAResource PAResourcePerformRuin(struct PAResource PA);
           struct PAResource PAResourcePerformDelete(struct PAResource PA);
           struct PAResource PAResourcePerformCopy(struct PAResource from, struct PAResource to);
-          int PAResourceOperatorLess(struct PAResource one, struct PAResource other);
-          int PAResourceOperatorGreater(struct PAResource one, struct PAResource other);
-          int PAResourceOperatorEqual(struct PAResource one, struct PAResource other);
-          int PAResourceOperatorNotEqual(struct PAResource one, struct PAResource other);
+          PAResult PAResourceOperatorLess(struct PAResource one, struct PAResource other);
+          PAResult PAResourceOperatorGreater(struct PAResource one, struct PAResource other);
+          PAResult PAResourceOperatorEqual(struct PAResource one, struct PAResource other);
+          PAResult PAResourceOperatorNotEqual(struct PAResource one, struct PAResource other);
 # 8 "./src/PA/Status.c" 2
+# 1 "./include/PA/Memory.h" 1
+# 9 "./src/PA/Status.c" 2
+
 
 
 
@@ -473,15 +478,15 @@ struct Facade {
     PA = temp;
     return PA;
 }
-          int PAStatusOperatorNotEqual(struct PAStatus one,struct PAStatus other)
+          PAResult PAStatusOperatorNotEqual(struct PAStatus one,struct PAStatus other)
 {
-    int result;
+    PAResult result;
     result = (one.visited != other.visited) ? ((int)1) : ((int)0);
     return result;
 }
-          int PAStatusOperatorEqual(struct PAStatus one,struct PAStatus other)
+          PAResult PAStatusOperatorEqual(struct PAStatus one,struct PAStatus other)
 {
-    int result;
+    PAResult result;
     result = (one.visited == other.visited) ? ((int)0) : ((int)1);
     return result;
 }

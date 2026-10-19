@@ -2,9 +2,11 @@
 #ifndef _WIN95
 #include <PA/Data.h>
 #include <PA/Resource.h>
+#include <PA/Memory.h>
 #elif defined _WIN95
 #include <PA\Data.h>
 #include <PA\Resource.h>
+#include <PA\Memory.h>
 #endif
 
 DllExport struct PAData PADataPerformConstruct()
@@ -30,6 +32,14 @@ DllExport struct PAData PADataPerformCopy(struct PAData from, struct PAData to)
     // temp.Resource = PAResourcePerformCopy(from.Resource, temp.Resource);
     // to.Resource = temp.Resource;
     return to;
+    // PADataDelete(aux);
+    // PADataFinish(aux);
+    // dataPointer->Resource = from->Resource;
+    // to->Resource = dataPointer->Resource;
+    // temp.Resource = PAResourcePerformCopy(from.Resource, temp.Resource);
+    // to.Resource = temp.Resource;
+    // return dataPointer;
+    // return temp;
 }
 DllExport PAResult PADataOperatorLess(struct PAData one, struct PAData other)
 {

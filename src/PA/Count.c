@@ -1,7 +1,6 @@
 //@Author Cristofor Rotsching
-
-#include <types.h>
-
+// #include <stdlib.h>
+// #include <types.h>
 #ifndef _WIN95
 #include <PA/Count.h>
 #include <PA/Number.h>
@@ -10,12 +9,6 @@
 #include <PA\Number.h>
 
 #endif
-
-DllExport struct PACount PACountPerformConstruct()
-{
-    struct PACount zies;
-    return zies;
-}
 DllExport struct PACount PACountPerformInit(struct PACount Count, PAValue Value)
 {
     struct PACount temp;
@@ -37,13 +30,7 @@ DllExport PAResult PACountPerformPrint(struct PACount Count)
     PAResult result;
     return result;
 }
-DllExport struct PACount PACountPerformCopy(struct PACount from, struct PACount to)
-{
-    struct PACount temp;
-    temp = from;
-    to = temp;
-    return to;
-}
+// DllExport PASize PASizePerformInitialise(PASize Size, int value);
 DllExport PAResult PACountOperatorLess(struct PACount one, struct PACount other)
 {
     PAResult result;

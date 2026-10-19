@@ -3,6 +3,7 @@
 
 #include <types.h>
 #include <defs.h>
+
 DllExport struct PAData PADataPerformConstruct();
 DllExport struct PAData PADataPerformInit(struct PAData PA, PAValue Resource);
 DllExport struct PAData PADataPerformRuin(struct PAData PA);

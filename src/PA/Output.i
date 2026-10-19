@@ -1,7 +1,7 @@
 # 1 "./src/PA/Output.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
-# 466 "<built-in>" 3
+# 418 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
 # 1 "./src/PA/Output.c" 2
@@ -17,13 +17,7 @@
 # 1 "./include/defs.h" 1
 # 6 "./include/PA/Output.h" 2
 # 1 "./include/types.h" 1
-# 15 "./include/types.h"
-typedef long ArrayListSize;
-
-
-
-
-
+# 14 "./include/types.h"
 typedef long ArrayListObject;
 
 
@@ -42,7 +36,7 @@ typedef long ArrayListCount;
 
 
 typedef long ArrayListValue;
-# 47 "./include/types.h"
+# 40 "./include/types.h"
 struct ArrayListPosition {
     ArrayListPosition position;
 };
@@ -56,17 +50,19 @@ struct ArrayList {
 
 
 };
-# 83 "./include/types.h"
-typedef int PAData ;
-typedef int PAStatus;
+# 79 "./include/types.h"
 typedef long PAValue;
+typedef long PABool;
+typedef long PAData;
+typedef long PAStatus;
+typedef long PAResult;
 
-
+typedef long long ArrayListSize;
 
 
 
 struct PANumber;
-# 108 "./include/types.h"
+# 106 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -76,7 +72,7 @@ struct PAArrow;
 
 struct PAData;
 
-struct NormalTree;
+struct PANormalTree;
 struct Adaptee;
 
 
@@ -91,7 +87,7 @@ struct PATransposeTree;
 
 
 
-
+struct PASize;
 struct PAInput;
 struct PAOutput;
 
@@ -99,7 +95,6 @@ struct PAData;
 
 struct List;
 struct PAList;
-struct PAStatus;
 
 
 
@@ -115,7 +110,8 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 166 "./include/types.h"
+struct PAInt;
+# 164 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -161,19 +157,25 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 223 "./include/types.h"
-struct Output {
-
-};
+# 224 "./include/types.h"
 struct Input {
  ;
 };
-# 240 "./include/types.h"
+struct Algorithm {
+ struct Input input;
+};
+# 238 "./include/types.h"
+struct PASize {
+ int digits;
+ int value;
+ int size;
+};
 struct PAResource {
 
 
 
  struct PANumber value;
+ struct PASize size;
 
 };
 struct PAStatus {
@@ -205,14 +207,13 @@ struct PACount {
 
 struct PASeries {
  struct PACount m;
-
  struct PAElement adj[4];
 };
 struct PAList {
  PAValue n;
  struct PASeries neigh[4];
 
-};
+} PAList;
 struct FlyweightFlyweightClient {
 
 
@@ -234,12 +235,12 @@ struct FlyweightUnsharedConcreteFlyweight {
  struct PASeries intrinsicState;
 
 };
-struct PATree {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
- struct PAList adj;
-};
+typedef struct PATree {
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
+ struct PAList* adj;
+}* PATree;
 struct BridgeAbstraction {
  struct PAElement elements[4];
 };
@@ -251,34 +252,27 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 330 "./include/types.h"
+# 333 "./include/types.h"
 struct PAInput {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
+ struct PAList* adj;
 };
 struct BFSRecord {
-struct PACount n;
+ struct PACount n;
  struct PAList d;
 };
 struct PAOutput {
  struct BFSRecord result;
 };
-
-
-
-
-
-
-
 struct PADestination {
     struct PAElement element;
 };
 struct PAPair {
- struct
- PAElement Node;
+ struct PAElement Node;
  struct PAElement Neigh;
- unsigned char padding[2];
+
 };
 struct PAArrow {
  struct PAPair p;
@@ -291,7 +285,14 @@ struct BFSInput {
 struct BFSOutput {
  struct BFSRecord result;
 };
-# 377 "./include/types.h"
+struct Output {
+
+
+ };
+
+
+
+
 struct PALink {
  struct PAPair p;
 
@@ -300,11 +301,11 @@ struct PALink {
 
 
 struct PANormalTree {
- struct PATree tree;
+ struct PATree adj;
 
 };
 struct PATransposeTree {
- struct PATree tree;
+ struct PATree adj_trans;
 
 };
 struct FactoryProduct1 {
@@ -410,11 +411,11 @@ struct Facade {
 # 7 "./include/PA/Output.h" 2
  struct PAOutput PAOutputPerformConstruct();
           struct PAOutput PAOutputPerformInit(struct PAOutput PA, struct BFSRecord Value);
-          struct PAOutput PAOutputPerformDelete(struct PAOutput PA);
-          struct PAOutput PAOutputPerformRuin(struct PAOutput PA);
-          int PAOutputOperatorEqual(struct PAOutput one, struct PAOutput other);
-          int PAOutputOperatorNotEqual(struct PAOutput one, struct PAOutput other);
-          void PAOutputPerformPrint(int Result);
+          PAResult PAOutputPerformDelete(struct PAOutput PA);
+          PAResult PAOutputPerformRuin(struct PAOutput PA);
+          PAResult PAOutputOperatorEqual(struct PAOutput one, struct PAOutput other);
+          PAResult PAOutputOperatorNotEqual(struct PAOutput one, struct PAOutput other);
+          void PAOutputPerformPrint(PAResult Result);
 # 6 "./src/PA/Output.c" 2
 # 1 "./include/BFS/Record.h" 1
 
@@ -424,14 +425,13 @@ struct Facade {
 
 
 
-          void BFSRecordConstruct(struct PAList, struct PACount);
+          struct BFSRecord BFSRecordCreate();
+          struct BFSRecord BFSRecordBegin(struct BFSRecord, struct PAList d, struct PACount n);
+          struct BFSRecord BFSRecordCopy(struct BFSRecord from, struct BFSRecord to);
 
-          void BFSRecordRuin();
+          struct BFSRecord BFSRecordDelete(struct BFSRecord);
+          int BFSRecordFinish(struct BFSRecord);
           void BFSRecordPrint(struct BFSRecord);
-          struct BFSRecord BFSRecordInit(struct BFSRecord);
-          struct BFSRecord BFSRecordCopy(struct BFSRecord);
-          struct BFSRecord BFSRecordPutList(struct BFSRecord, struct PAList);
-          struct BFSRecord BFSRecordPutCount(struct BFSRecord, struct PACount);
 # 7 "./src/PA/Output.c" 2
 
 
@@ -445,18 +445,19 @@ struct Facade {
 }
           struct PAOutput PAOutputPerformInit(struct PAOutput Output, struct BFSRecord Value)
 {
-    Output.result = Value;
     return Output;
 }
-          struct PAOutput PAOutputPerformDelete(struct PAOutput Output)
+          PAResult PAOutputPerformDelete(struct PAOutput Output)
 {
-    return Output;
+    PAResult result;
+    return result;
 }
-          struct PAOutput PAOutputPerformRuin(struct PAOutput PA)
+          PAResult PAOutputPerformRuin(struct PAOutput PA)
 {
-    return PA;
+    PAResult result = ((int)0);
+    return result;
 }
-          void PAOutputPerformPrint(int Result)
+          void PAOutputPrint(PAResult Result)
 {
 
 }

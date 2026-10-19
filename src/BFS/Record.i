@@ -7,27 +7,14 @@
 # 1 "src/BFS/Record.c" 2
 
 
-# 1 "include/types.h" 1
-
-
-
-
-# 1 "include/defs.h" 1
-# 11 "include/defs.h"
-typedef int PAInt;
-
-typedef int PAResource;
-typedef int PABool;
-typedef int PAResult;
+# 1 "./include/types.h" 1
 
 
 
 
 
-typedef int ArrayListSize;
-typedef int ArrayListObject;
-typedef int ArrayListPosition;
-# 6 "include/types.h" 2
+# 1 "./include/defs.h" 1
+# 7 "./include/types.h" 2
 
 
 
@@ -35,29 +22,67 @@ typedef int ArrayListPosition;
 
 
 
-typedef int PAInt;
-
-typedef int PAResource;
-typedef int PABool;
-typedef int PAResult;
-typedef int ArrayListSize;
-typedef int ArrayListObject;
-typedef int ArrayListPosition;
+typedef long ArrayListObject;
 
 
+
+
+typedef long ArrayListPosition;
+typedef long ArrayListOffset;
+
+
+
+
+
+typedef long ArrayListCount;
+
+
+
+
+typedef long ArrayListValue;
+# 40 "./include/types.h"
+struct ArrayListPosition {
+    ArrayListPosition position;
+};
+
+struct ArrayList {
+
+    ArrayListObject elements[4];
+    ArrayListPosition place;
+
+    ArrayListCount count;
+
+
+};
+# 79 "./include/types.h"
+typedef long PAValue;
+typedef long PABool;
+typedef long PAData;
+typedef long PAStatus;
+typedef long PAResult;
+
+typedef long long ArrayListSize;
+
+
+
+struct PANumber;
+# 106 "./include/types.h"
+struct Adapter;
 struct PADestination;
 struct PAArrow;
 
 
+
+
 struct PAData;
 
-struct NormalTree;
+struct PANormalTree;
 struct Adaptee;
 
 
 
 
-
+struct PAResource;
 struct PACount;
 struct PANormalTree;
 struct PATransposeTree;
@@ -66,16 +91,15 @@ struct PATransposeTree;
 
 
 
-
+struct PASize;
 struct PAInput;
 struct PAOutput;
 
 struct PAData;
-struct PAValue;
+
 struct List;
 struct PAList;
-struct PAStatus;
-struct PAFeature;
+
 
 
 
@@ -90,13 +114,8 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-
-
-
-
-
-
-
+struct PAInt;
+# 164 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -112,11 +131,11 @@ struct Director;
 struct NormalTree;
 struct Product ;
 struct TransposeTree;
-struct Aggregate;
+struct IteratorAggregate;
+struct IteratorConcreteAggregate;
+struct IteratorConcreteIterator;
+struct IteratorIterator ;
 struct BuilderClient ;
-struct ConcreteAggregate;
-struct ConcreteIterator;
-struct Iterator ;
 struct BFSProcedure;
 struct Input;
 struct Algorithm;
@@ -131,46 +150,78 @@ struct BridgeClient;
 struct BridgeConcreteImplementorA;
 struct BridgeConcreteImplementorB;
 struct BridgeImplementor;
-# 122 "include/types.h"
-struct ArrayListPosition {
- ArrayListPosition position;
-};
-struct ArrayList {
+struct PrototypePrototype;
+struct PrototypeClient;
+struct PANumber {
 
- struct ArrayListPosition place;
- ArrayListObject objects[((int)4096)];
+
+ PAValue val;
+
+};
+struct PrototypeConcretePrototype1;
+struct PrototypeConcretePrototype2;
+struct Facade;
+# 224 "./include/types.h"
+struct Input {
+ ;
+};
+struct Algorithm {
+ struct Input input;
+};
+# 238 "./include/types.h"
+struct PASize {
+ int digits;
+ int value;
+ int size;
+};
+struct PAResource {
+
+
+
+ struct PANumber value;
+ struct PASize size;
+
 };
 struct PAStatus {
- PAInt visited;
+ PAValue visited;
 };
 struct PAData {
-    PAResource resource;
-};
-struct PAFeature {
- PAInt kind;
-};
-struct PACount {
- PAInt number;
-};
-struct PASeries {
- struct PACount m;
- struct ArrayList adj;
-};
-struct PAList {
- struct PACount n;
- struct PASeries adj[((int)4096)];
+ PAValue Resource;
 
 };
+
+
 struct PAElement {
 
- struct PAData index;
+ PAData index;
 
- struct PAStatus status;
- struct PAFeature type;
+ PAStatus status;
+
+
 };
-struct FlyweightFlyweightClient {
- struct PASeries series;
+struct PAFeature {
+ PAValue kind;
+};
 
+struct PACount {
+
+ PAValue number;
+};
+
+
+struct PASeries {
+ struct PACount m;
+ struct PAElement adj[4];
+};
+struct PAList {
+ PAValue n;
+ struct PASeries neigh[4];
+
+} PAList;
+struct FlyweightFlyweightClient {
+
+
+ struct PASeries series;
 };
 struct FlyweightFlyweight {
  struct PAElement allState;
@@ -188,14 +239,14 @@ struct FlyweightUnsharedConcreteFlyweight {
  struct PASeries intrinsicState;
 
 };
-struct PATree {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
- struct PAList adj;
-};
+typedef struct PATree {
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
+ struct PAList* adj;
+}* PATree;
 struct BridgeAbstraction {
- struct PAElement elements[((int)4096)];
+ struct PAElement elements[4];
 };
 struct BridgeClient{
  struct PATree tree;
@@ -205,32 +256,27 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 208 "include/types.h"
+# 333 "./include/types.h"
 struct PAInput {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
+ struct PAList* adj;
 };
 struct BFSRecord {
-struct PACount n;
+ struct PACount n;
  struct PAList d;
 };
 struct PAOutput {
  struct BFSRecord result;
 };
-
-
-
-
-struct PAValue {
- PAInt value;
-};
 struct PADestination {
     struct PAElement element;
 };
 struct PAPair {
- struct PAElement node;
- struct PAElement neigh;
+ struct PAElement Node;
+ struct PAElement Neigh;
+
 };
 struct PAArrow {
  struct PAPair p;
@@ -243,19 +289,27 @@ struct BFSInput {
 struct BFSOutput {
  struct BFSRecord result;
 };
-# 253 "include/types.h"
+struct Output {
+
+
+ };
+
+
+
+
 struct PALink {
  struct PAPair p;
+
 };
 
 
 
 struct PANormalTree {
- struct PATree tree;
+ struct PATree adj;
 
 };
 struct PATransposeTree {
- struct PATree tree;
+ struct PATree adj_trans;
 
 };
 struct FactoryProduct1 {
@@ -283,7 +337,7 @@ struct FactoryCreator
  struct PATransposeTree transposeTree;
 };
 struct FlyWeight {
- PAInt todo;
+ PAValue todo;
 };
 struct Adaptee {
  struct ArrayList list;
@@ -313,23 +367,35 @@ struct Builder {
 struct Director {
  struct Builder builder;
 };
-struct Iterator {
+struct IteratorIterator {
  struct PAList series;
 };
-struct Aggregate {
- struct Iterator iterator;
+struct IteratorAggregate {
+ struct IteratorIterator iterator;
 };
 struct ConcreteBuilder {
  struct Builder builder;
 };
-struct ConcreteIterator {
- PAInt position;
+struct IteratorConcreteIterator {
+ PAValue position;
 };
-struct ConcreteAggregate {
- struct ConcreteIterator iterator;
+struct IteratorConcreteAggregate {
+ struct IteratorConcreteIterator iterator;
 };
 
 
+struct PrototypePrototype {
+ struct PASeries adj;
+};
+struct PrototypeClient {
+ struct PrototypePrototype prototype;
+};
+struct PrototypeConcretePrototype1 {
+ struct PASeries adj;
+};
+struct PrototypeConcretePrototype2 {
+ struct PASeries adj_trans;
+};
 struct BFSProcedure {
 
  struct BFSInput input;
@@ -337,59 +403,99 @@ struct BFSProcedure {
 
 
 };
+struct Facade {
+ struct PASeries series;
+ struct PACount size;
+ struct PAList list;
+ struct PAElement element;
+ struct PALink link;
+ struct PAData data;
+ struct FactoryCreator factory;
+};
 # 4 "src/BFS/Record.c" 2
 
 
-# 1 "include/PA/List.h" 1
+# 1 "./include/PA/List.h" 1
 
 
 
 
 
 
-
-
-struct PAList PASeriesPerformConstruct(struct PASeries Adj[],struct PACount Nß);
-PAResult PAListPerformInit();
-PAResult PAListPerformCopy();
-PAResult PAListPerformPutCount(struct PACount);
-PAResult PAListPerformPutList(struct PAList);
-PAResult PAListPerformRuin();
-PAResult PAListPerformDelete();
-void PAListDispose(void);
+          struct PAList PAListPerformConstruct();
+          struct PAList PAListPerformInit(struct PAList PA, PAValue N, struct PASeries adj[]);
+          struct PAList PAListPerformRuin(struct PAList PA);
+          struct PAList PAListPerformDelete(struct PAList PA);
+          struct PAList PAListPerformCopy(struct PAList from, struct PAList to);
+          PAResult PAListOperatorEqual(struct PAList one, struct PAList other);
+          PAResult PAListOperatorNotEqual(struct PAList one, struct PAList other);
+void PAListPerformPrint(struct PAList List);
 # 7 "src/BFS/Record.c" 2
-# 1 "include/PA/Count.h" 1
-# 12 "include/PA/Count.h"
-struct PACount PACountPerformConstruct(PAInt valoare);
-struct PACount PACountPerformInit(struct PACount);
-struct PACount PACountPerformCopy(struct PACount);
-
-PAResult PACountPerformPrint(struct PACount);
-PAResult PACountPerformRuin(struct PACount);
-struct PACount PACountPerformPutValue(struct PACount, PAInt);
-
-PAResult PACountPerformDelete(struct PACount);
+# 1 "./include/PA/Count.h" 1
+# 12 "./include/PA/Count.h"
+          struct PACount PACountPerformConstruct();
+          struct PACount PACountPerformInit(struct PACount Count, PAValue Number);
+          struct PACount PACountPerformCopy(struct PACount from, struct PACount to);
+          struct PACount PACountPerformRuin(struct PACount PA);
+          struct PACount PACountPerformDelete(struct PACount PA);
+          PAResult PACountOperatorLess(struct PACount one, struct PACount other);
+          PAResult PACountOperatorEqual(struct PACount one, struct PACount other);
+          PAResult PACountOperatorGreater(struct PACount one, struct PACount other);
+          PAResult PACountOperatorNotEqual(struct PACount one, struct PACount other);
 # 8 "src/BFS/Record.c" 2
-# 1 "include/PA/Result.h" 1
+# 1 "./include/PA/Result.h" 1
 # 9 "src/BFS/Record.c" 2
-# 1 "include/BFS/Record.h" 1
+# 1 "./include/BFS/Record.h" 1
 
 
 
 
 
 
-void BFSRecordConstruct(struct PAList, struct PACount);
 
-void BFSRecordRuin();
-void BFSRecordPrint(struct BFSRecord);
-struct BFSRecord BFSRecordInit(struct BFSRecord);
-struct BFSRecord BFSRecordCopy(struct BFSRecord);
-struct BFSRecord BFSRecordPutList(struct BFSRecord, struct PAList);
-struct BFSRecord BFSRecordPutCount(struct BFSRecord, struct PACount);
+          struct BFSRecord BFSRecordCreate();
+          struct BFSRecord BFSRecordBegin(struct BFSRecord, struct PAList d, struct PACount n);
+          struct BFSRecord BFSRecordCopy(struct BFSRecord from, struct BFSRecord to);
+
+          struct BFSRecord BFSRecordDelete(struct BFSRecord);
+          int BFSRecordFinish(struct BFSRecord);
+          void BFSRecordPrint(struct BFSRecord);
 # 10 "src/BFS/Record.c" 2
-# 19 "src/BFS/Record.c"
-void BFSRecordPrint(struct BFSRecord Record) {
 
 
+
+
+
+
+
+
+          struct BFSRecord BFSRecordCreate()
+{
+    struct BFSRecord recordPointer;
+    return recordPointer;
+}
+
+          int BFSRecordFinish(struct BFSRecord PA)
+{
+    return ((int)0);
+}
+          struct BFSRecord BFSRecordDelete(struct BFSRecord PA)
+{
+    struct BFSRecord record;
+    return record;
+}
+          void BFSRecordPrint(struct BFSRecord PA)
+{
+
+}
+          struct BFSRecord BFSRecordBegin(struct BFSRecord Record, struct PAList d, struct PACount n)
+{
+    struct BFSRecord record;
+    return record;
+}
+          struct BFSRecord BFSRecordCopy(struct BFSRecord from, struct BFSRecord to)
+{
+    struct BFSRecord record;
+
+    return to;
 }

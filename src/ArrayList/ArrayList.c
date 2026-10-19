@@ -2,7 +2,7 @@
 #include <types.h>
 // #include <stdio.h>
 #ifndef _WIN95
- #include <ArrayList/ArrayList.h>
+#include <ArrayList/ArrayList.h>
 // #eliuf
 #elif defined _WIN95
 #include <ArrayList\ArrayList.h>

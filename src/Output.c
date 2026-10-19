@@ -1,37 +1,39 @@
 //@Author Cristofor Rotsching
-
-#include <defs.h>
 #include <Output.h>
 
-#ifndef _WIN95
-// #include <Output.h>
-// #include <PA/Result.h>
-#elif defined _WIN95
-// #include <PA\Result.h>
-// #include <Output.h>
-// #include <types.h>
-#endif
-DllExport struct Output OutputPerformConstruct()
+// #ifndef _WIN95
+// // #include <Output.h>
+// // #include <PA/Result.h>
+// #elif defined _WIN95
+// // #include <PA\Result.h>
+// // #include <Output.h>
+// // #include <types.h>
+// #endif
+DllExport struct Output* OutputCreate()
 {
-    struct Output output;
-    return output;   
+    struct Output* outputPointer;
+    // output = Output
+    return outputPointer;
 }
-DllExport struct Output OutputPerformInit(struct Output output, struct PAOutput Output2)
+DllExport struct Output OutputBegin(struct Output* output, struct PAOutput* Value)
 {
-    return output;
+    return *output;
 }
-DllExport struct Output OutputPerformCopy(struct Output from, struct Output to)
+DllExport struct Output OutputCopy(struct Output* from, struct Output* to)
 {
-    return from;
+    struct Output temp;
+    return temp;
 }
-DllExport struct Output OutputPerformRuin(struct Output PA)
+DllExport int OutputFinish(struct Output* PA)
 {
-    return PA;
+    int returnCode = PARESULT_SUCCESS;
+    return returnCode;
 }
 // #include <PA/Output.h>
 //#include <types.h>
-void OutputPerformPrint(PAResult result)
+void OutputPerformPrint(struct Output* PA)
 {
+
     // int a = result;
     // int b = result;
     // int c = result;

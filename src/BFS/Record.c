@@ -15,8 +15,37 @@
 #endif
 // struct PALista Lista;
 	// struct PACardinal Cardinal;
-
-void BFSRecordPrint(struct BFSRecord Record) {
-    // PAListPerformPrint(Record.d);
-    // PACountPerformPrint(Record.n);
+DllExport struct BFSRecord BFSRecordCreate()
+{
+    struct BFSRecord recordPointer;
+    return recordPointer;
 }
+// void BFSRecordDestroy();
+DllExport int BFSRecordFinish(struct BFSRecord PA)
+{
+    return PARESULT_SUCCESS;
+}
+DllExport struct BFSRecord BFSRecordDelete(struct BFSRecord PA)
+{
+    struct BFSRecord record;
+    return record;
+}
+DllExport void BFSRecordPrint(struct BFSRecord PA)
+{
+
+}
+DllExport struct BFSRecord BFSRecordBegin(struct BFSRecord Record, struct PAList d, struct PACount n)
+{
+    struct BFSRecord record;
+    return record;
+}
+DllExport struct BFSRecord BFSRecordCopy(struct BFSRecord from, struct BFSRecord to)
+{
+    struct BFSRecord record;
+    // return record;
+    return to;
+}
+// void BFSRecordPrint(struct BFSRecord Record) {
+//     // PAListPerformPrint(Record.d);
+//     // PACountPerformPrint(Record.n);
+// }

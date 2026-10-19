@@ -1,29 +1,21 @@
 # 1 "./src/Output.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
-# 466 "<built-in>" 3
+# 418 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
 # 1 "./src/Output.c" 2
 
-
-# 1 "./include/defs.h" 1
-# 4 "./src/Output.c" 2
 # 1 "./include/Output.h" 1
 
 
 
 
 
-
+# 1 "./include/defs.h" 1
+# 7 "./include/Output.h" 2
 # 1 "./include/types.h" 1
-# 15 "./include/types.h"
-typedef long ArrayListSize;
-
-
-
-
-
+# 14 "./include/types.h"
 typedef long ArrayListObject;
 
 
@@ -42,7 +34,7 @@ typedef long ArrayListCount;
 
 
 typedef long ArrayListValue;
-# 47 "./include/types.h"
+# 40 "./include/types.h"
 struct ArrayListPosition {
     ArrayListPosition position;
 };
@@ -56,17 +48,19 @@ struct ArrayList {
 
 
 };
-# 83 "./include/types.h"
-typedef int PAData ;
-typedef int PAStatus;
+# 79 "./include/types.h"
 typedef long PAValue;
+typedef long PABool;
+typedef long PAData;
+typedef long PAStatus;
+typedef long PAResult;
 
-
+typedef long long ArrayListSize;
 
 
 
 struct PANumber;
-# 108 "./include/types.h"
+# 106 "./include/types.h"
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -76,7 +70,7 @@ struct PAArrow;
 
 struct PAData;
 
-struct NormalTree;
+struct PANormalTree;
 struct Adaptee;
 
 
@@ -91,7 +85,7 @@ struct PATransposeTree;
 
 
 
-
+struct PASize;
 struct PAInput;
 struct PAOutput;
 
@@ -99,7 +93,6 @@ struct PAData;
 
 struct List;
 struct PAList;
-struct PAStatus;
 
 
 
@@ -115,7 +108,8 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
-# 166 "./include/types.h"
+struct PAInt;
+# 164 "./include/types.h"
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -161,19 +155,25 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
-# 223 "./include/types.h"
-struct Output {
-
-};
+# 224 "./include/types.h"
 struct Input {
  ;
 };
-# 240 "./include/types.h"
+struct Algorithm {
+ struct Input input;
+};
+# 238 "./include/types.h"
+struct PASize {
+ int digits;
+ int value;
+ int size;
+};
 struct PAResource {
 
 
 
  struct PANumber value;
+ struct PASize size;
 
 };
 struct PAStatus {
@@ -205,14 +205,13 @@ struct PACount {
 
 struct PASeries {
  struct PACount m;
-
  struct PAElement adj[4];
 };
 struct PAList {
  PAValue n;
  struct PASeries neigh[4];
 
-};
+} PAList;
 struct FlyweightFlyweightClient {
 
 
@@ -234,12 +233,12 @@ struct FlyweightUnsharedConcreteFlyweight {
  struct PASeries intrinsicState;
 
 };
-struct PATree {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
- struct PAList adj;
-};
+typedef struct PATree {
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
+ struct PAList* adj;
+}* PATree;
 struct BridgeAbstraction {
  struct PAElement elements[4];
 };
@@ -251,34 +250,27 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
-# 330 "./include/types.h"
+# 333 "./include/types.h"
 struct PAInput {
- struct PACount n;
- struct PACount m;
- struct PAElement source;
+ struct PACount* n;
+ struct PACount* m;
+ struct PAElement* source;
+ struct PAList* adj;
 };
 struct BFSRecord {
-struct PACount n;
+ struct PACount n;
  struct PAList d;
 };
 struct PAOutput {
  struct BFSRecord result;
 };
-
-
-
-
-
-
-
 struct PADestination {
     struct PAElement element;
 };
 struct PAPair {
- struct
- PAElement Node;
+ struct PAElement Node;
  struct PAElement Neigh;
- unsigned char padding[2];
+
 };
 struct PAArrow {
  struct PAPair p;
@@ -291,7 +283,14 @@ struct BFSInput {
 struct BFSOutput {
  struct BFSRecord result;
 };
-# 377 "./include/types.h"
+struct Output {
+
+
+ };
+
+
+
+
 struct PALink {
  struct PAPair p;
 
@@ -300,11 +299,11 @@ struct PALink {
 
 
 struct PANormalTree {
- struct PATree tree;
+ struct PATree adj;
 
 };
 struct PATransposeTree {
- struct PATree tree;
+ struct PATree adj_trans;
 
 };
 struct FactoryProduct1 {
@@ -410,35 +409,40 @@ struct Facade {
 # 8 "./include/Output.h" 2
 
 
-          struct Output OutputPerformConstruct();
-          struct Output OutputPerformInit(struct Output, struct PAOutput);
-          struct Output OutputPerformCopy(struct Output, struct Output);
-          struct Output OutputPerformRuin(struct Output);
 
-          void OutputPerformPrint(int);
-# 5 "./src/Output.c" 2
-# 14 "./src/Output.c"
-          struct Output OutputPerformConstruct()
+          struct Output* OutputCreate();
+          struct Output OutputBegin(struct Output*, struct PAOutput*);
+          struct Output OutputCopy(struct Output*, struct Output*);
+          int OutputFinish(struct Output*);
+
+          void OutputPrint(struct Output*);
+# 3 "./src/Output.c" 2
+# 12 "./src/Output.c"
+          struct Output* OutputCreate()
 {
-    struct Output output;
-    return output;
+    struct Output* outputPointer;
+
+    return outputPointer;
 }
-          struct Output OutputPerformInit(struct Output output, struct PAOutput Output2)
+          struct Output OutputBegin(struct Output* output, struct PAOutput* Value)
 {
-    return output;
+    return *output;
 }
-          struct Output OutputPerformCopy(struct Output from, struct Output to)
+          struct Output OutputCopy(struct Output* from, struct Output* to)
 {
-    return from;
+    struct Output temp;
+    return temp;
 }
-          struct Output OutputPerformRuin(struct Output PA)
+          int OutputFinish(struct Output* PA)
 {
-    return PA;
+    int returnCode = ((int)0);
+    return returnCode;
 }
 
 
-void OutputPerformPrint(int result)
+void OutputPerformPrint(struct Output* PA)
 {
+
 
 
 

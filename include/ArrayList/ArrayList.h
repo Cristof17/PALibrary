@@ -4,6 +4,9 @@
 
 #include <defs.h>
 #include <types.h>
+#include <stdlib.h>
+#include <string.h>
+// #include <string.h>
 
 DllExport struct ArrayList ArrayListPerformConstruct(struct ArrayList Array, ArrayListValue Data[], ArrayListCount Count);
 DllExport struct ArrayList ArrayListPerformInit(struct ArrayList Array, ArrayListValue Data, ArrayListCount Count);

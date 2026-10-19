@@ -2,33 +2,46 @@
 
 #include <Input.h>
 #ifndef _WIN95
+#include <PA/Memory.h>
 #include <ArrayList/ArrayList.h>
 #include <PA/Result.h>
 #elif defined _WIN95
+#include <PA\Memory.h>
 #include <PA\Result.h>
 #include <ArrayList\ArrayList.h>
 #endif
 #include <types.h>
+#include <defs.h>
+// #endif
 // #include <ty[].h>
 //#include <types.h>
-DllExport struct Input InputPerformConstruct()
+DllExport struct Input* InputCreate()
 {
-    struct Input input;
+
+    // struct Input input;
+    struct Input* input;
+    input = (struct Input*) malloc (sizeof(struct Input));
+    // return i
     return input;
 }
-DllExport struct Input InputPerformInit(struct Input input, struct PACount n, struct PACount m, struct ArrayList adj, struct PAElement source)
+DllExport struct Input InputBegin(struct Input* input, struct PACount n, struct PACount m, struct ArrayList adj, struct PAElement source)
 {
-    return input;
+    return *input;
 }
-DllExport struct Input InputPerformCopy(struct Input from, struct Input to)
+DllExport struct Input InputCopy(struct Input* from, struct Input* to)
 {
-    return from;
+    struct Input aux;
+    // return from;
+    return aux;
 }
-DllExport struct Input InputPerformDelete(struct Input PA)
+DllExport struct Input InputDelete(struct Input* PA)
 {
-    return PA;
+    return *PA;
 }
-DllExport struct Input InputPerformRuin(struct Input PA)
+DllExport int InputFinish(struct Input* PA)
 {
-    return PA;
+    int returnCode;
+    returnCode = PARESULT_SUCCESS;
+    // return PA;
+    return returnCode;
 }

@@ -3,6 +3,7 @@
 #define INCLUDE_PA_RESOURCE_H_	1
 #include <types.h>
 #include <defs.h>
+
 DllExport struct PAResource PAResourcePerformInit(struct PAResource PA, struct PANumber Number);
 DllExport struct PAResource PAResourcePerformConstruct();
 DllExport struct PAResource PAResourcePerformRuin(struct PAResource PA);

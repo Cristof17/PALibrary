@@ -16,18 +16,19 @@ DllExport struct PAOutput PAOutputPerformConstruct()
 }
 DllExport struct PAOutput PAOutputPerformInit(struct PAOutput Output, struct BFSRecord Value)
 {
-    Output.result = Value;
     return Output;
 }
-DllExport struct PAOutput PAOutputPerformDelete(struct PAOutput Output)
+DllExport PAResult PAOutputPerformDelete(struct PAOutput Output)
 {
-    return Output;
+    PAResult result;
+    return result;
 }
-DllExport struct PAOutput PAOutputPerformRuin(struct PAOutput PA)
+DllExport PAResult PAOutputPerformRuin(struct PAOutput PA)
 {
-    return PA;
+    PAResult result = PARESULT_SUCCESS;
+    return result;
 }
-DllExport void PAOutputPerformPrint(PAResult Result)
+DllExport void PAOutputPrint(PAResult Result)
 {
 
 }

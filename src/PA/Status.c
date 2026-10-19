@@ -1,13 +1,15 @@
-//@Author Cristofor Rotsching
+// //@Author Cristofor Rotsching
 
-#include <defs.h>
+// #include <defs.h>
 
 #ifndef _WIN95
 #include <PA/Status.h>
 #include <PA/Resource.h>
+#include <PA/Memory.h>
 #elif defined _WIN95
 #include <PA\Status.h>
 #include <PA\Resource.h>
+#include <PA\Memory.h>
 #endif
 
 DllExport struct PAStatus PAStatusPerformConstruct()

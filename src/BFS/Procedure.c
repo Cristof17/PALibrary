@@ -23,9 +23,9 @@
 //check and searcg based b on state
 // a situation that must exist before something else is possible or permitted
 //use visited flag when searching
-PAResult BFS()
+HRESULT BFS()
 {
-    PAResult result;
+    HRESULT result;
     return result;
     // struct PAElement element;
     // return element;
@@ -48,12 +48,12 @@ struct BFSProcedure BFSProcedurePutInput(struct BFSProcedure Procedure, struct P
     return procedure;
 }
 // void BFSAlgorithm(struct PATree, struct BFSInput);
-PAResult BFSProcedureRuin()
+HRESULT BFSProcedureRuin()
 {
     PAResult result;
     return result;
 }
-PAResult BFSProcedureSubroutine()
+HRESULT BFSProcedureSubroutine()
 {
     PAResult result;
     return result;

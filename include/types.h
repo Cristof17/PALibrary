@@ -6,16 +6,9 @@
 #include <defs.h>
 
 #ifdef _WIN95
-typedef int ArrayListSize;
-typedef int ArrayListObject;
 #else
 #endif
 
-#ifdef _64BIT
-typedef long ArrayListSize;
-#else
-typedef int ArrayListSize;
-#endif 
 // typedef int ArrayListSize;
 #ifdef _64BIT
 typedef long ArrayListObject;
@@ -64,30 +57,35 @@ struct ArrayList {
 // #define PANumber int
 #define PABool int
 #define PAResult int
-#define ArrayListSize int
 #else
 // #define PANumber long long
 #define PABool int
 #define PAResult int
-#define ArrayListSize long long
 #endif //64BIT	
 #else
 // typedef int PANumber;
+
 #ifndef _64BIT
 // #define PANumber int
-#define PABool int
-#define PAResult int
-#define ArrayListSize int
+typedef int PAValue;
+typedef int PABool;
+typedef int PAResult;
+typedef int ArrayListSize;
+typedef int PAData;
+typedef int PAStatus;
+typedef int PAResult;
 #else
 // #define PANumber long long
-typedef int PAData ;
-typedef int PAStatus;
 typedef long PAValue;
-#define PABool int
-#define PAResult int
+typedef long PABool;
+typedef long PAData;
+typedef long PAStatus;
+typedef long PAResult;
 // @define 
-#define ArrayListSize long long
+typedef long long ArrayListSize;
 #endif //#64BIT
+
+
 struct PANumber;
 // typedef int PAInt;
 //#define PAInt int
@@ -114,7 +112,7 @@ struct PAArrow;
 // struct BFSAlgorithm;
 struct PAData;
 //struct BFSRecord;
-struct NormalTree;
+struct PANormalTree;
 struct Adaptee;
 // struct BFSAlgorithm;
 // struct BFSOutput;
@@ -129,7 +127,7 @@ struct PATransposeTree;
 // struct PAElement;
 // struct PACount;
 // typedef struct PAData PAData;
-// struct PASize;
+struct PASize;
 struct PAInput;
 struct PAOutput;
 // struct PAResource;
@@ -137,11 +135,10 @@ struct PAData;
 // struct PAValue;
 struct List;
 struct PAList;
-struct PAStatus;
+// struct PAStatus;
 // struct PAFeature;
 // struct PAValue;
 // struct PADestination;
-// struct PAStatus/*.*/;
 // struct PAPair;struct PAPair;
 struct PAElement;
 struct PADestination;
@@ -153,6 +150,7 @@ struct BFSOutput;
 struct PASeries;
 struct PATree;
 struct PALink;
+struct PAInt;
 // struct ConcreteIterator;
 // struct Iterator;
 // struct PAList;
@@ -214,21 +212,21 @@ struct Facade;
 // };
 	// struct PASeries adj;
 // };
-	// struct PASeries adj_trans;
+	// struct PASeries adgij_trans;
 // };
 
 // struct Input {
 // 	struct Algorithm algorithm;
 // };
-struct Output {
+// struct Output {
 
-};
+// };
 struct Input {
 	;
 };
-	// struct Algorithm {
-			// struct Input input;
-		// };
+struct Algorithm {
+	struct Input input;
+};
 // struct ArrayListPosition {
 // 	int position;
 // };
@@ -237,11 +235,17 @@ struct Input {
 // 	struct ArrayListPosition place;
 // 	int objects[SIZE];
 // };
+struct PASize {
+	int digits;
+	int value;
+	int size;
+};
 struct PAResource {
 	// struct
 	// PA_INt
 	// PAInt value;
 	struct PANumber value;
+	struct PASize size;
 	// PADDING_1_BYTE(0);
 };
 struct PAStatus {
@@ -273,14 +277,13 @@ struct PACount {
 
 struct PASeries {
 	struct PACount m;
-	// struct PANumber adj[0];
 	struct PAElement adj[SIZE];
 };
 struct PAList {
 	PAValue n;
 	struct PASeries neigh[SIZE];
 	// struct PANod Nod;
-};
+} PAList;
 struct FlyweightFlyweightClient {
 	// struct PASeries series;
 	//PAInt todo;
@@ -302,12 +305,12 @@ struct FlyweightUnsharedConcreteFlyweight {
 	struct PASeries intrinsicState;
 	//PAInt todo;
 };
-struct PATree  {
-	struct PACount n;
-	struct PACount m;
-	struct PAElement source;
-	struct PAList adj;
-};
+typedef struct PATree  {
+	struct PACount* n;
+	struct PACount* m;
+	struct PAElement* source;
+	struct PAList* adj;
+}* PATree;
 struct BridgeAbstraction {
 	struct PAElement elements[SIZE];
 };
@@ -328,32 +331,25 @@ struct BridgeConcreteImplementorB {
 // struct BFSPorce
 
 struct PAInput {
-	struct PACount n;
-	struct PACount m;
-	struct PAElement source;
+	struct PACount* n;
+	struct PACount* m;
+	struct PAElement* source;
+	struct PAList* adj;
 };
 struct BFSRecord {
-struct PACount n;
+	struct PACount n;
 	struct PAList d;
 };
 struct PAOutput {
 	struct BFSRecord result;
 };
-// struct PAData {
-// //    int Value;
-// 	INT Value;
-// };
-// struct PAValue {
-// 	PAValue value;
-// };
 struct PADestination {
     struct PAElement element;
 };
 struct PAPair {
-	struct
-	PAElement Node;
+	struct PAElement Node;
 	struct PAElement Neigh;
-	PADDING_1_BYTE(2);
+	// PADDING_1_BYTE(2);
 };
 struct PAArrow {
 	struct PAPair p;
@@ -366,10 +362,10 @@ struct BFSInput {
 struct BFSOutput {
 	struct BFSRecord result;
 };
-// struct Output {
-	// //	struct PARezultat rezultat;
-	// //	struct BFSOutput outputBFS;
-	// };
+struct Output {
+	//	struct PARezultat rezultat;
+	//	struct BFSOutput outputBFS;
+	};
 	//struct PASeries
 	//{
 		//

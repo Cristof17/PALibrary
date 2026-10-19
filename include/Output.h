@@ -5,12 +5,13 @@
 // #include "types.h"
 #include <defs.h>
 #include <types.h>
+// #include <BFS/Record.h>
 // struct Output;
 // typedef struct Output Output;
-DllExport struct Output OutputPerformConstruct();
-DllExport struct Output OutputPerformInit(struct Output, struct PAOutput);
-DllExport struct Output OutputPerformCopy(struct Output, struct Output);
-DllExport struct Output OutputPerformRuin(struct Output);
+DllExport struct Output* OutputCreate();
+DllExport struct Output OutputBegin(struct Output*, struct PAOutput*);
+DllExport struct Output OutputCopy(struct Output*, struct Output*);
+DllExport int OutputFinish(struct Output*);
 //struct Output dispose();
-DllExport void OutputPerformPrint(PAResult);
+DllExport void OutputPrint(struct Output*);
 #endif

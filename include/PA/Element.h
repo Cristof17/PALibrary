@@ -5,6 +5,10 @@
 #include <defs.h>
 #include <types.h>
 
+#ifndef _WIN95
+#elif defined _WIN95
+#endif
+
 DllExport struct PAElement PAElementPerformConstruct();
 DllExport struct PAElement PAElementPerformInit(struct PAElement PA, PAData Data, PAStatus Status);
 DllExport void PAElementVisit(struct PAElement Element);

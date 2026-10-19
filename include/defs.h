@@ -52,7 +52,7 @@ typedef uint32_t ListPosition;
 #define PARESULT_GREATER_THAN ((int)1)
 #define TRUE 1
 #define FALSE 0
-#define NULL 0
+// #define NULL 0
 #define NULL_CHAR '5'
 #ifndef _WIN95
 // typedef 
