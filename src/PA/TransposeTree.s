@@ -1,5 +1,5 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.build_version macos, 14, 0	sdk_version 14, 4
+	.build_version macos, 15, 0	sdk_version 26, 2
 	.globl	_PATransposeTreePerformConstruct ; -- Begin function PATransposeTreePerformConstruct
 	.p2align	2
 _PATransposeTreePerformConstruct:       ; @PATransposeTreePerformConstruct
@@ -17,16 +17,29 @@ _PATransposeTreePerformConstruct:       ; @PATransposeTreePerformConstruct
 _PATransposeTreePerformInit:            ; @PATransposeTreePerformInit
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #48
-	.cfi_def_cfa_offset 48
-	mov	x9, x0
-	str	x9, [sp, #40]
-	str	x1, [sp, #32]
-	ldr	q0, [x0]
-	str	q0, [x8]
-	ldr	q0, [x0, #16]
-	str	q0, [x8, #16]
-	add	sp, sp, #48
+	sub	sp, sp, #400
+	stp	x28, x27, [sp, #368]            ; 16-byte Folded Spill
+	stp	x29, x30, [sp, #384]            ; 16-byte Folded Spill
+	add	x29, sp, #384
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	.cfi_offset w27, -24
+	.cfi_offset w28, -32
+	str	x8, [sp, #8]                    ; 8-byte Folded Spill
+	mov	x2, x0
+	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
+	str	x2, [sp, #16]                   ; 8-byte Folded Spill
+	mov	x8, x1
+	ldr	x1, [sp, #16]                   ; 8-byte Folded Reload
+	mov	x9, x1
+	stur	x9, [x29, #-24]
+	stur	x8, [x29, #-32]
+	mov	x2, #328                        ; =0x148
+	bl	_memcpy
+	ldp	x29, x30, [sp, #384]            ; 16-byte Folded Reload
+	ldp	x28, x27, [sp, #368]            ; 16-byte Folded Reload
+	add	sp, sp, #400
 	ret
 	.cfi_endproc
                                         ; -- End function

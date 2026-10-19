@@ -306,10 +306,10 @@ struct FlyweightUnsharedConcreteFlyweight {
 	//PAInt todo;
 };
 typedef struct PATree  {
-	struct PACount* n;
-	struct PACount* m;
-	struct PAElement* source;
-	struct PAList* adj;
+	struct PACount n;
+	struct PACount m;
+	struct PAElement source;
+	struct PAList adj;
 }* PATree;
 struct BridgeAbstraction {
 	struct PAElement elements[SIZE];
@@ -331,10 +331,10 @@ struct BridgeConcreteImplementorB {
 // struct BFSPorce
 
 struct PAInput {
-	struct PACount* n;
-	struct PACount* m;
-	struct PAElement* source;
-	struct PAList* adj;
+	struct PACount n;
+	struct PACount m;
+	struct PAElement source;
+	struct PAList adj;
 };
 struct BFSRecord {
 	struct PACount n;

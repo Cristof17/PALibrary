@@ -1,7 +1,7 @@
 # 1 "src/BFS/Record.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
-# 418 "<built-in>" 3
+# 466 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
 # 1 "src/BFS/Record.c" 2
@@ -240,10 +240,10 @@ struct FlyweightUnsharedConcreteFlyweight {
 
 };
 typedef struct PATree {
- struct PACount* n;
- struct PACount* m;
- struct PAElement* source;
- struct PAList* adj;
+ struct PACount n;
+ struct PACount m;
+ struct PAElement source;
+ struct PAList adj;
 }* PATree;
 struct BridgeAbstraction {
  struct PAElement elements[4];
@@ -258,10 +258,10 @@ struct BridgeConcreteImplementorB {
 };
 # 333 "./include/types.h"
 struct PAInput {
- struct PACount* n;
- struct PACount* m;
- struct PAElement* source;
- struct PAList* adj;
+ struct PACount n;
+ struct PACount m;
+ struct PAElement source;
+ struct PAList adj;
 };
 struct BFSRecord {
  struct PACount n;
