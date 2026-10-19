@@ -2098,7 +2098,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     struct PASeries series;
     return series;
 }
-          struct PASeries PASeriesCopy(struct PASeries from, struct PASeries to)
+          struct PASeries PASeriesPerformCopy(struct PASeries from, struct PASeries to)
 {
     return to;
 }

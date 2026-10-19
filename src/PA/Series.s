@@ -8,9 +8,9 @@ _PASeriesPerformConstruct:              ; @PASeriesPerformConstruct
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PASeriesCopy                   ; -- Begin function PASeriesCopy
+	.globl	_PASeriesPerformCopy            ; -- Begin function PASeriesPerformCopy
 	.p2align	2
-_PASeriesCopy:                          ; @PASeriesCopy
+_PASeriesPerformCopy:                   ; @PASeriesPerformCopy
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #48
