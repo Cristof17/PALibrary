@@ -188,6 +188,21 @@ LBB1_11:
 	ret
 	.cfi_endproc
                                         ; -- End function
+	.globl	_PAListPerformConstructWithSize ; -- Begin function PAListPerformConstructWithSize
+	.p2align	2
+_PAListPerformConstructWithSize:        ; @PAListPerformConstructWithSize
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	mov	x9, x8
+	str	x0, [sp, #8]
+	ldr	x8, [sp, #8]
+	str	x8, [x9]
+	add	sp, sp, #16
+	ret
+	.cfi_endproc
+                                        ; -- End function
 	.globl	_PAListPerformInit              ; -- Begin function PAListPerformInit
 	.p2align	2
 _PAListPerformInit:                     ; @PAListPerformInit
@@ -211,14 +226,14 @@ _PAListPerformInit:                     ; @PAListPerformInit
 	str	x8, [sp, #288]
 	mov	x8, #1                          ; =0x1
 	str	x8, [sp, #280]
-	b	LBB2_1
-LBB2_1:                                 ; =>This Inner Loop Header: Depth=1
+	b	LBB3_1
+LBB3_1:                                 ; =>This Inner Loop Header: Depth=1
 	ldr	x8, [sp, #280]
 	ldr	x9, [sp, #272]
 	subs	x8, x8, x9
-	b.gt	LBB2_3
-	b	LBB2_2
-LBB2_2:                                 ;   in Loop: Header=BB2_1 Depth=1
+	b.gt	LBB3_3
+	b	LBB3_2
+LBB3_2:                                 ;   in Loop: Header=BB3_1 Depth=1
 	ldr	x8, [sp, #48]                   ; 8-byte Folded Reload
 	add	x8, x8, #8
 	ldr	x9, [sp, #280]
@@ -248,8 +263,8 @@ LBB2_2:                                 ;   in Loop: Header=BB2_1 Depth=1
 	ldr	x8, [sp, #280]
 	add	x8, x8, #1
 	str	x8, [sp, #280]
-	b	LBB2_1
-LBB2_3:
+	b	LBB3_1
+LBB3_3:
 	ldr	x1, [sp, #48]                   ; 8-byte Folded Reload
 	ldr	x0, [sp, #40]                   ; 8-byte Folded Reload
 	ldr	x8, [sp, #288]

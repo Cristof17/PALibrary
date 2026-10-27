@@ -55,6 +55,13 @@ DllExport struct PAList PAListPerformCopy(struct PAList from, struct PAList to)
     return to;
 }
 
+DllExport struct PAList PAListPerformConstructWithSize(PAValue Size)
+{
+    struct PAList list;
+    list.n = Size;
+    return list;
+}
+
 DllExport struct PAList PAListPerformInit(struct PAList List, PAValue Value, struct PASeries Value2[])
 {
     struct PAList list;
