@@ -70,6 +70,7 @@ DllExport struct PAList PAListPerformInitWithSize(struct PAList List, PAValue Si
     PAValue y;
     x = FIRST;
     y = Size;
+    // just to be sure that the size is not bigger than the list size
     while (x <= y)
     {
         PASeriesPerformCopy(List.neigh[x],list.neigh[x]);

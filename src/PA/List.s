@@ -203,9 +203,9 @@ _PAListPerformConstructWithSize:        ; @PAListPerformConstructWithSize
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_PAListPerformInit              ; -- Begin function PAListPerformInit
+	.globl	_PAListPerformInitWithSize      ; -- Begin function PAListPerformInitWithSize
 	.p2align	2
-_PAListPerformInit:                     ; @PAListPerformInit
+_PAListPerformInitWithSize:             ; @PAListPerformInitWithSize
 	.cfi_startproc
 ; %bb.0:
 	stp	x28, x27, [sp, #-32]!           ; 16-byte Folded Spill
@@ -226,6 +226,8 @@ _PAListPerformInit:                     ; @PAListPerformInit
 	str	x8, [sp, #288]
 	mov	x8, #1                          ; =0x1
 	str	x8, [sp, #280]
+	ldur	x8, [x29, #-32]
+	str	x8, [sp, #272]
 	b	LBB3_1
 LBB3_1:                                 ; =>This Inner Loop Header: Depth=1
 	ldr	x8, [sp, #280]
@@ -265,6 +267,80 @@ LBB3_2:                                 ;   in Loop: Header=BB3_1 Depth=1
 	str	x8, [sp, #280]
 	b	LBB3_1
 LBB3_3:
+	ldr	x1, [sp, #48]                   ; 8-byte Folded Reload
+	ldr	x0, [sp, #40]                   ; 8-byte Folded Reload
+	ldr	x8, [sp, #288]
+	str	x8, [x1]
+	mov	x2, #296                        ; =0x128
+	bl	_memcpy
+	add	sp, sp, #608
+	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
+	ldp	x28, x27, [sp], #32             ; 16-byte Folded Reload
+	ret
+	.cfi_endproc
+                                        ; -- End function
+	.globl	_PAListPerformInit              ; -- Begin function PAListPerformInit
+	.p2align	2
+_PAListPerformInit:                     ; @PAListPerformInit
+	.cfi_startproc
+; %bb.0:
+	stp	x28, x27, [sp, #-32]!           ; 16-byte Folded Spill
+	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
+	add	x29, sp, #16
+	sub	sp, sp, #608
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	.cfi_offset w27, -24
+	.cfi_offset w28, -32
+	str	x8, [sp, #40]                   ; 8-byte Folded Spill
+	str	x0, [sp, #48]                   ; 8-byte Folded Spill
+	stur	x0, [x29, #-24]
+	stur	x1, [x29, #-32]
+	stur	x2, [x29, #-40]
+	ldur	x8, [x29, #-32]
+	str	x8, [sp, #288]
+	mov	x8, #1                          ; =0x1
+	str	x8, [sp, #280]
+	b	LBB4_1
+LBB4_1:                                 ; =>This Inner Loop Header: Depth=1
+	ldr	x8, [sp, #280]
+	ldr	x9, [sp, #272]
+	subs	x8, x8, x9
+	b.gt	LBB4_3
+	b	LBB4_2
+LBB4_2:                                 ;   in Loop: Header=BB4_1 Depth=1
+	ldr	x8, [sp, #48]                   ; 8-byte Folded Reload
+	add	x8, x8, #8
+	ldr	x9, [sp, #280]
+	mov	x10, #72                        ; =0x48
+	mul	x9, x9, x10
+	add	x1, x8, x9
+	add	x8, sp, #288
+	add	x8, x8, #8
+	ldr	x9, [sp, #280]
+	mul	x9, x9, x10
+	add	x8, x8, x9
+	str	x8, [sp, #8]                    ; 8-byte Folded Spill
+	add	x0, sp, #128
+	str	x0, [sp, #24]                   ; 8-byte Folded Spill
+	mov	x2, #72                         ; =0x48
+	str	x2, [sp, #16]                   ; 8-byte Folded Spill
+	bl	_memcpy
+	ldr	x1, [sp, #8]                    ; 8-byte Folded Reload
+	ldr	x2, [sp, #16]                   ; 8-byte Folded Reload
+	add	x0, sp, #56
+	str	x0, [sp, #32]                   ; 8-byte Folded Spill
+	bl	_memcpy
+	ldr	x0, [sp, #24]                   ; 8-byte Folded Reload
+	ldr	x1, [sp, #32]                   ; 8-byte Folded Reload
+	add	x8, sp, #200
+	bl	_PASeriesPerformCopy
+	ldr	x8, [sp, #280]
+	add	x8, x8, #1
+	str	x8, [sp, #280]
+	b	LBB4_1
+LBB4_3:
 	ldr	x1, [sp, #48]                   ; 8-byte Folded Reload
 	ldr	x0, [sp, #40]                   ; 8-byte Folded Reload
 	ldr	x8, [sp, #288]

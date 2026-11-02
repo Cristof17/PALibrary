@@ -2144,6 +2144,24 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
     return list;
 }
 
+          struct PAList PAListPerformInitWithSize(struct PAList List, PAValue Size, struct PASeries Value2[])
+{
+    struct PAList list;
+    list.n = Size;
+    PAValue x;
+    PAValue y;
+    x = (1);
+    y = Size;
+
+    while (x <= y)
+    {
+        PASeriesPerformCopy(List.neigh[x],list.neigh[x]);
+        x++;
+    }
+    List.n = list.n;
+    return List;
+}
+
           struct PAList PAListPerformInit(struct PAList List, PAValue Value, struct PASeries Value2[])
 {
     struct PAList list;

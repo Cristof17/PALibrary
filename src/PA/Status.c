@@ -19,7 +19,7 @@ DllExport struct PAStatus PAStatusPerformConstruct()
 }
 DllExport struct PAStatus PAStatusPerformInit(struct PAStatus Status, PAValue Value)
 {
-    struct PAStatus temp;
+    struct PAStatus temp;//
     // temp = Status;
     // temp.visited = Value;;
     Status = temp;
