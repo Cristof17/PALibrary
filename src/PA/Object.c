@@ -49,7 +49,7 @@ DllExport struct PAObject PAObjectPerformRuin(struct PAObject object)
 }
 DllExport struct PASize PAObjectSize()
 {
-	
+
 }
 // // #include <types.h>
 // // DllExport struct PACount PATreeSize()
@@ -176,15 +176,15 @@ DllExport struct PASize PAObjectSize()
 //     // tree = PATreePerformInit(Tree);
 //     // return tree;
 // // }
-DllExport PAObject PAObjectPerformCopy(PAObject from,PAObject to,PASize size) {
-	PAMemory aux;
-	size_t standardSize = PASizePerformConvertToStandard(size);
-	aux = malloc (standardSize);
-	// aux = PAMemoryPerformConstruct(size);
-	memcpy(aux,from,standardSize);
-	memcpy(from,to,standardSize);
-	return aux;
-}
+// DllExport PAObject PAObjectPerformCopy(PAObject from,PAObject to,PASize size) {
+// 	PAMemory aux;
+// 	size_t standardSize = PASizePerformConvertToStandard(size);
+// 	aux = malloc (standardSize);
+// 	// aux = PAMemoryPerformConstruct(size);
+// 	memcpy(aux,from,standardSize);
+// 	memcpy(from,to,standardSize);
+// 	return aux;
+// }
 // DllExport static Object PATreeCopy(Object from, Object to, size_t size)
 // {
 //     Memory aux;
@@ -342,11 +342,11 @@ DllExport PAObject PAObjectPerformCopy(PAObject from,PAObject to,PASize size) {
 // //     struct PATransposeTree tree;
 // //     return tree;
 // // }
-DllExport struct PASize PAObjectSize()
-{
-	size_t standardSize = sizeof(PAObject);
+// DllExport struct PASize PAObjectSize()
+// {
+// 	size_t standardSize = sizeof(PAObject);
 
-	struct PASize size = PASizePerformConstruct(standardSize);
+// 	struct PASize size = PASizePerformConstruct(standardSize);
 
-	return size;
-}
+// 	return size;
+// }
