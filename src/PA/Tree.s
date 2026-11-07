@@ -1,5 +1,5 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.build_version macos, 15, 0	sdk_version 26, 2
+	.build_version macos, 14, 0	sdk_version 14, 4
 	.globl	_PATreePerformConstruct         ; -- Begin function PATreePerformConstruct
 	.p2align	2
 _PATreePerformConstruct:                ; @PATreePerformConstruct
@@ -14,6 +14,7 @@ _PATreePerformInit:                     ; @PATreePerformInit
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #80
+	.cfi_def_cfa_offset 80
 	stp	x29, x30, [sp, #64]             ; 16-byte Folded Spill
 	add	x29, sp, #64
 	.cfi_def_cfa w29, 16
@@ -32,7 +33,7 @@ _PATreePerformInit:                     ; @PATreePerformInit
 	mov	x8, x1
 	str	x8, [sp, #24]
 	str	x3, [sp, #16]
-	mov	x2, #328                        ; =0x148
+	mov	x2, #328
 	bl	_memcpy
 	ldp	x29, x30, [sp, #64]             ; 16-byte Folded Reload
 	add	sp, sp, #80
@@ -45,6 +46,7 @@ _PATreePerformCopy:                     ; @PATreePerformCopy
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #48
+	.cfi_def_cfa_offset 48
 	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
 	add	x29, sp, #32
 	.cfi_def_cfa w29, 16
@@ -56,7 +58,7 @@ _PATreePerformCopy:                     ; @PATreePerformCopy
 	stur	x8, [x29, #-8]
 	mov	x8, x1
 	str	x8, [sp, #16]
-	mov	x2, #328                        ; =0x148
+	mov	x2, #328
 	bl	_memcpy
 	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
 	add	sp, sp, #48

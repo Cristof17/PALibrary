@@ -5,7 +5,6 @@
 // #include <PA/Element.h>
 // #include <PA/List.h>
 #include <PA/Object.h>
-#include <PA/Size.h>
 #elif defined _WIN95
 // #include <PA\Tree.h>
 #include <PA\Object.h>
@@ -14,6 +13,44 @@
 // #include <PA\Element.h>
 // #include <PA\List.h>
 #endif
+
+DllExport struct PAObject PAObjectPerformCreate()
+{
+	struct PAObject object;
+	return object;
+}
+DllExport struct PAObject PAObjectPerformInit(struct PAObject object, long adress)
+{
+	struct PAObject temp;
+	temp.address = adress;
+	object = temp;
+	return object;
+}
+DllExport struct PAObject PAObjectPerformCopy(struct PAObject from, struct PAObject to)
+{
+	struct PAObject temp;
+	temp = from;
+	to = temp;
+	return to;
+}
+DllExport struct PAObject PAObjectPerformDelete(struct PAObject object)
+{
+	struct PAObject temp;
+	temp.address = 0;
+	object = temp;
+	return object;
+}
+DllExport struct PAObject PAObjectPerformRuin(struct PAObject object)
+{
+	struct PAObject temp;
+	temp.address = 0;
+	object = temp;
+	return object;
+}
+DllExport struct PASize PAObjectSize()
+{
+	
+}
 // // #include <types.h>
 // // DllExport struct PACount PATreeSize()
 // // {

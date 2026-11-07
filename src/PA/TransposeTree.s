@@ -1,5 +1,5 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.build_version macos, 15, 0	sdk_version 26, 2
+	.build_version macos, 14, 0	sdk_version 14, 4
 	.globl	_PATransposeTreePerformConstruct ; -- Begin function PATransposeTreePerformConstruct
 	.p2align	2
 _PATransposeTreePerformConstruct:       ; @PATransposeTreePerformConstruct
@@ -18,6 +18,7 @@ _PATransposeTreePerformInit:            ; @PATransposeTreePerformInit
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #400
+	.cfi_def_cfa_offset 400
 	stp	x28, x27, [sp, #368]            ; 16-byte Folded Spill
 	stp	x29, x30, [sp, #384]            ; 16-byte Folded Spill
 	add	x29, sp, #384
@@ -35,7 +36,7 @@ _PATransposeTreePerformInit:            ; @PATransposeTreePerformInit
 	mov	x9, x1
 	stur	x9, [x29, #-24]
 	stur	x8, [x29, #-32]
-	mov	x2, #328                        ; =0x148
+	mov	x2, #328
 	bl	_memcpy
 	ldp	x29, x30, [sp, #384]            ; 16-byte Folded Reload
 	ldp	x28, x27, [sp, #368]            ; 16-byte Folded Reload

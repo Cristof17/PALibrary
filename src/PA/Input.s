@@ -1,5 +1,5 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.build_version macos, 15, 0	sdk_version 26, 2
+	.build_version macos, 14, 0	sdk_version 14, 4
 	.globl	_PAInputPerformConstruct        ; -- Begin function PAInputPerformConstruct
 	.p2align	2
 _PAInputPerformConstruct:               ; @PAInputPerformConstruct
@@ -14,6 +14,7 @@ _PAInputPerformInit:                    ; @PAInputPerformInit
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #432
+	.cfi_def_cfa_offset 432
 	stp	x28, x27, [sp, #400]            ; 16-byte Folded Spill
 	stp	x29, x30, [sp, #416]            ; 16-byte Folded Spill
 	add	x29, sp, #416
@@ -31,7 +32,7 @@ _PAInputPerformInit:                    ; @PAInputPerformInit
 	mov	x8, x0
 	stur	x8, [x29, #-56]
 	add	x1, sp, #32
-	mov	x2, #328                        ; =0x148
+	mov	x2, #328
 	str	x2, [sp, #24]                   ; 8-byte Folded Spill
 	bl	_memcpy
 	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload

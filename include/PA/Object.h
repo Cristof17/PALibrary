@@ -13,7 +13,11 @@
 // struct PATree;
 // struct PATree PATreeConstruct(struct OPAResult);
 // DllExport Memory PATreeCreate(size_t size);
-DllExport PAObject PAObjectPerformCopy(PAObject, PAObject, PASize size);
+DllExport struct PAObject PAObjectPerformCreate();
+DllExport struct PAObject PAObjectPerformInit(struct PAObject, struct PAAdress adress);
+DllExport struct PAObject PAObjectPerformCopy(struct PAObject, struct PAObject);
+DllExport struct PAObject PAObjectPerformDelete(struct PAObject);
+DllExport struct PAObject PAObjectPerformRuin(struct PAObject);
 DllExport struct PASize PAObjectSize();
 // DllExport struct PACount PATreeSize();
 // DllExport PATree PATreeBegin(PATree, PACount N, PACount M, PASeries adj, PAElement source);

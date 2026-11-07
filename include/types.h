@@ -130,6 +130,7 @@ struct PATransposeTree;
 struct PASize;
 struct PAInput;
 struct PAOutput;
+struct PAObject;
 // struct PAResource;
 struct PAData;
 // struct PAValue;
@@ -305,12 +306,16 @@ struct FlyweightUnsharedConcreteFlyweight {
 	struct PASeries intrinsicState;
 	//PAInt todo;
 };
-typedef struct PATree  {
+struct PAObject
+{
+	long address;
+};
+struct PATree  {
 	struct PACount n;
 	struct PACount m;
 	struct PAElement source;
 	struct PAList adj;
-}* PATree;
+};
 struct BridgeAbstraction {
 	struct PAElement elements[SIZE];
 };
