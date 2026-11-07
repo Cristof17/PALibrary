@@ -1,5 +1,5 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.build_version macos, 14, 0	sdk_version 14, 4
+	.build_version macos, 15, 0	sdk_version 26, 2
 	.globl	_PAOutputPerformConstruct       ; -- Begin function PAOutputPerformConstruct
 	.p2align	2
 _PAOutputPerformConstruct:              ; @PAOutputPerformConstruct
@@ -14,7 +14,6 @@ _PAOutputPerformInit:                   ; @PAOutputPerformInit
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #48
-	.cfi_def_cfa_offset 48
 	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
 	add	x29, sp, #32
 	.cfi_def_cfa w29, 16
@@ -29,7 +28,7 @@ _PAOutputPerformInit:                   ; @PAOutputPerformInit
 	mov	x9, x1
 	stur	x9, [x29, #-8]
 	str	x8, [sp, #16]
-	mov	x2, #304
+	mov	x2, #304                        ; =0x130
 	bl	_memcpy
 	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
 	add	sp, sp, #48

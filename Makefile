@@ -49,7 +49,7 @@ libs= libpa.a libarraylist.a libbfs.a libalgorithm.a
 output=pa
 version=1.0
 program_test_pa= test.out
-program_test_pointers_pa= test_pointers.out
+program_test_pointers_pa=
 visual_code_run_target=a.out
 all: preprocess assemble compile $(program_test_pa) $(program_test_pointers_pa) $(lib_pa)
 # preprocess: $(sources)
@@ -908,8 +908,6 @@ test.i: test/test.c
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 test.s: test.i
 	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
-test_pointers.s: test_pointers.i
-	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
 
 test.o: test.s
 ifeq ($(host-type),arm64)
@@ -922,22 +920,8 @@ ifeq ($(host-type),AArch64)
 	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
-test_pointers.o: test_pointers.s
-ifeq ($(host-type),arm64)
-	$(AS) $(ASFLAGS) src/$< -o lib/$@
-endif
-ifeq ($(host-type),x86_64)
-	$(CC) -c $(CFLAGS) src/$< -o lib/$@
-endif
-ifeq ($(host-type),AArch64)
-	$(AS) $(ASFLAGS) src/$< -o lib/$@
-endif
-
 test.out: $(objects) test.o $(lib_pa) $(lib_bfs) $(lib_arraylist)
 	$(CC) lib/$< $(foreach object,$(objects_pa),lib/$(object)) lib/$(lib_pa) lib/$(lib_bfs) lib/$(lib_arraylist) -o $(bindir)/$(program_test_pa)
-
-test_pointers.out: test_pointers.o $(objects) $(lib_pa) $(lib_bfs) $(lib_arraylist)
-	$(CC) lib/$< $(foreach object,$(objects_pa),lib/$(object)) lib/$(lib_pa) lib/$(lib_bfs) lib/$(lib_arraylist) -o $(bindir)/$(program_test_pointers_pa)
 
 #$(CC) -lc $(foreach dependency,$^,lib/$(dependency)) -o $(bindir)/$@
 

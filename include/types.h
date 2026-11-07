@@ -252,7 +252,7 @@ struct PAStatus {
 	PAValue visited;
 };
 struct PAData {
-	PAValue Resource;
+	PAValue resource;
 	// PADDING_1_BYTE(0);
 };
 // #pragma pack(push, 8)
@@ -306,10 +306,10 @@ struct FlyweightUnsharedConcreteFlyweight {
 	//PAInt todo;
 };
 typedef struct PATree  {
-	struct PACount* n;
-	struct PACount* m;
-	struct PAElement* source;
-	struct PAList* adj;
+	struct PACount n;
+	struct PACount m;
+	struct PAElement source;
+	struct PAList adj;
 }* PATree;
 struct BridgeAbstraction {
 	struct PAElement elements[SIZE];
@@ -331,10 +331,10 @@ struct BridgeConcreteImplementorB {
 // struct BFSPorce
 
 struct PAInput {
-	struct PACount* n;
-	struct PACount* m;
-	struct PAElement* source;
-	struct PAList* adj;
+	struct PACount n;
+	struct PACount m;
+	struct PAElement source;
+	struct PAList adj;
 };
 struct BFSRecord {
 	struct PACount n;
@@ -347,8 +347,8 @@ struct PADestination {
     struct PAElement element;
 };
 struct PAPair {
-	struct PAElement Node;
-	struct PAElement Neigh;
+	struct PAElement node;
+	struct PAElement neigh;
 	// PADDING_1_BYTE(2);
 };
 struct PAArrow {
@@ -435,7 +435,7 @@ struct BuilderProduct {
 struct Builder {
 	// struct NormalTree NormalTree;
 	// struct TransposeTree
-	struct BuilderProduct Product;
+	struct BuilderProduct product;
 };
 struct Director {
 	struct Builder builder;

@@ -25,7 +25,7 @@ DllExport struct PASeries PASeriesPerformConstruct()
     struct PASeries series;
     return series;
 }
-DllExport struct PASeries PASeriesCopy(struct PASeries from, struct PASeries to)
+DllExport struct PASeries PASeriesPerformCopy(struct PASeries from, struct PASeries to)
 {
     return to;
 }
