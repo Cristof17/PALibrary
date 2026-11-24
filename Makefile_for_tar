@@ -221,6 +221,12 @@ AUX =   README.md COPYING Makefile.in  \
 #### End of system configuration section. ####
 
 
+CDEBUG = -g
+CFLAGS = $(CDEBUG) -I. -I$(srcdir) $(DEFS) \
+        -DDEF_AR_FILE=\"$(DEF_AR_FILE)\" \
+        -DDEFBLOCKING=$(DEFBLOCKING)
+LDFLAGS = -g
+
 # .PHONY: all
 # all:    tar rmt tar.info
 
