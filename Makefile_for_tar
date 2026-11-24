@@ -366,7 +366,7 @@ link: link_pa link_bfs link_arraylist
 	src/mkinstalldirs $(libdir) $(libdir)/PA
 #	$(LD) $(foreach object,$^,$(libdir)/$(object)) $(prefix)/musl-$(musl)/obj/crt/$(crt) -lc -static -o $(libdir)/$(output) 
 #pa arraylist bfs
-
+.PHONY: mostlyclean
 mostlyclean: $(objects_pa) $(objects_arraylist) $(objects_bfs)
 	-rm -v $(foreach object,$(objects_pa),$(libdir)/$(object))
 	-rm -v $(foreach object,$(objects_arraylist),$(libdir)/$(object))
@@ -383,6 +383,7 @@ mostlyclean: $(objects_pa) $(objects_arraylist) $(objects_bfs)
 # 	-rm $(assemblies_pa)
 # 	-rm $(sources_pa)
 #
+.PHONY: maintainer-clean
 maintainer-clean: $(objects_pa) $(objects_bfs) $(objects_arraylist) $(assemblies_pa) $(assemblies_bfs) $(assemblies_arraylist) $(sources_pa) $(sources_bfs) $(sources_arraylist) $(sources_test_pa) $(assemblies_test_pa) $(sources_test_arraylist) $(objects_test_pa) $(program_test_pa) $(program_test_pointers_pa) $(lib_arraylist) $(lib_pa) $(lib_bfs) $(output).tar.gz
 	@echo 'This command is intended for maintainers to use; it'
 	@echo 'deletes files that may need special tools to rebuild.'
@@ -438,21 +439,27 @@ maintainer-clean: $(objects_pa) $(objects_bfs) $(objects_arraylist) $(assemblies
 #	-rm $(objects_pa)
 #	-rm $(objects_bfs)
 #	-rm $(objects_arraylist)
+.PHONY: realclean
 realclean:
+
+.PHONY: clobber
 clobber:
 
+.PHONY: install
 install:
 	$(srcdir)/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
 	$(srcdir)/mkinstalldirs $(libdir)/PA
 	$(srcdir)/mkinstalldirs $(libdir)/BFS
 	$(srcdir)/mkinstalldirs $(libdir)/ArrayList
 
+.PHONY: install-strip
 install-strip:
 	strip $(foreach lib,$(libs),$(libdir)/$(lib))
 # 	mkdir $(subdirs)
 #	cp out/libpa.a $(libdir)
 #	cp -r obj/*.o $(libdir)
 #
+.PHONY: installcheck
 installcheck:
 	ls $(foreach subdir,$(subdirs),$(subdir))
 	ls $(foreach lib,$(libs),$(libdir)/$(lib))
@@ -461,10 +468,15 @@ installcheck:
 print:
 	git status
 	ar -T -t $(libdir)/libpa.a
+
+.PHONY: share
 share:
+
+.PHONY: dist
 dist: lib/ lib/PA lib/BFS lib/ArrayList $(objects_pa) $(objects_bfs) $(objects_arraylist) $(libs) $(output).tar.gz
 	#tar cvf libpa.tar.gz $(libdir)/libpa.a
 
+.PHONY: check
 check: $(program_test_pa) $(program_test_pointers_pa)
 	@echo "Testing"
 	mv ./bin/$(program_test_pointers_pa) ./a.out
@@ -643,6 +655,7 @@ objects_test_arraylist=
 # 	src/PA/Arrow.i
 # 	src/PA/Feature.i
 
+.PHONY: distclean
 distclean: dist
 	-rm $(foreach source,$(sources_pa),$(srcdir)/$(source))
 	-rm $(foreach source,$(sources_test_pa),$(srcdir)/$(source))
@@ -758,7 +771,10 @@ link_test_pa: $(objects_test_pa) $(output_pa)
 #${MAKE} $(assemblies_pa)
 #${MAKE} $(output_dir)/$(output_pa)
 
+.PHONY: lib
 lib: out/$(output)
+
+.PHONY: build
 build: preprocess compile assemble test
 #link_windows
 ${subdirs}:
@@ -771,6 +787,8 @@ ${subdirs}:
 # 	${MAKE} arch=${arch}
 # 	${MAKE} arch=${arch}
 # 	${MA
+
+.PHONY: build
 build: $(subdirs)
 #	${MAKE} assemble
 # 	mkdir obj/Director/
@@ -807,6 +825,8 @@ $(lib_bfs): $(objects_bfs)
 # 	$(LD) $(objects) -o filiename.library
 # link_macos: $(objects)
 # link_linux: $(objects)
+
+.PHONY: build
 build: preprocess assemble compile
 #SUBDIRS= src src/Iterator src/Builder src/Adapter src/Arraylist
 #bar := $(foo:.c=.o)
@@ -1624,6 +1644,7 @@ endif
 		$(MAKE) -C $$dir; \
 	done
 
+.PHONY: installdirs
 installdirs: mkinstalldirs
 	$(srcdir)/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(datadir) \
 				$(DESTDIR)$(libdir) $(DESTDIR)$(infodir) \
@@ -1631,8 +1652,10 @@ installdirs: mkinstalldirs
 				$(DESTDIR)$(subdirs) \
 				$(DESTDIR)$(objdirs)
 
+.PHONY: mkinstalldirs
 mkinstalldirs: $(srcdir)/mkinstalldirs
 
+.PHONY: uninstall
 uninstall:
 # 	cp . .
 # 	mv
@@ -1819,6 +1842,7 @@ bfs:
 arraylist: 
 # ${designs_arraylist} ${sources_arraylist} ${assemblies_arraylist} ${objects_arraylist} $(output_arraylist)
 
+.PHONY: run
 run:
 	@echo "Running"
 # .PHONY: build preprocess assemble compile 
