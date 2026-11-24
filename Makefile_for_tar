@@ -283,8 +283,7 @@ version=1.0
 program_test_pa= test.out
 program_test_pointers_pa=
 visual_code_run_target=a.out
-all: preprocess assemble compile $(program_test_pa) $(program_test_pointers_pa) $(lib_pa)
-# preprocess: $(sources)
+all: preprocess assemble compile $(program_test_pa) $(program_test_pointers_pa) libpa.a # preprocess: $(sources)
 preprocess: preprocess_pa 
 #preprocess_bfs preprocess_arraylist
 compile: compile_pa 
@@ -383,7 +382,8 @@ mostlyclean: $(objects_pa) $(objects_arraylist) $(objects_bfs)
 # 	-rm $(sources_pa)
 #
 .PHONY: maintainer-clean
-maintainer-clean: $(objects_pa) $(objects_bfs) $(objects_arraylist) $(assemblies_pa) $(assemblies_bfs) $(assemblies_arraylist) $(sources_pa) $(sources_bfs) $(sources_arraylist) $(sources_test_pa) $(assemblies_test_pa) $(sources_test_arraylist) $(objects_test_pa) $(program_test_pa) $(program_test_pointers_pa) $(lib_arraylist) $(lib_pa) $(lib_bfs) $(output).tar.gz
+maintainer-clean: 
+#$(objects_pa) $(objects_bfs) $(objects_arraylist) $(assemblies_pa) $(assemblies_bfs) $(assemblies_arraylist) $(sources_pa) $(sources_bfs) $(sources_arraylist) $(sources_test_pa) $(assemblies_test_pa) $(sources_test_arraylist) $(objects_test_pa) $(program_test_pa) $(program_test_pointers_pa) $(lib_arraylist) libpa.a:$(lib_bfs) $(output).tar.gz
 	@echo 'This command is intended for maintainers to use; it'
 	@echo 'deletes files that may need special tools to rebuild.'
 	-rm -v $(foreach object,$(objects_pa),$(libdir)/$(object))
@@ -395,8 +395,7 @@ maintainer-clean: $(objects_pa) $(objects_bfs) $(objects_arraylist) $(assemblies
 	-rm -v $(foreach source,$(sources_pa),$(srcdir)/$(source))
 	-rm -v $(foreach source,$(sources_bfs),$(srcdir)/$(source))
 	-rm -v $(foreach source,$(sources_arraylist),$(srcdir)/$(source))
-	#-rm -v $(libdir)/$(lib_pa)
-	#-rm -v $(libdir)/$(lib_arraylist)
+	#-rm -v $(libdirlibpa.a:	#-rm -v $(libdir)/$(lib_arraylist)
 	#-rm -v $(libdir)/$(lib_bfs)
 	-rm -v $(foreach test,$(sources_test_pa),$(srcdir)/$(test))
 	-rm -v $(foreach test,$(assemblies_test_pa),$(srcdir)/$(test))
@@ -720,8 +719,7 @@ endif
 # ${objdirs}:`
 lib_algorithm= libalgorithm.a
 lib_bfs= libbfs.a
-lib_arraylist= libarraylist.a
-lib_pa= libpa.a
+lib_arraylist= libarraylist.a 
 lib_algorithm= libalgorithm.a
 
 output_dir= out
@@ -729,7 +727,6 @@ output_algorithm= $(output_dir)/$(lib_algorithm)
 output_bfs= $(output_dir)/$(lib_bfs)
 output_arraylist= $(output_dir)/$(lib_arraylist)
 output_pa= $(output_dir)/$(lib_pa)
-
 assemble_algorithm: $(assemblies_algorithm) $(assemblies_test_algorithm)
 assemble_pa: $(assemblies_pa) $(assemblies_test_pa)
 assemble_bfs: $(assemblies_bfs) $(assemblies_test_bfs)
@@ -807,7 +804,8 @@ $(lib_arraylist): $(objects_arraylist)
 	src/mkinstalldirs $(bindir) $(datadir) lib $(infodir) $(mandir)
 	$(AR) -v -s -q ./lib/$@ $(foreach object,$^,lib/$(object))  
 	$(AR) -v -t -s ./lib/$@
-$(lib_pa): $(objects_pa)
+
+libpa.a: $(OBJS)
 	src/mkinstalldirs $(bindir) $(datadir) lib $(infodir) $(mandir)
 	$(AR) -v -s -q ./lib/$@ $(foreach object,$^,lib/$(object))  
 	$(AR) -v -t -s ./lib/$@
@@ -1145,7 +1143,7 @@ ifeq ($(host-type),AArch64)
 endif
 
 test.out: $(objects) test.o $(lib_pa) $(lib_bfs) $(lib_arraylist)
-	$(CC) lib/$< $(foreach object,$(objects_pa),lib/$(object)) lib/$(lib_pa) lib/$(lib_bfs) lib/$(lib_arraylist) -o $(bindir)/$(program_test_pa)
+	$(CC) lib/$< $(foreach object,$(objects_pa),lib/$(object)) liblibpa.a:lib/$(lib_bfs) lib/$(lib_arraylist) -o $(bindir)/$(program_test_pa)
 
 #$(CC) -lc $(foreach dependency,$^,lib/$(dependency)) -o $(bindir)/$@
 
@@ -1673,22 +1671,22 @@ uninstall:
 #installcheck:
 #	echo "installcheck"
 
-$(output_dir)/$(lib_algorithm):
-ifeq ($(host-type),arm64)
-	$(AR) -r $@ $(objects_algoritm)
-endif
-$(output_dir)/$(lib_pa):
-ifeq ($(host-type),arm64)
-	$(AR) -r $@ $(objects_pa)
-endif
-$(output_dir)/$(lib_bfs):
-ifeq ($(host-type),arm64)
-	$(AR) -r $@ $(objects_bfs)
-endif
-$(output_dir)/$(lib_arraylist):
-ifeq ($(host-type),arm64)
-	$(AR) -r $@ $(objects_arraylist)
-endif
+# $(output_dir)/$(lib_algorithm):
+# ifeq ($(host-type),arm64)
+# 	$(AR) -r $@ $(objects_algoritm)
+# endif
+# $(output_dir)/$(lib_pa):
+# ifeq ($(host-type),arm64)
+# 	$(AR) -r $@ $(objects_pa)
+# endif
+# $(output_dir)/$(lib_bfs):
+# ifeq ($(host-type),arm64)
+# 	$(AR) -r $@ $(objects_bfs)
+# endif
+# $(output_dir)/$(lib_arraylist):
+# ifeq ($(host-type),arm64)
+# 	$(AR) -r $@ $(objects_arraylist)
+# endif
 clean:
 #	${MAKE} ARCH=${host-type} build
 # # 	-rm libpa.a
