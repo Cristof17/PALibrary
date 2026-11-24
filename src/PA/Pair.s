@@ -7,10 +7,10 @@ _PAPairPerformConstruct:                ; @PAPairPerformConstruct
 ; %bb.0:
 	sub	sp, sp, #32
 	.cfi_def_cfa_offset 32
-	str	x0, [sp, #16]
-	str	x1, [sp, #24]
-	str	x2, [sp]
-	str	x3, [sp, #8]
+	str	x0, [sp, #8]
+	str	x1, [sp]
+	ldr	x0, [sp, #16]
+	ldr	x1, [sp, #24]
 	add	sp, sp, #32
 	ret
 	.cfi_endproc
@@ -20,23 +20,19 @@ _PAPairPerformConstruct:                ; @PAPairPerformConstruct
 _PAPairPerformInit:                     ; @PAPairPerformInit
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #80
-	.cfi_def_cfa_offset 80
-	str	x1, [sp, #64]
-	str	x2, [sp, #72]
-	str	x3, [sp, #48]
-	str	x4, [sp, #56]
-	mov	x9, x0
-	str	x9, [sp, #40]
-	ldur	q0, [sp, #8]
-	str	q0, [x0]
-	ldur	q0, [sp, #24]
-	str	q0, [x0, #16]
-	ldr	q0, [x0]
-	str	q0, [x8]
-	ldr	q0, [x0, #16]
-	str	q0, [x8, #16]
-	add	sp, sp, #80
+	sub	sp, sp, #64
+	.cfi_def_cfa_offset 64
+	str	x0, [sp, #32]
+	str	x1, [sp, #40]
+	str	x2, [sp, #24]
+	str	x3, [sp, #16]
+	ldr	q0, [sp]
+	str	q0, [sp, #32]
+	ldr	q0, [sp, #32]
+	str	q0, [sp, #48]
+	ldr	x0, [sp, #48]
+	ldr	x1, [sp, #56]
+	add	sp, sp, #64
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -45,11 +41,15 @@ _PAPairPerformInit:                     ; @PAPairPerformInit
 _PAPairPerformCopy:                     ; @PAPairPerformCopy
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	str	x0, [sp, #8]
-	str	x1, [sp]
-	add	sp, sp, #16
+	sub	sp, sp, #48
+	.cfi_def_cfa_offset 48
+	str	x0, [sp, #16]
+	str	x1, [sp, #24]
+	str	x2, [sp]
+	str	x3, [sp, #8]
+	ldr	x0, [sp, #32]
+	ldr	x1, [sp, #40]
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -58,17 +58,17 @@ _PAPairPerformCopy:                     ; @PAPairPerformCopy
 _PAPairPerformRuin:                     ; @PAPairPerformRuin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	mov	x9, x0
-	str	x9, [sp, #8]
-	ldr	q0, [x0]
-	str	q0, [x8]
-	ldr	q0, [x0, #16]
-	str	q0, [x8, #16]
-	add	sp, sp, #16
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp]
+	str	x1, [sp, #8]
+	ldr	q0, [sp]
+	str	q0, [sp, #16]
+	ldr	x0, [sp, #16]
+	ldr	x1, [sp, #24]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.comm	_PAList,296,3                   ; @PAList
+	.comm	_PAList,16,3                    ; @PAList
 .subsections_via_symbols

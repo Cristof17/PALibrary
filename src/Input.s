@@ -25,15 +25,16 @@ _InputCreate:                           ; @InputCreate
 _InputBegin:                            ; @InputBegin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #64
-	.cfi_def_cfa_offset 64
-	str	x1, [sp, #48]
-	str	x2, [sp, #40]
-	str	x4, [sp, #24]
-	str	x5, [sp, #32]
+	sub	sp, sp, #48
+	.cfi_def_cfa_offset 48
+	mov	x8, x1
+	str	w8, [sp, #40]
+	mov	x8, x2
+	str	w8, [sp, #36]
+	stur	x4, [sp, #28]
 	str	x0, [sp, #16]
 	str	x3, [sp, #8]
-	add	sp, sp, #64
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -76,5 +77,5 @@ _InputFinish:                           ; @InputFinish
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.comm	_PAList,296,3                   ; @PAList
+	.comm	_PAList,16,3                    ; @PAList
 .subsections_via_symbols

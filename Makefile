@@ -613,7 +613,7 @@ srcdir=$(prefix)/src
 #CFLAGS+=-I$(abspath $(includedir)/Adapter)
 CPPFLAGS=
 ifeq ($(host-type),arm64)
-CPPFLAGS+=-D_64BIT
+CPPFLAGS+=-D_64BI
 endif
 ifeq ($(host-type),Aarch64)
 CPPFLAGS+=-D_64BIT

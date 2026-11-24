@@ -30,7 +30,7 @@ DllExport struct PASeries PASeriesPerformCopy(struct PASeries from, struct PASer
     return to;
 }
 DllExport struct PASeries PASeriesPerformInit(struct PASeries Series,
-    struct PACount Value, struct PAElement Value2[])
+    struct PACount M, struct PAElement adj[])
 {
     return Series;
 }

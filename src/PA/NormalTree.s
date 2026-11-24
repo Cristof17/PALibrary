@@ -20,8 +20,8 @@ _PANormalTreePerformDelete:             ; @PANormalTreePerformDelete
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	str	x0, [sp, #8]
-	str	xzr, [sp]
-	ldr	x0, [sp]
+	str	wzr, [sp, #4]
+	ldr	w0, [sp, #4]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -34,11 +34,11 @@ _PANormalTreePerformRuin:               ; @PANormalTreePerformRuin
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	str	x0, [sp, #8]
-	str	xzr, [sp]
-	ldr	x0, [sp]
+	str	wzr, [sp, #4]
+	ldr	w0, [sp, #4]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.comm	_PAList,296,3                   ; @PAList
+	.comm	_PAList,16,3                    ; @PAList
 .subsections_via_symbols

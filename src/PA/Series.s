@@ -5,6 +5,11 @@
 _PASeriesPerformConstruct:              ; @PASeriesPerformConstruct
 	.cfi_startproc
 ; %bb.0:
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	ldr	x0, [sp]
+	ldr	x1, [sp, #8]
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -14,20 +19,15 @@ _PASeriesPerformCopy:                   ; @PASeriesPerformCopy
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #48
-	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
-	add	x29, sp, #32
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	str	x8, [sp, #8]                    ; 8-byte Folded Spill
-	mov	x8, x0
-	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
-	stur	x8, [x29, #-8]
-	mov	x8, x1
-	str	x8, [sp, #16]
-	mov	x2, #72                         ; =0x48
-	bl	_memcpy
-	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
+	.cfi_def_cfa_offset 48
+	str	x0, [sp, #16]
+	str	x1, [sp, #24]
+	str	x2, [sp]
+	str	x3, [sp, #8]
+	ldr	q0, [sp]
+	str	q0, [sp, #32]
+	ldr	x0, [sp, #32]
+	ldr	x1, [sp, #40]
 	add	sp, sp, #48
 	ret
 	.cfi_endproc
@@ -37,26 +37,18 @@ _PASeriesPerformCopy:                   ; @PASeriesPerformCopy
 _PASeriesPerformInit:                   ; @PASeriesPerformInit
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #64
-	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
-	add	x29, sp, #48
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	str	x8, [sp, #8]                    ; 8-byte Folded Spill
-	mov	x3, x0
-	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
-	str	x3, [sp, #16]                   ; 8-byte Folded Spill
-	mov	x8, x1
-	ldr	x1, [sp, #16]                   ; 8-byte Folded Reload
-	stur	x8, [x29, #-8]
-	mov	x8, x1
-	stur	x8, [x29, #-16]
-	str	x2, [sp, #24]
-	mov	x2, #72                         ; =0x48
-	bl	_memcpy
-	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
-	add	sp, sp, #64
+	sub	sp, sp, #48
+	.cfi_def_cfa_offset 48
+	str	x0, [sp, #16]
+	str	x1, [sp, #24]
+	mov	x8, x2
+	str	w8, [sp, #12]
+	str	x3, [sp]
+	ldr	q0, [sp, #16]
+	str	q0, [sp, #32]
+	ldr	x0, [sp, #32]
+	ldr	x1, [sp, #40]
+	add	sp, sp, #48
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -65,12 +57,13 @@ _PASeriesPerformInit:                   ; @PASeriesPerformInit
 _PASeriesPerformDelete:                 ; @PASeriesPerformDelete
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	str	x0, [sp, #8]
-	str	xzr, [sp]
-	ldr	x0, [sp]
-	add	sp, sp, #16
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #16]
+	str	x1, [sp, #24]
+	str	wzr, [sp, #12]
+	ldr	w0, [sp, #12]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -79,12 +72,13 @@ _PASeriesPerformDelete:                 ; @PASeriesPerformDelete
 _PASeriesPerformRuin:                   ; @PASeriesPerformRuin
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	str	x0, [sp, #8]
-	str	xzr, [sp]
-	ldr	x0, [sp]
-	add	sp, sp, #16
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	x0, [sp, #16]
+	str	x1, [sp, #24]
+	str	wzr, [sp, #12]
+	ldr	w0, [sp, #12]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -93,10 +87,13 @@ _PASeriesPerformRuin:                   ; @PASeriesPerformRuin
 _PASeriesGet:                           ; @PASeriesGet
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	str	x0, [sp, #8]
-	add	sp, sp, #16
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	mov	x8, x0
+	str	w8, [sp, #12]
+	ldr	x0, [sp, #16]
+	ldr	x1, [sp, #24]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -107,10 +104,11 @@ _PASeriesPerformPrint:                  ; @PASeriesPerformPrint
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	str	x0, [sp, #8]
+	str	x0, [sp]
+	str	x1, [sp, #8]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.comm	_PAList,296,3                   ; @PAList
+	.comm	_PAList,16,3                    ; @PAList
 .subsections_via_symbols
