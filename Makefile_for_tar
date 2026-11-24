@@ -244,7 +244,7 @@ LDFLAGS = -g
 #         -test ! -f rmt || $(INSTALL) rmt /etc/rmt
 #         $(INSTALLDATA) $(srcdir)/tar.info* $(infodir)
 
-# $(OBJS): tar.h port.h testpad.h
+$(OBJS): defs.h types.h PA/Count.h PA/Data.h PA/Element.h PA/Input.h PA/Link.h PA/List.h PA/NormalTree.h PA/Number.h PA/Output.h PA/Pair.h PA/Result.h PA/Resource.h PA/Series.h PA/Status.h PA/TransposeTree.h PA/Tree.h PA/Value.h PA/PADrawingEditor.h PA/PALine.h PA/PAShape.h PA/PATextView.h PA/Arrow.h PA/Destination.h PA/Feature.h PA/Count.h PA/Data.h PA/Element.h PA/Input.h PA/Link.h PA/List.h PA/NormalTree.h  PA/Number.h PA/Output.h PA/Pair.h PA/Result.h PA/Resource.h PA/Series.h PA/Status.h PA/TransposeTree.h PA/Tree.h PA/Value.h PA/PADrawingEditor.h PA/PALine.h PA/PAShape.h PA/PATextView.h PA/Arrow.h PA/Destination.h PA/Feature.h
 # regex.o buffer.o tar.o: regex.h
 # # getdate.y has 8 shift/reduce conflicts.
 
