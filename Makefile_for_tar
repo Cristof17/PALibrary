@@ -275,6 +275,9 @@ LDFLAGS = -g
 #musl=@musl@
 #crt=@crt@
 #output=@output@
+
+# .PHONY: all
+
 libs= libpa.a libarraylist.a libbfs.a libalgorithm.a
 output=pa
 version=1.0
