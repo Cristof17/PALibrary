@@ -12,7 +12,7 @@
 # 	obj/PA/Feature.o
 #prefix=/usr/local
 # prefix=/usr/local/
-
+# https://www.gnu.org/software/make/manual/html_node/Complex-Makefile.html
 SHELL = /bin/sh
 
 #### Start of system configuration section. ####
