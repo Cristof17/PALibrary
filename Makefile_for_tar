@@ -73,33 +73,33 @@ DEFS =  -DSIGTYPE=int \
 # INSTALL = /usr/local/bin/install -c
 # INSTALLDATA = /usr/local/bin/install -c -m 644
 
-SRCS_C  = Input.i \
-	Algorithm.i \
-	PA/Input.i \
-	PA/Output.i \
-	Output.i \
-	PA/Data.i \
-	PA/Tree.i \
-	PA/List.i \
-	PA/Link.i \
-	PA/Element.i \
-	PA/Count.i \
-	PA/Pair.i \
-	PA/Result.i \
-	PA/Series.i \
-	PA/Status.i \
-	PA/Value.i \
-	PA/Resource.i \
-	PA/NormalTree.i \
-	PA/Number.i \
-	PA/TransposeTree.i \
-	PA/PADrawingEditor.i \
-	PA/PALine.i \
-	PA/PAShape.i \
-	PA/PATextView.i \
-	PA/Arrow.i \
-	PA/Destination.i \
-	PA/Feature.i
+SRCS_C  = Input.c \
+	Algorithm.c \
+	PA/Input.c \
+	PA/Output.c \
+	Output.c \
+	PA/Data.c \
+	PA/Tree.c \
+	PA/List.c \
+	PA/Link.c \
+	PA/Element.c \
+	PA/Count.c \
+	PA/Pair.c \
+	PA/Result.c \
+	PA/Series.c \
+	PA/Status.c \
+	PA/Value.c \
+	PA/Resource.c \
+	PA/NormalTree.c \
+	PA/Number.c \
+	PA/TransposeTree.c \
+	PA/PADrawingEditor.c \
+	PA/PALine.c \
+	PA/PAShape.c \
+	PA/PATextView.c \
+	PA/Arrow.c \
+	PA/Destination.c \
+	PA/Feature.c
 # SRCS_Y  = getdate.y
 SRCS    = $(SRCS_C)
 OBJS    = $(SRCS_C:.c=.o)
@@ -807,7 +807,7 @@ $(lib_arraylist): $(objects_arraylist)
 
 libpa.a: $(OBJS)
 	src/mkinstalldirs $(bindir) $(datadir) lib $(infodir) $(mandir)
-	$(AR) -v -s -q ./lib/$@ $(foreach object,$^,lib/$(object))  
+	$(AR) -v -s -q ./lib/$@ $(foreach object,$^,$(libdir)/$(object))  
 	$(AR) -v -t -s ./lib/$@
 
 $(lib_bfs): $(objects_bfs)
