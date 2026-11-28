@@ -3,6 +3,7 @@
 #define INCLUDE_TYPES_H_	1
 
 #include <defs.h>
+#include <stdlib.h>
 
 #ifdef _WIN95
 #else
@@ -235,10 +236,16 @@ struct Algorithm {
 // 	struct ArrayListPosition place;
 // 	int objects[SIZE];
 // };
+// struct PASize {
+// 	int digits;
+// 	int value;
+// 	int size;
+// };
 struct PASize {
-	int digits;
-	int value;
-	int size;
+
+ size_t size;
+ char* value;
+ char* digits;
 };
 struct PAResource {
 	// struct
@@ -399,6 +406,7 @@ struct PATransposeTree {
 	struct PATree adj_trans;
 	//struct PAList adj_trans;
 };
+
 struct FactoryProduct1 {
 	struct PANormalTree tree;
 };

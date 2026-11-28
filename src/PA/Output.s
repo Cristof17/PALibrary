@@ -1,5 +1,5 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.build_version macos, 14, 0	sdk_version 14, 4
+	.build_version macos, 14, 0	sdk_version 15, 2
 	.globl	_PAOutputPerformConstruct       ; -- Begin function PAOutputPerformConstruct
 	.p2align	2
 _PAOutputPerformConstruct:              ; @PAOutputPerformConstruct
@@ -13,28 +13,6 @@ _PAOutputPerformConstruct:              ; @PAOutputPerformConstruct
 _PAOutputPerformInit:                   ; @PAOutputPerformInit
 	.cfi_startproc
 ; %bb.0:
-<<<<<<< HEAD
-	sub	sp, sp, #48
-	.cfi_def_cfa_offset 48
-	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
-	add	x29, sp, #32
-	.cfi_def_cfa w29, 16
-	.cfi_offset w30, -8
-	.cfi_offset w29, -16
-	str	x8, [sp]                        ; 8-byte Folded Spill
-	mov	x2, x0
-	ldr	x0, [sp]                        ; 8-byte Folded Reload
-	str	x2, [sp, #8]                    ; 8-byte Folded Spill
-	mov	x8, x1
-	ldr	x1, [sp, #8]                    ; 8-byte Folded Reload
-	mov	x9, x1
-	stur	x9, [x29, #-8]
-	str	x8, [sp, #16]
-	mov	x2, #304
-	bl	_memcpy
-	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
-	add	sp, sp, #48
-=======
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	mov	x9, x8
@@ -46,7 +24,6 @@ _PAOutputPerformInit:                   ; @PAOutputPerformInit
 	ldr	x8, [x0, #16]
 	str	x8, [x9, #16]
 	add	sp, sp, #16
->>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	ret
 	.cfi_endproc
                                         ; -- End function

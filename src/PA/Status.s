@@ -1,5 +1,5 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.build_version macos, 14, 0	sdk_version 14, 4
+	.build_version macos, 14, 0	sdk_version 15, 2
 	.globl	_PAStatusPerformConstruct       ; -- Begin function PAStatusPerformConstruct
 	.p2align	2
 _PAStatusPerformConstruct:              ; @PAStatusPerformConstruct
@@ -98,68 +98,6 @@ _PAStatusPerformRuin:                   ; @PAStatusPerformRuin
 _PAStatusOperatorNotEqual:              ; @PAStatusOperatorNotEqual
 	.cfi_startproc
 ; %bb.0:
-<<<<<<< HEAD
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
-	str	x0, [sp, #24]
-	str	x1, [sp, #16]
-	ldr	x8, [sp, #24]
-	ldr	x9, [sp, #16]
-	subs	x8, x8, x9
-	cset	w8, ne
-	and	w9, w8, #0x1
-	mov	w8, #0
-	ands	w9, w9, #0x1
-	csinc	w9, w8, wzr, eq
-                                        ; implicit-def: $x8
-	mov	x8, x9
-	sxtw	x8, w8
-	str	x8, [sp, #8]
-	ldr	x0, [sp, #8]
-	add	sp, sp, #32
-=======
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	mov	x8, x0
-	str	w8, [sp, #12]
-	mov	x8, x1
-	str	w8, [sp, #8]
-	ldr	w9, [sp, #12]
-	ldr	w10, [sp, #8]
-	mov	w8, #0                          ; =0x0
-	subs	w9, w9, w10
-	csinc	w8, w8, wzr, eq
-	str	w8, [sp, #4]
-	ldr	w0, [sp, #4]
-	add	sp, sp, #16
->>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
-	ret
-	.cfi_endproc
-                                        ; -- End function
-	.globl	_PAStatusOperatorEqual          ; -- Begin function PAStatusOperatorEqual
-	.p2align	2
-_PAStatusOperatorEqual:                 ; @PAStatusOperatorEqual
-	.cfi_startproc
-; %bb.0:
-<<<<<<< HEAD
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
-	str	x0, [sp, #24]
-	str	x1, [sp, #16]
-	ldr	x8, [sp, #24]
-	ldr	x9, [sp, #16]
-	subs	x8, x8, x9
-	cset	w8, eq
-	and	w8, w8, #0x1
-	ands	w8, w8, #0x1
-	cset	w9, eq
-                                        ; implicit-def: $x8
-	mov	x8, x9
-	sxtw	x8, w8
-	str	x8, [sp, #8]
-	ldr	x0, [sp, #8]
-	add	sp, sp, #32
-=======
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	mov	x8, x0
@@ -169,11 +107,38 @@ _PAStatusOperatorEqual:                 ; @PAStatusOperatorEqual
 	ldr	w8, [sp, #12]
 	ldr	w9, [sp, #8]
 	subs	w8, w8, w9
-	cset	w8, ne
+	cset	w9, ne
+	mov	w8, #0                          ; =0x0
+	and	w9, w9, #0x1
+	ands	w9, w9, #0x1
+	csinc	w8, w8, wzr, eq
 	str	w8, [sp, #4]
 	ldr	w0, [sp, #4]
 	add	sp, sp, #16
->>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
+	ret
+	.cfi_endproc
+                                        ; -- End function
+	.globl	_PAStatusOperatorEqual          ; -- Begin function PAStatusOperatorEqual
+	.p2align	2
+_PAStatusOperatorEqual:                 ; @PAStatusOperatorEqual
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	mov	x8, x0
+	str	w8, [sp, #12]
+	mov	x8, x1
+	str	w8, [sp, #8]
+	ldr	w8, [sp, #12]
+	ldr	w9, [sp, #8]
+	subs	w8, w8, w9
+	cset	w8, eq
+	and	w8, w8, #0x1
+	ands	w8, w8, #0x1
+	cset	w8, eq
+	str	w8, [sp, #4]
+	ldr	w0, [sp, #4]
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function

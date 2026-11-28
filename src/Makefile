@@ -25,7 +25,8 @@ objects=Algorithm.o \
 	PARezultat.o \
 	PASir.o \
 	PAStare.o \
-	PATip.o 
+	PATip.o \
+	PASize.o
 
 $(objects): %.o : %.c 
 	$(CC) -c $(CFLAGS) $< -o $@

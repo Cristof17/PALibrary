@@ -1,5 +1,5 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.build_version macos, 14, 0	sdk_version 14, 4
+	.build_version macos, 14, 0	sdk_version 15, 2
 	.globl	_PAElementPerformConstruct      ; -- Begin function PAElementPerformConstruct
 	.p2align	2
 _PAElementPerformConstruct:             ; @PAElementPerformConstruct
@@ -44,16 +44,9 @@ _PAElementCauseVisit:                   ; @PAElementCauseVisit
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-<<<<<<< HEAD
-	str	x0, [sp]
-	str	x1, [sp, #8]
-	mov	x8, #1
-	str	x8, [sp, #8]
-=======
 	str	x0, [sp, #8]
 	mov	w8, #1                          ; =0x1
 	str	w8, [sp, #12]
->>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -123,27 +116,6 @@ _PAElementPerformDelete:                ; @PAElementPerformDelete
 _PAElementOperatorLess:                 ; @PAElementOperatorLess
 	.cfi_startproc
 ; %bb.0:
-<<<<<<< HEAD
-	sub	sp, sp, #48
-	.cfi_def_cfa_offset 48
-	str	x0, [sp, #32]
-	str	x1, [sp, #40]
-	str	x2, [sp, #16]
-	str	x3, [sp, #24]
-	ldr	x8, [sp, #32]
-	ldr	x9, [sp, #16]
-	subs	x8, x8, x9
-	cset	w8, lt
-	and	w8, w8, #0x1
-	ands	w8, w8, #0x1
-	cset	w9, eq
-                                        ; implicit-def: $x8
-	mov	x8, x9
-	sxtw	x8, w8
-	str	x8, [sp, #8]
-	ldr	x0, [sp, #8]
-	add	sp, sp, #48
-=======
 	sub	sp, sp, #32
 	.cfi_def_cfa_offset 32
 	str	x0, [sp, #24]
@@ -151,11 +123,13 @@ _PAElementOperatorLess:                 ; @PAElementOperatorLess
 	ldr	w8, [sp, #24]
 	ldr	w9, [sp, #16]
 	subs	w8, w8, w9
-	cset	w8, ge
+	cset	w8, lt
+	and	w8, w8, #0x1
+	ands	w8, w8, #0x1
+	cset	w8, eq
 	str	w8, [sp, #12]
 	ldr	w0, [sp, #12]
 	add	sp, sp, #32
->>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -164,27 +138,6 @@ _PAElementOperatorLess:                 ; @PAElementOperatorLess
 _PAElementOperatorEqual:                ; @PAElementOperatorEqual
 	.cfi_startproc
 ; %bb.0:
-<<<<<<< HEAD
-	sub	sp, sp, #48
-	.cfi_def_cfa_offset 48
-	str	x0, [sp, #32]
-	str	x1, [sp, #40]
-	str	x2, [sp, #16]
-	str	x3, [sp, #24]
-	ldr	x8, [sp, #32]
-	ldr	x9, [sp, #16]
-	subs	x8, x8, x9
-	cset	w8, eq
-	and	w8, w8, #0x1
-	ands	w8, w8, #0x1
-	cset	w9, eq
-                                        ; implicit-def: $x8
-	mov	x8, x9
-	sxtw	x8, w8
-	str	x8, [sp, #8]
-	ldr	x0, [sp, #8]
-	add	sp, sp, #48
-=======
 	sub	sp, sp, #32
 	.cfi_def_cfa_offset 32
 	str	x0, [sp, #24]
@@ -192,11 +145,13 @@ _PAElementOperatorEqual:                ; @PAElementOperatorEqual
 	ldr	w8, [sp, #24]
 	ldr	w9, [sp, #16]
 	subs	w8, w8, w9
-	cset	w8, ne
+	cset	w8, eq
+	and	w8, w8, #0x1
+	ands	w8, w8, #0x1
+	cset	w8, eq
 	str	w8, [sp, #12]
 	ldr	w0, [sp, #12]
 	add	sp, sp, #32
->>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -205,41 +160,21 @@ _PAElementOperatorEqual:                ; @PAElementOperatorEqual
 _PAElementOperatorGreater:              ; @PAElementOperatorGreater
 	.cfi_startproc
 ; %bb.0:
-<<<<<<< HEAD
-	sub	sp, sp, #48
-	.cfi_def_cfa_offset 48
-	str	x0, [sp, #32]
-	str	x1, [sp, #40]
-	str	x2, [sp, #16]
-	str	x3, [sp, #24]
-	ldr	x8, [sp, #32]
-	ldr	x9, [sp, #16]
-	subs	x8, x8, x9
-	cset	w8, gt
-	and	w9, w8, #0x1
-	mov	w8, #0
-	ands	w9, w9, #0x1
-	csinc	w9, w8, wzr, eq
-                                        ; implicit-def: $x8
-	mov	x8, x9
-	sxtw	x8, w8
-	str	x8, [sp, #8]
-	ldr	x0, [sp, #8]
-	add	sp, sp, #48
-=======
 	sub	sp, sp, #32
 	.cfi_def_cfa_offset 32
 	str	x0, [sp, #24]
 	str	x1, [sp, #16]
-	ldr	w9, [sp, #24]
-	ldr	w10, [sp, #16]
+	ldr	w8, [sp, #24]
+	ldr	w9, [sp, #16]
+	subs	w8, w8, w9
+	cset	w9, gt
 	mov	w8, #0                          ; =0x0
-	subs	w9, w9, w10
-	csinc	w8, w8, wzr, le
+	and	w9, w9, #0x1
+	ands	w9, w9, #0x1
+	csinc	w8, w8, wzr, eq
 	str	w8, [sp, #12]
 	ldr	w0, [sp, #12]
 	add	sp, sp, #32
->>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -248,41 +183,21 @@ _PAElementOperatorGreater:              ; @PAElementOperatorGreater
 _PAElementOperatorNotEqual:             ; @PAElementOperatorNotEqual
 	.cfi_startproc
 ; %bb.0:
-<<<<<<< HEAD
-	sub	sp, sp, #48
-	.cfi_def_cfa_offset 48
-	str	x0, [sp, #32]
-	str	x1, [sp, #40]
-	str	x2, [sp, #16]
-	str	x3, [sp, #24]
-	ldr	x8, [sp, #32]
-	ldr	x9, [sp, #16]
-	subs	x8, x8, x9
-	cset	w8, ne
-	and	w9, w8, #0x1
-	mov	w8, #0
-	ands	w9, w9, #0x1
-	csinc	w9, w8, wzr, eq
-                                        ; implicit-def: $x8
-	mov	x8, x9
-	sxtw	x8, w8
-	str	x8, [sp, #8]
-	ldr	x0, [sp, #8]
-	add	sp, sp, #48
-=======
 	sub	sp, sp, #32
 	.cfi_def_cfa_offset 32
 	str	x0, [sp, #24]
 	str	x1, [sp, #16]
-	ldr	w9, [sp, #24]
-	ldr	w10, [sp, #16]
+	ldr	w8, [sp, #24]
+	ldr	w9, [sp, #16]
+	subs	w8, w8, w9
+	cset	w9, ne
 	mov	w8, #0                          ; =0x0
-	subs	w9, w9, w10
+	and	w9, w9, #0x1
+	ands	w9, w9, #0x1
 	csinc	w8, w8, wzr, eq
 	str	w8, [sp, #12]
 	ldr	w0, [sp, #12]
 	add	sp, sp, #32
->>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	ret
 	.cfi_endproc
                                         ; -- End function

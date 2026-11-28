@@ -1,5 +1,5 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.build_version macos, 14, 0	sdk_version 14, 4
+	.build_version macos, 14, 0	sdk_version 15, 2
 	.globl	_PANumberPerformConstruct       ; -- Begin function PANumberPerformConstruct
 	.p2align	2
 _PANumberPerformConstruct:              ; @PANumberPerformConstruct
@@ -93,17 +93,6 @@ _PANumberPerformCopy:                   ; @PANumberPerformCopy
 _PANumberOperatorEqual:                 ; @PANumberOperatorEqual
 	.cfi_startproc
 ; %bb.0:
-<<<<<<< HEAD
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
-	str	x0, [sp, #24]
-	str	x1, [sp, #16]
-	ldr	x8, [sp, #24]
-	ldr	x9, [sp, #16]
-	subs	x8, x8, x9
-	cset	w8, ne
-	tbnz	w8, #0, LBB5_2
-=======
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	mov	x8, x0
@@ -113,20 +102,15 @@ _PANumberOperatorEqual:                 ; @PANumberOperatorEqual
 	ldr	w8, [sp, #12]
 	ldr	w9, [sp, #8]
 	subs	w8, w8, w9
-	b.ne	LBB5_2
->>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
+	cset	w8, ne
+	tbnz	w8, #0, LBB5_2
 	b	LBB5_1
 LBB5_1:
 	str	wzr, [sp, #4]
 	b	LBB5_3
 LBB5_2:
-<<<<<<< HEAD
-	mov	x8, #1
-	str	x8, [sp, #8]
-=======
 	mov	w8, #1                          ; =0x1
 	str	w8, [sp, #4]
->>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	b	LBB5_3
 LBB5_3:
 	ldr	w0, [sp, #4]
@@ -139,21 +123,6 @@ LBB5_3:
 _PANumberOperatorNotEqual:              ; @PANumberOperatorNotEqual
 	.cfi_startproc
 ; %bb.0:
-<<<<<<< HEAD
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
-	str	x0, [sp, #24]
-	str	x1, [sp, #16]
-	ldr	x8, [sp, #24]
-	ldr	x9, [sp, #16]
-	subs	x8, x8, x9
-	cset	w8, eq
-	tbnz	w8, #0, LBB6_2
-	b	LBB6_1
-LBB6_1:
-	mov	x8, #1
-	str	x8, [sp, #8]
-=======
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	mov	x8, x0
@@ -163,12 +132,12 @@ LBB6_1:
 	ldr	w8, [sp, #12]
 	ldr	w9, [sp, #8]
 	subs	w8, w8, w9
-	b.eq	LBB6_2
+	cset	w8, eq
+	tbnz	w8, #0, LBB6_2
 	b	LBB6_1
 LBB6_1:
 	mov	w8, #1                          ; =0x1
 	str	w8, [sp, #4]
->>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	b	LBB6_3
 LBB6_2:
 	str	wzr, [sp, #4]
@@ -184,17 +153,6 @@ LBB6_3:
 _PANumberOperatorLess:                  ; @PANumberOperatorLess
 	.cfi_startproc
 ; %bb.0:
-<<<<<<< HEAD
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
-	str	x0, [sp, #24]
-	str	x1, [sp, #16]
-	ldr	x8, [sp, #24]
-	ldr	x9, [sp, #16]
-	subs	x8, x8, x9
-	cset	w8, ge
-	tbnz	w8, #0, LBB7_2
-=======
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	mov	x8, x0
@@ -204,20 +162,15 @@ _PANumberOperatorLess:                  ; @PANumberOperatorLess
 	ldr	w8, [sp, #12]
 	ldr	w9, [sp, #8]
 	subs	w8, w8, w9
-	b.ge	LBB7_2
->>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
+	cset	w8, ge
+	tbnz	w8, #0, LBB7_2
 	b	LBB7_1
 LBB7_1:
 	str	wzr, [sp, #4]
 	b	LBB7_3
 LBB7_2:
-<<<<<<< HEAD
-	mov	x8, #1
-	str	x8, [sp, #8]
-=======
 	mov	w8, #1                          ; =0x1
 	str	w8, [sp, #4]
->>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	b	LBB7_3
 LBB7_3:
 	ldr	w0, [sp, #4]
@@ -230,21 +183,6 @@ LBB7_3:
 _PANumberOperatorGreater:               ; @PANumberOperatorGreater
 	.cfi_startproc
 ; %bb.0:
-<<<<<<< HEAD
-	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
-	str	x0, [sp, #24]
-	str	x1, [sp, #16]
-	ldr	x8, [sp, #24]
-	ldr	x9, [sp, #16]
-	subs	x8, x8, x9
-	cset	w8, le
-	tbnz	w8, #0, LBB8_2
-	b	LBB8_1
-LBB8_1:
-	mov	x8, #1
-	str	x8, [sp, #8]
-=======
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	mov	x8, x0
@@ -254,12 +192,12 @@ LBB8_1:
 	ldr	w8, [sp, #12]
 	ldr	w9, [sp, #8]
 	subs	w8, w8, w9
-	b.le	LBB8_2
+	cset	w8, le
+	tbnz	w8, #0, LBB8_2
 	b	LBB8_1
 LBB8_1:
 	mov	w8, #1                          ; =0x1
 	str	w8, [sp, #4]
->>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	b	LBB8_3
 LBB8_2:
 	str	wzr, [sp, #4]
