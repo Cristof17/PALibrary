@@ -1,10 +1,10 @@
-# 1 "src/BFS/Record.c"
+# 1 "./src/BFS/Record.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 424 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/BFS/Record.c" 2
+# 1 "./src/BFS/Record.c" 2
 
 
 # 1 "./include/types.h" 1
@@ -1800,7 +1800,7 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 4 "src/BFS/Record.c" 2
+# 4 "./src/BFS/Record.c" 2
 
 
 # 1 "./include/PA/List.h" 1
@@ -1818,7 +1818,7 @@ struct Facade {
           PAResult PAListOperatorEqual(struct PAList one, struct PAList other);
           PAResult PAListOperatorNotEqual(struct PAList one, struct PAList other);
 void PAListPerformPrint(struct PAList List);
-# 7 "src/BFS/Record.c" 2
+# 7 "./src/BFS/Record.c" 2
 # 1 "./include/PA/Count.h" 1
 # 12 "./include/PA/Count.h"
           struct PACount PACountPerformConstruct();
@@ -1830,9 +1830,9 @@ void PAListPerformPrint(struct PAList List);
           PAResult PACountOperatorEqual(struct PACount one, struct PACount other);
           PAResult PACountOperatorGreater(struct PACount one, struct PACount other);
           PAResult PACountOperatorNotEqual(struct PACount one, struct PACount other);
-# 8 "src/BFS/Record.c" 2
+# 8 "./src/BFS/Record.c" 2
 # 1 "./include/PA/Result.h" 1
-# 9 "src/BFS/Record.c" 2
+# 9 "./src/BFS/Record.c" 2
 # 1 "./include/BFS/Record.h" 1
 
 
@@ -1848,7 +1848,7 @@ void PAListPerformPrint(struct PAList List);
           struct BFSRecord BFSRecordDelete(struct BFSRecord);
           int BFSRecordFinish(struct BFSRecord);
           void BFSRecordPrint(struct BFSRecord);
-# 10 "src/BFS/Record.c" 2
+# 10 "./src/BFS/Record.c" 2
 
 
 

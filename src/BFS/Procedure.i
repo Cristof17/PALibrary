@@ -1,10 +1,10 @@
-# 1 "src/BFS/Procedure.c"
+# 1 "./src/BFS/Procedure.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 424 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "src/BFS/Procedure.c" 2
+# 1 "./src/BFS/Procedure.c" 2
 
 
 # 1 "./include/types.h" 1
@@ -1800,7 +1800,7 @@ struct Facade {
  struct PAData data;
  struct FactoryCreator factory;
 };
-# 4 "src/BFS/Procedure.c" 2
+# 4 "./src/BFS/Procedure.c" 2
 # 1 "./include/Algorithm.h" 1
 
 
@@ -1838,7 +1838,7 @@ struct Facade {
           struct Algorithm AlgorithmDelete(struct Algorithm);
           struct Algorithm AlgorithmCopy(struct Algorithm from, struct Algorithm to);
           struct Output AlgorithmPerformRun(struct Input);
-# 5 "src/BFS/Procedure.c" 2
+# 5 "./src/BFS/Procedure.c" 2
 
 
 
@@ -2014,7 +2014,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           PAResult PATreePerformDelete(struct PATree PA);
           PAResult PATreeOperatorEqual(struct PATree one, struct PATree other);
           PAResult PATreeOperatorNotEqual(struct PATree one, struct PATree other);
-# 9 "src/BFS/Procedure.c" 2
+# 9 "./src/BFS/Procedure.c" 2
 # 1 "./include/PA/Element.h" 1
 # 12 "./include/PA/Element.h"
           struct PAElement PAElementPerformConstruct();
@@ -2029,7 +2029,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           PAResult PAElementOperatorEqual(struct PAElement one, struct PAElement other);
           PAResult PAElementOperatorGreater(struct PAElement one, struct PAElement other);
           PAResult PAElementOperatorNotEqual(struct PAElement one, struct PAElement other);
-# 10 "src/BFS/Procedure.c" 2
+# 10 "./src/BFS/Procedure.c" 2
 # 1 "./include/BFS/Procedure.h" 1
 
 
@@ -2046,7 +2046,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 
           int BFSProcedureRuin();
           int BFSProcedureSubroutine();
-# 11 "src/BFS/Procedure.c" 2
+# 11 "./src/BFS/Procedure.c" 2
 
 # 1 "./include/PA/Input.h" 1
 
@@ -2064,8 +2064,8 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
           PAResult PAInputPerformDelete(struct PAInput PA);
           PAResult PAInputOperatorEqual(struct PAInput one, struct PAInput other);
           PAResult PAInputOperatorNotEqual(struct PAInput one, struct PAInput other);
-# 13 "src/BFS/Procedure.c" 2
-# 26 "src/BFS/Procedure.c"
+# 13 "./src/BFS/Procedure.c" 2
+# 26 "./src/BFS/Procedure.c"
 int BFS()
 {
     int result;

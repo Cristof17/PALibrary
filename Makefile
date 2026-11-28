@@ -766,12 +766,10 @@ Algorithm.i : Algorithm.c PA/Result.h Algorithm.h
 Output.i : Output.c defs.h Output.h
 	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
 
-BFS/Procedure.i : $(srcdir)/BFS/Procedure.c $(includedir)/types.h $(includedir)/Algorithm.h $(includedir)/PA/Tree.h $(includedir)/PA/Element.h $(includedir)/BFS/Procedure.h $(includedir)/PA/Input.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
+BFS/Procedure.i : BFS/Procedure.c $(includedir)/types.h $(includedir)/Algorithm.h $(includedir)/PA/Tree.h $(includedir)/PA/Element.h $(includedir)/BFS/Procedure.h $(includedir)/PA/Input.h
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
 BFS/Record.i : BFS/Record.c $(includedir)/types.h $(includedir)/PA/List.h $(includedir)/PA/Count.h $(includedir)/PA/Result.h $(includedir)/BFS/Record.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
-BFS/Record.i : $(srcdir)/BFS/Record.c $(includedir)/types.h $(includedir)/PA/List.h $(includedir)/PA/Count.h $(includedir)/PA/Result.h $(includedir)/BFS/Record.h
-	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
 
 PA/Input.i : PA/Input.c
 	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
