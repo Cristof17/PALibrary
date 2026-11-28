@@ -22,36 +22,36 @@ DllExport struct PAList PAListPerformConstruct()
 DllExport struct PAList PAListPerformCopy(struct PAList from, struct PAList to)
 {
     struct PAList temp;
-    temp = from;
-    PAValue x;
-    PAValue y;
-    x = FIRST;
-    y = x;
-    if (temp.n > to.n)
-    {
-        y = to.n;
-    }
-    else if (temp.n < to.n)
-    {
-        y = temp.n;
-    }
-    while (x <= y)
-    {
-        struct PASeries aux;
-        PASeriesPerformCopy(from.neigh[x], aux);
-        PASeriesPerformCopy(aux, temp.neigh[x]);
-        x++;
-    }
+    // temp = from;
+    // PAValue x;
+    // PAValue y;
+    // x = FIRST;
+    // y = x;
+    // if (temp.n > to.n)
+    // {
+    //     y = to.n;
+    // }
+    // else if (temp.n < to.n)
+    // {
+    //     y = temp.n;
+    // }
+    // while (x <= y)
+    // {
+    //     struct PASeries aux;
+    //     PASeriesPerformCopy(from.neigh[x], aux);
+    //     PASeriesPerformCopy(aux, temp.neigh[x]);
+    //     x++;
+    // }
 
-    x = FIRST;
-    while (x < y)
-    {
-        struct PASeries aux;
-        PASeriesPerformCopy(temp.neigh[x],aux);
-        PASeriesPerformCopy(aux, to.neigh[x]);
-        x++;
-    }
-    to.n = temp.n;
+    // x = FIRST;
+    // while (x < y)
+    // {
+    //     struct PASeries aux;
+    //     PASeriesPerformCopy(temp.neigh[x],aux);
+    //     PASeriesPerformCopy(aux, to.neigh[x]);
+    //     x++;
+    // }
+    // to.n = temp.n;
     return to;
 }
 
@@ -65,36 +65,36 @@ DllExport struct PAList PAListPerformConstructWithSize(PAValue Size)
 DllExport struct PAList PAListPerformInitWithSize(struct PAList List, PAValue Size, struct PASeries Value2[])
 {
     struct PAList list;
-    list.n = Size;
-    PAValue x;
-    PAValue y;
-    x = FIRST;
-    y = Size;
-    // just to be sure that the size is not bigger than the list size
-    while (x <= y)
-    {
-        PASeriesPerformCopy(List.neigh[x],list.neigh[x]);
-        x++;
-    }
-    List.n = list.n;
+    // list.n = Size;
+    // PAValue x;
+    // PAValue y;
+    // x = FIRST;
+    // y = Size;
+    // // just to be sure that the size is not bigger than the list size
+    // while (x <= y)
+    // {
+    //     PASeriesPerformCopy(List.neigh[x],list.neigh[x]);
+    //     x++;
+    // }
+    // List.n = list.n;
     return List;
 }
 
-DllExport struct PAList PAListPerformInit(struct PAList List, PAValue Value, struct PASeries Value2[])
+DllExport struct PAList PAListPerformInit(struct PAList List, PAValue N, struct PASeries adj[])
 {
-    struct PAList list;
-    list.n = Value;
-    PAValue x;
-    PAValue y;
-    x = FIRST;
+    // struct PAList list;
+    // list.n = N;
+    // PAValue x;
+    // PAValue y;
+    // x = FIRST;
 
-    while (x <= y)
-    {
-        PASeriesPerformCopy(List.neigh[x],list.neigh[x]);
-        x++;
-    }
-    List.n = list.n;
-    return List;
+    // while (x <= y)
+    // {
+    //     PASeriesPerformCopy(List.neigh[x],List.neigh[x]);
+    //     x++;
+    // }
+    // List.n = list.n;
+    // return List;
 }
 DllExport struct PAList PAListPerformRuin(struct PAList PA)
 {

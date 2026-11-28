@@ -1,7 +1,11 @@
 # 1 "./src/Output.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
+<<<<<<< HEAD
 # 418 "<built-in>" 3
+=======
+# 466 "<built-in>" 3
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
 # 1 "./src/Output.c" 2
@@ -15,19 +19,41 @@
 # 1 "./include/defs.h" 1
 # 7 "./include/Output.h" 2
 # 1 "./include/types.h" 1
+<<<<<<< HEAD
 # 14 "./include/types.h"
 typedef long ArrayListObject;
+=======
+# 15 "./include/types.h"
+typedef int ArrayListObject;
+
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 
 
 
 
+<<<<<<< HEAD
 typedef long ArrayListPosition;
 typedef long ArrayListOffset;
+=======
+typedef long ArrayListOffset;
+typedef int ArrayListPosition;
+
+
+
+
+typedef int ArrayListCount;
+
+
+
+
+typedef int ArrayListValue;
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 
 
 
 
 
+<<<<<<< HEAD
 typedef long ArrayListCount;
 
 
@@ -35,6 +61,9 @@ typedef long ArrayListCount;
 
 typedef long ArrayListValue;
 # 40 "./include/types.h"
+=======
+
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 struct ArrayListPosition {
     ArrayListPosition position;
 };
@@ -48,6 +77,7 @@ struct ArrayList {
 
 
 };
+<<<<<<< HEAD
 # 79 "./include/types.h"
 typedef long PAValue;
 typedef long PABool;
@@ -61,6 +91,19 @@ typedef long long ArrayListSize;
 
 struct PANumber;
 # 106 "./include/types.h"
+=======
+# 69 "./include/types.h"
+typedef int PAValue;
+typedef int PABool;
+typedef int PAResult;
+typedef int ArrayListSize;
+typedef int PAData;
+typedef int PAStatus;
+typedef int PAResult;
+# 88 "./include/types.h"
+struct PANumber;
+# 105 "./include/types.h"
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -88,7 +131,10 @@ struct PATransposeTree;
 struct PASize;
 struct PAInput;
 struct PAOutput;
+<<<<<<< HEAD
 struct PAObject;
+=======
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 
 struct PAData;
 
@@ -110,7 +156,11 @@ struct PASeries;
 struct PATree;
 struct PALink;
 struct PAInt;
+<<<<<<< HEAD
 # 165 "./include/types.h"
+=======
+# 163 "./include/types.h"
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -156,14 +206,22 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
+<<<<<<< HEAD
 # 225 "./include/types.h"
+=======
+# 223 "./include/types.h"
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 struct Input {
  ;
 };
 struct Algorithm {
  struct Input input;
 };
+<<<<<<< HEAD
 # 239 "./include/types.h"
+=======
+# 237 "./include/types.h"
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 struct PASize {
  int digits;
  int value;
@@ -206,11 +264,29 @@ struct PACount {
 
 struct PASeries {
  struct PACount m;
+<<<<<<< HEAD
  struct PAElement adj[4];
 };
 struct PAList {
  PAValue n;
  struct PASeries neigh[4];
+=======
+
+ struct PAElement* adj;
+
+
+
+
+};
+struct PAList {
+ PAValue n;
+
+ struct PAElement* neigh;
+
+
+
+
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 
 } PAList;
 struct FlyweightFlyweightClient {
@@ -234,16 +310,24 @@ struct FlyweightUnsharedConcreteFlyweight {
  struct PASeries intrinsicState;
 
 };
+<<<<<<< HEAD
 struct PAObject
 {
  long address;
 };
 struct PATree {
+=======
+typedef struct PATree {
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
  struct PACount n;
  struct PACount m;
  struct PAElement source;
  struct PAList adj;
+<<<<<<< HEAD
 };
+=======
+}* PATree;
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 struct BridgeAbstraction {
  struct PAElement elements[4];
 };
@@ -255,7 +339,11 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
+<<<<<<< HEAD
 # 338 "./include/types.h"
+=======
+# 342 "./include/types.h"
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 struct PAInput {
  struct PACount n;
  struct PACount m;

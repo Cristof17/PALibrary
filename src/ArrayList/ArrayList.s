@@ -22,9 +22,9 @@ _ArrayListPerformGetFirst:              ; @ArrayListPerformGetFirst
 	.cfi_def_cfa_offset 16
 	mov	x8, x0
 	str	x8, [sp, #8]
-	ldr	x8, [x0, #8]
-	str	x8, [sp]
-	ldr	x0, [sp]
+	ldr	w8, [x0, #4]
+	str	w8, [sp, #4]
+	ldr	w0, [sp, #4]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -38,10 +38,10 @@ _ArrayListPerformGetLast:               ; @ArrayListPerformGetLast
 	.cfi_def_cfa_offset 16
 	mov	x8, x0
 	str	x8, [sp, #8]
-	ldr	x8, [x0, #40]
-	ldr	x8, [x0, x8, lsl #3]
-	str	x8, [sp]
-	ldr	x0, [sp]
+	ldrsw	x8, [x0, #20]
+	ldr	w8, [x0, x8, lsl #2]
+	str	w8, [sp, #4]
+	ldr	w0, [sp, #4]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -51,18 +51,24 @@ _ArrayListPerformGetLast:               ; @ArrayListPerformGetLast
 _ArrayListPerformPutFirst:              ; @ArrayListPerformPutFirst
 	.cfi_startproc
 ; %bb.0:
+<<<<<<< HEAD
 	sub	sp, sp, #112
 	.cfi_def_cfa_offset 112
 	stp	x29, x30, [sp, #96]             ; 16-byte Folded Spill
 	add	x29, sp, #96
+=======
+	sub	sp, sp, #80
+	stp	x29, x30, [sp, #64]             ; 16-byte Folded Spill
+	add	x29, sp, #64
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	str	x0, [sp, #8]                    ; 8-byte Folded Spill
-	mov	x8, x1
-	ldr	x1, [sp, #8]                    ; 8-byte Folded Reload
-	mov	x0, x1
+	mov	x8, x0
+	str	x8, [sp]                        ; 8-byte Folded Spill
+	mov	x0, x8
 	stur	x0, [x29, #-8]
+<<<<<<< HEAD
 	stur	x8, [x29, #-16]
 	ldr	x8, [x1, #40]
 	stur	x8, [x29, #-24]
@@ -71,18 +77,28 @@ _ArrayListPerformPutFirst:              ; @ArrayListPerformPutFirst
 	mov	x2, #48
 	bl	_memcpy
 	ldr	x0, [sp]                        ; 8-byte Folded Reload
+=======
+	stur	w1, [x29, #-12]
+	ldr	w9, [x8, #20]
+	stur	w9, [x29, #-16]
+	ldr	q0, [x8]
+	add	x0, sp, #16
+	str	q0, [sp, #16]
+	ldr	x8, [x8, #16]
+	str	x8, [sp, #32]
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	bl	_ArrayListMoveComponentsRight
-	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
-	ldur	x8, [x29, #-16]
-	str	x8, [x0, #8]
-	ldr	x8, [x0, #8]
-	str	x8, [sp, #16]
-	ldr	x8, [x0, #40]
-	add	x8, x8, #1
-	str	x8, [x0, #40]
-	ldr	x0, [sp, #16]
-	ldp	x29, x30, [sp, #96]             ; 16-byte Folded Reload
-	add	sp, sp, #112
+	ldr	x0, [sp]                        ; 8-byte Folded Reload
+	ldur	w8, [x29, #-12]
+	str	w8, [x0, #4]
+	ldr	w8, [x0, #4]
+	str	w8, [sp, #12]
+	ldr	w8, [x0, #20]
+	add	w8, w8, #1
+	str	w8, [x0, #20]
+	ldr	w0, [sp, #12]
+	ldp	x29, x30, [sp, #64]             ; 16-byte Folded Reload
+	add	sp, sp, #80
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -93,34 +109,40 @@ _ArrayListMoveComponentsRight:          ; @ArrayListMoveComponentsRight
 ; %bb.0:
 	sub	sp, sp, #32
 	.cfi_def_cfa_offset 32
-	str	x0, [sp]                        ; 8-byte Folded Spill
+	str	x0, [sp, #8]                    ; 8-byte Folded Spill
 	mov	x8, x0
 	str	x8, [sp, #24]
-	ldr	x8, [x0, #40]
-	str	x8, [sp, #16]
+	ldr	w8, [x0, #20]
+	str	w8, [sp, #20]
 	b	LBB4_1
 LBB4_1:                                 ; =>This Inner Loop Header: Depth=1
+<<<<<<< HEAD
 	ldr	x8, [sp, #16]
 	subs	x8, x8, #1
 	cset	w8, lt
 	tbnz	w8, #0, LBB4_3
+=======
+	ldr	w8, [sp, #20]
+	subs	w8, w8, #1
+	b.lt	LBB4_3
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	b	LBB4_2
 LBB4_2:                                 ;   in Loop: Header=BB4_1 Depth=1
-	ldr	x9, [sp]                        ; 8-byte Folded Reload
-	ldr	x8, [sp, #16]
-	ldr	x8, [x9, x8, lsl #3]
-	str	x8, [sp, #8]
-	ldr	x8, [sp, #8]
-	ldr	x10, [sp, #16]
-	add	x10, x10, #1
-	str	x8, [x9, x10, lsl #3]
-	ldr	x8, [sp, #16]
-	subs	x8, x8, #1
-	str	x8, [sp, #16]
+	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload
+	ldrsw	x8, [sp, #20]
+	ldr	w8, [x9, x8, lsl #2]
+	str	w8, [sp, #16]
+	ldr	w8, [sp, #16]
+	ldr	w10, [sp, #20]
+	add	w10, w10, #1
+	str	w8, [x9, w10, sxtw #2]
+	ldr	w8, [sp, #20]
+	subs	w8, w8, #1
+	str	w8, [sp, #20]
 	b	LBB4_1
 LBB4_3:
-	ldr	x8, [sp]                        ; 8-byte Folded Reload
-	ldr	x0, [x8, #8]
+	ldr	x8, [sp, #8]                    ; 8-byte Folded Reload
+	ldr	w0, [x8, #4]
 	add	sp, sp, #32
 	ret
 	.cfi_endproc
@@ -130,33 +152,46 @@ LBB4_3:
 _ArrayListRemoveFirst:                  ; @ArrayListRemoveFirst
 	.cfi_startproc
 ; %bb.0:
+<<<<<<< HEAD
 	sub	sp, sp, #96
 	.cfi_def_cfa_offset 96
 	stp	x29, x30, [sp, #80]             ; 16-byte Folded Spill
 	add	x29, sp, #80
+=======
+	sub	sp, sp, #80
+	stp	x29, x30, [sp, #64]             ; 16-byte Folded Spill
+	add	x29, sp, #64
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	mov	x1, x0
-	str	x1, [sp, #8]                    ; 8-byte Folded Spill
-	mov	x0, x1
+	mov	x8, x0
+	str	x8, [sp, #8]                    ; 8-byte Folded Spill
+	mov	x0, x8
 	stur	x0, [x29, #-8]
-	str	xzr, [x1, #8]
+	str	wzr, [x8, #4]
+	ldr	q0, [x8]
 	add	x0, sp, #16
+<<<<<<< HEAD
 	str	x0, [sp]                        ; 8-byte Folded Spill
 	mov	x2, #48
 	bl	_memcpy
 	ldr	x0, [sp]                        ; 8-byte Folded Reload
+=======
+	str	q0, [sp, #16]
+	ldr	x8, [x8, #16]
+	str	x8, [sp, #32]
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	bl	_ArrayListMoveComponentsLeft
 	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
-	ldr	x8, [x0, #40]
-	subs	x8, x8, #1
-	str	x8, [x0, #40]
-	ldr	x8, [x0, #8]
-	stur	x8, [x29, #-16]
-	ldur	x0, [x29, #-16]
-	ldp	x29, x30, [sp, #80]             ; 16-byte Folded Reload
-	add	sp, sp, #96
+	ldr	w8, [x0, #20]
+	subs	w8, w8, #1
+	str	w8, [x0, #20]
+	ldr	w8, [x0, #4]
+	stur	w8, [x29, #-12]
+	ldur	w0, [x29, #-12]
+	ldp	x29, x30, [sp, #64]             ; 16-byte Folded Reload
+	add	sp, sp, #80
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -167,8 +202,9 @@ _ArrayListMoveComponentsLeft:           ; @ArrayListMoveComponentsLeft
 ; %bb.0:
 	sub	sp, sp, #32
 	.cfi_def_cfa_offset 32
-	str	x0, [sp]                        ; 8-byte Folded Spill
+	str	x0, [sp, #8]                    ; 8-byte Folded Spill
 	str	x0, [sp, #24]
+<<<<<<< HEAD
 	mov	x8, #1
 	str	x8, [sp, #16]
 	b	LBB6_1
@@ -179,23 +215,34 @@ LBB6_1:                                 ; =>This Inner Loop Header: Depth=1
 	subs	x8, x8, x9
 	cset	w8, gt
 	tbnz	w8, #0, LBB6_3
+=======
+	mov	w8, #1                          ; =0x1
+	str	w8, [sp, #20]
+	b	LBB6_1
+LBB6_1:                                 ; =>This Inner Loop Header: Depth=1
+	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload
+	ldr	w8, [sp, #20]
+	ldr	w9, [x9, #20]
+	subs	w8, w8, w9
+	b.gt	LBB6_3
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	b	LBB6_2
 LBB6_2:                                 ;   in Loop: Header=BB6_1 Depth=1
-	ldr	x9, [sp]                        ; 8-byte Folded Reload
-	ldr	x8, [sp, #16]
-	add	x8, x8, #1
-	ldr	x8, [x9, x8, lsl #3]
-	str	x8, [sp, #8]
-	ldr	x8, [sp, #8]
-	ldr	x10, [sp, #16]
-	str	x8, [x9, x10, lsl #3]
-	ldr	x8, [sp, #16]
-	add	x8, x8, #1
-	str	x8, [sp, #16]
+	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload
+	ldr	w8, [sp, #20]
+	add	w8, w8, #1
+	ldr	w8, [x9, w8, sxtw #2]
+	str	w8, [sp, #16]
+	ldr	w8, [sp, #16]
+	ldrsw	x10, [sp, #20]
+	str	w8, [x9, x10, lsl #2]
+	ldr	w8, [sp, #20]
+	add	w8, w8, #1
+	str	w8, [sp, #20]
 	b	LBB6_1
 LBB6_3:
-	ldr	x8, [sp]                        ; 8-byte Folded Reload
-	ldr	x0, [x8, #8]
+	ldr	x8, [sp, #8]                    ; 8-byte Folded Reload
+	ldr	w0, [x8, #4]
 	add	sp, sp, #32
 	ret
 	.cfi_endproc
@@ -209,6 +256,7 @@ _ArrayListRemoveLast:                   ; @ArrayListRemoveLast
 	.cfi_def_cfa_offset 16
 	mov	x8, x0
 	str	x8, [sp, #8]
+<<<<<<< HEAD
 	ldr	x9, [x0, #40]
 	mov	x8, #0
 	str	x8, [x0, x9, lsl #3]
@@ -219,6 +267,18 @@ _ArrayListRemoveLast:                   ; @ArrayListRemoveLast
 	ldr	x8, [x0, x8, lsl #3]
 	str	x8, [sp]
 	ldr	x0, [sp]
+=======
+	ldrsw	x9, [x0, #20]
+	mov	w8, #0                          ; =0x0
+	str	w8, [x0, x9, lsl #2]
+	ldr	w8, [x0, #20]
+	subs	w8, w8, #1
+	str	w8, [x0, #20]
+	ldrsw	x8, [x0, #20]
+	ldr	w8, [x0, x8, lsl #2]
+	str	w8, [sp, #4]
+	ldr	w0, [sp, #4]
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -231,8 +291,8 @@ _ArrayListPerformPutLast:               ; @ArrayListPerformPutLast
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	str	x0, [sp, #8]
-	str	x1, [sp]
-	ldr	x0, [sp]
+	str	w1, [sp, #4]
+	ldr	w0, [sp, #4]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -242,6 +302,7 @@ _ArrayListPerformPutLast:               ; @ArrayListPerformPutLast
 _ArrayListPerformConstruct:             ; @ArrayListPerformConstruct
 	.cfi_startproc
 ; %bb.0:
+<<<<<<< HEAD
 	sub	sp, sp, #80
 	.cfi_def_cfa_offset 80
 	stp	x29, x30, [sp, #64]             ; 16-byte Folded Spill
@@ -266,28 +327,58 @@ LBB9_1:                                 ; =>This Inner Loop Header: Depth=1
 	subs	x8, x8, x9
 	cset	w8, gt
 	tbnz	w8, #0, LBB9_3
+=======
+	sub	sp, sp, #48
+	.cfi_def_cfa_offset 48
+	str	x8, [sp]                        ; 8-byte Folded Spill
+	str	x0, [sp, #8]                    ; 8-byte Folded Spill
+	mov	x8, x0
+	str	x8, [sp, #40]
+	str	x1, [sp, #32]
+	str	w2, [sp, #28]
+	mov	w8, #1                          ; =0x1
+	str	w8, [sp, #24]
+	ldr	w8, [sp, #28]
+	str	w8, [x0, #20]
+	b	LBB9_1
+LBB9_1:                                 ; =>This Inner Loop Header: Depth=1
+	ldr	w8, [sp, #24]
+	ldr	w9, [sp, #28]
+	subs	w8, w8, w9
+	b.gt	LBB9_3
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	b	LBB9_2
 LBB9_2:                                 ;   in Loop: Header=BB9_1 Depth=1
-	ldr	x9, [sp, #16]                   ; 8-byte Folded Reload
-	ldur	x8, [x29, #-16]
-	ldr	x10, [sp, #32]
-	subs	x10, x10, #1
-	ldr	x8, [x8, x10, lsl #3]
-	str	x8, [sp, #24]
-	ldr	x8, [sp, #24]
-	ldr	x10, [sp, #32]
-	str	x8, [x9, x10, lsl #3]
+	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload
 	ldr	x8, [sp, #32]
-	add	x8, x8, #1
-	str	x8, [sp, #32]
+	ldr	w10, [sp, #24]
+	subs	w10, w10, #1
+	ldr	w8, [x8, w10, sxtw #2]
+	str	w8, [sp, #20]
+	ldr	w8, [sp, #20]
+	ldrsw	x10, [sp, #24]
+	str	w8, [x9, x10, lsl #2]
+	ldr	w8, [sp, #24]
+	add	w8, w8, #1
+	str	w8, [sp, #24]
 	b	LBB9_1
 LBB9_3:
+<<<<<<< HEAD
 	ldr	x1, [sp, #16]                   ; 8-byte Folded Reload
 	ldr	x0, [sp, #8]                    ; 8-byte Folded Reload
 	mov	x2, #48
 	bl	_memcpy
 	ldp	x29, x30, [sp, #64]             ; 16-byte Folded Reload
 	add	sp, sp, #80
+=======
+	ldr	x9, [sp]                        ; 8-byte Folded Reload
+	ldr	x8, [sp, #8]                    ; 8-byte Folded Reload
+	ldr	q0, [x8]
+	str	q0, [x9]
+	ldr	x8, [x8, #16]
+	str	x8, [x9, #16]
+	add	sp, sp, #48
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -296,6 +387,7 @@ LBB9_3:
 _ArrayListPerformInit:                  ; @ArrayListPerformInit
 	.cfi_startproc
 ; %bb.0:
+<<<<<<< HEAD
 	sub	sp, sp, #80
 	.cfi_def_cfa_offset 80
 	stp	x29, x30, [sp, #64]             ; 16-byte Folded Spill
@@ -319,25 +411,54 @@ LBB10_1:                                ; =>This Inner Loop Header: Depth=1
 	subs	x8, x8, x9
 	cset	w8, gt
 	tbnz	w8, #0, LBB10_3
+=======
+	sub	sp, sp, #48
+	.cfi_def_cfa_offset 48
+	str	x8, [sp]                        ; 8-byte Folded Spill
+	str	x0, [sp, #8]                    ; 8-byte Folded Spill
+	str	x0, [sp, #40]
+	str	w1, [sp, #36]
+	str	w2, [sp, #32]
+	mov	w8, #1                          ; =0x1
+	str	w8, [sp, #28]
+	ldr	w8, [sp, #36]
+	str	w8, [sp, #20]
+	b	LBB10_1
+LBB10_1:                                ; =>This Inner Loop Header: Depth=1
+	ldr	w8, [sp, #28]
+	ldr	w9, [sp, #32]
+	subs	w8, w8, w9
+	b.gt	LBB10_3
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	b	LBB10_2
 LBB10_2:                                ;   in Loop: Header=BB10_1 Depth=1
 	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload
-	ldr	x8, [sp, #16]
-	ldr	x10, [sp, #32]
-	str	x8, [x9, x10, lsl #3]
-	ldr	x8, [sp, #32]
-	add	x8, x8, #1
-	str	x8, [sp, #24]
-	ldr	x8, [sp, #24]
-	str	x8, [sp, #32]
+	ldr	w8, [sp, #20]
+	ldrsw	x10, [sp, #28]
+	str	w8, [x9, x10, lsl #2]
+	ldr	w8, [sp, #28]
+	add	w8, w8, #1
+	str	w8, [sp, #24]
+	ldr	w8, [sp, #24]
+	str	w8, [sp, #28]
 	b	LBB10_1
 LBB10_3:
+<<<<<<< HEAD
 	ldr	x1, [sp, #8]                    ; 8-byte Folded Reload
 	ldr	x0, [sp]                        ; 8-byte Folded Reload
 	mov	x2, #48
 	bl	_memcpy
 	ldp	x29, x30, [sp, #64]             ; 16-byte Folded Reload
 	add	sp, sp, #80
+=======
+	ldr	x9, [sp]                        ; 8-byte Folded Reload
+	ldr	x8, [sp, #8]                    ; 8-byte Folded Reload
+	ldr	q0, [x8]
+	str	q0, [x9]
+	ldr	x8, [x8, #16]
+	str	x8, [x9, #16]
+	add	sp, sp, #48
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -348,8 +469,9 @@ _ArrayListGet:                          ; @ArrayListGet
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	str	x0, [sp, #8]
-	ldr	x0, [sp]
+	mov	x8, x0
+	str	w8, [sp, #12]
+	ldr	w0, [sp, #8]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -361,8 +483,9 @@ _ArrayListPut:                          ; @ArrayListPut
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	str	x0, [sp, #8]
-	str	x1, [sp]
+	mov	x8, x0
+	str	w8, [sp, #12]
+	str	w1, [sp, #8]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -374,8 +497,9 @@ _ArrayListPerformRuin:                  ; @ArrayListPerformRuin
 ; %bb.0:
 	sub	sp, sp, #32
 	.cfi_def_cfa_offset 32
-	str	x0, [sp]                        ; 8-byte Folded Spill
+	str	x0, [sp, #8]                    ; 8-byte Folded Spill
 	str	x0, [sp, #24]
+<<<<<<< HEAD
 	mov	x8, #1
 	str	x8, [sp, #8]
 	b	LBB13_1
@@ -395,10 +519,30 @@ LBB13_2:                                ;   in Loop: Header=BB13_1 Depth=1
 	ldr	x8, [sp, #8]
 	add	x8, x8, #1
 	str	x8, [sp, #8]
+=======
+	mov	w8, #1                          ; =0x1
+	str	w8, [sp, #16]
+	b	LBB13_1
+LBB13_1:                                ; =>This Inner Loop Header: Depth=1
+	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload
+	ldr	w8, [sp, #16]
+	ldr	w9, [x9, #20]
+	subs	w8, w8, w9
+	b.gt	LBB13_3
+	b	LBB13_2
+LBB13_2:                                ;   in Loop: Header=BB13_1 Depth=1
+	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload
+	ldrsw	x10, [sp, #16]
+	mov	w8, #0                          ; =0x0
+	str	w8, [x9, x10, lsl #2]
+	ldr	w8, [sp, #16]
+	add	w8, w8, #1
+	str	w8, [sp, #16]
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	b	LBB13_1
 LBB13_3:
-	ldr	x8, [sp]                        ; 8-byte Folded Reload
-	str	xzr, [x8, #40]
+	ldr	x8, [sp, #8]                    ; 8-byte Folded Reload
+	str	wzr, [x8, #20]
 	str	wzr, [sp, #20]
 	ldr	w0, [sp, #20]
 	add	sp, sp, #32
@@ -412,8 +556,9 @@ _ArrayListPerformDelete:                ; @ArrayListPerformDelete
 ; %bb.0:
 	sub	sp, sp, #32
 	.cfi_def_cfa_offset 32
-	str	x0, [sp]                        ; 8-byte Folded Spill
+	str	x0, [sp, #8]                    ; 8-byte Folded Spill
 	str	x0, [sp, #24]
+<<<<<<< HEAD
 	mov	x8, #1
 	str	x8, [sp, #8]
 	b	LBB14_1
@@ -433,6 +578,26 @@ LBB14_2:                                ;   in Loop: Header=BB14_1 Depth=1
 	ldr	x8, [sp, #8]
 	add	x8, x8, #1
 	str	x8, [sp, #8]
+=======
+	mov	w8, #1                          ; =0x1
+	str	w8, [sp, #16]
+	b	LBB14_1
+LBB14_1:                                ; =>This Inner Loop Header: Depth=1
+	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload
+	ldr	w8, [sp, #16]
+	ldr	w9, [x9, #20]
+	subs	w8, w8, w9
+	b.gt	LBB14_3
+	b	LBB14_2
+LBB14_2:                                ;   in Loop: Header=BB14_1 Depth=1
+	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload
+	ldrsw	x10, [sp, #16]
+	mov	w8, #0                          ; =0x0
+	str	w8, [x9, x10, lsl #2]
+	ldr	w8, [sp, #16]
+	add	w8, w8, #1
+	str	w8, [sp, #16]
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	b	LBB14_1
 LBB14_3:
 	str	wzr, [sp, #20]
@@ -441,5 +606,5 @@ LBB14_3:
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.comm	_PAList,296,3                   ; @PAList
+	.comm	_PAList,16,3                    ; @PAList
 .subsections_via_symbols

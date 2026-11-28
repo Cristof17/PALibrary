@@ -1,7 +1,11 @@
 # 1 "./src/Algorithm.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
+<<<<<<< HEAD
 # 418 "<built-in>" 3
+=======
+# 466 "<built-in>" 3
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
 # 1 "./src/Algorithm.c" 2
@@ -17,19 +21,41 @@
 # 1 "./include/defs.h" 1
 # 8 "./include/Algorithm.h" 2
 # 1 "./include/types.h" 1
+<<<<<<< HEAD
 # 14 "./include/types.h"
 typedef long ArrayListObject;
+=======
+# 15 "./include/types.h"
+typedef int ArrayListObject;
+
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 
 
 
 
+<<<<<<< HEAD
 typedef long ArrayListPosition;
 typedef long ArrayListOffset;
+=======
+typedef long ArrayListOffset;
+typedef int ArrayListPosition;
+
+
+
+
+typedef int ArrayListCount;
+
+
+
+
+typedef int ArrayListValue;
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 
 
 
 
 
+<<<<<<< HEAD
 typedef long ArrayListCount;
 
 
@@ -37,6 +63,9 @@ typedef long ArrayListCount;
 
 typedef long ArrayListValue;
 # 40 "./include/types.h"
+=======
+
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 struct ArrayListPosition {
     ArrayListPosition position;
 };
@@ -50,6 +79,7 @@ struct ArrayList {
 
 
 };
+<<<<<<< HEAD
 # 79 "./include/types.h"
 typedef long PAValue;
 typedef long PABool;
@@ -63,6 +93,19 @@ typedef long long ArrayListSize;
 
 struct PANumber;
 # 106 "./include/types.h"
+=======
+# 69 "./include/types.h"
+typedef int PAValue;
+typedef int PABool;
+typedef int PAResult;
+typedef int ArrayListSize;
+typedef int PAData;
+typedef int PAStatus;
+typedef int PAResult;
+# 88 "./include/types.h"
+struct PANumber;
+# 105 "./include/types.h"
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 struct Adapter;
 struct PADestination;
 struct PAArrow;
@@ -90,7 +133,10 @@ struct PATransposeTree;
 struct PASize;
 struct PAInput;
 struct PAOutput;
+<<<<<<< HEAD
 struct PAObject;
+=======
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 
 struct PAData;
 
@@ -112,7 +158,11 @@ struct PASeries;
 struct PATree;
 struct PALink;
 struct PAInt;
+<<<<<<< HEAD
 # 165 "./include/types.h"
+=======
+# 163 "./include/types.h"
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 struct AdapterTarget;
 struct AdapterClient;
 struct Adapter;
@@ -158,14 +208,22 @@ struct PANumber {
 struct PrototypeConcretePrototype1;
 struct PrototypeConcretePrototype2;
 struct Facade;
+<<<<<<< HEAD
 # 225 "./include/types.h"
+=======
+# 223 "./include/types.h"
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 struct Input {
  ;
 };
 struct Algorithm {
  struct Input input;
 };
+<<<<<<< HEAD
 # 239 "./include/types.h"
+=======
+# 237 "./include/types.h"
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 struct PASize {
  int digits;
  int value;
@@ -208,11 +266,29 @@ struct PACount {
 
 struct PASeries {
  struct PACount m;
+<<<<<<< HEAD
  struct PAElement adj[4];
 };
 struct PAList {
  PAValue n;
  struct PASeries neigh[4];
+=======
+
+ struct PAElement* adj;
+
+
+
+
+};
+struct PAList {
+ PAValue n;
+
+ struct PAElement* neigh;
+
+
+
+
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 
 } PAList;
 struct FlyweightFlyweightClient {
@@ -236,16 +312,24 @@ struct FlyweightUnsharedConcreteFlyweight {
  struct PASeries intrinsicState;
 
 };
+<<<<<<< HEAD
 struct PAObject
 {
  long address;
 };
 struct PATree {
+=======
+typedef struct PATree {
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
  struct PACount n;
  struct PACount m;
  struct PAElement source;
  struct PAList adj;
+<<<<<<< HEAD
 };
+=======
+}* PATree;
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 struct BridgeAbstraction {
  struct PAElement elements[4];
 };
@@ -257,7 +341,11 @@ struct BridgeConcreteImplementorA {
 };
 struct BridgeConcreteImplementorB {
 };
+<<<<<<< HEAD
 # 338 "./include/types.h"
+=======
+# 342 "./include/types.h"
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 struct PAInput {
  struct PACount n;
  struct PACount m;
@@ -422,6 +510,7 @@ struct Facade {
 
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
+<<<<<<< HEAD
 # 61 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
 # 176 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 3 4
@@ -442,6 +531,40 @@ struct Facade {
 # 836 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h" 2 3 4
 # 63 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 2 3 4
 
+=======
+# 58 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 1 3 4
+# 64 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
+# 196 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityVersions.h" 1 3 4
+# 197 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 2 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h" 1 3 4
+# 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityVersions.h" 1 3 4
+# 34 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h" 2 3 4
+# 198 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 2 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternalLegacy.h" 1 3 4
+# 34 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternalLegacy.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h" 1 3 4
+# 35 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternalLegacy.h" 2 3 4
+# 199 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 2 3 4
+# 65 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 2 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h" 1 3 4
+# 808 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_symbol_aliasing.h" 1 3 4
+# 809 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h" 2 3 4
+# 874 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_posix_availability.h" 1 3 4
+# 875 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h" 2 3 4
+# 992 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/usr/lib/clang/17/include/ptrcheck.h" 1 3 4
+# 993 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h" 2 3 4
+# 66 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 2 3 4
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_bounds.h" 1 3 4
+# 68 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 2 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types.h" 1 3 4
 # 27 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types.h" 1 3 4
@@ -449,7 +572,11 @@ struct Facade {
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/machine/_types.h" 1 3 4
 # 34 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/machine/_types.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/_types.h" 1 3 4
+<<<<<<< HEAD
 # 15 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/_types.h" 3 4
+=======
+# 28 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/_types.h" 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 typedef signed char __int8_t;
 
 
@@ -464,7 +591,11 @@ typedef unsigned long long __uint64_t;
 
 typedef long __darwin_intptr_t;
 typedef unsigned int __darwin_natural_t;
+<<<<<<< HEAD
 # 48 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/_types.h" 3 4
+=======
+# 61 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/_types.h" 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 typedef int __darwin_ct_rune_t;
 
 
@@ -479,6 +610,7 @@ typedef union {
 typedef __mbstate_t __darwin_mbstate_t;
 
 
+<<<<<<< HEAD
 typedef long int __darwin_ptrdiff_t;
 
 
@@ -487,18 +619,34 @@ typedef long int __darwin_ptrdiff_t;
 
 
 
+=======
+
+
+typedef long int __darwin_ptrdiff_t;
+# 87 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/_types.h" 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 typedef long unsigned int __darwin_size_t;
 
 
 
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 typedef __builtin_va_list __darwin_va_list;
 
 
 
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 typedef int __darwin_wchar_t;
 
 
@@ -518,7 +666,11 @@ typedef long __darwin_ssize_t;
 typedef long __darwin_time_t;
 # 35 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/machine/_types.h" 2 3 4
 # 34 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types.h" 2 3 4
+<<<<<<< HEAD
 # 55 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types.h" 3 4
+=======
+# 67 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types.h" 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 typedef __int64_t __darwin_blkcnt_t;
 typedef __int32_t __darwin_blksize_t;
 typedef __int32_t __darwin_dev_t;
@@ -544,6 +696,11 @@ typedef __uint32_t __darwin_useconds_t;
 typedef unsigned char __darwin_uuid_t[16];
 typedef char __darwin_uuid_string_t[37];
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_types.h" 1 3 4
 # 57 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_types.h" 3 4
 struct __darwin_pthread_handler_rec {
@@ -608,14 +765,24 @@ typedef struct _opaque_pthread_once_t __darwin_pthread_once_t;
 typedef struct _opaque_pthread_rwlock_t __darwin_pthread_rwlock_t;
 typedef struct _opaque_pthread_rwlockattr_t __darwin_pthread_rwlockattr_t;
 typedef struct _opaque_pthread_t *__darwin_pthread_t;
+<<<<<<< HEAD
 # 81 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types.h" 2 3 4
 # 28 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types.h" 2 3 4
 # 40 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types.h" 3 4
+=======
+# 95 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types.h" 2 3 4
+# 28 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types.h" 2 3 4
+# 43 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types.h" 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 typedef int __darwin_nl_item;
 typedef int __darwin_wctrans_t;
 
 typedef __uint32_t __darwin_wctype_t;
+<<<<<<< HEAD
 # 65 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 2 3 4
+=======
+# 69 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 2 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/wait.h" 1 3 4
 # 79 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/wait.h" 3 4
@@ -642,7 +809,12 @@ typedef __darwin_id_t id_t;
 # 73 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/signal.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/appleapiopts.h" 1 3 4
 # 74 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/signal.h" 2 3 4
+<<<<<<< HEAD
 
+=======
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
+# 75 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/signal.h" 2 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 
 
 
@@ -711,10 +883,14 @@ typedef int64_t register_t;
 
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_intptr_t.h" 1 3 4
+<<<<<<< HEAD
 # 30 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_intptr_t.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/machine/types.h" 1 3 4
 # 31 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_intptr_t.h" 2 3 4
 
+=======
+# 32 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_intptr_t.h" 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 typedef __darwin_intptr_t intptr_t;
 # 72 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/types.h" 2 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_uintptr_t.h" 1 3 4
@@ -732,7 +908,11 @@ typedef int64_t user_long_t;
 typedef u_int64_t user_ulong_t;
 typedef int64_t user_time_t;
 typedef int64_t user_off_t;
+<<<<<<< HEAD
 # 104 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/types.h" 3 4
+=======
+# 105 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/types.h" 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 typedef u_int64_t syscall_arg_t;
 # 38 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/machine/types.h" 2 3 4
 # 38 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/arm/_structs.h" 2 3 4
@@ -752,7 +932,17 @@ struct __darwin_arm_exception_state64
  __uint32_t __esr;
  __uint32_t __exception;
 };
+<<<<<<< HEAD
 # 77 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/arm/_structs.h" 3 4
+=======
+
+struct __darwin_arm_exception_state64_v2
+{
+ __uint64_t __far;
+ __uint64_t __esr;
+};
+# 89 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/arm/_structs.h" 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 struct __darwin_arm_thread_state
 {
  __uint32_t __r[13];
@@ -761,7 +951,11 @@ struct __darwin_arm_thread_state
  __uint32_t __pc;
  __uint32_t __cpsr;
 };
+<<<<<<< HEAD
 # 136 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/arm/_structs.h" 3 4
+=======
+# 148 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/arm/_structs.h" 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 struct __darwin_arm_thread_state64
 {
  __uint64_t __x[29];
@@ -772,13 +966,21 @@ struct __darwin_arm_thread_state64
  __uint32_t __cpsr;
  __uint32_t __pad;
 };
+<<<<<<< HEAD
 # 477 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/arm/_structs.h" 3 4
+=======
+# 519 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/arm/_structs.h" 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 struct __darwin_arm_vfp_state
 {
  __uint32_t __r[64];
  __uint32_t __fpscr;
 };
+<<<<<<< HEAD
 # 496 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/arm/_structs.h" 3 4
+=======
+# 538 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/arm/_structs.h" 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 struct __darwin_arm_neon_state64
 {
  __uint128_t __v[32];
@@ -792,12 +994,53 @@ struct __darwin_arm_neon_state
  __uint32_t __fpsr;
  __uint32_t __fpcr;
 };
+<<<<<<< HEAD
 # 567 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/arm/_structs.h" 3 4
+=======
+# 609 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/arm/_structs.h" 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 struct __arm_pagein_state
 {
  int __pagein_error;
 };
+<<<<<<< HEAD
 # 604 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/arm/_structs.h" 3 4
+=======
+
+
+
+struct __darwin_arm_sme_state
+{
+ __uint64_t __svcr;
+ __uint64_t __tpidr2_el0;
+ __uint16_t __svl_b;
+};
+
+
+struct __darwin_arm_sve_z_state
+{
+ char __z[16][256];
+} __attribute__((aligned(4)));
+
+
+struct __darwin_arm_sve_p_state
+{
+ char __p[16][256 / 8];
+} __attribute__((aligned(4)));
+
+
+struct __darwin_arm_sme_za_state
+{
+ char __za[4096];
+} __attribute__((aligned(4)));
+
+
+struct __darwin_arm_sme2_state
+{
+ char __zt0[64];
+} __attribute__((aligned(4)));
+# 712 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/arm/_structs.h" 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 struct __arm_legacy_debug_state
 {
  __uint32_t __bvr[16];
@@ -805,7 +1048,11 @@ struct __arm_legacy_debug_state
  __uint32_t __wvr[16];
  __uint32_t __wcr[16];
 };
+<<<<<<< HEAD
 # 627 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/arm/_structs.h" 3 4
+=======
+# 735 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/arm/_structs.h" 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 struct __darwin_arm_debug_state32
 {
  __uint32_t __bvr[16];
@@ -824,7 +1071,11 @@ struct __darwin_arm_debug_state64
  __uint64_t __wcr[16];
  __uint64_t __mdscr_el1;
 };
+<<<<<<< HEAD
 # 669 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/arm/_structs.h" 3 4
+=======
+# 777 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/arm/_structs.h" 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 struct __darwin_arm_cpmu_state64
 {
  __uint64_t __ctrs[16];
@@ -893,7 +1144,11 @@ typedef struct __darwin_ucontext ucontext_t;
 typedef __darwin_sigset_t sigset_t;
 # 155 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/signal.h" 2 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_size_t.h" 1 3 4
+<<<<<<< HEAD
 # 31 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_size_t.h" 3 4
+=======
+# 50 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_size_t.h" 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 typedef __darwin_size_t size_t;
 # 156 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/signal.h" 2 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_uid_t.h" 1 3 4
@@ -911,6 +1166,10 @@ union sigval {
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 struct sigevent {
  int sigev_notify;
  int sigev_signo;
@@ -932,7 +1191,11 @@ typedef struct __siginfo {
  long si_band;
  unsigned long __pad[7];
 } siginfo_t;
+<<<<<<< HEAD
 # 269 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/signal.h" 3 4
+=======
+# 270 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/signal.h" 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 union __sigaction_u {
  void (*__sa_handler)(int);
  void (*__sa_sigaction)(int, struct __siginfo *,
@@ -955,26 +1218,45 @@ struct sigaction {
  sigset_t sa_mask;
  int sa_flags;
 };
+<<<<<<< HEAD
 # 331 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/signal.h" 3 4
 typedef void (*sig_t)(int);
 # 348 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/signal.h" 3 4
+=======
+# 332 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/signal.h" 3 4
+typedef void (*sig_t)(int);
+# 349 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/signal.h" 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 struct sigvec {
  void (*sv_handler)(int);
  int sv_mask;
  int sv_flags;
 };
+<<<<<<< HEAD
 # 367 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/signal.h" 3 4
+=======
+# 368 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/signal.h" 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 struct sigstack {
  char *ss_sp;
  int ss_onstack;
 };
+<<<<<<< HEAD
 # 390 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/signal.h" 3 4
+=======
+# 391 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/signal.h" 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 void(*signal(int, void (*)(int)))(int);
 # 110 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/wait.h" 2 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/resource.h" 1 3 4
 # 72 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/resource.h" 3 4
+<<<<<<< HEAD
 # 1 "/Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/stdint.h" 1 3 4
 # 52 "/Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/stdint.h" 3 4
+=======
+# 1 "/Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdint.h" 1 3 4
+# 56 "/Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdint.h" 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdint.h" 1 3 4
 # 23 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdint.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uint8_t.h" 1 3 4
@@ -1023,11 +1305,20 @@ typedef long int intmax_t;
 # 32 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uintmax_t.h" 3 4
 typedef long unsigned int uintmax_t;
 # 60 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdint.h" 2 3 4
+<<<<<<< HEAD
 # 53 "/Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/stdint.h" 2 3 4
 # 73 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/resource.h" 2 3 4
 
 
 
+=======
+# 57 "/Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdint.h" 2 3 4
+# 73 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/resource.h" 2 3 4
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
+# 76 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/resource.h" 2 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 
 
 
@@ -1287,21 +1578,40 @@ struct rusage_info_v6 {
  uint64_t ri_penergy_nj;
  uint64_t ri_secure_time_in_system;
  uint64_t ri_secure_ptime_in_system;
+<<<<<<< HEAD
  uint64_t ri_reserved[12];
 };
 
 typedef struct rusage_info_v6 rusage_info_current;
 # 461 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/resource.h" 3 4
+=======
+ uint64_t ri_neural_footprint;
+ uint64_t ri_lifetime_max_neural_footprint;
+ uint64_t ri_interval_max_neural_footprint;
+ uint64_t ri_reserved[9];
+};
+
+typedef struct rusage_info_v6 rusage_info_current;
+# 464 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/resource.h" 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 struct rlimit {
  rlim_t rlim_cur;
  rlim_t rlim_max;
 };
+<<<<<<< HEAD
 # 496 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/resource.h" 3 4
+=======
+# 499 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/resource.h" 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 struct proc_rlimit_control_wakeupmon {
  uint32_t wm_flags;
  int32_t wm_rate;
 };
+<<<<<<< HEAD
 # 568 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/resource.h" 3 4
+=======
+# 578 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/resource.h" 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 int getpriority(int, id_t);
 
 int getiopolicy_np(int, int) __attribute__((availability(macosx,introduced=10.5)));
@@ -1318,6 +1628,7 @@ int setrlimit(int, const struct rlimit *) __asm("_" "setrlimit" );
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/machine/endian.h" 1 3 4
 # 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/machine/endian.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/endian.h" 1 3 4
+<<<<<<< HEAD
 # 77 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/endian.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_endian.h" 1 3 4
 # 94 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_endian.h" 3 4
@@ -1354,6 +1665,38 @@ static inline
 uint32_t
 _OSSwapInt32(
  uint32_t _data
+=======
+# 61 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/endian.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_endian.h" 1 3 4
+# 94 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_endian.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/machine/_endian.h" 1 3 4
+# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/machine/_endian.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/_endian.h" 1 3 4
+# 95 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/_endian.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/__endian.h" 1 3 4
+# 96 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/_endian.h" 2 3 4
+# 38 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/machine/_endian.h" 2 3 4
+# 95 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_endian.h" 2 3 4
+# 131 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_endian.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/libkern/_OSByteOrder.h" 1 3 4
+# 62 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/libkern/_OSByteOrder.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/libkern/arm/_OSByteOrder.h" 1 3 4
+# 48 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/libkern/arm/_OSByteOrder.h" 3 4
+static inline
+__uint16_t
+_OSSwapInt16(
+ __uint16_t _data
+ )
+{
+
+ return (__uint16_t)(_data << 8 | _data >> 8);
+}
+
+static inline
+__uint32_t
+_OSSwapInt32(
+ __uint32_t _data
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
  )
 {
 
@@ -1367,13 +1710,20 @@ _OSSwapInt32(
 }
 
 static inline
+<<<<<<< HEAD
 uint64_t
 _OSSwapInt64(
  uint64_t _data
+=======
+__uint64_t
+_OSSwapInt64(
+ __uint64_t _data
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
  )
 {
 
  return __builtin_bswap64(_data);
+<<<<<<< HEAD
 # 60 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/libkern/arm/OSByteOrder.h" 3 4
 }
 
@@ -1456,6 +1806,13 @@ OSWriteSwapInt64(
 # 81 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/libkern/_OSByteOrder.h" 2 3 4
 # 132 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_endian.h" 2 3 4
 # 78 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/endian.h" 2 3 4
+=======
+# 95 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/libkern/arm/_OSByteOrder.h" 3 4
+}
+# 63 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/libkern/_OSByteOrder.h" 2 3 4
+# 132 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_endian.h" 2 3 4
+# 62 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/endian.h" 2 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 # 38 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/machine/endian.h" 2 3 4
 # 187 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/wait.h" 2 3 4
 
@@ -1482,7 +1839,10 @@ union wait {
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
  } w_T;
 
 
@@ -1499,10 +1859,16 @@ union wait {
 
 
 
+<<<<<<< HEAD
 
  } w_S;
 };
 # 248 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/wait.h" 3 4
+=======
+ } w_S;
+};
+# 246 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/wait.h" 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 pid_t wait(int *) __asm("_" "wait" );
 pid_t waitpid(pid_t, int *, int) __asm("_" "waitpid" );
 
@@ -1511,6 +1877,7 @@ int waitid(idtype_t, id_t, siginfo_t *, int) __asm("_" "waitid" );
 
 pid_t wait3(int *, int, struct rusage *);
 pid_t wait4(pid_t, int *, int, struct rusage *);
+<<<<<<< HEAD
 # 67 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 2 3 4
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/alloca.h" 1 3 4
@@ -1519,15 +1886,32 @@ void *alloca(size_t);
 # 69 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 2 3 4
 
 
+=======
+# 71 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 2 3 4
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/alloca.h" 1 3 4
+# 30 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/alloca.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_size_t.h" 1 3 4
+# 31 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/alloca.h" 2 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 
 
 
 
+<<<<<<< HEAD
+=======
+void * alloca(size_t __size);
+# 73 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 2 3 4
+# 91 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_size_t.h" 1 3 4
+# 92 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 2 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_ct_rune_t.h" 1 3 4
 # 32 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_ct_rune_t.h" 3 4
 typedef __darwin_ct_rune_t ct_rune_t;
+<<<<<<< HEAD
 # 78 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 2 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_rune_t.h" 1 3 4
 # 31 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_rune_t.h" 3 4
@@ -1539,6 +1923,21 @@ typedef __darwin_rune_t rune_t;
 # 34 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_wchar_t.h" 3 4
 typedef __darwin_wchar_t wchar_t;
 # 82 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 2 3 4
+=======
+# 95 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 2 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_rune_t.h" 1 3 4
+# 31 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_rune_t.h" 3 4
+typedef __darwin_rune_t rune_t;
+# 96 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 2 3 4
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_wchar_t.h" 1 3 4
+# 53 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_wchar_t.h" 3 4
+typedef __darwin_wchar_t wchar_t;
+# 99 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 2 3 4
+
+
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 
 typedef struct {
  int quot;
@@ -1558,18 +1957,45 @@ typedef struct {
 
 
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_null.h" 1 3 4
+<<<<<<< HEAD
 # 101 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 2 3 4
 # 118 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 3 4
 extern int __mb_cur_max;
 # 128 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h" 1 3 4
 # 44 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h" 3 4
+=======
+# 120 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 2 3 4
+# 138 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 3 4
+extern int __mb_cur_max;
+
+
+
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h" 1 3 4
+# 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
+# 34 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h" 2 3 4
+
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_size_t.h" 1 3 4
+# 37 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h" 2 3 4
+
+
+
+
+
+
+
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/malloc/_malloc_type.h" 1 3 4
 # 27 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/malloc/_malloc_type.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/malloc/_ptrcheck.h" 1 3 4
 # 28 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/malloc/_malloc_type.h" 2 3 4
 
 
+<<<<<<< HEAD
 
 
 
@@ -1607,10 +2033,65 @@ void *realloc(void * __ptr, size_t __size) __attribute__((__warn_unused_result__
 void *reallocf(void * __ptr, size_t __size) __attribute__((__warn_unused_result__)) __attribute__((alloc_size(2)));
 
 void *valloc(size_t) __attribute__((alloc_size(1))) ;
+=======
+typedef unsigned long long malloc_type_id_t;
 
 
 
 
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
+# 36 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/malloc/_malloc_type.h" 2 3 4
+
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_size_t.h" 1 3 4
+# 38 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/malloc/_malloc_type.h" 2 3 4
+# 92 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/malloc/_malloc_type.h" 3 4
+__attribute__((availability(macos,introduced=14.0))) __attribute__((availability(ios,introduced=17.0))) __attribute__((availability(tvos,introduced=17.0))) __attribute__((availability(watchos,introduced=10.0))) __attribute__((availability(visionos,introduced=1.0))) __attribute__((availability(driverkit,introduced=23.0)))
+void * malloc_type_malloc(size_t size, malloc_type_id_t type_id) __attribute__((__warn_unused_result__)) __attribute__((alloc_size(1)));
+__attribute__((availability(macos,introduced=14.0))) __attribute__((availability(ios,introduced=17.0))) __attribute__((availability(tvos,introduced=17.0))) __attribute__((availability(watchos,introduced=10.0))) __attribute__((availability(visionos,introduced=1.0))) __attribute__((availability(driverkit,introduced=23.0)))
+void * malloc_type_calloc(size_t count, size_t size, malloc_type_id_t type_id) __attribute__((__warn_unused_result__)) __attribute__((alloc_size(1,2)));
+__attribute__((availability(macos,introduced=14.0))) __attribute__((availability(ios,introduced=17.0))) __attribute__((availability(tvos,introduced=17.0))) __attribute__((availability(watchos,introduced=10.0))) __attribute__((availability(visionos,introduced=1.0))) __attribute__((availability(driverkit,introduced=23.0)))
+void malloc_type_free(void * ptr, malloc_type_id_t type_id);
+__attribute__((availability(macos,introduced=14.0))) __attribute__((availability(ios,introduced=17.0))) __attribute__((availability(tvos,introduced=17.0))) __attribute__((availability(watchos,introduced=10.0))) __attribute__((availability(visionos,introduced=1.0))) __attribute__((availability(driverkit,introduced=23.0)))
+void * malloc_type_realloc(void * ptr, size_t size, malloc_type_id_t type_id) __attribute__((__warn_unused_result__)) __attribute__((alloc_size(2)));
+__attribute__((availability(macos,introduced=14.0))) __attribute__((availability(ios,introduced=17.0))) __attribute__((availability(tvos,introduced=17.0))) __attribute__((availability(watchos,introduced=10.0))) __attribute__((availability(visionos,introduced=1.0))) __attribute__((availability(driverkit,introduced=23.0)))
+void * malloc_type_valloc(size_t size, malloc_type_id_t type_id) __attribute__((__warn_unused_result__)) __attribute__((alloc_size(1)));
+__attribute__((availability(macos,introduced=14.0))) __attribute__((availability(ios,introduced=17.0))) __attribute__((availability(tvos,introduced=17.0))) __attribute__((availability(watchos,introduced=10.0))) __attribute__((availability(visionos,introduced=1.0))) __attribute__((availability(driverkit,introduced=23.0)))
+void * malloc_type_aligned_alloc(size_t alignment, size_t size, malloc_type_id_t type_id) __attribute__((__warn_unused_result__)) __attribute__((alloc_align(1))) __attribute__((alloc_size(2)));
+
+__attribute__((availability(macos,introduced=14.0))) __attribute__((availability(ios,introduced=17.0))) __attribute__((availability(tvos,introduced=17.0))) __attribute__((availability(watchos,introduced=10.0))) __attribute__((availability(visionos,introduced=1.0))) __attribute__((availability(driverkit,introduced=23.0)))
+int malloc_type_posix_memalign(void * *memptr, size_t alignment, size_t size, malloc_type_id_t type_id) ;
+
+
+
+typedef struct _malloc_zone_t malloc_zone_t;
+
+__attribute__((availability(macos,introduced=14.0))) __attribute__((availability(ios,introduced=17.0))) __attribute__((availability(tvos,introduced=17.0))) __attribute__((availability(watchos,introduced=10.0))) __attribute__((availability(visionos,introduced=1.0))) __attribute__((availability(driverkit,introduced=23.0)))
+void * malloc_type_zone_malloc(malloc_zone_t *zone, size_t size, malloc_type_id_t type_id) __attribute__((__warn_unused_result__)) __attribute__((alloc_size(2)));
+__attribute__((availability(macos,introduced=14.0))) __attribute__((availability(ios,introduced=17.0))) __attribute__((availability(tvos,introduced=17.0))) __attribute__((availability(watchos,introduced=10.0))) __attribute__((availability(visionos,introduced=1.0))) __attribute__((availability(driverkit,introduced=23.0)))
+void * malloc_type_zone_calloc(malloc_zone_t *zone, size_t count, size_t size, malloc_type_id_t type_id) __attribute__((__warn_unused_result__)) __attribute__((alloc_size(2,3)));
+__attribute__((availability(macos,introduced=14.0))) __attribute__((availability(ios,introduced=17.0))) __attribute__((availability(tvos,introduced=17.0))) __attribute__((availability(watchos,introduced=10.0))) __attribute__((availability(visionos,introduced=1.0))) __attribute__((availability(driverkit,introduced=23.0)))
+void malloc_type_zone_free(malloc_zone_t *zone, void * ptr, malloc_type_id_t type_id);
+__attribute__((availability(macos,introduced=14.0))) __attribute__((availability(ios,introduced=17.0))) __attribute__((availability(tvos,introduced=17.0))) __attribute__((availability(watchos,introduced=10.0))) __attribute__((availability(visionos,introduced=1.0))) __attribute__((availability(driverkit,introduced=23.0)))
+void * malloc_type_zone_realloc(malloc_zone_t *zone, void * ptr, size_t size, malloc_type_id_t type_id) __attribute__((__warn_unused_result__)) __attribute__((alloc_size(3)));
+__attribute__((availability(macos,introduced=14.0))) __attribute__((availability(ios,introduced=17.0))) __attribute__((availability(tvos,introduced=17.0))) __attribute__((availability(watchos,introduced=10.0))) __attribute__((availability(visionos,introduced=1.0))) __attribute__((availability(driverkit,introduced=23.0)))
+void * malloc_type_zone_valloc(malloc_zone_t *zone, size_t size, malloc_type_id_t type_id) __attribute__((__warn_unused_result__)) __attribute__((alloc_size(2)));
+__attribute__((availability(macos,introduced=14.0))) __attribute__((availability(ios,introduced=17.0))) __attribute__((availability(tvos,introduced=17.0))) __attribute__((availability(watchos,introduced=10.0))) __attribute__((availability(visionos,introduced=1.0))) __attribute__((availability(driverkit,introduced=23.0)))
+void * malloc_type_zone_memalign(malloc_zone_t *zone, size_t alignment, size_t size, malloc_type_id_t type_id) __attribute__((__warn_unused_result__)) __attribute__((alloc_align(2))) __attribute__((alloc_size(3)));
+# 45 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h" 2 3 4
+# 54 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h" 3 4
+void * malloc(size_t __size) __attribute__((__warn_unused_result__)) __attribute__((alloc_size(1))) ;
+void * calloc(size_t __count, size_t __size) __attribute__((__warn_unused_result__)) __attribute__((alloc_size(1,2))) ;
+void free(void * );
+void * realloc(void * __ptr, size_t __size) __attribute__((__warn_unused_result__)) __attribute__((alloc_size(2))) ;
+
+void * reallocf(void * __ptr, size_t __size) __attribute__((__warn_unused_result__)) __attribute__((alloc_size(2)));
+void * valloc(size_t __size) __attribute__((__warn_unused_result__)) __attribute__((alloc_size(1))) ;
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
+
+
+
+
+<<<<<<< HEAD
 void *aligned_alloc(size_t __alignment, size_t __size) __attribute__((__warn_unused_result__)) __attribute__((alloc_align(1))) __attribute__((alloc_size(2))) __attribute__((availability(macosx,introduced=10.15))) __attribute__((availability(ios,introduced=13.0))) __attribute__((availability(tvos,introduced=13.0))) __attribute__((availability(watchos,introduced=6.0)));
 
 
@@ -1621,6 +2102,25 @@ int posix_memalign(void * *__memptr, size_t __alignment, size_t __size) __attrib
 void abort(void) __attribute__((__cold__)) __attribute__((__noreturn__));
 int abs(int) __attribute__((__const__));
 int atexit(void (* _Nonnull)(void));
+=======
+void * aligned_alloc(size_t __alignment, size_t __size) __attribute__((__warn_unused_result__)) __attribute__((alloc_align(1))) __attribute__((alloc_size(2))) __attribute__((availability(macosx,introduced=10.15))) __attribute__((availability(ios,introduced=13.0))) __attribute__((availability(tvos,introduced=13.0))) __attribute__((availability(watchos,introduced=6.0)));
+
+
+int posix_memalign(void * *__memptr, size_t __alignment, size_t __size) __attribute__((availability(macosx,introduced=10.6)));
+# 145 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 2 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_abort.h" 1 3 4
+# 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_abort.h" 3 4
+void abort(void) __attribute__((__cold__)) __attribute__((__noreturn__));
+# 146 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 2 3 4
+
+
+int abs(int) __attribute__((__const__));
+int atexit(void (* _Nonnull)(void));
+
+
+int at_quick_exit(void (*)(void));
+
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 double atof(const char *);
 int atoi(const char *);
 long atol(const char *);
@@ -1628,13 +2128,21 @@ long atol(const char *);
 long long
   atoll(const char *);
 
+<<<<<<< HEAD
 void *bsearch(const void *__key, const void *__base, size_t __nel,
+=======
+void *bsearch(const void * __key, const void * __base, size_t __nel,
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
      size_t __width, int (* _Nonnull __compar)(const void *, const void *));
 
 div_t div(int, int) __attribute__((__const__));
 void exit(int) __attribute__((__noreturn__));
 
+<<<<<<< HEAD
 char *getenv(const char *);
+=======
+char * getenv(const char *);
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 long labs(long) __attribute__((__const__));
 ldiv_t ldiv(long, long) __attribute__((__const__));
 
@@ -1643,6 +2151,7 @@ long long
 lldiv_t lldiv(long long, long long);
 
 
+<<<<<<< HEAD
 int mblen(const char *__s, size_t __n);
 size_t mbstowcs(wchar_t * restrict , const char * restrict, size_t);
 int mbtowc(wchar_t * restrict, const char * restrict, size_t);
@@ -1666,6 +2175,35 @@ unsigned long
 
 unsigned long long
   strtoull(const char *__str, char **__endptr, int __base);
+=======
+int mblen(const char * __s, size_t __n);
+size_t mbstowcs(wchar_t * restrict , const char * restrict, size_t __n);
+int mbtowc(wchar_t * restrict, const char * restrict , size_t __n);
+
+void qsort(void * __base, size_t __nel, size_t __width,
+     int (* _Nonnull __compar)(const void *, const void *));
+
+
+void quick_exit(int) __attribute__((__noreturn__));
+
+int rand(void) __attribute__((__availability__(swift, unavailable, message="Use arc4random instead.")));
+
+void srand(unsigned) __attribute__((__availability__(swift, unavailable, message="Use arc4random instead.")));
+double strtod(const char *, char * *) __asm("_" "strtod" );
+float strtof(const char *, char * *) __asm("_" "strtof" );
+long strtol(const char *__str, char * *__endptr, int __base);
+long double
+  strtold(const char *, char * *);
+
+long long
+  strtoll(const char *__str, char * *__endptr, int __base);
+
+unsigned long
+  strtoul(const char *__str, char * *__endptr, int __base);
+
+unsigned long long
+  strtoull(const char *__str, char * *__endptr, int __base);
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 
 
 __attribute__((__availability__(swift, unavailable, message="Use posix_spawn APIs or NSTask instead. (On iOS, process spawning is unavailable.)")))
@@ -1674,13 +2212,18 @@ __attribute__((availability(watchos,unavailable))) __attribute__((availability(t
 int system(const char *) __asm("_" "system" );
 
 
+<<<<<<< HEAD
 size_t wcstombs(char * restrict, const wchar_t * restrict, size_t);
+=======
+size_t wcstombs(char * restrict , const wchar_t * restrict, size_t __n);
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 int wctomb(char *, wchar_t);
 
 
 void _Exit(int) __attribute__((__noreturn__));
 long a64l(const char *);
 double drand48(void);
+<<<<<<< HEAD
 char *ecvt(double, int, int *restrict, int *restrict);
 double erand48(unsigned short[3]);
 char *fcvt(double, int, int *restrict, int *restrict);
@@ -1689,6 +2232,18 @@ int getsubopt(char **, char * const *, char **);
 int grantpt(int);
 
 char *initstate(unsigned, char *, size_t);
+=======
+char * ecvt(double, int, int *restrict, int *restrict);
+double erand48(unsigned short[3]);
+char * fcvt(double, int, int *restrict, int *restrict);
+char * gcvt(double, int, char *) ;
+int getsubopt(char * *, char * const *, char * *);
+int grantpt(int);
+
+char *
+  initstate(unsigned, char *, size_t __size);
+
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 
 
 
@@ -1699,34 +2254,57 @@ long lrand48(void) __attribute__((__availability__(swift, unavailable, message="
 
 __attribute__((__deprecated__("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of mktemp(3), it is highly recommended that you use mkstemp(3) instead.")))
 
+<<<<<<< HEAD
 char *mktemp(char *);
+=======
+char * mktemp(char *);
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 int mkstemp(char *);
 long mrand48(void) __attribute__((__availability__(swift, unavailable, message="Use arc4random instead.")));
 long nrand48(unsigned short[3]) __attribute__((__availability__(swift, unavailable, message="Use arc4random instead.")));
 int posix_openpt(int);
+<<<<<<< HEAD
 char *ptsname(int);
 
 
 int ptsname_r(int fildes, char *buffer, size_t buflen) __attribute__((availability(macos,introduced=10.13.4))) __attribute__((availability(ios,introduced=11.3))) __attribute__((availability(tvos,introduced=11.3))) __attribute__((availability(watchos,introduced=4.3)));
+=======
+char * ptsname(int);
+
+
+int ptsname_r(int fildes, char * buffer, size_t buflen) __attribute__((availability(macos,introduced=10.13.4))) __attribute__((availability(ios,introduced=11.3))) __attribute__((availability(tvos,introduced=11.3))) __attribute__((availability(watchos,introduced=4.3)));
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 
 
 int putenv(char *) __asm("_" "putenv" );
 long random(void) __attribute__((__availability__(swift, unavailable, message="Use arc4random instead.")));
 int rand_r(unsigned *) __attribute__((__availability__(swift, unavailable, message="Use arc4random instead.")));
 
+<<<<<<< HEAD
 char *realpath(const char * restrict, char * restrict) __asm("_" "realpath" "$DARWIN_EXTSN");
 
 
 
 unsigned short
  *seed48(unsigned short[3]);
+=======
+char * realpath(const char * restrict, char * restrict ) __asm("_" "realpath" "$DARWIN_EXTSN");
+
+
+
+unsigned short * seed48(unsigned short[3]);
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 int setenv(const char * __name, const char * __value, int __overwrite) __asm("_" "setenv" );
 
 void setkey(const char *) __asm("_" "setkey" );
 
 
 
+<<<<<<< HEAD
 char *setstate(const char *);
+=======
+char * setstate(const char *);
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 void srand48(long);
 
 void srandom(unsigned);
@@ -1736,6 +2314,7 @@ void srandom(unsigned);
 int unlockpt(int);
 
 int unsetenv(const char *) __asm("_" "unsetenv" );
+<<<<<<< HEAD
 # 257 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_dev_t.h" 1 3 4
 # 31 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_dev_t.h" 3 4
@@ -1745,11 +2324,26 @@ typedef __darwin_dev_t dev_t;
 # 31 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_mode_t.h" 3 4
 typedef __darwin_mode_t mode_t;
 # 259 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 2 3 4
+=======
+# 282 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_dev_t.h" 1 3 4
+# 31 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_dev_t.h" 3 4
+typedef __darwin_dev_t dev_t;
+# 283 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 2 3 4
+# 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_mode_t.h" 1 3 4
+# 31 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_mode_t.h" 3 4
+typedef __darwin_mode_t mode_t;
+# 284 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 2 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 
 
 
 uint32_t arc4random(void);
+<<<<<<< HEAD
 void arc4random_addrandom(unsigned char * , int )
+=======
+void arc4random_addrandom(unsigned char * , int __datlen)
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
     __attribute__((availability(macosx,introduced=10.0))) __attribute__((availability(macosx,deprecated=10.12,message="use arc4random_stir")))
     __attribute__((availability(ios,introduced=2.0))) __attribute__((availability(ios,deprecated=10.0,message="use arc4random_stir")))
     __attribute__((availability(tvos,introduced=2.0))) __attribute__((availability(tvos,deprecated=10.0,message="use arc4random_stir")))
@@ -1760,13 +2354,19 @@ uint32_t
   arc4random_uniform(uint32_t __upper_bound) __attribute__((availability(macosx,introduced=10.7)));
 
 int atexit_b(void (^ _Nonnull)(void)) __attribute__((availability(macosx,introduced=10.6)));
+<<<<<<< HEAD
 # 282 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 3 4
 void *bsearch_b(const void *__key, const void *__base, size_t __nel,
+=======
+# 307 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 3 4
+void *bsearch_b(const void * __key, const void * __base, size_t __nel,
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
      size_t __width, int (^ _Nonnull __compar)(const void *, const void *) __attribute__((__noescape__)))
      __attribute__((availability(macosx,introduced=10.6)));
 
 
 
+<<<<<<< HEAD
 char *cgetcap(char *, const char *, int);
 int cgetclose(void);
 int cgetent(char **, char **, const char *);
@@ -1824,11 +2424,71 @@ int radixsort(const unsigned char **__base, int __nel, const unsigned char *__ta
 int rpmatch(const char *)
  __attribute__((availability(macos,introduced=10.15))) __attribute__((availability(ios,introduced=13.0))) __attribute__((availability(tvos,introduced=13.0))) __attribute__((availability(watchos,introduced=6.0)));
 int sradixsort(const unsigned char **__base, int __nel, const unsigned char *__table,
+=======
+char * cgetcap(char *, const char *, int);
+int cgetclose(void);
+int cgetent(char * *, char * *, const char *);
+int cgetfirst(char * *, char * *);
+int cgetmatch(const char *, const char *);
+int cgetnext(char * *, char * *);
+int cgetnum(char *, const char *, long *);
+int cgetset(const char *);
+int cgetstr(char *, const char *, char * *);
+int cgetustr(char *, const char *, char * *);
+
+int daemon(int, int) __asm("_" "daemon" ) __attribute__((availability(macosx,introduced=10.0,deprecated=10.5,message="Use posix_spawn APIs instead."))) __attribute__((availability(watchos,unavailable))) __attribute__((availability(tvos,unavailable)));
+char * devname(dev_t, mode_t);
+char * devname_r(dev_t, mode_t, char * buf, int len);
+char * getbsize(int *, long *);
+int getloadavg(double [], int __nelem);
+const char
+ *getprogname(void);
+void setprogname(const char *);
+# 341 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h" 3 4
+int heapsort(void * __base, size_t __nel, size_t __width,
+     int (* _Nonnull __compar)(const void *, const void *));
+
+int heapsort_b(void * __base, size_t __nel, size_t __width,
+     int (^ _Nonnull __compar)(const void *, const void *) __attribute__((__noescape__)))
+     __attribute__((availability(macosx,introduced=10.6)));
+
+int mergesort(void * __base, size_t __nel, size_t __width,
+     int (* _Nonnull __compar)(const void *, const void *));
+
+int mergesort_b(void * __base, size_t __nel, size_t __width,
+     int (^ _Nonnull __compar)(const void *, const void *) __attribute__((__noescape__)))
+     __attribute__((availability(macosx,introduced=10.6)));
+
+void psort(void * __base, size_t __nel, size_t __width,
+     int (* _Nonnull __compar)(const void *, const void *))
+     __attribute__((availability(macosx,introduced=10.6)));
+
+void psort_b(void * __base, size_t __nel, size_t __width,
+     int (^ _Nonnull __compar)(const void *, const void *) __attribute__((__noescape__)))
+     __attribute__((availability(macosx,introduced=10.6)));
+
+void psort_r(void * __base, size_t __nel, size_t __width, void *,
+     int (* _Nonnull __compar)(void *, const void *, const void *))
+     __attribute__((availability(macosx,introduced=10.6)));
+
+void qsort_b(void * __base, size_t __nel, size_t __width,
+     int (^ _Nonnull __compar)(const void *, const void *) __attribute__((__noescape__)))
+     __attribute__((availability(macosx,introduced=10.6)));
+
+void qsort_r(void * __base, size_t __nel, size_t __width, void *,
+     int (* _Nonnull __compar)(void *, const void *, const void *));
+int radixsort(const unsigned char * * __base, int __nel, const unsigned char * __table,
+     unsigned __endbyte);
+int rpmatch(const char *)
+ __attribute__((availability(macos,introduced=10.15))) __attribute__((availability(ios,introduced=13.0))) __attribute__((availability(tvos,introduced=13.0))) __attribute__((availability(watchos,introduced=6.0)));
+int sradixsort(const unsigned char * * __base, int __nel, const unsigned char * __table,
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
      unsigned __endbyte);
 void sranddev(void);
 void srandomdev(void);
 
 long long
+<<<<<<< HEAD
  strtonum(const char *__numstr, long long __minval, long long __maxval, const char **__errstrp)
  __attribute__((availability(macos,introduced=11.0))) __attribute__((availability(ios,introduced=14.0))) __attribute__((availability(tvos,introduced=14.0))) __attribute__((availability(watchos,introduced=7.0)));
 
@@ -1838,6 +2498,18 @@ unsigned long long
   strtouq(const char *__str, char **__endptr, int __base);
 
 extern char *suboptarg;
+=======
+ strtonum(const char *__numstr, long long __minval, long long __maxval, const char * *__errstrp)
+ __attribute__((availability(macos,introduced=11.0))) __attribute__((availability(ios,introduced=14.0))) __attribute__((availability(tvos,introduced=14.0))) __attribute__((availability(watchos,introduced=7.0)));
+
+long long
+  strtoq(const char *__str, char * *__endptr, int __base);
+unsigned long long
+  strtouq(const char *__str, char * *__endptr, int __base);
+
+extern char * suboptarg;
+# 59 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h" 2 3 4
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 # 8 "./include/Input.h" 2
 
 

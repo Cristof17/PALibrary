@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 1 "src/BFS/Record.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
@@ -504,3 +505,5 @@ void PAListPerformPrint(struct PAList List);
 
     return to;
 }
+=======
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992

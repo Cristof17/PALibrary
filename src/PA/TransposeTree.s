@@ -17,6 +17,7 @@ _PATransposeTreePerformConstruct:       ; @PATransposeTreePerformConstruct
 _PATransposeTreePerformInit:            ; @PATransposeTreePerformInit
 	.cfi_startproc
 ; %bb.0:
+<<<<<<< HEAD
 	sub	sp, sp, #400
 	.cfi_def_cfa_offset 400
 	stp	x28, x27, [sp, #368]            ; 16-byte Folded Spill
@@ -41,6 +42,18 @@ _PATransposeTreePerformInit:            ; @PATransposeTreePerformInit
 	ldp	x29, x30, [sp, #384]            ; 16-byte Folded Reload
 	ldp	x28, x27, [sp, #368]            ; 16-byte Folded Reload
 	add	sp, sp, #400
+=======
+	sub	sp, sp, #48
+	.cfi_def_cfa_offset 48
+	mov	x9, x0
+	str	x9, [sp, #40]
+	str	x1, [sp, #32]
+	ldr	q0, [x0]
+	str	q0, [x8]
+	ldr	q0, [x0, #16]
+	str	q0, [x8, #16]
+	add	sp, sp, #48
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -66,7 +79,7 @@ _PATransposeTreeRuin:                   ; @PATransposeTreeRuin
 	.cfi_def_cfa_offset 16
 	str	x0, [sp, #8]
 	str	wzr, [sp, #4]
-	ldrsw	x0, [sp, #4]
+	ldr	w0, [sp, #4]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -79,7 +92,7 @@ _PATransposeTreePerformRuin:            ; @PATransposeTreePerformRuin
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
 	str	x0, [sp, #8]
-	ldrsw	x0, [sp, #4]
+	ldr	w0, [sp, #4]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
@@ -91,11 +104,10 @@ _PATransposeTreeGetResult:              ; @PATransposeTreeGetResult
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	ldr	x8, [sp, #8]
-	mov	x0, x8
+	ldr	w0, [sp, #12]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.comm	_PAList,296,3                   ; @PAList
+	.comm	_PAList,16,3                    ; @PAList
 .subsections_via_symbols

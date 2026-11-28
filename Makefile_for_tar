@@ -1,0 +1,2002 @@
+#!/usr/bin/make -f
+# Copyright (C)  2025 Cristofor Rotsching. 
+# Permission is granted to copy, distribute and/or modify this document
+# under the terms of the GNU Free Documentation License, Version 1.3
+# or any later version published by the Free Software Foundation;
+# with no Invariant Sections, no Front-Cover Texts, and no Back-Cover
+# Texts.  A copy of the license is included in the section entitled ``GNU
+# Free Documentation License''.
+
+# 	obj/PA/Destination.o
+# 	obj/PA/Arrow.o
+# 	obj/PA/Feature.o
+#prefix=/usr/local
+# prefix=/usr/local/
+SHELL = /bin/sh
+
+#### Start of system configuration section. ####
+
+srcdir = .
+
+# prefix = /usr/local
+prefix = .
+binprefix =
+
+exec_prefix = $(prefix)
+bindir = $(prefix)/bin
+sbindir = $(exec_prefix)/sbin
+libexdir = $(exec_prefix)/libexec
+datarootdir = $(prefix)/share
+datadir = $(datarootdir)
+sysconfdir = $(prefix)/etc
+sharedstatedir = $(prefix)/com
+localstatedir = $(prefix)/var
+runstatedir = $(localstatedir)/run
+includedir = $(prefix)/include
+oldincludedir = /usr/local/
+docdir = $(datarootdir)/doc/yourpkg
+
+infodir = $(prefix)/info
+htmldir = $(docdir)
+dvdir = $(docdir)
+pdfdir = $(docdir)
+# /usr/local/
+psdir = $(docdir)
+# /usr/local/share/emacs/site-lisp
+libdir = $(exec_prefix)/lib
+lispdir = $(datarootdir)/emacs-site-lisp #d
+localedir = $(datarootdir)/locale
+mandir = $(datarootdir)/man
+man1dir = $(mandir)/man1
+man2dir = $(mandir)/man2
+manext = .1
+man1ext =
+man2ext =
+
+DEFS =  -DSIGTYPE=int \
+		-D_64BIT
+
+# LIBS =
+# DEF_AR_FILE = /dev/rmt8
+# DEFBLOCKING = 20
+
+# CDEBUG = -g
+# CFLAGS = $(CDEBUG) -I. -I$(srcdir) $(DEFS) \
+#         -DDEF_AR_FILE=\"$(DEF_AR_FILE)\" \
+#         -DDEFBLOCKING=$(DEFBLOCKING)
+# LDFLAGS = -g
+# # If you use gcc, you should either run the
+# # fixincludes script that comes with it or else use
+# # gcc with the -traditional option.  Otherwise ioctl
+# # calls will be compiled incorrectly on some systems.
+# CC = gcc -O
+# INSTALL = /usr/local/bin/install -c
+# INSTALLDATA = /usr/local/bin/install -c -m 644
+
+SRCS_C  = Input.c \
+	Algorithm.c \
+	PA/Input.c \
+	PA/Output.c \
+	Output.c \
+	PA/Data.c \
+	PA/Tree.c \
+	PA/List.c \
+	PA/Link.c \
+	PA/Element.c \
+	PA/Count.c \
+	PA/Pair.c \
+	PA/Result.c \
+	PA/Series.c \
+	PA/Status.c \
+	PA/Value.c \
+	PA/Resource.c \
+	PA/NormalTree.c \
+	PA/Number.c \
+	PA/TransposeTree.c \
+	PA/PADrawingEditor.c \
+	PA/PALine.c \
+	PA/PAShape.c \
+	PA/PATextView.c \
+	PA/Arrow.c \
+	PA/Destination.c \
+	PA/Feature.c
+# SRCS_Y  = getdate.y
+SRCS    = $(SRCS_C)
+OBJS    = $(SRCS_C:.c=.o)
+AUX =   README.md COPYING Makefile.in  \
+        configure configure.in \
+		defs.h \
+		types.h \
+		PA/Count.h \
+		PA/Data.h \
+		PA/Element.h \
+		PA/Input.h \
+		PA/Link.h \
+		PA/List.h \
+		PA/NormalTree.h \
+		PA/Number.h \
+		PA/Output.h \
+		PA/Pair.h \
+		PA/Result.h \
+		PA/Resource.h \
+		PA/Series.h \
+		PA/Status.h \
+		PA/TransposeTree.h \
+		PA/Tree.h \
+		PA/Value.h \
+		PA/PADrawingEditor.h \
+		PA/PALine.h \
+		PA/PAShape.h \
+		PA/PATextView.h \
+		PA/Arrow.h \
+		PA/Destination.h \
+		PA/Feature.h \
+		PA/Count.h \
+		PA/Data.h \
+		PA/Element.h \
+		PA/Input.h \
+		PA/Link.h \
+		PA/List.h \
+		PA/NormalTree.h \
+		PA/Number.h \
+		PA/Output.h \
+		PA/Pair.h \
+		PA/Result.h \
+		PA/Resource.h \
+		PA/Series.h \
+		PA/Status.h \
+		PA/TransposeTree.h \
+		PA/Tree.h \
+		PA/Value.h \
+		PA/PADrawingEditor.h \
+		PA/PALine.h \
+		PA/PAShape.h \
+		PA/PATextView.h \
+		PA/Arrow.h \
+		PA/Destination.h \
+		PA/Feature.h
+
+# Things you might add to DEFS:
+# -DSTDC_HEADERS        If you have ANSI C headers and
+#                       libraries.
+# -DPOSIX               If you have POSIX.1 headers and
+#                       libraries.
+# -DBSD42               If you have sys/dir.h (unless
+#                       you use -DPOSIX), sys/file.h,
+#                       and st_blocks in `struct stat'.
+# -DUSG                 If you have System V/ANSI C
+#                       string and memory functions
+#                       and headers, sys/sysmacros.h,
+#                       fcntl.h, getcwd, no valloc,
+#                       and ndir.h (unless
+#                       you use -DDIRENT).
+# -DNO_MEMORY_H         If USG or STDC_HEADERS but do not
+#                       include memory.h.
+# -DDIRENT              If USG and you have dirent.h
+#                       instead of ndir.h.
+# -DSIGTYPE=int         If your signal handlers
+#                       return int, not void.
+# -DNO_MTIO             If you lack sys/mtio.h
+#                       (magtape ioctls).
+# -DNO_REMOTE           If you do not have a remote shell
+#                       or rexec.
+# -DUSE_REXEC           To use rexec for remote tape
+#                       operations instead of
+#                       forking rsh or remsh.
+# -DVPRINTF_MISSING     If you lack vprintf function
+#                       (but have _doprnt).
+# -DDOPRNT_MISSING      If you lack _doprnt function.
+#                       Also need to define
+#                       -DVPRINTF_MISSING.
+# -DFTIME_MISSING       If you lack ftime system call.
+# -DSTRSTR_MISSING      If you lack strstr function.
+# -DVALLOC_MISSING      If you lack valloc function.
+# -DMKDIR_MISSING       If you lack mkdir and
+#                       rmdir system calls.
+# -DRENAME_MISSING      If you lack rename system call.
+# -DFTRUNCATE_MISSING   If you lack ftruncate
+#                       system call.
+# -DV7                  On Version 7 Unix (not
+#                       tested in a long time).
+# -DEMUL_OPEN3          If you lack a 3-argument version
+#                       of open, and want to emulate it
+#                       with system calls you do have.
+# -DNO_OPEN3            If you lack the 3-argument open
+#                       and want to disable the tar -k
+#                       option instead of emulating open.
+# -DXENIX               If you have sys/inode.h
+#                       and need it 94 to be included.
+
+# Set this to rtapelib.o unless you defined NO_REMOTE,
+# in which case make it empty.
+
+# Prefix for each installed program,
+# normally empty or `g'.
+
+# The directory to install tar in.
+
+# The directory to install the info files in.
+
+#### End of system configuration section. ####
+
+
+CDEBUG = -g
+CFLAGS = $(CDEBUG) -I. -I$(srcdir) $(DEFS) \
+        -DDEF_AR_FILE=\"$(DEF_AR_FILE)\" \
+        -DDEFBLOCKING=$(DEFBLOCKING)
+LDFLAGS = -g
+
+# .PHONY: all
+# all:    tar rmt tar.info
+
+# tar:    $(OBJS)
+#         $(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
+
+# rmt:    rmt.c
+#         $(CC) $(CFLAGS) $(LDFLAGS) -o $@ rmt.c
+
+# tar.info: tar.texinfo
+#         makeinfo tar.texinfo
+
+# .PHONY: install
+# install: all
+#         $(INSTALL) tar $(bindir)/$(binprefix)tar
+#         -test ! -f rmt || $(INSTALL) rmt /etc/rmt
+#         $(INSTALLDATA) $(srcdir)/tar.info* $(infodir)
+
+$(OBJS): defs.h types.h PA/Count.h PA/Data.h PA/Element.h PA/Input.h PA/Link.h PA/List.h PA/NormalTree.h PA/Number.h PA/Output.h PA/Pair.h PA/Result.h PA/Resource.h PA/Series.h PA/Status.h PA/TransposeTree.h PA/Tree.h PA/Value.h PA/PADrawingEditor.h PA/PALine.h PA/PAShape.h PA/PATextView.h PA/Arrow.h PA/Destination.h PA/Feature.h PA/Count.h PA/Data.h PA/Element.h PA/Input.h PA/Link.h PA/List.h PA/NormalTree.h  PA/Number.h PA/Output.h PA/Pair.h PA/Result.h PA/Resource.h PA/Series.h PA/Status.h PA/TransposeTree.h PA/Tree.h PA/Value.h PA/PADrawingEditor.h PA/PALine.h PA/PAShape.h PA/PATextView.h PA/Arrow.h PA/Destination.h PA/Feature.h
+# regex.o buffer.o tar.o: regex.h
+# # getdate.y has 8 shift/reduce conflicts.
+
+# testpad.h: testpad
+#         ./testpad
+
+# testpad: testpad.o
+#         $(CC) -o $@ testpad.o
+
+# TAGS:   $(SRCS)
+#         etags $(SRCS)
+
+# .PHONY: clean
+# clean:
+#         rm -f *.o tar rmt testpad testpad.h core
+
+# .PHONY: distclean
+# distclean: clean
+#         rm -f TAGS Makefile config.status
+
+# .PHONY: realclean
+# realclean: distclean
+#         rm -f tar.info*
+
+
+
+#musl=@musl@
+#crt=@crt@
+#output=@output@
+
+# .PHONY: all
+
+libs= libpa.a libarraylist.a libbfs.a libalgorithm.a
+output=pa
+version=1.0
+program_test_pa= test.out
+program_test_pointers_pa=
+visual_code_run_target=a.out
+all: preprocess assemble compile $(program_test_pa) $(program_test_pointers_pa) libpa.a # preprocess: $(sources)
+preprocess: preprocess_pa 
+#preprocess_bfs preprocess_arraylist
+compile: compile_pa 
+#compile_arraylist compile_bfs
+assemble: assemble_pa 
+
+preprocess_test_pa: $(sources_test_pa)
+preprocess_test_pointers_pa: $(sources_test_pointers_pa)
+
+compile_test_pa: assemble_test_pa assemble_test_pointers_pa
+compile_test_pointers_pa: assemble_test_pointers_pa
+
+assemble_test_pa: preprocess_test_pa preprocess_test_pointers_pa
+assemble_test_pointers_pa: preprocess_test_pointers_pa
+
+#test: compile_test_pa compile_test_pointers_pa
+
+#assemble_bfs assemble_arraylist
+#	${MAKE} obj/Input.o
+#	${MAKE} obj/Algorithm.o
+#	${MAKE} obj/BFS/Procedure.o
+#	${MAKE} obj/PA/Input.o
+#	${MAKE} obj/PA/Output.o
+#	${MAKE} obj/BFS/Record.o
+#	${MAKE} obj/Output.o
+#	${MAKE} obj/PA/Data.o
+#	${MAKE} obj/PA/Destination.o
+#	${MAKE} obj/PA/Tree.o
+#	${MAKE} obj/PA/List.o
+#	${MAKE} obj/PA/Status.o
+#	${MAKE} obj/PA/Link.o
+#	${MAKE} obj/PA/Arrow.o
+#	${MAKE} obj/PA/Element.o
+#	${MAKE} obj/PA/Count.o
+#	${MAKE} obj/PA/Pair.o
+#	${MAKE} obj/PA/Result.o
+#	${MAKE} obj/PA/Series.o
+#	${MAKE} obj/PA/Feature.o
+#	${MAKE} obj/PA/Value.o
+#	${MAKE} obj/PA/Resource.o
+#	${MAKE} obj/Builder/Director.o
+#	${MAKE} obj/Builder/Builder.o
+#	${MAKE} obj/Builder/Product.o
+#	${MAKE} obj/Builder/ConcreteBuilder.o
+#	${MAKE} obj/PA/NormalTree.o
+#	${MAKE} obj/PA/TransposeTree.o
+#	${MAKE} obj/Adapter/Client.o
+#	${MAKE} obj/Adapter/Target.o
+#	${MAKE} obj/Adapter/Adapter.o
+#	${MAKE} obj/Adapter/Adaptee.o
+#	${MAKE} obj/PA/PADrawingEditor.o
+#	${MAKE} obj/PA/PALine.o
+#	${MAKE} obj/PA/PAShape.o
+#	${MAKE} obj/PA/PATextView.o
+#	${MAKE} obj/ArrayList/ArrayList.o
+#	${MAKE} obj/State/Context.o
+#	${MAKE} obj/State/State.o
+#	${MAKE} obj/State/ConcreteStateA.o
+#	${MAKE} obj/State/ConcreteStateB.o
+#	${MAKE} obj/ArrayList/ArrayListPosition.o
+#	${MAKE} obj/Iterator/Client.o
+#	${MAKE} obj/Iterator/ConcreteIterator.o
+#	${MAKE} obj/Iterator/Iterator.o
+#	${MAKE} obj/Iterator/ConcreteAggregate.o
+#	${MAKE} obj/Prototype/Client.o
+#	${MAKE} obj/Prototype/Prototype.o
+#	${MAKE} obj/Prototype/ConcretePrototype1.o
+#	${MAKE} obj/Prototype/ConcretePrototype2.o
+#	${MAKE} obj/Bridge/Client.o
+#	${MAKE} obj/Bridge/Implementor.o
+#	${MAKE} obj/Bridge/Abstraction.o
+#	${MAKE} obj/Bridge/RefinedAbstraction.o
+#	${MAKE} obj/Bridge/ConcreteImplementorA.o
+#	${MAKE} obj/Bridge/ConcreteImplementorB.o
+#	#-mkdir $(dir $<)
+	@echo "Building"
+link: link_pa link_bfs link_arraylist
+	src/mkinstalldirs $(libdir) $(libdir)/PA
+#	$(LD) $(foreach object,$^,$(libdir)/$(object)) $(prefix)/musl-$(musl)/obj/crt/$(crt) -lc -static -o $(libdir)/$(output) 
+#pa arraylist bfs
+.PHONY: mostlyclean
+mostlyclean: $(objects_pa) $(objects_arraylist) $(objects_bfs)
+	-rm -v $(foreach object,$(objects_pa),$(libdir)/$(object))
+	-rm -v $(foreach object,$(objects_arraylist),$(libdir)/$(object))
+	-rm -v $(foreach object,$(objects_bfs),$(libdir)/$(object))
+	-rm -v $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
+	-rm -v $(foreach assembly,$(assemblies_arraylist),$(srcdir)/$(assembly))
+	-rm -v $(foreach assembly,$(assemblies_bfs),$(srcdir)/$(assembly))
+	-rm -v $(foreach source,$(sources_pa),$(srcdir)/$(source))
+	-rm -v $(foreach source,$(sources_arraylist),$(srcdir)/$(source))
+	-rm -v $(foreach source,$(sources_bfs),$(srcdir)/$(source))
+	-rm -v $(foreach test,$(sources_test_pa),$(srcdir)/$(test))
+#	rm -v $(foreach binary,$(output_pa),$(bindir)/$(binary))
+# 	-rm $(objects_pa)
+# 	-rm $(assemblies_pa)
+# 	-rm $(sources_pa)
+#
+.PHONY: maintainer-clean
+maintainer-clean: 
+#$(objects_pa) $(objects_bfs) $(objects_arraylist) $(assemblies_pa) $(assemblies_bfs) $(assemblies_arraylist) $(sources_pa) $(sources_bfs) $(sources_arraylist) $(sources_test_pa) $(assemblies_test_pa) $(sources_test_arraylist) $(objects_test_pa) $(program_test_pa) $(program_test_pointers_pa) $(lib_arraylist) libpa.a:$(lib_bfs) $(output).tar.gz
+	@echo 'This command is intended for maintainers to use; it'
+	@echo 'deletes files that may need special tools to rebuild.'
+	-rm -v $(foreach object,$(objects_pa),$(libdir)/$(object))
+	-rm -v $(foreach object,$(objects_bfs),$(libdir)/$(object))
+	-rm -v $(foreach object,$(objects_arraylist),$(libdir)/$(object))
+	-rm -v $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
+	-rm -v $(foreach assembly,$(assemblies_bfs),$(srcdir)/$(assembly))
+	-rm -v $(foreach assembly,$(assemblies_arraylist),$(srcdir)/$(assembly))
+	-rm -v $(foreach source,$(sources_pa),$(srcdir)/$(source))
+	-rm -v $(foreach source,$(sources_bfs),$(srcdir)/$(source))
+	-rm -v $(foreach source,$(sources_arraylist),$(srcdir)/$(source))
+	#-rm -v $(libdirlibpa.a:	#-rm -v $(libdir)/$(lib_arraylist)
+	#-rm -v $(libdir)/$(lib_bfs)
+	-rm -v $(foreach test,$(sources_test_pa),$(srcdir)/$(test))
+	-rm -v $(foreach test,$(assemblies_test_pa),$(srcdir)/$(test))
+	-rm -v $(foreach test,$(objects_test_pa),$(libdir)/$(test))
+	-rm -v $(foreach test,$(program_test_pa),$(bindir)/$(test))
+	-rm -v $(foreach test,$(program_test_pointers_pa),$(bindir)/$(test))
+	-rm -v $(foreach lib,$(output),$(libdir)/$(lib).a)
+	-rm -v $(output).tar.gz 
+	#-rm -r -v $(foreach lib,$(libs),$(output)-$(version)/$(lib))
+	#rm -r -v $(output)-$(version)/ArrayList
+	#rm -r -v $(output)-$(version)/BFS
+	#rm -r -v $(output)-$(version)/PA
+#	-rmdir -v $(output)-$(version)/BFS
+#	-rmdir -v $(output)-$(version)/PA
+#	-rm -r -v $(output)-$(version)
+# 	-rm $(libdir)/libpa.a
+# 	-rm $(sources_pa)
+# 	-rm $(sources_bfs)
+# 	-rm $(sources_arraylist)
+
+# 	-rm $(assemblies_pa)
+# 	-rm $(assemblies_bfs)
+# 	-rm $(assemblies_arraylist)
+# 	-rm $(objects_pa)
+# 	-rm $(objects_bfs)
+# 	-rm $(objects_arraylist)
+#	-rm $(output_dir)/$(outfile)
+#-rmdir $(libdir)/PA
+#	-rm $(libdir)/BFS/*
+#	-rmdir $(libdir)/BFS/
+#	-rm $(libdir)/ArrayList/*
+#	-rmdir $(libdir)/ArrayList
+#	-rm $(sources_pa)
+#	-rm $(sources_bfs)
+#	-rm $(sources_arraylist)
+#	-rm $(assemblies_pa)
+#	-rm $(assemblies_bfs)
+#	-rm $(assemble_arraylist)
+#	-rm $(objects_pa)
+#	-rm $(objects_bfs)
+#	-rm $(objects_arraylist)
+.PHONY: realclean
+realclean:
+
+.PHONY: clobber
+clobber:
+
+.PHONY: install
+install:
+	$(srcdir)/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) $(mandir)
+	$(srcdir)/mkinstalldirs $(libdir)/PA
+	$(srcdir)/mkinstalldirs $(libdir)/BFS
+	$(srcdir)/mkinstalldirs $(libdir)/ArrayList
+
+.PHONY: install-strip
+install-strip:
+	strip $(foreach lib,$(libs),$(libdir)/$(lib))
+# 	mkdir $(subdirs)
+#	cp out/libpa.a $(libdir)
+#	cp -r obj/*.o $(libdir)
+#
+.PHONY: installcheck
+installcheck:
+	ls $(foreach subdir,$(subdirs),$(subdir))
+	ls $(foreach lib,$(libs),$(libdir)/$(lib))
+#	ls $(libdir) | grep libpa.a
+#	ls $(libdir) | grep $(objects)/PA
+print:
+	git status
+	ar -T -t $(libdir)/libpa.a
+
+.PHONY: share
+share:
+
+.PHONY: dist
+dist: lib/ lib/PA lib/BFS lib/ArrayList $(objects_pa) $(objects_bfs) $(objects_arraylist) $(libs) $(output).tar.gz
+	#tar cvf libpa.tar.gz $(libdir)/libpa.a
+
+.PHONY: check
+check: $(program_test_pa) $(program_test_pointers_pa)
+	@echo "Testing"
+	mv ./bin/$(program_test_pointers_pa) ./a.out
+	./bin/$(program_test_pointers_pa)
+
+$(output).tar.gz:
+	mkdir -v $(output)-$(version)
+	mkdir -v $(output)-$(version)/PA
+	mkdir -v $(output)-$(version)/BFS
+	mkdir -v $(output)-$(version)/ArrayList
+	cp -r -v lib/PA/ $(output)-$(version)/PA
+	cp -r -v lib/BFS/ $(output)-$(version)/BFS
+	cp -r -v lib/ArrayList/ $(output)-$(version)/ArrayList
+	cp -r -v $(foreach lib,$(libs),./lib/$(lib)) $(output)-$(version)
+	tar --gzip --create --verbose --file $(output).tar.gz $(output-version) $(output)-$(version)/$(dir $(obj))
+$(objects_pa): include/types.h include/defs.h
+test:
+ifeq ($(host-type), arm64)
+	file ./lib/libpa.a
+endif
+
+test_pa_arm64: 
+	#ifeq ($(host-type),arm64)
+##	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+#endif
+#ifeq ($(host-type),x86_64)
+#	$(CC) -c $(CFLAGS) $(libdir)/test.o $(libdir)/libpa.a -o $(bindir)/test
+#endif
+ifeq ($(host-type),AArch64)
+	$(CC) -c $(CFLAGS) $(libdir)/test.o $(libdir)/libpa.a -o $(bindir)/test
+#	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+
+#	-$(CPP) -I$(includedir)/ $(CPPFLAGS) test/test.c > test/test.i
+#	-$(CC) -S test.i -o test.s
+#	-$(AS) test.s -o test.o
+
+objects_algorithm= Algorithm.o \
+	Input.o \
+	Output.o
+
+objects_arraylist= ArrayList/ArrayList.o
+
+objects_bfs= BFS/Procedure.o \
+	BFS/Record.o
+
+# objects_arraylist= obj/Input.o
+#
+
+objects_pa= Input.o \
+	Algorithm.o \
+	PA/Input.o \
+	PA/Output.o \
+	PA/Resource.o \
+	PA/Count.o \
+	PA/Data.o \
+	PA/Tree.o \
+	PA/List.o \
+	PA/Link.o \
+	PA/Element.o \
+	PA/Pair.o \
+	PA/Result.o \
+	PA/Series.o \
+	PA/Value.o \
+	PA/Status.o \
+	PA/NormalTree.o \
+	PA/Number.o \
+	PA/TransposeTree.o \
+	PA/PADrawingEditor.o \
+	PA/PALine.o \
+	PA/PAShape.o \
+	PA/PATextView.o \
+	PA/Arrow.o \
+	PA/Destination.o \
+	PA/Feature.o
+# 	src/PA/Data.i \
+
+sources_algorithm= Algorithm.i \
+	Input.i \
+	Output.i
+sources_arraylist= ArrayList/ArrayList.i
+
+sources_bfs= BFS/Procedure.i \
+	BFS/Record.i
+sources_pa= 
+# sources_arraylist= src/Input.i
+
+designs_algorithm= Algorithm.c \
+	Input.c \
+	Output.c
+
+designs_arraylist= ArrayList/ArrayList.c
+
+designs_bfs= src/BFS/Procedure.c \
+	BFS/Record.c
+# sources_= src/Input.i
+designs_pa= PA/Input.c \
+	PA/Output.c \
+	PA/Data.c \
+	PA/Tree.c \
+	PA/Data.c \
+	PA/List.c \
+	PA/Link.c \
+	PA/Element.c \
+	PA/Count.c \
+	PA/Pair.c \
+	PA/Result.c \
+	PA/Series.c \
+	PA/Status.c \
+	PA/Value.c \
+	PA/Resource.c \
+	PA/NormalTree.c \
+	PA/Number.c \
+	PA/TransposeTree.c \
+	PA/PALine.c \
+	PA/PAShape.c \
+	PA/Arrow.c \
+	PA/Destination.c \
+	PA/Feature.c \
+	PA/PATextView.c
+
+assemblies_algorithm= Algorithm.s \
+	Input.s \
+	Output.s
+assemblies_arraylist= ArrayList/ArrayList.s
+assemblies_bfs= BFS/Procedure.s \
+	BFS/Record.s
+assemblies_pa= PA/Input.s \
+	PA/Output.s \
+	PA/Tree.s \
+	PA/Data.s \
+	PA/List.s \
+	PA/Link.s \
+	PA/Element.s \
+	PA/Count.s \
+	PA/Pair.s \
+	PA/Result.s \
+	PA/Series.s \
+	PA/Status.s \
+	PA/Value.s \
+	PA/Resource.s \
+	PA/NormalTree.s \
+	PA/Number.s \
+	PA/TransposeTree.s \
+	PA/PADrawingEditor.s \
+	PA/PALine.s \
+	PA/PAShape.s \
+	PA/PATextView.s \
+	PA/Arrow.s \
+	PA/Destination.s \
+	PA/Feature.s
+
+sources_test_algorithm= test.i
+sources_test_pa= test.i
+sources_test_bfs= 
+sources_test_arraylist=
+asemblies_test_algorithm= test.s
+assemblies_test_pa= test.s
+assemblies_test_bfs=
+assemblies_test_arraylist =
+# as
+objects_test_algorithm= test.o
+objects_test_pa= test.o
+objects_test_bfs=
+objects_test_arraylist= 
+# 	src/PA/Destination.s
+# 	src/PA/Arrow.s
+# 	src/PA/Feature.s
+
+# 	src/PA/Destination.c
+# 	src/PA/Arrow.c
+# 	src/PA/Feature.c
+
+	
+# 	src/PA/Destination.i
+# 	src/PA/Arrow.i
+# 	src/PA/Feature.i
+
+.PHONY: distclean
+distclean: dist
+	-rm $(foreach source,$(sources_pa),$(srcdir)/$(source))
+	-rm $(foreach source,$(sources_test_pa),$(srcdir)/$(source))
+# 	rm $(foreach source,$(sources_bfs),$(srcdir)/$(source))
+# 	rm $(foreach source,$(sources_arraylist),$(srcdir)/$(source))
+	-rm $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
+	-rm $(foreach assembly,$(assemblies_test_pa),$(srcdir)/$(assembly))
+# 	rm $(foreach assembly,$(assemblies_bfs),$(srcdir)/$(assembly))
+# 	rm $(foreach assembly,$(assemblies_arraylist),$(srcdir)/$(assembly))
+	-rm $(foreach object,$(objects_pa),$(libdir)/$(object))
+	-rm $(foreach object,$(objects_test_pa),$(libdir)/$(object))
+# 	rm $(foreach object,$(objects_bfs),$(libdir)/$(object))
+# 	rm $(foreach object,$(objects_arraylist),$(libdir)/$(object))
+	-rm $(foreach program,$(program_test_pointers_pa),$(bindir)/$(program))
+	-rm $(output).tar.gz
+	-rm -r $(foreach obj,$(objects_pa),$(output)-$(version)/$(obj))
+	-rm -r $(foreach obj,$(objects_bfs),$(output)-$(version)/$(obj))
+	-rm -r $(foreach obj,$(objects_arraylist),$(output)-$(version)/$(obj))
+	-rm -r $(foreach lib,$(libs),$(output)-$(version)/$(lib))
+	-rmdir $(output)-$(version)/PA
+	-rmdir $(output)-$(version)/BFS
+	-rmdir $(output)-$(version)/ArrayList
+	-rmdir $(output)-$(version)
+
+objdirs= $(libdir)/ \
+	$(libdir)/BFS/ \
+	$(libdir)/ArrayList/ \
+	$(libdir)/PA/
+ 
+#	obj/Flyweight/
+
+subdirs= $(libdir)/ \
+	$(libdir)/BFS/ \
+	$(libdir)/ArrayList/ \
+	$(libdir)/PA/
+
+ifeq (0,${MAKELEVEL})
+host-type := $(shell arch)
+#MAKE := ${MAKE} ARCH=${host-type}
+endif
+
+# ${objdirs}
+# ${objdirs}:
+# 	mkdir $<
+# obj/BFS/: obj
+# 	mkdir $<
+# obj/Adapter/: obj
+# 	mkdir $<
+# obj/Iterator/: obj
+# 	mkdir $<
+# obj/Builder/: obj
+# 	mkdir $<
+# obj/ArrayList: obj
+# 	mkdir $<
+# obj/Prototype: obj
+# 	mkdir $<
+# obj/Bridge: obj
+# 	mkdir $<
+# obj/PA: obj
+# 	mkdir $<
+	
+# 	mkdir $<
+# ${objdirs}:`
+lib_algorithm= libalgorithm.a
+lib_bfs= libbfs.a
+lib_arraylist= libarraylist.a 
+lib_algorithm= libalgorithm.a
+
+output_dir= out
+output_algorithm= $(output_dir)/$(lib_algorithm)
+output_bfs= $(output_dir)/$(lib_bfs)
+output_arraylist= $(output_dir)/$(lib_arraylist)
+output_pa= $(output_dir)/$(lib_pa)
+assemble_algorithm: $(assemblies_algorithm) $(assemblies_test_algorithm)
+assemble_pa: $(assemblies_pa) $(assemblies_test_pa)
+assemble_bfs: $(assemblies_bfs) $(assemblies_test_bfs)
+assemble_arraylist: $(assemblies_arraylist) $(assemblies_test_arraylist)
+assemble_algorithm: $(assemblies_algorithm) $(assemblies_test_algorithm)
+
+compile_algorithm: $(objects_algorithm) $(objects_test_algorithm)
+compile_pa: $(objects_pa) $(objects_test_pa)
+compile_bfs: $(objects_bfs) $(objects_test_bfs)
+compile_arraylist: $(objects_arraylist) $(objects_test_arraylist)
+compile_algorithm: $(objects_algorithm) $(objects_test_algorithm)
+
+preprocess_algorithm: $(sources_algorithm) $(sources_test_algorithm)
+preprocess_pa: $(sources_pa) $(sources_test_pa)
+preprocess_bfs: $(sources_bfs) $(sources_test_bfs)
+preprocess_arraylist: $(sources_arraylist) $(sources_test_arraylist)
+preprocess_algorithm: $(sources_algorithm) $(sources_test_algorithm)
+
+link_algorithm: $(output_algorithm) $(link_test_algorithm)
+link_pa: $(output_pa) $(link_test_pa)
+link_bfs: $(output_bfs) $(link_test_bfs)
+link_arraylist: $(output_arraylist) $(link_test_arraylist)
+link_algorithm: $(output_algorithm) $(link_test_algorithm)
+
+run_pa: $(test_pa)
+
+link_test_bfs: $(objects_test_bfs) $(output_bfs)
+	@echo "Testing"
+link_test_arraylist: $(objects_test_arraylist) $(output_arraylist)
+	@echo "Testing"
+link_test_algorithm: $(objects_test_algorithm) $(output_algorithm)
+	@echo "Testing"
+link_test_pa: $(objects_test_pa) $(output_pa)
+	@echo "Testing"
+#${MAKE} $(designs_pa) 
+#${MAKE} $(sources_pa)
+#${MAKE} $(objects_pa)
+#${MAKE} $(assemblies_pa)
+#${MAKE} $(output_dir)/$(output_pa)
+
+.PHONY: lib
+lib: out/$(output)
+
+.PHONY: build
+build: preprocess compile assemble test
+#link_windows
+${subdirs}:
+	-mkdir $@
+# 	${MAKE} -C $@ all
+
+# 	${MAKE} $(objdirs)
+# 	${MAKE} $(objects)
+# 	${MAKE} arch=${arch}
+# 	${MAKE} arch=${arch}
+# 	${MAKE} arch=${arch}
+# 	${MA
+
+.PHONY: build
+build: $(subdirs)
+#	${MAKE} assemble
+# 	mkdir obj/Director/
+# 	mkdir obj/Builder/
+# 	mkdir $(OBJ_DIR)
+# 	mkdir $(patsubst, )
+# 	#
+# 	echo "build"
+# 	@echo "Build"
+# 	@echo "$<"
+#
+$(lib_algorithm): $(objects_algorithm)
+	src/mkinstalldirs $(bindir) $(datadir) lib $(infodir) $(mandir)
+	$(AR) -v -s -q ./lib/$@ $(foreach object,$^,lib/$(object))  
+	$(AR) -v -t -s ./lib/$@
+$(lib_arraylist): $(objects_arraylist)
+	src/mkinstalldirs $(bindir) $(datadir) lib $(infodir) $(mandir)
+	$(AR) -v -s -q ./lib/$@ $(foreach object,$^,lib/$(object))  
+	$(AR) -v -t -s ./lib/$@
+
+libpa.a: $(OBJS)
+	src/mkinstalldirs $(bindir) $(datadir) lib $(infodir) $(mandir)
+	$(AR) -v -s -q ./lib/$@ $(foreach object,$^,$(libdir)/$(object))  
+	$(AR) -v -t -s ./lib/$@
+
+$(lib_bfs): $(objects_bfs)
+	src/mkinstalldirs $(bindir) $(datadir) lib $(infodir) $(mandir)
+	$(AR) -v -s -q ./lib/$@ $(foreach object,$^,lib/$(object))  
+	$(AR) -v -t -s ./lib/$@
+
+#libpa.a: $(objects_pa)
+#	$(LD) $(foreach object,$^,$(libdir)/$(object)) /lib/crt0.o -static -o $(libdir)/$@
+# 	$(LD) $(LDFLAGS) $(foreach object,$$^,$(libdir)/$(object)) -static -o $(libdir)/$@
+# link_windows: $(objects)
+# 	$(LD) $(objects) -o filiename.library
+# link_macos: $(objects)
+# link_linux: $(objects)
+
+.PHONY: build
+build: preprocess assemble compile
+#SUBDIRS= src src/Iterator src/Builder src/Adapter src/Arraylist
+#bar := $(foo:.c=.o)
+#bindir=bin
+srcdir=$(prefix)/src
+#includedir=include
+#CFLAGS+=-I$(abspath $(includedir))
+#CFLAGS+=-I$(abspath $(includedir)/Builder)
+#CFLAGS+=-I$(abspath $(includedir)/Iterator)
+#CFLAGS+=-I$(abspath $(includedir)/ArrayList)
+#CFLAGS+=-I$(abspath $(includedir)/Adapter)
+CPPFLAGS=
+ifeq ($(host-type),arm64)
+CPPFLAGS+=
+endif
+ifeq ($(host-type),Aarch64)
+CPPFLAGS+=
+endif
+ifeq ($(host-type),x86_64)
+CPPFLAGS+=
+endif
+CPPFLAGS+=-I$(prefix)/include -I$(prefix)
+#libdir=$(prefix)/obj
+#datadir=dat
+#infodir=info
+#mandir=man
+#export CPATH
+#export CFLAGS
+#export include
+#all: 
+#	$(objects)
+#	@echo "end of compile $(pwd)"
+#	@echo "end of all $(pwd)"
+#	@echo "end of assemble $(pwd)"
+#all: installdirs preprocess compile assemble
+#installdirs: 
+#//build
+#$(objects)
+#src/Input.c: include/defs.h
+#src/Algorithm.c: include/Algorithm.h include/defs.h 
+#src/BFS/Procedure.c: include/defs.h
+#src/PA/Input.c: include/PA/Input.h include/defs.h
+#src/PA/Output.c:  include/PA/Output.h include/defs.h
+#src/BFS/Record.c: include/BFS/Record.h include/defs.h
+#src/Output.c: include/Output.h include/defs.h
+#src/PA/Data.c: include/PA/Data.h include/defs.h
+#src/PA/Destination.c: include/PA/Destination.h include/defs.h
+#src/PA/Tree.c: include/PA/Tree.h include/defs.h
+#src/PA/List.c: include/PA/List.h include/defs.h
+#src/PA/Link.c: include/PA/Link.h include/defs.h
+#src/PA/Arrow.c: include/PA/Arrow.h include/defs.h
+#src/PA/Element.c: include/PA/Element.h include/defs.h
+#src/PA/Count.c: include/PA/Count.h include/defs.h
+#src/PA/Pair.c: include/PA/Pair.h include/defs.h
+#src/PA/Result.c:  include/PA/Result.h include/defs.h
+#src/PA/Series.c: include/PA/Series.h include/defs.h
+#src/PA/Status.c : include/PA/Status.h include/defs.h
+#src/PA/Feature.c:  include/PA/Feature.h include/defs.h
+#src/PA/Value.c: include/PA/Value.h include/defs.h
+#src/PA/Resource.c: include/PA/Resource.h include/defs.h
+#src/Builder/Director.c: include/Builder/Director.h include/defs.h
+#src/Builder/Builder.c: include/Builder/Builder.h include/defs.h
+#src/Builder/Product.c:
+#src/Builder/ConcreteBuilder.c:
+#src/PA/NormalTree.c: include/PA/NormalTree.h include/defs.h
+#src/PA/TransposeTree.c: include/PA/TransposeTree.h include/defs.h
+#src/Adapter/Client.c: include/Adapter/Client.h include/defs.h
+#src/Adapter/Target.c: include/Adapter/Target.h include/defs.h
+#src/Adapter/Adapter.c: include/Adapter/Adapter.h include/defs.h
+#src/Adapter/Adaptee.c: include/Adapter/Adaptee.h include/defs.h
+#src/PA/PADrawingEditor.c:  include/PA/PADrawingEditor.h include/defs.h
+#src/PA/PALine.c: include/PA/PALine.h include/defs.h
+#src/PA/PAShape.c: include/PA/PAShape.h include/defs.h
+#src/PA/PATextView.c:  include/PA/PATextView.h include/defs.h
+#src/ArrayList/ArrayList.c: include/ArrayList/ArrayList.h include/defs.h
+#src/Iterator/Client.c: include/Iterator/Client.h include/defs.h
+#src/Iterator/ConcreteIterator.c: include/Iterator/ConcreteIterator.h include/defs.h
+#src/Iterator/Iterator.c: include/Iterator/Iterator.h include/defs.h
+#src/Iterator/ConcreteAggregate.c:  include/Iterator/ConcreteAggregate.h include/defs.h
+#src/Factory/Product.c: include/Factory/Product.h
+#src/Factory/Creator.c: include/Factory/Creator.h
+#src/Factory/ConcreteProduct.c: include/Factory/ConcreteProduct.h
+#src/Factory/ConcreteCreator.c:include/Factory/ConcreteCreator.h
+#
+#src/Prototype/Client.c: include/Prototype/Client.h
+#src/Prototype/Prototype.c: include/Prototype/Prototype.h
+#src/Prototype/ConcretePrototype1.c: include/Prototype/ConcretePrototype1.h
+#src/Prototype/ConcretePrototype2.c: include/Prototype/ConcretePrototype2.h
+
+defs.h: $(includedir)/defs.h
+types.h: $(includedir)/types.h
+
+Input.h: $(includedir)/Input.h
+Output.h: $(includedir)/Output.h
+Algorithm.h: $(includedir)/Algorithm.h
+
+ArrayList/ArrayList.h: $(includedir)/ArrayList/ArrayList.h
+BFS/Procedure.h: $(includedir)/BFS/Procedure.h
+BFS/Record.h: $(includedir)/BFS/Record.h
+
+PA/Count.h: defs.h types.h $(includedir)/PA/Count.h
+PA/Data.h: defs.h types.h $(includedir)/PA/Data.h
+PA/Element.h: defs.h types.h $(includedir)/PA/Element.h
+PA/Input.h: defs.h $(includedir)/PA/Input.h
+PA/Link.h: defs.h $(includedir)/PA/Link.h
+PA/List.h: defs.h types.h $(includedir)/PA/List.h
+PA/NormalTree.h: defs.h $(includedir)/PA/NormalTree.h
+PA/Number.h: defs.h types.h $(includedir)/PA/Number.h
+PA/Output.h: defs.h types.h $(includedir)/PA/Output.h
+PA/Pair.h: defs.h $(includedir)/PA/Pair.h
+PA/Result.h: $(includedir)/PA/Result.h $(includedir)/PA/Result.h
+PA/Resource.h: types.h defs.h $(includedir)/PA/Resource.h
+PA/Series.h: defs.h $(includedir)/PA/Series.h
+PA/Status.h: defs.h types.h $(includedir)/PA/Status.h
+PA/TransposeTree.h: defs.h $(includedir)/PA/TransposeTree.h
+PA/Tree.h: defs.h types.h $(includedir)/PA/Tree.h
+PA/Value.h: defs.h $(includedir)/PA/Value.h
+PA/PADrawingEditor.h: $(includedir)/PA/PADrawingEditor.h $(includedir)/PA/PADrawingEditor.h
+PA/PALine.h: $(includedir)/PA/PALine.h $(includedir)/PA/PALine.h
+PA/PAShape.h: $(includedir)/PA/PAShape.h $(includedir)/PA/PAShape.h
+PA/PATextView.h: $(includedir)/PA/PATextView.h $(includedir)/PA/PATextView.h
+PA/Arrow.h: $(includedir)/PA/Arrow.h $(includedir)/PA/Arrow.h
+PA/Destination.h: $(includedir)/PA/Destination.h
+PA/Feature.h: $(includedir)/PA/Feature.h $(includedir)/PA/Feature.h
+
+Input.c: Input.h $(srcdir)/Input.c
+Output.c: Output.h $(srcdir)/Output.c
+Algorithm.c: Algorithm.h $(srcdir)/Algorithm.c
+
+ArrayList/ArrayList.c: ArrayList/ArrayList.h $(srcdir)/ArrayList/ArrayList.c
+
+BFS/Procedure.c: BFS/Procedure.h $(srcdir)/BFS/Procedure.c
+BFS/Record.c: BFS/Record.h $(srcdir)/BFS/Record.c
+
+PA/Count.c: PA/Count.h PA/Number.h types.h $(srcdir)/PA/Count.c
+PA/Data.c: PA/Data.h PA/Resource.h $(srcdir)/PA/Data.c
+PA/Element.c: defs.h PA/Element.h PA/Status.h $(srcdir)/PA/Element.c
+PA/Input.c: types.h PA/Input.h PA/Count.h PA/Element.h $(srcdir)/PA/Input.c
+PA/Link.c: defs.h types.h PA/Link.h PA/Pair.h $(srcdir)/PA/Link.c
+PA/List.c: types.h PA/List.h PA/Count.h PA/Series.h $(srcdir)/PA/List.c
+PA/NormalTree.c: types.h PA/NormalTree.h PA/Tree.h $(srcdir)/PA/NormalTree.c
+PA/Number.c: PA/Number.h $(srcdir)/PA/Number.c
+PA/Output.c: PA/Output.h $(includedir)/BFS/Record.h $(srcdir)/PA/Output.c
+PA/Pair.c: types.h PA/Pair.h PA/Element.h $(srcdir)/PA/Pair.c
+PA/Resource.c: PA/Resource.h PA/Element.h PA/Number.h $(srcdir)/PA/Resource.c
+PA/Result.c: PA/Result.h $(srcdir)/PA/Result.c
+PA/Series.c: defs.h types.h PA/Series.h PA/Count.h PA/Element.h $(srcdir)/PA/Series.c
+PA/Status.c: defs.h PA/Status.h PA/Resource.h $(srcdir)/PA/Status.c
+PA/TransposeTree.c: types.h PA/TransposeTree.h PA/Tree.h $(srcdir)/PA/TransposeTree.c
+PA/Tree.c: PA/Tree.h PA/Count.h PA/Element.h PA/List.h $(srcdir)/PA/Tree.c
+PA/Value.c: types.h PA/Value.h $(srcdir)/PA/Value.c
+PA/PADrawingEditor.c: PA/PADrawingEditor.h $(srcdir)/PA/PADrawingEditor.c
+PA/PALine.c: PA/PALine.h $(srcdir)/PA/PALine.c $(srcdir)/PA/PALine.c
+PA/PAShape.c: PA/PAShape.h $(srcdir)/PA/PAShape.c
+PA/PATextView.c: PA/PATextView.h $(srcdir)/PA/PATextView.c
+PA/Arrow.c: $(srcdir)/PA/Arrow.c PA/Arrow.h
+PA/Destination.c: $(srcdir)/PA/Destination.c PA/Destination.h
+PA/Feature.c: $(srcdir)/PA/Feature.c PA/Feature.h
+
+Input.i : Input.c ArrayList/ArrayList.h PA/Result.h Input.h types.h
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+Algorithm.i : Algorithm.c PA/Result.h Algorithm.h
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+Output.i : Output.c defs.h Output.h
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+
+BFS/Procedure.i : $(srcdir)/BFS/Procedure.c $(includedir)/types.h $(includedir)/Algorithm.h $(includedir)/PA/Tree.h $(includedir)/PA/Element.h $(includedir)/BFS/Procedure.h $(includedir)/PA/Input.h
+	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
+BFS/Record.i : BFS/Record.c $(includedir)/types.h $(includedir)/PA/List.h $(includedir)/PA/Count.h $(includedir)/PA/Result.h $(includedir)/BFS/Record.h
+	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
+
+PA/Input.i : PA/Input.c
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+PA/Output.i : PA/Output.c
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+PA/Data.i : PA/Data.c
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+# src/PA/Destination.i : src/PA/Destination.c include/types.h include/PA/Destination.h
+# 	-$(CPP) $(CPPFLAGS) -E $< > $@
+PA/Tree.i : PA/Tree.c
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+PA/List.i : PA/List.c 
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+PA/Link.i : PA/Link.c
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+# src/PA/Arrow.i : src/PA/Arrow.c include/defs.h include/PA/Arrow.h include/types.h
+# 	-$(CPP) $(CPPFLAGS) -E $< > $@
+PA/Element.i : PA/Element.c
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+PA/Count.i : PA/Count.c
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+PA/Pair.i : PA/Pair.c
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+PA/Result.i : PA/Result.c
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+PA/Series.i : PA/Series.c
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+PA/Status.i : PA/Status.c
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+# src/PA/Feature.i : src/PA/Feature.c include/PA/Feature.h include/types.h
+# 	-$(CPP) $(CPPFLAGS) -E $< > $@
+PA/Value.i : PA/Value.c
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+PA/Resource.i : PA/Resource.c
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@	
+PA/NormalTree.i : PA/NormalTree.c
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+PA/Number.i : PA/Number.c
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+PA/TransposeTree.i : PA/TransposeTree.c
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+PA/PADrawingEditor.i : PA/PADrawingEditor.c
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+PA/PALine.i : PA/PALine.c
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+PA/PAShape.i : PA/PAShape.c
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+PA/PATextView.i : PA/PATextView.c 
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+PA/Arrow.i : PA/Arrow.c
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+PA/Destination.i : PA/Destination.c
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+PA/Feature.i : PA/Feature.c
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+ArrayList/ArrayList.i: $(srcdir)/ArrayList/ArrayList.c $(includedir)/defs.h $(includedir)/types.h $(includedir)/ArrayList/ArrayList.h
+	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
+
+Input.s: Input.i
+	$(CC) -S src/$< -o src/$@
+Algorithm.s: Algorithm.i
+	$(CC) -S src/$< -o src/$@
+BFS/Procedure.s: BFS/Procedure.i
+	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+BFS/Record.s: BFS/Record.i
+	$(CC) -S src/$< -o src/$@
+Output.s: Output.i
+	$(CC) -S src/$< -o src/$@
+Memory.s: Memory.i
+	$(CC) -S src/$< -o src/$@
+# src/PA/Destination.s : src/PA/Destination.i
+# 	-$(CC) -S $< -o $@
+#asm/PA/Data.s: src/PA/Data.c
+#	$(CC) $(CFLAGS) -S $< -o $@
+PA/Input.s: PA/Input.i
+	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+PA/Output.s: PA/Output.i
+	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+PA/Tree.s: PA/Tree.i
+	$(CC) -S src/$< -o src/$@
+PA/Data.s: PA/Data.i
+	$(CC) -S src/$< -o src/$@
+PA/List.s: PA/List.i
+	$(CC) -S src/$< -o src/$@
+PA/Link.s: PA/Link.i
+	$(CC) -S src/$< -o src/$@
+# src/PA/Arrow.s: src/PA/Arrow.i
+# 	-$(CC) -S $< -o $@
+PA/Element.s: PA/Element.i
+	$(CC) -S src/$< -o src/$@
+PA/Count.s: PA/Count.i
+	$(CC) -S src/$< -o src/$@
+PA/Pair.s: PA/Pair.i
+	$(CC) -S src/$< -o src/$@
+PA/Result.s: PA/Result.i
+	$(CC) -S src/$< -o src/$@
+PA/Series.s: PA/Series.i
+	$(CC) -S src/$< -o src/$@
+# src/PA/Feature.s: src/PA/Feature.i
+# 	-$(CC) -S $< -o $@
+PA/Value.s: PA/Value.i
+	$(CC) -S src/$< -o src/$@
+PA/Resource.s: PA/Resource.i
+	$(CC) -S src/$< -o src/$@
+PA/NormalTree.s: PA/NormalTree.i
+	$(CC) -S src/$< -o src/$@
+PA/Number.s: PA/Number.i
+	$(CC) -S src/$< -o src/$@
+PA/TransposeTree.s: PA/TransposeTree.i
+	$(CC) -S src/$< -o src/$@
+PA/Status.s: PA/Status.i
+	$(CC) -S src/$< -o src/$@
+PA/PADrawingEditor.s: PA/PADrawingEditor.i
+	$(CC) -S src/$< -o src/$@
+PA/PALine.s: PA/PALine.i
+	$(CC) -S src/$< -o src/$@
+PA/PAShape.s: PA/PAShape.i
+	$(CC) -S src/$< -o src/$@
+PA/PATextView.s: PA/PATextView.i
+	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+PA/Feature.s: PA/Feature.i
+	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+PA/Arrow.s: PA/Arrow.i
+	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+PA/Destination.s: PA/Destination.i
+	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+ArrayList/ArrayList.s: ArrayList/ArrayList.i
+	$(CC) -S src/$< -o src/$@
+PA/Memory.s: PA/Memory.i
+	$(CC) -S src/$< -o src/$@
+PA/Object.s: PA/Object.i
+	$(CC) -S src/$< -o src/$@
+test.i: test/test.c
+	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
+test.s: test.i
+	$(CC) -S $(srcdir)/$< -o $(srcdir)/$@
+
+test.o: test.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+test.out: $(objects) test.o $(lib_pa) $(lib_bfs) $(lib_arraylist)
+	$(CC) lib/$< $(foreach object,$(objects_pa),lib/$(object)) liblibpa.a:lib/$(lib_bfs) lib/$(lib_arraylist) -o $(bindir)/$(program_test_pa)
+
+#$(CC) -lc $(foreach dependency,$^,lib/$(dependency)) -o $(bindir)/$@
+
+# ASFLAGS=
+
+
+main.o : main.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+
+Input.o: Input.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+ 
+ 
+ #obj/Input.o: src/Input.s
+#	$(AS) $(ASFLAGS) $< -o $@
+Algorithm.o: Algorithm.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+
+
+
+BFS/Procedure.o: BFS/Procedure.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+# ifeq
+
+BFS/Record.o: BFS/Record.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+
+
+Output.o: Output.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+
+PA/Input.o: PA/Input.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+
+
+
+PA/Output.o: PA/Output.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+
+PA/Value.o: PA/Value.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+
+
+PA/Data.o: PA/Data.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+
+
+PA/Tree.o: PA/Tree.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+
+
+PA/List.o: PA/List.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+
+
+PA/Link.o: PA/Link.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+
+
+# obj/PA/Arrow.o: src/PA/Arrow.s
+# ifeq ($(host-type),arm64)
+# 	-$(AS) $(ASFLAGS) $< -o $@
+# endif
+# ifeq ($(host-type),x86_64)
+# 	-$(CC) -c $(CFLAGS) $< -o $@
+# endif
+# ifeq ($(host-type),AArch64)
+# 	-$(AS) $(ASFLAGS) $< -o $@
+# endif
+
+
+PA/Element.o: PA/Element.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+
+
+PA/Count.o: PA/Count.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+
+
+PA/Pair.o: PA/Pair.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	-$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+
+
+PA/Result.o: PA/Result.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+
+
+PA/Series.o: PA/Series.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+
+PA/Status.o: PA/Status.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+
+# obj/PA/Feature.o: src/PA/Feature.s
+# ifeq ($(host-type),arm64)
+# 	-$(AS) $(ASFLAGS) $< -o $@
+# endif
+# ifeq ($(host-type),x86_64)
+# 	-$(CC) -c $(CFLAGS) $< -o $@
+# endif
+# ifeq ($(host-type),AArch64)
+# 	-$(AS) $(ASFLAGS) $< -o $@
+# endif
+
+
+
+# obj/PA/Destination.o : src/PA/Destination.s
+# ifeq ($(host-type),arm64)
+# 	-$(AS) $(ASFLAGS) $< -o $@
+# endif
+# ifeq ($(host-type),x86_64)
+# 	-$(CC) -c $(CFLAGS) $< -o $@
+# endif
+# ifeq ($(host-type),AArch64)
+# 	-$(AS) $(ASFLAGS) $< -o $@
+# endif
+
+
+
+PA/Resource.o: PA/Resource.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+PA/NormalTree.o: PA/NormalTree.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+PA/Number.o: PA/Number.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+PA/TransposeTree.o: PA/TransposeTree.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+PA/Memory.o: PA/Memory.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+PA/Object.o: PA/Object.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+PA/PADrawingEditor.o: PA/PADrawingEditor.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+PA/PALine.o: PA/PALine.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+
+
+PA/PAShape.o: PA/PAShape.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+
+
+PA/PATextView.o: PA/PATextView.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+PA/Arrow.o: PA/Arrow.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+
+PA/Feature.o: PA/Feature.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+
+PA/Destination.o: PA/Destination.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+
+ArrayList/ArrayList.o: ArrayList/ArrayList.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+
+#src/Input.c: 
+#src/Algorithm.c: 
+#src/BFS/Procedure.c: 
+#src/PA/Input.c:
+#src/PA/Output.c:
+#src/BFS/Record.c:
+#src/Output.c:
+#src/PA/Data.c:
+#src/PA/Tree.c:
+#src/PA/Data.c:
+#src/PA/List.c:
+#src/PA/Link.c:
+#src/PA/Arrow.c:
+#src/PA/Element.c:
+#src/PA/Count.c:
+#src/PA/Pair.c:
+#src/PA/Result.c:
+#src/PA/Series.c:
+#src/PA/Feature.c:
+#src/PA/Value.c:
+#src/PA/Resource.c:
+#src/Builder/Director.c:
+#src/Builder/Builder.c:
+#src/Builder/Product.c:
+#src/Builder/ConcreteBuilder.c:
+#src/PA/NormalTree.c:
+#src/PA/TransposeTree.c:
+#src/Adapter/Client.c:
+#src/Adapter/Target.c:
+#src/Adapter/Adapter.c:
+#src/Adapter/Adaptee.c:
+#src/PA/PADrawingEditor.c:
+#src/PA/PALine.c:
+#src/PA/PAShape.c:
+#src/PA/PATextView.c:
+#src/ArrayList/ArrayList.c:
+#src/ArrayList/ArrayListPosition.c:
+#src/Iterator/Client.c:
+#src/Iterator/ConcreteIterator.c:
+#src/Iterator/Iterator.c:
+#src/Iterator/ConcreteAggregate.c:
+#$(objects): obj/%.o : src/%.c
+#	$(CC) -c $(CFLAGS) $< -o $@
+
+#install: installdirs
+
+#subdirs: $(SUBDIRS)
+#	for dir in $(SUBDIRS); do \
+		$(MAKE) -C $$dir; \
+	done
+
+.PHONY: installdirs
+installdirs: mkinstalldirs
+	$(srcdir)/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(datadir) \
+				$(DESTDIR)$(libdir) $(DESTDIR)$(infodir) \
+				$(DESTDIR)$(mandir) \
+				$(DESTDIR)$(subdirs) \
+				$(DESTDIR)$(objdirs)
+
+.PHONY: mkinstalldirs
+mkinstalldirs: $(srcdir)/mkinstalldirs
+
+.PHONY: uninstall
+uninstall:
+# 	cp . .
+# 	mv
+	rm -v $(foreach lib,$(libs),$(lib))
+
+#distclean:
+#	rm asm/*
+#	rm obj/*
+
+#dist:
+#	echo "dist"
+
+#check:
+#	echo "check"
+
+#installcheck:
+#	echo "installcheck"
+
+# $(output_dir)/$(lib_algorithm):
+# ifeq ($(host-type),arm64)
+# 	$(AR) -r $@ $(objects_algoritm)
+# endif
+# $(output_dir)/$(lib_pa):
+# ifeq ($(host-type),arm64)
+# 	$(AR) -r $@ $(objects_pa)
+# endif
+# $(output_dir)/$(lib_bfs):
+# ifeq ($(host-type),arm64)
+# 	$(AR) -r $@ $(objects_bfs)
+# endif
+# $(output_dir)/$(lib_arraylist):
+# ifeq ($(host-type),arm64)
+# 	$(AR) -r $@ $(objects_arraylist)
+# endif
+clean:
+#	${MAKE} ARCH=${host-type} build
+# # 	-rm libpa.a
+# 	-rm $(srcdir)/Input.i
+# 	-rm $(srcdir)/Algorithm.i
+# 	-rm $(srcdir)/BFS/Procedure.i
+# 	-rm $(srcdir)/PA/Input.i
+# 	-rm $(srcdir)/PA/Output.i
+# 	-rm $(srcdir)/BFS/Record.i
+# 	-rm $(srcdir)/Output.i
+# 	-rm $(srcdir)/PA/Data.i
+# # 	-rm src/PA/Destination.i
+# 	-rm $(srcdir)/PA/Tree.i
+# # 	-rm src/PA/Data.i
+# 	-rm $(srcdir)/PA/List.i
+# 	-rm $(srcdir)/PA/Link.i
+# # 	-rm src/PA/Arrow.i
+# 	-rm $(srcdir)/PA/Element.i
+# 	-rm $(srcdir)/PA/Count.i
+# 	-rm $(srcdir)/PA/Pair.i
+# 	-rm $(srcdir)/PA/Result.i
+# 	-rm $(srcdir)/PA/Series.i
+# 	-rm $(srcdir)/PA/Status.i
+# # 	-rm src/PA/Feature.i
+# 	-rm $(srcdir)/PA/Value.i
+# 	-rm $(srcdir)/PA/Resource.i
+# 	-rm $(srcdir)/PA/NormalTree.i
+# 	-rm $(srcdir)/PA/Number.i
+# 	-rm $(srcdir)/PA/TransposeTree.i
+# 	-rm $(srcdir)/PA/PADrawingEditor.i
+# 	-rm $(srcdir)/PA/PALine.i
+# 	-rm $(srcdir)/PA/PAShape.i
+# 	-rm $(srcdir)/PA/PATextView.i
+# 	-rm $(srcdir)/ArrayList/ArrayList.i
+# 	-rm $(srcdir)/ArrayList/ArrayListPosition.i
+# 	-rm $(srcdir)/Input.s
+# 	-rm $(srcdir)/Algorithm.s
+# 	-rm $(srcdir)/BFS/Procedure.s
+# 	-rm $(srcdir)/PA/Input.s
+# 	-rm $(srcdir)/PA/Output.s
+# 	-rm $(srcdir)/BFS/Record.s
+# 	-rm $(srcdir)/Output.s
+# 	-rm $(srcdir)/PA/Data.s
+# 	-rm $(srcdir)/PA/Status.s
+# # 	-rm src/PA/Destination.s
+# 	-rm $(srcdir)/PA/Tree.s
+# #	-rm src/PA/Data.s
+# 	-rm $(srcdir)/PA/List.s
+# 	-rm $(srcdir)/PA/Link.s
+# # 	-rm src/PA/Arrow.s
+# 	-rm $(srcdir)/PA/Element.s
+# 	-rm $(srcdir)/PA/Count.s
+# 	-rm $(srcdir)/PA/Pair.s
+# 	-rm $(srcdir)/PA/Result.s
+# 	-rm $(srcdir)/PA/Series.s
+# # 	-rm src/PA/Feature.s
+# 	-rm $(srcdir)/PA/Value.s
+# 	-rm $(srcdir)/PA/Resource.s
+# 	-rm $(srcdir)/PA/NormalTree.s
+# 	-rm $(srcdir)/PA/Number.s
+# 	-rm $(srcdir)/PA/TransposeTree.s
+# 	-rm $(srcdir)/PA/PADrawingEditor.s
+# 	-rm $(srcdir)/PA/PALine.s
+# 	-rm $(srcdir)/PA/PAShape.s
+# 	-rm $(srcdir)/PA/PATextView.s
+# 	-rm $(libdir)/Input.o
+# 	-rm $(libdir)/Algorithm.o
+# 	-rm $(libdir)/BFS/Procedure.o
+# 	-rm $(libdir)/BFS/Record.o
+# 	-rm $(libdir)/Output.o
+# 	-rm $(libdir)/PA/Data.o
+# 	-rm $(libdir)/PA/Tree.o
+# 	-rm $(libdir)/PA/List.o
+# 	-rm $(libdir)/PA/Input.o
+# 	-rm $(libdir)/PA/Output.o
+# 	-rm $(libdir)/PA/Link.o
+# # 	-rm obj/PA/Arrow.o
+# 	-rm $(libdir)/PA/Element.o
+# 	-rm $(libdir)/PA/Status.o
+# 	-rm $(libdir)/PA/Count.o
+# 	-rm $(libdir)/PA/Pair.o
+# 	-rm $(libdir)/PA/Result.o
+# 	-rm $(libdir)/PA/Series.o
+# # 	-rm obj/PA/Feature.o
+# 	-rm $(libdir)/PA/Value.o
+# 	-rm $(libdir)/PA/Resource.o
+# # 	-rm obj/PA/Destination.o
+# 	-rm $(libdir)/PA/NormalTree.o
+# 	-rm $(libdir)/PA/TransposeTree.o
+# # 	-rm obj/PA/Product.o
+# 	-rm $(libdir)/PA/PADrawingEditor.o
+# 	-rm $(libdir)/PA/PALine.o
+# 	-rm $(libdir)/PA/PAShape.o
+# 	-rm $(libdir)/PA/PATextView.o
+# 	-rm $(libdir)/ArrayList/ArrayList.o
+# #	-rm obj/ArrayList/ArrayListObject.o
+# 	-rm $(libdir)/PA/Number.o
+# # 	-rm obj/Bridge/ConcreteImplementorB.o
+# 	-rm $(libdir)/libpa.a
+# 	-rm $(libdir)/libbfs.a
+# 	-rm $(libdir)/libarraylist.a
+# 	-rm $(srcdir)/test.i
+# 	-rm $(srcdir)/test.s
+# 	-rm $(bindir)/test
+	-rm -v $(foreach source,$(sources_pa),$(srcdir)/$(source))
+	-rm -v $(foreach test,$(sources_test_pa),$(srcdir)/$(test))
+# 	rm $(foreach source,$(sources_bfs),$(srcdir)/$(source))
+# 	rm $(foreach source,$(sources_arraylist),$(srcdir)/$(source))
+# 	rm $(foreach assembly,$(assemblies_pa),$(libdir)/$(assembly))
+# 	rm $(foreach assembly,$(assemblies_bfs),$(libdir)/$(assembly))
+# 	rm $(foreach assembly,$(assemblies_arraylist),$(libdir)/$(assembly))
+# 	rm $(foreach assembly,$(assemblies_pa),$(srcdir)/ass)
+	-rm -v $(foreach assembly,$(assemblies_pa),$(srcdir)/$(assembly))
+	-rm -v $(foreach test,$(assemblies_test_pa),$(srcdir)/$(test))
+# 	rm $(foreach assembly,$(assemblies_bfs),$(srcdir)/$(assebmbly))
+# 	rm $(foreach assembly,$(assemblies_arraylist),$(srcdir)/$(assembly))
+	-rm -v $(foreach object,$(objects_pa),$(libdir)/$(object))
+	-rm -v $(foreach object,$(objects_test_pa),$(libdir)/$(object))
+	-rm -v $(foreach lib,$(libs)/,./lib/$(lib))
+	-rm -v $(output)-$(version)/*
+	-rm -r -v $(output)-$(version)
+	-rm -r -v $(output).tar.gz
+# 	rm $(foreach object,$(objects_bfs),$(libdir)/$(object))
+# 	rm $(foreach object,$(objects_arraylist),$(libdir)/$(object))
+# 	rm $(bindir)/test
+# 	-rm -r obj/BFS/
+# 	-rm -r obj/Adapter/
+# 	-rm -r obj/Iterator/
+# 	-rm -r obj/Adapter/
+# 	-rm -r obj/Builder/
+# 	-rm -r obj/ArrayList/
+# 	-rm -r obj/Prototype/
+# 	-rm -r obj/Bridge/
+# 	-rm -r obj/PA/
+# 	-rm -r obj/
+# 	#rm obj/Iterator/
+# 	#rm obj/Adapter/
+# 	#rm obj/ArrayList/
+# 	#rm obj/BFS/
+#rm objInput.o
+#rm $(objects)
+#obj/Input.
+##include "includePAGrafProduct.h
+#@echo "clean $(pwd)"
+#	@echo "end of clean"
+pa: 
+# ${designs_pa} ${sources_pa} ${assemblies_pa} ${objects_pa} ${output_pa}
+bfs: 
+# ${designs_bfs} ${sources_bfs} ${assemblies_bfs} ${objects_bfs} $(output_bfs)
+arraylist: 
+# ${designs_arraylist} ${sources_arraylist} ${assemblies_arraylist} ${objects_arraylist} $(output_arraylist)
+
+.PHONY: run
+run:
+	@echo "Running"
+# .PHONY: build preprocess assemble compile 
+# input.s: src/input.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
+# algorithm.s: src/algorithm.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
+# bfsalgorithm.s: src/bfsalgorithm.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
+# bfsinput.s: src/bfsinput.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
+# bfsoutput.s: src/bfsoutput.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
+# bfsresult.s : src/bfsresult.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
+# output.s : src/output.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
+# padata.s : src/padata.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
+# pagraf.s: src/pagraf.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
+# palista.s: src/palista.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
+# pamuchie.s: src/pamuchie.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
+# panod.s: src/panod.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
+# papereche.s: src/papereche.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
+# parezultat.s: src/parezultat.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
+# pastare.s: src/pastare.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
+# paneigh.s: src/paneigh.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
+# patip.s: src/patip.c 
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
+# paindex.s: src/paindex.c 
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
+# paneigh.s: src/paneigh.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
+# pasir.s: src/pasir.c 
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
+# parezultat.s: src/parezultat.c 
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/$@
+# pagrafnormal.s: src/builder/pagrafnormal.c 
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/builder/$@
+# pagraftranspus.s:  src/builder/pagraftranspus.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/builder/$@
+# padirector.s:  src/builder/padirector.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/builder/$@
+# pagrafproduct.s:  src/builder/pagrafproduct.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/builder/$@
+# pabuilder.s:  src/builder/pabuilder.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/builder/$@
+
+# PADrawingEditor.s: src/PA/PADrawingEditor.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
+# PALine.s: src/PA/PALine.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
+# PAShape.s: src/PA/PAShape.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
+# PATextView.s: src/PA/PATextView.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
+
+# client.s: src/adapter/client.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
+# target.s: src/adapter/target.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
+# adapter.s: src/adapter/adapter.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
+# adaptee.s: src/adapter/adaptee.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
+# arraylist.s: src/arraylist/arraylist.c
+# 	CPATH=$(CPATH) $(CC) -S $^ -o asm/adapter/$@
+
+# input.o: include/Input.h 
+# 	$(AS) -c asm/$^ -o obj/$@
+# algorithm.o: include/Algorithm.h
+# 	$(AS) -c asm/$^ -o obj/$@
+# bfsalgorithm.o: include/BFSAlgorithm.h 
+# 	$(AS) -c asm/$^ -o obj/$@
+# bfsinput.o: include/BFSInput.h 
+# 	$(AS) -c asm/$^ -o obj/$@
+# bfsoutput.o: include/BFSOutput.h 
+# 	$(AS) -c asm/$^ -o obj/$@
+# bfsresult.o: include/BFSResult.h 
+# 	$(AS) -c asm/$^ -o obj/$@
+# output.o: include/Output.h 
+# 	$(AS) -c asm/$^ -o /bj/$@
+# padata.o: include/PAData.h 
+# 	$(AS) -c asm/$^ -o obj/$@
+# pagraf.o: include/PAGraf.h 
+# 	$(AS) -c asm/$^ -o obj/$@
+# palista.o: include/PALista.h  
+# 	$(AS) -c asm/$^ -o obj/$@
+# pamuchie.o: include/PAMuchie.h  
+# 	$(AS) -c asm/$^ -o obj/$@
+# panod.o: include/PANod.h
+# 	$(AS) -c asm/$^ -o obj/$@
+# papereche.o: include/PAPereche.h 
+# 	$(AS) -c asm/$^ -o obj/$@
+# parezultat.o : include/PARezultat.h
+# 	$(AS) -c asm/$^ -o obj/$@
+# pastare.o: include/PAStare.h
+# 	$(AS) -c asm/$^ -o obj/$@
+# paneigh.o: include/PANeigh.h
+# 	$(AS) -c asm/$^ -o obj/$@
+# patip.o: include/PATip.h
+# 	$(AS) -c asm/$^ -o obj/$@
+# paindex.o: include/PAIndex.h 
+# 	$(AS) -c asm/$^ -o obj/$@
+
+# aggregate.o: aggregate.s 
+# 	$(AS) -c asm/iterator/$^ -o obj/iterator/$@
+# client.o: client.s 
+# 	$(AS) -c asm/iterator/$^ -o obj/iterator/$@
+# concreteaggregate.o: concreteaggregate.s 
+# 	$(AS) -c asm/iterator/$^ -o obj/iterator/$@
+# concreteiterator.o: concreteiterator.s 
+# 	$(AS) -c asm/iterator/$^ -o obj/iterator/$@
+# iterator.o: iterator.s 
+# 	$(AS) -c asm/iterator/$^ -o obj/iterator/$@
+
+# pagrafnormal.o: pagrafnormal.s 
+# 	$(AS) -c asm/builder/$^ -o obj/builder/$@
+# pagraftranspus.o: pagraftranspus.s 
+# 	$(AS) -c asm/builder/$^ -o obj/builder/$@
+# padirector.o: padirector.s 
+# 	$(AS) -c asm/builder/$^ -o obj/builder/$@
+# pagrafproduct.o: pagrafproduct.s 
+# 	$(AS) -c asm/builder/$^ -o obj/builder/$@
+# pabuilder.o: pabuilder.s
+# 	$(AS) -c asm/builder/$^ -o obj/builder/$@
+
+# PADrawingEditor.o: 
+# 	$(AS) -c asm/adapter/$^ -o obj/adapter/$@
+# PALine.o: PALine.s 
+# 	$(AS) -c asm/adapter/$^ -o obj/adapter/$@
+# PAShape.o: PAShape.s
+# 	$(AS) -c asm/adapter/$^ -o obj/adapter/$@
+# PASTexthape.o: patextshape.s
+# 	$(AS) -c asm/adapter/$^ -o obj/adapter/$@
+# PATextView.o: PATextView.s 
+# 	$(AS) -c asm/adapter/$^ -o obj/adapter/$@
+	
+# client.o: asm/adapter/client.s
+# 	$(AS) -c asm/adapter/$s^ -o obj/adapter/$@
+# target.o: asm/adapter/target.s
+# 	$(AS) -c asm/adapter/$^ -o obj/adapter/$@
+# adapter.o: asm/adapter/adapter.s
+# 	$(AS) -c asm/adapter/$^ -o obj/adapter/$@
+# adaptee.o: asm/adapter/adaptee.s
+# 	$(AS) -c asm/adapter/$^ -o obj/adapter/$@
+	
+# arraylist.o : arraylist_arraylist.s
+# 	$(AS) -c asm/arraylist/$^ -o obj/arraylist/$@
+
+#.PHONY: all install installdirs installcheck uinstall run distclean clean
+.PHONY: all install installcheck test

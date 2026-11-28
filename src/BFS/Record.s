@@ -52,9 +52,11 @@ _BFSRecordBegin:                        ; @BFSRecordBegin
 ; %bb.0:
 	sub	sp, sp, #32
 	.cfi_def_cfa_offset 32
+	str	x1, [sp, #16]
 	str	x2, [sp, #24]
-	str	x0, [sp, #16]
-	str	x1, [sp, #8]
+	mov	x8, x3
+	str	w8, [sp, #12]
+	str	x0, [sp]
 	add	sp, sp, #32
 	ret
 	.cfi_endproc
@@ -64,6 +66,7 @@ _BFSRecordBegin:                        ; @BFSRecordBegin
 _BFSRecordCopy:                         ; @BFSRecordCopy
 	.cfi_startproc
 ; %bb.0:
+<<<<<<< HEAD
 	sub	sp, sp, #368
 	.cfi_def_cfa_offset 368
 	stp	x28, x27, [sp, #336]            ; 16-byte Folded Spill
@@ -85,8 +88,21 @@ _BFSRecordCopy:                         ; @BFSRecordCopy
 	ldp	x29, x30, [sp, #352]            ; 16-byte Folded Reload
 	ldp	x28, x27, [sp, #336]            ; 16-byte Folded Reload
 	add	sp, sp, #368
+=======
+	sub	sp, sp, #48
+	.cfi_def_cfa_offset 48
+	mov	x9, x8
+	str	x0, [sp, #40]
+	mov	x8, x1
+	str	x8, [sp, #32]
+	ldr	q0, [x1]
+	str	q0, [x9]
+	ldr	x8, [x1, #16]
+	str	x8, [x9, #16]
+	add	sp, sp, #48
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.comm	_PAList,296,3                   ; @PAList
+	.comm	_PAList,16,3                    ; @PAList
 .subsections_via_symbols

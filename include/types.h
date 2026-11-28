@@ -1,4 +1,3 @@
-
 //@Author Cristofor Rotsching
 #ifndef INCLUDE_TYPES_H_
 #define INCLUDE_TYPES_H_	1
@@ -278,11 +277,21 @@ struct PACount {
 
 struct PASeries {
 	struct PACount m;
-	struct PAElement adj[SIZE];
+	#ifndef _WIN95
+	struct PAElement* adj;
+	#else
+	struct PAElement* adj;
+	#endif
+	// struct PAElement adj[SIZE];
 };
 struct PAList {
 	PAValue n;
-	struct PASeries neigh[SIZE];
+	#ifndef _WIN95
+	struct PAElement* neigh;
+	#else
+	struct PAElement* neigh;
+	#endif	
+	// struct PASeries neigh[SIZE];
 	// struct PANod Nod;
 } PAList;
 struct FlyweightFlyweightClient {

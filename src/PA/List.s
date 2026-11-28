@@ -5,7 +5,12 @@
 _PAListPerformConstruct:                ; @PAListPerformConstruct
 	.cfi_startproc
 ; %bb.0:
-	str	xzr, [x8]
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	str	wzr, [sp]
+	ldr	x0, [sp]
+	ldr	x1, [sp, #8]
+	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -14,6 +19,7 @@ _PAListPerformConstruct:                ; @PAListPerformConstruct
 _PAListPerformCopy:                     ; @PAListPerformCopy
 	.cfi_startproc
 ; %bb.0:
+<<<<<<< HEAD
 	stp	x28, x27, [sp, #-32]!           ; 16-byte Folded Spill
 	.cfi_def_cfa_offset 32
 	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
@@ -190,6 +196,19 @@ LBB1_11:
 	add	sp, sp, #1488
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	ldp	x28, x27, [sp], #32             ; 16-byte Folded Reload
+=======
+	sub	sp, sp, #64
+	.cfi_def_cfa_offset 64
+	str	x0, [sp, #32]
+	str	x1, [sp, #40]
+	str	x2, [sp, #16]
+	str	x3, [sp, #24]
+	ldr	q0, [sp, #16]
+	str	q0, [sp, #48]
+	ldr	x0, [sp, #48]
+	ldr	x1, [sp, #56]
+	add	sp, sp, #64
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -198,13 +217,14 @@ LBB1_11:
 _PAListPerformConstructWithSize:        ; @PAListPerformConstructWithSize
 	.cfi_startproc
 ; %bb.0:
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 16
-	mov	x9, x8
-	str	x0, [sp, #8]
-	ldr	x8, [sp, #8]
-	str	x8, [x9]
-	add	sp, sp, #16
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 32
+	str	w0, [sp, #12]
+	ldr	w8, [sp, #12]
+	str	w8, [sp, #16]
+	ldr	x0, [sp, #16]
+	ldr	x1, [sp, #24]
+	add	sp, sp, #32
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -213,6 +233,7 @@ _PAListPerformConstructWithSize:        ; @PAListPerformConstructWithSize
 _PAListPerformInitWithSize:             ; @PAListPerformInitWithSize
 	.cfi_startproc
 ; %bb.0:
+<<<<<<< HEAD
 	stp	x28, x27, [sp, #-32]!           ; 16-byte Folded Spill
 	.cfi_def_cfa_offset 32
 	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
@@ -283,6 +304,19 @@ LBB3_3:
 	add	sp, sp, #608
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	ldp	x28, x27, [sp], #32             ; 16-byte Folded Reload
+=======
+	sub	sp, sp, #64
+	.cfi_def_cfa_offset 64
+	str	x0, [sp, #32]
+	str	x1, [sp, #40]
+	str	w2, [sp, #28]
+	str	x3, [sp, #16]
+	ldr	q0, [sp, #32]
+	str	q0, [sp, #48]
+	ldr	x0, [sp, #48]
+	ldr	x1, [sp, #56]
+	add	sp, sp, #64
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -291,6 +325,7 @@ LBB3_3:
 _PAListPerformInit:                     ; @PAListPerformInit
 	.cfi_startproc
 ; %bb.0:
+<<<<<<< HEAD
 	stp	x28, x27, [sp, #-32]!           ; 16-byte Folded Spill
 	.cfi_def_cfa_offset 32
 	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
@@ -359,6 +394,17 @@ LBB4_3:
 	add	sp, sp, #608
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	ldp	x28, x27, [sp], #32             ; 16-byte Folded Reload
+=======
+	sub	sp, sp, #48
+	.cfi_def_cfa_offset 48
+	str	x0, [sp, #16]
+	str	x1, [sp, #24]
+	str	w2, [sp, #12]
+	str	x3, [sp]
+	ldr	x0, [sp, #32]
+	ldr	x1, [sp, #40]
+	add	sp, sp, #48
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -369,6 +415,7 @@ _PAListPerformRuin:                     ; @PAListPerformRuin
 ; %bb.0:
 	sub	sp, sp, #48
 	.cfi_def_cfa_offset 48
+<<<<<<< HEAD
 	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
 	add	x29, sp, #32
 	.cfi_def_cfa w29, 16
@@ -386,6 +433,18 @@ _PAListPerformRuin:                     ; @PAListPerformRuin
 	mov	x2, #296
 	bl	_memcpy
 	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
+=======
+	str	x0, [sp, #16]
+	str	x1, [sp, #24]
+	mov	w8, #1                          ; =0x1
+	str	w8, [sp, #12]
+	ldr	w8, [sp, #16]
+	str	w8, [sp, #8]
+	ldr	q0, [sp, #16]
+	str	q0, [sp, #32]
+	ldr	x0, [sp, #32]
+	ldr	x1, [sp, #40]
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	add	sp, sp, #48
 	ret
 	.cfi_endproc
@@ -403,6 +462,7 @@ _Dispose:                               ; @Dispose
 _PAListPerformDelete:                   ; @PAListPerformDelete
 	.cfi_startproc
 ; %bb.0:
+<<<<<<< HEAD
 	sub	sp, sp, #64
 	.cfi_def_cfa_offset 64
 	stp	x29, x30, [sp, #48]             ; 16-byte Folded Spill
@@ -425,6 +485,23 @@ _PAListPerformDelete:                   ; @PAListPerformDelete
 	bl	_memcpy
 	ldp	x29, x30, [sp, #48]             ; 16-byte Folded Reload
 	add	sp, sp, #64
+=======
+	sub	sp, sp, #48
+	.cfi_def_cfa_offset 48
+	str	x0, [sp, #16]
+	str	x1, [sp, #24]
+	ldr	w8, [sp, #16]
+	str	w8, [sp, #12]
+	ldr	w8, [sp, #12]
+	str	w8, [sp, #4]
+	mov	w8, #1                          ; =0x1
+	str	w8, [sp, #8]
+	ldr	q0, [sp, #16]
+	str	q0, [sp, #32]
+	ldr	x0, [sp, #32]
+	ldr	x1, [sp, #40]
+	add	sp, sp, #48
+>>>>>>> ff519d48d73d5f1f22e326e397b3a12b857c2992
 	ret
 	.cfi_endproc
                                         ; -- End function
@@ -435,10 +512,11 @@ _PAListPerformPrint:                    ; @PAListPerformPrint
 ; %bb.0:
 	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	str	x0, [sp, #8]
+	str	x0, [sp]
+	str	x1, [sp, #8]
 	add	sp, sp, #16
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.comm	_PAList,296,3                   ; @PAList
+	.comm	_PAList,16,3                    ; @PAList
 .subsections_via_symbols
