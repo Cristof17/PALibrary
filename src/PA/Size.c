@@ -2,38 +2,21 @@
 #include <types.h>
 
 
-PAMemory PASizePerformAllocate(size_t);
-PASize PASizePerformInitialise(PASize);
+// PAMemory PASizePerformAllocate(size_t);
+struct PASize PASizePerformInitialise(PASize);
 struct PASize PASizePerformConstruct(size_t standardSize);
 size_t PASizePerformConvertToStandard(PASize);
-PASize PASizePerformConvertStandardSize(size_t size);
-int PASizePerformDelete(PASize PA);
+struct PASize PASizePerformConvertStandardSize(size_t size);
+int PASizePerformDelete(struct PASize PA);
 struct PASize PASizeSize();
 
 
 
 
 
-
-
-PAMemory PAMemoryPerformConstruct(PASize size);
-int PAMemoryPerformRuin(PAMemory);
-
-
-
-
-
-
-PAObject PAObjectPerformCopy(PAObject, PAObject, PASize size);
-struct PASize PAObjectSize();
-
-
-
-
-
-PASize PASizePerformConvertStandardSize(size_t size)
+struct PASize PASizePerformConvertStandardSize(size_t size)
 {
-    PASize size2;
+    struct PASize size2;
     return size2;
 }
 struct PASize PASizeSize()
@@ -43,14 +26,14 @@ struct PASize PASizeSize()
     return size;
 }
 
-PAMemory PASizePerformAllocate(size_t size)
-{
-    PAMemory address;
-    struct PASize totalSize;
-    totalSize = PASizeSize();
-    address = PAMemoryPerformConstruct(&totalSize);
-    return address;
-}
+// PAMemory PASizePerformAllocate(size_t size)
+// {
+//     PAMemory address;
+//     struct PASize totalSize;
+//     totalSize = PASizeSize();
+//     address = PAMemoryPerformConstruct(&totalSize);
+//     return address;
+// }
 
 size_t convertToStandard(struct PASize size)
 {
@@ -80,7 +63,7 @@ size_t convertToStandard(struct PASize size)
     }
     return standardSize;
 }
-size_t PASizePerformConvertToStandard(PASize size)
+size_t PASizePerformConvertToStandard(struct PASize* size)
 {
     size_t value;
     value = convertToStandard(*size);
@@ -93,9 +76,9 @@ struct PASize PASizePerformConstruct(size_t size) {
     struct PASize aux ;
     return aux;
 }
-PASize PASizePerformInitialise(PASize Size)
+struct PASize PASizePerformInitialise(struct PASize Size)
 {
-    PASize aux;
+    struct PASize aux;
     return Size;
 }
 
@@ -124,9 +107,11 @@ int PASizePerformDelete(struct PASize* PA)
     memset(PA, 0, sizeof(struct PASize));
     return returnCode;
 }
-int PASizePerformRuin(PAMemory PA)
+int PASizePerformRuin(struct PASize* PA)
 {
-    int returnCode;
-    PAMemoryPerformRuin(PA);
+    int returnCode = ((int)0);
+    memset(PA->value, 0, sizeof(size_t));
+    memset(PA, 0, sizeof(struct PASize));
     return returnCode;
+
 }

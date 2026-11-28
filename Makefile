@@ -724,6 +724,7 @@ PA/PATextView.h: $(includedir)/PA/PATextView.h $(includedir)/PA/PATextView.h
 PA/Arrow.h: $(includedir)/PA/Arrow.h $(includedir)/PA/Arrow.h
 PA/Destination.h: $(includedir)/PA/Destination.h
 PA/Feature.h: $(includedir)/PA/Feature.h $(includedir)/PA/Feature.h
+PA/Size.h: $(includedir)/PA/Size.h
 
 Input.c: Input.h $(srcdir)/Input.c
 Output.c: Output.h $(srcdir)/Output.c
@@ -758,6 +759,7 @@ PA/PATextView.c: PA/PATextView.h $(srcdir)/PA/PATextView.c
 PA/Arrow.c: $(srcdir)/PA/Arrow.c PA/Arrow.h
 PA/Destination.c: $(srcdir)/PA/Destination.c PA/Destination.h
 PA/Feature.c: $(srcdir)/PA/Feature.c PA/Feature.h
+PA/Size.c: $(srcdir)/PA/Size.c PA/Size.h
 
 Input.i : Input.c ArrayList/ArrayList.h PA/Result.h Input.h types.h
 	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
@@ -825,6 +827,9 @@ PA/Destination.i : PA/Destination.c
 	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
 PA/Feature.i : PA/Feature.c
 	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+PA/Size.i : PA/Size.c
+	$(CPP) $(CPPFLAGS) -E $(srcdir)/$< > $(srcdir)/$@
+
 ArrayList/ArrayList.i: $(srcdir)/ArrayList/ArrayList.c $(includedir)/defs.h $(includedir)/types.h $(includedir)/ArrayList/ArrayList.h
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
 
@@ -901,6 +906,8 @@ ArrayList/ArrayList.s: ArrayList/ArrayList.i
 PA/Memory.s: PA/Memory.i
 	$(CC) -S src/$< -o src/$@
 PA/Object.s: PA/Object.i
+	$(CC) -S src/$< -o src/$@
+PA/Size.s: PA/Size.i
 	$(CC) -S src/$< -o src/$@
 test.i: test/test.c
 	$(CPP) $(CPPFLAGS) -E $< > $(srcdir)/$@
@@ -1353,6 +1360,18 @@ ifeq ($(host-type),x86_64)
 endif
 ifeq ($(host-type),AArch64)
 	$(AS) $(ASFLAGS) $(srcdir)/$< -o $(libdir)/$@
+endif
+
+
+PA/Size.o: PA/Size.s
+ifeq ($(host-type),arm64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),x86_64)
+	$(CC) -c $(CFLAGS) src/$< -o lib/$@
+endif
+ifeq ($(host-type),AArch64)
+	$(AS) $(ASFLAGS) src/$< -o lib/$@
 endif
 
 ArrayList/ArrayList.o: ArrayList/ArrayList.s
